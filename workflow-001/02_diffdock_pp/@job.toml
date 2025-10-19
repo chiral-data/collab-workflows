@@ -1,0 +1,6 @@
+use_gpu = true
+
+[container]
+docker_image = "chiral.sakuracr.jp/diffdock_pp_potter_nvidia:latest"
+
+[scripts]
