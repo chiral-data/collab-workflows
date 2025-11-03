@@ -1,0 +1,5 @@
+[container]
+docker_file = "Dockerfile"
+
+[scripts]
+run = "bash run.sh"
