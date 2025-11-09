@@ -1,7 +1,9 @@
-from rdkit import Chem
-from rdkit.Chem import AllChem, Draw
-from rdkit.Chem.Draw import rdMolDraw2D
 import os
+
+from rdkit import Chem
+from rdkit.Chem import AllChem
+from rdkit.Chem.Draw import rdMolDraw2D
+
 
 def generate_variants(smiles):
     """Generate functional group variants of a molecule."""
@@ -47,7 +49,7 @@ def save_variant_figure(base_smiles, variants, filename="variants.svg"):
     drawer = rdMolDraw2D.MolDraw2DSVG(300 * n_cols, 300 * n_rows, 300, 300)
     drawer.DrawMolecules(mols, legends=labels)
     drawer.FinishDrawing()
-    svg = drawer.GetDrawingText().replace('svg:', '')
+    svg = drawer.GetDrawingText().replace("svg:", "")
 
     with open(filename, "w") as f:
         f.write(svg)
