@@ -16,7 +16,9 @@ from pdbfixer import PDBFixer
 
 def main():
     """Main execution function"""
-    print("Starting protein preparation process...")
+    pdb_id = "4OHU"
+    pdb_file = f"./{pdb_id}.pdb"
+    output_pdb_file = f"{os.path.splitext(pdb_file)[0]}_A_NAD.pdb"
 
     # Calculate ligand center (2TK coordinates)
     center_coords = calculate_ligand_center(pdb_file)  # use original for 2TK coords

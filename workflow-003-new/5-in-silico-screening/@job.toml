@@ -1,0 +1,8 @@
+depends_on = ["2-protein-preparation", "4-ligand-modification"]
+inputs = []
+outputs = ["docking_results", "results"]
+
+[container]
+docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+
+[scripts]

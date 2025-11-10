@@ -1,0 +1,6 @@
+outputs = ["*.pdb"]
+
+[container]
+docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+
+[scripts]

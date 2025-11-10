@@ -1,0 +1,8 @@
+depends_on = ["5-in-silico-screening"]
+inputs = []
+outputs = ["results"]
+
+[container]
+docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+
+[scripts]

@@ -1,0 +1,9 @@
+depends_on = ["2-protein-preparation"]
+inputs = ["*.pdb"]
+outputs = ["*.sdf"]
+
+
+[container]
+docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+
+[scripts]

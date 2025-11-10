@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import urllib.request
 
 # ------------------------------------------------------------------------------
 # 1. Download structure

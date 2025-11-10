@@ -1,0 +1,9 @@
+depends_on = ["3-ligand-extraction"]
+inputs = ["*.sdf"]
+outputs = ["ligand_library", "variants.svg"]
+
+
+[container]
+docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+
+[scripts]
