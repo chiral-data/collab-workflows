@@ -1,0 +1,7 @@
+use_gpu = true
+
+[container]
+docker_image = "chiral.sakuracr.jp/gromacs:2025_11_12"
+
+[scripts]
+
