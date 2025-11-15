@@ -1,18 +1,24 @@
-# Use Ubuntu 22.04 base image to match project pattern
-FROM ubuntu:22.04
+# Dockerfile to build a custom image for ViennaRNA 
+#
+# 2025-11-15: add ghostscript, pdf2svg to convert .ps files (Qin Wan rogerwq@gmai.com)
+#
 
-# Set environment variables
-ENV DEBIAN_FRONTEND=noninteractive \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+from ubuntu:22.04
 
-# Install system dependencies and wget for micromamba
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# set environment variables
+env debian_frontend=noninteractive \
+    pythondontwritebytecode=1 \
+    pythonunbuffered=1
+
+# install system dependencies and wget for micromamba
+run apt-get update && apt-get install -y --no-install-recommends \
     wget \
     bzip2 \
     ca-certificates \
     curl \
     jq \
+    ghostscript \
+    pdf2svg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
