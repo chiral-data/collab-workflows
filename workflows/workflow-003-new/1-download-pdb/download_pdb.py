@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import os
 import urllib.request
 
 # ------------------------------------------------------------------------------
@@ -28,5 +29,6 @@ def download_pdb_file(pdb_id, output_dir="."):
 # ------------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    pdb_id = "4OHU"
+    # pdb_id = "4OHU"
+    pdb_id = os.getenv("PARAM_PDB_ID")
     download_pdb_file(pdb_id)
