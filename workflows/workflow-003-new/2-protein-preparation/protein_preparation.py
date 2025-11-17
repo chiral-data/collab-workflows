@@ -50,7 +50,8 @@ def extract_chain_a_with_nad(pdb_file):
 # ------------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    pdb_id = "4OHU"
+    # pdb_id = "4OHU"
+    pdb_id = os.getenv("PARAM_PDB_ID")
     # Extract Chain A with NAD (exclude 2TK)
     pdb_file = f"./{pdb_id}.pdb"
     output_pdb_file = extract_chain_a_with_nad(pdb_file)
