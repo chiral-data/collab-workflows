@@ -1,0 +1,16 @@
+{
+  "name": "3 Extract Ligand from PDB",
+  "description": "Extracts a specified ligand from a PDB file, preserving original coordinates, and saves it as an SDF file",
+  "params": {
+    "pdb_id": [
+      "string",
+      "4OHU",
+      "The ID of the PDB file. The script expects a file named '{pdb_id}_A_NAD.pdb' to be present in the current working directory, which will be used as the input PDB file."
+    ],
+    "ligand_name": [
+      "string",
+      "2TK",
+      "The three-letter residue name of the ligand to extract (e.g., '2TK'). The extracted ligand will be saved as '{ligand_name}.sdf'."
+    ]
+  }
+}
