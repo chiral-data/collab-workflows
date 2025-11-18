@@ -122,7 +122,7 @@ smiles_output = sdf_to_smiles(f"{ligand_name}.sdf")
 for s in smiles_output:
     print(s)
 
-if smiles_output.len() > 0:
+if len(smiles_output) > 0:
     base_smiles = smiles_output[0]
     variants = generate_variants(base_smiles)
 
