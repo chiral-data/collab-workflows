@@ -1,0 +1,9 @@
+{
+  "name": "5 Virtual Screening using SMINA",
+  "description": "",
+  "params": {
+    "exhaustiveness": ["integer", 8, "smina config"],
+    "num_modes": ["integer", 5, "smina config"],
+    "energy_range": ["integer", 4, "smina config"]
+  }
+}

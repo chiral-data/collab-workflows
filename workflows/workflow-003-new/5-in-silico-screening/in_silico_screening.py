@@ -7,13 +7,15 @@ Dock all ligands from ligand_library/ onto 2B35 receptor (with NAD cofactor)
 import os
 import subprocess
 
+
 def main():
     print("=== Starting docking on 2B35 receptor (with NAD) ===")
 
     # Check environment and receptor
     print(f"Current working directory: {os.getcwd()}")
     check_smina()
-    receptor_pdbqt = prepare_receptor()
+    pdb_id = os.getenv("PARAM_PDB_ID")
+    receptor_pdbqt = prepare_receptor(pdb_id)
 
     # Prepare folders
     ligand_dir = "ligand_library"
@@ -58,12 +60,12 @@ def check_smina():
         exit()
 
 
-def prepare_receptor():
+def prepare_receptor(pdb_id):
     """Prepare receptor PDBQT (preserve NAD)."""
     print("\n--- Preparing receptor ---")
 
-    receptor_pdb = "./4OHU_A_NAD_fixed_with_NAD.pdb"
-    receptor_pdbqt = "./4OHU_A_NAD_fixed_with_NAD.pdbqt"
+    receptor_pdb = f"./{pdb_id}_A_NAD_fixed_with_NAD.pdb"
+    receptor_pdbqt = f"./{pdb_id}_A_NAD_fixed_with_NAD.pdbqt"
 
     if os.path.exists(receptor_pdbqt):
         print(f"✔ Using existing receptor file: {receptor_pdbqt}")
@@ -71,9 +73,12 @@ def prepare_receptor():
 
     cmd = [
         "prepare_receptor4.py",
-        "-r", receptor_pdb,
-        "-o", receptor_pdbqt,
-        "-A", "hydrogens",
+        "-r",
+        receptor_pdb,
+        "-o",
+        receptor_pdbqt,
+        "-A",
+        "hydrogens",
     ]
 
     try:
@@ -99,13 +104,20 @@ def run_docking(ligand_name, receptor_pdbqt, ligand_path, output_dir):
 
     smina_cmd = [
         "smina",
-        "-r", receptor_pdbqt,
-        "-l", ligand_path,
-        "--config", config_file,
-        "-o", out_sdf,
-        "--log", out_log,
-        "--scoring", "vina",
-        "--num_modes", "1",
+        "-r",
+        receptor_pdbqt,
+        "-l",
+        ligand_path,
+        "--config",
+        config_file,
+        "-o",
+        out_sdf,
+        "--log",
+        out_log,
+        "--scoring",
+        "vina",
+        "--num_modes",
+        "1",
     ]
 
     print("Command:")

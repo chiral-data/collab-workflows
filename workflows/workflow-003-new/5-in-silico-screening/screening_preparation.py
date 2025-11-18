@@ -16,7 +16,7 @@ from pdbfixer import PDBFixer
 
 def main():
     """Main execution function"""
-    pdb_id = "4OHU"
+    pdb_id = os.getenv("PARAM_PDB_ID")
     pdb_file = f"./{pdb_id}.pdb"
     output_pdb_file = f"{os.path.splitext(pdb_file)[0]}_A_NAD.pdb"
 
@@ -94,6 +94,10 @@ def generate_docking_config(center_data):
     min_size = 20.0
     size_vec = np.maximum(extent + padding, min_size)
 
+    exhaustiveness = os.getenv("PARAM_EXHAUSTIVENESS")
+    num_modes = os.getenv("PARAM_NUM_MODES")
+    energy_range = os.getenv("PARAM_ENERGY_RANGE")
+
     config_path = "config.txt"
     config_lines = [
         f"center_x = {center[0]:.3f}",
@@ -102,9 +106,9 @@ def generate_docking_config(center_data):
         f"size_x   = {size_vec[0]:.1f}",
         f"size_y   = {size_vec[1]:.1f}",
         f"size_z   = {size_vec[2]:.1f}",
-        "exhaustiveness = 8",
-        "num_modes = 5",
-        "energy_range = 4",
+        f"exhaustiveness = {exhaustiveness}",
+        f"num_modes = {num_modes}",
+        f"energy_range = {energy_range}",
     ]
 
     with open(config_path, "w") as f:

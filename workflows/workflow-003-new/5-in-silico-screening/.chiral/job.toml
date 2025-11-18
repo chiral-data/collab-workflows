@@ -1,5 +1,5 @@
 depends_on = ["2-protein-preparation", "4-ligand-modification"]
-inputs = []
+inputs = ["*.pdb", "ligand_library"]
 outputs = ["docking_results", "results"]
 
 [container]
