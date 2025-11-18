@@ -116,7 +116,9 @@ def sdf_to_smiles(sdf_filepath):
 # Example molecule (2TK)
 # base_smiles = "CCCCCCc1ccc(Oc2ccccc2Br)c(O)c1"
 
-smiles_output = sdf_to_smiles("aspirin.sdf")
+# ligand_name = "2TK"
+ligand_name = os.getenv("PARAM_LIGAND_NAME")
+smiles_output = sdf_to_smiles(f"{ligand_name}.sdf")
 for s in smiles_output:
     print(s)
 
