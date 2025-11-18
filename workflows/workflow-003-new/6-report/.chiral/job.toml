@@ -1,5 +1,5 @@
 depends_on = ["5-in-silico-screening"]
-inputs = []
+inputs = ["docking_results", "results"]
 outputs = ["results"]
 
 [container]
