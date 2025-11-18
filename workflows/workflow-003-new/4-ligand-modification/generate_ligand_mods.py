@@ -101,16 +101,35 @@ def generate_3d_structures(base_smiles, variants, out_dir="ligand_library"):
         print(f"\nGenerated {len(generated)} 3D structure(s) in '{out_dir}'.")
 
 
+def sdf_to_smiles(sdf_filepath):
+    smiles_list = []
+    # Using a context manager is a good practice for file handling
+    with Chem.SDMolSupplier(sdf_filepath) as supplier:
+        for mol in supplier:
+            if mol is not None:
+                # Get the canonical SMILES
+                smiles = Chem.MolToSmiles(mol, canonical=True)
+                smiles_list.append(smiles)
+    return smiles_list
+
+
 # Example molecule (2TK)
-base_smiles = "CCCCCCc1ccc(Oc2ccccc2Br)c(O)c1"
-variants = generate_variants(base_smiles)
+# base_smiles = "CCCCCCc1ccc(Oc2ccccc2Br)c(O)c1"
 
-print("Generated variants:")
-for name, smiles_list in variants.items():
-    print(f"\n{name}:")
-    for s in smiles_list:
-        print("  ", s)
+smiles_output = sdf_to_smiles("aspirin.sdf")
+for s in smiles_output:
+    print(s)
 
-# Save 2D figure and 3D models
-save_variant_figure(base_smiles, variants, "variants.svg")
-generate_3d_structures(base_smiles, variants)
+if smiles_output.len() > 0:
+    base_smiles = smiles_output[0]
+    variants = generate_variants(base_smiles)
+
+    print("Generated variants:")
+    for name, smiles_list in variants.items():
+        print(f"\n{name}:")
+        for s in smiles_list:
+            print("  ", s)
+
+    # Save 2D figure and 3D models
+    save_variant_figure(base_smiles, variants, "variants.svg")
+    generate_3d_structures(base_smiles, variants)
