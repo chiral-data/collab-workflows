@@ -1,11 +1,5 @@
 {
   "name": "2 Protein Preparation",
   "description": "Extracts Chain A and the NAD cofactor from a PDB file.",
-  "params": {
-    "pdb_id": [
-      "string",
-      "4OHU",
-      "The ID of the PDB file (e.g., '4OHU') from which to extract Chain A and NAD. The tool expects a file named '{pdb_id}.pdb' to be present in the current working directory."
-    ]
-  }
+  "params": {}
 }

@@ -1,7 +1,5 @@
 {
   "name": "1 Download PDB",
   "description": "Download a PDB file from the RCSB Protein Data Bank.",
-  "params": {
-    "pdb_id": ["string", "4OHU", "The ID of the PDB file to download."]
-  }
+  "params": {}
 }

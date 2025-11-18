@@ -1,0 +1,12 @@
+{
+  "name": "workflow-003",
+  "description": "In-silico Screening by Diego",
+  "params": {
+    "pdb_id": ["string", "4OHU", "The ID of the PDB file."],
+    "ligand_name": [
+      "string",
+      "2TK",
+      "The three-letter residue name of the ligand to extract (e.g., '2TK'). The extracted ligand will be saved as '{ligand_name}.sdf'."
+    ]
+  }
+}

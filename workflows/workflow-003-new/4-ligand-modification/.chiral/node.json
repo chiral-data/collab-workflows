@@ -1,11 +1,5 @@
 {
   "name": "4 Ligand Variant Generator",
   "description": "Generates molecular variants from a base ligand, creates 2D depictions, and generates 3D structures. The base ligand is extracted from an SDF file.",
-  "params": {
-    "ligand_name": [
-      "string",
-      "2TK",
-      "The three-letter residue name of the ligand to extract (e.g., '2TK'). "
-    ]
-  }
+  "params": {}
 }
