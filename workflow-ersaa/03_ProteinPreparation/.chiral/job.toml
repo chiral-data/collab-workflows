@@ -1,0 +1,12 @@
+[job]
+name = "03_prepare_receptor"
+description = "Prepare receptor PDBQT file using MGLTools."
+
+[docker]
+dockerfile = "Dockerfile"
+
+[inputs]
+receptor_pdb = { type = "file", required = true }
+
+[outputs]
+receptor_pdbqt = { type = "file", path = "receptor.pdbqt" }
