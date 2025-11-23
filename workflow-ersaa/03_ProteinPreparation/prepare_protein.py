@@ -1,31 +1,44 @@
+#!/usr/bin/env python3
+
 import sys
+import os
 from pdbfixer import PDBFixer
 from openmm.app import PDBFile
-import os
 import subprocess
+from pathlib import Path
 
-def prepare_protein(input_pdb, output_pdbqt):
-    print(f"Fixing protein: {input_pdb}")
-    fixer = PDBFixer(filename=input_pdb)
+def prepare_receptor(input_pdb: Path, output_pdbqt: Path):
+    print(f"[Node3] Fixing protein: {input_pdb}")
+
+    fixer = PDBFixer(filename=str(input_pdb))
     fixer.findMissingResidues()
     fixer.findMissingAtoms()
     fixer.addMissingAtoms()
     fixer.addMissingHydrogens(pH=7.4)
-    fixed_pdb = "protein_fixed.pdb"
-    PDBFile.writeFile(fixer.topology, fixer.positions, open(fixed_pdb, 'w'))
 
-    print("Converting protein to PDBQT format...")
+    fixed = Path("protein_fixed.pdb")
+    with open(fixed, "w") as f:
+        PDBFile.writeFile(fixer.topology, fixer.positions, f)
+
+    print("[Node3] Converting to PDBQT...")
     cmd = [
         "python2", "/opt/mgltools/bin/prepare_receptor4.py",
-        "-r", fixed_pdb,
-        "-o", output_pdbqt,
+        "-r", str(fixed),
+        "-o", str(output_pdbqt),
         "-A", "hydrogens"
     ]
     subprocess.run(cmd, check=True)
-    print(f"Protein prepared and saved to {output_pdbqt}")
+
+    print(f"[Node3] Saved receptor to {output_pdbqt}")
+
 
 if __name__ == "__main__":
-    input_pdb = sys.argv[1]
-    output_pdbqt = sys.argv[2]
-    os.makedirs(os.path.dirname(output_pdbqt), exist_ok=True)
-    prepare_protein(input_pdb, output_pdbqt)
+    if len(sys.argv) < 3:
+        print("Usage: python prepare_receptor.py <INPUT_PDB> <OUTPUT_PDBQT>")
+        sys.exit(2)
+
+    input_pdb = Path(sys.argv[1])
+    output_pdbqt = Path(sys.argv[2])
+    output_pdbqt.parent.mkdir(parents=True, exist_ok=True)
+
+    prepare_receptor(input_pdb, output_pdbqt)
