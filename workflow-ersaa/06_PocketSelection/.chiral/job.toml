@@ -1,0 +1,12 @@
+[job]
+name = "06_generate_grids"
+description = "Generate Vina grid boxes based on P2Rank pocket JSON."
+
+[docker]
+dockerfile = "Dockerfile"
+
+[inputs]
+pockets_json = { type = "file", required = true }
+
+[outputs]
+grid_boxes = { type = "file", path = "grids.json" }
