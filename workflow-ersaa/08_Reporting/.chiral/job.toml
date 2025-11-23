@@ -1,0 +1,15 @@
+[job]
+name = "08_rank_results"
+description = "Parse Vina logs and rank ligands by binding affinity."
+
+[docker]
+dockerfile = "Dockerfile"
+
+[inputs]
+vina_results = { type = "folder", required = true }
+
+[outputs]
+ranked_excel = { type = "file", path = "results.xlsx" }
+
+[command]
+cmd = "python3 rank_vina.py --results {{inputs.vina_results}} --out results.xlsx"
