@@ -1,1 +1,5 @@
-node
+{
+  "name": "2 Download Ligands",
+  "description": "Download ligand structures (SDF) from PubChem using their CIDs.",
+  "params": {}
+}
