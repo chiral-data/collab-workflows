@@ -12,4 +12,3 @@ receptor_pdb = { type = "file", path = "receptor.pdb" }
 dockerfile = "Dockerfile"
 
 [scripts]
-run = "run.sh"
