@@ -1,58 +1,47 @@
-import os
+#!/usr/bin/env python3
+
+import json
 import subprocess
-import pandas as pd
+import sys
+import os
+from pathlib import Path
 
-def run_p2rank(protein_pdb, output_dir):
-    """Run P2Rank to predict binding pockets."""
-    os.makedirs(output_dir, exist_ok=True)
-    subprocess.run(["prank", "predict", protein_pdb, "--output_dir", output_dir], check=True)
-    print("P2Rank prediction completed.")
+def run_vina(receptor, ligand, center, box_size, outdir):
+    outdir.mkdir(parents=True, exist_ok=True)
 
-def choose_pocket(p2rank_dir):
-    """Let user choose a pocket from P2Rank results."""
-    csv_path = os.path.join(p2rank_dir, "predictions.csv")
-    df = pd.read_csv(csv_path)
-    print("\nDetected pockets:\n", df[["rank", "center_x", "center_y", "center_z", "score"]])
-    pocket = input("Enter pocket rank to use (default = 1): ") or "1"
-    row = df[df["rank"] == int(pocket)].iloc[0]
-    return float(row["center_x"]), float(row["center_y"]), float(row["center_z"])
+    x, y, z = center["center_x"], center["center_y"], center["center_z"]
 
-def run_vina(protein_pdbqt, ligand_pdbqt, center, box_size, output_dir):
-    """Run AutoDock Vina for one ligand."""
-    os.makedirs(output_dir, exist_ok=True)
-    x, y, z = center
-    out_file = os.path.join(output_dir, ligand_pdbqt.replace(".pdbqt", "_out.pdbqt"))
-    log_file = out_file.replace(".pdbqt", ".log")
+    out = outdir / (ligand.stem + "_out.pdbqt")
+    log = out.with_suffix(".log")
 
     cmd = [
         "vina",
-        "--receptor", protein_pdbqt,
-        "--ligand", ligand_pdbqt,
-        "--center_x", str(x), "--center_y", str(y), "--center_z", str(z),
-        "--size_x", str(box_size), "--size_y", str(box_size), "--size_z", str(box_size),
-        "--out", out_file,
-        "--log", log_file
+        "--receptor", str(receptor),
+        "--ligand", str(ligand),
+        "--center_x", str(x),
+        "--center_y", str(y),
+        "--center_z", str(z),
+        "--size_x", str(box_size),
+        "--size_y", str(box_size),
+        "--size_z", str(box_size),
+        "--out", str(out),
+        "--log", str(log),
     ]
+
     subprocess.run(cmd, check=True)
+    print(f"[Node7] Docked: {ligand.name}")
+
 
 if __name__ == "__main__":
-    protein_pdb = "./input/protein_prepared.pdb"
-    protein_pdbqt = "./input/protein_prepared.pdbqt"
-    ligands_dir = "./input/ligands_pdbqt"
-    output_dir = "./results"
-    p2rank_output = "./p2rank_output"
+    if len(sys.argv) < 6:
+        print("Usage: python run_vina.py <RECEPTOR_PDBQT> <LIGAND_PDBQT> <POCKET_JSON> <BOX_SIZE> <OUTPUT_DIR>")
+        sys.exit(2)
 
-    run_p2rank(protein_pdb, p2rank_output)
-    center = choose_pocket(p2rank_output)
+    receptor = Path(sys.argv[1])
+    ligand = Path(sys.argv[2])
+    center = json.loads(Path(sys.argv[3]).read_text())
+    box = int(sys.argv[4])
+    outdir = Path(sys.argv[5])
 
-    box_size = input("Enter box size (default = 80): ") or "80"
-    box_size = int(box_size)
+    run_vina(receptor, ligand, center, box, outdir)
 
-    for ligand in os.listdir(ligands_dir):
-        if ligand.endswith(".pdbqt"):
-            ligand_path = os.path.join(ligands_dir, ligand)
-            print(f"Docking {ligand}...")
-            run_vina(protein_pdbqt, ligand_path, center, box_size, output_dir)
-
-    print("\nDocking finished. To analyze results, run:")
-    print("  python rank_vina.py")
