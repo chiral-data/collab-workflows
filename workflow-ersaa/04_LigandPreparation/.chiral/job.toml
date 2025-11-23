@@ -1,0 +1,15 @@
+[job]
+name = "04_prepare_ligands"
+description = "Prepare ligands (protonation + convert to PDBQT)."
+
+[docker]
+dockerfile = "Dockerfile"
+
+[inputs]
+ligands_folder = { type = "folder", required = true }
+
+[outputs]
+ligands_prepared = { type = "folder", path = "ligands_prepared" }
+
+[command]
+cmd = "python3 prepare_ligands.py --input {{inputs.ligands_folder}} --output ligands_prepared/"
