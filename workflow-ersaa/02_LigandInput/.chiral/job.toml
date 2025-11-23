@@ -1,15 +1,10 @@
-[job]
-name = "02_download_ligands"
-description = "Download ligand structures from PubChem."
-
-[docker]
-dockerfile = "Dockerfile"
-
 [inputs]
 ligand_ids = { type = "list", subtype = "string", required = true }
 
 [outputs]
 ligands_folder = { type = "folder", path = "ligands" }
 
-[command]
-cmd = "python3 download_ligands.py --ids {{inputs.ligand_ids}} --out ligands/"
+[container]
+dockerfile = "Dockerfile"
+
+[scripts]
