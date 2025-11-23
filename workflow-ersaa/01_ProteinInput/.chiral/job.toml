@@ -1,0 +1,15 @@
+[job]
+name = "01_download_receptor"
+description = "Download receptor PDB file."
+
+[docker]
+dockerfile = "Dockerfile"
+
+[inputs]
+protein_id = { type = "string", required = true }
+
+[outputs]
+receptor_pdb = { type = "file", path = "receptor.pdb" }
+
+[command]
+cmd = "python3 download_receptor.py --protein-id {{inputs.protein_id}} --output receptor.pdb"
