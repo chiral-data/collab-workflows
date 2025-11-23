@@ -1,0 +1,17 @@
+[job]
+name = "07_run_docking"
+description = "Run Vina docking for all ligands using predefined grids."
+
+[docker]
+dockerfile = "Dockerfile"
+
+[inputs]
+receptor_pdbqt = { type = "file", required = true }
+ligands_prepared = { type = "folder", required = true }
+grid_boxes = { type = "file", required = true }
+
+[outputs]
+vina_results = { type = "folder", path = "vina_results" }
+
+[command]
+cmd = "python3 run_vina.py --receptor {{inputs.receptor_pdbqt}} --ligands {{inputs.ligands_prepared}} --grids {{inputs.grid_boxes}} --out vina_results/"
