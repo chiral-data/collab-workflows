@@ -1,7 +1,3 @@
-[job]
-name = "download_receptor"
-description = "Download receptor PDB structure from RCSB."
-
 [inputs]
 protein_id = { type = "string", required = true }
 
