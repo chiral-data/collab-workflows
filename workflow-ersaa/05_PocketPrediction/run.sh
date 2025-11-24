@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-PROTEIN_PDB="/workspace/input/protein_prepared.pdb"
-OUTPUT_DIR="/workspace/out"
+INPUT_PDB="{{inputs.receptor_pdb}}"
+OUTPUT_JSON="/workspace/out/pockets.json"
 
-mkdir -p "$OUTPUT_DIR"
+mkdir -p /workspace/out
 
-python3 /workspace/run_p2rank.py "$PROTEIN_PDB" "$OUTPUT_DIR"
+python3 /workspace/run_p2rank.py "$INPUT_PDB" "$OUTPUT_JSON"
