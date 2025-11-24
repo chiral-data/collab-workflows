@@ -1,5 +1,21 @@
 {
-  "name": "7 Run Docking",
-  "description": "Perform virtual screening by docking all prepared ligands against the receptor using AutoDock Vina.",
-  "params": {}
+  "name": "7 Virtual Screening using AutoDock Vina",
+  "description": "Runs AutoDock Vina to dock all prepared ligands using predefined grid boxes.",
+  "params": {
+    "exhaustiveness": [
+      "integer",
+      8,
+      "Search thoroughness. Higher values increase accuracy but take longer."
+    ],
+    "num_modes": [
+      "integer",
+      9,
+      "Maximum number of binding poses to generate for each ligand."
+    ],
+    "energy_range": [
+      "integer",
+      4,
+      "Maximum allowed energy difference (kcal/mol) between the best and preserved poses."
+    ]
+  }
 }
