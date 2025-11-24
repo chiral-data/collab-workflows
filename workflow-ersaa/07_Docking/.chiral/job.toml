@@ -1,17 +1,18 @@
-[job]
-name = "07_run_docking"
-description = "Run Vina docking for all ligands using predefined grids."
+# Hard dependencies
+depends_on = ["03_ProteinPreparation", "04_LigandPreparation"]
 
-[docker]
-dockerfile = "Dockerfile"
+# Optional dependency (user may provide custom grids)
+optional_depends_on = ["06_PocketSelection"]
 
 [inputs]
 receptor_pdbqt = { type = "file", required = true }
 ligands_prepared = { type = "folder", required = true }
-grid_boxes = { type = "file", required = true }
+grid_boxes = { type = "file", required = false }
 
 [outputs]
 vina_results = { type = "folder", path = "vina_results" }
 
-[command]
-cmd = "python3 run_vina.py --receptor {{inputs.receptor_pdbqt}} --ligands {{inputs.ligands_prepared}} --grids {{inputs.grid_boxes}} --out vina_results/"
+[container]
+dockerfile = "Dockerfile"
+
+[scripts]
