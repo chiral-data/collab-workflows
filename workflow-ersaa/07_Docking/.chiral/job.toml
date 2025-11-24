@@ -12,11 +12,6 @@ grid_boxes = { type = "file", required = true }
 [outputs]
 vina_results = { type = "folder", path = "vina_results" }
 
-[params]
-exhaustiveness = { type = "integer", default = 8 }
-num_modes      = { type = "integer", default = 9 }
-energy_range   = { type = "integer", default = 4 }
-
 [container]
 dockerfile = "Dockerfile"
 
