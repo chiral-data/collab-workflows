@@ -1,1 +1,5 @@
-node
+{
+  "name": "7 Run Docking",
+  "description": "Perform virtual screening by docking all prepared ligands against the receptor using AutoDock Vina.",
+  "params": {}
+}
