@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
-LOG_DIR="/workspace/input"
+RESULTS="{{inputs.vina_results}}"
+OUTDIR="/workspace/out"
 
-python3 /workspace/rank_vina.py "$LOG_DIR"
+mkdir -p "$OUTDIR"
+
+python3 /workspace/rank_vina.py "$RESULTS"
+
+# Move output to Silva output directory
+mv binding_affinities.xlsx "$OUTDIR/results.xlsx"
