@@ -42,3 +42,4 @@ if __name__ == "__main__":
     output_pdbqt.parent.mkdir(parents=True, exist_ok=True)
 
     prepare_receptor(input_pdb, output_pdbqt)
+
