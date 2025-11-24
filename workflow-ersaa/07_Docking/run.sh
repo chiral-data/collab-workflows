@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-RECEPTOR="/workspace/input/receptor.pdbqt"
-POCKET="/workspace/input/pocket.json"
-LIGAND="/workspace/input/ligand.pdbqt"
+RECEPTOR="{{inputs.receptor_pdbqt}}"
+LIGANDS="{{inputs.ligands_prepared}}"
+GRIDS="{{inputs.grid_boxes}}"
 BOX_SIZE="${BOX_SIZE:-80}"
 
 OUTPUT_DIR="/workspace/out"
