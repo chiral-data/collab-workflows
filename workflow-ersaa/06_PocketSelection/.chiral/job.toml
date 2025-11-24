@@ -1,3 +1,5 @@
+depends_on = ["05_PocketPrediction"]
+
 [inputs]
 pockets_json = { type = "file", required = true }
 
