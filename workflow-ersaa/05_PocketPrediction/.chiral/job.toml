@@ -1,15 +1,10 @@
-[job]
-name = "05_predict_pockets"
-description = "Run P2Rank to predict binding pockets."
-
-[docker]
-dockerfile = "Dockerfile"
-
 [inputs]
 receptor_pdb = { type = "file", required = true }
 
 [outputs]
 pockets_json = { type = "file", path = "pockets.json" }
 
-[command]
-cmd = "python3 run_p2rank.py --receptor {{inputs.receptor_pdb}} --out pockets.json"
+[container]
+dockerfile = "Dockerfile"
+
+[scripts]
