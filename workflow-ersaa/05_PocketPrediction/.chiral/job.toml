@@ -1,3 +1,5 @@
+depends_on = ["03_ProteinPreparation"]
+
 [inputs]
 receptor_pdb = { type = "file", required = true }
 
