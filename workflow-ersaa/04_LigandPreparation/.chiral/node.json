@@ -1,1 +1,5 @@
-node
+{
+  "name": "4 Prepare Ligands",
+  "description": "Convert ligand SDF/PDB files into PDBQT format for docking.",
+  "params": {}
+}
