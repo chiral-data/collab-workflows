@@ -34,5 +34,4 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python rank_vina.py <LOG_DIR>")
         sys.exit(2)
-
     extract_affinities(Path(sys.argv[1]))
