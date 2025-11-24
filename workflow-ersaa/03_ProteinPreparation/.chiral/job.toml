@@ -1,12 +1,13 @@
-[job]
-name = "03_prepare_receptor"
-description = "Prepare receptor PDBQT file using MGLTools."
-
-[docker]
-dockerfile = "Dockerfile"
+depends_on = ["01_ProteinInput"]
 
 [inputs]
 receptor_pdb = { type = "file", required = true }
 
 [outputs]
 receptor_pdbqt = { type = "file", path = "receptor.pdbqt" }
+receptor_fixed_pdb = { type = "file", path = "protein_fixed.pdb" }
+
+[container]
+dockerfile = "Dockerfile"
+
+[scripts]
