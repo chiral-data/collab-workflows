@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-INPUT_DIR="/workspace/input/ligands"
-OUTPUT_DIR="/workspace/out"
+INPUT_DIR="{{inputs.ligands_folder}}"
+OUTPUT_DIR="/workspace/out/ligands_prepared"
 
 mkdir -p "$OUTPUT_DIR"
 
