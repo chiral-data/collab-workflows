@@ -31,5 +31,4 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python prepare_ligands.py <INPUT_DIR> <OUTPUT_DIR>")
         sys.exit(2)
-
     convert_ligands(Path(sys.argv[1]), Path(sys.argv[2]))
