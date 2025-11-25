@@ -1,17 +1,17 @@
-# Node 5: Run P2Rank pocket prediction
-FROM openjdk:17-slim
+FROM continuumio/miniconda3:24.1.2-0
+SHELL ["/bin/bash","-c"]
 
-RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install pandas
+# Use system Java and python libs
+RUN apt-get update && apt-get install -y --no-install-recommends openjdk-11-jre-headless wget && \
+    conda install -y -n base -c conda-forge mamba && \
+    mamba install -y -n base -c conda-forge python=3.10 pandas && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* && conda clean -afy
 
 RUN useradd -m -u 1000 worker
 USER worker
-
 WORKDIR /workspace
+
 COPY . /workspace
+RUN chmod +x /workspace/run.sh
 
-RUN chmod +x run.sh
-
-ENTRYPOINT ["bash", "run.sh"]
+ENTRYPOINT ["bash","/workspace/run.sh"]
