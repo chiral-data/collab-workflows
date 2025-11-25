@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
-import sys
 import os
 from pathlib import Path
 from Bio.PDB import PDBList
 
 def download_receptor(pdb_id: str, outdir: Path):
     outdir.mkdir(parents=True, exist_ok=True)
-    pdb_id = pdb_id.lower().strip()
+    pdb_id = pdb_id.strip().lower()
 
     print(f"[Node1] Downloading receptor: {pdb_id}")
     pdbl = PDBList()
@@ -27,10 +26,9 @@ def download_receptor(pdb_id: str, outdir: Path):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python download_receptor.py <PDB_ID> <OUTPUT_DIR>")
-        sys.exit(2)
+    pdb_id = os.getenv("PARAM_PDB_ID")
+    if not pdb_id:
+        raise ValueError("Missing global parameter: PARAM_PDB_ID")
 
-    pdb_id = sys.argv[1]
-    outdir = Path(sys.argv[2])
-    download_receptor(pdb_id, outdir)
+    output_dir = Path("/workspace/out")
+    download_receptor(pdb_id, output_dir)
