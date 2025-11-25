@@ -1,14 +1,15 @@
-# Node 8: Rank Vina results
-FROM python:3.10-slim
+FROM continuumio/miniconda3:24.1.2-0
+SHELL ["/bin/bash","-c"]
 
-RUN pip install pandas openpyxl
+RUN conda install -y -n base -c conda-forge mamba && \
+    mamba install -y -n base -c conda-forge python=3.10 pandas openpyxl && \
+    conda clean -afy
 
 RUN useradd -m -u 1000 worker
 USER worker
-
 WORKDIR /workspace
+
 COPY . /workspace
+RUN chmod +x /workspace/run.sh
 
-RUN chmod +x run.sh
-
-ENTRYPOINT ["bash", "run.sh"]
+ENTRYPOINT ["bash","/workspace/run.sh"]
