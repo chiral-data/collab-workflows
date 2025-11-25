@@ -1,12 +1,9 @@
+# Node 8: Rank Vina results
 depends_on = ["07_Docking"]
-
-[inputs]
-vina_results = { type = "folder", required = true }
-
-[outputs]
-ranked_excel = { type = "file", path = "results.xlsx" }
+inputs = ["vina_results/*.log"]
+outputs = ["results.xlsx"]
 
 [container]
-dockerfile = "Dockerfile"
+docker_image = "workflow-esraa/node8:latest"
 
 [scripts]
