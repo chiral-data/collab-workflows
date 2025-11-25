@@ -1,10 +1,7 @@
-[inputs]
-ligand_ids = { type = "list", subtype = "string", required = true }
-
-[outputs]
-ligands_folder = { type = "folder", path = "ligands" }
+# Node 2: Download ligand SDF files
+outputs = ["ligands/*.sdf"]
 
 [container]
-dockerfile = "Dockerfile"
+docker_image = "workflow-esraa/node2:latest"
 
 [scripts]
