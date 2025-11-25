@@ -1,41 +1,30 @@
 #!/usr/bin/env python3
 
-import sys
 import os
-import requests
+import json
+import urllib.request
 from pathlib import Path
 
-REQUEST_TIMEOUT = 30
-
-def download_ligand(cid: str, outdir: Path, record_type="3d"):
-    outdir.mkdir(parents=True, exist_ok=True)
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/record/SDF/?record_type={record_type}"
-
-    outpath = outdir / f"{cid}_{record_type}.sdf"
-    print(f"[Node2] Downloading ligand CID={cid} (record_type={record_type})")
+def download_pubchem_cid(cid, outdir: Path):
+    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/{cid}/SDF?record_type=3d"
+    outfile = outdir / f"{cid}.sdf"
 
     try:
-        r = requests.get(url, timeout=REQUEST_TIMEOUT)
-        r.raise_for_status()
-        text = r.text
-
-        outpath.write_text(text)
-        print(f"[Node2] Saved {outpath}")
-        return outpath
-
+        urllib.request.urlretrieve(url, outfile)
+        print(f"[Node2] Downloaded CID {cid}")
     except Exception as e:
-        print(f"[Node2] ERROR for CID {cid}: {e}")
-        return None
+        print(f"[Node2] Failed to download CID {cid}: {e}")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 4:
-        print("Usage: python download_ligands.py <CID1,CID2,...> <OUTPUT_DIR> <RECORD_TYPE>")
-        sys.exit(2)
+    cid_string = os.getenv("PARAM_LIGAND_CIDS")
+    if not cid_string:
+        raise ValueError("Missing global parameter: PARAM_LIGAND_CIDS")
 
-    cids = sys.argv[1].split(",")
-    outdir = Path(sys.argv[2])
-    record = sys.argv[3]
+    cids = [c.strip() for c in cid_string.split(",")]
+
+    outdir = Path("/workspace/out/ligands")
+    outdir.mkdir(parents=True, exist_ok=True)
 
     for cid in cids:
-        download_ligand(cid.strip(), outdir, record)
+        download_pubchem_cid(cid, outdir)
