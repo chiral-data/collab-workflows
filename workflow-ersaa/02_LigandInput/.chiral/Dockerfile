@@ -1,13 +1,15 @@
-# Node 2: Download ligands from PubChem
 FROM continuumio/miniconda3:24.1.2-0
+SHELL ["/bin/bash","-c"]
 
-SHELL ["/bin/bash", "-c"]
+RUN conda install -y -n base -c conda-forge mamba && \
+    mamba install -y -n base -c conda-forge python=3.10 requests && \
+    conda clean -afy
 
-RUN conda create -y -n env python=3.10 \
-    && conda install -y -n env -c conda-forge requests \
-    && conda clean -afy
-
+RUN useradd -m -u 1000 worker
+USER worker
 WORKDIR /workspace
-COPY .. /workspace
 
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "env", "bash", "run.sh"]
+COPY . /workspace
+RUN chmod +x /workspace/run.sh
+
+ENTRYPOINT ["bash","/workspace/run.sh"]
