@@ -1,13 +1,9 @@
+# Node 3: Prepare receptor (PDB → PDBQT)
 depends_on = ["01_ProteinInput"]
-
-[inputs]
-receptor_pdb = { type = "file", required = true }
-
-[outputs]
-receptor_pdbqt = { type = "file", path = "receptor.pdbqt" }
-receptor_fixed_pdb = { type = "file", path = "protein_fixed.pdb" }
+inputs = ["receptor.pdb"]
+outputs = ["receptor.pdbqt", "protein_fixed.pdb"]
 
 [container]
-dockerfile = "Dockerfile"
+docker_image = "workflow-esraa/node3:latest"
 
 [scripts]
