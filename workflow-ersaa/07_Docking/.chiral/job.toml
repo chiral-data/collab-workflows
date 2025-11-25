@@ -1,18 +1,9 @@
-# Hard dependencies
-depends_on = ["03_ProteinPreparation", "04_LigandPreparation"]
-
-# Optional dependency (user may provide custom grids)
-optional_depends_on = ["06_PocketSelection"]
-
-[inputs]
-receptor_pdbqt = { type = "file", required = true }
-ligands_prepared = { type = "folder", required = true }
-grid_boxes = { type = "file", required = true }
-
-[outputs]
-vina_results = { type = "folder", path = "vina_results" }
+# Node 7: Run AutoDock Vina docking
+depends_on = ["03_ProteinPreparation", "04_LigandPreparation", "06_PocketSelection"]
+inputs = ["receptor.pdbqt", "ligands_prepared/*.pdbqt", "grids.json"]
+outputs = ["vina_results/*"]
 
 [container]
-dockerfile = "Dockerfile"
+docker_image = "workflow-esraa/node7:latest"
 
 [scripts]
