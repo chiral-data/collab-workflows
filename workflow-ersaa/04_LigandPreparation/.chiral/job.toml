@@ -1,12 +1,9 @@
+# Node 4: Prepare ligands (SDF → PDBQT)
 depends_on = ["02_LigandInput"]
-
-[inputs]
-ligands_folder = { type = "folder", required = true }
-
-[outputs]
-ligands_prepared = { type = "folder", path = "ligands_prepared" }
+inputs = ["ligands/*.sdf"]
+outputs = ["ligands_prepared/*.pdbqt"]
 
 [container]
-dockerfile = "Dockerfile"
+docker_image = "workflow-esraa/node4:latest"
 
 [scripts]
