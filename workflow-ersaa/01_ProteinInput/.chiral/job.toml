@@ -2,6 +2,6 @@
 outputs = ["receptor.pdb"]
 
 [container]
-docker_image = "workflow-esraa/node1:latest"
+docker_image = "workflow-esraa-node1:1.0"
 
 [scripts]
