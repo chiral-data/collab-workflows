@@ -181,11 +181,15 @@ def generate_docking_ranking(input_dir):
     
     # Extract affinity from each log
     results = []
+    true_ligand_result = None
     for log_file in log_files:
         affinity = parse_smina_log(log_file)
         if affinity is not None:
             compound_name = os.path.basename(log_file).replace("_log.txt", "")
             results.append((compound_name, affinity))
+            # Check if this is true_ligand
+            if compound_name == "true_ligand":
+                true_ligand_result = (compound_name, affinity)
     
     if not results:
         error_msg = "No valid docking results found."
@@ -195,23 +199,40 @@ def generate_docking_ranking(input_dir):
     # Sort by affinity (binding energy) in ascending order (lower = stronger binding)
     results.sort(key=lambda x: x[1])
     
+    # Find true_ligand's rank in the sorted results
+    true_ligand_rank = None
+    if true_ligand_result:
+        for rank, (compound, affinity) in enumerate(results, 1):
+            if compound == "true_ligand":
+                true_ligand_rank = rank
+                break
+    
     # Write results to text file
     with open(RANKING_FILE, "w", encoding="utf-8") as f:
         f.write("Docking Result Ranking (sorted by binding strength)\n")
         f.write("=" * 50 + "\n")
         for rank, (compound, affinity) in enumerate(results, 1):
+            marker = " [TRUE LIGAND]" if compound == "true_ligand" else ""
             f.write(
-                f"Rank {rank}: Compound {compound}, Binding energy: {affinity:.2f} kcal/mol\n"
+                f"Rank {rank}: Compound {compound}, Binding energy: {affinity:.2f} kcal/mol{marker}\n"
             )
+        # Add summary for true_ligand if it exists
+        if true_ligand_rank:
+            f.write("\n" + "=" * 50 + "\n")
+            f.write(f"True Ligand (true_ligand) Ranking: {true_ligand_rank} / {len(results)}\n")
+            f.write(f"True Ligand Binding Energy: {true_ligand_result[1]:.2f} kcal/mol\n")
     
     # Display results
     print(f"Ranked docking results for {len(results)} compounds")
+    if true_ligand_rank:
+        print(f"✓ True ligand found: Rank {true_ligand_rank} / {len(results)} (Binding energy: {true_ligand_result[1]:.2f} kcal/mol)")
     print(f"Results saved to {RANKING_FILE}")
     
     # Display top 10 results
     print("\n--- Top 10 compounds ---")
     for rank, (compound, affinity) in enumerate(results[:10], 1):
-        print(f"Rank {rank}: Compound {compound}, Binding energy: {affinity:.2f} kcal/mol")
+        marker = " [TRUE LIGAND]" if compound == "true_ligand" else ""
+        print(f"Rank {rank}: Compound {compound}, Binding energy: {affinity:.2f} kcal/mol{marker}")
     
     return results
 
@@ -285,6 +306,10 @@ def copy_top_compounds(results, input_dir, preparation_dir):
     
     copied_count = 0
     
+    # Track which compounds have been copied
+    copied_compounds = set()
+    
+    # Copy top 3 compounds
     for rank, (ligand_name, affinity) in enumerate(top_compounds, 1):
         print(f"\nRank {rank}: {ligand_name} (Binding energy: {affinity:.2f} kcal/mol)")
         
@@ -295,10 +320,36 @@ def copy_top_compounds(results, input_dir, preparation_dir):
             shutil.copy(src_sdf, dst_sdf)
             print(f"  ✓ Copied docked ligand: {dst_sdf.name}")
             copied_count += 1
+            copied_compounds.add(ligand_name)
         else:
             print(f"  ⚠ Warning: Docked SDF file not found: {src_sdf.name}")
     
-    print(f"\n✅ Copied receptor PDB and {copied_count} top {top_n} ligand file(s) to {RESULTS_DIR}/")
+    # Always copy true_ligand if it exists and hasn't been copied yet
+    true_ligand_name = "true_ligand"
+    true_ligand_src = Path(input_dir) / f"{true_ligand_name}_docked.sdf"
+    if true_ligand_src.exists() and true_ligand_name not in copied_compounds:
+        # Find true_ligand's rank in the full results
+        true_ligand_rank = None
+        for rank, (compound, affinity) in enumerate(results, 1):
+            if compound == true_ligand_name:
+                true_ligand_rank = rank
+                break
+        
+        if true_ligand_rank:
+            print(f"\n--- True Ligand (Rank {true_ligand_rank}) ---")
+            true_ligand_affinity = next((aff for name, aff in results if name == true_ligand_name), None)
+            if true_ligand_affinity:
+                print(f"Rank {true_ligand_rank}: {true_ligand_name} (Binding energy: {true_ligand_affinity:.2f} kcal/mol)")
+            
+            dst_sdf = dst_dir / f"true_ligand_rank{true_ligand_rank}_docked.sdf"
+            shutil.copy(true_ligand_src, dst_sdf)
+            print(f"  ✓ Copied true ligand: {dst_sdf.name}")
+            copied_count += 1
+            copied_compounds.add(true_ligand_name)
+    
+    print(f"\n✅ Copied receptor PDB and {copied_count} ligand file(s) to {RESULTS_DIR}/")
+    if true_ligand_name in copied_compounds:
+        print(f"   (Including true_ligand)")
 
 
 
