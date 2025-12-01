@@ -48,8 +48,8 @@ DOCKING_RESULTS_DIR = DOCKING_OUTPUT_DIR
 # Fallback to input/ for backward compatibility
 if not os.path.exists(DOCKING_RESULTS_DIR):
     DOCKING_RESULTS_DIR = INPUT_DIR
-# PDB files from protein_extraction should be in input/ (optional)
-PREPARATION_DIR = INPUT_DIR
+# Protein PDB from docking/input/ (the receptor used for docking)
+DOCKING_INPUT_DIR = os.path.join(SCRIPT_DIR, "..", "docking", "input")
 # Output should be in "outputs/results" directory
 RANKING_FILE = os.path.join(RESULTS_DIR, "docking_ranking.txt")
 
@@ -82,10 +82,11 @@ def main():
     
     print(f"✓ Found docking results in: {DOCKING_RESULTS_DIR}")
     
-    # Find PDB files in input/ directory (copied by run.sh)
-    # PREPARATION_DIR is already set to INPUT_DIR at module level
-    if not os.path.exists(PREPARATION_DIR):
-        print(f"⚠ Warning: PDB files directory not found in input/.")
+    # Find protein PDB file from docking/input/ (the receptor used for docking)
+    # Fallback to input/ directory (copied by run.sh)
+    if not os.path.exists(DOCKING_INPUT_DIR):
+        print(f"⚠ Warning: docking/input/ directory not found, trying input/ directory")
+        DOCKING_INPUT_DIR = INPUT_DIR
     
     # Ensure OUTPUT_DIR is not nested (double-check and fix if needed)
     OUTPUT_DIR = os.path.abspath(OUTPUT_DIR)
@@ -107,7 +108,7 @@ def main():
         exit(1)
     
     print(f"Input directory (docking_results): {DOCKING_RESULTS_DIR}")
-    print(f"Preparation directory (PDB files): {PREPARATION_DIR}")
+    print(f"Protein PDB directory (docking/input): {DOCKING_INPUT_DIR}")
     print(f"Output directory: {OUTPUT_DIR}")
     print(f"✓ Output directory created: {OUTPUT_DIR}")
     
@@ -122,7 +123,7 @@ def main():
     
     # Copy top 3 compound files and generate complexes
     try:
-        copy_top_compounds(results, DOCKING_RESULTS_DIR, PREPARATION_DIR)
+        copy_top_compounds(results, DOCKING_RESULTS_DIR, DOCKING_INPUT_DIR)
     except Exception as e:
         print(f"❌ Error in copy_top_compounds: {e}")
         import traceback
@@ -237,14 +238,56 @@ def generate_docking_ranking(input_dir):
     return results
 
 
+def extract_best_pose_from_sdf(sdf_file, output_sdf_file):
+    """
+    Extract the best pose (first molecule) from an SDF file that may contain multiple poses.
+    The first molecule in SMINA output SDF is the best pose (mode 1, highest binding affinity).
+    
+    Args:
+        sdf_file: Path to input SDF file (may contain multiple poses)
+        output_sdf_file: Path to output SDF file (will contain only the first pose)
+    
+    Returns:
+        bool: True if successful, False otherwise
+    """
+    if not os.path.exists(sdf_file):
+        print(f"  ⚠ Warning: SDF file not found: {sdf_file}")
+        return False
+    
+    try:
+        with open(sdf_file, "r") as f:
+            lines = f.readlines()
+        
+        if len(lines) < 4:
+            print(f"  ⚠ Warning: SDF file too short: {sdf_file}")
+            return False
+        
+        # Find the first molecule (ends with "$$$$" or end of file)
+        first_molecule_end = len(lines)
+        for i, line in enumerate(lines):
+            if line.strip() == "$$$$":
+                first_molecule_end = i + 1
+                break
+        
+        # Write the first molecule to output file
+        with open(output_sdf_file, "w") as out_f:
+            out_f.writelines(lines[:first_molecule_end])
+        
+        return True
+    
+    except Exception as e:
+        print(f"  ⚠ Warning: Failed to extract best pose from {sdf_file}: {e}")
+        return False
+
+
 def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, ligand_resname="LIG", ligand_chain_id="L"):
     """
     Create a simple protein-ligand complex PDB by combining:
-    - receptor_file: cleaned protein PDB
-    - docked_sdf: docked ligand SDF (first molecule)
+    - receptor_file: cleaned protein PDB from docking/input/
+    - docked_sdf: docked ligand SDF (best pose, first molecule)
     
     Notes:
-    - This is a minimal, visualization-oriented converter.
+    - This extracts the best pose (first molecule) from the SDF file.
     - It parses the first molecule in the SDF (V2000 style) and writes HETATM records.
     """
     if not os.path.exists(receptor_file):
@@ -270,7 +313,7 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
                 except ValueError:
                     continue
         
-        # Parse SDF (first molecule only)
+        # Parse SDF (first molecule only - best pose)
         with open(docked_sdf, "r") as f:
             sdf_lines = f.readlines()
         
@@ -278,7 +321,21 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
             print(f"  ⚠ Warning: SDF file too short for complex generation: {docked_sdf}")
             return False
         
-        counts_line = sdf_lines[3]
+        # Find the end of the first molecule (best pose)
+        first_molecule_end = len(sdf_lines)
+        for i, line in enumerate(sdf_lines):
+            if line.strip() == "$$$$":
+                first_molecule_end = i
+                break
+        
+        # Extract first molecule lines
+        first_molecule_lines = sdf_lines[:first_molecule_end]
+        
+        if len(first_molecule_lines) < 4:
+            print(f"  ⚠ Warning: First molecule in SDF too short: {docked_sdf}")
+            return False
+        
+        counts_line = first_molecule_lines[3]
         try:
             # V2000 counts line: columns (0-3)=natoms, (3-6)=nbonds
             natoms = int(counts_line[0:3])
@@ -286,7 +343,7 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
             print(f"  ⚠ Warning: Could not parse atom count from SDF counts line: {counts_line.strip()}")
             return False
         
-        atom_lines = sdf_lines[4:4 + natoms]
+        atom_lines = first_molecule_lines[4:4 + natoms]
         if len(atom_lines) < natoms:
             print(f"  ⚠ Warning: SDF atom block shorter than expected in {docked_sdf}")
             return False
@@ -348,9 +405,17 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
         return False
 
 
-def copy_top_compounds(results, input_dir, preparation_dir):
-    """Copy top 3 compound files and receptor PDB file separately, and create protein-ligand complexes for all ligands"""
-    print("\n--- Copy top 3 compound files and receptor ---")
+def copy_top_compounds(results, docking_output_dir, docking_input_dir):
+    """
+    Create protein-ligand complexes for top 1, 2, 3 and true_ligand.
+    
+    Steps:
+    1. Get protein PDB from docking/input/
+    2. Get top 1, 2, 3 and true_ligand SDF files from docking/outputs/
+    3. Extract best pose from each SDF and create complexes
+    4. Output complexes to outputs/
+    """
+    print("\n--- Create protein-ligand complexes for top 3 and true_ligand ---")
     
     if not results:
         print("Warning: No results available for copying.")
@@ -361,31 +426,31 @@ def copy_top_compounds(results, input_dir, preparation_dir):
     pdb_id = os.environ.get("PDB_ID") or os.environ.get("PARAM_PDB_ID") or global_pdb_id
     chain_id = os.environ.get("CHAIN_ID", DEFAULT_CHAIN_ID)
     
-    # Find receptor file with multiple fallback options
+    # Step 1: Find receptor file from docking/input/
     receptor_file = None
     
     # Priority 1: Chain-specific cleaned PDB (e.g., 4OHU_chain_A_clean.pdb)
     if chain_id:
-        receptor_file = os.path.join(preparation_dir, f"{pdb_id}_chain_{chain_id}_clean.pdb")
+        receptor_file = os.path.join(docking_input_dir, f"{pdb_id}_chain_{chain_id}_clean.pdb")
         if os.path.exists(receptor_file):
-            print(f"Found receptor file: {os.path.basename(receptor_file)}")
+            print(f"✓ Found receptor file: {os.path.basename(receptor_file)}")
     
     # Priority 2: General cleaned PDB (e.g., 4OHU_clean.pdb)
     if not receptor_file or not os.path.exists(receptor_file):
-        receptor_file = os.path.join(preparation_dir, f"{pdb_id}_clean.pdb")
+        receptor_file = os.path.join(docking_input_dir, f"{pdb_id}_clean.pdb")
         if os.path.exists(receptor_file):
-            print(f"Found receptor file: {os.path.basename(receptor_file)}")
+            print(f"✓ Found receptor file: {os.path.basename(receptor_file)}")
     
     # Priority 3: Search for any PDB file with _clean in the name
     if not receptor_file or not os.path.exists(receptor_file):
-        clean_files = glob.glob(os.path.join(preparation_dir, f"{pdb_id}*_clean.pdb"))
+        clean_files = glob.glob(os.path.join(docking_input_dir, f"{pdb_id}*_clean.pdb"))
         if clean_files:
             receptor_file = clean_files[0]
-            print(f"Found receptor file: {os.path.basename(receptor_file)}")
+            print(f"✓ Found receptor file: {os.path.basename(receptor_file)}")
     
     # Priority 4: Search for any PDB file starting with pdb_id
     if not receptor_file or not os.path.exists(receptor_file):
-        pdb_files = glob.glob(os.path.join(preparation_dir, f"{pdb_id}*.pdb"))
+        pdb_files = glob.glob(os.path.join(docking_input_dir, f"{pdb_id}*.pdb"))
         if pdb_files:
             # Prefer files with "clean" in the name
             clean_files = [f for f in pdb_files if "clean" in os.path.basename(f).lower()]
@@ -393,60 +458,46 @@ def copy_top_compounds(results, input_dir, preparation_dir):
                 receptor_file = clean_files[0]
             else:
                 receptor_file = pdb_files[0]
-            print(f"Found receptor file: {os.path.basename(receptor_file)}")
+            print(f"✓ Found receptor file: {os.path.basename(receptor_file)}")
     
-    # Get top 3 compounds
+    if not receptor_file or not os.path.exists(receptor_file):
+        print(f"❌ Error: Receptor file not found in {docking_input_dir}")
+        print(f"   Searched for: {pdb_id}_chain_{chain_id}_clean.pdb, {pdb_id}_clean.pdb, {pdb_id}*_clean.pdb")
+        if os.path.exists(docking_input_dir):
+            available_files = [f for f in os.listdir(docking_input_dir) if f.endswith('.pdb')]
+            print(f"   Available PDB files: {available_files[:10]}...")
+        return
+    
+    # Destination directory
+    dst_dir = Path(OUTPUT_DIR)
+    dst_dir.mkdir(exist_ok=True)
+    
+    complex_count = 0
+    
+    # Step 2 & 3: Process top 1, 2, 3
     top_n = min(3, len(results))
     top_compounds = results[:top_n]
     
-    # Destination directory
-    dst_dir = Path(RESULTS_DIR)
-    dst_dir.mkdir(exist_ok=True)
-    
-    # Copy receptor PDB file (used for docking)
-    if receptor_file and os.path.exists(receptor_file):
-        receptor_dst = dst_dir / f"receptor_{os.path.basename(receptor_file)}"
-        shutil.copy(receptor_file, receptor_dst)
-        print(f"✓ Copied receptor PDB: {receptor_dst.name}")
-    else:
-        print(f"⚠ Warning: Receptor file not found in {preparation_dir}")
-        print(f"   Searched for: {pdb_id}_chain_{chain_id}_clean.pdb, {pdb_id}_clean.pdb, {pdb_id}*_clean.pdb")
-        if os.path.exists(preparation_dir):
-            available_files = [f for f in os.listdir(preparation_dir) if f.endswith('.pdb')]
-            print(f"   Available PDB files: {available_files[:10]}...")
-    
-    copied_count = 0
-    complex_count = 0
-    
-    # Track which compounds have been copied
-    copied_compounds = set()
-    
-    # Copy top 3 compounds and create complexes
     for rank, (ligand_name, affinity) in enumerate(top_compounds, 1):
         print(f"\nRank {rank}: {ligand_name} (Binding energy: {affinity:.2f} kcal/mol)")
         
-        # Copy docked ligand SDF file
-        src_sdf = Path(input_dir) / f"{ligand_name}_docked.sdf"
-        if src_sdf.exists():
-            dst_sdf = dst_dir / f"top{rank}_{ligand_name}_docked.sdf"
-            shutil.copy(src_sdf, dst_sdf)
-            print(f"  ✓ Copied docked ligand: {dst_sdf.name}")
-            copied_count += 1
-            copied_compounds.add(ligand_name)
-            
-            # Create protein-ligand complex PDB
-            if receptor_file and os.path.exists(receptor_file):
-                complex_pdb = dst_dir / f"top{rank}_{ligand_name}_complex.pdb"
-                if create_protein_ligand_complex(str(receptor_file), str(src_sdf), str(complex_pdb)):
-                    print(f"  ✓ Created complex PDB: {complex_pdb.name}")
-                    complex_count += 1
-        else:
-            print(f"  ⚠ Warning: Docked SDF file not found: {src_sdf.name}")
+        # Get SDF file from docking/outputs/
+        src_sdf = Path(docking_output_dir) / f"{ligand_name}_docked.sdf"
+        if not src_sdf.exists():
+            print(f"  ⚠ Warning: Docked SDF file not found: {src_sdf}")
+            continue
+        
+        # Step 3: Extract best pose and create complex
+        complex_pdb = dst_dir / f"{ligand_name}_rank{rank}_complex.pdb"
+        if create_protein_ligand_complex(str(receptor_file), str(src_sdf), str(complex_pdb)):
+            print(f"  ✓ Created complex PDB: {complex_pdb.name}")
+            complex_count += 1
     
-    # Always copy true_ligand if it exists and hasn't been copied yet
+    # Step 2 & 3: Process true_ligand
     true_ligand_name = "true_ligand"
-    true_ligand_src = Path(input_dir) / f"{true_ligand_name}_docked.sdf"
-    if true_ligand_src.exists() and true_ligand_name not in copied_compounds:
+    true_ligand_src = Path(docking_output_dir) / f"{true_ligand_name}_docked.sdf"
+    
+    if true_ligand_src.exists():
         # Find true_ligand's rank in the full results
         true_ligand_rank = None
         for rank, (compound, affinity) in enumerate(results, 1):
@@ -460,39 +511,15 @@ def copy_top_compounds(results, input_dir, preparation_dir):
             if true_ligand_affinity:
                 print(f"Rank {true_ligand_rank}: {true_ligand_name} (Binding energy: {true_ligand_affinity:.2f} kcal/mol)")
             
-            dst_sdf = dst_dir / f"true_ligand_rank{true_ligand_rank}_docked.sdf"
-            shutil.copy(true_ligand_src, dst_sdf)
-            print(f"  ✓ Copied true ligand: {dst_sdf.name}")
-            copied_count += 1
-            copied_compounds.add(true_ligand_name)
-            
-            # Create protein-ligand complex PDB for true_ligand
-            if receptor_file and os.path.exists(receptor_file):
-                complex_pdb = dst_dir / f"true_ligand_rank{true_ligand_rank}_complex.pdb"
-                if create_protein_ligand_complex(str(receptor_file), str(true_ligand_src), str(complex_pdb)):
-                    print(f"  ✓ Created complex PDB: {complex_pdb.name}")
-                    complex_count += 1
+            # Step 3: Extract best pose and create complex
+            complex_pdb = dst_dir / f"{true_ligand_name}_rank{true_ligand_rank}_complex.pdb"
+            if create_protein_ligand_complex(str(receptor_file), str(true_ligand_src), str(complex_pdb)):
+                print(f"  ✓ Created complex PDB: {complex_pdb.name}")
+                complex_count += 1
+    else:
+        print(f"\n⚠ Warning: true_ligand SDF file not found: {true_ligand_src}")
     
-    # Create protein-ligand complexes for all ligands (not just top 3)
-    print(f"\n--- Creating protein-ligand complexes for all ligands ---")
-    if receptor_file and os.path.exists(receptor_file):
-        for rank, (ligand_name, affinity) in enumerate(results, 1):
-            # Skip if already created (top 3 or true_ligand)
-            if ligand_name in copied_compounds:
-                continue
-            
-            src_sdf = Path(input_dir) / f"{ligand_name}_docked.sdf"
-            if src_sdf.exists():
-                complex_pdb = dst_dir / f"{ligand_name}_rank{rank}_complex.pdb"
-                if create_protein_ligand_complex(str(receptor_file), str(src_sdf), str(complex_pdb)):
-                    complex_count += 1
-                    if rank <= 10:  # Only print for top 10 to avoid too much output
-                        print(f"  ✓ Created complex PDB for rank {rank}: {ligand_name}_rank{rank}_complex.pdb")
-    
-    print(f"\n✅ Copied receptor PDB and {copied_count} ligand file(s) to {RESULTS_DIR}/")
-    print(f"✅ Created {complex_count} protein-ligand complex PDB file(s)")
-    if true_ligand_name in copied_compounds:
-        print(f"   (Including true_ligand)")
+    print(f"\n✅ Created {complex_count} protein-ligand complex PDB file(s) in {OUTPUT_DIR}/")
 
 
 
