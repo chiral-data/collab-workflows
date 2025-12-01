@@ -26,9 +26,9 @@ def download_receptor(pdb_id: str, outdir: Path):
 
 
 if __name__ == "__main__":
-    pdb_id = os.getenv("PARAM_PDB_ID")
+    pdb_id = os.getenv("PARAM_PROTEIN_ID")
     if not pdb_id:
-        raise ValueError("Missing global parameter: PARAM_PDB_ID")
+        raise ValueError("Missing global parameter: PARAM_PROTEIN_ID")
 
-    output_dir = Path("/workspace/out")
+    output_dir = Path("./")
     download_receptor(pdb_id, output_dir)
