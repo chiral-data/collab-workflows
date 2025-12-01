@@ -237,8 +237,119 @@ def generate_docking_ranking(input_dir):
     return results
 
 
+def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, ligand_resname="LIG", ligand_chain_id="L"):
+    """
+    Create a simple protein-ligand complex PDB by combining:
+    - receptor_file: cleaned protein PDB
+    - docked_sdf: docked ligand SDF (first molecule)
+    
+    Notes:
+    - This is a minimal, visualization-oriented converter.
+    - It parses the first molecule in the SDF (V2000 style) and writes HETATM records.
+    """
+    if not os.path.exists(receptor_file):
+        print(f"  ⚠ Warning: Receptor file not found for complex generation: {receptor_file}")
+        return False
+    if not os.path.exists(docked_sdf):
+        print(f"  ⚠ Warning: Docked SDF not found for complex generation: {docked_sdf}")
+        return False
+    
+    try:
+        # Read receptor PDB
+        with open(receptor_file, "r") as f:
+            receptor_lines = f.readlines()
+        
+        # Determine the last atom serial number in receptor (for nicer PDB)
+        max_serial = 0
+        for line in receptor_lines:
+            if line.startswith("ATOM  ") or line.startswith("HETATM"):
+                try:
+                    serial = int(line[6:11])
+                    if serial > max_serial:
+                        max_serial = serial
+                except ValueError:
+                    continue
+        
+        # Parse SDF (first molecule only)
+        with open(docked_sdf, "r") as f:
+            sdf_lines = f.readlines()
+        
+        if len(sdf_lines) < 4:
+            print(f"  ⚠ Warning: SDF file too short for complex generation: {docked_sdf}")
+            return False
+        
+        counts_line = sdf_lines[3]
+        try:
+            # V2000 counts line: columns (0-3)=natoms, (3-6)=nbonds
+            natoms = int(counts_line[0:3])
+        except Exception as e:
+            print(f"  ⚠ Warning: Could not parse atom count from SDF counts line: {counts_line.strip()}")
+            return False
+        
+        atom_lines = sdf_lines[4:4 + natoms]
+        if len(atom_lines) < natoms:
+            print(f"  ⚠ Warning: SDF atom block shorter than expected in {docked_sdf}")
+            return False
+        
+        ligand_pdb_lines = []
+        serial = max_serial
+        res_seq = 1
+        
+        for atom_line in atom_lines:
+            # SDF atom line format (V2000):
+            # x(10.4) y(10.4) z(10.4) atom_symbol(>30-34) ...
+            try:
+                x = float(atom_line[0:10])
+                y = float(atom_line[10:20])
+                z = float(atom_line[20:30])
+                symbol = atom_line[31:34].strip()
+                if not symbol:
+                    symbol = "C"
+            except Exception:
+                # Skip malformed atoms
+                continue
+            
+            serial += 1
+            element = symbol[0].upper()
+            # Build a simple HETATM line
+            # Columns follow standard PDB formatting
+            pdb_line = (
+                f"HETATM{serial:5d} "
+                f"{symbol:<4s}"
+                f"{ligand_resname:>3s} "
+                f"{ligand_chain_id:1s}"
+                f"{res_seq:4d}    "
+                f"{x:8.3f}{y:8.3f}{z:8.3f}"
+                f"{1.00:6.2f}{0.00:6.2f}          "
+                f"{element:>2s}"
+            )
+            ligand_pdb_lines.append(pdb_line + "\n")
+        
+        if not ligand_pdb_lines:
+            print(f"  ⚠ Warning: No atoms parsed from SDF for complex generation: {docked_sdf}")
+            return False
+        
+        # Write combined complex PDB
+        with open(complex_pdb_path, "w") as out_f:
+            for line in receptor_lines:
+                # Avoid duplicate END records; we'll add our own at the end
+                if not line.startswith("END"):
+                    out_f.write(line)
+            # Ensure there is a TER between receptor and ligand
+            out_f.write("TER\n")
+            for line in ligand_pdb_lines:
+                out_f.write(line)
+            out_f.write("END\n")
+        
+        return True
+    
+    except Exception as e:
+        print(f"  ⚠ Warning: Failed to create complex PDB for {docked_sdf}: {e}")
+        return False
+
+
 def copy_top_compounds(results, input_dir, preparation_dir):
-    """Copy top 3 compound files and receptor PDB file separately"""
+    """Copy top 3 compound files and receptor PDB file separately, and create protein-ligand complexes for all ligands"""
     print("\n--- Copy top 3 compound files and receptor ---")
     
     if not results:
@@ -305,11 +416,12 @@ def copy_top_compounds(results, input_dir, preparation_dir):
             print(f"   Available PDB files: {available_files[:10]}...")
     
     copied_count = 0
+    complex_count = 0
     
     # Track which compounds have been copied
     copied_compounds = set()
     
-    # Copy top 3 compounds
+    # Copy top 3 compounds and create complexes
     for rank, (ligand_name, affinity) in enumerate(top_compounds, 1):
         print(f"\nRank {rank}: {ligand_name} (Binding energy: {affinity:.2f} kcal/mol)")
         
@@ -321,6 +433,13 @@ def copy_top_compounds(results, input_dir, preparation_dir):
             print(f"  ✓ Copied docked ligand: {dst_sdf.name}")
             copied_count += 1
             copied_compounds.add(ligand_name)
+            
+            # Create protein-ligand complex PDB
+            if receptor_file and os.path.exists(receptor_file):
+                complex_pdb = dst_dir / f"top{rank}_{ligand_name}_complex.pdb"
+                if create_protein_ligand_complex(str(receptor_file), str(src_sdf), str(complex_pdb)):
+                    print(f"  ✓ Created complex PDB: {complex_pdb.name}")
+                    complex_count += 1
         else:
             print(f"  ⚠ Warning: Docked SDF file not found: {src_sdf.name}")
     
@@ -346,8 +465,32 @@ def copy_top_compounds(results, input_dir, preparation_dir):
             print(f"  ✓ Copied true ligand: {dst_sdf.name}")
             copied_count += 1
             copied_compounds.add(true_ligand_name)
+            
+            # Create protein-ligand complex PDB for true_ligand
+            if receptor_file and os.path.exists(receptor_file):
+                complex_pdb = dst_dir / f"true_ligand_rank{true_ligand_rank}_complex.pdb"
+                if create_protein_ligand_complex(str(receptor_file), str(true_ligand_src), str(complex_pdb)):
+                    print(f"  ✓ Created complex PDB: {complex_pdb.name}")
+                    complex_count += 1
+    
+    # Create protein-ligand complexes for all ligands (not just top 3)
+    print(f"\n--- Creating protein-ligand complexes for all ligands ---")
+    if receptor_file and os.path.exists(receptor_file):
+        for rank, (ligand_name, affinity) in enumerate(results, 1):
+            # Skip if already created (top 3 or true_ligand)
+            if ligand_name in copied_compounds:
+                continue
+            
+            src_sdf = Path(input_dir) / f"{ligand_name}_docked.sdf"
+            if src_sdf.exists():
+                complex_pdb = dst_dir / f"{ligand_name}_rank{rank}_complex.pdb"
+                if create_protein_ligand_complex(str(receptor_file), str(src_sdf), str(complex_pdb)):
+                    complex_count += 1
+                    if rank <= 10:  # Only print for top 10 to avoid too much output
+                        print(f"  ✓ Created complex PDB for rank {rank}: {ligand_name}_rank{rank}_complex.pdb")
     
     print(f"\n✅ Copied receptor PDB and {copied_count} ligand file(s) to {RESULTS_DIR}/")
+    print(f"✅ Created {complex_count} protein-ligand complex PDB file(s)")
     if true_ligand_name in copied_compounds:
         print(f"   (Including true_ligand)")
 
