@@ -343,6 +343,10 @@ def main():
             if affinity is not None:
                 print(f"  Binding energy: {affinity:.2f} kcal/mol")
             
+            # Create protein-ligand complex PDB
+            complex_pdb = os.path.join(DOCKING_RESULTS_DIR, f"{base_name}_complex.pdb")
+            create_protein_ligand_complex(receptor_file, out_sdf, complex_pdb_path=complex_pdb)
+            
             successful_count += 1
         
         except subprocess.TimeoutExpired:
@@ -374,6 +378,118 @@ def main():
     if failed_count > 0:
         print(f"   Failed: {failed_count}/{len(ligand_files)}")
     print(f"Results saved in {OUTPUT_DIR}/ directory.")
+    
+    
+def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, ligand_resname="LIG", ligand_chain_id="L"):
+    """
+    Create a simple protein-ligand complex PDB by combining:
+    - receptor_file: cleaned protein PDB
+    - docked_sdf: docked ligand SDF (first molecule)
+    
+    Notes:
+    - This is a minimal, visualization-oriented converter.
+    - It parses the first molecule in the SDF (V2000 style) and writes HETATM records.
+    """
+    import math
+    
+    if not os.path.exists(receptor_file):
+        print(f"  ⚠ Warning: Receptor file not found for complex generation: {receptor_file}")
+        return
+    if not os.path.exists(docked_sdf):
+        print(f"  ⚠ Warning: Docked SDF not found for complex generation: {docked_sdf}")
+        return
+    
+    try:
+        # Read receptor PDB
+        with open(receptor_file, "r") as f:
+            receptor_lines = f.readlines()
+        
+        # Determine the last atom serial number in receptor (for nicer PDB)
+        max_serial = 0
+        for line in receptor_lines:
+            if line.startswith("ATOM  ") or line.startswith("HETATM"):
+                try:
+                    serial = int(line[6:11])
+                    if serial > max_serial:
+                        max_serial = serial
+                except ValueError:
+                    continue
+        
+        # Parse SDF (first molecule only)
+        with open(docked_sdf, "r") as f:
+            sdf_lines = f.readlines()
+        
+        if len(sdf_lines) < 4:
+            print(f"  ⚠ Warning: SDF file too short for complex generation: {docked_sdf}")
+            return
+        
+        counts_line = sdf_lines[3]
+        try:
+            # V2000 counts line: columns (0-3)=natoms, (3-6)=nbonds
+            natoms = int(counts_line[0:3])
+        except Exception as e:
+            print(f"  ⚠ Warning: Could not parse atom count from SDF counts line: {counts_line.strip()}")
+            return
+        
+        atom_lines = sdf_lines[4:4 + natoms]
+        if len(atom_lines) < natoms:
+            print(f"  ⚠ Warning: SDF atom block shorter than expected in {docked_sdf}")
+            return
+        
+        ligand_pdb_lines = []
+        serial = max_serial
+        res_seq = 1
+        
+        for atom_line in atom_lines:
+            # SDF atom line format (V2000):
+            # x(10.4) y(10.4) z(10.4) atom_symbol(>30-34) ...
+            try:
+                x = float(atom_line[0:10])
+                y = float(atom_line[10:20])
+                z = float(atom_line[20:30])
+                symbol = atom_line[31:34].strip()
+                if not symbol:
+                    symbol = "C"
+            except Exception:
+                # Skip malformed atoms
+                continue
+            
+            serial += 1
+            element = symbol[0].upper()
+            # Build a simple HETATM line
+            # Columns follow standard PDB formatting
+            pdb_line = (
+                f"HETATM{serial:5d} "
+                f"{symbol:<4s}"
+                f"{ligand_resname:>3s} "
+                f"{ligand_chain_id:1s}"
+                f"{res_seq:4d}    "
+                f"{x:8.3f}{y:8.3f}{z:8.3f}"
+                f"{1.00:6.2f}{0.00:6.2f}          "
+                f"{element:>2s}"
+            )
+            ligand_pdb_lines.append(pdb_line + "\n")
+        
+        if not ligand_pdb_lines:
+            print(f"  ⚠ Warning: No atoms parsed from SDF for complex generation: {docked_sdf}")
+            return
+        
+        # Write combined complex PDB
+        with open(complex_pdb_path, "w") as out_f:
+            for line in receptor_lines:
+                # Avoid duplicate END records; we'll add our own at the end
+                if not line.startswith("END"):
+                    out_f.write(line)
+            # Ensure there is a TER between receptor and ligand
+            out_f.write("TER\n")
+            for line in ligand_pdb_lines:
+                out_f.write(line)
+            out_f.write("END\n")
+        
+        print(f"  ✓ Created protein-ligand complex PDB: {os.path.basename(complex_pdb_path)}")
+    
+    except Exception as e:
+        print(f"  ⚠ Warning: Failed to create complex PDB for {docked_sdf}: {e}")
     
     
 def get_smina_path():

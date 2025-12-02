@@ -62,9 +62,6 @@ if [ -d "${DOCKING_OUTPUT_DIR}" ]; then
     fi
 fi
 
-# Note: Protein PDB file is accessed directly from docking/input/ in reporting.py
-# No need to copy it here
-
 # ============================================================================
 # Move files from Silva mounts to input/ directory (fallback)
 # ============================================================================

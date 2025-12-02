@@ -78,6 +78,14 @@ if [ -d "${SCRIPT_DIR}/selected_compounds" ]; then
     echo "✓ Removed selected_compounds from root directory (Silva mount)"
 fi
 
+# Remove true_ligand.sdf from root directory if Silva mounted it there
+# (Silva may mount outputs/selected_compounds/true_ligand.sdf as root/true_ligand.sdf due to *.sdf pattern in outputs)
+# We only use input/true_ligand.sdf - root directory should not have it
+if [ -f "${SCRIPT_DIR}/true_ligand.sdf" ]; then
+    rm -f "${SCRIPT_DIR}/true_ligand.sdf"
+    echo "✓ Removed true_ligand.sdf from root directory (Silva mount)"
+fi
+
 # ============================================================================
 # Run nodes
 # ============================================================================
@@ -85,4 +93,14 @@ fi
 cd "${SCRIPT_DIR}"
 python3 "${SCRIPT_DIR}/prepare_ligands.py"
 python3 "${SCRIPT_DIR}/ligand_view.py"
+
+# ============================================================================
+# Post-run cleanup: Remove true_ligand.sdf from root directory if it was created
+# ============================================================================
+# After processing, if true_ligand.sdf exists in root directory, remove it
+# (input/true_ligand.sdf should remain, only root directory version is removed)
+if [ -f "${SCRIPT_DIR}/true_ligand.sdf" ]; then
+    rm -f "${SCRIPT_DIR}/true_ligand.sdf"
+    echo "✓ Removed true_ligand.sdf from root directory (post-run cleanup)"
+fi
 

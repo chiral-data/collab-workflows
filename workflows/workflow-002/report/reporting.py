@@ -39,9 +39,6 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_DIR = os.path.join(SCRIPT_DIR, "input")
 # Base output directory
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
-# Actual results directory
-RESULTS_DIR = os.path.join(OUTPUT_DIR, "results")
-
 # docking_results from docking/outputs/ (files are directly in outputs/, not in a subdirectory)
 DOCKING_OUTPUT_DIR = os.path.join(SCRIPT_DIR, "..", "docking", "outputs")
 DOCKING_RESULTS_DIR = DOCKING_OUTPUT_DIR
@@ -50,19 +47,15 @@ if not os.path.exists(DOCKING_RESULTS_DIR):
     DOCKING_RESULTS_DIR = INPUT_DIR
 # Protein PDB from docking/input/ (the receptor used for docking)
 DOCKING_INPUT_DIR = os.path.join(SCRIPT_DIR, "..", "docking", "input")
-# Output should be in "outputs/results" directory
-RANKING_FILE = os.path.join(RESULTS_DIR, "docking_ranking.txt")
 
 def main():
     """Main execution function"""
-    global OUTPUT_DIR, RESULTS_DIR, RANKING_FILE
+    global OUTPUT_DIR
     
     print("=== Generate report ===")
     
     # Reset directories to ensure correctness
     OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
-    RESULTS_DIR = os.path.join(OUTPUT_DIR, "results")
-    RANKING_FILE = os.path.join(RESULTS_DIR, "docking_ranking.txt")
     
     # Find docking results from docking/outputs/ (files are directly in outputs/, not in a subdirectory)
     if not os.path.exists(DOCKING_RESULTS_DIR):
@@ -84,13 +77,13 @@ def main():
     
     # Find protein PDB file from docking/input/ (the receptor used for docking)
     # Fallback to input/ directory (copied by run.sh)
-    if not os.path.exists(DOCKING_INPUT_DIR):
+    receptor_input_dir = DOCKING_INPUT_DIR
+    if not os.path.exists(receptor_input_dir):
         print(f"⚠ Warning: docking/input/ directory not found, trying input/ directory")
-        DOCKING_INPUT_DIR = INPUT_DIR
+        receptor_input_dir = INPUT_DIR
     
     # Ensure OUTPUT_DIR is not nested (double-check and fix if needed)
     OUTPUT_DIR = os.path.abspath(OUTPUT_DIR)
-    RANKING_FILE = os.path.join(OUTPUT_DIR, "docking_ranking.txt")
     
     # Remove nested outputs directory if it exists
     nested_outputs = os.path.join(OUTPUT_DIR, "outputs")
@@ -108,34 +101,45 @@ def main():
         exit(1)
     
     print(f"Input directory (docking_results): {DOCKING_RESULTS_DIR}")
-    print(f"Protein PDB directory (docking/input): {DOCKING_INPUT_DIR}")
+    print(f"Protein PDB directory (docking/input): {receptor_input_dir}")
     print(f"Output directory: {OUTPUT_DIR}")
     print(f"✓ Output directory created: {OUTPUT_DIR}")
     
     # Generate docking result ranking
     try:
-        results = generate_docking_ranking(DOCKING_RESULTS_DIR)
+        results = generate_docking_ranking(DOCKING_RESULTS_DIR, OUTPUT_DIR)
     except Exception as e:
         print(f"❌ Error in generate_docking_ranking: {e}")
         import traceback
         traceback.print_exc()
         exit(1)
     
-    # Copy top 3 compound files and generate complexes
+    # Create protein-ligand complexes for top 3 and true_ligand
     try:
-        copy_top_compounds(results, DOCKING_RESULTS_DIR, DOCKING_INPUT_DIR)
+        copy_top_compounds(results, DOCKING_RESULTS_DIR, receptor_input_dir, OUTPUT_DIR)
     except Exception as e:
         print(f"❌ Error in copy_top_compounds: {e}")
         import traceback
         traceback.print_exc()
         exit(1)
     
-    # Verify that results directory still exists and has files
-    if os.path.exists(RESULTS_DIR):
-        result_files = os.listdir(RESULTS_DIR)
-        print(f"✅ Report generation complete. Results directory contains {len(result_files)} file(s).")
+    # Verify output directory has complex PDB files and ranking file
+    if os.path.exists(OUTPUT_DIR):
+        pdb_files = [f for f in os.listdir(OUTPUT_DIR) if f.endswith('.pdb')]
+        txt_files = [f for f in os.listdir(OUTPUT_DIR) if f.endswith('.txt')]
+        print(f"\n✅ Report generation complete. Output directory contains:")
+        print(f"   - {len(pdb_files)} complex PDB file(s)")
+        print(f"   - {len(txt_files)} text file(s)")
+        if pdb_files:
+            print(f"\n   Complex PDB files:")
+            for pdb_file in sorted(pdb_files):
+                print(f"     - {pdb_file}")
+        if txt_files:
+            print(f"\n   Text files:")
+            for txt_file in sorted(txt_files):
+                print(f"     - {txt_file}")
     else:
-        print(f"⚠ Warning: Results directory was removed or does not exist: {RESULTS_DIR}")
+        print(f"⚠ Warning: Output directory does not exist: {OUTPUT_DIR}")
 
 
 def parse_smina_log(log_file):
@@ -164,8 +168,8 @@ def parse_smina_log(log_file):
     return None  # mode1 data not found
 
 
-def generate_docking_ranking(input_dir):
-    """Generate docking result ranking"""
+def generate_docking_ranking(input_dir, output_dir):
+    """Generate docking result ranking and save to file"""
     print("\n--- Generate docking result ranking ---")
     
     # Get docking log files
@@ -208,26 +212,35 @@ def generate_docking_ranking(input_dir):
                 true_ligand_rank = rank
                 break
     
-    # Write results to text file
-    with open(RANKING_FILE, "w", encoding="utf-8") as f:
+    # Write ranking to file
+    ranking_file = os.path.join(output_dir, "docking_ranking.txt")
+    os.makedirs(output_dir, exist_ok=True)
+    
+    with open(ranking_file, "w", encoding="utf-8") as f:
         f.write("Docking Result Ranking (sorted by binding strength)\n")
-        f.write("=" * 50 + "\n")
+        f.write("=" * 60 + "\n")
+        f.write(f"Total compounds: {len(results)}\n")
+        f.write(f"Binding energy unit: kcal/mol (lower = stronger binding)\n")
+        f.write("=" * 60 + "\n\n")
+        
         for rank, (compound, affinity) in enumerate(results, 1):
             marker = " [TRUE LIGAND]" if compound == "true_ligand" else ""
-            f.write(
-                f"Rank {rank}: Compound {compound}, Binding energy: {affinity:.2f} kcal/mol{marker}\n"
-            )
+            f.write(f"Rank {rank:4d}: {compound:30s}  Binding energy: {affinity:8.2f} kcal/mol{marker}\n")
+        
         # Add summary for true_ligand if it exists
         if true_ligand_rank:
-            f.write("\n" + "=" * 50 + "\n")
-            f.write(f"True Ligand (true_ligand) Ranking: {true_ligand_rank} / {len(results)}\n")
-            f.write(f"True Ligand Binding Energy: {true_ligand_result[1]:.2f} kcal/mol\n")
+            f.write("\n" + "=" * 60 + "\n")
+            f.write(f"True Ligand Summary:\n")
+            f.write(f"  Name: true_ligand\n")
+            f.write(f"  Rank: {true_ligand_rank} / {len(results)}\n")
+            f.write(f"  Binding energy: {true_ligand_result[1]:.2f} kcal/mol\n")
+            f.write("=" * 60 + "\n")
     
     # Display results
     print(f"Ranked docking results for {len(results)} compounds")
+    print(f"✓ Ranking saved to: {ranking_file}")
     if true_ligand_rank:
         print(f"✓ True ligand found: Rank {true_ligand_rank} / {len(results)} (Binding energy: {true_ligand_result[1]:.2f} kcal/mol)")
-    print(f"Results saved to {RANKING_FILE}")
     
     # Display top 10 results
     print("\n--- Top 10 compounds ---")
@@ -339,8 +352,9 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
         try:
             # V2000 counts line: columns (0-3)=natoms, (3-6)=nbonds
             natoms = int(counts_line[0:3])
+            nbonds = int(counts_line[3:6])
         except Exception as e:
-            print(f"  ⚠ Warning: Could not parse atom count from SDF counts line: {counts_line.strip()}")
+            print(f"  ⚠ Warning: Could not parse atom/bond count from SDF counts line: {counts_line.strip()}")
             return False
         
         atom_lines = first_molecule_lines[4:4 + natoms]
@@ -348,11 +362,18 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
             print(f"  ⚠ Warning: SDF atom block shorter than expected in {docked_sdf}")
             return False
         
+        # Parse bond lines (after atom lines)
+        bond_lines = first_molecule_lines[4 + natoms:4 + natoms + nbonds]
+        
         ligand_pdb_lines = []
+        ligand_connect_lines = []
         serial = max_serial
         res_seq = 1
         
-        for atom_line in atom_lines:
+        # Map SDF atom index (1-based) to PDB serial number
+        atom_index_to_serial = {}
+        
+        for atom_idx, atom_line in enumerate(atom_lines, 1):
             # SDF atom line format (V2000):
             # x(10.4) y(10.4) z(10.4) atom_symbol(>30-34) ...
             try:
@@ -367,6 +388,7 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
                 continue
             
             serial += 1
+            atom_index_to_serial[atom_idx] = serial
             element = symbol[0].upper()
             # Build a simple HETATM line
             # Columns follow standard PDB formatting
@@ -386,16 +408,48 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
             print(f"  ⚠ Warning: No atoms parsed from SDF for complex generation: {docked_sdf}")
             return False
         
+        # Parse bond information and create CONECT records
+        for bond_line in bond_lines:
+            try:
+                # SDF bond line format (V2000):
+                # atom1(3) atom2(3) bond_type(3) ...
+                # atom indices are 1-based
+                atom1_idx = int(bond_line[0:3])
+                atom2_idx = int(bond_line[3:6])
+                bond_type = int(bond_line[6:9])
+                
+                # Convert to PDB serial numbers
+                if atom1_idx in atom_index_to_serial and atom2_idx in atom_index_to_serial:
+                    serial1 = atom_index_to_serial[atom1_idx]
+                    serial2 = atom_index_to_serial[atom2_idx]
+                    
+                    # Create CONECT record
+                    # CONECT format: CONECT serial1 serial2 [serial3] [serial4] [serial5]
+                    conect_line = f"CONECT{serial1:5d}{serial2:5d}\n"
+                    ligand_connect_lines.append(conect_line)
+            except (ValueError, IndexError):
+                # Skip malformed bonds
+                continue
+        
         # Write combined complex PDB
         with open(complex_pdb_path, "w") as out_f:
+            # Write receptor PDB (excluding END)
             for line in receptor_lines:
-                # Avoid duplicate END records; we'll add our own at the end
                 if not line.startswith("END"):
                     out_f.write(line)
-            # Ensure there is a TER between receptor and ligand
+            
+            # Write TER to mark end of receptor
             out_f.write("TER\n")
+            
+            # Write ligand HETATM records
             for line in ligand_pdb_lines:
                 out_f.write(line)
+            
+            # Write CONECT records for ligand bonds
+            for line in ligand_connect_lines:
+                out_f.write(line)
+            
+            # Write END
             out_f.write("END\n")
         
         return True
@@ -405,7 +459,7 @@ def create_protein_ligand_complex(receptor_file, docked_sdf, complex_pdb_path, l
         return False
 
 
-def copy_top_compounds(results, docking_output_dir, docking_input_dir):
+def copy_top_compounds(results, docking_output_dir, docking_input_dir, output_dir):
     """
     Create protein-ligand complexes for top 1, 2, 3 and true_ligand.
     
@@ -469,10 +523,11 @@ def copy_top_compounds(results, docking_output_dir, docking_input_dir):
         return
     
     # Destination directory
-    dst_dir = Path(OUTPUT_DIR)
-    dst_dir.mkdir(exist_ok=True)
+    dst_dir = Path(output_dir)
+    dst_dir.mkdir(parents=True, exist_ok=True)
     
     complex_count = 0
+    processed_ligands = set()  # Track which ligands have been processed
     
     # Step 2 & 3: Process top 1, 2, 3
     top_n = min(3, len(results))
@@ -488,12 +543,13 @@ def copy_top_compounds(results, docking_output_dir, docking_input_dir):
             continue
         
         # Step 3: Extract best pose and create complex
-        complex_pdb = dst_dir / f"{ligand_name}_rank{rank}_complex.pdb"
+        complex_pdb = dst_dir / f"top{rank}_{ligand_name}_complex.pdb"
         if create_protein_ligand_complex(str(receptor_file), str(src_sdf), str(complex_pdb)):
             print(f"  ✓ Created complex PDB: {complex_pdb.name}")
             complex_count += 1
+            processed_ligands.add(ligand_name)
     
-    # Step 2 & 3: Process true_ligand
+    # Step 2 & 3: Process true_ligand (always output, even if it's in top 3)
     true_ligand_name = "true_ligand"
     true_ligand_src = Path(docking_output_dir) / f"{true_ligand_name}_docked.sdf"
     
@@ -512,14 +568,34 @@ def copy_top_compounds(results, docking_output_dir, docking_input_dir):
                 print(f"Rank {true_ligand_rank}: {true_ligand_name} (Binding energy: {true_ligand_affinity:.2f} kcal/mol)")
             
             # Step 3: Extract best pose and create complex
-            complex_pdb = dst_dir / f"{true_ligand_name}_rank{true_ligand_rank}_complex.pdb"
-            if create_protein_ligand_complex(str(receptor_file), str(true_ligand_src), str(complex_pdb)):
-                print(f"  ✓ Created complex PDB: {complex_pdb.name}")
-                complex_count += 1
+            # If true_ligand is already in top 3, the file already exists, so we skip creating it again
+            if true_ligand_name in processed_ligands:
+                print(f"  ℹ Note: true_ligand is already in top 3, complex PDB already created")
+            else:
+                # Create true_ligand complex if it's not in top 3
+                complex_pdb = dst_dir / f"top{true_ligand_rank}_{true_ligand_name}_complex.pdb"
+                if create_protein_ligand_complex(str(receptor_file), str(true_ligand_src), str(complex_pdb)):
+                    print(f"  ✓ Created complex PDB: {complex_pdb.name}")
+                    complex_count += 1
     else:
         print(f"\n⚠ Warning: true_ligand SDF file not found: {true_ligand_src}")
     
-    print(f"\n✅ Created {complex_count} protein-ligand complex PDB file(s) in {OUTPUT_DIR}/")
+    # Summary
+    expected_files = []
+    for rank in range(1, min(4, len(results) + 1)):
+        if rank <= len(top_compounds):
+            ligand_name = top_compounds[rank - 1][0]
+            expected_files.append(f"top{rank}_{ligand_name}_complex.pdb")
+    
+    # Add true_ligand if it's not in top 3
+    if true_ligand_src.exists() and true_ligand_name not in processed_ligands:
+        if true_ligand_rank:
+            expected_files.append(f"top{true_ligand_rank}_{true_ligand_name}_complex.pdb")
+    
+    print(f"\n✅ Created {complex_count} protein-ligand complex PDB file(s) in {output_dir}/")
+    print(f"   Expected output files:")
+    for expected_file in expected_files:
+        print(f"     - {expected_file}")
 
 
 

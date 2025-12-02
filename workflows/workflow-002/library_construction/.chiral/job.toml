@@ -1,6 +1,6 @@
 depends_on = ["ligand_selection", "true_ligand_addition"]
-inputs = ["*.sdf", "ligand_library", "outputs/selected_compounds", "outputs/true_ligand.sdf"]
-outputs = ["*.sdf", "ligand_library", "ligands.zip", "constructed_library", "outputs/selected_compounds"]
+inputs = ["*.sdf", "ligand_library", "outputs/selected_compounds"]
+outputs = ["ligand_library", "ligands.zip", "constructed_library", "outputs/selected_compounds"]
 
 [container]
 docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
