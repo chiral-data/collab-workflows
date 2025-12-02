@@ -1,9 +1,0 @@
-depends_on = ["protein"]
-inputs = ["*.pdb"]
-outputs = ["*.pdb", "config.txt"]
-
-[container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
-
-[scripts]
-

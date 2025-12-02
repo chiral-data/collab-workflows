@@ -1,9 +1,0 @@
-depends_on = ["2-ligand_preparation", "3-docking_preparation"]
-inputs = ["*.pdb", "selected_compounds", "config.txt"]
-outputs = ["docking_results"]
-
-[container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
-
-[scripts]
-

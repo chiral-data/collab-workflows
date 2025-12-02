@@ -1,0 +1,10 @@
+depends_on = ["protein_input"]
+inputs = ["*.pdb"]
+outputs = ["*.pdb", "config.txt", "ligand_list.txt", "real_ligand.sdf"]
+
+[container]
+docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+
+[scripts]
+run = "./run.sh"
+

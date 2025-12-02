@@ -1,9 +1,0 @@
-depends_on = ["preparation", "ligand"]
-inputs = ["*.pdb", "ligand_library"]
-outputs = ["*.pdbqt", "docking_results"]
-
-[container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
-
-[scripts]
-

@@ -1,9 +1,0 @@
-depends_on = ["docking"]
-inputs = ["docking_results"]
-outputs = ["results"]
-
-[container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
-
-[scripts]
-

@@ -1,0 +1,10 @@
+depends_on = ["docking_setup", "docking"]
+inputs = ["*.pdb", "docking_results"]
+outputs = ["outputs/results"]
+
+[container]
+docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+
+[scripts]
+run = "./run.sh"
+
