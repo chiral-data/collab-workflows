@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.6.0-cudnn-devel-ubuntu24.04
+FROM nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
 
 WORKDIR /root
 
@@ -27,7 +27,7 @@ RUN apt-get remove -y --purge --auto-remove cmake && \
     apt-get update && \
     apt-get install -y ca-certificates gpg wget && \
     wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null && \
-    echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ noble main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null && \
+    echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ jammy main' | tee /etc/apt/sources.list.d/kitware.list >/dev/null && \
     apt-get update && \
     apt-get install -y cmake
 
@@ -35,7 +35,7 @@ RUN apt-get remove -y --purge --auto-remove cmake && \
 RUN git clone --depth 1 --branch v1.3 https://github.com/gnina/gnina.git
 WORKDIR /root/gnina
 RUN mkdir build && cd build && \
-    cmake .. -DCMAKE_BUILD_TYPE=Release && \
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
     make -j$(nproc)
 
 # Set environment variables for gnina
