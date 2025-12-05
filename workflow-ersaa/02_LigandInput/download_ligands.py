@@ -11,19 +11,22 @@ def download_pubchem_cid(cid, outdir: Path):
 
     try:
         urllib.request.urlretrieve(url, outfile)
-        print(f"[Node2] Downloaded CID {cid}")
+        print(f"[Node2] Downloaded CID {cid} → {outfile}")
     except Exception as e:
         print(f"[Node2] Failed to download CID {cid}: {e}")
 
 
 if __name__ == "__main__":
-    cid_string = os.getenv("PARAM_LIGAND_CIDS")
+    cid_string = os.getenv("PARAM_LIGAND_IDS")
     if not cid_string:
-        raise ValueError("Missing global parameter: PARAM_LIGAND_CIDS")
+        raise ValueError("Missing global parameter: PARAM_LIGAND_IDS")
 
-    cids = [c.strip() for c in cid_string.split(",")]
+    try:
+        cids = json.loads(cid_string)
+    except Exception:
+        raise ValueError(f"PARAM_LIGAND_IDS is not valid JSON: {cid_string}")
 
-    outdir = Path("/workspace/out/ligands")
+    outdir = Path("./")
     outdir.mkdir(parents=True, exist_ok=True)
 
     for cid in cids:
