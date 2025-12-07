@@ -5,7 +5,6 @@ import json
 import os
 import urllib.request
 
-import imageio.v2 as imageio
 import numpy as np
 import pocketeer as pt
 from pocketeer.core.types import AlphaSphere
@@ -141,23 +140,24 @@ images = []
 frame_dir = "/tmp/frames"
 os.makedirs(frame_dir, exist_ok=True)
 
-print(f"\nRendering {total_frames} frames (using OpenGL draw)...", flush=True)
-for i, angle in enumerate(range(0, 360, step)):
-    cmd.rotate("y", float(step))
-    # Use draw() instead of ray() for faster OpenGL rendering
-    cmd.draw(512, 512)
-    frame_path = f"{frame_dir}/frame_{angle:03d}.png"
-    cmd.png(frame_path, ray=0)  # ray=0 to use the drawn image
-    images.append(imageio.imread(frame_path))
-    print(f"  Frame {i + 1}/{total_frames} ({angle}°) complete", flush=True)
-
-# Create GIF
-print("\nAssembling GIF...", flush=True)
-gif_path = f"protein_pockets_rotation_{representation}.gif"
-imageio.mimsave(gif_path, images, duration=0.1, loop=0)
-print(f"\nRotating GIF saved to {gif_path}", flush=True)
-
-# Cleanup temporary frames
-for f in os.listdir(frame_dir):
-    os.remove(os.path.join(frame_dir, f))
-os.rmdir(frame_dir)
+print(
+    f"\nRendering {total_frames} frames (ray tracing - this takes time)...", flush=True
+)
+# for i, angle in enumerate(range(0, 360, step)):
+#     cmd.rotate("y", float(step))
+#     cmd.ray(512, 512)
+#     frame_path = f"{frame_dir}/frame_{angle:03d}.png"
+#     cmd.png(frame_path)
+#     images.append(imageio.imread(frame_path))
+#     print(f"  Frame {i + 1}/{total_frames} ({angle}°) complete", flush=True)
+#
+# # Create GIF
+# print("\nAssembling GIF...", flush=True)
+# gif_path = f"protein_pockets_rotation_{representation}.gif"
+# imageio.mimsave(gif_path, images, duration=0.1, loop=0)
+# print(f"\nRotating GIF saved to {gif_path}", flush=True)
+#
+# # Cleanup temporary frames
+# for f in os.listdir(frame_dir):
+#     os.remove(os.path.join(frame_dir, f))
+# os.rmdir(frame_dir)
