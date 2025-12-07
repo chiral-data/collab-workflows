@@ -29,4 +29,9 @@ for pocket in pockets[:5]:  # Show top 5
 
 # Create visualization
 viewer = pt.view_pockets(atomarray, pockets)
-viewer.show()
+
+# Save visualization to HTML file (works in non-notebook environments)
+html_content = viewer._make_html()
+with open("pocket_visualization.html", "w") as f:
+    f.write(html_content)
+print("\nVisualization saved to pocket_visualization.html")
