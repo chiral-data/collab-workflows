@@ -145,9 +145,10 @@ print(f"\nRendering {total_frames} frames (using OpenGL draw)...", flush=True)
 for i, angle in enumerate(range(0, 360, step)):
     cmd.rotate("y", float(step))
     # Use draw() instead of ray() for faster OpenGL rendering
-    cmd.draw(512, 512)
+    # cmd.draw(512, 512)
+    cmd.ray(512, 512)
     frame_path = f"{frame_dir}/frame_{angle:03d}.png"
-    cmd.png(frame_path, ray=0)  # ray=0 to use the drawn image
+    cmd.png(frame_path)  # ray=0 to use the drawn image
     images.append(imageio.imread(frame_path))
     print(f"  Frame {i + 1}/{total_frames} ({angle}°) complete", flush=True)
 
