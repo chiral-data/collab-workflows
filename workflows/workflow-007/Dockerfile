@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir pocketeer[vis] pymol-open-source imageio
 
 # Copy the current directory contents into the container at /app
-COPY complete_notebook_example.py .
+# COPY complete_notebook_example.py .
 
 # Command to run the Python script
 CMD ["python", "complete_notebook_example.py"]
