@@ -9,4 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- pocketeer_2025_12_08_v1: Added pocketeer application for protein pocket detection
+- pocketeer_2025_12_08: Added pocketeer application for protein pocket detection (pocketeer v0.1.0, PyMOL, imageio)
