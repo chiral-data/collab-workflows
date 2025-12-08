@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+set -e
 
 REGISTRY_URL="chiral.sakuracr.jp"
 FORCE_REBUILD=false
@@ -7,14 +8,14 @@ FORCE_REBUILD=false
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
-        --force|-f)
-            FORCE_REBUILD=true
-            shift
-            ;;
-        *)
-            DIRECTORY_ARG="$1"
-            shift
-            ;;
+    --force | -f)
+        FORCE_REBUILD=true
+        shift
+        ;;
+    *)
+        DIRECTORY_ARG="$1"
+        shift
+        ;;
     esac
 done
 

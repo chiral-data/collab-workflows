@@ -17,4 +17,5 @@ RUN pip install --no-cache-dir pocketeer[vis] pymol-open-source imageio
 # Create a working directory
 WORKDIR /workspace
 
-# TODO: Command to show pocketeer version
+# Command to show pocketeer version
+CMD ["python", "-c", "import pocketeer; print(pocketeer.__version__)"]
