@@ -1,9 +1,10 @@
-depends_on = ["3-ligand-extraction"]
+name = "4 Ligand Variant Generator"
+description = "Generates molecular variants from a base ligand, creates 2D depictions, and generates 3D structures. The base ligand is extracted from an SDF file."
 inputs = ["*.sdf"]
 outputs = ["ligand_library", "variants.svg"]
 
-
 [container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+image = "chiral.sakuracr.jp/smina:2025_11_06"
 
 [scripts]
+run = "run.sh"

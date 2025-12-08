@@ -1,6 +1,9 @@
+name = "1 Download PDB"
+description = "Download a PDB file from the RCSB Protein Data Bank."
 outputs = ["*.pdb"]
 
 [container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+image = "chiral.sakuracr.jp/smina:2025_11_06"
 
 [scripts]
+run = "run.sh"

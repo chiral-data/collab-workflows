@@ -1,8 +1,10 @@
-depends_on = ["1-download-pdb"]
+name = "2 Protein Preparation"
+description = "Extracts Chain A and the NAD cofactor from a PDB file."
 inputs = ["*.pdb"]
 outputs = ["*.pdb"]
 
 [container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+image = "chiral.sakuracr.jp/smina:2025_11_06"
 
 [scripts]
+run = "run.sh"
