@@ -11,3 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - workflow-007/example.py: Merged 3 visualization scripts with configurable options (pocket_style, render_method, representation)
 - workflow-007/example.py: Tested with pocketeer docker image - successfully generated pocket_visualization.html and rotating GIF
+- workflow-007/example.py: Added output_format option ("html", "gif", or "both")
