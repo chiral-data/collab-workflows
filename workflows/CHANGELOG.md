@@ -16,3 +16,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - 01_download/download_pdb.py: Download PDB file
   - 02_pocket/calculate_pockets.py: Calculate pockets and save to JSON
   - 03_visualize/generate_output.py: Generate HTML/GIF visualization
+- workflow-007: Added Chiral workflow configuration:

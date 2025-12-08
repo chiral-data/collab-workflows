@@ -11,31 +11,26 @@ import pocketeer as pt
 from pocketeer.core.types import AlphaSphere
 
 # =============================================================================
-# CONFIGURATION OPTIONS
+# CONFIGURATION FROM ENVIRONMENT VARIABLES
 # =============================================================================
 
-# Input files (output from parts 1 and 2)
-pdb_filename = "4TOS.pdb"
+# PDB ID (from global workflow parameter)
+pdb_id = os.environ.get("PARAM_PDB_ID", "4TOS")
+pdb_filename = f"{pdb_id.upper()}.pdb"
 pockets_json = "pockets.json"
 
-# Pocket visualization style:
-#   "filled_surfaces" - Show all alpha spheres that define each pocket
-#   "single_sphere"   - Show a single sphere at each pocket's centroid
-pocket_style = "filled_surfaces"
+# Visualization parameters (from job parameters)
+# Pocket visualization style: "filled_surfaces" or "single_sphere"
+pocket_style = os.environ.get("PARAM_POCKET_STYLE", "filled_surfaces")
 
-# Rendering method:
-#   "ray"  - Use ray tracing (higher quality, slower)
-#   "draw" - Use OpenGL draw (faster, lower quality)
-render_method = "draw"
+# Rendering method: "ray" (higher quality, slower) or "draw" (faster)
+render_method = os.environ.get("PARAM_RENDER_METHOD", "draw")
 
-# Visualization representation for the protein: "cartoon" or "surface"
-representation = "surface"
+# Protein visualization representation: "cartoon" or "surface"
+representation = os.environ.get("PARAM_REPRESENTATION", "surface")
 
-# Output format:
-#   "html" - Generate interactive HTML visualization only
-#   "gif"  - Generate rotating GIF animation only
-#   "both" - Generate both HTML and GIF
-output_format = "html"
+# Output format: "html", "gif", or "both"
+output_format = os.environ.get("PARAM_OUTPUT_FORMAT", "html")
 
 # =============================================================================
 
@@ -70,6 +65,13 @@ def load_pockets_json(json_path: str) -> list[pt.Pocket]:
 
     return pockets
 
+
+# Print configuration
+print(f"Visualization configuration:", flush=True)
+print(f"  pocket_style={pocket_style}", flush=True)
+print(f"  render_method={render_method}", flush=True)
+print(f"  representation={representation}", flush=True)
+print(f"  output_format={output_format}", flush=True)
 
 # Load structure and pockets
 print("Loading structure...", flush=True)
