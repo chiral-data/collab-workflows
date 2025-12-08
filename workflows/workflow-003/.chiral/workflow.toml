@@ -1,0 +1,19 @@
+name = "In-silico Screening by Diego"
+description = "In-silico Screening by Diego"
+
+[dependencies]
+2-protein-preparation = ["1-download-pdb"]
+3-ligand-extraction = ["2-protein-preparation"]
+4-ligand-modification = ["3-ligand-extraction"]
+5-in-silico-screening = ["2-protein-preparation", "4-ligand-modification"]
+6-report = ["5-in-silico-screening"]
+
+[params.pdb_id]
+type = "string"
+default = "4OHU"
+hint = "The ID of the PDB file."
+
+[params.ligand_name]
+type = "string"
+default = "2TK"
+hint = "The three-letter residue name of the ligand to extract (e.g., '2TK'). The extracted ligand will be saved as '{ligand_name}.sdf'."

@@ -1,8 +1,10 @@
-depends_on = ["5-in-silico-screening"]
+name = "6 Docking Report"
+description = "Generates a report from the docking results"
 inputs = ["docking_results", "results"]
 outputs = ["results"]
 
 [container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+image = "chiral.sakuracr.jp/smina:2025_11_06"
 
 [scripts]
+run = "run.sh"

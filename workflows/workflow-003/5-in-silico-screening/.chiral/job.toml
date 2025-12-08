@@ -1,8 +1,25 @@
-depends_on = ["2-protein-preparation", "4-ligand-modification"]
+name = "5 Virtual Screening using SMINA"
+description = "Virtual screening using SMINA molecular docking"
 inputs = ["*.pdb", "ligand_library"]
 outputs = ["docking_results", "results"]
 
 [container]
-docker_image = "chiral.sakuracr.jp/smina:2025_11_06"
+image = "chiral.sakuracr.jp/smina:2025_11_06"
 
 [scripts]
+run = "run.sh"
+
+[params.exhaustiveness]
+type = "integer"
+default = 8
+hint = "smina config"
+
+[params.num_modes]
+type = "integer"
+default = 5
+hint = "smina config"
+
+[params.energy_range]
+type = "integer"
+default = 4
+hint = "smina config"

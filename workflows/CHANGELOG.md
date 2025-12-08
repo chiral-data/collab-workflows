@@ -20,3 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - receptor_cartoon/receptor_surface based on representation setting
   - sphere_scale adjusted based on pocket_style (2.0 for single_sphere, 1.0 for filled_surfaces)
 - workflow-007: Added Chiral workflow configuration:
+- workflow-003: Migrated from old silva config format to new format:
+  - Converted workflow.json to workflow.toml
+  - Merged node.json into job.toml for all 6 jobs
+  - Updated container.docker_image to container.image
+  - Added name, description to job.toml files
+  - Removed deprecated node.json and workflow.json files
+  - Tested successfully with silva
