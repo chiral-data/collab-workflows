@@ -8,4 +8,4 @@ A collection of workflows
 4. :construction:
 5. :construction:
 6. :construction:
-7. :checkered_flag: Protein pocket detection
+7. :checkered_flag: Protein pocket detection base on [Pocketeer](https://github.com/cch1999/pocketeer)
