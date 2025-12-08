@@ -1,9 +1,9 @@
+# Part 3: Generate visualization output (HTML/GIF)
 # github repo: https://github.com/cch1999/pocketeer
 # doc: https://pocketeer.readthedocs.io/en/latest/
 
 import json
 import os
-import urllib.request
 
 import imageio.v2 as imageio
 import numpy as np
@@ -13,6 +13,10 @@ from pocketeer.core.types import AlphaSphere
 # =============================================================================
 # CONFIGURATION OPTIONS
 # =============================================================================
+
+# Input files (output from parts 1 and 2)
+pdb_filename = "4TOS.pdb"
+pockets_json = "pockets.json"
 
 # Pocket visualization style:
 #   "filled_surfaces" - Show all alpha spheres that define each pocket
@@ -32,9 +36,6 @@ representation = "surface"
 #   "gif"  - Generate rotating GIF animation only
 #   "both" - Generate both HTML and GIF
 output_format = "html"
-
-# PDB code to analyze
-pdb_code = "4tos"
 
 # =============================================================================
 
@@ -70,34 +71,13 @@ def load_pockets_json(json_path: str) -> list[pt.Pocket]:
     return pockets
 
 
-print("Initializing PyMOL...", flush=True)
-from pymol import cmd
-
-print("PyMOL initialized.", flush=True)
-
-# Download the pdb file for demonstration
-print(f"\nDownloading PDB file: {pdb_code}...", flush=True)
-pdb_filename = f"{pdb_code.upper()}.pdb"
-url = f"https://files.rcsb.org/download/{pdb_code.upper()}.pdb"
-urllib.request.urlretrieve(url, pdb_filename)
-print(f"Downloaded {pdb_filename}", flush=True)
-
-# Load structure
-print("\nLoading structure...", flush=True)
+# Load structure and pockets
+print("Loading structure...", flush=True)
 atomarray = pt.load_structure(pdb_filename)
 
-# Detect pockets
-print("Detecting pockets (this may take a moment)...", flush=True)
-pockets = pt.find_pockets(atomarray)
-
-# Display results
-print(f"\nFound {len(pockets)} pockets:")
-for pocket in pockets[:5]:  # Show top 5
-    print(
-        f"  Pocket {pocket.pocket_id}: score={pocket.score:.2f}, "
-        f"volume={pocket.volume:.1f} Å³, "
-        f"spheres={pocket.n_spheres}"
-    )
+print("Loading pockets from JSON...", flush=True)
+pockets = load_pockets_json(pockets_json)
+print(f"Loaded {len(pockets)} pockets", flush=True)
 
 # Generate HTML visualization if requested
 if output_format in ("html", "both"):
@@ -112,6 +92,11 @@ if output_format in ("html", "both"):
 
 # Generate rotating GIF using PyMOL if requested
 if output_format in ("gif", "both"):
+    print("Initializing PyMOL...", flush=True)
+    from pymol import cmd
+
+    print("PyMOL initialized.", flush=True)
+
     print("\n" + "=" * 50, flush=True)
     print("Generating rotating GIF...", flush=True)
     print("=" * 50, flush=True)
