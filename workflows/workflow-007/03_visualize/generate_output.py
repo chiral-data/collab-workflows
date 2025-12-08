@@ -83,14 +83,32 @@ print(f"Loaded {len(pockets)} pockets", flush=True)
 
 # Generate HTML visualization if requested
 if output_format in ("html", "both"):
-    # Create visualization
-    viewer = pt.view_pockets(atomarray, pockets)
+    # Configure visualization based on representation option
+    receptor_cartoon = representation == "cartoon"
+    receptor_surface = representation == "surface"
+
+    # Configure sphere scale based on pocket_style
+    # For single_sphere style, use larger spheres; for filled_surfaces, use normal scale
+    sphere_scale = 2.0 if pocket_style == "single_sphere" else 1.0
+
+    print(f"\nGenerating HTML with:", flush=True)
+    print(f"  receptor_cartoon={receptor_cartoon}, receptor_surface={receptor_surface}", flush=True)
+    print(f"  sphere_scale={sphere_scale} (pocket_style={pocket_style})", flush=True)
+
+    # Create visualization with options
+    viewer = pt.view_pockets(
+        atomarray,
+        pockets,
+        receptor_cartoon=receptor_cartoon,
+        receptor_surface=receptor_surface,
+        sphere_scale=sphere_scale,
+    )
 
     # Save visualization to HTML file (works in non-notebook environments)
     html_content = viewer._make_html()
     with open("pocket_visualization.html", "w") as f:
         f.write(html_content)
-    print("\nVisualization saved to pocket_visualization.html")
+    print("Visualization saved to pocket_visualization.html")
 
 # Generate rotating GIF using PyMOL if requested
 if output_format in ("gif", "both"):

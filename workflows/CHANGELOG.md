@@ -16,4 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - 01_download/download_pdb.py: Download PDB file
   - 02_pocket/calculate_pockets.py: Calculate pockets and save to JSON
   - 03_visualize/generate_output.py: Generate HTML/GIF visualization
+- workflow-007/03_visualize: HTML visualization now uses pocket_style and representation options
+  - receptor_cartoon/receptor_surface based on representation setting
+  - sphere_scale adjusted based on pocket_style (2.0 for single_sphere, 1.0 for filled_surfaces)
 - workflow-007: Added Chiral workflow configuration:
