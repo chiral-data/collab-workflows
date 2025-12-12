@@ -1,9 +1,9 @@
 # Node 5: Predict binding pockets using P2Rank
-depends_on = ["03_ProteinPreparation"]
-inputs = ["receptor.pdb", "protein_fixed.pdb"]
-outputs = ["pockets.json", "p2rank_output/*"]
+depends_on = ["01_ProteinInput"]
+inputs = ["*.pdb"]
+outputs = ["*.csv", "*.log", "*.txt"]
 
 [container]
-docker_image = "workflow-esraa/node5:latest"
+docker_image = "esraasuliman/workflow-esraa-node5:1.0"
 
 [scripts]
