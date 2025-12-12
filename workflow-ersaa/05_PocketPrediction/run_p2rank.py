@@ -1,21 +1,42 @@
 #!/usr/bin/env python3
 
-import os
-import sys
 import subprocess
 from pathlib import Path
+import sys
 
-def run_p2rank(protein_pdb: Path, output_dir: Path):
-    output_dir.mkdir(parents=True, exist_ok=True)
+def run_p2rank():
+    workdir = Path("./")
 
-    print("[Node5] Running P2Rank...")
-    subprocess.run(["prank", "predict", str(protein_pdb), "--output_dir", str(output_dir)], check=True)
-    print("[Node5] P2Rank completed")
+    pdb_files = list(workdir.glob("*.pdb"))
+    if not pdb_files:
+        print("[Node5] ERROR: No .pdb file found in the working directory.")
+        sys.exit(1)
 
+    protein = pdb_files[0]
+    protein_abs = protein.resolve()
+
+    print(f"[Node5] Found protein file: {protein.name}")
+    print(f"[Node5] Absolute protein path: {protein_abs}")
+
+    prank_path = Path("/opt/p2rank/p2rank_2.5.1/prank")
+
+    if not prank_path.exists():
+        print(f"[Node5] ERROR: prank executable not found at: {prank_path}")
+        sys.exit(1)
+
+    # IMPORTANT: Use -o instead of --output_dir
+    cmd = [
+        str(prank_path),
+        "predict",
+        "-f", str(protein_abs),
+        "-o", str(workdir.resolve())
+    ]
+
+    print("[Node5] Running:", " ".join(cmd))
+
+    subprocess.run(cmd, check=True)
+
+    print("[Node5] P2Rank prediction completed successfully.")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python run_p2rank.py <PROTEIN_PDB> <OUTPUT_DIR>")
-        sys.exit(2)
-
-    run_p2rank(Path(sys.argv[1]), Path(sys.argv[2]))
+    run_p2rank()
