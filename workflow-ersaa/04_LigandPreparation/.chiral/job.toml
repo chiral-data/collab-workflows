@@ -1,9 +1,9 @@
 # Node 4: Prepare ligands (SDF → PDBQT)
 depends_on = ["02_LigandInput"]
-inputs = ["ligands/*.sdf"]
-outputs = ["ligands_prepared/*.pdbqt"]
+inputs = ["*.sdf"]
+outputs = ["*.pdbqt"]
 
 [container]
-docker_image = "workflow-esraa/node4:latest"
+docker_image = "esraasuliman/workflow-esraa-node4:1.0"
 
 [scripts]
