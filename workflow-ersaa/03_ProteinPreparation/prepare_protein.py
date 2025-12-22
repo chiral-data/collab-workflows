@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import os
 import sys
 import subprocess
 from pathlib import Path
@@ -10,57 +9,69 @@ from openmm.app import PDBFile
 
 def main():
 
-    input_dir = Path("./")
-    output_dir = Path("./")
+    workdir = Path("./")
 
-    # 1) Locate PDB file
-    pdb_files = list(input_dir.glob("*.pdb"))
+    pdb_files = list(workdir.glob("*.pdb")) + list(workdir.glob("*.cif"))
     if not pdb_files:
-        print("ERROR: No .pdb file found in ./ — cannot prepare receptor")
+        print("ERROR: No PDB or CIF file found")
         sys.exit(1)
 
-    input_pdb = pdb_files[0]
-    fixed_pdb = output_dir / "protein_fixed.pdb"
-    output_pdbqt = output_dir / "receptor.pdbqt"
+    input_structure = pdb_files[0]
+    fixed_pdb = workdir / "protein_fixed.pdb"
+    receptor_pdbqt = workdir / "receptor.pdbqt"
 
-    print(f"[Node3] Input PDB: {input_pdb}")
+    print(f"[Node3] Input structure: {input_structure}")
 
-    # 2) Clean with PDBFixer
-    print(f"[Node3] Running PDBFixer on {input_pdb} ...")
-    fixer = PDBFixer(filename=str(input_pdb))
+    # -----------------------
+    # PDBFixer (NO hydrogens)
+    # -----------------------
+    fixer = PDBFixer(filename=str(input_structure))
+
     fixer.findMissingResidues()
+    fixer.findNonstandardResidues()
+    fixer.replaceNonstandardResidues()
+
+    # Keep crystallographic waters if present
+    fixer.removeHeterogens(False)
+
     fixer.findMissingAtoms()
     fixer.addMissingAtoms()
-    fixer.addMissingHydrogens()
 
-    with open(fixed_pdb, "w") as out_f:
-        PDBFile.writeFile(fixer.topology, fixer.positions, out_f)
+    # IMPORTANT: DO NOT add hydrogens here
+    # AutoDockTools must do this
 
-    print(f"[Node3] Cleaned PDB saved to: {fixed_pdb}")
+    with open(fixed_pdb, "w") as f:
+        PDBFile.writeFile(
+            fixer.topology,
+            fixer.positions,
+            f,
+            keepIds=True
+        )
 
-    # 3) Convert with pythonsh
-    print("[Node3] Converting to PDBQT with pythonsh prepare_receptor4.py ...")
+    print(f"[Node3] Hydrogen-free PDB written: {fixed_pdb}")
 
+    # -----------------------
+    # AutoDockTools (Vina)
+    # -----------------------
     pythonsh = "/opt/mgltools_install/bin/pythonsh"
-    prep_script = "/opt/mgltools_install/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_receptor.py"
+    prep_script = (
+        "/opt/mgltools_install/MGLToolsPckgs/"
+        "AutoDockTools/Utilities24/prepare_receptor4.py"
+    )
 
     cmd = [
         pythonsh,
         prep_script,
         "-r", str(fixed_pdb),
-        "-o", str(output_pdbqt),
-        "-A", "hydrogens"
+        "-o", str(receptor_pdbqt),
+        "-A", "checkhydrogens",
         "-U", "nphs_lps_waters_nonstdres"
     ]
 
-    try:
-        subprocess.run(cmd, check=True)
-    except Exception as e:
-        print(f"ERROR running pythonsh: {e}")
-        sys.exit(1)
+    subprocess.run(cmd, check=True)
 
-    print(f"[Node3] Receptor PDBQT saved to: {output_pdbqt}")
-    print("[Node3] Receptor preparation complete ✅")
+    print(f"[Node3] Receptor PDBQT saved: {receptor_pdbqt}")
+    print("[Node3] Protein preparation complete ✅")
 
 
 if __name__ == "__main__":
