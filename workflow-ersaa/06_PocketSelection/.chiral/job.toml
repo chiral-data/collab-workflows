@@ -1,9 +1,9 @@
 # Node 6: Generate Vina grid boxes from P2Rank pocket data
 depends_on = ["05_PocketPrediction"]
-inputs = ["pockets.json"]
-outputs = ["grids.json"]
+inputs = ["5kir.pdb_predictions.csv"]
+outputs = ["*.json"]
 
 [container]
-docker_image = "workflow-esraa/node6:latest"
+docker_image = "esraasuliman/workflow-esraa-node6:1.0"
 
 [scripts]
