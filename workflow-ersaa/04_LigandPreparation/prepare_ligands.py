@@ -2,9 +2,9 @@
 
 import os
 
-# Force OpenBabel 2.4.1 (avoid using conda's obabel 3.x)
-os.environ["PATH"] = "/usr/local/bin:" + os.environ.get("PATH", "")
-os.environ["LD_LIBRARY_PATH"] = "/usr/local/lib:" + os.environ.get("LD_LIBRARY_PATH", "")
+# Force OpenBabel 3.X
+os.environ["PATH"] = "/opt/conda/bin:" + os.environ.get("PATH", "")
+os.environ["LD_LIBRARY_PATH"] = "/opt/conda/lib:" + os.environ.get("LD_LIBRARY_PATH", "")
 
 import sys
 import subprocess
