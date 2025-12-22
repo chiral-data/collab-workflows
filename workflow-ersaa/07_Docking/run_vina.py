@@ -1,62 +1,91 @@
 #!/usr/bin/env python3
 
-import os
 import json
 import subprocess
 from pathlib import Path
 
+WORKDIR = Path(".").resolve()
+RECEPTOR = (WORKDIR / "receptor.pdbqt").resolve()
+POCKET_FILE = WORKDIR / "selected_pocket.json"
+PARAMS_FILE = WORKDIR / "params.json"
 
-def run_vina(receptor, ligand, box, out_prefix, exhaust, modes, energy):
+# ---------------------------
+# Load pocket center
+# ---------------------------
+with open(POCKET_FILE) as f:
+    pocket = json.load(f)
+
+center_x = float(pocket["center_x"])
+center_y = float(pocket["center_y"])
+center_z = float(pocket["center_z"])
+
+# ---------------------------
+# Fixed box size
+# ---------------------------
+size_x = size_y = size_z = 80
+
+# ---------------------------
+# Load params
+# ---------------------------
+with open(PARAMS_FILE) as f:
+    params = json.load(f)
+
+exhaustiveness = int(str(params["exhaustiveness"]).strip())
+num_modes = int(str(params["num_modes"]).strip())
+energy_range = float(str(params["energy_range"]).strip())
+
+print(f"[DEBUG] exhaustiveness={exhaustiveness}, num_modes={num_modes}, energy_range={energy_range}")
+
+# ---------------------------
+# Collect ligands (no renaming)
+# ---------------------------
+ligands = [
+    f for f in WORKDIR.glob("*.pdbqt")
+    if f.name != RECEPTOR.name
+]
+
+if not ligands:
+    raise RuntimeError("No ligand PDBQT files found.")
+
+# ---------------------------
+# Run Vina
+# ---------------------------
+for ligand in ligands:
+    out_file = WORKDIR / f"{ligand.stem}_vina_out.pdbqt"
+
     cmd = [
         "vina",
-        "--receptor", str(receptor),
+        "--receptor", str(RECEPTOR),
         "--ligand", str(ligand),
-        "--center_x", str(box["center_x"]),
-        "--center_y", str(box["center_y"]),
-        "--center_z", str(box["center_z"]),
-        "--size_x", str(box["size_x"]),
-        "--size_y", str(box["size_y"]),
-        "--size_z", str(box["size_z"]),
-        "--exhaustiveness", str(exhaust),
-        "--num_modes", str(modes),
-        "--energy_range", str(energy),
-        "--out", f"{out_prefix}.pdbqt",
-        "--log", f"{out_prefix}.log"
+        "--center_x", str(center_x),
+        "--center_y", str(center_y),
+        "--center_z", str(center_z),
+        "--size_x", str(size_x),
+        "--size_y", str(size_y),
+        "--size_z", str(size_z),
+        "--exhaustiveness", str(exhaustiveness),
+        "--num_modes", str(num_modes),
+        "--energy_range", str(energy_range),
+        "--out", str(out_file)
     ]
 
-    subprocess.run(cmd, check=True)
-    print(f"[✔] Docked {ligand.name} → {out_prefix}.pdbqt")
+    result = subprocess.run(
+        cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
 
+    # write log
+    log_file = WORKDIR / f"{ligand.stem}.log"
+    with open(log_file, "w") as f:
+        f.write(result.stdout)
 
-if __name__ == "__main__":
-    receptor = Path("/workspace/input/receptor.pdbqt")
-    ligands_dir = Path("/workspace/input/ligands_prepared")
-    grids_file = Path("/workspace/input/grids.json")
-    out_dir = Path("/workspace/out/vina_results")
+    print(result.stdout)
+    print(result.stderr)
 
-    out_dir.mkdir(parents=True, exist_ok=True)
+    if result.returncode != 0:
+        print(f"❌ Docking failed for {ligand.name}")
+        break
 
-    # -------------------------------
-    # Read job-specific parameters
-    # -------------------------------
-    exhaust = os.getenv("JOB_PARAM_EXHAUSTIVENESS", "8")
-    modes = os.getenv("JOB_PARAM_NUM_MODES", "9")        # <-- updated
-    energy = os.getenv("JOB_PARAM_ENERGY_RANGE", "4")
-
-    # Load boxes
-    with open(grids_file) as f:
-        boxes = json.load(f)
-
-    ligands = sorted(ligands_dir.glob("*.pdbqt"))
-
-    print(f"[Node7] Docking {len(ligands)} ligands using {len(boxes)} grid boxes")
-    print(f"[Node7] Parameters → exhaust={exhaust}, num_modes={modes}, energy_range={energy}")
-
-    for lig in ligands:
-        for i, box in enumerate(boxes):
-            out_prefix = out_dir / f"{lig.stem}_p{i}"
-            run_vina(receptor, lig, box, out_prefix, exhaust, modes, energy)
-
-    print("[Node7] Docking complete")
-
-
+print("\nNode 7 finished successfully ✅")
