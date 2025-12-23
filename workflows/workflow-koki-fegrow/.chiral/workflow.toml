@@ -1,0 +1,44 @@
+name = "FEGrow Active Learning Workflow"
+description = "Active learning workflow for functional group development using FEGrow"
+
+[dependencies]
+02_scaffold_creation = ["01_ligand_upload"]
+04_protein_preparation = ["03_protein_upload"]
+05_chemical_space = ["02_scaffold_creation", "04_protein_preparation"]
+06_active_learning_docking = ["05_chemical_space"]
+07_report = ["06_active_learning_docking"]
+
+[params.num_linkers]
+type = "integer"
+default = 10
+hint = "Number of linkers to use for chemical space generation"
+
+[params.num_rgroups]
+type = "integer"
+default = 10
+hint = "Number of R-groups to use for chemical space generation"
+
+[params.attachment_id]
+type = "integer"
+default = 27
+hint = "Atom index for attachment point on the scaffold"
+
+[params.initial_molecules]
+type = "integer"
+default = 10
+hint = "Number of initial random molecules for active learning"
+
+[params.num_cycles]
+type = "integer"
+default = 3
+hint = "Number of active learning cycles"
+
+[params.molecules_per_cycle]
+type = "integer"
+default = 50
+hint = "Number of molecules to evaluate per active learning cycle"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of top compounds to extract in the report"

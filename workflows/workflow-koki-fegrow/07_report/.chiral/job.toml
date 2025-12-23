@@ -1,0 +1,15 @@
+name = "Report Generation"
+description = "Generate report with top compounds and their binding energies"
+inputs = ["chemspace_evaluated.sdf"]
+outputs = ["top_compounds.sdf", "top_compounds_report.csv", "summary.txt"]
+
+[container]
+image = "chiral.sakuracr.jp/fegrow:2025_12_23_v1"
+
+[scripts]
+run = "run.sh"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of top compounds to extract in the report"

@@ -51,6 +51,10 @@ RUN mamba env create -f /opt/FEgrow/environment.yml
 # Install essential packages first
 RUN mamba run -n fegrow pip install numpy pandas matplotlib seaborn scipy scikit-learn biopython
 
+# Install rdkit and prody for validation scripts
+RUN mamba install -n fegrow -c conda-forge rdkit -y
+RUN mamba run -n fegrow pip install prody
+
 # Try to install additional packages from requirements.txt (skip problematic ones)
 RUN mamba run -n fegrow pip install -r /opt/FEgrow/requirements.txt --ignore-requires-python || echo "Some packages failed to install, continuing..."
 

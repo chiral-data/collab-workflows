@@ -1,0 +1,10 @@
+name = "Protein Preparation"
+description = "Prepare protein structure for docking (remove water, hetero atoms, fix receptor)"
+inputs = ["*.pdb"]
+outputs = ["rec_final.pdb"]
+
+[container]
+image = "chiral.sakuracr.jp/fegrow:2025_12_23_v1"
+
+[scripts]
+run = "run.sh"
