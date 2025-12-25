@@ -1,0 +1,15 @@
+name = "Proteomics Amino Acid Analysis"
+description = "Processes proteomics datasets for MS and Myasthenia, performs statistical analysis and visualization of amino acid concentrations"
+
+[dependencies]
+02_feature_engineering = ["01_data_ingestion"]
+03_standardization = ["02_feature_engineering"]
+04_segmentation = ["03_standardization"]
+05_statistics = ["04_segmentation"]
+06_transform = ["03_standardization"]
+07_visualization = ["05_statistics", "06_transform"]
+
+[params.data_file]
+type = "string"
+default = "database-multiple-sclerosis-myasthenia.csv"
+hint = "Input TSV file with proteomics data"

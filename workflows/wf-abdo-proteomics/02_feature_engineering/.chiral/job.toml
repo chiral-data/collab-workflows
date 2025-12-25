@@ -1,0 +1,9 @@
+name = "Feature Engineering"
+description = "Cleans dataset, translates Polish columns to English, merges disease categories"
+outputs = ["data_cleaned.pkl"]
+
+[container]
+image = "chiral.sakuracr.jp/proteomics:2025_12_25_v1"
+
+[scripts]
+run = "run.sh"

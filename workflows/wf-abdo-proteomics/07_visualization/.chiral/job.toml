@@ -1,0 +1,9 @@
+name = "Visualization"
+description = "Generates boxplots comparing amino acid distributions between Case and Control"
+outputs = ["boxplot_overview.png", "boxplot_faceted.png"]
+
+[container]
+image = "chiral.sakuracr.jp/proteomics:2025_12_25_v1"
+
+[scripts]
+run = "run.sh"
