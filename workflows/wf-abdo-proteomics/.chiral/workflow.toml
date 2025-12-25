@@ -13,3 +13,8 @@ description = "Processes proteomics datasets for MS and Myasthenia, performs sta
 type = "string"
 default = "database-multiple-sclerosis-myasthenia.csv"
 hint = "Input TSV file with proteomics data"
+
+[params.plot_type]
+type = "string"
+default = "overview"
+hint = "Plot type: 'overview' (single boxplot), 'faceted' (per-AA subplots), or 'both'"
