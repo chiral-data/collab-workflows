@@ -1,7 +1,9 @@
 """Node 7: Visualization - Generate boxplots comparing Case vs Control"""
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend before importing pyplot
+import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
 
 print("Loading melted data and statistics...", flush=True)
 melted = pd.read_pickle("../06_transform/data_melted.pkl")
@@ -16,8 +18,8 @@ plt.title('Amino Acid Concentrations: Case vs Control')
 plt.xlabel('Amino Acid')
 plt.ylabel('Standardized Concentration')
 plt.tight_layout()
-plt.savefig('boxplot_overview.png', dpi=300)
-plt.close()
+plt.savefig('boxplot_overview.png', dpi=150)
+plt.close('all')
 print("Saved: boxplot_overview.png", flush=True)
 
 # Faceted boxplots
@@ -25,13 +27,14 @@ print("Generating faceted boxplots...", flush=True)
 sns.set(font_scale=1.0)
 g = sns.catplot(
     data=melted, x='status', y='conc', col='AA',
-    kind='box', col_wrap=6, height=2.5,
-    palette={'case': 'red', 'control': 'blue'}
+    kind='box', col_wrap=6, height=2.0,
+    hue='status', palette={'case': 'red', 'control': 'blue'},
+    legend=False
 )
 g.set_titles("{col_name}")
-plt.tight_layout()
-plt.savefig('boxplot_faceted.png', dpi=300)
-plt.close()
+g.tight_layout()
+g.savefig('boxplot_faceted.png', dpi=150)
+plt.close('all')
 print("Saved: boxplot_faceted.png", flush=True)
 
 # Print summary
