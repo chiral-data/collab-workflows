@@ -1,2 +1,3 @@
 #!/bin/bash
-python mann_whitney.py
+pip install scikit-posthocs
+python comprehensive_stats.py

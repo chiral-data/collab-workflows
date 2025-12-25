@@ -1,20 +1,31 @@
 """Node 3: Statistical Standardization - Z-score scaling of amino acid concentrations"""
+import json
 import pandas as pd
+from pathlib import Path
 from sklearn.preprocessing import StandardScaler
 
-AMINO_ACIDS = [
-    'SER_conc', 'GLN_conc', 'ARG_conc', 'CIT_conc', 'ASN_conc', '1MHIS_conc', '3MHIS_conc', 'HYP_conc', 'GLY_conc',
-    'THR_conc', 'ALA_conc', 'GABA_conc', 'SAR_conc', 'BAIB_conc', 'ABA_conc', 'ORN_conc', 'MET_conc', 'PRO_conc',
-    'LYS_conc', 'ASP_conc', 'HIS_conc', 'VAL_conc', 'TRP_conc', 'AAA_conc', 'LEU_conc', 'PHE_conc', 'ILE_conc',
-    'C-C_conc', 'TYR_conc'
-]
+# Setup paths
+current_dir = Path(__file__).parent
+root_dir = current_dir.parent
+input_file = root_dir / "02_feature_engineering" / "data_cleaned.pkl"
+metadata_file = root_dir / "global_params.json"
+output_file = current_dir / "data_standardized.pkl"
 
-print("Loading cleaned data...", flush=True)
-df = pd.read_pickle("../02_feature_engineering/data_cleaned.pkl")
+# Load metadata
+print(f"Loading metadata from {metadata_file}...", flush=True)
+with open(metadata_file, 'r') as f:
+    metadata = json.load(f)
+    if 'amino_acids_Conc' in metadata:
+        AMINO_ACIDS = metadata['amino_acids_Conc']
+    else:
+        AMINO_ACIDS = metadata.get('amino_acids', [])
+
+print(f"Loading cleaned data from {input_file}...", flush=True)
+df = pd.read_pickle(input_file)
 
 print("Standardizing amino acid concentrations (z-score)...", flush=True)
 scaler = StandardScaler()
 df[AMINO_ACIDS] = scaler.fit_transform(df[AMINO_ACIDS])
 
-df.to_pickle("data_standardized.pkl")
-print("Saved: data_standardized.pkl", flush=True)
+df.to_pickle(output_file)
+print(f"Saved: {output_file.name}", flush=True)

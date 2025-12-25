@@ -1,0 +1,11 @@
+name = "Advanced Analysis"
+description = "Performs PCA, Random Forest classification, and confounder analysis"
+dependencies = ["03_standardization", "02_feature_engineering"]
+inputs = ["../03_standardization/data_standardized.pkl", "../02_feature_engineering/data_cleaned.pkl"]
+outputs = ["advanced_results.pkl"]
+
+[container]
+image = "chiral.sakuracr.jp/proteomics:2025_12_25_v1"
+
+[scripts]
+run = "run.sh"
