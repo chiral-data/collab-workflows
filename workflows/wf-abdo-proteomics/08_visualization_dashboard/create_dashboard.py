@@ -365,12 +365,12 @@ def run_server(port=8080):
 # --- Main ---
 
 def setup_logging():
-    log_file = root_dir / "workflow_execution.log"
+    log_file = "workflow_execution.log"
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler(str(log_file)),
+            logging.FileHandler(log_file),
             logging.StreamHandler(sys.stdout)
         ]
     )
