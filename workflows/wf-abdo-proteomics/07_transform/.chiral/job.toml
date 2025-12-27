@@ -1,7 +1,7 @@
 name = "Data Transformation"
 description = "Transforms data from wide to long format for visualization libraries"
 dependencies = ["03_standardization"]
-inputs = ["../03_standardization/data_standardized.pkl"]
+inputs = ["data_standardized.pkl"]
 outputs = ["data_melted.pkl"]
 
 [container]

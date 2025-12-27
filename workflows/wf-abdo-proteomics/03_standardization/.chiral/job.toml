@@ -1,7 +1,7 @@
 name = "Standardization"
 description = "Standardizes amino acid concentrations using z-score scaling"
 dependencies = ["02_feature_engineering"]
-inputs = ["../02_feature_engineering/data_cleaned.pkl"]
+inputs = ["data_cleaned.pkl"]
 outputs = ["data_standardized.pkl"]
 
 [container]

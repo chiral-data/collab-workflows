@@ -1,7 +1,7 @@
 name = "Statistical Analysis"
 description = "Performs Mann-Whitney U test on each amino acid between Case and Control"
 dependencies = ["04_segmentation", "02_feature_engineering"]
-inputs = ["../04_segmentation/case.pkl", "../04_segmentation/control.pkl", "../02_feature_engineering/data_cleaned.pkl"]
+inputs = ["case.pkl", "control.pkl", "data_cleaned.pkl"]
 outputs = ["statistics_results.csv", "statistics_results.pkl", "comprehensive_stats.pkl"]
 
 [container]
