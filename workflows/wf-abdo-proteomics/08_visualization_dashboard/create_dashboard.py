@@ -20,13 +20,12 @@ from functools import lru_cache
 matplotlib.use('Agg')
 
 # Setup paths
-current_dir = Path(__file__).parent
-input_file = current_dir / "data_cleaned.pkl"
-std_file = current_dir / "data_standardized.pkl"
-stats_file = current_dir / "comprehensive_stats.pkl"
-adv_file = current_dir / "advanced_results.pkl"
-melted_file = current_dir / "data_melted.pkl"
-output_json = current_dir / "results.json"
+input_file = "data_cleaned.pkl"
+std_file = "data_standardized.pkl"
+stats_file = "comprehensive_stats.pkl"
+adv_file = "advanced_results.pkl"
+melted_file = "data_melted.pkl"
+output_json = "results.json"
 
 # Load parameters from environment variables
 DEFAULT_AMINO_ACIDS = "SER,GLN,ARG,CIT,ASN,1MHIS,3MHIS,HYP,GLY,THR,ALA,GABA,SAR,BAIB,ABA,ORN,MET,PRO,LYS,ASP,HIS,VAL,TRP,AAA,LEU,PHE,ILE,C-C,TYR"
@@ -246,7 +245,7 @@ def run_generate_json():
 
     with open(output_json, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False, cls=NpEncoder)
-    print(f"Saved: {output_json.name}", flush=True)
+    print(f"Saved: {output_json}", flush=True)
 
 
 # --- Plotting Logic ---
@@ -281,10 +280,10 @@ def generate_overview_plot(melted):
     ax.legend([bp1['boxes'][0], bp2['boxes'][0]], ['Case', 'Control'], loc='upper right')
 
     plt.tight_layout()
-    output_png = current_dir / 'boxplot_overview.png'
+    output_png = 'boxplot_overview.png'
     plt.savefig(output_png, dpi=100)
     plt.close('all')
-    print(f"Saved: {output_png.name}", flush=True)
+    print(f"Saved: {output_png}", flush=True)
 
 def run_faceted_worker():
     """Worker function to generate faceted plots (isolated process)."""
@@ -301,10 +300,10 @@ def run_faceted_worker():
     )
     g.set_titles("{col_name}")
     g.tight_layout()
-    output_png = current_dir / 'boxplot_faceted.png'
+    output_png = 'boxplot_faceted.png'
     g.savefig(output_png, dpi=150)
     plt.close('all')
-    print(f"Saved: {output_png.name}", flush=True)
+    print(f"Saved: {output_png}", flush=True)
 
 def generate_faceted_plot_subprocess():
     """Run faceted plot generation in subprocess (self-invoking)."""

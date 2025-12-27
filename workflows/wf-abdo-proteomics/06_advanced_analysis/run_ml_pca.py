@@ -2,7 +2,6 @@
 import os
 import pandas as pd
 import numpy as np
-from pathlib import Path
 from sklearn.decomposition import PCA
 from sklearn.impute import SimpleImputer
 from sklearn.ensemble import RandomForestClassifier
@@ -14,10 +13,9 @@ from sklearn.metrics import roc_auc_score, confusion_matrix, accuracy_score
 from scipy import stats
 
 # Setup paths
-current_dir = Path(__file__).parent
-input_file = current_dir / "data_cleaned.pkl"
-std_file = current_dir / "data_standardized.pkl"
-output_file = current_dir / "advanced_results.pkl"
+input_file = "data_cleaned.pkl"
+std_file = "data_standardized.pkl"
+output_file = "advanced_results.pkl"
 
 # Load parameters from environment variables
 DEFAULT_AMINO_ACIDS = "SER,GLN,ARG,CIT,ASN,1MHIS,3MHIS,HYP,GLY,THR,ALA,GABA,SAR,BAIB,ABA,ORN,MET,PRO,LYS,ASP,HIS,VAL,TRP,AAA,LEU,PHE,ILE,C-C,TYR"
@@ -192,4 +190,4 @@ results = {
 }
 
 pd.to_pickle(results, output_file)
-print(f"Saved: {output_file.name}", flush=True)
+print(f"Saved: {output_file}", flush=True)

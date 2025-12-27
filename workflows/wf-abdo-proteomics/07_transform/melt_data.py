@@ -1,12 +1,10 @@
 """Node 7: Data Transformation - Wide to Long format for visualization"""
 import os
 import pandas as pd
-from pathlib import Path
 
 # Setup paths
-current_dir = Path(__file__).parent
-input_file = current_dir / "data_standardized.pkl"
-output_file = current_dir / "data_melted.pkl"
+input_file = "data_standardized.pkl"
+output_file = "data_melted.pkl"
 
 ID_VARS = ['status', 'ID', 'type', 'Duration', 'EDSS', 'age', 'sex', 'drug', 'place']
 
@@ -29,4 +27,4 @@ melted = df.melt(
 print(f"Melted data shape: {melted.shape}", flush=True)
 
 melted.to_pickle(output_file)
-print(f"Saved: {output_file.name}", flush=True)
+print(f"Saved: {output_file}", flush=True)
