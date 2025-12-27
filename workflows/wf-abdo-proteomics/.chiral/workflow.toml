@@ -5,10 +5,10 @@ description = "Processes proteomics datasets for MS and Myasthenia, performs sta
 02_feature_engineering = ["01_data_ingestion"]
 03_standardization = ["02_feature_engineering"]
 04_segmentation = ["03_standardization"]
-05_statistics = ["04_segmentation"]
-06_advanced_analysis = ["03_standardization"]
+05_statistics = ["04_segmentation", "02_feature_engineering"]
+06_advanced_analysis = ["03_standardization", "02_feature_engineering"]
 07_transform = ["03_standardization"]
-08_visualization_dashboard = ["05_statistics", "06_advanced_analysis", "07_transform"]
+08_visualization_dashboard = ["05_statistics", "06_advanced_analysis", "07_transform", "02_feature_engineering", "03_standardization"]
 
 [params.plot_type]
 type = "string"

@@ -199,7 +199,7 @@ class NpEncoder(json.JSONEncoder):
 
 def run_generate_json():
     print("Loading data for JSON generation...", flush=True)
-    if not input_file.exists():
+    if not os.path.exists(input_file):
         print(f"Error: {input_file} missing. Run previous steps.", flush=True)
         return
 
@@ -337,7 +337,7 @@ def generate_faceted_plot_subprocess():
 
 def run_plotting():
     print("Loading melted data...", flush=True)
-    if not melted_file.exists():
+    if not os.path.exists(melted_file):
          print(f"Error: {melted_file} missing.", flush=True)
          return
 
