@@ -21,37 +21,25 @@ matplotlib.use('Agg')
 
 # Setup paths
 current_dir = Path(__file__).parent
-root_dir = current_dir.parent
 input_file = current_dir / "data_cleaned.pkl"
 std_file = current_dir / "data_standardized.pkl"
 stats_file = current_dir / "comprehensive_stats.pkl"
 adv_file = current_dir / "advanced_results.pkl"
 melted_file = current_dir / "data_melted.pkl"
-metadata_file = root_dir / "global_params.json"
 output_json = current_dir / "results.json"
 
-# Load global parameters
-try:
-    with open(metadata_file, 'r') as f:
-        config = json.load(f)
-        if 'amino_acids_Conc' in config:
-            AMINO_ACIDS = config['amino_acids_Conc']
-        else:
-            AMINO_ACIDS = config.get('amino_acids', [])
-        DISEASE_TYPES = config.get('disease_types', [])
-        SEXES = config.get('sexes', [])
-        KDE_POINTS = config.get('kde_points', 100)
-        PLOT_TYPE = config.get('plot_type', 'overview')
-except FileNotFoundError:
-    print(f"Warning: {metadata_file} not found. Using defaults.")
-    AMINO_ACIDS = []
-    DISEASE_TYPES = []
-    SEXES = []
-    KDE_POINTS = 100
-    PLOT_TYPE = 'overview'
+# Load parameters from environment variables
+DEFAULT_AMINO_ACIDS = "SER,GLN,ARG,CIT,ASN,1MHIS,3MHIS,HYP,GLY,THR,ALA,GABA,SAR,BAIB,ABA,ORN,MET,PRO,LYS,ASP,HIS,VAL,TRP,AAA,LEU,PHE,ILE,C-C,TYR"
+DEFAULT_DISEASE_TYPES = "PPMS,SPMS,RRMS,GMG,OMG"
+DEFAULT_SEXES = "Male,Female"
 
-# Allow environment override for plot type
-PLOT_TYPE = os.environ.get("PARAM_PLOT_TYPE", PLOT_TYPE).lower()
+AMINO_ACIDS = os.environ.get("PARAM_AMINO_ACIDS", DEFAULT_AMINO_ACIDS).split(",")
+DISEASE_TYPES = os.environ.get("PARAM_DISEASE_TYPES", DEFAULT_DISEASE_TYPES).split(",")
+SEXES = os.environ.get("PARAM_SEXES", DEFAULT_SEXES).split(",")
+KDE_POINTS = int(os.environ.get("PARAM_KDE_POINTS", "100"))
+PLOT_TYPE = os.environ.get("PARAM_PLOT_TYPE", "overview").lower()
+
+print(f"Using {len(AMINO_ACIDS)} amino acids from environment", flush=True)
 
 
 # Helper function to clean amino acid names for display

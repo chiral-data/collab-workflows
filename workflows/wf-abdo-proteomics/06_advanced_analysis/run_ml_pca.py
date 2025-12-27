@@ -1,5 +1,5 @@
-"""Node 8: Advanced Analysis - PCA, ML, and Confounders"""
-import json
+"""Node 6: Advanced Analysis - PCA, ML, and Confounders"""
+import os
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -15,20 +15,14 @@ from scipy import stats
 
 # Setup paths
 current_dir = Path(__file__).parent
-root_dir = current_dir.parent
 input_file = current_dir / "data_cleaned.pkl"
 std_file = current_dir / "data_standardized.pkl"
-metadata_file = root_dir / "global_params.json"
 output_file = current_dir / "advanced_results.pkl"
 
-# Load metadata
-print(f"Loading metadata from {metadata_file}...", flush=True)
-with open(metadata_file, 'r') as f:
-    metadata = json.load(f)
-    if 'amino_acids_Conc' in metadata:
-        AMINO_ACIDS = metadata['amino_acids_Conc']
-    else:
-        AMINO_ACIDS = metadata.get('amino_acids', [])
+# Load parameters from environment variables
+DEFAULT_AMINO_ACIDS = "SER,GLN,ARG,CIT,ASN,1MHIS,3MHIS,HYP,GLY,THR,ALA,GABA,SAR,BAIB,ABA,ORN,MET,PRO,LYS,ASP,HIS,VAL,TRP,AAA,LEU,PHE,ILE,C-C,TYR"
+AMINO_ACIDS = os.environ.get("PARAM_AMINO_ACIDS", DEFAULT_AMINO_ACIDS).split(",")
+print(f"Using {len(AMINO_ACIDS)} amino acids from environment", flush=True)
 
 print("Loading data...", flush=True)
 df = pd.read_pickle(input_file)
