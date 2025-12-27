@@ -5,7 +5,7 @@ inputs = ["data_cleaned.pkl"]
 outputs = ["data_standardized.pkl"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_25_v1"
+image = "chiral.sakuracr.jp/proteomics:2025_12_25_v2"
 
 [scripts]
 run = "run.sh"

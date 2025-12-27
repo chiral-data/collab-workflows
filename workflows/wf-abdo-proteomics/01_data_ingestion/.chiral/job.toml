@@ -3,7 +3,7 @@ description = "Loads raw TSV proteomics database into the pipeline"
 outputs = ["data_raw.pkl"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_25_v1"
+image = "chiral.sakuracr.jp/proteomics:2025_12_25_v2"
 
 [scripts]
 run = "run.sh"
