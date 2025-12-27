@@ -10,11 +10,6 @@ description = "Processes proteomics datasets for MS and Myasthenia, performs sta
 07_transform = ["03_standardization"]
 08_visualization_dashboard = ["05_statistics", "06_advanced_analysis", "07_transform"]
 
-[params.data_file]
-type = "string"
-default = "database-multiple-sclerosis-myasthenia.csv"
-hint = "Input TSV file with proteomics data"
-
 [params.plot_type]
 type = "string"
 default = "overview"

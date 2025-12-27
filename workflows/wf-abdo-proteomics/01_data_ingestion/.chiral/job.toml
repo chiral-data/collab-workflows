@@ -7,3 +7,8 @@ image = "chiral.sakuracr.jp/proteomics:2025_12_25_v1"
 
 [scripts]
 run = "run.sh"
+
+[params.data_file]
+type = "string"
+default = "database-multiple-sclerosis-myasthenia.csv"
+hint = "Input TSV file with proteomics data"
