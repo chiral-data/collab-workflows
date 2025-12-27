@@ -1,0 +1,12 @@
+{
+  "threads": 8,
+  "strandedness": 1,
+  "feature_type": "gene",
+  "attribute_type": "gene_id",
+  "long_read": false,
+  "allow_multi_overlap": true,
+  "use_fraction": true,
+  "control_condition": "normal",
+  "treatment_condition": "treatment",
+  "alpha": 0.05
+}

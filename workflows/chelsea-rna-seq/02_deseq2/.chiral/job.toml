@@ -1,0 +1,25 @@
+name = "DESeq2 Analysis"
+description = "Statistical analysis of differentially expressed genes using DESeq2"
+inputs = ["counts.csv"]
+outputs = ["merged.csv", "dds.rds", "res.rds"]
+
+[container]
+image = "chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1"
+
+[scripts]
+run = "run.sh"
+
+[params.count_columns]
+type = "string"
+default = ""
+hint = "Columns containing count data (e.g., '4:5' for columns 4-5). Leave empty to auto-detect."
+
+[params.gene_id_column]
+type = "string"
+default = "Geneid"
+hint = "Column name containing gene identifiers"
+
+[params.conditions]
+type = "string"
+default = ""
+hint = "Comma-separated conditions for each sample (e.g., 'normal,treatment'). Must match number of count columns."

@@ -1,0 +1,20 @@
+name = "featureCounts"
+description = "Quantify mapped reads per gene using featureCounts (Rsubread)"
+inputs = ["*.bam", "*.gtf"]
+outputs = ["counts.csv", "counts_annotation.csv", "counts_log.txt"]
+
+[container]
+image = "chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1"
+
+[scripts]
+run = "run.sh"
+
+[params.extra_attributes]
+type = "string"
+default = "ID,gene_biotype,Dbxref,locus_tag,Name,ECOCYC,gene_synonym,gene,orig_transcript_id"
+hint = "Comma-separated list of extra GTF attributes to include in output"
+
+[params.count_columns]
+type = "string"
+default = ""
+hint = "Specific column range for count data (e.g., '4:5' for columns 4-5). Leave empty for auto-detect."

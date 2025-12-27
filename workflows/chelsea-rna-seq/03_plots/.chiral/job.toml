@@ -1,0 +1,45 @@
+name = "Visualization Plots"
+description = "Generate MA plot and Volcano plot for differential expression results"
+inputs = ["dds.rds", "res.rds", "merged.csv"]
+outputs = ["ma_plot.png", "volcano_plot.png", "pca_plot.png", "merged_with_regulation.csv"]
+
+[container]
+image = "chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1"
+
+[scripts]
+run = "run.sh"
+
+[params.plot_width]
+type = "integer"
+default = 10
+hint = "Plot width in inches"
+
+[params.plot_height]
+type = "integer"
+default = 8
+hint = "Plot height in inches"
+
+[params.plot_dpi]
+type = "integer"
+default = 300
+hint = "Plot resolution in DPI"
+
+[params.up_color]
+type = "string"
+default = "firebrick"
+hint = "Color for upregulated genes"
+
+[params.down_color]
+type = "string"
+default = "dodgerblue4"
+hint = "Color for downregulated genes"
+
+[params.none_color]
+type = "string"
+default = "honeydew4"
+hint = "Color for non-significant genes"
+
+[params.highlight_color]
+type = "string"
+default = "gold1"
+hint = "Color for highlighted genes with labels"

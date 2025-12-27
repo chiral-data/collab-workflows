@@ -1,0 +1,56 @@
+name = "RNA-seq Differential Expression Analysis"
+description = "From mapped data to differential expression results using featureCounts + DESeq2"
+
+[dependencies]
+02_deseq2 = ["01_featurecounts"]
+03_plots = ["02_deseq2"]
+
+[params.threads]
+type = "integer"
+default = 8
+hint = "Number of threads to use for processing"
+
+[params.strandedness]
+type = "integer"
+default = 1
+hint = "Strandedness: 0=unstranded, 1=stranded, 2=reversely stranded"
+
+[params.feature_type]
+type = "string"
+default = "gene"
+hint = "Feature type to count (must match GTF 3rd column, e.g., gene, exon, CDS)"
+
+[params.attribute_type]
+type = "string"
+default = "gene_id"
+hint = "Attribute to group features by (must match GTF attribute, e.g., gene_id, locus_tag)"
+
+[params.long_read]
+type = "boolean"
+default = false
+hint = "Set to true for long-read sequencing data (adds -L flag)"
+
+[params.allow_multi_overlap]
+type = "boolean"
+default = true
+hint = "Allow reads to overlap multiple features (-O flag)"
+
+[params.use_fraction]
+type = "boolean"
+default = true
+hint = "Use fractional counting when multi-overlap is enabled"
+
+[params.control_condition]
+type = "string"
+default = "normal"
+hint = "Name of the control/reference condition for DESeq2"
+
+[params.treatment_condition]
+type = "string"
+default = "treatment"
+hint = "Name of the treatment condition for DESeq2"
+
+[params.alpha]
+type = "float"
+default = 0.05
+hint = "Significance threshold for adjusted p-value"
