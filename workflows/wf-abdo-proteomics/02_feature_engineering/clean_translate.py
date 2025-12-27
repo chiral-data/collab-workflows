@@ -18,5 +18,12 @@ df = df.rename(columns={
 print("Merging disease sub-categories...", flush=True)
 df['type'] = df['type'].replace({'general': 'GMG', 'eye-type': 'OMG'})
 
+print("Adding status column...", flush=True)
+df['status'] = df['type'].apply(lambda x: 'case' if x in ['PPMS', 'SPMS', 'RRMS'] else 'control')
+
+print("Removing '_conc' suffix from column names...", flush=True)
+df.columns = df.columns.str.replace('_conc', '')
+
+
 df.to_pickle("data_cleaned.pkl")
 print("Saved: data_cleaned.pkl", flush=True)

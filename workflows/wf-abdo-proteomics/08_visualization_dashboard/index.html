@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS & MG Proteomics Analysis Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --bg-light: #f5f5f5;
+            --bg-dark: #ebebeb;
+            --border: #d0d0d0;
+            --case: rgba(214, 39, 40, 0.65);
+            --control: rgba(31, 119, 180, 0.65);
+            --text-muted: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: var(--bg-light);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.05em;
+        }
+
+        .stats-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .stats-summary h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .figure-section {
+            margin: 60px 0;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .figure-title {
+            font-size: 1.5em;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .figure-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.65em;
+            font-weight: 500;
+        }
+
+        .facet-grid {
+            display: grid;
+            gap: 6px;
+            margin-top: 20px;
+        }
+
+        .grid-5col {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .grid-6col {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .facet-plot {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            min-height: 180px;
+        }
+
+        .single-plot {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 15px;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #ecf0f1;
+            z-index: 9999;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), #667eea);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--secondary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error {
+            background: #ff6b6b;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .interpretation-box {
+            background: #e8f4f8;
+            color: #2c3e50;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .abbreviation-box {
+            background: #f9f9f9;
+            color: #555;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+
+        .abbreviation-box strong {
+            color: var(--primary);
+        }
+
+        @media (max-width: 1400px) {
+
+            .grid-5col,
+            .grid-6col {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .grid-5col,
+            .grid-6col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .grid-5col,
+            .grid-6col {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>🔬 Proteomics Analysis Dashboard</h1>
+            <p class="subtitle">Multiple Sclerosis & Myasthenia Gravis - Amino Acid Analysis</p>
+        </header>
+
+        <div id="app">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading data and generating visualizations...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Dataset:</strong> database-multiple-sclerosis-myasthenia.csv</p>
+            <p><strong>Analysis:</strong> Standardized Z-scores, Mann-Whitney U tests, KDE visualization</p>
+            <p><strong>Stack:</strong> Python (Pandas, SciPy, Scikit-learn) + Plotly.js</p>
+        </footer>
+    </div>
+
+    <script>
+        'use strict';
+
+        const CONFIG = {
+            colors: {
+                case: 'rgba(214, 39, 40, 0.65)',
+                control: 'rgba(31, 119, 180, 0.65)',
+                female: 'rgba(214, 39, 40, 0.65)',
+                male: 'rgba(31, 119, 180, 0.65)',
+                ppms: '#5da5da',
+                spms: '#faa43a',
+                rrms: '#60bd68',
+                gmg: '#f17cb0',
+                omg: '#b2912f'
+            },
+            plotly: {
+                responsive: true,
+                displayModeBar: true,
+                modeBarButtons: [
+                    ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d'],
+                    ['toImage']
+                ],
+                displaylogo: false
+            },
+            layout: {
+                plot_bgcolor: '#ebebeb',
+                paper_bgcolor: 'white',
+                font: { family: 'Arial', size: 9 },
+                margin: { t: 50, r: 15, b: 25, l: 40 }
+            }
+        };
+
+        class Progress {
+            constructor() {
+                this.el = document.getElementById('progress');
+                this.value = 0;
+            }
+            set(val) {
+                this.value = Math.min(100, Math.max(0, val));
+                this.el.style.width = this.value + '%';
+            }
+            add(val) { this.set(this.value + val); }
+            done() {
+                this.set(100);
+                setTimeout(() => this.el.parentElement.style.opacity = '0', 500);
+            }
+        }
+
+        const progress = new Progress();
+
+        function baseLayout(title, height = 180) {
+            return {
+                ...CONFIG.layout,
+                title: { text: title, font: { size: 10 }, y: 0.85 },
+                xaxis: { gridcolor: '#d0d0d0', zeroline: true, showticklabels: false },
+                yaxis: { gridcolor: '#d0d0d0', showticklabels: false },
+                height,
+                showlegend: false
+            };
+        }
+
+        function vline() {
+            return {
+                type: 'line',
+                x0: 0, x1: 0,
+                y0: 0, y1: 1,
+                yref: 'paper',
+                line: { color: '#666', width: 1, dash: 'dash' }
+            };
+        }
+
+        function regression(x, y) {
+            const pairs = x.map((xi, i) => [xi, y[i]]).filter(([a, b]) => !isNaN(a) && !isNaN(b));
+            if (pairs.length < 2) return null;
+
+            const n = pairs.length;
+            const sx = pairs.reduce((s, [a]) => s + a, 0);
+            const sy = pairs.reduce((s, [, b]) => s + b, 0);
+            const sxy = pairs.reduce((s, [a, b]) => s + a * b, 0);
+            const sx2 = pairs.reduce((s, [a]) => s + a * a, 0);
+
+            const slope = (n * sxy - sx * sy) / (n * sx2 - sx * sx);
+            const intercept = (sy - slope * sx) / n;
+
+            return { slope, intercept };
+        }
+
+        function cleanAAName(aa) {
+            return aa.replace(/_conc$/, '');
+        }
+
+        async function loadData() {
+            progress.set(10);
+            const res = await fetch('results.json');
+            if (!res.ok) throw new Error('Failed to load results.json');
+            progress.set(40);
+            const data = await res.json();
+            progress.set(50);
+            return data;
+        }
+
+        class Renderer {
+            constructor(data) {
+                this.data = data;
+            }
+
+            fig1() {
+                const d = this.data.fig1;
+                if (!d) return '';
+
+                const aas = Object.keys(d);
+                const html = `<div class="facet-grid grid-5col">${aas.map(aa => `<div class="facet-plot" id="d1_${aa}"></div>`).join('')
+                    }</div>`;
+
+                setTimeout(() => {
+                    aas.forEach((aa, i) => {
+                        const ad = d[aa];
+                        const traces = [
+                            {
+                                x: ad.case_x || [],
+                                y: ad.case_y || [],
+                                type: 'scatter',
+                                mode: 'lines',
+                                fill: 'tozeroy',
+                                line: { color: CONFIG.colors.case, width: 1.5 },
+                                fillcolor: CONFIG.colors.case,
+                                hoverinfo: 'skip'
+                            },
+                            {
+                                x: ad.control_x || [],
+                                y: ad.control_y || [],
+                                type: 'scatter',
+                                mode: 'lines',
+                                fill: 'tozeroy',
+                                line: { color: CONFIG.colors.control, width: 1.5 },
+                                fillcolor: CONFIG.colors.control,
+                                hoverinfo: 'skip'
+                            }
+                        ];
+
+                        const layout = baseLayout(cleanAAName(aa));
+                        layout.shapes = [vline()];
+
+                        Plotly.newPlot(`d1_${aa}`, traces, layout, CONFIG.plotly);
+                        if (i % 10 === 0) progress.add(2);
+                    });
+                }, 100);
+
+                return html;
+            }
+
+            fig2() {
+                const d = this.data.fig2;
+                if (!d) return '';
+
+                const aas = Object.keys(d);
+                const html = `<div class="facet-grid grid-6col">${aas.map(aa => `<div class="facet-plot" id="d2_${aa}"></div>`).join('')
+                    }</div>`;
+
+                setTimeout(() => {
+                    aas.forEach((aa, i) => {
+                        const ad = d[aa];
+                        const traces = [
+                            {
+                                y: ad.case || [],
+                                type: 'box',
+                                marker: { color: CONFIG.colors.case },
+                                boxmean: false,
+                                hoverinfo: 'y'
+                            },
+                            {
+                                y: ad.control || [],
+                                type: 'box',
+                                marker: { color: CONFIG.colors.control },
+                                boxmean: false,
+                                hoverinfo: 'y'
+                            }
+                        ];
+
+                        const layout = baseLayout(cleanAAName(aa));
+                        layout.xaxis = {
+                            showticklabels: true,
+                            ticktext: ['case', 'ctrl'],
+                            tickvals: [0, 1],
+                            tickfont: { size: 8 }
+                        };
+                        layout.yaxis.showticklabels = true;
+                        layout.annotations = [{
+                            text: `p=${(ad.p_value || 0).toFixed(3)}`,
+                            xref: 'paper', yref: 'paper',
+                            x: 0.5, y: 1.15,
+                            showarrow: false,
+                            font: { size: 9 }
+                        }];
+
+                        Plotly.newPlot(`d2_${aa}`, traces, layout, CONFIG.plotly);
+                        if (i % 8 === 0) progress.add(1);
+                    });
+                }, 100);
+
+                return html;
+            }
+
+            fig3() {
+                const d = this.data.fig3;
+                if (!d) return '';
+
+                const types = ['PPMS', 'SPMS', 'RRMS', 'GMG'];
+                const traces = types.map(t => ({
+                    y: d[t] || [],
+                    type: 'box',
+                    name: t,
+                    marker: { color: CONFIG.colors[t.toLowerCase()] },
+                    boxmean: false
+                }));
+
+                const layout = {
+                    ...CONFIG.layout,
+                    title: { text: 'Overall AA Concentration by Disease Type', font: { size: 14 } },
+                    xaxis: { ticktext: types, tickvals: [0, 1, 2, 3] },
+                    yaxis: { title: 'Concentration', showticklabels: true },
+                    height: 400,
+                    showlegend: false
+                };
+
+                setTimeout(() => {
+                    Plotly.newPlot('d3', traces, layout, CONFIG.plotly);
+                    progress.add(5);
+                }, 100);
+
+                return '<div class="single-plot" id="d3"></div>';
+            }
+
+            fig4() {
+                const d = this.data.fig4;
+                if (!d || !d.age) return '';
+
+                const aas = Object.keys(d).filter(k => k !== 'age');
+                const html = `<div class="facet-grid grid-5col">${aas.map(aa => `<div class="facet-plot" id="d4_${aa}"></div>`).join('')
+                    }</div>`;
+
+                setTimeout(() => {
+                    aas.forEach((aa, i) => {
+                        const traces = [{
+                            x: d.age,
+                            y: d[aa] || [],
+                            mode: 'markers',
+                            type: 'scatter',
+                            marker: { size: 4, color: 'rgba(100,100,100,0.4)' },
+                            hoverinfo: 'x+y'
+                        }];
+
+                        const reg = regression(d.age, d[aa] || []);
+                        if (reg) {
+                            const xMin = Math.min(...d.age);
+                            const xMax = Math.max(...d.age);
+                            traces.push({
+                                x: [xMin, xMax],
+                                y: [reg.slope * xMin + reg.intercept, reg.slope * xMax + reg.intercept],
+                                mode: 'lines',
+                                line: { color: CONFIG.colors.ppms, width: 2 },
+                                hoverinfo: 'skip'
+                            });
+                        }
+
+                        Plotly.newPlot(`d4_${aa}`, traces, baseLayout(cleanAAName(aa)), CONFIG.plotly);
+                        if (i % 10 === 0) progress.add(1);
+                    });
+                }, 100);
+
+                return html;
+            }
+
+            fig6() {
+                const d = this.data.fig6;
+                if (!d) return '';
+
+                const aas = Object.keys(d);
+                const html = `<div class="facet-grid grid-5col">${aas.map(aa => `<div class="facet-plot" id="d6_${aa}"></div>`).join('')
+                    }</div>`;
+
+                setTimeout(() => {
+                    aas.forEach((aa, i) => {
+                        const ad = d[aa];
+                        const traces = [
+                            {
+                                x: ad.x || [],
+                                y: ad.y_case || [],
+                                type: 'scatter',
+                                mode: 'lines',
+                                fill: 'tozeroy',
+                                line: { color: CONFIG.colors.case, width: 1.5 },
+                                fillcolor: CONFIG.colors.case,
+                                hoverinfo: 'skip'
+                            },
+                            {
+                                x: ad.x || [],
+                                y: ad.y_control || [],
+                                type: 'scatter',
+                                mode: 'lines',
+                                fill: 'tozeroy',
+                                line: { color: CONFIG.colors.control, width: 1.5 },
+                                fillcolor: CONFIG.colors.control,
+                                hoverinfo: 'skip'
+                            }
+                        ];
+
+                        const layout = baseLayout(cleanAAName(aa));
+                        layout.shapes = [vline()];
+
+                        Plotly.newPlot(`d6_${aa}`, traces, layout, CONFIG.plotly);
+                        if (i % 10 === 0) progress.add(1);
+                    });
+                }, 100);
+
+                return html;
+            }
+
+            fig7() {
+                const d = this.data.fig7;
+                if (!d) return '';
+
+                const aas = Object.keys(d);
+                const html = `<div class="facet-grid grid-6col">${aas.map(aa => `<div class="facet-plot" id="d7_${aa}"></div>`).join('')
+                    }</div>`;
+
+                setTimeout(() => {
+                    aas.forEach((aa, i) => {
+                        const ad = d[aa];
+                        const traces = [
+                            {
+                                y: ad.Female || [],
+                                type: 'box',
+                                marker: { color: CONFIG.colors.female },
+                                boxmean: false
+                            },
+                            {
+                                y: ad.Male || [],
+                                type: 'box',
+                                marker: { color: CONFIG.colors.male },
+                                boxmean: false
+                            }
+                        ];
+
+                        const layout = baseLayout(cleanAAName(aa));
+                        layout.xaxis = {
+                            showticklabels: true,
+                            ticktext: ['F', 'M'],
+                            tickvals: [0, 1],
+                            tickfont: { size: 8 }
+                        };
+                        layout.yaxis.showticklabels = true;
+
+                        Plotly.newPlot(`d7_${aa}`, traces, layout, CONFIG.plotly);
+                        if (i % 8 === 0) progress.add(1);
+                    });
+                }, 100);
+
+                return html;
+            }
+
+            fig8() {
+                const d = this.data.fig8;
+                if (!d) return '';
+
+                const aas = Object.keys(d);
+                const types = ['PPMS', 'SPMS', 'RRMS', 'GMG', 'OMG'];
+                const html = `<div class="facet-grid grid-6col">${aas.map(aa => `<div class="facet-plot" id="d8_${aa}"></div>`).join('')
+                    }</div>`;
+
+                setTimeout(() => {
+                    aas.forEach((aa, i) => {
+                        const ad = d[aa];
+                        const traces = types.map(t => ({
+                            y: ad[t] || [],
+                            type: 'box',
+                            marker: { color: CONFIG.colors[t.toLowerCase()] || '#7f8c8d' },
+                            boxmean: false
+                        }));
+
+                        const layout = baseLayout(cleanAAName(aa));
+                        layout.xaxis = {
+                            showticklabels: true,
+                            ticktext: types.map(t => t.substring(0, 4)),
+                            tickvals: [0, 1, 2, 3, 4],
+                            tickfont: { size: 7 }
+                        };
+                        layout.yaxis.showticklabels = true;
+                        layout.margin.b = 35;
+
+                        Plotly.newPlot(`d8_${aa}`, traces, layout, CONFIG.plotly);
+                        if (i % 8 === 0) progress.add(1);
+                    });
+                }, 100);
+
+                return html;
+            }
+
+            statsTable() {
+                const d = this.data.statistical_tests;
+                if (!d) return '';
+
+                const aas = Object.keys(d).sort();
+
+                return `
+                <div class="table-container" style="overflow-x: auto; margin-top: 20px;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+                        <thead>
+                            <tr style="background: var(--primary); color: white;">
+                                <th style="padding: 10px; text-align: left;">Amino Acid</th>
+                                <th style="padding: 10px; text-align: right;">U-Statistic</th>
+                                <th style="padding: 10px; text-align: right;">P-Value</th>
+                                <th style="padding: 10px; text-align: center;">Significant</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${aas.map(aa => {
+                    const stat = d[aa];
+                    const isSig = stat.significant;
+                    const rowStyle = isSig ? 'background-color: rgba(214, 39, 40, 0.1); font-weight: bold;' : '';
+                    return `
+                                <tr style="border-bottom: 1px solid #ddd; ${rowStyle}">
+                                    <td style="padding: 8px;">${cleanAAName(aa)}</td>
+                                    <td style="padding: 8px; text-align: right;">${stat.U_statistic.toFixed(1)}</td>
+                                    <td style="padding: 8px; text-align: right;">${stat.p_value.toExponential(3)}</td>
+                                    <td style="padding: 8px; text-align: center;">${isSig ? '✅' : ''}</td>
+                                </tr>
+                                `;
+                }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                `;
+            }
+
+            additionalStats() {
+                const d = this.data.additional_stats;
+                if (!d) return '';
+
+                const sex = d.sex_distribution;
+                const age = d.age_analysis;
+                const disease = d.disease_types;
+
+                return `
+                <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                    <!-- Sex Distribution -->
+                    <div class="stat-box" style="text-align: left; display: block;">
+                        <h3 style="margin-bottom: 10px; color: var(--primary);">Sex Distribution (Chi-Square)</h3>
+                        <p><strong>Chi2:</strong> ${sex.chi2.toFixed(3)}</p>
+                        <p><strong>P-Value:</strong> ${sex.p_value.toExponential(3)}</p>
+                        <p><strong>Significant:</strong> ${sex.p_value < 0.05 ? '✅' : '❌'}</p>
+                    </div>
+
+                    <!-- Age Analysis -->
+                    <div class="stat-box" style="text-align: left; display: block;">
+                        <h3 style="margin-bottom: 10px; color: var(--primary);">Age Analysis</h3>
+                        <p><strong>Normality (Shapiro):</strong> p=${age.shapiro.p_value.toExponential(3)}</p>
+                        <p><strong>Comparison (T-Test):</strong> p=${age.t_test.p_value.toExponential(3)}</p>
+                        <p><strong>Significant Diff:</strong> ${age.t_test.p_value < 0.05 ? '✅' : '❌'}</p>
+                    </div>
+
+                    <!-- Disease Type Analysis -->
+                    <div class="stat-box" style="text-align: left; display: block;">
+                        <h3 style="margin-bottom: 10px; color: var(--primary);">Disease Types (Kruskal-Wallis)</h3>
+                        <p><strong>Global Conc Diff:</strong> p=${disease.kruskal_wallis_conc.p_value.toExponential(3)}</p>
+                        <p><strong>Significant:</strong> ${disease.kruskal_wallis_conc.p_value < 0.05 ? '✅' : '❌'}</p>
+                    </div>
+                </div>
+                
+                <!-- Post-hoc EDSS Table -->
+                <div style="margin-top: 20px;">
+                    <h3 style="margin-bottom: 10px; color: var(--primary);">Post-hoc Conover Test (EDSS)</h3>
+                    ${this.renderPostHocTable(disease.posthoc_edss)}
+                </div>
+                `;
+            }
+
+            renderPostHocTable(data) {
+                if (!data || data.error) return `<p><em>${data ? data.error : 'No data'}</em></p>`;
+
+                // Assuming data is a dict of dicts (matrix)
+                const rows = Object.keys(data);
+                if (rows.length === 0) return '';
+                const cols = Object.keys(data[rows[0]]);
+
+                return `
+                <div class="table-container" style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85em;">
+                        <thead>
+                            <tr style="background: var(--secondary); color: white;">
+                                <th style="padding: 8px;">Type</th>
+                                ${cols.map(c => `<th style="padding: 8px;">${c}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rows.map(r => `
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 8px; font-weight: bold;">${r}</td>
+                                    ${cols.map(c => {
+                    const val = data[r][c];
+                    const isSig = val < 0.05;
+                    return `<td style="padding: 8px; ${isSig ? 'background: #ffebee; color: #c62828; font-weight: bold;' : ''}">${val.toFixed(3)}</td>`;
+                }).join('')}
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                `;
+            }
+
+            // --- Advanced Analysis Renderers ---
+
+            pcaPlot() {
+                const d = this.data.advanced_analysis?.pca;
+                if (!d) return '';
+
+                setTimeout(() => {
+                    const trace = {
+                        x: d.pc1,
+                        y: d.pc2,
+                        mode: 'markers',
+                        type: 'scatter',
+                        text: d.labels,
+                        marker: {
+                            size: 8,
+                            color: d.labels.map(l => CONFIG.colors[l.toLowerCase()] || '#7f8c8d'),
+                            opacity: 0.7
+                        }
+                    };
+
+                    const layout = {
+                        ...CONFIG.layout,
+                        title: { text: `PCA (Explained Variance: ${(d.explained_variance[0] * 100).toFixed(1)}%, ${(d.explained_variance[1] * 100).toFixed(1)}%)`, font: { size: 14 } },
+                        xaxis: { title: 'PC1' },
+                        yaxis: { title: 'PC2' },
+                        height: 500,
+                        showlegend: false
+                    };
+
+                    Plotly.newPlot('pca_plot', [trace], layout, CONFIG.plotly);
+                }, 100);
+
+                return '<div class="single-plot" id="pca_plot"></div>';
+            }
+
+            correlationHeatmap() {
+                const d = this.data.advanced_analysis?.correlation_matrix;
+                if (!d) return '';
+
+                setTimeout(() => {
+                    const trace = {
+                        z: d.matrix,
+                        x: d.labels.map(cleanAAName),
+                        y: d.labels.map(cleanAAName),
+                        type: 'heatmap',
+                        colorscale: 'RdBu',
+                        zmin: -1, zmax: 1
+                    };
+
+                    const layout = {
+                        ...CONFIG.layout,
+                        title: { text: 'Amino Acid Correlation Matrix (Spearman)', font: { size: 14 } },
+                        height: 600,
+                        margin: { t: 50, r: 50, b: 100, l: 100 }
+                    };
+
+                    Plotly.newPlot('corr_heatmap', [trace], layout, CONFIG.plotly);
+                }, 100);
+
+                return '<div class="single-plot" id="corr_heatmap"></div>';
+            }
+
+            clinicalCorrelations() {
+                const d = this.data.advanced_analysis?.clinical_correlations;
+                if (!d) return '';
+
+                const edss = d.EDSS;
+                const duration = d.Duration;
+                const aas = Object.keys(edss).sort();
+
+                return `
+                <div class="table-container" style="overflow-x: auto; margin-top: 20px;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+                        <thead>
+                            <tr style="background: var(--primary); color: white;">
+                                <th style="padding: 10px;">Amino Acid</th>
+                                <th style="padding: 10px;">EDSS Correlation (r)</th>
+                                <th style="padding: 10px;">EDSS P-Value</th>
+                                <th style="padding: 10px;">Duration Correlation (r)</th>
+                                <th style="padding: 10px;">Duration P-Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${aas.map(aa => {
+                    const e = edss[aa] || { r: 0, p: 1 };
+                    const dur = duration[aa] || { r: 0, p: 1 };
+                    const sigEdss = e.p < 0.05 ? 'font-weight: bold; color: #d62728;' : '';
+                    const sigDur = dur.p < 0.05 ? 'font-weight: bold; color: #d62728;' : '';
+                    return `
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 8px;">${cleanAAName(aa)}</td>
+                                    <td style="padding: 8px; ${sigEdss}">${e.r.toFixed(3)}</td>
+                                    <td style="padding: 8px; ${sigEdss}">${e.p.toExponential(3)}</td>
+                                    <td style="padding: 8px; ${sigDur}">${dur.r.toFixed(3)}</td>
+                                    <td style="padding: 8px; ${sigDur}">${dur.p.toExponential(3)}</td>
+                                </tr>
+                                `;
+                }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                `;
+            }
+
+            rocAnalysis() {
+                const d = this.data.advanced_analysis?.roc_auc;
+                if (!d) return '';
+
+                const aas = Object.keys(d).sort((a, b) => d[b] - d[a]); // Sort by AUC desc
+
+                setTimeout(() => {
+                    const trace = {
+                        x: aas.map(cleanAAName),
+                        y: aas.map(aa => d[aa]),
+                        type: 'bar',
+                        marker: {
+                            color: aas.map(aa => d[aa] > 0.7 ? CONFIG.colors.case : CONFIG.colors.control)
+                        }
+                    };
+
+                    const layout = {
+                        ...CONFIG.layout,
+                        title: { text: 'Predictive Power (ROC AUC) - Case vs Control', font: { size: 14 } },
+                        yaxis: { title: 'AUC Score', range: [0, 1] },
+                        height: 400,
+                        shapes: [{
+                            type: 'line',
+                            x0: -0.5, x1: aas.length - 0.5,
+                            y0: 0.5, y1: 0.5,
+                            line: { color: 'black', width: 2, dash: 'dash' }
+                        }]
+                    };
+
+                    Plotly.newPlot('roc_plot', [trace], layout, CONFIG.plotly);
+                }, 100);
+
+                return '<div class="single-plot" id="roc_plot"></div>';
+            }
+
+            classificationResults() {
+                const d = this.data.advanced_analysis?.classification;
+                if (!d || d.error) return `<p><em>${d ? d.error : 'No data'}</em></p>`;
+
+                setTimeout(() => {
+                    const trace = {
+                        z: d.confusion_matrix,
+                        x: d.classes,
+                        y: d.classes,
+                        type: 'heatmap',
+                        colorscale: 'Blues',
+                        text: d.confusion_matrix.map(row => row.map(String)),
+                        texttemplate: "%{text}",
+                        showscale: false
+                    };
+
+                    const layout = {
+                        ...CONFIG.layout,
+                        title: { text: 'Confusion Matrix (Disease Type Prediction)', font: { size: 14 } },
+                        height: 400,
+                        xaxis: { title: 'Predicted' },
+                        yaxis: { title: 'Actual' }
+                    };
+
+                    Plotly.newPlot('cm_plot', [trace], layout, CONFIG.plotly);
+                }, 100);
+
+                return `
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <div class="stat-box" style="text-align: center; margin-bottom: 20px;">
+                            <div class="stat-value">${(d.accuracy * 100).toFixed(1)}%</div>
+                            <div class="stat-label">Model Accuracy</div>
+                        </div>
+                        <div class="abbreviation-box">
+                            <strong>Top Features:</strong> ${Object.entries(d.feature_importance)
+                        .sort(([, a], [, b]) => b - a)
+                        .slice(0, 5)
+                        .map(([k, v]) => `${k} (${v.toFixed(3)})`)
+                        .join(', ')}
+                        </div>
+                    </div>
+                    <div style="flex: 2; min-width: 300px;">
+                        <div class="single-plot" id="cm_plot"></div>
+                    </div>
+                </div>
+                `;
+            }
+
+            confounderAnalysis() {
+                const d = this.data.advanced_analysis?.confounders;
+                if (!d) return '';
+
+                const lek = d.Lek;
+                const miejsce = d.miejsce;
+                const aas = Object.keys(lek).sort();
+
+                return `
+                <div class="table-container" style="overflow-x: auto; margin-top: 20px;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+                        <thead>
+                            <tr style="background: var(--primary); color: white;">
+                                <th style="padding: 10px;">Amino Acid</th>
+                                <th style="padding: 10px;">Drug Effect (p-value)</th>
+                                <th style="padding: 10px;">Batch Effect (p-value)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${aas.map(aa => {
+                    const pLek = lek[aa] || 1;
+                    const pMiejsce = miejsce[aa] || 1;
+                    const sigLek = pLek < 0.05 ? 'background: #ffebee; color: #c62828; font-weight: bold;' : '';
+                    const sigMiejsce = pMiejsce < 0.05 ? 'background: #ffebee; color: #c62828; font-weight: bold;' : '';
+                    return `
+                                <tr style="border-bottom: 1px solid #ddd;">
+                                    <td style="padding: 8px;">${cleanAAName(aa)}</td>
+                                    <td style="padding: 8px; ${sigLek}">${pLek.toExponential(3)}</td>
+                                    <td style="padding: 8px; ${sigMiejsce}">${pMiejsce.toExponential(3)}</td>
+                                </tr>
+                                `;
+                }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                `;
+            }
+        }
+
+        async function init() {
+            try {
+                const data = await loadData();
+                const r = new Renderer(data);
+                const m = data.metadata;
+
+                const html = `
+                    <div class="stats-summary">
+                        <h2>📊 Dataset Summary</h2>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-value">${m.total_samples}</div>
+                                <div class="stat-label">Total Samples</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">${m.case_count}</div>
+                                <div class="stat-label">Cases</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">${m.control_count}</div>
+                                <div class="stat-label">Controls</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">${m.total_amino_acids}</div>
+                                <div class="stat-label">Amino Acids</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">${m.significant_tests}</div>
+                                <div class="stat-label">Significant Differences</div>
+                            </div>
+                        </div>
+                        <div class="interpretation-box" style="background: #e8f4f8; color: #2c3e50; padding: 15px; border-radius: 5px; margin-top: 15px; border-left: 4px solid var(--secondary);">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Cases vs Controls:</strong> The dataset contains ${m.case_count} cases and ${m.control_count} controls.</li>
+                                <li><strong>Significant Differences:</strong> ${m.significant_tests} out of ${m.total_amino_acids} amino acids show statistically significant differences between groups.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Additional Statistical Analyses</span>
+                            <span class="figure-badge">Sex, Age, Disease Type</span>
+                        </h2>
+                        ${r.additionalStats()}
+                        <div class="interpretation-box" style="background: #e8f4f8; color: #2c3e50; padding: 15px; border-radius: 5px; margin-top: 15px; border-left: 4px solid var(--secondary);">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Sex Distribution:</strong> Checks if sex ratios differ significantly between groups.</li>
+                                <li><strong>Age Analysis:</strong> Checks if age distributions differ significantly.</li>
+                                <li><strong>Disease Types:</strong> Checks if overall amino acid concentrations differ by disease type.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Statistical Analysis Details</span>
+                            <span class="figure-badge">Mann-Whitney U Test Results</span>
+                        </h2>
+                        ${r.statsTable()}
+                        <div class="interpretation-box" style="background: #e8f4f8; color: #2c3e50; padding: 15px; border-radius: 5px; margin-top: 15px; border-left: 4px solid var(--secondary);">
+                            <strong>💡 Interpretation:</strong>
+                            <p>Variables with significant p-values (< 0.05) suggest a statistically significant difference in concentration levels between cases and controls.</p>
+                            <p><strong>Significant Amino Acids:</strong> GLN, ARG, CIT, 1MHIS, HYP, SAR, ABA, PRO, VAL, TRP, C-C.</p>
+                        </div>
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Multivariate Analysis</span>
+                            <span class="figure-badge">PCA & Heatmap</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> PCA (Principal Component Analysis). Heatmap (Spearman Correlation).
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Scientific Commentary:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>PCA:</strong> Visualizes how samples cluster based on their amino acid profiles. Distinct clusters suggest strong metabolic differences.</li>
+                                <li><strong>Correlation Matrix:</strong> Shows which amino acids tend to increase or decrease together. Red indicates positive correlation, blue indicates negative.</li>
+                            </ul>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
+                            ${r.pcaPlot()}
+                            ${r.correlationHeatmap()}
+                        </div>
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Clinical Correlations</span>
+                            <span class="figure-badge">EDSS & Duration</span>
+                        </h2>
+                        <div class="interpretation-box">
+                            <strong>💡 Scientific Commentary:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>EDSS:</strong> Correlation with disability status. Positive r means concentration increases with severity.</li>
+                                <li><strong>Duration:</strong> Correlation with disease duration.</li>
+                            </ul>
+                        </div>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> EDSS (Expanded Disability Status Scale). r (Spearman Correlation Coefficient).
+                            <strong>Interpretation:</strong> Identifies amino acids that correlate with disease severity (EDSS) or duration. Significant correlations (p < 0.05) are highlighted in red.
+                        </div>
+                        ${r.clinicalCorrelations()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Predictive Modeling</span>
+                            <span class="figure-badge">Machine Learning</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> ROC AUC (Area Under Curve). RF (Random Forest).
+                            <strong>Note:</strong> The classification model uses an optimized pipeline with Feature Selection (SelectFromModel) and Hyperparameter Tuning (GridSearchCV).
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Scientific Commentary:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>ROC AUC:</strong> Measures how well each amino acid can distinguish cases from controls (0.5 = random, 1.0 = perfect).</li>
+                                <li><strong>Confusion Matrix:</strong> Shows how well the Random Forest model classifies specific disease types.</li>
+                            </ul>
+                        </div>
+                        ${r.rocAnalysis()}
+                        <div style="margin-top: 30px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px;">Disease Type Classification (Optimized Random Forest)</h3>
+                            ${r.classificationResults()}
+                        </div>
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Confounder Analysis</span>
+                            <span class="figure-badge">Drug & Batch Effects</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> p-value (Kruskal-Wallis test).
+                        </div>
+                        <div class="interpretation-box" style="border-left-color: #e74c3c;">
+                            <strong>⚠️ Critical Quality Control:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Drug Effect:</strong> Checks if medication ('Lek') influences amino acid levels. Significant p-values suggest drug interference.</li>
+                                <li><strong>Batch Effect:</strong> Checks if sample origin ('miejsce') influences levels. Significant p-values suggest batch effects.</li>
+                            </ul>
+                        </div>
+                        ${r.confounderAnalysis()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Density Plots - Case vs Control</span>
+                            <span class="figure-badge">KDE Analysis</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> KDE (Kernel Density Estimation) - A method to estimate the probability density function of a random variable.
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Red Curves (Cases):</strong> Distribution of amino acid concentrations in patients.</li>
+                                <li><strong>Blue Curves (Controls):</strong> Distribution in healthy controls.</li>
+                                <li><strong>Overlap:</strong> Less overlap indicates better separation between groups.</li>
+                            </ul>
+                        </div>
+                        ${r.fig1()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Statistical Comparison</span>
+                            <span class="figure-badge">Mann-Whitney U</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> p-value - Probability of obtaining test results at least as extreme as the results actually observed. IQR (Interquartile Range).
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Box Plots:</strong> Show median and quartiles.</li>
+                                <li><strong>P-Values:</strong> Indicated above each plot. Smaller values indicate stronger evidence of difference.</li>
+                            </ul>
+                        </div>
+                        ${r.fig2()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Disease Type Analysis</span>
+                            <span class="figure-badge">Overall Distribution</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> PPMS (Primary Progressive MS), SPMS (Secondary Progressive MS), RRMS (Relapsing-Remitting MS), GMG (Generalized Myasthenia Gravis).
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Comparison:</strong> Shows how the average amino acid concentration varies across different disease subtypes.</li>
+                            </ul>
+                        </div>
+                        ${r.fig3()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Age vs Concentration</span>
+                            <span class="figure-badge">Regression Analysis</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> Reg (Regression) - Statistical method to estimate relationships between variables.
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Scatter Plots:</strong> Each dot represents a patient.</li>
+                                <li><strong>Trend Line:</strong> Shows the general relationship between age and concentration.</li>
+                            </ul>
+                        </div>
+                        ${r.fig4()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Density Comparisons</span>
+                            <span class="figure-badge">Per Amino Acid</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> AA (Amino Acid).
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Detailed View:</strong> Individual density plots for each amino acid to inspect distribution shapes.</li>
+                            </ul>
+                        </div>
+                        ${r.fig6()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Sex Comparison</span>
+                            <span class="figure-badge">Male vs Female</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> F (Female), M (Male).
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Gender Differences:</strong> Checks if amino acid levels differ significantly between males and females.</li>
+                            </ul>
+                        </div>
+                        ${r.fig7()}
+                    </div>
+
+                    <div class="figure-section">
+                        <h2 class="figure-title">
+                            <span>Disease Type by Amino Acid</span>
+                            <span class="figure-badge">Detailed Breakdown</span>
+                        </h2>
+                        <div class="abbreviation-box">
+                            <strong>Abbreviations:</strong> PPMS (Primary Progressive MS), SPMS (Secondary Progressive MS), RRMS (Relapsing-Remitting MS), GMG (Generalized Myasthenia Gravis).
+                        </div>
+                        <div class="interpretation-box">
+                            <strong>💡 Interpretation:</strong>
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Subtype Analysis:</strong> Detailed boxplots for each amino acid across disease subtypes.</li>
+                            </ul>
+                        </div>
+                        ${r.fig8()}
+                    </div>
+                `;
+
+                document.getElementById('app').innerHTML = html;
+                progress.done();
+
+            } catch (e) {
+                document.getElementById('app').innerHTML = `
+                    <div class="error">
+                        <strong>Error Loading Data</strong>
+                        <p>${e.message}</p>
+                        <p>Please ensure results.json is in the same directory.</p>
+                    </div>
+                `;
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>

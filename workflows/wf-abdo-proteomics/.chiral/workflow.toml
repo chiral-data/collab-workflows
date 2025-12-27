@@ -6,8 +6,9 @@ description = "Processes proteomics datasets for MS and Myasthenia, performs sta
 03_standardization = ["02_feature_engineering"]
 04_segmentation = ["03_standardization"]
 05_statistics = ["04_segmentation"]
-06_transform = ["03_standardization"]
-07_visualization = ["05_statistics", "06_transform"]
+06_advanced_analysis = ["03_standardization"]
+07_transform = ["03_standardization"]
+08_visualization_dashboard = ["05_statistics", "06_advanced_analysis", "07_transform"]
 
 [params.data_file]
 type = "string"
