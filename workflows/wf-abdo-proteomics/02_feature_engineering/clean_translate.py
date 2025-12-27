@@ -2,7 +2,7 @@
 import pandas as pd
 
 print("Loading raw data...", flush=True)
-df = pd.read_pickle("../01_data_ingestion/data_raw.pkl")
+df = pd.read_pickle("data_raw.pkl")
 
 print("Renaming Polish columns to English...", flush=True)
 df = df.rename(columns={

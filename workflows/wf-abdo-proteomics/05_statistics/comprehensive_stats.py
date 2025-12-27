@@ -8,9 +8,9 @@ from scipy.stats import mannwhitneyu, chi2_contingency, shapiro, ttest_ind, krus
 # Setup paths
 current_dir = Path(__file__).parent
 root_dir = current_dir.parent
-case_file = root_dir / "04_segmentation" / "case.pkl"
-control_file = root_dir / "04_segmentation" / "control.pkl"
-data_file = root_dir / "02_feature_engineering" / "data_cleaned.pkl"
+case_file = current_dir / "case.pkl"
+control_file = current_dir / "control.pkl"
+data_file = current_dir / "data_cleaned.pkl"
 metadata_file = root_dir / "global_params.json"
 output_csv = current_dir / "statistics_results.csv"
 output_pkl = current_dir / "statistics_results.pkl"

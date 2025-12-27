@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 # Setup paths
 current_dir = Path(__file__).parent
 root_dir = current_dir.parent
-input_file = root_dir / "02_feature_engineering" / "data_cleaned.pkl"
+input_file = current_dir / "data_cleaned.pkl"
 metadata_file = root_dir / "global_params.json"
 output_file = current_dir / "data_standardized.pkl"
 

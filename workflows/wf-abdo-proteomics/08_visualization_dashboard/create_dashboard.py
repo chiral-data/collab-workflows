@@ -22,11 +22,11 @@ matplotlib.use('Agg')
 # Setup paths
 current_dir = Path(__file__).parent
 root_dir = current_dir.parent
-input_file = root_dir / "02_feature_engineering" / "data_cleaned.pkl"
-std_file = root_dir / "03_standardization" / "data_standardized.pkl"
-stats_file = root_dir / "05_statistics" / "comprehensive_stats.pkl"
-adv_file = root_dir / "06_advanced_analysis" / "advanced_results.pkl"
-melted_file = root_dir / "07_transform" / "data_melted.pkl"
+input_file = current_dir / "data_cleaned.pkl"
+std_file = current_dir / "data_standardized.pkl"
+stats_file = current_dir / "comprehensive_stats.pkl"
+adv_file = current_dir / "advanced_results.pkl"
+melted_file = current_dir / "data_melted.pkl"
 metadata_file = root_dir / "global_params.json"
 output_json = current_dir / "results.json"
 
