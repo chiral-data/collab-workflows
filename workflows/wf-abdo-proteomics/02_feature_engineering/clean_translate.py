@@ -15,6 +15,16 @@ df = df.rename(columns={
     'miejsce': 'place'
 })
 
+# Fix: Clean string columns to remove extra quotes and whitespace
+def clean_strings(val):
+    if isinstance(val, str):
+        return val.strip().strip('"').strip("'")
+    return val
+
+print("Cleaning string columns...", flush=True)
+for col in df.select_dtypes(include=['object']).columns:
+    df[col] = df[col].apply(clean_strings)
+
 print("Merging disease sub-categories...", flush=True)
 df['type'] = df['type'].replace({'general': 'GMG', 'eye-type': 'OMG'})
 

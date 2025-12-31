@@ -33,8 +33,22 @@ DEFAULT_DISEASE_TYPES = "PPMS,SPMS,RRMS,GMG,OMG"
 DEFAULT_SEXES = "Male,Female"
 
 AMINO_ACIDS = os.environ.get("PARAM_AMINO_ACIDS", DEFAULT_AMINO_ACIDS).split(",")
-DISEASE_TYPES = os.environ.get("PARAM_DISEASE_TYPES", DEFAULT_DISEASE_TYPES).split(",")
-SEXES = os.environ.get("PARAM_SEXES", DEFAULT_SEXES).split(",")
+raw_disease_types = os.environ.get("PARAM_DISEASE_TYPES", DEFAULT_DISEASE_TYPES)
+raw_sexes = os.environ.get("PARAM_SEXES", DEFAULT_SEXES)
+
+print(f"DEBUG: Raw PARAM_DISEASE_TYPES: {raw_disease_types}", flush=True)
+print(f"DEBUG: Raw PARAM_SEXES: {raw_sexes}", flush=True)
+
+DISEASE_TYPES = raw_disease_types.replace('[', '').replace(']', '').replace('"', '').replace("'", "").split(",")
+SEXES = raw_sexes.replace('[', '').replace(']', '').replace('"', '').replace("'", "").split(",")
+
+# Clean up whitespace
+DISEASE_TYPES = [x.strip() for x in DISEASE_TYPES]
+SEXES = [x.strip() for x in SEXES]
+
+print(f"DEBUG: Parsed DISEASE_TYPES: {DISEASE_TYPES}", flush=True)
+print(f"DEBUG: Parsed SEXES: {SEXES}", flush=True)
+
 KDE_POINTS = int(os.environ.get("PARAM_KDE_POINTS", "100"))
 PLOT_TYPE = os.environ.get("PARAM_PLOT_TYPE", "overview").lower()
 
@@ -148,6 +162,8 @@ class FigureGenerator:
                 subset = self.df_std[self.df_std['sex'] == sex][col].dropna()
                 if len(subset) > 0:
                     fig7_data[clean_col][sex] = subset.tolist()
+                else:
+                    print(f"DEBUG: Empty subset for {col} - {sex}. Sex match count: {len(self.df_std[self.df_std['sex'] == sex])}", flush=True)
         return fig7_data
 
     def generate_figure8(self):
@@ -207,6 +223,14 @@ def run_generate_json():
     df_std = pd.read_pickle(std_file)
     stats_results = pd.read_pickle(stats_file)
     adv_results = pd.read_pickle(adv_file)
+
+    print(f"DEBUG: df_std columns: {df_std.columns.tolist()}", flush=True)
+    if 'sex' in df_std.columns:
+        print(f"DEBUG: df_std['sex'] unique: {df_std['sex'].unique()}", flush=True)
+        print(f"DEBUG: df_std['sex'] dtypes: {df_std['sex'].dtype}", flush=True)
+    if 'type' in df_std.columns:
+        print(f"DEBUG: df_std['type'] unique: {df_std['type'].unique()}", flush=True)
+        print(f"DEBUG: df_std['type'] dtypes: {df_std['type'].dtype}", flush=True)
 
     generator = FigureGenerator(df, df_std, AMINO_ACIDS)
     mw_stats = stats_results.get('mann_whitney', {})
