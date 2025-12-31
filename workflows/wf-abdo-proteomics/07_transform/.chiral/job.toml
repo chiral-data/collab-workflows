@@ -5,7 +5,7 @@ inputs = ["data_standardized.pkl"]
 outputs = ["data_melted.pkl"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_25_v2"
+image = "chiral.sakuracr.jp/proteomics:2025_12_31"
 
 [scripts]
 run = "run.sh"
