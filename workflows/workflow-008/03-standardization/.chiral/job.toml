@@ -2,7 +2,7 @@ name = "Standardization"
 description = "Standardizes amino acid concentrations using z-score scaling"
 dependencies = ["02-feature-engineering"]
 inputs = ["data_cleaned.pkl"]
-outputs = ["data_standardized.pkl"]
+outputs = ["data_standardized.pkl", "data_cleaned.pkl"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"
