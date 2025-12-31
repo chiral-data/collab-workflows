@@ -1,6 +1,6 @@
 name = "Visualization Dashboard"
 description = "Generates web dashboard data and static visualizations"
-dependencies = ["07_transform", "05_statistics", "06_advanced_analysis"]
+dependencies = ["07-transform", "05-statistics", "06-advanced-analysis"]
 inputs = ["data_melted.pkl", "comprehensive_stats.pkl", "advanced_results.pkl", "data_cleaned.pkl", "data_standardized.pkl"]
 outputs = ["results.json", "*.png"]
 

@@ -1,6 +1,6 @@
 name = "Advanced Analysis"
 description = "Performs PCA, Random Forest classification, and confounder analysis"
-dependencies = ["03_standardization", "02_feature_engineering"]
+dependencies = ["03-standardization", "02-feature-engineering"]
 inputs = ["data_standardized.pkl", "data_cleaned.pkl"]
 outputs = ["advanced_results.pkl"]
 

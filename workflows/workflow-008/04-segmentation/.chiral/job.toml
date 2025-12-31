@@ -1,6 +1,6 @@
 name = "Group Segmentation"
 description = "Segments standardized data into Case and Control populations"
-dependencies = ["03_standardization"]
+dependencies = ["03-standardization"]
 inputs = ["data_standardized.pkl"]
 outputs = ["case.pkl", "control.pkl"]
 
