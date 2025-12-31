@@ -1,0 +1,47 @@
+{
+    "data_file": "database-multiple-sclerosis-myasthenia.csv",
+    "plot_type": "overview",
+    "amino_acids_Conc": [
+        "SER",
+        "GLN",
+        "ARG",
+        "CIT",
+        "ASN",
+        "1MHIS",
+        "3MHIS",
+        "HYP",
+        "GLY",
+        "THR",
+        "ALA",
+        "GABA",
+        "SAR",
+        "BAIB",
+        "ABA",
+        "ORN",
+        "MET",
+        "PRO",
+        "LYS",
+        "ASP",
+        "HIS",
+        "VAL",
+        "TRP",
+        "AAA",
+        "LEU",
+        "PHE",
+        "ILE",
+        "C-C",
+        "TYR"
+    ],
+    "disease_types": [
+        "PPMS",
+        "SPMS",
+        "RRMS",
+        "GMG",
+        "OMG"
+    ],
+    "sexes": [
+        "Male",
+        "Female"
+    ],
+    "kde_points": 100
+}
