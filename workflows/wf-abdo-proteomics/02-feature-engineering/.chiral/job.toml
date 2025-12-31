@@ -1,11 +1,11 @@
 name = "Feature Engineering"
 description = "Cleans dataset, translates Polish columns to English, merges disease categories"
-dependencies = ["01_data_ingestion"]
+dependencies = ["01-data-ingestion"]
 inputs = ["data_raw.pkl"]
 outputs = ["data_cleaned.pkl"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_25_v2"
+image = "chiral.sakuracr.jp/proteomics:2025_12_31"
 
 [scripts]
 run = "run.sh"

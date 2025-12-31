@@ -2,13 +2,13 @@ name = "Proteomics Amino Acid Analysis"
 description = "Processes proteomics datasets for MS and Myasthenia, performs statistical analysis and visualization of amino acid concentrations"
 
 [dependencies]
-02_feature_engineering = ["01_data_ingestion"]
-03_standardization = ["02_feature_engineering"]
-04_segmentation = ["03_standardization"]
-05_statistics = ["04_segmentation", "02_feature_engineering"]
-06_advanced_analysis = ["03_standardization", "02_feature_engineering"]
-07_transform = ["03_standardization"]
-08_visualization_dashboard = ["05_statistics", "06_advanced_analysis", "07_transform", "02_feature_engineering", "03_standardization"]
+02-feature-engineering = ["01-data-ingestion"]
+03-standardization = ["02-feature-engineering"]
+04-segmentation = ["03-standardization"]
+05-statistics = ["04-segmentation"]
+06-advanced-analysis = ["03-standardization"]
+07-transform = ["03-standardization"]
+08-visualization-dashboard = ["05-statistics", "06-advanced-analysis", "07-transform"]
 
 [params.plot_type]
 type = "string"
