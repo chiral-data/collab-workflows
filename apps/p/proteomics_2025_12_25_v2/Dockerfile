@@ -6,7 +6,8 @@ RUN pip install --no-cache-dir \
     scikit-learn \
     scipy \
     seaborn \
-    matplotlib
+    matplotlib \
+    scikit-posthocs
 
 WORKDIR /workspace
 

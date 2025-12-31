@@ -2,7 +2,7 @@
 import pandas as pd
 
 print("Loading standardized data...", flush=True)
-df = pd.read_pickle("../03_standardization/data_standardized.pkl")
+df = pd.read_pickle("data_standardized.pkl")
 
 print("Segmenting into Case and Control groups...", flush=True)
 case = df[df['status'] == 'case'].copy()

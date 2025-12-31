@@ -1,11 +1,11 @@
 name = "Visualization Dashboard"
 description = "Generates web dashboard data and static visualizations"
 dependencies = ["07_transform", "05_statistics", "06_advanced_analysis"]
-inputs = ["../07_transform/data_melted.pkl", "../05_statistics/comprehensive_stats.pkl", "../06_advanced_analysis/advanced_results.pkl"]
+inputs = ["data_melted.pkl", "comprehensive_stats.pkl", "advanced_results.pkl", "data_cleaned.pkl", "data_standardized.pkl"]
 outputs = ["results.json", "*.png"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_25_v1"
+image = "chiral.sakuracr.jp/proteomics:2025_12_25_v2"
 
 [scripts]
 run = "run.sh"

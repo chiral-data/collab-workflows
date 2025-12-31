@@ -1,29 +1,21 @@
 """Node 5: Comprehensive Statistical Analysis"""
-import json
+import os
 import pandas as pd
 import scikit_posthocs as sp
-from pathlib import Path
 from scipy.stats import mannwhitneyu, chi2_contingency, shapiro, ttest_ind, kruskal
 
 # Setup paths
-current_dir = Path(__file__).parent
-root_dir = current_dir.parent
-case_file = root_dir / "04_segmentation" / "case.pkl"
-control_file = root_dir / "04_segmentation" / "control.pkl"
-data_file = root_dir / "02_feature_engineering" / "data_cleaned.pkl"
-metadata_file = root_dir / "global_params.json"
-output_csv = current_dir / "statistics_results.csv"
-output_pkl = current_dir / "statistics_results.pkl"
-comprehensive_pkl = current_dir / "comprehensive_stats.pkl"
+case_file = "case.pkl"
+control_file = "control.pkl"
+data_file = "data_cleaned.pkl"
+output_csv = "statistics_results.csv"
+output_pkl = "statistics_results.pkl"
+comprehensive_pkl = "comprehensive_stats.pkl"
 
-# Load metadata
-print(f"Loading metadata from {metadata_file}...", flush=True)
-with open(metadata_file, 'r') as f:
-    metadata = json.load(f)
-    if 'amino_acids_Conc' in metadata:
-        AMINO_ACIDS = metadata['amino_acids_Conc']
-    else:
-        AMINO_ACIDS = metadata.get('amino_acids', [])
+# Load parameters from environment variables
+DEFAULT_AMINO_ACIDS = "SER,GLN,ARG,CIT,ASN,1MHIS,3MHIS,HYP,GLY,THR,ALA,GABA,SAR,BAIB,ABA,ORN,MET,PRO,LYS,ASP,HIS,VAL,TRP,AAA,LEU,PHE,ILE,C-C,TYR"
+AMINO_ACIDS = os.environ.get("PARAM_AMINO_ACIDS", DEFAULT_AMINO_ACIDS).split(",")
+print(f"Using {len(AMINO_ACIDS)} amino acids from environment", flush=True)
 
 print("Loading data...", flush=True)
 case = pd.read_pickle(case_file)
@@ -99,4 +91,4 @@ comprehensive_results = {
 }
 
 pd.to_pickle(comprehensive_results, comprehensive_pkl)
-print(f"Saved: {comprehensive_pkl.name}", flush=True)
+print(f"Saved: {comprehensive_pkl}", flush=True)

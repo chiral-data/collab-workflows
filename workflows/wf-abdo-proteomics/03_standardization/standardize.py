@@ -1,24 +1,16 @@
 """Node 3: Statistical Standardization - Z-score scaling of amino acid concentrations"""
-import json
+import os
 import pandas as pd
-from pathlib import Path
 from sklearn.preprocessing import StandardScaler
 
 # Setup paths
-current_dir = Path(__file__).parent
-root_dir = current_dir.parent
-input_file = root_dir / "02_feature_engineering" / "data_cleaned.pkl"
-metadata_file = root_dir / "global_params.json"
-output_file = current_dir / "data_standardized.pkl"
+input_file = "data_cleaned.pkl"
+output_file = "data_standardized.pkl"
 
-# Load metadata
-print(f"Loading metadata from {metadata_file}...", flush=True)
-with open(metadata_file, 'r') as f:
-    metadata = json.load(f)
-    if 'amino_acids_Conc' in metadata:
-        AMINO_ACIDS = metadata['amino_acids_Conc']
-    else:
-        AMINO_ACIDS = metadata.get('amino_acids', [])
+# Load parameters from environment variables
+DEFAULT_AMINO_ACIDS = "SER,GLN,ARG,CIT,ASN,1MHIS,3MHIS,HYP,GLY,THR,ALA,GABA,SAR,BAIB,ABA,ORN,MET,PRO,LYS,ASP,HIS,VAL,TRP,AAA,LEU,PHE,ILE,C-C,TYR"
+AMINO_ACIDS = os.environ.get("PARAM_AMINO_ACIDS", DEFAULT_AMINO_ACIDS).split(",")
+print(f"Using {len(AMINO_ACIDS)} amino acids from environment", flush=True)
 
 print(f"Loading cleaned data from {input_file}...", flush=True)
 df = pd.read_pickle(input_file)
@@ -28,4 +20,4 @@ scaler = StandardScaler()
 df[AMINO_ACIDS] = scaler.fit_transform(df[AMINO_ACIDS])
 
 df.to_pickle(output_file)
-print(f"Saved: {output_file.name}", flush=True)
+print(f"Saved: {output_file}", flush=True)

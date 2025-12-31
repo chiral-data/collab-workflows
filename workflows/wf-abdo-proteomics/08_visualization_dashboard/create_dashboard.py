@@ -20,38 +20,39 @@ from functools import lru_cache
 matplotlib.use('Agg')
 
 # Setup paths
-current_dir = Path(__file__).parent
-root_dir = current_dir.parent
-input_file = root_dir / "02_feature_engineering" / "data_cleaned.pkl"
-std_file = root_dir / "03_standardization" / "data_standardized.pkl"
-stats_file = root_dir / "05_statistics" / "comprehensive_stats.pkl"
-adv_file = root_dir / "06_advanced_analysis" / "advanced_results.pkl"
-melted_file = root_dir / "07_transform" / "data_melted.pkl"
-metadata_file = root_dir / "global_params.json"
-output_json = current_dir / "results.json"
+input_file = "data_cleaned.pkl"
+std_file = "data_standardized.pkl"
+stats_file = "comprehensive_stats.pkl"
+adv_file = "advanced_results.pkl"
+melted_file = "data_melted.pkl"
+output_json = "results.json"
 
-# Load global parameters
-try:
-    with open(metadata_file, 'r') as f:
-        config = json.load(f)
-        if 'amino_acids_Conc' in config:
-            AMINO_ACIDS = config['amino_acids_Conc']
-        else:
-            AMINO_ACIDS = config.get('amino_acids', [])
-        DISEASE_TYPES = config.get('disease_types', [])
-        SEXES = config.get('sexes', [])
-        KDE_POINTS = config.get('kde_points', 100)
-        PLOT_TYPE = config.get('plot_type', 'overview')
-except FileNotFoundError:
-    print(f"Warning: {metadata_file} not found. Using defaults.")
-    AMINO_ACIDS = []
-    DISEASE_TYPES = []
-    SEXES = []
-    KDE_POINTS = 100
-    PLOT_TYPE = 'overview'
+# Load parameters from environment variables
+DEFAULT_AMINO_ACIDS = "SER,GLN,ARG,CIT,ASN,1MHIS,3MHIS,HYP,GLY,THR,ALA,GABA,SAR,BAIB,ABA,ORN,MET,PRO,LYS,ASP,HIS,VAL,TRP,AAA,LEU,PHE,ILE,C-C,TYR"
+DEFAULT_DISEASE_TYPES = "PPMS,SPMS,RRMS,GMG,OMG"
+DEFAULT_SEXES = "Male,Female"
 
-# Allow environment override for plot type
-PLOT_TYPE = os.environ.get("PARAM_PLOT_TYPE", PLOT_TYPE).lower()
+AMINO_ACIDS = os.environ.get("PARAM_AMINO_ACIDS", DEFAULT_AMINO_ACIDS).split(",")
+raw_disease_types = os.environ.get("PARAM_DISEASE_TYPES", DEFAULT_DISEASE_TYPES)
+raw_sexes = os.environ.get("PARAM_SEXES", DEFAULT_SEXES)
+
+print(f"DEBUG: Raw PARAM_DISEASE_TYPES: {raw_disease_types}", flush=True)
+print(f"DEBUG: Raw PARAM_SEXES: {raw_sexes}", flush=True)
+
+DISEASE_TYPES = raw_disease_types.replace('[', '').replace(']', '').replace('"', '').replace("'", "").split(",")
+SEXES = raw_sexes.replace('[', '').replace(']', '').replace('"', '').replace("'", "").split(",")
+
+# Clean up whitespace
+DISEASE_TYPES = [x.strip() for x in DISEASE_TYPES]
+SEXES = [x.strip() for x in SEXES]
+
+print(f"DEBUG: Parsed DISEASE_TYPES: {DISEASE_TYPES}", flush=True)
+print(f"DEBUG: Parsed SEXES: {SEXES}", flush=True)
+
+KDE_POINTS = int(os.environ.get("PARAM_KDE_POINTS", "100"))
+PLOT_TYPE = os.environ.get("PARAM_PLOT_TYPE", "overview").lower()
+
+print(f"Using {len(AMINO_ACIDS)} amino acids from environment", flush=True)
 
 
 # Helper function to clean amino acid names for display
@@ -161,6 +162,8 @@ class FigureGenerator:
                 subset = self.df_std[self.df_std['sex'] == sex][col].dropna()
                 if len(subset) > 0:
                     fig7_data[clean_col][sex] = subset.tolist()
+                else:
+                    print(f"DEBUG: Empty subset for {col} - {sex}. Sex match count: {len(self.df_std[self.df_std['sex'] == sex])}", flush=True)
         return fig7_data
 
     def generate_figure8(self):
@@ -212,7 +215,7 @@ class NpEncoder(json.JSONEncoder):
 
 def run_generate_json():
     print("Loading data for JSON generation...", flush=True)
-    if not input_file.exists():
+    if not os.path.exists(input_file):
         print(f"Error: {input_file} missing. Run previous steps.", flush=True)
         return
 
@@ -220,6 +223,14 @@ def run_generate_json():
     df_std = pd.read_pickle(std_file)
     stats_results = pd.read_pickle(stats_file)
     adv_results = pd.read_pickle(adv_file)
+
+    print(f"DEBUG: df_std columns: {df_std.columns.tolist()}", flush=True)
+    if 'sex' in df_std.columns:
+        print(f"DEBUG: df_std['sex'] unique: {df_std['sex'].unique()}", flush=True)
+        print(f"DEBUG: df_std['sex'] dtypes: {df_std['sex'].dtype}", flush=True)
+    if 'type' in df_std.columns:
+        print(f"DEBUG: df_std['type'] unique: {df_std['type'].unique()}", flush=True)
+        print(f"DEBUG: df_std['type'] dtypes: {df_std['type'].dtype}", flush=True)
 
     generator = FigureGenerator(df, df_std, AMINO_ACIDS)
     mw_stats = stats_results.get('mann_whitney', {})
@@ -258,7 +269,7 @@ def run_generate_json():
 
     with open(output_json, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False, cls=NpEncoder)
-    print(f"Saved: {output_json.name}", flush=True)
+    print(f"Saved: {output_json}", flush=True)
 
 
 # --- Plotting Logic ---
@@ -293,10 +304,10 @@ def generate_overview_plot(melted):
     ax.legend([bp1['boxes'][0], bp2['boxes'][0]], ['Case', 'Control'], loc='upper right')
 
     plt.tight_layout()
-    output_png = current_dir / 'boxplot_overview.png'
+    output_png = 'boxplot_overview.png'
     plt.savefig(output_png, dpi=100)
     plt.close('all')
-    print(f"Saved: {output_png.name}", flush=True)
+    print(f"Saved: {output_png}", flush=True)
 
 def run_faceted_worker():
     """Worker function to generate faceted plots (isolated process)."""
@@ -313,10 +324,10 @@ def run_faceted_worker():
     )
     g.set_titles("{col_name}")
     g.tight_layout()
-    output_png = current_dir / 'boxplot_faceted.png'
+    output_png = 'boxplot_faceted.png'
     g.savefig(output_png, dpi=150)
     plt.close('all')
-    print(f"Saved: {output_png.name}", flush=True)
+    print(f"Saved: {output_png}", flush=True)
 
 def generate_faceted_plot_subprocess():
     """Run faceted plot generation in subprocess (self-invoking)."""
@@ -350,7 +361,7 @@ def generate_faceted_plot_subprocess():
 
 def run_plotting():
     print("Loading melted data...", flush=True)
-    if not melted_file.exists():
+    if not os.path.exists(melted_file):
          print(f"Error: {melted_file} missing.", flush=True)
          return
 
@@ -378,12 +389,12 @@ def run_server(port=8080):
 # --- Main ---
 
 def setup_logging():
-    log_file = root_dir / "workflow_execution.log"
+    log_file = "workflow_execution.log"
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler(str(log_file)),
+            logging.FileHandler(log_file),
             logging.StreamHandler(sys.stdout)
         ]
     )
