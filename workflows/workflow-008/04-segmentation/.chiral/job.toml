@@ -1,8 +1,8 @@
 name = "Group Segmentation"
 description = "Segments standardized data into Case and Control populations"
-dependencies = ["03_standardization"]
-inputs = ["data_standardized.pkl"]
-outputs = ["case.pkl", "control.pkl"]
+dependencies = ["03-standardization"]
+inputs = ["data_standardized.pkl", "data_cleaned.pkl"]
+outputs = ["case.pkl", "control.pkl", "data_cleaned.pkl"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"
