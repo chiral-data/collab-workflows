@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subtype Trajectories</title>
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js" crossorigin="anonymous"></script>
     <script>
         // Embedded JSON data
         const RAW_DATA = {
@@ -9710,8 +9710,8 @@
                     if (traceType === 'scatter') {
                         trace.x = t.x;
                         trace.mode = t.mode;
-                        trace.marker = t.marker;
-                        trace.line = t.line;
+                        if (t.marker) trace.marker = t.marker;
+                        if (t.line) trace.line = t.line;
                     } else {
                         trace.boxmean = 'sd';
                         trace.marker = { 

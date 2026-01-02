@@ -20,8 +20,6 @@ if not os.path.exists(OUTPUT_DIR):
 
 plt.rcParams['font.family'] = 'sans-serif'
 
-print(">>> NODE 9: SUBTYPE TRAJECTORIES...", flush=True)
-
 # Load data
 df = pd.read_pickle(INPUT_FILE)
 with open(AA_COLS_FILE, 'r') as f:
@@ -40,7 +38,6 @@ df_mg_ms = df[masks['MS'] | masks['MG']].copy()
 # ==========================================
 # FIG 9: Duration Grid by Subtype
 # ==========================================
-print("Generating Fig 9: Duration Grid by Subtype...", flush=True)
 
 df_fig9 = df_mg_ms.copy()
 
@@ -109,13 +106,11 @@ fig.text(0.5, 0.02, 'Duration [years]', ha='center', fontsize=12, fontweight='bo
 plt.tight_layout(rect=[0.04, 0.04, 1, 0.96])
 plt.savefig(os.path.join(OUTPUT_DIR, 'Fig9_Duration_Grid.png'), dpi=150, bbox_inches='tight')
 plt.close()
-print(f"Saved: Fig9_Duration_Grid.png", flush=True)
 
 
 # ==========================================
 # GENERATE JSON/HTML DATA
 # ==========================================
-print("Generating JSON and HTML...", flush=True)
 
 def create_trajectories_data(df_source, amino_acids, clean_names):
     subplots = []
@@ -171,13 +166,9 @@ json_data = {
 json_path = os.path.join(OUTPUT_DIR, 'trajectories_data.json')
 with open(json_path, 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2, allow_nan=False)
-print(f"Saved: {json_path}", flush=True)
 
 html_content = generate_trajectories_html(json_filename='trajectories_data.json')
 
 html_path = os.path.join(OUTPUT_DIR, 'trajectories.html')
 with open(html_path, 'w', encoding='utf-8') as f:
     f.write(html_content)
-print(f"Saved: {html_path}", flush=True)
-
-print("Node 9 completed successfully.", flush=True)
