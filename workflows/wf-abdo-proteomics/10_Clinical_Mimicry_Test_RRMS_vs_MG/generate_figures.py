@@ -109,8 +109,46 @@ print(f"Saved: Fig11_RRMS_vs_MG_Grid.png", flush=True)
 # ==========================================
 print("Generating JSON and HTML...", flush=True)
 
-# Create JSON data structure (simplified - enhance as needed)
-json_data = {'metadata': {'title': 'RRMS vs MG Mimicry'}}
+# Helper for Fig 10
+traces_fig10 = []
+for group in ['RRMS', 'MG']:
+    y_vals = df_rm[df_rm['Group'] == group]['Total_AA'].dropna().tolist()
+    traces_fig10.append({
+        'name': group,
+        'y': y_vals,
+        'color': 'grey' if group == 'RRMS' else 'skyblue'
+    })
+
+# Helper for Fig 11
+subplots_fig11 = []
+# aa_cols is already defined above
+aa_names = [c.replace('_conc', '') for c in aa_cols]
+
+for aa_col, aa_name in zip(aa_cols, aa_names):
+    traces = []
+    for group in ['RRMS', 'MG']:
+        y_vals = df_rm[df_rm['Group'] == group][aa_col].dropna().tolist()
+        traces.append({
+            'name': group,
+            'y': y_vals,
+            'color': 'lightgrey' if group == 'RRMS' else 'lightblue'
+        })
+    subplots_fig11.append({
+        'title': aa_name,
+        'traces': traces
+    })
+
+json_data = {
+    'metadata': {'title': 'RRMS vs MG Mimicry'},
+    'fig10': {
+        'title': 'Total Amino Acid Concentration: MS-RRMS vs MG',
+        'yaxis': 'Concentration [nmol/ml]',
+        'traces': traces_fig10
+    },
+    'fig11': {
+        'subplots': subplots_fig11
+    }
+}
 
 json_path = os.path.join(OUTPUT_DIR, 'mimicry_data.json')
 with open(json_path, 'w', encoding='utf-8') as f:

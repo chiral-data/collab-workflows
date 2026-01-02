@@ -100,27 +100,32 @@ print(f"Saved: Fig5_Female_Specific.png", flush=True)
 # ==========================================
 print("Generating JSON data...", flush=True)
 
+def create_subplots_data(df_source, amino_acids):
+    subplots = []
+    for aa in amino_acids:
+        traces = []
+        # MS
+        y_ms = df_source[df_source['Group']=='MS'][aa].dropna().tolist()
+        traces.append({'name': 'MS', 'y': y_ms, 'color': '#fa8072'})
+        # MG
+        y_mg = df_source[df_source['Group']=='MG'][aa].dropna().tolist()
+        traces.append({'name': 'MG', 'y': y_mg, 'color': '#008080'})
+        
+        subplots.append({
+            'title': aa.replace('_conc', ''),
+            'traces': traces
+        })
+    return subplots
+
+amino_acids_fig4 = ['CIT_conc', 'GABA_conc', 'AAA_conc']
+
 json_data = {
     'metadata': {'title': 'Differential Diagnosis Biomarkers'},
     'fig4': {
-        'traces': [
-            {'name': 'MS', 'aa': 'ARG', 'y': df_mg_ms[df_mg_ms['Group']=='MS']['ARG_conc'].dropna().tolist(), 'color': '#fa8072'},
-            {'name': 'MG', 'aa': 'ARG', 'y': df_mg_ms[df_mg_ms['Group']=='MG']['ARG_conc'].dropna().tolist(), 'color': '#008080'},
-            {'name': 'MS', 'aa': 'PRO', 'y': df_mg_ms[df_mg_ms['Group']=='MS']['PRO_conc'].dropna().tolist(), 'color': '#fa8072'},
-            {'name': 'MG', 'aa': 'PRO', 'y': df_mg_ms[df_mg_ms['Group']=='MG']['PRO_conc'].dropna().tolist(), 'color': '#008080'},
-            {'name': 'MS', 'aa': 'CIT', 'y': df_mg_ms[df_mg_ms['Group']=='MS']['CIT_conc'].dropna().tolist(), 'color': '#fa8072'},
-            {'name': 'MG', 'aa': 'CIT', 'y': df_mg_ms[df_mg_ms['Group']=='MG']['CIT_conc'].dropna().tolist(), 'color': '#008080'}
-        ]
+        'subplots': create_subplots_data(df_mg_ms, amino_acids_fig4)
     },
     'fig5': {
-        'traces': [
-            {'name': 'MS', 'aa': 'ARG', 'y': df_fem[df_fem['Group']=='MS']['ARG_conc'].dropna().tolist(), 'color': '#fa8072'},
-            {'name': 'MG', 'aa': 'ARG', 'y': df_fem[df_fem['Group']=='MG']['ARG_conc'].dropna().tolist(), 'color': '#008080'},
-            {'name': 'MS', 'aa': 'PRO', 'y': df_fem[df_fem['Group']=='MS']['PRO_conc'].dropna().tolist(), 'color': '#fa8072'},
-            {'name': 'MG', 'aa': 'PRO', 'y': df_fem[df_fem['Group']=='MG']['PRO_conc'].dropna().tolist(), 'color': '#008080'},
-            {'name': 'MS', 'aa': 'CIT', 'y': df_fem[df_fem['Group']=='MS']['CIT_conc'].dropna().tolist(), 'color': '#fa8072'},
-            {'name': 'MG', 'aa': 'CIT', 'y': df_fem[df_fem['Group']=='MG']['CIT_conc'].dropna().tolist(), 'color': '#008080'}
-        ]
+        'subplots': create_subplots_data(df_fem, amino_acids_fig4)
     }
 }
 

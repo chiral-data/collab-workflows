@@ -2,17 +2,20 @@
 import os
 import sys
 import json
+import base64
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy.cluster.hierarchy import dendrogram
 
 from html_generator import generate_clustering_html
 
 # Configuration
-INPUT_FILE = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
-AA_COLS_FILE = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
-OUTPUT_DIR = "output"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_FILE = os.path.join(SCRIPT_DIR, "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl")
+AA_COLS_FILE = os.path.join(SCRIPT_DIR, "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "output")
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -60,6 +63,30 @@ g6.ax_heatmap.set_title('')
 g6.ax_heatmap.tick_params(axis='both', which='major', labelsize=8)
 g6.figure.suptitle('MS+MG Correlation Matrix (Clustered)', fontsize=16, fontweight='bold', y=1.02)
 g6.savefig(os.path.join(OUTPUT_DIR, 'Fig6_Corr_MS_MG.png'), dpi=150, bbox_inches='tight')
+
+# Capture clustered data for JSON
+dendro_ms_mg = {'row': None, 'col': None}
+try:
+    if hasattr(g6, 'data2d'):
+        corr_ms_mg_clustered = g6.data2d
+    else:
+        # Reconstruct from indices
+        row_idx = g6.dendrogram_row.reordered_ind
+        col_idx = g6.dendrogram_col.reordered_ind
+        corr_ms_mg_clustered = corr_ms_mg.iloc[row_idx, col_idx]
+    
+    # Capture dendrogram traces
+    if hasattr(g6, 'dendrogram_row') and g6.dendrogram_row is not None:
+        d = dendrogram(g6.dendrogram_row.linkage, no_plot=True)
+        dendro_ms_mg['row'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+    if hasattr(g6, 'dendrogram_col') and g6.dendrogram_col is not None:
+        d = dendrogram(g6.dendrogram_col.linkage, no_plot=True)
+        dendro_ms_mg['col'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+        
+except Exception as e:
+    print(f"Warning: Could not capture clustering order for Fig 6: {e}")
+    corr_ms_mg_clustered = corr_ms_mg
+
 plt.close()
 print(f"Saved: Fig6_Corr_MS_MG.png", flush=True)
 
@@ -82,6 +109,30 @@ g7.ax_heatmap.set_title('')
 g7.ax_heatmap.tick_params(axis='both', which='major', labelsize=8)
 g7.figure.suptitle('Control Correlation Matrix (Clustered)', fontsize=16, fontweight='bold', y=1.02)
 g7.savefig(os.path.join(OUTPUT_DIR, 'Fig7_Corr_Control.png'), dpi=150, bbox_inches='tight')
+
+# Capture clustered data for JSON
+dendro_ctrl = {'row': None, 'col': None}
+try:
+    if hasattr(g7, 'data2d'):
+        corr_ctrl_clustered = g7.data2d
+    else:
+        # Reconstruct from indices
+        row_idx = g7.dendrogram_row.reordered_ind
+        col_idx = g7.dendrogram_col.reordered_ind
+        corr_ctrl_clustered = corr_ctrl.iloc[row_idx, col_idx]
+
+    # Capture dendrogram traces
+    if hasattr(g7, 'dendrogram_row') and g7.dendrogram_row is not None:
+        d = dendrogram(g7.dendrogram_row.linkage, no_plot=True)
+        dendro_ctrl['row'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+    if hasattr(g7, 'dendrogram_col') and g7.dendrogram_col is not None:
+        d = dendrogram(g7.dendrogram_col.linkage, no_plot=True)
+        dendro_ctrl['col'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+
+except Exception as e:
+    print(f"Warning: Could not capture clustering order for Fig 7: {e}")
+    corr_ctrl_clustered = corr_ctrl
+
 plt.close()
 print(f"Saved: Fig7_Corr_Control.png", flush=True)
 
@@ -91,21 +142,34 @@ print(f"Saved: Fig7_Corr_Control.png", flush=True)
 # ==========================================
 print("Generating JSON data...", flush=True)
 
+# Helper to encode images
+def get_base64_image(filename):
+    try:
+        with open(os.path.join(OUTPUT_DIR, filename), "rb") as img_file:
+            return f"data:image/png;base64,{base64.b64encode(img_file.read()).decode('utf-8')}"
+    except Exception as e:
+        print(f"Warning: Could not encode image {filename}: {e}")
+        return None
+
 json_data = {
     'metadata': {'title': 'Metabolic Network Clustering'},
     'fig6': {
-        'x': corr_ms_mg.columns.str.replace('_conc', '').tolist(),
-        'y': corr_ms_mg.index.str.replace('_conc', '').tolist(),
-        'z': corr_ms_mg.values.tolist(),
-        'title': 'MS & MG Correlation Matrix',
-        'colorscale': 'RdBu'
+        'x': corr_ms_mg_clustered.columns.str.replace('_conc', '').tolist(),
+        'y': corr_ms_mg_clustered.index.str.replace('_conc', '').tolist(),
+        'z': corr_ms_mg_clustered.values.tolist(),
+        'dendrogram': dendro_ms_mg,
+        'title': 'MS & MG Correlation Matrix (Clustered)',
+        'colorscale': 'YlGnBu_r',
+        'static_image': get_base64_image('Fig6_Corr_MS_MG.png')
     },
     'fig7': {
-        'x': corr_ctrl.columns.str.replace('_conc', '').tolist(),
-        'y': corr_ctrl.index.str.replace('_conc', '').tolist(),
-        'z': corr_ctrl.values.tolist(),
-        'title': 'Control Correlation Matrix',
-        'colorscale': 'RdBu'
+        'x': corr_ctrl_clustered.columns.str.replace('_conc', '').tolist(),
+        'y': corr_ctrl_clustered.index.str.replace('_conc', '').tolist(),
+        'z': corr_ctrl_clustered.values.tolist(),
+        'dendrogram': dendro_ctrl,
+        'title': 'Control Correlation Matrix (Clustered)',
+        'colorscale': 'YlGnBu_r',
+        'static_image': get_base64_image('Fig7_Corr_Control.png')
     }
 }
 

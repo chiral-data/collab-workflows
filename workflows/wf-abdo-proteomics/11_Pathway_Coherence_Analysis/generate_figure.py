@@ -78,8 +78,23 @@ print(f"Saved: Fig12_Split_Corr.png", flush=True)
 # ==========================================
 print("Generating JSON and HTML...", flush=True)
 
-# Create JSON data structure (simplified - enhance as needed)
-json_data = {'metadata': {'title': 'Pathway Coherence'}}
+json_data = {
+    'metadata': {'title': 'Pathway Coherence'},
+    'fig12_mg': {
+        'x': corr_mg.columns.str.replace('_conc', '').tolist(),
+        'y': corr_mg.index.str.replace('_conc', '').tolist(),
+        'z': corr_mg.values.tolist(),
+        'title': 'MG Correlation Matrix',
+        'colorscale': 'YlGnBu'
+    },
+    'fig12_rrms': {
+        'x': corr_rrms.columns.str.replace('_conc', '').tolist(),
+        'y': corr_rrms.index.str.replace('_conc', '').tolist(),
+        'z': corr_rrms.values.tolist(),
+        'title': 'MS-RRMS Correlation Matrix',
+        'colorscale': 'YlGnBu'
+    }
+}
 
 json_path = os.path.join(OUTPUT_DIR, 'coherence_data.json')
 with open(json_path, 'w', encoding='utf-8') as f:

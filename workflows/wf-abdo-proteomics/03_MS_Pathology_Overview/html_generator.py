@@ -3,9 +3,25 @@ Generates interactive HTML visualization for Fig1A and Fig1B
 Based on JavaScript + Plotly.js architecture with grid layout
 """
 
+import json
+import os
+
 def generate_pathology_html(json_filename='pathology_data.json'):
     """Generate HTML for MS pathology overview visualization"""
     
+    # Read JSON data to embed directly
+    json_path = os.path.join('output', json_filename)
+    # Fallback if running from inside output dir or elsewhere
+    if not os.path.exists(json_path):
+        json_path = json_filename
+        
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            json_content = f.read()
+    except Exception as e:
+        print(f"Warning: Could not read JSON file {json_path} for embedding: {e}")
+        json_content = '{}'
+
     html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,13 +219,16 @@ def generate_pathology_html(json_filename='pathology_data.json'):
     <script>
         'use strict';
         
+        // Embedded JSON data to avoid CORS issues
+        const RAW_DATA = __JSON_DATA__;
+        
         const CONFIG = {
             colors: {
-                ms: 'rgba(214, 39, 40, 0.65)',
-                control: 'rgba(31, 119, 180, 0.65)',
-                ppms: '#5da5da',
-                spms: '#faa43a',
-                rrms: '#60bd68'
+                ms: '#4682b4',      // SteelBlue
+                control: '#fa8072', // Salmon
+                ppms: '#800080',    // Purple
+                spms: '#ffa500',    // Orange
+                rrms: '#90ee90'     // LightGreen
             },
             plotly: {
                 responsive: true,
@@ -301,14 +320,10 @@ def generate_pathology_html(json_filename='pathology_data.json'):
             });
         }
         
-        async function init() {
+        function init() {
             try {
-                const response = await fetch('pathology_data.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const data = await response.json();
+                // Use embedded data
+                const data = RAW_DATA;
                 console.log('Data loaded successfully:', Object.keys(data));
                 
                 document.getElementById('app').innerHTML = `
@@ -338,8 +353,7 @@ def generate_pathology_html(json_filename='pathology_data.json'):
                     <div class="error">
                         <h2>⚠️ Error Loading Data</h2>
                         <p><strong>Message:</strong> ${error.message}</p>
-                        <p><strong>File:</strong> pathology_data.json</p>
-                        <p>Please ensure the JSON file exists in the same directory.</p>
+                        <p>Please check the embedded JSON data.</p>
                     </div>
                 `;
             }
@@ -349,5 +363,8 @@ def generate_pathology_html(json_filename='pathology_data.json'):
     </script>
 </body>
 </html>'''
+    
+    # Inject JSON data
+    html = html.replace('__JSON_DATA__', json_content)
     
     return html

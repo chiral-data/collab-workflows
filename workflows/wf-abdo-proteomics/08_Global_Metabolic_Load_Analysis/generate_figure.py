@@ -65,8 +65,27 @@ print(f"Saved: Fig8_TotalAA_Type.png", flush=True)
 # ==========================================
 print("Generating JSON and HTML...", flush=True)
 
-# Create JSON data structure (simplified - enhance as needed)
-json_data = {'metadata': {'title': 'Global Metabolic Load'}}
+# Create JSON data structure
+traces = []
+type_order = ['PPMS', 'SPMS', 'RRMS', 'GMG']
+type_colors = {'PPMS': '#1f77b4', 'SPMS': '#ff7f0e', 'RRMS': '#2ca02c', 'GMG': '#d62728'}
+
+for t in type_order:
+    y_vals = df_mg_ms[df_mg_ms['Plot_Type'] == t]['Total_AA'].dropna().tolist()
+    traces.append({
+        'name': t,
+        'y': y_vals,
+        'color': type_colors.get(t, '#333')
+    })
+
+json_data = {
+    'metadata': {'title': 'Global Metabolic Load'},
+    'fig8': {
+        'title': 'Total Amino Acid Concentration by Disease Type',
+        'yaxis': 'Concentration [nmol/ml]',
+        'traces': traces
+    }
+}
 
 json_path = os.path.join(OUTPUT_DIR, 'metabolic_load_data.json')
 with open(json_path, 'w', encoding='utf-8') as f:

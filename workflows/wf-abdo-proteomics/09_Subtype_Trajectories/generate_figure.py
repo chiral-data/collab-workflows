@@ -10,9 +10,10 @@ from scipy.stats import linregress
 from html_generator import generate_trajectories_html
 
 # Configuration
-INPUT_FILE = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
-AA_COLS_FILE = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
-OUTPUT_DIR = "output"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_FILE = os.path.join(SCRIPT_DIR, "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl")
+AA_COLS_FILE = os.path.join(SCRIPT_DIR, "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "output")
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -116,12 +117,60 @@ print(f"Saved: Fig9_Duration_Grid.png", flush=True)
 # ==========================================
 print("Generating JSON and HTML...", flush=True)
 
-# Create JSON data structure (simplified - enhance as needed)
-json_data = {'metadata': {'title': 'Subtype Trajectories'}}
+def create_trajectories_data(df_source, amino_acids, clean_names):
+    subplots = []
+    subtype_order = ['PPMS', 'SPMS', 'RRMS', 'GMG', 'OMG']
+    subtype_colors = {'PPMS': '#E74C3C', 'SPMS': '#3498DB', 'RRMS': '#2ECC71', 'GMG': '#9B59B6', 'OMG': '#F39C12'}
+    
+    for aa_col, aa_name in zip(amino_acids, clean_names):
+        traces = []
+        for subtype in subtype_order:
+            subtype_data = df_source[df_source['Subtype'] == subtype]
+            if len(subtype_data) > 0:
+                # Scatter points - remove NaN values completely
+                valid_data_scatter = subtype_data[['Duration', aa_col]].dropna()
+                
+                traces.append({
+                    'x': valid_data_scatter['Duration'].tolist(),
+                    'y': valid_data_scatter[aa_col].tolist(),
+                    'mode': 'markers',
+                    'type': 'scatter',
+                    'name': subtype,
+                    'marker': {'color': subtype_colors[subtype], 'size': 6, 'opacity': 0.6}
+                })
+                
+                # Regression line
+                valid_data = subtype_data[['Duration', aa_col]].dropna()
+                if len(valid_data) > 1:
+                    slope, intercept, r_val, p_val, std_err = linregress(valid_data['Duration'], valid_data[aa_col])
+                    x_line = [valid_data['Duration'].min(), valid_data['Duration'].max()]
+                    y_line = [slope * x + intercept for x in x_line]
+                    traces.append({
+                        'x': x_line,
+                        'y': y_line,
+                        'mode': 'lines',
+                        'type': 'scatter',
+                        'name': subtype + ' fit',
+                        'line': {'color': subtype_colors[subtype], 'width': 2},
+                        'showlegend': False
+                    })
+        
+        subplots.append({
+            'title': aa_name,
+            'traces': traces
+        })
+    return subplots
+
+json_data = {
+    'metadata': {'title': 'Subtype Trajectories'},
+    'fig9': {
+        'subplots': create_trajectories_data(df_fig9, aa_cols, aa_clean_names)
+    }
+}
 
 json_path = os.path.join(OUTPUT_DIR, 'trajectories_data.json')
 with open(json_path, 'w', encoding='utf-8') as f:
-    json.dump(json_data, f, indent=2)
+    json.dump(json_data, f, indent=2, allow_nan=False)
 print(f"Saved: {json_path}", flush=True)
 
 html_content = generate_trajectories_html(json_filename='trajectories_data.json')

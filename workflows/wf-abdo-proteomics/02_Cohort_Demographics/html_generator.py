@@ -3,9 +3,25 @@ Generates interactive HTML visualization for demographic tables
 Based on JavaScript + Plotly.js architecture
 """
 
+import json
+import os
+
 def generate_demographics_html(json_filename='demographics_data.json'):
     """Generate HTML for demographics tables visualization"""
     
+    # Read JSON data to embed directly
+    json_path = os.path.join('output', json_filename)
+    # Fallback if running from inside output dir or elsewhere
+    if not os.path.exists(json_path):
+        json_path = json_filename
+        
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            json_content = f.read()
+    except Exception as e:
+        print(f"Warning: Could not read JSON file {json_path} for embedding: {e}")
+        json_content = '{}'
+
     html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +29,10 @@ def generate_demographics_html(json_filename='demographics_data.json'):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cohort Demographics - Tables 1 & 2</title>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script>
+        // Embedded JSON data
+        const RAW_DATA = __JSON_DATA__;
+    </script>
     <style>
         :root {
             --primary: #2c3e50;
@@ -226,14 +246,9 @@ def generate_demographics_html(json_filename='demographics_data.json'):
             container.innerHTML = html;
         }
         
-        async function init() {
+        function init() {
             try {
-                const response = await fetch('demographics_data.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const data = await response.json();
+                const data = RAW_DATA;
                 console.log('Data loaded successfully:', Object.keys(data));
                 
                 document.getElementById('app').innerHTML = `
@@ -274,5 +289,8 @@ def generate_demographics_html(json_filename='demographics_data.json'):
     </script>
 </body>
 </html>'''
+    
+    # Inject JSON data
+    html = html.replace('__JSON_DATA__', json_content)
     
     return html
