@@ -1,0 +1,11 @@
+name = "Statistical Analysis"
+description = "Performs Mann-Whitney U test on each amino acid between Case and Control"
+dependencies = ["04-segmentation"]
+inputs = ["case.pkl", "control.pkl", "data_cleaned.pkl"]
+outputs = ["statistics_results.csv", "statistics_results.pkl", "comprehensive_stats.pkl"]
+
+[container]
+image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"
