@@ -1,0 +1,790 @@
+==========================================
+MS & MG Amino Acid Analysis Workflow
+==========================================
+
+[1/11] Running Node 01: Data Ingestion and Preprocessing...
+Starting Node 01: Data Ingestion and Preprocessing
+>>> NODE 1: DATA INGESTION & PREPROCESSING...
+Loading data from: ../01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.csv
+Loaded 208 records with 38 columns
+Saved: output\data_standardized.pkl
+Saved: output\aa_cols.txt
+Processing complete. Standardized 208 records.
+Node 01 completed
+✓ Node 01 completed
+
+[2/11] Running Node 02: Cohort Demographics...
+Starting Node 02: Cohort Demographics
+>>> NODE 2: COHORT DEMOGRAPHICS...
+Loaded 208 records
+Generating Table 1...
+Saved: output\Table1_Demographics.png
+Generating Table 2...
+Saved: output\Table2_MS_MG_Demographics.png
+Generating JSON data...
+Saved: output\demographics_data.json
+Generating HTML visualization...
+Saved: output\demographics.html
+Node 2 completed successfully.
+Node 02 completed
+✓ Node 02 completed
+
+[3/11] Running Node 03: MS Pathology Overview...
+Starting Node 03: MS Pathology Overview
+>>> NODE 3: MS PATHOLOGY OVERVIEW...
+Loaded 208 records
+Generating Fig 1A: MS vs Control...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:478: UserWarning: `gridspec_kws` ignored when using `col_wrap`
+  warnings.warn("`gridspec_kws` ignored when using `col_wrap`")
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+Saved: Fig1A_MS_vs_Control.png
+Generating Fig 1B: MS Subtypes...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:478: UserWarning: `gridspec_kws` ignored when using `col_wrap`
+  warnings.warn("`gridspec_kws` ignored when using `col_wrap`")
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+Saved: Fig1B_MS_Subtypes.png
+Generating JSON data...
+Saved: output\pathology_data.json
+Saved: output\pathology.html
+Node 3 completed successfully.
+Node 03 completed
+✓ Node 03 completed
+
+[4/11] Running Node 04: Clinical Confounders and Validation...
+Starting Node 04: Clinical Confounders and Validation
+>>> NODE 4: CLINICAL CONFOUNDERS & VALIDATION...
+Generating Fig 2A: Age vs AA...
+Saved: Fig2A_Age_Grid.png
+Generating Fig 2B: Duration vs AA...
+Saved: Fig2B_Duration_Grid.png
+Generating Fig 2C: EDSS vs AA...
+Saved: Fig2C_EDSS_Grid.png
+Generating JSON data...
+Saved: output\confounders_data.json
+Saved: output\confounders.html
+Node 4 completed successfully.
+Node 04 completed
+✓ Node 04 completed
+
+[5/11] Running Node 05: MS vs MG Autoimmune Comparison...
+Starting Node 05: MS vs MG Autoimmune Comparison
+>>> NODE 5: MS VS MG AUTOIMMUNE COMPARISON...
+Generating Fig 3: MS+MG vs Controls...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:478: UserWarning: `gridspec_kws` ignored when using `col_wrap`
+  warnings.warn("`gridspec_kws` ignored when using `col_wrap`")
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+Saved: Fig3_MS_MG_vs_Control.png
+Generating JSON data...
+Saved: output\autoimmune_data.json
+Saved: output\autoimmune.html
+Node 5 completed successfully.
+Node 05 completed
+✓ Node 05 completed
+
+[6/11] Running Node 06: Differential Diagnosis Biomarkers...
+Starting Node 06: Differential Diagnosis Biomarkers
+>>> NODE 6: DIFFERENTIAL DIAGNOSIS BIOMARKERS...
+Generating Fig 4: Specific Differences...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\06_Differential_Diagnosis_Biomarkers\generate_figures.py:51: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_mg_ms, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\06_Differential_Diagnosis_Biomarkers\generate_figures.py:51: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_mg_ms, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\06_Differential_Diagnosis_Biomarkers\generate_figures.py:51: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_mg_ms, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+Saved: Fig4_Specific_Diffs.png
+Generating Fig 5: Female Specific...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\06_Differential_Diagnosis_Biomarkers\generate_figures.py:82: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_fem, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\06_Differential_Diagnosis_Biomarkers\generate_figures.py:82: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_fem, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\06_Differential_Diagnosis_Biomarkers\generate_figures.py:82: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_fem, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+Saved: Fig5_Female_Specific.png
+Generating JSON data...
+Saved: output\biomarkers_data.json
+Saved: output\biomarkers.html
+Node 6 completed successfully.
+Node 06 completed
+✓ Node 06 completed
+
+[7/11] Running Node 07: Metabolic Network Clustering...
+Starting Node 07: Metabolic Network Clustering
+>>> NODE 7: METABOLIC NETWORK CLUSTERING...
+Generating Fig 6: MS+MG Correlation Matrix...
+Saved: Fig6_Corr_MS_MG.png
+Generating Fig 7: Control Correlation Matrix...
+Saved: Fig7_Corr_Control.png
+Generating JSON data...
+Saved: D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\07_Metabolic_Network_Clustering\output\clustering_data.json
+Saved: D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\07_Metabolic_Network_Clustering\output\clustering.html
+Node 7 completed successfully.
+Node 07 completed
+✓ Node 07 completed
+
+[8/11] Running Node 08: Global Metabolic Load Analysis...
+Starting Node 08: Global Metabolic Load Analysis
+>>> NODE 8: GLOBAL METABOLIC LOAD ANALYSIS...
+Generating Fig 8: Total AA by Type...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\08_Global_Metabolic_Load_Analysis\generate_figure.py:49: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_mg_ms, x='Plot_Type', y='Total_AA', order=type_order,
+Saved: Fig8_TotalAA_Type.png
+Generating JSON and HTML...
+Saved: output\metabolic_load_data.json
+Saved: output\metabolic_load.html
+Node 8 completed successfully.
+Node 08 completed
+✓ Node 08 completed
+
+[9/11] Running Node 09: Subtype Trajectories...
+Starting Node 09: Subtype Trajectories
+Node 09 completed
+✓ Node 09 completed
+
+[10/11] Running Node 10: Clinical Mimicry Test (RRMS vs MG)...
+Starting Node 10: Clinical Mimicry Test
+>>> NODE 10: CLINICAL MIMICRY TEST (RRMS vs MG)...
+Generating Fig 10: Total AA RRMS vs MG...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\10_Clinical_Mimicry_Test_RRMS_vs_MG\generate_figures.py:47: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=df_rm, x='Group', y='Total_AA', palette={'RRMS':'grey', 'MG':'skyblue'}, ax=ax)
+Saved: Fig10_TotalAA_RRMS_MG.png
+Generating Fig 11: RRMS vs MG Grid...
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:478: UserWarning: `gridspec_kws` ignored when using `col_wrap`
+  warnings.warn("`gridspec_kws` ignored when using `col_wrap`")
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+D:\1_GUMed\5. Omics in drug discovery\2. Proteomics\7.1. python\python\collab-workflows\workflows\wf-abdo-proteomics\.venv\Lib\site-packages\seaborn\axisgrid.py:854: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  func(*plot_args, **plot_kwargs)
+Saved: Fig11_RRMS_vs_MG_Grid.png
+Generating JSON and HTML...
+Saved: output\mimicry_data.json
+Saved: output\mimicry.html
+Node 10 completed successfully.
+Node 10 completed
+✓ Node 10 completed
+
+[11/11] Running Node 11: Pathway Coherence Analysis...
+Starting Node 11: Pathway Coherence Analysis
+>>> NODE 11: PATHWAY COHERENCE ANALYSIS...
+Generating Fig 12: Split Correlation Matrix...
+Saved: Fig12_Split_Corr.png
+Generating JSON and HTML...
+Saved: output\coherence_data.json
+Saved: output\coherence.html
+Node 11 completed successfully.
+Node 11 completed
+✓ Node 11 completed
+
+==========================================
+✓ ALL NODES COMPLETED SUCCESSFULLY!
+==========================================
+
+Output files have been generated in each node's 'output' folder:
+  - Node 01: Preprocessed data
+  - Node 02: Tables 1 & 2
+  - Node 03: Figures 1A & 1B
+  - Node 04: Figures 2A, 2B, 2C
+  - Node 05: Figure 3
+  - Node 06: Figures 4 & 5
+  - Node 07: Figures 6 & 7
+  - Node 08: Figure 8
+  - Node 09: Figure 9
+  - Node 10: Figures 10 & 11
+  - Node 11: Figure 12
+
