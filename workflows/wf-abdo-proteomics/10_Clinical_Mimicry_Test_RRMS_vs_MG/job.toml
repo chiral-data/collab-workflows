@@ -1,0 +1,21 @@
+[job]
+name = "Clinical Mimicry Test"
+description = "Generate Figure 10 (Total AA) and Figure 11 (RRMS vs MG Grid)"
+
+[job.input]
+data_file = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
+aa_cols_file = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
+
+[job.output]
+directory = "output"
+files = [
+    "Fig10_TotalAA_RRMS_MG.png",
+    "Fig11_RRMS_vs_MG_Grid.png",
+    "mimicry_data.json",
+    "mimicry.html"
+]
+
+[job.execution]
+script = "generate_figures.py"
+shell = "bash"
+timeout = 600

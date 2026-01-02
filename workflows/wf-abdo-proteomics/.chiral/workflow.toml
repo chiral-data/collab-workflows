@@ -1,16 +1,89 @@
-name = "Proteomics Amino Acid Analysis"
-description = "Processes proteomics datasets for MS and Myasthenia, performs statistical analysis and visualization of amino acid concentrations"
+# Workflow Configuration
+# Amino Acid Profiling in MS and MG
 
-[dependencies]
-02-feature-engineering = ["01-data-ingestion"]
-03-standardization = ["02-feature-engineering"]
-04-segmentation = ["03-standardization"]
-05-statistics = ["04-segmentation"]
-06-advanced-analysis = ["03-standardization"]
-07-transform = ["03-standardization"]
-08-visualization-dashboard = ["05-statistics", "06-advanced-analysis", "07-transform"]
+[workflow]
+name = "MS_MG_Amino_Acid_Analysis"
+version = "1.0"
+description = "Multi-stage pipeline for analyzing serum amino acid profiles in MS and MG patients"
 
-[params.plot_type]
-type = "string"
-default = "overview"
-hint = "Plot type: 'overview' (single boxplot), 'faceted' (per-AA subplots), or 'both'"
+[workflow.nodes]
+
+[workflow.nodes.node_01]
+name = "Data Ingestion and Preprocessing"
+directory = "01_Data_Ingestion_and_Preprocessing"
+script = "run.sh"
+outputs = ["output/data_standardized.pkl", "output/aa_cols.txt"]
+
+[workflow.nodes.node_02]
+name = "Cohort Demographics"
+directory = "02_Cohort_Demographics"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Table1_Demographics.png", "output/Table2_MS_MG_Demographics.png", "output/demographics_data.json", "output/demographics.html"]
+
+[workflow.nodes.node_03]
+name = "MS Pathology Overview"
+directory = "03_MS_Pathology_Overview"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig1A_MS_vs_Control.png", "output/Fig1B_MS_Subtypes.png", "output/pathology_data.json", "output/pathology.html"]
+
+[workflow.nodes.node_04]
+name = "Clinical Confounders and Validation"
+directory = "04_Clinical_Confounders_and_Validation"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig2A_Age_Grid.png", "output/Fig2B_Duration_Grid.png", "output/Fig2C_EDSS_Grid.png", "output/confounders_data.json", "output/confounders.html"]
+
+[workflow.nodes.node_05]
+name = "MS vs MG Autoimmune Comparison"
+directory = "05_MS_vs_MG_Autoimmune_Comparison"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig3_MS_MG_vs_Control.png", "output/autoimmune_data.json", "output/autoimmune.html"]
+
+[workflow.nodes.node_06]
+name = "Differential Diagnosis Biomarkers"
+directory = "06_Differential_Diagnosis_Biomarkers"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig4_Specific_Diffs.png", "output/Fig5_Female_Specific.png", "output/biomarkers_data.json", "output/biomarkers.html"]
+
+[workflow.nodes.node_07]
+name = "Metabolic Network Clustering"
+directory = "07_Metabolic_Network_Clustering"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig6_Corr_MS_MG.png", "output/Fig7_Corr_Control.png", "output/clustering_data.json", "output/clustering.html"]
+
+[workflow.nodes.node_08]
+name = "Global Metabolic Load Analysis"
+directory = "08_Global_Metabolic_Load_Analysis"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig8_TotalAA_Type.png", "output/metabolic_load_data.json", "output/metabolic_load.html"]
+
+[workflow.nodes.node_09]
+name = "Subtype Trajectories"
+directory = "09_Subtype_Trajectories"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig9_Duration_Grid.png", "output/trajectories_data.json", "output/trajectories.html"]
+
+[workflow.nodes.node_10]
+name = "Clinical Mimicry Test"
+directory = "10_Clinical_Mimicry_Test_RRMS_vs_MG"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig10_TotalAA_RRMS_MG.png", "output/Fig11_RRMS_vs_MG_Grid.png", "output/mimicry_data.json", "output/mimicry.html"]
+
+[workflow.nodes.node_11]
+name = "Pathway Coherence Analysis"
+directory = "11_Pathway_Coherence_Analysis"
+script = "run.sh"
+depends_on = ["node_01"]
+outputs = ["output/Fig12_Split_Corr.png", "output/coherence_data.json", "output/coherence.html"]
+
+[workflow.execution]
+parallel = true
+max_parallel_nodes = 10

@@ -1,0 +1,20 @@
+[job]
+name = "Subtype Trajectories"
+description = "Generate Figure 9 (Duration Grid by Subtype)"
+
+[job.input]
+data_file = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
+aa_cols_file = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
+
+[job.output]
+directory = "output"
+files = [
+    "Fig9_Duration_Grid.png",
+    "trajectories_data.json",
+    "trajectories.html"
+]
+
+[job.execution]
+script = "generate_figure.py"
+shell = "bash"
+timeout = 600

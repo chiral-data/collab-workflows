@@ -1,0 +1,22 @@
+[job]
+name = "Clinical Confounders and Validation"
+description = "Generate Figure 2A (Age), 2B (Duration), 2C (EDSS)"
+
+[job.input]
+data_file = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
+aa_cols_file = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
+
+[job.output]
+directory = "output"
+files = [
+    "Fig2A_Age_Grid.png",
+    "Fig2B_Duration_Grid.png",
+    "Fig2C_EDSS_Grid.png",
+    "confounders_data.json",
+    "confounders.html"
+]
+
+[job.execution]
+script = "generate_figures.py"
+shell = "bash"
+timeout = 600

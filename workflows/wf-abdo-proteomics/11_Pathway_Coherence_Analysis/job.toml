@@ -1,0 +1,20 @@
+[job]
+name = "Pathway Coherence Analysis"
+description = "Generate Figure 12 (Split Correlation: MG vs RRMS)"
+
+[job.input]
+data_file = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
+aa_cols_file = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
+
+[job.output]
+directory = "output"
+files = [
+    "Fig12_Split_Corr.png",
+    "coherence_data.json",
+    "coherence.html"
+]
+
+[job.execution]
+script = "generate_figure.py"
+shell = "bash"
+timeout = 600

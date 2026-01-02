@@ -1,0 +1,22 @@
+[job]
+name = "Data Ingestion and Preprocessing"
+description = "Load raw data, standardize amino acid concentrations, and prepare cohort masks"
+
+[job.input]
+data_file = "database-multiple-sclerosis-myasthenia.csv"
+
+[job.output]
+directory = "output"
+files = [
+    "data_standardized.pkl",
+    "aa_cols.txt"
+]
+
+[job.parameters]
+standardization_method = "z-score"
+amino_acid_count = 29
+
+[job.execution]
+script = "load_data.py"
+shell = "bash"
+timeout = 300

@@ -1,0 +1,20 @@
+[job]
+name = "Cohort Demographics"
+description = "Generate demographic tables (Table 1: MS vs Controls, Table 2: MS vs MG)"
+
+[job.input]
+data_file = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
+
+[job.output]
+directory = "output"
+files = [
+    "Table1_Demographics.png",
+    "Table2_MS_MG_Demographics.png",
+    "demographics_data.json",
+    "demographics.html"
+]
+
+[job.execution]
+script = "generate_tables.py"
+shell = "bash"
+timeout = 300

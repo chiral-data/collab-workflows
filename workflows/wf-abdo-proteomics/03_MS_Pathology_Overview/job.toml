@@ -1,0 +1,21 @@
+[job]
+name = "MS Pathology Overview"
+description = "Generate Figure 1A (MS vs Control) and Figure 1B (MS Subtypes)"
+
+[job.input]
+data_file = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
+aa_cols_file = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
+
+[job.output]
+directory = "output"
+files = [
+    "Fig1A_MS_vs_Control.png",
+    "Fig1B_MS_Subtypes.png",
+    "pathology_data.json",
+    "pathology.html"
+]
+
+[job.execution]
+script = "generate_figures.py"
+shell = "bash"
+timeout = 600
