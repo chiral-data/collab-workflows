@@ -28,7 +28,7 @@ def generate_coherence_html(json_filename='coherence_data.json'):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pathway Coherence Analysis</title>
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js" crossorigin="anonymous"></script>
     <script>
         // Embedded JSON data
         const RAW_DATA = __JSON_DATA__;
@@ -325,15 +325,20 @@ def generate_coherence_html(json_filename='coherence_data.json'):
                 type: 'heatmap',
                 colorscale: data.colorscale || 'RdBu',
                 zmin: -0.2,
-                zmax: 1
+                zmax: 1,
+                xgap: 1,
+                ygap: 1,
+                text: data.z,
+                texttemplate: '%{text:.2f}',
+                textfont: { size: 10 }
             };
             
             const layout = {
                 title: data.title || '',
-                height: 700,
-                width: 700,
+                height: 900,
+                width: 900,
                 xaxis: { tickangle: -45 },
-                yaxis: { automargin: true },
+                yaxis: { automargin: true, autorange: 'reversed' },
                 margin: { t: 50, r: 50, b: 100, l: 100 }
             };
             

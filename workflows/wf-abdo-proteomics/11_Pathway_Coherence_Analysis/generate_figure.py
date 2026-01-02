@@ -83,16 +83,30 @@ json_data = {
     'fig12_mg': {
         'x': corr_mg.columns.str.replace('_conc', '').tolist(),
         'y': corr_mg.index.str.replace('_conc', '').tolist(),
-        'z': corr_mg.values.tolist(),
+        'z': corr_mg.mask(np.triu(np.ones(corr_mg.shape, dtype=bool), k=0)).where(pd.notnull(corr_mg), None).values.tolist(),
         'title': 'MG Correlation Matrix',
-        'colorscale': 'YlGnBu'
+        'colorscale': [
+            [0.0, '#ffffd9'],
+            [0.2, '#c7e9b4'],
+            [0.4, '#41b6c4'],
+            [0.6, '#1d91c0'],
+            [0.8, '#225ea8'],
+            [1.0, '#0c2c84']
+        ]
     },
     'fig12_rrms': {
         'x': corr_rrms.columns.str.replace('_conc', '').tolist(),
         'y': corr_rrms.index.str.replace('_conc', '').tolist(),
-        'z': corr_rrms.values.tolist(),
+        'z': corr_rrms.mask(np.triu(np.ones(corr_rrms.shape, dtype=bool), k=0)).where(pd.notnull(corr_rrms), None).values.tolist(),
         'title': 'MS-RRMS Correlation Matrix',
-        'colorscale': 'YlGnBu'
+        'colorscale': [
+            [0.0, '#ffffd9'],
+            [0.2, '#c7e9b4'],
+            [0.4, '#41b6c4'],
+            [0.6, '#1d91c0'],
+            [0.8, '#225ea8'],
+            [1.0, '#0c2c84']
+        ]
     }
 }
 
