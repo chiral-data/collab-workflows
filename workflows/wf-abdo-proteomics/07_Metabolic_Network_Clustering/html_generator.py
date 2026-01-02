@@ -35,7 +35,7 @@ def generate_clustering_html(json_filename='clustering_data.json'):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metabolic Network Clustering</title>
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js" crossorigin="anonymous"></script>
     <script>
         // Embedded JSON data
         const RAW_DATA = __JSON_DATA__;
@@ -341,7 +341,8 @@ def generate_clustering_html(json_filename='clustering_data.json'):
                     automargin: true, 
                     autorange: 'reversed',
                     domain: [0, 0.85],
-                    anchor: 'x'
+                    anchor: 'x',
+                    side: 'right'
                 },
                 // Axes for dendrograms
                 xaxis2: {
@@ -384,12 +385,20 @@ def generate_clustering_html(json_filename='clustering_data.json'):
                 type: 'heatmap',
                 colorscale: data.colorscale || 'RdBu',
                 zmin: -0.2,
-                zmax: 1,
+                zmax: 1.0,
                 xaxis: 'x',
                 yaxis: 'y',
+                xgap: 1,
+                ygap: 1,
                 colorbar: {
-                    len: 0.4,
-                    y: 0.2
+                    len: 0.2,
+                    y: 1.0,
+                    yanchor: 'top',
+                    x: -0.15,
+                    xanchor: 'right',
+                    title: 'Corr',
+                    tickmode: 'array',
+                    tickvals: [-0.2, 0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
                 }
             });
 

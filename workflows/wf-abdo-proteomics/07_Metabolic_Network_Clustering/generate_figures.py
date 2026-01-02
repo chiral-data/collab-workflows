@@ -78,10 +78,15 @@ try:
     # Capture dendrogram traces
     if hasattr(g6, 'dendrogram_row') and g6.dendrogram_row is not None:
         d = dendrogram(g6.dendrogram_row.linkage, no_plot=True)
-        dendro_ms_mg['row'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+        # Scale icoords to match heatmap indices (0..N)
+        # Scipy dendrogram uses 10x scaling and centers at 5, 15, 25...
+        icoords = [[(x - 5.0) / 10.0 for x in seg] for seg in d['icoord']]
+        dendro_ms_mg['row'] = {'icoords': icoords, 'dcoords': d['dcoord']}
     if hasattr(g6, 'dendrogram_col') and g6.dendrogram_col is not None:
         d = dendrogram(g6.dendrogram_col.linkage, no_plot=True)
-        dendro_ms_mg['col'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+        # Scale icoords
+        icoords = [[(x - 5.0) / 10.0 for x in seg] for seg in d['icoord']]
+        dendro_ms_mg['col'] = {'icoords': icoords, 'dcoords': d['dcoord']}
         
 except Exception as e:
     print(f"Warning: Could not capture clustering order for Fig 6: {e}")
@@ -124,10 +129,14 @@ try:
     # Capture dendrogram traces
     if hasattr(g7, 'dendrogram_row') and g7.dendrogram_row is not None:
         d = dendrogram(g7.dendrogram_row.linkage, no_plot=True)
-        dendro_ctrl['row'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+        # Scale icoords
+        icoords = [[(x - 5.0) / 10.0 for x in seg] for seg in d['icoord']]
+        dendro_ctrl['row'] = {'icoords': icoords, 'dcoords': d['dcoord']}
     if hasattr(g7, 'dendrogram_col') and g7.dendrogram_col is not None:
         d = dendrogram(g7.dendrogram_col.linkage, no_plot=True)
-        dendro_ctrl['col'] = {'icoords': d['icoord'], 'dcoords': d['dcoord']}
+        # Scale icoords
+        icoords = [[(x - 5.0) / 10.0 for x in seg] for seg in d['icoord']]
+        dendro_ctrl['col'] = {'icoords': icoords, 'dcoords': d['dcoord']}
 
 except Exception as e:
     print(f"Warning: Could not capture clustering order for Fig 7: {e}")
@@ -159,7 +168,14 @@ json_data = {
         'z': corr_ms_mg_clustered.values.tolist(),
         'dendrogram': dendro_ms_mg,
         'title': 'MS & MG Correlation Matrix (Clustered)',
-        'colorscale': 'YlGnBu_r',
+        'colorscale': [
+            [0.0, '#ffffd9'],
+            [0.2, '#c7e9b4'],
+            [0.4, '#41b6c4'],
+            [0.6, '#1d91c0'],
+            [0.8, '#225ea8'],
+            [1.0, '#0c2c84']
+        ],
         'static_image': get_base64_image('Fig6_Corr_MS_MG.png')
     },
     'fig7': {
@@ -168,7 +184,14 @@ json_data = {
         'z': corr_ctrl_clustered.values.tolist(),
         'dendrogram': dendro_ctrl,
         'title': 'Control Correlation Matrix (Clustered)',
-        'colorscale': 'YlGnBu_r',
+        'colorscale': [
+            [0.0, '#ffffd9'],
+            [0.2, '#c7e9b4'],
+            [0.4, '#41b6c4'],
+            [0.6, '#1d91c0'],
+            [0.8, '#225ea8'],
+            [1.0, '#0c2c84']
+        ],
         'static_image': get_base64_image('Fig7_Corr_Control.png')
     }
 }
