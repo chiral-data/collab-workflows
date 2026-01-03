@@ -2,16 +2,19 @@
 import os
 import sys
 import json
+import io
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy import stats
 
 from html_generator import generate_metabolic_load_html
 
 # Configuration
-INPUT_FILE = "data_standardized.pkl"
-OUTPUT_DIR = "outputs"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+INPUT_FILE = "data_standardized.pkl" 
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -19,10 +22,14 @@ if not os.path.exists(OUTPUT_DIR):
 sns.set_style("whitegrid")
 plt.rcParams['font.family'] = 'sans-serif'
 
-print(">>> NODE 8: GLOBAL METABOLIC LOAD ANALYSIS...", flush=True)
+print(">>> NODE 8: GLOBAL METABOLIC LOAD ANALYSIS...")
 
 # Load data
-df = pd.read_pickle(INPUT_FILE)
+try:
+    df = pd.read_pickle(INPUT_FILE)
+except Exception as e:
+    print("Warning: Input file not found. Ensure data_standardized.pkl exists.")
+    sys.exit(1)
 
 # Define masks
 ms_types = ['RRMS', 'SPMS', 'PPMS']
@@ -37,12 +44,12 @@ df_mg_ms = df[masks['MS'] | masks['MG']].copy()
 # ==========================================
 # FIG 8: Total AA by Type
 # ==========================================
-print("Generating Fig 8: Total AA by Type...", flush=True)
+print("Generating Fig 8: Total AA by Type...")
 
 df_mg_ms['Plot_Type'] = np.where(df_mg_ms['Type'].isin(['general', 'eye-type']), 'GMG', df_mg_ms['Type'])
 
+# Static Plot (Legacy Support)
 plt.figure(figsize=(8,6))
-
 type_order = ['PPMS', 'SPMS', 'RRMS', 'GMG']
 type_colors = {'PPMS': '#1f77b4', 'SPMS': '#ff7f0e', 'RRMS': '#2ca02c', 'GMG': '#d62728'}
 
@@ -57,21 +64,41 @@ plt.title('Total Amino Acid Concentration by Disease Type', fontsize=12, fontwei
 
 plt.savefig(os.path.join(OUTPUT_DIR, 'Fig8_TotalAA_Type.png'))
 plt.close()
-print(f"Saved: Fig8_TotalAA_Type.png", flush=True)
+print("Saved: Fig8_TotalAA_Type.png")
 
+
+# ==========================================
+# STATISTICAL ANALYSIS (Kruskal-Wallis)
+# ==========================================
+print("Calculating Statistics...")
+groups = []
+group_names = []
+for t in type_order:
+    vals = df_mg_ms[df_mg_ms['Plot_Type'] == t]['Total_AA'].dropna().values
+    if len(vals) > 0:
+        groups.append(vals)
+        group_names.append(t)
+
+p_value = 1.0
+test_name = "N/A"
+if len(groups) > 1:
+    try:
+        stat, p_value = stats.kruskal(*groups)
+        test_name = "Kruskal-Wallis"
+        print("Kruskal-Wallis p-value: " + str(p_value))
+    except Exception as e:
+        print("Stats error: " + str(e))
 
 # ==========================================
 # GENERATE JSON/HTML DATA
 # ==========================================
-print("Generating JSON and HTML...", flush=True)
+print("Generating JSON and HTML...")
 
-# Create JSON data structure
 traces = []
-type_order = ['PPMS', 'SPMS', 'RRMS', 'GMG']
-type_colors = {'PPMS': '#1f77b4', 'SPMS': '#ff7f0e', 'RRMS': '#2ca02c', 'GMG': '#d62728'}
-
 for t in type_order:
     y_vals = df_mg_ms[df_mg_ms['Plot_Type'] == t]['Total_AA'].dropna().tolist()
+    # Adding jittered x-values for strip plot could be done in JS, 
+    # but sending raw y-data allows JS to handle Box/Violin logic perfectly.
     traces.append({
         'name': t,
         'y': y_vals,
@@ -80,6 +107,11 @@ for t in type_order:
 
 json_data = {
     'metadata': {'title': 'Global Metabolic Load'},
+    'stats': {
+        'test': test_name,
+        'p_value': p_value,
+        'p_value_fmt': "< 0.001" if p_value < 0.001 else "{:.4f}".format(p_value)
+    },
     'fig8': {
         'title': 'Total Amino Acid Concentration by Disease Type',
         'yaxis': 'Concentration [nmol/ml]',
@@ -88,15 +120,15 @@ json_data = {
 }
 
 json_path = os.path.join(OUTPUT_DIR, 'metabolic_load_data.json')
-with open(json_path, 'w', encoding='utf-8') as f:
-    json.dump(json_data, f, indent=2)
-print(f"Saved: {json_path}", flush=True)
+with io.open(json_path, 'w', encoding='utf-8') as f:
+    f.write(json.dumps(json_data, ensure_ascii=False))
+print("Saved: " + json_path)
 
-html_content = generate_metabolic_load_html(json_filename='metabolic_load_data.json')
+html_content = generate_metabolic_load_html('metabolic_load_data.json')
 
 html_path = os.path.join(OUTPUT_DIR, 'metabolic_load.html')
-with open(html_path, 'w', encoding='utf-8') as f:
+with io.open(html_path, 'w', encoding='utf-8') as f:
     f.write(html_content)
-print(f"Saved: {html_path}", flush=True)
+print("Saved: " + html_path)
 
-print("Node 8 completed successfully.", flush=True)
+print("Node 8 completed successfully.")
