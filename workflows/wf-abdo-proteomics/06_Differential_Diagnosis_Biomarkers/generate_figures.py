@@ -12,8 +12,9 @@ from matplotlib.patches import Patch
 from html_generator import generate_biomarkers_html
 
 # Configuration
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = "data_standardized.pkl"
-OUTPUT_DIR = "outputs"
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -56,13 +57,14 @@ for i, aa in enumerate(amino_acids_fig4):
     # Add p-value
     ms_vals = df_mg_ms[df_mg_ms['Group']=='MS'][aa].dropna()
     mg_vals = df_mg_ms[df_mg_ms['Group']=='MG'][aa].dropna()
-    _, pval = mannwhitneyu(ms_vals, mg_vals, alternative='two-sided')
-    
-    y_max = df_mg_ms[aa].max()
-    y_min = df_mg_ms[aa].min()
-    y_range = y_max - y_min
-    ax.annotate(f'p = {pval:.2e}', xy=(0.5, y_max + 0.1*y_range), 
-                fontsize=10, ha='center', fontweight='bold')
+    if len(ms_vals) > 0 and len(mg_vals) > 0:
+        _, pval = mannwhitneyu(ms_vals, mg_vals, alternative='two-sided')
+        
+        y_max = df_mg_ms[aa].max()
+        y_min = df_mg_ms[aa].min()
+        y_range = y_max - y_min
+        ax.annotate(f'p = {pval:.2e}', xy=(0.5, y_max + 0.1*y_range), 
+                    fontsize=10, ha='center', fontweight='bold')
 
 plt.tight_layout()
 plt.savefig(os.path.join(OUTPUT_DIR, 'Fig4_Specific_Diffs.png'))
@@ -74,7 +76,8 @@ print(f"Saved: Fig4_Specific_Diffs.png", flush=True)
 # ==========================================
 print("Generating Fig 5: Female Specific...", flush=True)
 
-df_fem = df_mg_ms[df_mg_ms['Sex'] == 'Female']
+# Note: Using 'Female' as per existing data convention
+df_fem = df_mg_ms[df_mg_ms['Sex'] == 'Female'].copy()
 fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 
 for i, aa in enumerate(['CIT_conc', 'GABA_conc', 'AAA_conc']):
@@ -96,44 +99,63 @@ print(f"Saved: Fig5_Female_Specific.png", flush=True)
 
 
 # ==========================================
-# GENERATE JSON DATA
+# GENERATE ENRICHED JSON DATA
 # ==========================================
-print("Generating JSON data...", flush=True)
+print("Generating Enriched JSON data...", flush=True)
 
-def create_subplots_data(df_source, amino_acids):
+def create_enriched_data(df_source, amino_acids):
+    """Generates data with statistical tests included"""
     subplots = []
     for aa in amino_acids:
-        traces = []
-        # MS
-        y_ms = df_source[df_source['Group']=='MS'][aa].dropna().tolist()
-        traces.append({'name': 'MS', 'y': y_ms, 'color': '#fa8072'})
-        # MG
-        y_mg = df_source[df_source['Group']=='MG'][aa].dropna().tolist()
-        traces.append({'name': 'MG', 'y': y_mg, 'color': '#008080'})
+        clean_name = aa.replace('_conc', '')
         
+        # Extract Data
+        ms_data = df_source[df_source['Group']=='MS'][aa].dropna()
+        mg_data = df_source[df_source['Group']=='MG'][aa].dropna()
+        
+        # Calculate P-Value (Mann-Whitney U)
+        p_val = 1.0
+        if len(ms_data) > 0 and len(mg_data) > 0:
+            stat, p_val = mannwhitneyu(ms_data, mg_data)
+            
         subplots.append({
-            'title': aa.replace('_conc', ''),
-            'traces': traces
+            'title': clean_name,
+            'p_value': p_val,
+            'traces': [
+                {
+                    'name': 'MS', 
+                    'y': ms_data.tolist(), 
+                    'color': '#fa8072' # Salmon
+                },
+                {
+                    'name': 'MG', 
+                    'y': mg_data.tolist(), 
+                    'color': '#008080' # Teal
+                }
+            ]
         })
     return subplots
-
-amino_acids_fig4 = ['CIT_conc', 'GABA_conc', 'AAA_conc']
 
 json_data = {
     'metadata': {'title': 'Differential Diagnosis Biomarkers'},
     'fig4': {
-        'subplots': create_subplots_data(df_mg_ms, amino_acids_fig4)
+        'title': 'General Cohort (MS vs MG)',
+        'subplots': create_enriched_data(df_mg_ms, amino_acids_fig4)
     },
     'fig5': {
-        'subplots': create_subplots_data(df_fem, amino_acids_fig4)
+        'title': 'Female Subgroup (MS vs MG)',
+        'subplots': create_enriched_data(df_fem, amino_acids_fig4)
     }
 }
 
 json_path = os.path.join(OUTPUT_DIR, 'biomarkers_data.json')
 with open(json_path, 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2)
-print(f"Saved: {json_path}", flush=True)
+print(f"Success! Enriched JSON saved to {json_path}", flush=True)
 
+# ==========================================
+# GENERATE HTML DASHBOARD
+# ==========================================
 html_content = generate_biomarkers_html(json_filename='biomarkers_data.json')
 
 html_path = os.path.join(OUTPUT_DIR, 'biomarkers.html')
@@ -142,4 +164,3 @@ with open(html_path, 'w', encoding='utf-8') as f:
 print(f"Saved: {html_path}", flush=True)
 
 print("Node 6 completed successfully.", flush=True)
-

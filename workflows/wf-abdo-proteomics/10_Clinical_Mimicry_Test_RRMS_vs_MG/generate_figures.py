@@ -80,7 +80,7 @@ g = sns.FacetGrid(df_melt_11, col='Amino Acid', col_wrap=6, sharey=False, height
                   gridspec_kws={'hspace': 0.5, 'wspace': 0.3})
 
 g.map_dataframe(sns.boxplot, x='Group', y='Concentration', palette={'RRMS':'lightgrey', 'MG':'lightblue'},
-                hue='Group', palette={'RRMS':'lightgrey', 'MG':'lightblue'}, legend=False,
+                hue='Group', legend=False,
                 showfliers=True, 
                 flierprops={'marker': 'o', 'markerfacecolor': 'black', 'markersize': 3})
 

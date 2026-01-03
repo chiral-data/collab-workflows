@@ -199,8 +199,8 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 5. **Data Export**: Saves standardized DataFrame and amino acid column list
 
 **Outputs:**
-* `output/data_standardized.pkl` (65KB) - Pandas DataFrame with standardized concentrations
-* `output/aa_cols.txt` (294B) - List of 29 amino acid column names for downstream processing
+* `outputs/data_standardized.pkl` (65KB) - Pandas DataFrame with standardized concentrations
+* `outputs/aa_cols.txt` (294B) - List of 29 amino acid column names for downstream processing
 
 **Script:** `load_data.py` | **Execution:** `run.sh` via `.venv\Scripts\python.exe`
 
@@ -213,7 +213,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 **Purpose:** Generates baseline population statistics for both study cohorts (MS vs Controls, MS vs MG).
 
 **Input:**
-* `../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl`
+* `../01_Data_Ingestion_and_Preprocessing/outputs/data_standardized.pkl`
 
 **Processing:**
 * Extracts Age, Gender, Disease Duration statistics
@@ -222,10 +222,10 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Generates styled dataframe tables
 
 **Outputs:**
-* `output/Table1_Demographics.png` - MS vs Controls demographics (Paper 1 cohort)
-* `output/Table2_MS_MG_Demographics.png` - MS vs MG demographics (Paper 2 cohort)
-* `output/demographics_data.json` (2.7KB) - Structured table data for web display
-* `output/demographics.html` (7.7KB) - Interactive demographic tables with hover tooltips
+* `outputs/Table1_Demographics.png` - MS vs Controls demographics (Paper 1 cohort)
+* `outputs/Table2_MS_MG_Demographics.png` - MS vs MG demographics (Paper 2 cohort)
+* `outputs/demographics_data.json` (2.7KB) - Structured table data for web display
+* `outputs/demographics.html` (7.7KB) - Interactive demographic tables with hover tooltips
 
 **Script:** `generate_tables.py` | **Configuration:** `job.toml` | **HTML Generator:** `html_generator.py`
 
@@ -253,10 +253,10 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * JSON export includes all datapoints, medians, quartiles, and p-values
 
 **Outputs:**
-* `output/Fig1A_MS_vs_Control.png` (64KB) - Global MS metabolic shifts
-* `output/Fig1B_MS_Subtypes.png` (67KB) - Subtype-specific patterns
-* `output/pathology_data.json` (328KB) - Complete boxplot data for 58 comparisons (29 AA × 2 figures)
-* `output/pathology.html` (9.4KB) - Interactive grid with zoom/pan, statistical overlays
+* `outputs/Fig1A_MS_vs_Control.png` (64KB) - Global MS metabolic shifts
+* `outputs/Fig1B_MS_Subtypes.png` (67KB) - Subtype-specific patterns
+* `outputs/pathology_data.json` (328KB) - Complete boxplot data for 58 comparisons (29 AA × 2 figures)
+* `outputs/pathology.html` (9.4KB) - Interactive grid with zoom/pan, statistical overlays
 
 **Script:** `generate_figures.py` | **HTML Generator:** `html_generator.py`
 
@@ -285,11 +285,11 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Correlation coefficient (r) and p-value annotations
 
 **Outputs:**
-* `output/Fig2A_Age_Grid.png` - Age correlation grid (29 amino acids)
-* `output/Fig2B_Duration_Grid.png` - Disease duration correlation grid
-* `output/Fig2C_EDSS_Grid.png` - Disability correlation grid
-* `output/confounders_data.json` (537KB) - Scatter plot coordinates, regression parameters, statistics
-* `output/confounders.html` (9.5KB) - Interactive scatter plots with dynamic regression lines
+* `outputs/Fig2A_Age_Grid.png` - Age correlation grid (29 amino acids)
+* `outputs/Fig2B_Duration_Grid.png` - Disease duration correlation grid
+* `outputs/Fig2C_EDSS_Grid.png` - Disability correlation grid
+* `outputs/confounders_data.json` (537KB) - Scatter plot coordinates, regression parameters, statistics
+* `outputs/confounders.html` (9.5KB) - Interactive scatter plots with dynamic regression lines
 
 **Script:** `generate_figures.py`
 
@@ -311,9 +311,9 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Mann-Whitney U tests with FDR correction
 
 **Outputs:**
-* `output/Fig3_MS_MG_vs_Control.png` - Shared autoimmune metabolic signature
-* `output/autoimmune_data.json` - Boxplot data with statistical annotations
-* `output/autoimmune.html` - Interactive comparison with toggle controls
+* `outputs/Fig3_MS_MG_vs_Control.png` - Shared autoimmune metabolic signature
+* `outputs/autoimmune_data.json` - Boxplot data with statistical annotations
+* `outputs/autoimmune.html` - Interactive comparison with toggle controls
 
 **Script:** `generate_figure.py`
 
@@ -334,10 +334,10 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Mann-Whitney U tests with Bonferroni correction
 
 **Outputs:**
-* `output/Fig4_Specific_Diffs.png` - Key biomarker panel (full cohort)
-* `output/Fig5_Female_Specific.png` - Female-only validation
-* `output/biomarkers_data.json` - Boxplot data for targeted amino acids
-* `output/biomarkers.html` - Interactive biomarker explorer
+* `outputs/Fig4_Specific_Diffs.png` - Key biomarker panel (full cohort)
+* `outputs/Fig5_Female_Specific.png` - Female-only validation
+* `outputs/biomarkers_data.json` - Boxplot data for targeted amino acids
+* `outputs/biomarkers.html` - Interactive biomarker explorer
 
 **Script:** `generate_figures.py`
 
@@ -360,10 +360,10 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Hierarchical clustering reveals disrupted metabolic coordination
 
 **Outputs:**
-* `output/Fig6_Corr_MS_MG.png` - Patient correlation network
-* `output/Fig7_Corr_Control.png` - Control correlation network
-* `output/clustering_data.json` - Correlation matrices with cluster assignments
-* `output/clustering.html` - Interactive heatmap with dendrogram navigation
+* `outputs/Fig6_Corr_MS_MG.png` - Patient correlation network
+* `outputs/Fig7_Corr_Control.png` - Control correlation network
+* `outputs/clustering_data.json` - Correlation matrices with cluster assignments
+* `outputs/clustering.html` - Interactive heatmap with dendrogram navigation
 
 **Script:** `generate_figures.py`
 
@@ -384,9 +384,9 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Kruskal-Wallis H-test with post-hoc pairwise comparisons
 
 **Outputs:**
-* `output/Fig8_TotalAA_Type.png` - Total AA load by subtype
-* `output/metabolic_load_data.json` - Boxplot data with statistics
-* `output/metabolic_load.html` - Interactive load comparison
+* `outputs/Fig8_TotalAA_Type.png` - Total AA load by subtype
+* `outputs/metabolic_load_data.json` - Boxplot data with statistics
+* `outputs/metabolic_load.html` - Interactive load comparison
 
 **Script:** `generate_figure.py`
 
@@ -408,9 +408,9 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Identifies amino acids with subtype-divergent trajectories
 
 **Outputs:**
-* `output/Fig9_Duration_Grid.png` - 29-panel duration trajectory grid
-* `output/trajectories_data.json` - Scatter data with subtype-specific regression parameters
-* `output/trajectories.html` - Interactive trajectory explorer with subtype filtering
+* `outputs/Fig9_Duration_Grid.png` - 29-panel duration trajectory grid
+* `outputs/trajectories_data.json` - Scatter data with subtype-specific regression parameters
+* `outputs/trajectories.html` - Interactive trajectory explorer with subtype filtering
 
 **Script:** `generate_figure.py`
 
@@ -431,10 +431,10 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Mann-Whitney U tests for each amino acid
 
 **Outputs:**
-* `output/Fig10_TotalAA_RRMS_MG.png` - Global metabolic load comparison
-* `output/Fig11_RRMS_vs_MG_Grid.png` - Full amino acid profile comparison
-* `output/mimicry_data.json` - Complete boxplot data for early-stage differentiation
-* `output/mimicry.html` - Interactive diagnostic decision-support tool
+* `outputs/Fig10_TotalAA_RRMS_MG.png` - Global metabolic load comparison
+* `outputs/Fig11_RRMS_vs_MG_Grid.png` - Full amino acid profile comparison
+* `outputs/mimicry_data.json` - Complete boxplot data for early-stage differentiation
+* `outputs/mimicry.html` - Interactive diagnostic decision-support tool
 
 **Script:** `generate_figures.py`
 
@@ -456,9 +456,9 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 * Pearson correlation with hierarchical clustering
 
 **Outputs:**
-* `output/Fig12_Split_Corr.png` - Split-panel correlation comparison (MS | MG)
-* `output/coherence_data.json` - Dual correlation matrices with cluster metrics
-* `output/coherence.html` - Interactive side-by-side network explorer
+* `outputs/Fig12_Split_Corr.png` - Split-panel correlation comparison (MS | MG)
+* `outputs/coherence_data.json` - Dual correlation matrices with cluster metrics
+* `outputs/coherence.html` - Interactive side-by-side network explorer
 
 **Script:** `generate_figure.py`
 
@@ -494,7 +494,7 @@ Each node contains a `.chiral/job.toml` file that specifies:
 * `scripts.run` - Shell script to execute (typically `run.sh`)
 
 **Output Structure:**
-Each node generates 3 output types in its `output/` directory:
+Each node generates 3 output types in its `outputs/` directory:
 1. **PNG files** - Publication-ready figures (300 DPI, matplotlib/seaborn)
 2. **JSON files** - Structured data (plot coordinates, statistics, metadata)
 3. **HTML files** - Interactive visualizations (Plotly.js, responsive design)
@@ -556,7 +556,7 @@ docker run -v $(pwd):/workspace chiral.sakuracr.jp/proteomics:2025_12_31 bash ru
 
 ### Output Summary
 
-Each node generates files in its `output/` directory:
+Each node generates files in its `outputs/` directory:
 
 | Node | PNG Outputs | JSON/HTML Outputs |
 |------|-------------|-------------------|
@@ -579,13 +579,13 @@ Each node generates files in its `output/` directory:
 ### Interactive Visualizations
 
 **View HTML Outputs:**
-1. Navigate to node output folder: `cd XX_Node_Name/output/`
+1. Navigate to node output folder: `cd XX_Node_Name/outputs/`
 2. Open HTML file in browser: `[node_name].html`
 3. Features: Zoom, pan, hover tooltips, data export
 
 **Using Python HTTP Server:**
 ```bash
-cd XX_Node_Name/output/
+cd XX_Node_Name/outputs/
 python -m http.server 8000
 # Open browser to http://localhost:8000/[node_name].html
 ```
@@ -620,10 +620,10 @@ ls 01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.cs
 **Clean outputs (start fresh):**
 ```bash
 # Remove all outputs
-rm -rf */output/*
+rm -rf */outputs/*
 
 # Remove specific node
-rm -rf 03_MS_Pathology_Overview/output/*
+rm -rf 03_MS_Pathology_Overview/outputs/*
 ```
 
 **Modify HTML visualizations:**
