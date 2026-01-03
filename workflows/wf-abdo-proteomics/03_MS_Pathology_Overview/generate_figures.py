@@ -11,9 +11,9 @@ import seaborn as sns
 from html_generator import generate_pathology_html
 
 # Configuration
-INPUT_FILE = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
-AA_COLS_FILE = "../01_Data_Ingestion_and_Preprocessing/output/aa_cols.txt"
-OUTPUT_DIR = "output"
+INPUT_FILE = "data_standardized.pkl"
+AA_COLS_FILE = "aa_cols.txt"
+OUTPUT_DIR = "outputs"
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)

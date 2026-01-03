@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 from html_generator import generate_demographics_html
 
 # Configuration
-INPUT_FILE = "../01_Data_Ingestion_and_Preprocessing/output/data_standardized.pkl"
-OUTPUT_DIR = "output"
+INPUT_FILE = "data_standardized.pkl"
+OUTPUT_DIR = "outputs"
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
