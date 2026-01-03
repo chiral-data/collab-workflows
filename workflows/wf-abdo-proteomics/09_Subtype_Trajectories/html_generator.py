@@ -18,7 +18,7 @@ def generate_trajectories_html(json_filename='trajectories_data.json'):
     
     if not os.path.exists(json_path):
         # Fallback to relative path
-        json_path = os.path.join('output', json_filename)
+        json_path = os.path.join('outputs', json_filename)
         if not os.path.exists(json_path):
             json_path = json_filename
         

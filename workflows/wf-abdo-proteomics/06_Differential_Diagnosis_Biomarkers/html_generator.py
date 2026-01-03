@@ -10,7 +10,7 @@ def generate_biomarkers_html(json_filename='biomarkers_data.json'):
     """Generate HTML for Differential Diagnosis Biomarkers visualization"""
     
     # Read JSON data to embed directly
-    json_path = os.path.join('output', json_filename)
+    json_path = os.path.join('outputs', json_filename)
     # Fallback if running from inside output dir or elsewhere
     if not os.path.exists(json_path):
         json_path = json_filename
