@@ -1,96 +1,115 @@
-"""HTML Generator for Node 06: Biomarkers Dashboard
-Fixes the 'locking' issue by correctly handling Fig4/Fig5 data structures.
+"""HTML Generator for Node 06: Differential Diagnosis Biomarkers (Python 3)
+Generates interactive HTML visualization matching Node 4/8 style.
 """
 
 import json
 import os
 
-def generate_biomarkers_html(json_filename='biomarkers_data.json'):
+def generate_biomarkers_html(json_filename: str = 'biomarkers_data.json') -> str:
     """Generate HTML for Differential Diagnosis Biomarkers visualization"""
     
-    # Locate the JSON file
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(script_dir, 'outputs', json_filename)
+    # Locate JSON
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(SCRIPT_DIR, 'outputs', json_filename)
+    
     if not os.path.exists(json_path):
-        json_path = json_filename
-        
+        # Try looking in current working directory as fallback
+        if os.path.exists(os.path.join(os.getcwd(), 'outputs', json_filename)):
+            json_path = os.path.join(os.getcwd(), 'outputs', json_filename)
+        elif os.path.exists(json_filename):
+             json_path = json_filename
+
+    json_content = '{}'
+    error_msg = ''
+    
     try:
+        print(f"DEBUG: Reading JSON from {json_path}")
         with open(json_path, 'r', encoding='utf-8') as f:
             json_content = f.read()
+            # Verify valid JSON
+            json.loads(json_content)
     except Exception as e:
-        print(f"Warning: Could not read JSON file {json_path}: {e}")
+        print(f"Warning: Could not read JSON: {e}")
+        error_msg = str(e)
         json_content = '{}'
 
-    # The HTML Template
-    html = """<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biomarker Discovery Dashboard</title>
+    <title>Differential Diagnosis Biomarkers</title>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <style>
-        :root {
+        :root {{
             --primary: #2c3e50;
             --accent: #008080; /* Teal for MG */
             --bg: #f8f9fa;
             --card-bg: #ffffff;
             --text: #333;
-        }
+        }}
         
-        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
+        body {{ font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }}
         
         /* Header */
-        header { background: var(--card-bg); padding: 15px 30px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        h1 { margin: 0; font-size: 1.4rem; color: var(--primary); }
-        .tag { font-size: 0.8rem; background: var(--accent); color: white; padding: 3px 8px; border-radius: 4px; vertical-align: middle; margin-left: 10px; }
+        header {{ background: var(--card-bg); padding: 15px 30px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }}
+        h1 {{ margin: 0; font-size: 1.2rem; color: var(--primary); }}
+        .timestamp {{ font-size: 0.8rem; color: #777; }}
 
-        /* Navigation Tabs */
-        .nav-tabs { display: flex; background: #fff; padding: 0 30px; border-bottom: 1px solid #ddd; gap: 20px; }
-        .nav-item { 
-            padding: 15px 5px; cursor: pointer; color: #666; font-weight: 500; border-bottom: 3px solid transparent; transition: 0.2s; 
-        }
-        .nav-item:hover { color: var(--accent); }
-        .nav-item.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-        /* Controls */
-        .controls { padding: 15px 30px; display: flex; justify-content: flex-end; align-items: center; }
-        .radio-group { display: flex; background: #e9ecef; border-radius: 6px; padding: 3px; }
-        .radio-group label { padding: 6px 14px; cursor: pointer; border-radius: 4px; font-weight: 500; color: #666; font-size: 0.9rem; transition: 0.2s; }
-        .radio-group input { display: none; }
-        .radio-group input:checked + label { background: white; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-
-        /* Content Grid */
-        #app { flex: 1; overflow-y: auto; padding: 0 30px 30px 30px; }
+        /* Controls Bar */
+        .controls {{ background: #fff; padding: 10px 30px; border-bottom: 1px solid #eee; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }}
         
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .tab-group {{ display: flex; gap: 5px; background: #eee; padding: 4px; border-radius: 6px; }}
+        .tab-btn {{ border: none; background: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 500; color: #666; transition: 0.2s; }}
+        .tab-btn.active {{ background: white; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
 
-        .chart-card {
+        .toggle-group {{ display: flex; gap: 5px; background: #eee; padding: 4px; border-radius: 6px; margin-left: 20px; }}
+        .toggle-btn {{ border: none; background: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 500; color: #666; transition: 0.2s; }}
+        .toggle-btn.active {{ background: white; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
+
+        .toggle-container {{ display: flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-left: auto; }}
+        input[type="checkbox"] {{ accent-color: var(--accent); cursor: pointer; transform: scale(1.2); }}
+
+        .legend-bar {{ display: flex; gap: 15px; font-size: 0.85rem; margin-left: 20px; }}
+        .legend-item {{ display: flex; align-items: center; gap: 5px; }}
+        .dot {{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }}
+
+        /* Main Content Grid */
+        #app {{ flex: 1; overflow-y: auto; padding: 20px 30px; }}
+        
+        .grid-container {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+            padding-bottom: 50px;
+        }}
+
+        .chart-card {{
             background: var(--card-bg);
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border: 1px solid transparent;
             height: 400px;
             display: flex;
             flex-direction: column;
-            border: 1px solid #eee;
-            min-width: 0; /* Prevents grid blowout */
-        }
+        }}
         
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding: 0 5px; }
-        .card-title { font-weight: 700; font-size: 1.1rem; color: var(--primary); }
-        .p-badge { font-size: 0.85rem; background: #f1f3f5; padding: 4px 8px; border-radius: 6px; color: #555; }
-        .p-sig { background: #ffe3e3; color: #c0392b; font-weight: bold; }
+        .chart-card:hover {{ transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }}
+        
+        .card-header {{ display: flex; justify-content: space-between; padding: 0 10px; margin-bottom: 5px; font-size: 0.95rem; font-weight: bold; color: var(--primary); }}
+        .stats-badge {{ font-size: 0.75rem; background: #e8f6fd; padding: 2px 6px; border-radius: 4px; font-weight: normal; color: #666; }}
+        .sig-badge {{ background: #e0f2f1; color: var(--accent); font-weight: bold; }}
+        
+        .plot-div {{ flex: 1; width: 100%; }}
 
-        .plot-div { flex: 1; width: 100%; min-width: 0; }
-        
-        .loading { text-align: center; padding: 50px; font-size: 1.2rem; color: #666; }
+        .loading {{ text-align: center; padding: 50px; font-size: 1.2rem; color: #666; }}
+
+        .error-msg {{
+            background: #ffebee; color: #c62828; padding: 20px; border-radius: 8px; border: 1px solid #ffcdd2;
+            margin: 20px; text-align: center;
+        }}
     </style>
     <script>
         const RAW_DATA = __JSON_DATA__;
@@ -98,24 +117,36 @@ def generate_biomarkers_html(json_filename='biomarkers_data.json'):
 </head>
 <body>
     <header>
-        <div>
-            <h1>Differential Diagnosis <span class="tag">MS vs MG</span></h1>
-        </div>
-        <div style="font-size: 0.8rem; color: #888;">Generated: <span id="timestamp"></span></div>
+        <h1>Differential Diagnosis Biomarkers</h1>
+        <span class="timestamp" id="timestamp">Generated: Just now</span>
     </header>
 
-    <div class="nav-tabs">
-        <div class="nav-item active" onclick="switchTab('fig4', this)">General Cohort</div>
-        <div class="nav-item" onclick="switchTab('fig5', this)">Female Subgroup</div>
-    </div>
-
     <div class="controls">
-        <div class="radio-group">
-            <input type="radio" id="viewBox" name="viewType" value="box" checked onchange="renderDashboard()">
-            <label for="viewBox">Box Plot</label>
-            
-            <input type="radio" id="viewViolin" name="viewType" value="violin" onchange="renderDashboard()">
-            <label for="viewViolin">Violin Plot</label>
+        <label style="font-weight:600; color:#555; margin-right:5px;">Cohort:</label>
+        <div class="tab-group">
+            <button class="tab-btn active" onclick="switchTab('fig4')">General (MS vs MG)</button>
+            <button class="tab-btn" onclick="switchTab('fig5')">Female Subgroup</button>
+        </div>
+
+        <label style="font-weight:600; color:#555; margin-left:15px; margin-right:5px;">Chart:</label>
+        <div class="toggle-group" style="margin-left:0;">
+             <button class="toggle-btn active" onclick="setChartType('box')">Box</button>
+             <button class="toggle-btn" onclick="setChartType('violin')">Violin</button>
+        </div>
+
+        <div class="legend-bar">
+            <div class="legend-item"><span class="dot" style="background:#fa8072"></span> MS</div>
+            <div class="legend-item"><span class="dot" style="background:#008080"></span> MG</div>
+        </div>
+        
+        <div class="toggle-container">
+            <input type="checkbox" id="sigFilter" onchange="renderCurrentView()">
+            <label for="sigFilter" title="Show only correlations with p < 0.05">Significant Only (p<0.05)</label>
+        </div>
+
+        <div class="toggle-container">
+            <input type="checkbox" id="showPoints" checked onchange="renderCurrentView()">
+            <label for="showPoints">Show Data</label>
         </div>
     </div>
 
@@ -124,94 +155,118 @@ def generate_biomarkers_html(json_filename='biomarkers_data.json'):
     </div>
 
     <script>
-        // Start with Fig 4 (General Cohort)
-        let currentSection = 'fig4';
+        let currentTab = 'fig4';
+        let currentType = 'box';
+        
+        const COLORS = {{
+            'MS': '#fa8072', // Salmon
+            'MG': '#008080'  // Teal
+        }};
 
-        function init() {
+        function init() {{
             document.getElementById('timestamp').textContent = new Date().toLocaleString();
             
-            // Check if data loaded correctly
-            if (!RAW_DATA || !RAW_DATA.fig4) {
-                document.getElementById('app').innerHTML = '<div class="loading">Error: Data not loaded correctly.</div>';
+            // Check for empty data
+            if (!RAW_DATA || Object.keys(RAW_DATA).length === 0) {{
+                document.getElementById('app').innerHTML = `
+                    <div class="error-msg">
+                        <h3>Dashboard Error</h3>
+                        <p>No data available to display.</p>
+                        <p>Debug info: JSON could not be loaded.</p>
+                    </div>
+                `;
                 return;
-            }
+            }}
             
-            renderDashboard();
-        }
+            switchTab('fig4');
+        }}
+        
+        function switchTab(tab) {{
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if(tab === 'fig4') document.querySelector('.tab-btn:first-child').classList.add('active');
+            else document.querySelector('.tab-btn:last-child').classList.add('active');
+            
+            renderCurrentView();
+        }}
+        
+        function setChartType(type) {{
+            currentType = type;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            if(type === 'box') document.querySelector('.toggle-btn:first-child').classList.add('active');
+            else document.querySelector('.toggle-btn:last-child').classList.add('active');
+            renderCurrentView();
+        }}
 
-        function switchTab(sectionKey, element) {
-            currentSection = sectionKey;
-            
-            // Update Tab UI
-            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            element.classList.add('active');
-            
-            renderDashboard();
-        }
-
-        function renderDashboard() {
+        function renderCurrentView() {{
             const container = document.getElementById('app');
             
-            // Get data for current section (fig4 or fig5)
-            const sectionData = RAW_DATA[currentSection];
-            
-            if (!sectionData || !sectionData.subplots) {
-                 container.innerHTML = '<div class="loading">No data found for this section.</div>';
-                 return;
-            }
+            if (!RAW_DATA[currentTab] || !RAW_DATA[currentTab].traces) {{
+                  container.innerHTML = '<div class="error-msg">Missing Data for current View</div>';
+                  return;
+            }}
 
-            const data = sectionData.subplots;
-            const chartType = document.querySelector('input[name="viewType"]:checked').value;
+            const traces = RAW_DATA[currentTab].traces;
+            const isSigOnly = document.getElementById('sigFilter').checked;
+            const showPoints = document.getElementById('showPoints').checked;
             
-            // Clear container
+            // Clean container
             container.innerHTML = '<div class="grid-container" id="grid"></div>';
             const grid = document.getElementById('grid');
+            
+            const groups = ['MS', 'MG'];
 
-            // Render Charts
-            data.forEach((item, index) => {
-                const pVal = item.p_value ?? 1;
-                const isSig = pVal < 0.05;
-                const pText = pVal < 0.001 ? 'p < 0.001' : `p = ${pVal.toFixed(4)}`;
-
-                // Create Card HTML
+            traces.forEach((item, index) => {{
+                const pVal = item.stats ? item.stats.p_value : 1.0;
+                
+                if (isSigOnly && pVal >= 0.05) return;
+                
                 const card = document.createElement('div');
                 card.className = 'chart-card';
+                // Green (Teal-ish) badge for significant
+                const badgeClass = pVal < 0.05 ? 'stats-badge sig-badge' : 'stats-badge';
+
                 card.innerHTML = `
                     <div class="card-header">
-                        <span class="card-title">${item.title}</span>
-                        <span class="p-badge ${isSig ? 'p-sig' : ''}">${pText}</span>
+                        <span>${{item.aa}}</span>
+                        <span class="${{badgeClass}}">P = ${{pVal.toExponential(2)}}</span>
                     </div>
-                    <div class="plot-div" id="plot_${index}"></div>
+                    <div class="plot-div" id="plot_${{index}}"></div>
                 `;
                 grid.appendChild(card);
 
-                // Create Traces for Plotly
-                const traces = item.traces.map(t => ({
-                    y: t.y,
-                    name: t.name,
-                    type: chartType,
-                    boxpoints: 'outliers',
-                    marker: { color: t.color, size: 4, opacity: 0.7 },
-                    line: { width: 1.5 },
-                    meanline: { visible: true },
-                    side: 'positive'
-                }));
+                const plotData = [];
+                
+                groups.forEach(g => {{
+                    if(item[g] && item[g].y) {{
+                        plotData.push({{
+                            y: item[g].y,
+                            type: currentType,
+                            name: g,
+                            marker: {{ color: COLORS[g] }},
+                            boxpoints: showPoints ? 'all' : false,
+                            points: showPoints ? 'all' : false, // for violin
+                            jitter: 0.3,
+                            pointpos: 0,
+                            box: {{ visible: true }}, // inside violin
+                            meanline: {{ visible: true }}
+                        }});
+                    }}
+                }});
 
-                // Layout settings
-                const layout = {
-                    margin: { t: 10, r: 10, b: 30, l: 40 },
-                    yaxis: { title: 'Concentration (Std)', zeroline: false },
-                    showlegend: (index === 0), // Show legend only on the first chart
-                    legend: { x: 1, y: 1, xanchor: 'right' },
+                const layout = {{
+                    margin: {{ t: 10, r: 10, b: 30, l: 40 }},
+                    yaxis: {{ title: 'Concentration', showgrid: true, gridcolor: '#eee' }},
                     paper_bgcolor: 'rgba(0,0,0,0)',
-                    plot_bgcolor: 'rgba(0,0,0,0)'
-                };
+                    plot_bgcolor: 'rgba(0,0,0,0)',
+                    showlegend: false
+                }};
 
-                Plotly.newPlot(`plot_${index}`, traces, layout, {responsive: true, displayModeBar: false});
-            });
-        }
+                Plotly.newPlot(`plot_${{index}}`, plotData, layout, {{responsive: true, displayModeBar: false}});
+            }});
+        }}
 
-        // Run initialization
+        // Run
         setTimeout(init, 100);
     </script>
 </body>
