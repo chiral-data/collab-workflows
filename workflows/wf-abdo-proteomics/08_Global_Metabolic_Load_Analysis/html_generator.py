@@ -1,225 +1,275 @@
-"""HTML Generator for Node 08: Global Metabolic Load Analysis"""
-import os
-import json
-import io
+"""HTML Generator for Node 08: Global Metabolic Load Analysis (Python 3)
+Generates interactive HTML visualization matching Node 4's Card Grid style.
+"""
 
-def generate_metabolic_load_html(json_filename='metabolic_load_data.json'):
+import json
+import os
+
+def generate_metabolic_load_html(json_filename: str = 'metabolic_load_data.json') -> str:
+    """Generate HTML for Global Metabolic Load visualization"""
     
-    # Locate JSON (Logic from your original file)
+    # Locate JSON
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
     json_path = os.path.join(SCRIPT_DIR, 'outputs', json_filename)
     
     if not os.path.exists(json_path):
-        json_path = json_filename # Fallback
+        # Try looking in current working directory as fallback
+        if os.path.exists(os.path.join(os.getcwd(), 'outputs', json_filename)):
+            json_path = os.path.join(os.getcwd(), 'outputs', json_filename)
+        elif os.path.exists(json_filename):
+             json_path = json_filename
 
+    json_content = '{}'
+    error_msg = ''
+    
     try:
-        # Use io.open for Python 2 compatibility
-        with io.open(json_path, 'r', encoding='utf-8') as f:
+        print(f"DEBUG: Reading JSON from {json_path}")
+        with open(json_path, 'r', encoding='utf-8') as f:
             json_content = f.read()
+            # Verify valid JSON
+            json.loads(json_content)
     except Exception as e:
-        print("Warning: Could not read JSON: " + str(e))
+        print(f"Warning: Could not read JSON: {e}")
+        error_msg = str(e)
         json_content = '{}'
 
-    html = '''<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Metabolic Load Analysis</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <style>
-        :root {
-            --sidebar-width: 280px;
+        :root {{
             --primary: #2c3e50;
             --accent: #3498db;
             --bg: #f8f9fa;
-        }
-        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); display: flex; height: 100vh; overflow: hidden; }
+            --card-bg: #ffffff;
+            --text: #333;
+        }}
         
-        /* Sidebar Styles */
-        .sidebar {
-            width: var(--sidebar-width);
-            background: white;
-            border-right: 1px solid #ddd;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-            z-index: 10;
-        }
-        .sidebar h2 { font-size: 1.2rem; color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
-        .control-group { margin-bottom: 25px; }
-        .control-group label { display: block; font-weight: 600; margin-bottom: 10px; color: #555; font-size: 0.9rem; }
+        body {{ font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }}
         
-        select, input[type="checkbox"] { margin-bottom: 10px; }
-        select {
-            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem;
-            background-color: white; cursor: pointer; transition: border 0.2s;
-        }
-        select:hover { border-color: var(--accent); }
+        /* Header */
+        header {{ background: var(--card-bg); padding: 15px 30px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }}
+        h1 {{ margin: 0; font-size: 1.2rem; color: var(--primary); }}
+        .timestamp {{ font-size: 0.8rem; color: #777; }}
+
+        /* Controls Bar */
+        .controls {{ background: #fff; padding: 10px 30px; border-bottom: 1px solid #eee; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }}
         
-        .stats-panel {
-            margin-top: auto; padding: 15px; background: #eef7fb; border-radius: 8px; font-size: 0.9rem; color: #444;
-            border-left: 4px solid var(--accent);
-        }
-        .stats-panel h3 { margin: 0 0 10px 0; font-size: 1rem; color: var(--primary); }
-        .stat-item { margin-bottom: 5px; display: flex; justify-content: space-between; }
-        .stat-value { font-weight: bold; color: var(--accent); }
+        .toggle-group {{ display: flex; gap: 5px; background: #eee; padding: 4px; border-radius: 6px; }}
+        .toggle-btn {{ border: none; background: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 500; color: #666; transition: 0.2s; }}
+        .toggle-btn.active {{ background: white; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
+
+        .toggle-container {{ display: flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-left: auto; }}
+        input[type="checkbox"] {{ accent-color: var(--accent); cursor: pointer; transform: scale(1.2); }}
+
+        .legend-bar {{ display: flex; gap: 15px; font-size: 0.85rem; margin-left: 20px; }}
+        .legend-item {{ display: flex; align-items: center; gap: 5px; }}
+        .dot {{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }}
 
         /* Main Content */
-        .main { flex: 1; padding: 20px; display: flex; flex-direction: column; position: relative; }
-        #plot-container { flex: 1; width: 100%; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
+        #app {{ flex: 1; overflow-y: auto; padding: 20px 30px; display: flex; justify-content: center; }}
         
-        .loading { position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); font-size: 1.2rem; color: #777; }
+        .hero-container {{
+             width: 100%;
+             max-width: 1000px;
+             margin-top: 20px;
+        }}
+
+        .chart-card {{
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }}
+        
+        .card-header {{ display: flex; justify-content: space-between; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #f0f0f0; font-size: 1.1rem; font-weight: bold; color: var(--primary); }}
+        
+        .stats-badge {{ font-size: 0.9rem; background: #e8f6fd; color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 600; }}
+        .sig-badge {{ background: #fee; color: #c0392b; }} /* Red for significant */
+
+        .plot-div {{ flex: 1; width: 100%; }}
+
+        .loading {{ text-align: center; padding: 50px; font-size: 1.2rem; color: #666; }}
+        
+        .error-msg {{
+            background: #ffebee; color: #c62828; padding: 20px; border-radius: 8px; border: 1px solid #ffcdd2;
+            margin: 20px; text-align: center;
+        }}
+        
+        .info-msg {{
+            background: #e3f2fd; color: #0d47a1; padding: 20px; border-radius: 8px; border: 1px solid #bbdefb;
+            margin: 20px; text-align: center;
+        }}
     </style>
+    <script>
+        const RAW_DATA = __JSON_DATA__;
+    </script>
 </head>
 <body>
+    <header>
+        <h1>Global Metabolic Load Analysis</h1>
+        <span class="timestamp" id="timestamp">Generated: Just now</span>
+    </header>
 
-    <div class="sidebar">
-        <h2>Metabolic Load</h2>
+    <div class="controls">
+        <label style="font-weight:600; color:#555; margin-right:10px;">Chart Type:</label>
+        <div class="toggle-group">
+            <button class="toggle-btn active" onclick="setChartType('box')">Box Plot</button>
+            <button class="toggle-btn" onclick="setChartType('violin')">Violin Plot</button>
+        </div>
+
+        <div class="legend-bar">
+            <div class="legend-item"><span class="dot" style="background:#1f77b4"></span> PPMS</div>
+            <div class="legend-item"><span class="dot" style="background:#ff7f0e"></span> SPMS</div>
+            <div class="legend-item"><span class="dot" style="background:#2ca02c"></span> RRMS</div>
+            <div class="legend-item"><span class="dot" style="background:#d62728"></span> GMG</div>
+        </div>
         
-        <div class="control-group">
-            <label for="chart-type">Visualization Type:</label>
-            <select id="chart-type" onchange="updatePlot()">
-                <option value="box">Box Plot</option>
-                <option value="violin">Violin Plot</option>
-            </select>
+        <div class="toggle-container">
+            <input type="checkbox" id="sigFilter" onchange="renderCurrentView()">
+            <label for="sigFilter" title="Show only results with p < 0.05">Significant Only (p<0.05)</label>
         </div>
 
-        <div class="control-group">
-            <label for="points-toggle">Data Points:</label>
-            <select id="points-toggle" onchange="updatePlot()">
-                <option value="outliers">Outliers Only (Clean)</option>
-                <option value="all">Show All Points (Jitter)</option>
-                <option value="false" selected>Hidden</option>
-            </select>
-        </div>
-
-        <div class="control-group" style="border-top: 1px solid #eee; padding-top: 15px;">
-            <label class="checkbox-label" style="display: flex; align-items: center; cursor: pointer;">
-                <input type="checkbox" id="sig-filter" onchange="updatePlot()" style="margin: 0 10px 0 0;">
-                <span>Filter Non-Significant</span>
-            </label>
-        </div>
-
-        <div class="stats-panel" id="stats-panel">
-            <h3>Statistical Significance</h3>
-            <div class="stat-item">
-                <span>Test:</span> <span id="stat-test" style="font-weight: 600;">Loading...</span>
-            </div>
-            <div class="stat-item">
-                <span>P-Value:</span> <span id="stat-p" class="stat-value" style="font-size: 1.2rem;">...</span>
-            </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="showPoints" checked onchange="renderCurrentView()">
+            <label for="showPoints">Show Data Points</label>
         </div>
     </div>
 
-    <div class="main">
-        <div id="plot-container"></div>
-        <div id="loading" class="loading">Loading Data...</div>
-        <div id="filter-msg" style="display:none; text-align: center; margin-top: 50px; color: #7f8c8d;">
-            <h3>Result Not Significant</h3>
-            <p>Chart hidden by filter (P > 0.05)</p>
+    <div id="app">
+        <div class="hero-container" id="hero">
+            <div class="loading">Initializing Dashboard...</div>
         </div>
     </div>
 
     <script>
-        const RAW_DATA = __JSON_DATA__;
+        let currentType = 'box';
         
-        // Helper to parse p-value
-        function isSignificant(pValStr) {
-            if (typeof pValStr !== 'string') return false;
-            if (pValStr.includes('<')) return true; 
-            return parseFloat(pValStr) < 0.05;
-        }
+        const COLORS = {{
+            'PPMS': '#1f77b4', 
+            'SPMS': '#ff7f0e', 
+            'RRMS': '#2ca02c', 
+            'GMG': '#d62728'
+        }};
+        
+        // Order for x-axis
+        const GROUPS = ['PPMS', 'SPMS', 'RRMS', 'GMG'];
 
-        function init() {
-            document.getElementById('loading').style.display = 'none';
-            if(!RAW_DATA.fig8 || !RAW_DATA.fig8.traces) {
-                alert("Error: Data structure invalid.");
+        function init() {{
+            document.getElementById('timestamp').textContent = new Date().toLocaleString();
+            
+            // Check for empty data
+            if (!RAW_DATA || Object.keys(RAW_DATA).length === 0) {{
+                document.getElementById('app').innerHTML = `
+                    <div class="error-msg">
+                        <h3>Dashboard Error</h3>
+                        <p>No data available to display.</p>
+                        <p>Debug info: JSON could not be loaded. {error_msg}</p>
+                    </div>
+                `;
                 return;
-            }
+            }}
             
-            // Populate Stats
-            if (RAW_DATA.stats) {
-                const pVal = RAW_DATA.stats.p_value_fmt;
-                const pElem = document.getElementById('stat-p');
-                document.getElementById('stat-test').textContent = RAW_DATA.stats.test;
-                pElem.textContent = pVal;
-                
-                // Color logic
-                if (isSignificant(pVal)) {
-                    pElem.style.color = '#27ae60'; // Green
-                    pElem.textContent += ' (Sig)';
-                } else {
-                    pElem.style.color = '#7f8c8d'; // Grey
-                    pElem.textContent += ' (ns)';
-                }
-            }
+            renderCurrentView();
+        }}
+        
+        function setChartType(type) {{
+            currentType = type;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            if(type === 'box') document.querySelector('.toggle-btn:first-child').classList.add('active');
+            else document.querySelector('.toggle-btn:last-child').classList.add('active');
+            renderCurrentView();
+        }}
 
-            updatePlot();
-        }
-
-        function updatePlot() {
-            var chartType = document.getElementById('chart-type').value;
-            var pointsMode = document.getElementById('points-toggle').value;
-            var filterOn = document.getElementById('sig-filter').checked;
+        function renderCurrentView() {{
+            const container = document.getElementById('hero');
             
-            // P-Value Filter Logic
-            var pVal = RAW_DATA.stats ? RAW_DATA.stats.p_value_fmt : "1.0";
-            var isSig = isSignificant(pVal);
+            if (!RAW_DATA['fig8'] || !RAW_DATA['fig8'].traces) {{
+                  container.innerHTML = '<div class="error-msg">Missing Figure 8 Data</div>';
+                  return;
+            }}
             
-            if (filterOn && !isSig) {
-                document.getElementById('plot-container').style.display = 'none';
-                document.getElementById('filter-msg').style.display = 'block';
-                return; // Stop rendering
-            } else {
-                document.getElementById('plot-container').style.display = 'block';
-                document.getElementById('filter-msg').style.display = 'none';
-            }
+            const data = RAW_DATA['fig8'].traces[0];
+            const pVal = data.stats.p_value;
+            const testName = data.stats.test || 'Test';
+            const showPoints = document.getElementById('showPoints').checked;
+            const isSigOnly = document.getElementById('sigFilter').checked;
 
-            var dataConfig = RAW_DATA.fig8;
+            container.innerHTML = '';
             
-            var traces = dataConfig.traces.map(function(t) {
-                var trace = {
-                    y: t.y,
-                    name: t.name,
-                    type: chartType,
-                    marker: { color: t.color },
-                    line: { color: 'black', width: 1.5 }
-                };
+            // Filter logic
+            if (isSigOnly && pVal >= 0.05) {{
+                container.innerHTML = `
+                    <div class="info-msg">
+                        <h3>Result Hidden</h3>
+                        <p>The result is not statistically significant (p = ${{pVal.toExponential(2)}}).</p>
+                        <p>Uncheck "Significant Only" to view.</p>
+                    </div>
+                `;
+                return;
+            }}
+            
+            const card = document.createElement('div');
+            card.className = 'chart-card';
+            
+            // Add sig-badge class if significant
+            const badgeClass = pVal < 0.05 ? 'stats-badge sig-badge' : 'stats-badge';
+            
+            card.innerHTML = `
+                <div class="card-header">
+                    <span>Total Amino Acid Concentration by Disease Type</span>
+                    <span class="${{badgeClass}}">${{testName}} P = ${{pVal.toExponential(2)}}</span>
+                </div>
+                <div class="plot-div" id="plot_hero"></div>
+            `;
+            container.appendChild(card);
+            
+            const plotData = [];
+            
+            GROUPS.forEach(g => {{
+                if(data[g] && data[g].y) {{
+                    plotData.push({{
+                        y: data[g].y,
+                        type: currentType,
+                        name: g,
+                        marker: {{ color: COLORS[g] }},
+                        boxpoints: showPoints ? 'all' : false,
+                        points: showPoints ? 'all' : false, // for violin
+                        jitter: 0.3,
+                        pointpos: 0,
+                        box: {{ visible: true }}, // inside violin
+                        meanline: {{ visible: true }}
+                    }});
+                }}
+            }});
+            
+            const layout = {{
+                margin: {{ t: 20, r: 20, b: 40, l: 60 }},
+                yaxis: {{ title: 'Concentration [nmol/ml]', showgrid: true, gridcolor: '#eee', zeroline: false }},
+                xaxis: {{ showgrid: false }},
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                showlegend: false,
+                font: {{ family: 'Segoe UI, sans-serif' }}
+            }};
+            
+            Plotly.newPlot('plot_hero', plotData, layout, {{responsive: true, displayModeBar: false}});
+        }}
 
-                if (chartType === 'box') {
-                    trace.boxpoints = pointsMode;
-                    trace.jitter = 0.3;
-                    trace.pointpos = 0; // Centered
-                    trace.fillcolor = t.color; 
-                } else if (chartType === 'violin') {
-                    trace.points = pointsMode;
-                    trace.side = 'positive';
-                    trace.meanline = { visible: true };
-                    trace.fillcolor = t.color; 
-                    trace.line = { color: 'black', width: 1 };
-                }
-                
-                return trace;
-            });
-
-            var layout = {
-                title: { text: dataConfig.title, font: {size: 20} },
-                yaxis: { title: dataConfig.yaxis, zeroline: false },
-                margin: { l: 60, r: 30, t: 80, b: 60 },
-                showlegend: true,
-                legend: { orientation: 'h', x: 0.5, xanchor: 'center', y: -0.1 }
-            };
-
-            Plotly.newPlot('plot-container', traces, layout, {responsive: true});
-        }
-
-        init();
+        // Run
+        setTimeout(init, 100);
     </script>
 </body>
-</html>'''
-
+</html>"""
+    
     # Inject JSON data
     html = html.replace('__JSON_DATA__', json_content)
     

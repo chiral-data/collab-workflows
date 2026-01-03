@@ -1,134 +1,157 @@
-"""Node 8: Global Metabolic Load Analysis - Generate Fig 8"""
+"""Node 8: Global Metabolic Load Analysis - Generate Fig 8 (Python 3)"""
 import os
 import sys
 import json
-import io
+import traceback
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 
-from html_generator import generate_metabolic_load_html
-
-# Configuration
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE = "data_standardized.pkl" 
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
-
-if not os.path.exists(OUTPUT_DIR):
-    os.makedirs(OUTPUT_DIR)
-
-sns.set_style("whitegrid")
-plt.rcParams['font.family'] = 'sans-serif'
-
-print(">>> NODE 8: GLOBAL METABOLIC LOAD ANALYSIS...")
-
-# Load data
+# Import local HTML generator
 try:
-    df = pd.read_pickle(INPUT_FILE)
-except Exception as e:
-    print("Warning: Input file not found. Ensure data_standardized.pkl exists.")
+    from html_generator import generate_metabolic_load_html
+except ImportError as e:
+    print(f"Error importing html_generator: {e}")
     sys.exit(1)
 
-# Define masks
-ms_types = ['RRMS', 'SPMS', 'PPMS']
-mg_types = ['general', 'eye-type']
-masks = {
-    'MS': df['Type'].isin(ms_types),
-    'MG': df['Type'].isin(mg_types)
-}
-
-df_mg_ms = df[masks['MS'] | masks['MG']].copy()
-
-# ==========================================
-# FIG 8: Total AA by Type
-# ==========================================
-print("Generating Fig 8: Total AA by Type...")
-
-df_mg_ms['Plot_Type'] = np.where(df_mg_ms['Type'].isin(['general', 'eye-type']), 'GMG', df_mg_ms['Type'])
-
-# Static Plot (Legacy Support)
-plt.figure(figsize=(8,6))
-type_order = ['PPMS', 'SPMS', 'RRMS', 'GMG']
-type_colors = {'PPMS': '#1f77b4', 'SPMS': '#ff7f0e', 'RRMS': '#2ca02c', 'GMG': '#d62728'}
-
-sns.boxplot(data=df_mg_ms, x='Plot_Type', y='Total_AA', order=type_order,
-            palette=type_colors, showfliers=True, width=0.5, linewidth=1.5,
-            flierprops={'marker': 'o', 'markerfacecolor': 'white', 'markeredgecolor': 'black', 'markersize': 5})
-
-plt.ylabel('Concentration [nmol/ml]')
-plt.xlabel('')
-plt.yticks([-4, -2, 0, 2, 4, 6, 8, 10, 12])
-plt.title('Total Amino Acid Concentration by Disease Type', fontsize=12, fontweight='bold')
-
-plt.savefig(os.path.join(OUTPUT_DIR, 'Fig8_TotalAA_Type.png'))
-plt.close()
-print("Saved: Fig8_TotalAA_Type.png")
-
-
-# ==========================================
-# STATISTICAL ANALYSIS (Kruskal-Wallis)
-# ==========================================
-print("Calculating Statistics...")
-groups = []
-group_names = []
-for t in type_order:
-    vals = df_mg_ms[df_mg_ms['Plot_Type'] == t]['Total_AA'].dropna().values
-    if len(vals) > 0:
-        groups.append(vals)
-        group_names.append(t)
-
-p_value = 1.0
-test_name = "N/A"
-if len(groups) > 1:
+def main():
     try:
-        stat, p_value = stats.kruskal(*groups)
-        test_name = "Kruskal-Wallis"
-        print("Kruskal-Wallis p-value: " + str(p_value))
-    except Exception as e:
-        print("Stats error: " + str(e))
+        # Configuration
+        SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+        INPUT_FILE = "data_standardized.pkl" 
+        OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
 
-# ==========================================
-# GENERATE JSON/HTML DATA
-# ==========================================
-print("Generating JSON and HTML...")
+        if not os.path.exists(OUTPUT_DIR):
+            os.makedirs(OUTPUT_DIR, exist_ok=True)
+            print(f"Created output directory: {OUTPUT_DIR}")
 
-traces = []
-for t in type_order:
-    y_vals = df_mg_ms[df_mg_ms['Plot_Type'] == t]['Total_AA'].dropna().tolist()
-    # Adding jittered x-values for strip plot could be done in JS, 
-    # but sending raw y-data allows JS to handle Box/Violin logic perfectly.
-    traces.append({
-        'name': t,
-        'y': y_vals,
-        'color': type_colors.get(t, '#333')
-    })
+        sns.set_style("whitegrid")
+        plt.rcParams['font.family'] = 'sans-serif'
 
-json_data = {
-    'metadata': {'title': 'Global Metabolic Load'},
-    'stats': {
-        'test': test_name,
-        'p_value': p_value,
-        'p_value_fmt': "< 0.001" if p_value < 0.001 else "{:.4f}".format(p_value)
-    },
-    'fig8': {
-        'title': 'Total Amino Acid Concentration by Disease Type',
-        'yaxis': 'Concentration [nmol/ml]',
-        'traces': traces
-    }
-}
+        print(">>> NODE 8: GLOBAL METABOLIC LOAD ANALYSIS...")
 
-json_path = os.path.join(OUTPUT_DIR, 'metabolic_load_data.json')
-with io.open(json_path, 'w', encoding='utf-8') as f:
-    f.write(json.dumps(json_data, ensure_ascii=False))
-print("Saved: " + json_path)
+        # Load data
+        if not os.path.exists(INPUT_FILE):
+             print(f"ERROR: Input file {INPUT_FILE} not found in {os.getcwd()}")
+             sys.exit(1)
 
-html_content = generate_metabolic_load_html('metabolic_load_data.json')
+        df = pd.read_pickle(INPUT_FILE)
+        print(f"Loaded {len(df)} records")
 
-html_path = os.path.join(OUTPUT_DIR, 'metabolic_load.html')
-with io.open(html_path, 'w', encoding='utf-8') as f:
-    f.write(html_content)
-print("Saved: " + html_path)
+        # Define masks
+        ms_types = ['RRMS', 'SPMS', 'PPMS']
+        mg_types = ['general', 'eye-type']
+        masks = {
+            'MS': df['Type'].isin(ms_types),
+            'MG': df['Type'].isin(mg_types)
+        }
 
-print("Node 8 completed successfully.")
+        df_mg_ms = df[masks['MS'] | masks['MG']].copy()
+        df_mg_ms['Plot_Type'] = np.where(df_mg_ms['Type'].isin(['general', 'eye-type']), 'GMG', df_mg_ms['Type'])
+
+        # ==========================================
+        # FIG 8: Total AA by Type (Static)
+        # ==========================================
+        print("Generating Fig 8: Total AA by Type...")
+
+        plt.figure(figsize=(8,6))
+        type_order = ['PPMS', 'SPMS', 'RRMS', 'GMG']
+        type_colors = {'PPMS': '#1f77b4', 'SPMS': '#ff7f0e', 'RRMS': '#2ca02c', 'GMG': '#d62728'}
+
+        sns.boxplot(data=df_mg_ms, x='Plot_Type', y='Total_AA', order=type_order,
+                    palette=type_colors, showfliers=True, width=0.5, linewidth=1.5,
+                    flierprops={'marker': 'o', 'markerfacecolor': 'white', 'markeredgecolor': 'black', 'markersize': 5})
+
+        plt.ylabel('Concentration [nmol/ml]')
+        plt.xlabel('')
+        
+        # Calculate max y to place simple annotation
+        y_max = df_mg_ms['Total_AA'].max()
+        plt.ylim(top=y_max * 1.1)
+
+        plt.title('Total Amino Acid Concentration by Disease Type', fontsize=12, fontweight='bold')
+
+        out_path = os.path.join(OUTPUT_DIR, 'Fig8_TotalAA_Type.png')
+        plt.savefig(out_path)
+        plt.close()
+        print(f"Saved: {out_path}")
+
+        # ==========================================
+        # STATISTICAL ANALYSIS (Kruskal-Wallis)
+        # ==========================================
+        print("Calculating Statistics...")
+        groups = []
+        for t in type_order:
+            vals = df_mg_ms[df_mg_ms['Plot_Type'] == t]['Total_AA'].dropna().values
+            if len(vals) > 0:
+                groups.append(vals)
+
+        p_value = 1.0
+        test_name = "N/A"
+        if len(groups) > 1:
+            try:
+                stat, p_value = stats.kruskal(*groups)
+                test_name = "Kruskal-Wallis"
+                print(f"Kruskal-Wallis p-value: {p_value:.4e}")
+            except Exception as e:
+                print(f"Stats error: {e}")
+
+        # ==========================================
+        # GENERATE JSON DATA
+        # ==========================================
+        print("Generating JSON...")
+
+        json_data = {
+            'metadata': {
+                'title': 'Global Metabolic Load Analysis'
+            },
+            'fig8': {
+                'title': 'Total Amino Acid by Disease Type',
+                'variable': 'Total_AA',
+                'traces': []
+            }
+        }
+        
+        # Create a single trace object that contains all group data
+        # This structure matches the "Hero Plot" expectation
+        trace_data = {
+             'name': 'Total AA',
+             'stats': {
+                 'p_value': float(p_value),
+                 'test': test_name
+             }
+        }
+        
+        # Add data for each group
+        for t in type_order:
+            y_vals = df_mg_ms[df_mg_ms['Plot_Type'] == t]['Total_AA'].dropna().tolist()
+            trace_data[t] = {'y': y_vals}
+            
+        json_data['fig8']['traces'].append(trace_data)
+
+        json_path = os.path.join(OUTPUT_DIR, 'metabolic_load_data.json')
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(json_data, f, indent=2, ensure_ascii=False)
+        print(f"Saved JSON: {json_path}")
+
+        # ==========================================
+        # GENERATE HTML
+        # ==========================================
+        html_content = generate_metabolic_load_html(json_filename='metabolic_load_data.json')
+        
+        html_path = os.path.join(OUTPUT_DIR, 'metabolic_load.html')
+        with open(html_path, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        print(f"Saved HTML: {html_path}")
+        
+        print("Node 8 completed successfully.")
+
+    except Exception:
+        print("CRITICAL ERROR IN GENERATE_FIGURE.PY:")
+        traceback.print_exc()
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
