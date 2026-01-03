@@ -45,6 +45,7 @@ df_rm['Group'] = np.where(df_rm['Type']=='RRMS', 'RRMS', 'MG')
 
 fig, ax = plt.subplots(figsize=(6, 6))
 sns.boxplot(data=df_rm, x='Group', y='Total_AA', palette={'RRMS':'grey', 'MG':'skyblue'}, ax=ax)
+sns.boxplot(data=df_rm, x='Group', y='Total_AA', hue='Group', palette={'RRMS':'grey', 'MG':'skyblue'}, ax=ax, legend=False)
 ax.set_ylabel('Concentration [nmol/ml]', fontsize=12)
 ax.set_xlabel('', fontsize=12)
 ax.set_title('Total Amino Acid Concentration: MS-RRMS vs MG', fontsize=12, fontweight='bold')
@@ -79,6 +80,7 @@ g = sns.FacetGrid(df_melt_11, col='Amino Acid', col_wrap=6, sharey=False, height
                   gridspec_kws={'hspace': 0.5, 'wspace': 0.3})
 
 g.map_dataframe(sns.boxplot, x='Group', y='Concentration', palette={'RRMS':'lightgrey', 'MG':'lightblue'},
+                hue='Group', palette={'RRMS':'lightgrey', 'MG':'lightblue'}, legend=False,
                 showfliers=True, 
                 flierprops={'marker': 'o', 'markerfacecolor': 'black', 'markersize': 3})
 

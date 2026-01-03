@@ -48,7 +48,7 @@ amino_acids_fig4 = ['CIT_conc', 'GABA_conc', 'AAA_conc']
 
 for i, aa in enumerate(amino_acids_fig4):
     ax = axes[i]
-    sns.boxplot(data=df_mg_ms, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+    sns.boxplot(data=df_mg_ms, x='Group', y=aa, hue='Group', palette={'MS':'salmon', 'MG':'teal'}, ax=ax, legend=False)
     ax.set_title(aa.replace('_conc', ''), fontsize=12, fontweight='bold')
     ax.set_xlabel('')
     ax.set_ylabel('Concentration [nmol/ml]' if i == 0 else '')
@@ -79,7 +79,7 @@ fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 
 for i, aa in enumerate(['CIT_conc', 'GABA_conc', 'AAA_conc']):
     ax = axes[i]
-    sns.boxplot(data=df_fem, x='Group', y=aa, palette={'MS':'salmon', 'MG':'teal'}, ax=ax)
+    sns.boxplot(data=df_fem, x='Group', y=aa, hue='Group', palette={'MS':'salmon', 'MG':'teal'}, ax=ax, legend=False)
     ax.set_title(aa.replace('_conc', ''), fontsize=12, fontweight='bold')
     ax.set_xlabel('')
     ax.set_ylabel('Concentration [nmol/ml]' if i == 0 else '')
