@@ -1,8 +1,7 @@
-name = "Advanced Analysis"
-description = "Performs PCA, Random Forest classification, and confounder analysis"
-dependencies = ["03-standardization"]
-inputs = ["data_standardized.pkl", "data_cleaned.pkl"]
-outputs = ["advanced_results.pkl"]
+name = "Differential Diagnosis Biomarkers"
+description = "Generate Figure 4 (Specific AAs) and Figure 5 (Females Only)"
+inputs = ["data_standardized.pkl"]
+outputs = ["Fig4_Specific_Diffs.png", "Fig5_Female_Specific.png", "biomarkers_data.json", "biomarkers.html"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"

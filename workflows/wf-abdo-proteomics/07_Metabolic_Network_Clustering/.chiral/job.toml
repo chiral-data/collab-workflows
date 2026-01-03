@@ -1,8 +1,7 @@
-name = "Data Transformation"
-description = "Transforms data from wide to long format for visualization libraries"
-dependencies = ["03-standardization"]
-inputs = ["data_standardized.pkl"]
-outputs = ["data_melted.pkl"]
+name = "Metabolic Network Clustering"
+description = "Generate Figure 6 (MS+MG Correlation) and Figure 7 (Control Correlation)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig6_Corr_MS_MG.png", "Fig7_Corr_Control.png", "clustering_data.json", "clustering.html"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"

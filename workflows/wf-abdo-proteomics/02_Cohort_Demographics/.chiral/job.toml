@@ -1,8 +1,7 @@
-name = "Feature Engineering"
-description = "Cleans dataset, translates Polish columns to English, merges disease categories"
-dependencies = ["01-data-ingestion"]
-inputs = ["data_raw.pkl"]
-outputs = ["data_cleaned.pkl"]
+name = "Cohort Demographics"
+description = "Generate demographic tables (Table 1: MS vs Controls, Table 2: MS vs MG)"
+inputs = ["data_standardized.pkl"]
+outputs = ["Table1_Demographics.png", "Table2_MS_MG_Demographics.png", "demographics_data.json", "demographics.html"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"

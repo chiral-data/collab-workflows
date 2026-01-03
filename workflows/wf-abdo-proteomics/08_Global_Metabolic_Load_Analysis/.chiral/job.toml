@@ -1,8 +1,7 @@
-name = "Visualization Dashboard"
-description = "Generates web dashboard data and static visualizations"
-dependencies = ["07-transform", "05-statistics", "06-advanced-analysis"]
-inputs = ["data_melted.pkl", "comprehensive_stats.pkl", "advanced_results.pkl", "data_cleaned.pkl"]
-outputs = ["results.json", "*.png"]
+name = "Global Metabolic Load Analysis"
+description = "Generate Figure 8 (Total AA by Disease Type)"
+inputs = ["data_standardized.pkl"]
+outputs = ["Fig8_TotalAA_Type.png", "metabolic_load_data.json", "metabolic_load.html"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"

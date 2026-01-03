@@ -1,8 +1,7 @@
-name = "Data Transformation"
-description = "Transforms data from wide to long format for visualization libraries"
-dependencies = ["03-standardization"]
-inputs = ["data_standardized.pkl"]
-outputs = ["data_melted.pkl"]
+name = "Clinical Mimicry Test"
+description = "Generate Figure 10 (Total AA) and Figure 11 (RRMS vs MG Grid)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig10_TotalAA_RRMS_MG.png", "Fig11_RRMS_vs_MG_Grid.png", "mimicry_data.json", "mimicry.html"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"

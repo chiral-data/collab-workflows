@@ -1,8 +1,7 @@
-name = "Data Transformation"
-description = "Transforms data from wide to long format for visualization libraries"
-dependencies = ["03-standardization"]
-inputs = ["data_standardized.pkl"]
-outputs = ["data_melted.pkl"]
+name = "Subtype Trajectories"
+description = "Generate Figure 9 (Duration Grid by Subtype)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig9_Duration_Grid.png", "trajectories_data.json", "trajectories.html"]
 
 [container]
 image = "chiral.sakuracr.jp/proteomics:2025_12_31"
