@@ -2,6 +2,7 @@
 import os
 import sys
 import json
+import io
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -36,8 +37,9 @@ masks = {
 df_mg_ms = df[masks['MS'] | masks['MG']].copy()
 
 # ==========================================
-# FIG 9: Duration Grid by Subtype
+# FIG 9: Duration Grid by Subtype (Static Image)
 # ==========================================
+# (Keep existing static generation as user liked it)
 
 df_fig9 = df_mg_ms.copy()
 
@@ -109,66 +111,72 @@ plt.close()
 
 
 # ==========================================
-# GENERATE JSON/HTML DATA
+# GENERATE JSON DATA (Node 4 Style)
 # ==========================================
 
-def create_trajectories_data(df_source, amino_acids, clean_names):
-    subplots = []
-    subtype_order = ['PPMS', 'SPMS', 'RRMS', 'GMG', 'OMG']
-    subtype_colors = {'PPMS': '#E74C3C', 'SPMS': '#3498DB', 'RRMS': '#2ECC71', 'GMG': '#9B59B6', 'OMG': '#F39C12'}
+def get_regression_stats(x, y):
+    """Calculates linear regression stats for web visualization"""
+    if len(x) < 2:
+        return None
+    slope, intercept, r_value, p_value, std_err = linregress(x, y)
+    # Consistent scale for lines
+    line_x = [float(min(x)), float(max(x))]
+    line_y = [slope * xi + intercept for xi in line_x]
     
-    for aa_col, aa_name in zip(amino_acids, clean_names):
-        traces = []
-        for subtype in subtype_order:
-            subtype_data = df_source[df_source['Subtype'] == subtype]
-            if len(subtype_data) > 0:
-                # Scatter points - remove NaN values completely
-                valid_data_scatter = subtype_data[['Duration', aa_col]].dropna()
-                
-                traces.append({
-                    'x': valid_data_scatter['Duration'].tolist(),
-                    'y': valid_data_scatter[aa_col].tolist(),
-                    'mode': 'markers',
-                    'type': 'scatter',
-                    'name': subtype,
-                    'marker': {'color': subtype_colors[subtype], 'size': 6, 'opacity': 0.6}
-                })
-                
-                # Regression line
-                valid_data = subtype_data[['Duration', aa_col]].dropna()
-                if len(valid_data) > 1:
-                    slope, intercept, r_val, p_val, std_err = linregress(valid_data['Duration'], valid_data[aa_col])
-                    x_line = [valid_data['Duration'].min(), valid_data['Duration'].max()]
-                    y_line = [slope * x + intercept for x in x_line]
-                    traces.append({
-                        'x': x_line,
-                        'y': y_line,
-                        'mode': 'lines',
-                        'type': 'scatter',
-                        'name': subtype + ' fit',
-                        'line': {'color': subtype_colors[subtype], 'width': 2},
-                        'showlegend': False
-                    })
-        
-        subplots.append({
-            'title': aa_name,
-            'traces': traces
-        })
-    return subplots
+    return {
+        'slope': float(slope),
+        'intercept': float(intercept),
+        'r_squared': float(r_value**2),
+        'p_value': float(p_value),
+        'line_x': line_x,
+        'line_y': line_y
+    }
 
 json_data = {
-    'metadata': {'title': 'Subtype Trajectories'},
+    'metadata': {
+        'title': 'Subtype Trajectories',
+        'amino_acids': aa_clean_names
+    },
     'fig9': {
-        'subplots': create_trajectories_data(df_fig9, aa_cols, aa_clean_names)
+        'type': 'scatter', 
+        'variable': 'Duration',
+        'traces': []
     }
 }
 
-json_path = os.path.join(OUTPUT_DIR, 'trajectories_data.json')
-with open(json_path, 'w', encoding='utf-8') as f:
-    json.dump(json_data, f, indent=2, allow_nan=False)
+for aa_col, aa_name in zip(aa_cols, aa_clean_names):
+    trace_item = {'aa': aa_name}
+    
+    for subtype in subtype_order:
+        subtype_data = df_fig9[df_fig9['Subtype'] == subtype]
+        if len(subtype_data) > 0:
+            valid_data = subtype_data[['Duration', aa_col]].dropna()
+            
+            # Scatter Data
+            x_vals = valid_data['Duration'].tolist()
+            y_vals = valid_data[aa_col].tolist()
+            
+            # Stats
+            stats_obj = get_regression_stats(valid_data['Duration'].values, valid_data[aa_col].values)
+            
+            trace_item[subtype] = {
+                'x': x_vals,
+                'y': y_vals,
+                'stats': stats_obj
+            }
+            
+    json_data['fig9']['traces'].append(trace_item)
 
+
+json_path = os.path.join(OUTPUT_DIR, 'trajectories_data.json')
+with io.open(json_path, 'w', encoding='utf-8') as f:
+    f.write(json.dumps(json_data, ensure_ascii=False))
+
+# Generate HTML
 html_content = generate_trajectories_html(json_filename='trajectories_data.json')
 
 html_path = os.path.join(OUTPUT_DIR, 'trajectories.html')
-with open(html_path, 'w', encoding='utf-8') as f:
+with io.open(html_path, 'w', encoding='utf-8') as f:
     f.write(html_content)
+
+print("Node 9 completed.")

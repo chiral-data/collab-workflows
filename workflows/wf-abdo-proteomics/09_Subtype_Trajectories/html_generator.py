@@ -1,427 +1,243 @@
-"""HTML Generator for Node 09: Subtype Trajectories
-Generates interactive HTML visualization
-Based on JavaScript + Plotly.js architecture
+"""HTML Generator for Node 09: Subtype Trajectories Dashboard
+Generates interactive HTML visualization matching Node 4's Card Grid style.
 """
 
 import json
 import os
+import io
 
 def generate_trajectories_html(json_filename='trajectories_data.json'):
     """Generate HTML for Subtype Trajectories visualization"""
     
-    # Determine script directory to locate output folder correctly
+    # Locate JSON
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-    
-    # Read JSON data to embed directly
-    # Try absolute path first
-    json_path = os.path.join(SCRIPT_DIR, 'output', os.path.basename(json_filename))
+    json_path = os.path.join(SCRIPT_DIR, 'outputs', json_filename)
     
     if not os.path.exists(json_path):
-        # Fallback to relative path
-        json_path = os.path.join('outputs', json_filename)
-        if not os.path.exists(json_path):
-            json_path = json_filename
-        
+        json_path = json_filename # Fallback
+
     try:
-        with open(json_path, 'r', encoding='utf-8') as f:
+        with io.open(json_path, 'r', encoding='utf-8') as f:
             json_content = f.read()
     except Exception as e:
-        print(f"Warning: Could not read JSON file {json_path} for embedding: {e}")
+        print("Warning: Could not read JSON: " + str(e))
         json_content = '{}'
 
-    html = '''<!DOCTYPE html>
+    html = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subtype Trajectories</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js" crossorigin="anonymous"></script>
-    <script>
-        // Embedded JSON data
-        const RAW_DATA = __JSON_DATA__;
-    </script>
+    <title>Subtype Trajectories Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <style>
         :root {
             --primary: #2c3e50;
-            --secondary: #667eea;
-            --gradient-start: #667eea;
-            --gradient-end: #764ba2;
-            --bg-light: #f5f5f5;
-            --text-muted: #7f8c8d;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #333;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            padding: 20px;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+        /* Header */
+        header { background: var(--card-bg); padding: 15px 30px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h1 { margin: 0; font-size: 1.2rem; color: var(--primary); }
+        .timestamp { font-size: 0.8rem; color: #777; }
+
+        /* Controls Bar */
+        .controls { background: #fff; padding: 10px 30px; border-bottom: 1px solid #eee; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
         
-        .container {
-            max-width: 1800px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        }
+        .toggle-container { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-left: auto; }
+        input[type="checkbox"] { accent-color: var(--accent); cursor: pointer; transform: scale(1.2); }
+
+        .legend-bar { display: flex; gap: 15px; font-size: 0.85rem; }
+        .legend-item { display: flex; align-items: center; gap: 5px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+        /* Main Content Grid */
+        #app { flex: 1; overflow-y: auto; padding: 20px 30px; }
         
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 3px solid var(--secondary);
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            padding-bottom: 50px;
         }
-        
-        h1 {
-            color: var(--primary);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
-        
-        .figure-section {
-            margin: 60px 0;
-            animation: fadeIn 0.6s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .figure-title {
-            font-size: 1.6em;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 5px solid var(--secondary);
-        }
-        
-        .plot-container {
-            background: var(--bg-light);
+
+        .chart-card {
+            background: var(--card-bg);
             border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            min-height: 300px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border: 1px solid transparent;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
         }
         
-        .loading {
-            text-align: center;
-            padding: 100px 20px;
-        }
+        .chart-card:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--secondary);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
+        .card-header { display: flex; justify-content: space-between; padding: 0 10px; margin-bottom: 5px; font-size: 0.9rem; font-weight: bold; color: var(--primary); }
+        .stats-badge { font-size: 0.75rem; background: #eee; padding: 2px 6px; border-radius: 4px; font-weight: normal; color: #666; }
+        .sig-badge { background: #fee; color: #c0392b; font-weight: bold; }
         
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
-        }
-        
-        .error {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-        }
-        
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            color: var(--text-muted);
-            padding-top: 30px;
-            border-top: 2px solid #ecf0f1;
-            font-size: 0.95em;
-        }
-        
-        @media (max-width: 1400px) {
-            .plot-container[style*="grid-template-columns"] {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
-        }
-        
-        @media (max-width: 900px) {
-            .container {
-                padding: 25px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            .plot-container[style*="grid-template-columns"] {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-        }
+        .plot-div { flex: 1; width: 100%; }
+
+        .loading { text-align: center; padding: 50px; font-size: 1.2rem; color: #666; }
     </style>
+    <script>
+        const RAW_DATA = __JSON_DATA__;
+    </script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🔬 Subtype Trajectories</h1>
-            <p class="subtitle">MS & MG Amino Acid Analysis</p>
-        </header>
-        
-        <div id="app">
-            <div class="loading">
-                <div class="spinner"></div>
-                <p style="color: var(--text-muted); font-size: 1.1em;">Loading data and generating visualizations...</p>
-            </div>
+    <header>
+        <h1>Subtype Trajectories Analysis</h1>
+        <span class="timestamp" id="timestamp">Generated: Just now</span>
+    </header>
+
+    <div class="controls">
+        <div class="legend-bar">
+            <!-- Legend matching python colors -->
+            <div class="legend-item"><span class="dot" style="background:#E74C3C"></span> PPMS</div>
+            <div class="legend-item"><span class="dot" style="background:#3498DB"></span> SPMS</div>
+            <div class="legend-item"><span class="dot" style="background:#2ECC71"></span> RRMS</div>
+            <div class="legend-item"><span class="dot" style="background:#9B59B6"></span> GMG</div>
+            <div class="legend-item"><span class="dot" style="background:#F39C12"></span> OMG</div>
+        </div>
+
+        <div class="toggle-container">
+            <input type="checkbox" id="sigFilter" onchange="renderCurrentView()">
+            <label for="sigFilter" title="Show only correlations with p < 0.05">Significant Only (p<0.05)</label>
         </div>
         
-        <footer>
-            <p><strong>Dataset:</strong> Multiple Sclerosis & Myasthenia Gravis Proteomics</p>
-            <p><strong>Generated:</strong> <span id="timestamp"></span></p>
-            <p><strong>Node:</strong> 09 - Subtype Trajectories</p>
-        </footer>
+        <div class="toggle-container">
+            <input type="checkbox" id="trendlineToggle" checked onchange="renderCurrentView()">
+            <label for="trendlineToggle">Show Trendlines</label>
+        </div>
     </div>
-    
+
+    <div id="app">
+        <div class="loading">Initializing Dashboard...</div>
+    </div>
+
     <script>
-        'use strict';
-        
-        // Wait for Plotly to load
-        function waitForPlotly() {
-            if (typeof Plotly !== 'undefined') {
-                init();
-            } else {
-                setTimeout(waitForPlotly, 100);
-            }
-        }
-        
-        // Global error handler
-        window.onerror = function(msg, url, lineNo, columnNo, error) {
-            const errorDiv = document.getElementById('app');
-            if (errorDiv) {
-                errorDiv.innerHTML = `
-                    <div class="error">
-                        <h2>⚠️ JavaScript Error</h2>
-                        <p><strong>Message:</strong> ${msg}</p>
-                        <p><strong>URL:</strong> ${url}</p>
-                        <p><strong>Line:</strong> ${lineNo}</p>
-                        <p>Please check the console for more details.</p>
-                    </div>
-                `;
-            }
-            console.error('Error:', msg, 'at', url, 'line', lineNo);
-            return false;
+        // Colors from Python script
+        const COLORS = {
+            'PPMS': '#E74C3C', 
+            'SPMS': '#3498DB', 
+            'RRMS': '#2ECC71', 
+            'GMG': '#9B59B6', 
+            'OMG': '#F39C12'
         };
 
-        const CONFIG = {
-            colors: {
-                case: '#4682b4',
-                control: '#fa8072',
-                ms: '#4682b4',
-                mg: '#20b2aa',
-                ppms: '#800080',
-                spms: '#ffa500',
-                rrms: '#90ee90',
-                gmg: '#f17cb0',
-                omg: '#b2912f'
-            },
-            plotly: {
-                responsive: true,
-                displayModeBar: true,
-                modeBarButtons: [
-                    ['zoom2d', 'pan2d', 'autoScale2d', 'resetScale2d'],
-                    ['toImage']
-                ],
-                displaylogo: false
-            }
-        };
-        
-        function renderGridPlot(containerId, data) {
-            if (!data || !data.subplots) {
-                console.error('No subplot data for ' + containerId);
-                return;
-            }
+        function init() {
+            document.getElementById('timestamp').textContent = new Date().toLocaleString();
+            renderCurrentView();
+        }
+
+        function renderCurrentView() {
+            const container = document.getElementById('app');
+            const dataSection = RAW_DATA['fig9']; // Only one fig currently
+            const traces = dataSection.traces;
+            const isSigOnly = document.getElementById('sigFilter').checked;
+            const showLines = document.getElementById('trendlineToggle').checked;
             
-            const subplots = data.subplots;
-            const container = document.getElementById(containerId);
-            
-            container.style.display = 'grid';
-            container.style.gridTemplateColumns = 'repeat(5, 1fr)';
-            container.style.gap = '12px';
-            container.style.padding = '10px';
-            container.style.background = '#f5f5f5';
-            
-            subplots.forEach((subplot, idx) => {
-                const div = document.createElement('div');
-                div.id = containerId + '_' + idx;
-                div.style.minHeight = '250px';
-                div.style.background = 'white';
-                div.style.borderRadius = '8px';
-                div.style.border = '1px solid #d0d0d0';
-                div.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-                container.appendChild(div);
+            // Clean container
+            container.innerHTML = '<div class="grid-container" id="grid"></div>';
+            const grid = document.getElementById('grid');
+
+            // Process each AA
+            traces.forEach((item, index) => {
+                const aaName = item.aa;
+                const subtypes = ['PPMS', 'SPMS', 'RRMS', 'GMG', 'OMG'];
                 
-                const traces = subplot.traces.map((t, tIdx) => {
-                    const traceType = t.type || 'box';
-                    const trace = {
-                        y: t.y,
-                        name: t.name,
-                        type: traceType,
-                    };
-                    
-                    if (traceType === 'scatter') {
-                        trace.x = t.x;
-                        trace.mode = t.mode;
-                        if (t.marker) trace.marker = t.marker;
-                        if (t.line) trace.line = t.line;
-                    } else {
-                        trace.boxmean = 'sd';
-                        trace.marker = { 
-                            color: t.color || CONFIG.colors[t.name.toLowerCase()] || '#3498db',
-                            line: { color: 'black', width: 1 }
-                        };
+                // Determine significance (if ANY subtype has p < 0.05)
+                let isSig = false;
+                let minP = 1.0;
+                
+                subtypes.forEach(st => {
+                    if (item[st] && item[st].stats && item[st].stats.p_value < 0.05) {
+                        isSig = true;
+                        if(item[st].stats.p_value < minP) minP = item[st].stats.p_value;
                     }
-                    
-                    trace.showlegend = (idx === 0 && (!t.name.includes('fit')));
-                    return trace;
                 });
+
+                if (isSigOnly && !isSig) return; // Skip if filter is on
+
+                // Create Card
+                const card = document.createElement('div');
+                card.className = 'chart-card';
                 
+                // Header info
+                let statsText = isSig ? `Min P: ${minP.toExponential(2)}` : 'ns';
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <span>${aaName}</span>
+                        <span class="stats-badge ${isSig ? 'sig-badge' : ''}">${statsText}</span>
+                    </div>
+                    <div class="plot-div" id="plot_${index}"></div>
+                `;
+                grid.appendChild(card);
+
+                // Prepare Plotly Data
+                const plotData = [];
+                
+                subtypes.forEach(st => {
+                     const groupData = item[st];
+                     if(!groupData) return;
+
+                     // Scatter points
+                     plotData.push({
+                         x: groupData.x,
+                         y: groupData.y,
+                         mode: 'markers',
+                         type: 'scatter',
+                         name: st,
+                         marker: { color: COLORS[st], size: 5, opacity: 0.6 },
+                         showlegend: false
+                     });
+
+                     // Trendline
+                     if(showLines && groupData.stats) {
+                         plotData.push({
+                             x: groupData.stats.line_x,
+                             y: groupData.stats.line_y,
+                             mode: 'lines',
+                             type: 'scatter',
+                             name: `${st} Fit`,
+                             line: { color: COLORS[st], width: 2 },
+                             showlegend: false,
+                             hoverinfo: 'skip'
+                         });
+                     }
+                });
+
+                // Layout
                 const layout = {
-                    title: { text: subplot.title, font: { size: 12 }, y: 0.95 },
-                    showlegend: idx === 0,
-                    legend: { x: 0, y: -0.25, orientation: 'h', font: { size: 9 } },
-                    height: 250,
-                    margin: { t: 45, r: 15, b: 50, l: 50 },
-                    plot_bgcolor: '#ebebeb',
-                    paper_bgcolor: 'white',
-                    xaxis: { showticklabels: true, tickfont: { size: 9 }, gridcolor: '#d0d0d0' },
-                    yaxis: { 
-                        title: 'Concentration',
-                        titlefont: { size: 10 },
-                        tickfont: { size: 9 },
-                        gridcolor: '#d0d0d0',
-                        zeroline: true
-                    }
+                    margin: { t: 10, r: 10, b: 30, l: 40 },
+                    xaxis: { title: dataSection.variable, showgrid: true, gridcolor: '#eee' },
+                    yaxis: { title: 'Conc', showgrid: true, gridcolor: '#eee' },
+                    paper_bgcolor: 'rgba(0,0,0,0)',
+                    plot_bgcolor: 'rgba(0,0,0,0)',
+                    showlegend: false, // Legend is in header
+                    hovermode: 'closest'
                 };
-                
-                Plotly.newPlot(div.id, traces, layout, CONFIG.plotly);
+
+                Plotly.newPlot(`plot_${index}`, plotData, layout, {responsive: true, displayModeBar: false});
             });
         }
-        
-        function renderBoxPlot(containerId, data) {
-            if (!data || !data.traces) {
-                console.error('No data for ' + containerId);
-                return;
-            }
-            
-            const traces = data.traces.map(trace => ({
-                y: trace.y,
-                name: trace.name,
-                type: 'box',
-                boxmean: 'sd',
-                marker: { 
-                    color: trace.color || CONFIG.colors[trace.name.toLowerCase()] || '#3498db',
-                    line: { color: 'black', width: 1 }
-                }
-            }));
-            
-            const layout = {
-                title: data.title || '',
-                xaxis: { title: data.xaxis || '' },
-                yaxis: { title: data.yaxis || 'Value' },
-                showlegend: true,
-                height: 500,
-                plot_bgcolor: '#ebebeb',
-                paper_bgcolor: 'white',
-                margin: { t: 50, r: 20, b: 40, l: 50 }
-            };
-            
-            Plotly.newPlot(containerId, traces, layout, CONFIG.plotly);
-        }
-        
-        function init() {
-            try {
-                if (typeof RAW_DATA === 'undefined') {
-                    throw new Error('RAW_DATA is not defined. JSON embedding failed.');
-                }
-                const data = RAW_DATA;
-                console.log('Data loaded successfully:', Object.keys(data));
-                
-                // Build HTML based on data structure
-                let html = '';
-                for (const key in data) {
-                    if (key !== 'metadata') {
-                        html += `
-                            <div class="figure-section">
-                                <h2 class="figure-title">${key.toUpperCase().replace('_', ' ')}</h2>
-                                <div class="plot-container" id="${key}"></div>
-                            </div>
-                        `;
-                    }
-                }
-                
-                document.getElementById('app').innerHTML = html;
-                document.getElementById('timestamp').textContent = new Date().toLocaleString();
-                
-                setTimeout(() => {
-                    console.log('Rendering visualizations...');
-                    for (const key in data) {
-                        if (key !== 'metadata') {
-                            if (data[key].subplots) {
-                                renderGridPlot(key, data[key]);
-                            } else if (data[key].traces) {
-                                renderBoxPlot(key, data[key]);
-                            }
-                        }
-                    }
-                    console.log('All visualizations rendered successfully!');
-                }, 150);
-                
-            } catch (error) {
-                console.error('Error during initialization:', error);
-                document.getElementById('app').innerHTML = `
-                    <div class="error">
-                        <h2>⚠️ Error Loading Data</h2>
-                        <p><strong>Message:</strong> ${error.message}</p>
-                        <p><strong>File:</strong> trajectories_data.json</p>
-                        <p>Please ensure the JSON file exists in the same directory.</p>
-                    </div>
-                `;
-            }
-        }
-        
-        // Start initialization when page loads
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', waitForPlotly);
-        } else {
-            waitForPlotly();
-        }
+
+        // Run
+        setTimeout(init, 100);
     </script>
 </body>
-</html>'''
+</html>"""
     
     # Inject JSON data
     html = html.replace('__JSON_DATA__', json_content)
     
     return html
-
