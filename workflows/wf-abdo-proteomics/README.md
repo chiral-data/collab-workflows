@@ -154,32 +154,32 @@ The following columns represent serum concentrations determined by LC-MS/MS, gro
 
 ## Part 2: Technical Documentation (Pipeline Architecture)
 
-The analysis is implemented as a **modular, parallelizable 11-node workflow** with dual output generation (static PNG visualizations + interactive JSON/HTML web presentations). The pipeline is designed for both local execution and remote deployment via TOML-based orchestration.
+The analysis is implemented as a **modular, parallelizable 11-node workflow** orchestrated by the `silva` command-line tool. It features dual output generation (static PNG visualizations + interactive JSON/HTML web presentations) and is designed for both local execution and remote deployment via TOML-based configuration.
 
 ### Architecture Overview
 
 **Execution Model:**
-* **Sequential Foundation**: Node 01 executes first (data preprocessing)
-* **Parallel Analysis**: Nodes 02-11 execute in parallel after Node 01 completion (max 10 concurrent nodes)
+* **Orchestration**: The `silva` tool manages the workflow execution based on dependencies defined in the node-level `job.toml` files.
+* **Sequential Foundation**: Node 01 (Data Ingestion) is executed first as other nodes depend on its output.
+* **Parallel Analysis**: Nodes 02-11 are executed in parallel after Node 01 completes.
 * **Dual Output System**: Each analysis node generates:
-  - **Static PNG images** for publication-quality figures
-  - **JSON data files** storing plot data in structured format
-  - **Interactive HTML files** with Plotly.js visualizations for web-based exploration
+  - **Static PNG images** for publication-quality figures.
+  - **JSON data files** storing plot data in a structured format.
+  - **Interactive HTML files** with Plotly.js visualizations for web-based exploration.
 
 **Configuration System:**
-* **Main Configuration**: `.chiral/workflow.toml` defines all nodes, dependencies, outputs, and parallel execution settings
-* **Node Configuration**: Each node has a `job.toml` file specifying inputs, outputs, and execution parameters
-* **Remote Deployment**: TOML files enable workflow execution via external orchestration tools
+* **Workflow Definition**: The workflow is defined by the collection of `job.toml` files within each node's directory. The `silva` tool discovers and executes these jobs.
+* **Node Configuration**: Each node has a `job.toml` file specifying its inputs, outputs, and execution parameters.
 
 **Technology Stack:**
-* **Core**: Python 3.14.2 with virtual environment (`.venv`)
-* **Analysis**: pandas, numpy, scipy (statistical analysis)
-* **Visualization**: matplotlib, seaborn (static plots), Plotly.js 2.27.0 (interactive)
-* **Web Technologies**: Plain JavaScript ES6+ (async/await, classes, arrow functions)
-* **Modular Architecture**: Each analysis node (02-11) contains its own `html_generator.py` file for self-contained HTML generation
-  - **Benefits**: Easier debugging, isolated development, no cross-node dependencies
-  - **Size**: ~118 lines, ~12 KB per generator (vs 572-line shared template)
-  - **Customization**: Node-specific rendering functions (e.g., `renderGridPlot()`, `renderBoxPlot()`, `renderTable()`)
+* **Core**: Python 3.11 with a virtual environment (`.venv`).
+* **Analysis**: pandas, numpy, scipy (statistical analysis).
+* **Visualization**: matplotlib, seaborn (static plots), Plotly.js 2.27.0 (interactive).
+* **Web Technologies**: Plain JavaScript ES6+ (async/await, classes, arrow functions).
+* **Modular Architecture**: Each analysis node (02-11) contains its own `html_generator.py` file for self-contained HTML generation.
+  - **Benefits**: Easier debugging, isolated development, and no cross-node dependencies.
+  - **Size**: ~118 lines, ~12 KB per generator.
+  - **Customization**: Node-specific rendering functions (e.g., `renderGridPlot()`, `renderBoxPlot()`, `renderTable()`).
 
 ---
 
@@ -275,6 +275,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 
 **Input:**
 * `data_standardized.pkl`
+* `aa_cols.txt`
 
 **Processing:**
 * Linear regression analysis: Age vs 29 amino acids
@@ -302,6 +303,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 
 **Input:**
 * `data_standardized.pkl`
+* `aa_cols.txt`
 
 **Processing:**
 * Pools MS and MG patients into combined "Autoimmune" group
@@ -363,7 +365,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 * `output/clustering_data.json` - Correlation matrices with cluster assignments
 * `output/clustering.html` - Interactive heatmap with dendrogram navigation
 
-**Script:** `generate_heatmap.py`
+**Script:** `generate_figures.py`
 
 **Biological Context:** Demonstrates "loss of homeostasis" in autoimmunity – controls show tight metabolic coordination (strong positive correlations), while patients exhibit chaotic, weakened correlation structures indicating dysregulated metabolic networks.
 
@@ -398,6 +400,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 
 **Input:**
 * `data_standardized.pkl`
+* `aa_cols.txt`
 
 **Processing:**
 * Scatter plots: Disease Duration (x-axis) vs 29 amino acids (y-axis)
@@ -409,7 +412,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 * `output/trajectories_data.json` - Scatter data with subtype-specific regression parameters
 * `output/trajectories.html` - Interactive trajectory explorer with subtype filtering
 
-**Script:** `generate_figures.py`
+**Script:** `generate_figure.py`
 
 **Biological Context:** Reveals prognostic markers – amino acids with steep positive slopes in progressive subtypes (SPMS/PPMS) indicate accelerated metabolic dysregulation over time, while stable trajectories in RRMS suggest relapse-remission metabolic resilience.
 
@@ -445,6 +448,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 
 **Input:**
 * `data_standardized.pkl`
+* `aa_cols.txt`
 
 **Processing:**
 * Side-by-side triangular correlation heatmaps (MS vs MG)
@@ -456,7 +460,7 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 * `output/coherence_data.json` - Dual correlation matrices with cluster metrics
 * `output/coherence.html` - Interactive side-by-side network explorer
 
-**Script:** `generate_heatmap.py`
+**Script:** `generate_figure.py`
 
 **Biological Context:** Demonstrates fundamental metabolic architectural differences – MS shows highly fragmented correlation structure (chaotic central demyelination effects), while MG retains more organized peripheral metabolic networks (localized neuromuscular pathology). Validates that MS and MG, despite shared autoimmune mechanisms, exhibit distinct systemic metabolic dysregulation patterns.
 
@@ -464,16 +468,30 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** wi
 
 ### Workflow Execution
 
-**Local Execution:**
+**Run Complete Workflow:**
 ```bash
-bash run_workflow.sh
+silva .
 ```
-Executes all nodes sequentially with Node 01 first, then Nodes 02-11 in parallel (max 10 concurrent).
+The `silva` command discovers all `job.toml` files, resolves dependencies, and executes nodes in the correct order. Node 01 runs first, then Nodes 02-11 execute in parallel inside Docker containers.
 
-**Remote Deployment:**
-The workflow is configured for remote orchestration tools via TOML specifications:
-* `.chiral/workflow.toml` - Main workflow definition with dependency graph
-* `XX_Node_Name/job.toml` - Individual node configurations with I/O specifications
+**How Silva Works:**
+1. Reads `.chiral/workflow.toml` in the root directory for workflow-level configuration and dependencies
+2. Scans each node's `.chiral/job.toml` for inputs, outputs, and container settings
+3. Builds a dependency graph based on the `[dependencies]` section in `workflow.toml`
+4. Pulls or reuses the Docker image (`chiral.sakuracr.jp/proteomics:2025_12_31`)
+5. Executes each node's `run.sh` script inside the container
+6. Copies input files between nodes as specified in `job.toml`
+7. Collects outputs to a timestamped folder (e.g., `C:\Windows\TEMP\silva-2026-01-03-...`)
+8. Cleans up containers after workflow completion
+
+**Node Configuration (`.chiral/job.toml`):**
+Each node contains a `.chiral/job.toml` file that specifies:
+* `name` - Human-readable node name
+* `description` - What the node does
+* `inputs` - Files required from other nodes
+* `outputs` - Files produced by this node
+* `container.image` - Docker image to use
+* `scripts.run` - Shell script to execute (typically `run.sh`)
 
 **Output Structure:**
 Each node generates 3 output types in its `output/` directory:
@@ -509,32 +527,31 @@ Each analysis node (02-11) contains its own `html_generator.py` module with:
 
 ### Prerequisites
 
-**Required Python Packages:**
-```bash
-pip install pandas>=1.3.0 numpy>=1.21.0 matplotlib>=3.4.0 seaborn>=0.11.0 scipy>=1.7.0
-```
-
-**Python Environment:**
-- Python 3.14.2 (virtual environment at `.venv`)
-- Activate: `.venv\Scripts\python.exe` (Windows) or `source .venv/bin/activate` (Linux/Mac)
+**Required Software:**
+* **Docker**: Must be installed and running (containers execute the analysis)
+* **Silva**: Workflow orchestration tool (`silva` command must be available in PATH)
 
 **Input Data:**
-Place the database file in Node 01 directory:
+The database file should be present in Node 01 directory:
 ```
 01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.csv
 ```
+
+**Note:** Python packages are pre-installed in the Docker image (`chiral.sakuracr.jp/proteomics:2025_12_31`). No local Python environment setup is required.
 
 ### Execution Commands
 
 **Run Complete Workflow:**
 ```bash
-bash run_workflow.sh
+silva .
 ```
+This command executes all 11 nodes with proper dependency ordering. Outputs are collected to a timestamped folder.
 
-**Run Individual Nodes:**
+**Run Individual Nodes (for development/debugging):**
 ```bash
-# Example: Run Node 03 only
-cd 03_MS_Pathology_Overview && bash run.sh && cd ..
+# Navigate to node directory and run the script directly
+cd 03_MS_Pathology_Overview
+docker run -v $(pwd):/workspace chiral.sakuracr.jp/proteomics:2025_12_31 bash run.sh
 ```
 
 ### Output Summary
@@ -557,7 +574,7 @@ Each node generates files in its `output/` directory:
 
 **Total Outputs:** 38 files (18 PNG + 10 JSON + 10 HTML)
 
-**Execution Time:** ~8-10 minutes for complete workflow
+**Execution Time:** ~2-3 minutes for complete workflow (with Docker image cached)
 
 ### Interactive Visualizations
 
@@ -575,27 +592,29 @@ python -m http.server 8000
 
 ### Troubleshooting
 
+**Docker not running:**
+```bash
+# Ensure Docker Desktop is running before executing silva
+docker info
+```
+
 **Database file not found:**
 ```bash
 # Check if file exists
 ls 01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.csv
 ```
 
-**Python packages missing:**
+**Silva command not found:**
 ```bash
-pip install pandas numpy matplotlib seaborn scipy
+# Ensure silva is installed and in PATH
+# Contact your administrator for installation instructions
 ```
 
-**Permission denied:**
+**Node fails - Check container logs:**
 ```bash
-chmod +x run_workflow.sh
-chmod +x */run.sh
-```
-
-**Node fails - Run directly for detailed errors:**
-```bash
-cd 03_MS_Pathology_Overview
-.venv\Scripts\python.exe generate_figures.py
+# Silva outputs detailed logs during execution
+# Look for error messages in the terminal output
+# Common issues: missing input files, Python errors in scripts
 ```
 
 **Clean outputs (start fresh):**
@@ -614,10 +633,8 @@ cd 03_MS_Pathology_Overview
 nano html_generator.py  # or use your preferred editor
 
 # Modify CONFIG object (colors, layout) or rendering functions
-# Regenerate HTML only
-bash run.sh
-
-# Changes affect only this node - no impact on others
+# Re-run the workflow to regenerate
+cd .. && silva .
 ```
 
 **HTML Generator Structure:**
@@ -631,31 +648,29 @@ bash run.sh
 ```
 wf-abdo-proteomics/
 ├── .chiral/
-│   └── workflow.toml              # Main workflow configuration
-├── .venv/                         # Python virtual environment
-├── run_workflow.sh                # Master execution script
-├── README.md                      # This file
+│   └── workflow.toml              # Main workflow configuration (dependencies)
+├── README.md                      # This documentation file
 │
 ├── 01_Data_Ingestion_and_Preprocessing/
-│   ├── database-multiple-sclerosis-myasthenia.csv
-│   ├── load_data.py
-│   ├── run.sh
-│   ├── job.toml
-│   └── output/
+│   ├── .chiral/
+│   │   └── job.toml               # Node configuration for silva
+│   ├── database-multiple-sclerosis-myasthenia.csv  # Input dataset
+│   ├── load_data.py               # Data loading and standardization script
+│   └── run.sh                     # Execution script (called by silva)
 │
 ├── 02_Cohort_Demographics/
-│   ├── generate_tables.py
-│   ├── html_generator.py         # Node-specific HTML generator (11.5 KB)
-│   ├── run.sh
-│   ├── job.toml
-│   └── output/
+│   ├── .chiral/
+│   │   └── job.toml               # Node configuration (inputs, outputs, image)
+│   ├── generate_tables.py         # Demographics analysis script
+│   ├── html_generator.py          # Node-specific HTML generator
+│   └── run.sh                     # Execution script
 │
 └── [03-11]_*/                     # Additional analysis nodes
-    ├── generate_*.py              # Analysis script
+    ├── .chiral/
+    │   └── job.toml               # Node configuration for silva
+    ├── generate_*.py              # Analysis script (generate_figure.py or generate_figures.py)
     ├── html_generator.py          # Node-specific HTML generator (~12 KB each)
-    ├── run.sh
-    ├── job.toml
-    └── output/
+    └── run.sh                     # Execution script
 ```
 
 **Modular Architecture Notes:**
@@ -681,7 +696,7 @@ Node 01 (Preprocessing)
     └─→ Node 11 (Coherence)
 ```
 
-**Execution Model:** Node 01 runs first; Nodes 02-11 execute in parallel (max 10 concurrent)
+**Execution Model:** Silva orchestrates the workflow - Node 01 runs first, then Nodes 02-11 execute in parallel inside Docker containers. Run with `silva .` from the workflow directory.
 
 ---
 
