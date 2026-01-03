@@ -2,6 +2,7 @@
 import os
 import sys
 import json
+import io
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,9 +12,10 @@ from scipy.stats import mannwhitneyu
 from html_generator import generate_mimicry_html
 
 # Configuration
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = "data_standardized.pkl"
 AA_COLS_FILE = "aa_cols.txt"
-OUTPUT_DIR = "outputs"
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -21,7 +23,7 @@ if not os.path.exists(OUTPUT_DIR):
 sns.set_style("whitegrid")
 plt.rcParams['font.family'] = 'sans-serif'
 
-print(">>> NODE 10: CLINICAL MIMICRY TEST (RRMS vs MG)...", flush=True)
+print(">>> NODE 10: CLINICAL MIMICRY TEST (RRMS vs MG)...")
 
 # Load data
 df = pd.read_pickle(INPUT_FILE)
@@ -36,9 +38,9 @@ masks = {
 }
 
 # ==========================================
-# FIG 10: Total AA RRMS vs MG
+# FIG 10: Total AA RRMS vs MG (Static)
 # ==========================================
-print("Generating Fig 10: Total AA RRMS vs MG...", flush=True)
+print("Generating Fig 10: Total AA RRMS vs MG...")
 
 df_rm = df[masks['RRMS'] | masks['MG']].copy()
 df_rm['Group'] = np.where(df_rm['Type']=='RRMS', 'RRMS', 'MG')
@@ -60,18 +62,17 @@ ax.set_yticks(y_ticks)
 
 y_max = df_rm['Total_AA'].max()
 annotation_y_pos = max(y_max, y_ticks[-1]) * 1.05
-ax.annotate(f'p = {pval:.1e}', xy=(0.5, annotation_y_pos), fontsize=11, ha='center', fontweight='bold')
+ax.annotate('p = {:.1e}'.format(pval), xy=(0.5, annotation_y_pos), fontsize=11, ha='center', fontweight='bold')
 ax.set_ylim(y_ticks[0], annotation_y_pos * 1.1)
 
 plt.tight_layout()
 plt.savefig(os.path.join(OUTPUT_DIR, 'Fig10_TotalAA_RRMS_MG.png'), dpi=150, bbox_inches='tight')
 plt.close()
-print(f"Saved: Fig10_TotalAA_RRMS_MG.png", flush=True)
 
 # ==========================================
-# FIG 11: RRMS vs MG Grid
+# FIG 11: Grid (Static) - Keep for reference
 # ==========================================
-print("Generating Fig 11: RRMS vs MG Grid...", flush=True)
+print("Generating Fig 11: Static Grid...")
 
 df_melt_11 = df_rm.melt(id_vars='Group', value_vars=aa_cols, var_name='Amino Acid', value_name='Concentration')
 df_melt_11['Amino Acid'] = df_melt_11['Amino Acid'].str.replace('_conc', '', regex=False)
@@ -79,7 +80,7 @@ df_melt_11['Amino Acid'] = df_melt_11['Amino Acid'].str.replace('_conc', '', reg
 g = sns.FacetGrid(df_melt_11, col='Amino Acid', col_wrap=6, sharey=False, height=2.5, aspect=1,
                   gridspec_kws={'hspace': 0.5, 'wspace': 0.3})
 
-g.map_dataframe(sns.boxplot, x='Group', y='Concentration', palette={'RRMS':'lightgrey', 'MG':'lightblue'},
+g.map_dataframe(sns.boxplot, x='Group', y='Concentration', palette={'RRMS':'grey', 'MG':'skyblue'},
                 hue='Group', legend=False,
                 showfliers=True, 
                 flierprops={'marker': 'o', 'markerfacecolor': 'black', 'markersize': 3})
@@ -98,70 +99,71 @@ for i, ax in enumerate(g.axes.flat):
     ax.set_ylabel('')
 
 g.figure.supylabel('Concentration [nmol/ml]')
-g.figure.suptitle('P2 Fig 9: RRMS vs MG', y=1.02, fontsize=16)
+g.figure.suptitle('Fig 11: RRMS vs MG Grid', y=1.02, fontsize=16)
 
 plt.tight_layout(rect=[0.03, 0, 1, 0.98])
 g.savefig(os.path.join(OUTPUT_DIR, 'Fig11_RRMS_vs_MG_Grid.png'))
 plt.close()
-print(f"Saved: Fig11_RRMS_vs_MG_Grid.png", flush=True)
-
+print("Saved: Fig11_RRMS_vs_MG_Grid.png")
 
 # ==========================================
-# GENERATE JSON/HTML DATA
+# GENERATE JSON DATA (Node 4 Style)
 # ==========================================
-print("Generating JSON and HTML...", flush=True)
-
-# Helper for Fig 10
-traces_fig10 = []
-for group in ['RRMS', 'MG']:
-    y_vals = df_rm[df_rm['Group'] == group]['Total_AA'].dropna().tolist()
-    traces_fig10.append({
-        'name': group,
-        'y': y_vals,
-        'color': 'grey' if group == 'RRMS' else 'skyblue'
-    })
-
-# Helper for Fig 11
-subplots_fig11 = []
-# aa_cols is already defined above
-aa_names = [c.replace('_conc', '') for c in aa_cols]
-
-for aa_col, aa_name in zip(aa_cols, aa_names):
-    traces = []
-    for group in ['RRMS', 'MG']:
-        y_vals = df_rm[df_rm['Group'] == group][aa_col].dropna().tolist()
-        traces.append({
-            'name': group,
-            'y': y_vals,
-            'color': 'lightgrey' if group == 'RRMS' else 'lightblue'
-        })
-    subplots_fig11.append({
-        'title': aa_name,
-        'traces': traces
-    })
+print("Generating JSON data...")
 
 json_data = {
-    'metadata': {'title': 'RRMS vs MG Mimicry'},
-    'fig10': {
-        'title': 'Total Amino Acid Concentration: MS-RRMS vs MG',
-        'yaxis': 'Concentration [nmol/ml]',
-        'traces': traces_fig10
+    'metadata': {
+        'title': 'Clinical Mimicry Test: RRMS vs MG',
+        'amino_acids': [aa.replace('_conc', '') for aa in aa_cols]
     },
-    'fig11': {
-        'subplots': subplots_fig11
+    'fig10': { # Hero Plot
+        'title': 'Total Amino Acid Load',
+        'variable': 'Total AA',
+        'traces': [] 
+    },
+    'fig11': { # Grid Plot
+        'type': 'box',
+        'variable': 'Amino Acid',
+        'traces': []
     }
 }
 
-json_path = os.path.join(OUTPUT_DIR, 'mimicry_data.json')
-with open(json_path, 'w', encoding='utf-8') as f:
-    json.dump(json_data, f, indent=2)
-print(f"Saved: {json_path}", flush=True)
+# Populate Fig 10 (Total)
+json_data['fig10']['traces'] = [{
+    'name': 'Total AA',
+    'RRMS': {'y': rrms_data.tolist()},
+    'MG': {'y': mg_data.tolist()},
+    'stats': {'p_value': pval}
+}]
 
+# Populate Fig 11 (Grid)
+for aa in aa_cols:
+    aa_clean = aa.replace('_conc', '')
+    
+    rrms_vals = df_rm[df_rm['Group']=='RRMS'][aa].dropna()
+    mg_vals = df_rm[df_rm['Group']=='MG'][aa].dropna()
+    
+    # Calc stats
+    p_val_aa = 1.0
+    if len(rrms_vals) > 0 and len(mg_vals) > 0:
+        _, p_val_aa = mannwhitneyu(rrms_vals, mg_vals, alternative='two-sided')
+        
+    json_data['fig11']['traces'].append({
+        'aa': aa_clean,
+        'RRMS': {'y': rrms_vals.tolist()},
+        'MG': {'y': mg_vals.tolist()},
+        'stats': {'p_value': p_val_aa}
+    })
+
+json_path = os.path.join(OUTPUT_DIR, 'mimicry_data.json')
+with io.open(json_path, 'w', encoding='utf-8') as f:
+    f.write(json.dumps(json_data, ensure_ascii=False))
+
+# Generate HTML
 html_content = generate_mimicry_html(json_filename='mimicry_data.json')
 
 html_path = os.path.join(OUTPUT_DIR, 'mimicry.html')
-with open(html_path, 'w', encoding='utf-8') as f:
+with io.open(html_path, 'w', encoding='utf-8') as f:
     f.write(html_content)
-print(f"Saved: {html_path}", flush=True)
 
-print("Node 10 completed successfully.", flush=True)
+print("Node 10 completed successfully.")
