@@ -1,3 +1,163 @@
+"""Node 5: MS vs MG Autoimmune Comparison - Generate Enriched JSON"""
+import os
+import sys
+import json
+import pandas as pd
+import numpy as np
+from scipy import stats  # Required for statistical tests
+
+# Configuration
+INPUT_FILE = "data_standardized.pkl"
+AA_COLS_FILE = "aa_cols.txt"
+OUTPUT_DIR = "outputs"
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
+
+print(">>> NODE 5: MS VS MG AUTOIMMUNE COMPARISON (Enriched)...", flush=True)
+# Load data
+df = pd.read_pickle(INPUT_FILE)
+with open(AA_COLS_FILE, 'r') as f:
+    aa_cols = [line.strip() for line in f.readlines()]
+
+# Define masks
+ms_types = ['RRMS', 'SPMS', 'PPMS']
+mg_types = ['general', 'eye-type']
+masks = {
+    'MS': df['Type'].isin(ms_types),
+    'MG': df['Type'].isin(mg_types),
+    'Control': df['Status'] == 'control'
+}
+
+# Create a combined dataframe for easy processing
+df_p2 = df.copy()
+# Create the specific groups for this analysis
+df_p2['Group'] = 'Other'
+df_p2.loc[masks['MS'] | masks['MG'], 'Group'] = 'MS+MG'
+df_p2.loc[masks['Control'], 'Group'] = 'Controls'
+
+# Initialize JSON structure
+json_data = {
+    'metadata': {
+        'title': 'MS+MG vs Controls',
+        'amino_acids': [aa.split(' ')[0] for aa in aa_cols]
+    },
+    'fig3': {
+        'subplots': []
+    }
+}
+
+# Generate Data
+for aa in aa_cols:
+    aa_clean = aa.split(' ')[0] # Clean name
+    
+    # Extract data for the two groups
+    ms_mg_data = df_p2[df_p2['Group']=='MS+MG'][aa].dropna()
+    ctrl_data = df_p2[df_p2['Group']=='Controls'][aa].dropna()
+    
+    # Calculate Statistics (T-test)
+    # We use equal_var=False (Welch's t-test) which is safer for biological data
+    p_val = 1.0
+    if len(ms_mg_data) > 1 and len(ctrl_data) > 1:
+        t_stat, p_val = stats.ttest_ind(ms_mg_data, ctrl_data, equal_var=False)
+        
+    ms_mg_vals = ms_mg_data.tolist()
+    ctrl_vals = ctrl_data.tolist()
+    
+    json_data['fig3']['subplots'].append({
+    'title': aa_clean,
+    'p_value': p_val,  # Save p-value for the web to use
+    'traces': [
+            {'name': 'MS+MG', 'y': ms_mg_vals, 'color': '#e74c3c'},   # Red
+            {'name': 'Controls', 'y': ctrl_vals, 'color': '#2ecc71'}  # Green
+        ]
+    })
+
+# Save JSON
+json_path = os.path.join(OUTPUT_DIR, 'autoimmune_data.json')
+with open(json_path, 'w', encoding='utf-8') as f:
+    json.dump(json_data, f, indent=2)
+
+print(f"Success! Enriched JSON saved to {json_path}")
+"""Node 5: MS vs MG Autoimmune Comparison - Generate Enriched JSON"""
+import os
+import sys
+import json
+import pandas as pd
+import numpy as np
+from scipy import stats  # Required for statistical tests
+
+# Configuration
+INPUT_FILE = "data_standardized.pkl"
+AA_COLS_FILE = "aa_cols.txt"
+OUTPUT_DIR = "outputs"
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
+
+print(">>> NODE 5: MS VS MG AUTOIMMUNE COMPARISON (Enriched)...", flush=True)
+# Load data
+df = pd.read_pickle(INPUT_FILE)
+with open(AA_COLS_FILE, 'r') as f:
+    aa_cols = [line.strip() for line in f.readlines()]
+
+# Define masks
+ms_types = ['RRMS', 'SPMS', 'PPMS']
+mg_types = ['general', 'eye-type']
+masks = {
+    'MS': df['Type'].isin(ms_types),
+    'MG': df['Type'].isin(mg_types),
+    'Control': df['Status'] == 'control'
+}
+
+# Create a combined dataframe for easy processing
+df_p2 = df.copy()
+# Create the specific groups for this analysis
+df_p2['Group'] = 'Other'
+df_p2.loc[masks['MS'] | masks['MG'], 'Group'] = 'MS+MG'
+df_p2.loc[masks['Control'], 'Group'] = 'Controls'
+
+# Initialize JSON structure
+json_data = {
+    'metadata': {
+        'title': 'MS+MG vs Controls',
+        'amino_acids': [aa.split(' ')[0] for aa in aa_cols]
+    },
+    'fig3': {
+        'subplots': []
+    }
+}
+
+# Generate Data
+for aa in aa_cols:
+    aa_clean = aa.split(' ')[0] # Clean name
+    
+    # Extract data for the two groups
+    ms_mg_data = df_p2[df_p2['Group']=='MS+MG'][aa].dropna()
+    ctrl_data = df_p2[df_p2['Group']=='Controls'][aa].dropna()
+    
+    # Calculate Statistics (T-test)
+    # We use equal_var=False (Welch's t-test) which is safer for biological data
+    p_val = 1.0
+    if len(ms_mg_data) > 1 and len(ctrl_data) > 1:
+        t_stat, p_val = stats.ttest_ind(ms_mg_data, ctrl_data, equal_var=False)
+        
+    ms_mg_vals = ms_mg_data.tolist()
+    ctrl_vals = ctrl_data.tolist()
+    
+    json_data['fig3']['subplots'].append({
+        'title': aa_clean,
+        'p_value': p_val,  # Save p-value for the web to use
+        'traces': [
+            {'name': 'MS+MG', 'y': ms_mg_vals, 'color': '#e74c3c'},   # Red
+            {'name': 'Controls', 'y': ctrl_vals, 'color': '#2ecc71'}  # Green
+        ]
+    })
+
+# Save JSON
+json_path = os.path.join(OUTPUT_DIR, 'autoimmune_data.json')
+with open(json_path, 'w', encoding='utf-8') as f:
+    json.dump(json_data, f, indent=2)
+
+print(f"Success! Enriched JSON saved to {json_path}")
 """Node 5: MS vs MG Autoimmune Comparison - Generate Fig 3"""
 import os
 import sys
