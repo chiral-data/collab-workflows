@@ -162,37 +162,39 @@ def get_base64_image(filename):
 
 json_data = {
     'metadata': {'title': 'Metabolic Network Clustering'},
-    'fig6': {
-        'x': corr_ms_mg_clustered.columns.str.replace('_conc', '').tolist(),
-        'y': corr_ms_mg_clustered.index.str.replace('_conc', '').tolist(),
-        'z': corr_ms_mg_clustered.values.tolist(),
-        'dendrogram': dendro_ms_mg,
-        'title': 'MS & MG Correlation Matrix (Clustered)',
-        'colorscale': [
-            [0.0, '#ffffd9'],
-            [0.2, '#c7e9b4'],
-            [0.4, '#41b6c4'],
-            [0.6, '#1d91c0'],
-            [0.8, '#225ea8'],
-            [1.0, '#0c2c84']
-        ],
-        'static_image': get_base64_image('Fig6_Corr_MS_MG.png')
-    },
-    'fig7': {
-        'x': corr_ctrl_clustered.columns.str.replace('_conc', '').tolist(),
-        'y': corr_ctrl_clustered.index.str.replace('_conc', '').tolist(),
-        'z': corr_ctrl_clustered.values.tolist(),
-        'dendrogram': dendro_ctrl,
-        'title': 'Control Correlation Matrix (Clustered)',
-        'colorscale': [
-            [0.0, '#ffffd9'],
-            [0.2, '#c7e9b4'],
-            [0.4, '#41b6c4'],
-            [0.6, '#1d91c0'],
-            [0.8, '#225ea8'],
-            [1.0, '#0c2c84']
-        ],
-        'static_image': get_base64_image('Fig7_Corr_Control.png')
+    'cohorts': {
+        'MS+MG': {
+            'x': corr_ms_mg_clustered.columns.str.replace('_conc', '').tolist(),
+            'y': corr_ms_mg_clustered.index.str.replace('_conc', '').tolist(),
+            'z': corr_ms_mg_clustered.values.tolist(),
+            'dendrogram': dendro_ms_mg,
+            'title': 'MS & MG Correlation Matrix (Clustered)',
+            'colorscale': [
+                [0.0, '#ffffd9'],
+                [0.2, '#c7e9b4'],
+                [0.4, '#41b6c4'],
+                [0.6, '#1d91c0'],
+                [0.8, '#225ea8'],
+                [1.0, '#0c2c84']
+            ],
+            'static_image': get_base64_image('Fig6_Corr_MS_MG.png')
+        },
+        'Control': {
+            'x': corr_ctrl_clustered.columns.str.replace('_conc', '').tolist(),
+            'y': corr_ctrl_clustered.index.str.replace('_conc', '').tolist(),
+            'z': corr_ctrl_clustered.values.tolist(),
+            'dendrogram': dendro_ctrl,
+            'title': 'Control Correlation Matrix (Clustered)',
+            'colorscale': [
+                [0.0, '#ffffd9'],
+                [0.2, '#c7e9b4'],
+                [0.4, '#41b6c4'],
+                [0.6, '#1d91c0'],
+                [0.8, '#225ea8'],
+                [1.0, '#0c2c84']
+            ],
+            'static_image': get_base64_image('Fig7_Corr_Control.png')
+        }
     }
 }
 
