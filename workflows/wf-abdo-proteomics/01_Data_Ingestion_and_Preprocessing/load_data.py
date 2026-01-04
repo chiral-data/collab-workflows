@@ -65,4 +65,58 @@ with open(os.path.join(OUTPUT_DIR, "aa_cols.txt"), 'w') as f:
     f.write('\n'.join(aa_cols))
 print(f"Saved: {os.path.join(OUTPUT_DIR, 'aa_cols.txt')}", flush=True)
 
+# ==========================================
+# EXPORT DATA FOR VISUALIZATION
+# ==========================================
+import json
+
+print("Exporting visualization data...", flush=True)
+
+# Prepare JSON structure
+json_data = {
+    "metadata": {
+        "total_records": len(df),
+        "amino_acids": [col.replace('_conc', '') for col in aa_cols]
+    },
+    "raw": {},
+    "processed": {}
+}
+
+# Helper to look up raw/processed columns
+for col in aa_cols:
+    clean_name = col.replace('_conc', '')
+    
+    # Raw Data (handle NaN)
+    json_data["raw"][clean_name] = df[col].dropna().tolist()
+    
+    # Processed Data (handle NaN)
+    json_data["processed"][clean_name] = df_std[col].dropna().tolist()
+
+# Data Tables (Export full dataset for grid view)
+# We fill NaNs with empty string or null for JSON compliance
+json_data["tables"] = {
+    "raw": df.fillna("").to_dict(orient='records'),
+    "processed": df_std.fillna("").to_dict(orient='records'),
+    "columns": list(df.columns) # Assumes same columns for both
+}
+
+# Save JSON
+json_path = os.path.join(OUTPUT_DIR, "preprocessing_data.json")
+with open(json_path, 'w') as f:
+    json.dump(json_data, f)
+print(f"Saved: {json_path}", flush=True)
+
+# Call HTML Generator
+try:
+    from html_generator import generate_preprocessing_report
+    html_content = generate_preprocessing_report(json_path)
+    html_path = os.path.join(OUTPUT_DIR, "preprocessing_report.html")
+    with open(html_path, 'w', encoding='utf-8') as f:
+        f.write(html_content)
+    print(f"Saved: {html_path}", flush=True)
+except ImportError:
+    print("Warning: html_generator.py not found or failed to import. Skipping HTML generation.", flush=True)
+except Exception as e:
+    print(f"Warning: HTML generation failed: {e}", flush=True)
+
 print(f"Processing complete. Standardized {len(df_std)} records.", flush=True)
