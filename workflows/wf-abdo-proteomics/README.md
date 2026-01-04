@@ -200,9 +200,11 @@ The analysis is implemented as a **modular, parallelizable 11-node workflow** or
 
 **Outputs:**
 * `outputs/data_standardized.pkl` (65KB) - Pandas DataFrame with standardized concentrations
-* `outputs/aa_cols.txt` (294B) - List of 29 amino acid column names for downstream processing
+* `outputs/aa_cols.txt` (294B) - List of 29 amino acid column names
+* `outputs/preprocessing_data.json` - Raw vs Standardized distribution data
+* `outputs/preprocessing_report.html` - Interactive dashboard with side-by-side boxplots and sortable data tables
 
-**Script:** `load_data.py` | **Execution:** `run.sh` via `.venv\Scripts\python.exe`
+**Script:** `load_data.py` | **HTML Generator:** `html_generator.py` | **Execution:** `python3 load_data.py`
 
 **Biological Context:** Without standardization, high-abundance amino acids dominate statistical models, masking dysregulation in trace metabolites that serve as critical biomarkers (e.g., 3-MHIS for muscle breakdown, GABA for neuromuscular tone).
 
@@ -560,7 +562,7 @@ Each node generates files in its `outputs/` directory:
 
 | Node | PNG Outputs | JSON/HTML Outputs |
 |------|-------------|-------------------|
-| 01 | data_standardized.pkl, aa_cols.txt | N/A |
+| 01 | data_standardized.pkl, aa_cols.txt | preprocessing_data.json, preprocessing_report.html |
 | 02 | Table1_Demographics.png, Table2_MS_MG_Demographics.png | demographics_data.json, demographics.html |
 | 03 | Fig1A_MS_vs_Control.png, Fig1B_MS_Subtypes.png | pathology_data.json, pathology.html |
 | 04 | Fig2A_Age_Grid.png, Fig2B_Duration_Grid.png, Fig2C_EDSS_Grid.png | confounders_data.json, confounders.html |
