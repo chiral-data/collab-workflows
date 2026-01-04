@@ -69,8 +69,7 @@ def main():
         df_melt = df_p1a.melt(id_vars='Group', value_vars=aa_cols, var_name='Amino Acid', value_name='LogC')
         df_melt['Amino Acid'] = df_melt['Amino Acid'].str.replace('_conc', '', regex=False)
 
-        g = sns.FacetGrid(df_melt, col='Amino Acid', col_wrap=6, sharey=False, height=2.5, aspect=1,
-                          gridspec_kws={'hspace': 0.5, 'wspace': 0.3})
+        g = sns.FacetGrid(df_melt, col='Amino Acid', col_wrap=6, sharey=False, height=2.5, aspect=1)
         g.map_dataframe(sns.boxplot, x='Group', y='LogC', 
                         hue='Group', palette={'MS':'steelblue', 'Control':'salmon'}, legend=False,
                         showfliers=True, 
@@ -106,10 +105,10 @@ def main():
         df_melt_b = df_p1b.melt(id_vars='Type', value_vars=aa_cols, var_name='Amino Acid', value_name='LogC')
         df_melt_b['Amino Acid'] = df_melt_b['Amino Acid'].str.replace('_conc', '', regex=False)
         
-        g = sns.FacetGrid(df_melt_b, col='Amino Acid', col_wrap=5, sharey=False, height=2.5, aspect=1,
-                          gridspec_kws={'hspace': 0.5, 'wspace': 0.3})
+        g = sns.FacetGrid(df_melt_b, col='Amino Acid', col_wrap=5, sharey=False, height=2.5, aspect=1)
         g.map_dataframe(sns.boxplot, x='Type', y='LogC', 
                         order=['RRMS', 'SPMS', 'PPMS'],
+                        hue='Type', legend=False,
                         palette={'RRMS':'lightgreen', 'SPMS':'orange', 'PPMS':'purple'},
                         showfliers=True,
                         flierprops={'marker': 'o', 'markerfacecolor': 'black', 'markersize': 3})

@@ -76,7 +76,7 @@ def main():
                 p_val_total = 1.0
 
         fig, ax = plt.subplots(figsize=(6, 6))
-        sns.boxplot(data=df_rm, x='Group', y='Total_AA', palette={'RRMS':'grey', 'MG':'skyblue'}, ax=ax)
+        # Removed redundant call without hue
         sns.boxplot(data=df_rm, x='Group', y='Total_AA', hue='Group', palette={'RRMS':'grey', 'MG':'skyblue'}, ax=ax, legend=False)
         ax.set_ylabel('Concentration [nmol/ml]', fontsize=12)
         ax.set_xlabel('', fontsize=12)
@@ -104,8 +104,7 @@ def main():
         df_melt_11 = df_rm.melt(id_vars='Group', value_vars=aa_cols, var_name='Amino Acid', value_name='Concentration')
         df_melt_11['Amino Acid'] = df_melt_11['Amino Acid'].str.replace('_conc', '', regex=False)
 
-        g = sns.FacetGrid(df_melt_11, col='Amino Acid', col_wrap=6, sharey=False, height=2.5, aspect=1,
-                          gridspec_kws={'hspace': 0.5, 'wspace': 0.3})
+        g = sns.FacetGrid(df_melt_11, col='Amino Acid', col_wrap=6, sharey=False, height=2.5, aspect=1)
 
         g.map_dataframe(sns.boxplot, x='Group', y='Concentration', palette={'RRMS':'grey', 'MG':'skyblue'},
                         hue='Group', legend=False,

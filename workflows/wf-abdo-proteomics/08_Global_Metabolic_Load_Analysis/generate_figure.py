@@ -61,6 +61,7 @@ def main():
         type_colors = {'PPMS': '#1f77b4', 'SPMS': '#ff7f0e', 'RRMS': '#2ca02c', 'GMG': '#d62728'}
 
         sns.boxplot(data=df_mg_ms, x='Plot_Type', y='Total_AA', order=type_order,
+                    hue='Plot_Type', legend=False,
                     palette=type_colors, showfliers=True, width=0.5, linewidth=1.5,
                     flierprops={'marker': 'o', 'markerfacecolor': 'white', 'markeredgecolor': 'black', 'markersize': 5})
 
