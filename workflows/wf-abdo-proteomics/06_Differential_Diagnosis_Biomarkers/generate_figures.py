@@ -22,7 +22,7 @@ def main():
         # Configuration
         SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
         INPUT_FILE = "data_standardized.pkl"
-        OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
+        OUTPUT_DIR = "outputs"
 
         if not os.path.exists(OUTPUT_DIR):
             os.makedirs(OUTPUT_DIR, exist_ok=True)

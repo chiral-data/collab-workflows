@@ -14,7 +14,7 @@ from html_generator import generate_trajectories_html
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = "data_standardized.pkl"
 AA_COLS_FILE = "aa_cols.txt"
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "outputs")
+OUTPUT_DIR = "outputs"
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
