@@ -78,36 +78,87 @@ print(f"Saved: Fig12_Split_Corr.png", flush=True)
 # ==========================================
 print("Generating JSON and HTML...", flush=True)
 
-json_data = {
-    'metadata': {'title': 'Pathway Coherence'},
-    'fig12_mg': {
-        'x': corr_mg.columns.str.replace('_conc', '').tolist(),
-        'y': corr_mg.index.str.replace('_conc', '').tolist(),
-        'z': corr_mg.mask(np.triu(np.ones(corr_mg.shape, dtype=bool), k=0)).where(pd.notnull(corr_mg), None).values.tolist(),
-        'title': 'MG Correlation Matrix',
-        'colorscale': [
-            [0.0, '#ffffd9'],
-            [0.2, '#c7e9b4'],
-            [0.4, '#41b6c4'],
-            [0.6, '#1d91c0'],
-            [0.8, '#225ea8'],
-            [1.0, '#0c2c84']
-        ]
-    },
-    'fig12_rrms': {
-        'x': corr_rrms.columns.str.replace('_conc', '').tolist(),
-        'y': corr_rrms.index.str.replace('_conc', '').tolist(),
-        'z': corr_rrms.mask(np.triu(np.ones(corr_rrms.shape, dtype=bool), k=0)).where(pd.notnull(corr_rrms), None).values.tolist(),
-        'title': 'MS-RRMS Correlation Matrix',
-        'colorscale': [
-            [0.0, '#ffffd9'],
-            [0.2, '#c7e9b4'],
-            [0.4, '#41b6c4'],
-            [0.6, '#1d91c0'],
-            [0.8, '#225ea8'],
-            [1.0, '#0c2c84']
-        ]
+from scipy.cluster.hierarchy import dendrogram, linkage, leaves_list
+
+# ... (Imports preserved above)
+
+# Calculate dictionaries for all cohorts
+cohorts = {
+    'Control': df['Status'] == 'control',
+    'RRMS': df['Type'] == 'RRMS',
+    'SPMS': df['Type'] == 'SPMS',
+    'PPMS': df['Type'] == 'PPMS',
+    'GMG': df['Type'] == 'general',
+    'OMG': df['Type'] == 'eye-type'
+}
+
+correlation_data = {}
+
+for name, mask in cohorts.items():
+    subset = df[mask][aa_cols]
+    if len(subset) < 2:
+        continue
+        
+    # Calculate Correlation
+    corr = subset.corr()
+    # Ensure standard index/columns
+    corr.index = aa_labels
+    corr.columns = aa_labels
+    
+    # Perform Clustering using Seaborn Clustermap (to get order and linkage)
+    # We use a temporary figure to extract data, then close it.
+    try:
+        # Clustermap (Standard call, no invalid args)
+        g = sns.clustermap(corr, cmap='YlGnBu', 
+                           method='average', metric='euclidean') 
+        
+        # Reorder correlation matrix
+        reordered_ind_row = g.dendrogram_row.reordered_ind
+        reordered_ind_col = g.dendrogram_col.reordered_ind
+        
+        corr_clustered = corr.iloc[reordered_ind_row, reordered_ind_col]
+        
+        # Extract Dendrogram Data
+        dendro = {'row': None, 'col': None}
+        
+        # Row Dendrogram
+        if hasattr(g, 'dendrogram_row') and g.dendrogram_row is not None:
+             d = dendrogram(g.dendrogram_row.linkage, no_plot=True)
+             icoords = [[(x - 5.0) / 10.0 for x in seg] for seg in d['icoord']]
+             dendro['row'] = {'icoords': icoords, 'dcoords': d['dcoord']}
+             
+        # Col Dendrogram
+        if hasattr(g, 'dendrogram_col') and g.dendrogram_col is not None:
+             d = dendrogram(g.dendrogram_col.linkage, no_plot=True)
+             icoords = [[(x - 5.0) / 10.0 for x in seg] for seg in d['icoord']]
+             dendro['col'] = {'icoords': icoords, 'dcoords': d['dcoord']}
+
+        plt.close(g.figure) # Close to save memory
+        
+    except Exception as e:
+        print(f"Warning: Clustering failed for {name}, falling back to unclustered. Error: {e}")
+        corr_clustered = corr
+        dendro = None
+
+    # Mask Upper Triangle AND Diagonal (Keep strictly lower)
+    # np.triu(..., k=0) includes diagonal. We want to mask that.
+    mask = np.triu(np.ones_like(corr_clustered, dtype=bool), k=0)
+    corr_masked = corr_clustered.mask(mask)
+
+    # Prepare Z-values (handle NaNs for JSON)
+    z_vals = corr_masked.where(pd.notnull(corr_masked), None).values.tolist()
+    
+    correlation_data[name] = {
+        'x': corr_clustered.columns.tolist(),
+        'y': corr_clustered.index.tolist(),
+        'z': z_vals,
+        'dendrogram': dendro,
+        'title': f'{name} Clustered Network'
     }
+
+json_data = {
+    'metadata': {'title': 'Pathway Coherence Comparator'},
+    'cohorts': correlation_data
 }
 
 json_path = os.path.join(OUTPUT_DIR, 'coherence_data.json')
