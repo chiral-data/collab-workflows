@@ -1,294 +1,333 @@
-"""HTML Generator for Node 02: Cohort Demographics
-Generates interactive HTML visualization for demographic tables
-Based on JavaScript + Plotly.js architecture
+"""HTML Generator for Node 02: Cohort Demographics (Python 3)
+Generates interactive HTML Dashboard matching Node 10 style.
 """
 
 import json
 import os
 
-def generate_demographics_html(json_filename='demographics_data.json'):
-    """Generate HTML for demographics tables visualization"""
+def generate_demographics_html(json_filename: str = 'demographics_data.json') -> str:
+    """Generate HTML for Demographics Dashboard"""
     
-    # Read JSON data to embed directly
-    json_path = os.path.join('outputs', json_filename)
-    # Fallback if running from inside output dir or elsewhere
+    # Locate JSON
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(SCRIPT_DIR, 'outputs', json_filename)
+    
     if not os.path.exists(json_path):
-        json_path = json_filename
-        
+        if os.path.exists(os.path.join(os.getcwd(), 'outputs', json_filename)):
+            json_path = os.path.join(os.getcwd(), 'outputs', json_filename)
+        elif os.path.exists(json_filename):
+             json_path = json_filename
+
+    json_content = '{}'
+
     try:
+        print(f"DEBUG: Reading JSON from {json_path}")
         with open(json_path, 'r', encoding='utf-8') as f:
             json_content = f.read()
+            json.loads(json_content) # Verify
     except Exception as e:
-        print(f"Warning: Could not read JSON file {json_path} for embedding: {e}")
+        print(f"Warning: Could not read JSON: {e}")
         json_content = '{}'
 
-    html = '''<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cohort Demographics - Tables 1 & 2</title>
+    <title>Cohort Demographics</title>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        :root {{
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #333;
+        }}
+        
+        body {{ font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }}
+        
+        header {{ background: var(--card-bg); padding: 15px 30px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }}
+        h1 {{ margin: 0; font-size: 1.2rem; color: var(--primary); }}
+        .timestamp {{ font-size: 0.8rem; color: #777; }}
+
+        .controls {{ background: #fff; padding: 10px 30px; border-bottom: 1px solid #eee; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }}
+        
+        .tab-group {{ display: flex; gap: 5px; background: #eee; padding: 4px; border-radius: 6px; }}
+        .tab-btn {{ border: none; background: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 500; color: #666; transition: 0.2s; }}
+        .tab-btn.active {{ background: white; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
+
+        .toggle-group {{ display: flex; gap: 5px; background: #eee; padding: 4px; border-radius: 6px; margin-left: 0; }}
+        .toggle-btn {{ border: none; background: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; font-weight: 500; color: #666; transition: 0.2s; }}
+        .toggle-btn.active {{ background: white; color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
+
+        #app {{ flex: 1; overflow-y: auto; padding: 20px 30px; }}
+        
+        /* Layouts */
+        .dashboard-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }}
+        
+        .full-width {{ grid-column: 1 / -1; }}
+        
+        .chart-card {{
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+        }}
+        
+        .table-card {{
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow-x: auto;
+            height: auto;
+        }}
+        
+        .card-title {{ font-weight: bold; color: var(--primary); margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }}
+        
+        /* Table Styles */
+        table {{ width: 100%; border-collapse: collapse; font-size: 0.9em; }}
+        th {{ background: #f8f9fa; padding: 12px; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #ddd; }}
+        td {{ padding: 12px; border-bottom: 1px solid #eee; color: #333; }}
+        tr:hover {{ background: #fcfcfc; }}
+        
+        .loading {{ text-align: center; padding: 50px; font-size: 1.2rem; color: #666; }}
+    </style>
     <script>
-        // Embedded JSON data
         const RAW_DATA = __JSON_DATA__;
     </script>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #667eea;
-            --gradient-start: #667eea;
-            --gradient-end: #764ba2;
-            --bg-light: #f5f5f5;
-            --text-muted: #7f8c8d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            padding: 20px;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 3px solid var(--secondary);
-        }
-        
-        h1 {
-            color: var(--primary);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
-        
-        .figure-section {
-            margin: 60px 0;
-            animation: fadeIn 0.6s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .figure-title {
-            font-size: 1.6em;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 5px solid var(--secondary);
-        }
-        
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95em;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .data-table th,
-        .data-table td {
-            padding: 14px 16px;
-            text-align: left;
-            border-bottom: 1px solid #d0d0d0;
-        }
-        
-        .data-table th {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9em;
-        }
-        
-        .data-table tbody tr:hover {
-            background-color: var(--bg-light);
-            transition: background-color 0.2s;
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 100px 20px;
-        }
-        
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--secondary);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
-        }
-        
-        .error {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-        }
-        
-        .error h2 {
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            color: var(--text-muted);
-            padding-top: 30px;
-            border-top: 2px solid #ecf0f1;
-            font-size: 0.95em;
-        }
-        
-        footer p {
-            margin: 8px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 25px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📊 Cohort Demographics</h1>
-            <p class="subtitle">MS & MG Amino Acid Analysis - Table 1 & Table 2</p>
-        </header>
-        
-        <div id="app">
-            <div class="loading">
-                <div class="spinner"></div>
-                <p style="color: var(--text-muted); font-size: 1.1em;">Loading demographic data...</p>
-            </div>
+    <header>
+        <h1>Cohort Demographics</h1>
+        <span class="timestamp" id="timestamp">Generated: Just now</span>
+    </header>
+
+    <div class="controls">
+        <label style="font-weight:600; color:#555;">Dashboard:</label>
+        <div class="tab-group">
+            <button class="tab-btn active" onclick="switchTab('tab1')">MS vs Controls</button>
+            <button class="tab-btn" onclick="switchTab('tab2')">MS vs MG</button>
         </div>
-        
-        <footer>
-            <p><strong>Dataset:</strong> Multiple Sclerosis & Myasthenia Gravis Proteomics</p>
-            <p><strong>Generated:</strong> <span id="timestamp"></span></p>
-            <p><strong>Node:</strong> 02 - Cohort Demographics</p>
-        </footer>
+
+        <label style="font-weight:600; color:#555; margin-left:15px;">Chart:</label>
+        <div class="toggle-group">
+             <button class="toggle-btn active" onclick="setChartType('box')">Box</button>
+             <button class="toggle-btn" onclick="setChartType('violin')">Violin</button>
+        </div>
     </div>
-    
+
+    <div id="app">
+        <div class="loading">Initializing Dashboard...</div>
+    </div>
+
     <script>
-        'use strict';
+        let currentTab = 'tab1';
+        let currentType = 'box';
         
-        function renderTable(containerId, data) {
-            if (!data || !data.columns || !data.rows) {
-                console.error('No table data for ' + containerId);
+        const COLORS = {{
+            'MS': '#4682b4',     // SteelBlue
+            'Control': '#fa8072', // Salmon
+            'MG': '#ffa500'      // Orange
+        }};
+
+        function init() {{
+            document.getElementById('timestamp').textContent = new Date().toLocaleString();
+            if (!RAW_DATA || Object.keys(RAW_DATA).length === 0) {{
+                document.getElementById('app').innerHTML = '<div style="padding:20px">No Data Available</div>';
                 return;
-            }
-            
-            const container = document.getElementById(containerId);
-            let html = '<table class="data-table"><thead><tr>';
-            
-            data.columns.forEach(col => {
-                html += `<th>${col}</th>`;
-            });
-            html += '</tr></thead><tbody>';
-            
-            data.rows.forEach(row => {
-                html += '<tr>';
-                row.forEach(cell => {
-                    html += `<td>${cell !== null && cell !== undefined ? cell : '-'}</td>`;
-                });
-                html += '</tr>';
-            });
-            html += '</tbody></table>';
-            
-            container.innerHTML = html;
-        }
+            }}
+            switchTab('tab1');
+        }}
         
-        function init() {
-            try {
-                const data = RAW_DATA;
-                console.log('Data loaded successfully:', Object.keys(data));
-                
-                document.getElementById('app').innerHTML = `
-                    <div class="figure-section">
-                        <h2 class="figure-title">Table 1: MS vs Controls Demographics</h2>
-                        <div id="table1"></div>
+        function switchTab(tab) {{
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if(tab === 'tab1') document.querySelector('.tab-btn:first-child').classList.add('active');
+            else document.querySelector('.tab-btn:last-child').classList.add('active');
+            renderDashboard();
+        }}
+        
+        function setChartType(type) {{
+            currentType = type;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            if(type === 'box') document.querySelector('.toggle-btn:first-child').classList.add('active');
+            else document.querySelector('.toggle-btn:last-child').classList.add('active');
+            renderDashboard();
+        }}
+
+        function renderDashboard() {{
+            const app = document.getElementById('app');
+            const plots = RAW_DATA.plots;
+            
+            let html = '<div class="dashboard-grid">';
+            
+            if (currentTab === 'tab1') {{
+                // --- Tab 1 Visuals ---
+                // 1. Age Distribution (Box)
+                html += `
+                    <div class="chart-card">
+                        <div class="card-title">Age Distribution</div>
+                        <div id="plot_age" style="flex:1"></div>
                     </div>
-                    
-                    <div class="figure-section">
-                        <h2 class="figure-title">Table 2: MS and MG Demographic Comparison</h2>
-                        <div id="table2"></div>
+                `;
+                // 2. Sex Ratio (Bar)
+                html += `
+                    <div class="chart-card">
+                        <div class="card-title">Sex Distribution</div>
+                        <div id="plot_sex" style="flex:1"></div>
+                    </div>
+                `;
+                html += '</div>'; // End Grid
+                
+                // 3. Table 1 (Full Width)
+                html += `
+                    <div class="table-card">
+                        <div class="card-title">Detailed Demographics (Table 1)</div>
+                        ${{generateTableHTML(RAW_DATA.table1)}}
                     </div>
                 `;
                 
-                document.getElementById('timestamp').textContent = new Date().toLocaleString();
+                app.innerHTML = html;
                 
-                setTimeout(() => {
-                    console.log('Rendering tables...');
-                    renderTable('table1', data.table1);
-                    renderTable('table2', data.table2);
-                    console.log('Tables rendered successfully!');
-                }, 150);
-                
-            } catch (error) {
-                console.error('Error during initialization:', error);
-                document.getElementById('app').innerHTML = `
-                    <div class="error">
-                        <h2>⚠️ Error Loading Data</h2>
-                        <p><strong>Message:</strong> ${error.message}</p>
-                        <p><strong>File:</strong> demographics_data.json</p>
-                        <p>Please ensure the JSON file exists in the same directory.</p>
+                // Render Plots
+                plotDist('plot_age', plots.age, ['MS', 'Control']);
+                plotSex('plot_sex', plots.sex, ['MS', 'Control']);
+
+            }} else {{
+                // --- Tab 2 Visuals ---
+                // 1. Age Distribution
+                html += `
+                    <div class="chart-card">
+                        <div class="card-title">Age Comparison</div>
+                        <div id="plot_age_2" style="flex:1"></div>
                     </div>
                 `;
-            }
-        }
+                // 2. Duration Distribution
+                html += `
+                    <div class="chart-card">
+                        <div class="card-title">Disease Duration</div>
+                        <div id="plot_dur_2" style="flex:1"></div>
+                    </div>
+                `;
+                // 3. Subtype Counts
+                html += `
+                    <div class="chart-card full-width" style="height:350px">
+                        <div class="card-title">Subtype Composition</div>
+                        <div id="plot_sub_2" style="flex:1"></div>
+                    </div>
+                `;
+                html += '</div>'; // End Grid
+                
+                // 4. Table 2
+                html += `
+                    <div class="table-card">
+                        <div class="card-title">MS vs MG Statistics (Table 2)</div>
+                        ${{generateTableHTML(RAW_DATA.table2)}}
+                    </div>
+                `;
+                
+                app.innerHTML = html;
+                
+                plotDist('plot_age_2', plots.age, ['MS', 'MG']);
+                plotDist('plot_dur_2', plots.duration, ['MS', 'MG']);
+                plotSubtypes('plot_sub_2', plots.subtypes);
+            }}
+        }}
+
+        // --- Plotting Helpers ---
+        function plotDist(divId, dataObj, groups) {{
+            const traces = [];
+            groups.forEach(g => {{
+                if (dataObj[g]) {{
+                    traces.push({{
+                        y: dataObj[g],
+                        type: currentType,
+                        name: g,
+                        marker: {{ color: COLORS[g] }},
+                        boxpoints: 'all',
+                        jitter: 0.3,
+                        pointpos: -1.8
+                    }});
+                }}
+            }});
+            const layout = {{ margin: {{t:10, b:30, l:30, r:10}}, showlegend: true }};
+            Plotly.newPlot(divId, traces, layout, {{displayModeBar: false}});
+        }}
+
+        function plotSex(divId, sexData, groups) {{
+            const males = [];
+            const females = [];
+            groups.forEach(g => {{
+                if(sexData[g]) {{
+                    males.push(sexData[g].Male);
+                    females.push(sexData[g].Female);
+                }}
+            }});
+            
+            const traces = [
+                {{ x: groups, y: males, name: 'Male', type: 'bar', marker: {{color: '#34495e'}} }},
+                {{ x: groups, y: females, name: 'Female', type: 'bar', marker: {{color: '#e74c3c'}} }}
+            ];
+            const layout = {{ barmode: 'group', margin: {{t:10, b:30, l:30, r:10}} }};
+            Plotly.newPlot(divId, traces, layout, {{displayModeBar: false}});
+        }}
         
-        init();
+        function plotSubtypes(divId, subData) {{
+            // Nested Pies
+             const labelsMS = Object.keys(subData.MS);
+             const valuesMS = Object.values(subData.MS);
+             const labelsMG = Object.keys(subData.MG);
+             const valuesMG = Object.values(subData.MG);
+             
+             const trace1 = {{
+                 values: valuesMS, labels: labelsMS,
+                 type: 'pie', name: 'MS Subtypes', title: 'MS',
+                 domain: {{ column: 0 }},
+                 hole: 0.4
+             }};
+             const trace2 = {{
+                 values: valuesMG, labels: labelsMG,
+                 type: 'pie', name: 'MG Subtypes', title: 'MG',
+                 domain: {{ column: 1 }},
+                 hole: 0.4
+             }};
+             
+             const layout = {{ 
+                 grid: {{rows: 1, columns: 2}},
+                 margin: {{t:0, b:10, l:0, r:0}},
+                 showlegend: true
+             }};
+             Plotly.newPlot(divId, [trace1, trace2], layout, {{displayModeBar: false}});
+        }}
+
+        function generateTableHTML(tableData) {{
+            if(!tableData) return '';
+            let h = '<table><thead><tr>';
+            tableData.columns.forEach(c => h += `<th>${{c}}</th>`);
+            h += '</tr></thead><tbody>';
+            tableData.rows.forEach(r => {{
+                h += '<tr>';
+                r.forEach(c => h += `<td>${{c}}</td>`);
+                h += '</tr>';
+            }});
+            h += '</tbody></table>';
+            return h;
+        }}
+
+        setTimeout(init, 100);
     </script>
 </body>
-</html>'''
+</html>"""
     
     # Inject JSON data
     html = html.replace('__JSON_DATA__', json_content)
