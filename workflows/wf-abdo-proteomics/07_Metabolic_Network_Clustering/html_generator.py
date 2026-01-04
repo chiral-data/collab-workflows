@@ -14,7 +14,7 @@ def generate_clustering_html(json_filename='clustering_data.json'):
     
     # Read JSON data to embed directly
     # Try absolute path first
-    json_path = os.path.join(SCRIPT_DIR, 'output', os.path.basename(json_filename))
+    json_path = os.path.join(SCRIPT_DIR, 'outputs', os.path.basename(json_filename))
     
     if not os.path.exists(json_path):
         # Fallback to relative path
