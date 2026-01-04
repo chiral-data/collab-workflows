@@ -1,0 +1,10 @@
+name = "Pathway Coherence Analysis"
+description = "Generate Figure 12 (Split Correlation: MG vs RRMS)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig12_Split_Corr.png", "coherence_data.json", "coherence.html"]
+
+[container]
+image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"

@@ -1,0 +1,14 @@
+name = "Data Ingestion and Preprocessing"
+description = "Load raw data, standardize amino acid concentrations, and prepare cohort masks"
+outputs = ["data_standardized.pkl", "aa_cols.txt"]
+
+[container]
+image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"
+
+[params.data_file]
+type = "string"
+default = "database-multiple-sclerosis-myasthenia.csv"
+hint = "Input CSV file with proteomics data"
