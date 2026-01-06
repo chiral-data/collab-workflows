@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-01-06]
+
+### Changed
+
+- workflow-007/03_visualize/generate_output.py: Improved HTML output with full-page responsive layout
+  - Wrapped 3Dmol viewer in a complete HTML document structure
+  - Full-page viewer container (max-width: 1400px)
+  - Added zoom-out script to show protein at 70% for better overview
+  - Clean header with title, card-style viewer with shadow
+  - Added UI controls for protein representation styles (Cartoon, Stick, Sphere, Line, Surface)
+
 ## [2025-12-08]
 
 ### Added

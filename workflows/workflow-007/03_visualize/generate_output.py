@@ -105,7 +105,193 @@ if output_format in ("html", "both"):
     )
 
     # Save visualization to HTML file (works in non-notebook environments)
-    html_content = viewer._make_html()
+    viewer_html = viewer._make_html()
+
+    # Wrap in a complete HTML document with full-page layout and controls
+    html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Visualization - {pdb_id}</title>
+    <style>
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        html, body {{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }}
+        body {{
+            display: flex;
+            flex-direction: column;
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }}
+        header {{
+            padding: 12px 20px;
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }}
+        h1 {{
+            color: #333;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }}
+        .controls {{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }}
+        .controls label {{
+            font-size: 0.875rem;
+            color: #666;
+            margin-right: 4px;
+        }}
+        .btn-group {{
+            display: flex;
+            gap: 4px;
+        }}
+        .btn {{
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #333;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }}
+        .btn:hover {{
+            background: #f0f0f0;
+            border-color: #ccc;
+        }}
+        .btn.active {{
+            background: #0066cc;
+            color: white;
+            border-color: #0066cc;
+        }}
+        .viewer-container {{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            min-height: 0;
+        }}
+        .viewer-wrapper {{
+            width: 100%;
+            height: 100%;
+            max-width: 1400px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }}
+        /* Override 3Dmol viewer size to fill wrapper */
+        .viewer-wrapper > div {{
+            width: 100% !important;
+            height: 100% !important;
+        }}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Protein Pocket Visualization: {pdb_id}</h1>
+        <div class="controls">
+            <label>Style:</label>
+            <div class="btn-group">
+                <button class="btn active" data-style="cartoon">Cartoon</button>
+                <button class="btn" data-style="stick">Stick</button>
+                <button class="btn" data-style="sphere">Sphere</button>
+                <button class="btn" data-style="line">Line</button>
+                <button class="btn" data-style="surface">Surface</button>
+            </div>
+        </div>
+    </header>
+    <div class="viewer-container">
+        <div class="viewer-wrapper">
+            {viewer_html}
+        </div>
+    </div>
+    <script>
+        var globalViewer = null;
+
+        // Initialize viewer and set up controls
+        if (typeof $3Dmolpromise !== 'undefined') {{
+            $3Dmolpromise.then(function() {{
+                setTimeout(function() {{
+                    // Find the viewer
+                    var viewers = document.querySelectorAll('[id^="3dmolviewer_"]');
+                    viewers.forEach(function(el) {{
+                        var viewerId = el.id.replace('3dmolviewer_', '');
+                        globalViewer = window['viewer_' + viewerId];
+                        if (globalViewer) {{
+                            globalViewer.zoom(0.7);
+                            globalViewer.render();
+                        }}
+                    }});
+                }}, 100);
+            }});
+        }}
+
+        // Style change handler
+        function setStyle(style) {{
+            if (!globalViewer) return;
+
+            // Clear all styles first
+            globalViewer.setStyle({{}}, {{}});
+
+            // Apply new style to protein
+            var styleSpec = {{}};
+            switch(style) {{
+                case 'cartoon':
+                    styleSpec = {{cartoon: {{color: 'spectrum'}}}};
+                    break;
+                case 'stick':
+                    styleSpec = {{stick: {{colorscheme: 'Jmol'}}}};
+                    break;
+                case 'sphere':
+                    styleSpec = {{sphere: {{colorscheme: 'Jmol', scale: 0.3}}}};
+                    break;
+                case 'line':
+                    styleSpec = {{line: {{colorscheme: 'Jmol'}}}};
+                    break;
+                case 'surface':
+                    styleSpec = {{cartoon: {{color: 'spectrum'}}}};
+                    globalViewer.addSurface($3Dmol.SurfaceType.VDW, {{opacity: 0.7, color: 'white'}});
+                    break;
+            }}
+            globalViewer.setStyle({{}}, styleSpec);
+            globalViewer.render();
+        }}
+
+        // Set up button click handlers
+        document.querySelectorAll('.btn[data-style]').forEach(function(btn) {{
+            btn.addEventListener('click', function() {{
+                // Update active state
+                document.querySelectorAll('.btn[data-style]').forEach(function(b) {{
+                    b.classList.remove('active');
+                }});
+                this.classList.add('active');
+
+                // Apply style
+                setStyle(this.dataset.style);
+            }});
+        }});
+    </script>
+</body>
+</html>"""
+
     with open("pocket_visualization.html", "w") as f:
         f.write(html_content)
     print("Visualization saved to pocket_visualization.html")
