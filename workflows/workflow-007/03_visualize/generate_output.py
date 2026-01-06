@@ -237,7 +237,8 @@ if output_format in ("html", "both"):
                         globalViewer = window['viewer_' + viewerId];
                         if (globalViewer) {{
                             globalViewer.zoom(0.7);
-                            globalViewer.render();
+                            // Set default representation to Cartoon
+                            setStyle('cartoon');
                         }}
                     }});
                 }}, 100);
@@ -248,7 +249,8 @@ if output_format in ("html", "both"):
         function setStyle(style) {{
             if (!globalViewer) return;
 
-            // Clear all styles first
+            // Clear all styles and surfaces first
+            globalViewer.removeAllSurfaces();
             globalViewer.setStyle({{}}, {{}});
 
             // Apply new style to protein

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added zoom-out script to show protein at 70% for better overview
   - Clean header with title, card-style viewer with shadow
   - Added UI controls for protein representation styles (Cartoon, Stick, Sphere, Line, Surface)
+  - Fixed: Surface now properly removed when switching to other representations
 
 ## [2025-12-08]
 

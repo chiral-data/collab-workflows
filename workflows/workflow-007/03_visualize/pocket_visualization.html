@@ -377,7 +377,8 @@ viewer_176519289281192.render();
                         globalViewer = window['viewer_' + viewerId];
                         if (globalViewer) {
                             globalViewer.zoom(0.7);
-                            globalViewer.render();
+                            // Set default representation to Cartoon
+                            setStyle('cartoon');
                         }
                     });
                 }, 100);
@@ -388,7 +389,8 @@ viewer_176519289281192.render();
         function setStyle(style) {
             if (!globalViewer) return;
 
-            // Clear all styles first
+            // Clear all styles and surfaces first
+            globalViewer.removeAllSurfaces();
             globalViewer.setStyle({}, {});
 
             // Apply new style to protein
