@@ -13,6 +13,7 @@ from pathlib import Path
 import fegrow
 from fegrow.al import Model, Query
 from rdkit import Chem
+from dask.distributed import LocalCluster
 
 logging.basicConfig(
     level=logging.INFO,
@@ -125,87 +126,117 @@ def run_active_learning(
         cs = cloudpickle.load(f)
     logger.info(f"Loaded chemical space with {len(cs)} molecules")
 
-    # Setup gnina
-    setup_gnina()
-
-    # Initial random selection
-    logger.info(f"Performing initial random selection of {initial_molecules} molecules...")
-    random_molecules = cs.active_learning(initial_molecules, first_random=True)
-
-    # Evaluate initial selection
-    logger.info("Evaluating initial selection...")
-    cs.evaluate(
-        random_molecules,
-        num_conf=5,
-        gnina_gpu=False,
-        penalty=0.0,
-        al_ignore_penalty=False,
+    # Setup Dask cluster for evaluation
+    n_workers = os.cpu_count() or 4  # Use all available CPU cores, fallback to 4
+    logger.info(f"Setting up Dask LocalCluster with {n_workers} workers for evaluation...")
+    eval_cluster = LocalCluster(
+        processes=True,
+        n_workers=n_workers,
+        threads_per_worker=1,
+        memory_limit="4GB",
+        dashboard_address=":0",  # Use random port to avoid conflicts
+        silence_logs=False,
     )
 
-    computed = cs.df[~cs.df.score.isna()]
-    logger.info(f"Computed cases in total: {len(computed)}")
+    try:
+        # Attach cluster to ChemSpace
+        cs.dask_cluster = eval_cluster
+        logger.info("Dask cluster attached to ChemSpace")
 
-    # Setup active learning
-    setup_active_learning(cs, model_type, query_type)
+        # Setup gnina
+        setup_gnina()
 
-    # Run active learning cycles
-    logger.info(f"Starting {num_cycles} active learning cycles...")
-    for cycle in range(num_cycles):
-        logger.info(f"Starting cycle {cycle + 1}/{num_cycles}...")
-        try:
-            # Check available molecules
-            available_molecules = len(cs.df[~cs.df.score.isna()])
-            if available_molecules < molecules_per_cycle:
-                logger.warning(
-                    f"Not enough available molecules ({available_molecules}). "
-                    f"Reducing molecules_per_cycle to {available_molecules}"
+        # Initial random selection
+        logger.info(f"Performing initial random selection of {initial_molecules} molecules...")
+        random_molecules = cs.active_learning(initial_molecules, first_random=True)
+
+        # Evaluate initial selection
+        logger.info("Evaluating initial selection...")
+        cs.evaluate(
+            random_molecules,
+            num_conf=5,
+            gnina_gpu=False,
+            penalty=0.0,
+            al_ignore_penalty=False,
+        )
+
+        computed = cs.df[~cs.df.score.isna()]
+        logger.info(f"Computed cases in total: {len(computed)}")
+
+        # Setup active learning
+        setup_active_learning(cs, model_type, query_type)
+
+        # Run active learning cycles
+        logger.info(f"Starting {num_cycles} active learning cycles...")
+        for cycle in range(num_cycles):
+            logger.info(f"Starting cycle {cycle + 1}/{num_cycles}...")
+            try:
+                # Check available molecules
+                available_molecules = len(cs.df[~cs.df.score.isna()])
+                if available_molecules < molecules_per_cycle:
+                    logger.warning(
+                        f"Not enough available molecules ({available_molecules}). "
+                        f"Reducing molecules_per_cycle to {available_molecules}"
+                    )
+                    molecules_per_cycle = max(1, available_molecules)
+
+                picks = cs.active_learning(molecules_per_cycle)
+                logger.info(f"Selected {len(picks)} molecules for evaluation")
+
+                picks_results = cs.evaluate(
+                    picks,
+                    num_conf=10,
+                    gnina_gpu=False,
+                    penalty=0.0,
+                    al_ignore_penalty=False,
                 )
-                molecules_per_cycle = max(1, available_molecules)
 
-            picks = cs.active_learning(molecules_per_cycle)
-            logger.info(f"Selected {len(picks)} molecules for evaluation")
+                # Save cycle results
+                results_file = f"iteration_{cycle}_results.csv"
+                picks_results.to_csv(results_file)
+                logger.info(f"Cycle {cycle + 1} completed. Results saved to {results_file}")
 
-            picks_results = cs.evaluate(
-                picks,
-                num_conf=10,
-                gnina_gpu=False,
-                penalty=0.0,
-                al_ignore_penalty=False,
-            )
-
-            # Save cycle results
-            results_file = f"iteration_{cycle}_results.csv"
-            picks_results.to_csv(results_file)
-            logger.info(f"Cycle {cycle + 1} completed. Results saved to {results_file}")
-
-        except Exception as e:
-            logger.error(f"Error in cycle {cycle + 1}: {str(e)}")
-            logger.info("Continuing with next cycle...")
-            continue
-
-    # Save chemical space to SDF
-    logger.info(f"Saving evaluated chemical space to {output_path}...")
-    output_file = Path(output_path)
-
-    with Chem.SDWriter(str(output_file)) as SD:
-        columns = cs.df.columns.to_list()
-        columns.remove("Mol")
-
-        for i, row in cs.df.iterrows():
-            if row.Success is False:
+            except Exception as e:
+                logger.error(f"Error in cycle {cycle + 1}: {str(e)}")
+                logger.info("Continuing with next cycle...")
                 continue
 
-            mol = row.Mol
-            mol.SetIntProp("index", i)
-            for column in columns:
-                value = getattr(row, column)
-                mol.SetProp(column, str(value))
+        # Save chemical space to SDF
+        logger.info(f"Saving evaluated chemical space to {output_path}...")
+        output_file = Path(output_path)
 
-            mol.ClearProp("attachement_point")
-            SD.write(mol)
+        with Chem.SDWriter(str(output_file)) as SD:
+            columns = cs.df.columns.to_list()
+            columns.remove("Mol")
 
-    logger.info(f"Evaluated chemical space saved to {output_path}")
-    return True
+            for i, row in cs.df.iterrows():
+                if row.Success is False:
+                    continue
+
+                mol = row.Mol
+                mol.SetIntProp("index", i)
+                for column in columns:
+                    value = getattr(row, column)
+                    mol.SetProp(column, str(value))
+
+                mol.ClearProp("attachement_point")
+                SD.write(mol)
+
+        logger.info(f"Evaluated chemical space saved to {output_path}")
+        return True
+
+    finally:
+        # Cleanup Dask cluster
+        logger.info("Closing Dask cluster...")
+        try:
+            eval_cluster.close(timeout=5)
+            logger.info("Dask cluster closed successfully")
+        except Exception as cleanup_error:
+            logger.warning(f"Error during cluster cleanup: {cleanup_error}")
+            try:
+                eval_cluster.shutdown()
+            except:
+                pass
 
 
 def main():

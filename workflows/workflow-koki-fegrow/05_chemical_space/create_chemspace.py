@@ -7,6 +7,7 @@ import argparse
 import logging
 import cloudpickle
 import sys
+import os
 from pathlib import Path
 
 from dask.distributed import LocalCluster
@@ -61,11 +62,14 @@ def create_chemical_space(
 
     # Setup Dask cluster
     logger.info("Setting up Dask cluster...")
+    n_workers = os.cpu_count() or 2  # Use all available CPU cores, fallback to 2
+    logger.info(f"Configuring LocalCluster with {n_workers} workers")
     lc = LocalCluster(
         processes=True,
-        n_workers=2,
+        n_workers=n_workers,
         threads_per_worker=1,
         memory_limit="2GB",
+        dashboard_address=":0",  # Use random port to avoid conflicts
         silence_logs=False,
     )
 

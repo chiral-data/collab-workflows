@@ -62,8 +62,8 @@ def generate_report(input_path: str, top_n: int, output_dir: str) -> bool:
             if mol is None:
                 continue
             props = mol.GetPropsAsDict()
-            # Check for valid score (minimizedAffinity or score that is not NA/nan)
-            score = props.get("minimizedAffinity") or props.get("score")
+            # Check for valid score (prioritize score over minimizedAffinity)
+            score = props.get("score") or props.get("minimizedAffinity")
             if score and str(score) not in ["<NA>", "nan", "None", ""]:
                 molecules.append(mol)
 
@@ -76,7 +76,17 @@ def generate_report(input_path: str, top_n: int, output_dir: str) -> bool:
     # Sort by score (binding energy) - lower is better
     def get_score(mol):
         props = mol.GetPropsAsDict()
-        score = props.get("minimizedAffinity") or props.get("score", "999")
+        # Prioritize score (pK) and convert to kcal/mol, fallback to minimizedAffinity
+        if props.get("score") and str(props.get("score")) not in ["<NA>", "nan", "None", ""]:
+            try:
+                pk_value = float(props.get("score"))
+                # Convert pK to ΔG (kcal/mol): ΔG ≈ -1.36 × pK at 298K
+                return -1.36 * pk_value
+            except (ValueError, TypeError):
+                pass
+
+        # Fallback to minimizedAffinity if score is not available
+        score = props.get("minimizedAffinity", "999")
         try:
             return float(score)
         except (ValueError, TypeError):
