@@ -3,7 +3,7 @@ description = "Upload and validate the ligand SDF file"
 outputs = ["*.sdf"]
 
 [container]
-image = "chiral.sakuracr.jp/fegrow:2026_01_10_v2"
+image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
 
 [scripts]
 run = "run.sh"

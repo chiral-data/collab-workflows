@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV CONDA_DIR=/opt/conda
 ENV PATH=$CONDA_DIR/bin:$PATH
 
-# Install system dependencies
+# Install system dependencies including CUDA libraries for gnina
 RUN apt-get update && apt-get install -y \
     wget \
     curl \
@@ -19,6 +19,22 @@ RUN apt-get update && apt-get install -y \
     libxrender-dev \
     libgomp1 \
     libgcc-s1 \
+    gnupg \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add NVIDIA CUDA repository and install CUDA libraries
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
+    dpkg -i cuda-keyring_1.1-1_all.deb && \
+    rm cuda-keyring_1.1-1_all.deb && \
+    apt-get update && \
+    apt-get install -y \
+    libcudnn9-cuda-12 \
+    libcublas-12-6 \
+    libcusparse-12-6 \
+    libcusolver-12-6 \
+    cuda-cudart-12-6 \
+    libcufft-12-6 \
     && rm -rf /var/lib/apt/lists/*
 
 # Download and install gnina binary

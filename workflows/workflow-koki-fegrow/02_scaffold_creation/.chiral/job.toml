@@ -4,7 +4,7 @@ inputs = ["*.sdf"]
 outputs = ["scaffold.pkl"]
 
 [container]
-image = "chiral.sakuracr.jp/fegrow:2026_01_10_v2"
+image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
 
 [scripts]
 run = "run.sh"
