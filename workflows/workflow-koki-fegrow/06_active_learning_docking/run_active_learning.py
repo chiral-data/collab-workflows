@@ -28,15 +28,27 @@ logger = logging.getLogger(__name__)
 def setup_gnina():
     """Setup gnina binary path."""
     logger.info("Setting up gnina...")
-    gnina_path = Path("gnina")
-    if gnina_path.exists():
-        fegrow.RMol.set_gnina(str(gnina_path))
-        logger.info(f"gnina path set to: {gnina_path.absolute()}")
-    else:
-        logger.warning(f"gnina not found at: {gnina_path.absolute()}")
-        for f in os.listdir("."):
-            if "gnina" in f.lower():
-                logger.info(f"Found gnina-like file: {f}")
+
+    # First, try system-installed gnina
+    system_gnina = Path("/usr/local/bin/gnina")
+    if system_gnina.exists():
+        fegrow.RMol.set_gnina(str(system_gnina))
+        logger.info(f"Using system-installed gnina: {system_gnina}")
+        return
+
+    # Fall back to local gnina for backward compatibility
+    local_gnina = Path("gnina")
+    if local_gnina.exists():
+        fegrow.RMol.set_gnina(str(local_gnina))
+        logger.info(f"Using local gnina: {local_gnina.absolute()}")
+        return
+
+    # If neither found, log warning
+    logger.warning("gnina not found in system path or local directory")
+    logger.warning("Searched: /usr/local/bin/gnina and ./gnina")
+    for f in os.listdir("."):
+        if "gnina" in f.lower():
+            logger.info(f"Found gnina-like file: {f}")
 
 
 def setup_active_learning(cs, model_type: str, query_type: str):

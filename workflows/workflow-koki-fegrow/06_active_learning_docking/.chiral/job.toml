@@ -4,7 +4,7 @@ inputs = ["chemspace.pkl"]
 outputs = ["chemspace_evaluated.sdf", "iteration_*.csv"]
 
 [container]
-image = "chiral.sakuracr.jp/fegrow:2025_12_23_v1"
+image = "chiral.sakuracr.jp/fegrow:2026_01_10_v2"
 
 [scripts]
 run = "run.sh"

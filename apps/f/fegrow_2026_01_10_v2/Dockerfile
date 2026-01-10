@@ -21,6 +21,11 @@ RUN apt-get update && apt-get install -y \
     libgcc-s1 \
     && rm -rf /var/lib/apt/lists/*
 
+# Download and install gnina binary
+RUN wget https://github.com/gnina/gnina/releases/download/v1.3.2/gnina.1.3.2 -O /usr/local/bin/gnina && \
+    chmod +x /usr/local/bin/gnina && \
+    echo "gnina installed to /usr/local/bin/gnina"
+
 # Install Miniconda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
     bash /tmp/miniconda.sh -b -p $CONDA_DIR && \
