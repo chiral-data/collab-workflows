@@ -1,6 +1,6 @@
 name = "Active Learning Docking"
 description = "Run active learning cycles with molecular docking using gnina"
-inputs = ["chemspace.pkl"]
+inputs = ["chemspace.pkl", "rec_final.pdb"]
 outputs = ["chemspace_evaluated.sdf", "iteration_*.csv"]
 
 [container]
