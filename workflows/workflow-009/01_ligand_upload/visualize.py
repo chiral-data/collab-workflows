@@ -29,6 +29,33 @@ def mol_to_svg(mol, width=400, height=300):
     return drawer.GetDrawingText()
 
 
+def mol_to_svg_with_h(mol, width=800, height=600):
+    """Convert RDKit molecule to SVG with explicit H atoms and atom indices."""
+    if mol is None or mol.GetNumAtoms() == 0:
+        return "<p>Invalid molecule</p>"
+
+    # Add explicit hydrogens
+    mol_with_h = Chem.AddHs(mol)
+    AllChem.Compute2DCoords(mol_with_h)
+
+    # Highlight all heavy atoms (non-H) in light blue
+    highlight_atoms = []
+    highlight_colors = {}
+    for atom in mol_with_h.GetAtoms():
+        if atom.GetAtomicNum() != 1:  # Non-hydrogen
+            idx = atom.GetIdx()
+            highlight_atoms.append(idx)
+            highlight_colors[idx] = (0.7, 0.85, 1.0)  # Light blue
+
+    drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
+    opts = drawer.drawOptions()
+    opts.addAtomIndices = True  # Show atom index numbers
+
+    drawer.DrawMolecule(mol_with_h, highlightAtoms=highlight_atoms, highlightAtomColors=highlight_colors)
+    drawer.FinishDrawing()
+    return drawer.GetDrawingText()
+
+
 def mol_to_molblock(mol):
     """Convert molecule to MOL block for 3Dmol.js."""
     if mol is None:
@@ -56,7 +83,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .container {{ max-width: 900px; margin: 0 auto; }}
         .card {{ background: #16213e; border-radius: 12px; padding: 20px; margin-bottom: 20px; }}
         .mol-2d {{ text-align: center; background: white; border-radius: 8px; padding: 10px; margin-bottom: 20px; }}
-        .mol-3d {{ width: 100%; height: 400px; border-radius: 8px; }}
+        .mol-3d {{ width: 100%; height: 400px; border-radius: 8px; position: relative; }}
         .props {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }}
         .prop {{ background: #1a1a2e; padding: 16px; border-radius: 8px; text-align: center; }}
         .prop .value {{ font-size: 24px; color: #ea7d3d; font-weight: bold; }}
@@ -70,8 +97,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             <p>{filename}</p>
         </div>
         <div class="card">
+            <h3 style="color: #ea7d3d; margin-bottom: 16px;">2D Structure</h3>
             <div class="mol-2d">{svg_2d}</div>
             <div class="mol-3d" id="viewer"></div>
+        </div>
+        <div class="card">
+            <h3 style="color: #ea7d3d; margin-bottom: 16px;">2D Structure (with H Atoms and Atom Indices)</h3>
+            <div class="mol-2d">{svg_2d_with_h}</div>
         </div>
         <div class="props">
             <div class="prop"><div class="value">{num_atoms}</div><div class="label">Atoms</div></div>
@@ -110,11 +142,13 @@ def main():
         sys.exit(1)
 
     svg_2d = mol_to_svg(mol)
+    svg_2d_with_h = mol_to_svg_with_h(mol)
     molblock = mol_to_molblock(mol).replace('`', '\\`').replace('\n', '\\n')
 
     html = HTML_TEMPLATE.format(
         filename=Path(input_file).name,
         svg_2d=svg_2d,
+        svg_2d_with_h=svg_2d_with_h,
         num_atoms=mol.GetNumAtoms(),
         mw=round(Descriptors.MolWt(mol), 2),
         logp=round(Descriptors.MolLogP(mol), 2),

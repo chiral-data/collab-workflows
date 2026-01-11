@@ -23,27 +23,36 @@ from rdkit.Chem import AllChem, Descriptors
 from rdkit.Chem.Draw import rdMolDraw2D
 
 
-def mol_to_svg(mol, width=500, height=400):
-    """Convert RDKit molecule to SVG string."""
-    if mol is None:
+def mol_to_svg(mol, width=800, height=600):
+    """Convert RDKit molecule to SVG with atom indices and explicit hydrogens."""
+    if mol is None or mol.GetNumAtoms() == 0:
         return "<p>Invalid molecule</p>"
-    if mol.GetNumConformers() == 0:
-        AllChem.Compute2DCoords(mol)
+
+    # Add explicit hydrogens
+    mol_with_h = Chem.AddHs(mol)
+
+    # Generate 2D coordinates
+    AllChem.Compute2DCoords(mol_with_h)
+
+    # Highlight all scaffold atoms (non-H) and attachment points specially
+    highlight_atoms = []
+    highlight_colors = {}
+    for atom in mol_with_h.GetAtoms():
+        idx = atom.GetIdx()
+        if atom.GetAtomicNum() == 0:  # Dummy atom (attachment point) - orange
+            highlight_atoms.append(idx)
+            highlight_colors[idx] = (0.92, 0.49, 0.24)  # Orange (#ea7d3d)
+        elif atom.GetAtomicNum() != 1:  # Non-hydrogen (scaffold) - light blue
+            highlight_atoms.append(idx)
+            highlight_colors[idx] = (0.7, 0.85, 1.0)  # Light blue
+
     drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
-    drawer.DrawMolecule(mol)
+    opts = drawer.drawOptions()
+    opts.addAtomIndices = True  # Show atom index numbers
+
+    drawer.DrawMolecule(mol_with_h, highlightAtoms=highlight_atoms, highlightAtomColors=highlight_colors)
     drawer.FinishDrawing()
     return drawer.GetDrawingText()
-
-
-def mol_to_molblock(mol):
-    """Convert molecule to MOL block for 3Dmol.js."""
-    if mol is None:
-        return ""
-    if mol.GetNumConformers() == 0:
-        mol = Chem.AddHs(mol)
-        AllChem.EmbedMolecule(mol, AllChem.ETKDG())
-        AllChem.MMFFOptimizeMolecule(mol)
-    return Chem.MolToMolBlock(mol)
 
 
 def load_scaffold(pkl_path):
@@ -69,12 +78,13 @@ def load_scaffold(pkl_path):
         raise ValueError(f"Cannot extract molecule from: {type(scaffold)}")
 
 
-def find_attachment_point(mol):
-    """Find attachment point (atom with atomic number 0)."""
+def find_attachment_points(mol):
+    """Find all attachment points (atoms with atomic number 0)."""
+    points = []
     for atom in mol.GetAtoms():
         if atom.GetAtomicNum() == 0:
-            return atom.GetIdx()
-    return None
+            points.append(atom.GetIdx())
+    return points
 
 
 HTML_TEMPLATE = """<!DOCTYPE html>
@@ -82,7 +92,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <title>Scaffold Visualization</title>
-    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
     <style>
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -91,15 +100,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .header {{ text-align: center; padding: 20px; background: #16213e; border-radius: 12px; margin-bottom: 20px; }}
         .header h1 {{ color: #ea7d3d; }}
         .container {{ max-width: 1000px; margin: 0 auto; }}
-        .grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }}
-        .card {{ background: #16213e; border-radius: 12px; padding: 20px; }}
+        .card {{ background: #16213e; border-radius: 12px; padding: 20px; margin-bottom: 20px; }}
         .mol-2d {{ text-align: center; background: white; border-radius: 8px; padding: 10px; }}
-        .mol-3d {{ width: 100%; height: 400px; border-radius: 8px; }}
         .props {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }}
         .prop {{ background: #16213e; padding: 16px; border-radius: 8px; text-align: center; border: 1px solid #2a2a4a; }}
         .prop .value {{ font-size: 24px; color: #ea7d3d; font-weight: bold; }}
         .prop .label {{ color: #888; font-size: 14px; }}
-        .info {{ background: #16213e; padding: 20px; border-radius: 12px; margin-top: 20px; }}
+        .info {{ background: #16213e; padding: 20px; border-radius: 12px; }}
         .info h3 {{ color: #ea7d3d; margin-bottom: 12px; }}
         .highlight {{ color: #22c55e; font-weight: bold; }}
     </style>
@@ -111,35 +118,22 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             <p>Node 2: Scaffold Creation</p>
         </div>
         <div class="props">
-            <div class="prop"><div class="value">{num_atoms}</div><div class="label">Atoms</div></div>
+            <div class="prop"><div class="value">{num_atoms}</div><div class="label">Heavy Atoms</div></div>
+            <div class="prop"><div class="value">{num_atoms_with_h}</div><div class="label">Total Atoms (with H)</div></div>
             <div class="prop"><div class="value">{num_bonds}</div><div class="label">Bonds</div></div>
-            <div class="prop"><div class="value">{attachment}</div><div class="label">Attachment Point</div></div>
             <div class="prop"><div class="value">{mw}</div><div class="label">Mol. Weight</div></div>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3 style="color: #ea7d3d; margin-bottom: 16px;">2D Structure</h3>
-                <div class="mol-2d">{svg_2d}</div>
-            </div>
-            <div class="card">
-                <h3 style="color: #ea7d3d; margin-bottom: 16px;">3D Structure</h3>
-                <div class="mol-3d" id="viewer"></div>
-            </div>
+        <div class="card">
+            <h3 style="color: #ea7d3d; margin-bottom: 16px;">2D Structure (with Atom Indices)</h3>
+            <div class="mol-2d">{svg_2d}</div>
         </div>
         <div class="info">
             <h3>Scaffold Information</h3>
-            <p>The scaffold has an attachment point at atom index <span class="highlight">{attachment}</span>.</p>
-            <p>This is where R-groups and linkers will be attached during chemical space generation.</p>
+            <p>Attachment point(s) at atom index: <span class="highlight">{attachments}</span></p>
+            <p>Attachment points are highlighted in orange. These are where R-groups will be attached.</p>
             <p><strong>SMILES:</strong> {smiles}</p>
         </div>
     </div>
-    <script>
-        const viewer = $3Dmol.createViewer('viewer', {{backgroundColor: '#16213e'}});
-        viewer.addModel(`{molblock}`, 'sdf');
-        viewer.setStyle({{}}, {{stick: {{colorscheme: 'orangeCarbon', radius: 0.15}}}});
-        viewer.zoomTo();
-        viewer.render();
-    </script>
 </body>
 </html>
 """
@@ -154,19 +148,19 @@ def main():
         sys.exit(1)
 
     mol = load_scaffold(input_file)
-    attachment = find_attachment_point(mol)
+    attachments = find_attachment_points(mol)
+    mol_with_h = Chem.AddHs(mol)
 
     svg_2d = mol_to_svg(mol)
-    molblock = mol_to_molblock(mol).replace('`', '\\`').replace('\n', '\\n')
 
     html = HTML_TEMPLATE.format(
         svg_2d=svg_2d,
         num_atoms=mol.GetNumAtoms(),
+        num_atoms_with_h=mol_with_h.GetNumAtoms(),
         num_bonds=mol.GetNumBonds(),
-        attachment=attachment if attachment is not None else "N/A",
+        attachments=', '.join(str(a) for a in attachments) if attachments else "N/A",
         mw=round(Descriptors.MolWt(mol), 2),
-        smiles=Chem.MolToSmiles(mol),
-        molblock=molblock
+        smiles=Chem.MolToSmiles(mol)
     )
 
     with open(output_file, 'w') as f:

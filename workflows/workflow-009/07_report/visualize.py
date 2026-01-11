@@ -10,6 +10,7 @@ Default:
 """
 
 import sys
+import json
 from pathlib import Path
 
 from rdkit import Chem
@@ -93,25 +94,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .tab:hover, .tab.active {{ background: #ea7d3d; color: white; border-color: #ea7d3d; }}
         .tab-content {{ display: none; }}
         .tab-content.active {{ display: block; }}
-        .grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }}
-        .card {{ background: #16213e; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a4a; transition: all 0.2s; }}
-        .card:hover {{ transform: translateY(-4px); box-shadow: 0 8px 32px rgba(234,125,61,0.2); }}
-        .card-header {{ background: #1a1a2e; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }}
-        .card-header h3 {{ color: #ea7d3d; font-size: 16px; }}
-        .rank {{ background: #ea7d3d; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }}
-        .badge {{ padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }}
-        .badge.excellent {{ background: #22c55e; color: white; }}
-        .badge.good {{ background: #3b82f6; color: white; }}
-        .badge.fair {{ background: #eab308; color: black; }}
-        .badge.poor {{ background: #ef4444; color: white; }}
-        .card-body {{ padding: 16px; }}
-        .mol-2d {{ text-align: center; background: white; border-radius: 8px; padding: 8px; margin-bottom: 14px; }}
-        .mol-3d {{ width: 100%; height: 240px; border-radius: 8px; margin-bottom: 14px; }}
-        .props {{ font-size: 13px; }}
-        .props div {{ display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #2a2a4a; }}
-        .props div:last-child {{ border-bottom: none; }}
-        .props .label {{ color: #888; }}
-        .props .value {{ color: #fff; font-weight: 500; }}
         table.data-table {{ width: 100%; border-collapse: collapse; background: #16213e; border-radius: 12px; overflow: hidden; }}
         table.data-table th {{ background: #ea7d3d; color: white; padding: 14px 16px; text-align: left; font-weight: 600; }}
         table.data-table td {{ padding: 12px 16px; border-bottom: 1px solid #2a2a4a; }}
@@ -123,6 +105,20 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .summary-box {{ background: #16213e; padding: 24px; border-radius: 12px; border: 1px solid #2a2a4a; }}
         .summary-box h2 {{ color: #ea7d3d; margin-bottom: 16px; }}
         .summary-box pre {{ background: #1a1a2e; padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px; line-height: 1.7; white-space: pre-wrap; }}
+        .view-btn {{ padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer; font-size: 12px; font-weight: 600; margin-right: 4px; }}
+        .view-btn.btn-2d {{ background: #3b82f6; color: white; }}
+        .view-btn.btn-3d {{ background: #22c55e; color: white; }}
+        .view-btn:hover {{ opacity: 0.8; }}
+        .modal {{ display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; }}
+        .modal.active {{ display: flex; }}
+        .modal-content {{ background: #16213e; border-radius: 12px; max-width: 800px; max-height: 90vh; overflow: auto; }}
+        .modal-header {{ display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #2a2a4a; }}
+        .modal-header h3 {{ color: #ea7d3d; margin: 0; }}
+        .modal-close {{ background: none; border: none; color: #888; font-size: 24px; cursor: pointer; }}
+        .modal-close:hover {{ color: #fff; }}
+        .modal-body {{ padding: 20px; }}
+        .mol-2d-modal {{ text-align: center; background: white; border-radius: 8px; padding: 16px; }}
+        .mol-3d-modal {{ width: 100%; height: 400px; border-radius: 8px; position: relative; }}
     </style>
 </head>
 <body>
@@ -138,14 +134,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             <div class="stat"><div class="value">{worst_energy}</div><div class="label">Worst Energy (kcal/mol)</div></div>
         </div>
         <div class="tabs">
-            <div class="tab active" data-tab="molecules">Molecules</div>
-            <div class="tab" data-tab="table">Data Table</div>
+            <div class="tab active" data-tab="table">Data Table</div>
             <div class="tab" data-tab="summary">Summary</div>
         </div>
-        <div class="tab-content active" data-tab="molecules">
-            <div class="grid">{cards}</div>
-        </div>
-        <div class="tab-content" data-tab="table">{table}</div>
+        <div class="tab-content active" data-tab="table">{table}</div>
         <div class="tab-content" data-tab="summary">
             <div class="summary-box">
                 <h2>Analysis Summary</h2>
@@ -153,22 +145,59 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             </div>
         </div>
     </div>
+    <div class="modal" id="mol-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Molecule View</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
     <script>
-        document.querySelectorAll('.mol-3d').forEach(function(container) {{
-            const molData = container.dataset.mol;
-            if (molData) {{
-                const viewer = $3Dmol.createViewer(container, {{backgroundColor: '#16213e'}});
-                viewer.addModel(molData.replace(/&#10;/g, '\\n').replace(/&quot;/g, '"'), 'sdf');
+        var molData = {mol_data_json};
+
+        function show2D(idx) {{
+            var data = molData[idx];
+            if (!data) return;
+            document.getElementById('modal-title').textContent = 'Compound #' + (idx + 1) + ' - 2D View';
+            document.getElementById('modal-body').innerHTML = '<div class="mol-2d-modal">' + data.svg + '</div>';
+            document.getElementById('mol-modal').classList.add('active');
+        }}
+
+        function show3D(idx) {{
+            var data = molData[idx];
+            if (!data) return;
+            document.getElementById('modal-title').textContent = 'Compound #' + (idx + 1) + ' - 3D View';
+            document.getElementById('modal-body').innerHTML = '<div class="mol-3d-modal" id="viewer-container"></div>';
+            document.getElementById('mol-modal').classList.add('active');
+            setTimeout(function() {{
+                var container = document.getElementById('viewer-container');
+                var viewer = $3Dmol.createViewer(container, {{backgroundColor: '#16213e'}});
+                viewer.addModel(data.molblock, 'sdf');
                 viewer.setStyle({{}}, {{stick: {{colorscheme: 'orangeCarbon', radius: 0.12}}}});
                 viewer.zoomTo();
                 viewer.render();
-            }}
+            }}, 50);
+        }}
+
+        function closeModal() {{
+            document.getElementById('mol-modal').classList.remove('active');
+        }}
+
+        document.getElementById('mol-modal').addEventListener('click', function(e) {{
+            if (e.target === this) closeModal();
         }});
+
+        document.addEventListener('keydown', function(e) {{
+            if (e.key === 'Escape') closeModal();
+        }});
+
         document.querySelectorAll('.tab').forEach(function(tab) {{
             tab.addEventListener('click', function() {{
-                const tabId = this.dataset.tab;
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                var tabId = this.dataset.tab;
+                document.querySelectorAll('.tab').forEach(function(t) {{ t.classList.remove('active'); }});
+                document.querySelectorAll('.tab-content').forEach(function(c) {{ c.classList.remove('active'); }});
                 this.classList.add('active');
                 document.querySelector('.tab-content[data-tab="' + tabId + '"]').classList.add('active');
             }});
@@ -178,26 +207,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
-CARD_TEMPLATE = """
-<div class="card">
-    <div class="card-header">
-        <div style="display:flex;align-items:center;gap:12px">
-            <div class="rank">{rank}</div>
-            <h3>Compound #{rank}</h3>
-        </div>
-        {badge}
-    </div>
-    <div class="card-body">
-        <div class="mol-2d">{svg_2d}</div>
-        <div class="mol-3d" data-mol="{molblock}"></div>
-        <div class="props">
-            <div><span class="label">Binding Energy</span><span class="value">{score} kcal/mol</span></div>
-            <div><span class="label">Molecular Weight</span><span class="value">{mw}</span></div>
-            <div><span class="label">LogP</span><span class="value">{logp}</span></div>
-        </div>
-    </div>
-</div>
-"""
 
 
 def main():
@@ -232,46 +241,42 @@ def main():
 
     # Calculate statistics
     energies = [get_score(mol) for mol in molecules if get_score(mol) is not None]
-    best_energy = f"{min(energies):.2f}" if energies else "N/A"
-    worst_energy = f"{max(energies):.2f}" if energies else "N/A"
-    avg_energy = f"{sum(energies)/len(energies):.2f}" if energies else "N/A"
+    best_energy = f"{min(energies):.3f}" if energies else "N/A"
+    worst_energy = f"{max(energies):.3f}" if energies else "N/A"
+    avg_energy = f"{sum(energies)/len(energies):.3f}" if energies else "N/A"
 
-    # Generate molecule cards
-    cards = []
+    # Generate molecule data for 2D/3D view modals
+    mol_data = {}
     for i, mol in enumerate(molecules):
-        score = get_score(mol)
-        status_text, status_class = get_status(score)
+        svg_2d = mol_to_svg(mol, width=500, height=400)
+        molblock = mol_to_molblock(mol)
+        mol_data[i] = {
+            'svg': svg_2d,
+            'molblock': molblock
+        }
 
-        svg_2d = mol_to_svg(mol)
-        molblock = mol_to_molblock(mol).replace('"', '&quot;').replace('\n', '&#10;')
-
-        badge = f'<span class="badge {status_class}">{status_text}</span>' if status_text else ""
-
-        card = CARD_TEMPLATE.format(
-            rank=i + 1,
-            badge=badge,
-            svg_2d=svg_2d,
-            molblock=molblock,
-            score=f"{score:.2f}" if score else "N/A",
-            mw=round(Descriptors.MolWt(mol), 1),
-            logp=round(Descriptors.MolLogP(mol), 2)
-        )
-        cards.append(card)
-
-    # Generate data table
+    # Generate data table with View column
     table_html = "<p>No CSV data available</p>"
     if csv_data is not None and not csv_data.empty:
         table_html = '<table class="data-table"><thead><tr>'
+        table_html += '<th>View</th>'  # Add View column header
         for col in csv_data.columns:
             table_html += f'<th>{col}</th>'
         table_html += '</tr></thead><tbody>'
 
-        for _, row in csv_data.iterrows():
+        for row_idx, row in csv_data.iterrows():
             table_html += '<tr>'
+            # Add 2D/3D buttons
+            if row_idx < len(molecules):
+                table_html += f'<td><button class="view-btn btn-2d" onclick="show2D({row_idx})">2D</button><button class="view-btn btn-3d" onclick="show3D({row_idx})">3D</button></td>'
+            else:
+                table_html += '<td>-</td>'
             for col in csv_data.columns:
                 val = row[col]
                 if col == 'Status' and val in ['EXCELLENT', 'GOOD', 'FAIR', 'POOR']:
                     table_html += f'<td class="status-{str(val).lower()}">{val}</td>'
+                elif isinstance(val, float):
+                    table_html += f'<td>{val:.3f}</td>'
                 else:
                     table_html += f'<td>{val}</td>'
             table_html += '</tr>'
@@ -282,9 +287,9 @@ def main():
         best_energy=best_energy,
         avg_energy=avg_energy,
         worst_energy=worst_energy,
-        cards="\n".join(cards),
         table=table_html,
-        summary=summary_text
+        summary=summary_text,
+        mol_data_json=json.dumps(mol_data)
     )
 
     with open(output_file, 'w') as f:
