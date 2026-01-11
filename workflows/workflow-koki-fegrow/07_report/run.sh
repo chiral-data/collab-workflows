@@ -13,3 +13,6 @@ workflow-run python generate_report.py \
     --input "${INPUT_FILE}" \
     --top-n "${PARAM_TOP_N:-10}" \
     --output-dir "."
+
+# Generate visualization HTML
+workflow-run python visualize.py top_compounds.sdf top_compounds_report.csv summary.txt report_viz.html

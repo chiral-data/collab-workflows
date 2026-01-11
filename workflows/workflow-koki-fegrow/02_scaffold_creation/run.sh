@@ -13,3 +13,6 @@ workflow-run python create_scaffold.py \
     --ligand "${LIGAND_FILE}" \
     --attachment-id "${PARAM_ATTACHMENT_ID:-27}" \
     --output scaffold.pkl
+
+# Generate visualization HTML
+workflow-run python visualize.py scaffold.pkl scaffold_viz.html

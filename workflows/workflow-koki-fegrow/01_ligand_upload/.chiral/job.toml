@@ -1,6 +1,6 @@
 name = "Ligand Upload"
 description = "Upload and validate the ligand SDF file"
-outputs = ["*.sdf"]
+outputs = ["*.sdf", "ligand_viz.html"]
 
 [container]
 image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"

@@ -21,3 +21,6 @@ workflow-run python create_chemspace.py \
     --num-linkers "${PARAM_NUM_LINKERS:-10}" \
     --num-rgroups "${PARAM_NUM_RGROUPS:-10}" \
     --output chemspace.pkl
+
+# Generate visualization HTML
+workflow-run python visualize.py chemspace.pkl chemspace_viz.html

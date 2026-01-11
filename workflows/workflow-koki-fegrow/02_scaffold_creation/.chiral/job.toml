@@ -1,7 +1,7 @@
 name = "Scaffold Creation"
 description = "Create scaffold molecule with attachment point from the ligand"
 inputs = ["*.sdf"]
-outputs = ["scaffold.pkl"]
+outputs = ["scaffold.pkl", "scaffold_viz.html"]
 
 [container]
 image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"

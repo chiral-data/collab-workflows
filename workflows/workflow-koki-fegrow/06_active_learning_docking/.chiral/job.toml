@@ -1,7 +1,7 @@
 name = "Active Learning Docking"
 description = "Run active learning cycles with molecular docking using gnina"
 inputs = ["chemspace.pkl", "rec_final.pdb"]
-outputs = ["chemspace_evaluated.sdf", "iteration_*.csv"]
+outputs = ["chemspace_evaluated.sdf", "iteration_*.csv", "evaluated_viz.html"]
 
 [container]
 image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"

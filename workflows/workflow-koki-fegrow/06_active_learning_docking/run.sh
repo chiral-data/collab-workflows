@@ -17,3 +17,6 @@ workflow-run python run_active_learning.py \
     --model-type "${PARAM_MODEL_TYPE:-gaussian_process}" \
     --query-type "${PARAM_QUERY_TYPE:-UCB}" \
     --output chemspace_evaluated.sdf
+
+# Generate visualization HTML
+workflow-run python visualize.py chemspace_evaluated.sdf evaluated_viz.html

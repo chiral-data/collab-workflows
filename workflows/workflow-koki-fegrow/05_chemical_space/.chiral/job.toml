@@ -1,7 +1,7 @@
 name = "Chemical Space Creation"
 description = "Build chemical space by combining scaffold with linkers and R-groups"
 inputs = ["scaffold.pkl", "rec_final.pdb"]
-outputs = ["chemspace.pkl", "rec_final.pdb"]
+outputs = ["chemspace.pkl", "rec_final.pdb", "chemspace_viz.html"]
 
 [container]
 image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"

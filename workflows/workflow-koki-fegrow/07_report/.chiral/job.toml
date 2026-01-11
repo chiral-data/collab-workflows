@@ -1,7 +1,7 @@
 name = "Report Generation"
 description = "Generate report with top compounds and their binding energies"
 inputs = ["chemspace_evaluated.sdf"]
-outputs = ["top_compounds.sdf", "top_compounds_report.csv", "summary.txt"]
+outputs = ["top_compounds.sdf", "top_compounds_report.csv", "summary.txt", "report_viz.html"]
 
 [container]
 image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
