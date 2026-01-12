@@ -6,14 +6,14 @@ Run active learning cycles with molecular docking.
 import argparse
 import logging
 import os
-import cloudpickle
 import sys
 from pathlib import Path
 
+import cloudpickle
 import fegrow
+from dask.distributed import LocalCluster
 from fegrow.al import Model, Query
 from rdkit import Chem
-from dask.distributed import LocalCluster
 
 logging.basicConfig(
     level=logging.INFO,
@@ -127,8 +127,10 @@ def run_active_learning(
     logger.info(f"Loaded chemical space with {len(cs)} molecules")
 
     # Setup Dask cluster for evaluation
-    n_workers = os.cpu_count() or 4  # Use all available CPU cores, fallback to 4
-    logger.info(f"Setting up Dask LocalCluster with {n_workers} workers for evaluation...")
+    n_workers = (os.cpu_count() - 2) or 4  # Use all available CPU cores, fallback to 4
+    logger.info(
+        f"Setting up Dask LocalCluster with {n_workers} workers for evaluation..."
+    )
     eval_cluster = LocalCluster(
         processes=True,
         n_workers=n_workers,
@@ -147,7 +149,9 @@ def run_active_learning(
         setup_gnina()
 
         # Initial random selection
-        logger.info(f"Performing initial random selection of {initial_molecules} molecules...")
+        logger.info(
+            f"Performing initial random selection of {initial_molecules} molecules..."
+        )
         random_molecules = cs.active_learning(initial_molecules, first_random=True)
 
         # Evaluate initial selection
@@ -194,7 +198,9 @@ def run_active_learning(
                 # Save cycle results
                 results_file = f"iteration_{cycle}_results.csv"
                 picks_results.to_csv(results_file)
-                logger.info(f"Cycle {cycle + 1} completed. Results saved to {results_file}")
+                logger.info(
+                    f"Cycle {cycle + 1} completed. Results saved to {results_file}"
+                )
 
             except Exception as e:
                 logger.error(f"Error in cycle {cycle + 1}: {str(e)}")
@@ -240,9 +246,7 @@ def run_active_learning(
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Run active learning docking cycles"
-    )
+    parser = argparse.ArgumentParser(description="Run active learning docking cycles")
     parser.add_argument(
         "--chemspace", required=True, help="Input chemical space pickle file"
     )

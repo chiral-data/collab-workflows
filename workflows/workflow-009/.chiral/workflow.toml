@@ -2,11 +2,11 @@ name = "FEGrow Active Learning Workflow"
 description = "Active learning workflow for functional group development using FEGrow"
 
 [dependencies]
-02_scaffold_creation = ["01_ligand_upload"]
-04_protein_preparation = ["03_protein_upload"]
-05_chemical_space = ["02_scaffold_creation", "04_protein_preparation"]
-06_active_learning_docking = ["05_chemical_space"]
-07_report = ["06_active_learning_docking"]
+02-scaffold-creation = ["01-ligand-upload"]
+04-protein-preparation = ["03-protein-upload"]
+05-chemical-space = ["02-scaffold-creation", "04-protein-preparation"]
+06-active-learning-docking = ["05-chemical-space"]
+07-report = ["06-active-learning-docking"]
 
 [params.num_linkers]
 type = "integer"
