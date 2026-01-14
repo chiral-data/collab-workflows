@@ -234,8 +234,6 @@ def get_scaffold_mol(chemspace):
 
     # Try loading from scaffold.pkl (Node 2 output - preferred, has attachment point)
     scaffold_paths = [
-        Path("../02_scaffold_creation/outputs/scaffold.pkl"),
-        Path("../02_scaffold_creation/scaffold.pkl"),
         Path("scaffold.pkl"),
     ]
     for scaffold_path in scaffold_paths:
@@ -259,20 +257,19 @@ def get_scaffold_mol(chemspace):
             except Exception as e:
                 print(f"  - Failed to load {scaffold_path}: {e}")
 
-    # Fallback: Try loading from ligand.sdf (Node 1 output - original ligand)
-    ligand_paths = [
-        Path("../01_ligand_upload/outputs/ligand.sdf"),
-        Path("../01_ligand_upload/ligand.sdf"),
-        Path("ligand.sdf"),
+    # Fallback: Try loading from ligand.smi (Node 1 output - original ligand as SMILES)
+    ligand_smi_paths = [
+        Path("ligand.smi"),
     ]
-    for ligand_path in ligand_paths:
+    for ligand_path in ligand_smi_paths:
         if ligand_path.exists():
             try:
-                suppl = Chem.SDMolSupplier(str(ligand_path))
-                for mol in suppl:
-                    if mol is not None:
-                        print(f"  - Scaffold source: {ligand_path}")
-                        return mol
+                with open(ligand_path, "r") as f:
+                    smiles = f.read().strip()
+                mol = Chem.MolFromSmiles(smiles)
+                if mol is not None:
+                    print(f"  - Scaffold source: {ligand_path}")
+                    return mol
             except Exception as e:
                 print(f"  - Failed to load {ligand_path}: {e}")
 

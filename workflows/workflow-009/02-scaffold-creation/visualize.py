@@ -9,8 +9,8 @@ Default:
     python visualize.py scaffold.pkl scaffold_viz.html
 """
 
-import sys
 import pickle
+import sys
 from pathlib import Path
 
 try:
@@ -28,20 +28,13 @@ def mol_to_svg(mol, width=800, height=600):
     if mol is None or mol.GetNumAtoms() == 0:
         return "<p>Invalid molecule</p>"
 
-    # Use molecule as-is if it already has explicit Hs, otherwise add them
-    mol_no_h = Chem.RemoveHs(mol)
-    if mol.GetNumAtoms() > mol_no_h.GetNumAtoms():
-        mol_with_h = mol  # Already has explicit Hs
-    else:
-        mol_with_h = Chem.AddHs(mol)
-
     # Generate 2D coordinates
-    AllChem.Compute2DCoords(mol_with_h)
+    AllChem.Compute2DCoords(mol)
 
     # Highlight all scaffold atoms (non-H) and attachment points specially
     highlight_atoms = []
     highlight_colors = {}
-    for atom in mol_with_h.GetAtoms():
+    for atom in mol.GetAtoms():
         idx = atom.GetIdx()
         if atom.GetAtomicNum() == 0:  # Dummy atom (attachment point) - orange
             highlight_atoms.append(idx)
@@ -52,9 +45,10 @@ def mol_to_svg(mol, width=800, height=600):
 
     drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
     opts = drawer.drawOptions()
-    opts.addAtomIndices = True  # Show atom index numbers
 
-    drawer.DrawMolecule(mol_with_h, highlightAtoms=highlight_atoms, highlightAtomColors=highlight_colors)
+    drawer.DrawMolecule(
+        mol, highlightAtoms=highlight_atoms, highlightAtomColors=highlight_colors
+    )
     drawer.FinishDrawing()
     return drawer.GetDrawingText()
 
@@ -62,19 +56,19 @@ def mol_to_svg(mol, width=800, height=600):
 def load_scaffold(pkl_path):
     """Load scaffold from pickle file and extract RDKit molecule."""
     try:
-        with open(pkl_path, 'rb') as f:
+        with open(pkl_path, "rb") as f:
             scaffold = pickle.load(f)
     except:
         if cloudpickle:
-            with open(pkl_path, 'rb') as f:
+            with open(pkl_path, "rb") as f:
                 scaffold = cloudpickle.load(f)
         else:
             raise
 
     # Extract RDKit molecule from FEGrow RMol
-    if hasattr(scaffold, 'mol'):
+    if hasattr(scaffold, "mol"):
         return scaffold.mol
-    elif hasattr(scaffold, 'GetMol'):
+    elif hasattr(scaffold, "GetMol"):
         return scaffold.GetMol()
     elif isinstance(scaffold, Chem.Mol):
         return scaffold
@@ -87,7 +81,7 @@ def find_attachment_points(mol):
     points = []
     for atom in mol.GetAtoms():
         if atom.GetAtomicNum() == 0:
-            points.append(atom.GetIdx())
+            points.append(atom.GetAtomMapNum())
     return points
 
 
@@ -135,7 +129,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             <h3>Scaffold Information</h3>
             <p>Attachment point(s) at atom index: <span class="highlight">{attachments}</span></p>
             <p>Attachment points are highlighted in orange. These are where R-groups will be attached.</p>
-            <p><strong>SMILES:</strong> {smiles}</p>
+            <p><strong>SMILES regenrated from Mol:</strong> {smiles}</p>
         </div>
     </div>
 </body>
@@ -153,30 +147,24 @@ def main():
 
     mol = load_scaffold(input_file)
     attachments = find_attachment_points(mol)
-    # Use molecule as-is if it already has explicit Hs, otherwise add them
-    mol_no_h = Chem.RemoveHs(mol)
-    if mol.GetNumAtoms() > mol_no_h.GetNumAtoms():
-        mol_with_h = mol
-    else:
-        mol_with_h = Chem.AddHs(mol)
 
     svg_2d = mol_to_svg(mol)
 
     html = HTML_TEMPLATE.format(
         svg_2d=svg_2d,
         num_atoms=mol.GetNumAtoms(),
-        num_atoms_with_h=mol_with_h.GetNumAtoms(),
+        num_atoms_with_h=mol.GetNumAtoms(),
         num_bonds=mol.GetNumBonds(),
-        attachments=', '.join(str(a) for a in attachments) if attachments else "N/A",
+        attachments=", ".join(str(a) for a in attachments) if attachments else "N/A",
         mw=round(Descriptors.MolWt(mol), 2),
-        smiles=Chem.MolToSmiles(mol)
+        smiles=Chem.MolToSmiles(mol),
     )
 
-    with open(output_file, 'w') as f:
+    with open(output_file, "w") as f:
         f.write(html)
 
     print(f"Generated: {output_file}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

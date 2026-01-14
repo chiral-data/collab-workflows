@@ -11,7 +11,7 @@ fi
 
 workflow-run python create_scaffold.py \
     --ligand "${LIGAND_FILE}" \
-    --attachment-id "${PARAM_ATTACHMENT_ID:-27}" \
+    --attachment-id "${PARAM_ATTACHMENT_ID}" \
     --output scaffold.pkl
 
 # Generate visualization HTML

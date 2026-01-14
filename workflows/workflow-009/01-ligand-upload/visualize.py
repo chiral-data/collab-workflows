@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Visualize ligand SDF file - Node 1
+Visualize ligand SMILES file - Node 1
 
 Usage:
-    python visualize.py [input.sdf] [output.html]
+    python visualize.py [input.smi] [output.html]
 
 Default:
-    python visualize.py ligand.sdf ligand_viz.html
+    python visualize.py ligand.smi ligand_viz.html
 """
 
 import sys
@@ -29,34 +29,45 @@ def mol_to_svg(mol, width=400, height=300):
     return drawer.GetDrawingText()
 
 
-def mol_to_svg_with_h(mol, width=800, height=600):
-    """Convert RDKit molecule to SVG with explicit H atoms and atom map numbers."""
-    if mol is None or mol.GetNumAtoms() == 0:
+def mol_to_svg_with_h(smiles, width=800, height=600):
+    """Convert SMILES to SVG with explicit H atoms and atom map numbers."""
+    # Load SMILES without sanitization to preserve explicit H atoms with map numbers
+    mol = Chem.MolFromSmiles(smiles, sanitize=False)
+    if mol is None:
         return "<p>Invalid molecule</p>"
+    # Sanitize without adjusting/removing Hs
+    Chem.SanitizeMol(
+        mol,
+        sanitizeOps=Chem.SanitizeFlags.SANITIZE_ALL
+        ^ Chem.SanitizeFlags.SANITIZE_ADJUSTHS,
+    )
 
-    # Use molecule as-is if it already has explicit Hs, otherwise add them
-    mol_no_h = Chem.RemoveHs(mol)
-    if mol.GetNumAtoms() > mol_no_h.GetNumAtoms():
-        mol_with_h = mol  # Already has explicit Hs
-    else:
-        mol_with_h = Chem.AddHs(mol)
-    AllChem.Compute2DCoords(mol_with_h)
+    AllChem.Compute2DCoords(mol)
 
     # Highlight all heavy atoms (non-H) in light blue
     highlight_atoms = []
     highlight_colors = {}
-    for atom in mol_with_h.GetAtoms():
+    for atom in mol.GetAtoms():
+        idx = atom.GetIdx()
         if atom.GetAtomicNum() != 1:  # Non-hydrogen
-            idx = atom.GetIdx()
             highlight_atoms.append(idx)
             highlight_colors[idx] = (0.7, 0.85, 1.0)  # Light blue
 
     drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
     opts = drawer.drawOptions()
-    # Show atom map numbers (set in validate_ligand.py) - these are the IDs to use for attachment points
-    opts.addAtomIndices = True
+    # Set custom labels for ALL atoms to show their map numbers (forces H atoms to be visible)
+    for atom in mol.GetAtoms():
+        idx = atom.GetIdx()
+        map_num = atom.GetAtomMapNum()
+        symbol = atom.GetSymbol()
+        if map_num > 0:
+            opts.atomLabels[idx] = f"{symbol}:{map_num}"
+        else:
+            opts.atomLabels[idx] = symbol
 
-    drawer.DrawMolecule(mol_with_h, highlightAtoms=highlight_atoms, highlightAtomColors=highlight_colors)
+    drawer.DrawMolecule(
+        mol, highlightAtoms=highlight_atoms, highlightAtomColors=highlight_colors
+    )
     drawer.FinishDrawing()
     return drawer.GetDrawingText()
 
@@ -136,23 +147,24 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 def main():
-    input_file = sys.argv[1] if len(sys.argv) > 1 else "ligand.sdf"
+    input_file = sys.argv[1] if len(sys.argv) > 1 else "ligand.smi"
     output_file = sys.argv[2] if len(sys.argv) > 2 else "ligand_viz.html"
 
     if not Path(input_file).exists():
         print(f"Error: {input_file} not found")
         sys.exit(1)
 
-    supplier = Chem.SDMolSupplier(input_file)
-    mol = next((m for m in supplier if m is not None), None)
+    with open(input_file, "r") as f:
+        smiles = f.read().strip()
 
+    mol = Chem.MolFromSmiles(smiles)
     if mol is None:
         print("Error: No valid molecule found")
         sys.exit(1)
 
     svg_2d = mol_to_svg(mol)
-    svg_2d_with_h = mol_to_svg_with_h(mol)
-    molblock = mol_to_molblock(mol).replace('`', '\\`').replace('\n', '\\n')
+    svg_2d_with_h = mol_to_svg_with_h(smiles)
+    molblock = mol_to_molblock(mol).replace("`", "\\`").replace("\n", "\\n")
 
     html = HTML_TEMPLATE.format(
         filename=Path(input_file).name,
@@ -161,15 +173,15 @@ def main():
         num_atoms=mol.GetNumAtoms(),
         mw=round(Descriptors.MolWt(mol), 2),
         logp=round(Descriptors.MolLogP(mol), 2),
-        smiles=Chem.MolToSmiles(mol),
-        molblock=molblock
+        smiles=smiles,
+        molblock=molblock,
     )
 
-    with open(output_file, 'w') as f:
+    with open(output_file, "w") as f:
         f.write(html)
 
     print(f"Generated: {output_file}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

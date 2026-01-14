@@ -45,21 +45,40 @@ def create_scaffold(ligand_path: str, attachment_id: int, output_path: str) -> b
         smiles = f.read().strip()
         logger.info(f"Loaded molecule with smiles: {smiles}")
 
-    mol = Chem.MolFromSmiles(smiles)
+    mol = Chem.MolFromSmiles(smiles, sanitize=False)
     if mol is None:
         logger.error("Failed to load molecule from SMILES file")
         return False
+    # Sanitize without adjusting/removing Hs
+    Chem.SanitizeMol(
+        mol,
+        sanitizeOps=Chem.SanitizeFlags.SANITIZE_ALL
+        ^ Chem.SanitizeFlags.SANITIZE_ADJUSTHS,
+    )
 
-    # Add hydrogens
-    mol = Chem.AddHs(mol)
     logger.info(f"Loaded molecule with {mol.GetNumAtoms()} atoms")
+
+    # Find atom index by map number
+    atom_idx = None
+    for atom in mol.GetAtoms():
+        if atom.GetAtomMapNum() == attachment_id:
+            atom_idx = atom.GetIdx()
+            break
+
+    if atom_idx is None:
+        logger.error(f"No atom found with map number {attachment_id}")
+        return False
+
+    logger.info(f"Found atom with map number {attachment_id} at index {atom_idx}")
 
     # Create FEgrow scaffold
     scaffold = fegrow.RMol(mol)
 
     # Set attachment point (mark atom as dummy)
-    scaffold.GetAtomWithIdx(attachment_id).SetAtomicNum(0)
-    logger.info(f"Set attachment point at atom index {attachment_id}")
+    scaffold.GetAtomWithIdx(atom_idx).SetAtomicNum(0)
+    logger.info(
+        f"Set attachment point at atom index {atom_idx} (map number {attachment_id})"
+    )
 
     # Save scaffold as pickle
     output_file = Path(output_path)
@@ -82,7 +101,7 @@ def main():
     parser.add_argument(
         "--attachment-id",
         type=int,
-        default=27,
+        default=26,
         help="Atom index for attachment point",
     )
     parser.add_argument(

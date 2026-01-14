@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Validate and prepare the ligand SDF file.
+Validate and prepare the ligand file, output SMILES with atom map numbers.
 """
 
 import argparse
@@ -20,11 +20,11 @@ logger = logging.getLogger(__name__)
 
 def validate_ligand(input_path: str, output_path: str) -> bool:
     """
-    Validate and copy the ligand SDF file.
+    Validate ligand and output SMILES with atom map numbers.
 
     Args:
         input_path: Path to input ligand SDF file
-        output_path: Path to output ligand SDF file
+        output_path: Path to output SMILES file
 
     Returns:
         True if validation successful, False otherwise
@@ -51,31 +51,27 @@ def validate_ligand(input_path: str, output_path: str) -> bool:
     mol = Chem.AddHs(mol)
     logger.info(f"After adding hydrogens: {mol.GetNumAtoms()} atoms")
 
-    # Set atom map numbers to preserve atom indices
+    # Set atom map numbers on heavy atoms only (these are preserved in SMILES)
     for atom in mol.GetAtoms():
         atom.SetAtomMapNum(atom.GetIdx())
 
-    # Write the validated ligand as SDF
+    # Write SMILES with atom map numbers
     output_file = Path(output_path)
-    with Chem.SDWriter(str(output_file)) as writer:
-        writer.write(mol)
-    logger.info(f"Validated ligand saved to: {output_path}")
-
-    # Also write SMILES with atom map numbers for Node 02
-    smiles_path = output_file.with_suffix(".smi")
     smiles = Chem.MolToSmiles(mol)
-    with open(smiles_path, "w") as f:
+    with open(output_file, "w") as f:
         f.write(smiles)
-    logger.info(f"SMILES with atom indices saved to: {smiles_path}")
+    logger.info(f"SMILES with atom map numbers saved to: {output_path}")
 
     return True
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Validate ligand SDF file")
+    parser = argparse.ArgumentParser(description="Validate ligand file")
     parser.add_argument("--input", required=True, help="Input ligand SDF file")
     parser.add_argument(
-        "--output", default="ligand.sdf", help="Output validated ligand SDF file"
+        "--output",
+        default="ligand.smi",
+        help="Output SMILES file with atom map numbers",
     )
 
     args = parser.parse_args()

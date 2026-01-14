@@ -11,5 +11,5 @@ run = "run.sh"
 
 [params.attachment_id]
 type = "integer"
-default = 27
+default = 26
 hint = "Atom index for the attachment point on the scaffold"
