@@ -212,14 +212,31 @@ def extract_molecules(chemspace, max_molecules=100):
 
 
 def get_scaffold_mol(chemspace):
-    """Extract scaffold molecule from chemspace or external files.
+    """Extract scaffold molecule from chemspace or external files for R-group highlighting.
 
-    Priority:
-    1. chemspace.scaffold attribute
-    2. scaffold.pkl from Node 2 (has attachment point info)
-    3. ligand.sdf from Node 1 (original ligand)
+    Priority (for matching/highlighting purposes):
+    1. ligand.smi from Node 1 (original ligand with all atoms intact - best for matching)
+    2. chemspace.scaffold attribute (may have dummy atoms)
+    3. scaffold.pkl from Node 2 (has attachment point as dummy atom)
+
+    Note: scaffold.pkl has the attachment point as dummy atom (atomic num 0).
+    When dummy atoms are removed for matching, that atom is lost entirely,
+    which breaks substructure matching. Using the original ligand is preferred.
     """
-    # First try from chemspace object
+    # First try ligand.smi (original ligand - best for matching since all atoms intact)
+    ligand_path = Path("ligand.smi")
+    if ligand_path.exists():
+        try:
+            with open(ligand_path, "r") as f:
+                smiles = f.read().strip()
+            mol = Chem.MolFromSmiles(smiles)
+            if mol is not None:
+                print(f"  - Scaffold source: {ligand_path} (original ligand)")
+                return mol
+        except Exception as e:
+            print(f"  - Failed to load {ligand_path}: {e}")
+
+    # Try from chemspace object
     if hasattr(chemspace, "scaffold") and chemspace.scaffold is not None:
         scaffold = chemspace.scaffold
         if hasattr(scaffold, "mol"):
@@ -232,46 +249,27 @@ def get_scaffold_mol(chemspace):
             print("  - Scaffold source: chemspace.scaffold")
             return scaffold
 
-    # Try loading from scaffold.pkl (Node 2 output - preferred, has attachment point)
-    scaffold_paths = [
-        Path("scaffold.pkl"),
-    ]
-    for scaffold_path in scaffold_paths:
-        if scaffold_path.exists():
-            try:
-                if cloudpickle:
-                    with open(scaffold_path, "rb") as f:
-                        scaffold = cloudpickle.load(f)
-                else:
-                    with open(scaffold_path, "rb") as f:
-                        scaffold = pickle.load(f)
-                if hasattr(scaffold, "mol"):
-                    print(f"  - Scaffold source: {scaffold_path}")
-                    return scaffold.mol
-                elif hasattr(scaffold, "GetMol"):
-                    print(f"  - Scaffold source: {scaffold_path}")
-                    return scaffold.GetMol()
-                elif isinstance(scaffold, Chem.Mol):
-                    print(f"  - Scaffold source: {scaffold_path}")
-                    return scaffold
-            except Exception as e:
-                print(f"  - Failed to load {scaffold_path}: {e}")
-
-    # Fallback: Try loading from ligand.smi (Node 1 output - original ligand as SMILES)
-    ligand_smi_paths = [
-        Path("ligand.smi"),
-    ]
-    for ligand_path in ligand_smi_paths:
-        if ligand_path.exists():
-            try:
-                with open(ligand_path, "r") as f:
-                    smiles = f.read().strip()
-                mol = Chem.MolFromSmiles(smiles)
-                if mol is not None:
-                    print(f"  - Scaffold source: {ligand_path}")
-                    return mol
-            except Exception as e:
-                print(f"  - Failed to load {ligand_path}: {e}")
+    # Fallback: scaffold.pkl (has dummy atom - matching may be less accurate)
+    scaffold_path = Path("scaffold.pkl")
+    if scaffold_path.exists():
+        try:
+            if cloudpickle:
+                with open(scaffold_path, "rb") as f:
+                    scaffold = cloudpickle.load(f)
+            else:
+                with open(scaffold_path, "rb") as f:
+                    scaffold = pickle.load(f)
+            if hasattr(scaffold, "mol"):
+                print(f"  - Scaffold source: {scaffold_path} (has dummy atom)")
+                return scaffold.mol
+            elif hasattr(scaffold, "GetMol"):
+                print(f"  - Scaffold source: {scaffold_path} (has dummy atom)")
+                return scaffold.GetMol()
+            elif isinstance(scaffold, Chem.Mol):
+                print(f"  - Scaffold source: {scaffold_path} (has dummy atom)")
+                return scaffold
+        except Exception as e:
+            print(f"  - Failed to load {scaffold_path}: {e}")
 
     print("  - No scaffold found")
     return None

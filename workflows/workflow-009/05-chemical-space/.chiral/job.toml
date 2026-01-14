@@ -1,6 +1,6 @@
 name = "Chemical Space Creation"
 description = "Build chemical space by combining scaffold with linkers and R-groups"
-inputs = ["scaffold.pkl", "rec_final.pdb"]
+inputs = ["scaffold.pkl", "rec_final.pdb", "*.smi"]
 outputs = ["chemspace.pkl", "rec_final.pdb", "chemspace_viz.html"]
 
 [container]
