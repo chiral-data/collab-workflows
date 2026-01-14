@@ -51,12 +51,23 @@ def validate_ligand(input_path: str, output_path: str) -> bool:
     mol = Chem.AddHs(mol)
     logger.info(f"After adding hydrogens: {mol.GetNumAtoms()} atoms")
 
-    # Write the validated ligand
+    # Set atom map numbers to preserve atom indices
+    for atom in mol.GetAtoms():
+        atom.SetAtomMapNum(atom.GetIdx())
+
+    # Write the validated ligand as SDF
     output_file = Path(output_path)
     with Chem.SDWriter(str(output_file)) as writer:
         writer.write(mol)
-
     logger.info(f"Validated ligand saved to: {output_path}")
+
+    # Also write SMILES with atom map numbers for Node 02
+    smiles_path = output_file.with_suffix(".smi")
+    smiles = Chem.MolToSmiles(mol)
+    with open(smiles_path, "w") as f:
+        f.write(smiles)
+    logger.info(f"SMILES with atom indices saved to: {smiles_path}")
+
     return True
 
 

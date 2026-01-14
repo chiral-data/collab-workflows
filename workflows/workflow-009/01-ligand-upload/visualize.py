@@ -30,12 +30,16 @@ def mol_to_svg(mol, width=400, height=300):
 
 
 def mol_to_svg_with_h(mol, width=800, height=600):
-    """Convert RDKit molecule to SVG with explicit H atoms and atom indices."""
+    """Convert RDKit molecule to SVG with explicit H atoms and atom map numbers."""
     if mol is None or mol.GetNumAtoms() == 0:
         return "<p>Invalid molecule</p>"
 
-    # Add explicit hydrogens
-    mol_with_h = Chem.AddHs(mol)
+    # Use molecule as-is if it already has explicit Hs, otherwise add them
+    mol_no_h = Chem.RemoveHs(mol)
+    if mol.GetNumAtoms() > mol_no_h.GetNumAtoms():
+        mol_with_h = mol  # Already has explicit Hs
+    else:
+        mol_with_h = Chem.AddHs(mol)
     AllChem.Compute2DCoords(mol_with_h)
 
     # Highlight all heavy atoms (non-H) in light blue
@@ -49,7 +53,8 @@ def mol_to_svg_with_h(mol, width=800, height=600):
 
     drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
     opts = drawer.drawOptions()
-    opts.addAtomIndices = True  # Show atom index numbers
+    # Show atom map numbers (set in validate_ligand.py) - these are the IDs to use for attachment points
+    opts.addAtomIndices = True
 
     drawer.DrawMolecule(mol_with_h, highlightAtoms=highlight_atoms, highlightAtomColors=highlight_colors)
     drawer.FinishDrawing()
@@ -61,7 +66,10 @@ def mol_to_molblock(mol):
     if mol is None:
         return ""
     if mol.GetNumConformers() == 0:
-        mol = Chem.AddHs(mol)
+        # Only add Hs if not already present
+        mol_no_h = Chem.RemoveHs(mol)
+        if mol.GetNumAtoms() == mol_no_h.GetNumAtoms():
+            mol = Chem.AddHs(mol)
         AllChem.EmbedMolecule(mol, AllChem.ETKDG())
         AllChem.MMFFOptimizeMolecule(mol)
     return Chem.MolToMolBlock(mol)
@@ -102,7 +110,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             <div class="mol-3d" id="viewer"></div>
         </div>
         <div class="card">
-            <h3 style="color: #ea7d3d; margin-bottom: 16px;">2D Structure (with H Atoms and Atom Indices)</h3>
+            <h3 style="color: #ea7d3d; margin-bottom: 16px;">2D Structure (with H Atoms and Atom IDs)</h3>
+            <p style="color: #888; margin-bottom: 16px;">Use these atom IDs when selecting attachment points in Node 2</p>
             <div class="mol-2d">{svg_2d_with_h}</div>
         </div>
         <div class="props">

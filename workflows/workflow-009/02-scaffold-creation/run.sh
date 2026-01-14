@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-# Find the ligand file from previous step
-LIGAND_FILE=$(ls *.sdf 2>/dev/null | head -1)
+# Find the ligand SMILES file from previous step (contains atom map numbers)
+LIGAND_FILE=$(ls *.smi 2>/dev/null | head -1)
 
 if [ -z "$LIGAND_FILE" ]; then
-    echo "Error: No SDF file found from previous step"
+    echo "Error: No SMILES file found from previous step"
     exit 1
 fi
 

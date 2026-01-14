@@ -28,8 +28,12 @@ def mol_to_svg(mol, width=800, height=600):
     if mol is None or mol.GetNumAtoms() == 0:
         return "<p>Invalid molecule</p>"
 
-    # Add explicit hydrogens
-    mol_with_h = Chem.AddHs(mol)
+    # Use molecule as-is if it already has explicit Hs, otherwise add them
+    mol_no_h = Chem.RemoveHs(mol)
+    if mol.GetNumAtoms() > mol_no_h.GetNumAtoms():
+        mol_with_h = mol  # Already has explicit Hs
+    else:
+        mol_with_h = Chem.AddHs(mol)
 
     # Generate 2D coordinates
     AllChem.Compute2DCoords(mol_with_h)
@@ -149,7 +153,12 @@ def main():
 
     mol = load_scaffold(input_file)
     attachments = find_attachment_points(mol)
-    mol_with_h = Chem.AddHs(mol)
+    # Use molecule as-is if it already has explicit Hs, otherwise add them
+    mol_no_h = Chem.RemoveHs(mol)
+    if mol.GetNumAtoms() > mol_no_h.GetNumAtoms():
+        mol_with_h = mol
+    else:
+        mol_with_h = Chem.AddHs(mol)
 
     svg_2d = mol_to_svg(mol)
 

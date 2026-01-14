@@ -25,40 +25,34 @@ def create_scaffold(ligand_path: str, attachment_id: int, output_path: str) -> b
     Create scaffold from ligand with specified attachment point.
 
     Args:
-        ligand_path: Path to input ligand SDF file
-        attachment_id: Atom index for attachment point
+        ligand_path: Path to input ligand SMILES file (with atom map numbers)
+        attachment_id: Atom map number for attachment point (from Node 01 visualization)
         output_path: Path to save scaffold pickle file
 
     Returns:
         True if successful, False otherwise
     """
     logger.info(f"Creating scaffold from ligand: {ligand_path}")
-    logger.info(f"Attachment point atom index: {attachment_id}")
+    logger.info(f"Attachment point atom map number: {attachment_id}")
 
     ligand_file = Path(ligand_path)
     if not ligand_file.exists():
         logger.error(f"Ligand file not found: {ligand_path}")
         return False
 
-    # Load the ligand molecule
-    suppl = Chem.SDMolSupplier(str(ligand_file), removeHs=False)
-    mol = suppl[0]
+    # Load the ligand molecule from SMILES (preserves atom map numbers)
+    with open(ligand_file, "r") as f:
+        smiles = f.read().strip()
+        logger.info(f"Loaded molecule with smiles: {smiles}")
 
+    mol = Chem.MolFromSmiles(smiles)
     if mol is None:
-        logger.error("Failed to load molecule from SDF file")
+        logger.error("Failed to load molecule from SMILES file")
         return False
 
     # Add hydrogens
     mol = Chem.AddHs(mol)
     logger.info(f"Loaded molecule with {mol.GetNumAtoms()} atoms")
-
-    # Validate attachment_id
-    if attachment_id >= mol.GetNumAtoms():
-        logger.error(
-            f"Attachment ID {attachment_id} is out of range. "
-            f"Molecule has {mol.GetNumAtoms()} atoms (0-{mol.GetNumAtoms()-1})"
-        )
-        return False
 
     # Create FEgrow scaffold
     scaffold = fegrow.RMol(mol)
@@ -80,7 +74,11 @@ def main():
     parser = argparse.ArgumentParser(
         description="Create scaffold from ligand with attachment point"
     )
-    parser.add_argument("--ligand", required=True, help="Input ligand SDF file")
+    parser.add_argument(
+        "--ligand",
+        required=True,
+        help="Input ligand SMILES file (with atom map numbers)",
+    )
     parser.add_argument(
         "--attachment-id",
         type=int,
