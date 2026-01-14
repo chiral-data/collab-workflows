@@ -126,8 +126,24 @@ def run_active_learning(
         cs = cloudpickle.load(f)
     logger.info(f"Loaded chemical space with {len(cs)} molecules")
 
+    # Debug: Check if protein/receptor is attached
+    if hasattr(cs, "receptor") and cs.receptor is not None:
+        logger.info(f"Receptor attached: {type(cs.receptor)}")
+    else:
+        logger.warning("No receptor attached to ChemSpace - will reload from file")
+        # Reload protein from rec_final.pdb (passed as input to this node)
+        protein_file = Path("rec_final.pdb")
+        if protein_file.exists():
+            cs.add_protein(str(protein_file))
+            logger.info(f"Reloaded protein from: {protein_file}")
+        else:
+            logger.error("rec_final.pdb not found - cannot dock without receptor!")
+            return False
+    if hasattr(cs, "scaffold") and cs.scaffold is not None:
+        logger.info(f"Scaffold attached: {type(cs.scaffold)}")
+
     # Setup Dask cluster for evaluation
-    n_workers = (os.cpu_count() - 2) or 4  # Use all available CPU cores, fallback to 4
+    n_workers = 4  # Use 4 cores
     logger.info(
         f"Setting up Dask LocalCluster with {n_workers} workers for evaluation..."
     )

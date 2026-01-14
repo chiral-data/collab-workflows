@@ -51,16 +51,22 @@ def validate_ligand(input_path: str, output_path: str) -> bool:
     mol = Chem.AddHs(mol)
     logger.info(f"After adding hydrogens: {mol.GetNumAtoms()} atoms")
 
-    # Set atom map numbers on heavy atoms only (these are preserved in SMILES)
+    # Set atom map numbers (these are preserved in SMILES for attachment point selection)
     for atom in mol.GetAtoms():
         atom.SetAtomMapNum(atom.GetIdx())
 
-    # Write SMILES with atom map numbers
+    # Write SMILES with atom map numbers (for attachment point selection in visualization)
     output_file = Path(output_path)
     smiles = Chem.MolToSmiles(mol)
     with open(output_file, "w") as f:
         f.write(smiles)
     logger.info(f"SMILES with atom map numbers saved to: {output_path}")
+
+    # Also save SDF with 3D coordinates (needed for FEgrow conformer generation)
+    sdf_output = output_file.with_suffix(".sdf")
+    with Chem.SDWriter(str(sdf_output)) as w:
+        w.write(mol)
+    logger.info(f"SDF with 3D coordinates saved to: {sdf_output}")
 
     return True
 

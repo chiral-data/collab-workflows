@@ -18,8 +18,8 @@ fi
 workflow-run python create_chemspace.py \
     --scaffold "${SCAFFOLD_FILE}" \
     --protein "${PROTEIN_FILE}" \
-    --num-linkers "${PARAM_NUM_LINKERS:-10}" \
-    --num-rgroups "${PARAM_NUM_RGROUPS:-10}" \
+    --num-linkers "${PARAM_NUM_LINKERS:-5}" \
+    --num-rgroups "${PARAM_NUM_RGROUPS:-5}" \
     --output chemspace.pkl
 
 # Generate visualization HTML

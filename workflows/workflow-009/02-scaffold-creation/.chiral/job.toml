@@ -1,6 +1,6 @@
 name = "Scaffold Creation"
 description = "Create scaffold molecule with attachment point from the ligand"
-inputs = ["*.smi"]
+inputs = ["*.smi", "*.sdf"]
 outputs = ["scaffold.pkl", "scaffold_viz.html", "*.smi"]
 
 [container]

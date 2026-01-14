@@ -40,27 +40,24 @@ def create_scaffold(ligand_path: str, attachment_id: int, output_path: str) -> b
         logger.error(f"Ligand file not found: {ligand_path}")
         return False
 
-    # Load the ligand molecule from SMILES (preserves atom map numbers)
+    # Load SMILES to get atom map number -> index mapping
     with open(ligand_file, "r") as f:
         smiles = f.read().strip()
-        logger.info(f"Loaded molecule with smiles: {smiles}")
+        logger.info(f"Loaded SMILES: {smiles}")
 
-    mol = Chem.MolFromSmiles(smiles, sanitize=False)
-    if mol is None:
+    smiles_mol = Chem.MolFromSmiles(smiles, sanitize=False)
+    if smiles_mol is None:
         logger.error("Failed to load molecule from SMILES file")
         return False
-    # Sanitize without adjusting/removing Hs
     Chem.SanitizeMol(
-        mol,
+        smiles_mol,
         sanitizeOps=Chem.SanitizeFlags.SANITIZE_ALL
         ^ Chem.SanitizeFlags.SANITIZE_ADJUSTHS,
     )
 
-    logger.info(f"Loaded molecule with {mol.GetNumAtoms()} atoms")
-
-    # Find atom index by map number
+    # Find atom index by map number in SMILES molecule
     atom_idx = None
-    for atom in mol.GetAtoms():
+    for atom in smiles_mol.GetAtoms():
         if atom.GetAtomMapNum() == attachment_id:
             atom_idx = atom.GetIdx()
             break
@@ -69,9 +66,45 @@ def create_scaffold(ligand_path: str, attachment_id: int, output_path: str) -> b
         logger.error(f"No atom found with map number {attachment_id}")
         return False
 
-    logger.info(f"Found atom with map number {attachment_id} at index {atom_idx}")
+    logger.info(f"Found atom with map number {attachment_id} at index {atom_idx} (in SMILES)")
 
-    # Create FEgrow scaffold
+    # Load SDF for 3D coordinates (same directory, .sdf extension)
+    sdf_file = ligand_file.with_suffix(".sdf")
+    if not sdf_file.exists():
+        logger.error(f"SDF file not found: {sdf_file}")
+        return False
+
+    suppl = Chem.SDMolSupplier(str(sdf_file), removeHs=False)
+    mol = next(iter(suppl), None)
+    if mol is None:
+        logger.error("Failed to load molecule from SDF file")
+        return False
+
+    logger.info(f"Loaded SDF with {mol.GetNumAtoms()} atoms and 3D coordinates")
+
+    # Check if SDF has atom map numbers
+    sdf_map_nums = [atom.GetAtomMapNum() for atom in mol.GetAtoms()]
+    logger.info(f"SDF atom map numbers: {sdf_map_nums[:10]}... (first 10)")
+
+    # Find the atom with the same map number in SDF
+    sdf_atom_idx = None
+    for atom in mol.GetAtoms():
+        if atom.GetAtomMapNum() == attachment_id:
+            sdf_atom_idx = atom.GetIdx()
+            break
+
+    if sdf_atom_idx is not None:
+        logger.info(f"Found atom with map number {attachment_id} at index {sdf_atom_idx} (in SDF)")
+        atom_idx = sdf_atom_idx  # Use SDF index
+    else:
+        logger.warning(f"Map number {attachment_id} not found in SDF, using SMILES index {atom_idx}")
+
+    # Verify atom count matches
+    if mol.GetNumAtoms() != smiles_mol.GetNumAtoms():
+        logger.error(f"Atom count mismatch: SDF has {mol.GetNumAtoms()}, SMILES has {smiles_mol.GetNumAtoms()}")
+        return False
+
+    # Create FEgrow scaffold from SDF molecule (has 3D coords)
     scaffold = fegrow.RMol(mol)
 
     # Set attachment point (mark atom as dummy)

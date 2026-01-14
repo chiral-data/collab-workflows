@@ -710,8 +710,8 @@ def main():
     # Get scaffold for highlighting
     scaffold_mol = get_scaffold_mol(chemspace)
 
-    # Extract and visualize molecules (limit to 100 for performance)
-    max_display = 100
+    # Extract and visualize molecules (limit to 25 for performance)
+    max_display = 25
     molecules = extract_molecules(chemspace, max_molecules=max_display)
     molecule_cards, modal_data = generate_molecule_cards(molecules, scaffold_mol)
 
