@@ -1,0 +1,15 @@
+name = "Scaffold Creation"
+description = "Create scaffold molecule with attachment point from the ligand"
+inputs = ["*.smi", "*.sdf"]
+outputs = ["scaffold.pkl", "scaffold_viz.html", "*.smi"]
+
+[container]
+image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
+
+[scripts]
+run = "run.sh"
+
+[params.attachment_id]
+type = "integer"
+default = 26
+hint = "Atom index for the attachment point on the scaffold"

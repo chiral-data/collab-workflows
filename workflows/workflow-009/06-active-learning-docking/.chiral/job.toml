@@ -1,0 +1,37 @@
+name = "Active Learning Docking"
+description = "Run active learning cycles with molecular docking using gnina"
+inputs = ["chemspace.pkl", "rec_final.pdb"]
+outputs = ["chemspace_evaluated.sdf", "iteration_*.csv"]
+
+[container]
+image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
+
+[scripts]
+run = "run.sh"
+
+[params.initial_molecules]
+type = "integer"
+default = 10
+hint = "Number of initial random molecules for active learning"
+
+[params.num_cycles]
+type = "integer"
+default = 3
+hint = "Number of active learning cycles"
+
+[params.molecules_per_cycle]
+type = "integer"
+default = 50
+hint = "Number of molecules to evaluate per active learning cycle"
+
+[params.model_type]
+type = "enum"
+default = "gaussian_process"
+hint = "Type of surrogate model for active learning"
+enum_values = ["gaussian_process", "random_forest", "linear"]
+
+[params.query_type]
+type = "enum"
+default = "UCB"
+hint = "Active learning query strategy"
+enum_values = ["UCB", "Greedy", "PI", "EI"]

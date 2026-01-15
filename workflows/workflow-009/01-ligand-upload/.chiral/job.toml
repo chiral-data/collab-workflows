@@ -1,0 +1,14 @@
+name = "Ligand Upload"
+description = "Upload and validate the ligand SDF file"
+outputs = ["*.smi", "*.sdf", "ligand_viz.html"]
+
+[container]
+image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
+
+[scripts]
+run = "run.sh"
+
+[params.ligand_file]
+type = "file"
+default = ".chiral/test_inputs/ligand.sdf"
+hint = "Ligand SDF file to use as scaffold template"

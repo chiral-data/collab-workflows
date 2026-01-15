@@ -1,0 +1,14 @@
+name = "Protein Upload"
+description = "Upload and validate the protein PDB file"
+outputs = ["*.pdb"]
+
+[container]
+image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
+
+[scripts]
+run = "run.sh"
+
+[params.protein_file]
+type = "file"
+default = ".chiral/test_inputs/protein.pdb"
+hint = "Protein PDB file for docking"

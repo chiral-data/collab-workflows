@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV CONDA_DIR=/opt/conda
 ENV PATH=$CONDA_DIR/bin:$PATH
 
-# Install system dependencies
+# Install system dependencies including CUDA libraries for gnina
 RUN apt-get update && apt-get install -y \
     wget \
     curl \
@@ -19,7 +19,28 @@ RUN apt-get update && apt-get install -y \
     libxrender-dev \
     libgomp1 \
     libgcc-s1 \
+    gnupg \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
+
+# Add NVIDIA CUDA repository and install CUDA libraries
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
+    dpkg -i cuda-keyring_1.1-1_all.deb && \
+    rm cuda-keyring_1.1-1_all.deb && \
+    apt-get update && \
+    apt-get install -y \
+    libcudnn9-cuda-12 \
+    libcublas-12-6 \
+    libcusparse-12-6 \
+    libcusolver-12-6 \
+    cuda-cudart-12-6 \
+    libcufft-12-6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install gnina binary
+RUN wget https://github.com/gnina/gnina/releases/download/v1.3.2/gnina.1.3.2 -O /usr/local/bin/gnina && \
+    chmod +x /usr/local/bin/gnina && \
+    echo "gnina installed to /usr/local/bin/gnina"
 
 # Install Miniconda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
@@ -49,10 +70,18 @@ RUN git clone https://github.com/cole-group/FEgrow.git /opt/FEgrow
 RUN mamba env create -f /opt/FEgrow/environment.yml
 
 # Install essential packages first
-RUN mamba run -n fegrow pip install numpy pandas matplotlib seaborn scipy scikit-learn biopython
+RUN mamba run -n fegrow pip install "numpy<2.0" pandas matplotlib seaborn scipy scikit-learn biopython
+
+# Install rdkit and prody for validation scripts
+RUN mamba install -n fegrow -c conda-forge rdkit -y
+RUN mamba run -n fegrow pip install prody
 
 # Try to install additional packages from requirements.txt (skip problematic ones)
 RUN mamba run -n fegrow pip install -r /opt/FEgrow/requirements.txt --ignore-requires-python || echo "Some packages failed to install, continuing..."
+
+# ADD THIS LINE - force numpy downgrade after requirements.txt
+RUN mamba run -n fegrow pip install "numpy<2.0" --force-reinstall --no-deps
+
 
 # Install FEgrow package 
 RUN mamba run -n fegrow pip install --no-deps /opt/FEgrow
