@@ -4,6 +4,7 @@
 import os
 
 from Bio.PDB import PDBIO, PDBParser, Select
+from pdbfixer import PDBFixer
 
 # ------------------------------------------------------------------------------
 # 2. Extract Chain A + NAD
@@ -44,6 +45,29 @@ def extract_chain_a_with_nad(pdb_file):
 
     return output_pdb_file
 
+def fix_protein (output_pdb_file):
+
+    # Load the PDB into the PDBFixer class
+    fixer = PDBFixer(filename=output_pdb_file)
+
+    print("Starting PDBFixer")
+    print("Fixing protein...")
+    # Fixing the structure at pH 7.4
+    fixer.findMissingResidues()
+    fixer.missingResidues
+    fixer.findNonstandardResidues()
+    print(fixer.nonstandardResidues)
+    fixer.replaceNonstandardResidues()
+    fixer.removeHeterogens(keepWater=False)
+    fixer.findMissingAtoms()
+    print(fixer.missingAtoms)
+    print(fixer.missingTerminals)
+    fixer.addMissingAtoms()
+    fixer.addMissingHydrogens(pH=7.4)
+
+    print("Fixing protein complete!")
+
+    return fixed_output_pdb_file
 
 # ------------------------------------------------------------------------------
 # Entry point

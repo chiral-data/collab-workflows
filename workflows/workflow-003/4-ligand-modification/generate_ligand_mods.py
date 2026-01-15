@@ -118,7 +118,7 @@ def sdf_to_smiles(sdf_filepath):
 
 # ligand_name = "2TK"
 ligand_name = os.getenv("PARAM_LIGAND_NAME")
-smiles_output = sdf_to_smiles(f"{ligand_name}.sdf")
+smiles_output = sdf_to_smiles(f"{ligand_name}_corrected_pose.sdf")
 for s in smiles_output:
     print(s)
 
