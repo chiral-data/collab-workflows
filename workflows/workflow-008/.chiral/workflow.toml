@@ -1,0 +1,14 @@
+name = "MS_MG_Amino_Acid_Analysis"
+description = "Multi-stage pipeline for analyzing serum amino acid profiles in MS and MG patients"
+
+[dependencies]
+02_Cohort_Demographics = ["01_Data_Ingestion_and_Preprocessing"]
+03_MS_Pathology_Overview = ["01_Data_Ingestion_and_Preprocessing"]
+04_Clinical_Confounders_and_Validation = ["01_Data_Ingestion_and_Preprocessing"]
+05_MS_vs_MG_Autoimmune_Comparison = ["01_Data_Ingestion_and_Preprocessing"]
+06_Differential_Diagnosis_Biomarkers = ["01_Data_Ingestion_and_Preprocessing"]
+07_Metabolic_Network_Clustering = ["01_Data_Ingestion_and_Preprocessing"]
+08_Global_Metabolic_Load_Analysis = ["01_Data_Ingestion_and_Preprocessing"]
+09_Subtype_Trajectories = ["01_Data_Ingestion_and_Preprocessing"]
+10_Clinical_Mimicry_Test_RRMS_vs_MG = ["01_Data_Ingestion_and_Preprocessing"]
+11_Pathway_Coherence_Analysis = ["01_Data_Ingestion_and_Preprocessing"]
