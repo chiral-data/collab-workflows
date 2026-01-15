@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 # Configuration
-DATA_FILE = os.environ.get("PARAM_DATA_FILE", "../01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.csv")
+DATA_FILE = os.environ.get("PARAM_DATA_FILE", "database-multiple-sclerosis-myasthenia.csv")
 OUTPUT_DIR = "outputs"
 
 if not os.path.exists(OUTPUT_DIR):
