@@ -1,0 +1,9 @@
+# Node 7: Run AutoDock Vina docking
+depends_on = ["03_ProteinPreparation", "04_LigandPreparation", "06_PocketSelection"]
+inputs = ["*.pdbqt", "selected_pocket.json"]
+outputs = ["*.log", "*_vina_out.pdbqt"]
+
+[container]
+docker_image = "esraasuliman/workflow-esraa-node7:1.0"
+
+[scripts]

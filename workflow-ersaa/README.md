@@ -1,149 +1,193 @@
-🧬 Workflow: Protein–Ligand Virtual Screening (AutoDock Vina + P2Rank)
-Overview
+# 🧬 AutoDock Vina Virtual Screening Workflow
 
-This workflow automates protein–ligand virtual screening using AutoDock Vina, with optional binding pocket prediction via P2Rank.
-It is divided into three modular jobs that can be run independently or sequentially through Silva, ensuring clarity, reproducibility, and flexibility.
+**Protein–Ligand Docking with Pocket Prediction and Automated Ranking**  
 
-The workflow includes:
+A fully modular workflow for protein–ligand virtual screening using AutoDock Vina, with optional binding pocket prediction via P2Rank, executed on the Silva workflow platform.
 
-1. 01_download – retrieves receptor and ligand structures.
+---
 
-2. 02_prepare – prepares receptor and ligand files for docking.
+## 📌 Overview
 
-3. 03_virtual_screening – performs docking using AutoDock Vina and ranks ligands automatically by binding affinity.
+This workflow provides an **end-to-end, reproducible, and flexible pipeline** for virtual screening:
 
-Each job runs in a separate container with its own dependencies to keep the environment clean and efficient.
+- **Eight containerized nodes**, each with independent inputs and outputs  
+- **Optional pocket prediction** using P2Rank  
+- Automated **ligand ranking** by binding affinity  
+- **Silva-compatible**, allowing seamless orchestration of nodes  
 
-🧩 Job Structure
-01_download
+**Key Features:**
 
-Purpose:
-Downloads protein and ligand structures from public databases (RCSB, PubChem, etc.).
+- Modular design: Nodes can run independently or sequentially  
+- Clean environments: Each node runs in its own container  
+- Reproducibility: Inputs, outputs, and parameters are fully tracked    
 
-Main Files:
+---
 
-- job.toml – defines the container and commands.
+## 🧩 Workflow Layout
 
-- Dockerfile – installs Python and libraries (requests, biopython).
+```
+vina_workflow_final/
+├── 01_ProteinInput
+├── 02_LigandInput
+├── 03_ProteinPreparation
+├── 04_LigandPreparation
+├── 05_PocketPrediction
+├── 06_PocketSelection
+├── 07_Docking
+├── 08_Reporting
+├── global_params.json
+└── README.md
+```
 
-- download_job.py – script for downloading receptor and ligand files.
+Each node is structured as follows:
 
-Inputs:
+```
+<node_name>/
+├── .chiral/
+│   ├── job.toml      # Node inputs, outputs, and dependencies
+│   └── node.json     # Node description
+├── run.sh           # Entry point executed by Silva
+├── *.py             # Node logic
+└── params.json      # Optional node-specific parameters
+```
 
-Protein ID (e.g., PDB code).
+---
 
-List of ligand IDs.
+## 🔗 Workflow Dependency Diagram
 
-Outputs:
+```
+01_ProteinInput
+        │
+        ▼
+03_ProteinPreparation ───────┐
+        ▼                    │
+05_PocketPrediction          │
+        ▼                    │
+06_PocketSelection           │
+        ▼                    │
+07_Docking ──────────────────┼──▶ 08_Reporting
+        ▲                    │
+04_LigandPreparation         │
+        ▲                    │
+02_LigandInput ──────────────┘
+```
 
-receptor.pdb
+---
 
-ligands/ (folder of ligand files)
+## 🔬 Node Descriptions
 
-02_prepare
+### ① Protein Input – `01_ProteinInput`
+**Purpose:** Download receptor structures from RCSB PDB  
+**Inputs:** Protein PDB ID (e.g., `5KIR`)  
+**Outputs:** `receptor.pdb`
 
-Purpose:
-Prepares the receptor and ligand structures for docking (protonation, cleaning, and conversion to .pdbqt).
+---
 
-Main Files:
-
-Dockerfile – installs MGLTools and Open Babel.
-
-prepare_protein.py – prepares protein.
-
-prepare_ligands.py – prepares ligands.
-Inputs:
-
-receptor.pdb
-
+### ② Ligand Input – `02_LigandInput`
+**Purpose:** Download ligand structures from PubChem  
+**Inputs:** List of PubChem CIDs (e.g., `2662`, `3672`)  
+**Outputs:**
+```
 ligands/
+├── 2662.sdf
+└── 3672.sdf
+```
 
-Outputs:
+---
 
-receptor.pdbqt
+### ③ Protein Preparation – `03_ProteinPreparation`
+**Purpose:** Clean, protonate, and convert receptor to PDBQT using MGLTools  
+**Inputs:** `receptor.pdb`  
+**Outputs:** `receptor.pdbqt`
 
+---
+
+### ④ Ligand Preparation – `04_LigandPreparation`
+**Purpose:** Convert ligands to PDBQT format for docking  
+**Inputs:** Ligand structure files (`.sdf`)  
+**Outputs:**
+```
 ligands_prepared/
+├── 2662.pdbqt
+└── 3672.pdbqt
+```
 
-03_virtual_screening
+---
 
-Purpose:
-Performs docking using AutoDock Vina and optionally identifies binding pockets using P2Rank.
-It then parses Vina log files to generate an Excel sheet ranking ligands by binding affinity.
+### ⑤ Pocket Prediction – `05_PocketPrediction`
+**Purpose:** Predict potential binding pockets using P2Rank  
+**Inputs:** `receptor.pdb`  
+**Outputs:** Pocket prediction files (`JSON/CSV`)
 
-Main Files:
+---
 
-Dockerfile – installs AutoDock Vina, Python (pandas, openpyxl), and optionally Java for P2Rank.
+### ⑥ Pocket Selection – `06_PocketSelection`
+**Purpose:** Convert P2Rank output into AutoDock Vina grid box definitions  
+**Inputs:** Pocket prediction files  
+**Outputs:** Grid box center coordinates and dimensions
 
-run_vina.py – performs docking and saves log files.
+---
 
-rank_vina.py – ranks ligands automatically and saves results as results.xlsx.
+### ⑦ Docking – `07_Docking`
+**Purpose:** Perform virtual screening using AutoDock Vina  
+**Inputs:**
+- `receptor.pdbqt`  
+- `ligands in pdbqt format`  
+- Grid box definition  
 
-p2rank_helper.py (optional) – allows selecting different binding pockets for docking.
+**Outputs:**
+- Docked poses (`*.pdbqt`)  
+- Vina log files (`*.log`)
 
-Inputs:
+**Docking Parameters (`params.json`):**
+| Parameter       | Type    | Default | Description                     |
+|-----------------|---------|---------|---------------------------------|
+| exhaustiveness   | integer | 8       | Search thoroughness             |
+| num_modes        | integer | 9       | Maximum poses per ligand        |
+| energy_range     | integer | 4       | Energy window (kcal/mol)       |
 
-receptor.pdbqt
+---
 
-ligands_prepared/
+### ⑧ Reporting – `08_Reporting`
+**Purpose:** Parse docking logs and generate a ranked Excel report  
+**Inputs:** Vina log files (`*.log`)  
+**Outputs:** `binding_affinities.xlsx`
 
-Outputs:
+**Example Report:**
 
-vina_results/ – docking poses and logs.
+| Ligand | Affinity (kcal/mol) |
+|--------|--------------------|
+| 2662   | -8.4               |
+| 3672   | -7.9               |
 
-results.xlsx – ranked binding affinities.
+Lower (more negative) values indicate stronger predicted binding.
 
-🧠 How to Run
+---
 
-Clone the repository:
+## 🧪 Tested Example
 
-git clone https://github.com/yourusername/vina_workflow.git
-cd vina_workflow
+- **Protein:** `5KIR`  
+- **Ligands:** `2662`, `3672`  
+- **Docking Engine:** AutoDock Vina  
+- **Pocket Prediction:** P2Rank  
 
+After running the workflow, the **final ranked Excel file** (`binding_affinities.xlsx`) lists ligand affinities.
 
-Set your Silva home directory:
+---
 
-export SILVA_HOME_DIR=/path/to/silva_home
+## ⚙️ Global Parameters
 
+**`global_params.json`** contains workflow-wide configuration values shared across nodes.
 
-Run each job in sequence using Silva:
+---
 
- 01_download
- 02_prepare
- 03_virtual_screening
+## 📚 References
 
+- **AutoDock Vina** – https://github.com/ccsb-scripps/AutoDock-Vina  
+- **P2Rank** – https://github.com/rdk/p2rank  
+- **Open Babel** – https://github.com/openbabel/openbabel  
+- **MGLTools** – https://ccsb.scripps.edu/mgltools/  
+- **Pandas** – https://pandas.pydata.org/  
+- **OpenPyXL** – https://openpyxl.readthedocs.io/  
+- **Silva Workflow Platform** – https://github.com/chiral-data/silva
 
-The ranked results will appear in 03_virtual_screening/results.xlsx.
-
-⚙️ Dependencies
-
-Each job uses a minimal environment, installing only what’s needed:
-
-Python 3 – scripting, automation, and data handling
-
-Requests / Biopython – downloading and handling biological data
-
-Open Babel / MGLTools – molecular file preparation
-
-AutoDock Vina – docking engine
-
-Pandas / OpenPyXL – ranking and Excel export
-
-Java + P2Rank (optional) – pocket prediction
-
-📚 References
-
-AutoDock Vina — https://github.com/ccsb-scripps/AutoDock-Vina
-
-Open Babel — https://github.com/openbabel/openbabel
-
-MGLTools — https://ccsb.scripps.edu/mgltools/
-
-P2Rank — https://github.com/rdk/p2rank
-
-Biopython — https://biopython.org/
-
-Pandas — https://pandas.pydata.org/
-
-OpenPyXL — https://openpyxl.readthedocs.io/
-
-Silva Workflow Platform — https://github.com/chiral-data/silva

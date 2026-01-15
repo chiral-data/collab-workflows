@@ -1,0 +1,16 @@
+{
+  "name": "protein-ligand-virtual-screening",
+  "description": "Automated protein–ligand virtual screening workflow using AutoDock Vina and P2Rank.",
+  "params": {
+    "pdb_id": [
+      "string",
+      "5KIR",
+      "The PDB ID of the receptor protein to download from RCSB."
+    ],
+    "ligand_ids": [
+      "list-string",
+      ["3672", "2662"],
+      "A list of PubChem CIDs for the ligands to download and process."
+    ]
+  }
+}

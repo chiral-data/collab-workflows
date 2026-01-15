@@ -1,0 +1,9 @@
+# Node 3: Prepare receptor (PDB → PDBQT)
+depends_on = ["01_ProteinInput"]
+inputs = ["*.pdb"]
+outputs = ["receptor.pdbqt", "protein_fixed.pdb"]
+
+[container]
+docker_image = "esraasuliman/workflow-esraa-node3:1.0"
+
+[scripts]

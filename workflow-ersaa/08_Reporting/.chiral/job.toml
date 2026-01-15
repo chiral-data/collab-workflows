@@ -1,0 +1,9 @@
+# Node 8: Rank Vina results
+depends_on = ["07_Docking"]
+inputs = ["*.log"]
+outputs = ["binding_affinities.xlsx"]
+
+[container]
+docker_image = "esraasuliman/workflow-esraa-node8:1.0"
+
+[scripts]

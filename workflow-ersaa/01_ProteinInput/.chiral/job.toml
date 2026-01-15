@@ -1,0 +1,7 @@
+# Node 1: Download receptor PDB
+outputs = ["*.pdb"]
+
+[container]
+docker_image = "esraasuliman/workflow-esraa-node1:latest"
+
+[scripts]

@@ -1,0 +1,7 @@
+# Node 2: Download ligand SDF files
+outputs = ["*.sdf"]
+
+[container]
+docker_image = "esraasuliman/workflow-esraa-node2:2.0"
+
+[scripts]
