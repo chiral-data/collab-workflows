@@ -1,0 +1,35 @@
+{
+  "job_id": "4G6K_docking_report",
+  "meta": {
+    "app": "docking_report",
+    "project": "potter_job_docking_report_sample_project"
+  },
+  "inputs": [
+    {
+      "filename": "4G6K_predictions.pkl",
+      "type": "pkl",
+      "description": "DiffDock-PP predictions file"
+    },
+    {
+      "filename": "4G6K_lig_model_0.pdb",
+      "type": "pdb",
+      "description": "Ligand protein structure file"
+    },
+    {
+      "filename": "4G6K_rec_model_0.pdb",
+      "type": "pdb",
+      "description": "Receptor protein structure file"
+    },
+    {
+      "filename": "poses/",
+      "type": "directory",
+      "description": "Directory containing all generated pose PDB files"
+    }
+  ],
+  "parameters": {
+    "analysis_type": "diffdock_pp",
+    "docking_method": "diffdock_pp",
+    "complex_name": "4G6K",
+    "poses_dir": "poses"
+  }
+}

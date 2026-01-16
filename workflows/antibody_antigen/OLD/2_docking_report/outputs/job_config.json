@@ -1,0 +1,27 @@
+{
+  "job_id": "docking_report_4G6K_test",
+  "meta": {
+    "app": "docking_report",
+    "project": "1_antibody_antigen"
+  },
+  "inputs": [
+    {
+      "filename": "4G6K_predictions.pkl",
+      "type": "pkl"
+    },
+    {
+      "filename": "4G6K_r_b.pdb",
+      "type": "pdb"
+    },
+    {
+      "filename": "4G6K_l_b.pdb",
+      "type": "pdb"
+    }
+  ],
+  "parameters": {
+    "analysis_type": "diffdock_pp"
+  },
+  "output": {
+    "directory": "outputs"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "job_id": "docking_report_1A2K_production",
+  "meta": {
+    "app": "docking_report",
+    "project": "1_antibody_antigen"
+  },
+  "inputs": [
+    {
+      "filename": "1A2K_predictions.pkl",
+      "type": "pkl"
+    },
+    {
+      "filename": "1A2K_r_b.pdb",
+      "type": "pdb"
+    },
+    {
+      "filename": "1A2K_l_b.pdb",
+      "type": "pdb"
+    }
+  ],
+  "parameters": {
+    "analysis_type": "diffdock_pp"
+  },
+  "output": {
+    "directory": "outputs"
+  }
+}

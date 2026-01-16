@@ -1,0 +1,23 @@
+{
+  "job_id": "diffdock_pp_1A2K_test",
+  "meta": {
+    "app": "diffdock-pp",
+    "project": "1_antibody_antigen"
+  },
+  "inputs": [
+    {
+      "filename": "1A2K_r_b.pdb",
+      "type": "pdb",
+      "description": "1A2K receptor structure"
+    },
+    {
+      "filename": "1A2K_l_b.pdb",
+      "type": "pdb",
+      "description": "1A2K ligand structure"
+    }
+  ],
+  "parameters": {
+    "num_samples": 40,
+    "run_name": "1A2K"
+  }
+}

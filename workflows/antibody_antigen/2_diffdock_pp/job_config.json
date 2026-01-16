@@ -1,0 +1,23 @@
+{
+  "job_id": "4G6K_protein_protein_docking",
+  "meta": {
+    "app": "diffdock-pp",
+    "project": "potter_job_diffdock_pp_sample_project"
+  },
+  "inputs": [
+    {
+      "filename": "4G6K_rec_model_0.pdb",
+      "type": "pdb",
+      "description": "Receptor protein structure file"
+    },
+    {
+      "filename": "4G6K_lig_model_0.pdb",
+      "type": "pdb",
+      "description": "Ligand protein structure file"
+    }
+  ],
+  "parameters": {
+    "num_samples": 40,
+    "run_name": "4G6K"
+  }
+}

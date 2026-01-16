@@ -1,0 +1,26 @@
+{
+  "job_id": "4G6K_antibody_antigen_prediction",
+  "meta": {
+    "app": "boltz_2",
+    "project": "potter_job_boltz_2_sample_project"
+  },
+  "inputs": [
+    {
+      "filename": "4G6K_rec.fasta",
+      "type": "fasta"
+    },
+    {
+      "filename": "4G6K_lig.fasta",
+      "type": "fasta"
+    }
+  ],
+  "parameters": {
+    "output_format": "pdb",
+    "recycling_steps": 3,
+    "sampling_steps": 200,
+    "diffusion_samples": 1,
+    "step_scale": 1.638,
+    "devices": 1,
+    "accelerator": "gpu"
+  }
+}
