@@ -1,0 +1,18 @@
+{
+  "input_pdb": "5kir.pdb",
+  "fixed_pdb": "protein_fixed.pdb",
+  "output_pdbqt": "receptor.pdbqt",
+  "preparation_steps": [
+    "Found and replaced non-standard residues",
+    "Added missing atoms",
+    "Added hydrogens at pH 7.0",
+    "Converted to PDBQT format"
+  ],
+  "file_sizes": {
+    "input_pdb_bytes": 2293434,
+    "fixed_pdb_bytes": 1430653,
+    "pdbqt_bytes": 1412884
+  },
+  "conversion_status": "success",
+  "timestamp": "2026-01-16T02:47:02.938834"
+}

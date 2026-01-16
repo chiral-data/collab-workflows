@@ -1,0 +1,15 @@
+name = "Ligand Collection"
+description = "Download ligand structures from PubChem"
+outputs = ["outputs/ligands_metadata.json", "outputs/*.sdf", "outputs/report.html"]
+
+[container]
+image = "vina-workflow:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.ligand_ids]
+type = "string"
+default = '["3672", "2662"]'
+hint = "JSON array of PubChem CIDs"
+env = "PARAM_LIGAND_IDS"

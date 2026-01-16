@@ -1,0 +1,215 @@
+{
+  "summary": {
+    "total_compounds": 2,
+    "successful_dockings": 2,
+    "failed_dockings": 0,
+    "top_hit": "2662",
+    "best_affinity": -11.077
+  },
+  "receptor_file": "receptor.pdbqt",
+  "docking_results": [
+    {
+      "ligand": "2662",
+      "best_affinity": -11.077,
+      "poses": [
+        {
+          "pose": 1,
+          "affinity": -11.077,
+          "file": "2662_pose1.pdbqt"
+        },
+        {
+          "pose": 2,
+          "affinity": -8.848,
+          "file": "2662_pose2.pdbqt"
+        },
+        {
+          "pose": 3,
+          "affinity": -8.825,
+          "file": "2662_pose3.pdbqt"
+        },
+        {
+          "pose": 4,
+          "affinity": -8.683,
+          "file": "2662_pose4.pdbqt"
+        },
+        {
+          "pose": 5,
+          "affinity": -6.515,
+          "file": "2662_pose5.pdbqt"
+        }
+      ],
+      "output_pdbqt": "2662_docked.pdbqt",
+      "status": "success",
+      "rank": 1
+    },
+    {
+      "ligand": "3672",
+      "best_affinity": -6.891,
+      "poses": [
+        {
+          "pose": 1,
+          "affinity": -6.891,
+          "file": "3672_pose1.pdbqt"
+        },
+        {
+          "pose": 2,
+          "affinity": -6.883,
+          "file": "3672_pose2.pdbqt"
+        },
+        {
+          "pose": 3,
+          "affinity": -6.754,
+          "file": "3672_pose3.pdbqt"
+        },
+        {
+          "pose": 4,
+          "affinity": -6.724,
+          "file": "3672_pose4.pdbqt"
+        },
+        {
+          "pose": 5,
+          "affinity": -6.649,
+          "file": "3672_pose5.pdbqt"
+        },
+        {
+          "pose": 6,
+          "affinity": -6.647,
+          "file": "3672_pose6.pdbqt"
+        },
+        {
+          "pose": 7,
+          "affinity": -6.491,
+          "file": "3672_pose7.pdbqt"
+        },
+        {
+          "pose": 8,
+          "affinity": -6.487,
+          "file": "3672_pose8.pdbqt"
+        },
+        {
+          "pose": 9,
+          "affinity": -6.324,
+          "file": "3672_pose9.pdbqt"
+        },
+        {
+          "pose": 10,
+          "affinity": -6.259,
+          "file": "3672_pose10.pdbqt"
+        }
+      ],
+      "output_pdbqt": "3672_docked.pdbqt",
+      "status": "success",
+      "rank": 2
+    }
+  ],
+  "ligand_results": [
+    {
+      "ligand": "2662",
+      "best_affinity": -11.077,
+      "poses": [
+        {
+          "pose": 1,
+          "affinity": -11.077,
+          "file": "2662_pose1.pdbqt"
+        },
+        {
+          "pose": 2,
+          "affinity": -8.848,
+          "file": "2662_pose2.pdbqt"
+        },
+        {
+          "pose": 3,
+          "affinity": -8.825,
+          "file": "2662_pose3.pdbqt"
+        },
+        {
+          "pose": 4,
+          "affinity": -8.683,
+          "file": "2662_pose4.pdbqt"
+        },
+        {
+          "pose": 5,
+          "affinity": -6.515,
+          "file": "2662_pose5.pdbqt"
+        }
+      ],
+      "output_pdbqt": "2662_docked.pdbqt",
+      "status": "success",
+      "rank": 1
+    },
+    {
+      "ligand": "3672",
+      "best_affinity": -6.891,
+      "poses": [
+        {
+          "pose": 1,
+          "affinity": -6.891,
+          "file": "3672_pose1.pdbqt"
+        },
+        {
+          "pose": 2,
+          "affinity": -6.883,
+          "file": "3672_pose2.pdbqt"
+        },
+        {
+          "pose": 3,
+          "affinity": -6.754,
+          "file": "3672_pose3.pdbqt"
+        },
+        {
+          "pose": 4,
+          "affinity": -6.724,
+          "file": "3672_pose4.pdbqt"
+        },
+        {
+          "pose": 5,
+          "affinity": -6.649,
+          "file": "3672_pose5.pdbqt"
+        },
+        {
+          "pose": 6,
+          "affinity": -6.647,
+          "file": "3672_pose6.pdbqt"
+        },
+        {
+          "pose": 7,
+          "affinity": -6.491,
+          "file": "3672_pose7.pdbqt"
+        },
+        {
+          "pose": 8,
+          "affinity": -6.487,
+          "file": "3672_pose8.pdbqt"
+        },
+        {
+          "pose": 9,
+          "affinity": -6.324,
+          "file": "3672_pose9.pdbqt"
+        },
+        {
+          "pose": 10,
+          "affinity": -6.259,
+          "file": "3672_pose10.pdbqt"
+        }
+      ],
+      "output_pdbqt": "3672_docked.pdbqt",
+      "status": "success",
+      "rank": 2
+    }
+  ],
+  "parameters": {
+    "exhaustiveness": 32,
+    "num_modes": 10,
+    "energy_range": 5.0
+  },
+  "grid_config": {
+    "center_x": 23.0761,
+    "center_y": 3.6087,
+    "center_z": 30.9459,
+    "size_x": 20.0,
+    "size_y": 20.0,
+    "size_z": 20.0
+  },
+  "timestamp": "2026-01-16T02:47:44.855600",
+  "software": "AutoDock Vina"
+}
