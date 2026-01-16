@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.802      0.000      0.000
+REMARK INTER + INTRA:          -8.802
+REMARK INTER:                  -8.802
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.541  62.100  65.294  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.345  61.663  64.622  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.148  61.226  63.951  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.577  61.571  64.908  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.363  61.903  65.631  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.917  62.327  66.071  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.703  62.659  66.795  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.257  63.083  67.233  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.935  62.567  67.079  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.720  62.899  67.804  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.380  62.142  66.641  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.594  61.810  65.916  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.113  61.755  64.337  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.327  61.423  63.613  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.668  62.180  64.776  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.750      1.234      3.320
+REMARK INTER + INTRA:          -8.750
+REMARK INTER:                  -8.750
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.354  62.110  65.971  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.519  62.626  66.594  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.685  63.142  67.215  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.263  62.774  66.271  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.492  62.402  65.573  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.977  61.880  65.195  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.206  61.508  64.495  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.691  60.987  64.118  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.951  61.657  64.174  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.180  61.284  63.473  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.467  62.178  64.551  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.238  62.551  65.251  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.774  62.477  66.916  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.545  62.849  67.614  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      59.258  61.955  66.538  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.586      2.848      3.908
+REMARK INTER + INTRA:          -7.586
+REMARK INTER:                  -7.586
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.648  63.139  68.737  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.655  62.563  68.146  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.661  61.986  67.556  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.568  61.976  68.719  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.519  62.181  69.516  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.557  62.974  69.741  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.508  63.179  70.538  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.546  63.971  70.763  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.421  62.592  71.111  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.372  62.798  71.909  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.383  61.799  70.886  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.431  61.593  70.089  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.742  63.149  67.573  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.791  62.944  66.776  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.780  63.943  67.798  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.506      4.608      5.791
+REMARK INTER + INTRA:          -7.506
+REMARK INTER:                  -7.506
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.897  63.015  70.400  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.656  62.226  70.393  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.414  61.438  70.387  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.808  62.173  71.202  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.094  62.829  71.611  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.226  63.539  71.214  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.512  64.195  71.624  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.644  64.905  71.225  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.665  64.141  72.432  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.950  64.798  72.843  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.532  63.431  72.831  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.247  62.775  72.421  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.503  62.279  69.584  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.217  61.624  69.174  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.635  62.990  69.185  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.407      6.763      7.935
+REMARK INTER + INTRA:          -7.407
+REMARK INTER:                  -7.407
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.093  65.848  70.930  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.608  65.828  70.263  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.124  65.808  69.595  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.146  66.304  69.858  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.835  66.559  70.233  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.986  66.338  71.013  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.675  66.594  71.388  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      65.825  66.373  72.168  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      66.213  67.069  70.983  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.902  67.325  71.359  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      66.062  67.291  70.202  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.373  67.035  69.827  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.070  65.352  70.667  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.381  65.097  70.292  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      63.221  65.131  71.448  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.385      4.644      6.120
+REMARK INTER + INTRA:          -7.385
+REMARK INTER:                  -7.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.370  63.732  71.201  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.509  63.572  71.999  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.648  63.412  72.796  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.250  62.797  71.888  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.001  62.548  71.143  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.010  63.074  70.507  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.760  62.825  69.762  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.770  63.351  69.127  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.501  62.050  69.651  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.251  61.801  68.905  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.491  61.523  70.286  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.741  61.772  71.032  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.769  64.347  72.110  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.018  64.596  72.855  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.778  64.874  71.474  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.242      6.948      7.991
+REMARK INTER + INTRA:          -7.242
+REMARK INTER:                  -7.242
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.297  66.427  71.251  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.866  66.863  70.841  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      66.434  67.298  70.431  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.401  66.829  70.161  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.677  66.436  70.176  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.417  66.075  70.871  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.692  65.681  70.886  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.433  65.321  71.580  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.227  65.648  70.206  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.502  65.254  70.220  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.486  66.008  69.510  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.211  66.402  69.495  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.332  66.897  71.521  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      67.056  67.290  71.507  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      66.072  66.536  72.217  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.184      6.529      7.693
+REMARK INTER + INTRA:          -7.184
+REMARK INTER:                  -7.184
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.685  64.573  72.285  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.883  65.223  72.754  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.082  65.872  73.222  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.625  64.892  72.897  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.823  64.165  72.563  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.281  63.768  72.086  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.479  63.040  71.752  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.936  62.643  71.275  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.221  62.710  71.895  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.420  61.981  71.560  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.765  63.106  72.372  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.566  63.834  72.706  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.141  65.554  72.611  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      58.942  66.281  72.945  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      58.597  65.156  72.133  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.138     24.819     25.747
+REMARK INTER + INTRA:          -7.138
+REMARK INTER:                  -7.138
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyldopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.752  80.011  50.450  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.980  79.753  50.589  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      69.209  79.494  50.727  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      70.061  79.194  49.987  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.767  79.139  49.567  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.396  79.642  49.748  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      72.103  79.587  49.327  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      72.730  80.090  49.508  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      72.183  79.028  48.726  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      72.891  78.973  48.305  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      71.555  78.524  48.545  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.847  78.579  48.965  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      69.900  80.312  51.190  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      69.193  80.367  51.610  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      70.529  80.816  51.371  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

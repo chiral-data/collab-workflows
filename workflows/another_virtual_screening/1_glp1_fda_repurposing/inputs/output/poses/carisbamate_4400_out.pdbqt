@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.227      0.000      0.000
+REMARK INTER + INTRA:          -8.227
+REMARK INTER:                  -8.227
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.800  63.412  68.765  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.224  63.256  68.074  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.993  63.541  67.990  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.879  62.814  67.469  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.303  62.658  66.779  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.958  62.216  66.174  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.188  61.931  66.258  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.383  62.061  65.484  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.037  61.619  64.878  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.267  61.333  64.963  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.462  61.463  64.188  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.230  61.748  64.104  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.576  62.189  64.709  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.151  62.346  65.399  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.778      2.311      3.466
+REMARK INTER + INTRA:          -7.778
+REMARK INTER:                  -7.778
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.761  61.624  63.395  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.077  61.631  63.857  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.390  61.267  63.583  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      62.081  62.003  64.593  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.397  62.010  65.054  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.400  62.383  65.791  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.088  62.748  66.066  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.717  62.390  66.252  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.720  62.762  66.989  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.407  63.127  67.264  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.036  62.769  67.450  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.350  62.405  67.176  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.346  62.032  66.440  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.030  62.025  65.978  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.229      2.141      3.880
+REMARK INTER + INTRA:          -7.229
+REMARK INTER:                  -7.229
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.055  62.544  65.143  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.785  62.254  65.867  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.681  61.444  65.974  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.619  62.777  66.483  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.349  62.487  67.207  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.183  63.010  67.824  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.288  63.822  67.717  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.913  62.721  68.548  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.747  63.243  69.165  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.852  64.055  69.058  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.477  62.954  69.888  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.373  62.143  69.995  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.538  61.621  69.379  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.809  61.910  68.655  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.206      1.589      2.281
+REMARK INTER + INTRA:          -7.206
+REMARK INTER:                  -7.206
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.477  63.590  70.262  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.956  63.336  69.674  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.150  63.279  69.833  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.244  63.141  68.926  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.723  62.888  68.338  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.011  62.692  67.589  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.818  62.750  67.429  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.490  62.439  67.001  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.778  62.243  66.253  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.585  62.301  66.093  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.257  61.990  65.665  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.451  61.933  65.825  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.163  62.128  66.573  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.684  62.382  67.161  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.193      5.687      7.289
+REMARK INTER + INTRA:          -7.193
+REMARK INTER:                  -7.193
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.684  63.799  70.618  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.230  64.345  70.326  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.440  64.331  69.529  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.565  64.903  70.831  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.111  65.448  70.538  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.447  66.008  71.044  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.237  66.022  71.842  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.993  66.553  70.751  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.329  67.112  71.257  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      65.119  67.126  72.055  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      65.874  67.657  70.964  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.084  67.643  70.168  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.749  67.084  69.662  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.203  66.539  69.955  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.070      2.688      4.686
+REMARK INTER + INTRA:          -7.070
+REMARK INTER:                  -7.070
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.256  62.081  66.553  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.159  62.525  67.243  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.284  63.339  67.231  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.938  62.152  67.945  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.842  62.595  68.634  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.620  62.222  69.336  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.495  61.407  69.349  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.524  62.665  70.025  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.302  62.292  70.728  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.177  61.477  70.740  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.206  62.735  71.417  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.331  63.550  71.404  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.553  63.923  70.703  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.649  63.480  70.013  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.027      5.679      6.403
+REMARK INTER + INTRA:          -7.027
+REMARK INTER:                  -7.027
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.853  66.209  72.175  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.401  65.635  72.406  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.824  65.728  73.107  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.523  64.970  71.935  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.070  64.397  72.166  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.193  63.731  71.694  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.769  63.638  70.993  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.740  63.158  71.926  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.863  62.491  71.454  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.439  62.398  70.752  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.410  61.919  71.685  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.833  62.012  72.386  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.711  62.678  72.857  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.163  63.251  72.626  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.999      3.730      5.750
+REMARK INTER + INTRA:          -6.999
+REMARK INTER:                  -6.999
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.421  62.296  67.964  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.508  62.261  68.785  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.203  61.620  69.204  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.900  62.867  69.184  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.986  62.831  70.003  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.378  63.438  70.403  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.683  64.079  69.983  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.465  63.402  71.223  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.857  64.009  71.623  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      62.162  64.650  71.203  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.943  63.973  72.442  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.639  63.333  72.862  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.247  62.727  72.463  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.160  62.762  71.642  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.790      4.997      5.845
+REMARK INTER + INTRA:          -6.790
+REMARK INTER:                  -6.790
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carisbamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.643  65.003  69.427  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.185  64.800  70.083  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.424  65.029  70.838  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.490  64.369  69.983  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.033  64.166  70.639  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.336  63.734  70.539  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.098  63.506  69.783  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.880  63.532  71.195  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.183  63.100  71.095  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.944  62.871  70.339  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.726  62.897  71.752  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.965  63.125  72.506  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.660  63.557  72.607  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.118  63.760  71.950  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,192 @@
+MODEL 1
+REMARK VINA RESULT:    -5.864      0.000      0.000
+REMARK INTER + INTRA:          -5.864
+REMARK INTER:                  -5.864
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.635  62.590  66.059  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.091  62.180  65.594  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.316  62.080  65.856  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.084  62.392  66.585  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      59.853  62.703  67.313  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.846  62.686  66.701  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.322  62.097  66.468  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.322  61.869  64.866  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.099  61.968  64.603  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.331  61.657  63.874  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.643  62.379  65.068  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.764      1.441      2.693
+REMARK INTER + INTRA:          -5.764
+REMARK INTER:                  -5.764
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.985  62.547  66.092  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.321  62.065  66.002  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.186  61.677  65.287  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.716  61.771  64.661  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      62.246  61.865  64.036  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.177  62.273  65.127  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.255  61.269  64.196  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.791  61.971  66.627  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.925  62.359  67.344  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.395  62.265  67.970  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.589  62.841  67.434  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.548      1.418      1.773
+REMARK INTER + INTRA:          -5.548
+REMARK INTER:                  -5.548
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.397  63.068  67.044  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.258  62.274  67.221  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.902  62.066  67.936  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.685  62.654  68.474  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.469  63.241  69.011  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.971  63.231  67.958  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.400  62.076  68.989  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.474  61.687  66.683  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.830  61.894  65.968  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.046  61.306  65.429  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.969  62.687  65.791  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.097      6.662      7.332
+REMARK INTER + INTRA:          -5.097
+REMARK INTER:                  -5.097
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.716  66.364  71.103  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.928  66.173  70.329  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.591  65.518  69.958  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.041  65.053  70.362  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      63.491  64.590  70.766  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.114  65.542  71.022  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.969  64.565  69.700  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      65.478  66.636  69.925  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.816  67.292  70.296  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.366  67.757  69.892  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      65.604  67.483  71.070  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.981     12.034     12.755
+REMARK INTER + INTRA:          -4.981
+REMARK INTER:                  -4.981
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.207  60.501  52.978  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.059  60.732  53.756  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.286  61.482  54.014  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.661  62.001  53.494  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      65.036  62.520  52.973  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.615  61.434  52.896  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.706  62.567  54.093  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.684  60.213  54.276  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.457  59.463  54.018  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.082  58.943  54.539  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      63.605  59.232  53.240  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.824     12.221     12.775
+REMARK INTER + INTRA:          -4.824
+REMARK INTER:                  -4.824
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.337  60.552  52.900  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.043  60.627  53.667  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.618  60.007  54.008  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.489  59.312  53.581  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      63.359  58.618  53.154  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.904  59.628  52.942  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.073  58.997  54.221  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.172  61.321  54.094  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.597  61.941  53.752  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.726  62.636  54.179  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.891  61.867  52.985  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.766      5.364      6.382
+REMARK INTER + INTRA:          -4.766
+REMARK INTER:                  -4.766
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.061  64.749  71.562  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.172  64.018  71.196  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.437  63.984  70.416  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.591  64.681  70.002  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      62.745  65.378  69.588  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.374  65.122  70.664  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.809  64.239  69.340  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.018  63.321  71.610  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.752  63.356  72.391  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.598  62.658  72.805  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.641  64.087  72.757  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.693     24.662     25.333
+REMARK INTER + INTRA:          -4.693
+REMARK INTER:                  -4.693
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methacholine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.306  78.874  49.634  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.846  79.465  49.831  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.647  80.036  50.392  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      69.906  80.016  50.755  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      69.165  79.996  51.118  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.710  79.345  50.317  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.103  80.687  51.193  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      71.587  79.485  49.468  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      71.787  78.914  48.907  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      72.528  78.934  48.544  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      71.246  78.322  48.710  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

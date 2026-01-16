@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.162      0.000      0.000
+REMARK INTER + INTRA:          -6.162
+REMARK INTER:                  -6.162
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.309  62.708  67.494  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.359  62.330  66.763  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.040  62.406  66.303  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.672  62.862  66.576  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.090  62.028  65.573  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.458  61.573  65.300  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.771  62.104  65.113  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.403  62.560  65.386  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.821  61.726  64.383  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.189  61.271  64.110  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.502  61.803  63.923  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.552  61.424  63.192  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.122      0.150      3.088
+REMARK INTER + INTRA:          -6.122
+REMARK INTER:                  -6.122
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.363  61.338  63.162  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.363  61.687  63.908  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.689  61.651  64.382  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.013  61.266  64.108  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.690  62.000  65.129  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.366  62.385  65.403  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.015  61.964  65.603  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.339  61.579  65.329  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.016  62.313  66.350  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.692  62.698  66.624  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.341  62.277  66.823  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.342  62.626  67.570  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.301      1.670      2.605
+REMARK INTER + INTRA:          -5.301
+REMARK INTER:                  -5.301
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.570  64.229  69.293  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.993  63.868  68.828  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.209  63.465  68.140  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.003  63.425  67.919  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.633  63.104  67.675  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.839  63.144  67.897  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.849  62.701  66.988  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.642  62.661  66.766  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.272  62.340  66.522  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.478  62.380  66.744  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.488  61.938  65.835  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.911  61.576  65.370  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.239      1.303      3.452
+REMARK INTER + INTRA:          -5.239
+REMARK INTER:                  -5.239
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.348  61.894  64.852  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.958  61.925  65.578  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.303  62.318  66.216  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.040  62.679  66.127  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.914  62.349  66.941  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.177  61.988  67.030  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.259  62.742  67.580  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.996  63.103  67.491  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.870  62.773  68.305  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.133  62.412  68.394  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.215  63.166  68.944  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.825  63.197  69.669  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.121      5.856      6.622
+REMARK INTER + INTRA:          -5.121
+REMARK INTER:                  -5.121
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.910  63.465  72.068  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.738  64.241  71.850  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.827  64.480  71.066  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.088  63.942  70.498  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.655  65.257  70.848  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.394  65.796  71.416  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.744  65.496  70.064  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.005  64.957  69.496  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.571  66.272  69.846  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.310  66.811  70.414  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.660  66.511  69.061  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.488  67.288  68.844  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.097      2.961      4.539
+REMARK INTER + INTRA:          -5.097
+REMARK INTER:                  -5.097
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.395  63.029  72.058  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.606  63.212  71.283  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.482  62.662  70.680  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.147  61.928  70.855  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.693  62.844  69.904  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.028  63.578  69.730  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.570  62.294  69.302  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.235  61.560  69.477  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.780  62.477  68.526  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.115  63.210  68.352  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.657  61.926  67.924  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.868  62.109  67.148  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.089      2.717      4.797
+REMARK INTER + INTRA:          -5.089
+REMARK INTER:                  -5.089
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.250  62.715  66.750  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.202  62.356  67.491  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.546  62.717  68.148  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.938  63.438  68.065  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.498  62.357  68.889  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.105  61.637  68.973  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.841  62.718  69.547  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.234  63.439  69.463  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.793  62.359  70.287  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.401  61.638  70.371  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.137  62.720  70.945  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.089  62.361  71.685  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.081      3.382      5.545
+REMARK INTER + INTRA:          -5.081
+REMARK INTER:                  -5.081
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.298  62.173  67.642  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.693  62.544  68.264  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.617  62.254  69.033  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.145  61.593  69.179  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.012  62.624  69.655  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.483  63.285  69.508  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.936  62.334  70.424  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.464  61.673  70.570  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.331  62.704  71.045  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.802  63.365  70.899  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.255  62.415  71.814  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.650  62.785  72.436  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.073      4.642      6.340
+REMARK INTER + INTRA:          -5.073
+REMARK INTER:                  -5.073
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sorbitol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.151  67.651  71.491  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.349  66.858  71.381  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.444  66.558  70.619  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.342  67.052  69.966  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.642  65.765  70.509  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.744  65.271  71.162  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.738  65.465  69.746  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.636  65.959  69.093  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.936  64.672  69.636  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.038  64.178  70.289  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.032  64.372  68.874  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.229  63.579  68.764  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

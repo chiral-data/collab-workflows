@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.433      0.000      0.000
+REMARK INTER + INTRA:          -8.433
+REMARK INTER:                  -8.433
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.373  61.627  63.722  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.031  61.903  64.421  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.458  62.404  64.920  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.262  61.679  64.621  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.921  61.955  65.318  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.152  61.732  65.518  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.811  62.008  66.217  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.237  62.507  66.715  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.895  62.783  67.414  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.323  63.284  67.912  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      59.981  63.560  68.611  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.408  64.060  69.110  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.067  64.336  69.807  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      61.176  64.283  68.909  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      61.006  62.732  66.516  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.348  62.455  65.817  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.891      1.308      1.847
+REMARK INTER + INTRA:          -7.891
+REMARK INTER:                  -7.891
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.003  61.895  65.244  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.701  62.288  65.904  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.644  63.112  65.904  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.456  61.857  66.564  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.154  62.249  67.223  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.909  61.819  67.883  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.608  62.211  68.543  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.551  63.033  68.543  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.249  63.426  69.204  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.192  64.249  69.204  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      59.891  64.642  69.864  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.834  65.465  69.865  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.532  65.857  70.524  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      60.079  65.895  69.205  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      60.796  63.465  67.884  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.097  63.072  67.224  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.849      2.790      5.142
+REMARK INTER + INTRA:          -7.849
+REMARK INTER:                  -7.849
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.576  64.095  72.813  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.436  63.788  72.060  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.686  64.204  71.392  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.045  63.066  71.974  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.905  62.760  71.222  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.515  62.038  71.135  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.375  61.732  70.382  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.625  62.147  69.715  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.485  61.841  68.961  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.735  62.257  68.294  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      60.595  61.951  67.541  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.845  62.366  66.873  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.706  62.060  66.121  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      61.236  63.088  66.959  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      61.015  62.870  69.800  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.156  63.176  70.554  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.827      2.057      4.254
+REMARK INTER + INTRA:          -7.827
+REMARK INTER:                  -7.827
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.144  64.441  70.553  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.990  64.055  69.841  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.474  64.187  69.186  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.350  63.536  69.783  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.196  63.150  69.071  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.557  62.632  69.012  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.402  62.246  68.300  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.886  62.378  67.646  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.732  61.992  66.933  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.216  62.124  66.278  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      61.062  61.738  65.566  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.547  61.871  64.911  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.392  61.485  64.199  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      62.185  62.389  64.969  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      61.526  62.897  67.703  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.680  63.283  68.416  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.611      5.423      6.289
+REMARK INTER + INTRA:          -7.611
+REMARK INTER:                  -7.611
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.099  67.688  70.165  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.516  67.131  70.339  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.066  67.206  71.027  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.383  66.498  69.826  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.801  65.941  70.000  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.668  65.309  69.488  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.085  64.752  69.662  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.635  64.827  70.349  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.052  64.269  70.523  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.602  64.344  71.211  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      62.020  63.787  71.386  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.569  63.862  72.074  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.987  63.305  72.248  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      61.702  64.494  72.586  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      63.768  65.459  70.862  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.351  66.016  70.688  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.546      2.025      3.126
+REMARK INTER + INTRA:          -7.546
+REMARK INTER:                  -7.546
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.729  62.095  66.205  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.091  62.377  66.891  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.525  63.079  66.871  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.019  61.957  67.598  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.380  62.239  68.283  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.308  61.820  68.990  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.670  62.101  69.676  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.103  62.802  69.655  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.465  63.084  70.342  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.899  63.786  70.321  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      62.260  64.068  71.007  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.694  64.770  70.986  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      63.056  65.052  71.671  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      62.766  65.189  70.279  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      61.176  63.223  68.949  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.814  62.941  68.263  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.493      4.305      5.832
+REMARK INTER + INTRA:          -7.493
+REMARK INTER:                  -7.493
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.502  61.627  69.868  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.689  62.298  70.310  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.678  63.043  69.954  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.887  62.225  71.108  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.074  62.895  71.550  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.272  62.822  72.347  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.459  63.493  72.789  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.449  64.237  72.434  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.636  64.909  72.876  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.625  65.653  72.520  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      61.812  66.324  72.962  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.802  67.069  72.606  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.989  67.739  73.047  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      61.604  67.142  71.808  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      61.251  64.311  71.636  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.063  63.640  71.194  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.458      2.665      4.284
+REMARK INTER + INTRA:          -7.458
+REMARK INTER:                  -7.458
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.885  62.010  67.636  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.704  62.411  68.334  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.485  63.207  68.308  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.741  62.016  69.058  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.560  62.417  69.755  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.597  62.023  70.479  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.416  62.424  71.177  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.198  63.219  71.151  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.016  63.620  71.850  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      59.798  64.416  71.823  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      59.616  64.817  72.521  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.398  65.612  72.495  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.217  66.013  73.192  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      59.361  66.006  71.771  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      60.160  63.614  70.427  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.341  63.213  69.729  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.215      4.843      5.874
+REMARK INTER + INTRA:          -7.215
+REMARK INTER:                  -7.215
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioacetazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.159  61.611  70.759  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.725  62.208  70.815  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.272  62.316  70.207  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.744  62.698  71.480  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.309  63.295  71.535  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.329  63.785  72.199  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.895  64.382  72.254  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.441  64.490  71.647  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.008  65.088  71.703  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      63.555  65.196  71.094  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      64.121  65.794  71.150  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      64.669  65.902  70.541  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      65.234  66.499  70.597  0.00  0.00    +0.000 NA
+ATOM     14  S   UNL     1      64.649  65.412  69.878  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      62.423  64.001  70.983  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.857  63.403  70.927  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

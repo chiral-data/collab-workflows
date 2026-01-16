@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.121      0.000      0.000
+REMARK INTER + INTRA:          -8.121
+REMARK INTER:                  -8.121
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.528  62.926  68.384  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.921  62.782  67.673  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.687  63.066  67.561  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.547  62.354  67.075  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      60.940  62.209  66.363  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      61.599  62.621  66.644  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.282  61.798  66.083  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.332  62.065  65.653  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.959  61.637  65.055  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.351  61.493  64.344  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.117  61.777  64.231  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.510  61.633  63.519  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.491  62.205  64.829  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.099  62.350  65.540  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.606      1.154      3.059
+REMARK INTER + INTRA:          -7.606
+REMARK INTER:                  -7.606
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.375  61.635  63.765  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.118  61.925  64.493  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.623  62.387  64.954  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.356  61.754  64.759  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      61.098  62.045  65.488  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      61.831  62.411  65.601  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.367  61.680  65.376  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.842  62.335  66.215  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.080  62.165  66.483  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.823  62.456  67.211  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.328  62.917  67.672  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.071  63.208  68.401  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.090  63.088  67.405  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.347  62.797  66.677  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.895      2.113      4.500
+REMARK INTER + INTRA:          -6.895
+REMARK INTER:                  -6.895
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.234  62.677  66.509  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.188  62.806  67.322  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.504  63.496  67.648  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.827  62.247  67.809  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      60.781  62.376  68.623  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      61.172  63.098  68.530  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.390  61.656  68.716  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.735  62.506  69.436  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.373  61.947  69.923  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.328  62.076  70.737  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.643  62.765  71.063  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.597  62.894  71.877  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.005  63.324  70.576  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.051  63.195  69.763  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.871      6.627      7.397
+REMARK INTER + INTRA:          -6.871
+REMARK INTER:                  -6.871
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.284  64.823  71.718  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.895  65.220  71.331  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.023  65.093  70.526  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      63.376  65.743  71.749  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      63.988  66.141  71.361  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      63.784  65.765  70.654  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.192  66.516  72.067  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.598  66.537  70.974  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.080  67.061  71.391  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.690  67.458  71.003  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.819  67.331  70.199  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      66.430  67.729  69.811  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.337  66.808  69.781  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.727  66.411  70.168  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.734      5.659      6.812
+REMARK INTER + INTRA:          -6.734
+REMARK INTER:                  -6.734
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.106  67.646  70.125  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.511  67.121  70.350  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.130  67.217  71.076  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.299  66.500  69.850  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      64.703  65.974  70.076  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      64.606  66.388  70.784  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.801  65.560  69.369  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.109  65.449  70.301  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.896  64.828  69.802  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.302  64.302  70.027  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.920  64.398  70.752  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.325  63.871  70.977  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.133  65.019  71.252  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.727  65.544  71.027  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.718      5.618      6.339
+REMARK INTER + INTRA:          -6.718
+REMARK INTER:                  -6.718
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.192  65.747  72.416  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.657  65.065  72.389  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.198  64.912  72.992  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      59.579  64.539  71.758  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      60.044  63.856  71.731  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      60.402  64.072  72.444  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      59.686  63.641  71.019  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.508  63.176  71.704  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.431  62.649  71.074  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.895  61.967  71.047  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.437  61.813  71.649  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.902  61.131  71.622  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.514  62.340  72.280  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.050  63.021  72.307  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.591     24.574     25.308
+REMARK INTER + INTRA:          -6.591
+REMARK INTER:                  -6.591
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.716  80.371  51.634  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.349  80.233  51.124  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      69.946  80.798  51.044  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      69.386  79.529  50.694  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      70.020  79.391  50.183  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      70.343  80.123  50.385  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      69.697  78.659  49.981  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      70.652  79.252  49.673  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.690  78.549  49.243  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.323  78.411  48.733  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.919  78.975  48.653  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      72.553  78.836  48.142  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      71.883  79.678  49.083  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.249  79.817  49.593  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.473      5.517      6.119
+REMARK INTER + INTRA:          -6.473
+REMARK INTER:                  -6.473
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.267  63.412  72.266  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.829  63.943  71.978  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.032  64.609  72.421  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.187  63.808  71.247  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      62.749  64.339  70.958  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      62.659  64.802  71.636  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      62.838  63.877  70.281  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.310  64.870  70.670  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.668  64.736  69.939  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.230  65.267  69.651  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.433  65.932  70.093  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      64.995  66.464  69.805  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      64.075  66.068  70.824  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.514  65.536  71.113  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.368      5.732      6.547
+REMARK INTER + INTRA:          -6.368
+REMARK INTER:                  -6.368
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfacetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.645  65.671  69.541  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.083  65.197  69.917  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.864  64.475  69.583  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      63.742  65.446  70.625  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      63.180  64.972  71.001  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      63.250  64.411  70.399  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      63.109  65.532  71.603  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.619  64.499  71.376  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.277  64.747  72.085  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.715  64.273  72.460  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.496  63.551  72.127  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.934  63.077  72.503  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.838  63.302  71.419  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.399  63.776  71.043  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

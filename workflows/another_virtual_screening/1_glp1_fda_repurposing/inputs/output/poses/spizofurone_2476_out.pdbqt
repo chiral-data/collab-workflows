@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.974      0.000      0.000
+REMARK INTER + INTRA:          -8.974
+REMARK INTER:                  -8.974
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.367  61.421  63.416  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.640  61.369  63.800  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.013  60.966  63.446  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.539  61.721  64.541  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.811  61.669  64.925  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.710  62.021  65.666  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.336  62.424  66.020  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.075  62.713  66.746  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.287  62.488  66.842  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.559  62.436  67.228  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.186  62.840  67.582  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.062  62.060  66.173  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.318  61.730  66.037  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.064  62.475  65.634  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.165  62.124  64.895  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.727      0.915      3.336
+REMARK INTER + INTRA:          -8.727
+REMARK INTER:                  -8.727
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.247  63.175  68.235  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.890  63.128  67.721  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.607  63.482  67.924  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.816  62.727  67.003  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.460  62.681  66.489  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.386  62.280  65.771  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.669  61.926  65.568  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.759  61.571  64.829  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.533  61.706  64.576  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.176  61.659  64.061  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.459  61.305  63.858  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.920  62.144  65.158  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.704  62.401  65.131  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.026  61.973  66.083  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.099  62.373  66.800  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.986      3.167      5.479
+REMARK INTER + INTRA:          -7.986
+REMARK INTER:                  -7.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.437  62.718  72.594  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.524  63.068  71.853  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.949  63.771  71.776  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.187  62.714  71.187  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.274  63.065  70.446  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.937  62.711  69.780  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.512  62.007  69.858  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.244  61.788  69.110  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.503  62.356  68.570  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.589  62.706  67.827  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.165  62.002  67.904  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.931  62.926  68.985  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.290  63.595  68.660  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.426  61.658  70.600  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.762  62.011  71.265  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.902      3.591      5.291
+REMARK INTER + INTRA:          -7.902
+REMARK INTER:                  -7.902
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.344  62.007  68.101  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.732  62.570  68.562  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.090  63.222  68.205  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.762  62.480  69.383  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.150  63.043  69.844  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.180  62.954  70.664  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.822  62.302  71.022  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.941  62.360  71.836  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.372  63.049  71.981  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.760  63.612  72.444  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.402  62.960  72.802  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.520  63.415  71.257  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.934  64.120  71.146  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.435  61.740  70.559  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.404  61.828  69.740  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.811      5.916      6.930
+REMARK INTER + INTRA:          -7.811
+REMARK INTER:                  -7.811
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.612  61.335  71.412  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.993  61.872  71.319  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.391  61.720  70.776  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.975  62.563  71.771  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.356  63.100  71.679  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.339  63.791  72.131  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.940  63.944  72.674  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.777  64.665  73.039  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.074  64.958  72.721  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.455  65.496  72.630  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.057  65.649  73.173  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.804  64.418  72.160  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.118  64.491  71.707  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.559  63.406  72.766  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.577  62.716  72.315  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.808      6.301      7.700
+REMARK INTER + INTRA:          -7.808
+REMARK INTER:                  -7.808
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.827  63.949  70.402  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.149  64.562  70.850  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.892  64.687  71.624  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.727  65.052  70.523  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.049  65.666  70.970  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.627  66.155  70.643  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.884  66.031  69.869  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      65.457  66.598  69.696  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.555  67.073  70.364  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.877  67.687  70.811  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.134  67.563  70.037  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.042  66.799  70.949  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.959  67.114  71.707  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      64.562  65.417  69.422  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.984  64.928  69.748  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.531      2.049      3.924
+REMARK INTER + INTRA:          -7.531
+REMARK INTER:                  -7.531
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.006  63.638  70.244  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.957  63.699  69.423  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.483  64.185  69.013  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.382  63.273  69.011  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.334  63.334  68.190  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.759  62.909  67.778  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.233  62.423  68.188  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.728  62.072  67.638  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.942  62.342  66.888  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.893  62.402  66.067  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.367  61.916  66.476  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.579  62.858  66.975  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.968  63.256  66.365  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.282  62.363  69.010  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.856  62.788  69.421  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.335      5.974      7.368
+REMARK INTER + INTRA:          -7.335
+REMARK INTER:                  -7.335
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.879  67.652  70.786  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.530  67.068  70.319  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.764  66.973  69.533  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.946  66.580  70.638  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.597  65.997  70.171  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.013  65.508  70.490  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.779  65.603  71.276  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.195  65.044  71.438  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.067  64.604  70.752  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.717  64.020  70.285  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.483  64.115  71.071  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.573  64.890  70.167  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.628  64.608  69.393  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      64.129  66.187  71.742  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.712  66.675  71.423  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.294      5.788      6.785
+REMARK INTER + INTRA:          -7.294
+REMARK INTER:                  -7.294
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = spizofurone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.118  66.085  69.872  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.702  65.975  70.575  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.698  66.566  71.150  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.288  65.271  70.704  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.871  65.161  71.407  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.458  64.458  71.535  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.462  63.867  70.961  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.007  63.237  71.239  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.722  63.441  71.987  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.305  63.329  72.690  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.309  62.738  72.115  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.001  64.195  72.169  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.849  64.613  72.864  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.879  63.978  70.257  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.292  64.680  70.129  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

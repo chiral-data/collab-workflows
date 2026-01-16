@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.780      0.000      0.000
+REMARK INTER + INTRA:          -8.780
+REMARK INTER:                  -8.780
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.887  60.925  63.806  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.273  61.427  64.334  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.054  61.652  64.194  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.440  62.155  64.722  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.045  62.433  65.391  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.263  62.208  65.532  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.878  61.705  65.003  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.868  62.485  66.201  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.181  62.988  66.775  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.597  63.122  67.341  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.673  63.594  68.015  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.384  63.983  68.167  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.923  62.702  67.117  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.090  62.309  66.413  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.571  61.823  65.993  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.424      1.524      3.347
+REMARK INTER + INTRA:          -8.424
+REMARK INTER:                  -8.424
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.944  62.941  67.953  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.927  62.600  67.202  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.220  62.303  66.899  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.204  61.962  66.148  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.895  61.918  65.700  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.603  62.215  66.004  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.619  62.555  66.754  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.295  62.170  65.556  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.363  61.846  64.800  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.150  61.918  64.563  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.464  61.665  63.842  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.977  61.304  63.284  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.567  62.286  65.171  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.039  62.442  65.785  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.223  62.806  66.502  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.735      6.136      7.490
+REMARK INTER + INTRA:          -7.735
+REMARK INTER:                  -7.735
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.455  67.791  69.840  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.082  67.326  70.411  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      66.400  67.268  71.169  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.027  66.803  71.740  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.334  66.396  71.551  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.015  66.454  70.791  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.390  66.919  70.222  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.323  66.047  70.602  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      63.890  65.564  71.112  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.242  65.270  70.696  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.663  64.764  70.993  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.703  64.506  71.776  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      63.274  65.572  69.928  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      63.942  66.052  69.871  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.186  66.465  69.199  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.673      2.251      4.630
+REMARK INTER + INTRA:          -7.673
+REMARK INTER:                  -7.673
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.457  62.941  71.706  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.130  62.596  71.032  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.616  61.955  71.105  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.288  61.610  70.431  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.475  61.906  69.684  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.990  62.548  69.611  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.317  62.892  70.285  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.177  62.844  68.864  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.893  62.557  68.144  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.221  63.015  67.541  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.087  62.920  66.732  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.584  62.324  66.465  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.707  63.584  67.888  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.680  63.478  68.706  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.084  63.928  69.267  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.392      5.453      6.527
+REMARK INTER + INTRA:          -7.392
+REMARK INTER:                  -7.392
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.952  61.919  71.020  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.037  62.520  71.579  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.525  62.407  72.234  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.610  63.008  72.794  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.206  63.721  72.698  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.718  63.833  72.042  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.633  63.233  71.483  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.314  64.546  71.946  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.344  65.194  72.457  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.858  65.784  72.149  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.726  66.527  72.484  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.097  66.733  73.191  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.528  65.502  71.448  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.809  64.738  71.322  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.619  64.249  70.685  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.274      5.664      6.504
+REMARK INTER + INTRA:          -7.274
+REMARK INTER:                  -7.274
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.562  61.792  71.339  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.612  62.513  71.738  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.250  62.604  72.473  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.300  63.325  72.872  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.712  63.955  72.534  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.075  63.864  71.798  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.024  63.143  71.401  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.488  64.493  71.460  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.584  65.243  71.792  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.032  65.697  71.269  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.260  66.482  71.380  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      63.038  66.882  72.066  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      63.212  65.228  70.615  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.876  64.484  70.733  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.920  63.844  70.215  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.103      6.537      7.550
+REMARK INTER + INTRA:          -7.103
+REMARK INTER:                  -7.103
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.797  67.312  70.191  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.195  66.756  70.292  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.114  66.133  69.759  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.512  65.578  69.861  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.990  65.647  70.496  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.071  66.272  71.030  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.673  66.826  70.928  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      63.549  66.341  71.665  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.923  65.831  71.837  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.549  66.107  72.518  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.895  65.764  72.886  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.558  65.080  72.572  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.944  66.788  72.767  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      63.561  66.932  72.240  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.097  67.558  72.281  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.900      5.645      6.689
+REMARK INTER + INTRA:          -6.900
+REMARK INTER:                  -6.900
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.020  66.299  69.796  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.542  66.189  70.460  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.589  66.714  71.094  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.111  66.605  71.758  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.586  65.969  71.787  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.540  65.442  71.152  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.018  65.553  70.489  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      63.015  64.806  71.182  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.505  64.627  71.805  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.083  63.948  71.602  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.512  63.574  72.066  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.319  63.879  72.807  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.332  63.708  70.853  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.908  64.238  70.593  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      63.307  64.207  69.872  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.855      6.211      7.335
+REMARK INTER + INTRA:          -6.855
+REMARK INTER:                  -6.855
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toloxatone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.160  64.469  71.625  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.824  64.657  71.172  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.034  64.184  70.530  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.698  64.372  70.078  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.152  65.034  70.268  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.942  65.508  70.911  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.278  65.319  71.363  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.397  66.169  71.101  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      65.072  66.425  70.702  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.348  67.105  71.078  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.012  67.544  70.861  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      66.466  67.312  70.213  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      64.844  67.269  71.710  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      64.256  66.691  71.724  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      63.636  66.643  72.267  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

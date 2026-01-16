@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.959      0.000      0.000
+REMARK INTER + INTRA:          -7.959
+REMARK INTER:                  -7.959
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.496  62.982  68.360  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.875  62.825  67.644  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.633  63.120  67.506  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.495  62.375  67.067  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      60.874  62.219  66.350  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      61.532  62.649  66.604  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.218  61.788  66.096  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.253  62.063  65.635  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.874  61.612  65.056  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.253  61.456  64.340  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.010  61.751  64.202  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.390  61.594  63.485  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.390  62.201  64.780  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.011  62.357  65.496  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.630      1.134      3.277
+REMARK INTER + INTRA:          -7.630
+REMARK INTER:                  -7.630
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.693  61.529  63.239  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.155  61.641  63.854  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.399  61.313  63.805  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.373  62.080  64.518  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      61.835  62.192  65.134  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      61.272  61.749  64.722  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      62.397  62.635  65.545  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.297  62.304  65.748  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.515  62.743  66.412  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.977  62.855  67.027  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.221  62.528  66.979  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.683  62.640  67.595  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.003  62.089  66.316  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.541  61.977  65.700  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.132      1.178      3.364
+REMARK INTER + INTRA:          -7.132
+REMARK INTER:                  -7.132
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.317  61.982  64.516  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.024  61.960  65.286  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.040  61.253  65.713  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.715  62.643  65.630  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      61.421  62.621  66.402  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      61.609  61.818  66.450  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.234  63.423  66.354  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.129  62.598  67.172  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.820  63.281  67.516  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.527  63.258  68.287  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.542  62.553  68.713  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.249  62.530  69.485  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.851  61.869  68.370  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.144  61.892  67.599  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.739      6.543      7.418
+REMARK INTER + INTRA:          -6.739
+REMARK INTER:                  -6.739
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.261  64.803  71.764  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.880  65.181  71.372  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.070  64.967  70.598  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.310  65.773  71.754  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      63.930  66.152  71.362  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      63.791  65.686  70.694  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.068  66.617  72.029  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.548  66.530  70.970  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.978  67.122  71.351  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.598  67.500  70.958  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.787  67.286  70.185  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      66.408  67.665  69.792  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.358  66.694  69.803  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.739  66.316  70.195  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.641      1.837      2.447
+REMARK INTER + INTRA:          -6.641
+REMARK INTER:                  -6.641
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.531  64.518  69.605  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.126  64.085  69.031  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.306  64.005  69.078  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.541  63.732  68.412  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      61.136  63.298  67.837  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      60.422  63.456  68.222  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.848  63.141  67.453  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.731  62.866  67.264  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.145  62.513  66.644  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.740  62.080  66.071  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.921  62.000  66.117  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.515  61.567  65.542  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.506  62.353  66.736  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.911  62.786  67.310  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.614      5.849      6.527
+REMARK INTER + INTRA:          -6.614
+REMARK INTER:                  -6.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.159  66.006  72.066  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.489  65.271  71.887  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.252  64.867  71.208  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.057  64.942  72.387  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      60.388  64.207  72.208  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      59.923  64.163  71.527  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.853  64.251  72.888  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.719  63.473  72.030  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.286  63.144  72.529  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.617  62.409  72.350  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.380  62.005  71.672  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.711  61.269  71.493  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.812  62.334  71.172  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.481  63.068  71.351  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.470      3.937      4.943
+REMARK INTER + INTRA:          -6.470
+REMARK INTER:                  -6.470
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.486  64.585  72.864  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.487  64.271  72.100  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.490  64.776  71.448  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.484  63.453  71.991  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      60.484  63.140  71.227  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      60.488  63.904  70.913  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.481  62.377  71.540  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.485  62.827  70.464  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.482  62.009  70.354  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.483  61.696  69.590  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.487  62.200  68.938  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.487  61.887  68.174  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.490  63.018  69.048  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.489  63.331  69.811  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.271      4.729      5.433
+REMARK INTER + INTRA:          -6.271
+REMARK INTER:                  -6.271
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.441  66.720  70.209  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.618  65.944  70.426  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.525  65.704  71.210  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.889  65.409  69.859  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      60.067  64.632  70.076  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      59.856  64.803  70.856  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.277  64.462  69.297  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.244  63.858  70.293  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.514  63.322  69.727  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.692  62.546  69.944  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.598  62.306  70.727  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.776  61.529  70.945  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.327  62.841  71.294  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.150  63.616  71.077  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.216      6.260      7.095
+REMARK INTER + INTRA:          -6.216
+REMARK INTER:                  -6.216
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfaguanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.962  67.393  72.702  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.980  66.607  72.451  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.437  66.393  71.798  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.542  66.036  72.855  0.00  0.00    +0.000 NA
+ATOM      5  S   UNL     1      61.561  65.249  72.604  0.00  0.00    +0.000 S 
+ATOM      6  O   UNL     1      62.078  65.455  71.994  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.044  65.042  73.213  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.579  64.464  72.354  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.142  63.892  72.756  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.160  63.106  72.505  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.617  62.892  71.853  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.635  62.105  71.602  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.055  63.463  71.450  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.036  64.249  71.700  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,297 @@
+MODEL 1
+REMARK VINA RESULT:    -9.523      0.000      0.000
+REMARK INTER + INTRA:          -9.523
+REMARK INTER:                  -9.523
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      62.736  61.655  63.395  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      62.157  61.745  63.975  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      62.344  62.113  64.690  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      61.765  62.203  65.271  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      61.952  62.572  65.985  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      61.373  62.662  66.566  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      61.560  63.030  67.280  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      60.981  63.121  67.861  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      60.216  62.843  67.728  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      61.168  63.489  68.575  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      61.934  63.767  68.708  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      60.589  63.579  69.157  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      60.777  63.948  69.871  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      60.197  64.038  70.452  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      60.385  64.406  71.166  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      59.806  64.497  71.748  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      61.150  64.684  71.299  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      60.608  62.384  66.433  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      60.030  62.474  67.014  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      60.422  62.016  65.718  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.225      1.837      5.422
+REMARK INTER + INTRA:          -9.225
+REMARK INTER:                  -9.225
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      59.539  64.619  72.380  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      60.114  64.545  71.793  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      59.931  64.169  71.081  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      60.507  64.095  70.495  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      60.323  63.720  69.784  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      60.899  63.645  69.197  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      60.715  63.270  68.485  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      61.291  63.195  67.898  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      62.049  63.497  68.023  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      61.108  62.820  67.187  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      60.350  62.519  67.062  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      61.683  62.746  66.600  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      61.500  62.370  65.889  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      62.076  62.296  65.301  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      61.892  61.920  64.590  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      62.468  61.846  64.003  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      61.134  61.619  64.465  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      61.657  63.946  69.321  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      62.231  63.872  68.735  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      61.839  64.322  70.033  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.850      3.628      5.539
+REMARK INTER + INTRA:          -8.850
+REMARK INTER:                  -8.850
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      66.610  68.045  69.751  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      66.087  67.592  70.201  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      65.594  67.043  69.832  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      65.072  66.590  70.282  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      64.579  66.041  69.912  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      64.056  65.588  70.362  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      63.563  65.039  69.993  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      63.040  64.586  70.443  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      63.010  64.682  71.262  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      62.548  64.037  70.073  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      62.578  63.941  69.254  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      62.024  63.584  70.523  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      61.532  63.035  70.154  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      61.009  62.582  70.604  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      60.516  62.033  70.234  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      59.993  61.580  70.684  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      60.546  61.937  69.415  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      64.026  65.684  71.181  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      63.503  65.232  71.630  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      64.519  66.234  71.550  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.712      1.937      2.725
+REMARK INTER + INTRA:          -8.712
+REMARK INTER:                  -8.712
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      61.793  61.869  65.677  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      61.547  61.984  66.455  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      61.331  62.739  66.712  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      61.085  62.854  67.491  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      60.870  63.608  67.747  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      60.623  63.724  68.526  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      60.408  64.478  68.782  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      60.162  64.594  69.561  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      60.131  63.956  70.084  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      59.946  65.348  69.817  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      59.977  65.986  69.295  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      59.700  65.464  70.597  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      59.484  66.218  70.853  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      59.238  66.334  71.632  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      59.023  67.088  71.888  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      58.776  67.204  72.667  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      59.053  67.726  71.366  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      60.593  63.086  69.048  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      60.347  63.202  69.827  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      60.809  62.332  68.791  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.436      2.356      4.993
+REMARK INTER + INTRA:          -8.436
+REMARK INTER:                  -8.436
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      65.383  65.988  71.336  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      64.621  65.685  71.238  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      64.405  65.339  70.520  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      63.644  65.037  70.422  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      63.428  64.691  69.705  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      62.666  64.388  69.606  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      62.450  64.042  68.889  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      61.689  63.740  68.790  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      61.144  63.783  69.408  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      61.473  63.393  68.073  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      62.018  63.349  67.455  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      60.711  63.091  67.975  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      60.495  62.745  67.258  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      59.733  62.442  67.159  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      59.518  62.096  66.442  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      58.756  61.794  66.343  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      60.062  62.052  65.824  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      62.121  64.432  70.224  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      61.361  64.130  70.125  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      62.338  64.779  70.941  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.748      4.279      6.673
+REMARK INTER + INTRA:          -7.748
+REMARK INTER:                  -7.748
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      63.507  69.492  73.220  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      62.877  68.990  73.042  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      63.024  68.210  72.816  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      62.394  67.708  72.638  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      62.541  66.928  72.412  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      61.911  66.425  72.234  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      62.058  65.646  72.008  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      61.427  65.143  71.829  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      60.652  65.420  71.877  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      61.574  64.363  71.603  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      62.350  64.086  71.555  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      60.944  63.860  71.425  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      61.091  63.080  71.199  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      60.461  62.577  71.021  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      60.608  61.798  70.795  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      59.978  61.295  70.616  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      61.383  61.521  70.747  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      61.135  66.702  72.281  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      60.506  66.200  72.103  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      60.990  67.482  72.508  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.330     14.076     14.201
+REMARK INTER + INTRA:          -7.330
+REMARK INTER:                  -7.330
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      63.640  58.541  53.582  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      63.894  59.315  53.710  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      63.355  59.939  53.661  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      63.610  60.713  53.789  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      63.071  61.336  53.740  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      63.325  62.111  53.868  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      62.787  62.734  53.818  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      63.041  63.510  53.947  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      63.832  63.661  54.124  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      62.502  64.133  53.897  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      61.711  63.982  53.720  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      62.756  64.908  54.025  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      62.218  65.531  53.976  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      62.472  66.306  54.104  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      61.934  66.929  54.055  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      62.188  67.704  54.183  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      61.142  66.778  53.877  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      64.117  62.262  54.045  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      64.370  63.036  54.174  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      64.654  61.638  54.095  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.155     13.965     14.093
+REMARK INTER + INTRA:          -7.155
+REMARK INTER:                  -7.155
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      63.331  61.734  53.789  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      62.810  62.369  53.710  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      63.039  63.122  53.960  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      62.518  63.757  53.881  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      62.747  64.510  54.130  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      62.226  65.146  54.052  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      62.454  65.898  54.301  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      61.934  66.534  54.223  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      61.186  66.417  53.894  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      62.162  67.286  54.472  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      62.910  67.403  54.800  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      61.642  67.922  54.393  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      61.870  68.675  54.643  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      61.349  69.311  54.564  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      61.578  70.063  54.814  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      61.057  70.699  54.735  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      62.325  70.180  55.142  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      61.478  65.029  53.723  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      60.959  65.664  53.645  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      61.251  64.276  53.474  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.054     13.450     14.515
+REMARK INTER + INTRA:          -7.054
+REMARK INTER:                  -7.054
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocysteine-lysine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  NZ  LYS A   2      61.635  68.669  53.923  0.00  0.00    +0.000 NA
+ATOM      2  CE  LYS A   2      61.596  67.901  54.221  0.00  0.00    +0.000 C 
+ATOM      3  CD  LYS A   2      62.026  67.296  53.859  0.00  0.00    +0.000 C 
+ATOM      4  CG  LYS A   2      61.987  66.528  54.158  0.00  0.00    +0.000 C 
+ATOM      5  CB  LYS A   2      62.417  65.924  53.796  0.00  0.00    +0.000 C 
+ATOM      6  CA  LYS A   2      62.378  65.155  54.095  0.00  0.00    +0.000 C 
+ATOM      7  N   LYS A   2      62.808  64.551  53.733  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      62.769  63.782  54.031  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   1      62.301  63.618  54.690  0.00  0.00    +0.000 OA
+ATOM     10  C   UNK A   1      63.199  63.178  53.670  0.00  0.00    +0.000 C 
+ATOM     11  N   UNK A   1      63.668  63.342  53.011  0.00  0.00    +0.000 NA
+ATOM     12  C   UNK A   1      63.160  62.409  53.968  0.00  0.00    +0.000 C 
+ATOM     13  S   UNK A   1      63.590  61.805  53.607  0.00  0.00    +0.000 S 
+ATOM     14  C   UNK A   1      63.552  61.036  53.905  0.00  0.00    +0.000 C 
+ATOM     15  C   UNK A   1      63.982  60.432  53.544  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      63.943  59.663  53.842  0.00  0.00    +0.000 OA
+ATOM     17  O   UNK A   1      64.450  60.596  52.885  0.00  0.00    +0.000 OA
+ATOM     18  C   LYS A   2      61.910  64.991  54.754  0.00  0.00    +0.000 C 
+ATOM     19  O   LYS A   2      61.871  64.223  55.051  0.00  0.00    +0.000 OA
+ATOM     20  OXT LYS A   2      61.480  65.596  55.114  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

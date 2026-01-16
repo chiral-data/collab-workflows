@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.181      0.000      0.000
+REMARK INTER + INTRA:          -8.181
+REMARK INTER:                  -8.181
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.751  62.802  67.663  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      59.971  62.460  66.945  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      59.233  62.096  66.893  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.708  62.825  66.998  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.190  62.119  66.227  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.940  62.264  65.913  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.525  62.735  66.254  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      62.183  62.726  65.755  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.004  62.248  65.108  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.441  62.035  64.441  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.110  61.538  63.872  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.343  61.253  63.970  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.905  61.464  64.636  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.236  61.962  65.205  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.143      0.930      1.400
+REMARK INTER + INTRA:          -8.143
+REMARK INTER:                  -8.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.279  63.147  68.087  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      60.772  62.992  67.444  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.366  63.448  67.789  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.178  62.536  67.099  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.265  62.838  66.801  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.997  62.365  66.180  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.254  62.011  66.126  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      60.222  61.590  65.417  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.945  61.684  65.033  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.231  61.396  64.314  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.994  61.586  64.067  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.473  62.065  64.539  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.189  62.354  65.257  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.424  62.163  65.504  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.953      1.608      2.883
+REMARK INTER + INTRA:          -7.953
+REMARK INTER:                  -7.953
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.653  61.639  63.655  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      61.982  61.678  64.135  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.551  61.268  63.563  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      62.414  62.088  64.705  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.311  61.716  64.613  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.350  62.091  65.348  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.017  62.449  65.674  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      61.807  62.753  66.413  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.011  62.581  66.542  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.506  62.744  67.174  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.720  62.499  67.148  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.437  62.090  66.489  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.941  61.926  65.857  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.728  62.172  65.884  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.233      2.048      3.401
+REMARK INTER + INTRA:          -7.233
+REMARK INTER:                  -7.233
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.861  62.367  65.149  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      61.594  62.183  65.908  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.607  61.381  65.717  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.581  62.985  66.097  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.326  61.999  66.666  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.181  62.602  67.210  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.279  63.410  67.075  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      61.071  63.811  67.766  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.846  63.251  68.327  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.588  63.323  69.108  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.398  62.650  69.544  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.466  61.903  69.200  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.724  61.829  68.420  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.914  62.504  67.984  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.152      6.925      7.464
+REMARK INTER + INTRA:          -7.152
+REMARK INTER:                  -7.152
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.124  64.229  70.311  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      63.639  64.845  70.119  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      63.426  64.773  69.325  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.850  64.915  70.912  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.153  65.460  69.926  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.594  65.830  70.518  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.578  65.644  71.321  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      65.102  66.150  71.710  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.441  66.647  71.146  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.996  67.255  71.208  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.236  67.665  70.534  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.921  67.467  69.798  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.367  66.860  69.735  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.127  66.450  70.410  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.058      4.472      5.665
+REMARK INTER + INTRA:          -7.058
+REMARK INTER:                  -7.058
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.186  62.663  68.255  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      60.507  62.500  68.998  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      60.844  61.808  68.700  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.170  63.191  69.295  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.828  62.336  69.740  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.697  62.854  70.369  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.259  63.552  70.339  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      60.272  63.894  71.090  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.718  63.407  71.583  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.920  63.465  72.382  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.384  62.882  72.734  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.647  62.239  72.288  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.446  62.180  71.490  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.981  62.764  71.138  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.032      6.067      6.570
+REMARK INTER + INTRA:          -7.032
+REMARK INTER:                  -7.032
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.450  65.623  72.661  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      59.614  64.923  72.257  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      58.970  65.059  71.760  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.258  64.788  72.754  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.778  64.223  71.852  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.418  63.755  72.081  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.940  63.916  72.699  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      61.493  63.304  72.732  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.313  62.766  72.134  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.668  62.058  71.902  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.360  61.629  71.270  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.696  61.908  70.867  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.340  62.615  71.098  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.649  63.045  71.731  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.697      5.490      6.480
+REMARK INTER + INTRA:          -6.697
+REMARK INTER:                  -6.697
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.591  65.264  69.464  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      63.144  64.677  69.834  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      63.125  64.248  69.129  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.162  65.107  70.537  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.696  64.091  70.203  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.488  64.170  70.997  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.687  64.800  71.490  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      62.366  64.652  72.236  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.970  63.930  72.204  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.550  63.505  72.772  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.205  62.782  72.576  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.280  62.484  71.810  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.700  62.908  71.241  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.045  63.632  71.438  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.667     24.878     25.314
+REMARK INTER + INTRA:          -6.667
+REMARK INTER:                  -6.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = zonisamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      69.032  80.361  51.589  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      69.699  80.269  51.111  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      70.033  80.944  51.448  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      69.365  79.594  50.776  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.366  80.177  50.634  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.410  79.546  50.104  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      69.833  78.967  49.991  0.00  0.00    +0.000 NA
+ATOM      8  O   UNL     1      70.105  78.446  49.411  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      70.849  78.704  49.166  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.380  78.408  48.609  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      72.098  78.791  48.479  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      72.287  79.470  48.907  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.757  79.767  49.465  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.037  79.383  49.595  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

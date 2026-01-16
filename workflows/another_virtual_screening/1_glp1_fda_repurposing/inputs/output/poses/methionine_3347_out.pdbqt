@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.104      0.000      0.000
+REMARK INTER + INTRA:          -5.104
+REMARK INTER:                  -5.104
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      61.336  63.086  67.477  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      61.114  62.650  66.812  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      61.633  62.576  66.175  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      61.411  62.141  65.510  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      61.929  62.067  64.874  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      62.670  62.429  64.901  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      61.708  61.631  64.209  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      62.226  61.557  63.572  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      60.967  61.269  64.182  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.726      2.260      2.960
+REMARK INTER + INTRA:          -4.726
+REMARK INTER:                  -4.726
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      62.308  61.724  63.900  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      62.309  62.067  64.651  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      61.623  62.062  65.108  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      61.624  62.405  65.859  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      60.938  62.399  66.316  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      60.250  62.050  66.023  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      60.939  62.742  67.067  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      60.254  62.736  67.524  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      61.627  63.090  67.359  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.374      2.189      2.722
+REMARK INTER + INTRA:          -4.374
+REMARK INTER:                  -4.374
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      60.512  62.082  70.094  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      60.466  61.912  69.288  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      60.841  62.402  68.741  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      60.796  62.232  67.934  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      61.171  62.721  67.387  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      61.592  63.382  67.646  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      61.125  62.551  66.581  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      61.500  63.041  66.034  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      60.703  61.891  66.323  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.309     17.659     17.822
+REMARK INTER + INTRA:          -4.309
+REMARK INTER:                  -4.309
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      64.650  80.231  58.276  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      64.643  79.519  58.693  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      65.353  79.155  58.900  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      65.346  78.443  59.318  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      66.055  78.079  59.525  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      66.774  78.426  59.315  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      66.048  77.367  59.942  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      66.758  77.003  60.149  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      65.330  77.020  60.152  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.179      4.201      5.148
+REMARK INTER + INTRA:          -4.179
+REMARK INTER:                  -4.179
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      60.525  62.436  67.132  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      60.492  62.052  67.862  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      60.494  62.491  68.560  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      60.460  62.108  69.290  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      60.462  62.547  69.988  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      60.497  63.370  69.956  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      60.429  62.163  70.718  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      60.431  62.602  71.415  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      60.393  61.340  70.749  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.166      6.228      6.958
+REMARK INTER + INTRA:          -4.166
+REMARK INTER:                  -4.166
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      66.125  67.557  70.268  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      65.592  67.014  70.589  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      65.284  66.411  70.119  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      64.751  65.869  70.439  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      64.443  65.265  69.969  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      64.667  65.204  69.178  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      63.910  64.723  70.290  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      63.602  64.120  69.820  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      63.686  64.784  71.081  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.157      7.059      7.862
+REMARK INTER + INTRA:          -4.157
+REMARK INTER:                  -4.157
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      63.582  64.442  69.882  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      64.065  64.809  70.441  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      64.484  65.491  70.241  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      64.967  65.858  70.800  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      65.386  66.539  70.600  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      65.321  66.854  69.841  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      65.869  66.906  71.159  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      66.288  67.587  70.959  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      65.934  66.591  71.919  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.047      5.851      6.758
+REMARK INTER + INTRA:          -4.047
+REMARK INTER:                  -4.047
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      60.422  61.991  69.326  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      60.656  62.008  70.117  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      60.741  62.729  70.506  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      60.975  62.747  71.298  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      61.061  63.468  71.687  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      60.912  64.174  71.286  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      61.294  63.486  72.478  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      61.380  64.207  72.868  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      61.443  62.780  72.880  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.044     11.738     11.998
+REMARK INTER + INTRA:          -4.044
+REMARK INTER:                  -4.044
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methionine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CE  MET A   1      64.659  62.710  53.809  0.00  0.00    +0.000 C 
+ATOM      2  SD  MET A   1      64.278  62.045  54.114  0.00  0.00    +0.000 S 
+ATOM      3  CG  MET A   1      64.256  61.345  53.678  0.00  0.00    +0.000 C 
+ATOM      4  CB  MET A   1      63.875  60.680  53.983  0.00  0.00    +0.000 C 
+ATOM      5  CA  MET A   1      63.853  59.980  53.548  0.00  0.00    +0.000 C 
+ATOM      6  N   MET A   1      64.213  59.945  52.806  0.00  0.00    +0.000 NA
+ATOM      7  C   MET A   1      63.472  59.315  53.853  0.00  0.00    +0.000 C 
+ATOM      8  O   MET A   1      63.450  58.615  53.417  0.00  0.00    +0.000 OA
+ATOM      9  OXT MET A   1      63.112  59.350  54.594  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

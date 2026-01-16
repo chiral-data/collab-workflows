@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.930      0.000      0.000
+REMARK INTER + INTRA:          -7.930
+REMARK INTER:                  -7.930
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.592  63.498  68.016  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.318  63.071  67.364  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.553  62.783  67.261  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.523  62.392  66.535  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.862  62.019  66.211  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.271  62.438  66.190  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.763  62.858  66.703  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.489  62.120  65.460  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.935  61.712  65.007  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.153  61.393  64.277  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.926  61.485  64.002  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.480  61.893  64.456  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.262  62.211  65.186  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.634      1.808      2.972
+REMARK INTER + INTRA:          -7.634
+REMARK INTER:                  -7.634
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.173  61.432  63.402  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.947  61.713  64.145  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.438  62.089  64.690  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.985  62.276  65.355  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.255  62.656  66.035  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.214  62.015  65.219  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.190  61.667  64.471  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.578  62.089  65.741  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.686  62.451  66.473  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.050  62.525  66.994  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.307  62.236  66.781  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.200  61.874  66.049  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.836  61.800  65.528  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.883      3.867      5.667
+REMARK INTER + INTRA:          -6.883
+REMARK INTER:                  -6.883
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.441  61.765  68.587  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.516  62.250  69.251  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.274  63.036  69.307  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.455  63.306  70.065  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.308  64.063  70.360  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.810  62.686  70.478  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.848  62.033  69.975  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.080  62.714  71.258  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.005  63.409  71.695  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.274  63.437  72.475  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.620  62.769  72.815  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.695  62.074  72.378  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.425  62.046  71.598  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.879      5.688      6.393
+REMARK INTER + INTRA:          -6.879
+REMARK INTER:                  -6.879
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.874  65.329  72.116  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.507  64.801  72.169  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.175  64.892  72.644  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.663  64.237  72.524  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.390  64.101  72.890  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.296  63.742  71.975  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.581  64.091  71.755  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.592  63.024  71.695  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.318  62.744  71.967  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.615  62.026  71.687  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.183  61.590  71.135  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.457  61.870  70.864  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.161  62.588  71.144  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.855      0.943      1.769
+REMARK INTER + INTRA:          -6.855
+REMARK INTER:                  -6.855
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.801  63.764  68.643  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.248  63.406  68.047  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.068  63.438  67.973  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.280  63.006  67.302  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.047  62.892  67.020  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.590  62.708  66.962  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.951  62.956  67.423  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.545  62.244  66.281  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.234  62.039  65.877  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.190  61.575  65.195  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.455  61.316  64.920  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.768  61.521  65.325  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.812  61.985  66.006  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.852      2.388      4.252
+REMARK INTER + INTRA:          -6.852
+REMARK INTER:                  -6.852
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.111  61.986  66.578  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.047  62.363  67.311  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.180  63.163  67.456  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.054  63.300  68.260  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.126  64.026  68.646  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.844  62.583  68.611  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.840  62.004  68.024  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.669  62.467  69.409  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.696  63.103  69.934  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.521  62.986  70.732  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.319  62.233  71.004  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.292  61.599  70.479  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.467  61.715  69.681  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.714      6.277      7.346
+REMARK INTER + INTRA:          -6.714
+REMARK INTER:                  -6.714
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.559  65.308  71.988  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.073  65.628  71.427  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.952  65.641  70.612  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.603  66.012  70.264  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.712  66.145  69.457  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.125  66.228  70.866  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.797  65.990  71.585  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.848  66.614  70.765  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.104  66.818  70.009  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.827  67.204  69.908  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.292  67.384  70.566  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.035  67.180  71.322  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.312  66.794  71.422  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.560      6.742      7.730
+REMARK INTER + INTRA:          -6.560
+REMARK INTER:                  -6.560
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      67.006  66.790  72.443  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.535  66.814  71.766  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      66.647  67.308  71.115  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      66.050  67.147  70.568  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.951  67.515  69.835  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.569  66.555  70.881  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.869  66.349  71.622  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.905  66.226  70.518  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.671  66.490  69.772  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.007  66.161  69.409  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.578  65.569  69.792  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.812  65.306  70.537  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.477  65.635  70.901  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.396      5.550      6.402
+REMARK INTER + INTRA:          -6.396
+REMARK INTER:                  -6.396
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pemoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.446  66.486  71.141  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.148  65.720  71.060  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.230  65.236  70.398  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.849  64.522  70.556  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.795  63.877  70.043  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.532  64.565  71.316  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.717  65.306  71.628  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.105  63.970  71.698  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.962  63.254  71.314  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.535  62.660  71.696  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.251  62.783  72.461  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.393  63.499  72.844  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.821  64.094  72.462  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

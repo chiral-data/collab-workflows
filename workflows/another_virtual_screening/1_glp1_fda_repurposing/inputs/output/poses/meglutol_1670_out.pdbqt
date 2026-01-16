@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.191      0.000      0.000
+REMARK INTER + INTRA:          -6.191
+REMARK INTER:                  -6.191
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.229  61.554  64.665  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.719  61.999  65.157  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.209  62.444  65.649  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.141  61.983  65.746  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.277  62.362  66.467  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.699  62.346  67.056  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.990  62.755  66.599  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.296  62.014  64.569  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.160  61.636  63.848  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.738  61.651  63.258  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.447  61.243  63.716  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.167      0.435      2.818
+REMARK INTER + INTRA:          -6.167
+REMARK INTER:                  -6.167
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.022  62.448  65.663  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.554  62.014  65.141  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.085  61.579  64.620  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.170  62.008  64.593  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.072  61.629  63.866  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.688  61.624  63.318  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.358  61.255  63.689  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.938  62.019  65.689  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.036  62.398  66.416  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.419  62.404  66.965  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.749  62.772  66.593  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.691      1.003      1.419
+REMARK INTER + INTRA:          -5.691
+REMARK INTER:                  -5.691
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.572  62.820  65.690  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.591  62.236  66.272  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.611  61.651  66.854  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.172  62.730  66.782  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.979  62.471  67.542  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.560  62.965  68.052  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.206  61.717  67.791  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.010  61.741  65.762  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.203  62.001  65.002  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.623  61.506  64.491  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.976  62.754  64.754  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.564     17.574     17.998
+REMARK INTER + INTRA:          -5.564
+REMARK INTER:                  -5.564
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.329  78.478  59.553  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.533  78.452  59.339  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.736  78.425  59.126  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.592  79.213  59.026  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.931  79.571  58.684  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.991  80.331  58.371  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.212  79.168  58.656  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.473  77.691  59.653  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.134  77.334  59.995  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      66.075  76.572  60.308  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      66.853  77.737  60.023  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.297      2.633      4.603
+REMARK INTER + INTRA:          -5.297
+REMARK INTER:                  -5.297
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.871  62.976  69.305  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.752  62.409  68.718  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.633  61.840  68.132  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.019  62.942  68.149  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.049  62.717  67.355  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.315  63.250  66.785  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.812  61.958  67.132  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.486  61.876  69.288  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.456  62.101  70.082  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.189  61.568  70.653  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.692  62.860  70.305  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.278      2.981      4.423
+REMARK INTER + INTRA:          -5.278
+REMARK INTER:                  -5.278
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.847  63.051  68.927  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.581  62.349  69.268  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.314  61.646  69.609  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.633  62.693  70.016  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.429  62.255  70.686  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.482  62.599  71.434  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.172  61.475  70.607  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.528  62.005  68.520  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.732  62.443  67.851  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.680  62.099  67.102  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.989  63.223  67.930  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.242      6.474      7.687
+REMARK INTER + INTRA:          -5.242
+REMARK INTER:                  -5.242
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.782  65.926  69.552  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.108  66.256  70.234  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.434  66.584  70.918  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.459  66.848  69.781  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.917  67.430  70.146  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      66.268  68.023  69.692  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      66.024  67.418  70.964  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.758  65.663  70.688  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.299  65.081  70.323  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.948  64.487  70.777  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      64.192  65.093  69.505  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.240     15.727     16.835
+REMARK INTER + INTRA:          -5.240
+REMARK INTER:                  -5.240
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.172  76.638  72.381  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.936  76.713  72.683  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.700  76.787  72.985  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      58.849  77.533  72.698  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.468  78.008  72.968  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.382  78.828  72.983  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.173  77.662  73.222  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.022  75.893  72.668  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.403  75.418  72.398  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      58.489  74.597  72.383  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      57.698  75.764  72.144  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.084      4.607      6.372
+REMARK INTER + INTRA:          -5.084
+REMARK INTER:                  -5.084
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meglutol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.499  63.137  70.894  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.020  62.466  70.903  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.541  61.794  70.913  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.920  62.526  70.086  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.455  61.974  69.686  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.355  62.034  68.869  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.090  61.362  70.103  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.120  62.405  71.719  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.585  62.958  72.119  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.686  62.898  72.937  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.950  63.569  71.703  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

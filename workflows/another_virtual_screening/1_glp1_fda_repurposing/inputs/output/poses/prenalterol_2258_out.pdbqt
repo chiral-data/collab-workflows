@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.805      0.000      0.000
+REMARK INTER + INTRA:          -8.805
+REMARK INTER:                  -8.805
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.882  63.603  70.353  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.264  63.521  69.627  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.995  63.883  69.501  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.915  63.077  69.026  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.297  62.994  68.299  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.947  62.550  67.698  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.217  62.189  67.824  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.329  62.467  66.971  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.979  62.023  66.370  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.362  61.941  65.643  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.012  61.496  65.042  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.394  61.414  64.315  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.125  61.775  64.190  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.506  61.693  63.463  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.474  62.220  64.791  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.092  62.302  65.517  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.282      1.624      4.795
+REMARK INTER + INTRA:          -8.282
+REMARK INTER:                  -8.282
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.107  62.273  64.595  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.938  62.028  65.364  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.015  61.232  65.570  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.691  62.578  65.926  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.521  62.333  66.696  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.275  62.883  67.259  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.197  63.677  67.053  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.105  62.638  68.029  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.858  63.188  68.591  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.689  62.943  69.361  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.442  63.493  69.924  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.272  63.248  70.694  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.350  62.453  70.900  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.180  62.208  71.669  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.596  61.903  70.336  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.766  62.148  69.568  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.814      4.748      6.107
+REMARK INTER + INTRA:          -7.814
+REMARK INTER:                  -7.814
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.942  62.324  71.275  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.496  62.900  71.476  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.633  63.083  72.269  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.913  63.295  70.884  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.468  63.872  71.085  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.885  64.266  70.493  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.748  64.084  69.701  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.440  64.844  70.694  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.857  65.238  70.101  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.412  65.815  70.303  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.829  66.210  69.710  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.384  66.787  69.911  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.521  66.969  70.704  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      66.075  67.546  70.905  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      65.103  66.574  71.296  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.549  65.997  71.095  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.717      2.373      5.394
+REMARK INTER + INTRA:          -7.717
+REMARK INTER:                  -7.717
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.000  61.997  66.243  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.314  62.434  66.868  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.682  63.158  66.722  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.261  62.146  67.639  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.576  62.583  68.265  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.523  62.296  69.036  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.156  61.573  69.182  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.838  62.733  69.662  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.785  62.445  70.433  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.100  62.882  71.058  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.046  62.595  71.830  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.361  63.032  72.455  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.729  63.756  72.309  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.043  64.192  72.934  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.782  64.042  71.537  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.467  63.606  70.912  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.702      5.040      6.434
+REMARK INTER + INTRA:          -7.702
+REMARK INTER:                  -7.702
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.329  67.624  69.857  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.744  67.287  70.331  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.566  67.617  71.065  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.338  66.618  70.069  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.753  66.280  70.544  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.346  65.611  70.283  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.524  65.281  69.549  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.761  65.273  70.757  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.355  64.604  70.496  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.770  64.266  70.970  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.363  63.598  70.709  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.778  63.259  71.183  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.600  63.590  71.918  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.016  63.252  72.391  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.008  64.259  72.178  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.592  64.597  71.705  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.694      1.624      2.511
+REMARK INTER + INTRA:          -7.694
+REMARK INTER:                  -7.694
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.273  63.950  72.324  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.872  63.657  71.665  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.091  63.403  71.738  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.253  63.618  70.935  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.852  63.325  70.276  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.233  63.286  69.545  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.014  63.540  69.473  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.832  62.992  68.886  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.213  62.954  68.156  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.811  62.660  67.496  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.192  62.621  66.766  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.791  62.328  66.107  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.010  62.074  66.179  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.609  61.781  65.520  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.629  62.113  66.910  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.030  62.406  67.569  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.612      2.484      3.720
+REMARK INTER + INTRA:          -7.612
+REMARK INTER:                  -7.612
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.926  65.775  70.905  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.448  65.502  70.291  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.552  65.794  69.526  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.866  64.938  70.442  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.387  64.665  69.827  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.804  64.101  69.978  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.700  63.810  70.741  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.326  63.828  69.363  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.743  63.264  69.514  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.265  62.991  68.899  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.682  62.427  69.050  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.204  62.154  68.435  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.308  62.445  67.670  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.830  62.172  67.057  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.891  63.009  67.520  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.369  63.282  68.134  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.387     18.370     19.132
+REMARK INTER + INTRA:          -7.387
+REMARK INTER:                  -7.387
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.200  81.645  57.426  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.469  80.961  57.800  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.931  80.389  58.052  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.277  80.850  57.922  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.547  80.166  58.297  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.355  80.055  58.418  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.893  80.626  58.167  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.625  79.370  58.793  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      65.434  79.259  58.915  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.704  78.575  59.289  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.512  78.463  59.411  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.782  77.779  59.786  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.244  77.207  60.038  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      66.514  76.523  60.411  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      65.435  77.319  59.915  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      65.165  78.002  59.541  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.967      7.265      7.809
+REMARK INTER + INTRA:          -6.967
+REMARK INTER:                  -6.967
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prenalterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.261  66.821  71.717  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.507  66.997  71.433  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.410  67.273  70.661  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.850  66.895  71.921  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.094  67.071  71.637  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.437  66.970  72.125  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.534  66.694  72.895  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.682  67.146  71.841  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.025  67.045  72.329  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.270  67.221  72.045  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.612  67.120  72.533  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.857  67.295  72.249  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.760  67.572  71.478  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.006  67.748  71.195  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.419  67.673  70.991  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.173  67.497  71.274  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

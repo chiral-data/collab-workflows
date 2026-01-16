@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.502      0.000      0.000
+REMARK INTER + INTRA:          -8.502
+REMARK INTER:                  -8.502
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.564  61.649  63.576  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.340  61.927  64.319  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.589  61.759  64.614  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.289  61.998  65.344  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.689  62.449  65.908  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.316  62.647  66.617  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.644  63.091  67.230  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.081  63.155  67.829  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.405  62.750  67.587  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.549  62.435  66.838  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.021  61.988  66.388  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.519  61.709  65.412  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.343  61.290  64.722  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.004  61.321  64.229  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.069  60.975  63.484  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.155      1.781      3.341
+REMARK INTER + INTRA:          -8.155
+REMARK INTER:                  -8.155
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.373  62.336  67.221  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.766  62.112  66.533  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.547  62.350  66.408  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.009  62.170  65.749  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.773  61.719  65.099  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.299  61.584  64.478  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.142  61.147  63.796  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.819  61.155  63.326  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.396  61.597  63.717  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.074  61.862  64.429  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      62.459  62.324  64.994  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.750  62.518  65.853  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.745  62.915  66.578  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.001  62.811  66.920  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.755  63.114  67.647  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.412      2.837      4.535
+REMARK INTER + INTRA:          -7.412
+REMARK INTER:                  -7.412
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.394  61.660  70.958  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.365  61.788  70.145  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.825  62.382  69.804  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.854  62.574  69.003  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.427  62.204  68.400  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.513  62.457  67.619  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.125  62.143  66.962  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.374  62.560  66.295  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.915  63.132  66.540  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.002  63.069  67.358  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.490  63.535  67.833  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.383  63.199  68.908  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.682  63.394  69.652  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.337  62.889  70.206  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.479  62.891  71.018  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.370      6.514      7.833
+REMARK INTER + INTRA:          -7.370
+REMARK INTER:                  -7.370
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.612  67.910  69.901  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.903  67.494  69.840  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.661  66.998  70.453  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.970  66.549  70.470  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.397  66.518  69.876  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.730  66.042  69.971  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.115  65.955  69.429  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.565  65.429  69.747  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.841  65.189  70.487  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.561  65.568  70.626  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      64.030  65.488  71.300  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.950  66.137  71.184  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      65.631  66.331  71.609  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      66.071  66.863  71.157  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      66.792  67.201  71.371  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.271      4.207      5.987
+REMARK INTER + INTRA:          -7.271
+REMARK INTER:                  -7.271
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.632  62.661  72.924  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.394  62.519  72.147  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.215  63.152  71.649  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.971  63.097  70.863  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.863  62.398  70.437  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.616  62.429  69.650  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.486  61.781  69.157  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.245  62.064  68.421  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.226  62.888  68.459  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.456  63.114  69.218  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.515  63.888  69.498  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.853  63.862  70.577  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.025  64.391  71.187  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.248  63.952  71.850  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.466  64.259  72.583  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.248      5.775      6.900
+REMARK INTER + INTRA:          -7.248
+REMARK INTER:                  -7.248
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.476  61.637  70.608  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.189  62.333  70.943  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.642  62.741  71.499  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.428  63.441  71.879  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.723  63.856  71.771  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.585  64.552  72.192  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      58.910  65.023  72.142  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.004  65.661  72.656  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.739  65.584  73.024  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.098  64.899  72.738  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.839  64.610  72.957  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.042  63.655  72.387  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.637  63.086  72.320  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.389  62.521  71.771  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.814  61.855  71.536  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.891      4.570      5.877
+REMARK INTER + INTRA:          -6.891
+REMARK INTER:                  -6.891
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.414  62.720  72.782  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.096  63.265  72.252  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.050  63.081  71.449  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.747  63.568  70.857  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.437  64.326  70.963  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.153  64.750  70.315  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.829  65.508  70.335  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.619  65.718  69.566  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.812  65.088  69.069  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.143  64.490  69.532  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.415  63.760  69.260  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.808  63.166  70.139  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.149  62.429  70.288  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.298  62.377  71.098  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.636  61.734  71.488  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.753      5.253      6.472
+REMARK INTER + INTRA:          -6.753
+REMARK INTER:                  -6.753
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.003  63.788  72.781  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.642  64.106  72.369  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.753  63.920  71.573  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.364  64.195  71.091  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.971  64.704  71.321  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.547  64.932  70.776  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.184  65.435  70.924  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.617  65.512  70.227  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.248  65.056  69.646  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.587  64.698  69.985  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      63.057  64.193  69.602  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.262  63.872  70.339  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.586  63.396  70.356  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.272  63.427  71.119  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.597  63.033  71.381  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.718      3.149      4.554
+REMARK INTER + INTRA:          -6.718
+REMARK INTER:                  -6.718
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pilocarpine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.499  63.147  67.431  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.494  63.385  68.220  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.487  62.819  68.821  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.482  62.973  69.631  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.484  63.719  69.983  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.478  63.787  70.805  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.479  64.492  71.234  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.472  64.303  72.037  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.467  63.481  72.105  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.470  63.162  71.344  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.467  62.359  71.154  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.474  62.250  70.028  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.475  61.648  69.462  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.482  62.001  68.716  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.485  61.604  67.993  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

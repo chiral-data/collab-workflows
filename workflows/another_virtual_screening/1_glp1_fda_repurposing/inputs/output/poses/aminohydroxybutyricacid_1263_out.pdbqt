@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.624      0.000      0.000
+REMARK INTER + INTRA:          -4.624
+REMARK INTER:                  -4.624
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.443  62.274  66.554  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.993  62.306  65.940  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.816  61.967  65.208  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.087  61.596  65.091  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.365  61.999  64.595  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.188  61.661  63.864  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.738  61.692  63.250  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.459  61.289  63.747  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.561      1.556      2.450
+REMARK INTER + INTRA:          -4.561
+REMARK INTER:                  -4.561
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.456  61.686  63.814  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.316  62.264  64.384  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.084  62.047  65.146  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.990  61.249  65.336  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.944  62.625  65.716  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.712  62.408  66.476  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.572  62.986  67.048  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.618  61.609  66.667  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.268     16.908     17.234
+REMARK INTER + INTRA:          -4.268
+REMARK INTER:                  -4.268
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.081  76.064  60.661  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.659  76.671  60.295  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.061  77.300  59.944  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      66.887  77.323  59.961  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.640  77.907  59.578  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.042  78.535  59.228  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.621  79.143  58.861  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      66.868  78.558  59.244  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.220     17.377     17.703
+REMARK INTER + INTRA:          -4.220
+REMARK INTER:                  -4.220
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.111  79.619  58.596  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.002  78.877  58.940  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.638  78.487  59.292  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      66.385  78.839  59.300  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.528  77.746  59.636  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.164  77.356  59.987  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      66.054  76.614  60.332  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      66.911  77.708  59.995  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.938     24.167     24.588
+REMARK INTER + INTRA:          -3.938
+REMARK INTER:                  -3.938
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      69.484  79.609  50.674  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      70.191  79.719  50.264  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.486  79.119  49.781  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      70.072  78.408  49.707  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.193  79.229  49.371  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.487  78.630  48.888  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      72.194  78.739  48.478  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      71.073  77.918  48.814  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.911      7.632      8.218
+REMARK INTER + INTRA:          -3.911
+REMARK INTER:                  -3.911
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.335  64.946  70.264  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.627  65.603  69.861  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.111  66.146  70.251  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.303  66.030  71.046  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.402  66.803  69.848  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.886  67.345  70.238  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      66.178  68.003  69.835  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      66.078  67.229  71.033  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.898     24.354     24.926
+REMARK INTER + INTRA:          -3.898
+REMARK INTER:                  -3.898
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      72.680  79.017  48.279  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      72.147  79.388  48.788  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.477  78.985  49.051  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.340  78.208  48.804  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.945  79.355  49.560  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.276  78.952  49.823  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      69.743  79.323  50.332  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      70.139  78.176  49.576  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.761      3.512      4.544
+REMARK INTER + INTRA:          -3.761
+REMARK INTER:                  -3.761
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.634  62.653  66.524  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.709  62.157  67.178  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.533  62.438  67.933  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.280  63.218  68.034  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.608  61.942  68.587  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.432  62.224  69.342  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.507  61.728  69.997  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.179  63.004  69.442  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.656      4.914      5.650
+REMARK INTER + INTRA:          -3.656
+REMARK INTER:                  -3.656
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminohydroxybutyric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.249  62.538  71.970  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.085  62.046  71.329  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.829  62.370  70.614  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.738  63.188  70.541  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.665  61.878  69.973  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.410  62.202  69.259  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.245  61.710  68.617  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.319  63.020  69.186  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.131      0.000      0.000
+REMARK INTER + INTRA:          -7.131
+REMARK INTER:                  -7.131
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.969  63.059  67.579  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      61.347  62.864  66.872  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.973  62.370  66.327  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.222  62.071  66.489  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.351  62.176  65.620  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.978  61.682  65.075  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.226  61.383  65.237  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.356  61.487  64.368  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.107  61.787  64.206  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.485  61.592  63.498  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.481  62.281  64.751  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.103  62.475  65.458  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.846      1.363      2.826
+REMARK INTER + INTRA:          -6.846
+REMARK INTER:                  -6.846
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.626  61.613  63.559  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      61.951  61.620  64.034  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.963  62.008  64.763  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.651  62.388  65.015  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.290  62.015  65.237  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.301  62.403  65.965  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.988  62.782  66.218  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.627  62.410  66.440  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.940  62.030  66.186  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.265  62.038  66.661  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.927  61.643  65.458  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.602  61.635  64.983  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.970      1.352      3.028
+REMARK INTER + INTRA:          -5.970
+REMARK INTER:                  -5.970
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.224  62.432  64.939  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      61.976  62.608  65.706  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.207  62.426  65.943  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.686  62.069  65.412  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.959  62.601  66.709  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.190  62.420  66.946  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      59.669  62.063  66.415  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.942  62.596  67.713  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.463  62.953  68.243  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.215  63.128  69.011  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.233  63.134  68.007  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.481  62.959  67.240  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.927      6.731      7.517
+REMARK INTER + INTRA:          -5.927
+REMARK INTER:                  -5.927
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.293  67.919  69.813  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      65.835  67.237  69.733  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.465  66.909  70.393  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.552  67.263  71.133  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.008  66.228  70.313  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.637  65.899  70.973  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      64.725  66.253  71.713  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.180  65.217  70.893  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.093  64.864  70.154  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.635  64.181  70.073  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.463  65.191  69.493  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.920  65.873  69.573  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.856      6.282      7.032
+REMARK INTER + INTRA:          -5.856
+REMARK INTER:                  -5.856
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.197  65.766  73.219  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.538  65.037  73.039  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.239  64.584  72.417  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.599  64.861  71.976  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.579  63.855  72.237  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.281  63.402  71.615  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      59.642  63.679  71.174  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.622  62.673  71.435  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.261  62.396  71.876  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.603  61.666  71.696  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.560  62.849  72.498  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.220  63.578  72.678  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.827      7.253      7.728
+REMARK INTER + INTRA:          -5.827
+REMARK INTER:                  -5.827
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.718  65.779  72.036  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      63.427  66.144  71.826  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.671  66.149  71.037  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.206  65.789  70.460  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.380  66.514  70.828  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.624  66.520  70.040  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      64.159  66.159  69.462  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.334  66.885  69.830  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.798  67.245  70.408  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      66.509  67.611  70.198  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      65.555  67.240  71.197  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.846  66.875  71.406  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.786      6.184      7.319
+REMARK INTER + INTRA:          -5.786
+REMARK INTER:                  -5.786
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.430  61.628  70.582  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.244  62.326  70.981  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.761  62.627  71.550  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.464  62.230  71.718  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.576  63.324  71.948  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.092  63.626  72.516  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.795  63.228  72.684  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.906  64.324  72.915  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.204  64.720  72.746  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.018  65.419  73.145  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.686  64.420  72.178  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.872  63.722  71.779  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.644     24.599     25.411
+REMARK INTER + INTRA:          -5.644
+REMARK INTER:                  -5.644
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      72.874  79.230  48.238  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      72.335  79.492  48.805  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      71.647  79.060  48.952  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.498  78.367  48.531  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.108  79.323  49.518  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.421  78.892  49.665  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      70.272  78.198  49.244  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      69.882  79.154  50.232  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.030  79.848  50.652  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      69.491  80.110  51.219  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      70.718  80.280  50.506  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.257  80.017  49.939  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.614      3.019      4.016
+REMARK INTER + INTRA:          -5.614
+REMARK INTER:                  -5.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminosalicylic acid hydrazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.526  63.028  71.661  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.741  63.146  70.873  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.553  62.577  70.304  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.151  61.892  70.524  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.768  62.695  69.517  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.580  62.127  68.949  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.178  61.442  69.169  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.795  62.245  68.161  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.197  62.930  67.942  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.412  63.048  67.153  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.385  63.499  68.509  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.171  63.381  69.297  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

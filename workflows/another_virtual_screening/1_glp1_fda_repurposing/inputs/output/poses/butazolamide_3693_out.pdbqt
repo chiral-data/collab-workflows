@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.962      0.000      0.000
+REMARK INTER + INTRA:          -7.962
+REMARK INTER:                  -7.962
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.389  61.603  63.493  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.365  61.995  64.218  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.879  61.714  64.823  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.855  62.105  65.548  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.317  62.778  65.669  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.370  61.824  66.152  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.345  62.215  66.879  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.774  62.891  67.079  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      61.582  63.093  67.856  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.035  62.542  68.135  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      60.889  62.000  67.531  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      60.694  62.535  68.886  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      60.353  62.528  69.637  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.265  61.859  68.685  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.122  63.211  69.087  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.953      1.703      3.921
+REMARK INTER + INTRA:          -7.953
+REMARK INTER:                  -7.953
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.480  62.311  69.704  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.862  62.536  69.009  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.828  62.051  68.342  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.210  62.276  67.647  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.627  62.987  67.618  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.175  61.791  66.982  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.558  62.016  66.286  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.994  62.708  66.175  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      62.277  62.709  65.400  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.016  62.018  65.032  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      61.571  61.591  65.579  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      62.172  61.795  64.254  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      62.327  61.571  63.475  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      61.736  61.103  64.364  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.608  62.486  64.143  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.176      2.380      4.614
+REMARK INTER + INTRA:          -7.176
+REMARK INTER:                  -7.176
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.628  62.821  72.892  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.304  62.534  72.191  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.455  62.921  71.478  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.130  62.634  70.776  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.655  61.960  70.787  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.281  63.021  70.064  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.957  62.734  69.361  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.473  62.069  69.287  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      60.277  61.986  68.490  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.638  62.599  68.072  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      61.058  63.061  68.610  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      60.587  62.726  67.259  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      60.538  62.855  66.446  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      61.070  63.392  67.333  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.105  62.062  67.184  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.107      4.896      5.951
+REMARK INTER + INTRA:          -7.107
+REMARK INTER:                  -7.107
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.501  67.980  69.831  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.954  67.534  70.258  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.523  66.939  69.883  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.976  66.494  70.310  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.861  66.642  71.113  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      64.545  65.900  69.935  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.998  65.453  70.362  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      63.824  65.538  71.164  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      63.248  64.981  71.360  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.065  64.552  70.680  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      63.529  64.844  70.063  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      62.516  63.940  70.625  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      61.967  63.327  70.570  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      62.689  63.855  69.823  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.342  64.025  71.427  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.934      4.921      5.904
+REMARK INTER + INTRA:          -6.934
+REMARK INTER:                  -6.934
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.633  61.529  70.819  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.486  62.324  70.658  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.171  62.813  71.243  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.024  63.608  71.082  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.191  63.915  70.335  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      59.709  64.096  71.667  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.562  64.892  71.506  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.700  65.275  70.788  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      59.474  66.064  70.872  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.196  66.169  71.642  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      59.250  65.445  72.033  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      58.913  66.874  71.963  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      58.631  67.578  72.285  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      58.775  66.491  72.681  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      59.051  67.256  71.246  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.752      5.051      5.783
+REMARK INTER + INTRA:          -6.752
+REMARK INTER:                  -6.752
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.742  62.459  73.014  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.249  62.817  72.459  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.438  63.561  72.156  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.945  63.919  71.601  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.261  63.534  71.348  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.135  64.662  71.298  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.642  65.021  70.743  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.942  64.704  70.440  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      59.629  65.246  69.903  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.134  65.898  69.874  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      60.759  65.759  70.393  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      60.031  66.570  69.408  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      59.929  67.243  68.942  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.730  66.887  69.711  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      59.332  66.254  69.105  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.667      4.207      5.099
+REMARK INTER + INTRA:          -6.667
+REMARK INTER:                  -6.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.257  61.700  70.895  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.743  62.200  70.455  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.327  62.645  70.832  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.813  63.145  70.392  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.716  63.200  69.575  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      62.397  63.589  70.768  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.884  64.089  70.329  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.851  64.201  69.511  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      63.436  64.746  69.306  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.829  64.971  69.995  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      63.488  64.565  70.627  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      64.454  65.507  70.044  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      65.078  66.043  70.094  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      64.486  65.395  70.861  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      64.421  65.619  69.228  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.326      7.359      7.441
+REMARK INTER + INTRA:          -6.326
+REMARK INTER:                  -6.326
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.313  67.262  71.132  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.664  66.999  71.566  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.907  67.277  71.386  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.258  67.014  71.820  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.363  66.473  72.434  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      63.502  67.291  71.641  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.852  67.028  72.075  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.872  66.491  72.701  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      62.100  66.387  72.973  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.602  66.859  72.515  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      62.067  67.255  71.960  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      60.784  66.924  72.597  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      59.966  66.989  72.678  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.764  67.461  71.970  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.805  66.387  73.222  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.234      4.127      4.970
+REMARK INTER + INTRA:          -6.234
+REMARK INTER:                  -6.234
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.995  66.779  70.575  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.465  66.221  70.278  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.035  65.743  70.796  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.506  65.185  70.499  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.405  65.105  69.684  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      63.076  64.708  71.016  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.546  64.150  70.720  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.388  64.007  69.922  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      61.826  63.406  69.878  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.635  63.176  70.647  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      62.081  63.636  71.167  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      61.095  62.590  70.858  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      60.555  62.004  71.071  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      61.253  62.733  71.656  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.937  62.448  70.061  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

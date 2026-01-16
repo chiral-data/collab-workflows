@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.277      0.000      0.000
+REMARK INTER + INTRA:          -7.277
+REMARK INTER:                  -7.277
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.021  63.005  67.531  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.372  62.809  66.811  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.975  62.319  66.278  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.228  62.025  66.467  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.326  62.123  65.559  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.930  61.633  65.026  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.281  61.437  64.306  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.885  60.947  63.774  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.028  61.731  64.118  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.380  61.535  63.397  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.425  62.221  64.650  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.074  62.417  65.370  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.757      1.683      2.946
+REMARK INTER + INTRA:          -6.757
+REMARK INTER:                  -6.757
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.643  61.636  63.505  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.997  61.644  64.018  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.038  62.065  64.727  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.724  62.479  64.921  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.392  62.072  65.239  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.432  62.493  65.948  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.786  62.501  66.461  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.827  62.922  67.168  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.100  62.087  66.266  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.454  62.094  66.779  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.059  61.665  65.557  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.705  61.658  65.044  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.067      6.214      6.879
+REMARK INTER + INTRA:          -6.067
+REMARK INTER:                  -6.067
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.091  65.383  73.071  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.459  64.682  72.841  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.115  64.206  72.261  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.402  64.432  71.912  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.483  63.506  72.030  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.139  63.030  71.451  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.508  62.328  71.220  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.164  61.853  70.641  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.220  62.103  71.569  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.589  61.401  71.338  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.565  62.578  72.149  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.196  63.280  72.379  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.958      1.653      2.489
+REMARK INTER + INTRA:          -5.958
+REMARK INTER:                  -5.958
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.915  63.723  69.259  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.557  63.343  68.620  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.006  63.133  67.960  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.813  63.302  67.940  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.648  62.754  67.322  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.096  62.543  66.662  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.737  62.164  66.023  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.186  61.953  65.364  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.931  61.995  66.044  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.572  61.615  65.404  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.481  62.205  66.703  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.840  62.585  67.342  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.893      6.569      7.805
+REMARK INTER + INTRA:          -5.893
+REMARK INTER:                  -5.893
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.166  64.333  69.857  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.709  64.953  69.812  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.995  65.302  70.503  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.738  65.031  71.238  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.538  65.921  70.458  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.824  66.270  71.148  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.367  66.890  71.103  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      65.652  67.238  71.793  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.623  67.160  70.368  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.167  67.780  70.323  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.338  66.811  69.677  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.795  66.192  69.722  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.872      4.466      5.419
+REMARK INTER + INTRA:          -5.872
+REMARK INTER:                  -5.872
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.522  63.067  72.856  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.252  62.716  72.160  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.318  63.118  71.442  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.653  63.872  71.422  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.049  62.768  70.747  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.114  63.170  70.029  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.844  62.819  69.333  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.910  63.221  68.617  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.509  62.066  69.354  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.239  61.714  68.657  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.444  61.662  70.071  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.713  62.014  70.767  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.830      6.410      7.548
+REMARK INTER + INTRA:          -5.830
+REMARK INTER:                  -5.830
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.263  67.974  69.984  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.820  67.290  69.857  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.333  66.996  70.455  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.289  67.387  71.180  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.891  66.313  70.327  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.403  66.019  70.924  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.961  65.334  70.797  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.474  65.041  71.394  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.005  64.944  70.072  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      63.561  64.259  69.944  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.492  65.237  69.474  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.935  65.921  69.601  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.813      2.041      3.894
+REMARK INTER + INTRA:          -5.813
+REMARK INTER:                  -5.813
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.829  61.598  65.647  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.541  61.742  66.407  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.351  62.512  66.638  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.448  63.136  66.108  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.063  62.656  67.397  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.873  63.424  67.627  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.585  63.568  68.387  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.395  64.337  68.617  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.488  62.943  68.916  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.200  63.087  69.677  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.679  62.174  68.686  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.966  62.030  67.927  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.764      4.776      6.308
+REMARK INTER + INTRA:          -5.764
+REMARK INTER:                  -5.764
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = norepinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.197  61.770  68.860  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.593  62.274  69.380  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.602  62.108  70.189  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.213  61.439  70.476  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.997  62.611  70.709  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.006  62.446  71.517  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.402  62.949  72.037  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.410  62.783  72.844  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.790  63.617  71.749  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.186  64.121  72.269  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.782  63.783  70.940  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.386  63.280  70.420  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

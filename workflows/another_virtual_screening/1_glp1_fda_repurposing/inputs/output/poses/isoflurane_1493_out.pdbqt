@@ -1,0 +1,207 @@
+MODEL 1
+REMARK VINA RESULT:    -6.791      0.000      0.000
+REMARK INTER + INTRA:          -6.791
+REMARK INTER:                  -6.791
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      66.714  79.192  60.844  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      66.521  78.627  60.274  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      66.547  78.824  59.473  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      66.301  77.867  60.504  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      66.108  77.302  59.935  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      66.135  77.499  59.133  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      65.889  76.541  60.166  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      65.669  75.780  60.396  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      65.792  76.329  59.374  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      65.985  76.753  60.957  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.394      1.008      2.335
+REMARK INTER + INTRA:          -6.394
+REMARK INTER:                  -6.394
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      65.378  76.120  60.811  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      65.881  76.666  60.449  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      66.698  76.553  60.476  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      65.567  77.322  60.062  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      66.069  77.867  59.700  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      66.887  77.755  59.726  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      65.755  78.524  59.311  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      65.441  79.180  58.923  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      66.517  78.774  59.118  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      64.993  78.274  59.505  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.255     16.416     16.994
+REMARK INTER + INTRA:          -6.255
+REMARK INTER:                  -6.255
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.905  62.595  66.400  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      62.084  62.375  65.625  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      62.796  62.614  65.283  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      61.553  61.916  65.193  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.733  61.696  64.418  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      62.445  61.936  64.076  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.201  61.237  63.986  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      60.669  60.777  63.554  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      61.716  61.248  63.341  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      60.686  61.225  64.631  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.244     16.606     17.167
+REMARK INTER + INTRA:          -6.244
+REMARK INTER:                  -6.244
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      59.770  61.285  65.337  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      60.525  61.610  65.267  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      60.829  62.081  65.871  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      60.976  61.463  64.593  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.731  61.787  64.521  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      62.035  62.260  65.127  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      62.182  61.640  63.847  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      62.633  61.493  63.172  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      62.793  62.100  64.155  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      61.570  61.180  63.538  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.173     16.256     17.088
+REMARK INTER + INTRA:          -6.173
+REMARK INTER:                  -6.173
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      62.608  61.333  63.227  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      62.442  61.781  63.900  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      62.453  62.605  63.858  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      62.264  61.406  64.611  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.098  61.854  65.284  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      62.109  62.678  65.243  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.920  61.478  65.997  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      61.742  61.103  66.709  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      61.830  62.213  66.361  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      62.010  60.744  65.632  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.567     17.364     17.657
+REMARK INTER + INTRA:          -5.567
+REMARK INTER:                  -5.567
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      62.152  61.586  65.586  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.612  61.889  66.133  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      61.881  62.196  66.850  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      60.806  61.884  65.962  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.267  62.186  66.508  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      60.535  62.493  67.226  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      59.460  62.181  66.337  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      58.653  62.176  66.166  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      59.303  62.533  67.067  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      59.616  61.829  65.607  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.510     13.625     14.099
+REMARK INTER + INTRA:          -5.510
+REMARK INTER:                  -5.510
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      58.249  76.839  69.788  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      57.937  76.546  70.494  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      57.131  76.621  70.650  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      58.431  76.178  71.041  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      58.120  75.884  71.746  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      57.313  75.959  71.903  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      58.615  75.516  72.294  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      59.109  75.148  72.842  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      57.969  75.390  72.792  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      59.261  75.642  71.797  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.435     11.930     12.413
+REMARK INTER + INTRA:          -5.435
+REMARK INTER:                  -5.435
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      73.336  79.422  49.256  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      72.673  79.099  48.884  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      72.720  78.855  48.098  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      71.965  79.019  49.299  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.303  78.696  48.929  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      71.350  78.452  48.141  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      70.595  78.617  49.344  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      69.887  78.537  49.760  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      70.239  78.289  48.676  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      70.950  78.944  50.013  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.250     14.378     15.193
+REMARK INTER + INTRA:          -5.250
+REMARK INTER:                  -5.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      66.314  67.895  69.447  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      66.011  67.572  70.144  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      66.061  67.996  70.850  0.00  0.00    +0.000 F 
+ATOM      4  O   UNL     1      65.659  66.827  70.135  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.357  66.504  70.831  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      65.407  66.929  71.538  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      65.005  65.758  70.822  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      64.652  65.012  70.813  0.00  0.00    +0.000 F 
+ATOM      9  F   UNL     1      64.859  65.817  71.632  0.00  0.00    +0.000 F 
+ATOM     10  F   UNL     1      65.150  65.700  70.012  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL

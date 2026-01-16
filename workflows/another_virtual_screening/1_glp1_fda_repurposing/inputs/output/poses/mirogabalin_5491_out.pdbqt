@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.932      0.000      0.000
+REMARK INTER + INTRA:          -8.932
+REMARK INTER:                  -8.932
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.413  61.626  63.906  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.634  61.565  64.166  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.425  61.849  64.912  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.670  61.827  65.246  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.713  62.169  65.996  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.493  62.402  66.125  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.933  62.205  65.456  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.284  62.686  66.872  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.504  62.452  66.742  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.119  62.674  67.437  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.541  63.038  68.045  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.156  63.260  68.739  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.349  63.182  67.956  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.696  62.291  66.789  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      59.310  61.925  66.159  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.923      1.767      3.218
+REMARK INTER + INTRA:          -8.923
+REMARK INTER:                  -8.923
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.127  62.981  68.017  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.894  62.456  67.425  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.370  62.347  66.760  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.210  61.842  66.127  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.831  61.906  65.587  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.374  62.450  65.886  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.089  62.722  66.612  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.850  62.341  65.221  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.307  61.797  64.922  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.643  61.565  64.206  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.365  61.884  63.965  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.700  61.650  63.248  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.750  62.436  64.442  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.890  61.243  64.476  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.171  60.948  64.752  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.083      5.783      6.900
+REMARK INTER + INTRA:          -8.083
+REMARK INTER:                  -8.083
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.497  67.788  69.854  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.973  67.652  70.475  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.438  67.025  70.434  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.883  66.822  71.010  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.466  66.162  70.741  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.763  65.958  69.999  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.364  66.491  69.809  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.228  65.331  69.957  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.931  65.535  70.699  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.342  64.974  70.832  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.189  64.394  70.265  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.600  63.832  70.398  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      63.626  64.377  69.565  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      63.518  65.588  71.411  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      63.701  66.183  71.952  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.791      2.875      4.880
+REMARK INTER + INTRA:          -7.791
+REMARK INTER:                  -7.791
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.564  62.656  72.874  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.632  63.209  72.266  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.374  63.019  71.506  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.407  63.513  70.845  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.091  63.102  70.204  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.863  62.354  70.467  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.038  62.303  71.272  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.605  62.164  69.707  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.832  62.912  69.443  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.635  62.902  68.643  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.292  62.229  68.311  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.094  62.220  67.510  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.147  61.566  68.780  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.994  63.595  69.010  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.337  64.247  69.379  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.785      5.194      6.379
+REMARK INTER + INTRA:          -7.785
+REMARK INTER:                  -7.785
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.509  61.617  70.642  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.958  62.119  71.118  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.614  62.794  71.445  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.992  63.345  71.930  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.443  63.928  72.129  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.726  63.738  71.767  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.832  63.037  71.344  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.383  64.413  72.094  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.099  64.603  72.456  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.932  65.303  72.858  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.175  65.631  72.820  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.009  66.331  73.222  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      58.586  65.256  72.380  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.716  64.945  72.884  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.458  64.586  72.896  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.624      5.060      6.030
+REMARK INTER + INTRA:          -7.624
+REMARK INTER:                  -7.624
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.536  65.300  72.049  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.575  64.712  71.473  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.033  64.038  71.603  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.124  63.406  71.080  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.627  62.854  71.433  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.846  63.145  72.173  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.478  63.877  72.278  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.303  62.471  72.303  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.085  62.180  71.563  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.478  61.457  71.517  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.952  61.204  72.143  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.345  60.480  72.096  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.031  61.675  72.816  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.979  61.740  70.873  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.497  62.029  70.269  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.489     25.154     26.030
+REMARK INTER + INTRA:          -7.489
+REMARK INTER:                  -7.489
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.995  80.657  51.589  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.053  79.988  51.111  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      69.736  79.856  50.668  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      69.872  79.214  50.167  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.623  79.304  49.837  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.951  80.000  50.133  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.402  80.341  50.647  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.634  79.868  49.690  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      71.306  79.171  49.393  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      71.894  78.881  48.893  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      72.602  79.295  48.803  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      73.189  79.003  48.303  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      72.721  80.000  49.214  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      71.147  78.463  49.002  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      70.426  78.079  49.119  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.253      5.463      6.077
+REMARK INTER + INTRA:          -7.253
+REMARK INTER:                  -7.253
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.075  66.555  69.847  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.659  65.860  69.691  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.091  65.591  70.225  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.634  64.908  70.144  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.140  64.853  70.803  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.292  65.500  71.291  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.880  65.956  70.934  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.724  65.231  71.825  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.572  64.583  71.337  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.984  64.171  71.743  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.703  64.455  72.465  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.115  64.042  72.870  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.011  65.153  72.780  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.292  63.891  70.987  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      62.599  63.641  70.264  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.240     24.621     25.327
+REMARK INTER + INTRA:          -7.240
+REMARK INTER:                  -7.240
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mirogabalin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.223  78.443  48.227  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.522  78.920  48.828  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.018  79.212  49.412  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.238  79.694  50.046  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.561  79.853  50.491  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.925  79.469  50.133  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.207  79.073  49.467  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      69.421  79.761  50.718  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.057  80.145  51.075  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      69.715  80.517  51.727  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      68.907  80.440  51.870  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      68.566  80.813  52.522  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      68.440  79.989  51.361  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      70.559  80.586  51.559  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      71.363  80.638  51.382  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

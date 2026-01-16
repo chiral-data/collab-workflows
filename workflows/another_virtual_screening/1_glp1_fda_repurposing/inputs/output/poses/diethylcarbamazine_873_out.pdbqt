@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.276      0.000      0.000
+REMARK INTER + INTRA:          -7.276
+REMARK INTER:                  -7.276
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.154  62.880  67.746  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.994  62.436  67.070  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.565  62.364  66.479  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.297  62.737  66.564  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.867  62.666  65.974  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.406  61.920  65.802  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.675  61.547  65.716  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.976  61.848  65.211  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.817  61.404  64.535  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.389  61.333  63.944  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.119  61.706  64.030  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.691  61.634  63.438  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.279  62.150  64.706  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.708  62.222  65.297  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.199      0.623      2.893
+REMARK INTER + INTRA:          -7.199
+REMARK INTER:                  -7.199
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.413  61.636  63.764  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.688  61.537  64.146  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.547  61.916  64.866  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.131  62.393  65.203  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.990  62.771  65.921  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.823  61.818  65.249  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.240  61.341  64.912  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.682  62.196  65.967  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      59.958  62.098  66.351  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.817  62.477  67.070  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.400  62.953  67.406  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.259  63.332  68.126  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.125  63.051  67.024  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.266  62.673  66.304  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.527      2.493      3.762
+REMARK INTER + INTRA:          -6.527
+REMARK INTER:                  -6.527
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.413  62.812  71.436  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.786  63.222  70.825  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.796  62.906  70.063  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.434  62.179  69.913  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.445  61.863  69.152  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.169  63.315  69.451  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.530  64.042  69.601  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.179  62.999  68.690  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.551  63.408  68.078  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.562  63.091  67.316  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.201  62.366  67.166  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.211  62.049  66.404  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.828  61.956  67.778  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.817  62.272  68.540  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.309      6.286      7.442
+REMARK INTER + INTRA:          -6.309
+REMARK INTER:                  -6.309
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.126  67.624  70.216  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.596  67.299  70.759  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.092  66.689  70.526  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      65.117  66.404  69.751  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.613  65.795  69.519  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.561  66.362  71.068  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.536  66.647  71.842  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      64.057  65.753  70.836  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      63.527  65.427  71.377  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.023  64.817  71.145  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.048  64.533  70.371  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.543  63.923  70.139  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.578  64.859  69.829  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.083  65.469  70.061  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.263      3.597      5.699
+REMARK INTER + INTRA:          -6.263
+REMARK INTER:                  -6.263
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.302  62.023  67.952  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.762  62.581  68.351  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.844  62.537  69.171  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.466  61.936  69.592  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.548  61.892  70.411  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.303  63.095  69.570  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.680  63.695  69.149  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.385  63.051  70.389  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.844  63.608  70.788  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.926  63.564  71.608  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.549  62.963  72.028  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.632  62.919  72.849  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.090  62.405  71.630  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.008  62.449  70.810  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.255      5.124      6.462
+REMARK INTER + INTRA:          -6.255
+REMARK INTER:                  -6.255
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.719  61.647  70.605  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.677  62.369  70.206  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.375  63.034  70.589  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.115  62.978  71.371  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.814  63.642  71.754  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.332  63.756  70.191  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.592  63.812  69.410  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.031  64.421  70.574  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      59.988  65.142  70.176  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.686  65.807  70.560  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.427  65.751  71.340  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.124  66.417  71.724  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.469  65.030  71.739  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.771  64.365  71.356  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.006      6.292      7.359
+REMARK INTER + INTRA:          -6.006
+REMARK INTER:                  -6.006
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.544  64.012  69.933  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.837  64.507  70.524  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.473  65.008  70.364  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.816  65.013  69.613  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.451  65.513  69.454  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.766  65.505  70.955  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.423  65.499  71.705  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      64.402  66.005  70.795  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      64.695  66.501  71.385  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.331  67.002  71.226  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      65.673  67.006  70.476  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      66.310  67.508  70.316  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.381  66.510  69.885  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.745  66.010  70.044  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.969      5.911      6.498
+REMARK INTER + INTRA:          -5.969
+REMARK INTER:                  -5.969
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.883  63.617  72.493  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.383  63.456  71.857  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.950  64.009  71.627  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.018  64.724  72.035  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.584  65.277  71.806  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.451  63.849  70.991  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.383  63.134  70.584  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      63.017  64.401  70.762  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      63.517  64.241  70.126  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.084  64.795  69.896  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      64.151  65.509  70.303  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      64.719  66.063  70.074  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.651  65.670  70.940  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.084  65.117  71.169  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.969      5.889      6.863
+REMARK INTER + INTRA:          -5.969
+REMARK INTER:                  -5.969
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylcarbamazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.785  66.356  69.855  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.362  65.658  69.733  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.818  65.402  70.297  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.697  65.844  70.985  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.154  65.588  71.549  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.394  64.704  70.176  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.514  64.264  69.489  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      62.850  64.449  70.740  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.426  63.751  70.619  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.882  63.495  71.184  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.762  63.936  71.870  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.218  63.680  72.435  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.186  64.634  71.992  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.730  64.890  71.427  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

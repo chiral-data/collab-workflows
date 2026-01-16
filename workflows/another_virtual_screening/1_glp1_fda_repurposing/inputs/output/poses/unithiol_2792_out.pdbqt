@@ -1,0 +1,176 @@
+MODEL 1
+REMARK VINA RESULT:    -4.810      0.000      0.000
+REMARK INTER + INTRA:          -4.810
+REMARK INTER:                  -4.810
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.880  61.621  63.883  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      61.994  62.038  64.586  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      62.706  62.336  64.294  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.283  61.740  64.880  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.108  62.454  65.289  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.551  62.404  65.893  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      60.877  61.938  65.796  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      61.665  62.821  66.597  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.107  62.771  67.202  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.723      1.501      2.392
+REMARK INTER + INTRA:          -4.723
+REMARK INTER:                  -4.723
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.903  62.141  67.575  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      61.224  62.439  66.876  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.121  63.208  67.157  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.328  61.670  66.595  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.546  62.737  66.178  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.796  62.221  65.586  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      61.726  61.406  65.691  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      62.118  62.520  64.887  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      62.369  62.003  64.294  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.358      2.082      2.542
+REMARK INTER + INTRA:          -4.358
+REMARK INTER:                  -4.358
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.612  61.797  65.720  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      59.726  62.212  66.423  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      58.917  62.172  66.578  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.536  62.252  66.270  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.840  62.626  67.127  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.597  62.868  67.346  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      61.242  62.695  66.861  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      60.710  63.283  68.051  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.468  63.525  68.270  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.287      3.065      3.924
+REMARK INTER + INTRA:          -4.287
+REMARK INTER:                  -4.287
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.507  62.644  69.941  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      60.580  62.331  69.182  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      60.216  61.636  69.433  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.944  63.027  68.928  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.652  62.018  68.422  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.003  62.464  67.824  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      61.283  63.223  67.984  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      61.076  62.150  67.064  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.427  62.596  66.465  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.234      7.008      7.665
+REMARK INTER + INTRA:          -4.234
+REMARK INTER:                  -4.234
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.150  67.827  69.812  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      65.811  67.244  70.286  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      66.268  67.498  70.925  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      65.354  66.988  69.648  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.473  66.660  70.761  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.909  66.148  70.446  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      64.682  66.219  69.656  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      64.570  65.565  70.922  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      64.005  65.052  70.607  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.092     11.732     12.156
+REMARK INTER + INTRA:          -4.092
+REMARK INTER:                  -4.092
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.073  62.511  53.369  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      64.588  61.951  53.733  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      64.526  62.436  54.397  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      64.649  61.465  53.069  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.103  61.392  54.096  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.914  60.692  53.703  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      64.210  60.551  52.946  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      63.429  60.132  54.067  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      63.240  59.432  53.674  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.014     11.726     12.151
+REMARK INTER + INTRA:          -4.014
+REMARK INTER:                  -4.014
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.495  58.613  53.376  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      63.548  59.345  53.754  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      63.168  59.031  54.415  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.929  59.660  53.093  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.602  60.076  54.132  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.958  60.713  53.749  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      64.260  60.621  52.987  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      64.011  61.445  54.128  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      64.367  62.083  53.744  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.001      4.060      4.790
+REMARK INTER + INTRA:          -4.001
+REMARK INTER:                  -4.001
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = unithiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.486  61.675  68.598  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      60.515  62.297  69.138  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      60.548  62.837  68.515  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.483  61.759  69.762  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.545  62.920  69.679  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.532  62.764  70.488  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      60.489  61.986  70.758  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      60.562  63.388  71.028  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.549  63.232  71.839  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

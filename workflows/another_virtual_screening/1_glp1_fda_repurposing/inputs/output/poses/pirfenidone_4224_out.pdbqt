@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.744      0.000      0.000
+REMARK INTER + INTRA:          -8.744
+REMARK INTER:                  -8.744
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.138  60.950  63.488  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.373  61.389  64.148  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.828  61.563  64.741  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.062  62.001  65.400  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.841  62.265  65.465  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.075  62.703  66.123  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.386  62.090  64.870  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.152  61.652  64.212  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.518  62.176  65.995  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.738  61.913  65.930  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.194  62.088  66.524  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.428  62.525  67.182  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.207  62.789  67.247  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.752  62.614  66.652  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.544      0.900      3.176
+REMARK INTER + INTRA:          -8.544
+REMARK INTER:                  -8.544
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.071  63.438  68.081  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.724  62.995  67.477  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.166  62.784  66.814  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.818  62.342  66.210  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.029  62.111  66.269  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      59.681  61.669  65.666  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.586  62.323  66.933  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.933  62.765  67.537  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.260  62.130  65.546  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.051  62.360  65.487  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.492  62.148  64.823  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.145  61.707  64.220  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.356  61.476  64.279  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.913  61.688  64.944  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.499      4.273      5.986
+REMARK INTER + INTRA:          -7.499
+REMARK INTER:                  -7.499
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.652  62.376  73.067  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.530  62.888  72.431  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.268  62.591  71.707  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.146  63.103  71.072  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.286  63.911  71.159  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.164  64.422  70.524  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.548  64.208  71.883  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.670  63.697  72.519  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.884  62.807  70.348  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.744  61.998  70.260  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.482  61.701  69.536  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.360  62.212  68.901  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.500  63.020  68.988  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.762  63.317  69.713  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.471      5.243      6.514
+REMARK INTER + INTRA:          -7.471
+REMARK INTER:                  -7.471
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.438  61.582  70.196  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.708  61.970  70.873  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.352  62.673  71.115  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.622  63.060  71.792  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.248  62.744  72.226  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.517  63.131  72.902  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.604  62.040  71.984  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.334  61.653  71.307  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.266  63.764  72.035  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.639  64.080  71.600  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.284  64.783  71.843  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.553  65.170  72.519  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.179  64.854  72.953  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.535  64.150  72.710  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.428      6.812      7.853
+REMARK INTER + INTRA:          -7.428
+REMARK INTER:                  -7.428
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.318  67.683  69.882  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.775  67.344  70.405  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.354  66.671  70.182  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      64.812  66.333  70.705  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      64.692  66.667  71.449  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      64.151  66.329  71.971  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.114  67.341  71.671  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.656  67.679  71.149  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.390  65.660  70.483  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.510  65.325  69.738  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.087  64.652  69.516  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.546  64.314  70.038  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.426  64.648  70.782  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.849  65.322  71.005  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.389      2.622      3.729
+REMARK INTER + INTRA:          -7.389
+REMARK INTER:                  -7.389
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.673  62.145  66.964  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.174  62.529  67.496  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.213  62.277  68.280  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.714  62.661  68.812  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.175  63.296  68.560  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.675  63.680  69.091  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.136  63.548  67.775  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.635  63.165  67.243  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.753  62.409  69.597  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.292  61.773  69.850  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.331  61.522  70.634  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.831  61.905  71.165  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.293  62.540  70.913  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.253  62.793  70.128  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.307      4.190      5.529
+REMARK INTER + INTRA:          -7.307
+REMARK INTER:                  -7.307
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.517  61.964  68.683  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.534  62.567  69.247  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.811  62.412  70.008  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.828  63.015  70.571  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.568  63.773  70.373  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.585  64.375  70.936  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.291  63.927  69.611  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.274  63.325  69.048  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.105  62.861  71.333  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.365  62.103  71.531  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.642  61.949  72.293  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.659  62.551  72.855  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.399  63.308  72.657  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.122  63.463  71.895  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.241      1.542      3.343
+REMARK INTER + INTRA:          -7.241
+REMARK INTER:                  -7.241
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.191  63.849  69.670  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.625  63.627  69.003  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.251  63.245  68.376  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.684  63.023  67.710  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.492  63.184  67.671  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.925  62.962  67.006  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.867  63.566  68.299  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.434  63.788  68.965  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.310  62.641  67.082  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.501  62.480  67.121  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.127  62.098  66.493  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.560  61.877  65.828  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.368  62.037  65.789  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.743  62.420  66.417  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.099      5.681      6.596
+REMARK INTER + INTRA:          -7.099
+REMARK INTER:                  -7.099
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirfenidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.891  61.906  70.991  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.198  62.576  71.365  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.774  63.030  70.989  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.080  63.699  71.363  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.810  63.913  72.112  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.116  64.581  72.485  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.233  63.458  72.488  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.927  62.789  72.114  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.657  64.154  70.987  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.927  63.940  70.237  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.504  64.395  69.862  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.810  65.063  70.235  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.540  65.277  70.984  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.963  64.822  71.360  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

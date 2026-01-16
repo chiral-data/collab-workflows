@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.916      0.000      0.000
+REMARK INTER + INTRA:          -7.916
+REMARK INTER:                  -7.916
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.580  63.145  68.819  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.162  63.163  68.236  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.866  63.573  68.368  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.042  62.770  67.520  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.624  62.788  66.937  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.504  62.396  66.222  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.086  62.413  65.637  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.966  62.021  64.921  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.261  61.610  64.790  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.141  61.218  64.075  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.723  61.235  63.491  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.427  61.646  63.623  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.548  62.038  64.338  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.679  61.592  65.374  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.799  61.985  66.090  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.612      2.397      3.735
+REMARK INTER + INTRA:          -7.612
+REMARK INTER:                  -7.612
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.913  60.857  63.471  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.351  61.291  64.018  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.146  61.455  63.872  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.995  61.561  64.712  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.434  61.994  65.259  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.078  62.264  65.952  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.517  62.698  66.500  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.161  62.968  67.193  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.365  62.804  67.340  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.009  63.073  68.033  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.447  63.507  68.580  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.243  63.671  68.434  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.599  63.402  67.741  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.926  62.370  66.792  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.282  62.100  66.098  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.191      3.165      5.045
+REMARK INTER + INTRA:          -7.191
+REMARK INTER:                  -7.191
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.421  61.629  66.277  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.298  62.285  66.761  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.381  63.046  66.454  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.091  62.180  67.553  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.968  62.836  68.038  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.762  62.731  68.829  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.639  63.387  69.315  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.432  63.283  70.107  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.349  62.521  70.414  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.143  62.416  71.205  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.020  63.071  71.690  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.103  63.833  71.382  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.310  63.938  70.591  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.472  61.865  69.929  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.678  61.969  69.137  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.123      5.547      6.991
+REMARK INTER + INTRA:          -7.123
+REMARK INTER:                  -7.123
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.023  63.657  69.702  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.547  63.959  70.262  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.535  63.672  71.035  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.085  64.548  70.049  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.609  64.850  70.609  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.146  65.438  70.397  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.671  65.741  70.957  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.208  66.330  70.744  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.221  66.617  69.970  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      65.757  67.206  69.757  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      66.282  67.508  70.317  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.270  67.220  71.091  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      65.733  66.631  71.304  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      64.695  66.315  69.410  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.158  65.726  69.622  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.013      5.795      6.844
+REMARK INTER + INTRA:          -7.013
+REMARK INTER:                  -7.013
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.504  67.622  69.820  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.907  67.403  70.344  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.761  67.857  71.017  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      65.453  66.730  70.195  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.855  66.511  70.718  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.402  65.838  70.569  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.804  65.619  71.093  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.350  64.946  70.944  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.496  64.491  70.269  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      63.043  63.819  70.120  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.445  63.599  70.644  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.299  64.054  71.318  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.752  64.726  71.467  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      64.094  64.711  69.746  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.548  65.384  69.895  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.946      6.018      7.454
+REMARK INTER + INTRA:          -6.946
+REMARK INTER:                  -6.946
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.612  61.311  71.333  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.988  61.825  71.170  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.454  61.648  70.567  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.898  62.517  71.611  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.275  63.031  71.449  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.184  63.722  71.889  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.561  64.238  71.727  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.470  64.929  72.168  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.005  65.106  72.772  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.915  65.797  73.213  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.291  66.312  73.050  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.757  66.135  72.446  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      58.847  65.444  72.006  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.629  64.591  72.934  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.719  63.899  72.493  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.913      5.790      6.706
+REMARK INTER + INTRA:          -6.913
+REMARK INTER:                  -6.913
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.715  66.718  73.222  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.512  66.120  72.693  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      58.851  66.206  72.207  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.970  65.435  72.647  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.768  64.837  72.118  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.226  64.153  72.073  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.023  63.554  71.543  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.481  62.869  71.497  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.144  62.783  71.983  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.602  62.099  71.938  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.399  61.501  71.409  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.736  61.587  70.923  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.278  62.271  70.968  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.346  63.382  72.513  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.888  64.067  72.559  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.896      2.671      3.716
+REMARK INTER + INTRA:          -6.896
+REMARK INTER:                  -6.896
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.337  62.987  72.627  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.519  63.340  71.905  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.968  64.032  71.886  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.252  63.003  71.201  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.434  63.356  70.479  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.167  63.019  69.776  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.349  63.372  69.052  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.082  63.035  68.348  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.632  62.342  68.367  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.365  62.005  67.664  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.547  62.358  66.942  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.997  63.051  66.923  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.264  63.388  67.626  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.451  61.989  69.091  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.717  62.326  69.795  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.453     24.396     25.093
+REMARK INTER + INTRA:          -6.453
+REMARK INTER:                  -6.453
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guabenxan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      68.872  80.724  52.816  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      69.543  80.800  52.344  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      70.106  81.378  52.517  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      69.652  80.300  51.696  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      70.323  80.377  51.224  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.432  79.877  50.577  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.103  79.953  50.103  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.212  79.453  49.456  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.648  78.875  49.282  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      70.757  78.375  48.636  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      71.427  78.452  48.163  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.991  79.030  48.337  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      71.883  79.530  48.983  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      69.977  78.798  49.756  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      69.868  79.299  50.403  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

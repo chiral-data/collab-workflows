@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.189      0.000      0.000
+REMARK INTER + INTRA:          -8.189
+REMARK INTER:                  -8.189
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.349  62.021  66.471  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.552  62.589  67.032  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.217  62.564  67.786  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.421  63.134  68.347  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.933  63.781  68.317  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.914  64.156  69.051  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.391  63.740  69.536  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.087  63.109  69.101  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.547  62.514  69.293  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.344  61.945  68.732  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.679  61.970  67.978  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.684  62.046  65.717  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.534  61.517  65.102  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.985  61.749  64.452  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.413  62.421  64.665  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      62.228  62.605  65.447  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.276      3.719      4.872
+REMARK INTER + INTRA:          -7.276
+REMARK INTER:                  -7.276
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.003  63.979  71.022  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.950  64.576  70.456  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      59.728  65.339  70.679  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.675  65.936  70.112  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.806  65.937  69.297  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.666  66.700  69.017  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.448  67.171  69.659  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.453  66.699  70.335  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.286  66.865  71.126  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.339  66.268  71.693  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      59.561  65.505  71.469  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.224  63.217  70.799  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.301  62.567  71.301  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.532  61.919  70.846  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.598  62.168  70.063  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      60.408  62.970  70.033  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.139      4.029      5.735
+REMARK INTER + INTRA:          -7.139
+REMARK INTER:                  -7.139
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.606  66.092  70.117  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.054  65.831  70.671  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.534  65.219  70.478  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.981  64.958  71.033  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.820  65.196  71.807  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.201  64.732  72.093  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.979  64.207  71.495  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.462  64.347  70.841  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.495  63.996  70.094  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.048  64.258  69.540  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      63.567  64.869  69.733  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      65.126  66.703  70.310  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.705  67.021  69.816  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.094  67.618  70.231  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.756  67.669  70.982  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      65.157  67.104  71.031  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.120      1.598      2.317
+REMARK INTER + INTRA:          -7.120
+REMARK INTER:                  -7.120
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.848  63.017  67.585  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.588  63.277  68.323  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.121  63.629  68.847  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.860  63.889  69.586  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.119  63.873  69.948  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.192  64.215  70.695  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.979  64.443  70.795  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.392  64.241  70.109  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.184  64.333  69.894  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.443  64.073  69.155  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.911  63.721  68.632  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.316  62.665  67.061  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.494  62.380  66.308  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.801  62.075  65.981  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.195  62.173  66.531  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      59.513  62.537  67.199  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.100     18.775     19.724
+REMARK INTER + INTRA:          -7.100
+REMARK INTER:                  -7.100
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.001  78.871  59.066  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.046  79.562  58.619  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      64.354  79.956  58.398  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.399  80.648  57.951  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      65.041  81.071  57.650  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.747  81.726  57.243  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      63.923  81.707  57.292  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.708  81.041  57.729  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.973  80.742  57.955  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.929  80.050  58.401  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      63.620  79.657  58.623  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      65.692  78.478  59.287  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.734  77.784  59.731  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.530  77.587  59.821  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      66.980  78.160  59.433  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      66.462  78.710  59.103  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.039      2.395      4.301
+REMARK INTER + INTRA:          -7.039
+REMARK INTER:                  -7.039
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.983  64.823  69.861  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.006  64.334  69.197  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.183  63.532  69.281  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.206  63.043  68.616  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.080  63.194  67.815  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.178  62.487  67.403  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.366  61.897  67.950  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.383  62.242  68.700  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.537  61.929  69.448  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.514  62.418  70.112  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.337  63.220  70.028  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.806  65.624  69.777  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.763  66.178  70.387  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.572  66.908  70.055  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.496  66.806  69.240  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      59.641  66.013  69.068  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.021      1.562      3.708
+REMARK INTER + INTRA:          -7.021
+REMARK INTER:                  -7.021
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.004  63.718  69.612  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.936  63.567  68.804  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.349  63.057  68.527  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.281  62.907  67.719  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.709  63.179  67.068  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.388  62.838  66.390  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.761  62.354  66.621  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.695  62.396  67.442  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.176  62.036  67.974  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.245  62.187  68.782  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.831  62.697  69.059  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.590  64.228  69.889  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.725  64.430  70.677  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.363  64.952  70.700  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.622  65.073  69.927  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      63.145  64.625  69.425  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.913      4.715      5.766
+REMARK INTER + INTRA:          -6.913
+REMARK INTER:                  -6.913
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.436  64.559  71.909  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.971  64.663  71.290  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.411  65.360  71.237  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.946  65.464  70.617  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      64.155  64.981  69.981  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.724  65.378  69.536  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.867  66.107  69.897  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.386  66.159  70.565  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      64.291  66.751  71.133  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.757  66.647  71.752  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      63.317  65.951  71.804  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.996  63.863  71.961  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.444  63.681  72.546  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.138  62.933  72.384  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.501  62.652  71.699  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      62.032  63.226  71.437  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.722      4.449      5.136
+REMARK INTER + INTRA:          -6.722
+REMARK INTER:                  -6.722
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = kinetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.292  65.445  71.053  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.929  64.706  71.094  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.359  64.558  71.674  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.995  63.819  71.715  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.083  63.134  71.263  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.569  62.563  71.563  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.162  62.895  72.200  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.426  63.671  72.293  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.221  64.263  72.831  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.585  65.002  72.789  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      62.154  65.150  72.211  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.862  65.592  70.474  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.271  66.300  70.366  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.783  66.203  69.727  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.691  65.434  69.441  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      64.122  65.057  69.902  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

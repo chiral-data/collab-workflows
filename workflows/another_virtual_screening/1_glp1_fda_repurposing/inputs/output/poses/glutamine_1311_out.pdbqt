@@ -1,0 +1,207 @@
+MODEL 1
+REMARK VINA RESULT:    -5.493      0.000      0.000
+REMARK INTER + INTRA:          -5.493
+REMARK INTER:                  -5.493
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      62.713  62.363  64.919  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      61.979  62.000  64.818  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      61.430  62.003  65.433  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      61.614  62.369  66.150  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      61.065  62.372  66.765  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      61.248  62.737  67.481  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      60.331  62.009  66.664  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      61.796  61.635  64.102  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      62.345  61.632  63.487  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      61.062  61.272  64.001  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.482      0.811      2.772
+REMARK INTER + INTRA:          -5.482
+REMARK INTER:                  -5.482
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      61.624  62.740  66.429  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      60.972  62.357  66.099  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      61.037  61.995  65.361  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      61.754  62.015  64.953  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      61.819  61.652  64.215  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      62.535  61.672  63.806  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      61.167  61.269  63.885  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      60.256  62.337  66.508  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      60.191  62.699  67.245  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      59.604  61.954  66.178  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.899      2.861      3.818
+REMARK INTER + INTRA:          -4.899
+REMARK INTER:                  -4.899
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      59.936  62.271  67.828  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      60.631  62.611  68.115  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      60.849  62.499  68.902  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      60.373  62.048  69.403  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      60.592  61.936  70.190  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      60.116  61.485  70.691  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      61.286  62.277  70.478  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      61.106  63.063  67.614  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      60.888  63.174  66.827  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      61.801  63.403  67.902  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.877      6.637      7.483
+REMARK INTER + INTRA:          -4.877
+REMARK INTER:                  -4.877
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      64.796  65.262  69.309  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      64.596  65.473  70.081  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      64.891  66.171  70.407  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      65.386  66.658  69.961  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      65.681  67.355  70.287  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      66.175  67.843  69.841  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      65.481  67.567  71.059  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      64.101  64.986  70.527  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      63.807  64.288  70.202  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      63.902  65.197  71.299  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.858      4.636      5.704
+REMARK INTER + INTRA:          -4.858
+REMARK INTER:                  -4.858
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      60.295  61.420  70.648  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      60.650  62.111  70.370  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      61.050  62.607  70.893  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      61.096  62.414  71.694  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      61.495  62.910  72.216  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      61.541  62.716  73.017  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      61.850  63.601  71.939  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      60.604  62.304  69.569  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      60.204  61.808  69.047  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      60.959  62.996  69.292  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.852     17.755     18.157
+REMARK INTER + INTRA:          -4.852
+REMARK INTER:                  -4.852
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      66.800  78.483  59.299  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      66.064  78.157  59.475  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      65.375  78.540  59.234  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      65.422  79.251  58.818  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      64.733  79.635  58.578  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      64.779  80.346  58.161  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      63.996  79.308  58.753  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      66.017  77.445  59.891  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      66.706  77.062  60.131  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      65.280  77.118  60.066  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.850      1.685      3.575
+REMARK INTER + INTRA:          -4.850
+REMARK INTER:                  -4.850
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      60.472  61.982  68.252  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      60.750  62.687  67.927  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      61.180  62.676  67.224  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      61.334  61.960  66.845  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      61.764  61.949  66.142  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      61.919  61.232  65.763  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      62.042  62.654  65.817  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      60.595  63.404  68.306  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      60.165  63.415  69.009  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      60.872  64.110  67.981  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.764      1.698      2.134
+REMARK INTER + INTRA:          -4.764
+REMARK INTER:                  -4.764
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      61.507  62.126  66.054  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      60.742  62.224  66.348  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      60.623  62.621  67.061  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      61.267  62.922  67.479  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      61.148  63.320  68.191  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      61.792  63.621  68.610  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      60.383  63.418  68.486  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      60.098  61.923  65.930  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      60.217  61.525  65.218  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      59.333  62.021  66.224  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.665      7.254      8.076
+REMARK INTER + INTRA:          -4.665
+REMARK INTER:                  -4.665
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   GLN A   1      65.869  67.278  69.912  0.00  0.00    +0.000 NA
+ATOM      2  CA  GLN A   1      65.688  66.907  70.626  0.00  0.00    +0.000 C 
+ATOM      3  CB  GLN A   1      64.976  66.500  70.710  0.00  0.00    +0.000 C 
+ATOM      4  CG  GLN A   1      64.443  66.464  70.081  0.00  0.00    +0.000 C 
+ATOM      5  CD  GLN A   1      63.731  66.057  70.165  0.00  0.00    +0.000 C 
+ATOM      6  NE2 GLN A   1      63.199  66.021  69.535  0.00  0.00    +0.000 NA
+ATOM      7  OE1 GLN A   1      63.550  65.686  70.879  0.00  0.00    +0.000 OA
+ATOM      8  C   GLN A   1      66.220  66.943  71.256  0.00  0.00    +0.000 C 
+ATOM      9  O   GLN A   1      66.932  67.349  71.172  0.00  0.00    +0.000 OA
+ATOM     10  OXT GLN A   1      66.039  66.571  71.970  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

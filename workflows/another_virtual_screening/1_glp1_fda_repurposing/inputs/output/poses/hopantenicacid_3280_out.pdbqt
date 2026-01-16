@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.390      0.000      0.000
+REMARK INTER + INTRA:          -8.390
+REMARK INTER:                  -8.390
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.784  61.243  64.441  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.008  61.938  64.825  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.233  62.633  65.207  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.379  62.198  64.135  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.370  61.726  63.459  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.637  61.678  65.514  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.258  60.945  65.527  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.646  62.149  66.190  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.026  62.882  66.177  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.275  61.889  66.880  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.284  62.361  67.556  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.913  62.101  68.246  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.922  62.573  68.922  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.551  62.313  69.612  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.560  62.785  70.288  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.172  61.581  69.625  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.254      0.812      4.449
+REMARK INTER + INTRA:          -8.254
+REMARK INTER:                  -8.254
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.407  62.203  69.667  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.905  62.767  69.329  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.404  63.332  68.993  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.941  63.166  70.052  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.527  62.876  70.703  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.869  62.369  68.608  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.419  61.681  68.539  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.282  62.659  67.957  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.732  63.347  68.026  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.246  62.261  67.234  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.660  62.550  66.583  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.624  62.152  65.861  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.037  62.441  65.209  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.001  62.043  64.487  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.415  62.333  63.835  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.551  61.355  64.417  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.385      2.132      5.351
+REMARK INTER + INTRA:          -7.385
+REMARK INTER:                  -7.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.903  63.565  71.654  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.264  63.063  71.516  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.624  62.560  71.379  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.176  62.951  72.330  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.687  63.330  72.854  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.350  63.174  70.704  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.948  63.665  70.417  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.840  62.795  70.179  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.243  62.304  70.466  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.927  62.906  69.366  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.417  62.527  68.841  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.503  62.638  68.028  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.993  62.260  67.502  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.079  62.371  66.689  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.569  61.992  66.164  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.677  62.862  66.402  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.316      5.741      6.732
+REMARK INTER + INTRA:          -7.316
+REMARK INTER:                  -7.316
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.804  67.273  71.014  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.376  66.889  70.422  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.949  66.506  69.829  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.845  67.253  69.848  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      66.450  67.766  70.075  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.908  66.526  70.995  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.044  66.676  71.795  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.303  66.013  70.769  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.168  65.863  69.969  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      63.834  65.649  71.342  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.230  65.136  71.116  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.761  64.772  71.689  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.156  64.259  71.463  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.687  63.895  72.036  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.083  63.382  71.810  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.823  64.045  72.836  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.291      4.893      6.727
+REMARK INTER + INTRA:          -7.291
+REMARK INTER:                  -7.291
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.785  63.987  71.871  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.168  63.919  71.143  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.551  63.851  70.415  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.690  63.274  70.952  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.119  63.012  71.486  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.647  64.563  71.334  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.554  64.944  72.060  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.217  64.826  70.800  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.309  64.445  70.075  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      63.696  65.471  70.991  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.266  65.734  70.457  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.744  66.378  70.648  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.315  66.642  70.114  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.793  67.286  70.305  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      66.364  67.550  69.771  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      65.701  67.667  71.031  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.159      2.005      3.162
+REMARK INTER + INTRA:          -7.159
+REMARK INTER:                  -7.159
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.565  62.039  67.433  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.973  62.735  67.606  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.382  63.430  67.779  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.067  62.881  66.799  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.760  62.351  66.246  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.880  62.589  68.412  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.480  61.913  68.666  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.187  63.117  68.965  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.587  63.793  68.712  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.094  62.972  69.772  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.400  63.501  70.325  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.307  63.355  71.132  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.614  63.884  71.686  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.521  63.738  72.492  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.827  64.267  73.046  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.120  63.063  72.746  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.113      4.196      5.248
+REMARK INTER + INTRA:          -7.113
+REMARK INTER:                  -7.113
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.569  65.523  69.544  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.221  65.409  70.283  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.874  65.295  71.023  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.730  65.971  70.609  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.285  66.350  70.132  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.713  64.847  69.958  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.760  64.665  69.155  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.158  64.467  70.435  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.111  64.650  71.238  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      62.649  63.905  70.109  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.094  63.526  70.586  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.585  62.963  70.261  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.030  62.584  70.738  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.521  62.021  70.413  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.966  61.642  70.890  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.568  61.839  69.609  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.099      2.940      4.186
+REMARK INTER + INTRA:          -7.099
+REMARK INTER:                  -7.099
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.602  62.131  68.612  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.746  62.874  68.284  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.892  63.616  67.954  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.078  62.514  67.619  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.118  61.692  67.572  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.415  63.233  68.948  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.124  62.769  69.565  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.375  64.055  68.996  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.666  64.518  68.378  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.043  64.414  69.660  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.003  65.236  69.708  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.671  65.596  70.372  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.631  66.418  70.420  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.299  66.778  71.084  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.259  67.600  71.132  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.008  66.314  71.702  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.089      2.747      3.893
+REMARK INTER + INTRA:          -7.089
+REMARK INTER:                  -7.089
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hopantenic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.675  62.721  67.118  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.637  62.721  67.942  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.598  62.720  68.767  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.940  62.279  67.909  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.627  62.059  67.179  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.332  63.163  67.976  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.714  63.384  67.278  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.646  63.383  68.705  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.265  63.161  69.402  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      62.342  63.825  68.739  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.657  64.046  69.468  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.353  64.488  69.502  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.667  64.708  70.232  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.363  65.150  70.265  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.677  65.370  70.995  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      64.744  65.372  69.568  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

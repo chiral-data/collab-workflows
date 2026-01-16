@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.567      0.000      0.000
+REMARK INTER + INTRA:          -7.567
+REMARK INTER:                  -7.567
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.167  62.113  68.184  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.793  62.412  67.737  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.908  62.151  66.963  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.534  62.450  66.516  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.044  63.009  66.843  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.649  62.189  65.742  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.274  62.487  65.295  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.389  62.226  64.520  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.879  61.668  64.194  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.994  61.406  63.419  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.252  61.369  64.641  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.741  60.809  64.314  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.138  61.630  65.415  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.272      1.063      1.454
+REMARK INTER + INTRA:          -7.272
+REMARK INTER:                  -7.272
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.934  63.622  68.020  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.564  63.072  67.528  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.925  62.841  66.823  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.556  62.291  66.330  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.825  61.973  66.544  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.916  62.060  65.627  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.547  61.511  65.134  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.909  61.280  64.429  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.639  61.598  64.217  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.000  61.367  63.511  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.009  62.148  64.709  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.740  62.467  64.496  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.648  62.379  65.413  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.837      1.451      3.392
+REMARK INTER + INTRA:          -6.837
+REMARK INTER:                  -6.837
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.428  61.682  63.873  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.681  61.596  64.214  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.532  61.908  64.963  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.785  61.822  65.305  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.189  61.425  64.896  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.636  62.133  66.053  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.890  62.048  66.395  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.741  62.359  67.144  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.338  62.755  67.552  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.189  63.067  68.302  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.085  62.841  67.211  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.682  63.238  67.619  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.234  62.530  66.462  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.421      4.088      6.247
+REMARK INTER + INTRA:          -6.421
+REMARK INTER:                  -6.421
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.508  62.003  68.410  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.403  61.852  69.214  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.730  62.360  69.775  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.626  62.210  70.580  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.193  61.551  70.823  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.953  62.717  71.140  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.848  62.568  71.945  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.176  63.076  72.506  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.609  63.734  72.262  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.937  64.243  72.824  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.714  63.885  71.458  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.147  64.544  71.214  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.386  63.377  70.897  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.351      6.506      7.789
+REMARK INTER + INTRA:          -6.351
+REMARK INTER:                  -6.351
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.627  64.629  71.350  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.979  65.079  70.754  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.685  65.479  70.903  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.039  65.929  70.308  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.686  65.977  69.564  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.743  66.329  70.457  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.097  66.778  69.862  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.803  67.179  70.012  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.155  67.130  70.756  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.861  67.530  70.905  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.802  66.680  71.351  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      66.154  66.631  72.096  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      65.096  66.280  71.202  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.194      4.691      5.788
+REMARK INTER + INTRA:          -6.194
+REMARK INTER:                  -6.194
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.640  65.528  72.696  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.728  64.707  72.705  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.649  64.276  72.006  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.737  63.455  72.015  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.904  63.067  72.723  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.657  63.025  71.317  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.745  62.205  71.325  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.665  61.774  70.626  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.497  62.163  69.919  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.417  61.732  69.219  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.409  62.984  69.909  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.241  63.374  69.202  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.489  63.415  70.608  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.177     24.685     25.563
+REMARK INTER + INTRA:          -6.177
+REMARK INTER:                  -6.177
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.624  80.814  51.807  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      69.583  80.180  51.280  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      70.200  80.046  50.749  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.160  79.412  50.221  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      69.502  78.914  50.225  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      70.776  79.278  49.691  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.736  78.645  49.163  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.353  78.510  48.632  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      72.010  79.008  48.629  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      72.628  78.874  48.098  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      72.051  79.642  49.156  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      72.708  80.141  49.153  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      71.434  79.776  49.687  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.028      2.749      3.779
+REMARK INTER + INTRA:          -6.028
+REMARK INTER:                  -6.028
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.751  66.159  69.335  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.840  65.386  69.610  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.072  64.789  69.090  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.161  64.015  69.364  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.017  63.839  70.157  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.393  63.418  68.845  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.482  62.645  69.117  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.715  62.048  68.598  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.858  62.224  67.806  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.091  61.626  67.285  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.770  62.997  67.531  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.913  63.174  66.738  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.537  63.594  68.051  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.899      2.732      4.980
+REMARK INTER + INTRA:          -5.899
+REMARK INTER:                  -5.899
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = epinephrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.553  62.558  66.764  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.275  63.135  67.283  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.086  62.933  68.061  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.808  63.511  68.581  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.719  64.289  68.323  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.618  63.309  69.357  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.340  63.886  69.878  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.151  63.684  70.655  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.239  62.906  70.912  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.049  62.704  71.690  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.517  62.328  70.392  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.606  61.549  70.649  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.707  62.530  69.615  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

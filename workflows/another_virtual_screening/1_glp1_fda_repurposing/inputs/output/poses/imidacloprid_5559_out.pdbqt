@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.111      0.000      0.000
+REMARK INTER + INTRA:          -9.111
+REMARK INTER:                  -9.111
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.090  61.643  65.602  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      59.446  62.053  66.222  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      58.997  62.287  66.874  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.251  62.230  66.192  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.607  62.640  66.812  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.231  62.908  67.496  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.794  63.288  67.965  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.518  63.255  67.571  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.403  62.854  66.859  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.981  62.696  66.293  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.784  62.288  65.603  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.362  62.130  65.037  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.164  61.721  64.348  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.388  61.472  64.225  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      61.190  61.063  63.536  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      60.809  61.630  64.791  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      61.007  62.038  65.480  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.032      3.511      4.962
+REMARK INTER + INTRA:          -8.032
+REMARK INTER:                  -8.032
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.430  64.342  70.111  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.096  64.075  69.406  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.257  64.469  68.699  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.601  63.415  69.407  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.267  63.149  68.701  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.377  63.484  67.956  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.943  63.043  67.411  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.564  62.434  67.819  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.765  62.500  68.617  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.508  62.004  69.224  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.756  62.138  70.000  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.499  61.642  70.606  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.747  61.776  71.382  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.251  62.406  71.550  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      61.499  62.540  72.326  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      61.508  62.903  70.943  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      61.260  62.768  70.168  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.953      3.915      5.101
+REMARK INTER + INTRA:          -7.953
+REMARK INTER:                  -7.953
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.943  64.709  68.784  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      59.826  64.936  69.568  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.613  65.714  69.744  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      59.922  64.387  70.175  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.805  64.614  70.959  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      59.592  65.367  71.219  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.536  65.347  72.043  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.714  64.581  72.291  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      59.881  64.128  71.622  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.086  63.329  71.616  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.238  62.947  70.900  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.444  62.149  70.894  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.596  61.767  70.179  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.541  62.184  69.469  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      60.693  61.802  68.754  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      60.335  62.983  69.475  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      60.184  63.364  70.191  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.766      6.601      7.452
+REMARK INTER + INTRA:          -7.766
+REMARK INTER:                  -7.766
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.809  65.010  69.318  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      64.222  64.923  69.890  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      63.697  64.287  69.849  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      64.159  65.471  70.503  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.571  65.384  71.075  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      63.010  64.780  71.106  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.533  64.909  71.767  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.800  65.592  72.145  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.441  65.886  71.717  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      63.876  66.563  71.899  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.507  66.790  71.418  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.942  67.466  71.600  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.572  67.694  71.119  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.768  67.244  70.455  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      66.398  67.472  69.974  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      65.332  66.567  70.273  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      64.702  66.341  70.754  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.678      5.824      6.572
+REMARK INTER + INTRA:          -7.678
+REMARK INTER:                  -7.678
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.848  64.010  69.812  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.847  64.670  70.308  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      63.181  65.379  70.050  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.512  64.620  71.059  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.511  65.280  71.555  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.823  66.022  71.375  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.702  66.514  72.027  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.316  66.076  72.609  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.197  65.312  72.318  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.830  64.692  72.718  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.750  63.956  72.355  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.383  63.335  72.755  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.304  62.599  72.392  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.592  62.483  71.627  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      61.512  61.747  71.264  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      61.959  63.104  71.226  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      62.038  63.840  71.590  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.475      6.539      7.315
+REMARK INTER + INTRA:          -7.475
+REMARK INTER:                  -7.475
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.000  65.838  71.639  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      59.610  66.311  71.932  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.515  67.129  71.969  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.313  65.964  72.186  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.923  66.437  72.478  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.909  67.258  72.549  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.632  67.500  72.866  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.093  66.827  72.991  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.655  66.170  72.752  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.904  65.385  72.780  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.404  64.782  72.521  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.653  63.997  72.549  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.153  63.395  72.289  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.402  63.578  72.000  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      59.902  62.976  71.740  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      60.152  64.364  71.972  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      60.653  64.966  72.232  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.355      6.023      6.673
+REMARK INTER + INTRA:          -7.355
+REMARK INTER:                  -7.355
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.013  66.362  72.498  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.625  65.650  72.347  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.025  65.393  72.852  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.836  65.197  71.692  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.448  64.485  71.541  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.841  64.158  71.994  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.616  63.445  71.644  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.084  63.332  70.974  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.599  63.974  70.910  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      63.164  64.086  70.321  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.641  64.759  70.329  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.206  64.871  69.739  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.684  65.544  69.747  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.596  66.105  70.345  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      65.073  66.778  70.353  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      64.030  65.993  70.936  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      63.553  65.320  70.927  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.345      6.333      7.421
+REMARK INTER + INTRA:          -7.345
+REMARK INTER:                  -7.345
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.157  66.639  72.498  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      63.812  66.943  72.097  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      64.159  67.647  72.352  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      64.117  66.544  71.444  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.772  66.849  71.044  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      65.176  67.542  71.233  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      65.791  67.635  70.690  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.767  66.998  70.166  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      65.137  66.512  70.385  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      64.911  65.813  70.011  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.267  65.382  70.293  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.041  64.683  69.918  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.397  64.252  70.200  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.977  64.522  70.857  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      62.332  64.091  71.140  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      63.202  65.222  71.232  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      63.847  65.652  70.950  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.164      4.735      5.415
+REMARK INTER + INTRA:          -7.164
+REMARK INTER:                  -7.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = imidacloprid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.972  63.501  68.624  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.468  63.441  69.274  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.745  63.049  69.201  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.686  63.773  69.996  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.182  63.714  70.647  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.446  63.341  70.658  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.135  63.414  71.418  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.678  63.832  71.878  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.325  64.017  71.401  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.997  64.433  71.636  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.604  64.578  71.096  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.276  64.994  71.331  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.882  65.139  70.791  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.816  64.868  70.014  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      64.422  65.014  69.474  0.00  0.00    +0.000 Cl
+ATOM     16  N   UNL     1      63.143  64.452  69.778  0.00  0.00    +0.000 NA
+ATOM     17  C   UNL     1      62.537  64.308  70.319  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.524      0.000      0.000
+REMARK INTER + INTRA:          -9.524
+REMARK INTER:                  -9.524
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.501  62.037  66.522  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.211  62.449  66.606  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.369  62.862  67.302  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.816  62.863  67.915  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.265  62.865  68.528  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.316  62.388  67.465  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.318  63.340  68.365  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.764  62.448  65.992  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.473  62.859  66.076  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.606  62.035  65.296  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.157  62.033  64.683  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.999  61.620  63.987  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      62.551  61.619  63.374  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.290  61.209  63.903  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.737  61.210  64.516  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.895  61.623  65.213  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.851      1.852      3.697
+REMARK INTER + INTRA:          -8.851
+REMARK INTER:                  -8.851
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.076  62.357  65.495  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.353  61.987  65.343  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.231  61.601  64.624  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.831  61.585  64.057  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.429  61.569  63.490  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.318  62.021  64.560  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.343  61.149  63.554  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.754  62.004  65.910  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.032  61.634  65.758  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.876  62.389  66.628  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.278  62.406  67.195  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.400  62.792  67.914  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      59.801  62.808  68.480  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.121  63.161  68.066  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.721  63.145  67.499  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.599  62.759  66.780  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.700      2.151      3.921
+REMARK INTER + INTRA:          -8.700
+REMARK INTER:                  -8.700
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.186  61.633  67.229  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.352  62.430  67.094  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.649  62.672  66.363  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.780  62.117  65.767  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.912  61.563  65.171  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.513  61.518  66.266  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.047  62.718  65.268  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.221  62.985  67.691  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.386  63.782  67.556  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.924  62.743  68.421  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.793  63.297  69.018  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.496  63.055  69.748  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.365  63.610  70.344  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.331  62.259  69.882  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.462  61.703  69.286  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.758  61.946  68.555  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.565      3.735      5.695
+REMARK INTER + INTRA:          -8.565
+REMARK INTER:                  -8.565
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.771  62.086  69.996  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.650  62.881  69.809  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.394  63.093  69.054  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.260  62.509  68.486  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.125  61.927  67.917  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.477  61.929  69.030  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.042  63.091  67.941  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.785  63.465  70.378  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.663  64.259  70.190  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.040  63.253  71.132  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.175  63.836  71.701  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.431  63.624  72.456  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      61.565  64.206  73.024  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.552  62.830  72.643  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.417  62.247  72.075  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.162  62.458  71.320  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.502      5.294      7.021
+REMARK INTER + INTRA:          -8.502
+REMARK INTER:                  -8.502
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.697  65.578  71.343  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.820  65.317  70.569  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.381  64.684  70.273  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.820  64.312  70.750  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.258  63.940  71.225  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.002  64.828  71.367  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.638  63.796  70.132  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.382  65.689  70.093  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.504  65.428  69.320  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.820  66.321  70.389  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.381  66.694  69.913  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.820  67.327  70.210  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      66.381  67.698  69.734  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      65.697  67.587  70.982  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.135  67.215  71.459  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.697  66.582  71.163  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.321      2.729      3.961
+REMARK INTER + INTRA:          -8.321
+REMARK INTER:                  -8.321
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.757  62.477  70.549  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.257  63.124  70.434  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.584  63.514  71.084  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.409  63.258  71.848  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.236  63.002  72.613  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.933  62.660  71.540  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.887  63.857  72.157  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.431  63.380  69.669  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.931  64.026  69.554  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.105  62.990  69.020  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.279  63.246  68.255  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.953  62.855  67.605  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      61.126  63.111  66.841  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.453  62.210  67.721  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.279  61.953  68.485  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.605  62.344  69.135  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.257      5.740      7.107
+REMARK INTER + INTRA:          -8.257
+REMARK INTER:                  -8.257
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.617  65.874  69.980  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.509  66.236  70.714  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.963  66.893  70.921  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.525  67.188  70.394  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.087  67.484  69.868  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.325  66.601  69.852  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.725  67.777  70.938  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.947  65.940  71.241  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.839  66.302  71.975  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.493  65.284  71.035  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.931  64.988  71.561  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.477  64.331  71.354  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      61.916  64.035  71.880  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      62.585  63.970  70.620  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.147  64.265  70.093  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.601  64.922  70.300  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.102      5.793      6.306
+REMARK INTER + INTRA:          -8.102
+REMARK INTER:                  -8.102
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.726  63.987  70.863  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.651  64.587  71.425  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.113  64.507  72.046  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.651  63.826  72.104  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.188  63.146  72.164  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.004  63.527  71.422  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.297  64.126  72.787  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.114  65.268  71.366  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.039  65.868  71.928  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.651  65.349  70.746  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.114  66.029  70.687  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.652  66.110  70.066  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      65.114  66.790  70.007  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      64.727  65.510  69.505  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.264  64.829  69.564  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.726  64.749  70.184  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.976      5.494      6.407
+REMARK INTER + INTRA:          -7.976
+REMARK INTER:                  -7.976
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bupropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.165  65.103  71.472  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.144  64.717  70.743  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.639  64.965  70.130  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.154  65.598  70.247  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.669  66.232  70.363  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.881  65.678  71.021  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.427  65.518  69.472  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.628  64.083  70.626  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.608  63.697  69.897  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.135  63.835  71.238  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.619  63.202  71.122  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.125  62.955  71.734  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.610  62.322  71.618  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.146  63.340  72.462  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.661  63.974  72.580  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.156  64.222  71.967  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

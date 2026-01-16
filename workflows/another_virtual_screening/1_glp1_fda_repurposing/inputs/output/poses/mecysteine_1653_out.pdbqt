@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.313      0.000      0.000
+REMARK INTER + INTRA:          -4.313
+REMARK INTER:                  -4.313
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.049  62.371  67.604  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.413  61.972  66.982  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.525  62.351  66.257  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.271  63.130  66.156  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.889  61.952  65.634  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.142  61.173  65.735  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.000  62.331  64.911  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.364  61.932  64.287  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.046      1.840      2.350
+REMARK INTER + INTRA:          -4.046
+REMARK INTER:                  -4.046
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.420  62.138  64.477  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.124  62.379  65.208  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.355  62.177  65.429  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.883  61.731  64.918  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.058  62.418  66.159  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.530  62.863  66.669  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.290  62.215  66.380  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      59.993  62.457  67.111  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -3.700      2.693      3.164
+REMARK INTER + INTRA:          -3.700
+REMARK INTER:                  -3.700
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.513  62.390  70.577  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.827  62.685  69.874  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.691  62.289  69.163  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.241  61.597  69.155  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.005  62.584  68.460  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.456  63.276  68.468  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.869  62.189  67.750  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.183  62.484  67.046  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -3.668      3.179      3.829
+REMARK INTER + INTRA:          -3.668
+REMARK INTER:                  -3.668
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.052  63.034  67.191  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.137  63.026  68.010  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.744  62.458  68.462  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.264  61.897  68.091  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.829  62.451  69.282  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.308  63.011  69.652  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.435  61.883  69.732  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.520  61.875  70.553  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.588     12.327     12.795
+REMARK INTER + INTRA:          -3.588
+REMARK INTER:                  -3.588
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.550  58.998  53.249  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.916  59.722  53.103  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.876  60.326  53.663  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.468  60.206  54.371  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.241  61.050  53.516  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.648  61.171  52.809  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.201  61.654  54.076  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      64.566  62.379  53.929  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.586     12.372     12.860
+REMARK INTER + INTRA:          -3.586
+REMARK INTER:                  -3.586
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.595  62.058  54.083  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      64.229  61.321  54.129  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      64.243  60.811  53.480  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.625  61.040  52.784  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.877  60.074  53.525  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      63.495  59.845  54.220  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.892  59.565  52.877  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      63.526  58.827  52.921  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.523     24.714     25.149
+REMARK INTER + INTRA:          -3.523
+REMARK INTER:                  -3.523
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.711  80.261  51.358  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      69.822  79.662  50.802  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      70.386  79.751  50.207  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      70.840  80.440  50.168  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.498  79.152  49.651  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      70.045  78.464  49.690  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      71.062  79.241  49.056  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      71.174  78.642  48.500  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.497     24.891     25.389
+REMARK INTER + INTRA:          -3.497
+REMARK INTER:                  -3.497
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.208  78.512  48.290  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      71.094  79.150  48.799  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      70.583  79.079  49.443  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      70.186  78.367  49.577  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.468  79.717  49.953  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      70.865  80.428  49.818  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      69.958  79.645  50.596  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      69.843  80.283  51.106  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.467      2.849      3.206
+REMARK INTER + INTRA:          -3.467
+REMARK INTER:                  -3.467
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecysteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.165  62.369  66.804  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.299  62.727  67.534  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.040  63.044  67.709  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.649  63.002  67.153  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.174  63.402  68.440  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.566  63.444  68.996  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.915  63.719  68.615  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.049  64.077  69.346  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

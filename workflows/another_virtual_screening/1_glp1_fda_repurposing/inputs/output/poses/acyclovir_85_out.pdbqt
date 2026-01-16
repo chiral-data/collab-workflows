@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.604      0.000      0.000
+REMARK INTER + INTRA:          -7.604
+REMARK INTER:                  -7.604
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.494  60.522  63.944  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.995  61.073  64.299  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.907  61.254  65.099  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.408  61.805  65.455  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.997  62.174  65.010  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      62.406  62.690  65.508  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.070  62.640  66.260  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.453  62.093  66.227  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.967  61.873  66.855  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.078  62.209  67.601  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.592  61.989  68.229  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.702  62.326  68.975  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.217  62.105  69.603  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.085  61.992  64.210  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      62.674  62.362  63.766  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      61.584  61.442  63.855  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.369      1.763      4.401
+REMARK INTER + INTRA:          -7.369
+REMARK INTER:                  -7.369
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.238  64.505  69.180  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.765  63.875  68.934  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.852  63.567  68.174  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.379  62.936  67.928  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.821  62.614  68.443  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.437  61.999  68.049  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.757  61.941  67.292  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.341  62.520  67.217  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.802  62.659  66.548  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.701  62.196  65.872  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.163  62.334  65.204  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.061  61.871  64.528  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.523  62.010  63.860  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.735  62.923  69.203  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.176  62.600  69.718  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      61.207  63.553  69.449  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.335      1.577      2.073
+REMARK INTER + INTRA:          -7.335
+REMARK INTER:                  -7.335
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.725  62.064  64.668  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.032  62.055  65.117  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.012  62.430  65.851  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.319  62.421  66.300  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.648  62.037  66.014  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.049  62.120  66.576  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.350  62.555  67.209  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.136  62.741  67.038  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.648  63.171  67.521  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.385  63.458  68.249  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.897  63.888  68.732  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.635  64.175  69.460  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.146  64.605  69.943  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.668  61.662  65.280  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      59.996  61.278  64.994  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      61.360  61.671  64.831  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.051      6.284      7.618
+REMARK INTER + INTRA:          -7.051
+REMARK INTER:                  -7.051
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.482  66.639  72.407  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.125  66.687  71.665  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.501  66.182  71.474  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.143  66.230  70.732  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.410  66.783  70.181  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.953  66.703  69.499  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.404  66.101  69.628  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.522  65.808  70.391  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      64.093  65.202  70.748  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.483  64.828  70.336  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.055  64.222  70.693  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.445  63.848  70.282  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.016  63.242  70.639  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      66.034  67.288  70.372  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      66.301  67.841  69.820  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      66.391  67.240  71.114  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.991      1.981      2.797
+REMARK INTER + INTRA:          -6.991
+REMARK INTER:                  -6.991
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.018  62.082  66.461  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.745  62.370  66.724  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.808  62.708  67.474  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.536  62.995  67.737  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.200  62.944  67.250  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.838  63.272  67.657  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.570  63.526  68.394  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.764  63.354  68.444  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.274  63.514  69.088  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.582  63.878  69.761  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.092  64.038  70.405  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.399  64.401  71.078  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.909  64.561  71.722  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.136  62.606  66.501  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      61.801  62.556  66.014  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      60.409  62.319  66.238  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.960      2.379      4.661
+REMARK INTER + INTRA:          -6.960
+REMARK INTER:                  -6.960
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.424  61.597  70.542  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.533  62.295  70.114  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.778  62.261  69.327  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.887  62.958  68.898  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.751  63.688  69.258  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.903  64.278  68.701  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.133  63.913  67.998  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.123  63.096  68.120  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.315  62.521  67.562  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.543  62.743  66.801  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.735  62.168  66.242  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.963  62.390  65.481  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.155  61.815  64.923  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.506  63.721  70.045  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.370  64.452  70.404  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      60.397  63.025  70.473  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.716      2.622      4.926
+REMARK INTER + INTRA:          -6.716
+REMARK INTER:                  -6.716
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.504  64.542  69.813  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.717  64.330  69.685  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.498  63.965  68.979  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.710  63.753  68.852  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.143  63.907  69.430  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.415  63.637  69.151  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.532  63.317  68.400  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.333  63.388  68.215  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.693  63.139  67.516  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.242  62.781  66.925  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.602  62.531  66.226  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.152  62.173  65.635  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.511  61.924  64.936  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.363  64.273  70.137  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.795  64.427  70.715  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      62.150  64.484  70.264  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.658      5.500      7.026
+REMARK INTER + INTRA:          -6.658
+REMARK INTER:                  -6.658
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.372  63.942  69.051  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.566  64.324  69.756  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.177  64.878  69.770  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.370  65.260  70.476  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.953  65.087  71.166  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      63.267  65.548  71.774  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.877  66.006  71.460  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      63.941  65.827  70.657  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      64.481  66.159  70.129  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.022  66.723  70.391  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.562  67.054  69.864  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.104  67.619  70.126  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      66.643  67.950  69.598  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.343  64.533  71.151  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      61.926  64.361  71.843  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      62.149  64.151  70.447  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.602      2.942      4.434
+REMARK INTER + INTRA:          -6.602
+REMARK INTER:                  -6.602
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acyclovir
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.276  63.124  66.803  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.175  62.987  67.611  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.558  63.468  68.161  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.456  63.332  68.969  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.973  62.714  69.225  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.978  62.713  70.050  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.465  63.329  70.304  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.760  63.712  69.635  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.270  64.360  69.633  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.529  64.684  70.347  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.038  65.332  70.345  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.298  65.655  71.059  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.807  66.303  71.057  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.591  62.234  68.674  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.108  61.616  68.931  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      60.692  62.370  67.867  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

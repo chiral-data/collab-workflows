@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.405      0.000      0.000
+REMARK INTER + INTRA:          -8.405
+REMARK INTER:                  -8.405
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.489  63.520  67.983  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.052  63.094  67.428  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.253  62.939  67.564  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.413  62.823  66.737  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.976  62.397  66.183  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.177  62.242  66.318  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.379  62.087  66.454  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.338  62.126  65.492  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.899  61.700  64.937  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.261  61.429  64.247  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.060  61.585  64.112  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.497  62.010  64.666  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.136  62.281  65.356  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.241      1.668      2.848
+REMARK INTER + INTRA:          -7.241
+REMARK INTER:                  -7.241
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.771  62.284  64.036  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.061  61.984  64.331  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.670  61.381  63.927  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.744  62.287  65.030  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.035  61.986  65.324  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.642  61.383  64.921  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.251  60.780  64.517  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.716  62.289  66.024  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.007  61.988  66.318  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.689  62.290  67.016  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.081  62.894  67.420  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.790  63.194  67.126  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.108  62.892  66.427  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.154      3.863      5.595
+REMARK INTER + INTRA:          -7.154
+REMARK INTER:                  -7.154
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.902  64.892  69.469  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.145  64.124  69.646  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.080  63.531  69.077  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.454  63.950  70.391  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.697  63.182  70.567  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.633  62.588  69.998  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.568  61.994  69.430  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.007  63.008  71.313  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.250  62.239  71.488  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.559  62.065  72.233  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.624  62.659  72.802  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.380  63.427  72.626  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.072  63.601  71.881  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.123      6.481      7.749
+REMARK INTER + INTRA:          -7.123
+REMARK INTER:                  -7.123
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.720  66.511  72.498  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.413  66.737  71.766  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.797  67.314  71.320  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      65.724  66.385  71.481  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.418  66.611  70.750  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.800  67.189  70.303  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      66.183  67.766  69.856  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.727  66.258  70.465  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.421  66.485  69.733  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.732  66.133  69.447  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.349  65.555  69.895  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.655  65.329  70.626  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.344  65.681  70.911  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.879      5.206      6.081
+REMARK INTER + INTRA:          -6.879
+REMARK INTER:                  -6.879
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.419  65.354  70.952  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.976  64.944  71.401  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.372  65.327  72.015  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.136  64.151  71.237  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.693  63.742  71.687  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.091  64.125  72.301  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.487  64.507  72.914  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.854  62.949  71.522  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.411  62.540  71.972  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.572  61.747  71.808  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.174  61.365  71.194  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.617  61.774  70.745  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.457  62.567  70.909  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.858      5.910      7.301
+REMARK INTER + INTRA:          -6.858
+REMARK INTER:                  -6.858
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.749  65.276  71.939  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.244  65.357  71.285  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.162  64.847  70.641  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.822  65.946  71.274  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.316  66.026  70.619  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.235  65.517  69.975  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.153  65.009  69.331  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.894  66.616  70.608  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.389  66.696  69.953  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.967  67.285  69.942  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.048  67.794  70.587  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.553  67.714  71.241  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.976  67.125  71.252  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.840      5.070      6.657
+REMARK INTER + INTRA:          -6.840
+REMARK INTER:                  -6.840
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.468  61.736  70.022  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.714  62.067  70.736  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.310  61.703  71.174  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.365  62.762  71.011  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.612  63.092  71.725  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.208  62.729  72.165  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.804  62.365  72.603  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.263  63.788  72.001  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.510  64.119  72.715  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.161  64.814  72.990  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.565  65.177  72.551  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.318  64.847  71.837  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.667  64.152  71.562  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.749     15.369     16.676
+REMARK INTER + INTRA:          -6.749
+REMARK INTER:                  -6.749
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.122  78.969  73.039  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.365  78.640  73.038  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      58.713  79.110  73.222  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.261  77.843  72.852  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      58.504  77.516  72.851  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      57.851  77.985  73.035  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      57.198  78.454  73.220  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      58.400  76.718  72.665  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      57.642  76.391  72.664  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      57.538  75.594  72.478  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      58.192  75.125  72.294  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      58.948  75.452  72.295  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.052  76.249  72.481  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.659      5.409      6.447
+REMARK INTER + INTRA:          -6.659
+REMARK INTER:                  -6.659
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carfimate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.112  66.491  71.892  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.023  65.790  71.467  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.356  65.719  70.716  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      62.603  65.160  71.794  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.514  64.459  71.369  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.846  64.387  70.617  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.178  64.315  69.865  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.093  63.828  71.696  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.005  63.127  71.270  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.584  62.497  71.596  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.252  62.569  72.348  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.340  63.269  72.773  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.761  63.899  72.447  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

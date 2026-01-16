@@ -1,0 +1,11 @@
+ROOT
+REMARK  Name = aluminium oxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      -0.139   0.335   0.000  0.00  0.00    +0.000 OA
+ATOM      2 AL   UNL     1       0.445   0.918   0.000  0.00  0.00    +0.000 Al
+ATOM      3  O   UNL     1       1.028   0.335   0.000  0.00  0.00    +0.000 OA
+ATOM      4 AL   UNL     1       0.445  -0.248   0.000  0.00  0.00    +0.000 Al
+ATOM      5  O   UNL     1       0.590   0.335   0.000  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0

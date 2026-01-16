@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.624      0.000      0.000
+REMARK INTER + INTRA:          -6.624
+REMARK INTER:                  -6.624
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.250  61.642  64.224  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.510  61.610  64.588  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.896  61.186  64.236  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.385  61.999  65.304  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      61.999  62.423  65.656  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      60.645  61.967  65.668  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.031  61.543  65.316  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.520  62.357  66.384  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.780  62.324  66.748  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      59.655  62.714  67.464  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      59.166  61.901  66.396  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.329      1.231      2.617
+REMARK INTER + INTRA:          -6.329
+REMARK INTER:                  -6.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.839  62.737  67.503  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.916  62.384  66.761  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.260  62.035  66.402  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.646  62.379  66.379  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      61.302  62.728  66.739  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      60.722  62.026  65.637  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.067  61.677  65.278  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.453  62.022  65.255  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.529  61.668  64.514  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.260  61.664  64.131  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.874  61.319  64.154  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.719      4.708      5.895
+REMARK INTER + INTRA:          -5.719
+REMARK INTER:                  -5.719
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.588  62.586  72.941  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.259  62.847  72.231  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.953  63.611  72.175  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.235  62.345  71.578  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      61.541  61.581  71.634  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      60.906  62.606  70.868  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.600  63.370  70.812  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.882  62.103  70.214  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.553  62.364  69.504  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.529  61.862  68.851  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.246  63.128  69.448  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.582      6.533      6.904
+REMARK INTER + INTRA:          -5.582
+REMARK INTER:                  -5.582
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.635  61.832  71.734  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.353  62.500  72.127  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.666  62.708  72.862  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.759  62.960  71.787  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      60.446  62.752  71.053  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      60.477  63.628  72.181  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.790  63.836  72.916  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      59.883  64.088  71.841  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.601  64.756  72.235  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      59.007  65.215  71.895  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      59.914  64.964  72.970  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.530      4.784      5.470
+REMARK INTER + INTRA:          -5.530
+REMARK INTER:                  -5.530
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.256  61.597  70.914  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.714  62.108  70.455  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.586  62.157  69.642  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.299  62.568  70.809  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      61.426  62.519  71.623  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      61.757  63.079  70.350  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.629  63.128  69.537  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      62.342  63.539  70.704  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.800  64.050  70.245  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      63.385  64.511  70.599  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      62.672  64.099  69.432  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.445      7.656      8.083
+REMARK INTER + INTRA:          -5.445
+REMARK INTER:                  -5.445
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.030  67.361  70.123  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.460  67.182  70.691  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.445  67.597  71.404  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.905  66.589  70.548  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      64.920  66.174  69.835  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      64.334  66.411  71.117  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.319  66.826  71.829  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      63.780  65.818  70.973  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.209  65.640  71.542  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.654  65.047  71.399  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      63.194  66.055  72.255  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.281     26.176     26.837
+REMARK INTER + INTRA:          -5.281
+REMARK INTER:                  -5.281
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.214  78.502  49.622  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.874  78.779  49.211  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.191  78.333  48.593  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.217  79.499  49.417  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      70.900  79.945  50.034  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      71.877  79.776  49.006  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      72.194  79.330  48.388  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      72.220  80.496  49.212  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      72.880  80.773  48.801  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      73.223  81.493  49.007  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      73.197  80.327  48.183  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.280     24.913     25.375
+REMARK INTER + INTRA:          -5.280
+REMARK INTER:                  -5.280
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.070  78.869  48.728  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.337  78.815  49.103  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.866  78.147  48.992  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.076  79.428  49.589  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      71.548  80.096  49.700  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      70.343  79.374  49.964  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      69.872  78.706  49.853  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      70.082  79.987  50.450  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      69.349  79.933  50.826  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      69.088  80.545  51.311  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      68.878  79.265  50.715  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.124      6.269      6.775
+REMARK INTER + INTRA:          -5.124
+REMARK INTER:                  -5.124
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bromisoval
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.878  63.345  72.517  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.533  63.763  71.894  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.363  63.379  71.184  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.359  64.564  71.981  0.00  0.00    +0.000 C 
+ATOM      5 BR   UNL     1      60.530  64.949  72.691  0.00  0.00    +0.000 Br
+ATOM      6  C   UNL     1      60.015  64.983  71.359  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.844  64.599  70.649  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      59.841  65.784  71.446  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.497  66.202  70.823  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      59.323  67.003  70.910  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      59.326  65.818  70.113  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -6.195      0.000      0.000
+REMARK INTER + INTRA:          -6.195
+REMARK INTER:                  -6.195
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.389  64.059  68.272  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.353  63.788  69.050  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.531  62.999  69.220  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.139  64.302  69.657  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.961  65.090  69.487  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.747  65.605  70.095  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.711  65.333  70.872  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.889  64.545  71.043  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.103  64.030  70.436  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.853  64.273  71.821  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      59.639  64.788  72.430  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.031  63.486  71.992  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.570  66.392  69.925  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      59.355  66.908  70.533  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.606  66.664  69.147  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.167      0.108      2.334
+REMARK INTER + INTRA:          -6.167
+REMARK INTER:                  -6.167
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.501  62.932  69.336  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.314  63.708  69.130  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.314  63.935  68.336  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.128  64.257  69.715  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.128  64.031  70.509  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.941  64.581  71.095  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.754  65.357  70.888  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.754  65.584  70.095  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.941  65.035  69.508  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.567  66.361  69.887  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      59.380  66.911  70.474  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.567  66.587  69.094  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.941  64.354  71.887  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      59.754  64.904  72.474  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.128  63.577  72.095  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.158      0.114      2.823
+REMARK INTER + INTRA:          -6.158
+REMARK INTER:                  -6.158
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.378  66.955  70.484  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.565  66.406  69.897  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.565  66.635  69.103  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.753  65.631  70.102  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.753  65.402  70.895  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.941  64.625  71.101  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.128  64.077  70.514  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.127  64.305  69.721  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.940  65.082  69.515  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.314  63.757  69.133  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.502  62.979  69.339  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.314  63.985  68.341  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.941  64.398  71.893  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.129  63.620  72.099  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.754  64.946  72.481  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.108      0.483      2.925
+REMARK INTER + INTRA:          -6.108
+REMARK INTER:                  -6.108
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.481  63.871  72.431  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.234  64.628  72.215  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.099  65.199  72.796  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.123  64.815  71.420  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.258  64.246  70.839  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.147  64.433  70.043  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.900  65.190  69.829  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.764  65.760  70.409  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.876  65.573  71.205  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.517  66.518  70.195  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      59.406  66.706  69.398  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.382  67.088  70.775  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.282  63.863  69.463  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.170  64.051  68.667  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.529  63.105  69.678  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.088      0.448      2.373
+REMARK INTER + INTRA:          -6.088
+REMARK INTER:                  -6.088
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.409  66.883  69.560  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.501  66.608  70.332  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.387  67.120  70.969  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.708  65.822  70.468  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.823  65.309  69.832  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.030  64.522  69.968  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.123  64.248  70.739  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.008  64.760  71.376  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.801  65.547  71.241  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.100  64.485  72.149  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.308  63.698  72.285  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.986  64.997  72.785  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.145  64.011  69.331  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.353  63.223  69.467  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.053  64.285  68.559  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.069      0.552      2.379
+REMARK INTER + INTRA:          -6.069
+REMARK INTER:                  -6.069
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.129  65.193  72.859  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.252  64.644  72.256  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.492  63.876  72.441  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.134  64.862  71.470  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.894  65.629  71.285  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.777  65.847  70.498  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.900  65.297  69.896  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.141  64.530  70.079  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.258  64.312  70.867  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.264  63.979  69.477  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.147  64.198  68.689  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.504  63.213  69.661  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.536  66.613  70.314  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      59.419  66.831  69.526  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.413  67.164  70.917  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.040      2.285      3.506
+REMARK INTER + INTRA:          -6.040
+REMARK INTER:                  -6.040
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.667  64.919  70.954  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.334  64.642  70.253  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.708  64.789  69.532  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.627  64.219  70.271  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.252  64.072  70.991  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.544  63.648  71.010  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.211  63.372  70.308  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.585  63.518  69.587  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.293  63.942  69.569  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.252  63.242  68.885  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.544  62.818  68.903  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.626  63.388  68.165  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.171  63.501  71.730  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.462  63.077  71.748  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.504  63.778  72.432  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.029      2.462      3.310
+REMARK INTER + INTRA:          -6.029
+REMARK INTER:                  -6.029
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.242  61.545  70.617  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.604  62.023  70.050  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.505  61.856  69.247  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.063  62.665  70.285  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.161  62.832  71.086  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.621  63.475  71.321  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.982  63.953  70.754  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.884  63.787  69.952  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.425  63.144  69.717  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      62.246  64.264  69.384  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      62.706  64.909  69.619  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.148  64.099  68.582  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.718  63.641  72.123  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      62.179  64.285  72.358  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.357  63.164  72.691  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.973      3.725      4.089
+REMARK INTER + INTRA:          -5.973
+REMARK INTER:                  -5.973
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = altretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.358  64.611  71.631  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.152  64.749  71.456  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.593  64.173  71.061  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.506  65.460  71.674  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.066  66.036  72.068  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.420  66.749  72.287  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      63.213  66.885  72.112  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.655  66.310  71.717  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      63.301  65.598  71.499  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      64.449  66.447  71.542  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      64.803  67.160  71.761  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.890  65.872  71.148  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.979  67.323  72.681  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      62.333  68.037  72.900  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.185  67.187  72.857  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

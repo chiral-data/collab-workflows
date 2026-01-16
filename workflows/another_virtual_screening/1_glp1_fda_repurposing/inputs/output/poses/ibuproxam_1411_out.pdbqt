@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.754      0.000      0.000
+REMARK INTER + INTRA:          -9.754
+REMARK INTER:                  -9.754
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.715  61.517  63.265  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.173  61.629  63.877  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.433  61.265  63.844  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.371  62.105  64.522  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.829  62.217  65.133  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.026  62.693  65.777  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.484  62.805  66.389  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.745  62.442  66.356  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.546  61.966  65.712  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.089  61.853  65.100  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.202  62.554  66.968  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.462  62.190  66.935  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.399  63.030  67.612  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.139  63.393  67.645  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      59.857  63.142  68.223  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.054  63.618  68.868  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.357      2.204      3.766
+REMARK INTER + INTRA:          -9.357
+REMARK INTER:                  -9.357
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.260  63.149  68.782  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.359  62.818  68.034  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.773  62.331  67.717  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.045  62.974  67.601  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.144  62.643  66.853  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.829  62.798  66.420  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.929  62.467  65.671  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.343  61.980  65.355  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.658  61.824  65.787  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.558  62.155  66.536  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.443  61.648  64.605  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.856  61.161  64.289  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.127  61.804  64.173  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.713  62.291  64.489  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.227  61.473  63.424  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      62.912  61.628  62.991  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.828      3.111      5.337
+REMARK INTER + INTRA:          -8.828
+REMARK INTER:                  -8.828
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.631  62.577  73.069  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.417  62.788  72.301  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.425  63.581  72.072  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.196  62.205  71.759  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.983  62.415  70.992  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.762  61.833  70.450  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.549  62.043  69.682  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.556  62.835  69.454  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.777  63.418  69.995  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.991  63.208  70.763  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.343  63.046  68.685  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.350  63.839  68.457  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.122  62.463  68.144  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.115  61.671  68.372  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      59.909  62.674  67.376  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      59.688  62.092  66.835  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.714      5.385      6.595
+REMARK INTER + INTRA:          -8.714
+REMARK INTER:                  -8.714
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.339  67.763  70.179  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.739  67.238  70.393  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.481  67.203  71.177  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.397  66.747  69.824  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.798  66.223  70.038  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.456  65.733  69.470  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.857  65.208  69.684  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.599  65.174  70.466  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.941  65.664  71.036  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.540  66.189  70.821  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.999  64.648  70.680  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.741  64.614  71.464  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.657  64.159  70.112  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.915  64.193  69.330  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.058  63.634  70.326  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      61.716  63.144  69.758  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.640      5.915      6.641
+REMARK INTER + INTRA:          -8.640
+REMARK INTER:                  -8.640
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.010  60.909  71.710  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.529  61.580  71.719  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.856  61.612  71.243  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.722  62.219  72.205  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.242  62.889  72.214  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.434  63.528  72.699  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.953  64.199  72.708  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.281  64.230  72.232  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.088  63.592  71.747  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.569  62.921  71.738  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.800  64.902  72.241  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.128  64.933  71.765  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.993  65.540  72.726  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.665  65.508  73.203  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      59.512  66.211  72.736  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      59.704  66.850  73.221  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.277      6.269      7.296
+REMARK INTER + INTRA:          -8.277
+REMARK INTER:                  -8.277
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.289  67.631  70.251  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.630  67.157  70.395  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.404  66.586  69.842  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.195  67.252  71.090  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.537  66.779  71.234  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.103  66.874  71.928  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.443  66.399  72.072  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.218  65.830  71.520  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.651  65.733  70.825  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.311  66.208  70.681  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.557  65.355  71.664  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.332  64.785  71.112  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.124  65.451  72.359  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.350  66.020  72.910  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      61.465  64.976  72.502  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      61.031  65.071  73.197  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.253      2.359      3.448
+REMARK INTER + INTRA:          -8.253
+REMARK INTER:                  -8.253
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.171  62.762  65.994  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.030  62.584  66.788  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.626  61.893  66.990  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.291  63.098  67.379  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.149  62.920  68.171  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.410  63.433  68.762  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.268  63.255  69.555  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.865  62.565  69.757  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.604  62.051  69.167  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.746  62.229  68.374  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.723  62.387  70.551  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.320  61.695  70.753  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.984  62.899  71.141  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.387  63.590  70.940  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      60.843  62.722  71.934  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      61.103  63.234  72.526  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.159      5.910      6.906
+REMARK INTER + INTRA:          -8.159
+REMARK INTER:                  -8.159
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.028  63.366  72.384  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.625  63.664  71.899  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.870  63.236  71.236  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.977  64.389  72.076  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.574  64.687  71.591  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.926  65.412  71.767  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.523  65.710  71.282  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.768  65.283  70.621  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.416  64.558  70.443  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.819  64.260  70.929  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.365  65.581  70.135  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.610  65.154  69.473  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.717  66.306  70.312  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      64.472  66.732  70.973  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      65.314  66.603  69.827  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      65.666  67.328  70.003  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.908      3.871      6.229
+REMARK INTER + INTRA:          -7.908
+REMARK INTER:                  -7.908
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibuproxam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.936  65.702  73.221  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.046  65.021  72.769  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.165  64.293  73.140  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.038  65.067  71.944  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.148  64.387  71.492  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.140  64.432  70.669  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.250  63.751  70.216  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.368  63.025  70.587  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.377  62.978  71.411  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.267  63.659  71.864  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.479  62.343  70.134  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.597  61.616  70.506  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.470  62.390  69.311  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.352  63.116  68.940  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      60.580  61.709  68.859  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.572  61.754  68.035  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

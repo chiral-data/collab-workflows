@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.667      0.000      0.000
+REMARK INTER + INTRA:          -8.667
+REMARK INTER:                  -8.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.949  63.502  67.956  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.398  63.121  67.473  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.637  62.788  66.758  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.087  62.408  66.275  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.297  62.361  66.508  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      59.747  61.981  66.026  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      60.058  62.694  67.225  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.267  62.647  67.458  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.608  63.074  67.707  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.325  62.075  65.559  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.116  62.123  65.326  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.354  61.789  64.610  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.804  61.410  64.128  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.015  61.362  64.361  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.775  61.695  65.077  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.599      3.485      5.167
+REMARK INTER + INTRA:          -7.599
+REMARK INTER:                  -7.599
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.422  64.093  68.429  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.198  63.524  68.984  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.374  63.635  69.782  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.150  63.067  70.337  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.751  62.388  70.094  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      60.527  61.821  70.648  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      60.574  62.277  69.295  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.174  61.597  69.051  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.798  62.845  68.740  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.326  63.178  71.135  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.726  63.858  71.378  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.902  63.969  72.177  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.679  63.401  72.731  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.279  62.722  72.488  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.103  62.611  71.689  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.497      3.632      5.275
+REMARK INTER + INTRA:          -7.497
+REMARK INTER:                  -7.497
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.537  62.000  68.517  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.505  62.596  69.088  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.786  62.453  69.849  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.754  63.049  70.419  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.440  63.787  70.228  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      60.408  64.382  70.797  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      60.158  63.930  69.465  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.844  64.669  69.273  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.191  63.334  68.895  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.035  62.907  71.182  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.350  62.168  71.374  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.631  62.026  72.136  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.599  62.621  72.705  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.285  63.359  72.514  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.003  63.502  71.751  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.496      5.551      6.251
+REMARK INTER + INTRA:          -7.496
+REMARK INTER:                  -7.496
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.612  65.049  72.189  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.393  64.786  72.245  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.612  64.069  71.901  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.392  63.806  71.957  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.953  64.259  72.357  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      61.732  63.996  72.413  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      60.734  64.977  72.701  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.295  65.431  73.101  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      59.954  65.240  72.645  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.611  63.089  71.613  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.049  62.635  71.213  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.269  61.918  70.870  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.048  61.655  70.925  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.609  62.108  71.325  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.390  62.826  71.669  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.464      5.559      6.976
+REMARK INTER + INTRA:          -7.464
+REMARK INTER:                  -7.464
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.443  65.182  72.081  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.971  65.213  71.446  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.551  65.798  71.420  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.078  65.829  70.786  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.024  65.275  70.177  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      64.551  65.307  69.544  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      63.443  64.689  70.203  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.389  64.135  69.594  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.916  64.658  70.837  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.659  66.414  70.760  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.712  66.969  71.370  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.293  67.554  71.344  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.819  67.585  70.710  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.766  67.032  70.101  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.185  66.446  70.127  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.224      4.315      5.220
+REMARK INTER + INTRA:          -7.224
+REMARK INTER:                  -7.224
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.244  65.540  70.154  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.978  64.949  70.665  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.639  64.262  70.360  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.373  63.671  70.871  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.446  63.767  71.687  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      61.180  63.177  72.197  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      61.786  64.455  71.992  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.859  64.552  72.809  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.052  65.046  71.481  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.033  62.984  70.567  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.960  62.888  69.750  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.620  62.200  69.445  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.354  61.610  69.956  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.428  61.706  70.772  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.767  62.394  71.077  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.168      5.684      6.297
+REMARK INTER + INTRA:          -7.168
+REMARK INTER:                  -7.168
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.742  66.553  72.366  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.728  65.920  71.836  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.397  65.200  72.062  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.382  64.568  71.531  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.700  64.657  70.775  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      62.685  64.026  70.245  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      63.031  65.378  70.549  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.349  65.467  69.792  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      63.046  66.010  71.079  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.051  63.847  71.757  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.734  63.758  72.514  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.402  63.037  72.739  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.388  62.406  72.209  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.705  62.495  71.453  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.037  63.216  71.227  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.893     24.931     25.497
+REMARK INTER + INTRA:          -6.893
+REMARK INTER:                  -6.893
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      68.585  80.221  51.631  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      69.350  80.328  51.338  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      69.649  79.811  50.770  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      70.413  79.918  50.478  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.877  80.542  50.753  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      71.640  80.649  50.461  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      70.577  81.060  51.322  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      71.041  81.684  51.598  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      69.813  80.953  51.614  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      70.714  79.402  49.909  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.250  78.777  49.634  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.551  78.260  49.065  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.314  78.367  48.773  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.778  78.991  49.048  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      71.477  79.509  49.617  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.816      5.891      6.478
+REMARK INTER + INTRA:          -6.816
+REMARK INTER:                  -6.816
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bropirimine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.612  63.436  72.226  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.947  64.185  72.133  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.516  64.312  71.549  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.850  65.060  71.456  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.616  65.682  71.945  0.00  0.00    +0.000 A 
+ATOM      6 BR   UNL     1      62.951  66.429  71.851  0.00  0.00    +0.000 Br
+ATOM      7  C   UNL     1      62.047  65.554  72.529  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.812  66.176  73.019  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.712  64.806  72.623  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.420  65.188  70.872  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.654  64.566  70.382  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.223  64.694  69.799  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.557  65.442  69.705  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.323  66.063  70.195  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.754  65.936  70.779  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

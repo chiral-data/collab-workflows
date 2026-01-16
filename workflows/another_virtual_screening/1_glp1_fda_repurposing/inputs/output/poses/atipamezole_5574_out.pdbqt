@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:   -10.188      0.000      0.000
+REMARK INTER + INTRA:         -10.188
+REMARK INTER:                 -10.188
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.271  61.995  66.299  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.874  62.363  66.726  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.643  62.375  66.424  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.446  62.474  66.268  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.610  62.120  65.542  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.908  61.802  65.248  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.310  61.959  65.793  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.905  61.410  64.522  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.602  61.335  64.090  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.305  61.653  64.383  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.310  62.046  65.109  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.814  62.788  67.118  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.556  63.076  67.339  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.475  63.451  68.069  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.684  63.395  68.299  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.276  62.985  67.711  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.144      1.498      2.903
+REMARK INTER + INTRA:          -9.144
+REMARK INTER:                  -9.144
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.813  61.225  65.151  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.573  61.510  65.003  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.954  61.976  65.568  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.464  62.445  66.016  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.086  62.626  66.726  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.342  62.269  66.716  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.260  61.868  66.001  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.835  62.357  67.362  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.071  62.800  68.015  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.815  63.157  68.024  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.322  63.070  67.380  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.568  61.987  65.016  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.292  62.374  65.104  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.737  62.239  64.423  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.289  61.769  63.914  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      61.566  61.613  64.280  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.941      5.190      6.206
+REMARK INTER + INTRA:          -8.941
+REMARK INTER:                  -8.941
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.778  64.250  72.894  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.009  64.451  72.671  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.572  63.939  72.193  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.012  63.548  71.730  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.344  62.837  71.476  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.108  62.788  71.782  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.250  63.469  72.225  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.576  62.129  71.617  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.281  61.520  71.147  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.516  61.569  70.841  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.047  62.227  71.005  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.986  64.517  72.261  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.236  64.488  71.918  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      58.834  65.178  72.129  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.335  65.631  72.602  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.048  65.223  72.684  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.820      2.889      5.278
+REMARK INTER + INTRA:          -8.820
+REMARK INTER:                  -8.820
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.293  61.253  70.757  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.492  61.794  70.167  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.870  62.501  70.367  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.241  63.237  70.397  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.418  63.401  71.186  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.156  62.766  71.643  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.817  62.210  71.138  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.261  62.778  72.462  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.626  63.423  72.822  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.888  64.057  72.365  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.784  64.047  71.546  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.843  62.643  69.554  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.132  63.315  69.171  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.991  63.226  68.363  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.614  62.501  68.248  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.523  62.140  68.984  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.514      5.507      7.232
+REMARK INTER + INTRA:          -8.514
+REMARK INTER:                  -8.514
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.454  66.493  72.387  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.424  65.934  71.780  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.947  65.987  71.144  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.388  65.898  70.453  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.941  66.509  70.424  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.842  66.975  71.096  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.228  66.653  71.542  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.325  67.634  71.216  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.906  67.826  70.663  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.005  67.359  69.991  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.523  66.700  69.870  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.556  65.309  70.880  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.720  64.896  70.184  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.199  64.258  70.139  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.714  64.276  70.806  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      62.935  64.926  71.265  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.364      2.621      4.011
+REMARK INTER + INTRA:          -8.364
+REMARK INTER:                  -8.364
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.774  61.581  70.929  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.591  62.382  71.000  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.431  62.830  70.325  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.250  63.406  69.764  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.272  63.052  69.019  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.467  62.257  69.120  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.566  62.119  69.927  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.531  61.762  68.463  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.399  62.061  67.707  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.203  62.856  67.606  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.140  63.352  68.261  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.330  63.446  70.865  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.131  64.226  70.678  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.088  64.652  71.383  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.260  64.137  72.004  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.409  63.391  71.684  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.058     24.938     25.920
+REMARK INTER + INTRA:          -8.058
+REMARK INTER:                  -8.058
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.449  78.079  49.176  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.095  78.593  49.173  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.069  79.288  49.618  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.202  80.008  49.998  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.533  80.189  50.443  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      69.985  79.581  50.338  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.316  79.024  49.828  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      69.255  79.613  50.722  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      69.073  80.253  51.209  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      69.620  80.861  51.314  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.350  80.829  50.931  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.828  79.407  49.313  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.317  80.053  49.471  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      73.021  79.945  49.054  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      72.967  79.234  48.640  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      72.229  78.900  48.800  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.986      5.443      6.553
+REMARK INTER + INTRA:          -7.986
+REMARK INTER:                  -7.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.284  65.008  70.215  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.302  65.369  70.956  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.137  64.928  71.634  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.000  64.636  72.393  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.818  63.835  72.329  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.842  63.631  71.530  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.039  64.306  71.100  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.680  62.855  71.298  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.495  62.285  71.864  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.472  62.489  72.663  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.633  63.264  72.896  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.270  65.643  72.025  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.225  65.764  72.841  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.398  66.557  72.989  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.550  66.925  72.266  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      62.471  66.360  71.670  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.945     24.839     25.708
+REMARK INTER + INTRA:          -7.945
+REMARK INTER:                  -7.945
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atipamezole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.054  79.969  51.110  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.699  80.483  51.095  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.356  80.305  50.628  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.074  80.276  50.224  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.086  79.586  49.774  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.375  79.187  49.900  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      69.923  79.631  50.427  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.231  78.470  49.517  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.797  78.153  49.009  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.508  78.551  48.883  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.654  79.268  49.265  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.650  81.016  50.927  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.384  81.350  50.747  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      71.450  82.058  51.166  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      70.758  82.161  51.604  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      70.264  81.517  51.456  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

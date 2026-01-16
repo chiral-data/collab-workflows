@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.897      0.000      0.000
+REMARK INTER + INTRA:          -6.897
+REMARK INTER:                  -6.897
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.736  62.486  66.808  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.149  62.321  66.114  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.798  61.865  65.523  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.033  61.574  65.627  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.211  61.700  64.828  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.860  61.245  64.238  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.274  61.080  63.542  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.976  61.992  64.724  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.390  61.827  64.029  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.038  61.371  63.439  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.328  62.448  65.315  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.915  62.613  66.010  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.740      0.678      2.259
+REMARK INTER + INTRA:          -6.740
+REMARK INTER:                  -6.740
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.390  61.616  63.760  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.024  61.870  64.453  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.251  61.636  64.622  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.845  61.148  64.095  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.884  61.891  65.316  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.112  61.656  65.483  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.745  61.911  66.178  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.291  62.379  65.841  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.924  62.633  66.536  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.151  62.399  66.704  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.064  62.613  65.674  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.430  62.359  64.980  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.694      1.131      1.517
+REMARK INTER + INTRA:          -6.694
+REMARK INTER:                  -6.694
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.984  62.380  66.843  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.381  62.137  66.163  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.138  62.421  66.003  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.499  62.948  66.525  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.536  62.177  65.322  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.293  62.461  65.163  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.690  62.218  64.481  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.175  61.650  64.801  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.572  61.407  64.119  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.330  61.691  63.960  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.417  61.366  64.959  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.019  61.609  65.640  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.756      3.581      4.628
+REMARK INTER + INTRA:          -5.756
+REMARK INTER:                  -5.756
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.450  61.662  70.744  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.566  62.021  70.012  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.972  62.738  69.963  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.260  63.095  70.649  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.088  63.098  69.230  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.493  63.814  69.182  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.610  64.174  68.448  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.800  62.741  68.545  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.916  63.101  67.811  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.321  63.817  67.763  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.394  62.024  68.593  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.277  61.664  69.326  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.652      6.175      6.935
+REMARK INTER + INTRA:          -5.652
+REMARK INTER:                  -5.652
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.376  64.622  72.709  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.669  63.898  72.447  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.335  63.531  71.789  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      59.707  63.890  71.392  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.628  62.805  71.527  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.294  62.439  70.868  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.588  61.713  70.606  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.256  62.447  71.924  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.550  61.721  71.661  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.215  61.355  71.003  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.591  62.813  72.583  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.297  63.539  72.845  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.596     24.738     25.286
+REMARK INTER + INTRA:          -5.596
+REMARK INTER:                  -5.596
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.708  79.957  50.931  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.139  79.575  50.342  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      70.850  79.897  50.076  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      71.129  80.602  50.401  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.282  79.515  49.486  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.992  79.838  49.221  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      72.425  79.455  48.630  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      71.002  78.811  49.162  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.434  78.428  48.571  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      72.145  78.751  48.306  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.291  78.487  49.427  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      69.859  78.869  50.017  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.581      2.061      3.426
+REMARK INTER + INTRA:          -5.581
+REMARK INTER:                  -5.581
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.649  61.813  65.702  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.928  62.114  66.416  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.684  62.442  66.459  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.160  62.466  65.786  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.964  62.744  67.174  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.719  63.071  67.216  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.999  63.373  67.932  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.487  62.719  67.846  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.767  63.022  68.562  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.523  63.348  68.604  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.731  62.392  67.805  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.451  62.090  67.090  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.568     16.095     17.078
+REMARK INTER + INTRA:          -5.568
+REMARK INTER:                  -5.568
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.077  78.603  73.044  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.666  77.902  72.907  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.077  77.192  72.825  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      59.900  77.184  72.880  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      58.665  76.490  72.688  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.076  75.780  72.607  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      58.664  75.078  72.469  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      57.842  76.499  72.633  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      57.430  75.796  72.496  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      57.842  75.087  72.414  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      57.430  77.209  72.715  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      57.842  77.911  72.851  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.438      7.429      8.238
+REMARK INTER + INTRA:          -5.438
+REMARK INTER:                  -5.438
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.287  65.164  70.265  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.928  65.682  70.253  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.263  65.941  70.961  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      63.955  65.681  71.681  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.904  66.460  70.950  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.238  66.718  71.658  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.880  67.237  71.646  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.211  66.719  70.230  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.853  67.239  70.218  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      66.187  67.497  70.927  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.877  66.461  69.521  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      64.236  65.943  69.533  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

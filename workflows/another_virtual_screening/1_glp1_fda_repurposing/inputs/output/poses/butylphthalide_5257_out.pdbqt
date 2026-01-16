@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.603      0.000      0.000
+REMARK INTER + INTRA:          -8.603
+REMARK INTER:                  -8.603
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.764  61.628  63.433  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.035  61.625  63.819  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.969  61.932  64.581  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.240  61.929  64.967  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.175  62.237  65.729  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.788  62.565  66.174  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.477  62.801  66.901  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.897  63.158  67.515  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.673  62.620  66.905  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.486  62.271  66.181  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.712  62.029  66.028  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.126  62.136  66.597  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.312  62.485  67.321  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.086  62.727  67.476  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.517      1.256      3.452
+REMARK INTER + INTRA:          -8.517
+REMARK INTER:                  -8.517
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.348  62.390  68.659  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.890  62.504  68.048  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.762  62.156  67.312  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.304  62.270  66.701  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.175  61.922  65.964  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.533  61.446  65.758  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.627  61.218  64.971  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.111  60.740  64.540  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.327  61.552  64.691  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.666  61.986  65.305  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.378  62.385  65.183  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.751  62.349  64.449  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.412  61.915  63.835  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.701  61.516  63.956  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.119      1.492      3.398
+REMARK INTER + INTRA:          -8.119
+REMARK INTER:                  -8.119
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.949  62.016  70.878  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.453  61.974  70.220  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.755  62.117  69.466  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.259  62.076  68.808  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.560  62.219  68.054  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.343  62.408  67.872  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.399  62.504  67.055  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.083  62.696  66.635  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.652  62.373  66.732  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.134  62.197  67.349  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.340  62.040  67.188  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.064  62.059  66.412  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.582  62.235  65.794  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.376  62.393  65.954  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.098      3.938      5.244
+REMARK INTER + INTRA:          -8.098
+REMARK INTER:                  -8.098
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.113  62.140  67.854  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.509  61.957  68.554  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.396  62.420  69.226  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.792  62.237  69.926  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.678  62.701  70.598  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.187  63.362  70.655  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.241  63.654  71.424  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.841  64.312  71.722  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.765  63.175  71.843  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.035  62.585  71.333  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.571  62.020  71.604  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.837  62.043  72.384  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.567  62.633  72.894  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.031  63.198  72.624  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.834      5.291      6.716
+REMARK INTER + INTRA:          -7.834
+REMARK INTER:                  -7.834
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.698  65.885  72.616  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.852  65.225  72.144  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.475  64.720  72.333  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.629  64.060  71.862  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.252  63.554  72.050  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.767  63.636  72.690  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.303  63.010  72.668  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.915  62.876  73.205  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.120  62.541  72.015  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.471  62.878  71.633  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.163  62.523  70.955  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.503  61.834  70.658  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.153  61.497  71.039  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.462  61.851  71.718  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.736      7.181      8.537
+REMARK INTER + INTRA:          -7.736
+REMARK INTER:                  -7.736
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.430  65.375  71.981  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.914  65.777  71.448  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.692  65.958  71.653  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.176  66.361  71.119  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.954  66.541  71.324  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.324  66.356  72.038  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      66.098  66.639  72.006  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      66.663  66.574  72.603  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      66.207  66.999  71.272  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.500  66.939  70.851  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.446  67.254  70.090  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.097  67.629  69.751  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.803  67.690  70.173  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.859  67.375  70.933  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.670      2.978      4.847
+REMARK INTER + INTRA:          -7.670
+REMARK INTER:                  -7.670
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.569  62.777  72.807  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.440  62.421  72.074  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.124  62.861  71.452  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.995  62.506  70.718  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.679  62.945  70.097  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.465  63.742  70.125  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.175  63.954  69.383  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.898  64.701  69.166  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.209  63.290  68.896  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.521  62.666  69.337  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.620  61.925  68.989  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.409  61.807  68.201  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.097  62.430  67.760  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.997  63.172  68.107  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.631      2.225      3.169
+REMARK INTER + INTRA:          -7.631
+REMARK INTER:                  -7.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.280  62.308  65.815  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.082  61.990  66.551  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.071  62.473  67.219  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.874  62.156  67.955  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.862  62.639  68.623  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.034  63.447  68.641  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.955  63.707  69.420  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.075  64.478  69.688  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.734  63.061  69.883  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.676  62.402  69.390  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.462  61.670  69.705  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.306  61.597  70.511  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.363  62.256  71.004  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.577  62.989  70.690  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.383      5.795      7.036
+REMARK INTER + INTRA:          -7.383
+REMARK INTER:                  -7.383
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butylphthalide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.426  67.954  69.976  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.998  67.259  69.848  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.378  67.057  70.351  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.951  66.363  70.223  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.330  66.161  70.727  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.074  66.596  71.379  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.442  66.192  71.723  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.018  66.431  72.390  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.308  65.508  71.283  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.857  65.489  70.667  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.854  64.860  70.132  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.303  64.252  70.212  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.754  64.272  70.828  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.756  64.899  71.363  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

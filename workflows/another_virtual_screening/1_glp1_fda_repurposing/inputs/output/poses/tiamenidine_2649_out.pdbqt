@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.166      0.000      0.000
+REMARK INTER + INTRA:          -7.166
+REMARK INTER:                  -7.166
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.324  62.028  66.464  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.104  62.294  66.501  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.441  62.725  67.119  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      61.229  62.873  66.926  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      61.380  62.533  66.190  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      62.100  62.549  65.788  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.685  62.176  65.927  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.587  61.771  65.215  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.221  61.697  64.693  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.982  61.996  64.806  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.436  61.794  64.148  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.958  61.370  63.628  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.207  61.309  63.964  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.137      1.102      2.647
+REMARK INTER + INTRA:          -7.137
+REMARK INTER:                  -7.137
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.883  60.892  63.829  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.352  61.406  64.272  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.120  61.643  64.086  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      62.379  62.157  64.678  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      61.771  62.238  65.229  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      61.794  62.701  65.911  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.137  61.774  64.978  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.413  61.692  65.366  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.275  62.096  66.072  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.806  62.599  66.455  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.441  62.882  67.138  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.685  62.554  67.178  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.583  62.069  66.519  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.930      1.030      1.486
+REMARK INTER + INTRA:          -6.930
+REMARK INTER:                  -6.930
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.237  63.471  67.763  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.742  62.998  67.302  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.966  62.786  67.485  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      59.680  62.311  66.874  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      60.279  62.230  66.313  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      60.231  61.800  65.611  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.935  62.655  66.578  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.658  62.723  66.186  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.773  62.347  65.462  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.217  61.885  65.062  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.564  61.618  64.362  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.333  61.915  64.329  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      62.461  62.365  65.008  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.288      6.910      7.706
+REMARK INTER + INTRA:          -6.288
+REMARK INTER:                  -6.288
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.141  67.669  69.855  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.870  67.242  70.506  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      66.063  67.386  71.295  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      65.671  66.828  71.760  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      65.234  66.340  71.259  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      64.759  65.708  71.491  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      65.358  66.596  70.484  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      65.026  66.263  69.805  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.521  65.614  69.869  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      64.297  65.240  70.570  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.788  64.620  70.376  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.697  64.611  69.556  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      64.150  65.225  69.243  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.167      4.081      5.012
+REMARK INTER + INTRA:          -6.167
+REMARK INTER:                  -6.167
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.544  61.843  70.439  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.481  62.201  69.699  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.556  61.823  68.969  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      60.452  62.388  68.377  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      60.312  63.116  68.740  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      60.179  63.832  68.354  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.330  62.999  69.557  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.216  63.581  70.131  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.070  64.361  69.906  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.021  64.641  69.131  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.867  65.451  69.162  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.821  65.672  69.955  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.946  64.998  70.415  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.108      5.980      7.100
+REMARK INTER + INTRA:          -6.108
+REMARK INTER:                  -6.108
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.460  61.990  70.664  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.812  62.354  71.315  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.473  62.080  71.725  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      61.634  62.612  72.335  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      61.072  63.215  72.302  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      61.027  63.863  72.809  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.565  63.055  71.672  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.921  63.517  71.439  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.739  64.208  71.850  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.148  64.507  72.502  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.777  65.206  72.737  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.139  65.339  72.230  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.116  64.723  71.683  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.919      4.671      5.687
+REMARK INTER + INTRA:          -5.919
+REMARK INTER:                  -5.919
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.096  64.692  71.701  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.772  63.950  71.858  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.704  63.598  72.601  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      61.348  62.860  72.502  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      61.196  62.756  71.698  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      60.845  62.095  71.353  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.458  63.430  71.300  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.413  63.561  70.487  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.083  62.987  69.994  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.776  62.259  70.235  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.506  61.863  69.563  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.645  62.345  68.909  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.002  63.039  69.175  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.894      5.462      5.895
+REMARK INTER + INTRA:          -5.894
+REMARK INTER:                  -5.894
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.664  62.102  70.931  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.044  62.659  71.406  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.939  62.754  72.219  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      61.426  63.373  72.468  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      61.831  63.660  71.809  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      62.376  64.278  71.807  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.595  63.218  71.153  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.863  63.319  70.379  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.418  63.904  70.208  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.754  64.429  70.750  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.278  64.917  70.341  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.268  64.695  69.547  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      62.736  64.069  69.465  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.784      4.511      5.800
+REMARK INTER + INTRA:          -5.784
+REMARK INTER:                  -5.784
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tiamenidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.961  63.528  68.611  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.808  62.881  69.101  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.530  62.144  68.858  0.00  0.00    +0.000 A 
+ATOM      4  S   UNL     1      60.457  61.666  69.527  0.00  0.00    +0.000 S 
+ATOM      5  C   UNL     1      60.690  62.108  70.183  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      60.703  61.845  70.964  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.907  62.859  69.919  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.175  63.480  70.392  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.246  63.377  71.208  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.070  62.687  71.627  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.221  62.829  72.425  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.490  63.606  72.500  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.505  63.943  71.748  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

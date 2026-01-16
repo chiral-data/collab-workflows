@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.129      0.000      0.000
+REMARK INTER + INTRA:          -8.129
+REMARK INTER:                  -8.129
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.547  63.153  67.471  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.886  62.755  67.178  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.192  62.726  67.623  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.920  62.387  66.440  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.259  61.989  66.147  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.292  61.621  65.410  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.986  61.651  64.966  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.020  61.283  64.228  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.714  61.312  63.783  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.375  61.710  64.077  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.342  62.077  64.814  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.648  62.048  65.259  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.614  62.416  65.996  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.553      1.302      2.692
+REMARK INTER + INTRA:          -7.553
+REMARK INTER:                  -7.553
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.805  62.399  65.136  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.207  61.973  64.760  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.362  61.587  64.047  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.455  61.932  65.098  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.857  61.505  64.721  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.105  61.464  65.058  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.951  61.849  65.770  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.199  61.808  66.107  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.044  62.193  66.819  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.642  62.621  67.196  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.394  62.662  66.859  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.549  62.276  66.146  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.300  62.317  65.810  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.246      5.763      6.676
+REMARK INTER + INTRA:          -7.246
+REMARK INTER:                  -7.246
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.207  64.989  72.023  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.892  64.839  72.457  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.139  65.374  73.035  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.330  64.155  72.313  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.016  64.005  72.748  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.454  63.321  72.604  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.207  62.788  72.026  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.645  62.103  71.882  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.398  61.569  71.304  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.712  61.719  70.869  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.275  62.403  71.013  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.521  62.938  71.591  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.084  63.621  71.735  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.983      3.855      5.830
+REMARK INTER + INTRA:          -6.983
+REMARK INTER:                  -6.983
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.611  63.418  68.750  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.570  62.681  69.118  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.324  62.020  68.690  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.775  62.606  69.914  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.734  61.868  70.283  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.939  61.793  71.078  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.185  62.454  71.505  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.390  62.379  72.300  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.636  63.040  72.727  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.678  63.778  72.358  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.473  63.853  71.563  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.226  63.192  71.136  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.021  63.267  70.341  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.826      6.390      7.611
+REMARK INTER + INTRA:          -6.826
+REMARK INTER:                  -6.826
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.132  64.521  70.238  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.161  64.955  70.939  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.654  64.767  71.562  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.697  65.578  71.015  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      63.726  66.014  71.716  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.261  66.636  71.793  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.767  66.824  71.170  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.303  67.447  71.246  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.809  67.635  70.623  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.780  67.199  69.922  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.245  66.577  69.845  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.738  66.389  70.468  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.203  65.766  70.392  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.768      4.678      5.634
+REMARK INTER + INTRA:          -6.768
+REMARK INTER:                  -6.768
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.775  65.671  69.921  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.717  65.353  70.680  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.490  65.832  71.312  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.886  64.555  70.806  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      59.827  64.236  71.566  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.996  63.439  71.692  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.222  62.960  71.061  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.391  62.162  71.187  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.618  61.683  70.556  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.677  62.002  69.796  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.508  62.799  69.670  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.281  63.279  70.301  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.113  64.076  70.175  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.632      4.672      5.647
+REMARK INTER + INTRA:          -6.632
+REMARK INTER:                  -6.632
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.518  65.046  70.259  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.432  64.671  70.988  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.777  64.998  71.663  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.001  63.970  71.043  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.915  63.594  71.773  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.484  62.893  71.828  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.139  62.567  71.154  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.708  61.866  71.208  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.363  61.540  70.534  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.449  61.915  69.804  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.880  62.616  69.749  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.225  62.943  70.423  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.656  63.644  70.369  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.615      7.093      7.814
+REMARK INTER + INTRA:          -6.615
+REMARK INTER:                  -6.615
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.001  67.070  72.628  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.778  66.846  72.789  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.332  67.414  73.018  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.002  66.055  72.719  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.781  65.831  72.879  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.005  65.041  72.810  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.452  64.474  72.580  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.675  63.683  72.511  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.123  63.116  72.281  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.344  63.340  72.121  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.120  64.130  72.190  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.673  64.698  72.420  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.449  65.488  72.489  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.607      3.714      4.872
+REMARK INTER + INTRA:          -6.607
+REMARK INTER:                  -6.607
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = debrisoquine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.513  64.662  71.521  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.500  63.861  71.715  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.502  63.629  72.507  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.486  63.292  71.118  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.473  62.489  71.313  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.458  61.920  70.717  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.456  62.152  69.925  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.442  61.583  69.328  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.439  61.815  68.537  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.452  62.617  68.342  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.467  63.186  68.938  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.469  62.955  69.730  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.484  63.524  70.327  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

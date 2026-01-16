@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.353      0.000      0.000
+REMARK INTER + INTRA:          -8.353
+REMARK INTER:                  -8.353
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.956  63.061  68.784  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.774  62.670  68.080  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.065  62.256  68.009  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.302  62.695  67.446  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.120  62.305  66.743  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.648  62.330  66.109  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.358  62.745  66.179  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.466  61.940  65.406  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.994  61.965  64.771  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      62.704  62.379  64.842  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.812  61.574  64.068  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.103  61.160  63.998  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.575  61.135  64.631  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.757  61.525  65.335  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.728      1.714      3.774
+REMARK INTER + INTRA:          -7.728
+REMARK INTER:                  -7.728
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.097  62.478  65.067  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.816  62.205  65.794  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.720  61.397  65.922  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.631  62.743  66.392  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.351  62.470  67.118  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.166  63.008  67.717  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.262  63.817  67.589  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.885  62.735  68.443  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.700  63.273  69.042  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.797  64.082  68.914  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.420  63.000  69.768  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.323  62.191  69.896  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.508  61.654  69.298  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.789  61.927  68.571  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.411      3.725      5.840
+REMARK INTER + INTRA:          -7.411
+REMARK INTER:                  -7.411
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.046  63.079  67.973  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.367  62.758  68.663  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.666  61.991  68.660  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.387  63.207  69.355  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.708  62.887  70.044  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.728  63.336  70.736  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.429  64.104  70.739  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.049  63.015  71.425  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.069  63.464  72.118  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.770  64.233  72.121  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.390  63.144  72.807  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.689  62.376  72.805  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.669  61.927  72.113  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.348  62.247  71.423  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.318      5.864      7.425
+REMARK INTER + INTRA:          -7.318
+REMARK INTER:                  -7.318
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.232  64.115  71.312  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.820  64.535  70.913  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.001  64.349  70.131  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.224  65.143  71.297  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.811  65.563  70.897  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.217  66.171  71.282  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.035  66.358  72.064  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.803  66.591  70.882  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.209  67.199  71.266  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      65.027  67.386  72.049  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      65.796  67.619  70.867  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.977  67.433  70.085  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.572  66.825  69.701  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.985  66.404  70.100  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.262      3.268      4.293
+REMARK INTER + INTRA:          -7.262
+REMARK INTER:                  -7.262
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.514  63.095  72.790  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.372  62.760  72.049  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.539  61.963  71.918  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.061  63.222  71.441  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.919  62.887  70.701  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.609  63.350  70.091  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.441  64.147  70.223  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.466  63.015  69.351  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.156  63.477  68.742  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      59.988  64.275  68.873  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.013  63.142  68.002  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.180  62.346  67.871  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.490  61.883  68.479  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.633  62.218  69.220  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.162      5.649      6.930
+REMARK INTER + INTRA:          -7.162
+REMARK INTER:                  -7.162
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.403  67.679  69.864  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.795  67.322  70.293  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.573  67.628  71.026  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.409  66.659  69.989  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.802  66.303  70.418  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.416  65.640  70.114  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.637  65.334  69.380  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.808  65.284  70.543  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.422  64.621  70.239  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      63.644  64.315  69.505  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      62.814  64.265  70.668  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.593  64.570  71.401  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.979  65.233  71.706  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.587  65.590  71.276  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.134      3.859      4.751
+REMARK INTER + INTRA:          -7.134
+REMARK INTER:                  -7.134
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.722  66.646  69.105  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.817  65.964  69.562  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.757  66.006  70.382  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.972  65.242  69.195  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.067  64.561  69.651  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.223  63.838  69.285  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.283  63.796  68.463  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.318  63.158  69.741  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.474  62.434  69.375  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.534  62.392  68.553  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.569  61.754  69.831  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.509  61.795  70.652  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.353  62.518  71.018  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.258  63.199  70.562  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.068      5.879      6.775
+REMARK INTER + INTRA:          -7.068
+REMARK INTER:                  -7.068
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.941  66.854  72.149  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.449  66.247  72.386  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.880  66.319  73.084  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.524  65.569  71.922  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.031  64.963  72.159  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.106  64.284  71.695  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.674  64.211  70.996  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.613  63.678  71.932  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.688  62.999  71.468  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.256  62.926  70.769  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.195  62.393  71.705  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.627  62.465  72.403  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.552  63.143  72.867  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.044  63.750  72.630  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.895      5.624      6.262
+REMARK INTER + INTRA:          -6.895
+REMARK INTER:                  -6.895
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clorprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.170  62.777  71.835  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.640  63.456  71.864  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.585  63.968  72.507  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.164  63.620  71.248  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.633  64.298  71.277  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.157  64.463  70.661  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.212  63.950  70.017  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.626  65.141  70.691  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.151  65.306  70.075  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      64.206  64.793  69.431  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      64.620  65.984  70.104  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.565  66.496  70.747  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.041  66.331  71.363  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.572  65.653  71.334  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

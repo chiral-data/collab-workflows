@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.662      0.000      0.000
+REMARK INTER + INTRA:          -8.662
+REMARK INTER:                  -8.662
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.484  63.660  68.991  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.877  63.463  68.292  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.637  63.749  68.151  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.508  62.979  67.735  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.900  62.782  67.037  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.531  62.298  66.479  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.770  62.012  66.620  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.924  62.101  65.780  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.554  61.618  65.222  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.947  61.421  64.524  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.707  61.707  64.383  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.076  62.190  64.940  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.683  62.387  65.640  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.099  61.509  63.684  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.730  61.026  63.127  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.860  61.796  63.543  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.431      2.219      4.744
+REMARK INTER + INTRA:          -8.431
+REMARK INTER:                  -8.431
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.962  62.436  65.067  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.721  62.181  65.814  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.644  61.375  65.970  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.558  62.733  66.405  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.318  62.477  67.152  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.155  63.029  67.744  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.232  63.836  67.588  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.914  62.774  68.490  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.751  63.326  69.082  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.510  63.070  69.829  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.433  62.265  69.984  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.596  61.713  69.393  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.836  61.968  68.645  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.192  62.010  70.731  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.029  62.561  71.322  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.114  61.203  70.886  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.079      2.436      3.644
+REMARK INTER + INTRA:          -8.079
+REMARK INTER:                  -8.079
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.488  62.925  72.755  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.511  63.041  71.938  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.970  63.647  71.620  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.073  62.550  71.440  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.096  62.666  70.624  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.659  62.175  70.125  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.199  61.568  70.443  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.682  62.291  69.309  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.244  61.799  68.810  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.267  61.916  67.994  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.726  62.522  67.676  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.163  63.013  68.174  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.141  62.897  68.991  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.749  62.638  66.859  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.311  62.147  66.361  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.208  63.245  66.541  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.955      5.613      7.025
+REMARK INTER + INTRA:          -7.955
+REMARK INTER:                  -7.955
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.478  67.832  69.847  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.886  67.402  70.230  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.630  67.631  70.979  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.553  66.743  69.863  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.961  66.314  70.246  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.627  65.655  69.878  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.884  65.425  69.129  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.036  65.225  70.261  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.701  64.566  69.894  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.110  64.137  70.277  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.854  64.366  71.026  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.187  65.024  71.393  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.779  65.454  71.010  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.262  63.936  71.409  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.928  63.277  71.041  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.005  64.165  72.158  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.890      3.047      5.509
+REMARK INTER + INTRA:          -7.890
+REMARK INTER:                  -7.890
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.083  62.184  66.507  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.395  62.491  67.207  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.811  63.203  67.196  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.291  62.085  67.917  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.603  62.393  68.616  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.499  61.987  69.328  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.083  61.274  69.339  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.811  62.294  70.027  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.707  61.888  70.738  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.019  62.195  71.437  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.435  62.907  71.426  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.539  63.313  70.715  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.227  63.006  70.015  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.747  63.214  72.125  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.643  62.808  72.836  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.163  63.926  72.114  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.787      5.711      6.939
+REMARK INTER + INTRA:          -7.787
+REMARK INTER:                  -7.787
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.383  63.157  71.562  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.934  63.771  71.607  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.003  64.212  72.299  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.413  63.942  70.958  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.963  64.555  71.003  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.443  64.727  70.353  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.373  64.285  69.660  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.992  65.340  70.398  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.473  65.512  69.749  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.022  66.125  69.794  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.092  66.567  70.486  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.612  66.396  71.135  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.062  65.782  71.091  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      65.642  67.181  70.531  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      66.122  67.352  69.882  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      65.712  67.623  71.224  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.516      1.762      2.449
+REMARK INTER + INTRA:          -7.516
+REMARK INTER:                  -7.516
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.700  65.352  70.460  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.991  65.076  69.738  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.182  65.609  69.139  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.090  64.266  69.617  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.380  63.990  68.896  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.480  63.180  68.775  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.288  62.646  69.374  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.770  62.904  68.054  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.870  62.093  67.932  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.160  61.818  67.211  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.352  62.351  66.613  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.253  63.161  66.733  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.962  63.437  67.455  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.643  62.074  65.891  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.742  61.264  65.770  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.835  62.608  65.292  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.482      6.986      8.139
+REMARK INTER + INTRA:          -7.482
+REMARK INTER:                  -7.482
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.123  67.620  70.223  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.488  67.118  70.386  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.326  66.483  69.886  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.016  67.252  71.049  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.383  66.750  71.211  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.910  66.884  71.875  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.073  67.519  72.376  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.277  66.382  72.038  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.804  66.515  72.702  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.171  66.013  72.864  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.008  65.379  72.365  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.480  65.244  71.701  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.114  65.747  71.538  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.374  64.876  72.528  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.902  65.010  73.191  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.211  64.241  72.027  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.355      4.712      5.862
+REMARK INTER + INTRA:          -7.355
+REMARK INTER:                  -7.355
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifenalol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.622  61.595  71.681  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.333  62.364  71.600  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.278  62.855  72.259  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.099  62.639  70.858  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.810  63.408  70.778  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.576  63.684  70.036  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.631  63.192  69.376  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.287  64.453  69.955  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.053  64.729  69.213  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.764  65.498  69.132  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.709  65.989  69.791  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.943  65.713  70.533  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.232  64.944  70.614  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.420  66.758  69.710  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      59.186  67.034  68.969  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.365  67.250  70.370  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

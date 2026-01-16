@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.471      0.000      0.000
+REMARK INTER + INTRA:          -6.471
+REMARK INTER:                  -6.471
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.163  62.000  70.103  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.507  62.395  69.465  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.648  61.993  68.759  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.991  62.388  68.120  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.133  61.986  67.415  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.476  62.381  66.776  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.618  61.979  66.070  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.961  62.374  65.432  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      62.103  61.972  64.726  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      62.244  61.570  64.019  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      62.417  62.660  64.397  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.788  61.284  65.054  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.339      3.068      4.209
+REMARK INTER + INTRA:          -6.339
+REMARK INTER:                  -6.339
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.539  61.622  63.562  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.378  62.121  64.199  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.050  61.814  64.890  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.888  62.312  65.528  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.560  62.005  66.219  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.398  62.503  66.857  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.070  62.196  67.548  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.908  62.694  68.186  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      60.580  62.387  68.877  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      60.251  62.079  69.568  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.584  63.140  69.214  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.576  61.633  68.540  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.631      3.839      4.664
+REMARK INTER + INTRA:          -5.631
+REMARK INTER:                  -5.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.858  62.736  65.010  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.499  62.331  65.632  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.521  62.642  66.395  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.162  62.236  67.018  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.184  62.548  67.781  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.825  62.142  68.403  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.847  62.453  69.166  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.488  62.048  69.789  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      60.510  62.359  70.552  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      60.532  62.671  71.316  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.083  61.710  70.830  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.937  63.008  70.275  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.558      1.614      2.079
+REMARK INTER + INTRA:          -5.558
+REMARK INTER:                  -5.558
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.560  63.073  72.057  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.333  62.732  71.341  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.745  62.913  70.650  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.518  62.573  69.933  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.930  62.753  69.242  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.703  62.413  68.525  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.115  62.594  67.834  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.888  62.254  67.117  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      61.300  62.434  66.426  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      61.712  62.615  65.734  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.800  61.937  65.997  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.800  62.932  66.853  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.435      5.858      6.149
+REMARK INTER + INTRA:          -5.435
+REMARK INTER:                  -5.435
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.494  67.875  69.804  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.996  67.362  70.215  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.455  66.894  69.805  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.957  66.380  70.216  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.416  65.913  69.805  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.918  65.399  70.216  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.377  64.932  69.805  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.879  64.418  70.216  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      62.338  63.951  69.806  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      61.796  63.483  69.394  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      62.075  63.628  70.518  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.599  64.274  69.093  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.410     18.690     19.329
+REMARK INTER + INTRA:          -5.410
+REMARK INTER:                  -5.410
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.451  81.478  57.662  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.232  81.253  57.802  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.395  80.540  58.182  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.176  80.315  58.322  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.339  79.601  58.702  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.120  79.376  58.842  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.283  78.663  59.222  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      66.064  78.438  59.362  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      66.227  77.725  59.742  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      66.389  77.010  60.122  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      67.035  77.877  59.684  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      65.418  77.571  59.800  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.410      3.967      4.346
+REMARK INTER + INTRA:          -5.410
+REMARK INTER:                  -5.410
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.072  62.042  66.451  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.810  62.383  66.592  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.008  62.641  67.350  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.746  62.982  67.491  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.944  63.239  68.248  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.682  63.581  68.389  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.880  63.838  69.147  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.618  64.179  69.288  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      62.816  64.437  70.045  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      63.014  64.695  70.804  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      63.554  64.682  69.770  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.078  64.192  70.322  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.358      3.573      3.827
+REMARK INTER + INTRA:          -5.358
+REMARK INTER:                  -5.358
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.837  65.414  70.881  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.042  65.270  70.713  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.834  64.796  70.072  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.039  64.652  69.904  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.831  64.178  69.263  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.036  64.034  69.095  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.829  63.560  68.453  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.033  63.416  68.286  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      60.826  62.942  67.644  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      60.618  62.468  67.001  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.028  63.050  67.822  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.624  62.834  67.465  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.264      6.308      6.944
+REMARK INTER + INTRA:          -5.264
+REMARK INTER:                  -5.264
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifostine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.600  61.633  70.663  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.458  62.211  71.236  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.210  62.964  71.010  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.068  63.541  71.583  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.819  64.294  71.358  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.677  64.871  71.930  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.429  65.624  71.705  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      59.287  66.201  72.278  0.00  0.00    +0.000 S 
+ATOM      9  P   UNL     1      59.039  66.954  72.052  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      58.790  67.708  71.826  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      59.018  67.185  72.844  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.058  66.724  71.260  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.802      0.000      0.000
+REMARK INTER + INTRA:          -7.802
+REMARK INTER:                  -7.802
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.662  63.528  68.416  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.186  63.046  67.946  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.462  62.773  68.233  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.433  62.837  67.187  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.956  62.355  66.716  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.204  62.146  65.957  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.658  61.663  65.570  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.622  61.303  64.828  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.115  61.277  64.167  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.849  61.600  63.974  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.394  62.082  64.361  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.431  62.442  65.103  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.937  62.469  65.764  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.074      1.295      3.235
+REMARK INTER + INTRA:          -7.074
+REMARK INTER:                  -7.074
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.639  61.691  63.745  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.872  61.602  64.034  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.301  61.217  63.578  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.674  61.896  64.779  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.906  61.806  65.067  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.708  62.100  65.812  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.919  61.960  66.007  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.440  62.127  66.659  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.553  62.503  67.384  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.191  62.868  67.758  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.980  63.009  67.563  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.458  62.842  66.913  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.346  62.465  66.186  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.801      2.178      4.631
+REMARK INTER + INTRA:          -6.801
+REMARK INTER:                  -6.801
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.230  63.135  66.579  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.122  62.564  67.164  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.190  61.763  66.977  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.948  62.794  67.937  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.840  62.222  68.523  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.665  62.452  69.296  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.576  61.808  69.804  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.406  61.717  70.606  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.253  62.232  71.232  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.208  63.051  71.315  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.296  63.695  70.808  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.467  63.787  70.006  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.620  63.271  69.379  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.742      5.202      7.143
+REMARK INTER + INTRA:          -6.742
+REMARK INTER:                  -6.742
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.763  63.748  70.748  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.129  64.295  70.252  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.934  64.323  69.451  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.692  64.816  70.557  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.059  65.364  70.061  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.622  65.885  70.366  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.928  66.390  69.791  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.486  66.999  69.787  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.968  67.353  70.355  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.091  67.244  71.163  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.785  66.739  71.738  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.228  66.131  71.743  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      64.745  65.777  71.174  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.714      3.178      5.580
+REMARK INTER + INTRA:          -6.714
+REMARK INTER:                  -6.714
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.904  63.026  67.913  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.298  62.540  68.450  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.580  61.803  68.210  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.411  62.792  69.227  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.806  62.306  69.765  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.919  62.557  70.543  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.323  62.001  70.998  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.577  61.963  71.783  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.532  62.466  72.436  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.215  63.214  72.574  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.811  63.771  72.118  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.557  63.809  71.334  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.602  63.306  70.681  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.601      4.039      5.233
+REMARK INTER + INTRA:          -6.601
+REMARK INTER:                  -6.601
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.720  66.446  69.155  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.738  65.999  69.848  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.572  66.355  70.574  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.922  65.196  69.815  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.940  64.748  70.509  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.124  63.944  70.476  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.116  63.589  71.220  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.253  62.826  71.504  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.456  62.104  71.160  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.605  61.846  70.391  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.614  62.201  69.647  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.476  62.963  69.364  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.273  63.686  69.707  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.402      3.909      5.054
+REMARK INTER + INTRA:          -6.402
+REMARK INTER:                  -6.402
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.272  65.485  69.699  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.061  64.960  70.298  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.388  65.040  71.052  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.523  64.354  70.145  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.311  63.828  70.746  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.772  63.223  70.592  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.628  62.754  71.255  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.156  62.095  71.413  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.633  61.634  70.972  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.365  61.640  70.192  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.509  62.109  69.529  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.981  62.767  69.372  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.505  63.229  69.812  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.330      5.893      6.954
+REMARK INTER + INTRA:          -6.330
+REMARK INTER:                  -6.330
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.764  67.619  71.960  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.146  66.984  72.321  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.716  67.120  72.902  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.959  66.211  72.101  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.341  65.575  72.462  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.153  64.802  72.242  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.589  64.241  72.660  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.626  63.416  72.665  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.243  62.812  72.254  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.664  62.784  71.668  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.228  63.345  71.249  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.190  64.169  71.244  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.574  64.773  71.656  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.206     24.545     25.240
+REMARK INTER + INTRA:          -6.206
+REMARK INTER:                  -6.206
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanazodine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      69.871  81.285  52.324  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      69.679  80.651  51.834  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      68.950  80.273  51.913  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      70.217  80.393  51.264  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      70.026  79.758  50.773  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.564  79.500  50.203  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.278  78.861  49.766  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.572  78.399  49.148  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      71.272  78.385  48.713  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      71.969  78.826  48.715  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      72.254  79.464  49.152  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.961  79.926  49.769  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      71.260  79.941  50.205  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

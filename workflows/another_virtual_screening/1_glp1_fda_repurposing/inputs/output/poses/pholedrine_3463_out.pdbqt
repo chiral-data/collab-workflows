@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.617      0.000      0.000
+REMARK INTER + INTRA:          -7.617
+REMARK INTER:                  -7.617
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.041  62.823  67.901  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.589  62.823  67.283  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.410  62.443  66.574  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.683  62.062  66.481  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.958  62.442  65.956  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.779  62.062  65.247  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.325  62.061  64.629  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.146  61.681  63.919  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.420  61.301  63.827  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.241  60.920  63.117  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.873  61.301  64.445  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.052  61.681  65.154  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.649      1.327      2.108
+REMARK INTER + INTRA:          -6.649
+REMARK INTER:                  -6.649
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.687  63.797  69.033  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.119  63.447  68.547  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.350  63.071  67.850  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.147  63.044  67.639  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.782  62.721  67.363  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.012  62.345  66.667  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.446  61.995  66.180  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.676  61.618  65.483  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.473  61.591  65.273  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.703  61.214  64.575  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.040  61.941  65.759  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.810  62.317  66.456  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.550     17.819     18.272
+REMARK INTER + INTRA:          -6.550
+REMARK INTER:                  -6.550
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.199  80.530  58.079  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.935  80.329  58.395  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.051  79.582  58.725  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.431  79.037  58.741  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.787  79.380  59.041  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.902  78.634  59.371  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      66.637  78.431  59.687  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.753  77.684  60.018  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.134  77.140  60.033  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.250  76.392  60.365  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.398  77.342  59.718  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.283  78.088  59.387  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.528      6.379      7.197
+REMARK INTER + INTRA:          -6.528
+REMARK INTER:                  -6.528
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.452  65.928  73.068  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.067  65.396  73.208  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.151  64.729  72.730  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.620  64.593  72.113  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.766  64.196  72.870  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.850  63.529  72.393  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.465  62.997  72.532  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.549  62.330  72.054  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.019  62.195  71.437  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.103  61.527  70.959  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.403  62.727  71.297  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.319  63.394  71.775  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.526      6.979      8.017
+REMARK INTER + INTRA:          -6.526
+REMARK INTER:                  -6.526
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.581  64.832  71.269  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.085  65.388  71.614  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.663  65.759  71.157  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.738  65.575  70.356  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.167  66.315  71.502  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.745  66.686  71.046  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.249  67.241  71.390  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.827  67.612  70.934  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.901  67.429  70.133  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.480  67.800  69.677  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.398  66.873  69.788  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.820  66.502  70.245  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.465     24.516     25.117
+REMARK INTER + INTRA:          -6.465
+REMARK INTER:                  -6.465
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.972  80.567  51.626  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      69.051  79.921  51.118  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      69.739  79.830  50.672  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.348  80.385  50.733  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.820  79.184  50.164  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.507  79.094  49.718  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.587  78.448  49.210  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.275  78.358  48.764  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.883  78.912  48.825  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      72.571  78.821  48.379  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      71.803  79.558  49.333  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.115  79.648  49.779  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.444      4.578      6.574
+REMARK INTER + INTRA:          -6.444
+REMARK INTER:                  -6.444
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.413  61.986  68.631  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.493  61.766  69.422  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.752  62.317  69.979  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.931  63.088  69.745  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.832  62.097  70.771  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.091  62.647  71.327  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.171  62.428  72.118  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.430  62.979  72.675  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.609  63.749  72.441  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.868  64.301  72.999  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.529  63.969  71.650  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.270  63.419  71.093  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.191      6.761      7.510
+REMARK INTER + INTRA:          -6.191
+REMARK INTER:                  -6.191
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.989  61.143  71.727  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.371  61.609  71.441  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.193  62.327  71.807  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.634  62.579  72.459  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.575  62.794  71.522  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.397  63.511  71.888  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.780  63.978  71.603  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.602  64.695  71.969  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.042  64.946  72.620  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.864  65.665  72.986  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.660  64.480  72.905  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.838  63.762  72.539  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.037      6.064      7.199
+REMARK INTER + INTRA:          -6.037
+REMARK INTER:                  -6.037
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pholedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.130  67.628  70.233  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.572  67.304  70.748  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.107  66.668  70.504  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.200  66.356  69.745  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.549  66.343  71.019  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.085  65.707  70.775  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.528  65.382  71.289  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.063  64.746  71.045  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.155  64.435  70.287  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.690  63.797  70.043  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.713  64.759  69.772  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.178  65.395  70.016  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

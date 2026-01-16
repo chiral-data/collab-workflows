@@ -1,0 +1,207 @@
+MODEL 1
+REMARK VINA RESULT:    -5.603      0.000      0.000
+REMARK INTER + INTRA:          -5.603
+REMARK INTER:                  -5.603
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.943  61.240  64.409  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.262  61.698  65.016  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      62.065  61.891  65.008  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      60.780  61.962  65.631  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.973  61.814  65.713  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.715  62.181  66.404  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.363  62.558  66.750  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.353  62.993  67.451  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.650  63.081  67.872  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.021  62.422  66.272  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.593      1.417      2.707
+REMARK INTER + INTRA:          -5.593
+REMARK INTER:                  -5.593
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.627  62.022  66.573  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.397  62.264  66.407  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      60.802  62.744  66.944  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      60.764  62.028  65.707  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.431  61.551  65.122  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.989  61.456  64.523  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.667  61.873  64.737  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.363  61.927  64.296  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.421  61.541  63.569  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.529  62.227  65.469  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.081      2.991      3.960
+REMARK INTER + INTRA:          -5.081
+REMARK INTER:                  -5.081
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.180  61.624  70.713  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.620  62.257  70.420  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      60.955  62.803  70.941  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      60.725  62.346  69.606  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.425  61.848  69.021  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.663  62.142  68.289  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.110  62.823  68.421  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.458  63.295  67.840  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.372  63.099  67.044  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.148  62.949  69.235  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.783      5.256      6.046
+REMARK INTER + INTRA:          -4.783
+REMARK INTER:                  -4.783
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.363  63.163  72.581  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.557  63.037  71.790  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      61.243  62.389  71.386  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      62.064  63.559  71.401  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.418  64.227  71.731  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.879  64.585  71.148  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.810  64.138  70.458  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.180  64.298  69.737  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.671  64.956  69.664  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.306  63.504  70.614  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.746     15.302     15.699
+REMARK INTER + INTRA:          -4.746
+REMARK INTER:                  -4.746
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.503  75.548  72.474  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.010  76.086  72.106  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      58.716  76.304  72.474  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      57.811  76.405  71.372  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      57.128  76.241  70.940  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      57.156  76.679  70.242  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      57.856  77.115  70.243  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      58.107  77.630  69.649  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      57.641  77.744  68.978  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      58.261  76.946  70.941  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.700      6.265      6.731
+REMARK INTER + INTRA:          -4.700
+REMARK INTER:                  -4.700
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.510  62.922  72.831  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.038  63.211  72.218  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      60.988  62.796  71.506  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      60.617  63.913  72.317  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.613  64.385  72.993  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.120  65.030  72.851  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.819  64.957  72.086  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.301  65.483  71.716  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.039  66.154  72.118  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.126  64.267  71.756  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.683      5.322      6.018
+REMARK INTER + INTRA:          -4.683
+REMARK INTER:                  -4.683
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.847  63.851  71.532  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.680  64.658  71.540  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      59.493  65.034  72.251  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      59.701  65.091  70.837  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.879  64.793  70.089  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.835  65.415  69.550  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.630  66.098  69.965  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.527  66.850  69.640  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.629  66.966  68.830  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.548  65.898  70.760  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.661      2.809      3.747
+REMARK INTER + INTRA:          -4.661
+REMARK INTER:                  -4.661
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.677  61.971  67.860  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.706  62.611  68.379  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      60.847  63.371  68.089  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      60.593  62.493  69.188  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.447  61.769  69.556  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.371  61.907  70.366  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.469  62.715  70.498  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.436  63.095  71.230  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.293  62.657  71.914  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.607  63.077  69.770  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.628     25.240     25.702
+REMARK INTER + INTRA:          -4.628
+REMARK INTER:                  -4.628
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iodinated glycerol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.277  78.436  48.345  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.494  79.001  48.905  0.00  0.00    +0.000 C 
+ATOM      3  I   UNL     1      72.236  79.361  48.862  0.00  0.00    +0.000 I 
+ATOM      4  C   UNL     1      70.970  79.207  49.509  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      70.214  78.896  49.622  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      69.887  79.257  50.287  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.441  79.791  50.586  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.342  80.272  51.249  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      69.638  80.242  51.678  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      71.110  79.760  50.105  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

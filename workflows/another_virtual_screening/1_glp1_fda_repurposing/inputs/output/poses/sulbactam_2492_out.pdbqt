@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.270      0.000      0.000
+REMARK INTER + INTRA:          -7.270
+REMARK INTER:                  -7.270
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.787  62.650  66.644  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.320  62.455  66.045  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.846  62.916  66.482  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.682  62.034  65.733  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.931  61.676  65.033  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.723  61.875  64.912  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.727  61.433  64.215  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.936  61.234  64.336  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.380  60.782  63.929  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      61.963  62.356  65.538  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      62.740  62.464  65.282  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.496  62.816  65.969  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.928  61.982  66.063  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.343  61.539  65.687  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      59.759  62.373  66.770  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.186      0.935      2.184
+REMARK INTER + INTRA:          -7.186
+REMARK INTER:                  -7.186
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.203  62.378  65.747  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.529  62.011  65.446  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.044  61.736  64.863  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.154  62.363  66.091  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.355  62.155  66.067  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      60.237  61.675  65.406  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.436  61.612  65.595  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.555  62.092  66.256  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.072  62.387  66.856  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      60.962  61.586  65.023  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      60.688  61.103  64.412  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.471  61.307  64.436  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.514  62.838  66.661  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.066  63.153  67.278  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.321  62.999  66.614  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.985      1.032      2.881
+REMARK INTER + INTRA:          -6.985
+REMARK INTER:                  -6.985
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.050  61.559  64.876  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.607  61.825  65.520  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.982  61.451  65.134  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.326  62.144  65.771  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.197  62.529  66.489  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      60.399  62.448  66.682  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.522  62.879  67.374  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.320  62.960  67.182  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.971  63.322  67.535  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      60.035  62.013  66.082  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      59.276  62.019  66.408  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.403  61.641  65.703  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.046  62.088  65.374  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.722  62.436  65.694  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.092  61.683  64.656  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.668      3.549      4.864
+REMARK INTER + INTRA:          -6.668
+REMARK INTER:                  -6.668
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.437  63.610  68.597  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.028  62.958  68.893  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.830  62.832  68.102  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.311  63.220  69.623  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.035  62.703  70.204  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      60.582  62.122  69.834  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.439  61.768  70.565  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.893  62.349  70.935  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.112  62.510  71.714  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      60.577  62.279  69.024  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      60.105  61.639  68.805  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.375  62.146  68.235  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.786  63.882  69.748  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.027  64.077  70.513  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.020  64.350  69.110  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.585      3.680      4.733
+REMARK INTER + INTRA:          -6.585
+REMARK INTER:                  -6.585
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.638  63.259  70.884  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.164  62.722  70.475  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.990  62.435  71.229  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.437  63.123  69.807  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.095  62.773  69.143  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      60.611  62.157  69.400  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.408  61.989  68.618  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.893  62.605  68.360  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.092  62.922  67.626  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      60.653  62.126  70.224  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      60.138  61.489  70.321  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.474  61.832  70.973  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.960  63.760  69.804  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.185  64.106  69.090  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.259  64.052  70.516  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.469      3.587      4.611
+REMARK INTER + INTRA:          -6.469
+REMARK INTER:                  -6.469
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.419  63.494  68.471  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.521  63.426  69.287  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.030  64.068  69.189  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.990  62.798  69.213  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.871  62.476  69.964  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.328  62.905  70.501  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.054  62.428  71.115  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.597  61.999  70.579  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.081  61.358  70.633  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      61.730  63.492  70.082  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      62.123  63.818  70.730  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.240  64.134  69.993  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.641  62.538  68.513  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.119  61.900  68.526  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.814  62.916  67.800  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.421      5.339      6.615
+REMARK INTER + INTRA:          -6.421
+REMARK INTER:                  -6.421
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.811  65.833  69.447  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.620  65.864  70.249  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.493  66.665  70.100  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.787  65.056  70.231  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.673  64.755  70.991  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      59.435  65.376  71.478  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.393  64.858  72.119  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.630  64.236  71.631  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.768  63.430  71.739  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      59.403  66.062  71.020  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      59.162  66.569  71.624  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.273  66.865  70.879  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.026  64.625  69.569  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.174  63.816  69.636  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.117  65.003  68.841  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.409      6.056      7.113
+REMARK INTER + INTRA:          -6.409
+REMARK INTER:                  -6.409
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.504  67.241  70.296  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.588  66.423  70.237  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.674  66.576  69.431  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.485  66.441  71.056  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.524  65.665  71.334  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      59.651  65.168  70.688  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.650  64.514  71.191  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.523  65.011  71.837  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.433  64.900  72.649  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      59.691  65.637  70.010  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      59.815  65.020  69.476  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.777  65.781  69.202  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.365  67.115  71.514  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.270  67.047  72.331  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      59.339  67.858  71.157  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.365      5.171      6.127
+REMARK INTER + INTRA:          -6.365
+REMARK INTER:                  -6.365
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulbactam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.538  64.496  71.814  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.805  63.720  71.893  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.053  63.973  72.638  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.502  63.629  71.131  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.634  62.849  70.896  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.018  62.458  71.512  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.032  61.765  71.064  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.647  62.156  70.448  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.385  61.943  69.696  0.00  0.00    +0.000 OA
+ATOM     10  S   UNL     1      61.125  62.997  72.128  0.00  0.00    +0.000 S 
+ATOM     11  O   UNL     1      61.505  62.477  72.644  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.375  63.242  72.875  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.132  64.214  70.684  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.855  64.041  69.926  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.038  64.974  70.993  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

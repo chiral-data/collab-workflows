@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.298      0.000      0.000
+REMARK INTER + INTRA:          -6.298
+REMARK INTER:                  -6.298
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.297  61.998  66.357  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.053  62.295  66.216  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.439  62.123  65.509  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.013  62.590  65.873  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.732  61.715  65.389  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.609  61.297  64.688  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.194  61.287  64.107  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.072  60.868  63.406  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.902  61.694  64.226  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.488  61.684  63.645  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.025  62.112  64.927  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.733  62.519  65.046  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.288      0.554      1.601
+REMARK INTER + INTRA:          -6.288
+REMARK INTER:                  -6.288
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.957  62.838  66.807  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.248  62.479  66.589  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.179  62.117  65.852  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.423  61.976  66.150  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.958  62.382  65.808  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.407  62.237  65.131  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.076  61.826  64.498  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.525  61.681  63.820  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.296  61.560  64.540  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.964  61.149  63.906  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.847  61.705  65.217  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.067  61.439  65.260  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.149      0.518      2.056
+REMARK INTER + INTRA:          -6.149
+REMARK INTER:                  -6.149
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.817  60.923  63.666  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.510  61.332  63.848  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.575  61.733  64.565  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.315  61.900  64.241  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.813  61.427  64.641  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.372  61.581  65.322  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.694  62.041  65.926  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.253  62.194  66.607  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.457  62.347  65.851  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.779  62.807  66.455  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.897  62.193  65.170  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.660  62.500  65.094  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.576      1.595      2.392
+REMARK INTER + INTRA:          -5.576
+REMARK INTER:                  -5.576
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.068  63.510  68.225  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.536  63.206  67.618  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.190  62.776  67.006  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.979  62.749  66.770  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.520  62.952  67.454  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.778  62.689  67.208  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.705  62.250  66.514  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      58.962  61.986  66.268  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.375  62.073  66.065  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.303  61.634  65.370  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.117  62.336  66.311  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.787  62.160  65.862  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.275      7.215      8.343
+REMARK INTER + INTRA:          -5.275
+REMARK INTER:                  -5.275
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.151  67.891  69.601  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.176  67.601  70.372  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.710  66.955  70.585  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      66.083  67.104  71.305  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      65.497  67.030  69.791  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.948  66.511  69.460  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.612  65.917  69.922  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.062  65.397  69.590  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.823  65.841  70.716  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.487  65.247  71.179  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.372  66.360  71.047  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      65.585  66.285  71.842  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.238      2.988      4.193
+REMARK INTER + INTRA:          -5.238
+REMARK INTER:                  -5.238
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.785  63.729  70.083  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.280  63.080  70.035  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.027  62.807  69.299  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.640  62.270  69.790  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.502  63.439  69.063  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.589  63.612  68.261  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.202  63.153  67.696  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.289  63.327  66.893  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.727  62.521  67.931  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.339  62.062  67.366  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.639  62.348  68.733  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.164  61.716  68.970  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.102      3.446      4.555
+REMARK INTER + INTRA:          -5.102
+REMARK INTER:                  -5.102
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.868  64.422  69.641  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.745  64.151  68.872  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.329  63.451  68.744  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.497  63.661  67.964  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.304  63.483  69.568  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.922  62.888  69.993  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.565  62.261  69.594  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.183  61.665  70.020  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.589  62.228  68.770  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.231  61.600  68.370  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.971  62.823  68.345  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.995  62.790  67.520  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.085      6.359      7.679
+REMARK INTER + INTRA:          -5.085
+REMARK INTER:                  -5.085
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.681  67.282  68.945  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.726  66.470  69.078  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.635  66.171  69.841  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.755  65.468  69.427  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      59.547  66.977  69.991  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.408  67.241  70.761  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.358  66.699  71.380  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.220  66.963  72.150  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.447  65.892  71.230  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.397  65.349  71.849  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.585  65.628  70.461  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.673  64.821  70.311  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.992     11.118     12.222
+REMARK INTER + INTRA:          -4.992
+REMARK INTER:                  -4.992
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fructose
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.646  60.487  54.334  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.864  60.481  53.538  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.298  61.107  53.225  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.223  60.637  52.552  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      64.223  61.362  54.006  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.557  62.079  54.241  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.966  62.542  53.695  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      65.300  63.260  53.930  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.041  62.288  52.913  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.450  62.751  52.366  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.708  61.571  52.678  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      64.783  61.317  51.896  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

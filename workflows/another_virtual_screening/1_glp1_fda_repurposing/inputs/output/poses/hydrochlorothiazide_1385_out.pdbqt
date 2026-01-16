@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.013      0.000      0.000
+REMARK INTER + INTRA:          -9.013
+REMARK INTER:                  -9.013
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.762  61.934  63.916  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      62.174  61.962  64.495  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      62.675  62.397  64.984  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.672  61.526  64.005  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.585  61.990  65.073  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.856  61.626  64.937  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.717  61.235  64.224  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.269  61.653  65.515  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.408  62.044  66.227  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.820  62.072  66.805  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.959  62.463  67.517  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.688  62.827  67.653  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      61.276  62.799  67.076  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      61.668  63.233  67.658  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.000  62.922  66.701  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.137  62.408  66.362  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.725  62.380  65.785  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.869      1.169      2.788
+REMARK INTER + INTRA:          -8.869
+REMARK INTER:                  -8.869
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.772  63.346  68.040  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      60.741  62.934  67.325  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.527  63.136  67.174  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.955  62.731  67.476  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.710  62.522  66.611  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.013  62.140  66.385  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      59.349  62.172  66.873  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      59.982  61.728  65.671  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.646  61.697  65.183  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.615  61.285  64.469  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.279  61.254  63.981  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.975  61.636  64.207  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      62.007  62.047  64.921  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      62.775  62.175  64.648  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.305  62.504  65.540  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.342  62.079  65.410  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.374  62.490  66.123  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.755      1.803      2.342
+REMARK INTER + INTRA:          -7.755
+REMARK INTER:                  -7.755
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.476  62.007  65.672  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      61.179  62.366  66.353  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.942  62.597  66.565  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.415  62.134  66.142  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.882  62.724  67.035  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.071  62.702  67.192  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      59.560  62.323  66.668  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      59.774  63.060  67.873  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.285  63.439  68.396  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.988  63.797  69.078  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.499  64.177  69.601  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.310  64.198  69.444  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      61.607  63.841  68.764  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      62.307  64.131  69.090  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.148  63.584  68.196  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.096  63.461  68.239  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.393  63.103  67.558  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.692      4.074      5.056
+REMARK INTER + INTRA:          -7.692
+REMARK INTER:                  -7.692
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.409  61.953  68.517  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      60.632  62.233  69.260  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.037  62.857  68.903  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.227  61.609  69.617  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.856  62.513  70.004  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.616  62.112  70.685  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.154  61.432  70.621  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.839  62.392  71.427  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.301  63.072  71.491  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.524  63.352  72.234  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.986  64.032  72.297  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      62.226  64.433  71.616  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      62.003  64.154  70.873  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      62.440  64.817  70.651  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.932  64.104  70.053  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.540  63.473  70.809  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.317  63.193  70.067  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.603      6.529      7.442
+REMARK INTER + INTRA:          -7.603
+REMARK INTER:                  -7.603
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.328  67.892  69.961  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      65.749  67.389  70.265  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      65.766  66.948  69.568  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      65.732  67.830  70.962  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.170  66.887  70.569  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.866  67.018  71.326  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      65.142  67.651  71.777  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      64.287  66.515  71.631  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.012  65.883  71.180  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.433  65.380  71.484  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.157  64.747  71.034  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.461  64.616  70.277  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      64.040  65.118  69.972  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      63.955  64.596  69.339  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      64.589  65.439  69.448  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      64.316  65.751  70.423  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      64.894  66.254  70.119  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.572      3.207      4.865
+REMARK INTER + INTRA:          -7.572
+REMARK INTER:                  -7.572
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.463  62.862  72.252  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      61.278  62.740  71.458  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.724  63.403  71.252  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.832  62.076  71.663  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.093  62.617  70.663  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.615  61.981  70.444  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.321  61.468  71.020  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.430  61.858  69.650  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.723  62.371  69.074  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.538  62.248  68.279  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.831  62.761  67.704  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.310  63.397  67.923  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      61.495  63.520  68.717  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      61.901  64.151  68.376  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.821  63.862  69.392  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.202  63.007  69.293  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.386  63.130  70.087  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.560      2.133      3.596
+REMARK INTER + INTRA:          -7.560
+REMARK INTER:                  -7.560
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.513  64.231  69.727  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      61.966  63.854  69.239  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      62.506  63.877  68.615  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.425  63.832  69.862  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.418  63.477  68.750  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.676  63.269  69.046  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.483  63.439  69.830  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.128  62.892  68.558  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.321  62.723  67.775  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.774  62.346  67.286  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.967  62.177  66.503  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.709  62.385  66.207  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      61.257  62.762  66.694  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      61.693  62.718  65.996  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.956  63.123  66.940  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.064  62.931  67.479  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.611  63.308  67.966  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.474      5.875      6.641
+REMARK INTER + INTRA:          -7.474
+REMARK INTER:                  -7.474
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.039  61.605  70.958  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      60.930  62.314  71.366  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      60.438  62.585  70.762  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.423  62.043  71.970  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.822  63.023  71.773  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.194  63.142  72.500  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      61.675  62.552  72.819  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.086  63.851  72.908  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.606  64.440  72.589  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.497  65.150  72.997  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.017  65.739  72.679  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.644  65.620  71.951  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      59.752  64.912  71.544  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      59.248  65.302  71.020  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      59.685  64.339  70.954  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.233  64.321  71.862  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.341  63.613  71.455  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.420      2.801      3.887
+REMARK INTER + INTRA:          -7.420
+REMARK INTER:                  -7.420
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydrochlorothiazide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.995  62.066  66.980  0.00  0.00    +0.000 NA
+ATOM      2  S   UNL     1      60.872  62.384  67.731  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      60.807  61.623  68.043  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.938  63.145  67.419  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.750  62.702  68.483  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.745  63.522  68.588  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.864  64.021  67.941  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.623  63.840  69.338  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.504  63.341  69.984  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.382  63.660  70.735  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.263  63.161  71.380  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.268  62.342  71.275  0.00  0.00    +0.000 NA
+ATOM     13  S   UNL     1      60.390  62.023  70.525  0.00  0.00    +0.000 S 
+ATOM     14  O   UNL     1      60.304  61.329  70.963  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.483  61.463  69.927  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.509  62.522  69.878  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.631  62.204  69.128  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

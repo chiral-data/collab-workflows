@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.401      0.000      0.000
+REMARK INTER + INTRA:          -8.401
+REMARK INTER:                  -8.401
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.516  63.058  68.474  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.105  62.557  67.964  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.549  62.474  67.275  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.571  62.113  66.534  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.270  62.338  66.159  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.681  62.839  66.669  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.236  62.923  67.359  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.215  63.284  68.100  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      61.515  62.104  65.407  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.042  61.598  64.959  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.287  61.364  64.206  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.005  61.637  63.903  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.477  62.142  64.352  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.232  62.376  65.104  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.540      1.241      3.275
+REMARK INTER + INTRA:          -7.540
+REMARK INTER:                  -7.540
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.072  61.723  64.163  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.535  61.304  64.628  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.484  61.680  65.360  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.121  61.654  66.101  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.402  62.289  66.546  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.939  62.708  66.080  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.990  62.331  65.347  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.353  62.358  64.608  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      61.184  62.473  67.320  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.637  62.000  67.717  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.419  62.184  68.492  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.749  62.841  68.868  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.296  63.313  68.470  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.513  63.129  67.696  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.501     18.168     18.827
+REMARK INTER + INTRA:          -7.501
+REMARK INTER:                  -7.501
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.664  80.803  57.886  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.474  80.885  58.018  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.745  80.196  58.379  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      65.413  79.820  58.685  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.184  79.079  58.965  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.374  78.997  58.833  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.103  79.687  58.471  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      63.435  80.062  58.166  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      65.678  78.519  59.316  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.481  78.680  59.412  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.975  78.120  59.762  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.665  77.398  60.017  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.862  77.238  59.921  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.368  77.798  59.570  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.383      5.550      6.868
+REMARK INTER + INTRA:          -7.383
+REMARK INTER:                  -7.383
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.702  64.175  70.145  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.054  64.415  70.851  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.623  64.984  70.672  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      64.192  65.485  70.997  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.544  65.907  70.381  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.191  65.667  69.676  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.622  65.097  69.855  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      63.053  64.597  69.529  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      65.142  66.470  70.458  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.441  66.653  71.205  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.040  67.216  71.282  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.338  67.595  70.612  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.038  67.411  69.866  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.440  66.848  69.789  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.284      1.437      2.272
+REMARK INTER + INTRA:          -7.284
+REMARK INTER:                  -7.284
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.406  64.099  69.771  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.879  63.856  69.141  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.392  63.505  68.576  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.382  63.137  67.837  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.602  62.936  67.662  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.129  63.179  68.292  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.617  63.531  68.857  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.626  63.898  69.595  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      60.341  62.558  66.977  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.882  62.347  66.391  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.621  61.969  65.705  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.819  61.802  65.606  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.278  62.014  66.192  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.540  62.392  66.878  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.245      5.755      6.605
+REMARK INTER + INTRA:          -7.245
+REMARK INTER:                  -7.245
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.110  66.411  72.730  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.933  65.906  72.103  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.438  65.257  72.147  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      59.641  64.542  71.787  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.257  64.204  72.219  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.434  64.709  72.846  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.928  65.360  72.802  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      59.726  66.073  73.162  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      60.629  63.487  72.053  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.390  63.039  71.403  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.762  62.322  71.237  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.374  62.053  71.721  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.612  62.501  72.371  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.240  63.218  72.537  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.235      1.738      4.358
+REMARK INTER + INTRA:          -7.235
+REMARK INTER:                  -7.235
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.921  62.781  66.438  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.259  63.286  66.995  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.087  62.991  67.745  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.190  63.120  68.553  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.808  62.512  68.960  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.469  62.007  68.403  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.642  62.303  67.652  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.539  62.174  66.844  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      60.771  62.425  69.779  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.139  62.978  70.269  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.102  62.890  71.089  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.698  62.250  71.418  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.330  61.699  70.927  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.367  61.786  70.108  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.087      4.427      5.646
+REMARK INTER + INTRA:          -7.087
+REMARK INTER:                  -7.087
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.729  65.501  69.289  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.945  64.726  69.109  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.236  64.375  69.795  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.550  63.680  70.110  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.708  63.809  70.909  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.493  64.584  71.089  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.201  64.935  70.401  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      59.888  65.630  70.088  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      61.026  63.259  71.435  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.216  62.499  71.173  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.534  61.949  71.699  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.662  62.159  72.487  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.473  62.918  72.748  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.155  63.468  72.222  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.905      5.448      6.382
+REMARK INTER + INTRA:          -6.905
+REMARK INTER:                  -6.905
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levamisole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.561  65.575  69.973  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.186  65.834  70.661  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.637  65.261  70.883  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.065  65.065  71.445  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.748  64.331  71.243  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      63.123  64.073  70.556  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.673  64.647  70.333  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      64.243  64.841  69.771  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      62.159  63.927  71.656  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.833  64.257  72.338  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.244  63.853  72.751  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.980  63.119  72.481  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.306  62.790  71.798  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.895  63.194  71.386  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.029      0.000      0.000
+REMARK INTER + INTRA:          -8.029
+REMARK INTER:                  -8.029
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.939  60.924  63.645  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.277  61.406  64.224  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.840  61.621  64.888  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.177  62.103  65.466  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.953  62.371  65.379  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      62.391  62.155  64.713  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.053  61.673  64.136  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.492  61.459  63.470  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.740  62.319  66.132  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.964  62.052  66.219  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.527  62.267  66.885  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.864  62.749  67.462  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.640  63.016  67.375  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.078  62.800  66.709  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.828      1.614      3.383
+REMARK INTER + INTRA:          -7.828
+REMARK INTER:                  -7.828
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.281  63.498  67.680  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.885  62.993  67.160  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.255  62.743  66.466  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.860  62.239  65.947  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.095  61.984  66.120  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.725  62.234  66.815  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.120  62.739  67.334  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.750  62.988  68.028  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.229  61.989  65.253  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.995  62.244  65.078  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.364  61.994  64.385  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.969  61.490  63.866  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.204  61.236  64.039  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.834  61.486  64.734  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.148      1.296      1.595
+REMARK INTER + INTRA:          -7.148
+REMARK INTER:                  -7.148
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.372  60.980  65.543  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.001  61.686  65.757  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.638  61.754  66.494  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.267  62.459  66.708  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.258  63.096  66.184  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.622  63.028  65.446  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.993  62.323  65.232  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.355  62.255  64.494  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.904  62.528  67.446  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.913  61.890  67.970  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.550  61.959  68.708  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.179  62.663  68.921  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.171  63.301  68.397  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.534  63.232  67.659  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.885      6.226      7.501
+REMARK INTER + INTRA:          -6.885
+REMARK INTER:                  -6.885
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.849  64.690  71.454  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.368  64.931  70.858  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.866  65.577  70.981  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.384  65.817  70.385  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.404  65.411  69.667  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      63.906  64.764  69.545  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.388  64.524  70.141  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.890  63.878  70.018  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.882  66.463  70.507  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.862  66.869  71.225  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.360  67.515  71.347  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      65.877  67.755  70.752  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.898  67.349  70.035  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.400  66.702  69.912  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.815      5.972      6.893
+REMARK INTER + INTRA:          -6.815
+REMARK INTER:                  -6.815
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.224  61.895  70.733  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.558  62.383  71.310  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.177  63.080  71.531  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.510  63.567  72.107  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.226  63.359  72.461  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.608  62.661  72.239  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.274  62.174  71.663  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.657  61.477  71.441  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.129  64.264  72.330  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.413  64.473  71.976  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.032  65.170  72.198  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.365  65.657  72.773  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.080  65.449  73.127  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.462  64.751  72.905  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.771      6.792      7.949
+REMARK INTER + INTRA:          -6.771
+REMARK INTER:                  -6.771
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.251  67.719  69.818  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.878  67.210  70.351  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.141  66.890  70.169  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.769  66.382  70.701  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.134  66.193  71.416  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      65.873  66.513  71.598  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      66.245  67.022  71.066  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      66.984  67.342  71.248  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.031  66.061  70.520  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.664  66.250  69.805  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.926  65.930  69.623  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.554  65.422  70.155  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.920  65.233  70.870  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.659  65.554  71.052  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.677      6.316      7.611
+REMARK INTER + INTRA:          -6.677
+REMARK INTER:                  -6.677
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.694  65.529  72.149  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.422  65.203  72.361  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.656  64.478  72.047  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.384  64.152  72.259  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.877  64.551  72.786  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.642  65.277  73.101  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.915  65.603  72.888  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.681  66.329  73.203  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.618  63.426  71.945  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.125  63.026  71.418  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.360  62.301  71.104  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.086  61.975  71.316  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.580  62.374  71.842  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.345  63.100  72.157  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.533      4.509      6.275
+REMARK INTER + INTRA:          -6.533
+REMARK INTER:                  -6.533
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.550  63.064  73.032  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.461  63.393  72.279  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.211  62.921  71.651  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.122  63.249  70.899  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.283  64.048  70.775  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.533  64.520  71.405  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.622  64.193  72.157  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.872  64.665  72.785  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.872  62.777  70.270  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.711  61.977  70.393  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.461  61.506  69.764  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.372  61.833  69.013  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.532  62.633  68.890  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.783  63.105  69.519  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.405     24.513     25.394
+REMARK INTER + INTRA:          -6.405
+REMARK INTER:                  -6.405
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amrinone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      68.660  79.862  51.089  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      69.469  79.983  50.974  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      69.856  79.613  50.348  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      70.664  79.734  50.233  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.085  80.225  50.744  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      70.697  80.596  51.371  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      69.889  80.475  51.486  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      69.502  80.847  52.114  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      71.052  79.363  49.606  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.631  78.871  49.094  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.020  78.501  48.467  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      71.826  78.622  48.353  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      72.247  79.113  48.864  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.859  79.484  49.491  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.306      0.000      0.000
+REMARK INTER + INTRA:          -8.306
+REMARK INTER:                  -8.306
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.706  62.037  66.397  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.415  62.443  66.510  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.557  62.834  67.223  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.990  62.818  67.822  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.132  63.209  68.535  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.565  63.193  69.134  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      61.840  63.614  68.649  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.982  62.459  65.912  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.840  62.068  65.199  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.407  62.084  64.600  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.265  61.693  63.887  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.556  61.286  63.773  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.989  61.271  64.373  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.131  61.661  65.085  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.469      1.790      4.569
+REMARK INTER + INTRA:          -7.469
+REMARK INTER:                  -7.469
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.048  63.178  68.459  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.955  62.374  68.298  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.099  62.086  67.537  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.335  62.603  66.939  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.479  62.315  66.179  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.715  62.832  65.581  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      61.387  61.513  66.018  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.720  61.857  68.896  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.576  62.145  69.656  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.340  61.628  70.254  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.196  61.916  71.015  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.289  62.720  71.176  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.524  63.236  70.577  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.668  62.949  69.818  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.386      4.885      6.821
+REMARK INTER + INTRA:          -7.386
+REMARK INTER:                  -7.386
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.234  65.908  69.450  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.187  65.535  70.185  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.646  64.923  70.304  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.152  64.685  69.687  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.610  64.073  69.806  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.117  63.835  69.190  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      62.563  63.701  70.540  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.681  65.774  70.801  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.223  66.385  70.682  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.716  66.624  71.299  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.258  67.236  71.180  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.305  67.608  70.445  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.811  67.369  69.829  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.270  66.758  69.948  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.127      5.585      6.553
+REMARK INTER + INTRA:          -7.127
+REMARK INTER:                  -7.127
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.792  64.116  71.461  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.148  64.353  72.166  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.932  65.068  72.519  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.359  65.544  72.165  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.142  66.259  72.517  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      58.569  66.735  72.163  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      59.498  66.495  73.222  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.721  63.877  72.520  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.938  63.162  72.167  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.511  62.686  72.521  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.728  61.971  72.169  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.371  61.734  71.463  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.799  62.212  71.110  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.582  62.925  71.462  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.067      1.884      2.645
+REMARK INTER + INTRA:          -7.067
+REMARK INTER:                  -7.067
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.305  62.107  68.267  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.532  62.110  68.555  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.395  62.106  69.369  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.032  62.100  69.894  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.895  62.097  70.708  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.532  62.091  71.233  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      60.123  62.099  70.996  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.896  62.116  68.031  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.033  62.119  67.216  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.396  62.125  66.692  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.533  62.128  65.878  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.306  62.126  65.589  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.942  62.120  66.115  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.806  62.116  66.928  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.024     18.546     18.943
+REMARK INTER + INTRA:          -7.024
+REMARK INTER:                  -7.024
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.334  78.856  58.941  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.898  79.443  58.811  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.675  80.164  58.476  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.886  80.296  58.272  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.662  81.017  57.937  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.874  81.149  57.732  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      64.226  81.604  57.807  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.687  79.312  59.015  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.911  78.591  59.350  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.699  78.459  59.555  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.923  77.738  59.889  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.358  77.151  60.019  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.570  77.284  59.814  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.346  78.003  59.480  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.869      5.590      6.329
+REMARK INTER + INTRA:          -6.869
+REMARK INTER:                  -6.869
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.993  65.039  71.541  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.113  64.559  70.881  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.652  64.786  70.298  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.070  65.493  70.376  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.609  65.720  69.793  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      65.027  66.427  69.872  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      64.729  65.241  69.134  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.695  63.853  70.802  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.156  63.626  71.385  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.738  62.919  71.307  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.199  62.692  71.890  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.079  63.172  72.550  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.498  63.879  72.627  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.036  64.106  72.045  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.836      6.319      7.066
+REMARK INTER + INTRA:          -6.836
+REMARK INTER:                  -6.836
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.958  65.066  72.891  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.381  65.381  72.391  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.294  66.199  72.325  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.785  66.702  72.758  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.698  67.520  72.691  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.188  68.023  73.124  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      61.122  67.835  72.192  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.891  64.878  71.958  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.977  64.060  72.025  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.487  63.557  71.592  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.574  62.739  71.659  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.150  62.424  72.158  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.640  62.928  72.591  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.554  63.745  72.524  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.780      4.343      5.521
+REMARK INTER + INTRA:          -6.780
+REMARK INTER:                  -6.780
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = solriamfetol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.812  64.211  70.504  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.632  64.096  71.301  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.879  64.647  71.864  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.306  65.313  71.628  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.554  65.864  72.191  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.980  66.529  71.956  0.00  0.00    +0.000 NA
+ATOM      7  O   UNL     1      62.374  65.749  72.987  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.205  63.431  71.536  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.958  62.879  70.974  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.531  62.214  71.209  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.284  61.663  70.646  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.463  61.777  69.849  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.890  62.444  69.615  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.138  62.994  70.177  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

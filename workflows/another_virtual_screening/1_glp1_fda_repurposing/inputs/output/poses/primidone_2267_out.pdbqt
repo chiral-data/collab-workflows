@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.772      0.000      0.000
+REMARK INTER + INTRA:          -9.772
+REMARK INTER:                  -9.772
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.398  61.472  65.064  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.144  61.835  65.759  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.663  62.311  66.190  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.353  62.708  66.405  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.027  62.647  65.932  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.369  63.165  67.091  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.696  63.226  67.563  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.005  62.829  67.348  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.988  62.371  66.662  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.298  61.974  66.447  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.156  62.085  65.568  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.872  61.589  64.975  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.365  61.363  64.353  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.144  61.634  64.326  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.429  62.131  64.921  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.935  62.356  65.542  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.497      1.244      2.370
+REMARK INTER + INTRA:          -9.497
+REMARK INTER:                  -9.497
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.686  61.744  65.818  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.288  61.621  65.268  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.034  61.951  65.391  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.645  62.374  65.748  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.514  62.760  66.467  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      62.386  62.413  65.388  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.517  62.028  64.670  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.906  61.604  64.312  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.164  61.566  64.672  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.553  61.142  64.315  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.644  62.221  66.066  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.853  62.025  66.192  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.463  62.295  66.866  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.865  62.762  67.416  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.657  62.958  67.290  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.046  62.688  66.614  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.582      5.480      6.492
+REMARK INTER + INTRA:          -8.582
+REMARK INTER:                  -8.582
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.663  62.990  72.573  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.236  63.689  72.669  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.562  63.826  72.214  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.964  63.707  71.659  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.950  63.013  71.211  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      59.380  64.279  71.550  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.394  64.973  71.997  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.992  65.093  72.553  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.576  64.520  72.661  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.174  64.640  73.217  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.782  63.086  71.925  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.451  62.708  72.225  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.671  61.967  71.936  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.222  61.604  71.347  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.552  61.982  71.047  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.332  62.723  71.337  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.429      3.000      4.645
+REMARK INTER + INTRA:          -8.429
+REMARK INTER:                  -8.429
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.502  61.768  70.564  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.523  61.965  69.763  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.975  62.606  69.508  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.481  63.257  69.533  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.792  63.510  70.255  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.675  63.657  68.838  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.364  63.405  68.117  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.858  62.753  68.091  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.664  62.354  68.786  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.158  61.703  68.760  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.129  62.635  70.318  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.785  62.082  70.823  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.939  62.111  71.633  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.437  62.694  71.938  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.781  63.248  71.431  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.627  63.218  70.621  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.293      6.037      7.431
+REMARK INTER + INTRA:          -8.293
+REMARK INTER:                  -8.293
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.779  66.824  71.629  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.332  66.164  71.416  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.390  65.856  70.653  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.631  65.766  69.870  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.183  66.288  69.546  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      64.323  65.154  69.410  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.772  64.632  69.734  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.530  64.722  70.518  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.839  65.334  70.978  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.597  65.424  71.761  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.920  66.485  70.595  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.054  66.974  71.245  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.584  67.603  71.186  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.982  67.743  70.477  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.848  67.253  69.826  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      65.317  66.624  69.885  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.201      6.475      7.721
+REMARK INTER + INTRA:          -8.201
+REMARK INTER:                  -8.201
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.737  66.503  69.428  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.332  66.847  69.884  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.465  66.584  70.654  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.383  66.149  71.350  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.804  65.562  71.403  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      65.877  66.301  71.993  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      66.455  66.887  71.940  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      66.538  67.323  71.243  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      66.044  67.171  70.601  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      66.126  67.605  69.904  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.841  66.089  70.440  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.507  66.148  69.688  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.883  65.653  69.474  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.593  65.098  70.011  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.928  65.039  70.764  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.552  65.535  70.978  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.193      5.704      6.325
+REMARK INTER + INTRA:          -8.193
+REMARK INTER:                  -8.193
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.187  62.714  71.076  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.028  63.466  71.377  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.483  63.767  71.995  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.062  63.814  72.581  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.581  63.183  72.698  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.124  64.491  73.048  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.606  65.122  72.931  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.025  65.076  72.345  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.964  64.399  71.878  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.384  64.352  71.293  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.843  63.032  71.898  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.569  62.511  71.320  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.929  61.776  71.223  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.565  61.560  71.703  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.839  62.082  72.282  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.478  62.818  72.379  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.181      6.279      7.453
+REMARK INTER + INTRA:          -8.181
+REMARK INTER:                  -8.181
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.959  66.506  69.517  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.297  66.120  69.822  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.099  66.207  70.617  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.134  66.457  71.402  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.741  66.961  71.647  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      63.564  66.205  71.943  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.958  65.702  71.699  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.922  65.451  70.913  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.492  65.703  70.373  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.456  65.452  69.588  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.774  66.680  70.585  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.182  66.768  69.874  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.857  67.241  69.842  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.124  67.626  70.522  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.714  67.538  71.233  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      65.039  67.064  71.265  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.962     25.443     26.385
+REMARK INTER + INTRA:          -7.962
+REMARK INTER:                  -7.962
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = primidone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.270  78.495  48.794  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.934  78.965  48.658  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      72.021  79.681  49.057  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.859  80.311  49.564  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      71.167  80.308  50.016  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      72.386  80.943  49.621  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      73.077  80.946  49.170  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      73.240  80.316  48.662  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      72.713  79.684  48.605  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      72.875  79.055  48.098  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      71.301  79.430  49.369  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.974  78.713  49.127  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.253  78.461  49.439  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      69.859  78.927  49.994  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      70.186  79.645  50.237  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      70.907  79.896  49.924  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

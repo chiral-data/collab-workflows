@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.992      0.000      0.000
+REMARK INTER + INTRA:          -6.992
+REMARK INTER:                  -6.992
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.739  61.656  63.467  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.084  61.665  63.968  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.135  62.026  64.709  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.481  62.035  65.209  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.532  62.395  65.949  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.876  62.405  66.450  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.170  62.053  66.211  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.118  61.692  65.471  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.773  61.683  64.970  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.928  62.765  67.190  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.635  63.117  67.430  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      60.272  62.774  67.692  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.578      1.550      2.924
+REMARK INTER + INTRA:          -6.578
+REMARK INTER:                  -6.578
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.142  63.159  68.413  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.117  62.762  67.690  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.769  62.783  67.184  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.743  62.386  66.463  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.395  62.406  65.957  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.370  62.009  65.234  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.693  61.592  65.017  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.040  61.571  65.522  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.066  61.968  66.245  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.021  62.030  64.730  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.699  62.448  64.947  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      61.996  61.633  64.006  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.354      6.001      7.291
+REMARK INTER + INTRA:          -6.354
+REMARK INTER:                  -6.354
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.507  67.946  69.799  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.928  67.564  70.246  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.530  66.911  69.935  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.952  66.529  70.381  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.554  65.877  70.071  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.976  65.494  70.518  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.796  65.764  71.276  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.194  66.416  71.588  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      64.772  66.799  71.141  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.578  64.843  70.207  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.758  64.572  69.448  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      62.999  64.460  70.654  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.129      3.404      4.718
+REMARK INTER + INTRA:          -6.129
+REMARK INTER:                  -6.129
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.458  62.311  67.559  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.423  62.141  68.366  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.737  62.673  68.914  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.703  62.504  69.719  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.016  63.035  70.267  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.981  62.866  71.074  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.634  62.164  71.333  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.320  61.632  70.786  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.355  61.801  69.979  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.294  63.397  71.620  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.642  64.099  71.362  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      61.260  63.227  72.428  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.067      7.122      7.787
+REMARK INTER + INTRA:          -6.067
+REMARK INTER:                  -6.067
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.605  62.340  72.363  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.271  63.080  72.506  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.749  63.753  72.523  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.415  64.493  72.667  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.892  65.165  72.683  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.558  65.905  72.827  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.746  65.973  72.954  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.268  65.301  72.938  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.602  64.561  72.794  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.036  66.577  72.843  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.848  66.510  72.716  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      61.701  67.318  72.987  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.948      5.601      6.565
+REMARK INTER + INTRA:          -5.948
+REMARK INTER:                  -5.948
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.247  61.535  70.669  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.767  62.154  70.835  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.545  62.749  71.363  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.064  63.367  71.529  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.843  63.962  72.056  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.363  64.581  72.222  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.104  64.605  71.861  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.326  64.010  71.334  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.806  63.391  71.168  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.141  65.175  72.748  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.399  65.151  73.110  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      61.661  65.794  72.915  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.867      5.957      6.863
+REMARK INTER + INTRA:          -5.867
+REMARK INTER:                  -5.867
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.256  62.888  72.599  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.638  63.600  72.430  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.084  63.676  71.739  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.466  64.386  71.571  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.911  64.462  70.880  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.293  65.174  70.712  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.230  65.809  71.233  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.785  65.734  71.924  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.402  65.023  72.093  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.738  65.249  70.022  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.801  64.613  69.500  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      64.120  65.961  69.853  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.799      5.242      6.820
+REMARK INTER + INTRA:          -5.799
+REMARK INTER:                  -5.799
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.098  66.022  72.852  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.958  65.210  72.817  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.606  64.880  72.147  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.466  64.068  72.112  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.114  63.739  71.443  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.975  62.926  71.408  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.187  62.444  72.041  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.539  62.773  72.711  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.679  63.585  72.747  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.623  62.597  70.739  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.410  63.080  70.104  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      60.483  61.784  70.703  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.794      5.517      6.144
+REMARK INTER + INTRA:          -5.794
+REMARK INTER:                  -5.794
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = protionamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.765  61.659  70.837  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.436  62.343  71.159  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.427  63.043  70.721  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.098  63.727  71.042  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.088  64.426  70.604  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.759  65.110  70.926  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.439  65.096  71.686  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.447  64.397  72.124  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.777  63.712  71.803  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.750  65.809  70.488  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.071  65.824  69.728  0.00  0.00    +0.000 NA
+ATOM     12  S   UNL     1      59.420  66.494  70.810  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

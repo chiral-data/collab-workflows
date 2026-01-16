@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.878      0.000      0.000
+REMARK INTER + INTRA:          -8.878
+REMARK INTER:                  -8.878
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.613  62.503  66.695  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.410  62.700  66.609  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.798  63.121  67.203  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.818  62.476  65.927  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.431  62.056  65.333  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.812  62.143  65.872  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.069  61.831  65.703  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.450  61.919  66.242  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.182  62.114  64.999  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.784  62.504  65.407  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.332  61.782  64.259  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.730  61.392  63.853  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.880  61.059  63.112  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.978  61.333  64.186  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.828  61.665  64.926  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.075  61.607  65.260  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.770      1.361      3.046
+REMARK INTER + INTRA:          -8.770
+REMARK INTER:                  -8.770
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.616  61.588  64.560  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.831  61.345  64.637  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.495  60.849  64.070  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.383  61.597  65.283  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.720  62.092  65.850  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.362  62.002  65.341  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.077  62.377  65.507  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.720  62.286  64.998  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.961  62.012  66.162  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.402  61.548  65.771  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.761  62.395  66.865  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.320  62.858  67.255  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.120  63.241  67.959  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.080  62.939  66.944  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.280  62.556  66.241  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.039  62.637  65.928  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.932      6.801      8.132
+REMARK INTER + INTRA:          -7.932
+REMARK INTER:                  -7.932
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.298  67.349  70.879  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.954  67.411  70.131  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.239  67.965  69.590  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.323  66.919  69.926  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.039  66.367  70.467  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.642  66.706  70.916  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.785  66.442  71.683  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.389  66.783  72.131  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.534  66.218  69.832  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.610  66.653  69.136  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.954  65.635  69.894  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.878  65.200  70.590  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.298  64.616  70.651  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      64.383  65.348  71.226  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      64.963  65.931  71.165  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      65.468  66.080  71.801  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.788      5.586      6.859
+REMARK INTER + INTRA:          -7.788
+REMARK INTER:                  -7.788
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.204  61.450  70.988  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.585  61.535  71.716  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.073  60.934  71.999  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.476  62.223  72.160  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.989  62.824  71.876  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.918  62.281  71.259  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.443  62.455  70.608  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.372  61.912  69.991  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.228  63.159  72.591  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.740  62.746  73.088  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.955  63.907  72.809  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.443  64.319  72.311  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.170  65.068  72.529  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.203  63.985  71.596  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.476  63.237  71.379  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.236  62.902  70.663  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.739      2.949      3.850
+REMARK INTER + INTRA:          -7.739
+REMARK INTER:                  -7.739
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.146  62.821  70.534  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.510  63.406  70.079  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.975  63.982  70.443  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.409  63.414  69.260  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.944  62.838  68.897  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.875  62.600  69.684  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.422  61.939  69.877  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.353  61.702  70.665  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.174  63.275  68.236  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.662  63.933  68.327  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.915  63.053  67.484  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.427  62.395  67.394  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.168  62.173  66.642  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.197  61.957  68.055  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.455  62.179  68.806  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.226  61.741  69.468  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.544      3.453      4.607
+REMARK INTER + INTRA:          -7.544
+REMARK INTER:                  -7.544
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.228  61.834  69.175  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.400  62.177  68.444  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.033  61.898  67.760  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.939  62.801  68.399  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.305  63.080  69.082  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.838  62.482  69.406  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.855  62.338  70.217  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.387  61.740  70.540  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.646  63.581  68.523  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.442  63.509  67.727  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.191  64.154  68.759  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.395  64.226  69.554  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.940  64.799  69.791  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.054  63.725  70.115  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.509  63.152  69.879  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.168  62.651  70.439  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.419      5.157      6.300
+REMARK INTER + INTRA:          -7.419
+REMARK INTER:                  -7.419
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.059  63.741  72.786  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.604  64.257  72.330  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.343  64.971  72.650  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.409  64.057  71.553  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.670  63.344  71.233  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.995  63.287  71.989  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.435  62.623  72.201  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.760  62.567  72.958  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.256  63.647  70.587  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.883  64.380  70.646  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.214  63.217  69.884  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.587  62.484  69.827  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.546  62.053  69.123  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.002  62.180  70.472  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.044  62.609  71.175  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.459  62.306  71.821  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.164     24.542     25.335
+REMARK INTER + INTRA:          -7.164
+REMARK INTER:                  -7.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.903  79.066  48.981  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.155  79.709  49.433  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      72.912  80.018  49.324  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.650  80.042  49.994  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.894  79.732  50.103  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.168  79.231  49.509  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.683  78.632  49.217  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.958  78.130  48.622  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.881  80.340  50.660  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      71.542  80.824  50.757  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      70.207  80.465  51.120  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      69.546  79.982  51.022  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      68.872  80.107  51.483  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      69.558  79.373  50.466  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      70.232  79.248  50.006  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      70.245  78.639  49.449  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.151      5.843      6.987
+REMARK INTER + INTRA:          -7.151
+REMARK INTER:                  -7.151
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proxibarbal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.328  64.904  72.167  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.620  64.428  71.559  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.783  63.632  71.701  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.748  64.749  70.809  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.584  65.544  70.668  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.374  65.495  71.464  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.092  66.162  71.858  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      58.882  66.113  72.655  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.851  65.318  69.921  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.088  64.539  69.787  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.882  65.870  69.308  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.645  66.648  69.443  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.676  67.201  68.830  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      59.378  66.875  70.190  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.347  66.323  70.802  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.080  66.550  71.550  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

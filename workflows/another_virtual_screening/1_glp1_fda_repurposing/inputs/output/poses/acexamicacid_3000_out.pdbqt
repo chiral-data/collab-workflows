@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.942      0.000      0.000
+REMARK INTER + INTRA:          -6.942
+REMARK INTER:                  -6.942
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.616  63.104  69.028  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.179  63.112  68.425  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.901  63.495  68.539  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.019  62.736  67.708  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.582  62.744  67.104  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.423  62.368  66.387  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.986  62.376  65.784  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.826  62.000  65.067  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.389  62.008  64.463  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.229  61.632  63.746  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.792  61.640  63.142  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.507  61.249  63.633  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.616      1.488      4.385
+REMARK INTER + INTRA:          -6.616
+REMARK INTER:                  -6.616
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.013  61.571  63.955  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.006  62.036  64.636  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.365  62.778  64.632  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.639  61.758  65.320  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.631  62.223  66.002  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.264  61.945  66.686  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.257  62.410  67.368  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.890  62.132  68.053  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.883  62.597  68.735  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.516  62.319  69.419  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.508  62.784  70.101  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.156  61.576  69.422  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.333      1.825      2.460
+REMARK INTER + INTRA:          -6.333
+REMARK INTER:                  -6.333
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.382  62.571  71.303  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.375  62.139  70.601  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.116  61.355  70.602  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.627  62.490  69.899  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.620  62.057  69.196  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.872  62.408  68.493  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.865  61.975  67.790  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.117  62.327  67.088  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.110  61.894  66.385  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.363  62.245  65.683  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.356  61.812  64.979  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.621  63.029  65.682  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.076      4.829      6.449
+REMARK INTER + INTRA:          -6.076
+REMARK INTER:                  -6.076
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.505  67.994  69.833  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.093  67.405  70.238  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.254  67.260  71.034  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.520  66.960  69.845  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      65.107  66.370  70.249  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.534  65.926  69.857  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.121  65.336  70.261  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.548  64.891  69.869  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.136  64.301  70.273  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.562  63.857  69.880  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.150  63.267  70.285  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.401  64.001  69.084  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.031      5.243      6.708
+REMARK INTER + INTRA:          -6.031
+REMARK INTER:                  -6.031
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.845  63.551  71.269  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.298  63.980  70.729  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.169  63.891  69.919  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.880  64.497  71.000  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.334  64.927  70.460  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.916  65.444  70.731  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.370  65.873  70.191  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.952  66.391  70.462  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.406  66.820  69.922  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.988  67.338  70.193  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      66.442  67.767  69.653  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      66.117  67.427  71.003  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.720      5.395      7.665
+REMARK INTER + INTRA:          -5.720
+REMARK INTER:                  -5.720
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.643  61.627  70.841  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.699  62.426  71.039  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.413  62.827  70.937  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.041  62.823  71.339  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.097  63.622  71.538  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.439  64.019  71.838  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.495  64.818  72.036  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      58.837  65.215  72.336  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.893  66.015  72.534  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      58.235  66.411  72.834  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      58.291  67.211  73.033  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      57.521  66.010  72.937  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.682      6.039      7.003
+REMARK INTER + INTRA:          -5.682
+REMARK INTER:                  -5.682
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.078  67.567  70.555  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.518  67.022  70.292  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.448  66.858  69.486  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.029  66.640  70.835  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.468  66.094  70.571  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.979  65.712  71.114  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.418  65.166  70.851  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.929  64.784  71.394  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.368  64.238  71.131  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.879  63.856  71.674  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.318  63.310  71.411  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.949  64.020  72.480  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.554     23.902     24.622
+REMARK INTER + INTRA:          -5.554
+REMARK INTER:                  -5.554
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.384  81.164  53.130  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      68.377  80.761  52.410  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      67.660  80.584  52.043  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      69.088  80.535  52.059  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      69.082  80.131  51.339  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.793  79.904  50.988  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      69.787  79.500  50.268  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.498  79.274  49.916  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.492  78.870  49.196  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      71.203  78.643  48.845  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      71.196  78.240  48.125  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      71.920  78.820  49.213  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.450     24.214     25.258
+REMARK INTER + INTRA:          -5.450
+REMARK INTER:                  -5.450
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acexamic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.865  78.916  48.736  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.047  78.914  48.842  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      71.561  78.522  48.303  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      71.715  79.306  49.487  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      70.896  79.304  49.594  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.564  79.696  50.240  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      69.746  79.694  50.346  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      69.414  80.086  50.992  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      68.595  80.084  51.099  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      68.263  80.476  51.745  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      67.445  80.474  51.851  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      68.749  80.868  52.284  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

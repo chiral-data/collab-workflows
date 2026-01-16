@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -5.360      0.000      0.000
+REMARK INTER + INTRA:          -5.360
+REMARK INTER:                  -5.360
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.832  76.210  60.587  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      65.914  76.559  59.844  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      66.146  77.347  59.782  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      66.185  77.401  60.604  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      66.108  77.294  58.960  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      66.379  78.137  59.720  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      66.461  78.486  58.976  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      66.528  78.578  60.401  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.130     16.545     16.811
+REMARK INTER + INTRA:          -5.130
+REMARK INTER:                  -5.130
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.663  62.634  66.168  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.228  62.606  65.569  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.082  62.172  64.884  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      61.344  61.953  65.179  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      62.820  62.391  64.587  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      61.936  61.738  64.197  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      62.502  61.711  63.597  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      61.223  61.331  64.110  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.724     16.765     17.144
+REMARK INTER + INTRA:          -4.724
+REMARK INTER:                  -4.724
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.825  60.881  63.727  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.825  61.155  64.505  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.401  61.689  64.754  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      61.736  61.681  64.000  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      61.068  61.697  65.509  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      61.979  62.223  65.004  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      61.978  62.497  65.783  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      62.556  62.484  64.475  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.617     17.565     17.807
+REMARK INTER + INTRA:          -4.617
+REMARK INTER:                  -4.617
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.174  61.371  64.766  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.371  61.380  64.953  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.107  61.787  65.619  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      60.882  62.013  65.789  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      59.331  61.562  65.451  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      59.843  62.195  66.287  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      59.038  62.204  66.474  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      60.382  62.594  66.767  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.456     14.302     14.841
+REMARK INTER + INTRA:          -4.456
+REMARK INTER:                  -4.456
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.666  65.659  70.345  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      64.880  66.268  69.834  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      65.462  66.808  70.057  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      65.550  66.417  70.778  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      65.374  67.201  69.337  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      66.044  67.350  70.281  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      66.259  67.960  69.768  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      66.411  67.280  71.016  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.421     14.747     14.989
+REMARK INTER + INTRA:          -4.421
+REMARK INTER:                  -4.421
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.585  77.680  72.533  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.022  76.982  72.485  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      58.636  76.253  72.495  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      57.909  76.638  72.557  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      59.363  75.867  72.434  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      58.250  75.523  72.505  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      58.688  74.824  72.457  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      57.428  75.492  72.564  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.420     18.536     19.164
+REMARK INTER + INTRA:          -4.420
+REMARK INTER:                  -4.420
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.699  62.310  68.060  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.343  61.822  68.620  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.474  61.953  69.424  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      60.961  62.593  69.241  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      59.987  61.313  69.608  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      60.605  62.085  70.228  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      60.248  61.595  70.790  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      61.092  62.704  70.471  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.154     19.112     19.551
+REMARK INTER + INTRA:          -4.154
+REMARK INTER:                  -4.154
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.488  64.352  71.768  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.778  63.591  71.896  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.521  63.484  72.235  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      60.617  64.302  72.284  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      60.427  62.666  72.187  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      61.266  63.377  72.575  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      61.556  62.614  72.703  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      61.721  64.032  72.787  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.954     18.581     19.113
+REMARK INTER + INTRA:          -3.954
+REMARK INTER:                  -3.954
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.422  64.191  70.640  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.263  64.180  71.448  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.920  63.514  71.792  0.00  0.00    +0.000 C 
+ATOM      4  F   UNL     1      61.906  63.141  71.056  0.00  0.00    +0.000 F 
+ATOM      5  F   UNL     1      61.933  63.885  72.528  0.00  0.00    +0.000 F 
+ATOM      6  C   UNL     1      61.576  62.846  72.136  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      61.417  62.835  72.946  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      61.393  62.190  71.670  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

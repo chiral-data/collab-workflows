@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.344      0.000      0.000
+REMARK INTER + INTRA:          -8.344
+REMARK INTER:                  -8.344
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.755  61.653  63.408  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.219  61.701  64.033  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.511  61.278  64.001  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.974  61.326  64.626  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.266  60.904  64.594  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.146  61.796  65.282  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.608  61.844  65.906  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.780  62.314  66.562  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.299  62.415  67.225  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.684  62.929  67.743  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.403  63.145  67.401  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.462  62.765  66.671  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.853  62.218  65.313  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      62.024  62.688  65.969  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      62.390  62.171  64.689  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.064      1.027      2.993
+REMARK INTER + INTRA:          -8.064
+REMARK INTER:                  -8.064
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.394  63.334  68.399  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.426  62.972  67.658  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.743  62.647  67.328  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.776  62.286  66.587  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      59.092  61.961  66.257  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.490  62.249  66.176  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.521  61.888  65.435  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.236  61.851  65.024  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.352  61.509  64.283  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.148  61.597  64.083  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.524  61.993  64.702  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.960  62.151  65.284  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.172  62.574  66.506  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.887  62.538  66.095  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      61.141  62.936  67.247  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.332      5.953      7.595
+REMARK INTER + INTRA:          -7.332
+REMARK INTER:                  -7.332
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.458  67.989  69.802  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.984  67.404  70.138  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.986  67.289  70.955  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.512  66.704  71.291  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      65.515  66.589  72.108  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      65.035  66.233  70.810  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.561  65.647  71.147  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.084  65.176  70.666  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.583  64.573  70.921  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.214  64.249  70.258  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.486  64.653  69.592  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      64.024  65.227  69.844  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.032  66.347  69.993  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      64.556  65.876  69.513  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      65.507  66.933  69.657  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.303      1.811      2.635
+REMARK INTER + INTRA:          -7.303
+REMARK INTER:                  -7.303
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.304  61.703  65.696  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.907  62.056  66.134  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.673  62.091  65.828  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.276  62.445  66.267  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      62.042  62.480  65.961  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.113  62.764  67.010  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.717  63.117  67.448  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.555  63.436  68.191  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.098  63.804  68.690  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.699  64.038  69.374  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.909  63.813  69.298  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.819  63.441  68.567  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.348  62.728  67.315  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.186  63.047  68.059  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      59.745  62.375  66.878  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.260      1.385      3.721
+REMARK INTER + INTRA:          -7.260
+REMARK INTER:                  -7.260
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.214  61.986  69.727  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.585  62.261  69.044  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.934  63.010  69.038  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.305  63.285  68.355  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.653  64.034  68.348  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.329  62.813  67.679  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.701  63.089  66.996  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.725  62.617  66.320  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.075  62.818  65.600  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.969  62.186  65.080  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.553  61.594  65.478  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.402  61.861  66.245  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.981  62.065  67.685  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.005  61.593  67.009  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      60.609  61.789  68.368  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.054      5.737      6.928
+REMARK INTER + INTRA:          -7.054
+REMARK INTER:                  -7.054
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.616  61.730  70.406  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.631  62.318  70.984  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.156  62.259  71.619  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.171  62.847  72.197  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.696  62.789  72.831  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.661  63.494  72.141  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.677  64.082  72.720  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.168  64.729  72.664  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.121  65.356  73.198  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.540  65.877  72.928  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.228  65.571  72.228  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.616  64.861  72.065  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.137  63.553  71.507  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      59.628  64.199  71.452  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      60.121  62.965  70.928  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.052      2.864      5.084
+REMARK INTER + INTRA:          -7.052
+REMARK INTER:                  -7.052
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.179  63.828  71.884  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.296  63.363  71.214  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.293  62.540  71.278  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.411  62.074  70.607  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.407  61.251  70.671  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.531  62.430  69.873  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.648  61.963  69.203  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.769  62.320  68.468  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.893  61.928  67.753  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.988  62.497  67.163  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.922  63.241  67.513  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.787  63.132  68.320  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.534  63.252  69.809  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.655  63.608  69.075  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      60.417  63.719  70.479  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.886      7.087      7.851
+REMARK INTER + INTRA:          -6.886
+REMARK INTER:                  -6.886
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.406  67.626  70.424  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.686  67.239  70.538  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.375  66.762  69.940  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.656  66.376  70.054  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      64.345  65.899  69.456  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      64.247  66.466  70.765  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      63.527  66.079  70.878  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.118  66.169  71.589  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.396  65.819  71.781  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.191  66.058  72.544  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.786  66.557  72.823  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.359  66.625  72.233  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      64.557  66.942  71.362  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      64.148  67.032  72.073  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      65.277  67.329  71.249  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.793      4.490      6.482
+REMARK INTER + INTRA:          -6.793
+REMARK INTER:                  -6.793
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = apraclonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.542  65.221  72.822  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.426  64.508  72.423  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.560  63.792  72.810  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.445  63.079  72.411  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.579  62.363  72.799  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.194  63.082  71.625  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.079  62.369  71.226  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.829  62.372  70.440  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.691  61.707  69.973  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.449  61.965  69.227  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.438  62.790  69.233  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.673  63.042  69.984  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.060  63.798  71.238  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.810  63.801  70.452  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      61.176  64.511  71.637  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

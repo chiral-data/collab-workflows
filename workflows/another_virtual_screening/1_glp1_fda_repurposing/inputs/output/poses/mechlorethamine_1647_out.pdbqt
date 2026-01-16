@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.645      0.000      0.000
+REMARK INTER + INTRA:          -4.645
+REMARK INTER:                  -4.645
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.563  62.635  65.851  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.103  62.120  65.400  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.338  61.929  65.644  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.034  62.251  66.339  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      59.269  62.059  66.583  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.407  61.798  64.705  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.172  61.989  64.461  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      62.477  61.667  63.766  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.620      0.252      2.683
+REMARK INTER + INTRA:          -4.620
+REMARK INTER:                  -4.620
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.570  62.124  66.119  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.056  61.959  65.495  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.357  61.801  64.744  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.171  61.807  64.615  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      62.472  61.649  63.863  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.241  61.952  65.624  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.940  62.111  66.376  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      59.126  62.104  66.504  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.360      1.901      3.270
+REMARK INTER + INTRA:          -4.360
+REMARK INTER:                  -4.360
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.294  63.295  67.510  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.149  62.500  67.343  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.307  62.202  66.590  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.611  62.698  66.005  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      61.770  62.399  65.253  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.845  62.005  67.928  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.686  62.303  68.681  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      60.382  61.808  69.265  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.270      2.055      2.381
+REMARK INTER + INTRA:          -4.270
+REMARK INTER:                  -4.270
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.660  63.290  67.566  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.950  62.518  67.548  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.832  62.018  68.194  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.424  62.290  68.857  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      60.305  61.790  69.503  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.358  62.246  66.885  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.477  62.746  66.240  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      61.885  62.475  65.577  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.057      4.910      5.978
+REMARK INTER + INTRA:          -4.057
+REMARK INTER:                  -4.057
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.557  63.362  70.764  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.860  62.598  70.832  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.807  62.076  70.196  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.453  62.317  69.492  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      60.400  61.795  68.855  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.214  62.357  71.536  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.266  62.879  72.173  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      61.621  62.638  72.877  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.994      7.407      8.139
+REMARK INTER + INTRA:          -3.994
+REMARK INTER:                  -3.994
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.032  66.518  71.461  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.964  66.327  70.661  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.391  66.752  70.098  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.886  67.368  70.333  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      66.314  67.793  69.770  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      64.469  65.711  70.426  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.042  65.286  70.989  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      63.546  64.670  70.754  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.895      7.218      7.703
+REMARK INTER + INTRA:          -3.895
+REMARK INTER:                  -3.895
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.507  66.138  69.564  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.701  66.270  70.355  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      64.291  65.874  70.951  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.687  65.346  70.757  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      63.277  64.950  71.353  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      65.304  66.797  70.549  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.715  67.193  69.953  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      66.318  67.720  70.147  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.835     11.708     12.047
+REMARK INTER + INTRA:          -3.835
+REMARK INTER:                  -3.835
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.266  60.670  52.983  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.060  60.845  53.763  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.622  60.303  54.205  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.390  59.588  53.868  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      62.952  59.046  54.310  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      64.291  61.561  54.099  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.730  62.103  53.657  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      64.961  62.819  53.994  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.829     11.749     12.154
+REMARK INTER + INTRA:          -3.829
+REMARK INTER:                  -3.829
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mechlorethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.268  60.629  52.972  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.037  60.797  53.746  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      64.256  61.511  54.096  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.704  62.058  53.672  0.00  0.00    +0.000 C 
+ATOM      5 CL   UNL     1      64.923  62.773  54.022  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      63.589  60.250  54.169  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.370  59.535  53.820  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      62.922  58.988  54.243  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

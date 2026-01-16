@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.660      0.000      0.000
+REMARK INTER + INTRA:          -7.660
+REMARK INTER:                  -7.660
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.239  62.045  66.478  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.991  62.078  66.141  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.138  61.702  65.421  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.890  61.734  65.085  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.037  61.358  64.366  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.790  61.391  64.029  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.395  61.800  64.412  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.249  62.176  65.131  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.496  62.144  65.468  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.349  62.520  66.188  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.598  62.487  66.524  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      61.955  62.929  66.570  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.236      0.862      2.313
+REMARK INTER + INTRA:          -7.236
+REMARK INTER:                  -7.236
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.372  61.969  64.721  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.815  62.128  65.308  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.029  61.895  65.206  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.473  62.054  65.792  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.688  61.821  65.691  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.131  61.980  66.278  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.358  62.371  66.967  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.143  62.604  67.070  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.701  62.445  66.483  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.486  62.678  66.585  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.043  62.520  65.998  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      61.713  63.069  67.275  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.529      5.794      6.479
+REMARK INTER + INTRA:          -6.529
+REMARK INTER:                  -6.529
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.342  64.585  72.060  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.906  63.984  72.013  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.809  63.369  71.472  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.373  62.769  71.425  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.277  62.154  70.884  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.841  61.553  70.836  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.500  61.568  71.330  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.598  62.183  71.872  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.034  62.784  71.919  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.130  63.399  72.461  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.567  63.999  72.508  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      61.791  63.413  72.954  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.432      5.101      6.122
+REMARK INTER + INTRA:          -6.432
+REMARK INTER:                  -6.432
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.527  61.985  69.267  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.616  62.372  69.990  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.042  62.014  70.601  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.131  62.401  71.323  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.555  62.044  71.933  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.644  62.432  72.656  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.309  63.177  72.768  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.884  63.535  72.159  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.795  63.147  71.436  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.370  63.505  70.825  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.281  63.118  70.103  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      60.035  64.250  70.938  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.415      7.050      8.125
+REMARK INTER + INTRA:          -6.415
+REMARK INTER:                  -6.415
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.569  68.016  69.796  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.075  67.439  70.119  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.524  67.052  69.642  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.030  66.477  69.965  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.479  66.090  69.488  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.985  65.514  69.811  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.042  65.324  70.611  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.593  65.711  71.089  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.087  66.287  70.766  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.638  66.674  71.244  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      66.131  67.249  70.921  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      65.694  66.484  72.044  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.197      2.236      2.974
+REMARK INTER + INTRA:          -6.197
+REMARK INTER:                  -6.197
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.496  62.060  70.145  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.613  62.308  69.367  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.112  62.040  68.768  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.229  62.288  67.991  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.729  62.021  67.392  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.846  62.269  66.614  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.463  62.786  66.435  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.964  63.054  67.033  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.847  62.806  67.811  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.348  63.074  68.410  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.231  62.826  69.187  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      61.965  63.591  68.230  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.180      3.664      4.871
+REMARK INTER + INTRA:          -6.180
+REMARK INTER:                  -6.180
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.532  64.693  68.668  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.510  63.932  68.985  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.516  63.825  69.804  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.493  63.065  70.121  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.499  62.958  70.939  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.477  62.196  71.256  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.449  61.542  70.755  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.443  61.648  69.937  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.465  62.409  69.620  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.460  62.516  68.801  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.482  63.276  68.484  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      60.432  61.861  68.301  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.172      6.750      7.786
+REMARK INTER + INTRA:          -6.172
+REMARK INTER:                  -6.172
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.144  65.213  71.510  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.730  65.618  71.093  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.157  66.220  71.462  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.743  66.625  71.046  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.170  67.227  71.414  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.756  67.631  70.997  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.915  67.434  70.213  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.488  66.831  69.844  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.902  66.427  70.260  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.475  65.824  69.892  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.890  65.420  70.308  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      64.635  65.627  69.107  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.123      5.655      6.776
+REMARK INTER + INTRA:          -6.123
+REMARK INTER:                  -6.123
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethenzamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.188  64.322  69.743  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.807  64.224  70.468  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.432  63.510  70.644  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.051  63.411  71.368  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.677  62.698  71.544  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.295  62.600  72.269  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.288  63.215  72.817  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.663  63.929  72.642  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.044  64.027  71.917  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.419  64.742  71.742  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.800  64.840  71.018  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      62.412  65.357  72.291  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

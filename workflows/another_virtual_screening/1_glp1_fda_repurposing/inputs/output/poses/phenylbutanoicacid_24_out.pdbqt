@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.887      0.000      0.000
+REMARK INTER + INTRA:          -7.887
+REMARK INTER:                  -7.887
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.558  62.663  68.701  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.518  62.380  67.927  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.826  62.027  67.652  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.171  62.450  67.428  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.131  62.167  66.655  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.785  62.238  66.156  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.745  61.955  65.382  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.399  62.025  64.883  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.359  61.742  64.109  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.666  61.389  63.834  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.013  61.319  64.333  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.053  61.602  65.107  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.682      2.176      3.419
+REMARK INTER + INTRA:          -7.682
+REMARK INTER:                  -7.682
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.770  61.580  63.368  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.082  61.599  63.825  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.392  61.246  63.546  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.087  61.973  64.560  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.400  61.992  65.016  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.405  62.366  65.752  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.718  62.386  66.209  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.722  62.760  66.945  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.035  62.779  67.401  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.345  62.426  67.122  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.340  62.052  66.387  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.027  62.032  65.930  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.165      5.893      7.183
+REMARK INTER + INTRA:          -7.165
+REMARK INTER:                  -7.165
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.762  64.016  69.280  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.281  64.438  69.763  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.360  64.238  70.558  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.722  65.061  69.448  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.241  65.482  69.931  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.682  66.106  69.617  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.201  66.527  70.100  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.642  67.151  69.785  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.161  67.572  70.268  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.240  67.372  71.063  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.799  66.749  71.378  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.279  66.327  70.895  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.042      3.028      5.314
+REMARK INTER + INTRA:          -7.042
+REMARK INTER:                  -7.042
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.980  62.155  67.387  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.135  62.474  68.133  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.979  63.269  68.282  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.447  61.996  68.729  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.601  62.315  69.474  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.913  61.836  70.070  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.068  62.155  70.815  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.379  61.677  71.411  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.534  61.996  72.156  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.378  62.791  72.305  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.066  63.269  71.709  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.911  62.951  70.964  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.971      5.961      6.760
+REMARK INTER + INTRA:          -6.971
+REMARK INTER:                  -6.971
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      58.396  66.077  72.510  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.014  65.537  72.606  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.555  65.635  73.219  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.087  64.899  72.088  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.704  64.360  72.185  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.778  63.721  71.667  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.395  63.182  71.763  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.469  62.544  71.245  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.086  62.004  71.342  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.628  62.103  71.955  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.554  62.741  72.472  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.937  63.281  72.376  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.747      3.500      4.546
+REMARK INTER + INTRA:          -6.747
+REMARK INTER:                  -6.747
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.525  62.738  73.027  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.294  62.978  72.272  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.188  63.778  72.107  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.169  62.415  71.681  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.938  62.655  70.927  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.812  62.092  70.336  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.581  62.332  69.581  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.456  61.769  68.990  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.225  62.009  68.236  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.119  62.810  68.071  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.244  63.372  68.662  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.476  63.133  69.417  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.574     24.493     25.129
+REMARK INTER + INTRA:          -6.574
+REMARK INTER:                  -6.574
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      68.116  80.864  52.012  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      68.442  80.338  51.465  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      67.971  79.754  51.124  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      69.238  80.397  51.260  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.563  79.872  50.714  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.361  79.931  50.509  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.686  79.406  49.962  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.483  79.465  49.757  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.808  78.939  49.211  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.337  78.356  48.870  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.541  78.296  49.074  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.215  78.822  49.621  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.344      5.760      6.601
+REMARK INTER + INTRA:          -6.344
+REMARK INTER:                  -6.344
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.959  66.106  69.587  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.580  65.425  69.857  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.591  64.739  69.401  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.189  65.431  70.584  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.810  64.750  70.853  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.419  64.756  71.580  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.040  64.074  71.849  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.649  64.080  72.576  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.270  63.399  72.846  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.282  62.713  72.389  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.672  62.706  71.663  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.052  63.388  71.393  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.119      5.655      6.278
+REMARK INTER + INTRA:          -6.119
+REMARK INTER:                  -6.119
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylbutanoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.949  63.561  72.743  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.509  64.098  72.461  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.632  64.811  72.854  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.946  63.920  71.784  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.505  64.456  71.502  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.942  64.278  70.825  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.502  64.815  70.543  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.939  64.637  69.865  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.498  65.173  69.583  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.620  65.887  69.977  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.184  66.065  70.654  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.624  65.528  70.936  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

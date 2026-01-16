@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.899      0.000      0.000
+REMARK INTER + INTRA:          -4.899
+REMARK INTER:                  -4.899
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      62.515  62.370  65.274  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      61.825  61.952  65.105  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      61.249  61.854  65.688  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      61.711  61.632  64.354  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      62.286  61.729  63.772  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      61.019  61.213  64.185  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      60.905  60.892  63.433  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      60.443  61.115  64.767  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.849      0.995      1.364
+REMARK INTER + INTRA:          -4.849
+REMARK INTER:                  -4.849
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      62.478  61.761  63.759  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      62.024  61.862  64.440  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      62.322  62.298  65.074  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      61.272  61.527  64.487  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      60.975  61.092  63.854  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      60.817  61.628  65.168  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      60.064  61.293  65.215  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      61.115  62.064  65.802  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.389      2.022      2.608
+REMARK INTER + INTRA:          -4.389
+REMARK INTER:                  -4.389
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      59.345  62.040  66.249  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      60.083  62.306  66.505  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      60.149  62.720  67.216  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      60.755  62.157  66.050  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      60.689  61.744  65.341  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      61.493  62.423  66.306  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      62.166  62.274  65.851  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      61.559  62.837  67.017  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.232      8.389      8.912
+REMARK INTER + INTRA:          -4.232
+REMARK INTER:                  -4.232
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      66.127  67.654  69.860  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      65.902  67.168  70.488  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      66.270  67.246  71.223  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      65.310  66.604  70.381  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      64.942  66.527  69.647  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      65.084  66.118  71.009  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      64.491  65.554  70.901  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      65.452  66.196  71.743  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.986     24.543     24.946
+REMARK INTER + INTRA:          -3.986
+REMARK INTER:                  -3.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      72.115  79.121  48.808  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      71.387  78.907  49.131  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      71.025  78.201  48.902  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      71.021  79.398  49.683  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      71.383  80.103  49.912  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      70.293  79.184  50.007  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      69.927  79.676  50.560  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      69.930  78.479  49.779  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.968      6.991      7.585
+REMARK INTER + INTRA:          -3.968
+REMARK INTER:                  -3.968
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      60.541  61.963  70.596  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      60.632  62.450  71.256  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      60.140  63.105  71.356  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      61.215  62.282  71.815  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      61.706  61.628  71.714  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      61.306  62.769  72.475  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      61.889  62.601  73.034  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      60.814  63.424  72.575  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.943      4.587      5.137
+REMARK INTER + INTRA:          -3.943
+REMARK INTER:                  -3.943
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      60.501  61.959  70.233  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      60.710  62.291  69.507  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      60.439  61.952  68.805  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      61.189  62.961  69.484  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      61.460  63.300  70.185  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      61.398  63.294  68.757  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      61.878  63.965  68.733  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      61.127  62.955  68.055  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.815     24.550     24.926
+REMARK INTER + INTRA:          -3.815
+REMARK INTER:                  -3.815
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      70.172  80.049  50.416  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      70.721  79.692  49.916  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      71.417  80.088  49.716  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      70.575  78.938  49.615  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      69.880  78.542  49.815  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      71.125  78.579  49.114  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      70.979  77.825  48.813  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      71.820  78.975  48.915  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.652      6.731      7.330
+REMARK INTER + INTRA:          -3.652
+REMARK INTER:                  -3.652
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = valine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG1 VAL A   1      61.562  64.088  72.776  0.00  0.00    +0.000 C 
+ATOM      2  CB  VAL A   1      61.558  63.374  72.364  0.00  0.00    +0.000 C 
+ATOM      3  CG2 VAL A   1      61.591  62.659  72.775  0.00  0.00    +0.000 C 
+ATOM      4  CA  VAL A   1      61.522  63.375  71.540  0.00  0.00    +0.000 C 
+ATOM      5  N   VAL A   1      61.490  64.088  71.129  0.00  0.00    +0.000 NA
+ATOM      6  C   VAL A   1      61.518  62.660  71.126  0.00  0.00    +0.000 C 
+ATOM      7  O   VAL A   1      61.482  62.661  70.302  0.00  0.00    +0.000 OA
+ATOM      8  OXT VAL A   1      61.550  61.945  71.537  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

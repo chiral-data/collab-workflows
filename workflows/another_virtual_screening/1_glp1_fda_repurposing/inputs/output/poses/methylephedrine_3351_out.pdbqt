@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.098      0.000      0.000
+REMARK INTER + INTRA:          -8.098
+REMARK INTER:                  -8.098
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.007  61.999  66.106  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.625  62.406  66.471  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.365  62.444  66.107  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.983  62.851  66.472  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.486  62.077  65.380  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.225  62.115  65.015  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.346  61.748  64.287  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.728  61.342  63.922  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.989  61.303  64.286  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.867  61.670  65.014  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.504  62.774  67.200  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.765  62.735  67.563  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.123  63.180  67.564  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.389      1.209      3.089
+REMARK INTER + INTRA:          -7.389
+REMARK INTER:                  -7.389
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.050  62.418  65.580  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.428  61.992  65.243  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.706  61.934  65.639  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.085  61.508  65.302  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.605  62.301  66.370  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.884  62.243  66.766  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.784  62.610  67.497  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.405  63.035  67.834  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.127  63.094  67.439  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.227  62.727  66.707  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.528  61.625  64.511  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.250  61.683  64.116  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.906  61.199  64.175  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.001      5.508      6.413
+REMARK INTER + INTRA:          -7.001
+REMARK INTER:                  -7.001
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.317  63.947  72.641  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.587  64.166  72.324  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.205  63.668  71.787  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.475  63.886  71.470  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.553  62.954  71.568  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.172  62.457  71.031  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.520  61.742  70.811  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.250  61.524  71.128  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.632  62.021  71.665  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.283  62.736  71.885  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.238  64.880  72.544  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.620  65.377  73.081  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.508  65.098  72.227  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.986      5.718      7.363
+REMARK INTER + INTRA:          -6.986
+REMARK INTER:                  -6.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.354  65.566  69.474  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.041  65.461  70.231  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.313  65.924  70.858  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.000  65.818  71.614  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.896  66.491  70.728  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.169  66.954  71.354  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.753  67.522  71.225  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.065  67.627  70.469  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.794  67.164  69.842  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.209  66.597  69.971  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      63.457  64.893  70.360  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.185  64.431  69.733  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.144  64.788  71.117  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.918      3.722      5.770
+REMARK INTER + INTRA:          -6.918
+REMARK INTER:                  -6.918
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.809  61.865  70.406  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.901  62.612  70.066  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.147  63.249  70.530  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.239  63.994  70.189  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.301  63.140  71.332  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.547  63.776  71.795  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.701  63.667  72.599  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.609  62.921  72.938  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.363  62.284  72.475  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.209  62.393  71.672  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.747  62.721  69.263  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.501  62.083  68.800  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.839  63.467  68.924  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.756     15.284     16.751
+REMARK INTER + INTRA:          -6.756
+REMARK INTER:                  -6.756
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.738  77.965  72.923  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.563  77.985  72.960  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.998  77.292  72.847  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.821  77.312  72.884  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      58.609  76.581  72.698  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.043  75.889  72.585  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      58.653  75.177  72.436  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      57.830  75.157  72.399  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      57.395  75.849  72.512  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      57.784  76.561  72.661  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      58.952  78.697  73.109  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      58.517  79.389  73.222  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.776  78.716  73.146  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.548     24.437     25.226
+REMARK INTER + INTRA:          -6.548
+REMARK INTER:                  -6.548
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.953  80.647  50.604  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.231  80.271  50.745  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.048  79.569  50.351  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      69.327  79.193  50.493  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.585  79.243  49.818  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.402  78.542  49.424  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.940  78.216  48.890  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.660  78.591  48.749  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.844  79.293  49.142  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.306  79.619  49.676  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      69.694  80.597  51.279  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      69.878  81.299  51.672  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      68.973  80.221  51.420  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.386      7.716      8.334
+REMARK INTER + INTRA:          -6.386
+REMARK INTER:                  -6.386
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.784  66.217  72.029  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.865  66.973  72.351  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.568  67.393  72.248  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.648  68.148  72.569  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.190  67.057  71.824  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.893  67.476  71.720  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.515  67.140  71.295  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.434  66.386  70.974  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.732  65.965  71.077  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.109  66.301  71.502  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      62.242  67.309  72.776  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.539  66.889  72.879  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.323  68.065  73.097  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.053      4.367      5.686
+REMARK INTER + INTRA:          -6.053
+REMARK INTER:                  -6.053
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.233  65.902  69.266  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.219  65.094  69.437  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.890  64.727  69.749  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.875  63.920  69.919  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.573  65.166  69.889  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.243  64.799  70.200  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.927  65.239  70.340  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.940  66.045  70.169  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.271  66.413  69.858  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.587  65.973  69.717  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.535  64.654  69.297  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.866  65.022  68.985  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.522  63.847  69.468  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

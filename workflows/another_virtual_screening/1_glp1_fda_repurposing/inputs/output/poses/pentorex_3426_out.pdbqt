@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -8.040      0.000      0.000
+REMARK INTER + INTRA:          -8.040
+REMARK INTER:                  -8.040
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.759  61.237  64.480  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.033  61.746  65.069  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.532  61.978  65.681  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.755  61.702  65.705  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.254  61.934  66.317  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.529  62.442  66.905  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.306  62.719  66.882  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.808  62.486  66.270  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.811  62.022  65.045  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.589  62.299  65.021  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.942  61.595  64.352  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.680  62.450  65.739  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.969      0.507      2.379
+REMARK INTER + INTRA:          -7.969
+REMARK INTER:                  -7.969
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.630  61.663  65.749  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.321  62.058  65.965  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.990  62.011  65.486  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.969  61.569  64.790  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.639  61.521  64.310  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.329  61.916  64.527  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.351  62.359  65.223  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.682  62.406  65.702  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.342  62.500  66.662  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.364  62.943  67.358  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.557  62.300  66.814  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.128  62.701  66.509  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.127      5.453      6.736
+REMARK INTER + INTRA:          -7.127
+REMARK INTER:                  -7.127
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.516  63.684  72.786  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.898  63.524  72.264  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.917  62.844  71.799  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.554  62.322  71.855  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.573  61.642  71.390  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.955  61.482  70.868  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.317  62.003  70.811  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.298  62.684  71.277  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.261  64.045  72.208  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.623  64.567  72.151  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.607  64.530  72.777  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.915  63.559  71.637  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.024      5.399      6.635
+REMARK INTER + INTRA:          -7.024
+REMARK INTER:                  -7.024
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.679  62.699  72.468  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.016  62.855  72.004  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.565  63.530  72.142  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.776  64.052  72.746  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.324  64.728  72.885  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.661  64.883  72.420  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.449  64.362  71.816  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.900  63.686  71.677  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.804  62.333  71.400  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.592  61.812  70.796  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.447  61.854  71.588  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.160  62.814  71.212  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.946      6.985      7.833
+REMARK INTER + INTRA:          -6.946
+REMARK INTER:                  -6.946
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.586  66.565  71.667  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.393  66.587  70.865  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.823  66.073  70.564  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.446  65.536  71.063  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.876  65.022  70.761  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.683  65.045  69.960  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.060  65.582  69.459  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.630  66.096  69.761  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.770  67.125  70.365  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.148  67.663  69.865  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.210  67.409  71.002  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      65.329  66.841  69.728  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.921      4.380      5.526
+REMARK INTER + INTRA:          -6.921
+REMARK INTER:                  -6.921
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.503  61.613  70.650  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.808  62.372  70.544  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.069  62.806  71.194  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.025  62.482  71.952  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.286  62.917  72.602  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.591  63.676  72.496  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.635  64.001  71.738  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.374  63.566  71.088  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.852  62.696  69.786  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.896  63.020  69.028  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.526  62.007  69.472  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.179  63.385  70.101  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.812      7.071      8.034
+REMARK INTER + INTRA:          -6.812
+REMARK INTER:                  -6.812
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.201  66.062  69.395  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.406  66.125  70.191  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.056  66.579  70.415  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.503  66.971  69.843  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      66.154  67.425  70.068  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      66.358  67.487  70.864  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.912  67.096  71.437  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.261  66.641  71.213  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.959  65.732  70.764  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.512  65.340  71.337  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.465  65.434  70.175  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      64.454  66.031  71.353  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.578      3.065      4.263
+REMARK INTER + INTRA:          -6.578
+REMARK INTER:                  -6.578
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.488  63.913  68.961  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.479  63.093  69.050  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.457  62.761  69.804  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.444  63.247  70.470  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.422  62.914  71.224  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.413  62.095  71.313  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.427  61.607  70.647  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.449  61.940  69.893  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.493  62.606  68.384  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.506  62.119  67.718  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.510  63.271  67.897  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.475  61.940  68.872  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.560     24.850     25.777
+REMARK INTER + INTRA:          -6.560
+REMARK INTER:                  -6.560
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentorex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.127  78.436  48.614  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.381  79.040  49.115  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.875  79.337  49.693  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      70.113  79.031  49.772  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      69.606  79.329  50.351  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      69.861  79.932  50.851  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.623  80.239  50.773  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.130  79.942  50.195  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      72.144  79.347  49.037  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      72.906  79.653  48.959  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      72.289  78.826  48.414  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      71.998  79.867  49.661  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

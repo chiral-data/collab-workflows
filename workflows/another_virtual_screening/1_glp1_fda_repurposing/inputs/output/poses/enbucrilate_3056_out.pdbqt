@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.541      0.000      0.000
+REMARK INTER + INTRA:          -6.541
+REMARK INTER:                  -6.541
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.390  62.306  68.788  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.931  62.401  68.173  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.773  62.076  67.431  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.314  62.171  66.816  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.156  61.846  66.074  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.697  61.941  65.459  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.397  62.359  65.585  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.539  61.616  64.716  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.839  61.197  64.590  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.080  61.711  64.101  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.621  61.804  63.485  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.506      2.007      3.512
+REMARK INTER + INTRA:          -6.506
+REMARK INTER:                  -6.506
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.431  61.648  63.643  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.382  61.990  64.392  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.661  62.001  64.794  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.612  62.343  65.543  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.891  62.353  65.945  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.842  62.695  66.694  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.513  63.027  67.042  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.121  62.705  67.096  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.450  62.374  66.749  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.072  63.047  67.845  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.022  63.389  68.595  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.146     17.929     18.611
+REMARK INTER + INTRA:          -6.146
+REMARK INTER:                  -6.146
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.362  81.144  57.861  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.288  80.406  58.223  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.959  80.012  58.498  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.885  79.275  58.860  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.557  78.881  59.134  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.482  78.143  59.496  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.737  77.800  59.584  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      66.154  77.749  59.771  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.899  78.093  59.683  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.079  77.012  60.133  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      66.006  76.274  60.495  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.065      1.201      1.675
+REMARK INTER + INTRA:          -6.065
+REMARK INTER:                  -6.065
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.459  62.177  70.368  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.867  62.107  69.654  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.452  62.111  68.940  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.860  62.041  68.227  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.445  62.046  67.513  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.852  61.976  66.799  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.674  61.902  66.799  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.438  61.981  66.085  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.616  62.055  66.086  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.845  61.911  65.372  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.252  61.841  64.657  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.999      3.358      4.636
+REMARK INTER + INTRA:          -5.999
+REMARK INTER:                  -5.999
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.367  62.007  66.221  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.825  62.368  66.804  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.827  62.066  67.572  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.286  62.427  68.155  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.288  62.125  68.923  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.747  62.486  69.506  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.204  63.148  69.322  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.749  62.184  70.275  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.293  61.523  70.459  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.208  62.545  70.858  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.667  62.905  71.442  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.691      6.249      7.297
+REMARK INTER + INTRA:          -5.691
+REMARK INTER:                  -5.691
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.357  67.682  69.863  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.748  67.411  70.349  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.355  66.708  70.164  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.746  66.437  70.650  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.353  65.735  70.465  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.745  65.463  70.951  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.528  65.893  71.621  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.352  64.761  70.766  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.568  64.331  70.096  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.743  64.490  71.252  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.134  64.217  71.737  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.518      7.054      8.024
+REMARK INTER + INTRA:          -5.518
+REMARK INTER:                  -5.518
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.528  62.319  72.176  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.349  63.068  72.471  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.855  63.703  72.320  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.676  64.452  72.615  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.182  65.086  72.463  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.003  65.835  72.758  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.319  65.951  73.204  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.510  66.470  72.607  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.194  66.354  72.161  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.330  67.219  72.902  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.152  67.969  73.197  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.517     19.039     19.654
+REMARK INTER + INTRA:          -5.517
+REMARK INTER:                  -5.517
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.488  77.595  59.837  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.762  77.937  59.647  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.739  78.645  59.222  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.013  78.987  59.033  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.989  79.695  58.608  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.263  80.037  58.418  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.561  79.673  58.652  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.240  80.745  57.993  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.942  81.109  57.758  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.514  81.087  57.803  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.788  81.431  57.612  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.473      6.484      7.441
+REMARK INTER + INTRA:          -5.473
+REMARK INTER:                  -5.473
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = enbucrilate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.203  64.246  71.611  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.756  64.576  71.096  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.243  65.191  71.353  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.797  65.521  70.838  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.284  66.136  71.096  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.838  66.466  70.581  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.905  66.182  69.809  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.324  67.081  70.839  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.257  67.365  71.610  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.878  67.411  70.324  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      66.432  67.742  69.810  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

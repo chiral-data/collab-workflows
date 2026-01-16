@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.871      0.000      0.000
+REMARK INTER + INTRA:          -4.871
+REMARK INTER:                  -4.871
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.974  76.239  60.563  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.747  76.920  60.156  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.153  77.410  59.858  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.946  77.610  59.750  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      66.520  78.124  59.454  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      67.092  78.639  59.158  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      67.112  77.635  59.752  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      65.926  78.614  59.156  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.851     16.699     17.288
+REMARK INTER + INTRA:          -4.851
+REMARK INTER:                  -4.851
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.415  61.949  64.183  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.250  61.726  64.960  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.275  61.162  65.562  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.940  61.902  65.704  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      61.568  62.433  66.214  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.196  62.962  66.726  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.543  62.996  65.613  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.592  61.869  66.817  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.787     16.919     17.370
+REMARK INTER + INTRA:          -4.787
+REMARK INTER:                  -4.787
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.913  61.744  65.746  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.516  61.564  65.213  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.795  61.127  64.570  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.282  61.688  64.931  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      62.004  62.083  64.977  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      62.727  62.478  65.022  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.725  62.519  65.619  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      62.283  61.647  64.334  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.273     11.815     12.328
+REMARK INTER + INTRA:          -4.273
+REMARK INTER:                  -4.273
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.307  78.649  49.561  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.894  78.610  48.983  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      71.155  78.344  48.246  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.649  78.808  48.716  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      72.371  79.191  48.834  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      73.092  79.573  48.951  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      72.110  79.456  49.570  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      72.632  78.924  48.098  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.201     11.046     11.549
+REMARK INTER + INTRA:          -4.201
+REMARK INTER:                  -4.201
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.137  79.831  50.494  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.230  79.175  50.002  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      69.983  78.428  49.753  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      70.636  78.786  49.399  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      71.249  78.768  48.846  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      71.861  78.750  48.293  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      71.495  79.515  49.094  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      71.002  78.021  48.597  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.194     17.449     17.841
+REMARK INTER + INTRA:          -4.194
+REMARK INTER:                  -4.194
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.267  62.113  66.294  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.021  62.403  66.460  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.744  62.706  66.200  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.606  62.603  67.007  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      60.863  62.658  67.789  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.122  62.714  68.570  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.142  62.355  68.048  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.586  62.961  67.529  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.169     15.110     15.738
+REMARK INTER + INTRA:          -4.169
+REMARK INTER:                  -4.169
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.187  67.806  69.838  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.138  67.451  70.581  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.486  67.254  71.304  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.707  67.032  71.146  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      65.008  66.662  71.381  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      64.310  66.292  71.617  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.661  66.858  70.660  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      65.356  66.466  72.104  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.143     14.820     15.081
+REMARK INTER + INTRA:          -4.143
+REMARK INTER:                  -4.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.545  75.571  72.384  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.319  75.844  72.475  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.133  75.714  72.429  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      58.845  76.447  72.677  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      58.982  77.218  72.937  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      59.120  77.989  73.196  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      58.169  77.347  72.982  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      59.796  77.088  72.891  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.127     17.902     18.621
+REMARK INTER + INTRA:          -4.127
+REMARK INTER:                  -4.127
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.521  61.878  70.556  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.445  61.906  69.735  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.177  61.571  69.030  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.583  62.289  69.018  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      60.897  62.926  68.597  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.210  63.562  68.175  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.164  63.260  69.301  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.628  62.591  67.891  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.892      0.000      0.000
+REMARK INTER + INTRA:          -7.892
+REMARK INTER:                  -7.892
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      60.925  60.923  63.575  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.172  61.386  64.212  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.648  61.549  64.829  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.894  62.012  65.467  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.370  62.175  66.083  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.589  61.917  66.138  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.273  62.208  66.841  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.859  62.647  67.222  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.537  62.627  66.753  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.663  62.310  65.488  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.908  62.772  66.125  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      62.186  62.146  64.871  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.940  61.684  64.233  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.463  61.520  63.617  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.379      1.748      3.271
+REMARK INTER + INTRA:          -7.379
+REMARK INTER:                  -7.379
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.699  63.366  67.971  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.257  62.968  67.398  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.608  62.751  66.684  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.168  62.354  66.111  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.519  62.137  65.397  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.302  62.280  65.178  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.415  61.970  64.422  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.703  61.636  64.173  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.149  61.739  64.775  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.375  62.173  66.253  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.935  61.776  65.680  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.024  62.390  66.967  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.465  62.788  67.539  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.114  63.004  68.254  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.850      2.562      3.890
+REMARK INTER + INTRA:          -6.850
+REMARK INTER:                  -6.850
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      60.212  61.400  69.557  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      60.493  62.032  69.106  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.748  61.903  68.332  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.029  62.533  67.880  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.285  62.405  67.106  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.292  61.681  66.711  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.590  61.807  65.953  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.767  62.609  65.878  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.579  62.979  66.591  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.055  63.293  68.202  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.336  63.923  67.751  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.799  63.421  68.976  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.518  62.790  69.427  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.263  62.918  70.201  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.744      4.526      5.577
+REMARK INTER + INTRA:          -6.744
+REMARK INTER:                  -6.744
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      59.977  61.129  70.070  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      60.421  61.825  70.069  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.671  62.155  70.783  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.114  62.850  70.784  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.364  63.180  71.498  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.213  62.879  72.250  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.564  63.382  72.801  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.932  63.994  72.389  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.809  63.870  71.584  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.308  63.216  70.069  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.752  63.912  70.070  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.059  62.886  69.356  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.615  62.191  69.356  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.365  61.861  68.642  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.736      2.909      3.762
+REMARK INTER + INTRA:          -6.736
+REMARK INTER:                  -6.736
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      59.909  61.967  67.161  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      60.390  62.378  67.691  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.387  62.175  68.491  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.868  62.585  69.022  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.866  62.382  69.822  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.415  61.786  70.170  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.585  61.776  70.977  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.141  62.367  71.128  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.315  62.741  70.414  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.351  63.198  68.753  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.831  63.608  69.284  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.353  63.400  67.953  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.872  62.990  67.423  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.874  63.192  66.623  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.430      5.208      6.457
+REMARK INTER + INTRA:          -6.430
+REMARK INTER:                  -6.430
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.454  63.132  73.220  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.463  63.408  72.442  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.193  62.924  71.830  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.202  63.198  71.052  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.933  62.714  70.441  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.640  61.947  70.522  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.435  61.672  69.773  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.601  62.268  69.228  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.909  62.912  69.640  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.482  63.957  70.886  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.491  64.231  70.108  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.751  64.440  71.497  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.742  64.165  72.275  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.011  64.649  72.887  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.344      5.768      6.543
+REMARK INTER + INTRA:          -6.344
+REMARK INTER:                  -6.344
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      59.312  67.419  70.562  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      59.480  66.673  70.250  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.585  66.030  70.756  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      59.753  65.284  70.446  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      59.859  64.641  70.951  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.814  64.658  71.774  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.955  63.896  72.054  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.088  63.406  71.403  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.028  63.866  70.721  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.815  65.182  69.629  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.983  64.436  69.318  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      59.709  65.825  69.123  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.541  66.571  69.435  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.436  67.214  68.929  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.269      6.703      7.492
+REMARK INTER + INTRA:          -6.269
+REMARK INTER:                  -6.269
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      63.621  64.254  69.148  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      63.702  64.721  69.823  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.249  65.339  69.833  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      64.331  65.806  70.507  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      64.878  66.424  70.518  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.378  66.640  69.898  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.829  67.283  70.147  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.608  67.466  70.920  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      65.020  66.936  71.150  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.866  65.656  71.173  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      63.948  66.123  71.847  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      63.319  65.038  71.163  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.238  64.571  70.487  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.691  63.953  70.477  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.192      6.292      7.037
+REMARK INTER + INTRA:          -6.192
+REMARK INTER:                  -6.192
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tegafur
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.967  62.259  73.164  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.496  62.534  72.545  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.061  63.229  72.637  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.590  63.506  72.019  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.154  64.200  72.111  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.134  64.675  72.784  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.630  65.310  72.634  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.338  65.228  71.867  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.661  64.542  71.543  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.554  63.087  71.308  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.083  63.363  70.690  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.990  62.392  71.217  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.461  62.116  71.836  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.896  61.422  71.744  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

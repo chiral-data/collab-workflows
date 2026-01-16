@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.164      0.000      0.000
+REMARK INTER + INTRA:          -9.164
+REMARK INTER:                  -9.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.581  63.903  68.898  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.851  63.601  68.179  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.334  63.196  67.682  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.546  63.091  67.902  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.605  62.893  66.963  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.087  62.487  66.465  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.299  62.383  66.686  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.781  61.977  66.187  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.052  61.675  65.469  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.841  61.779  65.248  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.359  62.186  65.746  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.146  62.290  65.526  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.417  61.988  64.808  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.899  61.581  64.309  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.111  61.477  64.530  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.329      1.476      3.018
+REMARK INTER + INTRA:          -8.329
+REMARK INTER:                  -8.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.389  61.620  63.790  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.316  61.927  64.552  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.584  61.925  64.929  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.923  61.616  64.545  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.512  62.233  65.692  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.778  62.231  66.070  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.117  61.921  65.685  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.383  61.919  66.063  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.311  62.227  66.825  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.972  62.537  67.210  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.707  62.539  66.832  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.367  62.849  67.216  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.295  63.156  67.977  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.561  63.154  68.356  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.900  62.845  67.972  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.031      4.750      5.830
+REMARK INTER + INTRA:          -8.031
+REMARK INTER:                  -8.031
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.183  66.157  71.504  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.344  65.399  71.221  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      59.877  64.914  71.620  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.251  65.186  72.303  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.037  64.155  71.337  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.571  63.670  71.736  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.945  63.943  72.419  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.480  63.457  72.819  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.639  62.698  72.535  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.265  62.425  71.852  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.730  62.912  71.452  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.357  62.639  70.770  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.516  61.882  70.486  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.051  61.395  70.886  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.425  61.668  71.569  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.011      4.236      5.424
+REMARK INTER + INTRA:          -8.011
+REMARK INTER:                  -8.011
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.741  65.504  69.103  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.064  65.239  69.814  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.219  64.437  69.922  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.052  63.898  69.320  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.543  64.171  70.634  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.698  63.368  70.742  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.530  62.831  70.139  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.685  62.027  70.247  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.008  61.762  70.959  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.177  62.299  71.562  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.021  63.103  71.454  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.189  63.640  72.056  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.512  63.375  72.767  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.668  62.571  72.875  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.500  62.034  72.273  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.819      5.905      7.154
+REMARK INTER + INTRA:          -7.819
+REMARK INTER:                  -7.819
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.964  65.739  72.869  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.664  66.133  72.680  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.992  66.053  71.929  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.622  65.578  71.365  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      63.692  66.447  71.740  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.021  66.367  70.987  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.650  65.893  70.424  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.979  65.813  69.671  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.679  66.207  69.483  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.050  66.682  70.046  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.721  66.762  70.799  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.092  67.236  71.363  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.791  67.631  71.175  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.120  67.550  70.421  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.749  67.076  69.858  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.668      1.906      4.314
+REMARK INTER + INTRA:          -7.668
+REMARK INTER:                  -7.668
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.378  62.247  66.301  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.254  62.025  67.086  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.030  62.589  67.644  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.930  63.376  67.418  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.907  62.367  68.429  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.683  62.931  68.988  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.583  63.718  68.761  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.359  64.283  69.320  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.236  64.060  70.105  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.336  63.273  70.332  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.560  62.708  69.772  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.660  61.922  69.999  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.536  61.699  70.783  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.312  62.264  71.342  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.212  63.051  71.116  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.513      6.300      6.819
+REMARK INTER + INTRA:          -7.513
+REMARK INTER:                  -7.513
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.088  67.640  73.216  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.166  66.825  73.113  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.521  66.377  72.861  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.798  66.743  72.711  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.600  65.562  72.759  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.955  65.114  72.506  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.231  65.481  72.356  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.586  65.032  72.104  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.665  64.217  72.002  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.388  63.850  72.151  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.034  64.299  72.404  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.757  63.932  72.554  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.836  63.118  72.452  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.190  62.669  72.199  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.467  63.036  72.049  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.448      2.540      5.506
+REMARK INTER + INTRA:          -7.448
+REMARK INTER:                  -7.448
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.450  62.012  68.057  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.477  62.086  68.878  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.976  62.641  69.226  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.451  63.123  68.754  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.002  62.715  70.048  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.503  63.271  70.397  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.977  63.752  69.924  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.478  64.309  70.273  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.503  64.382  71.094  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.029  63.900  71.568  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.528  63.344  71.218  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.054  62.863  71.691  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.080  62.936  72.511  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.581  63.493  72.861  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.055  63.974  72.388  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.379      3.189      4.428
+REMARK INTER + INTRA:          -7.379
+REMARK INTER:                  -7.379
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbaryl
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.310  65.627  69.513  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.005  65.031  69.996  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.457  64.495  69.694  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.212  64.553  68.908  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      62.152  63.900  70.178  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.603  63.363  69.875  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.359  63.422  69.089  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.810  62.885  68.786  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.505  62.290  69.270  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.749  62.231  70.056  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.299  62.768  70.359  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.543  62.709  71.144  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.239  62.115  71.628  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.689  61.577  71.325  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.445  61.636  70.540  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

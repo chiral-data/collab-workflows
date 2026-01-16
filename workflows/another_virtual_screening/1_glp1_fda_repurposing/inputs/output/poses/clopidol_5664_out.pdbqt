@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.348      0.000      0.000
+REMARK INTER + INTRA:          -6.348
+REMARK INTER:                  -6.348
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.241  62.032  66.316  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.022  62.036  66.053  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.220  61.666  65.342  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.002  61.671  65.079  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.200  61.301  64.369  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.586  62.044  65.526  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      62.368  62.048  65.263  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.388  62.414  66.237  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.972  62.788  66.685  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.606  62.410  66.500  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.408  62.780  67.211  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.320      0.155      1.928
+REMARK INTER + INTRA:          -6.320
+REMARK INTER:                  -6.320
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.004  61.235  64.316  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.884  61.641  65.023  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.131  61.671  65.360  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.011  62.077  66.067  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.259  62.107  66.403  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.643  62.454  66.438  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.523  62.861  67.147  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.397  62.425  66.103  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.030  62.802  66.474  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.517  62.018  65.395  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      62.270  61.988  65.058  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.757      1.421      2.282
+REMARK INTER + INTRA:          -5.757
+REMARK INTER:                  -5.757
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.153  62.042  66.326  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.801  62.367  66.718  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.704  62.711  67.461  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.353  63.036  67.854  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.255  63.379  68.597  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.099  63.017  67.503  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      61.748  63.343  67.895  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.197  62.673  66.759  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.943  62.654  66.407  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.548  62.348  66.366  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.646  62.004  65.622  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.678      7.469      8.099
+REMARK INTER + INTRA:          -5.678
+REMARK INTER:                  -5.678
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.207  66.116  69.518  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.824  66.417  69.973  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.334  66.983  69.655  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.952  67.285  70.111  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      66.461  67.850  69.792  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.060  67.021  70.884  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      66.679  67.323  71.340  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      65.551  66.456  71.204  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      65.660  66.191  71.978  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.933  66.154  70.748  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      64.424  65.588  71.067  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.638      7.389      8.100
+REMARK INTER + INTRA:          -5.638
+REMARK INTER:                  -5.638
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.377  67.741  69.815  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.843  67.206  70.143  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.216  66.918  69.690  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.681  66.383  70.019  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.055  66.095  69.566  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.773  66.135  70.800  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      64.237  65.600  71.129  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      65.399  66.423  71.254  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      65.492  66.176  72.036  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.934  66.958  70.925  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      66.562  67.246  71.379  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.587      5.470      6.095
+REMARK INTER + INTRA:          -5.587
+REMARK INTER:                  -5.587
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.730  64.235  71.694  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.222  63.574  71.716  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.154  62.989  71.139  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.647  62.328  71.161  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.578  61.743  70.584  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.208  62.252  71.760  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      61.701  61.590  71.782  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.277  62.837  72.338  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.838  62.761  72.938  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.784  63.498  72.316  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.853  64.084  72.894  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.426      3.387      4.300
+REMARK INTER + INTRA:          -5.426
+REMARK INTER:                  -5.426
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.492  62.177  68.026  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.473  62.399  68.820  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.455  61.822  69.409  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.436  62.045  70.204  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.419  61.468  70.793  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.434  62.843  70.408  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.415  63.066  71.203  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.452  63.421  69.819  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.450  64.220  70.023  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.471  63.198  69.025  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.488  63.776  68.435  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.290     25.576     26.118
+REMARK INTER + INTRA:          -5.290
+REMARK INTER:                  -5.290
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.792  80.233  49.176  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.097  79.810  49.309  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      71.558  80.069  49.877  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      70.863  79.646  50.010  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.325  79.905  50.578  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.707  78.963  49.575  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      70.011  78.539  49.709  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      71.245  78.703  49.007  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      71.089  78.019  48.571  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      71.940  79.126  48.874  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      72.480  78.867  48.305  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.274      5.765      6.188
+REMARK INTER + INTRA:          -5.274
+REMARK INTER:                  -5.274
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clopidol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.375  62.079  71.512  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.703  62.835  71.511  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.116  63.104  70.849  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.445  63.861  70.848  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.858  64.129  70.186  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.361  64.348  71.507  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      62.690  65.106  71.505  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.948  64.080  72.169  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.863  64.568  72.830  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.619  63.323  72.171  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      61.205  63.054  72.833  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

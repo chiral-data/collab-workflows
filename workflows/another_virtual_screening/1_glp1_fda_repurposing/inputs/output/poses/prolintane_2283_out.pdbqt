@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:   -10.189      0.000      0.000
+REMARK INTER + INTRA:         -10.189
+REMARK INTER:                 -10.189
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.738  63.602  68.561  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.647  63.188  67.852  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.293  63.087  67.349  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.202  62.673  66.641  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.849  62.571  66.138  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.758  62.158  65.430  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.404  62.056  64.926  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.313  61.643  64.218  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.578  61.331  64.014  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.932  61.432  64.517  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.023  61.846  65.225  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.467  62.362  66.437  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.294  61.937  65.750  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.495  61.733  65.772  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.174  62.030  66.471  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      59.776  62.419  66.882  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.279      0.581      2.883
+REMARK INTER + INTRA:          -9.279
+REMARK INTER:                  -9.279
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.736  61.718  63.615  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.159  61.767  64.203  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.318  62.172  64.904  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.741  62.220  65.491  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.900  62.626  66.192  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.323  62.674  66.780  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.482  63.080  67.481  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.905  63.129  68.069  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.171  62.773  67.956  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.011  62.368  67.255  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.589  62.319  66.667  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.007  61.865  65.378  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.379  61.868  65.914  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.753  61.448  65.576  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.995  61.186  64.832  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.769  61.443  64.710  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.964      2.864      5.515
+REMARK INTER + INTRA:          -8.964
+REMARK INTER:                  -8.964
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.246  62.022  67.921  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.360  62.395  68.649  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.680  61.973  69.282  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.794  62.346  70.008  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.114  61.924  70.642  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.229  62.297  71.369  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.549  61.875  72.003  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.663  62.248  72.729  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.458  63.041  72.823  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.138  63.462  72.191  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.023  63.089  71.463  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.589  63.138  70.102  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.671  63.582  70.794  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.398  64.346  70.640  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.147  64.374  69.855  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.265  63.628  69.523  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.769      5.333      6.439
+REMARK INTER + INTRA:          -8.769
+REMARK INTER:                  -8.769
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.615  65.772  72.474  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.240  65.237  72.411  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.141  64.536  71.988  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.766  64.001  71.925  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.668  63.299  71.502  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.293  62.765  71.439  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.194  62.063  71.016  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.819  61.529  70.953  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.542  61.695  71.312  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.641  62.396  71.735  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.015  62.931  71.799  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.489  64.168  72.285  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.160  63.688  72.269  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.755  64.067  72.698  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.451  64.781  72.979  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.669  64.843  72.723  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.660      2.883      4.717
+REMARK INTER + INTRA:          -8.660
+REMARK INTER:                  -8.660
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.630  62.723  73.166  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.617  62.898  72.359  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.206  62.407  71.839  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.192  62.581  71.033  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.782  62.090  70.512  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.768  62.264  69.705  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.357  61.773  69.184  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.344  61.947  68.378  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.740  62.611  68.093  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.150  63.102  68.613  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.164  62.928  69.420  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.589  63.245  70.748  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.623  63.488  69.959  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.076  64.177  69.924  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.321  64.359  70.691  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      62.020  63.784  71.199  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.621      5.537      7.354
+REMARK INTER + INTRA:          -8.621
+REMARK INTER:                  -8.621
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.486  67.945  69.829  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.885  67.509  70.190  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.583  66.838  69.818  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.983  66.402  70.178  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.681  65.730  69.806  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.080  65.294  70.167  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.778  64.622  69.794  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.177  64.187  70.155  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.879  64.422  70.886  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.181  65.094  71.258  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.782  65.530  70.898  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      64.684  66.638  70.909  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      64.087  66.258  71.334  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.964  66.680  72.033  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.485  67.320  72.040  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      64.930  67.293  71.345  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.578      5.420      7.136
+REMARK INTER + INTRA:          -8.578
+REMARK INTER:                  -8.578
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.932  64.612  72.125  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.535  64.890  71.633  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.005  65.523  71.875  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.606  65.800  71.384  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.077  66.434  71.626  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.678  66.711  71.134  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.149  67.345  71.376  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.751  67.622  70.885  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.882  67.267  70.153  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.412  66.634  69.911  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.810  66.356  70.402  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      63.737  65.445  70.652  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      64.316  65.662  70.104  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.249  65.161  69.452  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      63.630  64.635  69.596  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      63.314  64.811  70.338  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.570      4.629      6.368
+REMARK INTER + INTRA:          -8.570
+REMARK INTER:                  -8.570
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.383  60.487  72.106  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.903  61.118  71.874  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.826  61.778  72.363  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.347  62.407  72.131  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.269  63.068  72.620  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.790  63.698  72.388  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.712  64.359  72.877  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.233  64.989  72.645  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.831  64.959  71.926  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.909  64.299  71.437  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.388  63.668  71.669  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.946  62.377  71.412  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.449  62.963  71.109  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.166  62.704  70.378  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.488  61.959  70.230  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.969  61.757  70.869  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.252      5.910      7.007
+REMARK INTER + INTRA:          -8.252
+REMARK INTER:                  -8.252
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prolintane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.720  67.546  72.855  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.701  66.800  72.502  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.224  66.206  72.820  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.205  65.461  72.466  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.729  64.866  72.784  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.710  64.121  72.431  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.233  63.527  72.748  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.214  62.782  72.395  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.670  62.630  71.726  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.146  63.224  71.408  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.166  63.970  71.762  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.662  65.310  71.797  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.698  64.595  71.387  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.222  64.690  70.755  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      63.508  65.463  70.776  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      63.162  65.846  71.420  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.964      0.000      0.000
+REMARK INTER + INTRA:          -7.964
+REMARK INTER:                  -7.964
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.315  61.228  63.911  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.194  61.559  64.656  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.441  61.555  64.993  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.320  61.887  65.738  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      59.567  61.882  66.074  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.952  62.223  66.147  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.831  62.555  66.894  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.464  62.891  67.303  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.343  63.223  68.048  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.222  63.555  68.794  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      61.101  63.887  69.539  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      61.706  62.228  65.811  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.827  61.896  65.066  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      62.581  61.900  64.729  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.413      3.751      5.427
+REMARK INTER + INTRA:          -7.413
+REMARK INTER:                  -7.413
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.464  62.750  72.828  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.204  62.775  72.046  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.784  63.430  71.771  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.524  63.455  70.989  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.104  64.110  70.715  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.683  62.826  70.481  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.422  62.851  69.698  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.582  62.221  69.190  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.321  62.246  68.408  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.061  62.271  67.625  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      59.801  62.296  66.843  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      61.103  62.170  70.755  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.363  62.145  71.537  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.783  61.489  71.812  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.410      2.663      4.235
+REMARK INTER + INTRA:          -7.410
+REMARK INTER:                  -7.410
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.172  63.064  70.795  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.426  63.004  70.014  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.596  63.685  69.581  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.850  63.624  68.798  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.021  64.305  68.366  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.934  62.882  68.448  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.188  62.821  67.665  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.271  62.078  67.315  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.525  62.017  66.533  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.779  61.957  65.750  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      62.033  61.896  64.967  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.763  62.200  68.880  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.509  62.261  69.663  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.339  61.579  70.096  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.300      5.414      6.253
+REMARK INTER + INTRA:          -7.300
+REMARK INTER:                  -7.300
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.600  61.305  71.277  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.258  62.002  71.552  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.617  62.426  72.162  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.275  63.124  72.437  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.635  63.546  73.047  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.574  63.399  72.102  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.231  64.098  72.378  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.529  64.373  72.042  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.187  65.072  72.318  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      58.845  65.770  72.593  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      58.503  66.468  72.868  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.214  62.976  71.492  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.556  62.278  71.217  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.196  61.855  70.606  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.080      5.955      6.895
+REMARK INTER + INTRA:          -7.080
+REMARK INTER:                  -7.080
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      65.768  67.279  70.214  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      65.175  66.735  70.390  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.007  66.122  69.863  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.413  65.577  70.039  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      64.245  64.966  69.513  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      63.987  65.645  70.742  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      63.393  65.099  70.918  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.967  65.167  71.622  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.373  64.622  71.798  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.779  64.077  71.974  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      61.185  63.532  72.150  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      64.154  66.257  71.270  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.748  66.802  71.094  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      64.916  67.414  71.622  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.549      4.118      6.204
+REMARK INTER + INTRA:          -6.549
+REMARK INTER:                  -6.549
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.855  65.005  73.195  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.029  64.614  72.492  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.540  63.966  72.495  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.715  63.575  71.790  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.226  62.928  71.794  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.379  63.830  71.082  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.553  63.438  70.377  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.216  63.694  69.668  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.391  63.302  68.964  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.565  62.910  68.259  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      60.740  62.519  67.554  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      59.867  64.478  71.078  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.693  64.870  71.782  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      59.181  65.518  71.779  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.504     25.106     25.692
+REMARK INTER + INTRA:          -6.504
+REMARK INTER:                  -6.504
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      72.332  78.877  48.098  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      71.838  79.095  48.720  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.131  78.689  48.848  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      70.637  78.908  49.471  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      69.931  78.502  49.599  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      70.849  79.532  49.966  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      70.354  79.751  50.590  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      70.566  80.376  51.085  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.072  80.595  51.708  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      69.577  80.813  52.331  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      69.083  81.032  52.954  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      71.555  79.939  49.839  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.050  79.720  49.216  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      72.757  80.127  49.087  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.500      4.352      5.986
+REMARK INTER + INTRA:          -6.500
+REMARK INTER:                  -6.500
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      64.710  66.598  71.180  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      64.153  66.077  70.868  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.643  65.668  71.372  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.085  65.147  71.060  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      62.576  64.739  71.563  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      63.037  65.034  70.245  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      62.478  64.512  69.932  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.430  64.400  69.116  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.872  63.878  68.804  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.314  63.357  68.493  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      60.755  62.836  68.181  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      63.546  65.443  69.740  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.104  65.964  70.052  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      64.614  66.373  69.548  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.449      3.725      5.614
+REMARK INTER + INTRA:          -6.449
+REMARK INTER:                  -6.449
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = haloprogin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.894  65.323  72.055  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.763  64.989  71.313  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.361  64.998  70.745  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.229  64.664  70.002  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      63.827  64.673  69.434  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      62.500  64.321  69.828  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      62.369  63.986  69.084  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.639  63.643  68.910  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.507  63.308  68.167  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.376  62.974  67.424  0.00  0.00    +0.000 C 
+ATOM     11  I   UNL     1      61.245  62.640  66.682  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      61.902  64.311  70.395  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.033  64.645  71.138  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.435  64.636  71.707  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

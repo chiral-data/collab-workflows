@@ -1,0 +1,14 @@
+ROOT
+REMARK  Name = fosfomycin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1       0.238   1.714   0.000  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1       0.238   0.889   0.000  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1       0.651   0.174   0.000  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      -0.174   0.174   0.000  0.00  0.00    +0.000 C 
+ATOM      5  P   UNL     1      -0.889  -0.238   0.000  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      -1.603  -0.651   0.000  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      -1.301   0.476   0.000  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      -0.476  -0.953   0.000  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0

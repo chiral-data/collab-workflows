@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.718      0.000      0.000
+REMARK INTER + INTRA:          -8.718
+REMARK INTER:                  -8.718
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.085  62.060  66.417  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.782  62.453  66.615  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.425  62.436  66.099  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.371  62.025  65.385  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.015  62.009  64.869  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      62.713  62.403  65.066  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.961  61.599  64.155  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.263  61.205  63.957  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.620  61.222  64.474  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.674  61.632  65.187  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.031  61.649  65.703  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.837  62.863  67.328  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.242  62.928  67.897  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.533  63.386  68.518  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.307  63.603  68.334  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      61.495  63.281  67.599  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.295      1.640      3.540
+REMARK INTER + INTRA:          -8.295
+REMARK INTER:                  -8.295
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.060  62.427  65.675  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.450  62.049  65.269  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.697  62.007  65.602  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.554  62.343  66.343  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.800  62.301  66.676  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      59.189  61.923  66.270  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      59.657  62.637  67.415  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.267  63.015  67.822  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.021  63.057  67.488  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.164  62.721  66.749  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      61.917  62.763  66.416  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      61.593  61.713  64.529  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      62.314  61.712  64.129  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.207  61.317  63.413  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.419  61.075  63.371  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      61.040  61.319  64.060  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.825      5.519      7.155
+REMARK INTER + INTRA:          -7.825
+REMARK INTER:                  -7.825
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.321  65.401  69.660  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.988  65.411  70.414  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.240  65.966  70.969  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.827  66.512  70.770  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.080  67.067  71.326  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      64.746  67.078  72.081  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      65.667  67.612  71.127  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.001  67.601  70.372  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.748  67.046  69.817  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.161  66.501  70.016  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      64.909  65.946  69.461  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      63.401  64.867  70.613  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      63.094  64.282  70.119  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.522  63.866  70.541  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.475  64.192  71.297  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      63.018  64.811  71.342  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.777      3.139      5.152
+REMARK INTER + INTRA:          -7.777
+REMARK INTER:                  -7.777
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.486  61.982  70.064  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.917  62.535  69.631  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.391  63.086  70.021  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.433  63.084  70.846  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.908  63.635  71.236  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      62.339  64.189  70.802  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.950  63.633  72.060  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.518  63.079  72.494  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.045  62.528  72.103  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.002  62.530  71.279  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.529  61.980  70.889  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.875  62.538  68.807  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.428  62.023  68.343  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.549  62.223  67.552  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.071  62.860  67.527  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      61.273  63.055  68.303  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.774      4.128      5.142
+REMARK INTER + INTRA:          -7.774
+REMARK INTER:                  -7.774
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.792  64.546  71.274  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.905  64.730  70.479  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.149  64.145  69.951  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.280  63.375  70.220  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.523  62.790  69.691  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      60.637  62.973  68.895  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.654  62.021  69.960  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.541  61.837  70.757  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.297  62.422  71.284  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.166  63.191  71.015  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      59.923  63.776  71.543  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      59.775  65.499  70.210  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.532  66.138  70.671  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.471  66.798  70.179  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.677  66.566  69.415  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      59.865  65.763  69.433  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.426      4.244      5.168
+REMARK INTER + INTRA:          -7.426
+REMARK INTER:                  -7.426
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.914  63.952  69.517  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.232  64.013  70.275  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.006  63.480  70.862  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.461  62.883  70.690  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.236  62.350  71.277  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      61.554  62.411  72.036  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.691  61.754  71.105  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.372  61.692  70.346  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.599  62.226  69.760  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.143  62.822  69.932  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      61.369  63.355  69.345  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      62.777  64.609  70.447  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      63.054  65.179  69.920  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      63.588  65.661  70.323  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      63.641  65.388  71.100  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      63.140  64.738  71.177  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.314      3.429      4.449
+REMARK INTER + INTRA:          -7.314
+REMARK INTER:                  -7.314
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.113  64.680  69.724  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.173  64.197  70.390  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.291  63.386  70.302  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.348  63.056  69.547  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.466  62.244  69.460  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      60.526  61.761  70.127  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.523  61.915  68.706  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.464  62.397  68.039  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.346  63.209  68.127  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.288  63.538  68.881  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.171  64.350  68.969  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.115  64.527  71.144  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.999  65.325  71.317  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.976  65.407  72.137  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.078  64.660  72.471  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      60.165  64.115  71.858  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.285      5.692      6.622
+REMARK INTER + INTRA:          -7.285
+REMARK INTER:                  -7.285
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.927  65.568  71.650  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.140  64.994  71.098  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.768  64.258  71.104  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.183  64.096  71.664  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.811  63.359  71.670  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      62.023  62.784  71.117  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.226  63.197  72.229  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.013  63.772  72.782  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.385  64.508  72.775  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.970  64.670  72.216  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      62.342  65.406  72.210  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      63.724  65.156  70.539  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      64.142  65.863  70.466  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      64.670  65.783  69.837  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.578  65.026  69.521  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      63.994  64.638  69.955  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.204      6.139      6.725
+REMARK INTER + INTRA:          -7.204
+REMARK INTER:                  -7.204
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lofexidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.361  64.666  71.516  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.874  65.163  71.927  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.567  64.860  72.254  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.747  64.059  72.171  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.441  63.756  72.499  0.00  0.00    +0.000 A 
+ATOM      6 CL   UNL     1      61.956  64.253  72.911  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.621  62.955  72.416  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.107  62.457  72.005  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.414  62.761  71.677  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.234  63.562  71.760  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      59.541  63.864  71.433  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      59.694  65.964  72.010  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.025  66.344  71.714  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.069  67.140  71.925  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.767  67.252  72.352  0.00  0.00    +0.000 C 
+ATOM     16  N   UNL     1      60.153  66.526  72.404  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.385      0.000      0.000
+REMARK INTER + INTRA:          -8.385
+REMARK INTER:                  -8.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.762  62.908  68.945  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.709  62.540  68.208  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.116  61.986  68.065  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.250  62.728  67.614  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.196  62.360  66.878  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.738  62.548  66.283  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.332  63.103  66.426  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.684  62.180  65.547  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.226  62.368  64.952  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.172  62.001  64.216  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.713  62.188  63.621  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.579  61.447  64.073  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.038  61.259  64.667  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.444  60.704  64.524  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.091  61.627  65.404  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.894      1.470      3.445
+REMARK INTER + INTRA:          -7.894
+REMARK INTER:                  -7.894
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.644  61.573  63.466  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.022  61.646  64.005  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.287  61.317  63.831  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.139  62.047  64.716  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.517  62.119  65.254  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.633  62.520  65.966  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.369  62.849  66.139  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.011  62.592  66.503  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.127  62.994  67.216  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.506  63.066  67.753  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.621  63.467  68.465  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.770  62.738  67.580  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.654  62.337  66.868  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      58.917  62.008  66.695  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.276  62.264  66.330  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.555      1.675      3.882
+REMARK INTER + INTRA:          -7.555
+REMARK INTER:                  -7.555
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.279  62.010  64.723  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.974  61.891  65.481  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.919  61.129  65.789  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.726  62.537  65.931  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.422  62.418  66.688  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.173  63.064  67.138  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.228  63.827  66.831  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.869  62.945  67.896  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.620  63.590  68.346  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.316  63.471  69.104  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.067  64.117  69.554  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.261  62.709  69.411  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.510  62.063  68.962  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.455  61.300  69.270  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.814  62.182  68.203  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.406      3.112      4.465
+REMARK INTER + INTRA:          -7.406
+REMARK INTER:                  -7.406
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.608  62.735  73.070  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.572  62.963  72.278  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.933  63.662  72.033  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.174  62.491  71.731  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.138  62.719  70.939  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.740  62.246  70.392  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.378  61.547  70.637  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.704  62.475  69.600  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.305  62.002  69.052  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.270  62.230  68.261  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.871  61.758  67.713  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.631  62.929  68.016  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.029  63.402  68.562  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.391  64.101  68.317  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.065  63.174  69.355  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.321      5.328      6.852
+REMARK INTER + INTRA:          -7.321
+REMARK INTER:                  -7.321
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.391  67.638  69.889  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.771  67.241  70.264  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.510  67.489  71.005  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.413  66.596  69.895  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.794  66.199  70.269  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.435  65.554  69.900  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.696  65.305  69.158  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.816  65.158  70.274  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.457  64.512  69.905  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.838  64.116  70.279  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.479  63.470  69.911  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.577  64.364  71.021  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.935  65.009  71.390  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.675  65.258  72.132  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.555  65.406  71.015  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.242      3.566      5.643
+REMARK INTER + INTRA:          -7.242
+REMARK INTER:                  -7.242
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.840  62.752  67.380  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.185  62.484  68.080  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.541  61.741  68.107  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.173  62.960  68.754  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.518  62.692  69.454  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.506  63.168  70.128  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.150  63.912  70.102  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.850  62.900  70.828  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.839  63.376  71.502  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.183  63.108  72.202  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.171  63.584  72.876  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.539  62.365  72.228  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.551  61.889  71.555  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.907  61.145  71.581  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.206  62.157  70.854  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.934      5.018      6.077
+REMARK INTER + INTRA:          -6.934
+REMARK INTER:                  -6.934
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.810  62.153  71.123  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.568  62.940  71.190  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.442  63.270  71.934  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.451  63.394  70.511  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.209  64.180  70.579  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.093  64.635  69.900  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.218  64.304  69.155  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.850  65.420  69.967  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.734  65.875  69.288  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.491  66.661  69.356  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.375  67.116  68.677  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.366  66.992  70.100  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.482  66.537  70.779  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.357  66.868  71.524  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.725  65.751  70.712  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.887      5.464      6.404
+REMARK INTER + INTRA:          -6.887
+REMARK INTER:                  -6.887
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.881  62.744  71.738  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.407  63.377  71.794  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.425  63.839  72.476  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.915  63.547  71.166  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.441  64.180  71.223  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.949  64.351  70.595  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.931  63.888  69.912  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.475  64.983  70.651  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.984  65.154  70.023  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.510  65.787  70.080  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      65.018  65.958  69.452  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      64.528  66.249  70.762  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.020  66.079  71.390  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      64.039  66.541  72.073  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.494  65.445  71.334  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.885      5.968      7.424
+REMARK INTER + INTRA:          -6.885
+REMARK INTER:                  -6.885
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orciprenaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.761  67.636  70.782  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.233  67.004  70.721  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.286  66.483  70.085  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.652  66.896  71.296  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.124  66.265  71.235  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.543  66.156  71.810  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.489  66.678  72.447  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.015  65.525  71.748  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.433  65.416  72.324  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.906  64.785  72.262  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.324  64.676  72.838  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.959  64.263  71.627  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.540  64.372  71.051  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.594  63.850  70.415  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.068  65.003  71.113  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

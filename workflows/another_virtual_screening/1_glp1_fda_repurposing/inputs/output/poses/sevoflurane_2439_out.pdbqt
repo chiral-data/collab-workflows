@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.882      0.000      0.000
+REMARK INTER + INTRA:          -7.882
+REMARK INTER:                  -7.882
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      64.803  79.170  58.797  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      65.453  78.780  59.122  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.347  78.068  59.527  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.997  77.678  59.853  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.890  76.967  60.257  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      65.784  76.256  60.662  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      66.702  76.927  60.399  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      65.079  77.007  60.115  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      66.752  77.999  59.774  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      66.439  78.635  59.352  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      67.066  77.363  60.195  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      67.508  78.320  59.694  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.618      0.519      2.037
+REMARK INTER + INTRA:          -7.618
+REMARK INTER:                  -7.618
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      65.597  76.089  60.653  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      65.997  76.726  60.314  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.574  77.322  59.930  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.974  77.959  59.592  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.551  78.555  59.209  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      65.128  79.151  58.826  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      66.257  78.946  59.039  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      64.845  78.163  59.379  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      66.796  78.000  59.636  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      66.810  77.288  60.053  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      66.783  78.712  59.219  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      67.619  78.041  59.680  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.378     16.939     17.610
+REMARK INTER + INTRA:          -7.378
+REMARK INTER:                  -7.378
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      62.003  62.271  66.628  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.655  61.939  65.957  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.064  61.936  65.240  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.717  61.604  64.569  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.126  61.601  63.852  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      62.535  61.598  63.136  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      61.490  61.220  63.491  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      62.762  61.982  64.214  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      60.963  61.276  64.615  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      60.926  61.469  65.416  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      60.998  61.082  63.814  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      60.206  60.948  64.660  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.249     16.754     17.553
+REMARK INTER + INTRA:          -7.249
+REMARK INTER:                  -7.249
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      62.995  61.821  62.938  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      62.383  61.652  63.465  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.493  61.766  64.275  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.881  61.597  64.802  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.991  61.711  65.612  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      62.101  61.825  66.421  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      61.221  61.451  65.753  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      62.761  61.971  65.471  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      61.160  61.315  64.520  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      61.449  61.347  63.747  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      60.870  61.283  65.291  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      60.438  61.033  64.236  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.949     16.765     17.843
+REMARK INTER + INTRA:          -6.949
+REMARK INTER:                  -6.949
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      62.683  62.636  65.443  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      62.038  62.169  65.228  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.306  62.284  65.594  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.661  61.818  65.379  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.930  61.933  65.744  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      59.199  62.048  66.109  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      59.606  61.328  65.286  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      60.253  62.538  66.202  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      60.745  61.237  64.801  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      61.541  61.440  64.713  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      59.951  61.034  64.887  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      60.831  60.656  64.221  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.438     14.076     15.119
+REMARK INTER + INTRA:          -6.438
+REMARK INTER:                  -6.438
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      64.065  66.145  69.669  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      64.731  66.622  69.763  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.171  66.585  70.461  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.837  67.062  70.555  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.275  67.024  71.253  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      66.714  66.986  71.950  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      66.792  67.597  70.959  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      65.759  66.451  71.546  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      66.064  67.576  69.952  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      65.426  67.322  69.494  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      66.702  67.830  70.409  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      66.292  68.091  69.348  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.400     14.058     14.637
+REMARK INTER + INTRA:          -6.400
+REMARK INTER:                  -6.400
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      77.101  69.905  57.222  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      76.992  69.127  56.968  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      76.446  68.641  57.352  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      76.337  67.864  57.099  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      75.792  67.378  57.483  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      75.246  66.892  57.866  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      75.979  66.761  56.968  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      75.604  67.995  57.997  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      76.771  67.573  56.462  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      77.150  68.302  56.386  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      76.394  66.843  56.537  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      77.207  67.281  55.824  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.294     17.737     19.054
+REMARK INTER + INTRA:          -6.294
+REMARK INTER:                  -6.294
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.957  63.963  68.939  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.466  63.302  68.891  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.198  62.936  69.582  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.707  62.275  69.534  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.440  61.910  70.224  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      60.173  61.544  70.914  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      60.027  61.358  69.772  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      60.854  62.462  70.677  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      60.483  61.980  68.798  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      60.921  62.572  68.427  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      60.045  61.387  69.169  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      60.258  61.684  68.061  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.264     19.967     20.474
+REMARK INTER + INTRA:          -6.264
+REMARK INTER:                  -6.264
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sevoflurane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      60.179  61.864  70.185  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      60.655  61.766  70.852  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.704  62.366  71.417  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.179  62.269  72.083  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.227  62.869  72.647  0.00  0.00    +0.000 C 
+ATOM      6  F   UNL     1      61.276  63.469  73.211  0.00  0.00    +0.000 F 
+ATOM      7  F   UNL     1      61.750  62.410  73.091  0.00  0.00    +0.000 F 
+ATOM      8  F   UNL     1      60.705  63.328  72.203  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      61.607  61.572  72.185  0.00  0.00    +0.000 C 
+ATOM     10  F   UNL     1      61.305  61.281  71.475  0.00  0.00    +0.000 F 
+ATOM     11  F   UNL     1      61.910  61.861  72.896  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      62.036  60.873  72.288  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL

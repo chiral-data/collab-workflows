@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.614      0.000      0.000
+REMARK INTER + INTRA:          -7.614
+REMARK INTER:                  -7.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.551  61.649  63.488  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.021  61.696  64.119  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.279  61.340  64.062  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.233  62.100  64.807  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.703  62.147  65.437  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.916  62.552  66.125  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.385  62.599  66.755  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.644  62.242  66.698  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.598  63.003  67.443  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.068  63.050  68.073  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.280  63.454  68.761  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.326  62.694  68.016  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.264      0.999      3.682
+REMARK INTER + INTRA:          -7.264
+REMARK INTER:                  -7.264
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.855  62.683  68.914  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.701  62.380  68.163  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.977  62.017  68.004  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.271  62.442  67.568  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.116  62.140  66.817  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.686  62.201  66.223  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.531  61.899  65.471  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.808  61.535  65.313  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.101  61.960  64.877  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.947  61.658  64.125  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.517  61.719  63.531  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.223  61.294  63.967  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.000      1.343      4.175
+REMARK INTER + INTRA:          -7.000
+REMARK INTER:                  -7.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.283  61.991  70.771  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.599  62.315  70.081  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.002  63.034  70.110  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.513  61.918  69.362  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.830  62.242  68.673  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.743  61.845  67.954  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.060  62.169  67.265  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.463  62.888  67.293  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.973  61.772  66.545  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.290  62.096  65.856  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.204  61.699  65.137  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.693  62.815  65.885  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.960      4.500      6.545
+REMARK INTER + INTRA:          -6.960
+REMARK INTER:                  -6.960
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.394  67.867  69.897  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.887  67.313  70.238  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.884  67.204  71.056  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.384  66.866  69.760  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.877  66.311  70.101  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.374  65.864  69.623  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.867  65.310  69.964  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.864  65.201  70.782  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.363  64.863  69.486  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.857  64.308  69.827  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.353  63.862  69.349  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.854  64.200  70.645  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.957      2.683      5.400
+REMARK INTER + INTRA:          -6.957
+REMARK INTER:                  -6.957
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.716  62.067  72.901  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.457  62.476  72.234  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.369  63.296  72.260  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.285  62.065  71.539  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.026  62.474  70.871  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.855  62.062  70.176  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.596  62.471  69.509  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.508  63.291  69.535  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.424  62.059  68.814  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.165  62.468  68.146  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.994  62.057  67.451  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.078  63.288  68.172  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.705      5.489      6.483
+REMARK INTER + INTRA:          -6.705
+REMARK INTER:                  -6.705
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.993  61.242  71.737  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.412  61.818  71.630  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.835  61.720  71.049  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.409  62.493  72.105  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.829  63.069  71.998  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.826  63.745  72.474  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.245  64.321  72.367  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.668  64.222  71.786  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.242  64.996  72.842  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.661  65.572  72.735  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.658  66.247  73.210  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.084  65.474  72.154  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.684     18.247     18.676
+REMARK INTER + INTRA:          -6.684
+REMARK INTER:                  -6.684
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.305  81.048  57.751  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.003  80.697  58.015  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.722  81.093  57.933  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.982  79.947  58.361  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.680  79.596  58.625  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.658  78.847  58.971  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.356  78.495  59.235  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.075  78.892  59.154  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      65.335  77.746  59.581  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      66.033  77.394  59.845  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.012  76.645  60.191  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.752  77.791  59.764  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.473      5.388      6.455
+REMARK INTER + INTRA:          -6.473
+REMARK INTER:                  -6.473
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.000  63.443  72.713  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.550  63.515  72.102  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.651  62.898  71.563  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.999  64.204  72.030  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.549  64.275  71.420  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.998  64.964  71.348  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.548  65.036  70.737  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.649  64.419  70.198  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.997  65.725  70.666  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.547  65.796  70.055  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.996  66.485  69.983  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.648  65.180  69.516  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.350      2.972      4.467
+REMARK INTER + INTRA:          -6.350
+REMARK INTER:                  -6.350
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproheptine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.037  62.703  67.556  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.263  62.484  68.319  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.356  61.686  68.509  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.397  63.063  68.891  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.623  62.844  69.654  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.757  63.423  70.227  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.983  63.204  70.989  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.075  62.407  71.179  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.117  63.784  71.562  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.343  63.564  72.324  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.477  64.144  72.897  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.435  62.767  72.514  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

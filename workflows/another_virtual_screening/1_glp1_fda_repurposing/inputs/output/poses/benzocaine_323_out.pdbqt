@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.367      0.000      0.000
+REMARK INTER + INTRA:          -7.367
+REMARK INTER:                  -7.367
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.198  62.010  68.200  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.795  62.353  67.745  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.925  62.093  66.973  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.523  62.435  66.517  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.989  63.037  66.834  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.652  62.176  65.745  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.249  62.518  65.290  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.379  62.258  64.517  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.912  61.657  64.201  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.042  61.397  63.428  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.315  61.314  64.656  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.185  61.574  65.428  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.464      1.920      3.111
+REMARK INTER + INTRA:          -6.464
+REMARK INTER:                  -6.464
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.868  61.016  63.829  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.320  61.421  64.387  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.966  61.705  65.076  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.418  62.111  65.635  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.223  62.233  65.505  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.065  62.395  66.324  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.516  62.801  66.883  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.162  63.085  67.572  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.357  62.963  67.702  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.003  63.248  68.391  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.905  62.558  67.143  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.259  62.274  66.454  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.334      3.016      4.213
+REMARK INTER + INTRA:          -6.334
+REMARK INTER:                  -6.334
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.461  61.988  66.161  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.903  62.485  66.649  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.024  62.284  67.440  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.466  62.780  67.930  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.787  63.477  67.628  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.587  62.579  68.720  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.029  63.075  69.209  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.149  62.873  70.000  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.828  62.176  70.302  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.949  61.975  71.094  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.386  61.680  69.813  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.265  61.881  69.022  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.139      6.001      6.759
+REMARK INTER + INTRA:          -6.139
+REMARK INTER:                  -6.139
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.903  65.699  71.920  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.526  65.343  72.328  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.826  64.619  72.072  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.449  64.262  72.480  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.772  64.631  73.143  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.748  63.538  72.224  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.371  63.181  72.631  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.670  62.456  72.375  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.346  62.088  71.712  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.646  61.362  71.456  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.723  62.444  71.304  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.424  63.169  71.560  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.127      4.286      6.063
+REMARK INTER + INTRA:          -6.127
+REMARK INTER:                  -6.127
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.477  62.238  68.337  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.506  61.999  69.127  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.737  62.533  69.711  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.766  62.295  70.501  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.564  61.522  70.705  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.997  62.829  71.084  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.026  62.591  71.874  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.257  63.126  72.458  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.459  63.898  72.253  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.691  64.433  72.838  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.431  64.137  71.464  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.200  63.603  70.879  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.117      6.274      7.186
+REMARK INTER + INTRA:          -6.117
+REMARK INTER:                  -6.117
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.581  67.967  69.762  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.133  67.576  70.334  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.606  66.982  70.110  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.158  66.590  70.682  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.238  66.793  71.477  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.632  65.996  70.458  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.184  65.604  71.029  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.658  65.010  70.805  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.579  64.808  70.010  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.052  64.213  69.785  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.026  65.199  69.437  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.553  65.793  69.661  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.092     24.668     25.410
+REMARK INTER + INTRA:          -6.092
+REMARK INTER:                  -6.092
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.343  80.559  51.613  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.390  79.934  51.075  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      70.053  79.857  50.590  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      70.100  79.233  50.052  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      69.484  78.687  50.000  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      70.762  79.156  49.567  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.810  78.533  49.030  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.473  78.456  48.545  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      72.088  79.002  48.597  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      72.752  78.925  48.112  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      72.041  79.626  49.135  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.378  79.703  49.620  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.079      3.272      3.964
+REMARK INTER + INTRA:          -6.079
+REMARK INTER:                  -6.079
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.662  61.315  71.703  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.442  62.012  71.320  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.142  61.983  70.552  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.921  62.680  70.168  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.001  63.405  70.553  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.621  62.650  69.401  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.401  63.346  69.017  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.100  63.317  68.249  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.021  62.592  67.865  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.720  62.563  67.096  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.241  61.895  68.248  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.541  61.924  69.016  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.051      4.729      5.727
+REMARK INTER + INTRA:          -6.051
+REMARK INTER:                  -6.051
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.223  65.418  72.581  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.152  64.596  72.605  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.007  64.175  71.911  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.936  63.353  71.934  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.010  62.953  72.652  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.792  62.932  71.241  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.721  62.110  71.263  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.576  61.689  70.569  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.502  62.089  69.852  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.357  61.667  69.157  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.573  62.910  69.828  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.718  63.332  70.522  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

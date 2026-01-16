@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -8.174      0.000      0.000
+REMARK INTER + INTRA:          -8.174
+REMARK INTER:                  -8.174
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.263  61.989  66.451  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.047  62.216  66.321  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.052  61.793  65.612  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.041  62.639  67.029  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.830  62.443  66.191  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.225  62.190  65.513  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.007  62.416  65.383  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.403  62.163  64.705  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.016  61.684  64.157  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      62.412  61.430  63.478  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.233  61.457  64.286  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.838  61.710  64.964  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.728      1.878      2.962
+REMARK INTER + INTRA:          -7.728
+REMARK INTER:                  -7.728
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.350  61.756  64.316  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.564  61.656  64.547  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.719  62.056  65.252  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.409  61.256  63.843  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.777  61.555  64.778  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.519  61.851  65.503  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.734  61.751  65.734  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.476  62.047  66.459  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.003  62.444  66.953  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      59.744  62.741  67.679  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.789  62.545  66.723  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.047  62.249  65.998  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.071      6.038      6.819
+REMARK INTER + INTRA:          -7.071
+REMARK INTER:                  -7.071
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.295  64.855  72.733  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.203  64.260  72.168  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.806  63.825  72.526  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.601  64.694  71.810  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.111  63.665  71.603  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.587  62.993  71.631  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.495  62.399  71.066  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.972  61.726  71.094  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.539  61.647  71.687  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      62.016  60.973  71.715  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.632  62.241  72.252  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.156  62.914  72.224  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.914      5.289      6.135
+REMARK INTER + INTRA:          -6.914
+REMARK INTER:                  -6.914
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.499  61.736  69.076  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.542  62.356  69.620  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.860  61.842  70.182  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.224  62.869  69.059  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.585  62.976  70.163  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.881  62.841  70.920  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.924  63.460  71.464  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.221  63.325  72.221  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.475  62.570  72.436  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.772  62.435  73.195  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.433  61.950  71.893  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.136  62.085  71.136  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.913      5.104      5.895
+REMARK INTER + INTRA:          -6.913
+REMARK INTER:                  -6.913
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.690  63.958  72.422  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.450  63.214  72.158  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.318  63.523  71.404  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.582  62.904  72.911  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.210  62.469  71.894  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.976  62.366  71.110  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.736  61.622  70.846  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.502  61.519  70.061  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.508  62.158  69.542  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.274  62.055  68.756  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.748  62.903  69.805  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.982  63.006  70.589  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.906      6.192      7.101
+REMARK INTER + INTRA:          -6.906
+REMARK INTER:                  -6.906
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.476  61.580  70.581  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.831  62.044  71.164  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.197  62.571  71.132  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.465  61.518  71.196  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.186  62.508  71.747  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.815  63.195  72.011  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.169  63.659  72.593  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.797  64.347  72.857  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.071  64.571  72.537  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      59.699  65.259  72.801  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      59.716  64.108  71.954  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.087  63.420  71.691  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.847      7.062      7.681
+REMARK INTER + INTRA:          -6.847
+REMARK INTER:                  -6.847
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.452  64.625  69.784  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.868  65.057  70.351  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.233  65.493  69.753  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.504  64.621  70.949  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.285  65.489  70.919  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.807  66.081  70.684  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.223  66.513  71.250  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.747  67.106  71.015  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.854  67.267  70.214  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      66.377  67.861  69.979  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      65.438  66.836  69.646  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.915  66.243  69.881  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.764      7.111      7.858
+REMARK INTER + INTRA:          -6.764
+REMARK INTER:                  -6.764
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.122  67.623  71.004  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.776  67.178  70.400  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.392  66.712  70.962  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      66.160  67.644  69.838  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      65.431  66.734  69.796  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.926  66.109  69.982  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.581  65.664  69.379  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.076  65.039  69.564  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.916  64.858  70.353  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      63.410  64.232  70.538  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      64.261  65.302  70.957  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.766  65.928  70.771  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.609     24.665     25.170
+REMARK INTER + INTRA:          -6.609
+REMARK INTER:                  -6.609
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorphentermine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.675  80.640  51.341  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.688  79.996  50.825  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.457  80.192  50.597  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      68.921  79.799  51.052  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      69.701  79.351  50.309  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.372  79.200  49.855  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.385  78.556  49.340  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.057  78.404  48.885  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.715  78.897  48.946  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      72.387  78.745  48.491  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      71.703  79.541  49.461  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.031  79.693  49.916  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

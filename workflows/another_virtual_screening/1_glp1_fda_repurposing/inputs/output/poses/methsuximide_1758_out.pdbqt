@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.245      0.000      0.000
+REMARK INTER + INTRA:          -9.245
+REMARK INTER:                  -9.245
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.459  63.294  67.634  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.009  62.845  67.108  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.225  62.613  67.215  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.752  62.789  67.868  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.996  62.173  66.555  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.639  62.134  66.040  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.125  61.692  65.570  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.265  62.549  66.381  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.015  62.650  66.054  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.175  62.002  65.426  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.946  61.563  64.766  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.482  61.431  64.153  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.246  61.739  64.199  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.474  62.178  64.860  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.939  62.310  65.473  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.648      1.033      2.647
+REMARK INTER + INTRA:          -8.648
+REMARK INTER:                  -8.648
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.447  62.181  64.793  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.677  62.018  65.040  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.118  61.575  64.627  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.230  61.216  63.893  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.426  61.553  65.077  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.558  61.983  65.768  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.779  61.777  65.943  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.331  62.270  65.746  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.695  62.729  66.327  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.528  62.370  66.496  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.836  62.348  66.946  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.806  62.735  67.674  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.467  63.143  67.952  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.158  63.165  67.502  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.189  62.778  66.774  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.314      5.268      6.329
+REMARK INTER + INTRA:          -8.314
+REMARK INTER:                  -8.314
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.238  64.790  71.887  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.905  64.394  72.169  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.397  64.647  72.781  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.309  65.340  73.219  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.992  64.084  72.878  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.869  63.483  72.327  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.544  63.152  72.665  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.197  63.675  71.889  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.872  63.226  71.277  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.886  62.813  71.846  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.481  62.251  71.943  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.498  61.581  71.462  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.920  61.474  70.884  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.324  62.037  70.786  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.307  62.707  71.268  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.187      3.701      5.553
+REMARK INTER + INTRA:          -8.187
+REMARK INTER:                  -8.187
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.467  63.424  69.045  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.603  62.844  69.614  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.505  62.031  69.512  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.253  61.656  68.821  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.703  61.658  70.221  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.924  62.240  70.762  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.036  61.602  71.272  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.862  62.972  70.387  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.030  63.706  70.726  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.168  62.689  71.410  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.366  62.317  72.119  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.610  62.765  72.766  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.656  63.587  72.705  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.458  63.960  71.995  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.214  63.511  71.348  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.748      5.442      6.969
+REMARK INTER + INTRA:          -7.748
+REMARK INTER:                  -7.748
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.781  64.802  71.497  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.291  64.988  70.876  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.317  64.615  70.141  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.837  63.990  69.897  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.908  64.977  69.692  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.247  65.574  70.149  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.719  65.696  69.484  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.866  65.580  70.881  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.031  66.091  71.508  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.684  66.196  70.468  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.275  66.558  70.019  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.713  67.180  70.338  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.560  67.441  71.106  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.969  67.079  71.555  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.532  66.456  71.236  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.650      6.514      7.019
+REMARK INTER + INTRA:          -7.650
+REMARK INTER:                  -7.650
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.201  66.465  73.056  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.904  65.803  72.665  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.176  65.752  72.280  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      58.617  66.355  72.219  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.105  64.992  71.967  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.789  64.573  72.157  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.423  63.958  71.748  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.283  65.074  72.589  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.026  64.880  72.891  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.397  64.025  72.263  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.327  63.265  71.949  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.935  62.717  72.054  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.613  62.930  72.473  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.684  63.690  72.787  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.076  64.238  72.681  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.482     24.722     25.646
+REMARK INTER + INTRA:          -7.482
+REMARK INTER:                  -7.482
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.350  80.729  51.297  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      70.303  80.124  50.739  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      69.649  79.642  50.600  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      68.926  79.679  50.995  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      69.844  79.115  49.995  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.619  79.272  49.761  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.492  78.654  49.229  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.902  79.895  50.220  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      71.654  80.232  50.170  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      71.368  79.300  49.415  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.563  78.773  48.811  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      72.312  78.801  48.465  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.865  79.356  48.724  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      72.669  79.883  49.329  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      71.921  79.855  49.674  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.479     24.895     25.919
+REMARK INTER + INTRA:          -7.479
+REMARK INTER:                  -7.479
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.866  80.361  49.107  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      72.276  79.785  49.083  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      72.287  79.100  48.624  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      72.888  78.870  48.109  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.589  78.684  48.771  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.148  79.112  49.321  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.607  78.494  49.239  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.572  79.792  49.513  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      71.335  80.378  50.044  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      70.593  79.412  49.853  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      69.896  78.996  50.000  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      69.342  79.295  50.533  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      69.485  80.010  50.919  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.183  80.426  50.772  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      70.737  80.127  50.239  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.310      5.960      6.807
+REMARK INTER + INTRA:          -7.310
+REMARK INTER:                  -7.310
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methsuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.269  66.331  72.851  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.412  65.795  72.241  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.826  65.952  71.544  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.168  66.673  71.336  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.836  65.261  71.093  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.430  64.678  71.510  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.615  64.205  70.859  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.168  65.007  72.219  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.737  64.618  72.805  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.062  63.995  71.791  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.072  63.304  71.340  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.704  62.622  71.621  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.325  62.630  72.354  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.315  63.321  72.806  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.683  64.003  72.525  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

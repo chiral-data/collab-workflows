@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -8.423      0.000      0.000
+REMARK INTER + INTRA:          -8.423
+REMARK INTER:                  -8.423
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.135  62.595  66.582  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.710  62.563  65.992  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.583  62.105  65.317  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.331  62.408  65.146  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.879  61.961  65.722  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.308  61.464  65.394  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.441  61.112  64.660  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.145  61.256  64.254  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.196  61.701  64.978  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.716  61.753  64.583  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.219  61.650  63.937  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.457  62.110  64.513  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.249      0.867      2.124
+REMARK INTER + INTRA:          -8.249
+REMARK INTER:                  -8.249
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.660  61.735  63.425  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.917  61.441  63.631  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.606  61.594  64.379  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.993  61.145  64.058  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.327  61.991  64.441  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.523  62.384  65.138  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.999  62.382  65.775  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.277  61.986  65.714  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.670  61.874  64.967  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.081  61.592  65.016  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.355  61.349  65.324  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.533  61.136  64.600  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.481     16.996     17.708
+REMARK INTER + INTRA:          -7.481
+REMARK INTER:                  -7.481
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.159  79.183  58.843  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.064  78.490  59.280  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.724  78.047  59.502  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.126  77.588  59.834  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.094  78.661  59.092  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.915  78.672  59.019  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      67.367  78.070  59.356  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.999  77.456  59.766  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.373  77.969  59.498  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.176  77.445  59.838  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.196  76.743  60.272  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.504  77.063  60.129  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.391      6.028      6.942
+REMARK INTER + INTRA:          -7.391
+REMARK INTER:                  -7.391
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.758  64.112  71.711  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.942  63.419  71.305  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.553  62.934  71.572  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.309  62.505  70.912  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.586  63.531  72.141  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.144  63.494  72.746  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.670  62.860  72.785  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.639  62.263  72.217  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.026  62.816  72.009  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.080  62.300  71.610  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.346  61.590  71.284  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.757  61.953  70.934  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.290      7.754      8.724
+REMARK INTER + INTRA:          -7.290
+REMARK INTER:                  -7.290
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.271  65.751  71.131  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.590  66.206  70.521  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.280  66.640  70.647  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.130  66.835  69.860  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.191  66.295  71.391  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.738  66.451  71.988  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      66.376  66.953  71.840  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.466  67.299  71.097  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.761  66.824  71.050  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.917  67.143  70.500  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.318  67.627  69.965  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.675  67.269  69.721  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.830      4.018      5.065
+REMARK INTER + INTRA:          -6.830
+REMARK INTER:                  -6.830
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.719  63.791  70.784  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.496  63.568  70.022  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.079  62.867  69.902  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.135  63.135  69.124  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.167  62.842  70.722  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.858  62.210  71.152  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.460  61.602  70.762  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.371  61.625  69.942  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.802  62.329  70.152  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.681  62.258  69.512  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.411  61.943  68.799  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.794  62.616  68.777  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.827     24.466     25.250
+REMARK INTER + INTRA:          -6.827
+REMARK INTER:                  -6.827
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.665  80.786  49.999  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      71.806  80.130  49.519  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      71.257  79.515  49.488  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.825  79.227  48.965  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.879  80.018  50.022  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.150  79.805  50.343  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      69.798  79.090  50.131  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.175  78.587  49.597  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.688  79.261  49.686  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.905  78.800  49.275  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.946  78.105  48.833  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.532  78.608  48.774  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.541      6.961      7.707
+REMARK INTER + INTRA:          -6.541
+REMARK INTER:                  -6.541
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.726  62.481  72.290  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.984  62.694  71.999  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.684  63.448  72.145  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.063  63.130  71.706  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.410  63.505  72.533  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.621  64.205  72.914  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.105  64.850  72.907  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.380  64.794  72.519  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.760  64.039  72.415  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.169  64.092  72.138  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.446  64.407  71.897  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.611  63.678  71.693  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.008      6.545      7.571
+REMARK INTER + INTRA:          -6.008
+REMARK INTER:                  -6.008
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mecamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.780  65.915  71.996  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.023  65.391  71.407  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.743  65.508  71.022  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.484  64.825  70.638  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.752  66.150  71.540  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.390  66.672  71.539  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.020  66.552  71.021  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.013  65.910  70.503  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.288  65.861  70.947  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.373  65.387  70.504  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.710  64.929  69.906  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.022  64.711  70.187  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

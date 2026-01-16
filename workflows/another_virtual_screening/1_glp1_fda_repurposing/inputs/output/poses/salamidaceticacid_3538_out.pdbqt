@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.076      0.000      0.000
+REMARK INTER + INTRA:          -8.076
+REMARK INTER:                  -8.076
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.674  61.640  65.727  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.379  62.001  65.960  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.419  62.396  66.683  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.041  61.968  65.471  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.745  62.328  65.703  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.786  62.722  66.427  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.124  62.756  66.916  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.165  63.151  67.640  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.503  63.185  68.130  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.870  63.511  67.873  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.408  62.294  65.213  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.366  61.900  64.490  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.662  61.539  64.256  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.999  61.573  64.747  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.817      1.596      3.039
+REMARK INTER + INTRA:          -7.817
+REMARK INTER:                  -7.817
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.939  62.853  66.863  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.502  62.484  66.268  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.876  62.240  65.574  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.694  62.359  66.367  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.257  61.990  65.772  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.631  61.746  65.079  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.439  61.870  64.980  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.813  61.626  64.285  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.622  61.751  64.186  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.376  61.257  63.691  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.448  61.865  65.871  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.075  62.109  66.565  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.511  62.479  67.160  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.320  62.604  67.061  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.470      1.336      2.117
+REMARK INTER + INTRA:          -7.470
+REMARK INTER:                  -7.470
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.096  62.500  65.950  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.566  62.663  66.562  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.830  63.040  67.246  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.773  62.449  66.488  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.243  62.611  67.099  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.508  62.988  67.784  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.300  63.202  67.857  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.564  63.579  68.542  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.357  63.794  68.616  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.034  63.742  69.153  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.450  62.396  67.026  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.187  62.020  66.342  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.716  61.857  65.730  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.509  62.071  65.803  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.018      2.006      3.796
+REMARK INTER + INTRA:          -7.018
+REMARK INTER:                  -7.018
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.970  64.121  68.911  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.576  63.466  68.598  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.578  63.335  67.784  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.183  62.944  69.099  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.789  62.290  68.788  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.791  62.159  67.973  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.185  62.680  67.472  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.186  62.549  66.657  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.580  63.071  66.155  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.793  61.894  66.345  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.395  61.767  69.290  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.394  61.899  70.103  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.787  62.554  70.416  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.181  63.076  69.914  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.994      3.897      5.694
+REMARK INTER + INTRA:          -6.994
+REMARK INTER:                  -6.994
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.783  61.179  71.626  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.413  61.826  71.272  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.128  61.767  70.500  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.328  62.532  71.690  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.959  63.179  71.337  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.674  63.120  70.565  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.758  62.414  70.148  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.473  62.355  69.375  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.558  61.649  68.957  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.103  63.003  69.022  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.874  63.885  71.756  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.159  63.943  72.527  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.529  63.296  72.881  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.614  62.591  72.463  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.839      4.611      5.969
+REMARK INTER + INTRA:          -6.839
+REMARK INTER:                  -6.839
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.292  65.154  72.255  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.220  64.594  71.653  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.417  64.797  70.877  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.952  63.835  71.826  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.880  63.275  71.224  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.077  63.477  70.449  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.344  64.237  70.276  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.541  64.439  69.499  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.809  65.200  69.326  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.469  63.879  68.898  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.612  62.514  71.397  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.416  62.313  72.172  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.488  62.872  72.775  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.756  63.633  72.602  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.757      5.581      7.030
+REMARK INTER + INTRA:          -6.757
+REMARK INTER:                  -6.757
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.755  66.555  72.232  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.970  66.226  71.506  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.579  65.556  71.225  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.574  66.567  71.061  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.789  66.239  70.336  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      64.398  65.569  70.055  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.794  65.228  70.499  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.402  64.558  70.218  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.797  64.216  70.663  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      63.617  64.230  69.492  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.394  66.581  69.891  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.784  67.251  70.172  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.570  67.580  70.898  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.965  67.238  71.343  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.666      5.700      6.578
+REMARK INTER + INTRA:          -6.666
+REMARK INTER:                  -6.666
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.866  64.094  70.345  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.594  64.353  71.080  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.777  65.113  71.342  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.140  63.852  71.551  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.868  64.110  72.286  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.051  64.871  72.548  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.505  65.371  72.077  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.688  66.132  72.340  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.143  66.634  71.869  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.416  66.391  73.075  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.414  63.609  72.758  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.231  62.849  72.495  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.503  62.590  71.760  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.957  63.091  71.288  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.428     25.769     26.517
+REMARK INTER + INTRA:          -6.428
+REMARK INTER:                  -6.428
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = salamidacetic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      72.796  79.030  48.144  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      72.376  79.471  48.701  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      72.664  80.204  48.947  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.670  79.180  49.011  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.250  79.621  49.567  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      71.538  80.354  49.813  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      72.244  80.645  49.503  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      72.532  81.379  49.750  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      73.239  81.670  49.439  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      72.112  81.820  50.306  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.544  79.330  49.878  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.257  78.598  49.631  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.676  78.155  49.075  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.382  78.447  48.764  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

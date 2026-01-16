@@ -1,0 +1,153 @@
+MODEL 1
+REMARK VINA RESULT:    -3.231      0.000      0.000
+REMARK INTER + INTRA:          -3.231
+REMARK INTER:                  -3.231
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.434  78.187  59.625  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.446  77.505  60.087  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.825  76.962  60.039  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.837  76.279  60.501  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -2.923     16.177     16.345
+REMARK INTER + INTRA:          -2.923
+REMARK INTER:                  -2.923
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.064  62.381  65.457  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.438  62.287  64.728  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.150  61.736  64.185  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.524  61.642  63.455  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -2.599     11.385     11.684
+REMARK INTER + INTRA:          -2.599
+REMARK INTER:                  -2.599
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.294  78.481  48.629  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.704  78.360  49.191  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.361  79.005  49.576  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      69.770  78.884  50.139  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -2.554     14.327     14.689
+REMARK INTER + INTRA:          -2.554
+REMARK INTER:                  -2.554
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.160  67.695  69.903  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.227  67.339  70.643  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.588  67.353  71.167  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.655  66.997  71.908  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -2.501     12.275     12.577
+REMARK INTER + INTRA:          -2.501
+REMARK INTER:                  -2.501
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.555  78.462  49.338  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.165  78.499  48.786  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.891  78.834  48.993  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      72.501  78.871  48.440  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -2.439     17.054     17.310
+REMARK INTER + INTRA:          -2.439
+REMARK INTER:                  -2.439
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.172  62.132  66.422  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.955  62.161  66.165  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.542  62.461  66.662  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.325  62.491  66.404  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -2.385     14.404     14.569
+REMARK INTER + INTRA:          -2.385
+REMARK INTER:                  -2.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.535  76.111  71.904  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.145  76.442  72.349  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.876  76.060  72.395  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.486  76.391  72.840  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -2.384     15.362     15.485
+REMARK INTER + INTRA:          -2.384
+REMARK INTER:                  -2.384
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      76.516  67.327  56.572  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      77.220  67.722  56.410  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      77.944  67.356  56.561  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      78.650  67.752  56.399  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -2.356     18.618     19.071
+REMARK INTER + INTRA:          -2.356
+REMARK INTER:                  -2.356
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.589  62.726  72.710  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.158  63.421  72.614  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.546  64.150  72.610  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.114  64.847  72.514  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

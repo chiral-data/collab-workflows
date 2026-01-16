@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.461      0.000      0.000
+REMARK INTER + INTRA:          -8.461
+REMARK INTER:                  -8.461
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.506  64.183  70.334  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.129  63.700  69.781  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      60.504  63.519  69.069  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.127  63.037  68.515  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.502  62.855  67.804  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.126  62.373  67.250  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.501  62.192  66.538  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.252  62.493  66.379  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.629  62.975  66.933  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.254  63.156  67.645  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.627  62.311  65.666  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.379  62.612  65.508  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.251  61.829  65.114  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.626  61.648  64.401  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.250  61.166  63.848  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      62.377  61.949  64.242  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.282      2.442      5.029
+REMARK INTER + INTRA:          -8.282
+REMARK INTER:                  -8.282
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.418  61.869  66.062  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.571  62.495  66.578  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      59.844  62.343  67.341  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.996  62.969  67.858  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.269  62.816  68.621  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.421  63.441  69.137  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.694  63.289  69.900  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.814  62.512  70.148  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.662  61.886  69.632  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.389  62.038  68.868  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.087  62.359  70.912  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.207  61.581  71.159  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.240  62.984  71.428  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.512  62.832  72.191  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.665  63.457  72.708  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.633  62.055  72.439  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.267      1.548      4.529
+REMARK INTER + INTRA:          -8.267
+REMARK INTER:                  -8.267
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.628  61.694  64.408  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.747  62.290  64.966  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      61.495  62.182  65.744  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.614  62.779  66.303  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.362  62.671  67.080  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.481  63.266  67.639  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.229  63.159  68.417  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.858  62.456  68.637  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.739  61.859  68.079  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.991  61.967  67.300  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.606  62.348  69.416  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.235  61.644  69.635  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.725  62.943  69.973  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.473  62.836  70.751  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.592  63.431  71.310  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.102  62.133  70.972  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.161      1.360      4.419
+REMARK INTER + INTRA:          -8.161
+REMARK INTER:                  -8.161
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.779  60.359  62.660  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.323  60.845  63.044  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      61.166  61.118  63.806  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.710  61.604  64.192  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.553  61.877  64.953  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.097  62.363  65.339  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.939  62.636  66.101  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.238  62.423  66.478  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.693  61.937  66.094  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.851  61.664  65.331  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.080  62.696  67.242  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.378  62.483  67.619  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.624  63.182  67.626  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.466  63.455  68.388  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.010  63.941  68.774  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.765  63.242  68.766  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.901      4.890      6.155
+REMARK INTER + INTRA:          -7.901
+REMARK INTER:                  -7.901
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.021  67.644  70.170  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.720  66.955  69.831  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      65.126  66.531  70.216  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.824  65.842  69.877  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.231  65.418  70.262  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.929  64.730  69.924  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.335  64.306  70.309  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.044  64.571  71.033  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.345  65.260  71.373  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.939  65.684  70.988  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.449  64.147  71.419  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.158  64.412  72.144  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      62.148  63.458  71.080  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.554  63.035  71.466  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.252  62.346  71.128  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.262  63.299  72.191  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.796      4.562      6.315
+REMARK INTER + INTRA:          -7.796
+REMARK INTER:                  -7.796
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.089  62.802  70.952  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.638  63.064  70.394  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      62.149  63.684  70.579  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.699  63.946  70.021  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.210  64.566  70.206  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.759  64.828  69.649  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.271  65.449  69.834  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.233  65.807  70.576  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.684  65.545  71.134  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.172  64.925  70.949  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.745  66.428  70.761  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      64.707  66.786  71.503  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      65.294  66.689  70.204  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      65.805  67.310  70.389  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      66.354  67.572  69.832  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      65.768  67.668  71.131  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.360      3.862      5.460
+REMARK INTER + INTRA:          -7.360
+REMARK INTER:                  -7.360
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.376  67.866  72.861  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.255  67.097  73.135  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      62.017  66.505  72.612  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.895  65.736  72.886  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.657  65.145  72.363  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.535  64.377  72.636  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.297  63.785  72.113  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.181  63.962  71.316  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.303  64.730  71.042  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.541  65.322  71.565  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.943  63.369  70.792  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.827  63.547  69.995  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.822  62.602  71.066  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.584  62.010  70.543  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.462  61.241  70.816  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.468  62.186  69.745  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.870      2.382      3.696
+REMARK INTER + INTRA:          -6.870
+REMARK INTER:                  -6.870
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.954  66.423  72.951  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.604  66.438  72.203  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      60.632  65.769  71.722  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.283  65.784  70.974  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.311  65.115  70.493  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.962  65.129  69.745  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.991  64.460  69.263  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.368  63.777  69.529  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.718  63.762  70.276  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.690  64.431  70.758  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.397  63.107  69.046  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.775  62.424  69.313  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.048  63.122  68.300  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.076  62.453  67.818  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.727  62.467  67.071  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.454  61.769  68.083  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.443     12.639     13.724
+REMARK INTER + INTRA:          -6.443
+REMARK INTER:                  -6.443
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.111  63.171  53.797  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.991  63.736  54.386  0.00  0.00    +0.000 NA
+ATOM      3  N   UNL     1      62.101  64.536  54.218  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.982  65.102  54.807  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.092  65.901  54.640  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.973  66.467  55.228  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.083  67.267  55.060  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.313  67.502  54.304  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.432  66.937  53.714  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.322  66.136  53.882  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.423  68.303  54.135  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.653  68.537  53.378  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      62.304  68.868  54.724  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.414  69.668  54.556  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.295  70.233  55.144  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      62.644  69.903  53.799  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

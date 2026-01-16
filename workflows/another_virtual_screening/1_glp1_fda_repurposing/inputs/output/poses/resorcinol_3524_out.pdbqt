@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -5.431      0.000      0.000
+REMARK INTER + INTRA:          -5.431
+REMARK INTER:                  -5.431
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.671  61.688  63.430  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.158  61.719  64.074  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.368  62.144  64.749  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.854  62.175  65.394  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.065  62.599  66.068  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.131  61.780  65.364  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.920  61.355  64.689  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.434  61.324  64.044  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.411      0.083      1.749
+REMARK INTER + INTRA:          -5.411
+REMARK INTER:                  -5.411
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.071  62.465  66.123  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.861  62.085  65.423  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.363  62.115  64.770  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.153  61.734  64.069  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.656  61.765  63.416  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.440  61.323  64.021  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.936  61.292  64.674  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.146  61.673  65.375  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.953     17.217     17.630
+REMARK INTER + INTRA:          -4.953
+REMARK INTER:                  -4.953
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.010  78.928  58.925  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.549  78.418  59.283  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      66.357  78.579  59.246  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.897  78.068  59.605  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      67.705  78.230  59.567  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      66.629  77.396  60.000  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.820  77.234  60.038  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.281  77.745  59.679  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.764      8.221      8.836
+REMARK INTER + INTRA:          -4.764
+REMARK INTER:                  -4.764
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.328  67.998  69.627  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.983  67.432  70.116  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      66.222  67.364  70.903  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.876  66.798  71.393  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      66.116  66.731  72.179  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.291  66.299  71.096  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.051  66.365  70.309  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.397  66.932  69.820  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.743      1.241      1.696
+REMARK INTER + INTRA:          -4.743
+REMARK INTER:                  -4.743
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.486  61.300  63.885  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.235  61.579  64.619  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.463  61.437  64.873  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.212  61.716  65.607  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.441  61.573  65.861  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.732  62.138  66.088  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.505  62.281  65.835  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.756  62.002  65.100  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.687     15.936     16.708
+REMARK INTER + INTRA:          -4.687
+REMARK INTER:                  -4.687
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.501  77.273  72.823  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      58.896  76.723  72.721  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.077  75.928  72.597  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      58.471  75.377  72.496  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      58.653  74.583  72.372  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      57.684  75.622  72.518  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      57.501  76.417  72.643  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      58.107  76.968  72.744  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.614      7.649      8.518
+REMARK INTER + INTRA:          -4.614
+REMARK INTER:                  -4.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.577  65.723  69.826  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.041  66.299  70.190  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.435  66.861  69.734  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.899  67.438  70.099  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      66.293  68.000  69.643  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.969  67.451  70.921  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.575  66.889  71.378  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.111  66.312  71.013  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.440      6.442      7.072
+REMARK INTER + INTRA:          -4.440
+REMARK INTER:                  -4.440
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.156  61.630  70.457  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.523  62.076  71.045  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.159  62.757  71.334  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.527  63.204  71.923  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.163  63.885  72.211  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.258  62.969  72.222  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.623  62.287  71.933  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.256  61.841  71.345  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.407     24.260     24.856
+REMARK INTER + INTRA:          -4.407
+REMARK INTER:                  -4.407
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = resorcinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      69.948  79.625  50.427  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.449  79.255  49.888  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.144  79.628  49.647  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      71.646  79.257  49.107  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      72.341  79.630  48.866  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      71.452  78.513  48.808  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.757  78.139  49.048  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.255  78.510  49.588  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

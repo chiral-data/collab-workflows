@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.248      0.000      0.000
+REMARK INTER + INTRA:          -7.248
+REMARK INTER:                  -7.248
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.935  63.764  69.430  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      61.287  63.571  68.709  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.962  63.993  68.926  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.612  63.149  68.492  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.640  63.378  67.989  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.232  62.917  67.441  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.584  62.724  66.720  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.176  62.261  66.172  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.415  61.993  66.344  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.528  62.068  65.451  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.190  61.614  64.852  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.733  61.561  64.234  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.408  61.983  64.451  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      62.282  62.296  65.203  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.971      1.508      3.731
+REMARK INTER + INTRA:          -6.971
+REMARK INTER:                  -6.971
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.012  61.635  63.832  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      62.033  62.011  64.566  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      62.739  62.382  64.356  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.327  61.640  64.776  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.053  62.387  65.300  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.453  62.253  65.849  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.474  62.628  66.583  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.872  62.494  67.132  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.251  61.985  66.947  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.893  62.870  67.867  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.334  62.790  68.468  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.572  63.262  69.101  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.278  63.633  68.891  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      61.477  63.391  68.128  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.648      2.056      4.123
+REMARK INTER + INTRA:          -6.648
+REMARK INTER:                  -6.648
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.975  62.252  65.582  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      61.103  62.480  66.364  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.597  63.088  66.107  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.610  61.871  66.622  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.232  62.707  67.147  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.869  62.294  67.761  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.997  62.521  68.544  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.634  62.108  69.159  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.142  61.467  68.990  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.762  62.335  69.941  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.439  61.976  70.610  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.713  62.380  71.274  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.207  62.989  71.016  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      61.238  62.961  70.193  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.505      4.974      6.196
+REMARK INTER + INTRA:          -6.505
+REMARK INTER:                  -6.505
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.998  63.546  70.403  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      62.565  64.086  70.662  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      62.387  63.897  71.446  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      62.742  64.275  69.879  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.132  64.627  70.921  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.569  65.060  70.373  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      64.136  65.600  70.632  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.574  66.034  70.083  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.444  65.928  69.275  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.141  66.575  70.342  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.618  67.045  69.861  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.103  67.500  70.349  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.925  67.311  71.132  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      65.331  66.739  71.128  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.480      1.459      2.012
+REMARK INTER + INTRA:          -6.480
+REMARK INTER:                  -6.480
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.595  64.597  70.581  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      62.480  64.248  69.843  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      63.283  64.338  69.676  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.678  64.157  70.010  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.366  63.898  69.104  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.614  63.645  68.880  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.500  63.296  68.142  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.747  63.042  67.917  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.110  63.138  68.431  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.633  62.692  67.178  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.917  62.414  66.879  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.056  62.110  66.126  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.859  62.200  65.959  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      61.216  62.561  66.609  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.462      2.834      3.866
+REMARK INTER + INTRA:          -6.462
+REMARK INTER:                  -6.462
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.544  67.326  70.006  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      59.633  66.638  69.560  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      59.444  67.058  68.875  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.821  66.219  70.246  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.722  65.950  69.115  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.930  65.243  69.485  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.019  64.555  69.039  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.227  63.847  69.409  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.345  63.828  70.225  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.316  63.158  68.963  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.521  62.415  69.255  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.548  61.890  68.619  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.359  62.310  67.934  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      60.216  63.093  68.146  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.245      1.792      4.067
+REMARK INTER + INTRA:          -6.245
+REMARK INTER:                  -6.245
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.362  62.248  66.003  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      60.874  62.654  66.507  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      61.339  62.869  65.861  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.408  62.438  67.154  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.386  63.059  67.011  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.238  63.075  67.822  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.750  63.481  68.326  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.603  63.497  69.139  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.944  63.108  69.446  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.115  63.903  69.643  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.040  63.967  70.462  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.670  64.419  70.741  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.136  64.634  70.095  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      62.793  64.315  69.416  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.144      5.207      5.866
+REMARK INTER + INTRA:          -6.144
+REMARK INTER:                  -6.144
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.360  67.136  69.874  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      59.668  66.388  70.035  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      59.590  66.185  69.239  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.745  66.590  70.831  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.975  65.639  70.195  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.195  65.440  70.964  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.502  64.691  71.124  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.723  64.492  71.895  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.636  65.042  72.503  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.030  63.743  72.055  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.274  63.467  72.793  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.542  62.693  72.699  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.464  62.490  71.903  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      61.148  63.139  71.505  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.113      3.072      5.205
+REMARK INTER + INTRA:          -6.113
+REMARK INTER:                  -6.113
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = taurosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.211  62.546  67.444  0.00  0.00    +0.000 OA
+ATOM      2  S   UNL     1      60.384  62.452  68.245  0.00  0.00    +0.000 S 
+ATOM      3  O   UNL     1      60.267  61.638  68.174  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.500  63.266  68.316  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.556  62.357  69.046  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.743  63.014  69.508  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.916  62.920  70.309  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.103  63.578  70.772  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.117  64.329  70.432  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.276  63.483  71.573  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.472  64.085  72.101  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.600  63.744  72.840  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.484  62.930  72.769  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      61.284  62.769  71.986  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

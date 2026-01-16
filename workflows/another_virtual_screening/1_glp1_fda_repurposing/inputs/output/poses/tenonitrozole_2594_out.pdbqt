@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.964      0.000      0.000
+REMARK INTER + INTRA:          -7.964
+REMARK INTER:                  -7.964
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.241  63.906  69.808  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.860  63.916  69.263  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.545  64.347  69.423  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.794  63.495  68.556  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.146  63.041  68.321  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.316  62.720  67.580  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.068  62.975  67.358  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.457  62.784  66.656  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.091  62.296  66.100  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.335  61.998  66.248  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.479  62.105  65.399  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.184  61.626  64.795  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.753  61.585  64.200  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.400  62.039  64.435  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      62.231  62.360  65.176  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      61.363  63.454  67.961  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.858      1.522      4.040
+REMARK INTER + INTRA:          -7.858
+REMARK INTER:                  -7.858
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.745  61.267  63.440  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.062  61.799  63.986  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.725  62.247  63.789  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.713  61.883  64.729  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.050  61.474  65.003  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.893  61.729  65.772  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.459  62.295  65.973  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.509  62.695  66.692  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.961  62.542  67.290  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.362  61.988  67.167  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.011  62.942  68.009  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.505  62.848  68.654  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.758  63.355  69.253  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.420  63.763  68.979  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      61.577  63.508  68.210  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      61.965  62.390  65.329  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.391      1.706      4.212
+REMARK INTER + INTRA:          -7.391
+REMARK INTER:                  -7.391
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.756  62.615  64.970  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.575  62.084  65.575  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.552  61.274  65.421  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.417  62.363  66.335  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.420  63.154  66.571  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.233  63.181  67.375  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.115  62.407  67.635  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.919  62.178  68.403  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.822  62.748  68.992  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.923  63.547  68.812  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.625  62.520  69.759  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.511  63.024  70.402  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.323  62.562  71.059  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.321  61.772  70.822  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      60.508  61.746  70.019  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      61.229  61.902  66.993  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.386      2.317      4.710
+REMARK INTER + INTRA:          -7.386
+REMARK INTER:                  -7.386
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.240  62.196  66.576  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.627  62.732  67.070  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.988  63.401  66.751  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.651  62.598  67.884  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.316  61.956  68.280  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.473  62.044  69.086  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.905  62.740  69.187  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.178  63.041  69.904  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.025  62.636  70.607  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.598  61.930  70.591  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.298  62.936  71.324  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.189  62.595  72.067  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.552  63.079  72.628  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.887  63.720  72.231  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      61.730  63.632  71.426  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      61.015  63.082  68.444  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.303      4.400      5.965
+REMARK INTER + INTRA:          -7.303
+REMARK INTER:                  -7.303
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.600  63.252  69.978  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.093  63.607  70.537  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.039  63.393  71.331  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.640  64.178  70.300  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.756  64.447  69.528  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      63.355  65.015  69.544  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.608  65.096  70.325  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.200  65.605  70.592  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.597  66.093  70.058  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.401  66.072  69.257  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.188  66.602  70.325  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.630  67.120  69.859  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.156  67.521  70.351  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.040  67.251  71.122  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      65.441  66.683  71.106  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      63.166  64.579  70.792  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.276      3.933      4.913
+REMARK INTER + INTRA:          -7.276
+REMARK INTER:                  -7.276
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.098  67.664  71.386  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      59.386  67.159  70.800  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.561  67.454  70.051  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.498  66.359  70.965  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.347  65.986  71.686  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.537  65.187  71.605  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.804  65.066  70.834  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.052  64.347  70.514  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.046  63.665  70.978  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.792  63.702  71.762  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.294  62.947  70.659  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.318  62.222  71.053  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.601  61.653  70.527  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.751  62.026  69.807  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      60.562  62.825  69.888  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      59.780  65.790  70.439  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.229      1.393      1.873
+REMARK INTER + INTRA:          -7.229
+REMARK INTER:                  -7.229
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.242  64.848  70.594  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.460  64.457  69.901  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      63.255  64.393  69.695  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.880  64.128  69.415  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.066  64.148  69.549  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.695  63.754  68.925  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.280  63.492  68.406  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.155  63.072  67.707  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.388  62.878  67.473  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.746  63.106  67.939  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.263  62.459  66.775  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.531  62.227  66.472  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.663  61.822  65.766  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.477  61.802  65.632  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      60.847  62.196  66.256  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      62.012  63.723  68.709  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.836      5.148      6.074
+REMARK INTER + INTRA:          -6.836
+REMARK INTER:                  -6.836
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.756  66.879  69.847  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      65.252  66.794  70.495  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      65.283  67.335  71.116  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.717  66.167  70.521  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.623  65.585  69.943  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.029  65.069  70.194  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.756  65.333  70.927  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      63.163  64.981  71.379  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.784  64.301  71.105  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.000  63.973  70.379  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.191  63.948  71.556  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.766  63.270  71.355  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.230  63.115  71.963  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.325  63.696  72.540  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      61.918  64.212  72.289  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      64.181  66.011  71.129  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.532      4.608      5.936
+REMARK INTER + INTRA:          -6.532
+REMARK INTER:                  -6.532
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tenonitrozole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.684  61.991  70.939  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.698  62.737  71.293  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.045  63.003  71.720  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.365  63.216  71.218  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.056  63.025  70.810  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      62.577  63.662  70.878  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.208  64.246  71.329  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.530  64.977  71.534  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.290  65.178  71.283  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.727  64.646  70.827  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.613  65.908  71.488  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.362  66.184  71.278  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.455  66.938  71.599  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.764  67.128  72.007  0.00  0.00    +0.000 A 
+ATOM     15  S   UNL     1      63.244  66.492  71.938  0.00  0.00    +0.000 S 
+ATOM     16  S   UNL     1      61.459  63.970  71.539  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,297 @@
+MODEL 1
+REMARK VINA RESULT:    -9.566      0.000      0.000
+REMARK INTER + INTRA:          -9.566
+REMARK INTER:                  -9.566
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      60.983  60.919  64.950  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      61.481  61.575  64.913  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      61.595  62.046  65.582  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      61.210  61.858  66.287  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      61.324  62.328  66.956  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      61.822  62.985  66.919  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      60.940  62.141  67.662  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      61.054  62.611  68.331  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      61.552  63.268  68.294  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      61.665  63.737  68.962  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      60.669  62.424  69.036  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      60.171  61.767  69.073  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      60.783  62.894  69.705  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      60.398  62.706  70.410  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      60.512  63.176  71.078  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      60.128  62.989  71.785  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      61.011  63.833  71.041  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      61.866  61.763  64.208  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      61.752  61.293  63.539  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      62.364  62.419  64.171  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.393      1.157      1.493
+REMARK INTER + INTRA:          -9.393
+REMARK INTER:                  -9.393
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      62.093  62.344  64.628  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      61.487  61.845  64.879  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      61.222  61.877  65.661  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      61.565  62.409  66.190  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      61.301  62.441  66.972  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      60.694  61.942  67.223  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      61.644  62.973  67.500  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      61.380  63.006  68.282  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      60.773  62.506  68.533  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      60.509  62.539  69.314  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      61.723  63.538  68.811  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      62.329  64.037  68.559  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      61.458  63.570  69.592  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      61.801  64.102  70.121  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      61.537  64.134  70.902  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      61.880  64.666  71.432  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      60.930  63.635  71.153  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      61.144  61.313  64.351  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      61.408  61.280  63.569  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      60.537  60.813  64.602  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.890      1.457      5.301
+REMARK INTER + INTRA:          -8.890
+REMARK INTER:                  -8.890
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      62.084  64.347  69.690  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      61.294  64.108  69.689  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      60.986  63.704  69.038  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      61.468  63.540  68.389  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      61.159  63.137  67.738  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      60.369  62.898  67.737  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      61.641  62.973  67.089  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      61.332  62.569  66.438  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      60.543  62.330  66.437  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      60.235  61.927  65.787  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      61.814  62.406  65.789  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      62.604  62.645  65.790  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      61.505  62.002  65.138  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      61.987  61.838  64.489  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      61.678  61.435  63.839  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      62.160  61.271  63.189  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      60.889  61.196  63.838  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      60.813  64.272  70.338  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      61.121  64.675  70.989  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      60.023  64.032  70.337  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.725      3.707      5.778
+REMARK INTER + INTRA:          -8.725
+REMARK INTER:                  -8.725
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      65.376  66.815  69.849  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      65.239  66.645  70.644  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      64.657  66.099  70.856  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      64.213  65.723  70.272  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      63.632  65.176  70.484  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      63.495  65.007  71.280  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      63.188  64.800  69.900  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      62.606  64.253  70.112  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      62.470  64.084  70.907  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      61.889  63.539  71.119  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      62.162  63.877  69.527  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      62.299  64.046  68.731  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      61.581  63.331  69.739  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      61.137  62.954  69.155  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      60.556  62.408  69.367  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      60.111  62.031  68.782  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      60.419  62.239  70.163  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      65.683  67.022  71.229  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      66.265  67.568  71.017  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      65.546  66.853  72.025  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.358      4.550      6.096
+REMARK INTER + INTRA:          -8.358
+REMARK INTER:                  -8.358
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      65.995  66.634  71.824  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      65.780  66.828  71.051  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      65.064  66.557  70.741  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      64.564  66.093  71.204  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      63.848  65.823  70.894  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      63.634  66.016  70.121  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      63.348  65.359  71.358  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      62.632  65.088  71.047  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      62.418  65.282  70.275  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      61.703  65.012  69.965  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      62.132  64.624  71.511  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      62.346  64.430  72.284  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      61.416  64.353  71.201  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      60.915  63.890  71.664  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      60.200  63.620  71.354  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      59.699  63.155  71.817  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      59.986  63.813  70.581  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      66.280  67.292  70.588  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      66.996  67.562  70.898  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      66.066  67.485  69.815  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.023      2.234      3.076
+REMARK INTER + INTRA:          -8.023
+REMARK INTER:                  -8.023
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      60.137  62.400  67.704  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      60.813  62.684  67.325  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      61.330  63.188  67.726  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      61.171  63.407  68.505  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      61.688  63.911  68.905  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      62.363  64.195  68.526  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      61.528  64.130  69.684  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      62.046  64.634  70.085  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      62.721  64.918  69.706  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      63.237  65.421  70.106  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      61.886  64.853  70.864  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      61.211  64.570  71.243  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      62.403  65.357  71.264  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      62.244  65.577  72.043  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      62.761  66.080  72.443  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      62.602  66.300  73.222  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      63.436  66.364  72.064  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      60.972  62.464  66.546  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      60.455  61.961  66.146  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      61.648  62.748  66.167  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.726      3.876      5.225
+REMARK INTER + INTRA:          -7.726
+REMARK INTER:                  -7.726
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      61.180  62.696  70.409  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      61.258  62.999  69.645  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      61.826  63.576  69.486  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      62.315  63.850  70.091  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      62.884  64.428  69.931  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      62.962  64.730  69.168  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      63.373  64.702  70.536  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      63.941  65.279  70.377  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      64.019  65.582  69.613  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      64.587  66.158  69.455  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      64.431  65.553  70.982  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      64.353  65.250  71.745  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      64.999  66.130  70.822  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      65.489  66.404  71.427  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      66.056  66.981  71.267  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      66.546  67.256  71.873  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      66.134  67.284  70.504  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      60.768  62.725  69.040  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      60.200  62.147  69.200  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      60.846  63.028  68.277  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.124     14.055     14.765
+REMARK INTER + INTRA:          -7.124
+REMARK INTER:                  -7.124
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      61.028  65.379  53.745  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      61.785  65.488  54.055  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      62.319  64.858  54.071  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      62.095  64.121  53.776  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      62.629  63.491  53.792  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      63.385  63.599  54.102  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      62.404  62.754  53.497  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      62.938  62.124  53.513  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      63.695  62.233  53.823  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      64.228  61.604  53.838  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      62.714  61.387  53.218  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      61.957  61.279  52.908  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      63.248  60.757  53.234  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      63.024  60.020  52.939  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      63.558  59.392  52.955  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      63.334  58.654  52.660  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      64.314  59.500  53.265  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      62.009  66.225  54.350  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      61.475  66.855  54.334  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      62.766  66.333  54.660  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.021     13.897     14.509
+REMARK INTER + INTRA:          -7.021
+REMARK INTER:                  -7.021
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glutathione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   1      62.336  63.503  54.507  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   1      62.077  63.692  53.747  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   1      61.964  64.481  53.533  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   1      62.109  65.081  54.080  0.00  0.00    +0.000 C 
+ATOM      5  C   UNK A   1      61.995  65.870  53.866  0.00  0.00    +0.000 C 
+ATOM      6  O   UNK A   1      61.737  66.058  53.106  0.00  0.00    +0.000 OA
+ATOM      7  N   UNK A   1      62.140  66.470  54.413  0.00  0.00    +0.000 NA
+ATOM      8  C   UNK A   1      62.027  67.259  54.199  0.00  0.00    +0.000 C 
+ATOM      9  C   UNK A   1      61.768  67.448  53.439  0.00  0.00    +0.000 C 
+ATOM     10  S   UNK A   1      61.655  68.236  53.225  0.00  0.00    +0.000 S 
+ATOM     11  C   UNK A   1      62.172  67.859  54.746  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      62.430  67.671  55.507  0.00  0.00    +0.000 OA
+ATOM     13  N   GLY A   2      62.058  68.649  54.532  0.00  0.00    +0.000 NA
+ATOM     14  CA  GLY A   2      62.203  69.249  55.080  0.00  0.00    +0.000 C 
+ATOM     15  C   GLY A   2      62.090  70.037  54.865  0.00  0.00    +0.000 C 
+ATOM     16  O   GLY A   2      62.235  70.638  55.413  0.00  0.00    +0.000 OA
+ATOM     17  OXT GLY A   2      61.831  70.225  54.105  0.00  0.00    +0.000 OA
+ATOM     18  C   UNK A   1      61.932  63.092  53.200  0.00  0.00    +0.000 C 
+ATOM     19  O   UNK A   1      62.046  62.302  53.414  0.00  0.00    +0.000 OA
+ATOM     20  O   UNK A   1      61.674  63.280  52.439  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

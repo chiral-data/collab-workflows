@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -5.356      0.000      0.000
+REMARK INTER + INTRA:          -5.356
+REMARK INTER:                  -5.356
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.888  61.741  65.540  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.415  61.730  64.906  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.966  62.147  65.357  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.864  61.313  64.455  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.943  61.719  64.272  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      62.470  61.708  63.638  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      62.493  62.136  64.723  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      61.392  61.302  63.821  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.051     17.194     17.458
+REMARK INTER + INTRA:          -5.051
+REMARK INTER:                  -5.051
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.955  76.753  60.285  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.097  77.458  59.881  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.304  77.490  59.658  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      66.891  77.426  60.104  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      66.239  78.164  59.477  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      66.381  78.869  59.074  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      65.446  78.196  59.254  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      67.033  78.132  59.701  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.667     16.337     16.721
+REMARK INTER + INTRA:          -4.667
+REMARK INTER:                  -4.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.831  77.169  72.637  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.063  76.381  72.563  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.851  76.618  72.502  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      57.275  76.144  72.623  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      58.295  75.593  72.489  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      58.527  74.804  72.415  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      59.082  75.830  72.428  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      57.507  75.355  72.549  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.596      8.245      8.859
+REMARK INTER + INTRA:          -4.596
+REMARK INTER:                  -4.596
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.985  65.923  71.106  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.409  66.520  70.726  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.021  66.347  70.019  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.797  66.693  71.433  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.834  67.117  70.347  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      66.258  67.714  69.968  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      65.446  66.944  69.640  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      66.222  67.290  71.054  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.507     24.260     24.654
+REMARK INTER + INTRA:          -4.507
+REMARK INTER:                  -4.507
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.004  79.546  50.291  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.430  79.150  49.705  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.859  79.838  49.553  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      70.000  78.463  49.857  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.855  78.755  49.119  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      71.281  78.359  48.534  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      71.285  79.442  48.967  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      70.426  78.067  49.271  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.196      7.668      8.072
+REMARK INTER + INTRA:          -4.196
+REMARK INTER:                  -4.196
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.305  64.428  71.686  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.738  63.842  72.072  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.302  63.262  71.681  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.175  64.422  72.464  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.171  63.255  72.459  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      61.604  62.669  72.845  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      60.735  62.675  72.067  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      61.608  63.836  72.851  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.014      6.974      7.517
+REMARK INTER + INTRA:          -4.014
+REMARK INTER:                  -4.014
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.209  66.720  70.146  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.933  65.943  70.131  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.980  65.910  70.954  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.885  65.975  69.308  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.656  65.165  70.116  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      64.380  64.388  70.101  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      64.704  65.133  70.939  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      64.609  65.198  69.293  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.888     10.377     10.811
+REMARK INTER + INTRA:          -3.888
+REMARK INTER:                  -3.888
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.614  67.803  55.224  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.664  68.210  55.940  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.409  68.899  55.566  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.920  67.520  56.314  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.714  68.617  56.656  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      62.764  69.024  57.372  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      62.459  69.306  56.282  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      62.970  67.927  57.030  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.716      6.529      6.930
+REMARK INTER + INTRA:          -3.716
+REMARK INTER:                  -3.716
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorobutanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.317  64.299  70.995  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.061  64.536  70.727  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.141  65.028  71.384  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.980  64.044  70.069  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.804  64.773  70.459  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      64.547  65.010  70.191  0.00  0.00    +0.000 Cl
+ATOM      7 CL   UNL     1      63.884  65.265  71.116  0.00  0.00    +0.000 Cl
+ATOM      8 CL   UNL     1      63.724  64.281  69.801  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

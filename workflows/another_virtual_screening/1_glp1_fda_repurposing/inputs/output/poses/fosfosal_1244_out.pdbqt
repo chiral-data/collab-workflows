@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.682      0.000      0.000
+REMARK INTER + INTRA:          -7.682
+REMARK INTER:                  -7.682
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.985  61.325  65.594  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.469  61.228  64.934  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.219  60.755  64.305  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.202  61.603  64.901  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.453  62.076  65.529  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.968  62.173  66.189  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.218  62.647  66.818  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.514  62.486  67.218  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.468  63.120  67.446  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.921  62.807  66.418  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.186  62.452  65.497  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.670  62.354  64.836  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.421  61.881  64.208  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.687  61.506  64.240  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.642      1.535      2.844
+REMARK INTER + INTRA:          -7.642
+REMARK INTER:                  -7.642
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.947  63.006  66.989  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.160  62.923  67.219  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.911  63.218  67.950  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.622  62.546  66.722  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.870  62.252  65.993  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.657  62.335  65.762  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.906  62.041  65.032  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.672  62.307  65.186  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      62.154  61.746  64.302  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.140  61.775  64.878  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.331  61.875  65.495  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.544  61.792  65.726  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.295  62.086  66.456  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.833  62.463  66.954  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.271      1.166      2.058
+REMARK INTER + INTRA:          -7.271
+REMARK INTER:                  -7.271
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.249  62.422  65.896  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.640  62.064  65.471  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.800  61.701  64.747  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.871  62.067  65.770  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.711  62.428  66.493  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.320  62.787  66.918  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.160  63.149  67.643  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.956  63.354  67.715  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.999  63.511  68.367  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.365  62.943  67.569  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.942  62.431  66.792  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.333  62.073  66.367  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.493  61.711  65.643  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.262  61.708  65.344  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.775      3.791      4.655
+REMARK INTER + INTRA:          -6.775
+REMARK INTER:                  -6.775
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.075  63.096  68.269  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.679  62.487  68.660  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.211  61.958  68.233  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.751  62.407  69.477  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.219  62.936  69.905  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.614  63.544  69.513  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      62.082  64.074  69.940  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.269  64.471  69.242  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      62.550  64.602  70.368  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.895  63.675  70.638  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.291  62.855  70.723  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.895  62.246  71.113  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.427  61.717  70.687  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.355  61.798  69.869  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.692      5.285      6.297
+REMARK INTER + INTRA:          -6.692
+REMARK INTER:                  -6.692
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.024  64.259  70.875  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.341  64.180  71.632  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.234  64.781  72.188  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.766  63.503  71.833  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.873  62.903  71.278  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.556  62.982  70.520  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.664  62.381  69.964  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.235  62.818  69.411  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.771  61.781  69.409  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.092  61.945  70.518  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.298  62.225  71.479  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.615  62.147  72.236  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.508  62.747  72.793  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.083  63.425  72.591  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.643      3.720      4.858
+REMARK INTER + INTRA:          -6.643
+REMARK INTER:                  -6.643
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.451  64.384  69.242  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.457  64.064  70.002  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.460  64.563  70.660  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.459  63.246  70.105  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.456  62.747  69.448  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.449  63.068  68.688  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.446  62.569  68.030  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.441  63.227  67.532  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.442  62.070  67.373  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.451  61.912  68.529  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.458  61.929  69.551  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.464  61.609  70.310  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.468  62.107  70.968  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.465  62.926  70.866  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.588      4.689      5.847
+REMARK INTER + INTRA:          -6.588
+REMARK INTER:                  -6.588
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.036  63.742  72.075  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.528  63.093  72.103  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.301  62.778  72.832  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.246  62.759  71.405  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.472  63.073  70.676  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.981  63.722  70.648  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      62.208  64.036  69.919  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.664  64.604  70.307  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      62.434  64.350  69.191  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.751  63.469  69.533  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.190  62.739  69.977  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.681  62.091  70.006  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.454  61.776  70.734  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.737  62.110  71.433  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.340     25.154     25.841
+REMARK INTER + INTRA:          -6.340
+REMARK INTER:                  -6.340
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      70.634  80.511  50.776  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.259  79.831  50.497  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      69.520  79.616  50.795  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      70.622  79.367  49.921  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.360  79.582  49.623  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      71.735  80.262  49.902  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      72.474  80.477  49.604  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      72.481  81.137  50.098  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      73.213  80.691  49.306  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      72.467  79.816  49.110  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      71.724  79.117  49.046  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.349  78.438  48.767  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.610  78.222  49.065  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.246  78.687  49.641  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.326     25.186     25.881
+REMARK INTER + INTRA:          -6.326
+REMARK INTER:                  -6.326
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fosfosal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      72.922  79.999  49.297  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      72.547  79.343  48.966  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      72.941  78.883  48.405  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.780  79.147  49.195  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.386  79.606  49.756  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      71.761  80.262  50.087  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      71.366  80.722  50.648  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      72.026  81.215  50.706  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      70.972  81.181  51.208  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      70.708  80.229  50.588  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.618  79.409  49.985  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.245  78.753  49.653  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.638  78.293  49.093  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.406  78.490  48.864  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

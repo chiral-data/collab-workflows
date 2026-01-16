@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.265      0.000      0.000
+REMARK INTER + INTRA:          -8.265
+REMARK INTER:                  -8.265
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.567  61.640  65.733  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.283  61.987  65.949  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.286  62.377  66.677  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.908  62.775  67.045  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.680  62.882  66.776  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.023  62.617  66.073  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.676  62.181  65.465  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.213  62.030  64.858  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.977  61.600  64.196  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.203  61.320  64.141  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.966  60.889  63.477  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.665  61.470  64.748  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.902  61.900  65.410  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.200      1.478      2.286
+REMARK INTER + INTRA:          -8.200
+REMARK INTER:                  -8.200
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.357  60.907  64.323  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.991  61.381  64.554  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.665  61.334  64.079  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.381  61.734  64.162  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.602  62.279  64.740  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.160  62.560  65.379  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.389  62.364  65.596  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.153  62.772  66.273  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.399  62.655  66.584  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.878  62.130  66.216  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      59.122  62.013  66.527  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.113  61.723  65.539  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.868  61.840  65.229  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.388      5.498      6.615
+REMARK INTER + INTRA:          -7.388
+REMARK INTER:                  -7.388
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.515  61.960  70.367  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.556  62.545  70.947  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.121  63.230  70.795  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.049  63.908  71.260  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.394  64.068  71.992  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.897  63.590  72.440  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.179  62.835  72.266  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.671  62.552  72.864  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.011  61.804  72.798  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.860  61.339  72.133  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      62.201  60.590  72.067  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      61.368  61.622  71.535  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.027  62.370  71.602  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.274      6.848      8.104
+REMARK INTER + INTRA:          -7.274
+REMARK INTER:                  -7.274
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.651  65.625  69.374  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.390  65.829  70.130  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.762  65.380  70.424  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.380  65.446  71.152  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.531  65.976  71.766  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.101  66.572  71.803  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.661  66.784  71.236  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.129  67.412  71.494  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.724  67.710  71.009  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.853  67.379  70.264  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      66.449  67.678  69.777  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      65.385  66.751  70.005  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.790  66.453  70.492  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.257      6.072      6.759
+REMARK INTER + INTRA:          -7.257
+REMARK INTER:                  -7.257
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.293  64.036  71.727  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.047  64.083  72.055  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.204  64.763  72.497  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.897  64.972  72.892  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.606  64.554  72.942  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.797  63.822  72.611  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.326  63.329  72.147  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.730  62.645  71.927  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.357  62.077  71.461  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.578  62.193  71.214  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.204  61.625  70.746  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.173  62.877  71.433  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.547  63.445  71.900  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.038      3.768      5.012
+REMARK INTER + INTRA:          -7.038
+REMARK INTER:                  -7.038
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.492  64.439  69.638  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.476  63.732  69.213  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.468  63.809  68.391  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.452  63.215  67.819  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.440  62.397  67.927  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.442  61.971  68.635  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.455  62.258  69.408  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.451  61.644  69.958  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.463  61.813  70.765  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.478  62.596  71.022  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.490  62.765  71.830  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.482  63.211  70.473  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.470  63.042  69.665  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.782     25.196     25.925
+REMARK INTER + INTRA:          -6.782
+REMARK INTER:                  -6.782
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.566  80.892  50.208  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.880  80.302  49.726  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      72.639  80.445  49.433  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      73.099  79.968  48.942  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      72.915  79.230  48.622  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      72.225  78.787  48.714  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      71.549  78.972  49.149  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.983  78.375  49.095  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.264  78.451  49.491  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.110  79.125  49.941  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      69.390  79.202  50.337  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      70.676  79.723  49.995  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.396  79.646  49.599  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.597      7.248      7.693
+REMARK INTER + INTRA:          -6.597
+REMARK INTER:                  -6.597
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.106  64.311  72.114  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.680  64.848  72.363  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.419  65.623  72.477  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.852  66.281  72.721  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.653  66.327  72.911  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.220  65.727  72.905  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.124  64.932  72.706  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.833  64.517  72.773  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.858  63.712  72.599  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.173  63.321  72.358  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      61.197  62.514  72.184  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.463  63.735  72.291  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.439  64.541  72.465  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.552      3.613      4.782
+REMARK INTER + INTRA:          -6.552
+REMARK INTER:                  -6.552
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lorcaserin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.850  64.144  69.989  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.531  63.467  70.335  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.645  63.394  71.150  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.396  62.789  71.652  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.972  62.107  71.465  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.692  61.861  70.728  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.767  62.236  69.998  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.406  61.802  69.397  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.418  62.082  68.622  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.791  62.797  68.447  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.803  63.077  67.670  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      61.152  63.232  69.047  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.140  62.951  69.823  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

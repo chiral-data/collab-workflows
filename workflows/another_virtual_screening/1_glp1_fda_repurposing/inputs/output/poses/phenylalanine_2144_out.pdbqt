@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.566      0.000      0.000
+REMARK INTER + INTRA:          -7.566
+REMARK INTER:                  -7.566
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      61.069  62.795  66.619  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      60.397  62.365  66.410  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      60.395  61.910  65.721  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      61.065  61.886  65.242  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      61.064  61.432  64.553  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      61.735  61.408  64.073  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      62.406  61.839  64.282  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      62.409  62.293  64.970  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      61.738  62.317  65.450  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      59.726  62.388  66.890  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      59.728  62.843  67.579  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      59.054  61.958  66.681  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.213      1.855      2.894
+REMARK INTER + INTRA:          -7.213
+REMARK INTER:                  -7.213
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      61.950  62.267  65.446  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      61.473  61.889  64.889  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      60.671  61.767  65.047  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      60.348  62.024  65.761  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      59.548  61.903  65.919  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      59.225  62.159  66.633  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      59.702  62.537  67.189  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      60.503  62.658  67.032  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      60.826  62.402  66.318  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      61.796  61.632  64.175  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      62.597  61.754  64.017  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      61.317  61.254  63.618  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.541      2.823      4.329
+REMARK INTER + INTRA:          -6.541
+REMARK INTER:                  -6.541
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      61.146  63.497  68.519  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      60.969  62.769  68.173  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      60.717  62.139  68.643  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      60.643  62.237  69.458  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      60.391  61.607  69.928  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      60.316  61.705  70.744  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      60.493  62.433  71.089  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      60.745  63.063  70.620  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      60.820  62.965  69.804  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      61.044  62.671  67.357  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      61.296  63.301  66.888  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      60.867  61.943  67.012  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.529      1.714      2.461
+REMARK INTER + INTRA:          -6.529
+REMARK INTER:                  -6.529
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      61.551  63.063  67.664  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      60.863  63.208  68.096  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      60.132  62.961  67.803  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      60.089  62.570  67.078  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      59.359  62.324  66.785  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      59.316  61.933  66.059  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      60.004  61.789  65.628  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      60.735  62.035  65.921  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      60.777  62.426  66.646  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      60.905  63.599  68.822  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      61.637  63.845  69.114  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      60.217  63.743  69.253  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.482      4.398      5.777
+REMARK INTER + INTRA:          -6.482
+REMARK INTER:                  -6.482
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      60.507  63.507  70.158  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      60.627  62.706  69.998  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      60.946  62.213  70.578  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      61.145  62.520  71.317  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      61.463  62.027  71.897  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      61.662  62.334  72.636  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      61.542  63.134  72.796  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      61.223  63.628  72.217  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      61.024  63.321  71.477  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      60.429  62.399  69.259  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      60.110  62.893  68.679  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      60.549  61.599  69.099  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.450      6.879      7.481
+REMARK INTER + INTRA:          -6.450
+REMARK INTER:                  -6.450
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      64.302  65.675  69.373  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      64.150  65.372  70.126  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      64.536  65.689  70.784  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      65.072  66.307  70.689  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      65.458  66.624  71.346  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      65.995  67.243  71.251  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      66.146  67.546  70.499  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      65.761  67.230  69.841  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      65.224  66.610  69.936  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      63.614  64.753  70.221  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      63.229  64.437  69.563  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      63.463  64.450  70.974  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.345      5.785      6.492
+REMARK INTER + INTRA:          -6.345
+REMARK INTER:                  -6.345
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      61.200  63.960  72.697  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      60.456  64.157  72.398  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      60.088  63.663  71.848  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      60.464  62.974  71.597  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      60.097  62.480  71.048  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      60.473  61.790  70.797  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      61.216  61.594  71.095  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      61.584  62.087  71.645  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      61.208  62.777  71.896  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      60.080  64.847  72.649  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      60.448  65.340  73.199  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      59.336  65.043  72.349  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.132     24.697     25.351
+REMARK INTER + INTRA:          -6.132
+REMARK INTER:                  -6.132
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      70.889  80.229  50.758  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      70.162  79.858  50.635  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      70.075  79.313  50.020  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      70.715  79.141  49.530  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      70.629  78.597  48.915  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      71.270  78.424  48.425  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      71.996  78.795  48.548  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      72.082  79.339  49.163  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      71.442  79.512  49.653  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      69.521  80.031  51.125  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      69.608  80.575  51.740  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      68.795  79.659  51.001  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.080      5.629      6.518
+REMARK INTER + INTRA:          -6.080
+REMARK INTER:                  -6.080
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenylalanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   PHE A   1      62.645  65.119  71.204  0.00  0.00    +0.000 NA
+ATOM      2  CA  PHE A   1      62.730  64.584  70.581  0.00  0.00    +0.000 C 
+ATOM      3  CB  PHE A   1      62.436  63.816  70.653  0.00  0.00    +0.000 C 
+ATOM      4  CG  PHE A   1      62.059  63.583  71.347  0.00  0.00    +0.000 A 
+ATOM      5  CD1 PHE A   1      61.765  62.815  71.420  0.00  0.00    +0.000 A 
+ATOM      6  CE1 PHE A   1      61.387  62.582  72.115  0.00  0.00    +0.000 A 
+ATOM      7  CZ  PHE A   1      61.302  63.116  72.738  0.00  0.00    +0.000 A 
+ATOM      8  CE2 PHE A   1      61.595  63.884  72.666  0.00  0.00    +0.000 A 
+ATOM      9  CD2 PHE A   1      61.973  64.118  71.971  0.00  0.00    +0.000 A 
+ATOM     10  C   PHE A   1      63.108  64.817  69.886  0.00  0.00    +0.000 C 
+ATOM     11  O   PHE A   1      63.401  65.586  69.814  0.00  0.00    +0.000 OA
+ATOM     12  OXT PHE A   1      63.193  64.282  69.263  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

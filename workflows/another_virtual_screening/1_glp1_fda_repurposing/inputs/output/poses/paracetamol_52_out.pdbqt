@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.720      0.000      0.000
+REMARK INTER + INTRA:          -6.720
+REMARK INTER:                  -6.720
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.722  62.502  67.631  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.142  62.418  66.926  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.886  62.765  66.845  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.817  61.986  66.301  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.237  61.902  65.597  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.913  61.471  64.973  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.333  61.386  64.268  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.076  61.733  64.187  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.496  61.649  63.481  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.401  62.165  64.810  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.981  62.249  65.516  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.305      1.249      2.720
+REMARK INTER + INTRA:          -6.305
+REMARK INTER:                  -6.305
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.373  61.660  63.892  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.001  61.933  64.576  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.408  62.426  65.099  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.221  61.713  64.738  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.850  61.986  65.421  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.071  61.766  65.583  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.699  62.039  66.267  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.105  62.531  66.789  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      59.733  62.804  67.473  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.884  62.751  66.628  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.256  62.478  65.944  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.689      1.483      1.959
+REMARK INTER + INTRA:          -5.689
+REMARK INTER:                  -5.689
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.238  63.778  68.753  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.198  63.349  68.049  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.889  63.175  67.632  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.467  63.093  67.763  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.428  62.664  67.060  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.698  62.408  66.773  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.658  61.979  66.070  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.348  61.806  65.653  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.308  61.377  64.949  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.079  62.062  65.939  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.119  62.491  66.642  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.570      7.122      7.836
+REMARK INTER + INTRA:          -5.570
+REMARK INTER:                  -5.570
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.007  65.343  71.602  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.581  65.724  71.148  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.563  65.664  70.324  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      64.174  66.164  71.517  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.748  66.544  71.063  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.340  66.984  71.431  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.914  67.365  70.977  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.896  67.305  70.155  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      66.471  67.687  69.701  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.304  66.865  69.786  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.729  66.485  70.240  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.558     24.460     25.178
+REMARK INTER + INTRA:          -5.558
+REMARK INTER:                  -5.558
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.081  80.003  51.154  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.751  79.892  50.686  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      70.358  80.452  50.695  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      69.815  79.222  50.209  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      70.484  79.111  49.741  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.548  78.441  49.264  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.219  78.330  48.796  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.825  78.889  48.805  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      72.496  78.778  48.337  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      71.762  79.559  49.282  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.092  79.670  49.750  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.546      6.315      7.424
+REMARK INTER + INTRA:          -5.546
+REMARK INTER:                  -5.546
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.250  67.812  69.904  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.714  67.267  70.213  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.422  67.364  70.979  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.469  66.624  69.756  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.933  66.079  70.065  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.689  65.437  69.609  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.152  64.892  69.918  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.861  64.989  70.683  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      63.324  64.442  70.993  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.105  65.631  71.140  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.641  66.176  70.831  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.543      3.092      5.368
+REMARK INTER + INTRA:          -5.543
+REMARK INTER:                  -5.543
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.543  62.056  67.693  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.521  62.384  68.450  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.532  63.204  68.545  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.488  61.892  69.112  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.467  62.219  69.868  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.434  61.728  70.530  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.412  62.056  71.287  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.424  62.875  71.382  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.402  63.203  72.139  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.456  63.367  70.720  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.478  63.039  69.963  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.524      4.291      5.297
+REMARK INTER + INTRA:          -5.524
+REMARK INTER:                  -5.524
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.561  63.067  72.835  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.372  63.072  72.032  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.499  63.753  71.582  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.057  62.396  71.677  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.869  62.401  70.875  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.554  61.726  70.521  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.365  61.730  69.718  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.492  62.410  69.269  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.303  62.415  68.465  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.807  63.086  69.622  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.995  63.081  70.425  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.485      6.181      6.899
+REMARK INTER + INTRA:          -5.485
+REMARK INTER:                  -5.485
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paracetamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.378  65.320  72.483  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.695  64.620  72.182  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.371  64.277  71.504  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.336  64.262  72.559  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.653  63.563  72.259  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.294  63.205  72.636  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.611  62.505  72.336  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.288  62.163  71.659  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.605  61.462  71.358  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.647  62.520  71.281  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.330  63.220  71.582  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

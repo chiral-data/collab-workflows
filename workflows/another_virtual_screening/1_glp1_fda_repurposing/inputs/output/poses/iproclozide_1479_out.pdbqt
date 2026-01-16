@@ -1,0 +1,232 @@
+MODEL 1
+REMARK VINA RESULT:    -9.019      0.000      0.000
+REMARK INTER + INTRA:          -9.019
+REMARK INTER:                  -9.019
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.840  63.574  70.354  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.223  63.496  69.628  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.951  63.863  69.503  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.878  63.050  69.026  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.261  62.971  68.299  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.915  62.525  67.698  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.188  62.158  67.822  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.298  62.447  66.970  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.952  62.000  66.369  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.335  61.922  65.642  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.989  61.476  65.040  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.372  61.397  64.313  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.100  61.765  64.188  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      62.483  61.686  63.462  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      62.445  62.211  64.791  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.063  62.289  65.517  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.459      2.444      4.710
+REMARK INTER + INTRA:          -8.459
+REMARK INTER:                  -8.459
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.300  62.323  64.376  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.115  62.056  65.135  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.203  61.258  65.324  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.844  62.589  65.703  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.659  62.322  66.462  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.388  62.854  67.031  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.301  63.651  66.842  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.203  62.587  67.790  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.932  63.120  68.359  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.747  62.853  69.118  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.476  63.385  69.687  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.291  63.118  70.446  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.379  62.320  70.636  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.194  62.054  71.394  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      60.650  61.789  70.066  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.835  62.055  69.308  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.132      5.334      6.212
+REMARK INTER + INTRA:          -8.132
+REMARK INTER:                  -8.132
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.935  62.576  71.754  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.512  63.151  71.885  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.695  63.386  72.655  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.905  63.492  71.245  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      62.482  64.069  71.375  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.875  64.409  70.735  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.693  64.175  69.967  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.452  64.986  70.866  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.845  65.327  70.226  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.422  65.903  70.356  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.816  66.244  69.716  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.393  66.820  69.847  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.575  67.054  70.616  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      66.152  67.629  70.746  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      65.181  66.712  71.256  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.605  66.137  71.126  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.970      1.730      2.326
+REMARK INTER + INTRA:          -7.970
+REMARK INTER:                  -7.970
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.594  65.205  70.830  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.484  64.794  70.123  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.129  64.629  69.637  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.728  64.548  69.904  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      62.617  64.136  69.197  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.861  63.890  68.978  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.216  64.054  69.464  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.750  63.478  68.271  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.994  63.232  68.052  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.884  62.820  67.345  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.127  62.573  67.126  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.017  62.162  66.419  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.662  61.997  65.932  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.552  61.585  65.226  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      61.418  62.243  66.152  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.529  62.655  66.858  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.958      5.333      6.461
+REMARK INTER + INTRA:          -7.958
+REMARK INTER:                  -7.958
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.326  67.626  69.851  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.745  67.287  70.328  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.573  67.615  71.065  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.338  66.619  70.067  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      64.756  66.279  70.544  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.348  65.611  70.283  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.521  65.283  69.547  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.767  65.270  70.761  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.359  64.603  70.500  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.778  64.262  70.977  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.370  63.594  70.716  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.788  63.254  71.193  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.615  63.582  71.930  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.035  63.242  72.407  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      62.024  64.250  72.190  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.605  64.590  71.714  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.687      2.552      4.785
+REMARK INTER + INTRA:          -7.687
+REMARK INTER:                  -7.687
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.115  61.261  65.367  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.885  61.968  65.724  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.924  62.676  65.301  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.615  61.967  66.503  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.384  62.675  66.861  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.114  62.673  67.640  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.075  61.967  68.062  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.883  63.381  67.997  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.613  63.380  68.777  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.383  64.087  69.134  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.113  64.086  69.914  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.882  64.794  70.271  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.921  65.501  69.849  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      59.691  66.208  70.206  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      60.191  65.501  69.069  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.422  64.795  68.712  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.214      5.353      7.204
+REMARK INTER + INTRA:          -7.214
+REMARK INTER:                  -7.214
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.114  62.058  70.804  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.094  62.804  71.154  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.418  63.055  71.555  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.751  63.300  71.102  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.732  64.048  71.452  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.389  64.544  71.401  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.064  64.293  71.000  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.370  65.291  71.751  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.027  65.787  71.699  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.008  66.535  72.049  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.665  67.031  71.997  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.645  67.778  72.347  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.969  68.029  72.748  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      62.950  68.775  73.097  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      62.312  67.532  72.799  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.331  66.785  72.450  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.913      3.348      4.551
+REMARK INTER + INTRA:          -6.913
+REMARK INTER:                  -6.913
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproclozide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.916  67.421  72.481  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.603  66.683  72.285  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.386  66.156  72.881  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.507  66.474  71.493  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      62.194  65.735  71.297  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.099  65.526  70.505  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.316  66.052  69.910  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.785  64.787  70.309  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.690  64.578  69.517  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.376  63.839  69.321  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.281  63.630  68.529  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.968  62.891  68.333  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.750  62.364  68.929  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.437  61.627  68.733  0.00  0.00    +0.000 Cl
+ATOM     15  C   UNL     1      60.846  62.575  69.721  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.159  63.312  69.917  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

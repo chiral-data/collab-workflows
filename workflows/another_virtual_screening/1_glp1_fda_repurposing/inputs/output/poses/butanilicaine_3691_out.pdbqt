@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.866      0.000      0.000
+REMARK INTER + INTRA:          -9.866
+REMARK INTER:                  -9.866
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.503  62.635  70.900  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.279  62.276  70.192  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.717  62.406  69.506  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.493  62.047  68.797  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.932  62.178  68.112  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.708  61.818  67.403  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.147  61.949  66.718  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.811  62.439  66.739  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.923  61.590  66.009  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.361  61.720  65.323  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.137  61.361  64.615  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.474  60.871  64.593  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.576  61.491  63.929  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.240  61.982  63.951  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.464  62.341  64.658  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.025  62.211  65.345  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      62.249  62.570  66.053  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.518      1.388      4.960
+REMARK INTER + INTRA:          -9.518
+REMARK INTER:                  -9.518
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.146  61.825  64.372  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.032  62.360  64.990  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.774  62.093  65.726  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.660  62.628  66.344  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.402  62.361  67.080  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.289  62.896  67.697  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.031  62.629  68.433  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.886  61.824  68.553  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.917  63.164  69.051  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.659  62.897  69.787  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.545  63.432  70.404  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.689  64.235  70.285  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.288  63.165  71.140  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.143  62.360  71.260  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.257  61.825  70.643  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.515  62.092  69.906  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      60.629  61.557  69.290  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -9.452      1.435      1.769
+REMARK INTER + INTRA:          -9.452
+REMARK INTER:                  -9.452
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.771  64.828  70.442  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.333  64.672  69.858  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.148  64.170  69.231  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.709  64.014  68.646  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.524  63.511  68.020  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.085  63.355  67.435  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.900  62.853  66.808  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.152  62.505  66.765  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.461  62.697  66.224  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.276  62.194  65.597  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.837  62.038  65.013  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.585  62.385  65.056  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.652  61.536  64.386  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.904  61.188  64.343  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.343  61.344  64.926  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.528  61.847  65.554  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      59.967  62.002  66.137  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -9.160      2.411      5.675
+REMARK INTER + INTRA:          -9.160
+REMARK INTER:                  -9.160
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.641  61.884  66.006  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.717  62.400  66.646  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.013  62.126  67.364  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.088  62.642  68.004  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.385  62.369  68.723  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.460  62.885  69.362  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.756  62.611  70.081  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.979  61.820  70.162  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.832  63.127  70.721  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.128  62.853  71.440  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.203  63.370  72.079  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.981  64.160  71.999  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.500  63.096  72.798  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.722  62.304  72.878  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.647  61.788  72.240  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.350  62.062  71.520  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      61.275  61.546  70.881  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -9.112      1.790      2.132
+REMARK INTER + INTRA:          -9.112
+REMARK INTER:                  -9.112
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.372  65.029  70.550  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.662  64.768  70.220  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.667  64.348  69.511  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.957  64.087  69.180  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.961  63.667  68.471  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.252  63.406  68.141  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.256  62.985  67.432  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.972  62.825  67.051  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.546  62.724  67.101  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.551  62.304  66.392  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.841  62.043  66.062  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.127  62.203  66.441  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.846  61.622  65.353  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.561  61.462  64.973  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.271  61.722  65.302  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.267  62.143  66.012  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      61.976  62.404  66.342  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.800      5.272      6.873
+REMARK INTER + INTRA:          -8.800
+REMARK INTER:                  -8.800
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.341  67.619  69.849  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.744  67.451  70.394  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.299  66.761  70.319  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.702  66.593  70.863  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.257  65.904  70.789  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.660  65.736  71.333  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.215  65.046  71.258  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.366  64.522  70.638  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.618  64.879  71.803  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.173  64.189  71.728  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.575  64.021  72.272  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.424  64.544  72.892  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.130  63.331  72.198  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.282  62.807  71.577  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.878  62.974  71.033  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.324  63.665  71.108  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      62.921  63.832  70.564  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.702      4.259      5.870
+REMARK INTER + INTRA:          -8.702
+REMARK INTER:                  -8.702
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.589  67.023  69.850  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.153  66.589  70.400  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.586  66.049  70.144  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.150  65.615  70.695  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.583  65.074  70.439  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.147  64.641  70.990  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.580  64.100  70.734  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.447  63.992  69.926  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.144  63.667  71.284  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.576  63.126  71.029  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.141  62.693  71.579  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.273  62.800  72.386  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.573  62.152  71.323  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.441  62.044  70.515  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.876  62.477  69.965  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.444  63.018  70.221  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      61.879  63.451  69.670  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.417      2.888      5.214
+REMARK INTER + INTRA:          -8.417
+REMARK INTER:                  -8.417
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.244  62.005  66.279  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.970  62.364  66.437  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.148  62.616  67.201  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.874  62.974  67.360  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.052  63.227  68.124  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.779  63.585  68.282  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.957  63.837  69.047  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.408  63.732  69.655  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.683  64.196  69.205  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.861  64.448  69.969  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.587  64.806  70.128  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.136  64.912  69.520  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.766  65.059  70.892  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.217  64.953  71.500  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.491  64.595  71.342  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.312  64.342  70.577  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      61.587  63.984  70.420  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.344      4.882      6.469
+REMARK INTER + INTRA:          -8.344
+REMARK INTER:                  -8.344
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butanilicaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.258  61.663  70.924  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.883  62.059  70.558  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.219  62.721  70.916  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.844  63.116  70.550  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.180  63.778  70.908  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.805  64.174  70.541  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.141  64.836  70.899  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.852  65.104  71.625  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      63.766  65.231  70.533  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.102  65.893  70.891  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.727  66.288  70.525  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.016  66.020  69.800  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.064  66.951  70.883  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.775  67.219  71.609  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.150  66.824  71.975  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.814  66.161  71.617  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      63.189  65.767  71.983  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

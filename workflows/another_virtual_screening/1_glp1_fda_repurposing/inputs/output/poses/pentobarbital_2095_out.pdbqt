@@ -1,0 +1,232 @@
+MODEL 1
+REMARK VINA RESULT:    -9.362      0.000      0.000
+REMARK INTER + INTRA:          -9.362
+REMARK INTER:                  -9.362
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.876  60.524  63.087  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.357  60.963  63.594  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.043  61.282  64.287  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.524  61.721  64.793  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.319  61.841  64.607  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.210  62.040  65.486  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.990  62.303  65.548  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.537  62.113  64.960  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.539  61.668  65.184  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.583  61.257  64.469  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.826  61.705  65.596  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.783  62.115  66.309  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.068  62.152  66.722  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.453  62.489  66.612  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.167  62.451  66.200  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.839  62.825  66.503  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.009      1.161      2.457
+REMARK INTER + INTRA:          -9.009
+REMARK INTER:                  -9.009
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.165  62.097  66.769  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.949  62.289  66.598  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.298  62.016  65.902  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.081  62.207  65.731  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.516  62.673  66.256  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.430  61.935  65.036  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.063  62.355  65.357  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.976  62.742  66.081  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.677  61.608  64.955  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.109  61.735  65.540  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.492  61.155  64.291  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.061  61.028  63.708  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.876  60.574  63.043  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.815  61.354  63.787  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.999  61.807  64.452  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.754  62.134  64.532  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.977      1.253      2.221
+REMARK INTER + INTRA:          -8.977
+REMARK INTER:                  -8.977
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.419  61.947  64.419  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.665  61.883  64.750  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.518  62.187  65.503  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.766  62.123  65.833  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.160  61.754  65.411  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.619  62.427  66.585  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.871  62.128  66.404  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.741  61.756  65.678  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.416  62.621  66.507  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.822  62.420  65.817  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.808  63.015  67.117  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.401  63.215  67.805  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.793  63.609  68.416  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.603  63.022  67.885  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.212  62.628  67.275  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.413  62.434  67.354  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.852      1.227      3.136
+REMARK INTER + INTRA:          -8.852
+REMARK INTER:                  -8.852
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.226  63.589  68.103  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.704  63.151  67.637  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.965  62.814  66.930  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.444  62.376  66.465  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.661  62.275  66.707  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.704  62.040  65.759  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.918  61.791  65.753  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.415  62.001  66.374  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.400  62.406  66.009  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.412  62.828  66.717  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.084  62.348  65.550  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.071  61.926  64.843  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.756  61.869  64.384  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.376  61.560  64.592  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.692  61.617  65.050  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.995  61.252  64.800  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.362      5.420      6.820
+REMARK INTER + INTRA:          -8.362
+REMARK INTER:                  -8.362
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.697  64.919  72.327  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.241  64.320  72.491  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.360  63.711  71.948  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.904  63.113  72.112  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.329  63.126  72.820  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.023  62.504  71.570  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.554  62.276  72.159  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.634  62.733  72.842  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.451  62.943  71.169  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.148  63.631  71.507  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.183  62.693  70.430  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.486  62.005  70.092  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.217  61.755  69.352  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.058  61.565  70.493  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.327  61.815  71.232  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.899  61.375  71.633  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.130      4.280      5.422
+REMARK INTER + INTRA:          -8.130
+REMARK INTER:                  -8.130
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.500  62.132  67.943  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.483  61.979  68.754  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.449  62.604  69.291  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.431  62.451  70.101  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.448  61.672  70.374  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.397  63.075  70.638  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.403  62.437  71.162  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.435  61.665  70.871  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.403  63.496  69.929  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.436  63.093  69.211  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.377  64.321  69.939  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.345  64.724  70.657  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.319  65.549  70.667  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.339  64.303  71.367  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.365  63.479  71.358  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.359  63.057  72.068  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.089      3.597      5.254
+REMARK INTER + INTRA:          -8.089
+REMARK INTER:                  -8.089
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.310  64.099  71.384  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.809  63.467  71.209  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.615  63.299  70.425  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.115  62.667  70.250  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.808  62.204  70.861  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.922  62.498  69.467  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.495  61.905  69.850  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.517  61.847  70.673  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.414  63.150  69.356  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.755  63.524  70.007  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.566  63.427  68.594  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.225  63.053  67.943  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.377  63.331  67.180  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.732  62.401  68.054  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.580  62.123  68.816  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.087  61.471  68.927  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.006      6.873      8.182
+REMARK INTER + INTRA:          -8.006
+REMARK INTER:                  -8.006
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.512  67.640  69.850  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.966  67.522  70.457  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.435  66.892  70.417  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.890  66.773  71.024  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.875  67.286  71.671  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.359  66.144  70.985  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.132  66.476  71.705  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.520  67.147  71.990  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.770  66.029  70.279  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.379  66.544  70.069  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      64.571  65.400  69.783  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.962  64.886  69.994  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.763  64.256  69.497  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      63.550  65.000  70.700  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      63.749  65.629  71.195  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      63.337  65.744  71.902  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

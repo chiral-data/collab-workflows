@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.478      0.000      0.000
+REMARK INTER + INTRA:          -7.478
+REMARK INTER:                  -7.478
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.549  62.471  67.768  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.246  62.826  67.501  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.525  62.664  66.742  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.110  62.148  66.249  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.390  61.987  65.490  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.086  62.341  65.224  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.367  62.180  64.465  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.951  61.664  63.973  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.255  61.310  64.239  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.975  61.472  64.999  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.660  63.341  67.993  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      61.381  63.502  68.751  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.854      1.735      3.424
+REMARK INTER + INTRA:          -6.854
+REMARK INTER:                  -6.854
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.014  61.271  65.576  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.896  62.088  65.582  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.557  62.450  66.242  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.336  61.997  66.895  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.998  62.359  67.554  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.879  63.175  67.561  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.540  63.538  68.219  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.320  63.083  68.873  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.439  62.267  68.866  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.777  61.905  68.206  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      62.116  62.542  64.930  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      62.454  62.180  64.271  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.456      5.644      6.923
+REMARK INTER + INTRA:          -6.456
+REMARK INTER:                  -6.456
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.294  64.632  70.835  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.480  64.928  70.087  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.056  65.513  70.006  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.448  65.802  70.672  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.024  66.386  70.591  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.209  66.682  69.843  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.785  67.266  69.761  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.177  67.555  70.428  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.992  67.260  71.176  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.416  66.675  71.256  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      63.088  64.639  69.421  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      62.512  64.055  69.502  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.421      3.549      5.613
+REMARK INTER + INTRA:          -6.421
+REMARK INTER:                  -6.421
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.602  61.999  68.942  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.501  62.764  69.236  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.703  62.934  70.018  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.007  62.342  70.506  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.209  62.513  71.286  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.108  63.277  71.581  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.310  63.449  72.362  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.613  62.856  72.849  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.714  62.091  72.555  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.512  61.921  71.773  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.198  63.356  68.750  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      59.996  63.185  67.969  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.316      5.938      6.793
+REMARK INTER + INTRA:          -6.316
+REMARK INTER:                  -6.316
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.836  65.754  73.215  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.459  65.438  72.552  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.718  64.721  72.234  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.352  64.321  72.578  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.610  63.605  72.260  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.234  63.289  71.597  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.492  62.573  71.279  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.126  62.173  71.624  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.502  62.489  72.287  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.244  63.206  72.604  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      58.826  65.837  72.207  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      58.568  66.553  72.525  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.149      4.267      5.039
+REMARK INTER + INTRA:          -6.149
+REMARK INTER:                  -6.149
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.725  65.645  70.578  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.829  65.281  69.844  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.031  64.482  69.805  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.130  64.046  70.499  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.332  63.248  70.460  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.436  62.884  69.726  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.639  62.085  69.686  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.737  61.650  70.381  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.634  62.013  71.114  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.431  62.812  71.153  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      59.730  65.716  69.151  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      59.528  66.514  69.190  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.116      5.663      6.384
+REMARK INTER + INTRA:          -6.116
+REMARK INTER:                  -6.116
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.780  65.608  70.780  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.647  64.862  70.449  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.096  64.352  70.791  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.677  64.585  71.462  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.126  64.075  71.803  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.994  63.331  71.473  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.443  62.820  71.813  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.024  63.054  72.485  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.157  63.798  72.815  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.708  64.308  72.474  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      64.066  64.629  69.778  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      64.617  65.139  69.437  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.037     24.599     25.013
+REMARK INTER + INTRA:          -6.037
+REMARK INTER:                  -6.037
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.660  81.003  51.556  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.235  80.342  51.300  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      69.570  79.823  50.753  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      70.329  79.963  50.462  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.664  79.444  49.915  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.240  78.784  49.660  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.574  78.265  49.113  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.334  78.406  48.822  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.758  79.066  49.077  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.422  79.585  49.624  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      68.477  80.201  51.592  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      68.142  80.720  52.138  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.964      5.957      6.756
+REMARK INTER + INTRA:          -5.964
+REMARK INTER:                  -5.964
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenoxypropazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.130  66.191  71.334  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.767  66.074  72.066  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.399  65.355  72.234  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.393  64.752  71.670  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.025  64.034  71.837  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.663  63.917  72.569  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.295  63.198  72.738  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.289  62.596  72.173  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.650  62.713  71.441  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.019  63.432  71.274  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      62.773  66.676  72.630  0.00  0.00    +0.000 NA
+ATOM     12  N   UNL     1      63.141  67.394  72.463  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

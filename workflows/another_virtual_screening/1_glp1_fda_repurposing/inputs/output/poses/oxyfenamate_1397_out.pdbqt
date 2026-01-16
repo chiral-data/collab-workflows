@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.221      0.000      0.000
+REMARK INTER + INTRA:          -9.221
+REMARK INTER:                  -9.221
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.393  61.560  65.410  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.581  61.964  66.104  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.320  62.321  66.186  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.060  62.679  66.268  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.110  62.583  66.941  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.645  63.023  67.388  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.435  63.284  68.142  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.971  63.724  68.590  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.690  63.105  68.448  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.530  62.060  65.433  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.995  61.620  64.985  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.205  61.359  64.231  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.950  61.538  63.925  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.485  61.978  64.373  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.275  62.239  65.127  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.358      1.922      3.289
+REMARK INTER + INTRA:          -8.358
+REMARK INTER:                  -8.358
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.367  62.017  66.370  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.858  61.835  65.734  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.644  62.085  65.735  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.431  62.336  65.737  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.759  61.730  64.999  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.497  61.770  64.632  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.612  61.415  63.896  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.350  61.454  63.530  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.987  61.021  63.528  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.530  62.440  66.470  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.792  62.401  66.838  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.678  62.756  67.573  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.301  63.149  67.942  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.040  63.189  67.576  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.154  62.834  66.840  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.280      5.423      6.451
+REMARK INTER + INTRA:          -8.280
+REMARK INTER:                  -8.280
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.629  63.061  72.653  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.097  63.689  72.693  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.458  63.722  72.172  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.819  63.756  71.650  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.212  64.430  72.519  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.535  64.812  72.241  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.289  65.519  72.588  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      58.612  65.900  72.310  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      59.719  65.842  73.213  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.704  63.017  71.825  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.380  62.634  72.102  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.627  61.927  71.755  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.197  61.603  71.131  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.521  61.985  70.852  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.274  62.692  71.200  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.043      5.084      7.040
+REMARK INTER + INTRA:          -8.043
+REMARK INTER:                  -8.043
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.309  66.230  71.662  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.761  65.750  71.275  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.629  65.845  70.466  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.496  65.941  69.656  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.071  65.236  70.486  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.679  65.014  69.795  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.122  64.405  69.814  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.730  64.184  69.123  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      62.959  64.019  70.525  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.184  66.454  70.447  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.578  66.676  71.137  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.134  67.285  71.117  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.297  67.671  70.407  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.904  67.450  69.716  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.348  66.841  69.736  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.032      3.258      5.699
+REMARK INTER + INTRA:          -8.032
+REMARK INTER:                  -8.032
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.514  61.772  71.696  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.233  61.859  70.926  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.968  62.596  70.665  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.703  63.333  70.403  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.795  62.271  69.925  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.480  62.747  69.330  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.307  62.423  68.591  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.992  62.899  67.995  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.450  61.622  68.449  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.141  62.920  71.402  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.456  62.445  71.999  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.629  62.769  72.737  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.486  63.568  72.880  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.171  64.045  72.284  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.998  63.720  71.545  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.862      2.055      4.370
+REMARK INTER + INTRA:          -7.862
+REMARK INTER:                  -7.862
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.553  63.789  69.615  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.753  63.489  68.873  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.812  62.674  68.760  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.872  61.858  68.647  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.009  62.799  67.967  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.159  62.155  67.474  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.356  62.279  66.682  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.506  61.635  66.189  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      61.402  63.047  66.385  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.616  62.550  69.550  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.466  63.193  70.045  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.270  63.069  70.836  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.223  62.301  71.134  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.373  61.657  70.640  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.569  61.781  69.849  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.642      3.225      4.408
+REMARK INTER + INTRA:          -7.642
+REMARK INTER:                  -7.642
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.384  61.538  69.919  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.658  61.952  70.578  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.935  62.724  70.494  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.212  63.498  70.410  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.092  62.756  71.304  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.411  63.441  71.636  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.567  63.473  72.445  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.886  64.158  72.777  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      61.406  62.819  72.922  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.778  62.693  69.686  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.460  62.008  69.353  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.303  61.977  68.544  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.465  62.629  68.067  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.783  63.315  68.399  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.940  63.346  69.208  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.578      1.558      2.447
+REMARK INTER + INTRA:          -7.578
+REMARK INTER:                  -7.578
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.112  62.319  68.349  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.718  62.751  68.703  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.301  63.103  68.237  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.884  63.456  67.771  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.665  63.399  68.917  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.352  63.852  68.852  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.716  64.148  69.531  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.403  64.601  69.466  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      62.393  63.990  70.274  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.937  62.808  67.559  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.250  62.355  67.623  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.886  62.060  66.944  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.208  62.218  66.202  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.895  62.671  66.137  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.259  62.966  66.816  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.532      3.957      4.916
+REMARK INTER + INTRA:          -7.532
+REMARK INTER:                  -7.532
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxyfenamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.490  63.099  68.887  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.275  63.879  69.044  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.114  64.113  69.819  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.952  64.348  70.594  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.959  64.880  69.554  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.741  65.466  70.093  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.587  66.232  69.828  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.369  66.818  70.367  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      59.649  66.411  69.025  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.268  63.348  70.083  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.485  62.762  69.545  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.640  61.996  69.810  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.577  61.816  70.612  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.360  62.402  71.151  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.205  63.168  70.886  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

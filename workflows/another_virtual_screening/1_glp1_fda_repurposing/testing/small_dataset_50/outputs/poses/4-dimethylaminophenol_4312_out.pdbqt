@@ -1,0 +1,207 @@
+MODEL 1
+REMARK VINA RESULT:    -6.299      0.000      0.000
+REMARK INTER + INTRA:          -6.299
+REMARK INTER:                  -6.299
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.119  62.037  66.350  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.877  62.326  66.194  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.246  62.826  66.736  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.263  62.114  65.498  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.020  62.402  65.342  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.408  62.189  64.645  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.038  61.689  64.104  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.425  61.476  63.406  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.280  61.400  64.259  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.893  61.613  64.956  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.641      1.721      2.774
+REMARK INTER + INTRA:          -5.641
+REMARK INTER:                  -5.641
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.302  61.872  64.768  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.496  61.693  64.782  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.154  61.289  64.150  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.035  61.919  65.426  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.229  61.741  65.440  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.767  61.967  66.085  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.111  62.372  66.716  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.648  62.598  67.361  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.916  62.551  66.703  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.378  62.324  66.058  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.234      6.500      7.097
+REMARK INTER + INTRA:          -5.234
+REMARK INTER:                  -5.234
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.441  64.585  71.886  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.126  64.358  72.288  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.435  64.842  72.880  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.500  63.649  72.097  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.183  63.422  72.499  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.558  62.712  72.308  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.248  62.229  71.716  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.623  61.518  71.524  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.564  62.455  71.313  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.190  63.165  71.504  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.199      7.548      8.270
+REMARK INTER + INTRA:          -5.199
+REMARK INTER:                  -5.199
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.549  65.710  70.983  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.992  66.291  71.367  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.800  66.514  72.138  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.627  66.647  70.981  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.070  67.228  71.365  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.706  67.585  70.978  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.898  67.361  70.208  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      66.534  67.719  69.821  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.455  66.781  69.823  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.820  66.424  70.210  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.104      6.748      7.756
+REMARK INTER + INTRA:          -5.104
+REMARK INTER:                  -5.104
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.095  66.889  71.643  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.826  66.958  70.865  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      66.061  67.599  70.404  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.323  66.386  70.551  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.054  66.454  69.774  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.551  65.881  69.459  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.316  65.240  69.922  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.812  64.667  69.606  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.584  65.171  70.699  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.088  65.743  71.014  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.081      5.000      5.834
+REMARK INTER + INTRA:          -5.081
+REMARK INTER:                  -5.081
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.488  62.786  72.541  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.526  63.153  71.802  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.893  63.888  71.725  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.198  62.784  71.142  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.235  63.150  70.404  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.907  62.782  69.743  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.541  62.047  69.820  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.212  61.678  69.158  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.502  61.680  70.558  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.831  62.049  71.219  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.540      6.464      7.105
+REMARK INTER + INTRA:          -4.540
+REMARK INTER:                  -4.540
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.448  65.123  71.841  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.842  64.846  71.170  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.610  64.136  70.819  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.467  65.278  70.851  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.861  65.002  70.181  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.486  65.435  69.861  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.718  66.144  70.212  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      65.344  66.577  69.892  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.325  66.421  70.883  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.700  65.988  71.202  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.537      6.209      7.107
+REMARK INTER + INTRA:          -4.537
+REMARK INTER:                  -4.537
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.240  66.402  70.368  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.622  66.235  70.889  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      64.491  66.721  71.543  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.135  65.583  70.756  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.517  65.416  71.276  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.030  64.764  71.142  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.161  64.279  70.488  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.674  63.626  70.355  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.779  64.445  69.967  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.266  65.097  70.101  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.409     11.621     12.239
+REMARK INTER + INTRA:          -4.409
+REMARK INTER:                  -4.409
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 4-dimethylaminophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.935  60.116  52.646  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.961  60.509  53.372  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.625  60.161  54.040  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.321  61.248  53.428  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.347  61.641  54.153  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.708  62.380  54.209  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.043  62.727  53.540  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      65.404  63.468  53.597  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.017  62.335  52.815  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.657  61.596  52.758  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.723      0.000      0.000
+REMARK INTER + INTRA:          -7.723
+REMARK INTER:                  -7.723
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.135  61.654  65.742  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.832  62.046  65.944  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.467  62.055  65.419  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.789  62.495  66.038  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.341  62.640  66.716  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.662  63.080  67.336  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.572  62.345  66.774  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.926  61.613  64.981  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.131  61.331  64.233  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.878  61.493  63.923  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.420  61.935  64.360  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.215  62.217  65.108  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.551      1.394      2.360
+REMARK INTER + INTRA:          -7.551
+REMARK INTER:                  -7.551
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.481  61.105  64.498  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.222  61.463  64.457  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.504  61.903  65.094  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.140  61.983  64.575  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.113  61.623  63.833  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.748  61.702  63.312  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.450  61.183  63.612  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.771  61.671  65.394  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.540  61.907  66.150  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.042  62.376  66.606  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.775  62.608  66.308  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.006  62.372  65.552  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.821      1.379      2.072
+REMARK INTER + INTRA:          -6.821
+REMARK INTER:                  -6.821
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.911  62.391  66.177  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.369  62.670  66.731  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.567  62.496  66.648  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.544  62.942  67.341  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.243  63.250  67.657  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.221  63.696  68.350  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.962  63.112  67.277  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.867  62.110  65.983  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.358  61.706  65.476  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.549  61.687  65.633  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.248  62.073  66.298  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.757  62.478  66.805  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.796      5.912      6.597
+REMARK INTER + INTRA:          -6.796
+REMARK INTER:                  -6.796
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.419  63.463  72.766  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.740  63.524  72.304  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.575  62.951  71.734  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.924  63.445  71.630  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.841  64.122  72.095  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.190  64.618  71.992  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.411  64.303  72.664  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.284  62.654  72.035  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.602  61.957  71.731  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.212  61.556  71.126  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.503  61.851  70.824  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.185  62.549  71.128  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.708      4.656      6.150
+REMARK INTER + INTRA:          -6.708
+REMARK INTER:                  -6.708
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.273  63.686  70.967  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.519  62.921  70.781  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.967  62.490  71.320  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.913  61.939  70.709  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.499  62.128  70.020  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.444  61.578  69.407  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.139  62.867  69.945  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.866  63.189  71.746  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.196  63.266  72.498  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.626  62.644  72.826  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.727  61.943  72.401  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.398  61.866  71.649  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.660      6.340      7.687
+REMARK INTER + INTRA:          -6.660
+REMARK INTER:                  -6.660
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.720  65.859  71.654  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.722  65.814  70.831  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.128  66.377  70.388  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.829  65.907  69.779  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.367  65.247  69.958  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.067  64.776  69.351  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.205  65.058  70.745  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.287  66.653  71.149  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.748  67.328  71.256  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.050  67.729  70.602  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.892  67.454  69.840  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.431  66.779  69.733  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.601      7.263      8.150
+REMARK INTER + INTRA:          -6.601
+REMARK INTER:                  -6.601
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.915  66.807  71.687  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.835  67.014  70.893  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.219  66.700  70.445  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.584  67.169  69.873  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.254  67.610  70.069  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      66.621  68.080  69.499  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      66.557  67.580  70.837  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.066  66.339  71.171  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.425  65.826  71.250  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.936  65.674  70.604  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.088  66.035  69.877  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.729  66.547  69.798  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.366     24.456     25.124
+REMARK INTER + INTRA:          -6.366
+REMARK INTER:                  -6.366
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      71.381  80.511  50.230  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.706  80.050  50.336  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.618  79.345  49.919  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      69.914  79.343  50.350  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.747  79.965  50.867  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      69.044  79.965  51.298  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      70.284  80.586  50.953  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      71.351  79.589  49.633  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      71.753  79.129  49.079  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      71.421  78.423  48.811  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.687  78.177  49.097  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      70.285  78.638  49.651  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.347     24.983     25.668
+REMARK INTER + INTRA:          -6.347
+REMARK INTER:                  -6.347
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sodium hexacyclonate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      70.979  78.067  48.649  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      71.420  78.736  48.844  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.139  79.265  49.410  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.850  79.633  49.213  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.345  79.296  48.645  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      73.056  79.663  48.446  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      72.128  78.590  48.276  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      70.525  78.713  49.413  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      69.878  78.818  49.912  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      69.843  79.475  50.410  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.457  80.027  50.409  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.104  79.922  49.909  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

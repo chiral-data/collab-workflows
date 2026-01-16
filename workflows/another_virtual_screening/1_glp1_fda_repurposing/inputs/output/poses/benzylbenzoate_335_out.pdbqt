@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.770      0.000      0.000
+REMARK INTER + INTRA:          -9.770
+REMARK INTER:                  -9.770
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.336  63.885  67.980  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.202  63.074  68.037  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.356  62.583  67.391  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.644  62.905  66.689  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.798  62.415  66.043  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.664  61.603  66.100  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.818  61.114  65.455  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.106  61.435  64.752  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.241  62.248  64.695  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.087  62.737  65.340  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.913  62.751  68.740  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.759  63.241  69.385  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.471  62.920  70.088  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.337  62.107  70.145  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.491  61.617  69.500  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.779  61.940  68.797  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.365      1.095      4.156
+REMARK INTER + INTRA:          -9.365
+REMARK INTER:                  -9.365
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.910  61.612  65.821  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.678  61.911  65.857  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.937  62.304  66.536  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.427  62.397  67.177  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.686  62.789  67.856  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.454  63.088  67.893  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.712  63.480  68.570  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.203  63.573  69.212  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.434  63.274  69.176  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.176  62.882  68.498  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.188  61.818  65.215  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.929  61.426  64.537  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.438  61.333  63.894  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.207  61.632  63.931  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.466  62.024  64.609  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.955  62.117  65.251  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.869      2.138      3.317
+REMARK INTER + INTRA:          -8.869
+REMARK INTER:                  -8.869
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.062  61.320  71.002  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.052  62.138  70.905  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.845  62.465  70.175  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.650  61.972  69.544  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.444  62.298  68.815  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.433  63.117  68.717  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.227  63.443  67.989  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.031  62.951  67.356  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.042  62.131  67.454  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.248  61.805  68.182  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.247  62.632  71.537  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.453  62.306  72.266  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.649  62.798  72.899  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.638  63.618  72.801  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.432  63.944  72.072  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.237  63.451  71.440  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.783      4.140      5.741
+REMARK INTER + INTRA:          -8.783
+REMARK INTER:                  -8.783
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.511  64.379  69.467  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.538  64.765  70.196  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.062  64.505  70.818  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.559  63.860  70.711  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.083  63.601  71.333  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.109  63.986  72.062  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.634  63.727  72.683  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.131  63.082  72.577  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.104  62.696  71.847  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.579  62.955  71.226  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.041  65.410  70.303  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.517  65.669  69.681  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.020  66.314  69.788  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.047  66.700  70.517  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.571  66.440  71.139  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.068  65.795  71.031  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.718      1.875      4.775
+REMARK INTER + INTRA:          -8.718
+REMARK INTER:                  -8.718
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.196  61.496  69.645  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.559  62.216  69.472  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.885  62.670  70.080  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.847  62.403  70.859  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.173  62.857  71.466  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.537  63.577  71.294  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.862  64.030  71.901  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.825  63.764  72.681  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.461  63.043  72.853  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.136  62.590  72.247  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.597  62.483  68.692  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.271  62.029  68.085  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.308  62.295  67.305  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.672  63.016  67.133  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.998  63.470  67.740  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.960  63.202  68.520  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.608      4.322      5.560
+REMARK INTER + INTRA:          -8.608
+REMARK INTER:                  -8.608
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.894  64.097  70.004  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.868  64.432  70.757  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.367  65.062  70.946  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.891  65.357  70.382  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.389  65.987  70.570  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.364  66.322  71.324  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.862  66.951  71.512  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.386  67.246  70.948  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.412  66.911  70.194  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.914  66.282  70.005  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.344  64.137  71.323  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.846  63.508  71.134  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.321  63.212  71.698  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.296  63.548  72.452  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.794  64.177  72.641  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.318  64.472  72.076  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.068      4.345      6.028
+REMARK INTER + INTRA:          -8.068
+REMARK INTER:                  -8.068
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.601  64.247  71.557  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.388  64.037  71.686  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.921  64.595  71.981  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.666  65.361  72.146  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.198  65.918  72.441  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.985  65.709  72.570  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.517  66.266  72.865  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.262  67.033  73.030  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.474  67.243  72.901  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.943  66.686  72.606  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.644  63.270  71.521  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.111  62.713  71.226  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.366  61.946  71.061  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.154  61.736  71.190  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.686  62.293  71.485  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.430  63.060  71.650  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.827     24.991     25.906
+REMARK INTER + INTRA:          -7.827
+REMARK INTER:                  -7.827
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      69.083  79.803  51.066  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      69.868  79.996  51.225  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      70.460  79.797  50.684  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      70.264  79.406  49.985  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.855  79.207  49.445  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.641  79.400  49.603  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      72.232  79.202  49.063  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      72.037  78.810  48.364  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.250  78.617  48.205  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.660  78.815  48.745  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.064  80.388  51.924  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      69.473  80.586  52.465  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      69.668  80.978  53.164  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.455  81.172  53.323  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      71.046  80.973  52.783  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      70.850  80.581  52.083  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.810      4.217      5.399
+REMARK INTER + INTRA:          -7.810
+REMARK INTER:                  -7.810
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzyl benzoate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.526  65.306  71.370  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.247  65.172  71.748  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.588  64.420  71.732  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.208  63.803  71.338  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.549  63.052  71.322  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.270  62.918  71.700  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.610  62.167  71.684  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.231  61.550  71.290  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.509  61.684  70.911  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.169  62.435  70.928  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.628  65.789  72.142  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.287  66.540  72.158  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.666  67.157  72.552  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.388  67.023  72.931  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.729  66.272  72.914  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.348  65.655  72.520  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

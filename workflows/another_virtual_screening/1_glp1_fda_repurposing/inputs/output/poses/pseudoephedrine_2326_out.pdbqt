@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.637      0.000      0.000
+REMARK INTER + INTRA:          -7.637
+REMARK INTER:                  -7.637
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.814  62.740  67.556  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.551  62.790  67.189  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.673  62.426  66.458  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.057  62.012  66.095  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.410  62.476  66.089  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.025  62.889  66.452  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.531  62.112  65.360  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.268  62.162  64.991  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.389  61.798  64.261  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.774  61.385  63.899  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.037  61.335  64.267  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.916  61.699  64.997  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.811      1.287      2.003
+REMARK INTER + INTRA:          -6.811
+REMARK INTER:                  -6.811
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.535  63.936  68.761  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.708  63.542  68.057  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.104  63.175  67.631  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.327  63.203  67.909  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.277  62.780  66.927  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.053  62.753  66.649  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.674  62.414  66.501  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.845  62.019  65.798  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.241  61.653  65.372  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.466  61.680  65.649  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.293  62.075  66.353  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.896  62.442  66.779  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.714      5.838      6.556
+REMARK INTER + INTRA:          -6.714
+REMARK INTER:                  -6.714
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.918  65.385  72.855  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.515  64.816  72.864  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.452  64.145  72.388  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.792  64.044  71.902  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.048  63.574  72.397  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.707  63.675  72.883  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.985  62.904  71.921  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.581  62.334  71.930  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.518  61.664  71.454  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.859  61.563  70.969  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.263  62.133  70.959  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.326  62.804  71.435  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.607      6.672      7.509
+REMARK INTER + INTRA:          -6.607
+REMARK INTER:                  -6.607
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.248  64.344  69.841  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.547  64.827  70.439  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      64.099  65.413  70.259  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.352  65.516  69.479  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.400  65.896  70.857  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.147  65.792  71.635  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.951  66.481  70.676  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.251  66.964  71.274  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.803  67.550  71.093  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.054  67.653  70.315  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.755  67.171  69.716  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.203  66.585  69.897  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.531      5.927      6.635
+REMARK INTER + INTRA:          -6.531
+REMARK INTER:                  -6.531
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.300  65.402  71.738  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.551  64.713  71.359  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.059  64.191  71.747  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.315  64.358  72.514  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.311  63.502  71.368  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.055  63.336  70.602  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.818  62.981  71.756  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.070  62.292  71.378  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.578  61.771  71.766  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.833  61.937  72.532  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.582  62.626  72.911  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.074  63.148  72.523  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.493      3.957      5.915
+REMARK INTER + INTRA:          -6.493
+REMARK INTER:                  -6.493
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.468  61.947  68.835  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.893  62.563  69.183  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.947  62.614  70.004  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.575  62.050  70.478  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.372  63.230  70.353  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.744  63.794  69.879  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.425  63.282  71.173  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.850  63.897  71.522  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.904  63.948  72.344  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.532  63.384  72.817  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.107  62.769  72.469  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.053  62.717  71.648  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.322     24.589     25.245
+REMARK INTER + INTRA:          -6.322
+REMARK INTER:                  -6.322
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.724  80.568  51.784  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      69.631  79.984  51.209  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      70.232  79.848  50.660  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.925  80.295  50.687  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.140  79.264  50.083  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      69.447  78.817  50.057  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.740  79.128  49.535  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.649  78.544  48.959  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.250  78.408  48.411  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.942  78.855  48.438  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      72.035  79.439  49.014  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.434  79.575  49.562  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.242     25.697     26.577
+REMARK INTER + INTRA:          -6.242
+REMARK INTER:                  -6.242
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      73.189  81.529  48.176  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      73.057  80.715  48.150  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      72.394  80.393  48.521  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.864  80.886  48.919  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.261  79.579  48.495  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      72.791  79.087  48.098  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      71.599  79.258  48.866  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.465  78.444  48.841  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.803  78.122  49.212  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.274  78.614  49.609  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.406  79.428  49.636  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.069  79.750  49.264  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.013     15.528     16.668
+REMARK INTER + INTRA:          -6.013
+REMARK INTER:                  -6.013
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pseudoephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.625  79.497  72.033  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.007  78.810  72.284  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      58.624  78.082  72.231  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      57.858  78.040  71.927  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.006  77.395  72.482  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.772  77.437  72.786  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      58.623  76.667  72.429  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.005  75.980  72.680  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      58.621  75.252  72.626  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      57.856  75.210  72.322  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      57.473  75.897  72.071  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      57.857  76.625  72.124  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

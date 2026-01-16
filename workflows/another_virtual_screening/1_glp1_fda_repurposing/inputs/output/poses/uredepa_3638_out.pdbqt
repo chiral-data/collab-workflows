@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.130      0.000      0.000
+REMARK INTER + INTRA:          -7.130
+REMARK INTER:                  -7.130
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.426  61.617  63.470  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.415  61.955  64.222  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.716  61.963  64.659  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.704  62.301  65.412  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.391  62.629  65.728  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.004  62.310  65.850  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      60.992  62.647  66.603  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.793  62.832  66.532  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.981  62.985  67.355  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.571  63.184  68.042  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.372  63.369  67.972  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.191  62.463  66.673  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.504  62.134  66.357  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.492  62.471  67.110  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.860      1.228      3.080
+REMARK INTER + INTRA:          -6.860
+REMARK INTER:                  -6.860
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.427  62.242  68.779  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.912  62.380  68.126  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.742  62.020  67.404  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.227  62.157  66.751  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.881  62.654  66.820  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.057  61.797  66.027  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      61.542  61.934  65.374  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.018  62.429  65.832  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.026  62.071  64.721  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.208  61.943  63.927  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.684  62.438  64.385  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.065  61.439  64.917  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.411  60.943  64.848  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.896  61.080  64.195  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.760      1.332      1.959
+REMARK INTER + INTRA:          -6.760
+REMARK INTER:                  -6.760
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.384  62.379  64.582  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.985  62.145  65.266  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.996  62.627  65.934  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.597  62.393  66.618  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.187  61.678  66.632  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.608  62.876  67.288  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      61.209  62.642  67.971  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.966  61.950  67.593  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.810  62.408  68.654  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.586  62.551  69.435  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.344  61.859  69.056  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.452  63.334  68.349  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.861  64.050  68.335  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.463  63.816  69.018  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.357      1.085      3.115
+REMARK INTER + INTRA:          -6.357
+REMARK INTER:                  -6.357
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.103  64.483  69.784  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.406  64.103  69.118  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.898  63.722  68.593  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.202  63.342  67.927  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.014  63.344  67.785  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.693  62.960  67.401  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      60.996  62.580  66.735  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.760  62.802  66.956  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.300  62.200  66.068  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.182  61.761  65.381  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.945  61.982  65.603  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.233  62.358  66.513  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.421  62.357  66.655  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.725  61.977  65.988  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.213      3.861      4.846
+REMARK INTER + INTRA:          -6.213
+REMARK INTER:                  -6.213
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.507  62.003  69.057  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.408  62.806  68.897  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.207  63.325  69.505  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.108  64.129  69.346  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.210  64.413  68.578  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      59.906  64.649  69.955  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      59.807  65.452  69.795  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      59.982  65.316  69.001  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      59.708  66.256  69.636  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.535  67.019  69.894  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.710  66.883  69.100  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.632  65.588  70.590  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.530  65.304  71.357  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.431  66.108  71.198  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.110      3.077      4.880
+REMARK INTER + INTRA:          -6.110
+REMARK INTER:                  -6.110
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.552  63.078  72.844  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.231  62.755  72.155  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.426  63.075  71.421  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.105  62.752  70.733  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.590  62.109  70.779  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.300  63.071  69.997  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      60.979  62.749  69.309  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.569  62.193  69.761  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.658  62.426  68.621  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.585  62.424  67.800  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.175  61.868  68.251  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.389  63.304  68.857  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.904  63.946  68.810  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.583  63.623  68.122  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.040      6.759      7.459
+REMARK INTER + INTRA:          -6.040
+REMARK INTER:                  -6.040
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.620  62.373  72.452  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.354  63.138  72.610  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.835  63.785  72.440  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.568  64.550  72.598  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.820  64.667  72.926  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      62.049  65.199  72.428  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      61.782  65.963  72.586  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.073  65.656  72.873  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.516  66.728  72.744  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.639  67.543  72.737  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.929  67.236  73.024  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      62.492  66.270  72.298  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.240  66.153  71.970  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.973  66.918  72.128  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.023      5.598      6.575
+REMARK INTER + INTRA:          -6.023
+REMARK INTER:                  -6.023
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.361  67.631  70.006  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.748  67.329  70.468  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.283  66.711  70.182  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.669  66.409  70.643  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.520  66.726  71.390  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      64.204  65.790  70.358  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      63.590  65.488  70.819  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      63.773  66.029  71.415  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.976  65.186  71.280  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.354  64.655  71.382  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.536  65.196  71.978  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.408  64.948  70.223  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.557  64.631  69.476  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.944  64.329  69.937  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.905      5.713      6.627
+REMARK INTER + INTRA:          -5.905
+REMARK INTER:                  -5.905
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = uredepa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.243  63.239  72.484  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.774  63.464  71.893  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.186  64.174  71.959  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.716  64.399  71.368  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.834  63.913  70.712  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      63.130  65.111  71.433  0.00  0.00    +0.000 NA
+ATOM      7  P   UNL     1      63.660  65.336  70.843  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      63.490  64.644  70.426  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      64.190  65.561  70.252  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.734  66.101  69.949  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.564  65.409  69.533  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.830  66.027  71.259  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.712  66.514  71.915  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.243  66.738  71.324  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

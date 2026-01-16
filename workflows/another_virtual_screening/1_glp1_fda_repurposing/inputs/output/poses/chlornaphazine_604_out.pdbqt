@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.720      0.000      0.000
+REMARK INTER + INTRA:          -9.720
+REMARK INTER:                  -9.720
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.146  62.016  69.263  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.658  62.384  68.732  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.735  62.093  67.964  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.248  62.462  67.432  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.684  63.121  67.670  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.607  63.411  68.438  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      62.043  64.071  68.675  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.325  62.171  66.664  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.838  62.539  66.133  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.914  62.248  65.365  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.427  62.616  64.834  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.504  62.326  64.066  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.068  61.666  63.829  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.555  61.298  64.360  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.479  61.589  65.128  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.966  61.220  65.659  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.889  61.511  66.427  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.107      2.386      4.077
+REMARK INTER + INTRA:          -9.107
+REMARK INTER:                  -9.107
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      63.117  61.670  63.098  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.393  61.527  63.465  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.236  61.852  64.207  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.510  61.709  64.575  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.943  61.242  64.199  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.100  60.918  63.457  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      60.532  60.451  63.083  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.353  62.033  65.317  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.628  61.891  65.684  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.471  62.216  66.427  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.746  62.073  66.793  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.589  62.397  67.535  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.157  62.864  67.910  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.881  63.006  67.543  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.038  62.682  66.801  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.764  62.825  66.434  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.921  62.501  65.692  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -9.099      4.381      6.488
+REMARK INTER + INTRA:          -9.099
+REMARK INTER:                  -9.099
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.037  63.920  68.878  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.396  64.162  69.579  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.008  64.715  69.559  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.368  64.958  70.262  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      63.115  64.647  70.983  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.503  64.095  71.003  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      62.251  63.785  71.725  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      63.980  65.510  70.242  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.340  65.753  70.943  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.953  66.306  70.923  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.312  66.548  71.625  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.924  67.101  71.605  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.176  67.410  70.883  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.817  67.168  70.182  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.205  66.616  70.202  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.846  66.373  69.500  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      64.233  65.821  69.519  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -9.088      3.024      5.284
+REMARK INTER + INTRA:          -9.088
+REMARK INTER:                  -9.088
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.980  62.465  67.511  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.110  62.942  68.171  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.382  62.607  68.874  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.513  63.084  69.535  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.370  63.895  69.492  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.098  64.230  68.789  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      59.955  65.042  68.747  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.785  62.749  70.238  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.915  63.225  70.899  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.188  62.891  71.602  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.318  63.368  72.262  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.590  63.033  72.965  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.733  62.221  73.007  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.603  61.745  72.347  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.330  62.080  71.644  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.200  61.602  70.984  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.928  61.937  70.281  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.952      1.869      3.623
+REMARK INTER + INTRA:          -8.952
+REMARK INTER:                  -8.952
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.408  60.754  64.169  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.874  61.294  64.582  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.662  61.523  65.345  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.129  62.063  65.759  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.807  62.375  65.409  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.019  62.146  64.645  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      62.699  62.458  64.295  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.917  62.292  66.523  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.383  62.832  66.937  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.171  63.061  67.701  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.638  63.601  68.114  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.426  63.829  68.878  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.747  63.517  69.228  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.280  62.977  68.815  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.492  62.749  68.051  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.025  62.208  67.638  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.237  61.980  66.874  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.676      5.122      6.319
+REMARK INTER + INTRA:          -8.676
+REMARK INTER:                  -8.676
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      64.646  66.413  69.481  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      64.241  66.292  70.189  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.781  65.615  70.290  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.375  65.494  70.999  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      63.430  66.050  71.605  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.890  66.727  71.504  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      63.944  67.283  72.111  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      62.915  64.816  71.100  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.509  64.695  71.808  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.049  64.017  71.910  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.644  63.897  72.618  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.184  63.220  72.720  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.130  62.664  72.112  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.535  62.784  71.405  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.995  63.462  71.303  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.400  63.582  70.595  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      62.860  64.260  70.493  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.611      3.999      5.145
+REMARK INTER + INTRA:          -8.611
+REMARK INTER:                  -8.611
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.698  67.226  68.768  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      59.683  66.727  69.423  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.878  65.930  69.339  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.863  65.429  69.996  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      59.654  65.728  70.736  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.460  66.525  70.820  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      59.251  66.822  71.561  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.057  64.632  69.912  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.042  64.132  70.567  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.236  63.334  70.483  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.221  62.835  71.140  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.416  62.038  71.056  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.624  61.741  70.315  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.639  62.240  69.659  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.445  63.037  69.743  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.460  63.536  69.086  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.266  64.334  69.170  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.589      5.289      6.714
+REMARK INTER + INTRA:          -8.589
+REMARK INTER:                  -8.589
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      66.523  68.004  69.809  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      66.178  67.455  70.318  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.508  67.037  70.081  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.163  66.487  70.590  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      65.488  66.357  71.337  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.158  66.775  71.575  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      66.482  66.644  72.322  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      64.493  66.068  70.353  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.147  65.519  70.862  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.477  65.100  70.624  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.132  64.551  71.134  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.462  64.132  70.897  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.138  64.263  70.149  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.483  64.812  69.640  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.153  65.231  69.878  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.498  65.780  69.368  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      64.168  66.199  69.605  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.354      1.781      4.077
+REMARK INTER + INTRA:          -8.354
+REMARK INTER:                  -8.354
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlornaphazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.212  62.067  66.474  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      59.958  62.379  66.631  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.142  62.646  67.390  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.889  62.959  67.549  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.452  63.004  66.948  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.269  62.737  66.189  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      61.833  62.783  65.588  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.073  63.225  68.307  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.819  63.538  68.466  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.003  63.804  69.225  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.750  64.117  69.382  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.934  64.383  70.141  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.369  64.338  70.742  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.623  64.026  70.584  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.440  63.759  69.825  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.692  63.447  69.668  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.509  63.180  68.909  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

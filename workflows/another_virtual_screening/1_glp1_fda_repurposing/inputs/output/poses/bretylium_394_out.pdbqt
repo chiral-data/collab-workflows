@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.930      0.000      0.000
+REMARK INTER + INTRA:          -7.930
+REMARK INTER:                  -7.930
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.528  63.059  68.035  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.070  63.009  67.416  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.905  62.536  66.760  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.626  62.751  66.422  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.184  62.320  67.097  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.740  62.062  66.104  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.282  62.012  65.485  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.118  61.539  64.830  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      60.411  61.116  64.795  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      61.660  61.489  64.210  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.367  61.913  64.246  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.532  62.386  64.901  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.990  62.436  65.521  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.909      1.197      2.966
+REMARK INTER + INTRA:          -7.909
+REMARK INTER:                  -7.909
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.450  61.643  63.850  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.706  61.611  64.203  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.588  61.943  64.950  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.795  61.715  64.927  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.380  62.170  64.973  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.471  62.274  65.697  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.726  62.243  66.049  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.608  62.573  66.795  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      61.236  62.936  67.189  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      59.863  62.542  67.148  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.236  62.180  66.755  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.353  61.848  66.008  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.098  61.880  65.655  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.141      1.508      2.331
+REMARK INTER + INTRA:          -7.141
+REMARK INTER:                  -7.141
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.243  63.971  69.415  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.679  63.625  68.924  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.907  63.287  68.206  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.122  63.083  68.052  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.691  63.492  68.360  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.135  62.950  67.488  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.570  62.604  66.997  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.798  62.267  66.280  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      61.591  62.275  66.055  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      60.233  61.921  65.788  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.440  61.913  66.014  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.211  62.251  66.732  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.776  62.596  67.223  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.857      7.000      7.642
+REMARK INTER + INTRA:          -6.857
+REMARK INTER:                  -6.857
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.405  66.075  72.637  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.099  66.482  72.460  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.473  66.366  71.733  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      64.061  66.903  71.948  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.885  65.829  71.518  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.846  66.250  71.006  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.541  66.656  70.830  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.914  66.541  70.103  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      64.591  66.017  69.553  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      65.609  66.948  69.927  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.932  67.471  70.476  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.559  67.587  71.204  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.864  67.180  71.380  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.846      3.726      5.708
+REMARK INTER + INTRA:          -6.846
+REMARK INTER:                  -6.846
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.226  62.507  68.416  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.541  62.202  69.113  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.581  62.674  69.790  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.923  62.049  70.206  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.239  63.298  69.374  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.621  63.146  70.466  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.936  62.840  71.164  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.976  63.311  71.840  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      60.700  64.088  71.817  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      61.293  63.006  72.538  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.569  62.229  72.560  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.529  61.757  71.884  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.213  62.063  71.186  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.829      5.569      6.467
+REMARK INTER + INTRA:          -6.829
+REMARK INTER:                  -6.829
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.185  65.601  72.385  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.336  64.936  71.921  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.925  64.403  72.143  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      59.760  63.942  71.479  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.091  64.863  72.807  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.515  63.870  72.365  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.666  63.205  71.901  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.255  62.672  72.123  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      61.693  62.805  72.809  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      61.406  62.007  71.659  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.968  61.875  70.973  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.378  62.408  70.750  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.227  63.073  71.215  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.614      5.449      6.491
+REMARK INTER + INTRA:          -6.614
+REMARK INTER:                  -6.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.550  64.977  69.506  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.163  64.353  69.880  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.772  64.480  70.596  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.549  63.686  70.616  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.994  65.274  70.576  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.381  64.607  71.312  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.994  63.983  71.687  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.604  64.109  72.402  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      61.602  64.861  72.743  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      61.216  63.485  72.777  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.219  62.734  72.436  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.609  62.607  71.720  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.997  63.231  71.346  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.579      3.725      4.939
+REMARK INTER + INTRA:          -6.579
+REMARK INTER:                  -6.579
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.522  63.394  72.834  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.292  62.891  72.223  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.160  63.193  71.466  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.969  62.437  71.196  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.351  63.949  71.735  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.029  63.496  70.709  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.798  62.992  70.099  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.667  63.294  69.342  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      60.766  64.100  69.198  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      60.436  62.790  68.731  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.337  61.985  68.876  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.468  61.682  69.633  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.699  62.186  70.244  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.573      6.910      7.530
+REMARK INTER + INTRA:          -6.573
+REMARK INTER:                  -6.573
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bretylium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.882  67.475  72.913  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.004  66.661  72.886  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.379  66.155  72.697  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.880  65.505  72.774  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.877  66.805  72.619  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.753  65.650  72.508  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.876  64.836  72.481  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.251  64.330  72.293  0.00  0.00    +0.000 A 
+ATOM      9 BR   UNL     1      59.505  64.642  72.131  0.00  0.00    +0.000 Br
+ATOM     10  C   UNL     1      60.374  63.515  72.265  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.120  63.205  72.427  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.745  63.709  72.616  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.623  64.524  72.643  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

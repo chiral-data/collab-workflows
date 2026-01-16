@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.010      0.000      0.000
+REMARK INTER + INTRA:          -9.010
+REMARK INTER:                  -9.010
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.131  61.988  70.836  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.462  61.708  70.135  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.525  62.208  69.481  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.857  61.928  68.779  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.919  62.428  68.125  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.251  62.148  67.423  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.314  62.647  66.770  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.045  63.425  66.818  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.645  62.368  66.067  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.708  62.867  65.414  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.039  62.587  64.711  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.308  61.809  64.663  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.639  61.530  63.962  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.245  61.310  65.317  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.914  61.589  66.019  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.590      1.403      4.427
+REMARK INTER + INTRA:          -8.590
+REMARK INTER:                  -8.590
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.373  62.003  63.982  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.097  61.767  64.722  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.974  62.328  65.313  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.698  62.093  66.055  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.574  62.654  66.646  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.298  62.418  67.388  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.175  62.980  67.979  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.327  63.776  67.830  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.898  62.744  68.720  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.775  63.306  69.312  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.499  63.070  70.053  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.346  62.273  70.202  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.071  62.038  70.943  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.470  61.712  69.610  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.746  61.947  68.870  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.867      5.365      6.235
+REMARK INTER + INTRA:          -7.867
+REMARK INTER:                  -7.867
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.888  63.270  72.429  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.560  63.747  72.460  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.869  64.067  71.765  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.543  64.544  71.795  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.852  64.865  71.101  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.525  65.342  71.131  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.834  65.662  70.437  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.472  65.506  69.714  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.508  66.139  70.467  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.817  66.459  69.773  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.490  66.936  69.803  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.853  67.092  70.527  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      66.525  67.569  70.557  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      65.543  66.772  71.221  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.870  66.295  71.192  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.817      1.878      2.496
+REMARK INTER + INTRA:          -7.817
+REMARK INTER:                  -7.817
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.625  63.071  72.836  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.211  62.833  72.164  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.477  63.056  71.416  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.063  62.818  70.742  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.330  63.041  69.994  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.915  62.803  69.321  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.182  63.026  68.573  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.861  63.487  68.498  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.768  62.788  67.900  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.034  63.011  67.152  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.620  62.773  66.479  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.940  62.311  66.554  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      59.526  62.074  65.882  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.674  62.089  67.303  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.088  62.326  67.975  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.713      2.422      4.999
+REMARK INTER + INTRA:          -7.713
+REMARK INTER:                  -7.713
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.385  62.016  65.852  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.383  61.998  66.677  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.990  62.367  67.097  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.988  62.350  67.923  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.595  62.718  68.343  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.593  62.701  69.169  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.200  63.069  69.589  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.807  63.454  69.186  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.198  63.052  70.415  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.805  63.420  70.835  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.803  63.403  71.661  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.196  63.018  72.064  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.194  63.001  72.889  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.589  62.650  71.643  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.591  62.667  70.818  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.707      4.789      6.481
+REMARK INTER + INTRA:          -7.707
+REMARK INTER:                  -7.707
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.150  67.626  69.867  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.580  67.278  70.351  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.185  66.598  70.099  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.615  66.250  70.583  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.220  65.570  70.331  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.650  65.221  70.815  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.255  64.542  70.563  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.431  64.212  69.829  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.685  64.193  71.047  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.291  63.514  70.796  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.720  63.165  71.280  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.544  63.496  72.015  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.974  63.148  72.498  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.939  64.176  72.266  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.509  64.524  71.783  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.235      4.796      6.046
+REMARK INTER + INTRA:          -7.235
+REMARK INTER:                  -7.235
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.066  67.430  73.008  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.571  66.787  73.115  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.709  66.264  72.492  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.215  65.620  72.599  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.353  65.098  71.976  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.859  64.454  72.082  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.997  63.931  71.459  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.631  64.051  70.731  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.503  63.287  71.566  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.642  62.765  70.943  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.147  62.121  71.050  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.514  62.001  71.779  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.019  61.358  71.885  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.375  62.524  72.401  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.870  63.167  72.295  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.155      5.290      6.835
+REMARK INTER + INTRA:          -7.155
+REMARK INTER:                  -7.155
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.145  69.137  73.146  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.768  68.407  73.220  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.938  67.800  72.688  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.560  67.070  72.762  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.731  66.463  72.230  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.353  65.732  72.303  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.524  65.125  71.771  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.070  65.248  71.167  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.146  64.395  71.845  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.316  63.788  71.313  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.939  63.057  71.386  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.392  62.934  71.992  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.015  62.205  72.065  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.223  63.542  72.524  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.599  64.272  72.450  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.096      5.847      7.466
+REMARK INTER + INTRA:          -7.096
+REMARK INTER:                  -7.096
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bamethan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.095  61.498  71.993  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.422  61.971  72.063  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.497  62.762  72.282  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.825  63.236  72.353  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.900  64.028  72.572  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.227  64.501  72.642  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.302  65.293  72.861  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.047  65.611  73.010  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.629  65.767  72.931  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.704  66.558  73.150  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.032  67.032  73.220  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      58.285  66.714  73.071  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      57.614  67.187  73.142  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      58.212  65.922  72.852  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      58.883  65.448  72.782  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

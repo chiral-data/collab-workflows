@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.661      0.000      0.000
+REMARK INTER + INTRA:          -4.661
+REMARK INTER:                  -4.661
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.586  61.666  63.551  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.923  61.636  64.039  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.231  61.273  63.774  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.949  61.970  64.793  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.286  61.941  65.281  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.312  62.274  66.035  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.648  62.245  66.524  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      62.005  62.638  66.300  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.632      0.094      2.609
+REMARK INTER + INTRA:          -4.632
+REMARK INTER:                  -4.632
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.583  62.378  66.508  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.256  62.378  66.032  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.946  62.747  66.293  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.241  62.008  65.295  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.914  62.008  64.819  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.898  61.639  64.082  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.571  61.639  63.605  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.207  61.269  63.820  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.293      1.405      2.411
+REMARK INTER + INTRA:          -4.293
+REMARK INTER:                  -4.293
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.049  62.248  66.555  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.667  62.010  66.064  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.515  61.516  65.420  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.437  62.265  66.215  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.054  62.027  65.723  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.824  62.282  65.875  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.442  62.044  65.383  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.975  62.777  66.519  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.208      1.850      2.535
+REMARK INTER + INTRA:          -4.208
+REMARK INTER:                  -4.208
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.187  62.465  65.996  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.507  62.627  66.433  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.553  63.098  67.108  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.780  62.318  66.195  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.099  62.480  66.631  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.373  62.171  66.393  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      58.692  62.332  66.830  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      59.327  61.699  65.717  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.105      7.105      8.220
+REMARK INTER + INTRA:          -4.105
+REMARK INTER:                  -4.105
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.852  67.373  70.979  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.274  67.370  70.390  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.325  67.899  69.760  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.645  66.837  70.432  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.068  66.834  69.843  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.440  66.302  69.885  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.861  66.298  69.296  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      64.388  65.772  70.516  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.010      2.162      2.641
+REMARK INTER + INTRA:          -4.010
+REMARK INTER:                  -4.010
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.140  61.672  65.417  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.818  62.016  66.094  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.002  62.003  66.215  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.311  62.374  66.650  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.990  62.718  67.326  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.483  63.076  67.882  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.161  63.420  68.559  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.300  63.090  67.760  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.000      3.566      5.148
+REMARK INTER + INTRA:          -4.000
+REMARK INTER:                  -4.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.035  62.263  71.251  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.633  61.967  70.594  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.062  61.380  70.691  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.803  62.257  69.841  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.401  61.961  69.184  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.571  62.251  68.432  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.169  61.956  67.774  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.143  62.839  68.335  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.912     24.760     25.618
+REMARK INTER + INTRA:          -3.912
+REMARK INTER:                  -3.912
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      70.177  78.199  49.477  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.703  78.832  49.515  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      70.548  79.468  50.017  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.385  78.831  49.050  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.911  79.464  49.088  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      72.592  79.463  48.624  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      73.119  80.097  48.661  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      72.748  78.826  48.121  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.911      5.718      6.698
+REMARK INTER + INTRA:          -3.911
+REMARK INTER:                  -3.911
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = succinic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.156  61.366  70.579  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.500  62.097  70.742  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.493  62.693  70.172  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.853  62.233  71.476  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.197  62.964  71.640  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.549  63.099  72.373  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.894  63.830  72.537  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.557  62.502  72.943  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

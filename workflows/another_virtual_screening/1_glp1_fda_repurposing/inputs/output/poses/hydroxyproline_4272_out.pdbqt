@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.022      0.000      0.000
+REMARK INTER + INTRA:          -5.022
+REMARK INTER:                  -5.022
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      61.448  61.222  63.575  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      61.655  61.633  64.260  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      62.325  62.104  64.360  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      62.311  62.408  65.126  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      61.632  62.125  65.500  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      61.226  61.647  64.965  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      61.400  62.293  66.275  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      61.865  62.783  66.747  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      60.704  61.969  66.575  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.957      0.821      2.483
+REMARK INTER + INTRA:          -4.957
+REMARK INTER:                  -4.957
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      61.960  62.755  66.636  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      61.716  62.361  65.953  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      60.993  61.977  65.847  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      60.982  61.662  65.086  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      61.698  61.850  64.721  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      62.151  62.282  65.256  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      61.920  61.642  63.953  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      61.406  61.206  63.479  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      62.657  61.871  63.662  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.466      1.625      2.839
+REMARK INTER + INTRA:          -4.466
+REMARK INTER:                  -4.466
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      60.510  62.092  68.602  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      60.750  62.369  67.863  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      60.586  63.113  67.547  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      60.931  63.154  66.799  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      61.309  62.435  66.653  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      61.197  61.950  67.309  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      61.726  62.237  65.968  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      61.791  62.783  65.353  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      62.076  61.494  65.899  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.345      6.922      7.921
+REMARK INTER + INTRA:          -4.345
+REMARK INTER:                  -4.345
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      64.379  65.075  70.799  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      64.725  65.730  70.435  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      64.565  66.001  69.673  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      65.033  66.666  69.536  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      65.482  66.806  70.214  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      65.292  66.228  70.770  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      66.026  67.419  70.318  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      66.159  67.959  69.709  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      66.436  67.489  71.029  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.266      7.126      8.160
+REMARK INTER + INTRA:          -4.266
+REMARK INTER:                  -4.266
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      66.770  67.258  71.523  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      66.230  67.155  70.909  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      66.245  67.539  70.179  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      65.604  67.271  69.736  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      65.192  66.720  70.191  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      65.578  66.649  70.916  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      64.511  66.313  69.962  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      64.186  66.443  69.215  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      64.157  65.777  70.478  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.255      2.301      2.848
+REMARK INTER + INTRA:          -4.255
+REMARK INTER:                  -4.255
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      60.093  62.186  66.099  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      60.447  62.385  66.818  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      61.073  62.911  66.921  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      61.249  62.944  67.726  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      60.730  62.439  68.121  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      60.234  62.093  67.560  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      60.711  62.303  68.935  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      61.245  62.691  69.429  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      60.159  61.780  69.252  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.234     15.776     16.621
+REMARK INTER + INTRA:          -4.234
+REMARK INTER:                  -4.234
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      58.627  74.765  72.472  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      58.591  75.587  72.415  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      58.009  76.021  72.024  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      58.188  76.822  72.107  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      58.882  76.883  72.550  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      59.131  76.121  72.740  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      59.260  77.585  72.764  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      58.944  78.310  72.532  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      59.952  77.560  73.210  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.091      5.583      6.419
+REMARK INTER + INTRA:          -4.091
+REMARK INTER:                  -4.091
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      60.289  61.639  70.204  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      60.551  62.243  70.701  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      60.514  63.052  70.543  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      60.836  63.453  71.187  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      61.073  62.892  71.744  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      60.897  62.144  71.444  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      61.424  63.051  72.474  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      61.567  63.831  72.701  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      61.632  62.431  72.975  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.020      4.086      5.429
+REMARK INTER + INTRA:          -4.020
+REMARK INTER:                  -4.020
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydroxyproline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  OD  HYP A   1      60.498  63.052  71.757  0.00  0.00    +0.000 OA
+ATOM      2  CG  HYP A   1      60.498  62.629  71.048  0.00  0.00    +0.000 C 
+ATOM      3  CD  HYP A   1      60.500  61.808  70.973  0.00  0.00    +0.000 C 
+ATOM      4  N   HYP A   1      60.499  61.626  70.169  0.00  0.00    +0.000 NA
+ATOM      5  CA  HYP A   1      60.497  62.334  69.747  0.00  0.00    +0.000 C 
+ATOM      6  CB  HYP A   1      60.497  62.955  70.289  0.00  0.00    +0.000 C 
+ATOM      7  C   HYP A   1      60.496  62.409  68.925  0.00  0.00    +0.000 C 
+ATOM      8  O   HYP A   1      60.497  61.735  68.450  0.00  0.00    +0.000 OA
+ATOM      9  OXT HYP A   1      60.495  63.157  68.579  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

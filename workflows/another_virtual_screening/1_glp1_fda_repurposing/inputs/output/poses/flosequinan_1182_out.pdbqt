@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.592      0.000      0.000
+REMARK INTER + INTRA:          -8.592
+REMARK INTER:                  -8.592
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.554  61.527  65.552  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.235  61.886  65.850  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.223  62.236  66.596  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.904  62.596  66.894  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.596  62.604  66.445  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.276  62.963  66.743  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.608  62.254  65.699  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.300  62.262  65.250  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.312  61.912  64.504  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.631  61.552  64.206  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      61.643  61.202  63.459  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      60.939  61.544  64.654  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.926  61.894  65.401  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      60.891  62.946  67.641  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      60.199  62.938  68.090  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.572  63.306  67.939  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.268      2.208      3.268
+REMARK INTER + INTRA:          -8.268
+REMARK INTER:                  -8.268
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.003  63.096  66.660  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.557  62.637  66.140  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.898  62.353  65.445  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.451  61.893  64.924  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.664  61.720  65.098  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.218  61.261  64.578  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.323  62.004  65.793  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.536  61.831  65.968  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.195  62.116  66.662  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.641  62.575  67.183  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      59.300  62.859  67.879  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      60.428  62.748  67.009  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.770  62.464  66.314  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      61.793  61.609  64.229  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      62.580  61.782  64.054  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.347  61.150  63.708  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.776      3.234      4.845
+REMARK INTER + INTRA:          -7.776
+REMARK INTER:                  -7.776
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.099  64.140  69.747  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.612  63.517  69.513  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.435  63.409  68.715  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.947  62.785  68.481  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.637  62.270  69.045  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.150  61.647  68.811  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.814  62.378  69.843  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.504  61.863  70.408  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.680  61.971  71.206  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.168  62.595  71.441  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      61.344  62.703  72.240  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      61.478  63.110  70.876  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.302  63.002  70.078  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      60.771  62.678  67.682  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      61.081  63.193  67.117  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.284  62.054  67.448  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.633      4.339      5.255
+REMARK INTER + INTRA:          -7.633
+REMARK INTER:                  -7.633
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.585  63.076  72.319  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.697  63.247  71.520  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.218  63.846  71.296  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.331  64.017  70.496  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.923  63.590  69.922  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.035  63.761  69.123  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.402  62.991  70.145  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.993  62.563  69.571  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.472  61.964  69.794  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.360  61.793  70.594  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      59.838  61.193  70.818  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      60.768  62.220  71.169  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.289  62.820  70.945  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      62.852  64.617  70.273  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      63.261  65.045  70.848  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.965  64.788  69.474  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.603      4.050      4.948
+REMARK INTER + INTRA:          -7.603
+REMARK INTER:                  -7.603
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.617  63.795  68.679  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.609  63.677  69.495  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.999  64.206  69.992  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.991  64.088  70.810  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.592  63.440  71.128  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.583  63.322  71.945  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.202  62.911  70.631  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.803  62.263  70.949  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.412  61.733  70.452  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.421  61.852  69.635  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      60.030  61.321  69.138  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      60.819  62.499  69.317  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.210  63.029  69.814  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      62.381  64.618  71.307  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      62.780  65.266  70.989  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.373  64.500  72.123  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.593      6.582      7.519
+REMARK INTER + INTRA:          -7.593
+REMARK INTER:                  -7.593
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.447  65.444  69.435  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.312  65.824  70.154  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.695  65.578  70.641  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.560  65.959  71.362  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.043  66.585  71.593  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      63.909  66.965  72.313  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.661  66.831  71.106  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.146  67.458  71.338  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.764  67.704  70.851  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.898  67.323  70.130  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      66.517  67.570  69.643  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      65.415  66.697  69.899  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.796  66.450  70.386  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      62.941  65.712  71.849  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      62.457  65.085  71.617  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.807  66.092  72.568  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.569      6.257      7.224
+REMARK INTER + INTRA:          -7.569
+REMARK INTER:                  -7.569
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.676  66.621  72.143  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.876  66.236  71.441  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.458  65.566  71.205  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.658  65.180  70.503  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.277  65.466  70.038  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      64.477  65.080  69.337  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.695  66.136  70.275  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.314  66.421  69.810  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.733  67.091  70.046  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.532  67.477  70.749  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      65.951  68.148  70.985  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      64.913  67.192  71.213  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.494  66.521  70.977  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      63.239  64.510  70.267  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      62.620  64.224  70.731  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      63.440  64.125  69.565  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.506      5.041      5.878
+REMARK INTER + INTRA:          -7.506
+REMARK INTER:                  -7.506
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.278  64.913  72.067  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.434  64.409  71.432  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.220  64.632  70.668  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.376  64.128  70.032  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.746  63.403  70.162  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.902  62.900  69.527  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.960  63.181  70.927  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.331  62.455  71.057  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.545  62.232  71.822  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.389  62.736  72.457  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      61.603  62.513  73.222  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      61.018  63.461  72.327  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.804  63.684  71.562  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      60.161  64.351  69.267  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      59.791  65.077  69.137  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.317  63.848  68.632  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.253      6.691      7.253
+REMARK INTER + INTRA:          -7.253
+REMARK INTER:                  -7.253
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flosequinan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.012  65.508  72.879  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.258  65.327  72.598  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.708  65.929  72.477  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.952  65.748  72.196  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.749  64.966  72.035  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      58.995  64.785  71.754  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.299  64.364  72.155  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.096  63.580  71.995  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.646  62.978  72.115  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.401  63.159  72.397  0.00  0.00    +0.000 A 
+ATOM     11  F   UNL     1      61.951  62.556  72.517  0.00  0.00    +0.000 F 
+ATOM     12  C   UNL     1      61.605  63.942  72.557  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.054  64.545  72.437  0.00  0.00    +0.000 A 
+ATOM     14  S   UNL     1      59.402  66.351  72.076  0.00  0.00    +0.000 S 
+ATOM     15  C   UNL     1      59.605  67.135  72.236  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      58.648  66.171  71.794  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.338      0.000      0.000
+REMARK INTER + INTRA:          -7.338
+REMARK INTER:                  -7.338
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.332  63.620  68.978  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.900  63.521  68.388  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.661  63.823  68.492  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.707  63.119  67.693  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.274  63.019  67.103  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.081  62.617  66.408  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.649  62.518  65.819  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.455  62.116  65.124  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.023  62.016  64.534  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.829  61.614  63.839  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.783  62.318  64.638  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.320  62.316  66.305  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.753  62.416  66.896  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.946  62.817  67.589  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      58.992  62.114  66.792  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.310      0.830      3.306
+REMARK INTER + INTRA:          -7.310
+REMARK INTER:                  -7.310
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.030  61.232  64.607  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.452  61.616  65.203  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.277  61.641  65.174  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.050  61.976  65.827  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.473  62.360  66.423  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.070  62.720  67.048  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.493  63.103  67.643  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.090  63.463  68.268  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.513  63.847  68.863  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.111  64.207  69.488  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.337  63.872  68.834  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.246  62.695  67.076  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.824  62.310  66.480  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.226  61.951  65.856  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.000  62.286  66.509  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.249      1.294      2.044
+REMARK INTER + INTRA:          -7.249
+REMARK INTER:                  -7.249
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.502  62.426  70.292  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.523  62.056  69.555  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.157  61.324  69.450  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.910  62.418  68.922  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.931  62.048  68.185  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.318  62.410  67.553  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.339  62.040  66.816  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.727  62.402  66.183  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.747  62.032  65.447  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.135  62.394  64.814  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.381  61.300  65.342  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.685  63.142  67.658  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.663  63.512  68.395  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.276  63.150  69.027  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.029  64.244  68.500  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.808      1.715      4.037
+REMARK INTER + INTRA:          -6.808
+REMARK INTER:                  -6.808
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.787  62.421  65.811  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.632  62.162  66.579  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      58.944  61.738  66.741  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.168  62.328  67.185  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.013  62.070  67.953  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.548  62.235  68.560  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.393  61.977  69.327  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.928  62.143  69.934  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.773  61.884  70.702  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.308  62.050  71.308  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.084  61.460  70.864  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.237  62.659  68.398  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.390  62.918  67.629  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.856  62.752  67.023  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.079  63.342  67.467  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.688      1.551      3.970
+REMARK INTER + INTRA:          -6.688
+REMARK INTER:                  -6.688
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.300  61.731  66.501  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.155  62.512  66.722  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.274  63.123  66.180  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.893  62.683  67.486  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.749  63.464  67.707  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.486  63.635  68.471  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.342  64.416  68.692  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.079  64.587  69.456  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.935  65.368  69.677  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.672  65.539  70.441  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.053  65.979  69.135  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.367  63.024  69.013  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.512  62.242  68.790  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.774  62.072  68.028  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.394  61.632  69.332  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.623      2.456      4.085
+REMARK INTER + INTRA:          -6.623
+REMARK INTER:                  -6.623
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.537  67.254  70.377  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.660  66.757  69.730  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.685  67.070  68.967  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.758  65.945  69.847  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.881  65.448  69.201  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.979  64.637  69.318  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.102  64.139  68.672  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.200  63.328  68.789  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.323  62.830  68.143  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.421  62.019  68.260  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.348  63.143  67.380  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.953  64.324  70.081  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.830  64.823  70.727  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.732  65.633  70.610  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.805  64.510  71.490  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.602      1.689      2.757
+REMARK INTER + INTRA:          -6.602
+REMARK INTER:                  -6.602
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.913  64.252  71.291  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.056  64.300  70.480  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.920  65.008  70.078  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.335  63.640  70.071  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.478  63.688  69.260  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.758  63.028  68.851  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.901  63.076  68.040  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.181  62.416  67.631  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.324  62.464  66.820  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.603  61.804  66.411  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.188  63.172  66.418  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.894  62.321  69.253  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.751  62.274  70.064  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.471  62.933  70.473  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.887  61.566  70.466  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.499      1.904      4.036
+REMARK INTER + INTRA:          -6.499
+REMARK INTER:                  -6.499
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.106  62.750  67.039  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.862  62.861  67.351  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.507  62.469  67.020  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.971  63.365  67.996  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.726  63.476  68.309  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.836  63.980  68.954  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.591  64.091  69.266  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.701  64.594  69.911  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.456  64.705  70.223  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.565  65.209  70.868  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.102  64.313  69.892  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.190  64.372  69.285  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.435  64.260  68.972  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.325  63.757  68.328  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.789  64.652  69.303  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.487      3.133      4.587
+REMARK INTER + INTRA:          -6.487
+REMARK INTER:                  -6.487
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.499  62.035  70.558  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.183  62.426  70.803  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.503  62.271  71.547  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.547  62.972  70.302  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.231  63.363  70.546  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.595  63.909  70.045  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.279  64.300  70.290  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.643  64.846  69.789  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.327  65.237  70.034  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.691  65.783  69.533  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.647  65.083  70.778  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.275  64.064  69.301  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.590  63.672  69.058  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.227  63.127  69.557  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.270  63.827  68.313  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

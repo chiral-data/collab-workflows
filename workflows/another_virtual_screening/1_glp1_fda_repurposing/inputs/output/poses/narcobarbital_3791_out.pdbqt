@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.609      0.000      0.000
+REMARK INTER + INTRA:          -9.609
+REMARK INTER:                  -9.609
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.447  62.422  65.202  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.748  62.025  65.016  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.705  61.565  64.332  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.094  62.087  65.513  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.785  61.589  64.933  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.254  61.361  64.293  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      60.946  60.863  63.712  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      62.022  61.489  64.020  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.629  62.563  65.921  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.391  62.674  65.625  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.403  62.929  66.625  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.641  62.818  66.921  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.414  63.185  67.626  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.105  62.342  66.513  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      59.342  62.231  66.809  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.331  61.976  65.809  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      59.795  61.499  65.401  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.313      1.415      2.547
+REMARK INTER + INTRA:          -9.313
+REMARK INTER:                  -9.313
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.657  62.839  66.477  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.999  62.431  66.193  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.297  62.425  66.627  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.043  62.029  65.474  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.262  61.863  65.683  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.952  62.159  66.388  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      59.172  61.994  66.598  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      60.206  62.622  67.023  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.808  62.334  65.514  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.035  62.794  66.160  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.346  62.180  64.908  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.119  61.720  64.262  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.657  61.566  63.655  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.353  61.414  64.222  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      61.125  60.954  63.576  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.815  61.569  64.828  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      60.049  61.263  64.788  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.430      5.876      6.661
+REMARK INTER + INTRA:          -8.430
+REMARK INTER:                  -8.430
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.644  62.674  72.658  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.130  62.749  72.018  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.103  62.161  71.439  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.643  63.411  71.955  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.419  63.006  71.273  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.770  62.281  71.091  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      60.546  61.874  70.409  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      61.339  61.777  71.412  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.036  63.588  72.659  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.600  63.067  72.957  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.864  64.286  73.064  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.299  64.807  72.765  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.127  65.506  73.170  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      59.906  64.631  72.061  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      59.340  65.153  71.761  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.078  63.933  71.656  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      59.684  63.757  70.952  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.352      4.723      6.143
+REMARK INTER + INTRA:          -8.352
+REMARK INTER:                  -8.352
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.526  61.562  71.782  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.326  62.361  71.762  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.454  62.835  72.426  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.998  62.688  71.081  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.013  63.356  71.564  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.308  63.300  72.334  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      61.324  63.968  72.819  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      61.628  62.721  72.827  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.096  61.907  70.832  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.418  61.349  71.347  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.871  61.685  70.070  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.548  62.243  69.557  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.323  62.021  68.794  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.450  63.024  69.804  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      60.127  63.584  69.290  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.675  63.247  70.566  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      60.577  64.028  70.814  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.329      6.812      7.878
+REMARK INTER + INTRA:          -8.329
+REMARK INTER:                  -8.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.682  67.081  71.956  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.964  66.931  71.196  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.541  67.420  70.866  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.669  66.294  70.765  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.208  66.596  70.219  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.656  67.263  70.409  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      66.195  67.567  69.864  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      65.744  67.782  71.045  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.231  66.211  71.460  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.340  66.745  72.079  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.686  65.597  71.534  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.578  65.064  70.914  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.032  64.449  70.989  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      64.015  65.145  70.219  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      63.907  64.613  69.598  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      64.560  65.760  70.144  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      64.998  65.842  69.449  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.117      4.132      5.104
+REMARK INTER + INTRA:          -8.117
+REMARK INTER:                  -8.117
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.441  61.653  70.579  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.453  62.273  70.035  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.595  62.118  69.236  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.323  63.046  70.288  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.432  63.178  69.481  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.585  62.542  68.977  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      60.695  62.672  68.170  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      60.672  61.723  69.033  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.258  62.648  71.007  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.350  61.829  71.033  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.101  63.068  71.700  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.009  63.887  71.673  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.853  64.308  72.366  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.074  64.287  70.954  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      59.982  65.107  70.926  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.231  63.867  70.261  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      60.295  64.266  69.542  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.053      5.914      6.979
+REMARK INTER + INTRA:          -8.053
+REMARK INTER:                  -8.053
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.589  64.631  72.891  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.756  64.071  72.310  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.441  63.310  72.369  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.237  64.269  71.670  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.070  63.484  71.483  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.588  63.035  71.982  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      61.421  62.249  71.796  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      61.174  63.136  72.688  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.237  64.986  72.078  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.814  65.059  72.783  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.661  65.630  71.782  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.083  65.556  71.078  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.507  66.200  70.782  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      63.084  64.839  70.669  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      63.507  64.765  69.965  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      62.660  64.196  70.965  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      62.660  63.478  70.557  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.036      6.043      6.992
+REMARK INTER + INTRA:          -8.036
+REMARK INTER:                  -8.036
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.823  65.405  69.364  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.623  65.731  70.095  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.033  66.389  70.379  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.014  65.401  70.541  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.238  66.017  71.041  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.853  66.523  70.822  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      65.078  67.139  71.322  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      65.373  66.617  70.188  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.001  64.899  69.886  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.532  65.016  69.267  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.456  64.280  69.852  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.925  64.163  70.471  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.380  63.544  70.436  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.938  64.665  71.126  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      62.406  64.548  71.747  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      63.482  65.283  71.161  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      63.496  65.785  71.817  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.876     24.859     25.580
+REMARK INTER + INTRA:          -7.876
+REMARK INTER:                  -7.876
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = narcobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.225  78.427  49.339  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.883  78.917  49.264  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.438  78.775  48.670  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.988  79.549  49.783  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.660  79.638  49.314  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.802  79.113  48.693  0.00  0.00    +0.000 C 
+ATOM      7 BR   UNL     1      72.474  79.201  48.223  0.00  0.00    +0.000 Br
+ATOM      8  C   UNL     1      71.442  78.451  48.356  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.280  79.241  50.073  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      69.943  78.578  49.717  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      69.910  79.596  50.720  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      70.247  80.259  51.075  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      69.876  80.614  51.722  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      70.956  80.567  50.786  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      71.294  81.230  51.142  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      71.326  80.212  50.140  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      72.035  80.520  49.850  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

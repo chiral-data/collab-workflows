@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.005      0.000      0.000
+REMARK INTER + INTRA:          -5.005
+REMARK INTER:                  -5.005
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.446  62.021  66.122  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.232  62.246  66.229  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.461  62.629  66.922  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.248  62.854  67.029  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.476  63.237  67.722  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.805  62.696  66.442  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.576  62.312  65.748  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.134  62.154  65.161  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.790  62.088  65.641  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.986      0.123      1.653
+REMARK INTER + INTRA:          -4.986
+REMARK INTER:                  -4.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.369  63.158  67.820  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.163  62.787  67.114  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.376  62.586  66.968  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.169  62.214  66.261  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.383  62.014  66.116  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.749  62.043  65.701  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.536  62.242  65.846  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.117  62.071  65.286  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.743  62.614  66.553  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.953      0.258      2.033
+REMARK INTER + INTRA:          -4.953
+REMARK INTER:                  -4.953
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.029  62.355  65.327  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.485  62.466  65.936  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.697  62.247  65.831  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.153  62.357  66.441  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.365  62.138  66.335  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.397  62.687  67.156  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.185  62.906  67.263  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.430  63.236  67.978  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.729  62.796  66.652  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.805      7.724      8.504
+REMARK INTER + INTRA:          -4.805
+REMARK INTER:                  -4.805
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.245  67.672  69.960  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.049  67.322  70.680  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.261  67.153  70.856  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.065  66.801  71.576  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.277  66.633  71.751  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.656  66.619  72.120  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      66.445  66.787  71.945  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      67.038  66.605  72.490  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      66.642  67.139  71.225  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.788      7.815      8.560
+REMARK INTER + INTRA:          -4.788
+REMARK INTER:                  -4.788
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.103  66.688  72.442  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.505  66.878  71.908  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.717  66.725  72.099  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.118  66.915  71.564  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.331  66.762  71.756  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.307  67.258  70.839  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      66.095  67.411  70.646  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.284  67.753  69.920  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      66.694  67.221  71.181  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.640      4.692      5.872
+REMARK INTER + INTRA:          -4.640
+REMARK INTER:                  -4.640
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.683  62.823  72.902  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.101  62.879  72.322  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.053  62.308  71.729  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.470  62.364  71.148  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.422  61.793  70.555  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.935  62.991  71.160  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.982  63.563  71.752  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.447  64.191  71.765  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.565  63.507  72.334  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.635      6.244      7.487
+REMARK INTER + INTRA:          -4.635
+REMARK INTER:                  -4.635
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.409  65.767  69.462  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.786  66.324  69.939  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.391  66.791  69.630  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.768  67.348  70.107  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.373  67.815  69.797  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.540  67.438  70.894  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.935  66.972  71.205  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.706  67.062  71.993  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.558  66.414  70.728  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.628      4.718      5.558
+REMARK INTER + INTRA:          -4.628
+REMARK INTER:                  -4.628
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.616  64.238  71.767  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.097  63.568  71.755  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.686  63.472  72.325  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.167  62.802  72.313  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.755  62.707  72.882  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.058  62.227  71.732  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.469  62.322  71.162  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.359  61.747  70.580  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.988  62.992  71.174  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.595      4.530      5.593
+REMARK INTER + INTRA:          -4.595
+REMARK INTER:                  -4.595
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = paraldehyde
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.495  61.982  70.360  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.526  62.474  71.020  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.997  63.103  71.091  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.028  63.596  71.752  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.499  64.224  71.822  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.588  63.460  72.342  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.117  62.832  72.272  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.678  62.695  72.862  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.087  62.339  71.611  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

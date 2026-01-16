@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.179      0.000      0.000
+REMARK INTER + INTRA:          -5.179
+REMARK INTER:                  -5.179
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.725  61.306  63.474  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.756  61.643  64.225  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.364  62.167  64.418  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.395  62.505  65.170  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.818  62.319  65.729  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.849  62.658  66.482  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.210  61.796  65.538  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.178  61.458  64.786  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.570  60.934  64.593  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.968      1.432      2.100
+REMARK INTER + INTRA:          -4.968
+REMARK INTER:                  -4.968
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      60.524  61.653  65.830  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.069  61.674  65.212  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.896  61.304  64.495  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.441  61.325  63.877  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.160  61.717  63.975  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.706  61.739  63.355  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      62.334  62.089  64.691  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.789  62.067  65.309  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.962  62.438  66.026  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.547      1.662      2.273
+REMARK INTER + INTRA:          -4.547
+REMARK INTER:                  -4.547
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      62.338  61.870  65.796  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.524  61.937  65.900  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.008  61.609  65.346  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.192  61.675  65.450  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.892  62.070  66.109  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      59.076  62.137  66.213  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      60.407  62.398  66.664  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.222  62.332  66.560  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.738  62.660  67.115  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.543      8.462      8.880
+REMARK INTER + INTRA:          -4.543
+REMARK INTER:                  -4.543
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      65.008  66.942  69.404  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      65.367  66.881  70.143  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.078  66.347  70.700  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      65.438  66.286  71.440  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      66.087  66.760  71.623  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      66.447  66.699  72.364  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      66.377  67.295  71.067  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      66.018  67.356  70.327  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      66.308  67.892  69.769  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.225      4.025      4.421
+REMARK INTER + INTRA:          -4.225
+REMARK INTER:                  -4.225
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      60.061  61.484  69.612  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      60.525  62.113  69.352  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.967  62.551  69.894  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.432  63.181  69.634  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.454  63.374  68.833  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.919  64.005  68.573  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.012  62.937  68.290  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.547  62.306  68.550  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.105  61.869  68.008  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.210     24.811     25.276
+REMARK INTER + INTRA:          -4.210
+REMARK INTER:                  -4.210
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      70.364  77.818  49.617  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      70.607  78.519  49.260  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      70.996  78.499  48.533  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      71.239  79.201  48.175  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      71.094  79.923  48.544  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      71.338  80.627  48.185  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      70.705  79.945  49.271  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      70.462  79.243  49.629  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      70.073  79.264  50.357  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.173      2.347      2.828
+REMARK INTER + INTRA:          -4.173
+REMARK INTER:                  -4.173
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.477  63.275  66.046  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.202  62.929  66.741  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.816  63.388  67.307  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.541  63.041  68.003  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.652  62.235  68.133  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.376  61.887  68.830  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.038  61.774  67.568  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.314  62.121  66.872  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.700  61.661  66.306  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.955     11.246     11.600
+REMARK INTER + INTRA:          -3.955
+REMARK INTER:                  -3.955
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      63.782  58.444  53.058  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      63.819  59.213  53.351  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.144  59.815  52.891  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      64.182  60.585  53.185  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.894  60.753  53.939  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      63.931  61.524  54.234  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      63.568  60.151  54.400  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.530  59.381  54.106  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      63.205  58.778  54.567  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.950     11.180     11.383
+REMARK INTER + INTRA:          -3.950
+REMARK INTER:                  -3.950
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      63.994  63.687  53.948  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      63.959  62.864  53.980  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.228  62.483  54.008  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      63.192  61.659  54.040  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.888  61.217  54.045  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      63.852  60.392  54.078  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      64.620  61.597  54.018  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.655  62.421  53.985  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      65.387  62.802  53.957  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.765      0.000      0.000
+REMARK INTER + INTRA:          -4.765
+REMARK INTER:                  -4.765
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.506  62.665  67.158  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.439  62.311  66.416  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.008  62.457  65.836  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.942  62.103  65.094  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.465  62.197  64.463  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      62.187  61.744  63.832  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.492  61.370  64.073  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.340  61.592  64.853  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.670      0.930      2.439
+REMARK INTER + INTRA:          -4.670
+REMARK INTER:                  -4.670
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.548  61.538  63.310  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.387  61.834  64.063  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.661  61.675  64.423  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.499  61.972  65.176  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.802  61.859  65.602  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      60.879  62.250  66.324  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.624  62.604  66.344  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.008  62.432  65.635  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.485     16.765     17.132
+REMARK INTER + INTRA:          -4.485
+REMARK INTER:                  -4.485
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.892  75.800  60.673  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.102  76.570  60.467  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.637  76.998  59.935  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.847  77.768  59.729  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      65.438  78.260  59.209  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      65.842  78.978  59.166  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      66.501  78.930  59.660  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.504  78.183  60.009  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.346     17.404     17.761
+REMARK INTER + INTRA:          -4.346
+REMARK INTER:                  -4.346
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.610  79.693  58.532  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.896  79.016  58.907  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.691  78.969  59.125  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.977  78.292  59.500  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      66.753  78.166  59.748  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      66.792  77.419  60.094  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      66.040  77.083  60.061  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.535  77.622  59.693  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.225     15.782     16.432
+REMARK INTER + INTRA:          -4.225
+REMARK INTER:                  -4.225
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.936  77.884  73.192  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.296  77.385  73.045  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.425  76.610  72.792  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      58.785  76.111  72.645  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      58.828  75.328  72.391  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      58.058  75.042  72.316  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      57.539  75.648  72.524  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      57.987  76.309  72.728  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.118      1.879      2.645
+REMARK INTER + INTRA:          -4.118
+REMARK INTER:                  -4.118
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.351  61.904  69.513  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.350  62.014  68.695  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.005  62.352  68.323  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.004  62.462  67.506  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.616  62.790  67.060  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      61.381  62.794  66.269  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.624  62.469  66.226  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.391  62.263  66.990  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.102     15.655     15.937
+REMARK INTER + INTRA:          -4.102
+REMARK INTER:                  -4.102
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      57.270  76.939  69.484  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      57.349  76.649  70.253  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.082  76.377  70.519  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      58.160  76.087  71.287  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      58.854  75.798  71.628  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      58.681  75.569  72.400  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      57.881  75.715  72.538  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      57.559  76.036  71.850  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.056      6.962      8.049
+REMARK INTER + INTRA:          -4.056
+REMARK INTER:                  -4.056
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.637  65.989  69.473  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.236  66.229  69.987  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.883  66.653  69.699  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.482  66.893  70.213  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      66.158  67.318  70.006  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      66.603  67.437  70.690  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      66.202  67.086  71.320  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.509  66.750  71.026  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.050      6.498      7.545
+REMARK INTER + INTRA:          -4.050
+REMARK INTER:                  -4.050
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = betazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.262  68.014  69.898  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.803  67.336  69.799  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.576  66.891  70.456  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.118  66.212  70.357  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.851  65.715  70.958  0.00  0.00    +0.000 NA
+ATOM      6  N   UNL     1      64.414  65.107  70.612  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.411  65.229  69.796  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.846  65.911  69.638  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

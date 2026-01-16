@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.126      0.000      0.000
+REMARK INTER + INTRA:          -8.126
+REMARK INTER:                  -8.126
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.484  61.912  64.466  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.885  62.008  65.025  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.140  61.678  64.892  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.541  61.774  65.452  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.687  62.198  66.144  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.088  62.293  66.704  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      59.344  61.964  66.570  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.234  62.718  67.396  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.979  63.046  67.528  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      61.125  63.471  68.221  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      61.578  62.951  66.969  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.432  62.527  66.277  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      62.031  62.432  65.717  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      60.994  61.254  64.200  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.249  60.925  64.068  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.594  61.159  63.641  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.507      4.962      6.509
+REMARK INTER + INTRA:          -7.507
+REMARK INTER:                  -7.507
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.203  65.876  72.414  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.481  65.437  71.773  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.529  65.785  71.025  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.807  65.346  70.384  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.036  64.561  70.489  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.313  64.122  69.848  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.362  64.470  69.102  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.542  63.337  69.954  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.493  62.990  70.700  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      60.722  62.204  70.806  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      60.216  63.428  71.342  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.987  64.214  71.236  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      59.709  64.653  71.878  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      59.301  66.571  70.920  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.350  66.917  70.172  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.023  67.009  71.562  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.467      3.869      5.330
+REMARK INTER + INTRA:          -7.467
+REMARK INTER:                  -7.467
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.742  65.062  70.265  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.260  64.398  70.183  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.027  63.973  70.851  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.544  63.308  70.769  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.295  63.069  70.020  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.813  62.405  69.938  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.581  61.980  70.606  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.564  62.166  69.189  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.797  62.591  68.522  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      60.548  62.351  67.772  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      61.279  63.255  68.603  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.529  63.495  69.352  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      62.011  64.159  69.434  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      62.276  64.212  71.600  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.042  63.786  72.267  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.758  64.877  71.681  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.329      3.498      4.868
+REMARK INTER + INTRA:          -7.329
+REMARK INTER:                  -7.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.161  63.159  68.330  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.263  63.308  69.135  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.947  62.789  69.693  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.048  62.938  70.499  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.465  63.605  70.745  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.567  63.754  71.550  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      61.251  63.235  72.108  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      61.984  64.422  71.797  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.299  64.940  71.239  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      62.717  65.609  71.486  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      62.198  64.792  70.433  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.781  64.124  70.187  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      61.679  63.975  69.381  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      60.530  62.121  69.446  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.214  61.603  70.005  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.428  61.973  68.641  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.256      6.866      7.848
+REMARK INTER + INTRA:          -7.256
+REMARK INTER:                  -7.256
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.594  66.680  72.891  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.991  66.147  72.712  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.206  66.404  72.695  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.601  65.871  72.516  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.781  65.083  72.355  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.177  64.550  72.176  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      59.394  64.807  72.159  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.357  63.761  72.015  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.140  63.505  72.033  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      61.320  62.715  71.872  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      61.745  64.037  72.212  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.565  64.826  72.373  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      62.170  65.359  72.551  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      61.026  67.193  72.856  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.242  67.449  72.838  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.631  67.725  73.034  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.170      3.986      5.259
+REMARK INTER + INTRA:          -7.170
+REMARK INTER:                  -7.170
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.611  61.641  70.647  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.482  62.456  70.644  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.409  62.859  69.927  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.280  63.675  69.924  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.225  64.086  70.636  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.097  64.901  70.633  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.024  65.303  69.917  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.042  65.313  71.346  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.115  64.910  72.061  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      60.060  65.322  72.775  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      60.244  64.095  72.065  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.299  63.683  71.353  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      60.427  62.867  71.356  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      60.464  62.447  69.214  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.390  62.851  68.499  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.592  61.632  69.218  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.143      5.489      6.948
+REMARK INTER + INTRA:          -7.143
+REMARK INTER:                  -7.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.569  63.918  70.086  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.762  64.578  70.541  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.205  64.898  71.059  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.399  65.559  71.515  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.147  65.899  71.453  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.340  66.559  71.908  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      62.783  66.879  72.426  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      64.089  66.899  71.845  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.645  66.578  71.328  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      65.395  66.919  71.265  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      64.453  65.918  70.872  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.704  65.578  70.934  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      63.511  64.917  70.478  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      61.456  64.558  71.122  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.900  64.879  71.640  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.264  63.898  70.666  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.127      6.206      6.849
+REMARK INTER + INTRA:          -7.127
+REMARK INTER:                  -7.127
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.610  65.142  69.486  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.084  65.207  70.118  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.112  65.869  70.611  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.586  65.935  71.244  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.034  65.340  71.384  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.508  65.406  72.017  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      62.537  66.068  72.508  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      61.955  64.810  72.157  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.927  64.150  71.665  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      61.373  63.553  71.806  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      62.452  64.083  71.032  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.005  64.678  70.892  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      63.531  64.612  70.259  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      64.666  66.465  70.470  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.693  67.126  70.963  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      65.191  66.398  69.837  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.823     25.214     25.938
+REMARK INTER + INTRA:          -6.823
+REMARK INTER:                  -6.823
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenobutiodil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.310  78.507  48.417  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.273  79.051  49.036  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.943  79.488  49.242  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.907  80.032  49.862  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.202  80.139  50.275  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.165  80.682  50.895  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      71.835  81.118  51.099  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      70.460  80.789  51.309  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      69.791  80.353  51.103  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      69.085  80.460  51.518  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      69.827  79.809  50.484  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.532  79.702  50.070  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      70.569  79.158  49.450  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      72.649  79.381  48.827  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      73.318  79.818  49.033  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      72.684  78.837  48.208  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

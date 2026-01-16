@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.313      0.000      0.000
+REMARK INTER + INTRA:          -7.313
+REMARK INTER:                  -7.313
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.391  62.104  69.459  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.667  62.083  68.681  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.133  62.125  68.053  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.409  62.105  67.276  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.876  62.147  66.648  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.152  62.126  65.871  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.960  62.063  65.722  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.236  62.043  64.944  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.046  61.980  64.795  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.322  61.959  64.018  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.580  61.938  65.423  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.494  62.021  66.350  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.218  62.042  67.127  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.094      1.160      3.315
+REMARK INTER + INTRA:          -7.094
+REMARK INTER:                  -7.094
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.593  61.618  63.482  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.275  61.824  64.215  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.485  61.651  64.385  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.167  61.857  65.117  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.379  61.684  65.287  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.060  61.890  66.020  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.530  62.268  66.582  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.211  62.473  67.316  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.682  62.852  67.878  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.363  63.057  68.611  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.470  63.025  67.709  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.319  62.441  66.413  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.637  62.235  65.680  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.585      1.655      3.773
+REMARK INTER + INTRA:          -6.585
+REMARK INTER:                  -6.585
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.633  62.039  65.133  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.428  62.039  65.932  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.467  62.739  66.368  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.262  62.739  67.166  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.300  63.438  67.602  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.095  63.438  68.401  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.851  62.739  68.764  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.646  62.739  69.564  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.402  62.040  69.927  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.196  62.040  70.726  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.363  61.340  69.492  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.812  62.039  68.329  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.017  62.039  67.530  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.579      2.547      4.857
+REMARK INTER + INTRA:          -6.579
+REMARK INTER:                  -6.579
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.322  62.340  66.930  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.370  62.552  67.726  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.373  61.968  68.310  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.420  62.180  69.105  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.424  61.597  69.688  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.471  61.809  70.484  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.516  62.604  70.696  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.564  62.817  71.493  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.608  63.613  71.705  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.656  63.825  72.501  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.605  64.197  71.123  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.513  63.189  70.114  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.465  62.977  69.318  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.448      5.570      6.694
+REMARK INTER + INTRA:          -6.448
+REMARK INTER:                  -6.448
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.118  67.615  70.149  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.536  67.057  70.322  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.397  66.430  69.803  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.816  65.873  69.976  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.677  65.246  69.458  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.095  64.688  69.631  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.651  64.756  70.323  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      63.068  64.197  70.496  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.625  64.266  71.189  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.043  63.708  71.362  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.763  64.892  71.708  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.789  65.383  70.842  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.372  65.941  70.669  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.257      5.723      6.466
+REMARK INTER + INTRA:          -6.257
+REMARK INTER:                  -6.257
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.759  64.040  71.367  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.381  64.551  71.189  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.834  64.430  70.509  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.455  64.941  70.331  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.908  64.819  69.652  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.530  65.331  69.474  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.700  65.964  69.974  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      65.323  66.476  69.796  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      65.492  67.109  70.297  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.114  67.621  70.119  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      65.040  67.231  70.977  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      64.248  66.086  70.654  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.626  65.574  70.832  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.186      4.537      6.315
+REMARK INTER + INTRA:          -6.186
+REMARK INTER:                  -6.186
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.473  61.635  69.981  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.738  62.299  70.393  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.872  62.253  71.207  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.136  62.916  71.619  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.270  62.871  72.432  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.534  63.535  72.844  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.664  64.244  72.444  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.929  64.908  72.857  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.059  65.618  72.456  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.323  66.281  72.869  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.925  65.664  71.643  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.530  64.290  71.631  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.266  63.626  71.219  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.162      2.110      3.497
+REMARK INTER + INTRA:          -6.162
+REMARK INTER:                  -6.162
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.275  63.104  72.482  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.085  62.997  71.686  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.805  63.632  71.239  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.615  63.525  70.444  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.335  64.160  69.998  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.145  64.053  69.202  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.235  63.311  68.853  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.044  63.204  68.057  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.134  62.462  67.708  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.944  62.354  66.912  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.414  61.826  68.154  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.515  62.676  69.299  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.705  62.783  70.095  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.133      4.955      5.913
+REMARK INTER + INTRA:          -6.133
+REMARK INTER:                  -6.133
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacetin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.552  61.539  70.734  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.385  62.347  70.735  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.052  62.700  71.403  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.886  63.507  71.404  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.553  63.859  72.072  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.387  64.667  72.073  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.553  65.123  71.406  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.386  65.932  71.407  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.553  66.388  70.739  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.386  67.196  70.740  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.885  66.036  70.071  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.886  64.771  70.737  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.052  63.963  70.736  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

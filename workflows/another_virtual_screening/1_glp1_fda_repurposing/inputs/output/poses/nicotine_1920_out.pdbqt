@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.391      0.000      0.000
+REMARK INTER + INTRA:          -7.391
+REMARK INTER:                  -7.391
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.250  62.905  66.902  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.587  62.523  66.590  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      59.842  62.484  66.939  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.349  62.050  66.439  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.791  61.821  65.781  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.557  62.113  65.874  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.181  62.013  65.344  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.067  61.588  64.647  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.691  61.488  64.118  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.431  61.814  64.285  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      62.545  62.239  64.983  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.921  62.339  65.513  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.145      0.436      2.524
+REMARK INTER + INTRA:          -7.145
+REMARK INTER:                  -7.145
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.355  62.399  65.431  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.871  61.959  64.927  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.098  61.624  64.209  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.444  61.235  63.891  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.813  61.329  64.414  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.077  61.777  65.055  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.625  62.002  65.707  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.833  61.778  65.759  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.382  62.003  66.411  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.723  62.453  67.013  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.515  62.677  66.961  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.967  62.452  66.309  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.309      6.416      7.750
+REMARK INTER + INTRA:          -6.309
+REMARK INTER:                  -6.309
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.312  66.724  71.854  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.539  66.952  71.094  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      66.027  67.588  70.904  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.107  67.612  70.083  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.669  66.990  69.766  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.317  66.581  70.391  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.829  65.919  70.323  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.655  65.609  69.580  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.168  64.947  69.512  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.854  64.595  70.190  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      64.029  64.906  70.934  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      64.516  65.568  71.002  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.259      4.376      5.676
+REMARK INTER + INTRA:          -6.259
+REMARK INTER:                  -6.259
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.544  64.451  71.039  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.465  63.870  71.621  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.644  63.959  72.421  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.483  63.243  72.799  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.204  62.712  72.232  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.193  63.100  71.503  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.952  62.774  70.785  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.692  61.992  70.752  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.452  61.667  70.034  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.471  62.123  69.347  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.731  62.906  69.379  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.971  63.232  70.098  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.253      2.884      4.431
+REMARK INTER + INTRA:          -6.253
+REMARK INTER:                  -6.253
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.608  63.778  68.744  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.170  63.160  68.413  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.032  63.041  67.610  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.571  62.362  67.528  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.424  62.062  68.283  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.795  62.556  68.830  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.790  62.460  69.650  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.388  61.825  69.989  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.383  61.730  70.808  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.781  62.270  71.289  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.182  62.906  70.949  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.188  63.001  70.130  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.250      4.431      5.952
+REMARK INTER + INTRA:          -6.250
+REMARK INTER:                  -6.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.827  63.702  69.723  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.715  62.917  69.955  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.451  62.302  69.474  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.421  61.616  69.931  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.667  61.807  70.695  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.849  62.612  70.710  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.117  63.035  71.366  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.226  62.653  72.088  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.494  63.076  72.743  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.654  63.883  72.675  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.546  64.265  71.952  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.277  63.842  71.297  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.228      2.824      3.893
+REMARK INTER + INTRA:          -6.228
+REMARK INTER:                  -6.228
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.516  63.770  70.306  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.473  62.948  70.368  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.413  62.517  71.068  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.386  61.716  70.872  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.430  61.652  70.051  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.484  62.414  69.739  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.538  62.606  68.938  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.543  62.010  68.369  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.597  62.203  67.570  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.648  62.993  67.338  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.644  63.590  67.907  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.589  63.398  68.708  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.861     24.735     25.563
+REMARK INTER + INTRA:          -5.861
+REMARK INTER:                  -5.861
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.324  79.886  49.590  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      71.764  79.358  49.291  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      71.878  78.834  48.665  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.176  78.415  48.553  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.628  78.680  49.109  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.992  79.264  49.566  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.643  79.680  50.188  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      69.862  79.525  50.402  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      69.514  79.940  51.023  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      69.947  80.511  51.431  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      70.729  80.667  51.217  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      71.078  80.251  50.596  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.764      5.842      7.242
+REMARK INTER + INTRA:          -5.764
+REMARK INTER:                  -5.764
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.360  63.742  70.772  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.958  63.584  71.475  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.583  62.876  71.670  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.253  62.961  72.422  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.424  63.721  72.691  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.860  64.107  72.106  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.148  64.879  72.146  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.006  65.339  72.815  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.293  66.111  72.855  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.723  66.424  72.224  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      62.865  65.964  71.554  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.577  65.192  71.514  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

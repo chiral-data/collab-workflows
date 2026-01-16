@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.050      0.000      0.000
+REMARK INTER + INTRA:          -9.050
+REMARK INTER:                  -9.050
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.766  62.801  66.125  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.780  62.353  65.431  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.437  62.385  64.932  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.451  61.937  64.240  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.808  61.456  64.046  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.152  61.425  64.545  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.510  60.944  64.351  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.138  61.873  65.238  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.482  61.840  65.736  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.469  62.289  66.430  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.812  62.256  66.928  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.798  62.705  67.621  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.441  63.185  67.815  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.096  63.217  67.316  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      61.110  62.769  66.623  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.719      0.751      2.863
+REMARK INTER + INTRA:          -8.719
+REMARK INTER:                  -8.719
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.809  62.571  66.046  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.148  62.631  66.537  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.204  63.028  67.258  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.543  63.087  67.748  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.826  62.749  67.517  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.771  62.352  66.797  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.055  62.014  66.567  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.432  62.293  66.306  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.376  61.896  65.586  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.038  61.837  65.095  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.981  61.439  64.374  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.642  61.380  63.883  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.359  61.718  64.114  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.414  62.115  64.835  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      61.753  62.174  65.325  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.885      6.244      7.593
+REMARK INTER + INTRA:          -7.885
+REMARK INTER:                  -7.885
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.641  66.405  69.652  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.253  66.748  70.089  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.735  67.321  69.743  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.346  67.664  70.178  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      66.474  67.433  70.961  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.992  66.860  71.306  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      66.121  66.630  72.088  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.381  66.517  70.870  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      64.899  65.945  71.216  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.288  65.602  70.779  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.805  65.028  71.125  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.195  64.686  70.689  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.066  64.916  69.907  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.549  65.489  69.562  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      64.159  65.832  69.998  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.773      5.364      6.521
+REMARK INTER + INTRA:          -7.773
+REMARK INTER:                  -7.773
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.867  63.973  72.791  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.045  63.258  72.418  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.604  62.749  72.748  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.782  62.035  72.376  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.400  61.830  71.673  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.841  62.339  71.344  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.460  62.133  70.642  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.663  63.053  71.717  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.104  63.562  71.387  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.926  64.277  71.760  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.367  64.786  71.430  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.189  65.500  71.803  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.571  65.706  72.505  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.130  65.196  72.834  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      60.308  64.482  72.462  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.704      3.622      5.806
+REMARK INTER + INTRA:          -7.704
+REMARK INTER:                  -7.704
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.775  62.237  71.044  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.157  62.792  71.520  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.156  62.702  72.341  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.538  63.257  72.817  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.921  63.902  72.473  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.922  63.991  71.653  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.306  64.636  71.310  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.540  63.436  71.177  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.542  63.526  70.357  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.159  62.971  69.880  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.161  63.061  69.060  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.779  62.506  68.584  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.395  61.861  68.928  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.394  61.772  69.748  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      60.776  62.327  70.224  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.517      5.366      6.367
+REMARK INTER + INTRA:          -7.517
+REMARK INTER:                  -7.517
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.462  64.872  71.625  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.040  64.203  71.862  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.605  64.218  72.564  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.183  63.550  72.801  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.196  62.867  72.337  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.631  62.853  71.636  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.644  62.171  71.173  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.053  63.522  71.399  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.487  63.507  70.699  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.910  64.176  70.461  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.345  64.161  69.760  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.766  64.829  69.523  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.753  65.512  69.986  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.318  65.526  70.687  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      62.897  64.858  70.924  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.451      6.619      7.652
+REMARK INTER + INTRA:          -7.451
+REMARK INTER:                  -7.451
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.169  67.161  72.015  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.634  67.071  71.338  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.336  67.497  71.260  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.800  67.407  70.584  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.561  66.890  69.986  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.859  66.465  70.065  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.622  65.948  69.467  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.395  66.555  70.741  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      63.694  66.129  70.819  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.230  66.220  71.497  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.527  65.793  71.574  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.063  65.883  72.251  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.302  66.400  72.849  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.004  66.826  72.770  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      63.468  66.736  72.094  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.427      3.330      4.440
+REMARK INTER + INTRA:          -7.427
+REMARK INTER:                  -7.427
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.064  64.282  68.760  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.241  63.478  68.830  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.284  63.005  68.155  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.461  62.203  68.225  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.594  61.872  68.970  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.551  62.346  69.644  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.684  62.016  70.388  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.374  63.149  69.574  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.330  63.621  70.248  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.153  64.425  70.178  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.110  64.898  70.853  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.933  65.700  70.783  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.800  66.031  70.038  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.843  65.557  69.364  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      60.020  64.754  69.434  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.104      5.659      6.394
+REMARK INTER + INTRA:          -7.104
+REMARK INTER:                  -7.104
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = xylazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.569  63.771  70.695  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.141  64.358  70.594  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.652  64.328  69.946  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.224  64.915  69.845  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.284  65.531  70.392  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.773  65.559  71.038  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.834  66.175  71.584  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.202  64.973  71.139  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.691  65.002  71.786  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.119  64.415  71.887  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.608  64.444  72.535  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.037  63.858  72.636  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.976  63.242  72.089  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.488  63.213  71.443  0.00  0.00    +0.000 C 
+ATOM     15  S   UNL     1      62.059  63.800  71.342  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

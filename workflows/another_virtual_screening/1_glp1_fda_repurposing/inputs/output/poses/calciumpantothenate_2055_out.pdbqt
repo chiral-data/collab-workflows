@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.109      0.000      0.000
+REMARK INTER + INTRA:          -8.109
+REMARK INTER:                  -8.109
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.356  62.156  64.968  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.853  61.719  64.482  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.350  61.282  63.995  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.397  61.781  63.864  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.232  61.433  63.134  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.310  61.657  65.099  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.602  61.247  64.987  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.473  62.004  65.830  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.181  62.414  65.943  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.930  61.942  66.447  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.093  62.289  67.178  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.550  62.227  67.795  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.714  62.574  68.525  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.171  62.513  69.143  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.422  62.984  68.637  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.501      0.954      4.107
+REMARK INTER + INTRA:          -7.501
+REMARK INTER:                  -7.501
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.127  63.537  68.232  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.801  62.954  68.715  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.474  62.371  69.199  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.712  63.507  69.322  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.385  63.277  70.044  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.889  62.402  68.109  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.651  61.620  68.225  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.216  62.630  67.387  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.455  63.412  67.271  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.305  62.078  66.781  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.632  62.306  66.058  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.720  61.754  65.452  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.047  61.983  64.731  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.136  61.431  64.124  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.285  62.765  64.615  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.118      1.941      2.851
+REMARK INTER + INTRA:          -7.118
+REMARK INTER:                  -7.118
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.177  62.522  66.622  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.362  62.429  66.720  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.549  62.336  66.816  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.321  62.040  65.993  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.595  61.765  65.714  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.404  62.818  67.445  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.720  62.932  67.892  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.130  63.094  67.725  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.815  62.980  67.278  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.172  63.483  68.451  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.898  63.759  68.731  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.939  64.148  69.456  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.665  64.423  69.736  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.707  64.812  70.462  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      63.349  64.309  69.288  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.938      2.545      3.743
+REMARK INTER + INTRA:          -6.938
+REMARK INTER:                  -6.938
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.110  63.320  68.201  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.635  62.707  67.918  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.161  62.095  67.634  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.701  63.011  67.153  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.322  62.632  66.526  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.570  62.404  68.682  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.126  61.721  68.818  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.948  62.782  69.310  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.392  63.465  69.174  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.883  62.479  70.074  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.261  62.857  70.703  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.195  62.554  71.467  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.573  62.932  72.094  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.508  62.629  72.859  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.017  63.615  71.958  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.839      6.115      7.283
+REMARK INTER + INTRA:          -6.839
+REMARK INTER:                  -6.839
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.980  66.568  69.789  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.416  66.941  70.382  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.852  67.313  70.975  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.869  67.324  69.808  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      66.473  67.838  70.035  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.963  66.558  70.955  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.115  66.689  71.756  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.359  66.044  70.729  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.207  65.912  69.928  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      63.907  65.661  71.302  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.302  65.147  71.076  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.850  64.764  71.649  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.246  64.250  71.423  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.793  63.867  71.996  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      62.094  64.119  70.622  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.623      5.799      6.969
+REMARK INTER + INTRA:          -6.623
+REMARK INTER:                  -6.623
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.223  63.585  71.108  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.905  63.842  71.825  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.586  64.099  72.541  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.431  63.167  71.856  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.918  63.053  72.492  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.378  64.516  71.793  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.339  65.076  72.398  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.891  64.632  71.157  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.930  64.071  70.552  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      63.365  65.306  71.126  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.878  65.421  70.490  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.351  66.096  70.458  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.864  66.210  69.823  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      65.338  66.885  69.791  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      64.903  65.650  69.217  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.475      3.431      6.024
+REMARK INTER + INTRA:          -6.475
+REMARK INTER:                  -6.475
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.866  66.438  69.488  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.647  66.372  70.280  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.427  66.306  71.073  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.579  67.193  70.330  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.356  67.546  71.041  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.714  65.552  70.231  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.558  65.084  70.892  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.938  65.197  69.520  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.095  65.665  68.857  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.006  64.377  69.470  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.230  64.023  68.759  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.297  63.203  68.710  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.521  62.850  67.999  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.589  62.029  67.949  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.677  63.318  67.337  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.446     24.310     25.212
+REMARK INTER + INTRA:          -6.446
+REMARK INTER:                  -6.446
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.341  79.822  49.573  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.106  79.107  49.234  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.873  78.393  48.895  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.768  79.124  48.741  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      71.895  78.514  48.201  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      70.446  79.090  49.727  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      69.912  78.463  49.680  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      70.317  79.701  50.267  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      70.851  80.329  50.314  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      69.656  79.684  50.760  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      69.528  80.294  51.300  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      68.867  80.277  51.793  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      68.740  80.887  52.332  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      68.078  80.871  52.826  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      69.274  81.515  52.379  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.255      4.920      6.763
+REMARK INTER + INTRA:          -6.255
+REMARK INTER:                  -6.255
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = calcium pantothenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.318  65.431  71.147  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.311  65.607  71.953  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.305  65.785  72.758  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.710  66.314  71.801  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.904  66.820  72.423  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.913  64.902  72.105  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.708  64.702  72.878  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.718  64.395  71.483  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.924  64.595  70.708  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.320  63.689  71.635  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.126  63.183  71.013  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.727  62.477  71.165  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.533  61.971  70.544  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.134  61.265  70.695  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.738  62.171  69.769  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

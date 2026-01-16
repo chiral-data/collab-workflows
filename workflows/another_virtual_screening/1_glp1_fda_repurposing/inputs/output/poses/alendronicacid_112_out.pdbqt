@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.046      0.000      0.000
+REMARK INTER + INTRA:          -7.046
+REMARK INTER:                  -7.046
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.139  62.232  66.795  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.550  61.985  66.124  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.357  62.146  66.052  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.768  61.898  65.381  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.574  62.059  65.310  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.380  62.219  65.238  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.564  62.437  66.042  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.370  62.598  65.970  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.758  62.277  66.114  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.554  62.816  66.775  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      61.585  61.680  64.577  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      61.595  61.301  63.844  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.779  61.519  64.649  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.391  61.840  64.505  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.997      1.354      2.147
+REMARK INTER + INTRA:          -6.997
+REMARK INTER:                  -6.997
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.789  60.713  63.241  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.646  60.974  64.010  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.212  61.429  64.403  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.069  61.690  65.172  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.634  62.145  65.565  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.199  62.601  65.957  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      62.125  62.107  64.903  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.690  62.562  65.296  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.560  61.652  64.510  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.616  62.068  64.241  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      61.143  62.184  66.227  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      60.652  62.223  66.889  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.577  61.729  65.834  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.708  62.639  66.619  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.741      1.784      2.508
+REMARK INTER + INTRA:          -6.741
+REMARK INTER:                  -6.741
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.603  62.309  64.990  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.807  62.187  65.168  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.507  62.425  65.900  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.711  62.302  66.079  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.412  62.540  66.810  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.112  62.778  67.541  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.158  62.818  67.025  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.858  63.056  67.756  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.457  62.580  66.294  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.904  63.096  67.241  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      59.665  62.262  66.595  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      58.919  61.984  66.379  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.965  62.024  65.863  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      59.366  62.500  67.326  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.600      1.499      2.055
+REMARK INTER + INTRA:          -6.600
+REMARK INTER:                  -6.600
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.445  63.706  68.665  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.706  63.402  67.945  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.176  63.017  67.442  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.438  62.713  66.721  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.908  62.329  66.219  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.378  61.945  65.717  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.300  62.458  66.762  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      59.770  62.074  66.260  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.830  62.843  67.264  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.692  62.588  67.304  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      61.516  62.199  65.677  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      62.124  62.070  65.134  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.046  62.584  66.179  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.986  61.815  65.175  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.256      2.550      3.300
+REMARK INTER + INTRA:          -6.256
+REMARK INTER:                  -6.256
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.194  64.107  69.883  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.035  63.954  69.089  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.515  63.346  68.882  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.355  63.193  68.087  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.836  62.586  67.881  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.316  61.980  67.674  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.721  62.413  68.679  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.201  61.806  68.473  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.240  63.020  68.885  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.605  62.240  69.477  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      60.951  62.759  67.082  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      61.066  62.932  66.284  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.470  63.366  67.289  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.432  62.153  66.876  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.071      7.270      8.112
+REMARK INTER + INTRA:          -6.071
+REMARK INTER:                  -6.071
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.278  65.684  69.592  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.971  66.126  69.531  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.411  66.299  70.208  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.105  66.742  70.146  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.545  66.915  70.822  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.985  67.088  71.498  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      64.998  66.504  71.283  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      65.438  66.677  71.959  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      64.558  66.331  70.607  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      64.451  66.092  71.744  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      66.091  67.327  70.361  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      66.638  67.739  69.901  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      65.652  67.154  69.685  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      66.531  67.500  71.038  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.918      7.033      7.890
+REMARK INTER + INTRA:          -5.918
+REMARK INTER:                  -5.918
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.477  64.031  71.771  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.654  64.733  71.378  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.373  65.453  71.671  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.551  66.155  71.277  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.271  66.874  71.570  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      58.990  67.593  71.863  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      58.905  66.477  72.194  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      58.625  67.196  72.487  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      59.185  65.758  71.901  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      58.539  66.080  72.818  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      59.636  67.271  70.946  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      60.002  67.668  70.322  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.916  66.552  70.653  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      59.356  67.990  71.239  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.892      6.750      7.588
+REMARK INTER + INTRA:          -5.892
+REMARK INTER:                  -5.892
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.181  67.962  70.076  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.839  67.252  69.834  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.346  66.835  70.348  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.004  66.124  70.105  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.511  65.707  70.619  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.018  65.291  71.132  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      64.621  66.287  71.195  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      64.128  65.871  71.709  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      65.114  66.704  70.681  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      64.732  66.867  71.771  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      64.400  65.127  70.042  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      64.289  64.548  69.466  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      64.893  65.544  69.529  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      63.907  64.711  70.556  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.826      2.973      3.645
+REMARK INTER + INTRA:          -5.826
+REMARK INTER:                  -5.826
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alendronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.724  65.567  69.820  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.746  64.978  69.244  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.462  64.616  69.051  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.484  64.026  68.474  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.199  63.664  68.281  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.915  63.303  68.088  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.588  64.136  68.835  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.304  63.775  68.642  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.872  64.498  69.028  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.976  64.609  69.389  0.00  0.00    +0.000 OA
+ATOM     11  P   UNL     1      60.811  63.192  67.727  0.00  0.00    +0.000 P 
+ATOM     12  O   UNL     1      60.423  62.720  67.173  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.095  63.553  67.920  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.527  62.830  67.534  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

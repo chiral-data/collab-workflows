@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.895      0.000      0.000
+REMARK INTER + INTRA:          -7.895
+REMARK INTER:                  -7.895
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.321  61.614  65.532  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.012  61.689  65.088  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.665  62.085  65.403  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.625  62.406  66.161  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.934  62.332  66.605  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.894  62.653  67.364  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.546  63.049  67.679  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.203  62.579  67.809  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.163  62.900  68.567  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.356  62.159  64.959  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.396  61.838  64.201  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.743  61.441  63.885  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.052  61.367  64.329  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.291      1.043      3.191
+REMARK INTER + INTRA:          -7.291
+REMARK INTER:                  -7.291
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.097  61.913  65.723  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.276  62.223  66.466  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.051  62.447  66.644  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.645  62.361  66.079  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.466  62.051  65.336  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.060  61.964  64.770  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.834  62.188  64.948  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.881  61.653  64.027  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.475  61.567  63.462  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.229  62.758  67.387  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.635  62.844  67.952  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.861  62.620  67.774  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.682  62.310  67.032  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.008      3.387      5.729
+REMARK INTER + INTRA:          -7.008
+REMARK INTER:                  -7.008
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.310  61.649  71.042  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.302  62.284  71.568  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.011  63.018  71.323  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.730  63.115  70.554  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.739  62.479  70.029  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.458  62.576  69.259  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.168  63.309  69.015  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.466  61.940  68.733  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.185  62.037  67.964  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.003  63.653  71.850  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.284  63.557  72.619  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.574  62.823  72.863  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.583  62.188  72.337  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.948      5.451      6.517
+REMARK INTER + INTRA:          -6.948
+REMARK INTER:                  -6.948
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.460  63.397  72.606  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.195  62.853  72.046  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.488  62.989  71.640  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.049  63.670  71.795  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.314  64.214  72.354  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.875  64.895  72.509  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.170  65.031  72.103  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.140  65.440  73.068  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.701  66.121  73.222  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.223  62.444  71.081  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.663  61.764  70.926  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.369  61.628  71.332  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.634  62.172  71.892  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.921      5.932      7.197
+REMARK INTER + INTRA:          -6.921
+REMARK INTER:                  -6.921
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.757  66.245  69.451  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.179  66.562  70.084  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.024  66.307  70.854  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      64.446  65.735  70.989  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.024  65.417  70.357  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.446  64.844  70.492  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.290  64.589  71.261  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.022  64.526  69.859  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.445  63.954  69.995  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.447  66.625  71.487  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.025  67.197  71.351  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.180  67.453  70.581  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.758  67.135  69.948  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.879     18.053     18.649
+REMARK INTER + INTRA:          -6.879
+REMARK INTER:                  -6.879
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.404  79.181  59.042  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.238  78.453  59.390  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.460  78.178  59.422  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      64.849  78.632  59.105  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.015  79.360  58.757  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.404  79.816  58.440  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.627  79.541  58.472  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.569  80.545  58.091  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.958  80.999  57.775  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.295  77.448  59.770  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.906  76.994  60.087  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.684  77.269  60.055  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.850  77.998  59.707  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.538      5.357      6.332
+REMARK INTER + INTRA:          -6.538
+REMARK INTER:                  -6.538
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.148  64.702  72.046  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.920  63.910  72.030  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.035  63.461  71.346  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      62.379  63.804  70.681  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.607  64.596  70.696  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.951  64.940  70.030  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.066  64.491  69.347  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.180  65.733  70.045  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.524  66.077  69.379  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.806  62.668  71.331  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.462  62.325  71.997  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.347  62.774  72.680  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.576  63.566  72.696  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.336      2.596      3.943
+REMARK INTER + INTRA:          -6.336
+REMARK INTER:                  -6.336
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.854  62.425  70.035  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.816  62.461  69.212  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.258  63.025  68.802  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.737  63.553  69.216  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.776  63.517  70.039  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.256  64.045  70.453  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.698  64.609  70.044  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.295  64.009  71.277  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.775  64.536  71.691  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.219  63.061  67.979  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.739  62.533  67.565  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.297  61.969  67.975  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.335  61.933  68.797  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.318     24.491     25.321
+REMARK INTER + INTRA:          -6.318
+REMARK INTER:                  -6.318
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mephenesin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.844  78.882  49.959  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.552  78.938  49.540  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.120  79.495  49.762  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      70.978  79.996  50.401  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.270  79.940  50.819  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.128  80.442  51.460  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      70.695  80.998  51.681  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      69.420  80.386  51.879  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      69.278  80.887  52.518  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      71.829  79.550  49.342  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.970  79.050  48.703  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.402  78.492  48.482  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.694  78.437  48.900  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

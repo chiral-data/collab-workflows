@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.608      0.000      0.000
+REMARK INTER + INTRA:          -7.608
+REMARK INTER:                  -7.608
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.801  62.686  64.950  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.124  62.222  64.861  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.520  62.263  65.420  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.591  62.768  66.069  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.987  62.809  66.629  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.309  62.344  66.539  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.238  61.840  65.891  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.843  61.799  65.331  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.771  61.295  64.682  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.095  60.831  64.593  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.375  61.254  64.123  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.053  61.718  64.212  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      62.657  61.677  63.652  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.474      1.456      2.440
+REMARK INTER + INTRA:          -7.474
+REMARK INTER:                  -7.474
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.898  63.126  67.210  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.268  62.761  66.823  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.389  62.390  66.097  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.141  62.383  65.757  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.263  62.012  65.031  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.632  61.646  64.644  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.881  61.652  64.983  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.758  62.024  65.709  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.007  62.030  66.048  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      59.377  61.665  65.661  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      59.885  62.401  66.774  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.516  62.767  67.162  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.394  63.139  67.889  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.818      5.306      6.287
+REMARK INTER + INTRA:          -6.818
+REMARK INTER:                  -6.818
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.108  63.476  70.044  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.518  62.909  70.481  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.812  63.097  71.228  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.696  63.853  71.539  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.990  64.041  72.286  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.401  63.474  72.723  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.517  62.719  72.413  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.223  62.530  71.666  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.338  61.775  71.355  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.748  61.208  71.792  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.044  61.586  70.609  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.634  62.154  70.171  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.340  61.965  69.424  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.787      6.082      7.145
+REMARK INTER + INTRA:          -6.787
+REMARK INTER:                  -6.787
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.918  64.331  71.321  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.413  63.806  71.722  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.589  63.072  71.392  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.272  62.861  70.660  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.448  62.126  70.329  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.943  61.601  70.731  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.260  61.811  71.462  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.084  62.546  71.793  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.401  62.756  72.525  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.895  62.232  72.926  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.224  63.491  72.855  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.730  64.016  72.453  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.553  64.751  72.785  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.751      2.202      2.999
+REMARK INTER + INTRA:          -6.751
+REMARK INTER:                  -6.751
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.041  63.203  68.394  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.515  63.007  67.748  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.184  62.629  67.094  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      59.380  62.445  67.086  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.049  62.067  66.433  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.524  61.870  65.785  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.327  62.053  65.793  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.659  62.432  66.447  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.462  62.615  66.455  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.936  62.419  65.809  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.793  62.994  67.109  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.318  63.190  67.756  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      61.650  63.569  68.410  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.558     24.686     25.419
+REMARK INTER + INTRA:          -6.558
+REMARK INTER:                  -6.558
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      70.887  80.574  50.782  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.875  79.917  50.283  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.539  79.730  49.832  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      72.217  80.198  49.881  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      72.881  80.010  49.430  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      72.869  79.353  48.930  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      72.192  78.885  48.882  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.526  79.072  49.332  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.850  78.604  49.284  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      70.837  77.948  48.785  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      70.185  78.792  49.734  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.198  79.449  50.234  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      69.532  79.637  50.685  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.464      2.995      3.945
+REMARK INTER + INTRA:          -6.464
+REMARK INTER:                  -6.464
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.917  63.482  67.073  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.795  63.052  67.767  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.171  63.280  68.464  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.670  63.937  68.469  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.047  64.165  69.166  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.925  63.735  69.861  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.426  63.078  69.856  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.049  62.850  69.159  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.551  62.193  69.154  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.429  61.764  69.848  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.175  61.966  68.457  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.297  62.396  67.763  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      59.920  62.167  67.065  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.313     24.722     25.456
+REMARK INTER + INTRA:          -6.313
+REMARK INTER:                  -6.313
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      72.393  80.630  50.097  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      72.022  79.996  49.721  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.257  79.780  49.938  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      70.861  80.196  50.530  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      70.096  79.980  50.747  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      69.724  79.345  50.371  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.119  78.928  49.779  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.885  79.145  49.562  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.280  78.728  48.970  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      70.909  78.094  48.594  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      72.045  78.945  48.753  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      72.417  79.579  49.130  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      73.183  79.796  48.912  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.131      6.797      7.054
+REMARK INTER + INTRA:          -6.131
+REMARK INTER:                  -6.131
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.784  65.476  70.560  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.660  64.878  71.114  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.896  64.712  71.377  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.256  65.143  71.086  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.492  64.976  71.348  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.368  64.378  71.904  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.008  63.947  72.195  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.772  64.113  71.933  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.412  63.683  72.224  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.288  63.085  72.779  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      62.175  63.849  71.962  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.300  64.448  71.406  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      63.064  64.614  71.143  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

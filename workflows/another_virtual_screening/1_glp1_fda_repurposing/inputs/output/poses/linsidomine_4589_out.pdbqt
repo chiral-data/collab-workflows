@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.135      0.000      0.000
+REMARK INTER + INTRA:          -6.135
+REMARK INTER:                  -6.135
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.379  61.641  63.814  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.120  61.950  64.535  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      62.576  62.382  65.068  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.097  62.580  65.711  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.345  62.270  65.573  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.359  61.881  64.846  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.693  62.338  66.075  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.763  62.747  66.788  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.111  62.815  67.290  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.390  62.474  67.077  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.321  62.066  66.364  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.973  61.998  65.862  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.100      1.213      2.924
+REMARK INTER + INTRA:          -6.100
+REMARK INTER:                  -6.100
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.460  63.361  68.003  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.227  62.899  67.359  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      60.538  62.450  67.309  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.529  62.079  66.572  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.213  62.299  66.167  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.645  62.806  66.654  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.427  62.055  65.408  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.937  61.544  64.986  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.151  61.300  64.227  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.857  61.567  63.892  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.346  62.078  64.315  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.132  62.322  65.073  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.523      1.398      1.701
+REMARK INTER + INTRA:          -5.523
+REMARK INTER:                  -5.523
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.385  61.396  64.888  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.443  61.939  65.508  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      61.786  62.687  65.466  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.722  63.039  66.209  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.339  62.507  66.711  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.166  61.827  66.277  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.161  62.634  67.507  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      61.369  63.345  67.868  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.190  63.472  68.663  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.803  62.886  69.097  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.596  62.175  68.736  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.774  62.048  67.940  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.249      1.813      3.195
+REMARK INTER + INTRA:          -5.249
+REMARK INTER:                  -5.249
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.667  64.173  69.226  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.219  63.758  68.670  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      60.416  63.582  68.730  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.197  63.162  68.054  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.865  63.079  67.577  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.497  63.448  67.958  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.895  62.695  66.847  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.214  62.350  66.534  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.245  61.966  65.804  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.957  61.928  65.388  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.637  62.273  65.702  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.606  62.657  66.432  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.225      6.606      7.276
+REMARK INTER + INTRA:          -5.225
+REMARK INTER:                  -5.225
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.377  67.861  69.771  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.829  67.391  70.172  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      65.582  67.494  70.952  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.033  66.902  71.125  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      64.942  66.434  70.451  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      65.434  66.736  69.862  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.445  65.779  70.380  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      63.983  65.540  71.020  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.486  64.885  70.948  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.453  64.469  70.236  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.916  64.707  69.597  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.412  65.363  69.669  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.181     12.336     12.880
+REMARK INTER + INTRA:          -5.181
+REMARK INTER:                  -5.181
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.786  62.739  54.126  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.649  62.029  53.727  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      64.907  61.843  52.967  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      64.648  61.081  52.789  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      64.228  60.796  53.440  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      64.229  61.382  54.020  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      63.871  60.054  53.500  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      63.916  59.523  52.871  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.559  58.781  52.930  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.156  58.572  53.620  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.111  59.104  54.248  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.468  59.846  54.188  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.172      2.616      3.981
+REMARK INTER + INTRA:          -5.172
+REMARK INTER:                  -5.172
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.270  61.604  70.823  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.402  62.123  70.194  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      60.380  62.946  70.232  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.544  63.240  69.478  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.667  62.598  68.975  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      60.579  61.907  69.417  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.847  62.640  68.171  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.917  63.375  67.802  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.096  63.417  66.997  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.205  62.723  66.563  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.135  61.990  66.932  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.955  61.948  67.737  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.046      6.898      7.768
+REMARK INTER + INTRA:          -5.046
+REMARK INTER:                  -5.046
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.582  65.569  69.579  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.182  65.748  70.118  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      63.200  65.530  70.912  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      63.898  65.823  71.241  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      64.310  66.222  70.649  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      63.867  66.176  69.954  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      65.038  66.602  70.736  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      65.417  66.602  71.468  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.145  66.982  71.556  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      66.493  67.360  70.910  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      66.113  67.360  70.178  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.385  66.980  70.091  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.004      3.699      4.610
+REMARK INTER + INTRA:          -5.004
+REMARK INTER:                  -5.004
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = linsidomine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.145  62.454  68.359  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.833  62.883  68.520  0.00  0.00    +0.000 A 
+ATOM      3  O   UNL     1      61.387  63.134  67.964  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.983  63.541  68.365  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.796  63.540  69.169  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.084  63.133  69.265  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.242  63.886  69.771  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      62.945  64.277  69.590  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.391  64.623  70.193  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.133  64.577  70.975  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.430  64.186  71.155  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.983  63.840  70.553  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

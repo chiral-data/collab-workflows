@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.112      0.000      0.000
+REMARK INTER + INTRA:          -8.112
+REMARK INTER:                  -8.112
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.850  61.823  66.073  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.227  61.735  65.345  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.915  62.190  65.357  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.408  62.209  64.696  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.214  61.773  64.023  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.527  61.318  64.011  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.033  61.298  64.671  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.963  62.559  66.093  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.305  62.332  66.535  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.132  62.573  67.305  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.474  62.346  67.748  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      60.522  62.716  68.484  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      61.210  63.171  68.497  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.587  63.083  67.768  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.436      1.336      3.382
+REMARK INTER + INTRA:          -7.436
+REMARK INTER:                  -7.436
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.042  61.808  67.199  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.886  62.171  67.923  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.211  62.929  67.903  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.139  63.426  68.558  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.744  63.165  69.233  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.419  62.407  69.253  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.490  61.909  68.598  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.568  63.034  67.167  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.463  62.341  66.732  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.733  62.205  65.964  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.629  61.512  65.529  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      61.986  61.617  64.792  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      62.311  62.375  64.772  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.155  62.739  65.497  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.140      1.832      4.280
+REMARK INTER + INTRA:          -7.140
+REMARK INTER:                  -7.140
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.663  61.871  68.977  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.570  62.097  69.764  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.749  62.901  69.822  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.703  63.281  70.553  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.478  62.860  71.224  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.298  62.057  71.166  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.344  61.675  70.437  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.953  63.171  69.070  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.900  62.535  68.548  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.057  62.558  67.738  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.004  61.922  67.215  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      61.209  62.193  66.463  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      61.388  62.996  66.521  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.294  63.222  67.309  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.121      1.548      2.186
+REMARK INTER + INTRA:          -7.121
+REMARK INTER:                  -7.121
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.165  63.054  67.887  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.008  62.650  67.185  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.720  62.552  66.782  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.732  62.163  66.054  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.032  61.872  65.730  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.319  61.970  66.134  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.306  62.359  66.861  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.319  62.895  67.234  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.975  63.205  67.917  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.373  63.598  68.524  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.030  63.908  69.207  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      61.629  64.252  69.660  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      62.341  64.154  69.256  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.184  63.750  68.554  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.036      5.077      6.862
+REMARK INTER + INTRA:          -7.036
+REMARK INTER:                  -7.036
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.500  66.050  69.796  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.091  66.510  70.141  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.141  66.305  70.938  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.690  66.680  71.427  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      66.189  67.259  71.118  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      66.140  67.464  70.321  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.591  67.090  69.832  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.581  65.718  71.086  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.185  65.561  70.379  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.579  65.010  70.276  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.183  64.852  69.570  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      62.623  64.264  69.717  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      62.673  64.059  70.515  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.264  64.520  70.860  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.900      5.884      6.830
+REMARK INTER + INTRA:          -6.900
+REMARK INTER:                  -6.900
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.585  64.313  72.761  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.799  63.609  72.388  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.247  63.457  71.794  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.322  62.782  71.325  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.948  62.260  71.449  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.500  62.412  72.043  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.426  63.086  72.513  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.692  64.067  71.800  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.901  64.596  72.398  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.497  65.287  72.597  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.705  65.816  73.194  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      59.150  66.426  73.200  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      58.598  66.274  72.606  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      58.812  65.570  72.233  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.821      3.395      4.418
+REMARK INTER + INTRA:          -6.821
+REMARK INTER:                  -6.821
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.212  64.024  70.057  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.332  63.311  69.660  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.204  63.443  68.855  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.285  62.822  68.318  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.493  62.070  68.584  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.621  61.939  69.388  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.541  62.559  69.927  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.005  64.237  68.756  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.010  64.596  69.499  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.843  65.389  69.655  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.848  65.748  70.398  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      59.649  66.543  70.298  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      59.521  66.675  69.494  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.641  65.961  69.096  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.724      5.360      6.231
+REMARK INTER + INTRA:          -6.724
+REMARK INTER:                  -6.724
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.626  64.624  71.651  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.026  64.104  71.872  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.976  63.513  71.299  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.418  62.910  71.375  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.910  62.898  72.024  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.959  63.489  72.598  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.517  64.092  72.522  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.546  63.668  70.723  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.948  64.355  70.941  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.564  64.711  70.523  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.966  65.397  70.740  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      64.536  65.552  70.164  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      64.487  64.962  69.591  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.886  64.441  69.812  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.631      5.108      5.945
+REMARK INTER + INTRA:          -6.631
+REMARK INTER:                  -6.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiabendazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.687  64.516  71.590  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.977  63.798  71.874  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.940  63.248  71.261  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.196  62.474  71.386  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.488  62.250  72.124  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.525  62.800  72.737  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.269  63.575  72.613  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.628  63.625  70.597  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.472  64.410  70.801  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.155  64.986  70.303  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.998  65.770  70.506  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      59.686  66.148  69.842  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      59.650  65.598  69.228  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.939  64.879  69.513  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

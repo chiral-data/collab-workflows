@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.363      0.000      0.000
+REMARK INTER + INTRA:          -6.363
+REMARK INTER:                  -6.363
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.211  62.481  66.862  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.037  62.038  66.187  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.615  61.919  65.611  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.441  61.477  64.937  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.020  61.358  64.361  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.846  60.916  63.688  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.771  61.682  64.459  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      62.350  61.563  63.882  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      61.946  62.125  65.133  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.698  62.450  65.231  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.368  62.244  65.709  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.542  62.687  66.384  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.136      0.747      1.599
+REMARK INTER + INTRA:          -6.136
+REMARK INTER:                  -6.136
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.663  62.929  67.248  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.311  63.034  66.748  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.361  62.611  66.042  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.009  62.716  65.542  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.058  62.292  64.836  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.706  62.398  64.337  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.460  61.764  64.630  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      61.510  61.340  63.923  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      60.812  61.658  65.129  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.213  61.129  64.923  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.762  62.082  65.836  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.114  61.976  66.336  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.970      1.381      2.312
+REMARK INTER + INTRA:          -5.970
+REMARK INTER:                  -5.970
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.743  61.343  64.074  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.969  61.323  64.362  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.788  61.676  65.084  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.015  61.656  65.371  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.834  62.010  66.094  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.061  61.990  66.381  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.426  62.384  66.530  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      60.244  62.739  67.253  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      61.199  62.405  66.243  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.792  62.779  66.679  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.380  62.051  65.520  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.154  62.072  65.233  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.770      1.443      2.286
+REMARK INTER + INTRA:          -5.770
+REMARK INTER:                  -5.770
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.958  63.220  67.662  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.135  63.153  67.696  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.729  62.755  67.101  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.907  62.688  67.134  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.500  62.289  66.538  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      58.679  62.223  66.572  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.915  61.957  65.907  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      59.507  61.557  65.310  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      60.737  62.023  65.872  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.152  61.691  65.242  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.144  62.422  66.469  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.966  62.488  66.435  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.552      7.627      8.478
+REMARK INTER + INTRA:          -5.552
+REMARK INTER:                  -5.552
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.828  65.550  69.932  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.305  66.110  69.556  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.907  66.485  69.974  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.384  67.045  69.599  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.987  67.421  70.017  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      66.463  67.979  69.642  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      66.115  67.237  70.811  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      66.719  67.613  71.230  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      65.639  66.678  71.187  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.766  66.494  71.982  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.035  66.302  70.769  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      64.559  65.742  71.145  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.463      3.571      4.659
+REMARK INTER + INTRA:          -5.463
+REMARK INTER:                  -5.463
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.144  64.466  69.217  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.820  63.999  69.816  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.380  63.330  69.625  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.056  62.863  70.223  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.615  62.193  70.032  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.293  61.727  70.630  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.497  61.989  69.241  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      60.056  61.318  69.050  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      60.820  62.455  68.642  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.703  62.252  67.851  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.262  63.126  68.834  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.585  63.592  68.234  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.324      2.711      3.669
+REMARK INTER + INTRA:          -5.324
+REMARK INTER:                  -5.324
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.065  64.626  69.539  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.402  64.577  68.787  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.607  63.843  68.474  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.943  63.793  67.722  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.147  63.058  67.409  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.483  63.009  66.658  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.016  62.372  67.847  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      61.221  61.636  67.533  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      60.680  62.420  68.599  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.548  61.734  69.038  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.475  63.155  68.913  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.139  63.204  69.665  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.267     24.824     25.595
+REMARK INTER + INTRA:          -5.267
+REMARK INTER:                  -5.267
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      73.050  80.200  49.083  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      72.427  80.323  49.611  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.779  79.815  49.609  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.156  79.938  50.136  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.507  79.429  50.135  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      69.885  79.553  50.662  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.480  78.797  49.606  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      69.830  78.287  49.604  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      71.102  78.673  49.078  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      71.076  78.040  48.549  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      71.752  79.182  49.080  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      72.374  79.058  48.552  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.212     24.774     25.414
+REMARK INTER + INTRA:          -5.212
+REMARK INTER:                  -5.212
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fludeoxyglucose (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      69.515  79.594  50.699  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.238  79.971  50.569  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.782  79.647  50.041  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.505  80.023  49.910  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      72.049  79.699  49.382  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      72.771  80.075  49.252  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      71.871  79.000  48.983  0.00  0.00    +0.000 C 
+ATOM      8  F   UNL     1      72.416  78.676  48.454  0.00  0.00    +0.000 F 
+ATOM      9  C   UNL     1      71.148  78.623  49.113  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      70.969  77.923  48.714  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.604  78.947  49.642  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      69.880  78.570  49.772  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.247      0.000      0.000
+REMARK INTER + INTRA:          -9.247
+REMARK INTER:                  -9.247
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.568  61.614  63.486  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.100  61.753  64.151  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.340  61.437  64.193  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.871  61.576  64.859  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.164  62.031  65.481  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.924  62.348  65.439  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.393  62.209  64.773  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.695  62.170  66.145  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.303  62.616  66.480  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.087  61.724  65.811  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.227  62.309  66.810  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.520  62.765  67.433  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.052  62.905  68.098  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.344  63.360  68.720  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.104  63.677  68.678  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.573  63.538  68.012  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.280  63.082  67.390  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.862      1.381      3.927
+REMARK INTER + INTRA:          -8.862
+REMARK INTER:                  -8.862
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.151  61.982  70.521  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.419  62.224  69.779  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.513  63.027  69.618  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.781  63.270  68.875  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.954  62.710  68.296  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.860  61.906  68.457  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.592  61.663  69.199  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      61.222  62.953  67.554  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.267  62.165  67.313  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.176  63.740  67.796  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.489  63.196  66.813  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.662  62.634  66.233  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      61.930  62.878  65.490  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.103  62.317  64.911  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.008  61.514  65.072  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.740  61.271  65.815  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.568  61.832  66.394  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.091      5.544      7.027
+REMARK INTER + INTRA:          -8.091
+REMARK INTER:                  -8.091
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.489  67.852  69.833  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.892  67.420  70.205  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.667  67.607  70.976  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.070  67.175  71.348  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.698  66.557  70.948  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.923  66.369  70.177  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.520  66.802  69.804  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      64.102  66.125  71.320  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      64.017  65.660  70.644  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      64.187  66.590  71.996  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.505  65.693  71.692  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.134  65.075  71.291  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      62.536  64.642  71.664  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.165  64.024  71.264  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.389  63.837  70.493  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.987  64.270  70.121  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      63.358  64.888  70.521  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.090      1.432      1.862
+REMARK INTER + INTRA:          -8.090
+REMARK INTER:                  -8.090
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.676  61.310  64.895  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.593  61.738  65.596  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.842  61.872  65.910  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.759  62.301  66.611  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.426  62.594  66.996  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.177  62.459  66.682  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.261  62.031  65.981  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.343  63.022  67.697  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.162  63.113  67.738  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.524  62.930  67.655  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.260  63.450  68.397  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.928  63.743  68.783  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.844  64.171  69.484  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.512  64.464  69.869  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.262  64.330  69.555  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.345  63.901  68.854  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.678  63.608  68.469  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.070      2.731      3.793
+REMARK INTER + INTRA:          -8.070
+REMARK INTER:                  -8.070
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.022  63.036  66.703  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.949  62.875  67.509  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.512  62.223  67.760  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.438  62.061  68.567  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.802  62.552  69.120  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.240  63.205  68.869  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.313  63.367  68.063  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.728  62.391  69.926  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.191  63.051  70.101  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.266  61.731  69.752  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.655  62.230  70.732  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.019  62.721  71.285  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.946  62.560  72.092  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.309  63.051  72.645  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.746  63.703  72.394  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.820  63.865  71.587  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.456  63.374  71.034  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.035      2.201      4.518
+REMARK INTER + INTRA:          -8.035
+REMARK INTER:                  -8.035
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.628  63.270  72.158  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.381  63.001  71.418  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.835  62.385  71.365  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.588  62.115  70.625  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.886  62.461  69.939  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.432  63.078  69.992  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.680  63.348  70.732  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.639  62.192  69.200  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.127  62.748  68.834  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.151  61.636  69.565  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.392  61.922  68.460  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.691  62.269  67.774  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.443  62.000  67.034  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.742  62.346  66.348  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.287  62.962  66.401  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.535  63.232  67.141  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.236  62.885  67.827  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.939      5.170      5.886
+REMARK INTER + INTRA:          -7.939
+REMARK INTER:                  -7.939
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.379  66.887  70.069  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.827  66.276  70.129  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.683  65.786  69.482  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.132  65.174  69.543  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.725  65.054  70.250  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.869  65.544  70.898  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.421  66.156  70.837  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      63.174  64.443  70.310  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      63.023  64.657  71.093  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      63.326  64.229  69.528  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.623  63.832  70.371  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.217  63.712  71.079  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      61.665  63.100  71.139  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.259  62.980  71.846  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.403  63.471  72.493  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.955  64.082  72.433  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      62.361  64.202  71.726  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.750      5.661      6.457
+REMARK INTER + INTRA:          -7.750
+REMARK INTER:                  -7.750
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.636  62.402  73.035  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.251  62.970  72.578  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.855  62.747  71.891  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.470  63.317  71.433  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.482  64.108  71.663  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.879  64.332  72.351  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.264  63.762  72.809  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.098  64.677  71.205  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      60.334  65.263  71.736  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.862  64.091  70.675  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.714  65.246  70.748  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.726  66.038  70.979  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      59.342  66.607  70.521  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.354  67.399  70.751  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.751  67.622  71.439  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.136  67.052  71.897  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      60.123  66.261  71.666  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.679      4.987      5.936
+REMARK INTER + INTRA:          -7.679
+REMARK INTER:                  -7.679
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfadiazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.125  61.801  70.962  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.677  62.401  71.088  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.633  62.865  71.768  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.186  63.466  71.894  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.781  63.601  71.340  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.826  63.137  70.660  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.273  62.536  70.534  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      62.334  64.201  71.466  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      62.703  64.011  70.754  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.965  64.391  72.179  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.886  64.801  71.592  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.482  64.935  71.038  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      64.035  65.536  71.164  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      64.630  65.671  70.610  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.674  65.207  69.930  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.121  64.606  69.804  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      63.525  64.471  70.358  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

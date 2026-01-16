@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.152      0.000      0.000
+REMARK INTER + INTRA:          -8.152
+REMARK INTER:                  -8.152
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.731  62.839  66.121  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.743  62.375  65.438  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.388  62.413  64.925  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.400  61.950  64.243  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.766  61.448  64.073  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.122  61.411  64.587  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.489  60.910  64.417  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.110  61.874  65.269  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.466  61.836  65.782  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.454  62.300  66.465  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.850  62.320  67.026  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.067  62.857  67.614  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.805  63.169  67.416  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      61.044  62.824  66.705  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.976      0.983      1.467
+REMARK INTER + INTRA:          -7.976
+REMARK INTER:                  -7.976
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.205  62.063  66.282  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.682  61.888  65.631  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.396  61.400  65.030  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.872  61.226  64.379  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.634  61.539  64.329  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.919  62.027  64.930  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      62.680  62.340  64.880  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.443  62.201  65.581  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.728  62.689  66.181  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.251  62.863  66.833  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.461  63.340  67.472  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.821  63.363  67.993  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.217  62.901  67.675  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.483  62.592  66.957  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.900      1.039      3.021
+REMARK INTER + INTRA:          -7.900
+REMARK INTER:                  -7.900
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.422  61.700  65.144  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.199  62.022  65.871  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.425  61.931  66.142  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.202  62.252  66.869  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.754  62.665  67.324  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.527  62.755  67.052  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      61.078  63.167  67.508  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.750  62.434  66.326  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.523  62.525  66.055  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.746  62.203  65.327  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.496  62.250  64.987  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.471  61.854  64.263  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.706  61.564  64.157  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      61.258  61.780  64.815  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.250      6.233      7.583
+REMARK INTER + INTRA:          -7.250
+REMARK INTER:                  -7.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      64.673  66.169  69.511  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      65.195  66.568  70.012  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.629  67.210  69.728  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.151  67.607  70.228  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      66.239  67.363  71.012  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.805  66.721  71.294  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      65.893  66.477  72.077  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      65.283  66.323  70.794  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      64.849  65.682  71.077  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.327  65.284  70.576  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.859  64.636  70.781  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.424  64.416  70.115  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.624  64.928  69.500  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      64.182  65.464  69.785  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.046      2.545      4.552
+REMARK INTER + INTRA:          -7.046
+REMARK INTER:                  -7.046
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.622  61.797  68.789  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.531  62.130  69.539  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.422  61.643  70.196  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.331  61.976  70.945  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.349  62.796  71.038  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.459  63.282  70.380  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.477  64.102  70.473  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.549  62.949  69.631  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.658  63.436  68.974  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.749  63.103  68.224  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.862  63.518  67.520  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.926  62.968  66.908  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.852  62.214  67.234  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.743  62.298  68.048  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.034      5.759      6.532
+REMARK INTER + INTRA:          -7.034
+REMARK INTER:                  -7.034
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.833  63.908  72.755  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.999  63.207  72.352  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.614  62.720  72.607  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.779  62.019  72.205  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.328  61.805  71.547  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.714  62.292  71.292  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.264  62.078  70.635  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.549  62.993  71.695  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.934  63.480  71.440  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.769  64.182  71.843  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.174  64.721  71.653  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.207  65.339  72.198  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.822  65.181  72.725  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.169  64.465  72.505  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.904      4.071      4.893
+REMARK INTER + INTRA:          -6.904
+REMARK INTER:                  -6.904
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.205  63.937  70.873  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.368  63.165  70.628  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.523  62.579  71.187  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.685  61.808  70.942  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.692  61.623  70.137  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.536  62.210  69.579  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.543  62.025  68.775  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.374  62.981  69.824  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.219  63.567  69.266  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.057  64.339  69.511  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.892  64.979  69.018  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.765  65.641  69.495  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.850  65.409  70.281  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.031  64.603  70.291  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.784      5.488      6.344
+REMARK INTER + INTRA:          -6.784
+REMARK INTER:                  -6.784
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.631  64.698  71.692  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.102  64.078  71.827  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.680  64.043  72.535  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.152  63.423  72.670  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.046  62.839  72.096  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.469  62.875  71.388  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      61.362  62.291  70.816  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.997  63.494  71.254  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.419  63.530  70.546  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.947  64.150  70.412  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.405  64.257  69.734  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.851  64.944  69.834  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.668  65.261  70.574  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      63.109  64.769  70.931  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.689      3.382      4.268
+REMARK INTER + INTRA:          -6.689
+REMARK INTER:                  -6.689
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clonidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.997  63.862  68.721  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.438  63.254  68.703  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.113  63.015  67.983  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.554  62.408  67.965  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.321  62.040  68.666  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.646  62.281  69.385  0.00  0.00    +0.000 A 
+ATOM      7 CL   UNL     1      60.412  61.913  70.086  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.205  62.888  69.403  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.529  63.127  70.122  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.089  63.735  70.140  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.459  64.032  70.815  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.974  64.632  70.579  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.921  64.705  69.759  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      62.373  64.150  69.488  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

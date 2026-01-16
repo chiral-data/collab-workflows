@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.691      0.000      0.000
+REMARK INTER + INTRA:          -8.691
+REMARK INTER:                  -8.691
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.848  63.420  69.572  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.516  63.032  68.924  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.958  62.928  68.235  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.626  62.540  67.587  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.069  62.437  66.898  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.737  62.049  66.250  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.965  61.765  66.291  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.179  61.946  65.560  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.847  61.558  64.912  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.075  61.273  64.953  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.289  61.454  64.223  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.063  61.739  64.182  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      62.504  61.636  63.494  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      62.394  62.127  64.831  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.952  62.230  65.519  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.509      2.446      4.414
+REMARK INTER + INTRA:          -8.509
+REMARK INTER:                  -8.509
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.049  61.841  64.528  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.968  62.377  65.150  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.689  62.119  65.882  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.608  62.655  66.504  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.328  62.397  67.237  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.248  62.932  67.859  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.445  63.725  67.749  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.968  62.674  68.592  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.887  63.210  69.213  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.085  64.002  69.104  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.608  62.952  69.946  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.410  62.158  70.056  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.131  61.901  70.788  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.491  61.623  69.433  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.770  61.881  68.702  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.740      6.391      6.950
+REMARK INTER + INTRA:          -7.740
+REMARK INTER:                  -7.740
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.290  63.786  72.726  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.722  63.917  72.035  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.295  64.511  72.013  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.727  64.641  71.322  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.300  65.235  71.301  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.732  65.365  70.610  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.591  64.903  69.942  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.305  65.959  70.588  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.736  66.089  69.897  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      64.596  65.627  69.230  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.310  66.683  69.875  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.450  67.146  70.544  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      66.022  67.739  70.522  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      65.018  67.015  71.234  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.445  66.422  71.256  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.561      3.716      5.794
+REMARK INTER + INTRA:          -7.561
+REMARK INTER:                  -7.561
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.755  62.374  66.800  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.113  62.067  67.477  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.113  62.503  68.178  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.471  62.196  68.854  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.470  62.632  69.555  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.828  62.325  70.232  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.186  61.583  70.208  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.827  62.761  70.933  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.185  62.454  71.609  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.543  61.712  71.586  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.184  62.890  72.311  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.825  63.633  72.334  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.825  64.068  73.034  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.468  63.939  71.656  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.468  63.504  70.956  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.541      5.738      6.865
+REMARK INTER + INTRA:          -7.541
+REMARK INTER:                  -7.541
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.168  67.865  70.091  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.764  67.186  69.854  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.181  66.862  70.341  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.777  66.183  70.103  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.194  65.859  70.590  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.791  65.180  70.353  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.969  64.825  69.631  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.208  64.856  70.839  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.804  64.177  70.602  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.983  63.822  69.880  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.221  63.853  71.089  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.042  64.208  71.811  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      61.460  63.884  72.297  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      62.447  64.888  72.048  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.029  65.211  71.562  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.299      5.179      6.078
+REMARK INTER + INTRA:          -7.299
+REMARK INTER:                  -7.299
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.649  66.297  69.758  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.228  65.957  70.381  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.696  65.344  70.232  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.275  65.004  70.855  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.742  64.390  70.706  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.321  64.051  71.329  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.432  64.323  72.099  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.789  63.437  71.180  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.368  63.097  71.803  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.479  63.370  72.572  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.836  62.484  71.654  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.725  62.211  70.883  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      60.194  61.599  70.735  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.147  62.552  70.261  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.679  63.164  70.409  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.221      5.820      6.930
+REMARK INTER + INTRA:          -7.221
+REMARK INTER:                  -7.221
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.642  68.353  73.222  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.777  67.791  72.634  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.482  67.025  72.720  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.617  66.462  72.132  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.322  65.696  72.218  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.457  65.134  71.630  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.887  65.337  70.957  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.162  64.368  71.717  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.297  63.806  71.128  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.726  64.009  70.455  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.002  63.040  71.215  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.572  62.837  71.889  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      61.277  62.072  71.975  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.437  63.400  72.477  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.732  64.165  72.391  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.200      5.007      5.666
+REMARK INTER + INTRA:          -7.200
+REMARK INTER:                  -7.200
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.360  67.013  71.229  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.402  66.298  70.819  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.803  65.657  71.149  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.845  64.942  70.739  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.247  64.301  71.069  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.289  63.586  70.659  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.931  63.512  69.921  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.690  62.944  70.990  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.733  62.230  70.580  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.374  62.156  69.841  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.134  61.588  70.910  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.493  61.662  71.649  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      61.893  61.022  71.979  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.450  62.378  72.058  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.049  63.018  71.729  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.920      6.659      7.926
+REMARK INTER + INTRA:          -6.920
+REMARK INTER:                  -6.920
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buclosamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.952  62.640  71.931  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.592  63.113  71.714  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.634  63.895  71.976  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.274  64.367  71.759  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.317  65.149  72.021  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.957  65.622  71.804  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.554  65.315  71.327  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.999  66.404  72.066  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.639  66.877  71.849  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      64.236  66.569  71.372  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.681  67.659  72.111  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.083  67.967  72.589  0.00  0.00    +0.000 A 
+ATOM     13 CL   UNL     1      63.126  68.747  72.850  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      62.443  67.493  72.805  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.401  66.712  72.544  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

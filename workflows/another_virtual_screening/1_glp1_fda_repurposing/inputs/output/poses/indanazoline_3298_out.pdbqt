@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.147      0.000      0.000
+REMARK INTER + INTRA:          -9.147
+REMARK INTER:                  -9.147
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.452  61.998  64.353  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.757  61.587  64.184  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.236  61.698  64.813  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.609  62.178  65.371  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.360  62.364  65.087  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.215  62.384  66.066  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.587  62.865  66.624  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.194  63.071  67.319  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.495  63.545  67.924  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.918  63.607  68.510  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.260  63.171  68.267  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.431  62.840  67.531  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.449  62.111  66.204  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.077  61.631  65.646  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.470  61.424  64.951  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.582      1.048      3.107
+REMARK INTER + INTRA:          -8.582
+REMARK INTER:                  -8.582
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.761  63.327  68.124  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.996  63.041  68.009  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.972  62.665  67.276  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.722  62.718  66.937  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.210  63.127  67.460  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.863  62.387  66.194  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.613  62.440  65.855  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.755  62.109  65.113  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.473  62.119  64.707  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.365  61.726  63.990  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.580  61.473  63.952  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.203  61.710  64.647  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.255  62.003  65.791  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.505  61.950  66.131  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.362  62.281  66.873  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.343      5.005      6.205
+REMARK INTER + INTRA:          -8.343
+REMARK INTER:                  -8.343
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.505  61.713  70.599  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.131  61.595  71.124  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.128  62.216  71.667  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.500  62.717  71.478  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.116  62.407  70.818  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.361  63.392  71.931  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.734  63.894  71.742  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.594  64.569  72.195  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      58.991  65.118  72.073  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.057  65.702  72.652  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.701  65.513  73.133  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.033  64.812  72.850  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.848  63.566  72.573  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.475  63.065  72.763  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.616  62.390  72.310  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.114      2.934      5.525
+REMARK INTER + INTRA:          -8.114
+REMARK INTER:                  -8.114
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.087  63.975  72.621  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.393  63.244  72.849  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.355  62.738  72.198  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.026  63.157  71.568  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.860  63.921  71.830  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.920  62.788  70.838  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.591  63.207  70.208  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.485  62.839  69.478  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.164  63.185  68.802  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.162  62.619  68.202  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.481  61.922  68.507  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.681  62.058  69.296  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.143  62.001  70.738  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.473  61.582  71.367  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.579  61.950  72.098  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.989      5.179      7.153
+REMARK INTER + INTRA:          -7.989
+REMARK INTER:                  -7.989
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.169  67.644  69.824  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.112  67.798  70.632  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.569  67.268  70.954  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.290  66.787  70.346  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.661  67.019  69.647  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.734  66.199  70.507  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.455  65.717  69.899  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.899  65.129  70.059  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.572  64.608  69.510  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.043  64.116  69.909  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.045  64.333  70.705  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.574  64.959  70.798  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      64.457  66.092  71.277  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.736  66.574  71.885  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.292  67.162  71.725  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.926      4.267      5.475
+REMARK INTER + INTRA:          -7.926
+REMARK INTER:                  -7.926
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.635  62.729  72.889  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.622  62.040  72.437  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.315  62.227  71.695  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.137  63.032  71.689  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.335  63.343  72.426  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.818  63.378  71.011  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.641  64.184  71.004  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.322  64.531  70.327  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.117  65.325  70.239  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.820  65.429  69.476  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.841  64.698  69.092  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.151  64.143  69.618  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.677  62.919  70.340  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.855  62.114  70.347  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.174  61.767  71.024  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.849      6.243      7.320
+REMARK INTER + INTRA:          -7.849
+REMARK INTER:                  -7.849
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.210  67.674  70.588  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.040  67.268  69.890  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.334  66.856  70.000  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.067  67.007  70.766  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.608  67.512  71.129  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.366  66.664  71.033  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.099  66.815  71.799  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.398  66.473  72.067  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.064  66.573  72.814  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.367  66.132  72.844  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.270  65.760  72.113  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      62.907  65.970  71.633  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.932  66.171  70.535  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.199  66.019  69.770  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.900  66.361  69.501  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.792      4.249      5.429
+REMARK INTER + INTRA:          -7.792
+REMARK INTER:                  -7.792
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.487  61.874  70.213  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.366  61.912  71.028  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.888  62.471  71.336  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.332  62.778  70.711  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.084  62.409  70.017  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.904  63.355  70.856  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.347  63.661  70.232  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.920  64.238  70.376  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.402  64.594  69.810  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.891  65.135  70.196  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.710  65.114  71.001  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.109  64.559  71.112  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.033  63.624  71.625  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.590  63.317  72.249  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.018  62.741  72.105  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.501     24.526     25.519
+REMARK INTER + INTRA:          -7.501
+REMARK INTER:                  -7.501
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = indanazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.857  79.389  48.840  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.380  78.792  48.530  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.659  78.810  48.929  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      71.690  79.418  49.486  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      72.430  79.776  49.431  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.038  79.566  49.970  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      71.069  80.175  50.527  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      70.419  80.324  51.012  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      70.369  80.910  51.590  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      69.624  80.861  51.939  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      69.212  80.244  51.576  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      69.704  79.912  51.003  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      70.357  79.107  49.899  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.327  78.499  49.342  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      70.977  78.350  48.857  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

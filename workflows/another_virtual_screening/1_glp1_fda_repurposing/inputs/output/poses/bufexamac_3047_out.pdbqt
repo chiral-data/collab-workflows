@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.902      0.000      0.000
+REMARK INTER + INTRA:          -8.902
+REMARK INTER:                  -8.902
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.254  62.407  70.645  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.481  62.084  69.919  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.706  62.580  69.300  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.933  62.258  68.576  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.158  62.754  67.955  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.385  62.431  67.231  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.609  62.928  66.611  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.836  62.605  65.887  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.839  61.787  65.782  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.066  61.465  65.057  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.291  61.961  64.437  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.288  62.778  64.542  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      62.518  61.638  63.712  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      62.743  62.135  63.093  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.615  61.291  66.401  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.387  61.614  67.127  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.849      2.438      4.910
+REMARK INTER + INTRA:          -8.849
+REMARK INTER:                  -8.849
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.054  61.962  64.337  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.734  61.833  65.087  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.833  62.398  65.680  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.513  62.268  66.429  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.612  62.834  67.023  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.292  62.704  67.772  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.391  63.269  68.366  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.072  63.140  69.115  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.654  62.447  69.271  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.334  62.318  70.021  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.433  62.883  70.614  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.851  63.576  70.458  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.113  62.754  71.364  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.212  63.319  71.957  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.554  61.882  68.678  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.874  62.012  67.928  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.217      5.823      6.592
+REMARK INTER + INTRA:          -8.217
+REMARK INTER:                  -8.217
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.926  63.276  72.479  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.508  63.861  72.457  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.913  64.014  71.754  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.494  64.598  71.733  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.899  64.751  71.030  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.480  65.336  71.008  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.885  65.489  70.305  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.466  66.074  70.283  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.643  66.505  70.963  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.225  67.091  70.941  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.629  67.243  70.238  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      65.452  66.812  69.559  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      66.211  67.828  70.216  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      66.615  67.981  69.514  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      64.239  66.353  71.666  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.657  65.767  71.688  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.119      1.505      2.377
+REMARK INTER + INTRA:          -8.119
+REMARK INTER:                  -8.119
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.188  63.495  72.863  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.994  63.139  72.144  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.301  63.439  71.440  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.107  63.083  70.722  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.414  63.383  70.016  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.219  63.027  69.298  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.527  63.327  68.593  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.332  62.971  67.875  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.832  62.316  67.861  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.638  61.960  67.142  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.945  62.260  66.437  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.445  62.915  66.451  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.751  61.904  65.718  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      61.058  62.204  65.014  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.525  62.016  68.565  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.719  62.372  69.284  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.095      5.192      6.633
+REMARK INTER + INTRA:          -8.095
+REMARK INTER:                  -8.095
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.349  67.739  69.904  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.727  67.376  70.307  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.415  66.665  70.030  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.793  66.303  70.433  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.480  65.591  70.156  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.858  65.229  70.559  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.546  64.517  70.281  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.924  64.155  70.685  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.614  64.505  71.364  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.992  64.142  71.767  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.680  63.431  71.490  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.990  63.082  70.810  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.057  63.068  71.893  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.746  62.357  71.615  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.926  65.216  71.641  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.549  65.578  71.238  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.784      2.164      4.576
+REMARK INTER + INTRA:          -7.784
+REMARK INTER:                  -7.784
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.064  60.190  62.323  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.728  60.478  63.020  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.188  60.913  63.549  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.852  61.200  64.246  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.312  61.636  64.776  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.976  61.923  65.472  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.436  62.359  66.002  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.100  62.645  66.699  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.307  62.497  66.866  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.971  62.785  67.564  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.431  63.220  68.093  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.224  63.368  67.925  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.095  63.508  68.790  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.555  63.943  69.319  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.847  62.062  66.337  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.183  61.775  65.640  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.660      2.508      3.240
+REMARK INTER + INTRA:          -7.660
+REMARK INTER:                  -7.660
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.565  65.420  71.379  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.922  65.048  71.018  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.983  64.786  70.238  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.340  64.415  69.878  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.401  64.153  69.097  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.758  63.782  68.737  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.819  63.519  67.956  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.176  63.148  67.596  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.475  63.040  68.014  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.832  62.668  67.653  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.893  62.406  66.873  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.594  62.515  66.455  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      59.250  62.035  66.512  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      59.311  61.773  65.732  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.414  63.301  68.794  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.057  63.673  69.155  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.625      4.999      6.129
+REMARK INTER + INTRA:          -7.625
+REMARK INTER:                  -7.625
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.532  63.095  68.175  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.043  63.727  68.324  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.656  63.641  68.869  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.166  64.272  69.017  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.780  64.187  69.563  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.290  64.818  69.710  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.903  64.733  70.256  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.413  65.364  70.404  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.311  66.079  70.008  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.822  66.711  70.156  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.435  66.625  70.701  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      65.537  65.910  71.098  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      65.945  67.257  70.850  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      66.558  67.171  71.395  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.698  66.165  69.462  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.187  65.533  69.314  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.319      7.595      8.348
+REMARK INTER + INTRA:          -7.319
+REMARK INTER:                  -7.319
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bufexamac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.182  66.911  71.490  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.459  66.602  71.743  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.783  67.075  71.730  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.060  66.767  71.982  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.384  67.240  71.970  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.661  66.932  72.222  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.985  67.404  72.209  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.262  67.096  72.462  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.216  66.317  72.726  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.493  66.009  72.978  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.817  66.482  72.965  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.863  67.261  72.701  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      59.093  66.174  73.218  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      58.418  66.646  73.205  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.892  65.844  72.738  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.615  66.152  72.486  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

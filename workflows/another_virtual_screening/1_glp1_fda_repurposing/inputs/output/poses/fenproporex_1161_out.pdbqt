@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.740      0.000      0.000
+REMARK INTER + INTRA:          -8.740
+REMARK INTER:                  -8.740
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.843  62.110  66.368  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.556  62.524  66.409  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.077  62.510  65.770  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.886  62.084  65.090  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.407  62.070  64.450  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.216  61.644  63.771  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.503  61.231  63.730  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.981  61.244  64.369  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.173  61.671  65.049  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.747  62.949  67.088  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.226  62.963  67.728  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.417  63.389  68.407  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.896  63.403  69.047  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.375  63.416  69.686  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.029      1.331      4.208
+REMARK INTER + INTRA:          -8.029
+REMARK INTER:                  -8.029
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.201  61.747  67.222  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.352  62.554  67.145  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.227  63.060  67.784  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.949  62.759  68.501  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.823  63.264  69.141  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.546  62.963  69.856  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.395  62.156  69.933  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.520  61.650  69.294  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.798  61.952  68.577  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.629  62.855  66.429  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.755  62.350  65.789  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.033  62.651  65.074  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.158  62.145  64.434  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      62.284  61.640  63.795  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.949      2.745      5.792
+REMARK INTER + INTRA:          -7.949
+REMARK INTER:                  -7.949
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.547  63.144  70.157  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.797  62.358  70.128  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.140  62.011  70.792  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.234  62.448  71.486  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.577  62.100  72.151  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.671  62.537  72.843  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.421  63.323  72.872  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.077  63.672  72.208  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.984  63.234  71.514  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.703  61.921  69.435  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.360  62.269  68.771  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.266  61.832  68.078  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.922  62.179  67.413  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      59.579  62.527  66.749  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.901      4.694      6.867
+REMARK INTER + INTRA:          -7.901
+REMARK INTER:                  -7.901
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.270  65.921  69.473  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.212  65.556  70.211  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.700  65.797  70.830  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.248  66.403  70.712  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.737  66.644  71.331  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      66.284  67.250  71.213  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      66.343  67.615  70.475  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.854  67.374  69.856  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.306  66.768  69.974  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.665  64.951  70.329  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.175  64.709  69.710  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.629  64.104  69.828  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.139  63.862  69.209  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      61.651  63.621  68.591  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.857      5.421      6.491
+REMARK INTER + INTRA:          -7.857
+REMARK INTER:                  -7.857
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.823  64.034  71.759  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.388  64.133  72.351  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.979  63.567  72.456  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.006  62.902  71.968  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.597  62.336  72.072  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.623  61.672  71.584  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.057  61.573  70.992  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.466  62.138  70.886  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.440  62.804  71.375  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.362  64.797  72.839  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.771  65.363  72.735  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.745  66.027  73.222  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.154  66.594  73.118  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      58.563  67.159  73.014  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.449      5.305      6.356
+REMARK INTER + INTRA:          -7.449
+REMARK INTER:                  -7.449
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.937  64.882  71.441  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.007  64.408  70.770  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.567  63.713  70.708  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.056  63.492  71.318  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.616  62.797  71.257  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.106  62.576  71.865  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.036  63.051  72.537  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.475  63.746  72.599  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.986  63.967  71.989  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.517  64.628  70.161  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.958  65.323  70.222  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.468  65.544  69.613  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.908  66.239  69.674  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      65.348  66.934  69.736  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.273     18.326     18.916
+REMARK INTER + INTRA:          -7.273
+REMARK INTER:                  -7.273
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.524  79.652  58.806  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.815  79.232  58.840  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.804  78.468  59.151  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.501  78.124  59.428  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.490  77.360  59.740  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      66.187  77.016  60.016  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      66.896  77.437  59.981  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.908  78.201  59.670  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.210  78.544  59.394  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      64.119  79.575  58.564  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.130  80.339  58.253  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.433  80.682  57.976  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.444  81.447  57.665  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      63.456  82.210  57.354  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.871      4.606      5.909
+REMARK INTER + INTRA:          -6.871
+REMARK INTER:                  -6.871
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.896  64.728  71.090  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.969  64.454  70.316  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.551  64.765  69.822  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.061  65.350  70.101  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.644  65.661  69.607  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.154  66.246  69.887  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.081  66.520  70.662  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.499  66.209  71.157  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.989  65.624  70.876  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.459  63.870  70.036  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.876  63.559  70.530  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.366  62.974  70.250  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.784  62.663  70.744  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.201  62.352  71.238  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.719     18.557     19.093
+REMARK INTER + INTRA:          -6.719
+REMARK INTER:                  -6.719
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenproporex
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.249  79.038  58.970  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.021  79.302  58.848  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.155  80.022  58.469  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.517  80.478  58.212  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.651  81.199  57.833  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.014  81.655  57.576  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.242  81.391  57.699  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.107  80.671  58.078  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.745  80.215  58.335  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      65.658  78.846  59.104  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      65.524  78.125  59.483  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.161  77.669  59.740  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.028  76.948  60.119  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      65.894  76.229  60.498  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

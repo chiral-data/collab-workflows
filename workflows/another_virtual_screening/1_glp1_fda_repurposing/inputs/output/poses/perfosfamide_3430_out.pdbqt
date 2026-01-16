@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.633      0.000      0.000
+REMARK INTER + INTRA:          -8.633
+REMARK INTER:                  -8.633
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.759  60.810  63.535  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      60.620  61.190  64.253  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.233  61.595  64.631  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.983  61.618  64.291  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.595  62.022  64.668  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.456  62.403  65.387  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.705  62.379  65.727  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.105  62.830  66.292  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.093  61.976  65.350  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.093  62.513  66.264  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.232  62.955  66.946  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.619  63.088  67.484  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      60.757  63.530  68.166  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.342  62.204  66.118  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.729  62.337  66.655  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      58.978  62.028  66.509  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.148      1.855      2.870
+REMARK INTER + INTRA:          -8.148
+REMARK INTER:                  -8.148
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.237  62.076  67.122  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      59.708  61.922  66.463  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.461  62.255  66.406  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.742  62.744  67.008  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.494  63.077  66.951  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.965  62.923  66.291  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.683  62.434  65.689  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.428  62.620  65.387  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.932  62.100  65.746  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.661  62.010  64.982  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.308  62.027  64.470  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.285  61.603  63.762  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      62.931  61.619  63.251  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.992  61.570  64.787  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.969  61.145  64.078  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      60.299  60.704  63.883  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.915      1.847      3.406
+REMARK INTER + INTRA:          -7.915
+REMARK INTER:                  -7.915
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.888  63.859  68.306  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      61.820  63.424  67.610  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.103  63.064  67.416  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.455  63.139  67.920  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.739  62.779  67.727  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.670  62.344  67.029  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.319  62.269  66.525  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      59.760  61.830  66.106  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.035  62.629  66.718  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.773  62.042  65.875  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.439  61.576  65.281  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.894  61.349  64.631  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      60.561  60.884  64.037  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.561  62.279  65.820  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.016  62.051  65.169  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      62.804  62.289  65.114  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.297      3.661      4.771
+REMARK INTER + INTRA:          -7.297
+REMARK INTER:                  -7.297
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.614  63.467  67.495  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      61.684  63.471  68.316  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.239  62.945  68.771  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.723  62.417  68.403  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.278  61.892  68.858  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.348  61.895  69.680  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.864  62.425  70.047  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.560  62.036  70.709  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.309  62.949  69.593  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.274  62.819  70.645  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.149  62.614  71.434  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.560  63.008  72.032  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      61.436  62.804  72.821  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.808  63.417  70.452  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.218  63.811  71.051  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      62.753  64.410  70.858  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.283      6.325      7.307
+REMARK INTER + INTRA:          -7.283
+REMARK INTER:                  -7.283
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.324  64.649  71.943  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      62.909  65.189  71.730  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.349  65.072  71.041  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.203  64.414  70.566  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.642  64.297  69.878  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.228  64.838  69.664  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      64.374  65.495  70.140  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      64.931  65.622  69.545  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      63.934  65.612  70.828  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      64.713  66.197  70.409  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      65.322  66.552  69.979  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.662  67.255  70.248  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      66.269  67.610  69.819  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      64.445  66.544  71.108  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.785  67.247  71.377  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      64.517  67.593  72.076  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.128      5.561      6.449
+REMARK INTER + INTRA:          -7.128
+REMARK INTER:                  -7.128
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.376  65.284  70.705  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      59.735  64.544  70.757  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.187  64.349  71.419  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.280  64.895  72.030  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.732  64.700  72.692  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.091  63.959  72.743  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.998  63.413  72.131  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.475  62.976  72.643  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.546  63.608  71.470  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.071  62.715  71.698  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.516  62.089  71.998  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.589  61.390  71.563  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      62.034  60.764  71.863  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.699  62.645  70.965  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.772  61.946  70.531  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      60.400  61.875  69.798  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.048      3.796      4.721
+REMARK INTER + INTRA:          -7.048
+REMARK INTER:                  -7.048
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.128  61.397  70.595  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      60.601  62.072  70.566  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.786  62.415  69.839  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.497  62.084  69.141  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.682  62.427  68.414  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.156  63.102  68.385  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.444  63.433  69.084  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.769  63.955  68.532  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.259  63.090  69.810  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.846  63.946  69.590  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.270  64.582  69.281  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.672  65.096  69.789  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      63.096  65.731  69.480  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.822  63.822  70.405  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.224  64.335  70.912  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      62.201  64.211  71.728  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.003      4.671      6.045
+REMARK INTER + INTRA:          -7.003
+REMARK INTER:                  -7.003
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.494  65.219  72.239  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      62.229  64.765  71.604  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.812  64.065  71.742  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.661  63.821  72.514  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.244  63.123  72.652  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.979  62.668  72.016  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.132  62.913  71.243  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.718  62.215  71.094  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.548  63.611  71.106  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.140  62.915  70.418  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.779  62.301  70.001  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.787  62.303  69.175  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      60.426  61.690  68.758  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      61.509  63.530  70.011  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.517  63.531  69.185  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      61.887  64.147  68.778  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.961      3.859      5.462
+REMARK INTER + INTRA:          -6.961
+REMARK INTER:                  -6.961
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = perfosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.680  64.794  72.318  0.00  0.00    +0.000 OA
+ATOM      2  O   UNL     1      59.877  64.254  71.727  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      59.918  64.499  70.940  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.763  65.285  70.745  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.804  65.531  69.959  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.001  64.990  69.367  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.156  64.204  69.563  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.264  64.172  68.745  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.115  63.958  70.349  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.349  63.406  69.475  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.511  63.102  68.725  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.704  62.304  68.637  0.00  0.00    +0.000 C 
+ATOM     13 CL   UNL     1      60.866  62.000  67.888  0.00  0.00    +0.000 Cl
+ATOM     14  C   UNL     1      60.379  62.914  70.135  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.573  62.116  70.047  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      60.603  61.624  70.709  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

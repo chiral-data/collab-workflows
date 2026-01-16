@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.988      0.000      0.000
+REMARK INTER + INTRA:          -7.988
+REMARK INTER:                  -7.988
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.271  63.655  68.531  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.091  63.205  67.862  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.638  63.145  67.247  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.458  62.696  66.579  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.004  62.634  65.963  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.824  62.186  65.296  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.370  62.125  64.680  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.191  61.676  64.012  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.464  61.287  63.960  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.918  61.348  64.574  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.098  61.797  65.242  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.731  62.307  66.526  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.186  62.368  67.141  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.366  62.817  67.810  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.631      1.181      3.232
+REMARK INTER + INTRA:          -7.631
+REMARK INTER:                  -7.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.718  61.734  63.466  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.126  61.751  64.043  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.239  62.185  64.736  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.648  62.201  65.312  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.759  62.634  66.005  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.170  62.650  66.580  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.281  63.084  67.274  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.691  63.101  67.850  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.989  62.683  67.733  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.877  62.250  67.040  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.468  62.233  66.464  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.946  61.783  65.195  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.835  61.350  64.502  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.425  61.334  63.926  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.154      0.901      1.435
+REMARK INTER + INTRA:          -7.154
+REMARK INTER:                  -7.154
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.915  64.261  69.406  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.451  63.880  68.839  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.810  63.493  68.205  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.347  63.112  67.638  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.704  62.725  67.004  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.241  62.345  66.438  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.600  61.957  65.804  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.136  61.577  65.237  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.314  61.584  65.305  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.955  61.971  65.939  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.419  62.352  66.505  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.524  63.119  67.706  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.166  63.507  68.340  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.630  63.887  68.906  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.058      2.078      4.428
+REMARK INTER + INTRA:          -7.058
+REMARK INTER:                  -7.058
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.202  62.141  66.271  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.191  62.434  67.044  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.887  61.971  67.655  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.876  62.263  68.427  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.572  61.801  69.039  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.561  62.092  69.810  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.257  61.629  70.422  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.246  61.921  71.194  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.539  62.676  71.353  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.842  63.139  70.741  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.853  62.847  69.970  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.168  63.018  68.587  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.472  63.480  67.975  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.483  63.188  67.203  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.820      4.922      6.766
+REMARK INTER + INTRA:          -6.820
+REMARK INTER:                  -6.820
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.196  63.783  70.988  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.772  64.277  70.661  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.172  64.817  71.140  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.747  65.310  70.814  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      64.147  65.851  71.291  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.722  66.343  70.965  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.122  66.884  71.444  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.697  67.377  71.118  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.872  67.329  70.313  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.473  66.790  69.834  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.897  66.297  70.161  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      63.923  65.263  70.008  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.522  64.723  69.530  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.947  64.230  69.857  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.805      3.904      4.931
+REMARK INTER + INTRA:          -6.805
+REMARK INTER:                  -6.805
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.653  66.571  69.222  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.744  65.886  69.675  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.958  65.177  69.312  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.048  64.493  69.765  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.262  63.784  69.403  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.353  63.101  69.855  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.567  62.390  69.493  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.657  61.707  69.946  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.535  61.734  70.761  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.321  62.443  71.124  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.230  63.126  70.671  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.926  64.519  70.581  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.712  65.229  70.943  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.621  65.913  70.490  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.711      5.540      6.373
+REMARK INTER + INTRA:          -6.711
+REMARK INTER:                  -6.711
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.921  66.254  73.222  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.942  65.581  72.743  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.479  64.976  72.905  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.500  64.305  72.427  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.036  63.699  72.588  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.057  63.028  72.109  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.594  62.423  72.271  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.615  61.751  71.792  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.099  61.685  71.152  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.562  62.290  70.990  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.542  62.962  71.469  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.984  64.238  71.786  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.447  64.844  71.625  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.426  65.515  72.103  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.642      4.809      6.129
+REMARK INTER + INTRA:          -6.642
+REMARK INTER:                  -6.642
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.021  66.267  69.763  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.615  65.576  69.963  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.231  65.521  70.691  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.825  64.830  70.891  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.440  64.773  71.618  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.035  64.084  71.817  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.650  64.027  72.546  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.244  63.337  72.745  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.224  62.704  72.217  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.608  62.760  71.490  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.014  63.450  71.290  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.804  64.196  70.362  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.189  64.253  69.635  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.595  64.944  69.436  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.609     18.328     18.826
+REMARK INTER + INTRA:          -6.609
+REMARK INTER:                  -6.609
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amanozine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.102  81.430  57.647  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.196  80.701  58.024  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      64.950  80.440  58.235  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.043  79.712  58.611  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      65.796  79.450  58.822  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.890  78.723  59.198  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      66.644  78.461  59.410  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.737  77.733  59.786  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.077  77.266  59.951  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.324  77.527  59.740  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.230  78.255  59.364  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      64.383  79.244  58.776  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.630  79.506  58.565  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.536  80.234  58.189  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

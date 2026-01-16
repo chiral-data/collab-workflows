@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.233      0.000      0.000
+REMARK INTER + INTRA:          -6.233
+REMARK INTER:                  -6.233
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.068  61.786  64.666  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.268  61.583  64.674  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.949  61.141  64.055  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.788  61.823  65.301  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      59.983  61.662  65.385  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.727  62.005  66.089  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      58.958  61.979  66.390  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.373  62.377  66.442  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.029  62.265  65.955  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.792  62.544  66.096  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.396  62.388  65.557  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.951  62.981  66.778  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.155      1.060      2.118
+REMARK INTER + INTRA:          -6.155
+REMARK INTER:                  -6.155
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.877  60.907  63.799  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.737  61.154  64.575  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.069  60.887  64.977  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.266  61.667  64.946  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.199  61.959  65.714  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.845  62.451  65.857  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.998  62.859  66.558  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.312  62.462  65.177  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.954  61.978  64.614  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.235  61.830  63.853  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.815  61.331  63.348  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.935  62.182  63.596  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.008      0.815      2.103
+REMARK INTER + INTRA:          -6.008
+REMARK INTER:                  -6.008
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.727  62.370  66.802  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.943  62.022  66.085  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.374  61.646  65.622  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.728  62.051  65.832  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.025  61.730  65.133  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.833  61.886  65.103  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.349  61.663  64.498  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.038  62.304  65.785  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.355  62.406  66.235  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.306  62.795  66.961  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.581  62.854  67.350  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.983  63.125  67.298  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.964      0.902      2.068
+REMARK INTER + INTRA:          -5.964
+REMARK INTER:                  -5.964
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.031  61.577  65.051  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.543  61.989  65.551  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.348  62.027  65.376  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.249  62.362  66.226  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.691  62.790  66.774  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.177  63.065  67.358  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.386  63.519  68.014  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.416  62.805  67.170  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.461  62.371  66.471  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.829  62.009  66.084  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.958  61.590  65.385  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.067  62.065  66.396  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.493      7.219      8.465
+REMARK INTER + INTRA:          -5.493
+REMARK INTER:                  -5.493
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.627  65.602  70.835  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.786  66.075  70.177  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.385  65.942  69.468  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.346  66.679  70.228  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      65.561  67.193  69.620  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.136  67.707  69.913  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      66.507  68.311  69.490  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      66.276  67.511  70.702  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.788  66.876  70.897  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.747  66.502  71.631  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      65.229  65.870  71.745  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      66.226  66.761  72.252  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.442      3.244      4.202
+REMARK INTER + INTRA:          -5.442
+REMARK INTER:                  -5.442
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.723  64.019  68.710  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.526  63.758  69.468  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.739  64.208  70.126  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.117  63.049  69.568  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.884  62.720  70.287  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.492  62.012  70.129  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.166  61.502  70.691  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.483  61.903  69.312  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.869  62.543  68.964  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.986  62.658  68.156  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.385  63.330  67.888  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.706  62.102  67.616  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.394      2.925      3.956
+REMARK INTER + INTRA:          -5.394
+REMARK INTER:                  -5.394
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.602  63.596  69.976  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.656  63.616  69.153  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.091  64.211  68.783  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.274  63.041  68.700  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.278  62.990  67.877  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.829  62.334  67.660  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.686  62.077  66.889  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.547  61.978  68.350  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.822  62.415  68.992  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.672  62.255  69.787  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.986  62.744  70.373  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.207  61.607  69.997  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.323      3.653      4.621
+REMARK INTER + INTRA:          -5.323
+REMARK INTER:                  -5.323
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.718  62.445  68.330  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.232  63.020  68.626  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.617  63.533  68.108  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.359  63.080  69.439  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.854  63.623  69.813  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.815  63.486  70.625  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.223  63.904  71.208  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.296  62.858  70.753  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.014  62.606  70.020  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.481  61.991  69.890  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.249  61.801  69.122  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.181  61.564  70.529  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.211      6.191      7.308
+REMARK INTER + INTRA:          -5.211
+REMARK INTER:                  -5.211
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxaceprol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.069  66.556  72.191  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.155  67.082  71.560  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.020  67.887  71.674  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      59.376  66.801  70.816  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      59.483  67.257  70.138  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.702  66.753  69.523  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.864  66.977  68.746  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.730  65.984  69.822  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.529  66.014  70.621  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.488  65.370  71.135  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.277  65.484  71.924  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.657  64.611  70.859  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.594      0.000      0.000
+REMARK INTER + INTRA:          -7.594
+REMARK INTER:                  -7.594
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.302  62.542  67.375  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.814  62.444  66.735  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.578  62.754  66.767  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.561  62.036  66.063  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.797  61.727  66.032  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.072  61.938  65.424  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.821  61.531  64.752  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.332  61.433  64.113  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.080  61.026  63.442  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.096  61.743  64.145  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.608  61.645  63.504  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.349  62.150  64.816  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.837  62.248  65.456  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.275      1.376      3.116
+REMARK INTER + INTRA:          -7.275
+REMARK INTER:                  -7.275
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.363  61.624  63.786  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.782  61.714  64.365  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.022  61.417  64.237  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.960  62.102  65.072  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.719  62.398  65.199  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.379  62.192  65.650  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.556  62.579  66.356  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.975  62.669  66.934  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.152  63.056  67.640  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.216  62.372  66.806  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.634  62.463  67.385  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.038  61.985  66.100  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.619  61.895  65.521  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.510      1.460      2.119
+REMARK INTER + INTRA:          -6.510
+REMARK INTER:                  -6.510
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.687  63.119  69.025  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.633  62.810  68.262  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.976  62.359  68.045  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.236  62.951  67.716  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.892  63.401  67.934  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.182  62.642  66.954  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.784  62.783  66.408  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.730  62.474  65.645  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.332  62.615  65.100  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.074  62.024  65.428  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.020  61.715  64.664  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.471  61.883  65.973  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.525  62.192  66.736  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.269      2.861      3.763
+REMARK INTER + INTRA:          -6.269
+REMARK INTER:                  -6.269
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.979  62.371  71.198  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.059  62.624  70.417  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.562  63.254  70.237  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.635  62.249  69.816  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.132  61.621  69.997  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.714  62.503  69.036  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.291  62.128  68.435  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.371  62.382  67.654  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      59.948  62.007  67.054  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.873  63.010  67.474  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.953  63.264  66.692  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.297  63.385  68.074  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.218  63.132  68.855  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.233      4.655      6.514
+REMARK INTER + INTRA:          -6.233
+REMARK INTER:                  -6.233
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.396  61.968  69.107  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.696  62.485  69.675  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.906  63.255  69.463  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.786  62.233  70.456  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.576  61.464  70.667  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.086  62.749  71.024  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.176  62.498  71.804  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.476  63.015  72.373  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.566  62.763  73.153  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.686  63.784  72.161  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.986  64.302  72.730  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.596  64.037  71.381  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.296  63.519  70.812  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.189      7.544      8.311
+REMARK INTER + INTRA:          -6.189
+REMARK INTER:                  -6.189
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.781  65.709  70.642  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.529  65.955  70.887  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.775  65.819  71.664  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.032  66.338  70.357  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.786  66.475  69.581  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.779  66.585  70.602  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.283  66.967  70.072  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.031  67.214  70.317  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      66.533  67.597  69.787  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      66.276  67.077  71.093  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      67.025  67.324  71.338  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      65.773  66.694  71.624  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.025  66.448  71.378  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.109      6.424      7.376
+REMARK INTER + INTRA:          -6.109
+REMARK INTER:                  -6.109
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.392  65.641  72.128  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.732  64.915  71.934  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.552  64.555  71.213  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.251  64.548  72.460  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.431  64.908  73.180  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.591  63.823  72.266  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.110  63.455  72.791  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.449  62.729  72.597  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.968  62.363  73.122  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.270  62.370  71.877  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.610  61.643  71.682  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.750  62.736  71.350  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.411  63.462  71.545  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.096      6.755      7.505
+REMARK INTER + INTRA:          -6.096
+REMARK INTER:                  -6.096
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.575  61.632  71.552  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.130  62.325  71.503  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.648  62.460  70.847  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.168  62.884  72.109  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.650  62.749  72.765  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.723  63.576  72.060  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.760  64.135  72.666  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.315  64.828  72.617  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.353  65.385  73.222  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.833  64.962  71.962  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.388  65.656  71.912  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.796  64.404  71.355  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.240  63.711  71.404  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.036      6.524      7.524
+REMARK INTER + INTRA:          -6.036
+REMARK INTER:                  -6.036
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = corbadrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.866  67.599  70.599  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.290  67.042  70.794  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.950  67.045  71.547  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.054  66.480  70.237  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.394  66.477  69.486  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.479  65.923  70.432  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.243  65.361  69.876  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.667  64.804  70.071  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      63.431  64.243  69.514  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.327  64.807  70.822  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.751  64.249  71.017  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.562  65.369  71.379  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.138  65.926  71.184  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

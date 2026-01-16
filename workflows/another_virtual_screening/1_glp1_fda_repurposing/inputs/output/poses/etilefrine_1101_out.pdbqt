@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.881      0.000      0.000
+REMARK INTER + INTRA:          -7.881
+REMARK INTER:                  -7.881
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.502  62.262  69.043  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.502  61.999  68.261  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.065  62.284  67.730  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.064  62.021  66.948  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.628  62.307  66.417  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.191  62.855  66.668  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.627  62.044  65.635  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.191  62.329  65.104  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.190  62.066  64.322  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.754  62.352  63.790  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.628  61.519  64.071  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.064  61.233  64.602  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.065  61.496  65.385  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.347      1.594      3.389
+REMARK INTER + INTRA:          -7.347
+REMARK INTER:                  -7.347
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.771  61.602  63.394  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.064  61.620  63.820  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.050  61.943  64.579  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.343  61.961  65.005  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.328  62.284  65.764  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.019  62.590  66.097  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.622  62.302  66.190  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.607  62.626  66.950  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.900  62.643  67.376  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.885  62.967  68.135  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.211  62.339  67.044  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.225  62.015  66.285  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.932  61.997  65.858  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.981      1.572      4.109
+REMARK INTER + INTRA:          -6.981
+REMARK INTER:                  -6.981
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.060  62.431  65.154  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.753  62.168  65.874  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.643  62.702  66.494  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.336  62.439  67.213  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.226  62.972  67.833  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.424  63.767  67.734  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.919  62.710  68.552  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.809  63.243  69.173  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.502  62.981  69.892  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.392  63.514  70.513  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.304  62.187  69.991  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.414  61.654  69.371  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.721  61.916  68.651  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.883      1.646      2.188
+REMARK INTER + INTRA:          -6.883
+REMARK INTER:                  -6.883
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.960  64.400  69.651  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.374  64.039  69.195  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.575  63.665  68.488  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.990  63.303  68.033  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.191  62.929  67.325  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.977  62.916  67.073  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.606  62.568  66.869  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.807  62.193  66.162  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.221  61.832  65.706  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.422  61.457  64.998  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.437  61.845  65.957  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.235  62.219  66.664  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.821  62.581  67.121  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.759      5.894      7.126
+REMARK INTER + INTRA:          -6.759
+REMARK INTER:                  -6.759
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.424  63.681  70.609  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.868  64.323  70.879  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.416  64.683  70.379  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.860  65.324  70.649  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.409  65.685  70.149  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.514  65.405  69.380  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.853  66.326  70.419  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.402  66.687  69.918  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.845  67.328  70.188  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.395  67.688  69.688  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.741  67.608  70.956  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.193  67.247  71.456  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.748  66.606  71.186  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.676      3.390      6.042
+REMARK INTER + INTRA:          -6.676
+REMARK INTER:                  -6.676
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.229  62.044  67.985  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.483  61.960  68.766  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.531  62.622  69.256  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.784  62.538  70.037  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.833  63.200  70.528  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.628  63.944  70.238  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.086  63.116  71.308  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.135  63.778  71.799  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.389  63.694  72.580  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.437  64.356  73.071  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.593  62.950  72.869  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.545  62.288  72.379  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.291  62.372  71.598  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.609      5.801      6.780
+REMARK INTER + INTRA:          -6.609
+REMARK INTER:                  -6.609
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.973  66.867  73.221  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.348  66.134  73.163  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.079  65.576  72.619  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.454  64.843  72.561  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.185  64.284  72.016  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.542  64.459  71.530  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.560  63.552  71.959  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.291  62.993  71.414  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.665  62.260  71.356  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.397  61.702  70.811  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.308  62.086  71.842  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.577  62.644  72.387  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.202  63.378  72.445  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.277      5.605      6.921
+REMARK INTER + INTRA:          -6.277
+REMARK INTER:                  -6.277
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.144  67.697  70.044  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.645  67.055  69.902  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.126  66.800  70.490  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.627  66.158  70.349  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.108  65.902  70.937  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.088  66.288  71.666  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.609  65.260  70.796  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.089  65.004  71.384  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.591  64.363  71.243  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.071  64.107  71.831  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.611  63.978  70.514  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.130  64.233  69.926  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.629  64.875  70.068  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.250      5.568      6.549
+REMARK INTER + INTRA:          -6.250
+REMARK INTER:                  -6.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etilefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.511  66.211  70.702  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.032  65.740  71.182  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.428  65.290  70.846  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.949  64.820  71.326  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.345  64.369  70.990  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.221  64.387  70.175  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.866  63.899  71.471  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.262  63.447  71.135  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.783  62.978  71.615  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.179  62.526  71.279  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.908  62.959  72.429  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.511  63.410  72.765  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.991  63.880  72.285  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

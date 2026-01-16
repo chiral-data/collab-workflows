@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.563      0.000      0.000
+REMARK INTER + INTRA:          -7.563
+REMARK INTER:                  -7.563
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.140  63.236  68.777  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.770  63.275  68.245  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.729  62.869  67.528  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.359  62.907  66.996  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.318  62.501  66.279  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.648  62.057  66.093  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.608  61.651  65.377  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.237  61.689  64.844  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.907  62.134  65.029  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.948  62.540  65.747  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      62.437  62.069  64.401  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      62.095  61.585  63.828  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      62.435  61.373  63.107  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      61.354  61.351  64.102  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.545      1.621      3.813
+REMARK INTER + INTRA:          -7.545
+REMARK INTER:                  -7.545
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.251  61.619  63.717  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.444  62.018  64.413  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.878  62.109  65.007  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.071  62.507  65.703  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.505  62.598  66.297  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.747  62.289  66.195  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.182  62.380  66.788  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.374  62.778  67.485  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.132  63.087  67.587  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.698  62.997  66.993  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      61.162  63.451  68.326  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      60.422  63.367  68.681  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.207  63.650  69.426  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      59.936  62.952  68.161  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.046      2.389      3.826
+REMARK INTER + INTRA:          -7.046
+REMARK INTER:                  -7.046
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.481  62.981  72.774  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.644  63.305  72.033  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.345  62.947  71.352  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.508  63.271  70.611  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.209  62.914  69.930  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.747  62.233  69.990  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.448  61.876  69.310  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.611  62.199  68.568  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.073  62.880  68.508  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.373  63.238  69.189  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      61.142  63.072  67.709  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      60.722  62.510  67.275  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.643  62.491  66.454  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      60.394  61.971  67.806  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.026      5.562      6.839
+REMARK INTER + INTRA:          -7.026
+REMARK INTER:                  -7.026
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.542  67.788  69.829  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.925  67.542  70.319  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.494  66.864  70.131  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.877  66.618  70.621  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.446  65.940  70.432  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.631  65.509  69.753  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.200  64.832  69.565  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.583  64.585  70.055  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.398  65.017  70.733  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.829  65.695  70.922  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      62.766  64.643  71.108  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      62.560  63.981  70.662  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      61.955  63.448  70.835  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      63.066  63.945  70.011  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.950      3.297      5.376
+REMARK INTER + INTRA:          -6.950
+REMARK INTER:                  -6.950
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.631  62.182  66.482  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.865  62.714  67.067  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.033  62.442  67.829  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.267  62.974  68.414  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.435  62.702  69.175  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.367  61.898  69.350  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.534  61.627  70.110  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.769  62.158  70.697  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.836  62.962  70.522  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.669  63.234  69.760  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      61.078  63.352  71.206  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      61.160  62.791  71.805  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      61.392  62.941  72.582  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      60.969  62.053  71.489  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.731      5.370      7.104
+REMARK INTER + INTRA:          -6.731
+REMARK INTER:                  -6.731
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.539  61.566  70.627  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.503  62.330  70.319  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.222  62.951  70.786  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.186  63.715  70.477  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.905  64.335  70.944  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.661  64.190  71.719  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.380  64.810  72.185  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.344  65.575  71.878  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.589  65.719  71.103  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.870  65.099  70.636  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      59.491  66.524  70.951  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      59.185  66.876  71.631  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      59.002  67.676  71.722  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      59.095  66.290  72.203  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.571      6.824      7.397
+REMARK INTER + INTRA:          -6.571
+REMARK INTER:                  -6.571
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.289  64.689  72.105  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.943  65.152  72.299  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.476  65.380  71.711  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.130  65.844  71.905  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.662  66.072  71.316  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.539  65.838  70.535  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.071  66.066  69.948  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.726  66.529  70.141  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.849  66.764  70.922  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.316  66.535  71.511  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      65.538  67.216  70.947  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      65.841  67.261  70.182  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      66.526  67.661  69.954  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      65.339  66.837  69.684  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.536      8.039      8.924
+REMARK INTER + INTRA:          -6.536
+REMARK INTER:                  -6.536
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.295  67.206  71.206  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.631  66.725  71.289  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.940  67.030  71.623  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.275  66.549  71.706  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.584  66.854  72.039  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.559  67.640  72.289  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.869  67.945  72.622  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.203  67.464  72.706  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.228  66.678  72.456  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.919  66.373  72.122  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      61.492  66.339  72.607  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      61.012  66.915  72.950  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.229  66.813  73.191  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      61.452  67.610  73.011  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.184      5.264      5.818
+REMARK INTER + INTRA:          -6.184
+REMARK INTER:                  -6.184
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pramipexole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.499  62.178  70.572  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.249  62.432  70.799  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.566  63.122  70.475  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.317  63.377  70.703  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.634  64.067  70.379  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.200  64.502  69.828  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.516  65.191  69.504  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.267  65.447  69.731  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.701  65.012  70.282  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.385  64.322  70.606  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      64.421  65.397  70.400  0.00  0.00    +0.000 S 
+ATOM     12  C   UNL     1      64.433  66.068  69.922  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      65.049  66.614  69.866  0.00  0.00    +0.000 NA
+ATOM     14  N   UNL     1      63.719  66.099  69.509  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

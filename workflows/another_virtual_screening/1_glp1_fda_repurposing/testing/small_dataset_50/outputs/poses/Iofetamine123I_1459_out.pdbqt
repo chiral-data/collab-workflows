@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.107      0.000      0.000
+REMARK INTER + INTRA:          -8.107
+REMARK INTER:                  -8.107
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.641  61.225  63.546  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.715  61.600  64.278  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.426  61.959  64.487  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.075  61.616  64.799  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.149  61.991  65.530  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.861  62.350  65.739  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.510  62.007  66.051  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.584  62.382  66.782  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.944  62.398  67.304  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.018  62.773  68.035  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.730  63.132  68.244  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      60.803  63.507  68.976  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      61.369  63.116  67.723  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.295  62.741  66.992  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.952      2.127      3.176
+REMARK INTER + INTRA:          -7.952
+REMARK INTER:                  -7.952
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.905  62.086  66.334  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.165  62.402  67.052  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.479  63.163  67.077  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.109  61.955  67.742  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.369  62.271  68.459  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.683  63.032  68.484  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.314  61.824  69.151  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.573  62.140  69.867  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.518  61.693  70.559  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.778  62.009  71.275  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.092  62.770  71.300  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      61.352  63.086  72.018  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      61.147  63.217  70.609  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.888  62.901  69.892  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.865      1.849      3.540
+REMARK INTER + INTRA:          -7.865
+REMARK INTER:                  -7.865
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.272  63.250  69.269  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.716  63.154  68.580  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.460  63.502  68.517  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.414  62.709  67.954  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.858  62.613  67.266  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.602  62.961  67.203  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.556  62.168  66.639  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.000  62.072  65.950  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.698  61.627  65.324  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.141  61.531  64.635  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.886  61.879  64.573  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      62.330  61.783  63.883  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      62.188  62.324  65.198  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.744  62.420  65.888  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.591      5.164      6.594
+REMARK INTER + INTRA:          -7.591
+REMARK INTER:                  -7.591
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.379  67.743  69.863  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.773  67.294  70.198  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.526  67.445  70.970  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.415  66.693  69.760  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.809  66.245  70.096  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.562  66.396  70.867  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.450  65.644  69.658  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.845  65.195  69.993  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.486  64.594  69.555  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.880  64.146  69.891  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.633  64.297  70.662  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      62.027  63.848  70.998  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      62.992  64.898  71.100  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.598  65.347  70.765  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.132     24.517     25.565
+REMARK INTER + INTRA:          -7.132
+REMARK INTER:                  -7.132
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.701  80.569  51.845  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      68.438  80.536  51.476  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      68.977  81.152  51.575  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      68.636  79.887  51.008  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      69.373  79.854  50.639  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.911  80.471  50.738  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      69.571  79.204  50.170  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.308  79.172  49.801  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.507  78.522  49.332  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.244  78.490  48.963  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.782  79.106  49.062  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      72.519  79.073  48.693  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      71.584  79.756  49.530  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.846  79.788  49.900  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.912     18.653     19.148
+REMARK INTER + INTRA:          -6.912
+REMARK INTER:                  -6.912
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.208  76.884  60.145  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.106  77.612  59.769  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.760  78.085  59.603  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.349  77.865  59.560  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      65.248  78.592  59.185  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.902  79.066  59.019  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.491  78.846  58.975  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.389  79.573  58.600  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.632  79.827  58.391  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.530  80.554  58.015  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.184  81.028  57.849  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      64.082  81.756  57.474  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      64.941  80.775  58.058  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.043  80.047  58.434  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.609      5.986      6.385
+REMARK INTER + INTRA:          -6.609
+REMARK INTER:                  -6.609
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.612  64.818  70.209  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.950  65.139  70.584  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.826  65.954  70.574  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.413  64.644  70.967  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.752  64.966  71.341  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.628  65.780  71.332  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.215  64.470  71.725  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.553  64.792  72.099  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.016  64.297  72.483  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.355  64.618  72.857  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.230  65.432  72.848  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      59.568  65.754  73.222  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      60.767  65.928  72.464  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.429  65.606  72.090  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.578      3.439      5.078
+REMARK INTER + INTRA:          -6.578
+REMARK INTER:                  -6.578
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.337  65.752  71.306  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.890  65.393  70.712  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.019  65.593  69.922  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.315  64.836  70.908  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.869  64.478  70.314  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.997  64.677  69.524  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.293  63.920  70.510  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.847  63.562  69.915  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.271  63.004  70.111  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.825  62.646  69.517  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.954  62.845  68.728  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      60.507  62.487  68.133  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      61.529  63.403  68.531  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.975  63.761  69.126  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.504     19.610     21.291
+REMARK INTER + INTRA:          -6.504
+REMARK INTER:                  -6.504
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = Iofetamine (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      76.152  67.543  57.433  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      76.751  67.428  56.877  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      76.573  67.429  56.073  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      77.529  67.312  57.128  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      78.127  67.197  56.572  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      77.949  67.198  55.768  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      78.905  67.081  56.823  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      79.504  66.966  56.267  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      80.282  66.849  56.517  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      80.880  66.735  55.961  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      80.702  66.736  55.157  0.00  0.00    +0.000 A 
+ATOM     12  I   UNL     1      81.302  66.621  54.601  0.00  0.00    +0.000 I 
+ATOM     13  C   UNL     1      79.925  66.852  54.906  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      79.326  66.967  55.462  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

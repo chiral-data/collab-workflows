@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.255      0.000      0.000
+REMARK INTER + INTRA:          -8.255
+REMARK INTER:                  -8.255
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.376  62.369  63.843  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.058  62.030  64.526  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.815  61.242  64.521  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.984  62.480  65.213  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.667  62.142  65.896  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.593  62.592  66.583  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.275  62.253  67.266  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.201  62.704  67.953  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.420  63.494  68.040  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.249  63.721  68.815  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.925  63.070  69.206  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.620  62.809  69.927  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.401  62.018  69.838  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.071  61.538  70.422  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      60.572  61.791  69.064  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.896  62.441  68.673  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.186      1.210      1.558
+REMARK INTER + INTRA:          -8.186
+REMARK INTER:                  -8.186
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.113  61.268  63.385  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.211  61.819  63.992  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.699  62.475  63.880  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.822  61.712  64.712  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.921  62.263  65.319  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.532  62.156  66.039  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.630  62.707  66.646  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.241  62.600  67.366  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.739  61.974  67.558  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.474  62.088  68.330  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.812  62.785  68.616  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.856  63.286  69.270  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.359  63.912  69.077  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.560  64.541  69.571  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      61.624  63.797  68.305  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.286  63.101  68.020  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.931      2.266      4.624
+REMARK INTER + INTRA:          -7.931
+REMARK INTER:                  -7.931
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.541  63.554  69.748  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.015  63.515  69.073  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.733  63.921  69.049  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.769  63.071  68.423  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.243  63.032  67.748  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.997  62.587  67.098  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.471  62.548  66.422  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.225  62.104  65.772  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.525  61.672  65.717  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.504  61.314  64.974  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.193  61.526  64.569  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.604  61.436  63.860  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.305  61.869  63.917  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.883  61.933  63.332  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.325  62.226  64.660  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.638  62.014  65.063  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.662      4.634      5.683
+REMARK INTER + INTRA:          -7.662
+REMARK INTER:                  -7.662
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.512  67.849  69.671  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.011  67.472  70.209  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.040  67.669  71.009  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.481  66.898  69.944  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.980  66.520  70.482  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.450  65.946  70.217  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.949  65.569  70.755  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.419  64.995  70.490  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      63.328  64.741  69.711  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      62.740  64.163  69.698  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.467  64.059  70.471  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.935  63.637  70.940  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.028  63.892  71.720  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.605  63.616  72.373  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.616  64.470  71.732  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      62.888  64.573  70.960  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.495      1.687      2.354
+REMARK INTER + INTRA:          -7.495
+REMARK INTER:                  -7.495
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.637  61.607  65.811  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.417  62.177  66.366  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.345  62.967  66.140  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.269  61.956  67.147  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.049  62.526  67.702  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.901  62.305  68.483  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.681  62.876  69.038  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.533  62.655  69.818  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.582  61.890  70.124  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.389  61.923  70.925  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.220  62.708  71.115  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.997  63.213  71.728  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.948  63.979  71.422  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.742  64.657  71.844  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      60.141  63.945  70.621  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.309  63.161  70.431  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.401      4.328      5.422
+REMARK INTER + INTRA:          -7.401
+REMARK INTER:                  -7.401
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.243  67.615  70.959  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.772  67.229  70.402  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.857  67.401  69.600  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.217  66.671  70.648  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.746  66.285  70.090  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.190  65.727  70.336  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.719  65.341  69.778  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.164  64.783  70.024  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      63.018  64.554  70.803  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      62.421  63.985  70.794  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.197  63.862  70.009  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.690  63.434  69.519  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.837  63.663  68.739  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.454  63.373  68.069  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.435  64.232  68.749  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      62.657  64.355  69.533  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.354      3.287      4.459
+REMARK INTER + INTRA:          -7.354
+REMARK INTER:                  -7.354
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.746  61.955  68.015  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.543  62.382  68.691  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.464  61.995  69.416  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.418  63.196  68.642  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.214  63.623  69.319  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.090  64.437  69.270  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.886  64.864  69.947  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.761  65.678  69.898  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      59.819  66.137  69.216  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      59.650  66.919  69.420  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.487  66.942  70.229  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.282  67.440  70.854  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.224  66.979  71.537  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.031  67.252  72.291  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      59.394  66.198  71.332  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      59.556  66.175  70.525  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.018      2.329      4.255
+REMARK INTER + INTRA:          -7.018
+REMARK INTER:                  -7.018
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.185  65.147  71.230  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.207  64.835  70.466  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.908  64.858  70.031  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.528  64.502  70.137  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.550  64.190  69.373  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.870  63.856  69.045  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.892  63.545  68.281  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.213  63.211  67.952  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.477  63.150  68.319  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      59.960  62.781  67.793  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.377  62.614  67.100  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.315  62.282  66.347  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.052  62.344  65.981  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.239  62.082  65.221  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      61.568  62.713  66.508  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.151  62.880  67.199  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.877      3.252      4.631
+REMARK INTER + INTRA:          -6.877
+REMARK INTER:                  -6.877
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = biotin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.932  66.244  71.152  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.468  65.753  70.677  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.581  65.744  69.860  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.892  65.273  71.021  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.428  64.782  70.546  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.853  64.301  70.889  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.389  63.811  70.415  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.813  63.330  70.758  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.639  63.281  71.562  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.028  62.735  71.659  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.825  62.446  70.912  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.322  61.929  70.511  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.497  61.979  69.706  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.126  61.555  69.103  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      61.107  62.525  69.611  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.310  62.814  70.356  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.229      0.000      0.000
+REMARK INTER + INTRA:          -8.229
+REMARK INTER:                  -8.229
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.250  62.277  65.320  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      61.686  61.905  64.846  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.910  61.820  65.118  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.700  62.107  65.861  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.926  62.022  66.133  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      59.363  61.650  65.660  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      59.716  62.310  66.877  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.280  62.682  67.350  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.069  62.969  68.095  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.055  62.767  67.079  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.620  63.139  67.552  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.265  62.480  66.335  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.896  61.618  64.102  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.671  61.703  63.832  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      61.331  61.245  63.630  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.224      1.285      3.496
+REMARK INTER + INTRA:          -8.224
+REMARK INTER:                  -8.224
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.969  61.727  65.720  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      60.439  62.195  66.213  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.210  62.386  65.988  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.511  62.110  65.272  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.281  62.300  65.047  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      62.750  62.767  65.539  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      62.582  62.024  64.330  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.113  61.558  63.838  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.414  61.281  63.120  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.342  61.367  64.062  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.872  60.900  63.571  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.041  61.643  64.779  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.138  62.471  66.930  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.367  62.280  67.154  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      60.608  62.938  67.422  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.063      0.766      3.062
+REMARK INTER + INTRA:          -8.063
+REMARK INTER:                  -8.063
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.605  63.043  66.744  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      60.855  62.742  66.913  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.486  62.231  66.380  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.866  62.022  65.679  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.498  61.512  65.146  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      59.748  61.211  65.315  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      60.878  61.302  64.445  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.627  61.603  64.276  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.008  61.393  63.574  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.996  62.114  64.809  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.746  62.415  64.641  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.616  62.323  65.510  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.475  62.951  67.615  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.844  63.462  68.147  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      59.725  62.650  67.783  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.306      2.299      2.966
+REMARK INTER + INTRA:          -7.306
+REMARK INTER:                  -7.306
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.602  63.438  67.691  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      61.207  62.763  67.426  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.820  62.273  67.966  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.828  62.457  68.769  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.442  61.967  69.309  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      60.048  61.293  69.044  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      60.450  62.151  70.113  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.845  62.825  70.377  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.853  63.010  71.182  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.231  63.316  69.838  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.626  63.991  70.102  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.223  63.132  69.034  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.199  62.579  66.622  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.586  63.069  66.083  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      60.804  61.904  66.358  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.102      5.686      7.008
+REMARK INTER + INTRA:          -7.102
+REMARK INTER:                  -7.102
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.543  64.225  71.444  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      59.902  64.513  72.129  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.517  64.089  72.483  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.772  63.379  72.151  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.385  62.956  72.503  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      61.743  63.244  73.188  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      61.640  62.245  72.171  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.282  61.958  71.486  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.537  61.246  71.154  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.668  62.381  71.133  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.309  62.094  70.448  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.413  63.092  71.465  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.647  65.224  72.462  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.033  65.647  72.108  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      60.006  65.511  73.147  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.040      6.902      8.104
+REMARK INTER + INTRA:          -7.040
+REMARK INTER:                  -7.040
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.060  65.773  71.340  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      63.899  66.050  70.579  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.452  66.520  70.185  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.164  66.713  70.551  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.717  67.183  70.158  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      65.556  67.458  69.398  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      66.430  67.376  70.525  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.591  67.100  71.285  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      67.304  67.294  71.652  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      66.038  66.630  71.679  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      66.199  66.354  72.440  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      65.325  66.437  71.312  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.186  65.856  70.212  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.634  65.386  70.606  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      63.026  66.133  69.451  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.001      4.788      5.926
+REMARK INTER + INTRA:          -7.001
+REMARK INTER:                  -7.001
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.150  63.106  69.996  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      60.849  62.545  70.522  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.914  62.665  71.336  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.280  63.345  71.624  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.346  63.466  72.437  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      61.045  62.905  72.962  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      61.712  64.147  72.726  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.012  64.707  72.201  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.379  65.388  72.489  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.947  64.587  71.387  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.248  65.148  70.861  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.581  63.906  71.098  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.483  61.864  70.233  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.418  61.744  69.420  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      60.182  61.304  70.759  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.991      3.766      5.622
+REMARK INTER + INTRA:          -6.991
+REMARK INTER:                  -6.991
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.859  64.304  70.856  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      60.818  63.748  71.465  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.684  62.952  71.289  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.590  62.713  70.507  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.455  61.919  70.331  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      60.415  61.364  70.940  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      60.361  61.679  69.547  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.401  62.235  68.939  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.307  61.995  68.154  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.535  63.030  69.113  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.576  63.586  68.505  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.630  63.269  69.897  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.913  63.987  72.249  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.047  64.782  72.424  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      60.873  63.431  72.857  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.811      5.969      7.234
+REMARK INTER + INTRA:          -6.811
+REMARK INTER:                  -6.811
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluorodopa (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.584  66.810  71.412  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      65.075  66.820  70.749  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.009  66.228  70.177  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.454  65.627  70.268  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.388  65.035  69.698  0.00  0.00    +0.000 A 
+ATOM      6  F   UNL     1      64.879  65.046  69.035  0.00  0.00    +0.000 F 
+ATOM      7  C   UNL     1      63.831  64.433  69.789  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.341  64.422  70.452  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.784  63.820  70.543  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.406  65.014  71.023  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.915  65.004  71.687  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.962  65.616  70.932  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.631  67.423  70.657  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      65.696  68.014  71.229  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      66.122  67.433  69.994  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

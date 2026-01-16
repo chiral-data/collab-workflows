@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.583      0.000      0.000
+REMARK INTER + INTRA:          -8.583
+REMARK INTER:                  -8.583
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.631  63.553  68.360  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.011  63.208  67.941  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.147  62.890  67.190  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.902  62.919  66.861  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.525  62.545  66.771  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.769  62.516  67.100  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.104  62.253  66.365  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.040  61.882  65.601  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.284  61.853  65.932  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.149  62.171  66.681  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.661  62.227  66.022  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.417  62.256  65.691  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.037  62.601  66.111  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.552  61.939  64.943  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.307  61.967  64.612  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.420      0.311      2.193
+REMARK INTER + INTRA:          -8.420
+REMARK INTER:                  -8.420
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.375  61.714  64.382  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.619  61.717  64.710  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.487  62.078  65.441  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.112  62.437  65.841  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.730  62.081  65.769  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.104  61.722  65.368  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.173  62.135  66.107  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.841  62.445  66.827  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.216  62.086  66.426  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.348  61.725  65.696  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.598  62.442  66.499  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.224  62.801  66.900  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.981  62.798  66.571  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.093  63.162  67.629  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.718  63.521  68.031  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.902      3.600      5.359
+REMARK INTER + INTRA:          -7.902
+REMARK INTER:                  -7.902
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.552  65.078  71.889  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.059  64.475  72.131  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.236  63.853  71.618  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.905  63.835  70.863  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.744  63.249  71.861  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.075  63.267  72.616  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.130  62.731  71.959  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.428  62.024  71.590  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.759  62.042  72.345  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.582  62.664  72.859  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.920  62.628  71.348  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.589  62.610  70.592  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.081  63.213  70.350  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.765  61.989  70.079  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.434  61.970  69.324  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.879      3.565      5.692
+REMARK INTER + INTRA:          -7.879
+REMARK INTER:                  -7.879
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.525  61.912  69.274  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.837  61.932  70.036  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.641  62.551  70.547  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.133  63.148  70.294  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.955  62.570  71.310  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.464  61.973  71.564  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.149  62.674  71.926  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.072  63.209  72.584  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.580  62.610  72.836  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.776  61.992  72.326  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.758  63.188  71.820  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.249  63.787  71.567  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.937  63.766  70.804  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.053  64.404  72.077  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.544  65.002  71.825  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.616      2.220      4.049
+REMARK INTER + INTRA:          -7.616
+REMARK INTER:                  -7.616
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.140  62.148  67.643  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.213  62.011  68.453  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.707  62.489  68.910  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.127  63.104  68.556  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.780  62.351  69.720  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.360  61.736  70.075  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.904  62.323  70.362  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.348  62.692  70.987  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.927  62.077  71.341  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.434  61.599  70.884  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.274  62.830  70.177  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.695  63.446  69.823  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.621  63.582  69.013  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.188  63.923  70.278  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.609  64.539  69.925  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.371      3.321      4.681
+REMARK INTER + INTRA:          -7.371
+REMARK INTER:                  -7.371
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.888  64.845  69.267  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.525  64.106  69.304  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.459  63.714  70.029  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.756  64.063  70.714  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.096  62.974  70.065  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.798  62.625  69.379  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.828  62.392  70.196  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.666  61.843  70.826  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.369  61.495  70.140  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.436  61.886  69.416  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.029  62.583  70.789  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.327  62.932  71.475  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.690  63.672  71.438  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.261  62.542  72.198  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.557  62.890  72.884  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.363     24.804     26.019
+REMARK INTER + INTRA:          -7.363
+REMARK INTER:                  -7.363
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.839  81.098  49.699  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      72.447  80.409  49.472  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      71.709  80.228  49.796  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.365  80.737  50.346  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.317  79.539  49.569  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.661  79.030  49.018  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.932  79.023  49.454  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.187  78.668  49.665  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.532  78.160  49.114  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      71.269  78.341  48.791  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.580  79.358  49.892  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      70.235  79.867  50.444  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      70.628  80.556  50.670  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      69.499  79.687  50.767  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      69.154  80.195  51.318  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.358      6.345      6.872
+REMARK INTER + INTRA:          -7.358
+REMARK INTER:                  -7.358
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.569  65.346  72.478  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.147  64.760  72.436  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      59.944  64.959  72.524  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.160  65.744  72.655  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.522  64.372  72.482  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.306  63.587  72.351  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.048  63.984  72.465  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.897  63.984  72.528  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.680  63.199  72.398  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.884  63.001  72.309  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.318  64.571  72.571  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.535  65.357  72.701  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.956  65.942  72.744  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.330  65.555  72.790  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.548  66.340  72.921  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.342     24.794     26.006
+REMARK INTER + INTRA:          -7.342
+REMARK INTER:                  -7.342
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dimethylcarbate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.151  80.114  51.244  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      69.523  79.614  50.705  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      70.259  79.819  50.391  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      70.621  80.524  50.617  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.632  79.318  49.852  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.270  78.611  49.626  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      71.002  78.991  49.423  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.740  79.022  48.999  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      71.377  78.316  48.773  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.642  78.111  49.087  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      71.367  79.523  49.539  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.729  80.229  49.765  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      71.356  80.729  50.304  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      72.464  80.434  49.452  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      72.826  81.140  49.677  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.095      0.000      0.000
+REMARK INTER + INTRA:          -7.095
+REMARK INTER:                  -7.095
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.162  61.665  63.834  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.744  61.763  64.538  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.357  62.228  64.837  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.132  61.298  64.239  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.326  61.861  65.243  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.647  62.313  65.853  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.229  62.411  66.557  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.551  62.863  67.169  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.133  62.961  67.872  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.454  63.413  68.484  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.036  63.511  69.188  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.617  63.610  69.892  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.648  63.976  69.487  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.423  63.047  68.889  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.094      0.098      4.508
+REMARK INTER + INTRA:          -7.094
+REMARK INTER:                  -7.094
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.738  63.704  69.874  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.139  63.601  69.161  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.529  63.118  68.887  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.750  64.083  69.435  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.541  63.497  68.448  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.214  63.028  67.854  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.615  62.924  67.141  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.287  62.454  66.547  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.689  62.351  65.835  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.362  61.881  65.241  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.763  61.778  64.528  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      62.165  61.674  63.815  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.153  61.295  64.254  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.374  62.260  64.802  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.541      1.500      2.416
+REMARK INTER + INTRA:          -6.541
+REMARK INTER:                  -6.541
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.267  62.000  65.717  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.630  62.056  66.456  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.906  62.254  66.797  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.355  61.858  66.114  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.994  62.112  67.194  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.549  62.312  67.859  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.912  62.369  68.597  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.466  62.569  69.263  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.830  62.625  70.000  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.385  62.825  70.665  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.748  62.881  71.404  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.112  62.937  72.142  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.024  63.079  71.745  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.473  62.683  71.062  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.489      3.504      6.013
+REMARK INTER + INTRA:          -6.489
+REMARK INTER:                  -6.489
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.181  67.469  70.471  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.612  66.893  70.631  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      65.397  66.883  69.835  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.827  66.904  71.428  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.043  66.318  70.792  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.573  66.022  70.183  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.004  65.447  70.344  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.533  65.150  69.735  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.964  64.576  69.895  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.493  64.279  69.287  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.924  63.704  69.447  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.355  63.129  69.608  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.709  63.694  68.651  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.139  63.714  70.244  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.466      3.488      5.467
+REMARK INTER + INTRA:          -6.466
+REMARK INTER:                  -6.466
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.303  63.150  69.670  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.876  63.717  69.493  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.097  63.741  70.287  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.655  63.692  68.698  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.449  64.283  69.315  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.927  64.587  69.914  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.500  65.153  69.737  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.979  65.458  70.337  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.551  66.024  70.160  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.030  66.329  70.759  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      65.603  66.895  70.582  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      66.176  67.461  70.404  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.824  66.920  71.376  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.382  66.870  69.787  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.217      4.371      6.039
+REMARK INTER + INTRA:          -6.217
+REMARK INTER:                  -6.217
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.782  61.729  70.887  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.661  62.539  70.991  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.996  62.380  71.453  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.326  62.697  70.529  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.539  63.348  71.095  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.903  63.615  71.546  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.782  64.424  71.650  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.145  64.692  72.102  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.024  65.501  72.205  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      58.388  65.769  72.657  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      58.267  66.578  72.761  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      58.146  67.387  72.864  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      57.602  66.419  73.222  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      58.932  66.737  72.299  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.162      1.532      4.704
+REMARK INTER + INTRA:          -6.162
+REMARK INTER:                  -6.162
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.327  64.792  71.351  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.334  64.415  70.617  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.509  64.391  70.622  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.159  64.439  70.613  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.341  64.039  69.883  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.631  63.830  69.520  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.638  63.454  68.786  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.926  63.245  68.423  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.933  62.869  67.689  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.223  62.660  67.326  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.230  62.283  66.592  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.237  61.907  65.858  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.406  62.259  66.596  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.055  62.307  66.587  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.131      7.216      7.545
+REMARK INTER + INTRA:          -6.131
+REMARK INTER:                  -6.131
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.670  67.259  70.861  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      66.013  67.127  71.343  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      65.518  67.402  70.744  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.509  66.851  71.942  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.357  66.995  71.825  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.600  67.167  71.547  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.944  67.035  72.029  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.186  67.208  71.751  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.530  67.076  72.233  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.773  67.248  71.956  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.116  67.116  72.438  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.460  66.984  72.920  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.621  67.392  71.838  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.612  66.841  73.037  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.265      3.093      6.318
+REMARK INTER + INTRA:          -5.265
+REMARK INTER:                  -5.265
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hexamethonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.007  66.777  73.223  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.084  66.395  72.496  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.070  65.664  72.879  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.099  67.125  72.113  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.161  66.012  71.769  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.187  65.189  71.737  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.264  64.806  71.011  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.290  63.981  70.979  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.366  63.599  70.253  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.392  62.775  70.220  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.469  62.393  69.494  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.546  62.010  68.767  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.455  61.662  69.877  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.484  63.123  69.111  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.169      0.000      0.000
+REMARK INTER + INTRA:          -9.169
+REMARK INTER:                  -9.169
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.372  62.825  66.107  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.646  62.458  65.971  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.046  62.507  66.537  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.320  62.140  66.401  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.721  62.189  66.966  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.848  62.605  67.667  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.574  62.972  67.803  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.173  62.923  67.237  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.518  62.042  65.271  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.117  61.993  64.706  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.991  61.577  64.005  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.589  61.528  63.440  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.264  61.209  63.869  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.138  60.793  63.168  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.665  61.258  64.434  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.793  61.675  65.135  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.833      1.623      3.642
+REMARK INTER + INTRA:          -8.833
+REMARK INTER:                  -8.833
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.736  61.639  65.698  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.503  61.933  65.775  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.054  61.813  65.172  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.821  62.107  65.250  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.371  61.987  64.648  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.155  61.573  63.967  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.388  61.280  63.890  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.837  61.400  64.492  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.720  62.346  66.456  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.169  62.466  67.058  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.385  62.880  67.739  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.835  62.999  68.341  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.153  63.174  67.816  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.368  63.587  68.497  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.703  63.054  67.214  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.486  62.640  66.533  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.099      2.348      3.363
+REMARK INTER + INTRA:          -8.099
+REMARK INTER:                  -8.099
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.968  63.676  68.957  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.373  63.108  68.996  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.162  62.780  69.724  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.566  62.211  69.763  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.354  61.884  70.490  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.739  62.127  71.179  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.335  62.696  71.139  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.546  63.023  70.412  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.988  62.864  68.308  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.199  63.191  67.580  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.815  62.949  66.892  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.026  63.275  66.165  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.219  62.379  66.931  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.835  62.137  66.242  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.008  62.052  67.658  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.393  62.295  68.347  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.953      3.992      6.054
+REMARK INTER + INTRA:          -7.953
+REMARK INTER:                  -7.953
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.561  64.506  70.045  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.674  63.694  70.138  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.529  63.182  69.507  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.642  62.370  69.601  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.497  61.858  68.971  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.239  62.158  68.246  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.127  62.970  68.153  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.271  63.482  68.784  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.931  63.394  70.862  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.076  63.906  71.493  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.334  63.607  72.217  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.478  64.118  72.847  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.446  62.794  72.311  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.704  62.495  73.035  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.301  62.282  71.680  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.044  62.583  70.956  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.817      5.734      7.317
+REMARK INTER + INTRA:          -7.817
+REMARK INTER:                  -7.817
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.987  66.185  72.032  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.206  66.103  71.242  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.801  66.582  70.927  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.020  66.499  70.136  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.614  66.977  69.820  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.988  67.539  70.297  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.768  67.621  71.087  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      65.174  67.142  71.402  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.833  65.542  70.766  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.239  65.064  71.081  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.865  64.503  70.605  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.272  64.025  70.920  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      63.085  64.421  69.814  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.711  63.860  69.339  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.679  64.899  69.499  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.052  65.460  69.975  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.751      6.062      7.685
+REMARK INTER + INTRA:          -7.751
+REMARK INTER:                  -7.751
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.818  66.350  69.167  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.955  66.168  69.959  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.409  65.712  70.379  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.547  65.530  71.172  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.001  65.075  71.591  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.318  64.802  71.218  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.181  64.984  70.425  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.726  65.439  70.006  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.638  66.441  70.333  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.184  66.896  69.914  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.867  67.169  70.287  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      66.412  67.623  69.868  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      66.004  66.987  71.080  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      66.688  67.260  71.453  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      65.459  66.532  71.500  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.776  66.259  71.126  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.669      6.099      7.496
+REMARK INTER + INTRA:          -7.669
+REMARK INTER:                  -7.669
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.117  63.536  70.589  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.387  63.596  71.366  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.871  63.005  71.681  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.141  63.065  72.459  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.624  62.475  72.774  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.836  61.825  72.311  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.566  61.766  71.534  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.083  62.356  71.219  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.175  64.245  71.829  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.692  64.835  71.514  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.479  65.485  71.975  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      58.997  66.074  71.661  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.750  65.544  72.753  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.537  66.194  73.215  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.233  64.954  73.068  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.445  64.305  72.605  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.445      6.134      7.130
+REMARK INTER + INTRA:          -7.445
+REMARK INTER:                  -7.445
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.560  64.888  72.870  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.826  64.664  72.570  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.167  65.148  72.687  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.432  64.924  72.387  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.774  65.407  72.504  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      58.851  66.115  72.922  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.586  66.338  73.222  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.244  65.855  73.104  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.748  63.956  72.152  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.406  63.473  72.035  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.330  62.766  71.617  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.987  62.283  71.500  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.594  62.542  71.317  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.518  61.834  70.900  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.936  63.025  71.434  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.014  63.733  71.852  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.433      6.049      6.757
+REMARK INTER + INTRA:          -7.433
+REMARK INTER:                  -7.433
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimiterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.532  65.949  72.189  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.592  65.236  71.779  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.106  64.600  71.983  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.166  63.887  71.572  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.681  63.252  71.777  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.135  63.330  72.392  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.076  64.043  72.801  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.561  64.678  72.597  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.137  65.157  71.164  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.622  65.792  70.960  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.167  65.715  70.346  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      64.652  66.349  70.142  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      64.227  65.001  69.935  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      64.772  64.923  69.321  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.741  64.366  70.139  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.196  64.445  70.754  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

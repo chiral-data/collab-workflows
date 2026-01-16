@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.980      0.000      0.000
+REMARK INTER + INTRA:          -7.980
+REMARK INTER:                  -7.980
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.253  62.771  67.993  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.867  62.757  67.442  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.582  63.133  67.610  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.767  62.366  66.723  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.381  62.351  66.171  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.280  61.961  65.453  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.893  61.946  64.901  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.607  62.322  65.070  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.792  61.555  64.182  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.078  61.178  64.014  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.464  61.192  64.565  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.565  61.584  65.284  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.951  61.598  65.836  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.642      1.348      3.137
+REMARK INTER + INTRA:          -7.642
+REMARK INTER:                  -7.642
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.277  61.637  64.157  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.517  61.615  64.478  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.900  61.262  64.059  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.374  61.948  65.219  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.614  61.927  65.542  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.471  62.259  66.282  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.712  62.238  66.605  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.096  61.885  66.185  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.569  62.571  67.346  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.185  62.924  67.765  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.945  62.946  67.443  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.088  62.613  66.702  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.848  62.634  66.380  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.210      3.651      6.006
+REMARK INTER + INTRA:          -7.210
+REMARK INTER:                  -7.210
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.489  61.988  68.752  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.522  62.624  69.277  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.292  63.377  69.030  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.785  62.507  70.050  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.819  63.142  70.576  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.081  63.025  71.348  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.115  63.660  71.873  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.885  64.412  71.625  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.378  63.543  72.646  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.608  62.790  72.894  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.575  62.155  72.369  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.311  62.272  71.596  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.278  61.636  71.070  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.985      3.634      4.729
+REMARK INTER + INTRA:          -6.985
+REMARK INTER:                  -6.985
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.489  62.919  72.796  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.503  63.280  72.054  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.796  64.047  71.972  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.222  62.874  71.393  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.235  63.235  70.650  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.955  62.829  69.990  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.968  63.189  69.248  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.262  63.956  69.168  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.688  62.783  68.587  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.394  62.017  68.668  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.381  61.656  69.410  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.661  62.062  70.071  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.648  61.701  70.813  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.934      6.649      7.801
+REMARK INTER + INTRA:          -6.934
+REMARK INTER:                  -6.934
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.405  65.809  72.484  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.801  65.741  71.763  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.521  65.223  71.185  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.477  66.192  71.620  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.873  66.124  70.899  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.548  66.574  70.756  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.945  66.507  70.036  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.664  65.989  69.459  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.621  66.958  69.893  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.900  67.476  70.470  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.505  67.544  71.191  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.829  67.093  71.334  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.433  67.161  72.055  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.931      4.957      6.193
+REMARK INTER + INTRA:          -6.931
+REMARK INTER:                  -6.931
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.809  65.637  70.819  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.992  64.865  70.591  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.781  64.595  69.840  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.386  64.364  71.113  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.570  63.591  70.886  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.964  63.090  71.408  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.147  62.319  71.181  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.936  62.050  70.430  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.542  61.817  71.704  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.752  62.087  72.454  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.569  62.858  72.682  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.175  63.360  72.159  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.991  64.132  72.387  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.685      5.241      6.424
+REMARK INTER + INTRA:          -6.685
+REMARK INTER:                  -6.685
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.461  65.503  69.857  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.084  64.771  69.920  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.081  64.251  69.279  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.711  64.560  70.624  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.334  63.828  70.688  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.960  63.617  71.392  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.584  62.886  71.456  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.581  62.367  70.815  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.210  62.675  72.161  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.213  63.194  72.800  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.589  63.926  72.737  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.963  64.137  72.033  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.340  64.869  71.969  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.618     24.744     25.527
+REMARK INTER + INTRA:          -6.618
+REMARK INTER:                  -6.618
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.600  80.423  51.908  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.311  80.425  51.489  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      70.929  80.918  51.725  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      70.403  79.934  50.833  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      71.114  79.935  50.413  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      71.206  79.444  49.757  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.916  79.446  49.337  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      72.534  79.939  49.574  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      72.009  78.954  48.681  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.391  78.462  48.444  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.680  78.460  48.864  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.588  78.951  49.520  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      69.877  78.950  49.940  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.570      6.013      7.265
+REMARK INTER + INTRA:          -6.570
+REMARK INTER:                  -6.570
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mexiletine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.151  67.496  70.066  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.547  67.256  70.573  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.406  67.669  71.274  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.082  66.602  70.381  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.477  66.361  70.889  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.013  65.708  70.696  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.409  65.467  71.203  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.269  65.881  71.903  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.944  64.813  71.010  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.085  64.399  70.311  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.689  64.639  69.803  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.153  65.294  69.996  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.758  65.534  69.488  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

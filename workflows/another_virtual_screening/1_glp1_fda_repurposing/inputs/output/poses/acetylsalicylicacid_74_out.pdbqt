@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.410      0.000      0.000
+REMARK INTER + INTRA:          -7.410
+REMARK INTER:                  -7.410
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.065  62.367  67.283  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.702  62.378  66.758  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.385  62.801  66.946  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.656  61.968  66.044  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.291  61.979  65.520  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.974  62.402  65.708  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.611  62.413  65.183  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.564  62.002  64.470  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.881  61.579  64.281  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.245  61.568  64.806  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.561  61.145  64.617  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.926  61.133  65.141  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.515  60.734  63.903  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.379      0.873      2.965
+REMARK INTER + INTRA:          -7.379
+REMARK INTER:                  -7.379
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.239  61.685  64.182  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.530  61.711  64.604  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.849  61.370  64.288  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.503  62.078  65.342  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.795  62.104  65.764  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.114  61.763  65.448  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.405  61.790  65.870  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.378  62.156  66.607  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.060  62.497  66.924  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.768  62.471  66.503  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.450  62.812  66.819  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.158  62.786  66.398  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.422  63.179  67.557  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.118      1.147      1.889
+REMARK INTER + INTRA:          -7.118
+REMARK INTER:                  -7.118
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.091  62.875  67.692  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.090  62.442  66.990  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.421  62.013  66.770  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.758  62.438  66.507  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.758  62.006  65.805  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.089  61.576  65.586  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.088  61.143  64.883  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.757  61.140  64.401  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.427  61.569  64.620  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.427  62.002  65.322  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.097  62.432  65.542  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.098  62.864  66.243  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.766  62.428  65.058  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.440      4.350      6.079
+REMARK INTER + INTRA:          -6.440
+REMARK INTER:                  -6.440
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.505  61.988  69.103  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.638  62.168  69.898  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.232  61.759  70.487  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.178  62.757  70.103  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.310  62.937  70.896  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.904  62.528  71.486  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.037  62.708  72.280  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.576  63.297  72.484  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.983  63.707  71.895  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.850  63.527  71.101  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.257  63.937  70.511  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.125  63.757  69.718  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.797  64.526  70.716  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.332      4.620      5.971
+REMARK INTER + INTRA:          -6.332
+REMARK INTER:                  -6.332
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.392  64.154  69.159  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.234  64.001  69.954  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.582  64.465  70.541  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.727  63.385  70.164  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.570  63.232  70.958  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.918  63.696  71.545  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.760  63.543  72.340  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.254  62.926  72.548  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.905  62.462  71.962  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.063  62.615  71.167  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.714  62.150  70.580  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.872  62.303  69.786  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.208  61.534  70.790  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.326      3.467      4.782
+REMARK INTER + INTRA:          -6.326
+REMARK INTER:                  -6.326
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.409  65.216  69.432  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.409  64.503  69.847  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.394  64.506  70.672  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.425  63.787  69.439  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.425  63.075  69.853  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.410  63.078  70.678  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.410  62.365  71.094  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.426  61.650  70.684  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.441  61.646  69.859  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.441  62.359  69.444  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.457  62.356  68.618  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.456  63.067  68.203  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.472  61.639  68.209  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.324      3.025      5.268
+REMARK INTER + INTRA:          -6.324
+REMARK INTER:                  -6.324
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.492  62.982  67.541  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.473  62.633  68.289  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.487  61.812  68.362  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.441  63.106  68.964  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.421  62.758  69.710  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.435  61.937  69.784  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.416  61.588  70.531  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.383  62.062  71.206  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.370  62.884  71.134  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.389  63.232  70.386  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.375  64.054  70.313  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.394  64.402  69.566  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.343  64.527  70.988  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.214     24.855     25.622
+REMARK INTER + INTRA:          -6.214
+REMARK INTER:                  -6.214
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.092  80.536  51.509  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.193  80.000  50.890  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      69.580  79.490  50.681  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      70.908  79.975  50.479  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.009  79.440  49.861  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.396  78.929  49.651  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.497  78.394  49.032  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.212  78.369  48.622  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.826  78.879  48.830  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.725  79.414  49.450  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      72.339  79.925  49.659  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      72.238  80.460  50.278  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      73.054  79.899  49.248  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.137     25.039     25.839
+REMARK INTER + INTRA:          -6.137
+REMARK INTER:                  -6.137
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylsalicylic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.857  81.180  49.964  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.479  80.506  49.674  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      72.844  80.043  49.098  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      71.735  80.295  49.960  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.357  79.622  49.671  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.723  79.159  49.094  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.345  78.486  48.804  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.601  78.275  49.091  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.234  78.737  49.667  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.612  79.411  49.957  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.246  79.874  50.534  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      70.623  80.546  50.824  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      69.501  79.662  50.821  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

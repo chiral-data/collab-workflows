@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.568      0.000      0.000
+REMARK INTER + INTRA:          -8.568
+REMARK INTER:                  -8.568
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.316  63.174  68.244  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.001  63.561  68.490  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.573  63.465  67.904  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.242  63.019  67.295  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.464  62.839  67.506  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      61.620  62.791  66.598  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.216  62.343  66.036  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.436  62.081  66.094  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.259  61.653  65.412  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.929  61.650  64.932  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.521  62.077  65.318  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.261  62.167  64.964  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.409  61.832  64.226  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.818  61.405  63.840  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.078  61.314  64.192  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.773      1.506      2.291
+REMARK INTER + INTRA:          -7.773
+REMARK INTER:                  -7.773
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.315  63.973  69.299  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.729  64.126  69.860  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.011  63.855  69.557  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.152  63.536  68.810  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.959  63.609  68.651  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      60.588  63.202  68.310  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.812  62.904  67.575  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.577  62.900  67.266  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.549  62.551  66.520  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.767  62.338  66.367  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.312  62.556  67.019  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.500  62.410  67.022  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.143  62.046  66.374  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.599  61.827  65.722  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.411  61.973  65.718  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.564      2.894      5.565
+REMARK INTER + INTRA:          -7.564
+REMARK INTER:                  -7.564
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.051  63.144  68.157  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.150  62.361  67.919  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.444  61.934  68.561  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.528  62.454  69.196  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.285  63.202  68.946  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      60.806  62.260  69.948  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.860  62.842  70.531  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.657  63.637  70.443  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.797  64.017  71.161  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.087  63.457  71.693  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.125  62.731  71.303  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.398  62.063  71.704  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.631  62.120  72.492  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.593  62.847  72.881  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.321  63.515  72.482  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.515      4.940      7.043
+REMARK INTER + INTRA:          -7.515
+REMARK INTER:                  -7.515
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.573  64.087  70.816  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.536  63.872  70.020  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.077  64.335  69.605  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.450  64.836  70.143  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.138  64.682  70.892  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      64.032  65.394  69.965  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      64.356  65.858  70.565  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.154  65.828  71.364  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      64.612  66.385  71.764  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      65.096  66.760  71.212  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.938  66.434  70.471  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.345  66.705  69.806  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.910  67.300  69.882  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      66.068  67.626  70.624  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      65.662  67.357  71.289  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.481      5.555      6.414
+REMARK INTER + INTRA:          -7.481
+REMARK INTER:                  -7.481
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.781  65.966  73.017  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.100  66.102  72.572  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      58.993  65.460  72.065  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.608  64.926  72.197  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.094  65.239  72.786  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      59.717  64.206  71.809  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.361  63.728  72.000  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.939  63.896  72.565  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.475  63.269  72.574  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.229  62.715  72.016  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.541  62.999  71.661  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.167  62.555  71.074  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.480  61.828  70.843  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.169  61.545  71.198  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.544  61.987  71.784  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.356      4.197      5.104
+REMARK INTER + INTRA:          -7.356
+REMARK INTER:                  -7.356
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.592  66.584  69.419  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.429  66.890  70.168  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.519  66.282  70.717  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.737  65.600  70.310  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.783  65.787  69.507  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      59.885  64.860  70.645  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.100  64.225  70.165  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.189  64.246  69.344  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.408  63.491  69.093  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.454  63.005  69.757  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.264  63.458  70.419  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.264  63.114  71.169  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.455  62.316  71.256  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.645  61.863  70.594  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.645  62.206  69.844  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.184      6.243      7.113
+REMARK INTER + INTRA:          -7.184
+REMARK INTER:                  -7.184
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.453  67.615  72.525  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.143  67.628  72.977  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.369  66.849  73.120  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.819  66.352  72.758  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.253  66.827  72.390  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      61.833  65.527  72.762  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.242  65.103  72.373  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.605  65.426  71.958  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.154  64.804  71.659  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.511  64.097  71.889  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.183  64.282  72.330  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.655  63.677  72.635  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.455  62.889  72.499  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.783  62.704  72.058  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.311  63.308  71.753  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.076      5.581      6.434
+REMARK INTER + INTRA:          -7.076
+REMARK INTER:                  -7.076
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.324  65.951  70.089  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.560  65.433  69.491  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.143  64.728  69.585  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.649  64.809  70.241  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.761  65.565  70.552  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      63.134  64.235  70.534  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      62.672  64.396  71.198  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.666  65.102  71.625  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.125  65.022  72.243  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.797  64.267  72.198  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.135  63.880  71.552  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.910  63.107  71.370  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.347  62.722  71.833  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.009  63.108  72.479  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.234  63.881  72.662  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.867      7.067      7.673
+REMARK INTER + INTRA:          -6.867
+REMARK INTER:                  -6.867
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.827  66.152  72.689  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.724  66.887  73.050  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.426  67.311  72.969  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.963  66.840  72.557  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.592  66.123  72.384  0.00  0.00    +0.000 NA
+ATOM      6  S   UNL     1      62.736  67.048  72.354  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      63.211  66.517  71.940  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.991  65.761  71.692  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.634  65.425  71.299  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.250  65.972  71.304  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.989  66.647  71.700  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.494  67.293  71.791  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.260  67.265  71.487  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.521  66.590  71.091  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      65.017  65.944  70.999  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.426      0.000      0.000
+REMARK INTER + INTRA:          -8.426
+REMARK INTER:                  -8.426
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.939  61.972  66.060  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.538  62.370  66.467  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.295  62.413  66.145  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.893  62.811  66.551  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.734  63.165  67.279  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.974  63.122  67.600  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.376  62.724  67.194  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.618  62.681  67.517  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.456  62.059  65.418  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.857  61.661  65.012  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.018  61.307  64.284  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.776  61.350  63.962  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.375  61.748  64.369  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.214  62.102  65.096  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.855      0.923      2.779
+REMARK INTER + INTRA:          -7.855
+REMARK INTER:                  -7.855
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.140  61.575  65.478  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.914  61.827  65.335  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.299  62.306  65.884  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.072  62.558  65.740  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.459  62.331  65.048  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.072  61.851  64.499  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.300  61.599  64.642  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.914  61.119  64.092  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.913  62.534  66.575  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.140  62.282  66.719  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.754  62.510  67.411  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.139  62.989  67.960  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.913  63.241  67.817  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.299  63.014  67.125  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.352      5.436      6.337
+REMARK INTER + INTRA:          -7.352
+REMARK INTER:                  -7.352
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.513  63.998  72.616  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.795  64.250  72.296  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.378  63.759  71.782  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.660  64.011  71.462  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.361  64.755  71.655  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.779  65.247  72.169  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.497  64.995  72.489  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.914  65.488  73.003  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.676  63.015  71.589  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.394  62.762  71.910  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.693  62.018  71.716  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.275  61.526  71.203  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.557  61.779  70.883  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.258  62.522  71.076  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.333      3.447      5.454
+REMARK INTER + INTRA:          -7.333
+REMARK INTER:                  -7.333
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.666  62.040  70.449  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.982  62.636  69.973  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.377  63.273  70.318  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.693  63.869  69.843  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.615  63.828  69.023  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.220  63.190  68.678  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.904  62.594  69.153  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.510  61.957  68.807  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.455  63.315  71.138  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.138  62.719  71.614  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.217  62.761  72.434  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.611  63.397  72.779  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.927  63.994  72.303  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.849  63.952  71.484  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.295      5.461      7.173
+REMARK INTER + INTRA:          -7.295
+REMARK INTER:                  -7.295
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.374  65.486  69.451  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.982  65.450  70.178  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.196  65.961  70.788  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.805  65.924  71.513  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.199  65.377  71.628  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.984  64.865  71.017  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      63.376  64.901  70.291  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.161  64.390  69.681  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.802  66.508  70.674  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.194  66.545  69.948  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.800  67.093  69.834  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.014  67.604  70.444  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.622  67.568  71.170  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.017  67.020  71.284  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.028      1.388      2.140
+REMARK INTER + INTRA:          -7.028
+REMARK INTER:                  -7.028
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.024  63.800  67.777  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.849  63.125  68.220  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.971  62.377  67.898  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.796  61.703  68.341  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.498  61.778  69.106  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.376  62.528  69.429  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.551  63.202  68.986  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.428  63.951  69.310  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.268  62.301  67.133  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.444  62.976  66.689  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.741  62.899  65.923  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.864  62.151  65.601  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.689  61.476  66.044  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.391  61.552  66.809  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.893      5.983      6.858
+REMARK INTER + INTRA:          -6.893
+REMARK INTER:                  -6.893
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.820  65.401  72.797  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.383  65.366  72.193  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.455  64.684  71.736  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.017  64.649  71.133  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.507  65.296  70.987  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.435  65.979  71.445  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.873  66.014  72.048  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.801  66.697  72.506  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.965  64.037  71.881  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.402  64.072  72.484  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.912  63.424  72.629  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.984  62.741  72.172  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.547  62.706  71.568  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.037  63.353  71.423  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.865     15.471     16.866
+REMARK INTER + INTRA:          -6.865
+REMARK INTER:                  -6.865
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.751  77.424  72.959  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.063  77.882  72.970  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.329  77.526  72.850  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      57.643  77.982  72.861  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      57.689  78.795  72.993  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      58.424  79.152  73.113  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      59.111  78.695  73.102  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.846  79.052  73.222  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.282  76.713  72.719  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      58.969  76.256  72.707  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      58.921  75.443  72.575  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      58.188  75.086  72.455  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      57.500  75.544  72.467  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      57.548  76.356  72.598  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.766      7.374      8.052
+REMARK INTER + INTRA:          -6.766
+REMARK INTER:                  -6.766
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phendimetrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.845  65.804  71.785  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.754  66.542  72.143  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.373  67.087  72.128  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.282  67.825  72.486  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.571  68.018  72.858  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.952  67.473  72.873  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.043  66.735  72.515  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.423  66.190  72.530  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.083  66.894  71.756  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.174  66.155  71.399  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.885  65.963  71.027  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.504  66.507  71.012  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.413  67.246  71.370  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.703  67.439  71.741  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

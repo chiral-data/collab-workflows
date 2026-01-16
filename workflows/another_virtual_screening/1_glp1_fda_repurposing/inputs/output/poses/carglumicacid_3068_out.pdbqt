@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.809      0.000      0.000
+REMARK INTER + INTRA:          -6.809
+REMARK INTER:                  -6.809
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      62.749  61.643  63.333  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      62.137  61.633  63.885  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      61.426  61.256  63.705  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      62.235  62.000  64.618  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      61.623  61.990  65.170  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      61.721  62.357  65.902  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      61.108  62.347  66.454  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      61.206  62.714  67.187  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      60.594  62.704  67.739  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      61.917  63.092  67.367  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      60.912  61.613  64.990  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      60.298  61.602  65.543  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      60.813  61.245  64.258  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.529      1.772      3.121
+REMARK INTER + INTRA:          -6.529
+REMARK INTER:                  -6.529
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      60.105  63.233  68.208  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      60.089  62.830  67.490  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      59.404  62.436  67.253  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      60.758  62.819  67.007  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      60.742  62.416  66.288  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      61.411  62.405  65.805  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      61.395  62.002  65.086  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      62.064  61.991  64.603  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      62.048  61.588  63.884  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      62.749  62.385  64.840  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      60.057  62.022  66.051  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      60.041  61.617  65.332  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      59.388  62.031  66.533  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.118      2.393      4.149
+REMARK INTER + INTRA:          -6.118
+REMARK INTER:                  -6.118
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      60.243  61.666  70.067  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      60.611  62.143  69.504  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      60.976  62.846  69.734  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      60.615  61.918  68.710  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      60.983  62.395  68.147  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      60.987  62.170  67.353  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      61.355  62.646  66.791  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      61.359  62.421  65.997  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      61.727  62.898  65.434  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      60.994  61.718  65.766  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      61.348  63.098  68.378  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      61.717  63.576  67.815  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      61.345  63.324  69.171  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.940      2.311      3.583
+REMARK INTER + INTRA:          -5.940
+REMARK INTER:                  -5.940
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      60.706  62.069  66.165  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      60.912  62.422  66.881  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      61.370  63.108  66.885  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      60.661  62.090  67.593  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      60.867  62.443  68.309  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      60.615  62.111  69.021  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      60.821  62.464  69.737  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      60.570  62.132  70.449  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      60.776  62.485  71.165  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      60.112  61.446  70.445  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      61.325  63.129  68.313  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      61.531  63.483  69.030  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      61.576  63.462  67.602  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.777      6.054      7.668
+REMARK INTER + INTRA:          -5.777
+REMARK INTER:                  -5.777
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      66.313  67.786  69.836  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      65.799  67.316  70.277  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      65.705  67.455  71.085  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      65.378  66.708  69.912  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      64.864  66.238  70.353  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      64.444  65.630  69.988  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      63.930  65.160  70.429  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      63.509  64.551  70.064  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      62.995  64.082  70.506  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      63.603  64.413  69.256  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      64.771  66.376  71.161  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      64.256  65.906  71.604  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      65.191  66.984  71.528  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.703      6.057      7.109
+REMARK INTER + INTRA:          -5.703
+REMARK INTER:                  -5.703
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      62.654  64.133  71.172  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      63.205  64.475  70.663  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      63.325  64.156  69.912  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      63.636  65.136  70.904  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      64.187  65.478  70.395  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      64.618  66.139  70.636  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      65.169  66.480  70.127  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      65.601  67.141  70.368  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      66.152  67.483  69.859  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      65.480  67.460  71.119  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      64.308  65.158  69.644  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      64.860  65.500  69.134  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      63.877  64.498  69.402  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.493      4.339      6.150
+REMARK INTER + INTRA:          -5.493
+REMARK INTER:                  -5.493
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      62.024  64.312  72.362  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      61.533  63.750  72.011  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      61.013  63.309  72.476  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      61.562  63.627  71.196  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      61.072  63.065  70.845  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      61.101  62.942  70.030  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      60.611  62.380  69.679  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      60.640  62.257  68.863  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      60.150  61.695  68.513  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      61.160  62.697  68.399  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      60.552  62.624  71.310  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      60.060  62.061  70.959  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      60.522  62.746  72.125  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.401      6.586      7.648
+REMARK INTER + INTRA:          -5.401
+REMARK INTER:                  -5.401
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      60.109  67.995  70.589  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      59.776  67.351  70.980  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      59.129  67.462  71.481  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      60.087  66.594  70.871  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      59.753  65.950  71.262  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      60.065  65.194  71.153  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      59.731  64.549  71.544  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      60.043  63.793  71.435  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      59.709  63.148  71.826  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      60.689  63.682  70.934  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      59.107  66.061  71.763  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      58.773  65.416  72.154  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      58.795  66.816  71.872  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.401      5.745      6.275
+REMARK INTER + INTRA:          -5.401
+REMARK INTER:                  -5.401
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carglumic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNK A   0      60.860  62.078  70.477  0.00  0.00    +0.000 NA
+ATOM      2  C   UNK A   0      60.503  62.772  70.741  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      60.182  62.808  71.500  0.00  0.00    +0.000 OA
+ATOM      4  N   GLU A   1      60.467  63.432  70.247  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLU A   1      60.111  64.127  70.511  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLU A   1      60.075  64.787  70.017  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLU A   1      59.718  65.481  70.281  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLU A   1      59.682  66.141  69.787  0.00  0.00    +0.000 C 
+ATOM      9  OE1 GLU A   1      59.325  66.836  70.051  0.00  0.00    +0.000 OA
+ATOM     10  OE2 GLU A   1      60.003  66.105  69.028  0.00  0.00    +0.000 OA
+ATOM     11  C   GLU A   1      59.790  64.163  71.270  0.00  0.00    +0.000 C 
+ATOM     12  O   GLU A   1      59.432  64.858  71.535  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLU A   1      59.825  63.504  71.765  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

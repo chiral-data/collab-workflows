@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.385      0.000      0.000
+REMARK INTER + INTRA:          -7.385
+REMARK INTER:                  -7.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.016  61.162  64.155  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.497  61.619  64.646  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.185  61.957  65.330  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.963  62.225  65.381  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.509  62.021  64.797  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.514  61.572  65.042  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.802  61.617  65.456  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.760  62.048  66.158  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.047  62.094  66.572  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.430  62.434  66.446  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.142  62.388  66.032  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.813  62.774  66.321  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.096      1.599      2.331
+REMARK INTER + INTRA:          -7.096
+REMARK INTER:                  -7.096
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.119  61.191  65.002  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.619  61.691  65.427  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.350  61.907  65.113  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.376  62.315  65.829  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.742  62.267  66.355  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.071  61.424  64.505  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.532  61.298  63.833  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.272  61.656  63.768  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.733  61.531  63.094  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      62.552  62.140  64.375  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.091  62.265  65.048  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.370  62.749  65.655  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.095      1.617      2.744
+REMARK INTER + INTRA:          -7.095
+REMARK INTER:                  -7.095
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.886  62.792  66.007  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.268  62.300  65.771  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.314  61.897  65.053  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.577  61.635  65.316  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.280  61.899  66.040  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.034  62.298  65.038  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.545  62.205  64.397  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.335  61.711  63.771  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.846  61.619  63.129  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.614  61.310  63.785  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.104  61.402  64.426  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.382  61.001  64.441  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.386      7.259      8.136
+REMARK INTER + INTRA:          -6.386
+REMARK INTER:                  -6.386
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.142  66.868  71.796  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.983  67.037  71.005  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.379  66.638  70.612  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.646  67.127  70.004  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.271  67.649  70.138  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.321  66.287  71.356  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.751  65.707  71.496  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.240  65.478  70.891  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.670  64.897  71.031  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      64.297  65.828  70.146  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.866  66.408  70.007  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      64.924  66.759  69.261  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.378      5.353      6.164
+REMARK INTER + INTRA:          -6.378
+REMARK INTER:                  -6.378
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.407  63.796  72.007  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.927  63.182  72.189  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.039  62.565  71.656  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.548  62.325  72.259  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.626  62.785  72.940  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.492  63.018  71.237  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.233  62.770  70.494  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.522  62.070  70.169  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.263  61.822  69.425  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.069  61.615  70.587  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.328  61.863  71.330  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.876  61.409  71.749  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.365      5.772      6.429
+REMARK INTER + INTRA:          -6.365
+REMARK INTER:                  -6.365
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.448  61.870  70.564  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.969  61.889  71.203  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.947  62.517  71.735  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.557  62.072  72.067  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.788  61.362  71.714  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.346  62.746  71.219  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.934  63.449  71.351  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.123  63.923  71.998  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.711  64.626  72.129  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.725  63.695  72.515  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.137  62.992  72.383  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.739  62.764  72.900  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.078      6.748      7.259
+REMARK INTER + INTRA:          -6.078
+REMARK INTER:                  -6.078
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.847  64.582  72.860  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.468  63.905  72.582  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.703  63.956  72.280  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.838  63.148  72.187  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.559  62.821  72.421  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.832  64.746  72.477  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.243  65.308  72.340  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.525  65.078  72.005  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      58.935  65.640  71.868  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      59.395  64.288  71.808  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.984  63.727  71.945  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.854  62.935  71.747  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.071      3.959      4.835
+REMARK INTER + INTRA:          -6.071
+REMARK INTER:                  -6.071
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.473  61.421  70.968  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.460  62.245  70.939  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.427  62.632  70.212  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.436  63.283  70.719  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.468  63.169  71.536  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.430  61.848  69.957  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.403  61.676  69.150  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.374  62.289  68.599  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.347  62.117  67.792  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.371  63.074  68.854  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.398  63.246  69.660  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.395  64.031  69.915  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.027      3.130      4.208
+REMARK INTER + INTRA:          -6.027
+REMARK INTER:                  -6.027
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethadione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.433  61.968  69.908  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.500  62.173  69.113  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.022  62.768  68.883  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.712  62.560  68.148  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.145  61.962  68.094  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.151  62.771  69.698  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.694  63.297  70.028  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.108  63.820  69.543  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.651  64.347  69.874  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.979  63.819  68.728  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.436  63.293  68.398  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.307  63.290  67.583  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

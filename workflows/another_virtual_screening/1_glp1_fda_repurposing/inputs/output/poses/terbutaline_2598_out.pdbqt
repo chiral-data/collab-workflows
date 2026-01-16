@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.883      0.000      0.000
+REMARK INTER + INTRA:          -8.883
+REMARK INTER:                  -8.883
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.174  62.354  68.758  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.715  62.524  68.160  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.335  61.988  67.662  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.096  63.061  68.658  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.257  62.695  67.561  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.198  62.316  66.831  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.740  62.487  66.232  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.340  63.037  66.365  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.681  62.108  65.503  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.223  62.278  64.904  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.164  61.899  64.174  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.705  62.070  63.576  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.564  61.350  64.042  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.021  61.178  64.640  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.421  60.628  64.509  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.080  61.558  65.371  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.292      1.527      3.972
+REMARK INTER + INTRA:          -8.292
+REMARK INTER:                  -8.292
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.353  61.914  64.276  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.762  61.937  64.851  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.260  62.369  65.346  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.263  61.505  64.355  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.170  61.960  65.425  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.306  62.346  66.141  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.714  62.370  66.717  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.987  62.007  66.574  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.849  62.755  67.432  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.258  62.779  68.007  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.394  63.165  68.724  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.803  63.188  69.298  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.121  63.527  68.865  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.713  63.504  68.291  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      62.441  63.866  68.432  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.577  63.118  67.574  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.162      1.785      4.004
+REMARK INTER + INTRA:          -8.162
+REMARK INTER:                  -8.162
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.140  61.388  65.274  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.918  62.011  65.766  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.699  61.473  66.351  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.136  62.551  65.181  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.695  62.636  66.258  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.395  62.481  67.010  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.172  63.105  67.503  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.251  63.884  67.241  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.872  62.951  68.254  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.650  63.574  68.747  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.349  63.419  69.499  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.127  64.043  69.990  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.271  62.641  69.759  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.493  62.016  69.268  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.415  61.237  69.528  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.794  62.171  68.515  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.977      5.319      7.201
+REMARK INTER + INTRA:          -7.977
+REMARK INTER:                  -7.977
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.483  63.929  70.834  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.927  64.462  70.387  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.354  64.672  71.060  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.498  64.252  69.713  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.370  64.994  69.939  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.962  65.442  70.298  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.406  65.975  69.850  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.257  66.059  69.043  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.998  66.422  70.209  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.442  66.955  69.762  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.034  67.403  70.121  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      66.477  67.934  69.674  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      66.183  67.318  70.928  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.739  66.786  71.376  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      65.888  66.701  72.184  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      65.147  66.338  71.017  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.841      3.152      4.501
+REMARK INTER + INTRA:          -7.841
+REMARK INTER:                  -7.841
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.732  63.777  72.778  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.472  63.222  72.226  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.436  63.811  71.650  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.508  62.632  72.803  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.212  62.666  71.675  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.050  62.899  70.900  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.789  62.343  70.348  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.691  61.555  70.571  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.628  62.576  69.574  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.368  62.021  69.022  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.206  62.254  68.247  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.946  61.699  67.696  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.305  63.041  68.024  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.565  63.597  68.576  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.664  64.386  68.353  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.727  63.364  69.350  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.812      5.160      6.965
+REMARK INTER + INTRA:          -7.812
+REMARK INTER:                  -7.812
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.110  67.507  69.882  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.585  67.153  70.411  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.297  66.673  69.806  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.873  67.634  71.017  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      65.060  66.801  70.941  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.548  66.208  70.681  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.022  65.855  71.211  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.010  66.095  72.000  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.511  65.263  70.952  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.986  64.910  71.481  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.474  64.318  71.221  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.949  63.965  71.750  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.487  64.078  70.432  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.012  64.431  69.902  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      63.025  64.192  69.112  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      63.524  65.023  70.162  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.759      3.511      5.659
+REMARK INTER + INTRA:          -7.759
+REMARK INTER:                  -7.759
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.256  62.096  67.609  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.252  62.539  68.305  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.672  61.942  68.688  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.830  63.136  67.921  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.246  62.983  69.000  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.609  62.688  69.680  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.604  63.132  70.376  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.237  63.870  70.391  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.966  62.837  71.055  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.961  63.280  71.751  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.323  62.985  72.431  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.318  63.428  73.126  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.690  62.246  72.415  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.695  61.802  71.720  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      62.062  61.063  71.704  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.333  62.097  71.040  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.615      5.469      6.430
+REMARK INTER + INTRA:          -7.615
+REMARK INTER:                  -7.615
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.113  63.139  72.572  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.583  63.340  71.925  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.874  63.992  72.337  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.292  62.687  71.511  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.053  63.539  71.277  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.540  64.205  71.310  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.011  64.405  70.662  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.994  63.940  69.981  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.497  65.070  70.696  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.968  65.270  70.049  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.455  65.936  70.083  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      64.924  66.136  69.436  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      64.471  66.400  70.764  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.001  66.200  71.412  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      64.017  66.665  72.094  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      63.514  65.535  71.378  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.600      1.743      3.010
+REMARK INTER + INTRA:          -7.600
+REMARK INTER:                  -7.600
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = terbutaline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.842  64.341  70.145  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.131  64.023  69.871  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.470  63.902  69.130  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.792  64.145  70.614  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.420  63.706  69.598  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.359  63.443  68.819  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.647  63.125  68.546  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.998  63.072  69.052  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.586  62.862  67.767  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.875  62.545  67.493  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.814  62.281  66.714  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.103  61.964  66.441  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.463  62.335  66.209  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.174  62.652  66.481  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      61.824  62.705  65.976  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.236  62.915  67.261  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

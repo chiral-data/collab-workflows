@@ -1,0 +1,11 @@
+ROOT
+REMARK  Name = potassium bromide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  K   UNL     1       0.825   0.000   0.000  0.00  0.00    +0.000 K 
+REMARK  Name = potassium bromide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 BR   UNL     1       0.000   0.000   0.000  0.00  0.00    +0.000 Br
+ENDROOT
+TORSDOF 0

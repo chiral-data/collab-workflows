@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.475      0.000      0.000
+REMARK INTER + INTRA:          -7.475
+REMARK INTER:                  -7.475
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.010  63.836  68.555  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.359  63.498  68.178  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.612  63.540  68.525  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.455  63.117  67.452  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.804  62.778  67.074  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.058  62.821  67.422  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.900  62.398  66.349  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.250  62.059  65.971  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.504  62.102  66.319  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.347  61.678  65.246  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.093  61.636  64.899  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.190  61.254  64.172  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.744  61.974  65.276  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      62.492  61.931  64.929  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.648  62.355  66.001  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.339      1.338      3.067
+REMARK INTER + INTRA:          -7.339
+REMARK INTER:                  -7.339
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.374  61.779  64.308  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.621  61.747  64.643  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.005  61.371  64.244  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.483  62.093  65.380  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.730  62.062  65.717  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.115  61.685  65.316  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.593  62.407  66.452  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.840  62.376  66.789  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.226  61.999  66.388  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.703  62.722  67.525  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.318  63.098  67.925  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.180  63.444  68.663  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.071  63.129  67.589  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.687  63.506  67.989  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.209  62.784  66.853  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.689      2.236      4.107
+REMARK INTER + INTRA:          -6.689
+REMARK INTER:                  -6.689
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.656  62.012  66.510  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.198  62.489  66.911  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.636  63.053  66.499  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.300  62.401  67.725  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.842  62.878  68.126  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.279  63.442  67.713  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.944  62.790  68.939  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.485  63.266  69.341  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.923  63.830  68.928  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.588  63.178  70.155  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.150  62.614  70.567  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.253  62.526  71.382  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.609  62.137  70.166  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.171  61.572  70.578  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      60.506  62.225  69.352  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.583      1.867      2.686
+REMARK INTER + INTRA:          -6.583
+REMARK INTER:                  -6.583
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.517  64.725  69.474  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.866  64.258  69.670  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.688  64.108  70.462  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.392  63.941  69.074  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.740  63.473  69.270  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.563  63.324  70.061  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.266  63.156  68.674  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.615  62.689  68.869  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.438  62.540  69.661  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.141  62.372  68.273  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.318  62.522  67.482  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.843  62.204  66.886  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.969  62.989  67.286  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.147  63.139  66.494  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.443  63.306  67.882  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.401      3.564      4.536
+REMARK INTER + INTRA:          -6.401
+REMARK INTER:                  -6.401
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.534  67.144  68.807  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.573  66.644  69.463  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.403  66.936  70.216  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.782  65.852  69.365  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.821  65.352  70.021  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.650  65.645  70.773  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.029  64.561  69.924  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.068  64.061  70.579  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.898  64.353  71.331  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.277  63.268  70.481  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.447  62.976  69.729  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.657  62.183  69.632  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.409  63.476  69.073  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.579  63.184  68.320  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      60.200  64.268  69.171  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.397      4.282      5.334
+REMARK INTER + INTRA:          -6.397
+REMARK INTER:                  -6.397
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.890  65.302  70.768  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.302  64.959  70.302  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.369  64.965  69.479  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.645  64.610  70.658  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.056  64.267  70.192  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.125  64.273  69.370  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.400  63.918  70.549  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.811  63.574  70.084  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.880  63.581  69.262  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.154  63.225  70.440  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.086  63.219  71.262  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.429  62.869  71.619  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.674  63.562  71.728  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.607  63.556  72.550  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.331  63.911  71.371  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.353      2.112      4.257
+REMARK INTER + INTRA:          -6.353
+REMARK INTER:                  -6.353
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.631  62.757  66.537  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.204  62.988  67.204  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.382  62.914  67.216  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.599  63.294  67.861  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.173  63.526  68.529  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.351  63.452  68.539  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.567  63.831  69.184  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.142  64.063  69.852  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.320  63.989  69.862  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.537  64.369  70.508  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.358  64.443  70.497  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.754  64.749  71.154  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.785  64.211  69.830  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      63.607  64.285  69.819  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.390  63.906  69.174  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.273      3.958      4.739
+REMARK INTER + INTRA:          -6.273
+REMARK INTER:                  -6.273
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.953  65.680  69.783  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.016  64.891  69.547  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.753  64.661  68.800  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.342  64.333  70.060  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.405  63.544  69.825  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.142  63.315  69.077  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.730  62.986  70.337  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.793  62.198  70.103  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.531  61.969  69.355  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.119  61.639  70.615  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.382  61.869  71.362  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.708  61.310  71.875  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.319  62.658  71.598  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.581  62.888  72.345  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      60.993  63.216  71.085  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.106      4.276      5.023
+REMARK INTER + INTRA:          -6.106
+REMARK INTER:                  -6.106
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.474  67.488  69.075  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.649  66.684  69.133  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.047  66.124  69.065  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.427  66.439  69.258  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.603  65.635  69.316  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.000  65.076  69.248  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.380  65.391  69.441  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.556  64.587  69.499  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.953  64.028  69.431  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      63.334  64.343  69.625  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.936  64.902  69.692  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      64.715  64.657  69.818  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.761  65.706  69.634  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      64.363  66.267  69.702  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.983  65.951  69.509  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

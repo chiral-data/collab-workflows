@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:   -10.256      0.000      0.000
+REMARK INTER + INTRA:         -10.256
+REMARK INTER:                 -10.256
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.433  61.362  64.863  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.126  61.674  65.562  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.575  62.197  66.014  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.209  62.668  66.253  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.158  63.106  66.951  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.474  63.073  67.410  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.423  63.510  68.107  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      59.839  62.601  67.172  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.890  62.163  66.474  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.257  61.691  66.235  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.103  62.049  65.398  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.891  61.538  64.787  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.419  61.390  64.170  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.160  61.753  64.166  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      62.688  61.605  63.550  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      62.373  62.264  64.778  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.844  62.412  65.395  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:   -10.105      1.321      2.953
+REMARK INTER + INTRA:         -10.105
+REMARK INTER:                 -10.105
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.827  61.748  65.975  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.255  61.534  65.304  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.005  61.850  65.174  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.690  62.295  65.292  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.304  62.261  64.742  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.234  61.783  64.074  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.848  61.749  63.525  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.549  61.338  63.956  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.935  61.371  64.505  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.250  60.927  64.387  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.815  62.219  65.887  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.089  62.068  66.249  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.898  62.436  66.962  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.434  62.956  67.314  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      60.244  63.324  68.027  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.161  63.107  66.952  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.351  62.738  66.238  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -9.026      6.092      6.993
+REMARK INTER + INTRA:          -9.026
+REMARK INTER:                  -9.026
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.620  63.706  72.556  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.128  64.349  72.713  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.362  64.367  72.409  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.685  64.133  72.000  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.017  64.618  71.996  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.026  65.336  72.401  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      58.359  65.820  72.397  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      59.704  65.571  72.810  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.372  65.086  72.814  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.049  65.320  73.222  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.619  63.642  72.110  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.382  63.375  72.274  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.638  62.650  71.975  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.132  62.192  71.511  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      61.389  61.467  71.213  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.368  62.460  71.347  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.112  63.185  71.647  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.914      4.559      5.877
+REMARK INTER + INTRA:          -8.914
+REMARK INTER:                  -8.914
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.093  61.697  71.338  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.280  62.239  71.931  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.221  63.049  71.783  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.080  63.755  71.381  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.195  64.477  71.763  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.452  64.494  72.547  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.568  65.215  72.928  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.594  63.787  72.949  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.478  63.065  72.568  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.619  62.358  72.969  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.985  62.751  71.051  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.955  61.937  70.927  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.719  61.639  70.194  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.512  62.157  69.586  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      60.276  61.860  68.853  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.542  62.973  69.710  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.779  63.270  70.443  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.852      4.506      6.580
+REMARK INTER + INTRA:          -8.852
+REMARK INTER:                  -8.852
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.253  63.155  72.600  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.264  62.595  71.994  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.829  62.725  71.305  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.331  63.093  70.760  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.168  62.729  70.038  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.502  61.996  69.860  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.339  61.632  69.139  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.001  61.627  70.405  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.165  61.991  71.127  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.663  61.623  71.672  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.645  63.412  71.722  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.963  63.537  72.472  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.779  64.224  72.890  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.277  64.788  72.556  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      60.093  65.475  72.973  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      59.959  64.663  71.804  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.143  63.974  71.387  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.689      5.992      7.468
+REMARK INTER + INTRA:          -8.689
+REMARK INTER:                  -8.689
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.560  66.900  71.556  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.030  66.273  71.480  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.016  65.826  70.787  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.209  65.565  70.029  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.810  64.923  69.699  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.216  64.542  70.126  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.817  63.900  69.796  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      63.022  64.803  70.885  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.422  65.445  71.215  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.228  65.706  71.973  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.614  66.362  70.600  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.834  66.942  71.144  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.432  67.478  70.957  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.811  67.435  70.225  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      66.409  67.971  70.038  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      65.590  66.855  69.680  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      64.992  66.319  69.868  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.665      2.995      4.249
+REMARK INTER + INTRA:          -8.665
+REMARK INTER:                  -8.665
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.494  61.628  69.159  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.426  61.809  69.961  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.388  62.596  70.204  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.372  63.420  70.165  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.306  63.865  70.857  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.256  63.486  71.588  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.190  63.931  72.279  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.271  62.662  71.628  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.337  62.217  70.936  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.353  61.393  70.975  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.451  62.701  69.389  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.507  62.045  68.891  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.570  62.151  68.076  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.578  62.912  67.757  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      60.642  63.017  66.941  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.523  63.568  68.255  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.460  63.462  69.072  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.385     24.625     25.473
+REMARK INTER + INTRA:          -8.385
+REMARK INTER:                  -8.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.534  78.520  49.204  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.096  78.900  49.790  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.403  79.565  50.169  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.924  80.172  50.369  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.720  80.717  50.954  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.994  80.655  51.340  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      69.791  81.199  51.925  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      69.472  80.047  51.141  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      69.676  79.503  50.556  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      69.154  78.896  50.357  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      71.022  79.396  49.651  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.967  78.753  49.139  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.587  78.584  48.621  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      72.261  79.059  48.615  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      72.881  78.890  48.098  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      72.316  79.703  49.129  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      71.696  79.872  49.647  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.308     24.737     25.758
+REMARK INTER + INTRA:          -8.308
+REMARK INTER:                  -8.308
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aminoglutethimide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.835  78.818  49.922  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.442  78.632  49.395  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.108  79.115  49.345  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.626  79.739  49.496  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.340  79.792  49.086  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      72.536  79.221  48.524  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      73.249  79.273  48.113  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      72.017  78.596  48.372  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      71.304  78.544  48.783  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      70.786  77.920  48.632  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.681  79.518  49.925  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      69.947  79.233  50.170  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      69.520  79.636  50.749  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      69.827  80.325  51.084  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      69.400  80.728  51.663  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      70.562  80.611  50.838  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      70.989  80.207  50.258  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

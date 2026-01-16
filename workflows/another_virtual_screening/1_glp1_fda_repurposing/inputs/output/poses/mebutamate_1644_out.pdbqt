@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.432      0.000      0.000
+REMARK INTER + INTRA:          -8.432
+REMARK INTER:                  -8.432
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.336  61.952  64.338  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.432  62.339  65.061  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.837  62.303  65.631  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.934  62.689  66.353  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.145  61.879  65.478  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.454  61.457  65.326  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.433  61.677  64.732  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.978  61.210  64.227  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.266  61.008  63.482  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.811  60.541  62.977  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      62.009  61.273  63.240  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.857  62.082  66.225  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.313  62.549  66.730  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.025  62.752  67.476  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.480  63.219  67.980  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.282  62.486  67.717  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.161      0.652      3.619
+REMARK INTER + INTRA:          -8.161
+REMARK INTER:                  -8.161
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.020  62.405  66.947  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.927  62.011  66.227  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.564  61.947  65.707  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.471  61.554  64.988  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.294  62.275  65.906  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.025  62.603  66.105  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.980  62.539  66.621  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.456  62.956  67.151  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.142  63.220  67.866  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.617  63.637  68.397  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.352  63.069  68.053  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.608  62.010  65.190  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.133  61.594  64.660  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.446  61.329  63.944  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.971  60.913  63.415  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      62.236  61.481  63.759  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.420      5.653      7.524
+REMARK INTER + INTRA:          -7.420
+REMARK INTER:                  -7.420
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.823  66.716  71.467  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.245  66.138  71.584  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.004  65.661  70.955  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.427  65.084  71.073  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.341  65.763  70.209  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.676  65.864  69.462  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.813  66.371  70.504  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      65.340  66.763  70.005  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.812  67.371  70.300  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      66.340  67.763  69.801  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      65.758  67.588  71.095  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.868  65.154  69.914  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.340  64.762  70.413  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.868  64.154  70.118  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      62.341  63.762  70.616  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      62.923  63.937  69.323  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.408      1.841      4.364
+REMARK INTER + INTRA:          -7.408
+REMARK INTER:                  -7.408
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.330  63.503  69.338  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.564  63.612  68.554  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.361  63.054  67.981  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.594  63.163  67.198  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.923  62.387  68.193  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.486  61.720  68.403  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.906  62.647  68.975  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.518  62.199  69.550  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.501  62.458  70.332  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.113  62.010  70.906  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.871  63.165  70.542  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.941  62.128  67.409  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.328  62.576  66.835  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.346  62.318  66.052  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.733  62.765  65.478  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.976  61.610  65.843  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.395      2.159      3.451
+REMARK INTER + INTRA:          -7.395
+REMARK INTER:                  -7.395
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.303  63.498  67.686  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.285  63.611  68.504  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.954  63.035  68.993  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.937  63.148  69.809  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.641  62.346  68.664  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.327  61.657  68.337  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.842  62.614  67.911  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.671  62.150  67.250  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.872  62.418  66.496  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.701  61.955  65.835  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      61.244  63.148  66.403  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.440  62.079  69.419  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.611  62.542  70.080  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.410  62.275  70.835  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.581  62.738  71.495  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.038  61.544  70.928  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.268      2.828      5.617
+REMARK INTER + INTRA:          -7.268
+REMARK INTER:                  -7.268
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.648  62.115  70.978  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.458  61.867  70.213  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.721  62.299  69.562  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.531  62.052  68.799  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.175  62.980  69.675  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.628  63.660  69.786  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.132  62.873  70.491  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.504  63.409  70.997  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.461  63.302  71.813  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.833  63.838  72.319  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      61.048  62.660  72.125  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.217  63.086  68.857  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.846  62.550  68.351  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.888  62.656  67.535  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.517  62.121  67.029  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      61.302  63.299  67.223  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.180      3.064      4.879
+REMARK INTER + INTRA:          -7.180
+REMARK INTER:                  -7.180
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.502  61.927  69.163  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.501  61.927  69.989  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.887  62.527  70.402  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.886  62.527  71.226  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.274  63.128  69.989  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.662  63.729  69.578  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.052  62.782  69.275  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.276  63.129  68.561  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.053  62.782  67.847  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.277  63.129  67.133  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.607  62.088  67.845  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.497  63.475  70.705  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.273  63.128  71.419  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.495  63.474  72.134  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.272  63.127  72.847  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      61.942  64.168  72.134  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.106      5.818      7.008
+REMARK INTER + INTRA:          -7.106
+REMARK INTER:                  -7.106
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.336  62.870  72.254  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.258  63.578  72.671  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.701  64.138  72.433  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.623  64.845  72.850  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.222  63.989  71.778  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.742  63.842  71.123  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.588  63.258  71.675  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.357  62.764  71.056  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.723  62.033  70.953  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.492  61.539  70.334  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      61.322  61.795  71.468  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.855  64.721  71.881  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.086  65.215  72.500  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.720  65.947  72.604  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      59.951  66.440  73.222  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      59.121  66.185  72.088  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.102      6.111      7.690
+REMARK INTER + INTRA:          -7.102
+REMARK INTER:                  -7.102
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mebutamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.869  65.098  72.940  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.298  64.415  72.760  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.954  63.821  72.303  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.382  63.139  72.123  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.182  63.909  72.025  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.411  63.996  71.747  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.134  64.645  72.392  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.441  65.090  72.335  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.392  65.826  72.703  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      58.699  66.270  72.646  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.036  66.119  73.128  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.231  63.171  71.657  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.924  62.727  71.714  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.974  61.990  71.346  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.666  61.547  71.403  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.329  61.698  70.921  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

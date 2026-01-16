@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.167      0.000      0.000
+REMARK INTER + INTRA:          -8.167
+REMARK INTER:                  -8.167
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.643  63.852  68.824  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.663  63.488  68.083  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.015  63.049  67.823  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.035  62.685  67.083  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.702  62.761  66.603  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.722  62.398  65.863  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.389  62.474  65.384  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.409  62.110  64.644  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.762  61.671  64.383  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.782  61.306  63.642  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.449  61.383  63.163  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.094  61.594  64.862  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.075  61.958  65.602  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.347  62.972  68.302  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.327  63.336  69.042  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.716      2.027      4.160
+REMARK INTER + INTRA:          -7.716
+REMARK INTER:                  -7.716
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.324  62.441  64.433  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.049  62.488  65.209  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.447  61.985  65.464  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.172  62.032  66.241  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.500  62.581  66.762  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.226  62.628  67.538  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.553  63.177  68.059  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.278  63.224  68.836  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.676  62.722  69.091  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.401  62.768  69.868  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.729  63.317  70.389  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.348  62.172  68.570  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.623  62.125  67.794  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.118  61.436  64.943  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.393  61.389  64.167  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.255      5.722      6.467
+REMARK INTER + INTRA:          -7.255
+REMARK INTER:                  -7.255
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.906  66.569  73.160  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.129  65.812  72.919  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      59.762  65.462  72.268  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.985  64.705  72.027  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.575  64.298  72.438  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.798  63.542  72.197  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.387  63.135  72.607  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.610  62.378  72.366  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.244  62.028  71.716  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.467  61.270  71.475  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.056  60.865  71.885  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.654  62.434  71.305  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.431  63.191  71.546  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.173  65.868  71.857  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      58.950  66.625  72.098  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.182      5.224      6.652
+REMARK INTER + INTRA:          -7.182
+REMARK INTER:                  -7.182
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.731  63.678  70.385  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.352  64.221  70.410  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.645  64.478  71.137  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.266  65.021  71.161  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.593  65.307  70.459  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.213  65.849  70.484  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.540  66.135  69.782  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.161  66.678  69.807  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.455  66.935  70.533  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.076  67.478  70.558  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      66.403  67.763  69.857  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.128  66.650  71.235  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.508  66.107  71.211  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.319  64.193  71.839  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.698  63.651  71.814  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.924      2.398      3.837
+REMARK INTER + INTRA:          -6.924
+REMARK INTER:                  -6.924
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.457  65.938  71.273  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.697  65.353  70.744  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      59.780  64.573  71.002  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.020  63.988  70.473  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.177  64.182  69.686  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.416  63.597  69.157  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.572  63.790  68.370  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.812  63.204  67.841  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.896  62.425  68.098  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.136  61.839  67.569  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.292  62.033  66.783  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.740  62.231  68.885  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.500  62.817  69.414  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.624  64.379  71.789  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.384  64.964  72.318  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.898      2.332      3.274
+REMARK INTER + INTRA:          -6.898
+REMARK INTER:                  -6.898
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.311  65.024  71.029  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.990  64.621  70.384  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.488  64.285  69.819  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.167  63.882  69.174  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.347  63.816  69.095  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.027  63.414  68.452  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.208  63.347  68.372  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.887  62.945  67.728  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.384  62.609  67.162  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.063  62.206  66.517  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.245  62.140  66.438  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.203  62.674  67.241  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.524  63.077  67.885  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.307  64.350  69.897  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      63.628  64.753  70.542  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.704      4.968      6.345
+REMARK INTER + INTRA:          -6.704
+REMARK INTER:                  -6.704
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.218  67.225  71.425  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.601  66.739  71.174  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.375  66.736  70.380  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.757  66.250  70.130  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.365  65.767  70.673  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.748  65.282  70.422  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.356  64.799  70.964  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.739  64.313  70.713  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.513  64.310  69.921  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.894  63.823  69.670  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.503  63.341  70.212  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.904  64.792  69.377  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.522  65.278  69.628  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      65.766  67.219  69.837  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      66.384  67.704  70.088  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.669     18.730     19.171
+REMARK INTER + INTRA:          -6.669
+REMARK INTER:                  -6.669
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.056  78.083  59.721  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      66.443  78.548  59.422  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.671  78.257  59.416  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.058  78.721  59.117  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      65.218  79.477  58.824  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.605  79.941  58.526  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.764  80.695  58.233  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.151  81.160  57.934  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.380  80.869  57.928  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.766  81.334  57.628  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.926  82.088  57.336  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.220  80.115  58.220  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.833  79.650  58.519  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      65.511  77.502  59.709  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      66.124  77.038  60.008  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.410      5.806      6.839
+REMARK INTER + INTRA:          -6.410
+REMARK INTER:                  -6.410
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = meobentine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.230  67.962  73.125  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.156  67.190  72.843  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.768  66.852  72.403  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.694  66.081  72.120  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.009  65.647  72.277  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.936  64.876  71.995  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.252  64.442  72.152  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.178  63.671  71.869  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.789  63.333  71.430  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.715  62.561  71.147  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.031  62.128  71.304  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.473  63.766  71.272  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.547  64.538  71.555  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.452  67.285  72.245  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      63.526  68.057  72.528  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

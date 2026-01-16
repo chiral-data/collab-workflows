@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.866      0.000      0.000
+REMARK INTER + INTRA:          -8.866
+REMARK INTER:                  -8.866
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.339  61.231  64.832  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.098  61.518  64.685  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.479  61.985  65.248  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.060  61.965  64.664  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.928  61.547  63.965  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.509  61.526  63.380  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.214  61.149  63.851  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.061  62.445  65.609  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.774  62.586  65.220  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.929  62.763  66.359  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.216  62.622  66.748  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      61.085  62.940  67.498  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      60.634  62.161  66.388  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.765  61.843  65.638  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.182  61.383  65.277  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.282      1.542      2.802
+REMARK INTER + INTRA:          -8.282
+REMARK INTER:                  -8.282
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.622  62.849  66.542  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.964  62.447  66.250  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.004  62.061  65.522  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.225  61.890  65.730  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.918  62.170  66.443  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.138  61.999  66.652  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.390  62.621  66.947  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.776  61.616  64.867  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.010  61.311  64.823  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.312  61.476  64.255  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.076  61.780  64.300  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      62.613  61.640  63.688  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      62.306  62.226  64.955  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.770  62.366  65.567  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.000  62.812  66.223  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.741      1.834      2.827
+REMARK INTER + INTRA:          -7.741
+REMARK INTER:                  -7.741
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.618  62.389  66.240  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.856  62.452  66.548  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.730  62.844  67.262  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.956  62.625  67.082  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.797  62.202  66.391  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.023  61.982  66.210  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.413  62.001  65.880  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.336  63.161  67.914  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.518  63.077  67.981  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.759  63.561  68.498  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.577  63.644  68.430  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      62.001  64.045  69.015  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      61.972  63.328  67.778  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.548  62.928  67.194  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.943  62.611  66.542  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.649      6.668      7.902
+REMARK INTER + INTRA:          -7.649
+REMARK INTER:                  -7.649
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.833  66.892  71.898  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.066  66.860  71.108  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.725  66.309  70.598  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.244  66.682  70.077  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.726  67.297  70.344  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.245  67.671  69.824  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.687  67.538  71.133  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.563  65.888  69.908  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.964  66.070  69.210  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      64.001  65.284  69.915  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.601  65.102  70.613  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      63.038  64.498  70.620  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      63.762  65.523  71.304  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      64.324  66.127  71.296  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.486  66.549  71.987  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.638      5.997      7.084
+REMARK INTER + INTRA:          -7.638
+REMARK INTER:                  -7.638
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.671  62.686  72.645  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.129  62.711  72.024  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.625  63.358  71.940  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.383  62.905  71.296  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.741  62.177  71.144  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.499  61.724  70.499  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.343  61.904  71.639  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.037  63.849  71.634  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.620  63.620  70.960  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      59.867  64.568  72.001  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.284  64.796  72.674  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      60.113  65.516  73.042  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      60.872  64.306  72.982  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.043  63.587  72.615  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.631  63.096  72.922  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.291     24.494     25.206
+REMARK INTER + INTRA:          -7.291
+REMARK INTER:                  -7.291
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.273  78.390  49.349  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.943  78.871  49.326  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.013  79.507  49.847  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.723  79.582  49.435  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.909  79.048  48.833  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      72.619  79.122  48.420  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      71.384  78.440  48.644  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.329  80.168  50.225  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      72.063  80.463  49.992  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      70.911  80.535  50.834  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      70.177  80.239  51.066  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      69.758  80.606  51.676  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      69.860  79.577  50.688  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      70.278  79.211  50.079  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      69.962  78.549  49.701  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.230      3.886      5.044
+REMARK INTER + INTRA:          -7.230
+REMARK INTER:                  -7.230
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.404  62.853  68.361  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.390  62.811  69.184  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.256  63.491  69.631  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.340  62.938  70.236  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.488  62.147  70.055  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.573  61.593  70.660  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.552  61.909  69.266  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.150  63.980  70.286  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.188  63.662  71.047  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.007  64.786  70.182  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.969  65.102  69.422  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      59.826  65.909  69.317  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      60.074  64.614  68.765  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.218  63.809  68.869  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.323  63.319  68.213  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.222      4.879      6.423
+REMARK INTER + INTRA:          -7.222
+REMARK INTER:                  -7.222
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.848  64.303  71.723  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.479  63.772  71.722  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.805  63.519  71.008  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.282  63.103  71.537  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.161  63.181  72.350  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.637  62.765  72.880  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.563  63.675  72.633  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.296  63.122  70.477  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.885  62.618  70.760  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.198  63.228  69.665  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.608  63.731  69.384  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      60.510  63.837  68.571  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      60.117  64.129  69.914  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.215  64.023  70.726  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.724  64.421  71.258  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.081      6.214      7.247
+REMARK INTER + INTRA:          -7.081
+REMARK INTER:                  -7.081
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methallatal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.171  65.497  72.457  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.045  64.738  72.161  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.453  64.482  71.492  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.007  63.808  71.651  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.491  63.797  72.296  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.043  63.123  72.456  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.423  64.463  72.780  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.708  63.993  70.878  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.402  63.230  70.806  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      63.267  64.267  70.337  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.572  65.029  70.409  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      64.132  65.303  69.867  0.00  0.00    +0.000 S 
+ATOM     13  N   UNL     1      63.318  65.519  71.023  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.759  65.245  71.564  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.504  65.735  72.178  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

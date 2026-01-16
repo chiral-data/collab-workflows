@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.685      0.000      0.000
+REMARK INTER + INTRA:          -7.685
+REMARK INTER:                  -7.685
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.619  61.939  66.085  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.340  62.337  66.153  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.060  62.734  66.220  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.129  62.591  66.910  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.400  62.373  67.229  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      61.647  63.061  67.346  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.550  62.084  65.397  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.279  62.301  65.077  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.489  62.047  64.320  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.971  61.577  63.884  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.242  61.360  64.204  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.031  61.613  64.960  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.416      1.678      2.816
+REMARK INTER + INTRA:          -7.416
+REMARK INTER:                  -7.416
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.723  62.106  65.467  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.106  61.744  65.054  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.491  61.383  64.640  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.629  61.551  64.444  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.423  61.768  64.497  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      61.357  61.142  63.782  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.585  61.936  65.662  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.791  61.720  65.609  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.269  61.913  66.219  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.541  62.321  66.881  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.336  62.538  66.934  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.858  62.346  66.325  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.767      5.814      6.587
+REMARK INTER + INTRA:          -6.767
+REMARK INTER:                  -6.767
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.907  63.806  72.632  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.300  63.749  72.076  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.693  63.691  71.520  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.976  64.455  72.356  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.341  64.857  72.978  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      59.289  64.758  72.015  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.623  63.044  71.796  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.259  62.641  71.175  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.583  61.936  70.895  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.269  61.633  71.236  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.634  62.035  71.858  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.310  62.741  72.138  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.724      6.449      7.495
+REMARK INTER + INTRA:          -6.724
+REMARK INTER:                  -6.724
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.443  66.022  69.687  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.534  65.869  70.494  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.626  65.716  71.299  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.924  65.314  70.457  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.540  65.169  69.741  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      63.698  64.904  71.136  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.143  66.423  70.530  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.527  66.568  71.245  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.137  67.123  71.281  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.363  67.532  70.602  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.979  67.387  69.886  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.370  66.833  69.850  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.705     17.780     18.242
+REMARK INTER + INTRA:          -6.705
+REMARK INTER:                  -6.705
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.767  79.547  58.985  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.147  79.003  59.010  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.526  78.459  59.036  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.648  79.554  58.651  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.937  80.300  58.449  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      63.863  79.359  58.493  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.644  78.452  59.370  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.356  77.706  59.572  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.854  77.155  59.931  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.639  77.350  60.089  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.928  78.097  59.887  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.430  78.648  59.527  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.646      4.434      5.981
+REMARK INTER + INTRA:          -6.646
+REMARK INTER:                  -6.646
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.912  61.857  70.542  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.784  62.674  70.539  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.656  63.489  70.537  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.502  62.627  69.764  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.472  61.897  69.380  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      60.250  63.309  69.376  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.065  62.720  71.312  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.096  63.449  71.698  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.378  63.496  72.472  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.629  62.813  72.860  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.599  62.084  72.476  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.317  62.037  71.702  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.518      2.853      4.606
+REMARK INTER + INTRA:          -6.518
+REMARK INTER:                  -6.518
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.573  63.386  68.829  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.537  62.566  68.737  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.501  61.747  68.645  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.583  62.656  67.917  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.637  63.411  67.588  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      60.574  61.992  67.429  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.492  62.477  69.555  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.437  61.723  69.886  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.392  61.633  70.704  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.401  62.298  71.193  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.455  63.052  70.863  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.500  63.142  70.044  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.400     24.582     24.984
+REMARK INTER + INTRA:          -6.400
+REMARK INTER:                  -6.400
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.732  80.281  50.453  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.128  79.722  50.389  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      69.524  79.163  50.326  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      69.677  80.147  50.935  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      69.975  80.844  51.263  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      68.929  79.876  51.153  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.577  79.298  49.845  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.280  78.602  49.517  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.731  78.177  48.972  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.478  78.448  48.754  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.777  79.144  49.082  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.326  79.569  49.627  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.361      6.556      7.539
+REMARK INTER + INTRA:          -6.361
+REMARK INTER:                  -6.361
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = atrolactamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.573  66.526  71.177  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.497  66.810  70.405  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.421  67.093  69.634  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      66.152  67.299  70.521  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      66.545  67.297  71.246  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      66.414  67.788  69.911  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.843  66.322  70.290  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.450  66.322  69.565  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.795  65.834  69.450  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.534  65.344  70.060  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.927  65.343  70.786  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.581  65.831  70.901  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

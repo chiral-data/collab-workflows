@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.313      0.000      0.000
+REMARK INTER + INTRA:          -9.313
+REMARK INTER:                  -9.313
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.450  62.177  66.899  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.928  62.007  66.248  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.690  62.319  66.203  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.167  62.147  65.551  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.929  62.459  65.506  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.407  62.289  64.855  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.883  61.665  64.947  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.120  61.353  64.992  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.360  61.493  64.295  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.122  61.805  64.250  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.600  61.635  63.599  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.975  62.801  66.807  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.737  63.113  66.762  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.498  62.973  67.458  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      60.782  63.455  68.063  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      59.735  62.661  67.504  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.432      0.856      3.001
+REMARK INTER + INTRA:          -8.432
+REMARK INTER:                  -8.432
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.285  61.252  64.620  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.199  61.624  65.351  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.845  62.000  65.701  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.758  62.372  66.433  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.403  62.748  66.783  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.318  63.120  67.514  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.027  62.368  66.814  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.382  61.992  66.464  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.940  62.740  67.546  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.586  63.116  67.896  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.500  63.488  68.627  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.576  62.005  65.320  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.221  62.381  65.670  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.662  61.633  64.588  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      62.393  61.637  64.207  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.017  61.257  64.238  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.100      2.932      5.104
+REMARK INTER + INTRA:          -8.100
+REMARK INTER:                  -8.100
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.328  61.878  68.563  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.475  61.966  69.370  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.970  62.570  69.636  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.116  62.657  70.444  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.610  63.261  70.710  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.757  63.350  71.517  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.768  62.141  70.984  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.273  61.537  70.718  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.914  62.228  71.792  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.408  62.832  72.058  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.555  62.920  72.865  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.317  63.086  69.096  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.812  63.691  69.362  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.171  62.999  68.288  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      61.519  63.515  67.748  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.677  62.395  68.022  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.949      3.398      4.984
+REMARK INTER + INTRA:          -7.949
+REMARK INTER:                  -7.949
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.276  62.903  72.477  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.075  62.640  71.721  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.267  63.096  71.061  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.065  62.832  70.306  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      61.258  63.288  69.645  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.056  63.025  68.890  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.672  62.114  70.210  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.480  61.659  70.871  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.470  61.850  69.455  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.662  62.306  68.795  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.461  62.044  68.039  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.661  63.814  71.156  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.853  64.270  70.496  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.863  64.078  71.912  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      62.256  64.796  72.007  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.671  63.622  72.572  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.741      5.342      7.163
+REMARK INTER + INTRA:          -7.741
+REMARK INTER:                  -7.741
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.727  65.278  71.833  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.360  65.771  71.640  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.717  65.714  70.899  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.350  66.207  70.708  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      64.708  66.150  69.967  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.341  66.643  69.774  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.625  66.758  71.257  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.268  66.815  71.998  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.258  67.251  71.065  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.616  67.194  70.324  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.249  67.687  70.132  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.442  65.163  70.350  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.800  65.106  69.609  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.809  64.670  70.542  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      62.534  64.120  69.993  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      62.452  64.727  71.283  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.479      4.907      6.097
+REMARK INTER + INTRA:          -7.479
+REMARK INTER:                  -7.479
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.954  64.963  69.275  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.267  64.454  69.844  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.292  64.684  70.636  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.605  64.174  71.203  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.630  64.404  71.995  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.942  63.895  72.564  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.892  63.434  70.980  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.867  63.203  70.188  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.205  62.923  71.548  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.230  63.154  72.340  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.543  62.644  72.908  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.005  65.424  70.859  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.030  65.654  71.650  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      59.692  65.934  70.291  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      59.404  66.674  70.514  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      59.666  65.704  69.499  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.417      5.733      6.924
+REMARK INTER + INTRA:          -7.417
+REMARK INTER:                  -7.417
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.988  66.273  71.177  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.406  65.789  71.504  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.233  65.060  71.158  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.651  64.576  71.487  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      62.478  63.847  71.142  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.896  63.362  71.469  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.242  64.820  72.159  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.414  65.550  72.505  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.659  64.337  72.488  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.487  63.608  72.142  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.905  63.123  72.470  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.643  64.815  70.486  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.470  64.086  70.141  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      64.225  65.299  70.158  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      64.634  65.054  69.485  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      64.398  66.028  70.503  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.415      5.439      6.662
+REMARK INTER + INTRA:          -7.415
+REMARK INTER:                  -7.415
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.934  65.474  72.630  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.788  64.756  72.251  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.016  64.474  72.185  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.870  63.756  71.805  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      60.098  63.474  71.739  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.952  62.756  71.361  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.496  63.320  71.493  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.269  63.602  71.559  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.351  62.602  71.113  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.579  62.320  71.047  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.433  61.602  70.668  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.390  64.910  72.498  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.617  64.628  72.432  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.535  65.628  72.877  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      59.909  66.064  73.190  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.307  65.910  72.943  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.240      5.467      6.944
+REMARK INTER + INTRA:          -7.240
+REMARK INTER:                  -7.240
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = crotetamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.932  63.725  72.602  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.459  64.353  72.519  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.017  64.347  71.911  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.544  64.976  71.829  0.00  0.00    +0.000 N 
+ATOM      5  C   UNL     1      63.102  64.970  71.221  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.630  65.598  71.138  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.514  65.612  72.354  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.956  65.618  72.962  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.041  66.241  72.272  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.599  66.235  71.664  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.127  66.863  71.581  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.047  63.712  71.387  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.605  63.705  70.779  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.520  63.082  71.469  0.00  0.00    +0.000 N 
+ATOM     15  C   UNL     1      61.551  62.447  70.944  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.962  63.089  72.077  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.907      0.000      0.000
+REMARK INTER + INTRA:          -8.907
+REMARK INTER:                  -8.907
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.402  61.568  63.699  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.050  61.833  64.397  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.472  62.317  64.915  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.274  61.614  64.576  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.922  61.879  65.273  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.147  61.661  65.452  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.794  61.926  66.150  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.217  62.410  66.667  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.864  62.675  67.365  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.287  63.159  67.882  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.934  63.424  68.579  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.062  63.378  67.703  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.992  62.629  66.488  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.344  62.363  65.791  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.538      1.763      3.344
+REMARK INTER + INTRA:          -8.538
+REMARK INTER:                  -8.538
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.094  63.025  68.170  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.467  62.818  67.464  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.221  63.109  67.294  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.086  62.320  66.926  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.459  62.113  66.221  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.080  61.615  65.684  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.453  61.408  64.978  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.206  61.699  64.809  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.579  61.491  64.102  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.333  61.782  63.934  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.706  61.575  63.228  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.714  62.280  64.470  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.587  62.196  65.346  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.213  62.404  66.052  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.978      3.029      5.238
+REMARK INTER + INTRA:          -7.978
+REMARK INTER:                  -7.978
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.559  63.725  72.848  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.380  63.516  72.070  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.503  64.057  71.458  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.077  62.767  71.903  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.897  62.558  71.126  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.595  61.809  70.959  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.415  61.601  70.181  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.538  62.141  69.571  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.359  61.932  68.792  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.482  62.473  68.181  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.302  62.265  67.404  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.785  63.223  68.347  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.841  62.891  69.737  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.021  63.099  70.515  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.877      2.926      4.396
+REMARK INTER + INTRA:          -7.877
+REMARK INTER:                  -7.877
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.170  62.342  67.451  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.386  62.524  68.226  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.688  63.271  68.406  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.301  61.959  68.822  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.517  62.140  69.596  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.432  61.576  70.192  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.648  61.757  70.967  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.949  62.504  71.147  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.166  62.686  71.923  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.467  63.433  72.102  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.683  63.614  72.877  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.552  63.998  71.507  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.035  63.069  70.552  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.818  62.887  69.777  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.739      5.470      6.483
+REMARK INTER + INTRA:          -7.739
+REMARK INTER:                  -7.739
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.649  61.221  71.352  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.231  61.915  71.507  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.517  62.063  71.120  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.527  62.463  72.050  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.110  63.156  72.205  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.405  63.704  72.747  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.987  64.398  72.902  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.274  64.544  72.516  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.855  65.239  72.671  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.141  65.386  72.284  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      58.723  66.080  72.439  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      58.845  64.839  71.742  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.977  63.998  71.973  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.395  63.304  71.818  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.734      5.612      6.826
+REMARK INTER + INTRA:          -7.734
+REMARK INTER:                  -7.734
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.211  67.755  70.170  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.630  67.199  70.355  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.246  67.230  71.085  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.433  66.610  69.810  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.853  66.055  69.995  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.656  65.467  69.450  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.075  64.911  69.635  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.692  64.942  70.364  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.111  64.386  70.549  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.727  64.417  71.279  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.147  63.861  71.464  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.924  65.005  71.825  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      63.888  65.530  70.910  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.469  66.086  70.725  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.553      4.580      6.099
+REMARK INTER + INTRA:          -7.553
+REMARK INTER:                  -7.553
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.506  61.486  70.013  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.702  62.167  70.435  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.638  62.908  70.076  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.961  62.109  71.217  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.156  62.789  71.639  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.415  62.731  72.420  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.610  63.412  72.842  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.546  64.152  72.483  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.742  64.834  72.906  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.678  65.574  72.547  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.874  66.255  72.969  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.420  65.633  71.765  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.288  64.211  71.702  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.092  63.530  71.280  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.327      6.883      7.990
+REMARK INTER + INTRA:          -7.327
+REMARK INTER:                  -7.327
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.134  65.744  72.692  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.785  66.038  72.280  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.163  66.724  72.541  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.059  65.646  71.607  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.709  65.939  71.195  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.983  65.548  70.522  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.635  65.842  70.110  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.012  66.527  70.371  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.664  66.821  69.958  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.042  67.507  70.219  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      66.694  67.800  69.807  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      65.769  67.899  70.892  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      64.739  66.919  71.043  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.088  66.625  71.456  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.196      5.565      6.490
+REMARK INTER + INTRA:          -7.196
+REMARK INTER:                  -7.196
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ibufenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.387  65.950  71.219  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.762  65.217  71.277  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.752  64.696  70.637  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.146  65.004  71.976  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.519  64.272  72.035  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.903  64.059  72.733  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.277  63.326  72.791  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.268  62.806  72.152  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.642  62.072  72.210  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.632  61.552  71.570  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.006  60.819  71.628  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.248  61.764  70.871  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.884  63.018  71.453  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.510  63.751  71.394  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

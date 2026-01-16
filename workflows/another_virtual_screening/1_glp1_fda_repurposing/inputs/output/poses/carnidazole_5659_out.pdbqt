@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.979      0.000      0.000
+REMARK INTER + INTRA:          -7.979
+REMARK INTER:                  -7.979
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.299  63.936  69.157  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.679  63.751  68.448  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.295  63.288  67.883  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      60.533  63.011  68.027  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      61.676  63.102  67.175  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.291  62.639  66.610  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.672  62.454  65.902  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.287  61.990  65.336  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.528  61.676  65.403  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.019  61.768  66.045  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.367  61.252  64.713  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.027  61.305  64.222  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.596  61.762  64.607  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.343  61.955  64.313  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.577  61.684  63.569  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.855  62.419  64.763  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.544      1.374      3.683
+REMARK INTER + INTRA:          -7.544
+REMARK INTER:                  -7.544
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.499  61.625  63.507  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.595  62.000  64.235  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.962  62.041  64.764  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      61.235  61.709  64.563  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      62.058  62.416  65.493  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.425  62.457  66.021  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.520  62.831  66.750  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.887  62.873  67.278  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.132  62.567  67.154  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.875  62.166  66.480  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.676  62.733  67.822  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.152  63.141  68.359  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.901  63.227  68.022  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.548  63.603  68.370  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.477  63.934  69.123  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.265  63.647  67.966  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.303      1.666      4.336
+REMARK INTER + INTRA:          -7.303
+REMARK INTER:                  -7.303
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.959  62.226  64.872  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.047  62.736  65.514  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.705  62.546  66.241  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      61.275  61.848  66.325  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      61.792  63.056  66.884  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.450  62.866  67.610  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.537  63.376  68.253  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.195  63.187  68.980  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.752  62.511  69.145  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.574  61.906  68.614  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.519  62.546  69.936  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.818  63.244  70.258  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.236  63.640  69.667  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.625  64.363  69.750  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.618  64.755  70.476  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.022  64.693  69.107  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.874      3.005      4.085
+REMARK INTER + INTRA:          -6.874
+REMARK INTER:                  -6.874
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.364  65.130  72.856  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.358  65.093  72.032  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.151  64.390  71.652  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      60.951  63.725  72.096  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      61.145  64.353  70.828  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.938  63.649  70.449  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.932  63.613  69.625  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.725  62.909  69.245  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.513  62.203  69.615  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.470  62.076  70.429  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.351  61.646  69.028  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.463  62.010  68.295  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.694  62.790  68.430  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.865  63.352  67.850  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.810  63.151  67.051  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.090  64.114  68.069  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.849      3.670      6.513
+REMARK INTER + INTRA:          -6.849
+REMARK INTER:                  -6.849
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.975  63.140  67.701  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.727  63.866  68.004  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.501  63.926  68.796  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      60.524  63.261  69.283  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      60.254  64.652  69.100  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.028  64.712  69.892  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.780  65.438  70.195  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.554  65.498  70.987  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      59.548  64.883  71.537  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.766  64.101  71.393  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.285  65.188  72.258  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.129  65.992  72.151  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.296  66.183  71.366  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.217  66.928  71.022  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      58.950  67.566  71.473  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.405  67.037  70.226  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.727      2.707      5.125
+REMARK INTER + INTRA:          -6.727
+REMARK INTER:                  -6.727
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.588  62.072  66.111  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.577  62.011  66.934  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.124  62.433  67.385  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      60.681  62.915  67.014  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      60.114  62.373  68.208  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.661  62.795  68.659  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.651  62.735  69.482  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.198  63.157  69.933  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.785  63.657  69.640  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.927  63.824  68.845  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.204  63.962  70.282  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.876  63.649  70.972  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.254  63.151  70.756  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.774  62.723  71.273  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.897  62.773  72.087  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.171  62.246  70.975  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.699      4.073      4.911
+REMARK INTER + INTRA:          -6.699
+REMARK INTER:                  -6.699
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.578  65.941  69.824  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      64.044  65.419  69.474  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.541  64.965  69.946  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      63.572  65.034  70.767  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      63.007  64.443  69.596  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.504  63.990  70.068  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.970  63.468  69.718  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.467  63.014  70.191  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.436  63.024  71.015  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.902  63.489  71.512  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.857  62.488  71.255  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.530  62.147  70.578  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.907  62.472  69.921  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.751  62.287  69.132  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.172  61.730  68.945  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.175  62.659  68.530  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.671      6.345      7.161
+REMARK INTER + INTRA:          -6.671
+REMARK INTER:                  -6.671
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.345  63.868  72.075  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.046  64.277  72.223  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.441  64.655  71.604  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      62.135  64.623  70.840  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      63.142  65.063  71.752  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.537  65.441  71.133  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.238  65.850  71.281  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      64.634  66.227  70.662  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      64.395  66.243  69.873  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.720  65.885  69.563  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      64.951  66.681  69.447  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      65.532  66.935  69.975  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.336  66.654  70.725  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      65.768  66.780  71.417  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      66.465  67.222  71.395  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      65.502  66.464  72.132  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.630      5.907      6.874
+REMARK INTER + INTRA:          -6.630
+REMARK INTER:                  -6.630
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carnidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.873  67.505  70.382  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      65.274  67.235  70.881  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      64.843  66.560  70.680  0.00  0.00    +0.000 C 
+ATOM      4  S   UNL     1      65.011  66.156  69.982  0.00  0.00    +0.000 S 
+ATOM      5  N   UNL     1      64.244  66.290  71.179  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.813  65.615  70.978  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.214  65.345  71.477  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.783  64.670  71.276  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.889  64.212  70.599  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.443  64.347  70.003  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.342  63.594  70.622  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.900  63.671  71.314  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.172  64.337  71.718  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.884  64.618  72.438  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.266  64.224  72.818  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.213  65.294  72.778  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.003      0.000      0.000
+REMARK INTER + INTRA:          -7.003
+REMARK INTER:                  -7.003
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      59.141  62.006  66.453  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      59.937  62.121  66.267  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      60.440  62.478  66.814  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      60.229  61.880  65.534  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      61.024  61.996  65.348  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      61.316  61.755  64.616  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      62.112  61.870  64.430  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      62.404  61.629  63.697  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      62.615  62.227  64.977  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      61.528  62.353  65.895  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      62.323  62.469  65.710  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      61.236  62.594  66.629  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.822      0.999      2.489
+REMARK INTER + INTRA:          -6.822
+REMARK INTER:                  -6.822
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      61.292  61.253  63.852  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      61.465  61.647  64.556  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      62.189  62.033  64.645  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      60.915  61.656  65.170  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      61.088  62.051  65.874  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      60.538  62.060  66.488  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      60.710  62.455  67.192  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      60.160  62.464  67.806  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      61.434  62.841  67.281  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      61.811  62.437  65.963  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      61.985  62.832  66.666  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      62.363  62.428  65.348  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.275      2.239      3.223
+REMARK INTER + INTRA:          -6.275
+REMARK INTER:                  -6.275
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      60.645  61.929  70.433  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      60.708  62.303  69.700  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      61.173  62.980  69.622  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      60.307  62.001  69.047  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      60.370  62.375  68.314  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      59.970  62.072  67.660  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      60.033  62.446  66.927  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      59.632  62.144  66.273  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      60.498  63.123  66.849  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      60.835  63.052  68.236  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      60.899  63.427  67.504  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      61.237  63.355  68.890  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.197      2.086      3.313
+REMARK INTER + INTRA:          -6.197
+REMARK INTER:                  -6.197
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      59.405  62.027  66.099  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      59.955  62.319  66.640  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      60.594  62.769  66.375  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      59.868  62.161  67.444  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      60.419  62.453  67.985  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      60.332  62.295  68.789  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      60.883  62.587  69.330  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      60.796  62.429  70.134  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      61.521  63.037  69.065  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      61.058  62.903  67.720  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      61.609  63.196  68.259  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      61.145  63.062  66.914  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.987      4.473      5.544
+REMARK INTER + INTRA:          -5.987
+REMARK INTER:                  -5.987
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      61.623  62.753  72.842  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      61.289  63.000  72.129  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      60.999  63.768  72.054  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      61.247  62.479  71.491  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      60.913  62.726  70.778  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      60.870  62.205  70.140  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      60.537  62.452  69.427  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      60.494  61.931  68.789  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      60.246  63.220  69.352  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      60.622  63.494  70.703  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      60.289  63.742  69.991  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      60.665  64.016  71.342  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.858      5.505      6.749
+REMARK INTER + INTRA:          -5.858
+REMARK INTER:                  -5.858
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      60.366  61.579  70.106  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      60.671  61.970  70.766  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      61.324  61.659  71.162  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      60.323  62.669  71.028  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      60.628  63.060  71.688  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      60.281  63.760  71.951  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      60.586  64.151  72.610  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      60.238  64.850  72.873  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      61.239  63.840  73.007  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      61.282  62.750  72.085  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      61.587  63.140  72.745  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      61.630  62.049  71.822  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.841     24.619     25.335
+REMARK INTER + INTRA:          -5.841
+REMARK INTER:                  -5.841
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      72.560  79.219  48.492  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      71.832  79.090  48.858  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      71.378  78.433  48.650  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      71.557  79.616  49.430  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      70.829  79.486  49.796  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      70.555  80.012  50.368  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      69.826  79.883  50.734  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      69.552  80.409  51.306  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      69.372  79.226  50.526  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      70.375  78.829  49.588  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      69.647  78.699  49.953  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      70.649  78.302  49.015  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.840      3.604      4.978
+REMARK INTER + INTRA:          -5.840
+REMARK INTER:                  -5.840
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      61.131  63.087  67.611  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      60.892  62.717  68.309  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      60.490  61.997  68.276  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      61.054  63.066  69.038  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      60.814  62.696  69.735  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      60.976  63.044  70.465  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      60.737  62.674  71.162  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      60.898  63.023  71.891  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      60.335  61.954  71.129  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      60.413  61.976  69.703  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      60.173  61.604  70.399  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      60.250  61.626  68.972  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.820     15.985     16.821
+REMARK INTER + INTRA:          -5.820
+REMARK INTER:                  -5.820
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylleucine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CD1 LEU A   1      58.453  74.754  72.317  0.00  0.00    +0.000 C 
+ATOM      2  CG  LEU A   1      58.356  75.559  72.470  0.00  0.00    +0.000 C 
+ATOM      3  CD2 LEU A   1      57.600  75.890  72.474  0.00  0.00    +0.000 C 
+ATOM      4  CB  LEU A   1      59.013  76.034  72.619  0.00  0.00    +0.000 C 
+ATOM      5  CA  LEU A   1      58.916  76.839  72.772  0.00  0.00    +0.000 C 
+ATOM      6  N   LEU A   1      59.574  77.313  72.921  0.00  0.00    +0.000 NA
+ATOM      7  C   UNK A   0      59.477  78.118  73.073  0.00  0.00    +0.000 C 
+ATOM      8  C   UNK A   0      60.135  78.592  73.222  0.00  0.00    +0.000 C 
+ATOM      9  O   UNK A   0      58.721  78.448  73.077  0.00  0.00    +0.000 OA
+ATOM     10  C   LEU A   1      58.160  77.169  72.775  0.00  0.00    +0.000 C 
+ATOM     11  O   LEU A   1      58.062  77.974  72.928  0.00  0.00    +0.000 OA
+ATOM     12  OXT LEU A   1      57.501  76.694  72.626  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

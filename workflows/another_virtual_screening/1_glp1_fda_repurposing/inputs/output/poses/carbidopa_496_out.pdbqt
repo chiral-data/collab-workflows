@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.298      0.000      0.000
+REMARK INTER + INTRA:          -9.298
+REMARK INTER:                  -9.298
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.408  62.041  65.853  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.570  62.472  66.538  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.342  62.597  66.275  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.586  62.286  65.552  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.060  61.851  65.090  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.304  61.540  64.366  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.777  61.105  63.905  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.076  61.665  64.104  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.321  61.354  63.379  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.604  62.101  64.565  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.359  62.412  65.289  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.734  62.903  67.222  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      61.484  63.226  67.337  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.799  62.347  66.802  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.554  62.657  67.525  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.271  61.911  66.340  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.202      1.501      3.386
+REMARK INTER + INTRA:          -9.202
+REMARK INTER:                  -9.202
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.646  62.310  65.437  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.505  61.836  64.776  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.743  61.682  65.051  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.485  62.014  65.760  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.988  62.501  66.195  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.730  62.833  66.904  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.234  63.320  67.339  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.968  62.678  67.179  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      59.710  63.011  67.889  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.464  62.191  66.744  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.722  61.858  66.035  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.362  61.363  64.115  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      60.631  60.992  64.023  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.267  61.991  64.500  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.525  61.659  63.792  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.771  62.479  64.936  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.906      4.586      5.824
+REMARK INTER + INTRA:          -7.906
+REMARK INTER:                  -7.906
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.215  63.692  71.227  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.435  63.511  72.002  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.258  62.717  71.865  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.980  62.478  71.127  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.878  63.031  70.525  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.599  62.791  69.786  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.497  63.345  69.184  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.423  61.998  69.650  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.144  61.758  68.911  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.524  61.443  70.252  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.803  61.683  70.991  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.654  63.329  72.776  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      61.611  62.551  73.045  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.612  64.305  72.138  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.890  64.545  72.876  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.510  64.860  71.535  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.759      6.969      8.019
+REMARK INTER + INTRA:          -7.759
+REMARK INTER:                  -7.759
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.283  66.355  71.298  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.844  66.854  70.955  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.396  66.880  70.263  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.688  66.462  70.214  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.426  66.017  70.857  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.716  65.598  70.808  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      63.455  65.154  71.451  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.269  65.625  70.116  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.559  65.206  70.067  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.531  66.070  69.472  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.240  66.488  69.521  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      66.404  67.352  70.612  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      66.297  67.624  69.840  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      66.292  66.827  71.647  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      67.001  67.245  71.696  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      66.030  66.382  72.291  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.563      1.656      2.516
+REMARK INTER + INTRA:          -7.563
+REMARK INTER:                  -7.563
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.293  63.039  67.437  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.884  63.425  68.041  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.170  63.159  67.726  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.167  62.692  67.047  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.878  62.490  66.682  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.875  62.023  66.002  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.587  61.822  65.637  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.161  61.756  65.688  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.158  61.288  65.007  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.449  61.957  66.053  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.452  62.425  66.733  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.474  63.811  68.644  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      59.650  63.773  68.673  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.598  63.692  68.356  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.601  64.159  69.035  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.310  63.491  67.990  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.554      5.997      6.777
+REMARK INTER + INTRA:          -7.554
+REMARK INTER:                  -7.554
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.791  63.810  72.451  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.339  64.259  71.927  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.370  63.646  71.376  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.777  62.952  71.555  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.154  62.870  72.284  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.561  62.175  72.463  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.937  62.093  73.192  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.592  61.562  71.912  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.000  60.867  72.091  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.216  61.644  71.182  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.809  62.338  71.003  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.886  64.707  71.402  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      59.687  64.400  70.663  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.307  64.872  72.478  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.900  65.566  72.299  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.683  64.791  73.208  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.500      6.293      7.344
+REMARK INTER + INTRA:          -7.500
+REMARK INTER:                  -7.500
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.625  65.498  71.230  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.394  64.932  70.676  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.946  65.232  70.141  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.421  65.871  70.353  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.345  66.212  71.101  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.820  66.852  71.313  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      64.743  67.192  72.060  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.371  67.151  70.778  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      65.847  67.792  70.990  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.448  66.811  70.030  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.973  66.171  69.818  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      63.164  64.366  70.121  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      63.527  64.342  69.381  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.843  64.632  71.211  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.368  63.992  70.999  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.766  64.972  71.959  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.290      6.015      7.046
+REMARK INTER + INTRA:          -7.290
+REMARK INTER:                  -7.290
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.148  62.984  72.201  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.073  62.398  71.625  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.519  62.862  71.228  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.307  63.600  71.527  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.650  63.876  72.225  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.438  64.615  72.525  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.781  64.890  73.222  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.884  65.078  72.127  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      59.673  65.818  72.427  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.541  64.803  71.429  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.753  64.064  71.129  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.996  61.813  71.049  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      60.478  61.921  70.416  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.627  61.934  72.023  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.838  61.196  71.724  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.970  62.210  72.722  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.125      5.531      6.549
+REMARK INTER + INTRA:          -7.125
+REMARK INTER:                  -7.125
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbidopa
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.731  65.506  70.759  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.350  65.889  71.383  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.358  65.187  71.816  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.691  64.506  71.493  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.018  64.526  70.736  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.352  63.844  70.413  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.679  63.865  69.656  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.360  63.143  70.847  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.695  62.461  70.523  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.033  63.123  71.604  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.699  63.804  71.928  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      58.968  66.270  72.007  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      58.784  65.853  72.695  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.342  66.590  70.950  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.008  67.271  71.273  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.669  66.611  70.192  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

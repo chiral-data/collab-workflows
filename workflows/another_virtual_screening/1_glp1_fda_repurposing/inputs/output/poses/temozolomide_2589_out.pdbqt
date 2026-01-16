@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -6.963      0.000      0.000
+REMARK INTER + INTRA:          -6.963
+REMARK INTER:                  -6.963
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.406  61.667  63.842  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.003  61.880  64.531  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      62.384  62.325  65.111  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.982  62.538  65.798  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.198  62.305  65.907  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.664  62.431  66.522  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.953  62.063  66.323  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.047  61.710  65.584  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.816  61.859  65.327  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.219  61.646  64.638  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.838  61.201  64.058  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.815  62.851  67.216  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.557  63.190  67.340  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.225  62.932  67.787  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.806      0.776      2.677
+REMARK INTER + INTRA:          -6.806
+REMARK INTER:                  -6.806
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.337  63.081  67.966  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.630  62.810  67.244  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      61.400  62.999  67.014  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.693  62.728  66.293  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.217  62.268  65.800  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.353  61.925  65.063  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.669  61.524  64.837  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.109  61.620  65.435  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.447  62.079  66.030  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.154  62.350  66.752  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.384  62.162  66.982  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.053  61.974  64.628  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      62.695  62.397  64.926  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      62.110  61.601  63.894  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.351      1.100      1.551
+REMARK INTER + INTRA:          -6.351
+REMARK INTER:                  -6.351
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.057  61.541  64.931  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.990  61.946  65.647  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      61.660  62.270  66.003  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.593  62.674  66.718  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.855  62.755  67.079  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.620  63.121  67.779  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.805  63.024  67.857  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.536  62.598  67.205  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.185  62.431  66.724  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.252  62.026  66.007  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.581  61.703  65.652  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.115  63.516  68.309  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.924  63.569  68.158  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.800  63.857  68.991  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.294      1.527      3.406
+REMARK INTER + INTRA:          -6.294
+REMARK INTER:                  -6.294
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.761  64.024  69.319  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.645  63.602  68.618  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      59.887  63.357  68.405  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.771  62.935  67.706  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.414  62.759  67.219  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.469  62.355  66.503  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.261  62.351  66.272  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.695  62.752  66.848  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.172  63.004  67.432  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.288  63.426  68.133  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.046  63.672  68.346  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.842  62.015  66.088  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.075  62.064  66.388  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      59.982  61.627  65.374  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.141      2.148      4.222
+REMARK INTER + INTRA:          -6.141
+REMARK INTER:                  -6.141
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.383  62.070  70.781  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.590  62.276  70.009  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.426  61.760  69.386  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.633  61.966  68.615  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.005  62.688  68.466  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.272  63.038  67.769  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.602  63.769  67.960  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.538  63.871  68.776  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.170  63.203  69.089  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.962  62.997  69.861  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.126  63.512  70.484  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.219  62.713  67.012  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.873  61.972  66.905  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      61.512  63.129  66.363  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.000      2.604      3.991
+REMARK INTER + INTRA:          -6.000
+REMARK INTER:                  -6.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.021  62.577  67.032  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.969  62.584  67.856  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.595  61.965  68.252  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.544  61.972  69.075  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.867  62.599  69.503  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.902  62.756  70.311  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.297  63.472  70.416  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.508  63.757  69.672  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.242  63.218  69.107  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.293  63.211  68.283  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.668  63.830  67.888  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.594  62.280  70.911  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.210  61.575  70.722  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.670  62.509  71.700  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.917      4.714      6.771
+REMARK INTER + INTRA:          -5.917
+REMARK INTER:                  -5.917
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.013  66.817  72.376  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.229  66.439  71.674  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      59.378  65.627  71.672  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.593  65.250  70.971  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.660  65.683  70.272  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.860  65.464  69.503  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.836  66.139  69.030  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.619  66.776  69.507  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.511  66.494  70.274  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      59.295  66.873  70.976  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.146  67.684  70.978  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.053  64.702  69.251  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.055  64.077  69.790  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.243  64.564  68.460  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.902      5.868      6.435
+REMARK INTER + INTRA:          -5.902
+REMARK INTER:                  -5.902
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.416  66.888  69.227  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.532  66.250  69.738  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      59.773  65.520  69.438  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.889  64.884  69.949  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.765  64.976  70.759  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.836  64.452  71.392  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.639  64.857  72.083  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.447  65.633  71.876  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.525  65.706  71.059  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      59.408  66.344  70.548  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.168  67.074  70.848  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.063  63.660  71.342  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.245  63.328  70.609  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      60.109  63.200  72.026  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.844      5.825      6.755
+REMARK INTER + INTRA:          -5.844
+REMARK INTER:                  -5.844
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = temozolomide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.119  63.119  71.343  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.918  63.919  71.357  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      59.668  64.269  72.062  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.467  65.069  72.076  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.515  65.519  71.386  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.354  66.313  71.232  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.504  66.454  70.434  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.758  65.747  70.094  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.765  65.169  70.682  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      59.966  64.368  70.667  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.215  64.018  69.963  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.090  66.869  71.782  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      58.964  66.646  72.566  0.00  0.00    +0.000 NA
+ATOM     14  O   UNL     1      58.952  67.648  71.547  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.606      0.000      0.000
+REMARK INTER + INTRA:          -4.606
+REMARK INTER:                  -4.606
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.610  61.710  63.450  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.342  62.051  64.152  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.172  61.573  64.804  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.904  61.913  65.506  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.714  61.509  66.200  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.472  62.064  66.760  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.512  62.811  66.413  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.780  62.719  65.638  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.477      0.726      2.348
+REMARK INTER + INTRA:          -4.477
+REMARK INTER:                  -4.477
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.315  62.802  67.308  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.639  62.682  66.559  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.290  62.141  66.041  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.614  62.021  65.292  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.327  61.502  64.718  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.817  61.558  64.057  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.406  62.112  64.222  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.281  62.398  64.985  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.045     17.582     18.074
+REMARK INTER + INTRA:          -4.045
+REMARK INTER:                  -4.045
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.386  79.842  58.366  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.005  79.533  58.816  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.066  78.718  58.930  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.684  78.409  59.380  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.816  77.611  59.540  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      66.492  77.553  60.008  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      66.779  78.315  60.137  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      66.280  78.845  59.749  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.007      2.890      4.302
+REMARK INTER + INTRA:          -4.007
+REMARK INTER:                  -4.007
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.189  61.624  70.600  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.523  62.115  70.027  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.449  61.925  69.227  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.783  62.416  68.654  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.755  62.298  67.838  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.158  62.920  67.477  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.437  63.422  68.069  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.205  63.111  68.796  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.928     15.497     15.853
+REMARK INTER + INTRA:          -3.928
+REMARK INTER:                  -3.928
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      57.272  76.959  69.443  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      57.712  76.617  70.051  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      57.362  76.478  70.786  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      57.802  76.136  71.394  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      57.529  75.965  72.154  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      58.151  75.629  72.578  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      58.809  75.592  72.082  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      58.594  75.905  71.350  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.915      2.220      3.129
+REMARK INTER + INTRA:          -3.915
+REMARK INTER:                  -3.915
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.563  63.441  68.264  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.233  63.051  67.616  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.419  62.914  67.587  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.089  62.525  66.939  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.290  62.350  66.834  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.207  61.959  66.113  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.955  61.893  65.772  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.500  62.242  66.282  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.891      6.390      7.258
+REMARK INTER + INTRA:          -3.891
+REMARK INTER:                  -3.891
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.174  67.918  69.988  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.748  67.228  69.835  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.504  66.747  70.460  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.079  66.056  70.307  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.800  65.524  70.871  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.406  64.917  70.476  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.442  65.074  69.667  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.857  65.778  69.562  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.878      6.772      7.584
+REMARK INTER + INTRA:          -3.878
+REMARK INTER:                  -3.878
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.964  65.165  69.526  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.498  65.791  69.591  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.847  65.963  70.319  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.380  66.590  70.384  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.770  66.825  71.071  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      66.247  67.471  70.884  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      66.152  67.635  70.081  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      65.616  67.090  69.771  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.801      2.288      3.322
+REMARK INTER + INTRA:          -3.801
+REMARK INTER:                  -3.801
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = histamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.410  62.850  66.379  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.154  62.515  67.088  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.094  62.981  67.767  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.838  62.646  68.476  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.751  63.041  69.195  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.484  62.496  69.754  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.405  61.765  69.380  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.624  61.857  68.590  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

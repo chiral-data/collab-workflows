@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.762      0.000      0.000
+REMARK INTER + INTRA:          -9.762
+REMARK INTER:                  -9.762
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.006  62.017  66.740  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.684  62.437  66.950  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.349  62.417  66.461  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.336  61.977  65.764  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.027  62.838  66.671  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.040  63.278  67.369  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.692  62.818  66.183  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.679  62.378  65.485  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.974  61.978  65.328  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.789  61.498  64.683  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.262  61.298  64.038  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.037  61.529  63.877  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.531  62.017  64.323  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.372  62.395  65.038  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.657  61.634  64.307  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.643  61.194  63.609  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.243      1.324      3.183
+REMARK INTER + INTRA:          -9.243
+REMARK INTER:                  -9.243
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.746  61.972  63.977  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.013  61.596  63.968  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.485  61.707  64.593  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.691  62.195  65.225  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.751  61.331  64.584  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.544  60.843  63.952  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.223  61.442  65.209  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.429  61.931  65.842  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.176  62.280  65.795  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.538  62.790  66.333  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.246  63.076  67.049  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.517  62.923  67.404  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.902  62.446  67.132  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.863  62.005  66.437  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.778  62.755  66.910  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.984  63.243  67.542  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.471      4.360      5.568
+REMARK INTER + INTRA:          -8.471
+REMARK INTER:                  -8.471
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.630  62.345  73.061  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.569  63.114  72.770  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.334  63.242  71.989  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.162  62.600  71.500  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.273  64.011  71.698  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.445  64.653  72.187  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.038  64.139  70.916  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.866  63.497  70.427  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.945  62.752  70.773  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.815  62.012  70.434  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.574  61.832  69.666  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.403  62.350  69.047  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.431  63.174  69.044  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.637  63.685  69.658  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.574  62.413  69.601  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.402  61.771  69.112  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.318      4.731      6.253
+REMARK INTER + INTRA:          -8.318
+REMARK INTER:                  -8.318
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.583  61.869  68.827  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.394  62.658  68.975  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.532  62.982  69.722  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.859  62.517  70.319  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.342  63.771  69.869  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.015  64.237  69.272  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.480  64.096  70.616  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.808  63.630  71.214  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.976  62.849  71.007  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.302  62.253  71.475  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.539  62.290  72.264  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.510  62.933  72.781  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.235  63.697  72.635  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.923  64.007  71.938  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.361  62.845  72.224  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.688  62.379  72.821  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.297      6.319      7.582
+REMARK INTER + INTRA:          -8.297
+REMARK INTER:                  -8.297
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.182  67.613  69.876  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.805  67.615  70.609  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.232  67.046  70.780  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.037  66.475  70.217  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.855  67.048  71.513  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.050  67.618  72.076  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.282  66.478  71.684  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.087  65.908  71.121  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.497  65.955  70.406  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.429  65.472  69.741  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.935  64.822  69.626  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.386  64.494  70.148  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.197  64.736  70.913  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.509  65.365  71.346  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      63.758  64.944  70.169  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      63.563  64.373  69.606  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.275      6.647      7.809
+REMARK INTER + INTRA:          -8.275
+REMARK INTER:                  -8.275
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.121  64.810  69.370  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.125  64.942  70.184  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.664  65.473  70.514  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.199  65.872  70.028  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.667  65.605  71.328  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.132  65.207  71.813  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.207  66.137  71.657  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.742  66.535  71.171  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.692  66.363  70.366  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.144  66.666  69.746  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.757  67.216  69.778  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.071  67.599  70.438  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.847  67.526  71.229  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.256  67.053  71.555  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      65.646  67.209  70.351  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      66.181  67.607  69.866  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.178      1.910      2.962
+REMARK INTER + INTRA:          -8.178
+REMARK INTER:                  -8.178
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.482  62.804  70.394  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.107  63.137  69.970  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.109  63.105  69.145  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.486  62.739  68.745  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.733  63.437  68.721  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.355  63.803  69.121  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.735  63.405  67.896  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.112  63.039  67.496  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.516  62.724  67.973  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.830  62.330  67.743  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.569  62.152  66.982  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.930  62.325  66.261  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.642  62.719  66.124  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.168  63.037  66.674  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.061  62.422  66.821  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      59.439  62.056  66.421  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.015      4.663      5.899
+REMARK INTER + INTRA:          -8.015
+REMARK INTER:                  -8.015
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.350  65.037  72.728  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.439  65.291  71.948  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.690  64.759  71.368  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.851  63.975  71.569  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.780  65.013  70.589  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.619  65.797  70.388  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.031  64.481  70.009  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.192  63.698  70.209  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.085  63.502  71.004  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.198  62.774  71.374  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.446  62.061  71.041  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.643  61.900  70.256  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.640  62.413  69.611  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.439  63.213  69.589  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.464  62.373  70.548  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.625  61.589  70.748  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.891      6.999      8.219
+REMARK INTER + INTRA:          -7.891
+REMARK INTER:                  -7.891
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tigloidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.846  67.589  70.240  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.556  66.883  69.927  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.917  66.503  70.287  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.569  66.831  70.960  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.628  65.797  69.975  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.976  65.470  69.302  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      63.989  65.418  70.335  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.641  65.745  71.008  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.973  66.452  71.275  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.753  66.910  71.924  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.147  66.776  72.467  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.611  66.149  72.494  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.549  65.503  71.986  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.007  65.323  71.324  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      63.053  66.298  72.144  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      62.704  66.626  72.816  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

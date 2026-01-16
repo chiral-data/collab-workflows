@@ -1,0 +1,8 @@
+ROOT
+REMARK  Name = thallous chloride Tl-201
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1       0.825   0.000   0.000  0.00  0.00    +0.000 Cl
+ATOM      2 TL   UNL     1       0.000   0.000   0.000  0.00  0.00    +0.000 Tl
+ENDROOT
+TORSDOF 0

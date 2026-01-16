@@ -1,0 +1,232 @@
+MODEL 1
+REMARK VINA RESULT:    -8.711      0.000      0.000
+REMARK INTER + INTRA:          -8.711
+REMARK INTER:                  -8.711
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.444  62.040  66.598  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.092  62.015  66.091  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.056  61.573  65.396  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.706  61.547  64.888  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.669  61.105  64.193  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.392  61.964  65.076  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.429  62.407  65.771  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.780  62.432  66.279  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      60.816  62.875  66.975  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      60.853  63.317  67.670  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.045  62.648  67.159  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.588  63.101  66.790  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      62.043  61.939  64.567  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      62.692  61.914  64.060  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      62.461  62.436  65.078  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.625  61.443  64.058  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.540      0.873      2.672
+REMARK INTER + INTRA:          -8.540
+REMARK INTER:                  -8.540
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.767  61.203  64.339  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.659  61.596  65.055  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.921  61.590  65.423  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.814  61.984  66.140  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      59.075  61.978  66.507  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.444  62.384  66.489  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.184  62.390  66.122  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.291  61.997  65.405  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      62.030  62.003  65.037  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      62.768  62.009  64.670  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      61.727  61.545  64.422  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.332  62.461  65.653  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      60.337  62.778  67.207  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      60.230  63.171  67.923  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      61.129  63.013  67.196  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.546  62.543  67.217  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.583      4.448      5.287
+REMARK INTER + INTRA:          -7.583
+REMARK INTER:                  -7.583
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.512  63.108  72.479  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.309  62.903  71.708  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.810  62.260  71.569  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.606  62.055  70.796  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.108  61.413  70.658  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.901  62.492  70.162  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.400  63.135  70.300  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.604  63.340  71.073  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      62.103  63.983  71.211  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      62.602  64.625  71.349  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      62.050  63.849  72.023  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.156  64.116  70.399  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      60.698  62.286  69.389  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      60.494  62.081  68.617  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      61.157  62.910  69.102  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.239  61.663  69.675  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.438      4.731      5.821
+REMARK INTER + INTRA:          -7.438
+REMARK INTER:                  -7.438
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.324  61.387  70.622  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.743  62.057  70.854  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.954  62.159  71.645  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.373  62.830  71.878  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.584  62.931  72.668  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.582  63.400  71.319  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.371  63.299  70.528  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.952  62.628  70.295  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      60.741  62.527  69.503  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      60.531  62.426  68.713  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.379  61.810  69.692  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.104  63.244  69.316  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      62.002  64.072  71.552  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      62.420  64.743  71.785  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      62.001  64.343  70.772  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.003  63.801  72.332  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.373      7.081      7.971
+REMARK INTER + INTRA:          -7.373
+REMARK INTER:                  -7.373
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.113  66.929  71.854  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.469  66.730  71.381  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.830  66.319  71.703  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.185  66.120  71.229  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      63.548  65.709  71.552  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      64.179  66.331  70.432  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.817  66.742  70.108  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.462  66.942  70.583  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      66.101  67.353  70.259  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      66.738  67.763  69.936  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      66.476  67.345  70.994  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      65.724  67.360  69.525  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      63.533  66.132  69.957  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      62.889  65.933  69.484  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      63.898  66.492  69.310  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      63.168  65.772  70.604  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.307      7.029      7.832
+REMARK INTER + INTRA:          -7.307
+REMARK INTER:                  -7.307
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.284  65.866  71.645  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.942  66.222  71.301  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.561  66.491  71.776  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.221  66.848  71.432  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      65.839  67.116  71.907  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      65.261  66.937  70.613  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.643  66.668  70.137  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.983  66.311  70.481  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      63.364  66.043  70.006  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      62.746  65.774  69.531  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      62.960  65.785  70.678  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      63.769  66.300  69.335  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      65.921  67.294  70.269  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      66.580  67.651  69.925  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      65.587  67.190  69.521  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      66.255  67.398  71.016  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.254      6.013      6.669
+REMARK INTER + INTRA:          -7.254
+REMARK INTER:                  -7.254
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.489  65.162  72.906  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.653  64.442  72.540  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.116  63.879  72.926  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.281  63.158  72.559  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.744  62.596  72.946  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.982  63.001  71.808  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.518  63.563  71.421  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.354  64.284  71.787  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      59.890  64.847  71.401  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      59.426  65.409  71.015  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      59.968  65.354  72.047  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.812  64.339  70.755  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      61.146  62.279  71.441  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      61.311  61.559  71.075  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      60.706  62.513  70.783  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.587  62.045  72.098  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.996     25.047     25.695
+REMARK INTER + INTRA:          -6.996
+REMARK INTER:                  -6.996
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = disulfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.556  79.628  50.698  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.219  79.516  50.222  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      70.249  78.878  49.699  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      70.914  78.766  49.222  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      70.943  78.129  48.700  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      71.547  79.291  49.269  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.518  79.929  49.791  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.854  80.041  50.268  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      70.825  80.679  50.791  0.00  0.00    +0.000 S 
+ATOM     10  N   UNL     1      70.795  81.317  51.313  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      70.075  80.441  51.039  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      71.575  80.917  50.542  0.00  0.00    +0.000 OA
+ATOM     13  S   UNL     1      72.212  79.179  48.791  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      72.875  79.066  48.315  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      72.562  79.851  49.120  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      71.863  78.507  48.463  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,168 @@
+MODEL 1
+REMARK VINA RESULT:    -4.766      0.000      0.000
+REMARK INTER + INTRA:          -4.766
+REMARK INTER:                  -4.766
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.410  61.681  63.654  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.035  61.803  64.377  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.412  62.235  64.970  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.037  62.357  65.694  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.284  62.047  65.826  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.906  61.614  65.234  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.282  61.492  64.509  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.904  61.059  63.916  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.648      0.601      1.592
+REMARK INTER + INTRA:          -4.648
+REMARK INTER:                  -4.648
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.968  62.499  65.971  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.846  62.126  65.247  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.428  62.158  64.663  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.306  61.784  63.937  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.603  61.378  63.796  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.020  61.345  64.380  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.142  61.719  65.105  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.559  61.687  65.689  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.022      7.805      8.581
+REMARK INTER + INTRA:          -4.022
+REMARK INTER:                  -4.022
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.679  66.323  69.563  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.205  66.609  70.128  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.727  67.218  69.936  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.254  67.505  70.502  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      66.259  67.183  71.261  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.737  66.574  71.455  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.210  66.287  70.888  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      64.688  65.678  71.082  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.014      1.656      2.585
+REMARK INTER + INTRA:          -4.014
+REMARK INTER:                  -4.014
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.566  63.021  67.369  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.003  62.661  66.887  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.216  62.618  67.131  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.653  62.258  66.647  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.877  61.941  65.920  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.663  61.984  65.674  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.227  62.344  66.158  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.014  62.387  65.913  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.838      2.569      3.742
+REMARK INTER + INTRA:          -3.838
+REMARK INTER:                  -3.838
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.500  62.484  68.925  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.557  62.589  68.110  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.995  62.251  67.610  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.051  62.356  66.794  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.669  62.800  66.478  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.232  63.139  66.977  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.176  63.034  67.793  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.739  63.373  68.293  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.772     24.441     25.104
+REMARK INTER + INTRA:          -3.772
+REMARK INTER:                  -3.772
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      69.868  78.831  49.979  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      70.553  78.932  49.531  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      70.703  78.437  48.889  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      71.388  78.537  48.441  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      71.923  79.133  48.635  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      71.775  79.629  49.278  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.089  79.528  49.726  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      70.940  80.024  50.369  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.742     17.109     17.589
+REMARK INTER + INTRA:          -3.742
+REMARK INTER:                  -3.742
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      67.219  78.429  58.964  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.584  78.047  59.325  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      66.711  77.367  59.773  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.076  76.985  60.135  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      65.312  77.284  60.048  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.183  77.965  59.600  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.819  78.346  59.239  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      65.691  79.028  58.790  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.697      7.049      7.762
+REMARK INTER + INTRA:          -3.697
+REMARK INTER:                  -3.697
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amifampridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.665  64.595  72.885  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.686  63.889  72.460  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.296  63.349  72.587  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.317  62.642  72.162  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.727  62.475  71.610  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.116  63.015  71.483  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.095  63.722  71.908  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.484  64.262  71.781  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

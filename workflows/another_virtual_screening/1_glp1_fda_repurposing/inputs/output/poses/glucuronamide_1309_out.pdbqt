@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.784      0.000      0.000
+REMARK INTER + INTRA:          -6.784
+REMARK INTER:                  -6.784
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.279  62.463  66.758  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.109  62.037  66.072  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.355  61.721  65.960  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.691  61.926  65.499  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.521  61.500  64.814  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.104  61.389  64.241  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.933  60.963  63.556  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.857  61.704  64.353  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.441  61.594  63.780  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.029  62.131  65.039  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.783  62.447  65.151  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.446  62.242  65.612  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.616  62.669  66.298  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.550      1.157      2.402
+REMARK INTER + INTRA:          -6.550
+REMARK INTER:                  -6.550
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.318  61.759  64.477  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.509  61.637  64.584  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.072  61.242  64.007  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.138  61.910  65.267  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.329  61.788  65.375  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.958  62.062  66.059  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.150  61.940  66.166  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.395  62.457  66.635  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.023  62.731  67.320  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.204  62.580  66.529  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.642  62.975  67.105  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.575  62.306  65.845  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.385  62.429  65.737  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.963      1.547      2.425
+REMARK INTER + INTRA:          -5.963
+REMARK INTER:                  -5.963
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.512  63.571  68.312  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.742  63.339  68.126  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.121  63.529  68.635  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.593  62.919  67.433  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.823  62.688  67.248  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.674  62.267  66.554  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      58.905  62.036  66.369  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.295  62.077  66.046  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.146  61.655  65.351  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.066  62.308  66.230  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.688  62.118  65.722  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.215  62.729  66.924  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.985  62.960  67.110  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.650      7.375      8.461
+REMARK INTER + INTRA:          -5.650
+REMARK INTER:                  -5.650
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.689  65.623  69.910  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.087  65.577  70.632  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.818  65.064  71.219  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.754  66.043  70.765  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.152  65.998  71.486  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.819  66.464  71.620  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      66.216  66.418  72.340  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      66.087  66.977  71.032  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      66.755  67.444  71.166  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.690  67.023  70.311  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      65.959  67.536  69.723  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      65.023  66.557  70.177  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.625  66.602  69.455  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.649      2.649      3.919
+REMARK INTER + INTRA:          -5.649
+REMARK INTER:                  -5.649
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.286  62.788  66.487  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.036  62.375  67.157  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.431  61.819  67.096  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.392  62.519  67.886  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.143  62.107  68.556  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.499  62.252  69.286  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.249  61.839  69.955  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.104  62.808  69.346  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.461  62.952  70.077  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.355  63.221  68.677  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.961  63.777  68.737  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.999  63.076  67.947  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.248  63.489  67.277  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.647      3.377      4.214
+REMARK INTER + INTRA:          -5.647
+REMARK INTER:                  -5.647
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.992  62.497  71.099  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.596  62.130  70.474  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.084  61.501  70.625  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.713  62.391  69.702  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.318  62.024  69.077  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.434  62.285  68.304  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.039  61.918  67.681  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.946  62.914  68.154  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.063  63.176  67.380  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.342  63.282  68.778  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.855  63.911  68.629  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.226  63.020  69.551  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.622  63.388  70.176  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.618      3.005      4.110
+REMARK INTER + INTRA:          -5.618
+REMARK INTER:                  -5.618
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.964  63.832  70.222  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.027  63.928  69.404  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.520  64.511  69.094  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.596  63.440  68.898  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.657  63.536  68.081  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.226  63.048  67.575  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.288  63.144  66.758  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.733  62.465  67.885  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.301  61.976  67.378  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.670  62.369  68.702  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.177  61.785  69.014  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.102  62.856  69.209  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.039  62.761  70.027  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.484      5.098      6.215
+REMARK INTER + INTRA:          -5.484
+REMARK INTER:                  -5.484
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.367  67.227  70.246  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.537  66.768  69.581  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.533  67.112  68.831  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.710  65.967  69.667  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.879  65.508  69.004  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.053  64.706  69.090  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.222  64.247  68.426  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.057  64.363  69.839  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.231  63.560  69.925  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.887  64.822  70.504  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.891  64.479  71.255  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.714  65.624  70.418  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.544  66.083  71.083  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.466      3.121      4.560
+REMARK INTER + INTRA:          -5.466
+REMARK INTER:                  -5.466
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucuronamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.437  62.795  67.061  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.197  62.975  67.329  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.856  62.708  66.910  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.298  63.421  68.014  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.057  63.602  68.282  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.157  64.049  68.968  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.916  64.229  69.235  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.499  64.316  69.386  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.600  64.763  70.073  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.739  64.136  69.119  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.080  64.403  69.537  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.638  63.689  68.433  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.878  63.508  68.165  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

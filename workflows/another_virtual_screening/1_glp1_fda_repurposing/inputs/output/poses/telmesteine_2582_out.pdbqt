@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.596      0.000      0.000
+REMARK INTER + INTRA:          -6.596
+REMARK INTER:                  -6.596
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.384  61.881  64.010  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.267  62.152  64.781  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.517  62.108  65.123  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.399  62.378  65.893  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.031  62.693  66.322  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.650  62.334  66.236  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      59.970  62.035  65.878  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      59.349  62.097  66.417  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      59.645  62.435  67.109  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.449  62.581  66.997  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.962  62.916  67.549  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.681  63.137  68.292  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.757  63.030  67.358  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.497      1.550      3.156
+REMARK INTER + INTRA:          -6.497
+REMARK INTER:                  -6.497
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.130  63.017  68.018  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.066  62.581  67.320  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.694  62.566  66.785  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.632  62.130  66.088  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.940  61.710  65.925  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.259  62.115  65.553  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.981  62.506  65.640  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.443  62.338  64.978  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      62.007  61.844  64.481  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.276  61.706  64.836  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.668  61.241  64.529  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.765  60.863  63.802  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.963  61.153  64.949  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.197      1.781      2.360
+REMARK INTER + INTRA:          -6.197
+REMARK INTER:                  -6.197
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.969  62.571  65.426  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.615  62.337  66.133  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.680  62.813  66.804  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.326  62.580  67.512  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.907  61.870  67.549  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.392  63.057  68.182  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.791  63.777  68.229  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.715  64.061  68.999  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      61.268  63.516  69.429  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.069  62.896  68.925  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.624  62.231  69.126  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.336  62.145  69.894  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.468  61.652  68.560  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.152      1.468      2.766
+REMARK INTER + INTRA:          -6.152
+REMARK INTER:                  -6.152
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.298  64.191  69.068  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.633  63.856  68.712  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.703  63.478  67.982  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.039  63.143  67.626  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.304  63.185  68.000  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.109  62.765  66.896  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.803  62.679  66.458  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.620  62.268  65.768  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      60.812  62.099  65.778  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.496  62.406  66.475  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.707  62.362  66.710  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.154  61.984  66.229  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.471  62.696  67.426  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.932      3.115      4.760
+REMARK INTER + INTRA:          -5.932
+REMARK INTER:                  -5.932
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.616  62.808  72.787  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.294  62.523  72.082  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.460  62.906  71.370  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.139  62.622  70.665  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.652  61.956  70.673  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.305  63.005  69.953  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.780  63.673  69.860  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.793  63.866  69.059  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      61.326  63.318  68.656  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.025  62.785  69.208  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.530  62.146  69.046  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.294  61.994  68.270  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.271  61.658  69.658  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.695      5.617      6.533
+REMARK INTER + INTRA:          -5.695
+REMARK INTER:                  -5.695
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.119  67.634  70.208  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.718  66.926  70.072  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.051  66.737  70.519  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.649  66.030  70.384  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.915  65.510  69.800  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      63.982  65.841  70.832  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      63.654  66.303  71.431  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.996  65.905  71.728  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      62.917  65.197  71.312  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.526  65.157  70.759  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.658  64.542  70.226  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      63.153  63.889  70.217  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      64.294  64.578  69.701  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.676      6.722      7.408
+REMARK INTER + INTRA:          -5.676
+REMARK INTER:                  -5.676
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.311  62.907  72.470  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.525  63.703  72.506  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.959  64.274  72.689  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.171  65.070  72.725  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.952  65.295  72.577  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.605  65.641  72.907  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      59.808  65.500  73.067  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      59.447  66.225  73.221  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      60.020  66.815  73.156  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.736  66.454  72.963  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.456  66.838  72.845  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.503  67.658  72.920  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.130  66.402  72.653  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.645      2.708      3.530
+REMARK INTER + INTRA:          -5.645
+REMARK INTER:                  -5.645
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.445  65.131  69.513  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.913  64.525  69.688  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.450  64.197  69.089  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.918  63.591  69.263  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.849  63.314  70.038  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.456  63.263  68.664  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.465  63.482  67.869  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.918  63.012  67.469  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      60.570  62.502  68.017  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.903  62.657  68.755  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.715  62.274  69.461  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.148  61.675  69.467  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.095  62.489  70.161  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.614      4.019      4.871
+REMARK INTER + INTRA:          -5.614
+REMARK INTER:                  -5.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = telmesteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.664  62.009  69.545  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.486  62.803  69.409  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.268  63.291  70.037  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.089  64.085  69.902  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.129  64.391  69.137  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      59.871  64.572  70.531  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      59.808  64.345  71.321  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      59.576  65.004  71.758  0.00  0.00    +0.000 S 
+ATOM      9  C   UNL     1      59.496  65.640  71.238  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.679  65.373  70.480  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.670  65.826  69.791  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.465  66.624  69.825  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.867  65.482  69.067  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

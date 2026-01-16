@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.925      0.000      0.000
+REMARK INTER + INTRA:          -6.925
+REMARK INTER:                  -6.925
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      62.716  61.705  63.441  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      62.108  61.694  63.997  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      61.393  61.322  63.819  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      62.213  62.053  64.732  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      61.605  62.042  65.288  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      61.710  62.402  66.024  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      61.101  62.390  66.580  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      61.206  62.750  67.315  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      60.598  62.739  67.871  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      61.921  63.121  67.493  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      60.890  61.671  65.110  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      60.280  61.659  65.667  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      60.783  61.311  64.375  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.725      1.142      3.285
+REMARK INTER + INTRA:          -6.725
+REMARK INTER:                  -6.725
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      59.514  62.351  67.157  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      60.245  62.409  66.781  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      60.868  62.804  67.149  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      60.353  62.073  66.035  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      61.084  62.132  65.658  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      61.193  61.796  64.912  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      61.924  61.855  64.535  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      62.033  61.519  63.790  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      62.763  61.577  63.413  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      61.409  61.124  63.421  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      61.708  62.527  66.027  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      62.440  62.586  65.650  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      61.600  62.863  66.772  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.310     17.673     18.199
+REMARK INTER + INTRA:          -6.310
+REMARK INTER:                  -6.310
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      65.838  76.309  60.470  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      66.000  77.026  60.096  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      66.779  77.290  60.031  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      65.384  77.479  59.786  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      65.545  78.195  59.412  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      64.929  78.648  59.102  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      65.091  79.364  58.728  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      64.474  79.817  58.418  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      64.636  80.534  58.044  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      63.696  79.553  58.484  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      66.324  78.460  59.347  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      66.486  79.177  58.972  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      66.941  78.008  59.656  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.300      2.336      3.388
+REMARK INTER + INTRA:          -6.300
+REMARK INTER:                  -6.300
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      59.841  62.102  66.119  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      60.267  62.393  66.761  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      60.824  62.991  66.650  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      60.136  62.087  67.517  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      60.562  62.378  68.159  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      60.432  62.073  68.915  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      60.858  62.364  69.557  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      60.728  62.058  70.313  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      61.154  62.349  70.955  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      60.170  61.460  70.424  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      61.120  62.976  68.048  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      61.547  63.268  68.691  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      61.251  63.283  67.293  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.997      5.770      7.584
+REMARK INTER + INTRA:          -5.997
+REMARK INTER:                  -5.997
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      66.335  67.687  69.866  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      65.762  67.291  70.307  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      65.578  67.546  71.070  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      65.371  66.638  69.986  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      64.798  66.242  70.426  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      64.408  65.590  70.105  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      63.835  65.194  70.546  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      63.444  64.541  70.225  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      62.871  64.145  70.665  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      63.628  64.286  69.462  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      64.615  66.497  71.189  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      64.041  66.101  71.631  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      65.005  67.149  71.511  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.840     24.487     25.153
+REMARK INTER + INTRA:          -5.840
+REMARK INTER:                  -5.840
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      72.786  79.207  48.576  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      72.043  79.040  48.893  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      71.666  78.330  48.707  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      71.676  79.582  49.395  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      70.934  79.415  49.712  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      70.567  79.957  50.214  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      69.824  79.790  50.531  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      69.457  80.332  51.033  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      68.715  80.165  51.350  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      69.834  81.042  51.219  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      70.557  78.705  49.526  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      69.813  78.537  49.843  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      70.922  78.162  49.024  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.703      6.997      7.649
+REMARK INTER + INTRA:          -5.703
+REMARK INTER:                  -5.703
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      61.613  62.954  72.787  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      61.021  63.421  72.454  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      60.552  63.121  71.845  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      60.897  64.189  72.729  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      60.305  64.656  72.396  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      60.181  65.424  72.671  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      59.589  65.892  72.338  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      59.465  66.660  72.613  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      58.873  67.127  72.280  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      59.934  66.960  73.222  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      59.836  64.356  71.787  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      59.244  64.824  71.453  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      59.960  63.589  71.511  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.617     11.728     12.522
+REMARK INTER + INTRA:          -5.617
+REMARK INTER:                  -5.617
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      63.062  58.897  54.568  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      63.461  59.383  54.035  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      63.658  59.099  53.286  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      63.663  60.154  54.249  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      64.061  60.640  53.716  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      64.263  61.411  53.931  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      64.661  61.897  53.398  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      64.863  62.668  53.612  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      65.262  63.154  53.079  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      64.666  62.952  54.361  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      64.258  60.356  52.967  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      64.657  60.843  52.433  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      64.057  59.586  52.751  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.492      6.954      7.980
+REMARK INTER + INTRA:          -5.492
+REMARK INTER:                  -5.492
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceglutamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      61.722  64.762  72.278  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      62.317  65.325  72.188  0.00  0.00    +0.000 C 
+ATOM      3  O   UNK A   0      62.434  65.898  72.770  0.00  0.00    +0.000 OA
+ATOM      4  N   GLN A   1      62.795  65.316  71.516  0.00  0.00    +0.000 NA
+ATOM      5  CA  GLN A   1      63.390  65.879  71.425  0.00  0.00    +0.000 C 
+ATOM      6  CB  GLN A   1      63.869  65.870  70.753  0.00  0.00    +0.000 C 
+ATOM      7  CG  GLN A   1      64.464  66.433  70.662  0.00  0.00    +0.000 C 
+ATOM      8  CD  GLN A   1      64.943  66.425  69.990  0.00  0.00    +0.000 C 
+ATOM      9  NE2 GLN A   1      65.538  66.988  69.899  0.00  0.00    +0.000 NA
+ATOM     10  OE1 GLN A   1      64.825  65.852  69.408  0.00  0.00    +0.000 OA
+ATOM     11  C   GLN A   1      63.508  66.452  72.007  0.00  0.00    +0.000 C 
+ATOM     12  O   GLN A   1      64.104  67.016  71.916  0.00  0.00    +0.000 OA
+ATOM     13  OXT GLN A   1      63.030  66.462  72.679  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

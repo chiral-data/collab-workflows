@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.711      0.000      0.000
+REMARK INTER + INTRA:          -9.711
+REMARK INTER:                  -9.711
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.598  62.295  66.994  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.920  62.027  66.283  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.634  62.396  66.469  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.206  61.658  66.098  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.243  61.759  65.572  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.022  61.944  65.378  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.964  62.322  66.108  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.611  62.732  66.414  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.553  63.110  67.145  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.811  61.502  64.714  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.051  61.186  64.656  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.358  61.376  64.110  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.117  61.693  64.169  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.665  61.567  63.565  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.330  62.135  64.833  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.782  62.261  65.437  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      61.994  62.704  66.101  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.573      1.251      2.394
+REMARK INTER + INTRA:          -9.573
+REMARK INTER:                  -9.573
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.090  60.928  63.912  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.793  61.273  64.600  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.490  61.708  64.681  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.097  60.839  64.519  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.497  61.619  65.289  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.953  62.167  65.703  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.469  61.992  65.084  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.206  62.360  65.045  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.723  62.184  64.425  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.279  62.153  66.178  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.644  61.665  65.978  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.239  62.626  66.853  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.873  63.114  67.052  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.833  63.588  67.727  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      61.548  63.129  66.577  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.588  62.656  65.902  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      62.262  62.670  65.427  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.631      5.325      6.686
+REMARK INTER + INTRA:          -8.631
+REMARK INTER:                  -8.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.646  61.757  72.031  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.329  62.512  72.127  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.989  62.463  71.376  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.668  62.561  72.877  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.010  63.268  72.221  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.558  63.603  71.619  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.740  62.877  71.272  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.462  62.697  70.517  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.644  61.971  70.171  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.532  64.213  72.173  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.921  64.129  72.895  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.117  64.906  72.005  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.728  64.989  71.283  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.313  65.683  71.115  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      59.754  64.379  70.728  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.168  63.686  70.895  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      60.194  63.075  70.340  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.598      4.732      5.885
+REMARK INTER + INTRA:          -8.598
+REMARK INTER:                  -8.598
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.248  63.644  72.992  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.222  63.093  72.378  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.799  63.631  71.916  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.645  62.557  72.839  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.196  62.544  71.762  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.817  62.734  71.056  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.696  63.434  71.474  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.284  64.058  71.126  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.164  64.759  71.546  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.068  61.968  70.881  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.489  61.535  71.443  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.899  61.635  70.145  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.478  62.069  69.584  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.308  61.735  68.848  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      60.226  62.835  69.758  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.395  63.168  70.493  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      60.143  63.935  70.668  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.555      6.994      8.437
+REMARK INTER + INTRA:          -8.555
+REMARK INTER:                  -8.555
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.898  67.818  70.522  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.200  67.424  70.327  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.184  67.082  71.078  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.216  67.765  69.576  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.502  67.029  70.132  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.140  66.536  70.685  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.789  66.789  71.125  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.895  66.522  71.898  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.545  66.776  72.338  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.615  66.453  70.054  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.753  66.858  69.349  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      63.954  65.965  70.128  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.818  65.560  70.833  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      63.156  65.071  70.906  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      64.342  65.642  71.465  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      65.003  66.130  71.391  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      65.527  66.213  72.023  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.279      6.750      8.339
+REMARK INTER + INTRA:          -8.279
+REMARK INTER:                  -8.279
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.870  66.984  69.893  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.349  67.042  70.530  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.963  66.357  70.275  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.734  67.725  70.784  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.827  67.098  71.167  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.233  66.535  71.265  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.590  66.247  70.580  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.301  65.564  70.218  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.659  65.277  69.533  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.081  67.018  71.916  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.551  67.681  72.056  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      63.459  66.837  72.428  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.990  66.174  72.288  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.367  65.994  72.800  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      63.141  65.691  71.636  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      63.762  65.871  71.125  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      63.914  65.388  70.473  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.201      3.632      4.942
+REMARK INTER + INTRA:          -8.201
+REMARK INTER:                  -8.201
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.188  61.988  68.521  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.736  62.565  68.740  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.681  62.317  69.526  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.792  62.812  67.955  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.284  63.142  68.961  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.510  63.215  69.750  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.977  62.589  69.813  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.827  62.246  70.547  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.293  61.619  70.609  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.965  63.816  69.415  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.924  63.959  68.603  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      62.461  64.273  69.890  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.501  64.129  70.701  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.998  64.587  71.177  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.046  63.529  71.037  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.550  63.072  70.562  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      61.095  62.471  70.898  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.196      6.502      7.846
+REMARK INTER + INTRA:          -8.196
+REMARK INTER:                  -8.196
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.953  63.587  72.184  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.402  64.154  72.418  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.804  63.726  72.044  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.001  64.583  72.791  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.850  64.722  72.651  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.057  64.635  72.445  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.370  63.955  72.098  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.876  63.435  71.690  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.190  62.755  71.342  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.019  65.344  72.864  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.704  65.667  73.190  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      59.296  65.731  72.955  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      58.611  65.408  72.629  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      57.888  65.795  72.721  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      58.648  64.698  72.210  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      59.371  64.312  72.118  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      59.409  63.601  71.699  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.050      6.350      7.852
+REMARK INTER + INTRA:          -8.050
+REMARK INTER:                  -8.050
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nealbarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.892  65.352  71.624  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.477  65.930  71.558  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.744  65.579  70.860  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.210  66.281  72.255  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.062  66.508  71.490  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.585  66.493  70.854  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.127  65.830  70.677  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.289  65.385  70.002  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.830  64.722  69.826  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.862  67.162  71.250  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.497  67.406  71.949  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      65.503  67.585  70.949  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.867  67.340  70.251  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      66.508  67.764  69.950  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      65.591  66.672  69.853  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      64.950  66.249  70.155  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      64.673  65.580  69.757  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

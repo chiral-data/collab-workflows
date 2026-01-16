@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.562      0.000      0.000
+REMARK INTER + INTRA:          -7.562
+REMARK INTER:                  -7.562
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.395  63.202  68.258  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      61.200  63.381  68.287  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.696  63.153  67.667  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.387  62.748  67.020  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.881  62.520  66.400  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.572  62.114  65.752  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      62.067  61.886  65.134  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.767  61.936  65.724  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.457  61.529  65.075  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.271  62.163  66.343  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      59.466  61.985  66.315  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.581  62.569  66.991  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.510  63.787  68.935  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.014  64.015  69.554  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      62.315  63.965  68.963  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.372      1.997      3.524
+REMARK INTER + INTRA:          -7.372
+REMARK INTER:                  -7.372
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.141  63.468  67.018  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      61.251  62.650  66.995  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.143  62.200  67.679  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.925  62.567  68.383  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.817  62.118  69.067  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.598  62.486  69.772  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.490  62.036  70.455  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.489  63.302  69.795  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.270  63.670  70.501  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.597  63.753  69.112  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.487  64.570  69.134  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.815  63.385  68.406  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.470  62.283  66.289  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.578  62.734  65.606  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      61.579  61.465  66.267  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.133      2.384      3.239
+REMARK INTER + INTRA:          -7.133
+REMARK INTER:                  -7.133
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.000  64.857  70.525  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      59.839  65.260  69.823  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.903  64.869  69.099  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.129  64.077  69.076  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.194  63.687  68.353  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.420  62.894  68.331  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.485  62.504  67.607  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.582  62.491  69.032  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.808  61.697  69.009  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.517  62.881  69.756  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.678  62.478  70.458  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.291  63.674  69.779  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.613  66.053  69.846  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.548  66.443  70.570  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      59.451  66.456  69.144  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.007      3.452      4.636
+REMARK INTER + INTRA:          -7.007
+REMARK INTER:                  -7.007
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.441  65.583  70.941  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      59.310  65.235  71.678  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.543  64.455  71.814  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.905  64.022  71.213  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.138  63.243  71.348  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.500  62.810  70.747  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.733  62.031  70.882  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.631  63.157  70.010  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.994  62.723  69.408  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.398  63.937  69.874  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.529  64.285  69.137  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.036  64.370  70.475  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      58.948  65.668  72.280  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      58.716  66.448  72.143  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      58.818  65.321  73.017  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.948      2.397      3.095
+REMARK INTER + INTRA:          -6.948
+REMARK INTER:                  -6.948
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.187  63.931  70.944  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      62.429  64.384  70.298  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.167  64.194  69.538  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.664  63.552  69.425  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.401  63.361  68.667  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.897  62.718  68.554  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.636  62.528  67.795  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.655  62.266  69.199  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.150  61.622  69.086  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.916  62.456  69.958  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.674  62.003  70.605  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      61.421  63.099  70.072  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.934  65.027  70.411  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      63.195  65.217  71.170  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      63.176  65.480  69.765  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.846      3.824      4.718
+REMARK INTER + INTRA:          -6.846
+REMARK INTER:                  -6.846
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.188  64.236  69.453  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      63.582  64.512  70.123  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.231  64.441  70.867  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.487  64.094  70.940  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.136  64.023  71.683  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.391  63.675  71.756  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      61.041  63.604  72.499  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.998  63.400  71.087  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.252  63.052  71.160  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.348  63.470  70.343  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.955  63.194  69.672  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      62.093  63.818  70.270  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.327  64.859  70.050  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      64.678  64.930  69.306  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      64.721  65.135  70.721  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.767      4.989      6.287
+REMARK INTER + INTRA:          -6.767
+REMARK INTER:                  -6.767
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.024  66.274  69.869  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      65.081  66.837  70.471  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.526  66.843  71.083  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.917  66.288  71.093  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.363  66.294  71.704  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.754  65.738  71.714  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      62.200  65.745  72.325  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      62.698  65.177  71.113  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.087  64.621  71.123  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.251  65.170  70.501  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      63.196  64.608  69.899  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      63.861  65.726  70.491  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.691  67.392  70.460  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      66.244  67.385  69.848  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      65.746  67.954  71.062  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.709      2.979      4.685
+REMARK INTER + INTRA:          -6.709
+REMARK INTER:                  -6.709
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.491  64.074  68.442  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      60.498  63.399  68.917  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.308  63.456  69.718  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.112  64.187  70.044  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.922  64.245  70.845  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.726  64.977  71.171  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      59.536  65.034  71.971  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      59.719  65.651  70.696  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      59.523  66.384  71.023  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.909  65.595  69.895  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      59.903  66.269  69.420  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.105  64.863  69.569  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.694  62.667  68.590  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.884  62.611  67.789  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      60.701  61.992  69.066  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.675      4.874      5.936
+REMARK INTER + INTRA:          -6.675
+REMARK INTER:                  -6.675
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodotyrosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.825  66.873  71.659  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      62.239  66.901  72.241  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.804  66.223  72.421  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.953  65.519  72.020  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.519  64.841  72.200  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.669  64.136  71.799  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      61.234  63.459  71.979  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      62.254  64.108  71.219  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.404  63.402  70.817  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.689  64.785  71.038  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      63.275  64.758  70.457  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      62.539  65.491  71.439  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.089  67.607  72.642  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.525  68.284  72.461  0.00  0.00    +0.000 OA
+ATOM     15  OXT UNL     1      61.504  67.634  73.222  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

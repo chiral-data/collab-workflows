@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.412      0.000      0.000
+REMARK INTER + INTRA:          -7.412
+REMARK INTER:                  -7.412
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.429  61.682  65.076  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.669  62.079  65.757  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.458  62.304  65.847  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.699  62.701  66.529  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.152  62.873  67.120  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.362  62.649  67.031  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.121  62.252  66.349  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      59.332  62.027  66.260  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      59.091  61.631  65.579  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      58.785  62.200  66.852  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.393  63.271  67.803  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      62.181  63.495  67.892  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.845  63.443  68.395  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.005  62.131  65.254  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.795  62.355  65.344  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.764  61.734  64.573  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.072      0.362      2.369
+REMARK INTER + INTRA:          -7.072
+REMARK INTER:                  -7.072
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.382  62.966  66.658  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.601  62.729  66.550  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.379  62.338  65.858  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.597  62.101  65.750  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.035  62.254  66.334  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.256  62.644  67.026  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.038  62.882  67.134  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.259  63.273  67.827  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      62.041  63.510  67.935  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.697  63.425  68.411  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.252  62.016  66.225  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      59.031  61.626  65.533  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      58.690  62.169  66.810  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.942  62.186  65.274  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.721  61.795  64.581  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.723  62.423  65.382  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.963      3.511      5.066
+REMARK INTER + INTRA:          -6.963
+REMARK INTER:                  -6.963
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.343  64.324  71.121  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.862  63.703  70.871  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.759  63.559  70.066  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.278  62.938  69.815  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.898  62.461  70.370  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.000  62.604  71.177  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.482  63.226  71.427  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.584  63.370  72.234  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      62.065  63.990  72.484  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.204  62.892  72.789  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.416  61.839  70.120  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      60.314  61.696  69.314  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.036  61.362  70.676  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.139  64.037  69.511  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.037  63.893  68.704  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.621  64.657  69.761  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.950      3.534      4.409
+REMARK INTER + INTRA:          -6.950
+REMARK INTER:                  -6.950
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.211  62.854  69.046  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.309  63.006  69.850  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.798  63.622  70.097  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.897  63.774  70.902  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.507  63.309  71.459  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.018  62.692  71.213  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.919  62.540  70.408  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.429  61.923  70.161  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      60.331  61.771  69.358  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.039  61.458  70.720  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.606  63.461  72.265  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      62.095  64.077  72.512  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.215  62.995  72.823  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.188  64.087  69.538  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.678  64.704  69.785  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.090  63.936  68.734  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.944      3.538      5.354
+REMARK INTER + INTRA:          -6.944
+REMARK INTER:                  -6.944
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.318  64.364  71.161  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.851  63.736  70.903  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.460  63.260  71.451  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.992  62.631  71.193  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.915  62.479  70.386  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.306  62.955  69.837  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.773  63.584  70.095  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.165  64.060  69.546  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      62.632  64.688  69.804  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.087  63.907  68.739  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.447  61.850  70.127  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      60.057  61.374  70.676  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.370  61.698  69.320  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.537  63.413  72.258  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.146  62.936  72.807  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.004  64.040  72.516  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.923      3.601      4.858
+REMARK INTER + INTRA:          -6.923
+REMARK INTER:                  -6.923
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.305  62.861  69.110  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.385  63.011  69.916  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.973  62.553  70.465  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.053  62.703  71.272  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.546  63.311  71.531  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.959  63.770  70.983  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.879  63.620  70.176  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      62.292  64.078  69.627  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      62.211  63.928  68.821  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.785  64.686  69.887  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.627  63.461  72.339  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      61.214  63.004  72.886  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.121  64.070  72.597  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.480  61.945  70.205  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.067  61.486  70.754  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.399  61.795  69.399  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.773      2.388      3.723
+REMARK INTER + INTRA:          -6.773
+REMARK INTER:                  -6.773
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.168  61.700  69.059  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.672  62.326  69.237  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.886  62.475  70.020  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.392  63.102  70.198  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.683  63.581  69.594  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.470  63.433  68.810  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.965  62.806  68.632  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.751  62.658  67.848  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      60.246  62.032  67.670  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.043  63.138  67.244  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.189  64.209  69.772  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      62.403  64.356  70.555  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.481  64.688  69.167  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.594  61.995  70.624  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.808  62.143  71.408  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.089  61.369  70.446  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.735      4.153      5.816
+REMARK INTER + INTRA:          -6.735
+REMARK INTER:                  -6.735
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.743  64.804  70.774  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.174  64.209  71.148  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.314  64.248  71.960  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.745  63.653  72.334  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.036  63.018  71.896  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.896  62.977  71.083  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.465  63.573  70.709  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.325  63.533  69.897  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      59.894  64.128  69.523  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.616  62.897  69.459  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.468  62.421  72.270  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      61.607  62.462  73.082  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.759  61.786  71.831  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.023  64.884  72.397  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.163  64.924  73.210  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.592  65.479  72.023  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.731      2.310      3.312
+REMARK INTER + INTRA:          -6.731
+REMARK INTER:                  -6.731
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trinitrophenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.498  61.735  68.897  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.844  62.451  69.113  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.199  62.927  68.541  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.546  63.644  68.757  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.538  63.884  69.546  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.184  63.409  70.119  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.837  62.692  69.903  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.481  62.216  70.476  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      60.135  61.500  70.260  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.474  62.457  71.265  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.886  64.602  69.762  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      62.240  65.077  69.190  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.878  64.842  70.552  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.207  62.686  67.752  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.562  63.163  67.179  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.861  61.971  67.536  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

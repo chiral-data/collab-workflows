@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.121      0.000      0.000
+REMARK INTER + INTRA:          -7.121
+REMARK INTER:                  -7.121
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.393  61.596  63.665  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.695  61.584  64.105  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.027  61.203  63.808  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.666  61.952  64.842  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.288  62.353  65.208  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      62.017  62.634  65.936  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.228  62.407  66.019  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      61.012  61.986  65.343  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      60.741  62.571  66.664  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.958  62.993  67.340  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.303  63.026  67.840  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.681  62.625  67.474  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.952  62.344  66.747  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.512  61.912  66.199  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.029      0.937      3.062
+REMARK INTER + INTRA:          -7.029
+REMARK INTER:                  -7.029
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.117  62.943  68.040  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.060  62.516  67.336  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.387  62.066  67.180  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.677  62.538  66.790  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.381  62.961  66.870  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.839  62.826  66.197  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.417  62.319  65.700  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.700  62.141  66.067  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      61.669  62.039  64.966  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      62.387  62.217  64.600  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.409  61.821  63.877  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.705  61.397  63.796  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.248  61.533  64.470  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.501  61.217  64.620  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.329      1.668      2.372
+REMARK INTER + INTRA:          -6.329
+REMARK INTER:                  -6.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.985  61.621  65.413  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      59.813  62.030  66.108  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.033  62.101  66.364  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.423  62.369  66.548  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.227  62.344  66.362  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.638  62.752  66.950  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.088  63.029  67.499  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.338  62.793  67.250  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      61.259  63.466  68.177  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      62.009  63.703  68.426  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.923  64.127  69.129  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.120  64.152  69.315  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.709  63.744  68.727  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.892  63.633  68.694  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.980      2.285      3.761
+REMARK INTER + INTRA:          -5.980
+REMARK INTER:                  -5.980
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.225  64.432  70.159  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.753  64.023  69.620  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.958  63.884  69.790  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.076  63.753  68.911  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.858  63.850  68.666  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.940  63.496  67.925  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.208  63.179  67.713  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.674  63.338  68.322  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      61.039  62.775  67.014  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      61.573  62.616  66.405  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.172  62.201  65.816  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.389  62.104  66.060  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.308  62.458  66.801  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.616  62.491  67.249  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.923      3.477      4.488
+REMARK INTER + INTRA:          -5.923
+REMARK INTER:                  -5.923
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.115  61.953  68.097  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.434  62.153  68.832  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.222  61.727  69.504  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.965  62.782  68.892  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.228  63.257  68.270  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.753  63.814  68.579  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.814  63.683  69.391  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      61.328  63.045  69.585  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      62.280  64.114  69.918  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      62.767  64.752  69.725  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.129  65.015  70.417  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      62.867  64.540  71.039  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.342  63.983  70.730  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.949  63.398  71.159  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.917      4.029      5.546
+REMARK INTER + INTRA:          -5.917
+REMARK INTER:                  -5.917
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.620  62.654  72.907  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.361  63.069  72.243  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.270  63.888  72.277  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.193  62.665  71.544  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.257  61.850  71.427  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.035  61.686  70.649  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.833  62.398  70.286  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.931  63.003  70.839  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      60.578  62.490  69.507  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.480  61.885  68.954  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.218  62.223  68.249  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.154  63.038  68.366  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.376  63.202  69.143  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.394  63.948  69.495  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.902      5.408      6.055
+REMARK INTER + INTRA:          -5.902
+REMARK INTER:                  -5.902
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.526  67.147  68.872  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      59.515  66.816  69.628  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.314  67.281  70.279  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.705  66.021  69.733  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.916  65.490  69.137  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.060  64.757  69.488  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.937  64.834  70.300  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      59.718  65.616  70.451  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      60.019  64.237  70.862  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.238  63.455  70.711  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.251  63.050  71.429  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.040  63.581  72.025  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.897  64.314  71.674  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.671  65.003  72.067  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.889      2.773      3.661
+REMARK INTER + INTRA:          -5.889
+REMARK INTER:                  -5.889
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.533  63.110  66.806  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.222  62.667  67.429  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.956  61.898  67.297  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.177  62.995  68.185  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.420  63.754  68.399  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.275  63.850  69.206  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.942  63.150  69.490  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.882  62.622  68.858  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      60.710  63.004  70.268  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.771  63.533  70.899  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.475  63.160  71.573  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.232  62.401  71.358  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.378  62.305  70.551  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.218  61.628  70.107  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.737      3.582      4.697
+REMARK INTER + INTRA:          -5.737
+REMARK INTER:                  -5.737
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = niridazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.154  64.997  70.909  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.919  64.761  70.155  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      63.242  65.124  69.489  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.359  64.161  70.066  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.990  63.749  70.679  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.473  63.200  70.341  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.524  63.274  69.521  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      62.072  63.867  69.351  0.00  0.00    +0.000 S 
+ATOM      9  N   UNL     1      61.102  62.832  68.967  0.00  0.00    +0.000 N 
+ATOM     10  C   UNL     1      60.554  62.238  69.137  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.266  61.944  68.422  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.636  62.356  67.810  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.153  62.905  68.147  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.634  63.433  67.736  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

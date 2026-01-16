@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.476      0.000      0.000
+REMARK INTER + INTRA:          -8.476
+REMARK INTER:                  -8.476
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.453  62.506  66.255  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.714  62.323  66.573  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.975  62.141  66.890  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.531  61.890  65.895  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.078  61.832  65.282  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.810  62.206  65.346  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.359  62.148  64.732  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.175  61.714  64.055  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      62.724  61.656  63.441  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      61.443  61.339  63.991  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.894  61.398  64.604  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.897  62.757  67.250  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.349  62.815  67.863  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.630  63.132  67.314  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.292      1.901      3.034
+REMARK INTER + INTRA:          -8.292
+REMARK INTER:                  -8.292
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.617  62.281  65.392  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.436  61.799  64.747  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.255  61.318  64.102  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.682  61.671  65.055  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.462  62.023  65.767  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.996  62.504  66.172  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.776  62.856  66.885  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.022  62.727  67.192  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      59.802  63.080  67.906  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      59.487  62.246  66.788  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.708  61.894  66.076  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.190  61.928  64.438  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.410  61.576  63.726  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.725  62.410  64.843  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.339      5.809      6.592
+REMARK INTER + INTRA:          -7.339
+REMARK INTER:                  -7.339
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.658  63.872  72.419  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.018  64.251  72.061  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.378  64.629  71.704  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.940  63.621  71.535  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.454  62.979  71.582  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.048  62.965  72.154  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.562  62.322  72.201  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.483  61.692  71.674  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      61.999  61.049  71.721  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      60.890  61.705  71.101  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.375  62.348  71.055  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.096  64.882  72.588  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.582  65.524  72.541  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.691  64.869  73.161  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.297      6.054      7.237
+REMARK INTER + INTRA:          -7.297
+REMARK INTER:                  -7.297
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.088  65.436  70.104  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.633  65.202  70.752  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.179  64.969  71.400  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.981  65.794  71.209  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.548  66.292  70.876  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.768  66.198  70.087  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.335  66.697  69.754  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.682  67.288  70.211  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      66.250  67.787  69.878  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      65.463  67.383  71.001  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.896  66.885  71.334  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.285  64.610  70.296  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.719  64.112  70.628  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      63.505  64.516  69.505  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.192     17.886     18.460
+REMARK INTER + INTRA:          -7.192
+REMARK INTER:                  -7.192
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.687  78.926  58.901  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.005  79.651  58.667  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.324  80.375  58.434  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.739  79.424  58.968  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.830  78.685  59.320  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.188  78.170  59.372  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.279  77.430  59.724  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.013  77.204  60.024  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      66.104  76.463  60.377  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      66.656  77.718  59.973  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.565  78.458  59.621  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.271  79.878  58.366  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.180  80.617  58.014  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      63.628  79.363  58.418  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.158      3.304      4.721
+REMARK INTER + INTRA:          -7.158
+REMARK INTER:                  -7.158
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.784  63.133  68.797  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.609  62.576  68.213  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.434  62.018  67.631  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.500  62.002  68.796  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.597  62.198  69.590  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.803  62.967  69.805  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.900  63.162  70.600  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.790  62.588  71.182  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      60.887  62.784  71.978  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      60.584  61.818  70.969  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.487  61.623  70.173  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.718  63.150  67.631  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.622  62.955  66.836  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.925  63.920  67.845  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.034      1.585      2.496
+REMARK INTER + INTRA:          -7.034
+REMARK INTER:                  -7.034
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.510  63.319  67.977  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.223  63.558  68.317  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.936  63.795  68.656  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.636  63.166  67.720  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.226  62.764  67.129  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.401  62.754  67.133  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.991  62.352  66.541  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.405  61.961  65.945  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      59.994  61.558  65.353  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      61.230  61.970  65.940  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.641  62.372  66.532  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.809  63.949  68.913  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.220  64.351  69.505  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      59.984  63.939  68.918  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.004      6.561      7.734
+REMARK INTER + INTRA:          -7.004
+REMARK INTER:                  -7.004
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.415  66.496  70.968  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.759  67.019  70.429  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.102  67.541  69.891  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.155  66.860  69.891  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.556  66.329  70.088  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.561  65.955  70.823  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.961  65.424  71.020  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.358  65.265  70.481  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      62.758  64.733  70.678  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      63.352  65.638  69.745  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.951  66.170  69.548  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.363  67.178  70.968  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      66.962  67.709  70.771  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      66.368  66.804  71.704  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.715      5.656      6.502
+REMARK INTER + INTRA:          -6.715
+REMARK INTER:                  -6.715
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clofibric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.251  64.214  70.561  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.027  64.996  70.703  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.804  65.777  70.846  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.305  64.934  71.477  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.638  64.228  71.741  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.693  63.581  71.231  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.026  62.874  71.495  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.303  62.813  72.269  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      61.636  62.105  72.533  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      61.248  63.459  72.780  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.916  64.166  72.516  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.749  65.058  69.929  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.417  65.764  69.665  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      59.804  64.411  69.418  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

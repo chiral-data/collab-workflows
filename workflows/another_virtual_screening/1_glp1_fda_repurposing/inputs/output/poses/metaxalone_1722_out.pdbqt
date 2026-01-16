@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.050      0.000      0.000
+REMARK INTER + INTRA:          -9.050
+REMARK INTER:                  -9.050
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.732  62.226  63.791  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.163  62.067  64.368  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.201  62.447  65.099  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.634  62.289  65.677  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.672  62.669  66.408  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.103  62.511  66.985  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.141  62.891  67.716  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.713  63.440  67.948  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.539  63.677  68.720  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.862  63.275  68.964  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.494  63.346  69.699  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.616  62.789  68.343  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.027  61.751  65.522  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.989  61.371  64.791  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.384  60.833  64.637  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.558  61.529  64.214  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.818      1.640      4.192
+REMARK INTER + INTRA:          -8.818
+REMARK INTER:                  -8.818
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.382  61.812  69.868  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.538  62.300  69.221  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.865  61.981  68.534  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.022  62.468  67.887  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.349  62.149  67.200  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.505  62.637  66.553  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.832  62.318  65.866  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.031  61.525  65.746  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.339  61.453  64.984  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.332  62.200  64.633  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.591  62.381  63.872  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.018  62.734  65.179  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.852  63.274  67.927  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.525  63.593  68.614  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.355  64.399  68.654  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.369  63.105  69.261  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.640      0.824      1.122
+REMARK INTER + INTRA:          -8.640
+REMARK INTER:                  -8.640
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.341  62.007  64.665  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.787  62.121  65.266  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.008  62.504  65.963  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.455  62.619  66.564  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.676  63.001  67.261  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.122  63.116  67.861  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.343  63.498  68.558  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.094  63.794  68.732  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.068  64.130  69.485  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.301  64.043  69.777  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.029  64.300  70.511  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.853  63.652  69.204  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.680  62.352  66.468  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.459  61.970  65.771  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.684  61.703  65.675  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.013  61.855  65.170  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.470      4.937      6.987
+REMARK INTER + INTRA:          -8.470
+REMARK INTER:                  -8.470
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.327  67.989  69.798  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.015  67.403  70.287  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.403  66.922  70.015  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.090  66.335  70.503  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      64.477  65.855  70.230  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.165  65.268  70.719  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.552  64.787  70.446  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.198  64.829  69.702  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.613  64.248  69.666  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.606  63.848  70.387  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.106  63.224  70.591  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      63.187  64.181  70.869  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      65.391  66.229  71.264  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.003  66.709  71.537  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      66.303  66.602  72.297  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      66.315  67.296  71.048  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.297      4.786      5.708
+REMARK INTER + INTRA:          -8.297
+REMARK INTER:                  -8.297
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.622  62.744  72.899  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.241  62.893  72.182  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.059  63.667  71.965  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.678  63.817  71.249  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.496  64.592  71.032  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.115  64.740  70.315  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.933  65.515  70.098  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.097  66.193  70.538  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      59.821  66.846  70.115  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.486  66.570  69.413  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.142  67.035  68.825  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.555  65.748  69.403  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.478  63.190  70.749  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.660  62.416  70.967  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.461  61.790  70.468  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.041  62.267  71.683  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.254      2.608      5.479
+REMARK INTER + INTRA:          -8.254
+REMARK INTER:                  -8.254
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.237  63.851  72.846  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.266  63.252  72.279  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.970  63.388  71.521  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.999  62.790  70.953  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.703  62.925  70.195  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.732  62.326  69.628  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.437  62.462  68.870  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.098  63.165  68.600  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      59.880  63.056  67.811  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.083  62.287  67.594  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.964  61.945  66.853  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.427  61.920  68.248  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.323  62.055  71.144  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.619  61.919  71.903  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.942  61.185  72.093  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.590  62.518  72.469  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.842      4.705      5.870
+REMARK INTER + INTRA:          -7.842
+REMARK INTER:                  -7.842
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.519  61.888  70.601  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.941  62.496  70.968  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.577  62.848  70.580  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.999  63.455  70.945  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.636  63.808  70.557  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.057  64.415  70.923  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.694  64.768  70.535  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.972  64.572  69.783  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      64.615  65.061  69.613  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.734  65.559  70.260  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      65.319  66.137  70.327  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      64.165  65.377  70.830  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.784  63.710  71.700  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.147  63.358  72.089  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.932  63.612  72.843  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.726  62.750  71.722  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.558      6.118      7.076
+REMARK INTER + INTRA:          -7.558
+REMARK INTER:                  -7.558
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.434  62.488  71.880  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.144  63.250  72.009  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.669  63.873  72.140  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.381  64.635  72.268  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.905  65.258  72.399  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.616  66.020  72.528  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.140  66.644  72.659  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.964  66.589  72.676  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.266  67.343  72.823  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.630  67.863  72.896  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.680  68.672  73.045  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.934  67.430  72.795  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.567  64.774  72.266  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.042  64.151  72.136  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.230  64.289  72.134  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      60.332  63.389  72.007  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.200      5.775      7.196
+REMARK INTER + INTRA:          -7.200
+REMARK INTER:                  -7.200
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metaxalone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.802  65.163  72.892  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.460  65.018  72.417  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.061  65.580  72.363  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.720  65.436  71.888  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      63.321  65.999  71.834  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.980  65.854  71.358  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.581  66.416  71.304  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.599  67.145  71.691  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      65.299  67.529  71.480  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      65.713  67.037  70.962  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      66.442  67.203  70.614  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      65.269  66.350  70.854  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.778  64.729  71.467  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.177  64.166  71.521  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.235  63.459  71.100  0.00  0.00    +0.000 C 
+ATOM     16  C   UNL     1      61.518  64.311  71.996  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

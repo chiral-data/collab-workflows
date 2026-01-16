@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.427      0.000      0.000
+REMARK INTER + INTRA:          -7.427
+REMARK INTER:                  -7.427
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.513  62.356  66.960  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.303  62.586  66.897  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.745  62.364  66.235  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.087  61.971  65.927  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.403  62.756  66.543  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.186  62.142  65.576  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.976  62.370  65.511  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.418  62.149  64.851  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.070  61.699  64.254  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.280  61.469  64.317  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.931  61.019  63.721  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.838  61.691  64.978  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.944      1.401      2.837
+REMARK INTER + INTRA:          -6.944
+REMARK INTER:                  -6.944
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.393  61.844  64.489  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.614  61.576  64.531  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.126  61.823  65.150  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.744  62.277  65.457  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.508  61.371  64.843  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.638  62.070  65.767  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.860  61.803  65.810  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.372  62.050  66.428  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.663  62.565  67.002  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.442  62.834  66.959  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.734  63.350  67.534  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.930  62.587  66.342  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.279      7.077      8.015
+REMARK INTER + INTRA:          -6.279
+REMARK INTER:                  -6.279
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.411  64.778  70.718  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.699  65.297  70.145  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.327  65.803  70.324  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.356  65.495  71.090  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.298  66.110  69.559  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.954  66.307  70.503  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.243  66.826  69.930  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.870  67.331  70.109  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.208  67.317  70.860  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.920  66.799  71.434  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      66.259  66.785  72.187  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      65.293  66.294  71.255  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.230      5.747      6.448
+REMARK INTER + INTRA:          -6.230
+REMARK INTER:                  -6.230
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.426  64.876  72.093  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.111  64.562  72.429  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.413  63.844  72.154  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.796  63.793  71.608  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.029  63.894  72.700  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.715  63.127  71.881  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.399  62.812  72.216  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.701  62.095  71.942  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.319  61.693  71.332  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.634  62.007  70.996  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.250  61.605  70.386  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.332  62.724  71.270  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.064      5.256      6.459
+REMARK INTER + INTRA:          -6.064
+REMARK INTER:                  -6.064
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.499  61.992  69.587  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.489  62.781  69.828  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.748  62.983  70.586  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.909  62.188  70.744  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.588  63.777  70.429  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.007  63.185  71.342  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.998  63.973  71.585  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.256  64.175  72.342  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.524  63.589  72.856  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.534  62.800  72.614  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.802  62.213  73.128  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.275  62.598  71.857  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.028     25.329     26.209
+REMARK INTER + INTRA:          -6.028
+REMARK INTER:                  -6.028
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      73.015  80.859  48.483  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.827  80.089  48.252  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      72.187  79.699  48.600  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      72.035  80.364  49.066  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.339  79.035  48.134  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.549  79.310  48.946  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.360  78.541  48.717  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.721  78.151  49.064  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.270  78.531  49.640  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.458  79.301  49.870  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      70.007  79.682  50.447  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      71.097  79.690  49.523  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.969      3.443      4.747
+REMARK INTER + INTRA:          -5.969
+REMARK INTER:                  -5.969
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.482  62.244  67.359  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.475  62.912  67.844  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.460  62.826  68.665  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.459  62.004  68.579  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.462  63.646  68.751  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.445  62.739  69.485  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.439  63.406  69.970  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.424  63.320  70.790  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.415  62.567  71.125  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.422  61.899  70.641  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.413  61.145  70.976  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.437  61.985  69.820  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.922      7.015      8.020
+REMARK INTER + INTRA:          -5.922
+REMARK INTER:                  -5.922
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.655  67.153  71.729  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.365  67.240  70.962  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.694  66.820  70.724  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.642  66.479  71.474  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.746  67.161  69.975  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.025  66.402  70.487  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.734  66.487  69.720  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.064  66.068  69.483  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.685  65.564  70.013  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.975  65.477  70.781  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      63.595  64.972  71.312  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      64.645  65.896  71.018  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.740      4.490      5.400
+REMARK INTER + INTRA:          -5.740
+REMARK INTER:                  -5.740
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = edrophonium
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.990  65.501  69.484  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.110  64.781  69.099  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.237  64.094  69.540  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.172  64.530  70.238  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.302  63.659  68.842  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.364  63.409  69.979  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.484  62.688  69.595  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.611  62.002  70.035  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.618  62.036  70.859  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.498  62.756  71.244  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.504  62.790  72.068  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.371  63.442  70.804  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

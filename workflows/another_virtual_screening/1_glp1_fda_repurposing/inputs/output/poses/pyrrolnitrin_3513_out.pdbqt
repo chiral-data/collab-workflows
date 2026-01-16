@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.465      0.000      0.000
+REMARK INTER + INTRA:          -9.465
+REMARK INTER:                  -9.465
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.438  63.180  67.436  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.418  62.781  66.714  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.104  62.712  66.261  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.711  62.450  66.445  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.691  62.051  65.724  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.984  61.720  65.455  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.298  61.789  65.907  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.319  62.188  66.629  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.025  62.518  66.898  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.046  62.918  67.620  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.378  61.983  65.271  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.119  62.283  65.467  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      62.643  62.088  64.860  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.223  61.667  64.288  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.440  61.601  64.542  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      60.831  61.222  64.138  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.873      1.441      3.068
+REMARK INTER + INTRA:          -8.873
+REMARK INTER:                  -8.873
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.130  60.981  64.300  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.309  61.414  64.979  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.736  61.526  65.561  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.064  61.736  65.075  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.244  62.169  65.753  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.998  62.490  65.849  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.571  62.378  65.267  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.390  61.945  64.588  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.637  61.624  64.492  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.456  61.190  63.814  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.670  62.281  66.336  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.898  61.994  66.316  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.519  62.235  67.008  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.058  62.671  67.456  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.770  62.699  67.040  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      61.459  63.078  67.285  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.128      4.060      5.432
+REMARK INTER + INTRA:          -8.128
+REMARK INTER:                  -8.128
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.578  63.530  68.773  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.572  63.488  69.596  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.966  64.060  70.042  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.172  62.873  69.975  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.167  62.831  70.799  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.767  62.216  71.178  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.373  61.644  70.732  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.379  61.687  69.908  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.778  62.301  69.530  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.785  62.344  68.706  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.560  63.403  71.244  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.981  64.045  70.944  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      62.283  64.472  71.583  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.049  64.093  72.277  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.602  63.431  72.068  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      61.258  62.895  72.590  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.114      4.195      5.328
+REMARK INTER + INTRA:          -8.114
+REMARK INTER:                  -8.114
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.247  64.854  70.565  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.833  64.146  70.474  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.597  63.899  69.724  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.656  63.685  71.136  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.243  62.977  71.045  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.066  62.516  71.707  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.302  62.763  72.458  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.716  63.471  72.547  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.893  63.932  71.886  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      62.306  64.641  71.976  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.006  62.730  70.295  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.143  63.130  69.588  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.813  62.686  68.975  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.472  62.011  69.305  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.592  62.038  70.121  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      60.341  61.472  70.666  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.830      5.494      6.430
+REMARK INTER + INTRA:          -7.830
+REMARK INTER:                  -7.830
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.497  62.146  70.098  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.454  62.800  70.600  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.032  63.470  70.370  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.835  62.783  71.332  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.792  63.437  71.834  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.173  63.420  72.566  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.596  62.750  72.796  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.638  62.097  72.294  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.258  62.113  71.562  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.300  61.460  71.060  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.369  64.107  71.604  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.964  64.203  70.893  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      59.622  64.954  70.894  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.817  65.321  71.606  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.279  64.798  72.045  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      60.595  64.941  72.793  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.712      6.565      7.388
+REMARK INTER + INTRA:          -7.712
+REMARK INTER:                  -7.712
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.541  66.828  72.487  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      63.711  66.350  71.836  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      63.262  65.673  71.693  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.330  66.550  71.328  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.500  66.071  70.678  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.120  66.271  70.170  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.569  66.948  70.314  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.398  67.426  70.964  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.779  67.227  71.472  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      64.609  67.704  72.123  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      64.051  65.394  70.535  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.419  65.127  70.992  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      63.133  64.433  70.649  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      63.589  64.272  69.980  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.157  64.867  69.910  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      64.728  64.922  69.319  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.545     25.285     25.933
+REMARK INTER + INTRA:          -7.545
+REMARK INTER:                  -7.545
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      73.095  80.050  49.400  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      72.348  80.032  49.750  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      72.172  80.542  50.374  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.776  79.503  49.474  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.030  79.485  49.824  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.458  78.957  49.549  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.634  78.447  48.925  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.382  78.466  48.576  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.952  78.994  48.850  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      72.700  79.013  48.501  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      70.854  79.995  50.449  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.366  80.549  50.780  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      70.963  80.937  51.388  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      70.202  80.621  51.431  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      70.134  80.039  50.850  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      69.465  79.582  50.699  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.179     25.235     26.181
+REMARK INTER + INTRA:          -7.179
+REMARK INTER:                  -7.179
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      69.816  79.556  50.707  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      70.532  79.831  50.405  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      70.883  80.506  50.725  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      70.899  79.431  49.783  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.615  79.707  49.481  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.981  79.307  48.858  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.630  78.632  48.539  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.914  78.357  48.842  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.548  78.756  49.463  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      69.831  78.481  49.766  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      71.966  80.382  49.800  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.666  80.836  50.419  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      72.193  81.456  50.559  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      72.818  81.384  50.025  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      72.677  80.719  49.556  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      73.163  80.443  48.950  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.160      3.133      4.636
+REMARK INTER + INTRA:          -7.160
+REMARK INTER:                  -7.160
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrrolnitrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.276  62.123  67.774  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.507  62.252  68.555  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.198  61.783  69.160  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.046  62.851  68.732  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.277  62.980  69.514  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.817  63.580  69.691  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.125  64.049  69.086  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.894  63.919  68.305  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.355  63.320  68.128  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.124  63.190  67.346  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.968  62.511  70.118  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.428  61.896  70.025  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.272  61.579  70.771  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.716  62.000  71.325  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.147  62.576  70.921  0.00  0.00    +0.000 C 
+ATOM     16 CL   UNL     1      61.665  63.120  71.260  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.615      0.000      0.000
+REMARK INTER + INTRA:          -8.615
+REMARK INTER:                  -8.615
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.384  62.303  68.644  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.837  62.354  67.956  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.290  62.404  67.269  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.049  62.009  66.586  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.501  62.059  65.899  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.205  62.482  65.811  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.469  62.379  65.036  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.928  61.894  64.645  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.331  61.697  65.178  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.708  61.211  64.937  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.683  60.924  64.165  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.281  61.122  63.632  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.904  61.607  63.871  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.830      1.056      3.477
+REMARK INTER + INTRA:          -7.830
+REMARK INTER:                  -7.830
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.470  61.553  63.592  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.828  61.630  64.105  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.186  61.706  64.617  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.294  62.031  65.368  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.652  62.108  65.880  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.874  61.885  65.720  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.417  62.060  66.383  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.912  62.391  66.954  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.675  62.421  66.642  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.293  62.729  67.095  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.147  63.007  67.857  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.384  62.978  68.168  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.766  62.670  67.717  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.672      5.611      6.770
+REMARK INTER + INTRA:          -7.672
+REMARK INTER:                  -7.672
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.532  65.856  72.531  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.167  65.333  72.599  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.802  64.811  72.667  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.855  64.158  72.166  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.489  63.636  72.234  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.110  63.695  72.775  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.619  63.058  72.649  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.314  62.606  72.031  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.615  62.963  71.775  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.184  62.628  71.156  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.451  61.938  70.793  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.150  61.581  71.049  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.581  61.915  71.668  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.439      3.176      6.250
+REMARK INTER + INTRA:          -7.439
+REMARK INTER:                  -7.439
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.360  62.179  67.984  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.445  62.497  68.741  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.529  62.814  69.497  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.883  62.369  70.095  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.967  62.686  70.851  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.725  63.438  71.092  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.917  63.524  71.890  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.277  62.827  72.142  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.308  62.309  71.500  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.644  61.560  71.591  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.947  61.330  72.322  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.916  61.847  72.963  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.581  62.596  72.874  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.428      6.611      7.699
+REMARK INTER + INTRA:          -7.428
+REMARK INTER:                  -7.428
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.032  64.605  72.296  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.518  64.908  71.702  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.003  65.212  71.109  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.627  65.715  71.303  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.113  66.018  70.710  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.042  65.868  69.901  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.640  66.282  69.512  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.080  66.688  70.079  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.754  66.525  70.819  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.084  66.859  71.498  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.739  67.356  71.436  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.065  67.519  70.696  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.736  67.185  70.017  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.167     24.587     25.598
+REMARK INTER + INTRA:          -7.167
+REMARK INTER:                  -7.167
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.661  80.513  51.658  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.064  80.041  51.113  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      69.467  79.570  50.570  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      70.241  79.758  50.354  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      70.644  79.287  49.811  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.347  78.614  49.438  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.934  78.317  48.941  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.594  78.806  49.006  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.415  79.405  49.544  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.979  79.982  49.721  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      72.720  79.959  49.361  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      72.899  79.360  48.823  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.337  78.783  48.646  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.144      4.570      5.968
+REMARK INTER + INTRA:          -7.144
+REMARK INTER:                  -7.144
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.164  66.047  71.228  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.799  65.341  71.451  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.433  64.636  71.673  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.042  64.178  71.109  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.676  63.473  71.331  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.656  63.156  72.093  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.234  62.448  72.063  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.994  62.327  71.284  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.267  62.961  70.831  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.106  62.989  70.022  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.674  62.384  69.666  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.401  61.751  70.119  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.560  61.722  70.927  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.845      1.660      2.866
+REMARK INTER + INTRA:          -6.845
+REMARK INTER:                  -6.845
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.015  61.374  71.187  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.771  61.790  70.517  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.527  62.205  69.848  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.803  61.986  69.102  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.559  62.401  68.433  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.044  63.045  68.423  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.954  63.288  67.640  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.413  62.794  67.166  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.787  62.246  67.656  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.288  61.676  67.330  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.414  61.654  66.516  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.040  62.202  66.026  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.539  62.772  66.350  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.748      5.297      6.366
+REMARK INTER + INTRA:          -6.748
+REMARK INTER:                  -6.748
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rasagiline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.493  61.634  70.625  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.844  62.314  70.934  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.195  62.994  71.242  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.865  63.313  70.881  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.216  63.992  71.189  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.961  64.412  71.853  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.471  65.050  71.962  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.041  65.026  71.367  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.883  64.372  70.890  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.369  64.208  70.243  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.011  64.696  70.074  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.168  65.350  70.551  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.684  65.516  71.198  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

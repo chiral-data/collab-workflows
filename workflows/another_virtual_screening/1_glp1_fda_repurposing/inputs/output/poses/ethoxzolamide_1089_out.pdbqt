@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.281      0.000      0.000
+REMARK INTER + INTRA:          -8.281
+REMARK INTER:                  -8.281
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.298  63.622  69.176  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.254  63.231  68.452  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.902  63.233  67.941  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.857  62.841  67.217  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.505  62.843  66.706  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.461  62.452  65.981  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.768  62.058  65.767  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.120  62.056  66.278  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.165  62.448  67.002  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.885  61.723  65.023  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.650  61.909  64.777  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      62.005  62.359  65.369  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      61.998  61.684  64.064  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      62.347  61.459  63.350  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      61.306  61.290  63.849  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.691  62.078  64.278  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.148      1.690      3.740
+REMARK INTER + INTRA:          -8.148
+REMARK INTER:                  -8.148
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.866  61.614  63.116  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.298  61.638  63.713  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.463  62.017  64.427  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.895  62.040  65.023  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.061  62.419  65.736  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.492  62.443  66.334  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.757  62.087  66.217  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.591  61.708  65.503  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.160  61.685  64.907  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.309  62.198  66.900  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.767  62.622  67.439  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      61.498  62.773  67.089  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      60.534  62.855  68.196  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      60.302  63.087  68.953  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      59.799  62.499  68.079  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.269  63.210  68.313  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.634      2.922      4.601
+REMARK INTER + INTRA:          -7.634
+REMARK INTER:                  -7.634
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.664  62.090  64.984  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.623  62.430  65.734  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.282  62.013  66.359  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.242  62.354  67.109  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.902  61.937  67.733  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.861  62.277  68.484  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.161  63.035  68.609  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.502  63.453  67.984  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.542  63.112  67.234  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.044  63.227  69.402  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.672  62.588  69.768  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      60.559  62.001  69.199  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      60.452  62.544  70.561  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      60.232  62.500  71.355  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      60.752  63.302  70.687  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.152  61.786  70.436  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.583      5.440      6.767
+REMARK INTER + INTRA:          -7.583
+REMARK INTER:                  -7.583
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.568  67.995  69.834  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.004  67.525  70.207  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.587  66.957  69.776  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.023  66.487  70.150  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.607  65.921  69.719  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.042  65.450  70.093  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.893  65.546  70.898  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.309  66.113  71.330  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.874  66.583  70.956  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.309  65.006  71.116  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.096  64.576  70.445  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      63.549  64.851  69.813  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      62.530  63.977  70.412  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      61.963  63.379  70.379  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      62.381  64.074  71.218  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.679  63.881  69.606  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.280      5.821      6.975
+REMARK INTER + INTRA:          -7.280
+REMARK INTER:                  -7.280
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.633  61.648  70.588  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.339  62.315  70.973  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.360  63.051  70.600  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.065  63.717  70.985  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.086  64.452  70.612  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.791  65.120  70.997  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.476  65.052  71.756  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.456  64.316  72.130  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.750  63.649  71.744  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.229  65.800  71.997  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.390  66.331  71.388  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      59.738  65.910  70.770  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      59.232  67.141  71.394  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      59.074  67.951  71.401  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      58.917  67.073  72.154  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.547  67.209  70.635  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.228      3.799      5.464
+REMARK INTER + INTRA:          -7.228
+REMARK INTER:                  -7.228
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.683  62.490  66.461  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.631  62.358  67.273  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.004  62.872  67.800  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.952  62.740  68.612  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.325  63.253  69.138  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.273  63.121  69.951  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.847  62.475  70.238  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.474  61.961  69.711  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.526  62.094  68.899  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.892  62.485  71.061  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.345  63.137  71.284  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      61.580  63.530  70.598  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      61.530  63.357  72.057  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      61.716  63.578  72.830  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      61.105  62.711  72.343  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.956  64.003  71.771  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.194      6.328      7.584
+REMARK INTER + INTRA:          -7.194
+REMARK INTER:                  -7.194
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.555  66.808  72.820  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      67.037  66.845  72.180  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.295  66.488  72.227  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.777  66.525  71.587  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.035  66.169  71.635  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.517  66.206  70.994  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.741  66.600  70.304  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.484  66.957  70.256  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.001  66.919  70.898  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      64.119  66.546  69.766  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.510  66.119  70.122  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      63.756  65.909  70.880  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      62.782  65.935  69.780  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      62.055  65.750  69.437  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      63.007  66.329  69.090  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.558  65.541  70.469  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.019      5.964      7.249
+REMARK INTER + INTRA:          -7.019
+REMARK INTER:                  -7.019
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.727  61.676  70.635  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.920  62.284  71.157  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.291  62.966  70.878  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.485  63.574  71.400  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.855  64.255  71.120  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.049  64.864  71.642  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.872  64.791  72.445  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.501  64.109  72.725  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.307  63.501  72.202  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.127  65.476  72.826  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.462  65.973  72.259  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      62.414  65.595  71.528  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      62.788  66.718  72.399  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      63.113  67.463  72.539  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      62.610  66.645  73.202  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.965  66.791  71.597  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.882      5.241      6.306
+REMARK INTER + INTRA:          -6.882
+REMARK INTER:                  -6.882
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethoxzolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.500  62.045  70.141  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.939  62.628  70.524  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.600  62.957  70.155  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.039  63.540  70.537  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.699  63.868  70.168  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.139  64.452  70.551  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.919  64.707  71.304  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.258  64.378  71.674  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.819  63.795  71.290  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.454  65.286  71.544  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.006  65.389  70.940  0.00  0.00    +0.000 A 
+ATOM     12  S   UNL     1      63.811  64.874  70.327  0.00  0.00    +0.000 S 
+ATOM     13  S   UNL     1      64.641  65.916  70.948  0.00  0.00    +0.000 S 
+ATOM     14  N   UNL     1      65.276  66.442  70.956  0.00  0.00    +0.000 NA
+ATOM     15  O   UNL     1      64.420  66.171  71.701  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      64.862  65.661  70.195  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

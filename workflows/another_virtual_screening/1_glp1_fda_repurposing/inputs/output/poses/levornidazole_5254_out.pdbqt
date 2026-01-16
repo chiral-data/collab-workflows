@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.765      0.000      0.000
+REMARK INTER + INTRA:          -7.765
+REMARK INTER:                  -7.765
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.949  61.704  64.606  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.154  61.489  64.543  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.891  61.068  63.885  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      61.423  60.860  63.289  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      60.624  61.698  65.139  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.887  62.119  65.798  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.660  62.370  65.936  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.307  62.243  65.439  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.674  62.770  66.657  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.909  62.766  66.965  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.422  62.364  66.434  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.614  62.231  66.524  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      59.221  62.510  67.193  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      59.196  61.818  65.944  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.699      1.960      2.696
+REMARK INTER + INTRA:          -7.699
+REMARK INTER:                  -7.699
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.614  62.571  66.521  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.168  62.120  65.992  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.378  61.952  66.159  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      59.034  62.234  66.854  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      60.513  61.839  65.298  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.303  62.008  65.131  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.815  62.448  65.605  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.627  62.798  66.328  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.548  62.478  65.228  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.489  62.056  64.522  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.720  61.765  64.462  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.420  61.312  63.842  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      61.905  61.111  63.206  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.635  61.059  63.857  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.632      1.254      1.808
+REMARK INTER + INTRA:          -7.632
+REMARK INTER:                  -7.632
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.965  61.640  64.857  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.602  62.018  65.222  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.337  62.041  64.848  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      62.435  61.686  64.109  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      61.503  62.372  65.960  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.768  62.348  66.334  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      60.084  61.993  66.039  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.016  61.598  65.318  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      59.482  62.102  66.591  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.793  62.524  67.228  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.587  62.677  67.070  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.109  63.085  67.559  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      60.848  63.384  68.283  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.893  63.196  67.326  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.048      2.235      3.229
+REMARK INTER + INTRA:          -7.048
+REMARK INTER:                  -7.048
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.270  62.836  67.574  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.070  62.955  67.409  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.544  63.369  67.942  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      61.219  63.664  68.640  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      61.395  62.659  66.711  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.920  62.245  66.178  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      60.116  62.084  66.267  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.645  62.310  66.906  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      59.866  61.659  65.607  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.516  61.557  65.108  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.167  61.918  65.461  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.931  61.949  65.152  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      62.096  61.596  64.425  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.530  62.332  65.569  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.966      4.316      5.564
+REMARK INTER + INTRA:          -6.966
+REMARK INTER:                  -6.966
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.812  62.105  71.531  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.262  62.790  71.429  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.601  63.162  72.083  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      61.490  62.848  72.839  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      61.371  63.102  70.674  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.032  62.730  70.020  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      60.572  62.046  70.036  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.370  61.613  70.709  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.349  61.870  69.262  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.672  62.446  68.767  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.094  62.978  69.235  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.505  63.640  68.967  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      61.518  63.819  68.162  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.904  64.124  69.503  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.776      6.958      7.871
+REMARK INTER + INTRA:          -6.776
+REMARK INTER:                  -6.776
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.327  67.506  71.010  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.497  67.096  70.314  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.067  67.388  69.793  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      66.466  68.088  69.969  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      65.097  66.396  70.140  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.528  66.105  70.661  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      64.300  66.452  71.373  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.602  67.151  71.691  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.717  65.977  71.713  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.585  65.337  71.210  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.085  65.415  70.560  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      64.136  64.897  69.921  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      63.656  64.226  69.896  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      64.665  65.048  69.307  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.664      5.173      5.920
+REMARK INTER + INTRA:          -6.664
+REMARK INTER:                  -6.664
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.965  62.655  71.618  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.076  62.578  70.804  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.652  62.010  70.381  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      60.118  61.519  70.774  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      61.611  63.070  70.413  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.035  63.638  70.835  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.982  63.778  71.646  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.497  63.375  72.178  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.500  64.392  71.833  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.873  64.632  71.137  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.585  64.166  70.520  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.809  64.218  69.728  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      63.369  64.776  69.494  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.472  63.712  69.170  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.594      2.725      3.579
+REMARK INTER + INTRA:          -6.594
+REMARK INTER:                  -6.594
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.650  62.150  67.434  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.265  62.693  67.345  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.583  62.837  66.597  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      61.285  62.438  65.939  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      61.563  63.091  68.004  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.245  62.946  68.751  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      60.632  62.423  68.925  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.229  61.951  68.381  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.493  62.454  69.737  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.020  62.996  70.066  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.485  63.301  69.457  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.084  63.862  69.538  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      62.263  64.169  70.283  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.504  64.116  68.875  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.542      7.155      7.982
+REMARK INTER + INTRA:          -6.542
+REMARK INTER:                  -6.542
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = levornidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.284  66.506  69.788  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.262  67.003  70.447  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.808  67.618  70.518  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      66.374  67.736  69.930  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      64.695  66.884  71.034  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.150  66.269  70.963  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      64.104  65.731  70.340  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.596  65.713  69.677  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.481  65.214  70.495  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.142  65.432  71.214  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.555  66.084  71.504  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      63.400  66.481  72.210  0.00  0.00    +0.000 N 
+ATOM     13  O   UNL     1      62.783  66.232  72.697  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      63.863  67.128  72.429  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

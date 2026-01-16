@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:   -10.085      0.000      0.000
+REMARK INTER + INTRA:         -10.085
+REMARK INTER:                 -10.085
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.850  63.528  67.929  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.141  63.206  67.657  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.120  62.805  66.935  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.410  62.483  66.663  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.722  62.561  67.112  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.013  62.239  66.840  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      58.992  61.839  66.119  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.679  61.761  65.670  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.903  62.197  66.366  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.389  62.083  65.942  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.077  62.005  65.493  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.786  62.327  65.766  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.473  62.249  65.316  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.452  61.849  64.596  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.743  61.527  64.323  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.056  61.605  64.773  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.028      4.279      6.368
+REMARK INTER + INTRA:          -9.028
+REMARK INTER:                  -9.028
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.451  62.078  69.461  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.839  61.941  70.175  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.769  62.485  70.793  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.157  62.348  71.508  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.615  61.669  71.607  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.002  61.533  72.322  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.933  62.076  72.939  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.476  62.755  72.841  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.423  62.330  72.106  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.088  62.892  72.125  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.630  63.572  72.027  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.242  63.707  71.312  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.785  64.387  71.214  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.715  64.930  71.830  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.103  64.794  72.546  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.560  64.114  72.643  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.893      3.474      5.203
+REMARK INTER + INTRA:          -8.893
+REMARK INTER:                  -8.893
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.906  65.004  69.121  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.559  64.257  69.141  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.467  63.864  69.862  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.120  63.115  69.881  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.864  62.759  69.182  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.517  62.011  69.203  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.426  61.619  69.922  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.681  61.974  70.622  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.860  62.527  70.000  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.028  62.723  70.601  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.283  63.078  71.301  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.630  63.826  71.280  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.885  64.181  71.980  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.794  63.789  72.699  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.447  63.041  72.720  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.192  62.686  72.020  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.783      3.668      5.417
+REMARK INTER + INTRA:          -8.783
+REMARK INTER:                  -8.783
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.806  65.524  69.957  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.761  65.122  70.676  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.492  64.342  70.696  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.448  63.940  71.415  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.672  64.317  72.114  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.627  63.915  72.833  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.359  63.135  72.853  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.134  62.757  72.155  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.377  63.541  71.929  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.179  63.160  71.435  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.955  62.782  70.736  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.999  63.185  70.018  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.775  62.807  69.320  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.507  62.029  69.340  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.462  61.626  70.058  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.686  62.003  70.757  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.409      3.596      5.547
+REMARK INTER + INTRA:          -8.409
+REMARK INTER:                  -8.409
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.738  62.227  69.274  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.811  62.426  70.071  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.366  62.991  70.306  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.438  63.190  71.104  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.957  62.826  71.666  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.030  63.025  72.463  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.584  63.589  72.698  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.066  63.954  72.137  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.570  63.413  71.704  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.993  63.754  71.339  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.475  64.119  70.776  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.402  63.919  69.979  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.883  64.283  69.418  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.437  64.846  69.653  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.510  65.046  70.450  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.029  64.682  71.011  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.366     24.826     25.898
+REMARK INTER + INTRA:          -8.366
+REMARK INTER:                  -8.366
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      73.051  80.888  50.197  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.668  80.278  49.795  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      71.883  80.095  49.974  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      71.501  79.484  49.571  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.902  79.056  48.991  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.520  78.446  48.589  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.736  78.263  48.767  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.334  78.690  49.347  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      71.116  79.024  49.311  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.717  79.301  49.749  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.314  79.728  50.330  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.697  80.338  50.732  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.295  80.765  51.312  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      69.512  80.582  51.490  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      69.129  79.972  51.088  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      69.531  79.545  50.508  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.344      5.528      7.506
+REMARK INTER + INTRA:          -8.344
+REMARK INTER:                  -8.344
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.689  66.773  72.744  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.403  66.994  72.398  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.707  66.561  71.763  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.422  66.783  71.417  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.835  67.437  71.704  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.549  67.659  71.357  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.852  67.226  70.724  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.440  66.572  70.436  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.974  66.878  71.079  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.725  66.350  70.783  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.312  65.695  70.496  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.597  65.474  70.843  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.185  64.820  70.555  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.488  64.388  69.922  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.203  64.609  69.575  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.614  65.263  69.863  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.293      5.402      6.836
+REMARK INTER + INTRA:          -8.293
+REMARK INTER:                  -8.293
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.856  64.406  69.888  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.598  64.898  70.497  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.021  64.633  71.026  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.764  65.125  71.636  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.082  65.882  71.719  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.824  66.373  72.329  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.248  66.108  72.856  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.930  65.352  72.775  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.498  65.436  72.146  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.188  64.860  72.164  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.869  64.103  72.082  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.128  63.611  71.471  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.809  62.855  71.389  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.234  62.590  71.917  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.975  63.082  72.527  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.294  63.838  72.609  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.224      6.616      7.520
+REMARK INTER + INTRA:          -8.224
+REMARK INTER:                  -8.224
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fencamfamin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.604  65.584  72.513  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.178  64.993  72.486  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.976  65.189  72.562  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.551  64.597  72.535  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.328  63.809  72.433  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.902  63.218  72.406  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.700  63.414  72.482  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.924  64.201  72.585  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.074  64.204  72.527  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.348  64.793  72.611  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.572  65.581  72.714  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.997  66.172  72.741  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.221  66.959  72.844  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.018  67.155  72.920  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.593  66.564  72.893  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.369  65.777  72.790  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

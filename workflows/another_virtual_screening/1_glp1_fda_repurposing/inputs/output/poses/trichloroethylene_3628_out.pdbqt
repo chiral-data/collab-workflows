@@ -1,0 +1,162 @@
+MODEL 1
+REMARK VINA RESULT:    -3.858      0.000      0.000
+REMARK INTER + INTRA:          -3.858
+REMARK INTER:                  -3.858
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      65.749  76.902  60.452  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      66.121  77.172  59.766  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.483  77.914  59.758  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      66.855  78.183  59.072  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      66.471  78.386  60.435  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -3.669     16.784     17.203
+REMARK INTER + INTRA:          -3.669
+REMARK INTER:                  -3.669
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.912  61.186  64.193  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.355  61.645  64.718  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.104  61.913  64.502  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      62.546  62.371  65.027  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      62.411  61.722  63.760  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -3.239     14.135     14.828
+REMARK INTER + INTRA:          -3.239
+REMARK INTER:                  -3.239
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      65.828  66.790  71.420  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      66.195  67.351  70.938  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.972  67.424  70.147  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      66.339  67.985  69.666  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      65.383  66.935  69.838  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -2.967     11.118     11.794
+REMARK INTER + INTRA:          -2.967
+REMARK INTER:                  -2.967
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      70.253  79.020  49.972  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      70.627  79.134  49.245  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.002  78.502  48.870  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      71.376  78.617  48.143  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      71.003  77.756  49.222  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -2.964     19.370     19.980
+REMARK INTER + INTRA:          -2.964
+REMARK INTER:                  -2.964
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.587  64.080  72.748  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.474  63.500  72.171  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.544  62.702  72.368  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      61.431  62.124  71.791  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      61.728  62.484  73.143  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -2.880     15.091     15.342
+REMARK INTER + INTRA:          -2.880
+REMARK INTER:                  -2.880
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      78.353  67.172  56.256  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      77.953  67.816  56.584  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      77.130  67.853  56.546  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      76.731  68.497  56.873  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      76.706  67.247  56.179  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -2.646     18.378     19.060
+REMARK INTER + INTRA:          -2.646
+REMARK INTER:                  -2.646
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.211  63.063  72.707  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.555  63.806  72.604  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.981  63.972  71.918  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      62.324  64.716  71.816  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      62.064  63.395  71.334  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -2.599     15.415     15.977
+REMARK INTER + INTRA:          -2.599
+REMARK INTER:                  -2.599
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      64.490  64.526  69.970  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      64.750  65.112  70.490  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.887  65.878  70.214  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      65.147  66.463  70.734  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      64.763  66.057  69.418  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -2.565     11.211     11.372
+REMARK INTER + INTRA:          -2.565
+REMARK INTER:                  -2.565
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trichloroethylene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.819  67.677  56.171  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.750  68.150  55.497  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.233  68.009  54.844  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      63.164  68.482  54.171  0.00  0.00    +0.000 Cl
+ATOM      5 CL   UNL     1      63.785  67.396  54.863  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

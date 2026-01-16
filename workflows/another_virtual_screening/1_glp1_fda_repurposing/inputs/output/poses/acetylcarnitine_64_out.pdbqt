@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -6.667      0.000      0.000
+REMARK INTER + INTRA:          -6.667
+REMARK INTER:                  -6.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.850  63.516  67.982  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.238  63.158  67.560  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.470  63.163  67.865  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.391  62.797  66.836  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.778  62.439  66.414  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.011  62.444  66.719  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.398  62.086  66.297  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      58.631  62.092  66.602  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      59.552  61.725  65.572  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.932  62.077  65.689  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.699  62.073  65.385  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.964  62.488  66.047  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.434  61.657  64.723  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.466  62.068  65.081  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.600      1.015      2.236
+REMARK INTER + INTRA:          -6.600
+REMARK INTER:                  -6.600
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.441  62.363  65.122  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.691  62.314  65.461  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.073  61.956  65.046  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.557  62.621  66.213  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.806  62.572  66.553  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.189  62.215  66.137  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.438  62.165  66.477  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      58.822  61.808  66.061  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      59.305  62.474  67.230  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.672  62.880  67.306  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.290  63.238  67.720  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.800  63.088  67.090  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.779  63.388  68.352  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.907  63.596  68.136  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.277      2.228      3.540
+REMARK INTER + INTRA:          -6.277
+REMARK INTER:                  -6.277
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.378  61.700  70.695  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.520  61.987  69.934  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.154  61.631  69.285  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.026  62.627  69.822  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.168  62.913  69.061  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.802  62.557  68.413  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.944  62.843  67.651  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.578  62.488  67.003  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.451  63.484  67.539  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.675  63.554  68.948  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.041  63.908  69.598  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.667  63.374  70.101  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.416  64.444  69.093  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.407  64.264  70.246  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.221      1.967      2.841
+REMARK INTER + INTRA:          -6.221
+REMARK INTER:                  -6.221
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.591  64.485  69.427  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.059  63.862  69.523  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.867  63.597  70.281  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.720  63.503  68.863  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.188  62.880  68.960  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.996  62.615  69.718  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.464  61.992  69.814  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.273  61.728  70.572  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.124  61.633  69.154  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.848  62.521  68.299  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.040  62.786  67.542  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.543  63.352  67.867  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.536  62.218  67.216  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.232  63.050  66.784  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.130      5.106      6.384
+REMARK INTER + INTRA:          -6.130
+REMARK INTER:                  -6.130
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.748  63.824  71.714  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.544  64.620  71.794  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.296  64.910  72.526  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.588  65.124  71.144  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.384  65.920  71.224  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.136  66.210  71.955  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      58.931  67.006  72.035  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      58.683  67.295  72.767  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      58.975  67.511  71.384  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.428  66.425  70.573  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.676  66.134  69.842  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.769  65.384  70.171  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.584  66.885  69.512  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.924  65.844  69.110  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.129      2.382      3.827
+REMARK INTER + INTRA:          -6.129
+REMARK INTER:                  -6.129
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.529  62.406  67.233  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.529  62.308  68.052  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.068  61.715  68.397  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.988  62.801  68.527  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.988  62.702  69.347  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.528  62.110  69.690  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.527  62.012  70.510  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.067  61.420  70.853  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.987  62.506  70.985  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.447  63.196  69.822  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.907  63.788  69.477  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.642  63.560  68.730  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.173  64.016  70.225  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.368  64.380  69.133  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.035      2.446      3.780
+REMARK INTER + INTRA:          -6.035
+REMARK INTER:                  -6.035
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.201  61.714  70.760  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.676  62.342  70.515  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.035  62.830  71.076  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.793  62.483  69.711  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.269  63.112  69.467  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.628  63.599  70.028  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.104  64.228  69.784  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.462  64.715  70.345  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      62.220  64.368  68.979  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.386  63.253  68.663  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.026  62.765  68.103  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.685  62.321  68.708  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.369  63.209  67.497  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.668  62.278  67.542  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.980      5.012      6.252
+REMARK INTER + INTRA:          -5.980
+REMARK INTER:                  -5.980
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.834  66.922  72.871  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.024  66.828  72.074  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      58.966  67.470  71.558  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.272  66.094  71.792  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.463  66.001  70.994  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.404  66.643  70.479  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.594  66.550  69.681  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.536  67.191  69.166  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      59.842  65.815  69.399  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.711  65.267  70.712  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.769  64.625  71.229  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.516  65.103  71.851  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.022  64.147  70.605  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.828  63.984  71.744  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.900      3.645      4.872
+REMARK INTER + INTRA:          -5.900
+REMARK INTER:                  -5.900
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetylcarnitine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.305  64.890  69.639  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.703  64.653  70.150  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.795  64.744  70.965  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.009  64.326  69.847  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.407  64.089  70.359  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.499  64.180  71.174  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.897  63.942  71.686  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.989  64.033  72.501  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.203  63.615  71.383  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.713  63.761  70.056  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.621  63.671  69.241  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      62.369  63.997  69.121  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.873  63.345  69.362  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.529  63.580  68.427  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

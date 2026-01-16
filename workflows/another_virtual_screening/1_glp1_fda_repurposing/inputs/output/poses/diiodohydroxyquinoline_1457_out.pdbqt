@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.886      0.000      0.000
+REMARK INTER + INTRA:          -6.886
+REMARK INTER:                  -6.886
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.995  63.427  67.755  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.327  63.073  67.424  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.379  62.702  66.690  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.098  62.685  66.285  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.149  62.314  65.551  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.481  61.959  65.219  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.763  61.976  65.623  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.710  62.347  66.359  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.992  62.364  66.763  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      59.325  62.009  66.432  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      59.940  62.735  67.497  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.609  63.090  67.828  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      60.557  63.461  68.563  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.657      3.524      4.275
+REMARK INTER + INTRA:          -6.657
+REMARK INTER:                  -6.657
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.060  63.858  69.125  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.897  63.674  69.913  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.387  63.051  70.094  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.040  62.612  69.488  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.530  61.990  69.669  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.367  61.806  70.457  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.714  62.244  71.063  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.224  62.867  70.882  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.571  63.306  71.488  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      61.408  63.122  72.275  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      62.081  63.928  71.307  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.244  64.112  70.518  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      62.754  64.735  70.338  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.577      2.581      3.362
+REMARK INTER + INTRA:          -6.577
+REMARK INTER:                  -6.577
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.897  64.761  69.345  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.121  64.070  69.736  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.219  63.370  69.313  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.093  63.358  68.497  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.190  62.658  68.074  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.415  61.967  68.466  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.542  61.977  69.280  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.444  62.678  69.704  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.571  62.689  70.519  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      60.795  61.998  70.910  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      60.473  63.389  70.942  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.248  64.081  70.551  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      60.150  64.782  70.975  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.463      6.219      6.924
+REMARK INTER + INTRA:          -6.463
+REMARK INTER:                  -6.463
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.867  67.418  72.374  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.951  66.906  71.733  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.596  66.984  71.225  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      65.158  67.573  71.358  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      65.803  67.650  70.850  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.887  67.138  70.208  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.326  66.549  70.075  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.680  66.471  70.583  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.118  65.882  70.450  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      64.202  65.370  69.809  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      63.474  65.805  70.958  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.390  66.317  71.600  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      62.744  66.239  72.108  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.429      6.064      6.873
+REMARK INTER + INTRA:          -6.429
+REMARK INTER:                  -6.429
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.762  67.585  71.927  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.634  66.938  71.431  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.983  66.448  71.553  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      63.458  66.603  72.171  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.806  66.113  72.292  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.679  65.465  71.796  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.203  65.310  71.179  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.855  65.800  71.057  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.379  65.644  70.440  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      64.251  64.997  69.944  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      65.030  66.135  70.318  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.158  66.782  70.814  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      65.810  67.273  70.692  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.311      3.725      4.854
+REMARK INTER + INTRA:          -6.311
+REMARK INTER:                  -6.311
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.004  65.065  70.501  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.671  64.310  70.532  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.593  63.924  71.256  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.847  64.292  71.950  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.768  63.906  72.674  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.435  63.151  72.705  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.181  62.783  72.013  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.259  63.169  71.287  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.005  62.802  70.594  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      60.673  62.048  70.626  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      61.084  63.188  69.870  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.417  63.943  69.839  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      61.496  64.329  69.114  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.247      5.393      6.097
+REMARK INTER + INTRA:          -6.247
+REMARK INTER:                  -6.247
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.444  64.185  70.280  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.237  64.755  70.840  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.665  64.584  71.408  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.298  63.845  71.417  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.726  63.675  71.985  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.519  64.245  72.546  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.884  64.983  72.537  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.458  65.154  71.969  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.823  65.893  71.960  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      62.616  66.462  72.521  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      63.396  66.063  71.392  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.603  65.493  70.831  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      64.176  65.664  70.263  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.199     25.300     25.897
+REMARK INTER + INTRA:          -6.199
+REMARK INTER:                  -6.199
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      69.380  79.374  50.698  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.119  79.655  50.463  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      70.547  79.254  49.883  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      70.236  78.573  49.537  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      70.663  78.173  48.956  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.403  78.454  48.721  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.714  79.135  49.067  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.287  79.536  49.648  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.598  80.216  49.993  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      72.337  80.497  49.758  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      71.170  80.617  50.574  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.430  80.335  50.809  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      70.003  80.736  51.390  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.197      3.701      4.377
+REMARK INTER + INTRA:          -6.197
+REMARK INTER:                  -6.197
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diiodohydroxyquinoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.744  62.622  69.427  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.535  63.102  70.065  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.281  63.875  69.933  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.236  64.170  69.164  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.983  64.943  69.033  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.773  65.423  69.671  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.817  65.129  70.440  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.071  64.355  70.572  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.116  64.060  71.341  0.00  0.00    +0.000 A 
+ATOM     10  I   UNL     1      59.906  64.540  71.979  0.00  0.00    +0.000 I 
+ATOM     11  C   UNL     1      60.369  63.287  71.472  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.579  62.807  70.833  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      60.833  62.033  70.966  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL

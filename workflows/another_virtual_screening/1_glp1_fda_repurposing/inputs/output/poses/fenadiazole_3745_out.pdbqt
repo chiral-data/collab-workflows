@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.415      0.000      0.000
+REMARK INTER + INTRA:          -7.415
+REMARK INTER:                  -7.415
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.865  62.750  66.200  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.756  62.284  65.528  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.386  62.149  65.013  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.277  61.683  64.342  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.537  61.353  64.183  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.907  61.488  64.698  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.016  61.955  65.371  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.386  62.090  65.885  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.619  61.798  65.799  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.171  62.069  66.437  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.661  62.529  66.916  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.412  62.541  66.574  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.032      1.147      2.488
+REMARK INTER + INTRA:          -7.032
+REMARK INTER:                  -7.032
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.556  62.793  66.723  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.787  62.525  66.586  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.199  62.655  67.150  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.431  62.387  67.013  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.251  61.989  66.313  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.839  61.859  65.750  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.608  62.127  65.886  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.197  61.997  65.323  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.099  61.610  64.601  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.828  61.605  64.214  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.375  61.990  64.697  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.984  62.232  65.382  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.533      1.681      2.440
+REMARK INTER + INTRA:          -6.533
+REMARK INTER:                  -6.533
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.703  62.505  66.402  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.889  62.365  66.394  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.547  61.955  65.765  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.735  61.816  65.757  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.263  62.087  66.378  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.605  62.497  67.006  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.419  62.636  67.015  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.761  63.047  67.644  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.361  63.349  68.299  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.915  63.715  68.788  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.657  63.640  68.434  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.561  63.226  67.727  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.349     15.868     16.790
+REMARK INTER + INTRA:          -6.349
+REMARK INTER:                  -6.349
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      57.474  77.469  72.743  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      57.836  76.735  72.634  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      57.381  76.075  72.439  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      57.743  75.342  72.331  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      58.561  75.268  72.417  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.016  75.928  72.612  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      58.653  76.662  72.721  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.108  77.322  72.916  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.926  77.332  73.020  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.149  78.104  73.210  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.468  78.570  73.222  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      58.825  78.086  73.041  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.299      5.943      6.536
+REMARK INTER + INTRA:          -6.299
+REMARK INTER:                  -6.299
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.618  63.119  72.763  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.283  62.705  72.131  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.625  62.000  71.873  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.290  61.588  71.242  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.614  61.880  70.869  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.273  62.585  71.128  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.608  62.998  71.760  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.267  63.703  72.018  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.594  64.060  71.701  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.450  64.753  72.127  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.033  64.823  72.706  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.538  64.173  72.639  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.282      7.127      7.655
+REMARK INTER + INTRA:          -6.282
+REMARK INTER:                  -6.282
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.493  66.173  71.779  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.938  66.564  71.204  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.380  67.230  71.406  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.824  67.620  70.831  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.826  67.345  70.053  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.383  66.679  69.851  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.939  66.288  70.427  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.496  65.621  70.224  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      64.445  65.284  69.473  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      63.944  64.630  69.522  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.687  64.564  70.303  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      64.029  65.177  70.737  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.236      2.994      4.468
+REMARK INTER + INTRA:          -6.236
+REMARK INTER:                  -6.236
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.504  63.910  69.655  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.476  63.168  70.016  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.455  63.110  70.838  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.427  62.369  71.198  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.420  61.685  70.736  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.440  61.743  69.914  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.468  62.486  69.553  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.489  62.544  68.730  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.484  61.912  68.200  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.510  62.222  67.435  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.530  63.045  67.494  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.517  63.243  68.295  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.049      4.800      5.716
+REMARK INTER + INTRA:          -6.049
+REMARK INTER:                  -6.049
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.451  63.831  70.069  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.097  63.087  70.128  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.819  62.708  69.450  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.466  61.966  69.508  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.391  61.600  70.245  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.670  61.979  70.923  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.024  62.723  70.864  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.302  63.102  71.542  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.266  62.806  72.311  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.608  63.364  72.814  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.854  64.004  72.355  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.665  63.841  71.569  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.961      6.271      6.933
+REMARK INTER + INTRA:          -5.961
+REMARK INTER:                  -5.961
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenadiazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.354  63.537  70.506  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.028  63.339  71.238  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.721  62.584  71.363  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.396  62.386  72.094  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.377  62.944  72.702  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.684  63.699  72.578  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.010  63.897  71.845  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.318  64.653  71.721  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.337  65.264  72.274  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      62.691  65.919  71.917  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.889  65.711  71.144  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.658  64.928  71.023  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

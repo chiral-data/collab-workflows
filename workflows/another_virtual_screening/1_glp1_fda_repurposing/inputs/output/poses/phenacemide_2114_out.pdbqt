@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.097      0.000      0.000
+REMARK INTER + INTRA:          -8.097
+REMARK INTER:                  -8.097
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.247  63.199  68.607  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.073  62.811  67.899  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.351  62.424  67.809  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.621  62.812  67.283  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.446  62.425  66.576  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.724  62.038  66.486  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.994  62.426  65.959  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.819  62.039  65.252  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.367  62.040  64.634  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.192  61.653  63.927  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.471  61.266  63.837  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.922  61.264  64.453  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.097  61.652  65.161  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.272     18.312     18.702
+REMARK INTER + INTRA:          -7.272
+REMARK INTER:                  -7.272
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.772  81.055  57.824  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.968  80.321  58.147  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.411  79.715  58.163  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      64.724  80.196  58.454  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.920  79.463  58.777  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.362  78.856  58.793  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.676  79.337  59.085  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.872  78.603  59.408  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.628  78.477  59.715  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.824  77.744  60.038  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.266  77.138  60.053  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.511  77.263  59.746  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.314  77.997  59.423  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.160      5.641      7.148
+REMARK INTER + INTRA:          -7.160
+REMARK INTER:                  -7.160
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.781  63.779  70.365  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.283  64.393  70.136  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.310  64.631  69.347  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      63.758  64.767  70.697  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.260  65.380  70.467  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.287  65.618  69.679  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.736  65.756  71.028  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.238  66.369  70.799  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.713  66.744  71.360  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.215  67.357  71.131  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.242  67.595  70.342  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.767  67.220  69.781  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.265  66.607  70.010  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.103      3.359      5.720
+REMARK INTER + INTRA:          -7.103
+REMARK INTER:                  -7.103
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.376  62.009  67.928  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.436  62.393  68.657  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.149  63.161  68.742  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.783  62.008  69.298  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.843  62.393  70.025  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.556  63.161  70.111  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.190  62.008  70.668  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.250  62.392  71.395  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.597  62.007  72.038  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.657  62.392  72.765  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.370  63.160  72.850  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.023  63.545  72.209  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.963  63.160  71.481  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.061      5.746      6.495
+REMARK INTER + INTRA:          -7.061
+REMARK INTER:                  -7.061
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.742  65.823  72.609  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.321  65.235  72.617  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.923  65.258  73.179  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      59.297  64.626  72.062  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.876  64.038  72.070  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.478  64.061  72.632  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.852  63.428  71.514  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.432  62.841  71.523  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.408  62.230  70.967  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.987  61.643  70.976  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.589  61.666  71.538  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.613  62.275  72.093  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.034  62.863  72.085  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.990      1.656      2.287
+REMARK INTER + INTRA:          -6.990
+REMARK INTER:                  -6.990
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.559  64.201  69.477  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.888  63.900  69.102  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.151  63.959  69.466  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.956  63.539  68.364  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.285  63.238  67.989  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.548  63.298  68.353  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.353  62.878  67.250  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.682  62.577  66.875  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.750  62.216  66.136  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.079  61.915  65.761  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.342  61.975  66.125  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.274  62.335  66.864  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.945  62.637  67.239  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.673      6.951      7.516
+REMARK INTER + INTRA:          -6.673
+REMARK INTER:                  -6.673
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.380  67.836  73.097  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.882  67.205  72.908  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.093  67.345  72.716  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.175  66.434  72.912  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.678  65.804  72.724  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.889  65.944  72.531  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.971  65.032  72.728  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.473  64.402  72.539  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.766  63.630  72.543  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.268  62.999  72.355  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.480  63.140  72.162  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.186  63.911  72.158  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.684  64.542  72.347  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.567      5.672      6.375
+REMARK INTER + INTRA:          -6.567
+REMARK INTER:                  -6.567
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.952  66.077  69.651  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.563  65.393  69.902  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.557  64.723  69.423  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      63.181  65.382  70.633  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.793  64.698  70.884  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.787  64.028  70.405  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.411  64.687  71.616  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.023  64.003  71.867  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.641  63.991  72.598  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.253  63.308  72.849  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.247  62.638  72.370  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.629  62.649  71.639  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.017  63.333  71.387  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.497      4.872      5.812
+REMARK INTER + INTRA:          -6.497
+REMARK INTER:                  -6.497
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenacemide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.243  65.746  72.968  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.967  65.306  72.326  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.907  65.654  71.582  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.751  64.517  72.432  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.475  64.077  71.791  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.415  64.425  71.046  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.259  63.287  71.895  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.983  62.847  71.255  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.767  62.057  71.359  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.491  61.617  70.718  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.431  61.965  69.974  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.647  62.754  69.869  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.923  63.195  70.510  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

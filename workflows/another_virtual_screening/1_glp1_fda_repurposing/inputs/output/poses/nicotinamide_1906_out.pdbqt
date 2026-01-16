@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.468      0.000      0.000
+REMARK INTER + INTRA:          -5.468
+REMARK INTER:                  -5.468
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.620  62.761  66.723  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.152  62.285  66.237  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.413  62.030  66.500  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.423  62.066  65.491  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.955  61.590  65.005  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.226  61.371  64.257  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.965  61.627  63.995  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.434  62.102  64.480  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.162  62.322  65.228  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.231      1.260      2.184
+REMARK INTER + INTRA:          -5.231
+REMARK INTER:                  -5.231
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.393  61.661  63.894  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.228  62.047  64.605  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.789  62.548  64.942  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.502  61.930  64.978  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.336  62.315  65.688  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.610  62.199  66.061  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.049  61.698  65.724  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.214  61.312  65.013  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.940  61.428  64.640  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.757      1.780      2.358
+REMARK INTER + INTRA:          -4.757
+REMARK INTER:                  -4.757
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.324  63.144  68.341  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.809  62.959  67.699  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.613  63.138  67.725  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.489  62.595  67.032  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.972  62.410  66.390  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.652  62.046  65.723  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.847  61.867  65.698  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.362  62.052  66.339  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.683  62.416  67.006  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.755      7.234      7.961
+REMARK INTER + INTRA:          -4.755
+REMARK INTER:                  -4.755
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.156  67.755  69.921  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.988  67.240  70.544  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.363  67.339  71.272  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.447  66.627  70.438  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.280  66.113  71.061  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.738  65.499  70.955  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.364  65.401  70.227  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.531  65.915  69.604  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.073  66.528  69.709  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.669     16.032     16.720
+REMARK INTER + INTRA:          -4.669
+REMARK INTER:                  -4.669
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.996  77.302  73.221  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.205  77.442  73.029  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      58.888  78.198  73.115  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      58.733  76.826  72.752  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      57.943  76.965  72.560  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      57.471  76.348  72.283  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      57.788  75.593  72.197  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      58.578  75.452  72.389  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.051  76.069  72.666  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.656     25.139     25.698
+REMARK INTER + INTRA:          -4.656
+REMARK INTER:                  -4.656
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      72.870  78.891  48.274  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      72.498  79.389  48.818  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      72.870  80.085  49.059  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.758  79.191  49.119  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.386  79.688  49.663  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      70.645  79.489  49.965  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      70.274  78.794  49.723  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.644  78.296  49.179  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.386  78.494  48.877  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.621      3.526      4.931
+REMARK INTER + INTRA:          -4.621
+REMARK INTER:                  -4.621
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.542  61.920  68.102  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.571  62.607  68.560  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.646  63.342  68.194  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.526  62.557  69.381  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.556  63.243  69.839  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.510  63.193  70.661  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.435  62.457  71.026  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.405  61.771  70.569  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.451  61.821  69.747  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.548     15.859     16.706
+REMARK INTER + INTRA:          -4.548
+REMARK INTER:                  -4.548
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.627  75.154  72.306  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      58.302  75.901  72.175  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      57.602  75.976  71.744  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      58.676  76.572  72.474  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      58.352  77.319  72.343  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      58.727  77.990  72.642  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.426  77.914  73.072  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.751  77.168  73.204  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.377  76.496  72.905  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.524      6.289      6.849
+REMARK INTER + INTRA:          -4.524
+REMARK INTER:                  -4.524
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nicotinamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.344  64.564  72.796  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.135  64.113  72.135  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.513  64.356  71.651  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.549  63.422  71.961  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.341  62.972  71.302  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.755  62.280  71.127  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.376  62.038  71.612  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.585  62.487  72.271  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.171  63.180  72.446  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

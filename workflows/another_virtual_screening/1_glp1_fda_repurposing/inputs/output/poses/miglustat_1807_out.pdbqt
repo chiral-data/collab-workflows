@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.912      0.000      0.000
+REMARK INTER + INTRA:          -7.912
+REMARK INTER:                  -7.912
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.059  62.943  68.022  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.864  62.473  67.372  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.399  62.390  66.749  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.205  61.921  66.098  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.739  61.837  65.476  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.545  61.369  64.826  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.080  61.285  64.203  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.886  60.817  63.553  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.808  61.670  64.231  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.344  61.587  63.608  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.003  62.139  64.882  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.732  62.525  64.910  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.468  62.223  65.504  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.663  62.692  66.155  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.128  62.776  66.777  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.748      1.134      3.433
+REMARK INTER + INTRA:          -7.748
+REMARK INTER:                  -7.748
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.203  61.594  63.763  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.395  62.001  64.455  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.831  62.091  65.050  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.023  62.498  65.742  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.460  62.587  66.337  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.651  62.994  67.029  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.087  63.084  67.624  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.278  63.490  68.315  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.332  62.767  67.528  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.767  62.857  68.124  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.139  62.360  66.836  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.384  62.043  66.739  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.703  62.271  66.241  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.512  61.864  65.548  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.075  61.774  64.954  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.188      1.672      3.731
+REMARK INTER + INTRA:          -7.188
+REMARK INTER:                  -7.188
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.126  61.902  64.948  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.789  61.551  65.615  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.605  62.011  66.274  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.268  61.660  66.942  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.085  62.120  67.601  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.748  61.770  68.267  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.564  62.230  68.927  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.228  61.880  69.593  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.716  63.040  68.920  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.532  63.501  69.580  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.053  63.392  68.253  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.206  64.203  68.245  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.237  62.932  67.594  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.574  63.282  66.926  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.758  62.823  66.267  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.826      3.423      4.637
+REMARK INTER + INTRA:          -6.826
+REMARK INTER:                  -6.826
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.621  63.163  72.813  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.206  62.710  72.262  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.293  62.860  71.455  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.878  62.407  70.904  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.965  62.556  70.098  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.551  62.104  69.547  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.638  62.254  68.740  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.224  61.802  68.190  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.140  62.856  68.485  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.227  63.007  67.678  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.555  63.310  69.036  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.057  63.913  68.781  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.468  63.160  69.842  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.883  63.613  70.394  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.796  63.463  71.200  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.819      1.494      2.439
+REMARK INTER + INTRA:          -6.819
+REMARK INTER:                  -6.819
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.353  64.143  69.512  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.711  63.820  68.843  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.252  63.435  68.275  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.610  63.112  67.605  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.151  62.728  67.038  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.508  62.405  66.368  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.049  62.020  65.800  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.407  61.698  65.131  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.234  61.959  65.903  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.774  61.574  65.334  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.876  62.281  66.572  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.059  62.220  66.675  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.334  62.666  67.140  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.977  62.989  67.810  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.435  63.374  68.377  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.727      6.027      7.455
+REMARK INTER + INTRA:          -6.727
+REMARK INTER:                  -6.727
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.149  67.911  70.213  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.842  67.243  69.839  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.238  66.810  70.200  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.930  66.142  69.826  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      64.327  65.710  70.186  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.018  65.042  69.813  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.415  64.610  70.173  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.107  63.942  69.800  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.120  64.845  70.906  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.516  64.413  71.267  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.428  65.514  71.280  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      63.134  65.750  72.014  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      64.032  65.946  70.920  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.340  66.614  71.293  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.943  67.046  70.934  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.600      5.467      6.532
+REMARK INTER + INTRA:          -6.600
+REMARK INTER:                  -6.600
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.275  62.821  72.454  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.966  63.585  72.504  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.699  63.967  71.824  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.391  64.731  71.873  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.124  65.113  71.194  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.815  65.876  71.243  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.548  66.259  70.562  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.240  67.022  70.612  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.589  65.877  69.833  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.321  66.260  69.151  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.897  65.113  69.782  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.938  64.731  69.052  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.164  64.731  70.463  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.473  63.967  70.413  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.740  63.585  71.093  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.515      5.707      6.677
+REMARK INTER + INTRA:          -6.515
+REMARK INTER:                  -6.515
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.248  62.784  72.482  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.608  63.521  72.571  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.026  63.854  71.943  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.386  64.592  72.031  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.805  64.924  71.404  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.164  65.661  71.492  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.583  65.994  70.864  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.942  66.731  70.952  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.642  65.590  70.148  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.061  65.923  69.519  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      63.282  64.853  70.058  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      63.341  64.448  69.342  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.864  64.520  70.687  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.504  63.782  70.598  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.086  63.450  71.225  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.473      3.606      4.792
+REMARK INTER + INTRA:          -6.473
+REMARK INTER:                  -6.473
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = miglustat
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.289  65.542  69.948  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.865  64.969  70.365  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.404  64.420  69.957  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.980  63.846  70.373  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.520  63.298  69.965  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.096  62.725  70.381  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.636  62.175  69.973  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.212  61.603  70.389  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.599  62.198  69.150  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.138  61.648  68.741  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.022  62.771  68.733  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.986  62.795  67.909  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.483  63.321  69.141  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.907  63.894  68.725  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.367  64.443  69.132  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

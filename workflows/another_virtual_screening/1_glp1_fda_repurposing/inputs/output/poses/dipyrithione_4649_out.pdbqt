@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.790      0.000      0.000
+REMARK INTER + INTRA:          -8.790
+REMARK INTER:                  -8.790
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.698  62.620  65.082  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.085  62.126  64.836  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.093  61.804  64.077  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.480  61.310  63.832  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.859  61.137  64.346  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.851  61.459  65.105  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.464  61.953  65.350  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.455  62.275  66.110  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      60.833  62.102  66.625  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.826  62.424  67.384  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.204  62.251  67.898  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.196  62.573  68.658  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.809  63.067  68.904  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.430  63.239  68.389  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.439  62.918  67.630  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      62.060  63.090  67.116  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.752      1.124      3.787
+REMARK INTER + INTRA:          -8.752
+REMARK INTER:                  -8.752
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.512  62.375  67.282  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.176  62.757  67.587  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.140  63.122  68.326  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.804  63.504  68.630  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.505  63.523  68.195  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.541  63.158  67.456  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.877  62.776  67.152  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.914  62.411  66.413  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      61.615  62.430  65.978  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.651  62.065  65.239  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.352  62.084  64.804  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.388  61.719  64.065  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.724  61.336  63.760  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.023  61.318  64.195  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.987  61.682  64.934  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      60.286  61.664  65.369  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.008      3.092      4.216
+REMARK INTER + INTRA:          -8.008
+REMARK INTER:                  -8.008
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.256  64.276  68.843  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.285  63.466  68.687  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.082  63.183  67.939  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.110  62.374  67.783  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.341  61.847  68.374  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.544  62.131  69.121  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.516  62.939  69.278  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      60.718  63.223  70.026  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      60.950  62.695  70.618  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.152  62.979  71.366  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.383  62.452  71.957  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.586  62.735  72.705  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.558  63.545  72.862  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.327  64.071  72.270  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      61.124  63.788  71.522  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      60.893  64.314  70.931  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.905      2.935      5.324
+REMARK INTER + INTRA:          -7.905
+REMARK INTER:                  -7.905
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.918  64.715  71.088  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.708  64.087  71.580  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.838  64.138  72.393  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.628  63.511  72.884  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.287  62.832  72.564  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.156  62.781  71.751  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.367  63.408  71.260  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      61.236  63.357  70.446  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      60.894  62.677  70.125  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.764  62.627  69.312  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.423  61.947  68.992  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.292  61.896  68.178  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.503  62.524  67.686  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.844  63.203  68.008  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.974  63.254  68.820  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      61.315  63.933  69.141  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.615      5.269      6.887
+REMARK INTER + INTRA:          -7.615
+REMARK INTER:                  -7.615
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.710  66.999  72.076  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      65.065  67.037  71.332  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      65.656  67.593  71.185  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.011  67.631  70.442  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.776  67.113  69.845  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.185  66.556  69.993  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.830  66.519  70.735  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      64.239  65.962  70.882  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      64.003  65.442  70.285  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      63.412  64.886  70.433  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.177  64.368  69.836  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.586  63.811  69.983  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.230  63.773  70.727  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.466  64.292  71.323  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      63.057  64.848  71.176  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      63.292  65.367  71.772  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.598      5.407      5.999
+REMARK INTER + INTRA:          -7.598
+REMARK INTER:                  -7.598
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.009  64.581  69.450  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      64.119  65.245  69.926  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      64.656  65.830  69.703  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.765  66.494  70.179  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.337  66.574  70.880  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.800  65.989  71.103  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.691  65.326  70.627  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      63.153  64.740  70.851  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      62.725  64.820  71.553  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      62.188  64.235  71.776  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.761  64.316  72.477  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.223  63.730  72.701  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.114  63.066  72.224  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.542  62.987  71.523  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      62.079  63.571  71.299  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      62.506  63.492  70.599  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.494      5.002      5.959
+REMARK INTER + INTRA:          -7.494
+REMARK INTER:                  -7.494
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.343  63.051  70.081  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.265  63.251  70.878  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.646  62.937  71.324  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.568  63.137  72.119  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.108  63.651  72.471  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.727  63.965  72.025  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.805  63.766  71.230  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.425  64.081  70.784  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      62.966  64.596  71.136  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      63.584  64.910  70.690  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.125  65.425  71.042  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.744  65.739  70.596  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.823  65.539  69.799  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.282  65.025  69.449  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      63.663  64.710  69.893  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      63.122  64.196  69.543  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.340      5.937      7.409
+REMARK INTER + INTRA:          -7.340
+REMARK INTER:                  -7.340
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.514  66.590  71.572  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.999  66.930  72.119  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.099  67.716  72.346  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.585  68.056  72.893  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.969  67.611  73.213  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.869  66.824  72.986  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.383  66.484  72.439  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      62.282  65.697  72.212  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      61.666  65.251  72.532  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.566  64.464  72.304  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.950  64.019  72.625  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.849  63.231  72.397  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.364  62.891  71.850  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.980  63.338  71.530  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      62.081  64.124  71.757  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      62.696  64.570  71.437  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.330      4.829      6.358
+REMARK INTER + INTRA:          -7.330
+REMARK INTER:                  -7.330
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dipyrithione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.486  64.954  71.521  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.477  64.693  70.739  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.918  64.137  70.495  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.909  63.876  69.714  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.458  64.171  69.174  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.017  64.727  69.417  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.026  64.988  70.198  0.00  0.00    +0.000 C 
+ATOM      8  S   UNL     1      63.585  65.545  70.441  0.00  0.00    +0.000 S 
+ATOM      9  S   UNL     1      64.135  65.840  69.901  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      64.694  66.396  70.144  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.243  66.691  69.604  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.802  67.247  69.847  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.811  67.509  70.629  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.261  67.213  71.169  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      64.703  66.657  70.927  0.00  0.00    +0.000 N 
+ATOM     16  O   UNL     1      64.154  66.362  71.466  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

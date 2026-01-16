@@ -1,0 +1,171 @@
+MODEL 1
+REMARK VINA RESULT:    -3.777      0.000      0.000
+REMARK INTER + INTRA:          -3.777
+REMARK INTER:                  -3.777
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      62.302  62.096  65.001  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      62.004  61.742  64.318  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      62.458  61.726  63.631  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      61.250  61.405  64.324  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      60.951  61.051  63.641  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      60.796  61.422  65.013  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -3.616      1.513      1.886
+REMARK INTER + INTRA:          -3.616
+REMARK INTER:                  -3.616
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      60.964  61.232  64.503  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      61.466  61.732  64.925  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      61.274  61.955  65.695  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      62.161  62.010  64.577  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      62.663  62.510  64.999  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      62.353  61.787  63.806  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -3.169      9.564      9.783
+REMARK INTER + INTRA:          -3.169
+REMARK INTER:                  -3.169
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      66.158  67.609  70.004  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      65.792  67.178  70.604  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      65.010  66.932  70.519  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      66.211  66.992  71.291  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      65.845  66.559  71.893  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      66.993  67.238  71.377  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -3.143     16.945     17.184
+REMARK INTER + INTRA:          -3.143
+REMARK INTER:                  -3.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      57.604  75.718  72.438  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      58.412  75.886  72.442  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      58.945  75.358  72.100  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      58.686  76.583  72.789  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      59.494  76.751  72.793  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      58.153  77.111  73.131  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.076     24.659     24.869
+REMARK INTER + INTRA:          -3.076
+REMARK INTER:                  -3.076
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      71.708  78.862  48.251  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      71.086  79.063  48.754  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      70.821  79.843  48.792  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      70.729  78.483  49.220  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      70.106  78.684  49.724  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      70.994  77.703  49.183  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -2.869      4.994      5.428
+REMARK INTER + INTRA:          -2.869
+REMARK INTER:                  -2.869
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      60.517  62.016  68.423  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      60.724  62.537  69.028  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      61.079  63.258  68.848  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      60.574  62.336  69.815  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      60.781  62.857  70.421  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      60.218  61.614  69.995  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -2.773     10.903     11.172
+REMARK INTER + INTRA:          -2.773
+REMARK INTER:                  -2.773
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      63.166  59.065  54.442  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      63.540  59.643  53.987  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      63.528  60.430  54.229  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      63.925  59.431  53.288  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      64.300  60.009  52.832  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      63.937  58.643  53.046  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -2.747     18.522     18.759
+REMARK INTER + INTRA:          -2.747
+REMARK INTER:                  -2.747
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      76.601  67.344  56.476  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      77.349  67.689  56.519  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      78.019  67.246  56.332  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      77.427  68.478  56.749  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      78.176  68.823  56.792  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      76.757  68.921  56.936  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -2.742     11.032     11.278
+REMARK INTER + INTRA:          -2.742
+REMARK INTER:                  -2.742
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      63.489  67.351  54.823  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      63.084  68.059  54.947  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      63.019  68.609  54.337  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      62.743  68.215  55.683  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      62.337  68.924  55.807  0.00  0.00    +0.000 OA
+ATOM      6  OXT ALA A   1      62.808  67.664  56.293  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

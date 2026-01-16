@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.914      0.000      0.000
+REMARK INTER + INTRA:          -8.914
+REMARK INTER:                  -8.914
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.144  63.240  68.436  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.989  62.831  67.738  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.589  62.720  67.182  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.366  62.986  67.249  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.682  63.409  67.883  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.774  62.754  66.570  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.248  62.345  66.084  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.515  62.324  66.462  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.830  61.968  66.170  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.425  62.015  65.348  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.187  62.080  65.039  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.363  61.750  64.303  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.776  61.354  63.878  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.015  61.289  64.187  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.839  61.620  64.923  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.421      1.273      3.430
+REMARK INTER + INTRA:          -8.421
+REMARK INTER:                  -8.421
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.427  61.548  63.471  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.434  61.950  64.191  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.774  61.920  64.687  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.074  61.514  64.536  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.907  61.065  63.864  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.566  61.635  65.176  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.955  62.116  65.722  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.702  62.293  65.419  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.275  62.760  65.786  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.650  62.375  66.443  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.890  62.152  66.673  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.584  62.412  67.395  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.041  62.894  67.886  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.800  63.116  67.655  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.105  62.857  66.934  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.812      1.529      2.403
+REMARK INTER + INTRA:          -7.812
+REMARK INTER:                  -7.812
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.883  64.311  69.606  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.952  63.912  68.888  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.279  63.608  68.518  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.506  63.663  68.799  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.268  64.029  69.498  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.011  63.286  68.256  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.479  62.999  67.640  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.264  63.198  67.802  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.916  63.019  67.330  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.210  62.585  66.979  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.406  62.425  66.892  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.137  62.011  66.231  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.673  61.758  65.657  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.477  61.918  65.744  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.746  62.332  66.406  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.786      5.443      6.385
+REMARK INTER + INTRA:          -7.786
+REMARK INTER:                  -7.786
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.692  66.095  73.221  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.248  65.490  73.151  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.114  64.864  72.630  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      59.453  64.769  72.147  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      58.810  65.283  72.097  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      59.548  64.069  71.719  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.268  63.732  71.940  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.618  64.223  72.503  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.345  64.095  72.873  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.583  63.027  71.647  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.167  62.593  71.083  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.482  61.888  70.791  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.212  61.618  71.065  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.627  62.052  71.629  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.312  62.758  71.921  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.764      2.965      5.435
+REMARK INTER + INTRA:          -7.764
+REMARK INTER:                  -7.764
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.166  62.303  67.949  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.438  62.006  68.668  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.536  62.512  69.313  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.386  63.322  69.320  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.110  63.771  68.685  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.559  63.607  70.075  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.816  62.972  70.534  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.803  62.294  70.063  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.018  61.534  70.301  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.048  63.008  71.326  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.032  63.728  71.727  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.263  63.764  72.519  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.510  63.078  72.908  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.524  62.359  72.506  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.293  62.323  71.714  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.684      5.360      6.910
+REMARK INTER + INTRA:          -7.684
+REMARK INTER:                  -7.684
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.349  63.872  70.650  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.768  64.461  71.048  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.336  64.906  70.646  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.542  64.825  69.853  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.219  64.285  69.319  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      64.130  65.379  69.685  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.287  65.802  70.375  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.795  65.510  70.970  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.769  65.775  71.751  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.838  66.411  70.457  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.292  66.645  69.810  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.844  67.254  69.891  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.939  67.628  70.621  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.485  67.394  71.267  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.933  66.785  71.186  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.394      5.528      6.363
+REMARK INTER + INTRA:          -7.394
+REMARK INTER:                  -7.394
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.157  66.156  69.783  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.795  65.417  69.830  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.346  65.218  70.494  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.212  65.700  71.149  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.502  66.465  71.258  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      62.736  65.282  71.679  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.577  64.542  71.350  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.954  64.503  70.617  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.941  63.860  70.100  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.120  63.947  71.694  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.776  64.067  72.434  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.320  63.472  72.778  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.208  62.756  72.381  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.553  62.637  71.642  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.009  63.233  71.298  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.329      4.308      5.684
+REMARK INTER + INTRA:          -7.329
+REMARK INTER:                  -7.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.681  65.669  69.151  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.937  65.498  69.915  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.230  64.747  70.095  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.299  64.116  69.569  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.088  64.123  68.771  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.617  63.476  69.981  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.744  63.711  70.761  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.505  64.498  70.832  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.536  64.954  71.519  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.056  63.243  71.365  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.271  62.462  71.210  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.583  61.993  71.814  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.679  62.307  72.572  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.463  63.088  72.725  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.151  63.556  72.121  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.202      5.542      6.900
+REMARK INTER + INTRA:          -7.202
+REMARK INTER:                  -7.202
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethotoin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.105  67.659  70.199  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.696  67.013  69.891  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.122  66.632  70.346  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      64.899  66.835  71.113  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.211  67.453  71.562  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      64.310  66.310  71.354  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.168  65.784  70.735  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.670  65.983  70.111  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.713  65.599  69.382  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.620  65.166  70.739  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.154  65.033  71.406  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.606  64.416  71.410  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.526  63.932  70.746  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.992  64.065  70.079  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.540  64.683  70.075  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

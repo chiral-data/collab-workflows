@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.504      0.000      0.000
+REMARK INTER + INTRA:          -7.504
+REMARK INTER:                  -7.504
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.382  61.995  64.113  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.357  62.301  64.879  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.654  62.278  65.310  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.629  62.584  66.075  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      60.927  62.561  66.506  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.419  62.926  67.057  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.677  62.204  65.806  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.895  61.950  65.727  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.364  62.054  66.349  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.613  62.411  67.050  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.395  62.665  67.128  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.644  63.022  67.830  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.425  63.275  67.908  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      61.675  63.632  68.608  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.303      0.655      2.605
+REMARK INTER + INTRA:          -7.303
+REMARK INTER:                  -7.303
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.327  63.791  68.988  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.631  63.506  68.276  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.135  63.123  67.740  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.438  62.837  67.029  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      60.943  62.454  66.493  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.656  62.414  66.080  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.401  62.627  67.090  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.611  62.403  67.009  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.363  62.007  66.330  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.904  61.833  65.732  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.694  62.057  65.813  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.236  61.884  65.215  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.025  62.107  65.296  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      62.567  61.934  64.699  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.052      1.853      2.549
+REMARK INTER + INTRA:          -7.052
+REMARK INTER:                  -7.052
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.020  60.253  62.511  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.624  60.514  63.187  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.020  60.975  63.745  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.624  61.235  64.420  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      61.018  61.696  64.977  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      60.275  61.650  65.332  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.625  61.582  64.430  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.369  61.914  64.564  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.506  62.359  65.244  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.899  62.473  65.792  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.156  62.141  65.659  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.548  62.255  66.207  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.806  61.924  66.073  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      59.199  62.037  66.620  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.908      2.180      2.909
+REMARK INTER + INTRA:          -6.908
+REMARK INTER:                  -6.908
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.314  62.212  66.110  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      59.421  62.000  66.901  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.954  62.417  67.372  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.060  62.205  68.162  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      60.594  62.621  68.632  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      60.318  62.072  69.182  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.684  63.027  67.920  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.213  63.659  67.869  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.651  63.884  68.530  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.561  63.479  69.243  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.032  62.847  69.294  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.941  62.441  70.008  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.413  61.811  70.059  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      60.323  61.405  70.771  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.781      2.053      3.625
+REMARK INTER + INTRA:          -6.781
+REMARK INTER:                  -6.781
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.576  61.613  71.020  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.267  61.615  70.254  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.600  62.099  69.676  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.291  62.101  68.911  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      60.623  62.584  68.333  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      60.025  62.227  67.892  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.106  62.775  68.974  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.715  63.325  68.883  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.839  63.685  68.152  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.356  63.495  67.510  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.748  62.945  67.601  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.265  62.755  66.959  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.657  62.205  67.049  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      59.174  62.015  66.409  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.532      1.784      3.315
+REMARK INTER + INTRA:          -6.532
+REMARK INTER:                  -6.532
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.905  64.820  70.092  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.721  64.536  69.340  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.166  63.933  69.251  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.982  63.648  68.499  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      61.427  63.046  68.410  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.630  63.169  67.620  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      61.416  63.130  69.230  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.920  62.655  69.688  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.435  62.096  69.325  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.446  62.010  68.504  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.942  62.485  68.047  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.953  62.400  67.225  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.448  62.875  66.769  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      61.459  62.790  65.948  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.474      1.735      2.294
+REMARK INTER + INTRA:          -6.474
+REMARK INTER:                  -6.474
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.006  62.209  65.761  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.288  62.764  66.303  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.134  62.670  67.108  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.416  63.225  67.649  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      61.262  63.132  68.453  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.697  63.832  68.473  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.880  62.463  68.156  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.496  61.945  68.670  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.493  62.094  69.481  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.875  62.763  69.779  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.259  63.281  69.265  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.641  63.950  69.563  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.025  64.468  69.050  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      62.407  65.136  69.347  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.373      6.065      6.725
+REMARK INTER + INTRA:          -6.373
+REMARK INTER:                  -6.373
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      66.495  67.690  69.797  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      65.886  67.558  70.340  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.410  66.888  70.270  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.802  66.757  70.812  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      64.326  66.088  70.742  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      63.988  66.434  71.410  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      64.829  65.972  70.099  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.738  65.308  69.618  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.145  64.760  69.780  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.641  64.874  70.424  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.732  65.538  70.905  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.228  65.653  71.549  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.319  66.316  72.030  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      62.816  66.431  72.674  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.338      3.615      4.609
+REMARK INTER + INTRA:          -6.338
+REMARK INTER:                  -6.338
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ifosfamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.306  61.998  68.333  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.566  61.994  69.117  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.487  62.671  69.581  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.747  62.667  70.363  0.00  0.00    +0.000 NA
+ATOM      5  P   UNL     1      60.669  63.343  70.827  0.00  0.00    +0.000 P 
+ATOM      6  O   UNL     1      61.023  62.837  71.374  0.00  0.00    +0.000 OA
+ATOM      7  O   UNL     1      60.342  63.616  70.121  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.059  64.389  70.068  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.104  64.890  70.721  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.430  64.618  71.429  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.713  63.845  71.482  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.040  63.572  72.189  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.322  62.800  72.242  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      61.649  62.527  72.949  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

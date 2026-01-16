@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -4.831      0.000      0.000
+REMARK INTER + INTRA:          -4.831
+REMARK INTER:                  -4.831
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.674  62.754  66.561  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.292  62.249  66.031  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.576  61.897  66.241  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.626  62.096  65.292  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.309  61.606  64.709  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.603  61.183  64.762  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      61.823  61.614  64.064  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.457  62.109  64.248  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.336  62.407  65.007  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.662      0.883      1.703
+REMARK INTER + INTRA:          -4.662
+REMARK INTER:                  -4.662
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.896  60.920  63.861  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.791  61.290  64.591  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.086  61.189  65.007  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.392  61.761  64.905  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.367  62.163  65.624  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.737  62.166  66.157  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      62.082  62.563  65.717  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.550  62.407  65.055  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.123  61.912  64.553  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.244      1.420      1.898
+REMARK INTER + INTRA:          -4.244
+REMARK INTER:                  -4.244
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.595  63.409  67.978  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.945  63.096  67.576  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.189  63.165  67.898  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.053  62.715  66.852  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.460  62.378  66.389  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.654  62.361  66.569  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.813  62.059  65.715  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.624  62.200  65.762  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.773  62.606  66.464  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.058      8.235      8.909
+REMARK INTER + INTRA:          -4.058
+REMARK INTER:                  -4.058
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.314  67.670  69.828  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.317  67.339  70.585  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      67.001  67.370  71.045  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.637  66.977  70.880  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.558  66.625  71.621  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      66.146  66.572  72.198  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      64.789  66.335  71.685  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.392  66.508  70.983  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      64.916  66.905  70.485  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.025      3.527      4.221
+REMARK INTER + INTRA:          -4.025
+REMARK INTER:                  -4.025
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.648  64.089  69.053  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.272  63.469  68.658  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.222  63.474  67.835  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.946  62.844  69.088  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.556  62.190  68.771  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.423  62.045  67.970  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.322  61.706  69.397  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.567  62.061  70.100  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.953  62.764  69.909  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.004      6.595      7.480
+REMARK INTER + INTRA:          -4.004
+REMARK INTER:                  -4.004
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.790  67.238  68.802  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.657  66.680  69.396  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.578  65.883  69.201  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.602  66.920  70.183  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.470  66.429  70.832  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.370  65.610  70.807  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      59.456  66.899  71.509  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.579  67.682  71.279  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.669  67.695  70.459  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.922      6.651      7.403
+REMARK INTER + INTRA:          -3.922
+REMARK INTER:                  -3.922
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.570  64.922  71.389  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.469  65.742  71.373  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.350  66.156  72.076  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.487  66.146  70.654  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.395  66.959  70.552  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.269  67.512  71.152  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      59.451  67.123  69.746  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.579  66.411  69.349  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.601  65.807  69.910  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.904     24.790     25.387
+REMARK INTER + INTRA:          -3.904
+REMARK INTER:                  -3.904
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      72.639  80.026  49.393  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      72.167  79.391  49.155  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      72.454  78.848  48.605  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.409  79.301  49.468  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.877  78.699  49.284  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      71.009  78.080  48.755  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      70.189  78.824  49.722  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      70.296  79.503  50.177  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      71.050  79.799  50.020  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.876      7.085      8.056
+REMARK INTER + INTRA:          -3.876
+REMARK INTER:                  -3.876
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orazamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.688  65.062  70.014  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.708  65.600  70.639  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.328  65.421  71.349  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.107  66.317  70.554  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.173  66.906  71.127  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.853  66.882  71.887  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      65.617  67.524  70.807  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      65.824  67.316  70.036  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      65.509  66.571  69.879  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.715      0.000      0.000
+REMARK INTER + INTRA:          -9.715
+REMARK INTER:                  -9.715
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.000  62.782  66.229  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.393  62.365  65.859  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.648  62.319  66.212  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.512  62.690  66.936  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.119  63.107  67.306  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.767  62.645  67.289  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.159  62.227  66.918  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.297  61.856  66.194  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.041  61.902  65.841  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.178  61.531  65.117  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.922  61.576  64.764  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.058  61.205  64.041  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.803  61.251  63.687  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.410  61.668  64.058  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.273  62.040  64.783  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.529  61.993  65.135  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.606      0.699      2.763
+REMARK INTER + INTRA:          -9.606
+REMARK INTER:                  -9.606
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.977  62.768  66.312  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.370  62.367  65.926  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.511  62.007  65.197  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.261  62.048  64.855  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.868  62.449  65.241  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.402  61.688  64.126  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.794  61.286  63.739  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.044  61.245  64.082  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.903  61.605  64.810  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.153  61.564  65.153  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.012  61.924  65.881  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.263  61.883  66.223  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.121  62.243  66.952  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.729  62.645  67.338  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.479  62.686  66.996  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.620  62.326  66.267  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.326      3.896      5.582
+REMARK INTER + INTRA:          -8.326
+REMARK INTER:                  -8.326
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.933  64.208  69.996  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.522  63.563  70.303  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.161  63.023  69.793  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.213  63.129  68.977  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.624  63.774  68.670  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.852  62.588  68.467  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.441  61.943  68.775  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.390  61.837  69.592  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.750  62.377  70.101  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.699  62.272  70.918  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.059  62.811  71.426  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.008  62.706  72.242  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.369  63.246  72.752  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.780  63.891  72.445  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.831  63.997  71.627  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.471  63.457  71.119  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.276      5.778      6.629
+REMARK INTER + INTRA:          -8.276
+REMARK INTER:                  -8.276
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.899  63.797  72.583  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.172  63.638  72.228  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.554  64.182  72.289  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.665  64.886  72.705  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.391  65.045  73.060  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.047  65.430  72.766  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.320  65.270  72.411  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.211  64.566  71.995  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.827  64.022  71.934  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.718  63.318  71.518  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.334  62.774  71.457  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.225  62.071  71.041  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.842  61.526  70.980  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.569  61.686  71.335  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.679  62.391  71.752  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.062  62.934  71.812  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.231      4.119      5.363
+REMARK INTER + INTRA:          -8.231
+REMARK INTER:                  -8.231
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.933  64.210  70.033  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.550  63.561  70.367  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.549  63.459  71.186  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.931  64.007  71.670  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.314  64.656  71.336  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.930  63.905  72.489  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.547  63.255  72.824  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.165  62.708  72.338  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.166  62.809  71.520  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.785  62.262  71.035  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.786  62.363  70.217  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.404  61.816  69.733  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.405  61.917  68.914  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.788  62.567  68.580  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.170  63.116  69.065  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.168  63.013  69.883  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.166      6.234      7.396
+REMARK INTER + INTRA:          -8.166
+REMARK INTER:                  -8.166
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.560  65.300  69.349  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.392  65.638  70.081  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.794  65.322  70.555  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.365  64.668  70.295  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.532  64.330  69.562  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.767  64.352  70.768  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.599  64.691  71.502  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.029  65.345  71.761  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.626  65.661  71.288  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      64.057  66.316  71.548  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.654  66.631  71.075  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.083  67.285  71.335  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.681  67.601  70.862  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.849  67.263  70.129  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.419  66.608  69.868  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.821  66.292  70.342  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.128      1.463      3.094
+REMARK INTER + INTRA:          -8.128
+REMARK INTER:                  -8.128
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.997  62.740  66.692  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.226  62.781  66.978  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.610  62.427  66.558  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.767  62.032  65.851  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.539  61.990  65.565  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.151  61.677  65.431  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.379  61.719  65.717  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.222  62.115  66.424  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.837  62.469  66.844  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.680  62.864  67.551  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.295  63.218  67.971  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.138  63.614  68.677  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.753  63.968  69.098  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.526  63.926  68.811  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.683  63.530  68.104  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.068  63.177  67.684  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.995      5.777      6.837
+REMARK INTER + INTRA:          -7.995
+REMARK INTER:                  -7.995
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.385  65.379  72.345  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.454  64.783  71.780  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.968  64.877  71.140  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.413  65.568  71.068  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.344  66.164  71.633  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.927  65.662  70.429  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.995  65.065  69.863  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.550  64.374  69.937  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.036  64.280  70.575  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.591  63.590  70.648  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.077  63.495  71.286  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.633  62.805  71.359  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.119  62.710  71.998  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.050  63.307  72.564  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.496  63.998  72.491  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.009  64.092  71.852  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.883      5.866      6.566
+REMARK INTER + INTRA:          -7.883
+REMARK INTER:                  -7.883
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = velnacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.844  65.859  72.077  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.834  65.196  71.588  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.332  64.564  71.760  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.840  64.596  72.422  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.850  65.260  72.911  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.338  63.964  72.594  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.328  63.300  72.105  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.820  63.268  71.443  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.322  63.900  71.271  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.814  63.868  70.609  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.315  64.499  70.437  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.807  64.467  69.776  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.309  65.099  69.603  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.319  65.763  70.093  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.827  65.795  70.755  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.325  65.163  70.927  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

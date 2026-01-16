@@ -1,0 +1,192 @@
+MODEL 1
+REMARK VINA RESULT:    -6.800      0.000      0.000
+REMARK INTER + INTRA:          -6.800
+REMARK INTER:                  -6.800
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.494  61.634  63.447  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.060  61.723  64.142  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.357  62.185  64.757  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.923  62.275  65.453  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.192  61.903  65.534  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.891  62.090  66.278  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.436  62.579  66.658  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.357  62.898  67.415  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.074  62.693  66.148  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.894  61.440  64.919  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.328  61.350  64.223  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.433      1.968      2.657
+REMARK INTER + INTRA:          -6.433
+REMARK INTER:                  -6.433
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.515  61.978  66.377  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.232  62.063  65.980  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.362  61.662  65.271  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.080  61.747  64.874  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.669  62.233  65.187  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.316  62.209  64.676  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.128  61.709  64.048  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.617  61.526  63.410  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.364  61.423  64.171  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.540  62.634  65.896  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.821  62.549  66.293  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.243     17.392     17.786
+REMARK INTER + INTRA:          -6.243
+REMARK INTER:                  -6.243
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      65.929  76.307  60.444  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      65.986  77.047  60.086  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.315  77.405  59.768  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.373  78.146  59.410  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      66.102  78.530  59.370  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      65.991  79.251  58.987  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.193  79.314  58.789  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      64.838  79.949  58.399  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      64.811  78.631  59.051  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      66.774  78.171  59.689  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.716  77.431  60.046  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.868      6.593      7.612
+REMARK INTER + INTRA:          -5.868
+REMARK INTER:                  -5.868
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      66.094  67.963  70.135  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      65.739  67.256  70.366  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.369  66.778  69.806  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.013  66.070  70.037  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.029  65.840  70.829  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      64.635  65.119  70.894  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.376  64.902  70.141  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.957  64.217  69.951  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      64.610  65.490  69.613  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      65.400  66.319  71.391  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.755  67.026  71.159  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.814      2.089      2.622
+REMARK INTER + INTRA:          -5.814
+REMARK INTER:                  -5.814
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.112  61.999  66.203  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      59.838  62.259  66.496  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.867  62.707  67.187  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.593  62.968  67.480  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.290  62.779  67.081  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.920  63.110  67.497  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.613  63.503  68.154  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.049  63.912  68.723  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.793  63.415  68.143  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.261  62.330  66.388  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.535  62.071  66.096  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.657     24.516     24.934
+REMARK INTER + INTRA:          -5.657
+REMARK INTER:                  -5.657
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      72.597  79.157  48.693  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      71.850  79.062  49.027  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.560  79.622  49.557  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      70.811  79.526  49.891  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.353  78.869  49.693  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      69.641  78.921  50.107  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      69.659  79.610  50.560  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      69.059  79.878  51.059  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      70.382  79.983  50.426  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      70.643  78.308  49.162  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.391  78.405  48.829  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.632      5.635      6.699
+REMARK INTER + INTRA:          -5.632
+REMARK INTER:                  -5.632
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.941  64.252  72.946  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.989  63.589  72.458  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.550  63.558  71.761  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.597  62.895  71.272  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.084  62.263  71.481  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.019  61.687  70.895  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.492  61.963  70.323  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.266  61.562  69.638  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.232  62.709  70.556  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.523  62.294  72.179  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.475  62.957  72.667  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.614      6.558      7.057
+REMARK INTER + INTRA:          -5.614
+REMARK INTER:                  -5.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorzoxazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.599  61.680  71.573  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.270  62.390  71.832  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.635  62.723  71.425  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.305  63.434  71.684  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.612  63.812  72.349  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.177  64.502  72.474  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.602  64.550  71.885  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.045  65.152  71.800  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      59.681  63.890  71.397  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.249  63.480  72.757  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.577  62.769  72.497  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

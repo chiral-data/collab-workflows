@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.464      0.000      0.000
+REMARK INTER + INTRA:          -8.464
+REMARK INTER:                  -8.464
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.989  62.033  66.708  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.780  62.254  66.618  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.200  62.021  65.948  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.989  62.241  65.858  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.409  62.009  65.189  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.996  62.432  65.584  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.831  62.784  66.312  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.677  61.666  65.024  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.054  61.752  65.558  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.569  61.237  64.328  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.192  61.152  63.795  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.083  60.723  63.098  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.925  61.494  63.958  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      62.034  61.923  64.655  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.767  62.266  64.819  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.456      1.198      2.472
+REMARK INTER + INTRA:          -8.456
+REMARK INTER:                  -8.456
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.810  60.578  63.165  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.305  60.988  63.683  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.996  61.319  64.373  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.490  61.729  64.890  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.183  62.059  65.580  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.973  62.281  65.657  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.520  62.067  65.076  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.498  61.723  65.265  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.533  61.316  64.548  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      59.781  61.794  65.665  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.748  62.201  66.381  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.029  62.273  66.783  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.431  62.538  66.698  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.149  62.467  66.297  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.834  62.803  66.613  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.336      1.839      3.272
+REMARK INTER + INTRA:          -8.336
+REMARK INTER:                  -8.336
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.372  61.923  64.305  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.619  61.859  64.638  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.474  62.162  65.391  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.723  62.098  65.724  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.578  62.400  66.476  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.830  62.103  66.296  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.697  61.733  65.570  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.376  62.593  66.396  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.780  62.393  65.706  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.769  62.984  67.007  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.365  63.184  67.697  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.759  63.576  68.308  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.566  62.991  67.778  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.173  62.600  67.168  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.374  62.407  67.248  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.134      1.212      2.065
+REMARK INTER + INTRA:          -8.134
+REMARK INTER:                  -8.134
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.970  63.645  68.313  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.477  63.214  67.811  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.785  62.864  67.131  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.292  62.434  66.629  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.600  62.084  65.949  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.811  61.853  65.883  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.265  62.081  66.458  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.283  62.435  66.251  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.248  62.865  66.954  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.999  62.357  65.849  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.033  61.927  65.147  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.751  61.848  64.745  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.351  61.575  64.844  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.634  61.653  65.245  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.951  61.301  64.943  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.646      4.743      5.625
+REMARK INTER + INTRA:          -7.646
+REMARK INTER:                  -7.646
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.633  63.221  72.863  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.255  62.744  72.305  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.315  62.922  71.502  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.937  62.446  70.945  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.997  62.623  70.142  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.523  61.949  70.103  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.306  61.558  70.797  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.450  63.236  70.458  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.554  63.292  71.274  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.798  63.793  69.958  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.693  63.736  69.142  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.041  64.293  68.642  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.240  63.124  68.825  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.892  62.567  69.325  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.438  61.954  69.008  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.542      5.629      6.442
+REMARK INTER + INTRA:          -7.542
+REMARK INTER:                  -7.542
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.348  65.006  72.121  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.942  64.482  72.353  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.157  63.858  71.859  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.751  63.334  72.090  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.966  62.710  71.597  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.481  62.577  72.227  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.471  63.081  72.881  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.376  63.059  71.138  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.982  63.729  71.413  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.181  62.738  70.403  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.575  62.068  70.128  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.379  61.746  69.393  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.165  61.718  70.587  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.361  62.039  71.321  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.951  61.690  71.781  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.532      6.316      7.313
+REMARK INTER + INTRA:          -7.532
+REMARK INTER:                  -7.532
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.488  61.568  70.543  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.819  61.966  71.186  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.599  62.745  71.347  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.930  63.142  71.989  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.711  63.919  72.151  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.251  63.794  72.762  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.632  63.065  72.832  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.247  63.776  71.484  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.280  63.041  71.111  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      59.751  64.366  71.191  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.719  65.100  71.565  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.223  65.692  71.271  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.183  65.245  72.232  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.679  64.655  72.525  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.143  64.799  73.192  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.413      4.831      5.815
+REMARK INTER + INTRA:          -7.413
+REMARK INTER:                  -7.413
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.533  62.139  67.975  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.451  61.997  68.784  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.888  62.439  69.327  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.806  62.297  70.135  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.242  62.738  70.678  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.825  62.249  71.195  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.295  61.690  70.896  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.509  63.074  69.973  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.216  62.802  69.251  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      62.066  63.682  69.991  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.358  63.953  70.712  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.916  64.561  70.730  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      62.092  63.617  71.418  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.534  63.010  71.400  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.268  62.673  72.106  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.040     25.214     26.054
+REMARK INTER + INTRA:          -7.040
+REMARK INTER:                  -7.040
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.608  80.180  51.104  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.886  79.632  50.552  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.574  79.789  50.125  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.851  79.242  49.574  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.538  79.399  49.147  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.344  78.660  48.836  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.670  78.265  49.104  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.495  80.083  49.605  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      70.875  80.183  50.139  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      72.072  80.668  49.528  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      72.692  80.568  48.994  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      73.269  81.154  48.917  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      72.736  79.884  48.535  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      72.159  79.299  48.612  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      72.202  78.614  48.153  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

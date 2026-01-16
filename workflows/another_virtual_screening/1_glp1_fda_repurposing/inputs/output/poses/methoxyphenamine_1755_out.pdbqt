@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.555      0.000      0.000
+REMARK INTER + INTRA:          -7.555
+REMARK INTER:                  -7.555
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.532  62.782  68.152  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.353  62.404  67.441  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.912  62.383  66.834  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.649  62.739  66.939  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.734  62.005  66.122  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.292  61.983  65.516  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.115  61.606  64.804  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.378  61.250  64.700  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.820  61.271  65.306  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.673  61.584  64.198  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.409  61.940  64.303  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.588  62.318  65.014  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.029  62.340  65.621  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.505      1.492      3.035
+REMARK INTER + INTRA:          -7.505
+REMARK INTER:                  -7.505
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.351  61.367  63.492  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.266  61.751  64.217  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.542  61.731  64.612  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.903  61.326  64.282  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.457  62.115  65.338  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.734  62.094  65.733  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.648  62.478  66.458  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.287  62.881  66.788  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.010  62.902  66.393  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.924  62.457  66.853  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.286  62.053  66.523  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.370  61.669  65.797  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.094  61.690  65.402  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.875      4.848      6.240
+REMARK INTER + INTRA:          -6.875
+REMARK INTER:                  -6.875
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.415  65.327  71.446  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.677  64.615  71.122  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.157  64.111  71.566  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.375  64.320  72.334  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.419  63.399  71.242  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.898  62.896  71.686  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.161  62.184  71.362  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.943  61.976  70.595  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.464  62.478  70.151  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.640  61.680  71.807  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.857  61.889  72.574  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.596  62.601  72.898  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.116  63.105  72.454  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.837      6.380      7.643
+REMARK INTER + INTRA:          -6.837
+REMARK INTER:                  -6.837
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.133  64.414  69.599  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.293  64.939  70.216  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.912  65.480  70.147  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.372  65.496  69.462  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.072  66.005  70.764  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.691  66.545  70.695  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.851  67.070  71.311  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      64.391  67.054  71.995  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.773  66.514  72.064  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.470  67.611  71.242  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.929  67.626  70.557  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.770  67.102  69.941  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.151  66.561  70.010  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.771      2.675      4.859
+REMARK INTER + INTRA:          -6.771
+REMARK INTER:                  -6.771
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.646  62.802  66.952  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.620  63.223  67.662  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.591  62.819  68.380  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.589  61.993  68.389  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.565  63.239  69.090  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.536  62.835  69.808  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.510  63.255  70.517  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.513  64.079  70.508  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.541  64.484  69.790  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.481  62.850  71.236  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.479  62.026  71.244  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.505  61.605  70.535  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.534  62.009  69.817  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.739      6.562      7.733
+REMARK INTER + INTRA:          -6.739
+REMARK INTER:                  -6.739
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.616  66.299  72.641  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.944  66.163  71.896  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.648  66.535  71.682  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.025  67.043  72.213  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.977  66.400  70.937  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.681  66.771  70.723  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.009  66.636  69.979  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      64.632  66.129  69.449  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.929  65.758  69.662  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.714  67.008  69.765  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.090  67.515  70.295  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.762  67.650  71.040  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.058  67.279  71.254  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.637      5.639      6.868
+REMARK INTER + INTRA:          -6.637
+REMARK INTER:                  -6.637
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.751  66.813  72.286  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.757  66.143  71.805  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.386  65.451  72.057  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.007  65.429  72.790  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.392  64.780  71.575  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.021  64.089  71.827  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.027  63.418  71.346  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.405  63.441  70.614  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.776  64.132  70.362  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.655  62.726  71.598  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.277  62.704  72.331  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.271  63.374  72.812  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.642  64.066  72.561  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.622      4.188      5.318
+REMARK INTER + INTRA:          -6.622
+REMARK INTER:                  -6.622
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.162  64.912  72.710  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.207  64.803  71.893  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.264  64.042  71.582  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.275  63.389  72.087  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.309  63.932  70.764  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.366  63.171  70.454  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.411  63.060  69.637  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.400  63.713  69.133  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.343  64.474  69.444  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.468  62.298  69.326  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.479  61.647  69.831  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.434  61.756  70.648  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.377  62.518  70.959  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.618      6.804      7.374
+REMARK INTER + INTRA:          -6.618
+REMARK INTER:                  -6.618
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxyphenamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.443  67.197  72.956  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.900  66.623  72.717  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.128  65.832  72.675  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.900  65.614  72.872  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.585  65.257  72.437  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.813  64.467  72.395  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.271  63.892  72.157  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      59.500  64.111  71.960  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.272  64.901  72.002  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.500  63.101  72.115  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.270  62.883  72.311  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.814  63.457  72.550  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.585  64.249  72.591  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

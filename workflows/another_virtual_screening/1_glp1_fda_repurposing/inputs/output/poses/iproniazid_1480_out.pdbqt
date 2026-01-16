@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.425      0.000      0.000
+REMARK INTER + INTRA:          -7.425
+REMARK INTER:                  -7.425
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.109  63.029  68.034  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.169  62.645  67.306  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.538  62.195  67.024  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.860  62.710  66.862  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.920  62.326  66.134  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.612  62.391  65.689  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.243  62.841  65.971  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.671  62.007  64.962  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.363  62.073  64.516  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.423  61.688  63.789  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.792  61.239  63.507  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.101  61.173  63.951  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.041  61.558  64.680  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.980      1.198      3.549
+REMARK INTER + INTRA:          -6.980
+REMARK INTER:                  -6.980
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.657  61.212  63.528  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.701  61.606  64.252  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.405  61.966  64.484  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.039  61.639  64.743  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.083  62.033  65.466  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.421  62.067  65.958  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.716  61.706  65.726  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.465  62.461  66.682  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.802  62.494  67.174  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.846  62.888  67.897  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.551  63.248  68.129  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.212  63.215  67.638  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.169  62.820  66.914  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.569      3.294      4.808
+REMARK INTER + INTRA:          -6.569
+REMARK INTER:                  -6.569
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.530  62.875  72.835  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.530  63.053  72.028  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.928  63.719  71.753  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.129  62.563  71.499  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.129  62.741  70.694  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.728  62.250  70.164  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.329  61.583  70.439  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.728  62.429  69.358  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.327  61.938  68.828  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.327  62.116  68.023  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      60.725  62.783  67.747  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.126  63.273  68.276  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.126  63.095  69.083  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.561      5.825      7.245
+REMARK INTER + INTRA:          -6.561
+REMARK INTER:                  -6.561
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.382  67.667  69.893  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.784  67.239  70.269  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.532  67.460  71.022  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      65.440  66.592  69.891  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      64.843  66.166  70.268  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.498  65.518  69.889  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.751  65.297  69.136  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.901  65.091  70.266  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.556  64.443  69.888  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.959  64.016  70.264  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      62.707  64.237  71.017  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.051  64.884  71.395  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.649  65.311  71.019  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.197      5.998      7.386
+REMARK INTER + INTRA:          -6.197
+REMARK INTER:                  -6.197
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.353  63.756  70.669  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.803  64.396  70.933  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.675  64.708  71.685  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.381  64.723  70.443  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      63.830  65.362  70.706  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.408  65.690  70.216  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.536  65.377  69.464  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.857  66.329  70.480  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.436  66.657  69.990  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.885  67.296  70.253  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      65.757  67.608  71.005  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      65.180  67.282  71.495  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.730  66.641  71.232  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.190      6.097      7.532
+REMARK INTER + INTRA:          -6.190
+REMARK INTER:                  -6.190
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.622  61.476  71.356  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.050  62.069  71.416  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.352  62.013  70.981  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.178  62.716  71.911  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.607  63.308  71.970  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.735  63.956  72.465  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.433  64.012  72.900  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.163  64.548  72.525  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.291  65.196  73.020  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.719  65.788  73.079  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      59.021  65.733  72.645  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      58.893  65.085  72.150  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.465  64.493  72.090  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.090     24.464     25.323
+REMARK INTER + INTRA:          -6.090
+REMARK INTER:                  -6.090
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.795  80.677  52.361  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.323  80.537  51.742  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.037  80.947  51.708  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      70.135  79.986  51.157  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      70.663  79.846  50.539  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      70.476  79.295  49.954  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      69.761  78.884  49.988  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      71.003  79.155  49.335  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.816  78.604  48.750  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.343  78.464  48.132  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      72.057  78.874  48.098  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      72.245  79.425  48.682  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.717  79.565  49.301  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.083      6.015      6.525
+REMARK INTER + INTRA:          -6.083
+REMARK INTER:                  -6.083
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.947  63.587  72.461  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.580  64.082  72.269  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.797  64.690  72.782  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.994  63.968  71.565  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      62.626  64.462  71.375  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.041  64.348  70.670  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.823  63.739  70.157  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.673  64.842  70.480  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.088  64.728  69.775  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.720  65.222  69.585  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      64.938  65.830  70.097  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      64.523  65.945  70.801  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.890  65.450  70.992  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.995      6.169      7.033
+REMARK INTER + INTRA:          -5.995
+REMARK INTER:                  -5.995
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iproniazid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.600  65.944  70.257  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.107  65.294  70.384  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.170  64.627  69.904  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.550  65.313  70.993  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      63.057  64.664  71.120  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.500  64.683  71.729  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.436  65.351  72.209  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.007  64.034  71.856  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.450  64.053  72.465  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.957  63.404  72.592  0.00  0.00    +0.000 A 
+ATOM     11  N   UNL     1      61.020  62.738  72.112  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.577  62.718  71.504  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.070  63.368  71.376  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

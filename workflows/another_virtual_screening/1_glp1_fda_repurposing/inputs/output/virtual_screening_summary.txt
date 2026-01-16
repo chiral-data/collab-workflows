@@ -1,0 +1,43 @@
+AutoDock Vina Virtual Screening Results
+======================================
+Job ID: glp1_fda_virtual_screening
+Date: Tue Sep  9 07:53:00 UTC 2025
+Target: GLP-1 Receptor FDA Drug Repurposing
+
+Input Information:
+- Receptor: 7s15_glp1r.pdb
+- Ligand Library: fda_drugs_sdf
+- Total SDF files found: 4278
+- Successfully converted to PDBQT: 4278
+- Conversion failures: 0
+
+Docking Parameters:
+- Box Center: (69.69, 69.69, 60.66)
+- Box Size: (25.0, 25.0, 25.0)
+- Exhaustiveness: 8
+- Number of modes: 9
+- Energy range: 3
+
+Results Summary:
+- Successful dockings: 4231
+- Failed dockings: 47
+
+Output Files:
+- Individual poses: poses/ directory (4231 files)
+- Docking logs: logs/ directory
+- Results CSV: screening_results.csv
+- Sorted results: screening_results_sorted.csv
+- Failure logs: logs/conversion_failures.log, logs/docking_failures.log
+
+Top 10 Best Scoring Compounds:
+
+- lurbinectedin_5398: -23.121 kcal/mol
+- dactinomycin_774: -22.601 kcal/mol
+- fondaparinux_1236: -22.316 kcal/mol
+- cabazitaxel_4153: -22.301 kcal/mol
+- vaniprevir_4939: -22.277 kcal/mol
+- salinomycin_5615: -22.263 kcal/mol
+- teicoplaninaglycone_2580: -22.242 kcal/mol
+- lomitapide_4721: -21.889 kcal/mol
+- lanreotide_1546: -21.506 kcal/mol
+- copperdotatateCu-64_5411: -20.925 kcal/mol

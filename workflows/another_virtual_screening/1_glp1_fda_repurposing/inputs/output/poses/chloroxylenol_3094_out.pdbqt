@@ -1,0 +1,207 @@
+MODEL 1
+REMARK VINA RESULT:    -6.734      0.000      0.000
+REMARK INTER + INTRA:          -6.734
+REMARK INTER:                  -6.734
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.021  61.249  65.177  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.771  61.590  65.157  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.046  62.020  65.804  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.797  62.361  65.784  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.072  62.792  66.431  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.273  62.271  65.116  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.998  61.841  64.468  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.474  61.750  63.800  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.247  61.500  64.488  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.972  61.069  63.840  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.672      1.344      2.047
+REMARK INTER + INTRA:          -6.672
+REMARK INTER:                  -6.672
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.026  62.696  65.908  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.869  62.240  65.240  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.400  62.237  64.609  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.244  61.780  63.939  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.775  61.778  63.309  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.556  61.327  63.902  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.024  61.329  64.533  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.336  60.875  64.495  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.181  61.785  65.202  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.649  61.788  65.833  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.475      0.958      1.676
+REMARK INTER + INTRA:          -6.475
+REMARK INTER:                  -6.475
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.657  62.446  65.014  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.917  62.085  64.989  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.385  62.189  65.611  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.644  61.828  65.585  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.113  61.932  66.208  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.434  61.363  64.938  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.965  61.259  64.315  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.755  60.793  63.666  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.706  61.620  64.340  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      62.237  61.516  63.717  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.102      7.984      8.854
+REMARK INTER + INTRA:          -6.102
+REMARK INTER:                  -6.102
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.196  67.780  69.837  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.974  67.251  70.429  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      66.372  67.250  71.152  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.149  66.720  71.744  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      66.547  66.719  72.466  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.529  66.193  71.614  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.131  66.194  70.892  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.510  65.666  70.761  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.353  66.723  70.299  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      64.954  66.724  69.576  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.018      6.258      7.007
+REMARK INTER + INTRA:          -6.018
+REMARK INTER:                  -6.018
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.726  62.807  72.864  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.138  62.845  72.288  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.587  63.458  72.301  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.998  63.496  71.725  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.447  64.109  71.738  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.961  62.922  71.135  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.513  62.308  71.120  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.476  61.733  70.530  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.101  62.270  71.697  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.653  61.656  71.684  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.981      6.175      6.916
+REMARK INTER + INTRA:          -5.981
+REMARK INTER:                  -5.981
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.566  61.705  70.472  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.611  62.294  71.046  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.118  62.954  71.000  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.162  63.544  71.575  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.669  64.203  71.528  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.700  63.475  72.195  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.194  62.815  72.243  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.733  62.746  72.864  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.150  62.225  71.668  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.644  61.565  71.714  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.644      7.591      8.400
+REMARK INTER + INTRA:          -5.644
+REMARK INTER:                  -5.644
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.339  66.726  71.923  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.671  66.667  71.171  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.416  66.078  70.652  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.748  66.019  69.899  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      64.494  65.431  69.381  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.335  66.549  69.665  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.590  67.139  70.183  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.177  67.669  69.949  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.258  67.197  70.936  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      65.513  67.787  71.455  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.444      7.093      7.675
+REMARK INTER + INTRA:          -5.444
+REMARK INTER:                  -5.444
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.221  64.791  72.089  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.784  64.190  72.052  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.636  63.512  71.607  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.200  62.911  71.571  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.051  62.233  71.126  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.912  62.988  71.979  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.061  63.666  72.424  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.774  63.744  72.833  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.497  64.267  72.461  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.646  64.947  72.907  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.411     16.065     16.712
+REMARK INTER + INTRA:          -5.411
+REMARK INTER:                  -5.411
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chloroxylenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.586  77.277  73.125  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.069  76.796  72.701  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.094  75.977  72.797  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      58.577  75.495  72.372  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      58.603  74.677  72.469  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      58.034  75.832  71.851  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      58.008  76.651  71.754  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      57.465  76.988  71.232  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.526  77.133  72.179  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      58.500  77.952  72.082  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

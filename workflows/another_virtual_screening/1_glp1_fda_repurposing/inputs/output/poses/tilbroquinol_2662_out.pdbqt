@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.670      0.000      0.000
+REMARK INTER + INTRA:          -7.670
+REMARK INTER:                  -7.670
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.109  62.020  66.299  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.919  62.070  66.153  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.412  62.451  66.694  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.096  62.782  67.380  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.589  63.162  67.920  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.400  63.212  67.774  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.717  62.882  67.089  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.224  62.501  66.548  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.540  62.170  65.862  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.351  62.220  65.716  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.047  61.790  65.322  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      61.364  61.458  64.635  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      60.236  61.739  65.468  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.658      1.373      2.167
+REMARK INTER + INTRA:          -7.658
+REMARK INTER:                  -7.658
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.432  61.686  65.727  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.046  62.050  66.140  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.807  62.059  65.823  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.955  61.704  65.092  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.716  61.713  64.775  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.331  62.078  65.188  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.184  62.433  65.918  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.423  62.424  66.236  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.276  62.779  66.965  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.890  63.143  67.378  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.515  62.770  67.282  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      60.367  63.125  68.013  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      59.899  62.405  66.869  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.214      1.741      2.916
+REMARK INTER + INTRA:          -7.214
+REMARK INTER:                  -7.214
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.337  62.755  66.130  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.658  62.381  65.846  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.670  62.008  65.111  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.361  62.007  64.659  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.373  61.633  63.924  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.693  61.259  63.640  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.003  61.260  64.091  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.991  61.634  64.827  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.301  61.635  65.278  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.622  61.262  64.994  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.289  62.009  66.012  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      59.598  62.010  66.464  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      60.968  62.382  66.297  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.140      4.770      5.960
+REMARK INTER + INTRA:          -7.140
+REMARK INTER:                  -7.140
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.775  62.520  72.948  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.248  62.958  72.487  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.990  62.661  71.763  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.256  61.927  71.498  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.997  61.630  70.773  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.470  62.069  70.313  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.204  62.803  70.577  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.463  63.100  71.302  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.196  63.834  71.567  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.670  64.271  71.106  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.455  64.130  72.291  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      60.188  64.864  72.556  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      60.982  63.691  72.752  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.002      4.102      5.052
+REMARK INTER + INTRA:          -7.002
+REMARK INTER:                  -7.002
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.690  61.209  71.801  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.356  61.818  71.356  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.282  62.573  71.679  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.543  62.720  72.449  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.470  63.474  72.772  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.135  64.084  72.327  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.875  63.938  71.558  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.948  63.183  71.234  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.688  63.036  70.465  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.354  63.646  70.020  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.761  62.282  70.141  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      60.501  62.135  69.372  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      61.095  61.672  70.587  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.770      4.127      5.327
+REMARK INTER + INTRA:          -6.770
+REMARK INTER:                  -6.770
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.305  62.905  72.786  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.523  63.251  72.070  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.257  62.929  71.359  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.772  62.261  71.364  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.506  61.939  70.653  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.724  62.285  69.936  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.208  62.952  69.931  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.475  63.275  70.642  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.959  63.942  70.636  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.177  64.288  69.920  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.226  64.264  71.347  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      62.710  64.932  71.342  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      62.007  63.918  72.064  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.664     25.634     26.187
+REMARK INTER + INTRA:          -6.664
+REMARK INTER:                  -6.664
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.735  78.067  48.885  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.822  78.735  49.362  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.536  79.147  49.366  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      72.163  78.893  48.894  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      72.876  79.306  48.898  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      72.964  79.975  49.375  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      72.337  80.229  49.847  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      71.623  79.816  49.843  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.996  80.070  50.315  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      71.084  80.738  50.791  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.283  79.658  50.310  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      69.655  79.912  50.782  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      70.196  78.989  49.833  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.620      6.063      7.097
+REMARK INTER + INTRA:          -6.620
+REMARK INTER:                  -6.620
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.880  66.606  72.111  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.135  66.297  71.390  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.748  66.663  70.978  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.108  67.338  71.286  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.721  67.704  70.874  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.975  67.394  70.152  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      65.616  66.720  69.844  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      65.002  66.353  70.256  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.643  65.678  69.947  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      64.897  65.369  69.226  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.030  65.312  70.359  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      63.670  64.637  70.051  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      63.775  65.622  71.081  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.610      6.509      7.349
+REMARK INTER + INTRA:          -6.610
+REMARK INTER:                  -6.610
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tilbroquinol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.450  65.404  69.442  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.681  65.994  69.971  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.269  66.098  70.677  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.627  65.612  70.857  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.216  65.716  71.564  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.446  66.306  72.093  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.088  66.792  71.914  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.500  66.688  71.207  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.142  67.174  71.028  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      65.373  67.764  71.557  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.553  67.070  70.321  0.00  0.00    +0.000 A 
+ATOM     12 BR   UNL     1      66.196  67.556  70.142  0.00  0.00    +0.000 Br
+ATOM     13  C   UNL     1      65.322  66.480  69.792  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

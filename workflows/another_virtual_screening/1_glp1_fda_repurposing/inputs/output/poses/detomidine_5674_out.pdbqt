@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.750      0.000      0.000
+REMARK INTER + INTRA:          -8.750
+REMARK INTER:                  -8.750
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.505  60.896  64.341  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.122  61.397  64.557  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.795  61.452  64.083  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.413  61.954  64.299  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.358  62.400  64.991  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.686  62.346  65.466  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.632  62.793  66.157  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.960  62.738  66.632  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.827  63.149  67.335  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.087  62.927  67.624  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.761  62.380  67.100  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.301  62.263  66.486  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.068  61.845  65.249  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.396  61.790  65.723  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.383      1.101      3.035
+REMARK INTER + INTRA:          -8.383
+REMARK INTER:                  -8.383
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.038  63.150  67.505  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.502  62.729  67.041  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.724  62.629  67.298  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.187  62.208  66.834  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.429  61.886  66.114  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.206  61.986  65.857  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.447  61.664  65.136  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.224  61.764  64.880  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.543  61.475  64.176  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.336  61.703  64.143  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.507  62.132  64.826  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.820  62.170  65.282  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.742  62.407  66.321  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.520  62.507  66.064  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.761      5.349      6.550
+REMARK INTER + INTRA:          -7.761
+REMARK INTER:                  -7.761
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.500  62.004  70.644  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.888  62.227  71.336  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.472  61.740  71.656  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.861  61.962  72.349  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.666  62.672  72.721  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.082  63.159  72.401  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.888  63.869  72.774  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.304  64.356  72.453  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.051  65.078  72.762  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.461  65.375  72.268  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.349  64.836  71.653  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.870  64.207  71.767  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.694  62.936  71.709  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.110  63.423  71.388  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.759      6.298      7.722
+REMARK INTER + INTRA:          -7.759
+REMARK INTER:                  -7.759
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.124  66.690  71.983  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.967  66.902  71.203  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      66.426  67.478  70.832  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.269  67.691  70.049  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.652  67.327  69.640  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.193  66.751  70.011  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.577  66.387  69.600  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.118  65.811  69.971  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.487  65.401  69.633  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.188  64.880  70.198  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.635  64.967  70.886  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      64.210  65.543  70.746  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.351  66.538  70.792  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.892  65.962  71.163  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.628      3.999      5.990
+REMARK INTER + INTRA:          -7.628
+REMARK INTER:                  -7.628
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.088  64.021  72.411  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.246  63.226  72.259  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.572  62.750  72.849  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.730  61.954  72.697  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.562  61.635  71.955  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.236  62.111  71.365  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.069  61.790  70.623  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.743  62.266  70.033  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.547  62.026  69.269  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.239  62.677  68.867  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.245  63.321  69.383  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.556  63.067  70.104  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.078  62.906  71.517  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.753  63.381  70.927  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.354      3.658      5.112
+REMARK INTER + INTRA:          -7.354
+REMARK INTER:                  -7.354
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.556  62.287  68.809  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.512  62.344  69.631  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.651  61.678  70.098  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.607  61.734  70.920  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.424  62.456  71.275  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.285  63.121  70.808  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.101  63.843  71.163  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.962  64.509  70.696  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.774  65.263  70.971  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.682  65.758  70.317  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.814  65.309  69.637  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      59.987  64.537  69.872  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.329  63.065  69.986  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.190  63.731  69.519  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.134     24.554     25.473
+REMARK INTER + INTRA:          -7.134
+REMARK INTER:                  -7.134
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.726  79.798  49.393  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.025  79.392  49.240  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      71.990  78.849  48.620  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      71.288  78.442  48.467  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.623  78.578  48.935  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.658  79.120  49.556  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      69.992  79.255  50.024  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.027  79.797  50.644  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      69.410  79.990  51.156  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      69.688  80.554  51.690  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      70.477  80.711  51.508  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      70.687  80.243  50.862  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      71.359  79.527  49.708  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.394  80.069  50.329  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.092      4.945      6.221
+REMARK INTER + INTRA:          -7.092
+REMARK INTER:                  -7.092
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.681  62.513  70.759  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.002  63.003  71.339  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.698  62.987  72.106  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.019  63.477  72.688  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.644  63.983  72.502  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.948  63.998  71.735  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.572  64.505  71.550  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.876  64.521  70.783  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.496  64.995  70.517  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.617  64.832  69.716  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.071  64.257  69.488  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.613  64.065  70.147  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.627  63.509  71.154  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.931  63.525  70.387  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.017      1.651      3.800
+REMARK INTER + INTRA:          -7.017
+REMARK INTER:                  -7.017
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = detomidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.076  63.932  69.153  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.531  63.315  69.203  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.284  63.042  69.941  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.738  62.424  69.991  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.442  62.080  69.303  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.690  62.352  68.565  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.392  62.007  67.877  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.640  62.280  67.138  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.393  61.991  66.407  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.779  62.422  65.818  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.265  62.978  66.187  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.179  62.890  67.003  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.234  62.970  68.515  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.482  63.242  67.777  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

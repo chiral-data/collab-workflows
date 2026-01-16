@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.655      0.000      0.000
+REMARK INTER + INTRA:          -8.655
+REMARK INTER:                  -8.655
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.127  62.949  67.812  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.209  62.607  67.065  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.603  62.276  66.615  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      58.808  62.227  66.831  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.931  62.001  65.909  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.740  62.163  65.924  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.912  62.538  66.639  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.657  62.797  66.883  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.282  61.981  65.328  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.027  61.604  64.641  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.569  61.422  64.045  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.366  61.620  64.138  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.619  61.997  64.826  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.077  62.178  65.421  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.338      1.512      2.899
+REMARK INTER + INTRA:          -8.338
+REMARK INTER:                  -8.338
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.454  61.659  63.794  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.796  61.664  64.293  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.082  61.276  64.156  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.897  60.815  63.497  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.583  61.430  64.795  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.989  61.913  65.326  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.740  62.057  65.016  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.330  62.515  65.367  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.696  62.200  66.042  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.931  62.008  66.282  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.638  62.295  66.998  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.112  62.775  67.474  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.877  62.967  67.234  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.170  62.680  66.518  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.655      5.671      6.400
+REMARK INTER + INTRA:          -7.655
+REMARK INTER:                  -7.655
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.150  65.490  73.124  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.037  64.843  72.623  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.380  64.710  72.143  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      58.720  65.200  72.078  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.499  64.001  71.739  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.230  63.695  71.970  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.563  64.216  72.517  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.293  64.124  72.891  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.568  62.992  71.701  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.168  62.526  71.151  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.506  61.823  70.882  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.245  61.587  71.165  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.645  62.053  71.715  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.306  62.756  71.983  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.644      3.591      5.551
+REMARK INTER + INTRA:          -7.644
+REMARK INTER:                  -7.644
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.177  63.470  68.680  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.451  63.030  69.323  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.585  62.217  69.331  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.469  61.699  68.699  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.855  62.011  70.083  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.888  62.697  70.539  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.638  63.328  70.069  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.585  64.117  70.306  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.129  62.745  71.327  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.365  62.064  71.728  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.606  62.111  72.516  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.610  62.841  72.902  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.373  63.521  72.501  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.133  63.474  71.713  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.522      6.164      7.256
+REMARK INTER + INTRA:          -7.522
+REMARK INTER:                  -7.522
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.767  64.626  71.173  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.342  65.040  70.749  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.557  64.904  69.965  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.236  64.331  69.466  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.151  65.441  69.767  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.303  65.909  70.429  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.802  65.661  71.037  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.770  65.979  71.798  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.857  66.519  70.476  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.320  66.705  69.820  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.875  67.315  69.866  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.965  67.737  70.570  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.502  67.550  71.225  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.947  66.940  71.179  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.100      4.365      5.394
+REMARK INTER + INTRA:          -7.100
+REMARK INTER:                  -7.100
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.692  65.954  69.810  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.780  65.269  70.263  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.646  65.205  71.074  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.402  65.812  71.576  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.801  64.425  71.296  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.029  64.008  70.622  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.016  64.530  69.983  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.207  64.344  69.202  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.235  63.209  70.592  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.222  62.755  71.280  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.428  61.956  71.250  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.646  61.613  70.531  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.659  62.068  69.844  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.453  62.867  69.874  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.052     24.669     25.358
+REMARK INTER + INTRA:          -7.052
+REMARK INTER:                  -7.052
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.048  80.988  51.994  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      70.011  80.454  51.365  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      69.341  80.043  51.119  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      68.589  80.091  51.456  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      69.553  79.573  50.474  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.355  79.694  50.324  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.638  80.239  50.875  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      71.413  80.519  50.925  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      70.797  79.334  49.726  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.436  78.797  49.214  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.877  78.437  48.617  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.679  78.614  48.533  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.039  79.150  49.046  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.598  79.511  49.643  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.964      5.936      6.808
+REMARK INTER + INTRA:          -6.964
+REMARK INTER:                  -6.964
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.488  65.807  70.069  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.067  65.507  70.714  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.862  65.925  71.394  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.040  66.715  71.552  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.447  65.413  71.891  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.396  64.680  71.517  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.780  64.738  70.788  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.861  64.132  70.234  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.027  64.006  71.818  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.664  64.031  72.559  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.295  63.358  72.860  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.288  62.659  72.420  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.651  62.635  71.680  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.020  63.309  71.379  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.767      3.389      4.769
+REMARK INTER + INTRA:          -6.767
+REMARK INTER:                  -6.767
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phensuximide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.251  63.031  72.455  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.342  63.157  71.644  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.803  63.744  71.294  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.255  64.309  71.691  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.734  63.668  70.475  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.230  63.033  70.320  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.988  62.717  71.043  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.480  62.075  71.144  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.008  62.762  69.572  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.297  63.136  68.896  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.074  62.864  68.149  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.563  62.220  68.080  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.275  61.847  68.756  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.497  62.118  69.503  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

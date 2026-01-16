@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.165      0.000      0.000
+REMARK INTER + INTRA:          -8.165
+REMARK INTER:                  -8.165
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.387  61.657  64.714  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.712  61.798  65.167  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.771  62.215  65.876  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.097  62.356  66.329  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.156  62.773  67.039  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.890  63.048  67.296  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.482  62.914  67.491  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.540  63.331  68.201  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      59.747  62.639  67.234  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.687  62.223  66.525  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      58.953  61.948  66.268  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.362  62.081  66.072  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.303  61.665  65.363  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.977  61.523  64.910  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.109      1.613      2.691
+REMARK INTER + INTRA:          -8.109
+REMARK INTER:                  -8.109
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.924  63.244  67.266  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.887  62.747  66.608  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.511  62.726  66.071  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.474  62.230  65.414  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.099  62.208  64.875  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.762  62.685  64.994  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.061  61.712  64.218  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      62.686  61.691  63.679  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.397  61.235  64.099  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.773  61.256  64.636  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      60.110  60.780  64.517  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      60.810  61.753  65.294  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.186  61.773  65.832  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.223  62.270  66.489  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.497      4.319      5.480
+REMARK INTER + INTRA:          -7.497
+REMARK INTER:                  -7.497
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.429  61.986  69.445  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.625  62.241  70.205  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.326  62.954  70.491  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.522  63.209  71.250  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.223  63.923  71.536  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      59.728  64.382  71.062  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.419  64.178  72.295  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.121  64.892  72.582  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.915  63.718  72.770  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.214  63.005  72.484  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      61.709  62.546  72.958  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      61.018  62.750  71.724  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.317  62.036  71.438  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.121  61.782  70.679  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.345      4.334      5.770
+REMARK INTER + INTRA:          -7.345
+REMARK INTER:                  -7.345
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.759  64.792  72.713  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.896  64.046  72.389  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.623  63.868  71.632  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.760  63.122  71.308  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.487  62.944  70.550  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.076  63.513  70.116  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.623  62.198  70.227  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.350  62.020  69.469  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.034  61.629  70.662  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.307  61.806  71.419  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      61.717  61.238  71.853  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      61.170  62.553  71.743  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.443  62.730  72.500  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.307  63.476  72.824  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.331      3.875      5.074
+REMARK INTER + INTRA:          -7.331
+REMARK INTER:                  -7.331
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.516  61.968  69.201  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.781  62.267  69.923  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.285  62.918  69.941  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.549  63.216  70.663  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.054  63.869  70.681  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      62.294  64.223  69.976  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.318  64.167  71.403  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      62.823  64.819  71.421  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      62.077  63.811  72.109  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.573  63.160  72.091  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      61.333  62.805  72.796  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      61.308  62.861  71.368  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.804  62.209  71.351  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.540  61.911  70.629  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.182      6.169      7.289
+REMARK INTER + INTRA:          -7.182
+REMARK INTER:                  -7.182
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.389  67.746  69.843  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.804  67.309  70.228  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.499  66.628  69.878  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.915  66.193  70.264  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.609  65.511  69.914  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      64.889  65.265  69.178  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.025  65.075  70.299  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      63.719  64.393  69.949  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      63.745  65.321  71.036  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.049  66.003  71.386  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      63.769  66.249  72.122  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      64.634  66.439  71.000  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.939  67.120  71.350  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.524  67.556  70.965  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.911      7.585      8.685
+REMARK INTER + INTRA:          -6.911
+REMARK INTER:                  -6.911
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.358  66.435  72.946  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      67.002  66.673  72.240  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      66.256  66.388  72.037  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.902  66.626  71.332  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.155  66.340  71.127  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      64.763  65.816  71.629  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.800  66.579  70.422  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      64.053  66.293  70.218  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      65.193  67.104  69.920  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.939  67.390  70.124  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      66.330  67.914  69.622  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      66.294  67.151  70.829  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      67.040  67.437  71.033  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      67.395  67.198  71.738  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.812     25.353     26.175
+REMARK INTER + INTRA:          -6.812
+REMARK INTER:                  -6.812
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.788  80.359  51.377  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.151  79.936  50.768  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      70.907  80.143  50.515  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      71.269  79.721  49.907  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      72.027  79.928  49.654  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      72.422  80.558  50.010  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      72.389  79.505  49.046  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      73.147  79.712  48.792  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      71.993  78.874  48.689  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.236  78.667  48.942  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      70.841  78.036  48.586  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      70.873  79.089  49.551  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.117  78.882  49.803  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      69.755  79.305  50.411  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.731     25.387     26.195
+REMARK INTER + INTRA:          -6.731
+REMARK INTER:                  -6.731
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorquinaldol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      73.253  80.889  49.856  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.667  80.330  49.697  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      71.942  80.369  50.086  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      71.357  79.810  49.927  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.631  79.849  50.317  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      70.490  80.448  50.867  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.046  79.290  50.158  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      69.320  79.329  50.548  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      70.187  78.691  49.607  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.913  78.652  49.218  0.00  0.00    +0.000 A 
+ATOM     11 CL   UNL     1      71.053  78.053  48.668  0.00  0.00    +0.000 Cl
+ATOM     12  C   UNL     1      71.498  79.211  49.377  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.223  79.172  48.987  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      72.808  79.731  49.146  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,28 @@
+{
+  "job_id": "glp1_fda_virtual_screening",
+  "meta": {
+    "app": "autodock_vina",
+    "project": "3_virtual_screening"
+  },
+  "inputs": [
+    {
+      "filename": "7s15_glp1r.pdb",
+      "type": "pdb",
+      "description": "GLP-1 receptor structure"
+    },
+    {
+      "directory": "fda_drugs_sdf",
+      "type": "sdf_collection",
+      "description": "FDA-approved drugs library"
+    }
+  ],
+  "parameters": {
+    "center_x": 69.69,
+    "center_y": 69.69,
+    "center_z": 60.66,
+    "size_x": 25.0,
+    "size_y": 25.0,
+    "size_z": 25.0,
+    "exhaustiveness": 8
+  }
+}

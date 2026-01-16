@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.771      0.000      0.000
+REMARK INTER + INTRA:          -4.771
+REMARK INTER:                  -4.771
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.678  60.900  64.203  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.198  61.437  64.551  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.036  61.742  65.300  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.556  62.280  65.648  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      61.393  62.584  66.397  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      62.237  62.513  65.248  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.400  62.208  64.498  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.880  61.671  64.150  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.400     17.096     17.474
+REMARK INTER + INTRA:          -4.400
+REMARK INTER:                  -4.400
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.016  78.836  58.935  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.620  78.389  59.274  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.449  77.663  59.626  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      66.054  77.216  59.966  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      65.882  76.490  60.317  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      66.829  77.496  59.954  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      67.001  78.222  59.603  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.397  78.669  59.263  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.399      1.640      2.040
+REMARK INTER + INTRA:          -4.399
+REMARK INTER:                  -4.399
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.184  63.276  66.358  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.531  62.632  65.980  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.799  62.704  65.203  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.146  62.059  64.824  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      62.414  62.132  64.047  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      62.226  61.341  65.222  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.959  61.267  65.999  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.611  61.913  66.378  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.086      2.307      2.544
+REMARK INTER + INTRA:          -4.086
+REMARK INTER:                  -4.086
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.101  62.083  66.219  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.810  62.139  66.635  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.805  62.137  67.460  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.514  62.194  67.878  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      60.509  62.192  68.702  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      61.228  62.253  67.470  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.234  62.255  66.645  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.525  62.198  66.228  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.908      3.293      3.718
+REMARK INTER + INTRA:          -3.908
+REMARK INTER:                  -3.908
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.211  61.694  69.130  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.603  62.251  68.666  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.045  62.849  69.024  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.437  63.407  68.560  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      61.878  64.004  68.918  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      61.387  63.367  67.738  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.946  62.770  67.379  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.554  62.212  67.843  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.805     25.169     25.516
+REMARK INTER + INTRA:          -3.805
+REMARK INTER:                  -3.805
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      70.115  79.245  50.345  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.473  79.232  49.603  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      70.658  79.939  49.222  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      71.016  79.926  48.479  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      71.201  80.633  48.098  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      71.189  79.205  48.117  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      71.004  78.497  48.498  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.646  78.510  49.241  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.739     11.309     11.621
+REMARK INTER + INTRA:          -3.739
+REMARK INTER:                  -3.739
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.037  59.002  54.715  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.433  59.478  54.170  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.557  60.277  54.333  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.953  60.753  53.788  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      64.076  61.551  53.951  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      64.226  60.430  53.080  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      64.103  59.630  52.916  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.707  59.154  53.461  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.719      6.977      7.311
+REMARK INTER + INTRA:          -3.719
+REMARK INTER:                  -3.719
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.600  67.241  68.663  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.590  66.835  69.380  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.449  67.241  70.084  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.439  66.834  70.801  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      59.297  67.241  71.504  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      59.571  66.020  70.815  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.713  65.613  70.111  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.722  66.020  69.394  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.643      6.445      6.747
+REMARK INTER + INTRA:          -3.643
+REMARK INTER:                  -3.643
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiouracil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.015  60.880  71.736  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.556  61.551  71.603  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.610  62.197  72.114  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.150  62.869  71.981  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      61.204  63.513  72.492  0.00  0.00    +0.000 S 
+ATOM      6  N   UNL     1      60.637  62.896  71.336  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.582  62.251  70.824  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.042  61.579  70.957  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

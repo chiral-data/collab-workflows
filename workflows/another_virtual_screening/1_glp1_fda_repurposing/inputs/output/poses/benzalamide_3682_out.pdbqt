@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.294      0.000      0.000
+REMARK INTER + INTRA:          -8.294
+REMARK INTER:                  -8.294
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.602  62.752  66.505  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.872  62.366  66.503  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.361  62.446  67.147  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.581  62.912  67.792  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.071  62.992  68.435  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      61.310  63.297  67.794  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.652  61.901  65.858  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.162  61.820  65.215  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.943  61.355  64.570  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.454  61.275  63.927  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.183  61.660  63.929  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.402  62.126  64.574  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.892  62.206  65.217  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.128      2.055      3.248
+REMARK INTER + INTRA:          -8.128
+REMARK INTER:                  -8.128
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.720  62.397  65.410  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.257  61.901  64.939  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.563  61.596  64.237  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.331  61.787  64.005  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.637  61.482  63.302  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      62.794  62.282  64.475  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.488  61.711  65.172  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.182  62.016  65.874  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.414  61.826  66.107  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.108  62.131  66.810  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.571  62.626  67.280  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.339  62.816  67.048  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.645  62.511  66.345  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.585      3.416      5.719
+REMARK INTER + INTRA:          -7.585
+REMARK INTER:                  -7.585
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.575  63.172  70.148  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.760  62.368  70.101  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.626  61.954  69.400  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.308  62.343  68.746  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.175  61.929  68.045  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      60.124  63.145  68.792  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.078  61.979  70.757  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.211  62.393  71.457  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.529  62.005  72.112  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.662  62.420  72.813  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.478  63.222  72.858  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.160  63.611  72.204  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.027  63.197  71.503  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.538      5.928      7.215
+REMARK INTER + INTRA:          -7.538
+REMARK INTER:                  -7.538
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.385  65.370  70.752  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.282  65.602  69.967  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.743  65.204  69.486  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.307  64.573  69.791  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.768  64.174  69.310  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      63.409  64.341  70.575  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.718  66.234  69.662  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.257  66.632  70.143  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.693  67.263  69.839  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.232  67.661  70.320  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.335  67.429  71.104  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.899  66.798  71.409  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.360  66.400  70.928  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.400      5.595      6.514
+REMARK INTER + INTRA:          -7.400
+REMARK INTER:                  -7.400
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.821  64.189  71.772  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.390  64.283  72.363  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.376  64.951  72.846  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.793  65.525  72.739  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.779  66.194  73.222  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      59.225  65.431  72.149  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.974  63.708  72.470  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.988  63.041  71.987  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.570  62.467  72.093  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.584  61.798  71.610  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.016  61.704  71.020  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.433  62.278  70.912  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.419  62.947  71.396  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.179     18.206     18.730
+REMARK INTER + INTRA:          -7.179
+REMARK INTER:                  -7.179
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.361  79.868  58.972  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.740  79.356  58.790  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.068  79.643  58.406  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.018  80.442  58.205  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.346  80.728  57.821  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      64.638  80.953  58.387  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.791  78.557  58.991  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.462  78.271  59.375  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.513  77.473  59.576  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.185  77.186  59.960  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.805  77.697  60.142  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.755  78.496  59.941  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.083  78.783  59.557  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.130      3.503      4.622
+REMARK INTER + INTRA:          -7.130
+REMARK INTER:                  -7.130
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.124  63.333  70.856  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.091  62.523  71.014  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.285  62.240  71.764  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.511  62.768  72.357  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.705  62.486  73.107  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      61.544  63.576  72.200  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.864  61.996  70.420  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.670  62.278  69.670  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.444  61.752  69.077  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.250  62.034  68.326  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.283  62.843  68.169  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.510  63.370  68.762  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.703  63.088  69.512  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.946     24.525     25.179
+REMARK INTER + INTRA:          -6.946
+REMARK INTER:                  -6.946
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.645  80.257  50.775  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.961  79.804  50.678  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      69.305  79.940  51.160  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      69.333  80.528  51.738  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      68.677  80.663  52.220  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      70.016  80.980  51.835  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      69.934  79.216  50.099  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.589  79.081  49.618  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.563  78.494  49.039  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.219  78.358  48.558  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.901  78.810  48.655  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.929  79.398  49.233  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.273  79.534  49.715  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.910      6.527      7.332
+REMARK INTER + INTRA:          -6.910
+REMARK INTER:                  -6.910
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = benzalamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.769  65.672  72.109  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.425  65.597  72.605  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.795  66.271  72.904  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.509  67.020  72.707  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.879  67.694  73.006  0.00  0.00    +0.000 NA
+ATOM      6  O   UNL     1      60.854  67.095  72.213  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.711  64.848  72.801  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.341  64.175  72.502  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.626  63.426  72.698  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.256  62.752  72.399  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.601  62.827  71.904  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.315  63.576  71.708  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.685  64.250  72.007  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.329      0.000      0.000
+REMARK INTER + INTRA:          -8.329
+REMARK INTER:                  -8.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.459  61.933  63.924  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.266  61.531  64.617  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.954  61.943  65.261  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      61.996  62.646  64.830  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      61.912  61.241  65.690  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.620  61.247  66.462  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.642  62.356  65.903  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.523  63.171  65.851  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.449  61.953  66.597  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.137  62.366  67.240  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.018  63.181  67.188  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.944  61.964  67.933  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.632  62.377  68.576  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.439  61.974  69.271  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.513  63.191  68.525  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.860      1.587      3.505
+REMARK INTER + INTRA:          -7.860
+REMARK INTER:                  -7.860
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.116  62.972  68.410  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.776  62.975  67.916  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.733  62.630  67.168  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      59.945  62.426  67.308  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      61.520  62.834  67.028  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.876  62.636  66.311  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.689  62.284  66.420  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.986  61.934  66.167  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.350  62.287  65.925  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.306  61.942  65.177  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.603  61.592  64.924  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.967  61.946  64.683  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.923  61.599  63.935  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.584  61.603  63.439  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.220  61.250  63.682  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.538      1.555      3.703
+REMARK INTER + INTRA:          -7.538
+REMARK INTER:                  -7.538
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.709  62.998  70.837  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.520  62.509  70.201  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.827  62.668  69.452  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      61.224  63.326  69.755  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      60.432  62.012  69.149  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.500  61.822  68.349  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.135  62.829  68.704  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.632  63.478  68.592  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.946  62.339  68.066  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.254  62.500  67.318  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.750  63.149  67.206  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.064  62.010  66.682  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.372  62.171  65.933  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.183  61.681  65.295  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.869  62.820  65.821  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.317      2.529      3.707
+REMARK INTER + INTRA:          -7.317
+REMARK INTER:                  -7.317
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.370  62.316  67.323  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.340  62.016  68.090  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.677  62.440  68.713  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      60.907  63.031  68.184  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      60.447  61.849  69.240  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.625  61.921  70.042  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.014  62.864  69.334  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.382  63.588  69.188  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.984  62.564  70.103  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.321  62.989  70.724  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.689  63.713  70.578  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.291  62.689  71.492  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.628  63.113  72.114  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.598  62.813  72.883  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.996  63.837  71.968  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.235      5.840      6.630
+REMARK INTER + INTRA:          -7.235
+REMARK INTER:                  -7.235
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.212  67.627  70.174  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.719  67.384  70.789  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.146  66.806  70.655  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      65.385  66.753  69.866  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      64.907  66.860  71.442  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.291  66.386  71.720  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.573  66.228  70.520  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.493  65.893  69.770  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      64.079  65.986  71.135  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.506  65.408  71.000  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      63.426  65.073  70.251  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      63.013  65.166  71.616  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.439  64.587  71.481  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.945  64.345  72.096  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.359  64.252  70.731  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.152      1.788      2.698
+REMARK INTER + INTRA:          -7.152
+REMARK INTER:                  -7.152
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.237  62.674  66.042  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.320  63.073  66.758  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.054  62.727  67.458  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      60.802  62.065  67.034  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      61.305  63.389  67.881  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.199  63.420  68.699  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.786  62.380  68.157  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.435  61.634  68.140  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.871  62.781  68.874  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.603  62.434  69.573  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.252  61.688  69.556  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.688  62.834  70.289  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.420  62.488  70.989  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.504  62.888  71.707  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.069  61.741  70.972  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.113      5.334      6.178
+REMARK INTER + INTRA:          -7.113
+REMARK INTER:                  -7.113
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.893  63.307  72.468  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.363  63.981  72.401  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.916  64.041  71.792  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      61.692  63.295  71.517  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      62.139  64.785  72.066  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.730  65.209  71.675  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.468  64.099  71.182  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.551  63.483  70.639  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.939  64.774  71.115  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.491  64.832  70.505  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      63.574  64.217  69.962  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      63.961  65.507  70.438  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      64.514  65.566  69.828  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.984  66.241  69.761  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.596  64.950  69.286  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.035      5.862      6.751
+REMARK INTER + INTRA:          -7.035
+REMARK INTER:                  -7.035
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.482  63.823  70.871  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.092  64.107  70.395  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.483  64.805  70.598  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      63.003  64.879  71.266  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      63.962  64.731  69.931  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.540  65.298  69.773  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.873  65.502  70.802  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.654  65.915  71.482  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      64.484  65.787  70.325  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.875  66.485  70.529  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.655  66.897  71.209  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      65.485  66.769  70.053  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.876  67.467  70.257  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      66.487  67.752  69.780  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      65.657  67.880  70.937  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.020      4.586      5.336
+REMARK INTER + INTRA:          -7.020
+REMARK INTER:                  -7.020
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acecarbromal
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.861  61.638  70.915  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.697  62.345  71.306  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.476  63.013  70.876  0.00  0.00    +0.000 C 
+ATOM      4 BR   UNL     1      60.538  62.582  70.175  0.00  0.00    +0.000 Br
+ATOM      5  C   UNL     1      60.414  63.444  71.577  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.192  64.238  71.554  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.256  63.681  70.445  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.199  63.643  69.623  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.091  64.389  70.838  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.871  65.057  70.407  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.815  65.018  69.585  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      59.707  65.764  70.799  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.486  66.433  70.368  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.322  67.141  70.761  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.430  66.394  69.546  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

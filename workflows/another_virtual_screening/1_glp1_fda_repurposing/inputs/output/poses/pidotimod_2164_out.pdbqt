@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.303      0.000      0.000
+REMARK INTER + INTRA:          -8.303
+REMARK INTER:                  -8.303
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.632  63.304  68.273  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.941  63.043  67.555  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      61.731  63.187  67.368  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      60.459  62.637  67.022  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      59.662  62.453  67.131  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      59.400  62.046  66.463  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.035  61.979  65.940  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.688  62.344  66.286  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.441  62.405  65.954  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.045  62.788  66.366  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      61.591  62.083  65.209  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.045  61.686  64.733  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.429  61.460  64.039  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.212  61.716  64.085  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.792  61.606  63.510  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      62.311  62.101  64.808  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.985      0.926      3.128
+REMARK INTER + INTRA:          -7.985
+REMARK INTER:                  -7.985
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.470  61.647  63.503  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.259  61.910  64.255  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      62.768  62.403  64.678  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      61.538  61.682  64.585  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      60.975  61.195  64.230  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      60.342  61.112  64.754  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.514  61.549  65.432  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.253  61.901  65.327  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.640  62.387  65.871  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.381  62.702  65.690  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      61.285  62.559  66.596  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.550  62.286  66.853  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.414  62.592  67.607  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.065  63.054  67.816  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.160  63.464  68.525  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      61.603  63.033  67.191  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.385      1.705      2.367
+REMARK INTER + INTRA:          -7.385
+REMARK INTER:                  -7.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.367  62.414  70.209  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.502  62.312  69.402  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      60.174  61.668  69.006  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      60.967  62.855  68.991  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      61.331  63.523  69.311  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      61.739  63.907  68.704  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.628  63.476  68.010  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.151  62.826  68.187  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.901  62.249  67.653  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.423  61.627  67.911  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      61.129  62.292  66.862  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.604  62.877  66.525  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.691  62.704  65.723  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.270  62.013  65.564  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.209  61.642  64.830  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      60.924  61.758  66.268  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.195      5.859      7.060
+REMARK INTER + INTRA:          -7.195
+REMARK INTER:                  -7.195
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.797  63.948  70.130  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.369  64.540  70.086  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      63.864  64.588  69.427  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      63.447  65.086  70.700  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      62.994  65.108  71.389  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      63.258  65.741  71.848  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      63.875  66.110  71.442  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.991  65.705  70.733  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      64.553  65.887  70.157  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.606  65.431  69.472  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      65.063  66.526  70.266  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.076  67.031  70.920  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.671  67.589  70.798  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      66.025  67.431  70.071  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      66.646  67.855  69.732  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      65.650  66.774  69.742  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.160      3.424      5.451
+REMARK INTER + INTRA:          -7.160
+REMARK INTER:                  -7.160
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.201  62.023  67.962  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.424  62.146  68.746  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      60.168  61.628  69.335  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      60.903  62.788  68.942  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      61.200  63.350  68.417  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      61.650  63.891  68.849  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.631  63.663  69.642  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.169  62.981  69.699  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.002  62.566  70.392  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.530  61.890  70.365  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      61.309  62.826  71.113  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.788  63.489  71.226  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.965  63.541  72.030  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.596  62.911  72.414  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.627  62.752  73.222  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      61.191  62.470  71.847  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.095      5.664      6.300
+REMARK INTER + INTRA:          -7.095
+REMARK INTER:                  -7.095
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.422  67.252  69.043  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.558  66.536  69.428  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      59.736  65.859  68.991  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      59.517  66.496  70.251  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      59.345  67.122  70.759  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      59.362  66.836  71.533  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      59.543  66.031  71.503  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.639  65.822  70.710  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      59.824  65.069  70.427  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.903  64.941  69.616  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      59.931  64.445  70.956  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.871  64.489  71.778  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.020  63.737  72.084  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.172  63.229  71.453  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.348  62.425  71.510  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      60.117  63.666  70.756  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.002      2.398      3.357
+REMARK INTER + INTRA:          -7.002
+REMARK INTER:                  -7.002
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.473  64.187  71.094  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.248  63.949  70.338  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      62.657  64.228  69.678  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      61.613  63.431  70.241  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      61.154  63.108  70.845  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      60.582  62.623  70.500  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.688  62.646  69.682  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.325  63.146  69.523  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.622  63.329  68.775  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.265  63.840  68.699  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      61.275  63.000  68.102  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.632  62.482  68.091  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.471  62.294  67.304  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.014  62.694  66.829  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.052  62.663  66.005  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      61.511  63.130  67.322  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.754      6.671      7.832
+REMARK INTER + INTRA:          -6.754
+REMARK INTER:                  -6.754
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      67.225  67.109  72.106  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.539  66.776  71.792  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      66.131  66.195  72.212  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      66.261  67.025  71.056  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      66.607  67.597  70.574  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      66.147  67.671  69.893  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      65.515  67.143  69.954  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      65.586  66.745  70.673  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      65.071  66.166  70.959  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.212  65.813  71.691  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      64.415  65.941  70.512  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.204  66.243  69.773  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.513  65.862  69.531  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.298  65.325  70.118  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.641  64.827  70.102  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      63.855  65.374  70.724  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.747      7.070      8.016
+REMARK INTER + INTRA:          -6.747
+REMARK INTER:                  -6.747
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pidotimod
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.599  68.521  72.935  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.310  67.750  72.887  0.00  0.00    +0.000 C 
+ATOM      3  OXT UNL     1      61.578  67.562  73.218  0.00  0.00    +0.000 OA
+ATOM      4  CA  UNL     1      62.753  67.167  72.507  0.00  0.00    +0.000 C 
+ATOM      5  CB  UNL     1      63.489  67.271  72.151  0.00  0.00    +0.000 C 
+ATOM      6  SG  UNL     1      63.728  66.545  71.840  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      63.139  65.992  72.004  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.536  66.376  72.415  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.839  66.030  72.689  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.283  66.485  73.094  0.00  0.00    +0.000 OA
+ATOM     11  CA  UNL     1      61.697  65.228  72.556  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.199  64.705  72.161  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.840  63.962  72.156  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.117  64.025  72.548  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.578  63.413  72.670  0.00  0.00    +0.000 OA
+ATOM     16  N   UNL     1      61.029  64.807  72.795  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

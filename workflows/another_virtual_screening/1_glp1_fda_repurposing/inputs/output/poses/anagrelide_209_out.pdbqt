@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.924      0.000      0.000
+REMARK INTER + INTRA:          -8.924
+REMARK INTER:                  -8.924
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.591  61.184  63.560  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.660  61.599  64.270  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.346  62.031  64.431  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.415  62.446  65.140  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.800  62.429  65.689  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.869  62.844  66.399  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.255  62.827  66.949  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.165  63.178  67.690  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.427  62.964  67.988  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.112  63.194  68.715  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.059  62.480  67.431  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.569  62.395  66.788  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      60.500  61.980  66.079  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.115  61.997  65.529  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.046  61.582  64.820  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      60.361  61.150  64.660  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.756      2.303      3.474
+REMARK INTER + INTRA:          -8.756
+REMARK INTER:                  -8.756
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.020  63.069  68.173  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.117  62.727  67.428  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.483  62.341  67.066  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.579  62.000  66.322  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.308  62.044  65.939  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.405  61.703  65.194  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.133  61.748  64.811  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.392  61.466  64.079  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.184  61.678  63.989  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.660  61.506  63.338  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.415  62.091  64.664  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.767  62.135  65.173  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      61.671  62.476  65.917  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.942  62.431  66.301  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.845  62.772  67.045  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      61.478  63.158  67.407  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.671      6.006      6.614
+REMARK INTER + INTRA:          -7.671
+REMARK INTER:                  -7.671
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.383  61.640  71.366  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.196  62.344  71.755  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.658  62.598  72.391  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.472  63.300  72.780  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.826  63.749  72.535  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.639  64.452  72.924  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.992  64.901  72.680  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.677  65.612  72.954  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.021  65.797  72.490  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      58.540  66.462  72.573  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      58.931  65.201  71.928  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.530  64.646  72.044  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      59.716  63.944  71.655  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.364  63.495  71.899  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.550  62.792  71.510  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      60.088  62.538  70.875  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.627      2.433      3.871
+REMARK INTER + INTRA:          -7.627
+REMARK INTER:                  -7.627
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.294  62.724  70.661  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.515  62.941  69.896  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.623  63.738  69.708  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.843  63.955  68.944  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.956  63.377  68.367  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.176  63.594  67.602  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.289  63.016  67.025  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.505  63.063  66.230  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.530  62.297  65.926  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.722  62.088  65.152  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.330  61.776  66.533  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.180  62.219  67.213  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      60.960  62.002  67.977  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.847  62.580  68.555  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.627  62.363  69.319  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      60.519  61.567  69.506  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.536      5.999      6.876
+REMARK INTER + INTRA:          -7.536
+REMARK INTER:                  -7.536
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      65.863  67.665  71.021  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      65.415  67.076  70.656  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.488  66.946  69.844  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.041  66.357  69.479  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.521  65.899  69.924  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.072  65.310  69.560  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.552  64.851  70.005  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.042  64.236  69.799  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.655  63.985  70.483  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.095  63.380  70.529  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.924  64.446  71.111  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.479  64.981  70.817  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      63.926  65.570  71.182  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.447  66.029  70.737  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.895  66.617  71.102  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      64.821  66.747  71.913  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.494      3.809      5.425
+REMARK INTER + INTRA:          -7.494
+REMARK INTER:                  -7.494
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.978  64.074  72.502  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.636  63.547  71.966  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.294  62.846  72.239  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.953  62.320  71.704  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.952  62.492  70.898  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.610  61.966  70.363  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.609  62.138  69.557  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.315  61.728  68.904  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.475  62.174  68.229  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.277  61.970  67.455  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.867  62.860  68.464  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.950  62.839  69.285  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      61.292  63.366  69.819  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.293  63.193  70.626  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.635  63.720  71.160  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      61.976  64.420  70.888  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.492      4.208      5.177
+REMARK INTER + INTRA:          -7.492
+REMARK INTER:                  -7.492
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.489  61.992  68.516  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.488  62.198  69.315  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.455  61.610  69.894  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.454  61.816  70.692  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.486  62.609  70.913  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.485  62.816  71.712  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.516  63.609  71.933  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.523  63.977  72.672  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.560  64.792  72.551  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.577  65.370  73.140  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.576  64.929  71.738  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.549  64.198  71.355  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      60.550  63.992  70.557  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.518  63.198  70.335  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.519  62.992  69.537  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      60.552  63.580  68.959  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.471      5.483      6.085
+REMARK INTER + INTRA:          -7.471
+REMARK INTER:                  -7.471
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.630  62.700  72.990  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.286  62.958  72.286  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.095  62.413  71.696  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.751  62.671  70.992  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.598  63.473  70.878  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.254  63.732  70.174  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.100  64.533  70.060  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.768  64.948  69.429  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.752  65.748  69.628  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.465  66.361  69.155  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.075  65.829  70.382  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.290  65.078  70.650  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      60.634  64.821  71.354  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.788  64.018  71.469  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.132  63.760  72.172  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      61.322  64.305  72.762  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.875      5.453      5.997
+REMARK INTER + INTRA:          -6.875
+REMARK INTER:                  -6.875
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = anagrelide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      64.837  65.811  70.661  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      64.216  65.275  70.569  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.215  64.751  69.930  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.596  64.215  69.838  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.977  64.202  70.383  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      62.356  63.666  70.291  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.738  63.653  70.835  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.056  63.191  70.888  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.637  63.428  71.557  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.921  63.111  71.818  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.058  64.037  71.918  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.738  64.178  71.474  0.00  0.00    +0.000 N 
+ATOM     13  C   UNL     1      62.358  64.713  71.566  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.978  64.727  71.021  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.597  65.262  71.113  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      63.598  65.786  71.751  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

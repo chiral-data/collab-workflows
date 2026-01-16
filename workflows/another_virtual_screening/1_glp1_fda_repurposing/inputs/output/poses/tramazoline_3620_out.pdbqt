@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.716      0.000      0.000
+REMARK INTER + INTRA:          -9.716
+REMARK INTER:                  -9.716
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.512  63.570  68.591  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.275  63.833  68.759  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.770  63.593  68.145  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.313  63.181  67.596  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.584  62.842  66.894  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.059  62.445  66.397  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.331  62.106  65.697  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.128  62.165  65.491  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.400  61.827  64.790  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.874  61.429  64.293  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.078  61.370  64.498  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.805  61.708  65.199  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.009  61.649  65.404  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.737  61.988  66.105  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.263  62.386  66.602  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.535  63.167  67.872  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.866      0.998      3.190
+REMARK INTER + INTRA:          -8.866
+REMARK INTER:                  -8.866
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.581  61.629  64.151  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.372  61.862  64.153  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.528  62.228  64.876  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.834  62.222  65.321  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.740  62.531  66.080  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.008  62.483  66.458  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.916  62.792  67.216  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.554  63.149  67.598  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.461  63.458  68.357  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.728  63.411  68.735  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.090  63.054  68.354  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.183  62.745  67.594  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.545  62.388  67.213  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.638  62.079  66.455  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.370  62.127  66.076  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      61.248  61.851  64.873  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.810      4.810      6.034
+REMARK INTER + INTRA:          -8.810
+REMARK INTER:                  -8.810
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.654  65.735  73.085  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.027  65.881  72.570  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      58.998  65.264  72.022  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.608  64.738  72.198  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.782  64.042  71.791  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.412  63.568  72.033  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.586  62.873  71.625  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.130  62.651  70.974  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.304  61.956  70.566  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.935  61.482  70.809  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.391  61.704  71.459  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.217  62.399  71.868  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.673  62.621  72.517  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.500  63.316  72.925  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.869  63.790  72.683  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.013  65.029  72.856  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.570      2.361      4.927
+REMARK INTER + INTRA:          -8.570
+REMARK INTER:                  -8.570
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.862  62.427  67.663  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.278  63.093  67.410  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.555  63.489  68.079  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.310  63.068  68.744  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.465  63.268  69.530  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.182  62.791  70.141  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.338  62.991  70.925  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.777  63.668  71.100  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.932  63.868  71.884  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.649  63.390  72.496  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.211  62.714  72.322  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.055  62.514  71.537  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.617  61.837  71.363  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.461  61.638  70.578  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.744  62.115  69.966  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.881  62.412  68.487  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.318      4.774      5.652
+REMARK INTER + INTRA:          -8.318
+REMARK INTER:                  -8.318
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.814  65.984  70.711  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.589  65.783  69.944  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.783  64.991  69.820  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.128  64.702  70.511  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.406  63.935  70.631  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.740  63.726  71.356  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.017  62.959  71.475  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.961  62.400  70.871  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.238  61.633  70.991  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.573  61.423  71.716  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.629  61.981  72.320  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.352  62.749  72.201  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.408  63.307  72.805  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.131  64.074  72.686  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.797  64.284  71.960  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      60.148  65.317  71.062  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.287      3.965      5.174
+REMARK INTER + INTRA:          -8.287
+REMARK INTER:                  -8.287
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.790  65.195  70.939  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.976  65.174  70.137  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.486  64.618  69.775  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.996  64.295  70.354  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.420  63.717  70.236  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.970  63.445  70.873  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.395  62.868  70.754  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.267  62.560  69.999  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.692  61.982  69.880  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.241  61.711  70.517  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.368  62.018  71.271  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.944  62.596  71.391  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.071  62.903  72.145  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.647  63.481  72.264  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.097  63.752  71.627  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      63.184  64.651  71.075  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.222      5.092      6.865
+REMARK INTER + INTRA:          -8.222
+REMARK INTER:                  -8.222
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.259  64.132  70.668  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.088  64.131  71.474  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.599  64.664  71.843  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.085  64.994  71.265  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.677  65.555  71.390  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.121  65.836  70.754  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.712  66.396  70.880  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.861  66.675  71.641  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.453  67.235  71.767  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.897  67.517  71.130  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.749  67.238  70.369  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.156  66.677  70.243  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.008  66.398  69.481  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.416  65.838  69.356  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.972  65.557  69.993  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      62.874  64.666  70.538  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.945     24.848     25.686
+REMARK INTER + INTRA:          -7.945
+REMARK INTER:                  -7.945
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.039  80.303  51.658  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.435  80.933  52.014  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      70.182  80.991  51.669  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      70.248  80.397  51.101  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      70.905  80.252  50.623  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      70.889  79.635  50.076  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.546  79.491  49.599  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      72.219  79.964  49.667  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      72.875  79.820  49.190  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      72.860  79.202  48.643  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      72.188  78.729  48.574  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.531  78.872  49.051  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.859  78.399  48.983  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.202  78.543  49.460  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      70.218  79.162  50.007  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      69.541  79.972  51.094  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.885      5.657      6.438
+REMARK INTER + INTRA:          -7.885
+REMARK INTER:                  -7.885
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tramazoline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.368  67.355  72.233  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.966  67.377  72.801  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.150  66.599  73.006  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.666  66.097  72.566  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.664  65.273  72.598  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.146  64.842  72.122  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.145  64.019  72.154  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.662  63.624  72.661  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.662  62.800  72.693  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.142  62.369  72.217  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.625  62.763  71.710  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.625  63.588  71.678  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.108  63.981  71.171  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.109  64.805  71.139  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.628  65.236  71.615  0.00  0.00    +0.000 A 
+ATOM     16  N   UNL     1      61.182  66.565  72.088  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

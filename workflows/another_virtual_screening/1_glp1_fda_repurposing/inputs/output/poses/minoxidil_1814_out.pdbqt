@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.260      0.000      0.000
+REMARK INTER + INTRA:          -8.260
+REMARK INTER:                  -8.260
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.007  62.037  66.844  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.779  62.304  66.717  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.192  62.065  66.045  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.963  62.331  65.919  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.320  62.836  66.465  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.906  63.074  67.139  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.263  63.579  67.686  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.135  62.808  67.265  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      59.722  63.047  67.938  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.377  62.093  65.247  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.020  61.589  64.699  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.434  61.351  64.027  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.204  61.617  63.901  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.561  62.121  64.447  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.147  62.359  65.121  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.153      0.428      1.475
+REMARK INTER + INTRA:          -8.153
+REMARK INTER:                  -8.153
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.342  63.473  67.791  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.960  63.021  67.214  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.370  62.779  66.541  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.989  62.328  65.966  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.197  62.118  66.063  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.786  62.361  66.737  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      58.994  62.151  66.835  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.168  62.812  67.313  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      59.757  63.054  67.986  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.399  62.086  65.292  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      62.191  62.295  65.195  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.601  62.053  64.521  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.220  61.602  63.946  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.428  61.392  64.043  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.018  61.635  64.717  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.786      1.620      3.426
+REMARK INTER + INTRA:          -7.786
+REMARK INTER:                  -7.786
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.667  62.448  64.249  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.986  62.160  64.618  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.758  62.458  65.352  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.078  62.170  65.720  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.627  61.584  65.355  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.857  61.285  64.621  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.406  60.698  64.255  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      61.536  61.573  64.252  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      61.765  61.274  63.517  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.849  62.468  66.454  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.299  63.055  66.820  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.070  63.353  67.554  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.391  63.066  67.922  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.941  62.479  67.557  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.170  62.180  66.823  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.242      3.559      5.318
+REMARK INTER + INTRA:          -7.242
+REMARK INTER:                  -7.242
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.489  61.957  68.604  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.488  62.585  69.140  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.770  62.473  69.907  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.768  63.101  70.442  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.485  63.840  70.211  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.203  63.952  69.443  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      59.919  64.692  69.212  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.204  63.325  68.908  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      59.922  63.437  68.141  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.050  62.989  71.209  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.333  62.249  71.441  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.615  62.138  72.208  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.614  62.765  72.743  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.331  63.504  72.512  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.049  63.616  71.744  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.972      4.384      5.832
+REMARK INTER + INTRA:          -6.972
+REMARK INTER:                  -6.972
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.513  66.104  70.779  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.828  65.382  70.531  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.174  64.873  71.079  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.488  64.152  70.832  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.457  63.939  70.035  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.111  64.449  69.486  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.080  64.237  68.688  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      59.796  65.170  69.734  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      59.450  65.680  69.184  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.834  63.642  71.380  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.866  63.854  72.177  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.212  63.344  72.726  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.526  62.624  72.478  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.495  62.411  71.682  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.149  62.921  71.133  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.966      5.247      6.748
+REMARK INTER + INTRA:          -6.966
+REMARK INTER:                  -6.966
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.449  64.805  71.969  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.869  64.942  71.271  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.479  65.497  71.260  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.898  65.634  70.563  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.708  65.217  69.877  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.097  64.662  69.889  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.906  64.244  69.203  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      62.677  64.524  70.586  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      62.067  63.969  70.597  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      64.509  66.189  70.551  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      64.699  66.607  71.237  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.310  67.161  71.225  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.729  67.298  70.529  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.539  66.881  69.843  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.928  66.326  69.855  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.876      6.369      7.768
+REMARK INTER + INTRA:          -6.876
+REMARK INTER:                  -6.876
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.228  66.454  72.251  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.881  66.608  71.518  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.150  66.276  71.329  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.803  66.431  70.597  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      65.187  66.917  70.052  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.919  67.249  70.241  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      66.304  67.737  69.697  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      66.266  67.095  70.974  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      66.997  67.428  71.162  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      64.072  66.099  70.408  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      63.688  65.612  70.952  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.956  65.280  70.763  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.610  65.434  70.031  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.994  65.921  69.487  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      63.726  66.253  69.676  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.875      4.707      5.737
+REMARK INTER + INTRA:          -6.875
+REMARK INTER:                  -6.875
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.775  66.181  69.929  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.713  65.598  70.510  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.975  64.832  70.355  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.913  64.249  70.935  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      59.588  64.432  71.671  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.325  65.199  71.826  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      58.999  65.383  72.562  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      59.387  65.782  71.245  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      59.124  66.549  71.401  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.176  63.483  70.781  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.501  63.299  70.045  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.764  62.533  69.891  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.702  61.951  70.470  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.377  62.134  71.206  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.113  62.901  71.361  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.548      5.654      6.454
+REMARK INTER + INTRA:          -6.548
+REMARK INTER:                  -6.548
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = minoxidil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.337  65.038  70.603  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.517  65.112  70.536  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.022  64.668  71.022  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.203  64.742  70.955  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      61.879  65.261  70.401  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.376  65.705  69.914  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.052  66.224  69.359  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      63.195  65.631  69.981  0.00  0.00    +0.000 N 
+ATOM      9  O   UNL     1      63.690  66.076  69.493  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.707  64.298  71.442  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      62.031  63.779  71.997  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.534  63.335  72.484  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.716  63.409  72.417  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.393  63.928  71.863  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.889  64.372  71.375  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

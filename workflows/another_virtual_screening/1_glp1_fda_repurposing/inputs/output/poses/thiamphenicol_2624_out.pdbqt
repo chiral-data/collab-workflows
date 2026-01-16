@@ -1,0 +1,306 @@
+MODEL 1
+REMARK VINA RESULT:   -10.494      0.000      0.000
+REMARK INTER + INTRA:         -10.494
+REMARK INTER:                 -10.494
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      60.986  63.877  69.826  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      60.917  63.509  69.090  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      60.141  63.293  69.271  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      61.692  63.725  68.909  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      60.847  63.141  68.355  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      61.484  63.144  67.831  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      61.415  62.777  67.096  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      60.709  62.406  66.886  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      60.071  62.403  67.410  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      60.141  62.771  68.145  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      60.639  62.038  66.150  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      59.933  61.667  65.939  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      61.276  62.041  65.626  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      61.982  62.412  65.837  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      62.619  62.415  65.312  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      61.207  61.673  64.890  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      61.843  61.676  64.366  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      62.550  62.047  64.577  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      61.774  61.309  63.631  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      62.411  61.311  63.106  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      61.068  60.938  63.420  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:   -10.296      2.748      4.380
+REMARK INTER + INTRA:         -10.296
+REMARK INTER:                 -10.296
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      62.370  61.648  63.506  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      62.020  61.800  64.238  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      61.360  61.358  64.014  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      62.680  62.241  64.463  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      61.670  61.951  64.970  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      62.066  62.408  65.530  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      61.716  62.559  66.261  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      60.971  62.253  66.433  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      60.573  61.795  65.873  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      60.923  61.644  65.141  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      60.621  62.404  67.164  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      59.874  62.097  67.336  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      61.017  62.862  67.725  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      61.763  63.168  67.553  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      62.160  63.626  68.114  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      60.667  63.013  68.457  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      61.063  63.470  69.016  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      61.810  63.777  68.845  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      60.713  63.621  69.748  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      61.110  64.079  70.309  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      59.967  63.315  69.920  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -9.841      2.035      2.944
+REMARK INTER + INTRA:          -9.841
+REMARK INTER:                  -9.841
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      61.594  63.551  72.843  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      61.409  63.287  72.082  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      60.875  62.745  72.400  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      61.943  63.830  71.764  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      61.224  63.024  71.323  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      61.593  63.362  70.668  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      61.408  63.099  69.908  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      60.854  62.497  69.804  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      60.484  62.159  70.460  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      60.669  62.422  71.219  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      60.669  62.234  69.045  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      60.114  61.632  68.940  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      61.038  62.572  68.389  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      61.592  63.174  68.494  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      61.962  63.512  67.838  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      60.853  62.309  67.630  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      61.222  62.647  66.975  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      61.777  63.249  67.078  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      61.037  62.383  66.215  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      61.407  62.722  65.559  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      60.483  61.782  66.110  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -9.810      3.603      5.257
+REMARK INTER + INTRA:          -9.810
+REMARK INTER:                  -9.810
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      61.179  62.537  65.751  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      61.107  62.552  66.574  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      60.572  61.925  66.539  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      61.641  63.179  66.609  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      61.034  62.568  67.396  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      61.461  63.118  67.837  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      61.388  63.134  68.658  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      60.889  62.599  69.038  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      60.462  62.047  68.597  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      60.535  62.032  67.775  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      60.817  62.614  69.860  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      60.317  62.078  70.240  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      61.243  63.165  70.302  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      61.742  63.700  69.921  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      62.170  64.251  70.363  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      61.171  63.180  71.123  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      61.598  63.731  71.564  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      62.097  64.267  71.184  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      61.525  63.746  72.386  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      61.952  64.298  72.828  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      61.026  63.211  72.767  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -9.782      5.657      6.945
+REMARK INTER + INTRA:          -9.782
+REMARK INTER:                  -9.782
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      66.316  67.762  69.910  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      65.714  67.331  70.276  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      65.677  67.894  70.878  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      65.750  66.769  69.673  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      65.112  66.901  70.641  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      64.843  66.200  70.301  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      64.241  65.770  70.666  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      63.909  66.041  71.370  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      64.178  66.743  71.710  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      64.780  67.174  71.345  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      63.307  65.611  71.735  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      62.974  65.883  72.440  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      63.037  64.909  71.396  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      63.370  64.638  70.691  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      63.100  63.935  70.352  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      62.435  64.479  71.761  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      62.166  63.778  71.421  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      62.498  63.505  70.717  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      61.564  63.347  71.786  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      61.294  62.645  71.446  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      61.231  63.618  72.490  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -9.688      5.000      6.346
+REMARK INTER + INTRA:          -9.688
+REMARK INTER:                  -9.688
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      66.028  67.620  70.713  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      65.487  67.009  70.588  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      65.754  66.931  69.812  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      65.219  67.087  71.365  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      64.946  66.399  70.463  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      64.444  66.161  71.073  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      63.904  65.551  70.948  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      63.865  65.179  70.213  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      64.367  65.416  69.603  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      64.908  66.026  69.728  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      63.324  64.568  70.088  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      63.285  64.195  69.353  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      62.822  64.330  70.698  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      62.862  64.703  71.433  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      62.359  64.465  72.043  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      62.282  63.719  70.573  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      61.780  63.482  71.183  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      61.818  63.854  71.918  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      61.239  62.871  71.058  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      60.737  62.633  71.668  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      61.200  62.498  70.323  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -9.423      5.544      6.457
+REMARK INTER + INTRA:          -9.423
+REMARK INTER:                  -9.423
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      60.797  62.459  71.279  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      61.321  63.096  71.323  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      60.992  63.317  72.046  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      61.650  62.875  70.599  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      61.844  63.733  71.366  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      62.390  63.860  70.762  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      62.913  64.496  70.805  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      62.889  65.005  71.453  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      62.343  64.879  72.059  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      61.820  64.242  72.015  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      63.412  65.642  71.497  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      63.389  66.152  72.146  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      63.958  65.770  70.892  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      63.981  65.260  70.244  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      64.528  65.387  69.639  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      64.481  66.406  70.936  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      65.027  66.533  70.331  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      65.051  66.024  69.682  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      65.550  67.170  70.375  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      66.097  67.297  69.769  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      65.527  67.679  71.023  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.892      6.819      7.964
+REMARK INTER + INTRA:          -8.892
+REMARK INTER:                  -8.892
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      66.077  66.945  71.484  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      65.287  66.716  71.559  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      65.446  66.026  71.136  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      65.127  67.406  71.982  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      64.498  66.487  71.634  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      63.966  66.970  72.038  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      63.176  66.742  72.113  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      62.920  66.031  71.785  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      63.453  65.547  71.380  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      64.242  65.775  71.305  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      62.131  65.802  71.860  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      61.874  65.090  71.531  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      61.598  66.285  72.264  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      61.855  66.996  72.592  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      61.322  67.480  72.997  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      60.809  66.056  72.339  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      60.277  66.539  72.743  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      60.533  67.251  73.072  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      59.488  66.311  72.818  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      58.954  66.794  73.222  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      59.231  65.599  72.490  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.629      5.489      6.258
+REMARK INTER + INTRA:          -8.629
+REMARK INTER:                  -8.629
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thiamphenicol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   1      58.191  65.402  72.935  0.00  0.00    +0.000 C 
+ATOM      2  S   UNK A   1      58.911  65.220  72.572  0.00  0.00    +0.000 S 
+ATOM      3  O   UNK A   1      58.568  64.553  72.227  0.00  0.00    +0.000 OA
+ATOM      4  O   UNK A   1      59.254  65.886  72.916  0.00  0.00    +0.000 OA
+ATOM      5  C   UNK A   1      59.629  65.037  72.209  0.00  0.00    +0.000 A 
+ATOM      6  C   UNK A   1      60.284  65.523  72.326  0.00  0.00    +0.000 A 
+ATOM      7  C   UNK A   1      61.003  65.341  71.964  0.00  0.00    +0.000 A 
+ATOM      8  C   UNK A   1      61.065  64.673  71.485  0.00  0.00    +0.000 A 
+ATOM      9  C   UNK A   1      60.409  64.186  71.367  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      59.690  64.368  71.730  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      61.783  64.490  71.122  0.00  0.00    +0.000 C 
+ATOM     12  O   UNK A   1      61.845  63.821  70.642  0.00  0.00    +0.000 OA
+ATOM     13  C   UNK A   1      62.439  64.976  71.239  0.00  0.00    +0.000 C 
+ATOM     14  C   UNK A   1      62.377  65.644  71.718  0.00  0.00    +0.000 C 
+ATOM     15  O   UNK A   1      63.034  66.131  71.835  0.00  0.00    +0.000 OA
+ATOM     16  N   UNK A   1      63.158  64.794  70.876  0.00  0.00    +0.000 NA
+ATOM     17  C   UNK A   0      63.813  65.280  70.993  0.00  0.00    +0.000 C 
+ATOM     18  O   UNK A   0      63.752  65.948  71.473  0.00  0.00    +0.000 OA
+ATOM     19  C   UNK A   0      64.532  65.097  70.631  0.00  0.00    +0.000 C 
+ATOM     20 CL   UNK A   0      65.188  65.584  70.748  0.00  0.00    +0.000 Cl
+ATOM     21 CL   UNK A   0      64.594  64.429  70.151  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

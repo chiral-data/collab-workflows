@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.189      0.000      0.000
+REMARK INTER + INTRA:          -9.189
+REMARK INTER:                  -9.189
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.391  62.678  69.894  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.672  62.636  69.119  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.385  62.057  68.607  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.665  62.015  67.833  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.232  62.553  67.569  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.513  62.511  66.795  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.225  61.932  66.283  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.506  61.891  65.507  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.218  61.311  64.996  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.498  61.269  64.221  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.066  61.807  63.958  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.353  62.387  64.470  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.073  62.428  65.245  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.519  63.132  68.082  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.239  63.174  68.856  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.179      0.985      4.106
+REMARK INTER + INTRA:          -9.179
+REMARK INTER:                  -9.179
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.487  61.831  63.430  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.173  61.852  64.193  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.408  62.441  64.720  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.095  62.462  65.482  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.546  61.893  65.718  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      61.232  61.914  66.481  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.467  62.503  67.007  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.153  62.524  67.771  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.389  63.114  68.298  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.075  63.135  69.060  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.525  62.566  69.296  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.290  61.976  68.769  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.604  61.956  68.006  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.311  61.304  65.191  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.624  61.283  64.429  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.303      2.430      5.200
+REMARK INTER + INTRA:          -8.303
+REMARK INTER:                  -8.303
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.878  62.857  66.941  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.129  62.746  67.719  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.134  63.380  68.247  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.385  63.269  69.023  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.633  62.523  69.275  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      60.884  62.411  70.052  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.889  63.046  70.579  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.141  62.934  71.358  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.145  63.569  71.884  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.396  63.458  72.662  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.644  62.711  72.913  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.639  62.077  72.386  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.388  62.189  71.608  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.628  61.889  68.747  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.377  62.000  67.970  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.209     18.278     19.430
+REMARK INTER + INTRA:          -8.209
+REMARK INTER:                  -8.209
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.028  81.693  57.412  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.413  81.058  57.771  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.235  81.062  57.846  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.620  80.428  58.204  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.184  79.788  58.489  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      64.570  79.153  58.848  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.391  79.158  58.922  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.777  78.522  59.282  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.598  78.528  59.356  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.984  77.893  59.715  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.548  77.252  60.000  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.726  77.248  59.925  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.341  77.883  59.566  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.363  79.784  58.415  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.978  80.418  58.056  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.992      4.566      6.393
+REMARK INTER + INTRA:          -7.992
+REMARK INTER:                  -7.992
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.646  63.323  70.231  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.229  63.885  70.388  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.643  64.236  69.767  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.226  64.797  69.924  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.397  65.008  70.703  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      63.980  65.569  70.861  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.393  65.920  70.240  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.977  66.482  70.397  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.391  66.832  69.775  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.974  67.394  69.932  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.145  67.605  70.712  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.731  67.254  71.334  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.147  66.692  71.176  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.983  64.657  71.325  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.400  64.096  71.167  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.908      5.046      6.359
+REMARK INTER + INTRA:          -7.908
+REMARK INTER:                  -7.908
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.252  66.573  69.502  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.717  66.041  69.837  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.262  66.267  70.486  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.728  65.736  70.820  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.647  64.978  70.506  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      63.113  64.446  70.840  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.658  64.672  71.489  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.122  64.140  71.824  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.668  64.367  72.474  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.133  63.835  72.809  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.053  63.077  72.493  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.508  62.851  71.843  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.043  63.382  71.509  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.103  64.752  69.856  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.637  65.283  69.522  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.506      3.755      5.191
+REMARK INTER + INTRA:          -7.506
+REMARK INTER:                  -7.506
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.308  67.632  70.669  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.456  66.822  70.726  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.736  66.407  70.071  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.884  65.598  70.127  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.753  65.203  70.839  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      59.901  64.393  70.896  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.180  63.979  70.241  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.329  63.168  70.297  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.609  62.754  69.641  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.757  61.944  69.698  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.626  61.549  70.411  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.346  61.965  71.066  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.198  62.774  71.009  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.473  65.619  71.495  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.325  66.427  71.438  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.297     24.607     25.547
+REMARK INTER + INTRA:          -7.297
+REMARK INTER:                  -7.297
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      68.480  81.073  52.983  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      68.828  80.723  52.322  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      69.647  80.738  52.230  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      69.995  80.388  51.570  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      69.524  80.023  51.000  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      69.872  79.673  50.339  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.691  79.688  50.247  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.039  79.338  49.586  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.859  79.354  49.495  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      72.207  79.004  48.834  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.735  78.638  48.263  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.915  78.622  48.356  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.568  78.973  49.017  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      68.704  80.007  51.092  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      68.357  80.357  51.752  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.163     24.816     26.090
+REMARK INTER + INTRA:          -7.163
+REMARK INTER:                  -7.163
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = monobenzone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      72.874  78.819  48.098  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      72.211  79.002  48.553  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      72.293  79.450  49.241  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      71.631  79.633  49.696  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.885  79.368  49.464  0.00  0.00    +0.000 A 
+ATOM      6  O   UNL     1      70.222  79.552  49.920  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.305  79.999  50.607  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      69.641  80.183  51.063  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      69.725  80.631  51.751  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      69.062  80.814  52.207  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      68.316  80.549  51.975  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      68.233  80.101  51.287  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      68.896  79.918  50.831  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.802  78.920  48.777  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      71.465  78.737  48.322  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

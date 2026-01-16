@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.087      0.000      0.000
+REMARK INTER + INTRA:          -8.087
+REMARK INTER:                  -8.087
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.126  63.199  68.149  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.678  62.963  67.583  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.478  63.136  67.689  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.430  62.556  66.910  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.631  62.383  66.803  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.383  61.976  66.130  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.934  61.740  65.565  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.734  61.913  65.671  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.287  61.677  65.105  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.038  61.269  64.431  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.086  61.849  65.211  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.982  62.320  66.344  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.782  62.493  66.450  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.084      0.023      2.443
+REMARK INTER + INTRA:          -8.084
+REMARK INTER:                  -8.084
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.023  61.253  64.453  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.277  61.663  65.122  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.079  61.825  65.227  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.729  61.910  65.686  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.927  61.749  65.582  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.379  61.996  66.147  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.633  62.406  66.815  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.435  62.569  66.921  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.690  62.979  67.590  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.141  63.227  68.155  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.492  63.141  67.695  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.983  62.321  66.356  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.786  62.483  66.461  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.975      1.045      3.148
+REMARK INTER + INTRA:          -7.975
+REMARK INTER:                  -7.975
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.351  61.372  63.366  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.667  61.361  63.827  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.006  60.935  63.574  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.643  61.774  64.540  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.302  62.200  64.793  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.278  62.614  65.506  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.595  62.602  65.966  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.934  62.176  65.714  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.249  62.164  66.175  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.225  62.578  66.889  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.590  61.739  65.923  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.958  61.762  65.001  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.297  61.336  64.748  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.340      3.071      4.330
+REMARK INTER + INTRA:          -7.340
+REMARK INTER:                  -7.340
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.522  63.103  72.567  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.555  63.240  71.754  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.980  63.884  71.461  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.163  62.734  71.235  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.738  62.090  71.527  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.347  61.583  71.007  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.380  61.721  70.194  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.805  62.364  69.901  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.838  62.502  69.088  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.446  61.995  68.567  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.262  63.145  68.795  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.196  62.871  70.421  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.621  63.515  70.128  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.329      3.057      4.853
+REMARK INTER + INTRA:          -7.329
+REMARK INTER:                  -7.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.440  62.016  68.497  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.821  62.502  69.045  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.221  63.177  68.788  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.803  62.313  69.846  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.403  61.639  70.103  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.385  61.450  70.906  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.766  61.935  71.452  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.166  62.610  71.197  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.548  63.097  71.743  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.529  62.908  72.547  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.947  63.771  71.488  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.184  62.799  70.394  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.585  63.474  70.138  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.321      4.607      6.302
+REMARK INTER + INTRA:          -7.321
+REMARK INTER:                  -7.321
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.518  61.368  71.260  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.993  62.003  71.216  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.432  62.032  70.611  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.028  62.607  71.775  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.588  62.578  72.380  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.624  63.183  72.939  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.099  63.817  72.894  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.538  63.848  72.290  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.013  64.482  72.244  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.048  65.088  72.805  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.452  64.512  71.640  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.503  63.242  71.730  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      59.942  63.272  71.125  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.310      4.604      5.892
+REMARK INTER + INTRA:          -7.310
+REMARK INTER:                  -7.310
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.089  65.130  72.680  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.052  64.504  72.143  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.506  64.525  71.524  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.559  63.860  72.225  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.104  63.839  72.843  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.611  63.194  72.925  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.573  62.569  72.388  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.028  62.589  71.769  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.990  61.964  71.231  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.498  61.318  71.313  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.446  61.984  70.613  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.521  63.234  71.687  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      59.975  63.255  71.068  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.054     25.298     26.251
+REMARK INTER + INTRA:          -7.054
+REMARK INTER:                  -7.054
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.803  78.977  48.346  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.409  79.452  48.894  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      72.761  80.149  49.163  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.666  79.231  49.172  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      71.314  78.535  48.904  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.569  78.314  49.183  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.177  78.790  49.730  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.528  79.486  49.999  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.135  79.962  50.547  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      69.390  79.741  50.826  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.486  80.658  50.816  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.272  79.707  49.721  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      71.624  80.404  49.990  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.937      6.146      7.307
+REMARK INTER + INTRA:          -6.937
+REMARK INTER:                  -6.937
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propofol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.767  65.140  71.159  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.329  65.722  71.321  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.332  66.097  72.057  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.885  65.929  70.750  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.882  65.555  70.015  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.439  65.763  69.444  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.000  66.345  69.607  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.005  66.720  70.342  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.566  67.302  70.506  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.124  67.510  69.934  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.570  67.676  71.240  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.447  66.512  70.914  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      64.451  66.887  71.649  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

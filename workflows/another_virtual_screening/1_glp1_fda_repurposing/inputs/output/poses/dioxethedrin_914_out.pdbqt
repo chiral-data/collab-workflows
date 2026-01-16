@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.609      0.000      0.000
+REMARK INTER + INTRA:          -8.609
+REMARK INTER:                  -8.609
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.161  63.069  68.515  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.656  62.953  67.865  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.388  62.524  67.214  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.883  62.409  66.564  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.644  62.723  66.565  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.614  61.979  65.912  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.852  61.664  65.911  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.110  61.864  65.263  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.841  61.434  64.611  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.336  61.319  63.961  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.068  60.889  63.310  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.098  61.633  63.962  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.593  61.518  63.312  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.366  62.063  64.613  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.871  62.178  65.264  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.678      1.420      3.500
+REMARK INTER + INTRA:          -7.678
+REMARK INTER:                  -7.678
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.376  61.253  63.097  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.355  61.616  63.838  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.661  61.602  64.284  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.640  61.965  65.024  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.311  62.341  65.319  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.945  61.951  65.471  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.273  61.574  65.176  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.924  62.314  66.211  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.230  62.300  66.658  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.209  62.662  67.398  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.515  62.648  67.845  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.881  63.039  67.692  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.859  63.402  68.434  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.575  63.053  67.247  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.596  62.690  66.505  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.556      2.301      4.634
+REMARK INTER + INTRA:          -7.556
+REMARK INTER:                  -7.556
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.895  62.451  65.168  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.641  62.206  65.914  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.522  62.761  66.512  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.269  62.516  67.258  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.134  61.716  67.405  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.150  63.071  67.857  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.285  63.872  67.709  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.896  62.826  68.602  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.777  63.382  69.201  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.524  63.136  69.946  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.405  63.692  70.545  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.390  62.336  70.094  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.136  62.091  70.840  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.508  61.781  69.496  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.762  62.026  68.749  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.372      5.816      6.770
+REMARK INTER + INTRA:          -7.372
+REMARK INTER:                  -7.372
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.767  66.588  73.222  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.167  65.875  73.102  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.903  65.347  72.527  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.303  64.636  72.407  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.965  64.453  72.861  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.039  64.106  71.831  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.375  64.289  71.376  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.438  63.395  71.711  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.174  62.865  71.135  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.574  62.154  71.015  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.310  61.625  70.439  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.237  61.971  71.470  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.636  61.259  71.350  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.501  62.500  72.045  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.101  63.212  72.166  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.271      5.972      7.244
+REMARK INTER + INTRA:          -7.271
+REMARK INTER:                  -7.271
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.388  67.703  69.857  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.773  67.322  70.256  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.432  66.644  69.935  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.818  66.264  70.334  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.546  66.561  71.052  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.476  65.584  70.012  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.749  65.286  69.293  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.862  65.204  70.411  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.521  64.525  70.090  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.907  64.145  70.489  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.565  63.465  70.167  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.635  64.442  71.207  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.020  64.062  71.606  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.976  65.121  71.529  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.591  65.502  71.130  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.261      3.589      6.014
+REMARK INTER + INTRA:          -7.261
+REMARK INTER:                  -7.261
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.850  62.368  67.171  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.077  62.213  67.950  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.202  62.837  68.475  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.428  62.682  69.252  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.529  61.904  69.505  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.553  63.306  69.778  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.452  64.085  69.525  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.779  63.151  70.556  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.904  63.775  71.081  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.131  63.620  71.859  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.256  64.244  72.384  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.231  62.842  72.112  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.458  62.687  72.891  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.106  62.218  71.587  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.880  62.373  70.808  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.174      6.649      7.854
+REMARK INTER + INTRA:          -7.174
+REMARK INTER:                  -7.174
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.646  64.853  70.067  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.340  65.103  70.439  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.886  65.563  70.026  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.578  65.813  70.398  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.724  65.604  71.182  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.125  66.274  69.985  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.979  66.483  69.201  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.817  66.524  70.357  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.364  66.984  69.944  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.056  67.234  70.316  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      66.603  67.695  69.903  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      66.202  67.025  71.100  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      66.896  67.275  71.472  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      65.656  66.565  71.513  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.963  66.314  71.141  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.060      1.669      2.763
+REMARK INTER + INTRA:          -7.060
+REMARK INTER:                  -7.060
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.223  63.849  70.851  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.880  63.494  70.189  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.276  63.503  69.465  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.933  63.148  68.804  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.196  62.784  68.867  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.328  63.157  68.080  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.066  63.522  68.017  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.986  62.802  67.419  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.381  62.812  66.694  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.038  62.457  66.033  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.434  62.466  65.308  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.301  62.093  66.096  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      59.959  61.738  65.434  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.906  62.084  66.820  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.249  62.439  67.481  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.890      6.044      7.666
+REMARK INTER + INTRA:          -6.890
+REMARK INTER:                  -6.890
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dioxethedrin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.239  61.520  71.168  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.281  62.231  71.586  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.775  62.836  71.320  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.818  63.546  71.737  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.367  63.651  72.419  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.312  64.151  71.472  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.763  64.046  70.789  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.354  64.861  71.890  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.849  65.467  71.624  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.891  66.177  72.042  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      63.386  66.783  71.776  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.441  66.282  72.723  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.483  66.993  73.141  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.947  65.677  72.989  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.904  64.966  72.571  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

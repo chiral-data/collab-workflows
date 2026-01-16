@@ -1,0 +1,41 @@
+AutoDock Vina Test Virtual Screening Results
+===========================================
+Job ID: glp1_test_50_compounds
+Date: Tue Sep  9 07:31:57 UTC 2025
+Target: GLP-1 Receptor FDA Drug Test (30 compounds)
+
+Input Information:
+- Receptor: 7s15_glp1r.pdb
+- Ligand Directory: inputs/pdbqt_files
+- Total PDBQT files found: 50
+
+Docking Parameters:
+- Box Center: (69.69, 69.69, 60.66)
+- Box Size: (25.0, 25.0, 25.0)
+- Exhaustiveness: 4
+- Number of modes: 9
+- Energy range: 3
+
+Results Summary:
+- Successful dockings: 0
+- Failed dockings: 50
+- Success rate: 0%
+
+Output Files:
+- Individual poses: poses/ directory (0 files)
+- Docking logs: logs/ directory
+- Results CSV: screening_results.csv
+- Sorted results: screening_results_sorted.csv
+
+Top 10 Best Scoring Compounds:
+
+- abarelix_35: -17.957 kcal/mol
+- SpiramycinI_2471: -16.871 kcal/mol
+- SpiramycinIII_2473: -16.783 kcal/mol
+- SpiramycinII_2472: -16.607 kcal/mol
+- abemaciclib_5259: -16.580 kcal/mol
+- acarbose_39: -15.893 kcal/mol
+- S-nicardipine_5: -15.591 kcal/mol
+- acalabrutinib_5260: -15.322 kcal/mol
+- StreptomycinB_2482: -15.235 kcal/mol
+- abirateroneacetate_4176: -14.818 kcal/mol

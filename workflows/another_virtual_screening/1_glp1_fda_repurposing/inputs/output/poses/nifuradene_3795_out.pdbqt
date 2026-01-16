@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.336      0.000      0.000
+REMARK INTER + INTRA:          -8.336
+REMARK INTER:                  -8.336
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.209  61.239  63.096  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.592  61.274  63.643  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.877  60.896  63.485  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.693  61.688  64.350  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.374  62.091  64.583  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.232  62.424  65.325  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.463  62.226  65.550  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.130  61.771  64.947  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.092  62.444  66.254  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.496  62.902  66.808  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      61.126  63.121  67.512  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.458  63.576  68.115  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.895  63.659  68.712  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.215  63.256  68.478  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.357  62.923  67.736  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.824  62.472  67.297  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.089      1.157      1.377
+REMARK INTER + INTRA:          -8.089
+REMARK INTER:                  -8.089
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.360  61.519  63.464  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.404  62.095  64.053  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.797  62.805  63.908  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.055  61.959  64.788  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.645  61.278  65.013  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.391  61.379  65.791  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.644  62.121  66.048  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      62.054  62.480  65.428  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.510  62.448  66.793  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.088  62.023  67.361  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      60.954  62.349  68.106  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.545  61.991  68.727  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.543  62.511  69.366  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      60.953  63.191  69.142  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.207  63.091  68.363  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.637  63.637  67.919  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.015      1.483      4.253
+REMARK INTER + INTRA:          -8.015
+REMARK INTER:                  -8.015
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.882  63.499  69.678  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.397  63.510  69.033  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.105  63.931  69.077  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.203  63.100  68.344  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.518  62.658  68.219  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.552  62.345  67.456  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.258  62.594  67.110  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.660  63.061  67.658  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.516  62.409  66.348  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.052  61.934  65.859  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      61.309  61.749  65.099  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.908  61.282  64.549  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.365  61.243  63.864  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      62.049  61.685  63.989  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.015  61.998  64.752  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.587  62.476  65.105  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.151      1.832      2.725
+REMARK INTER + INTRA:          -7.151
+REMARK INTER:                  -7.151
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.741  61.936  65.258  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.316  62.343  65.688  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.019  62.573  65.324  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.187  62.519  66.484  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.514  62.325  66.921  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.620  62.606  67.690  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.357  62.974  67.728  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      61.708  62.920  66.982  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.687  63.332  68.393  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.270  63.344  69.105  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      61.598  63.702  69.771  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.248  63.756  70.516  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.769  64.157  71.014  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      62.441  64.350  70.578  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.336  64.069  69.809  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.874  64.143  69.188  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.086      5.216      6.857
+REMARK INTER + INTRA:          -7.086
+REMARK INTER:                  -7.086
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.471  67.405  70.950  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      65.955  66.852  71.282  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      65.995  66.683  72.088  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.400  66.470  70.807  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.297  66.582  69.995  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.684  66.089  69.746  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.409  65.672  70.403  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      64.852  65.907  71.058  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.799  65.117  70.404  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      63.403  64.936  69.703  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      62.793  64.382  69.704  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      62.350  64.146  69.049  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.802  63.584  69.301  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      61.905  63.472  70.111  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.518  63.965  70.361  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.805  64.030  71.131  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.083      2.415      3.737
+REMARK INTER + INTRA:          -7.083
+REMARK INTER:                  -7.083
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.341  61.807  66.845  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.128  62.594  66.969  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.146  63.130  66.343  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.898  62.846  67.720  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.853  62.374  68.397  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.599  62.849  69.022  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.487  63.614  68.732  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.672  63.611  67.928  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.234  64.266  69.169  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.069  64.185  69.973  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      59.817  64.836  70.411  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.632  64.840  71.215  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.406  65.605  71.422  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      59.451  66.076  70.746  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.705  65.601  70.121  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.825  65.847  69.343  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.031      5.797      6.689
+REMARK INTER + INTRA:          -7.031
+REMARK INTER:                  -7.031
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.954  61.267  71.723  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.400  61.791  71.410  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.015  61.612  70.703  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.229  62.496  71.804  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.568  62.749  72.513  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.239  63.480  72.706  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.697  63.679  72.117  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.691  63.070  71.560  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.241  64.366  72.089  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.305  64.929  72.689  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      59.850  65.615  72.662  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.855  66.224  73.219  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.317  66.799  72.974  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      58.978  66.546  72.266  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.308  65.814  72.073  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.126  65.361  71.408  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.971      5.289      6.412
+REMARK INTER + INTRA:          -6.971
+REMARK INTER:                  -6.971
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.763  62.375  73.212  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.541  62.506  72.428  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.620  61.904  71.870  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.241  63.241  72.203  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.132  63.893  72.698  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.821  64.508  72.244  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.738  64.236  71.469  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      60.998  63.453  71.444  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.446  64.671  70.832  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.206  65.452  70.940  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      59.914  65.887  70.304  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.654  66.670  70.328  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.410  66.882  69.569  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      59.520  66.231  69.075  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.831  65.616  69.529  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.025  64.862  69.256  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.873      5.520      7.087
+REMARK INTER + INTRA:          -6.873
+REMARK INTER:                  -6.873
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = nifuradene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.748  63.208  70.956  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      62.160  63.774  71.393  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.007  63.867  72.197  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.726  64.248  71.024  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.938  64.218  70.226  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.522  64.786  70.096  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.672  65.166  70.813  0.00  0.00    +0.000 A 
+ATOM      8  O   UNL     1      63.180  64.833  71.386  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.217  65.772  70.936  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      64.674  66.051  70.307  0.00  0.00    +0.000 NA
+ATOM     11  N   UNL     1      65.219  66.656  70.429  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      65.711  66.990  69.857  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.165  67.576  70.219  0.00  0.00    +0.000 C 
+ATOM     14  N   UNL     1      65.953  67.605  71.016  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      65.369  67.037  71.146  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      64.999  66.878  71.866  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

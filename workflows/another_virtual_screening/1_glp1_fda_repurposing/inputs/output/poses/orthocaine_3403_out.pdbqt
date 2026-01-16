@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.233      0.000      0.000
+REMARK INTER + INTRA:          -7.233
+REMARK INTER:                  -7.233
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.301  63.101  67.657  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.604  62.884  66.921  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.157  62.411  66.413  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.407  62.155  66.642  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.461  62.195  65.678  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.015  61.722  65.170  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.318  61.506  64.434  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.872  61.034  63.927  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.068  61.762  64.206  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.372  61.545  63.470  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.515  62.235  64.714  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.212  62.451  65.450  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.641      1.509      3.014
+REMARK INTER + INTRA:          -6.641
+REMARK INTER:                  -6.641
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.361  61.667  63.698  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.795  61.742  64.292  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.986  62.125  64.999  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.744  62.432  65.109  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.420  62.201  65.593  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.611  62.583  66.298  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.044  62.659  66.893  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.235  63.041  67.598  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.287  62.352  66.782  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.719  62.428  67.378  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.095  61.970  66.077  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.661  61.894  65.482  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.105      6.144      6.826
+REMARK INTER + INTRA:          -6.105
+REMARK INTER:                  -6.105
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.929  65.410  72.985  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.337  64.709  72.830  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.102  64.224  72.205  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.459  64.440  71.735  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.509  63.525  72.050  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.275  63.040  71.426  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.683  62.340  71.271  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.449  61.855  70.646  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.325  62.125  71.741  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.734  61.424  71.586  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.561  62.609  72.366  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.153  63.309  72.521  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.007      4.590      6.445
+REMARK INTER + INTRA:          -6.007
+REMARK INTER:                  -6.007
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.498  61.974  68.781  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.785  61.932  69.553  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.644  62.552  70.081  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.217  63.213  69.835  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.931  62.510  70.852  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.791  63.129  71.379  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.078  63.086  72.151  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.938  63.705  72.678  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.505  62.425  72.397  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.793  62.383  73.170  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.646  61.805  71.870  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.359  61.848  71.098  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.848      1.925      2.721
+REMARK INTER + INTRA:          -5.848
+REMARK INTER:                  -5.848
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.121  63.664  69.848  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.792  63.336  69.167  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.234  63.304  68.470  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.004  63.600  68.456  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.905  62.976  67.789  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.346  62.943  67.092  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.017  62.615  66.410  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      61.458  62.583  65.715  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.248  62.319  66.425  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.919  61.991  65.743  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.806  62.351  67.121  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.135  62.680  67.803  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.824      6.302      7.760
+REMARK INTER + INTRA:          -5.824
+REMARK INTER:                  -5.824
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.745  65.001  69.843  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.416  65.482  69.840  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.842  65.601  70.537  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.597  65.240  71.236  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.512  66.081  70.533  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.938  66.201  71.229  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.609  66.681  71.225  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      66.035  66.800  71.921  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      65.853  67.042  70.525  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      66.525  67.523  70.521  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.428  66.924  69.828  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.757  66.443  69.832  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.815      5.906      7.142
+REMARK INTER + INTRA:          -5.815
+REMARK INTER:                  -5.815
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.129  67.627  69.972  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      65.641  66.973  69.852  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      65.110  66.740  70.440  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.068  67.163  71.147  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.622  66.087  70.320  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.092  65.855  70.908  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.603  65.201  70.788  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      63.073  64.969  71.375  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.646  64.779  70.081  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      63.157  64.124  69.961  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.176  65.011  69.492  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.664  65.665  69.612  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.683      6.700      7.485
+REMARK INTER + INTRA:          -5.683
+REMARK INTER:                  -5.683
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.665  61.611  71.655  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.169  62.266  71.583  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.164  62.847  72.170  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.655  62.771  72.828  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.668  63.501  72.098  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.663  64.081  72.684  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.166  64.736  72.612  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      60.162  65.316  73.199  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.675  64.811  71.954  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.178  65.467  71.882  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.680  64.231  71.367  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.176  63.576  71.439  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.655     24.247     24.957
+REMARK INTER + INTRA:          -5.655
+REMARK INTER:                  -5.655
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = orthocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.612  80.210  51.376  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      69.069  79.768  50.851  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      69.834  80.014  50.659  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      70.140  80.702  50.994  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.290  79.572  50.135  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.054  79.817  49.943  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      71.510  79.374  49.418  0.00  0.00    +0.000 A 
+ATOM      8  N   UNL     1      72.274  79.620  49.228  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      71.203  78.686  49.084  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      71.661  78.243  48.558  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.439  78.439  49.275  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      69.982  78.882  49.800  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

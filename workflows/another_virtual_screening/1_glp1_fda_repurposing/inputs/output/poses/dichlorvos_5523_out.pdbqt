@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.177      0.000      0.000
+REMARK INTER + INTRA:          -6.177
+REMARK INTER:                  -6.177
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.777  62.742  67.543  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.394  62.745  66.997  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      61.300  62.373  66.265  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      60.533  62.154  66.475  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      62.069  62.591  66.056  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.371  62.378  65.319  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.207  62.001  65.536  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.825  62.004  64.989  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.731  61.631  64.259  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      62.350  61.634  63.712  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      61.019  61.256  64.076  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.006      1.724      2.575
+REMARK INTER + INTRA:          -6.006
+REMARK INTER:                  -6.006
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.380  62.000  64.224  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.264  62.301  64.983  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      61.527  62.226  65.348  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      61.237  61.836  64.682  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.818  62.617  66.015  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.327  62.748  66.664  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.792  62.152  65.713  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.676  62.453  66.473  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.940  62.378  66.838  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      59.824  62.680  67.598  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      59.320  62.002  66.443  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.250      6.633      7.288
+REMARK INTER + INTRA:          -5.250
+REMARK INTER:                  -5.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.705  64.286  70.136  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.973  64.951  69.730  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      64.502  65.471  70.092  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      64.498  65.002  70.771  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      64.506  65.941  69.413  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.966  66.625  69.388  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.030  65.990  70.454  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.299  66.656  70.048  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.828  67.176  70.410  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      66.096  67.841  70.003  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      66.088  67.028  71.179  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.131      3.196      4.209
+REMARK INTER + INTRA:          -5.131
+REMARK INTER:                  -5.131
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.158  62.726  66.647  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.143  63.115  67.374  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      60.931  62.703  68.058  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      60.826  62.017  67.612  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.036  63.390  68.504  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.905  63.377  69.318  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.719  62.293  68.740  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.704  62.682  69.468  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.491  62.271  70.152  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      60.476  62.660  70.879  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      60.294  61.470  70.106  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.069      3.726      4.357
+REMARK INTER + INTRA:          -5.069
+REMARK INTER:                  -5.069
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.993  64.735  70.384  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.619  64.487  69.692  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      62.088  63.855  69.714  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      62.213  63.778  70.526  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.962  63.933  68.901  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.440  63.425  68.515  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.558  63.225  69.736  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.183  62.976  69.043  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.652  62.345  69.065  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      60.279  62.097  68.372  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      60.496  61.963  69.779  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.005      5.952      6.434
+REMARK INTER + INTRA:          -5.005
+REMARK INTER:                  -5.005
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.419  65.058  72.093  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.040  64.559  72.304  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      60.164  63.856  71.888  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      59.517  64.028  71.405  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.810  63.683  72.372  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.240  62.990  72.254  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.287  63.154  71.474  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.909  62.654  71.685  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.032  61.952  71.270  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.654  61.452  71.481  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      60.534  61.750  70.644  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.986      5.893      6.531
+REMARK INTER + INTRA:          -4.986
+REMARK INTER:                  -4.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.658  64.845  69.647  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.184  64.220  69.900  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      62.792  64.266  70.626  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      63.113  65.016  70.751  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      62.471  63.516  70.500  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.972  63.182  71.065  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.401  64.313  71.350  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.927  63.686  71.604  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.536  63.733  72.329  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.062  63.107  72.582  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      61.619  64.406  72.799  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.928      6.383      7.026
+REMARK INTER + INTRA:          -4.928
+REMARK INTER:                  -4.928
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.944  67.629  70.269  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      65.661  66.978  69.849  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      65.112  66.469  70.198  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      65.122  66.927  70.884  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      65.101  66.010  69.511  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.621  65.341  69.470  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.564  65.961  70.545  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.280  65.310  70.125  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.732  64.801  70.474  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      63.449  64.150  70.053  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      63.467  64.944  71.242  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.829      4.838      5.901
+REMARK INTER + INTRA:          -4.829
+REMARK INTER:                  -4.829
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorvos
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.358  63.556  68.834  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.469  63.790  69.617  0.00  0.00    +0.000 OA
+ATOM      3  P   UNL     1      60.777  63.257  70.168  0.00  0.00    +0.000 P 
+ATOM      4  O   UNL     1      60.825  62.679  69.581  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.728  63.836  70.755  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.970  63.664  71.524  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.083  62.726  70.717  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.195  62.960  71.501  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.502  62.428  72.051  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.613  62.663  72.835  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      61.698  61.661  71.818  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

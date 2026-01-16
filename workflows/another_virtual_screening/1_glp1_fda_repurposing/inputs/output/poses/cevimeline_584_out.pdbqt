@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.142      0.000      0.000
+REMARK INTER + INTRA:          -8.142
+REMARK INTER:                  -8.142
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.709  62.330  66.910  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.409  62.357  66.474  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.546  61.976  65.754  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.316  62.153  65.515  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.653  62.643  66.087  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      61.093  62.769  66.679  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.907  61.663  64.993  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.274  61.397  64.304  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.051  61.621  64.138  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.460  62.111  64.660  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.093  62.377  65.349  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.930  62.047  64.919  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.657  61.720  64.570  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.631      1.252      2.563
+REMARK INTER + INTRA:          -7.631
+REMARK INTER:                  -7.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.577  61.982  64.930  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.781  61.893  65.128  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.397  62.246  65.768  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.608  62.007  65.756  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.503  61.507  65.109  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      61.228  61.436  64.720  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.795  62.514  66.379  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.213  62.737  66.919  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.443  62.451  66.836  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.256  61.944  66.213  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.838  61.722  65.673  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.833  62.054  66.132  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.958  62.392  66.548  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.029      1.695      2.370
+REMARK INTER + INTRA:          -7.029
+REMARK INTER:                  -7.029
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.689  63.535  68.304  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.035  63.218  67.914  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.047  62.826  67.188  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.274  62.603  67.005  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.784  62.857  67.619  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      60.255  63.237  68.180  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.829  62.383  66.436  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.588  61.977  65.760  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.791  61.791  65.653  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.236  62.011  66.222  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.477  62.417  66.899  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.747  62.213  66.444  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.118  62.067  66.064  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.023     15.719     16.565
+REMARK INTER + INTRA:          -7.023
+REMARK INTER:                  -7.023
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.051  78.228  73.222  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.385  77.768  73.061  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.388  76.973  72.839  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      58.605  76.735  72.733  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.119  77.383  72.890  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      58.601  78.022  73.092  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      59.158  76.139  72.594  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      58.906  75.387  72.372  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      58.099  75.230  72.288  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      57.546  75.826  72.427  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      57.799  76.579  72.649  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.066  76.094  72.527  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      58.435  75.697  72.435  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.003      7.378      8.060
+REMARK INTER + INTRA:          -7.003
+REMARK INTER:                  -7.003
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.559  65.383  71.256  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.086  65.845  70.819  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.745  66.241  71.118  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.112  66.633  70.491  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.680  66.478  69.806  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      64.045  65.991  70.009  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      65.487  66.738  71.219  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      66.167  67.203  71.269  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      66.472  67.561  70.590  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.097  67.456  69.863  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.417  66.992  69.813  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.762  67.141  70.238  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.012  67.211  70.723  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.982     17.562     17.923
+REMARK INTER + INTRA:          -6.982
+REMARK INTER:                  -6.982
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.095  79.485  58.328  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.768  79.233  58.735  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.916  78.466  58.999  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.650  78.463  59.377  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.954  79.229  59.346  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      65.409  79.705  58.949  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      65.276  77.728  59.365  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      65.641  77.075  59.712  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      66.379  77.158  60.072  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.753  77.893  60.084  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.388  78.546  59.736  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.245  78.001  59.796  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.996  77.510  59.788  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.732     25.198     25.881
+REMARK INTER + INTRA:          -6.732
+REMARK INTER:                  -6.732
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.914  80.901  48.733  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.481  80.199  48.731  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      71.794  80.051  49.165  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.547  79.283  48.998  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.081  78.955  48.461  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      72.658  79.521  48.296  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      71.061  79.682  49.532  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      70.398  79.307  49.846  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      70.220  78.531  49.625  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.705  78.132  49.091  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      71.369  78.507  48.777  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      70.964  78.663  49.142  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      70.640  78.930  49.498  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.732      3.801      4.977
+REMARK INTER + INTRA:          -6.732
+REMARK INTER:                  -6.732
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.547  63.847  67.997  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.519  63.212  68.523  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.516  63.264  69.346  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.484  62.498  69.651  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.467  61.972  69.015  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      60.489  62.414  68.318  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.503  63.087  70.228  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.490  62.883  71.027  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.458  62.088  71.248  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.438  61.499  70.671  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.451  61.704  69.872  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.460  62.001  70.355  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.473  62.394  70.740  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.584      5.210      6.382
+REMARK INTER + INTRA:          -6.584
+REMARK INTER:                  -6.584
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cevimeline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.573  62.030  69.395  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.700  62.460  70.088  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.049  62.174  70.779  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.065  62.788  71.330  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.726  63.453  70.979  0.00  0.00    +0.000 C 
+ATOM      6  S   UNL     1      60.500  63.250  70.212  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.390  62.081  71.606  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.692  62.038  72.372  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.669  62.702  72.862  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.345  63.408  72.586  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.043  63.452  71.820  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.286  63.040  72.124  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.502  62.569  72.308  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

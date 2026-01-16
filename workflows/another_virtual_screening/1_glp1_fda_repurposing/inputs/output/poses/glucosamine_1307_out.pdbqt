@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.323      0.000      0.000
+REMARK INTER + INTRA:          -6.323
+REMARK INTER:                  -6.323
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.384  61.637  63.955  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.795  61.750  64.520  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.042  61.435  64.400  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.880  61.007  63.713  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.452  61.548  64.965  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.615  61.976  65.651  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.024  62.089  66.217  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.272  61.774  66.096  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.368  62.291  65.772  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.531  62.720  66.458  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.958  62.178  65.207  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.711  62.494  65.327  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.070      1.299      2.237
+REMARK INTER + INTRA:          -6.070
+REMARK INTER:                  -6.070
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.057  62.767  67.269  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.377  62.437  66.585  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.887  62.060  66.040  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.075  62.014  66.180  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.207  61.729  65.356  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.018  61.775  65.216  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.339  61.444  64.531  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.848  61.067  63.987  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.510  62.152  65.761  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.322  62.198  65.622  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.190  62.483  66.446  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.682  62.860  66.991  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.350      3.156      3.865
+REMARK INTER + INTRA:          -5.350
+REMARK INTER:                  -5.350
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.880  63.228  67.186  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.816  62.944  67.957  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.291  62.333  68.130  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.829  62.005  67.530  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.227  62.048  68.902  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.689  62.376  69.501  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.625  62.091  70.274  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.100  61.479  70.445  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.215  62.988  69.329  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.678  63.316  69.929  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.279  63.272  68.558  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.805  63.885  68.385  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.277      3.091      4.213
+REMARK INTER + INTRA:          -5.277
+REMARK INTER:                  -5.277
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.414  63.349  70.143  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.274  63.185  69.348  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.641  63.635  68.763  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.148  64.251  68.974  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.501  63.470  67.966  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.995  62.855  67.756  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.855  62.690  66.959  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.221  63.140  66.374  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.627  62.403  68.341  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.120  61.787  68.131  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.767  62.568  69.137  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.400  62.117  69.723  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.235      7.478      8.407
+REMARK INTER + INTRA:          -5.235
+REMARK INTER:                  -5.235
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.734  67.324  71.185  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.042  67.029  70.850  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.840  67.226  70.075  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      66.333  67.721  69.636  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      65.147  66.930  69.740  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.655  66.437  70.180  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.961  66.140  69.844  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.761  66.338  69.070  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.855  66.238  70.955  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.363  65.743  71.396  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.548  66.534  71.291  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      65.749  66.335  72.067  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.151      5.715      6.687
+REMARK INTER + INTRA:          -5.151
+REMARK INTER:                  -5.151
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.653  64.024  72.720  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.672  63.462  72.118  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.151  63.521  71.481  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.609  64.142  71.449  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.171  62.958  70.878  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.712  62.338  70.911  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.732  61.775  70.307  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.210  61.833  69.672  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.235  62.278  71.547  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.777  61.657  71.580  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.215  62.841  72.150  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.738  62.782  72.787  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.123      5.512      6.554
+REMARK INTER + INTRA:          -5.123
+REMARK INTER:                  -5.123
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.355  67.259  70.555  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.549  66.537  70.210  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.694  66.492  69.399  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.643  67.171  68.934  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      59.888  65.769  69.053  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.939  65.090  69.518  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.134  64.366  69.172  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.278  64.322  68.362  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.795  65.133  70.330  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.845  64.454  70.796  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.600  65.857  70.675  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.455  65.901  71.487  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.073     24.875     25.696
+REMARK INTER + INTRA:          -5.073
+REMARK INTER:                  -5.073
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      69.953  79.741  50.653  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      70.543  79.595  50.097  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.158  80.134  49.995  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.183  80.821  50.452  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      71.749  79.988  49.438  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      71.723  79.301  48.982  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      72.314  79.155  48.424  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      72.929  79.694  48.324  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      71.108  78.761  49.083  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      71.082  78.074  48.626  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.518  78.908  49.640  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      69.902  78.367  49.741  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.068     11.571     12.400
+REMARK INTER + INTRA:          -5.068
+REMARK INTER:                  -5.068
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucosamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.019  62.467  52.906  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.637  61.778  53.145  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.409  61.683  53.932  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.564  62.281  54.479  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      64.026  60.993  54.171  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.872  60.396  53.623  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.489  59.705  53.863  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.261  59.611  54.650  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.100  60.489  52.836  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.945  59.893  52.287  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.482  61.180  52.597  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      64.711  61.274  51.809  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

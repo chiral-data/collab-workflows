@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.728      0.000      0.000
+REMARK INTER + INTRA:          -7.728
+REMARK INTER:                  -7.728
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.401  62.067  64.934  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.880  61.648  64.451  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.360  61.229  63.967  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.421  61.694  63.829  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.240  61.354  63.100  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.340  61.602  65.072  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.619  61.216  64.964  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.520  61.942  65.802  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.242  62.328  65.911  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.980  61.896  66.424  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.160  62.236  67.154  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.620  62.190  67.775  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.800  62.530  68.504  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.260  62.484  69.126  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.109      0.934      3.899
+REMARK INTER + INTRA:          -7.109
+REMARK INTER:                  -7.109
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.558  63.168  67.888  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.863  62.792  68.123  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.168  62.416  68.360  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.903  63.175  68.853  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.321  63.040  69.422  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.823  62.409  67.394  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.201  61.891  67.234  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.405  62.543  66.825  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.028  63.061  66.985  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.365  62.160  66.096  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.947  62.294  65.526  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.907  61.911  64.797  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.488  62.045  64.228  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.449  61.662  63.498  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.702      1.577      4.769
+REMARK INTER + INTRA:          -6.702
+REMARK INTER:                  -6.702
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.865  63.310  69.722  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.584  62.604  70.045  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.304  61.899  70.369  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.518  62.969  70.783  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.242  62.540  71.431  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.650  62.240  69.309  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.440  61.447  69.220  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.926  62.668  68.659  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.137  63.462  68.748  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.992  62.304  67.923  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.268  62.732  67.273  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.334  62.368  66.536  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.610  62.796  65.888  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.676  62.432  65.150  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.584      2.890      4.081
+REMARK INTER + INTRA:          -6.584
+REMARK INTER:                  -6.584
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.056  63.308  68.503  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.615  62.671  68.219  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.175  62.035  67.934  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.641  62.994  67.460  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.271  62.603  66.834  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.590  62.350  68.978  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.196  61.637  69.111  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.959  62.740  69.605  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.354  63.453  69.472  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.934  62.418  70.363  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.303  62.808  70.990  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.278  62.486  71.748  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.647  62.876  72.374  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.622  62.554  73.134  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.582      2.179      3.299
+REMARK INTER + INTRA:          -6.582
+REMARK INTER:                  -6.582
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.961  62.740  67.864  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.233  62.631  67.093  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.504  62.522  66.321  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.503  62.308  66.881  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.374  62.053  66.108  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.962  62.954  67.304  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.561  63.021  66.741  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.092  63.210  68.077  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.491  63.142  68.641  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.820  63.532  68.289  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.950  63.788  69.062  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.679  64.110  69.274  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.809  64.366  70.047  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      63.538  64.689  70.259  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.475      6.466      7.534
+REMARK INTER + INTRA:          -6.475
+REMARK INTER:                  -6.475
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.985  66.564  69.787  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.405  66.937  70.391  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.826  67.310  70.994  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.874  67.318  69.829  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      66.472  67.831  70.071  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.937  66.556  70.952  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.067  66.688  71.756  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.338  66.042  70.711  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.208  65.909  69.906  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      63.869  65.661  71.272  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.271  65.147  71.031  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.802  64.766  71.592  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.204  64.253  71.351  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      61.735  63.872  71.912  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.343      5.626      7.194
+REMARK INTER + INTRA:          -6.343
+REMARK INTER:                  -6.343
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.167  65.239  71.352  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.051  64.638  70.797  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.935  64.038  70.244  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.459  64.315  71.273  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.063  63.633  71.031  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.643  64.962  70.323  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.838  64.604  69.605  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.040  65.644  70.564  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.845  66.002  71.282  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      64.631  65.967  70.089  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      65.028  66.649  70.331  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.619  66.973  69.856  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.016  67.654  70.098  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      66.608  67.978  69.623  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.250      6.732      7.992
+REMARK INTER + INTRA:          -6.250
+REMARK INTER:                  -6.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.988  64.424  72.846  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.480  63.980  72.354  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.971  63.534  71.863  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.992  63.322  72.461  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.174  62.609  72.089  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.967  64.636  72.248  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.637  64.579  71.769  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.786  65.350  72.620  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.116  65.407  73.099  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      62.273  66.006  72.513  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.092  66.720  72.885  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.579  67.377  72.779  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.397  68.090  73.150  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.885  68.747  73.044  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.185      6.642      7.711
+REMARK INTER + INTRA:          -6.185
+REMARK INTER:                  -6.185
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexpanthenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.079  63.476  71.985  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.866  63.518  72.227  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.654  63.558  72.469  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.996  62.758  71.932  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.744  62.414  71.994  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.736  64.276  72.522  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.353  64.691  72.880  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.988  64.621  72.461  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.371  64.205  72.103  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      59.858  65.379  72.756  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.111  65.724  72.694  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.980  66.483  72.989  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      58.234  66.827  72.927  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      58.103  67.586  73.222  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

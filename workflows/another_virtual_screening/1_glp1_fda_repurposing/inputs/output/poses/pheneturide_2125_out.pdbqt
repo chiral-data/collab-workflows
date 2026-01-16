@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.890      0.000      0.000
+REMARK INTER + INTRA:          -8.890
+REMARK INTER:                  -8.890
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.386  61.992  66.064  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.818  62.405  66.633  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.635  62.489  66.551  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.067  62.902  67.120  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.883  62.985  67.039  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.680  63.232  67.771  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.112  63.645  68.340  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.726  63.975  68.992  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      61.929  63.728  68.259  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.020  62.159  65.901  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.589  61.746  65.331  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.973  61.416  64.681  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.791  61.500  64.599  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.222  61.913  65.168  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.836  62.242  65.819  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.449      1.547      2.204
+REMARK INTER + INTRA:          -8.449
+REMARK INTER:                  -8.449
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.631  62.415  65.281  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.930  62.414  65.716  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.266  62.019  65.425  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.564  62.017  65.861  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.900  61.623  65.572  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.528  62.410  66.586  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.827  62.408  67.021  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.790  62.801  67.746  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      59.162  62.013  66.731  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.302  61.626  64.701  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.003  61.628  64.266  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.041  61.236  63.542  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.376  60.841  63.252  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.675  60.839  63.687  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.639  61.232  64.412  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.427      1.632      3.014
+REMARK INTER + INTRA:          -8.427
+REMARK INTER:                  -8.427
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.261  62.107  66.435  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.949  62.073  65.982  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.659  62.359  66.290  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.349  62.325  65.837  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.059  62.611  66.144  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.327  62.006  65.076  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.016  61.972  64.623  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.995  61.652  63.862  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      62.727  62.258  64.931  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.681  62.679  67.050  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.992  62.712  67.502  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.013  63.032  68.262  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.724  63.318  68.570  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.412  63.284  68.117  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.390  62.964  67.357  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.016      3.175      5.344
+REMARK INTER + INTRA:          -8.016
+REMARK INTER:                  -8.016
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.591  61.265  71.674  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.281  61.549  70.964  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.075  62.345  70.893  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.766  62.630  70.182  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.559  63.425  70.112  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.663  62.118  69.543  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.354  62.402  68.833  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.251  61.890  68.193  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.147  63.198  68.762  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.177  62.856  71.532  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.486  62.572  72.242  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.589  63.083  72.882  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.382  63.879  72.810  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.073  64.163  72.100  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.971  63.651  71.461  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.014      4.696      5.761
+REMARK INTER + INTRA:          -8.014
+REMARK INTER:                  -8.014
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.795  62.827  72.898  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.260  63.452  72.839  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.714  63.471  72.220  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.180  64.097  72.160  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.634  64.116  71.543  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.192  64.704  72.719  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.658  65.330  72.660  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.670  65.938  73.219  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      59.111  65.349  72.041  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.702  62.864  71.662  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.236  62.238  71.722  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.225  61.631  71.164  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.678  61.650  70.545  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.144  62.276  70.486  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.156  62.883  71.044  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.873      3.814      4.984
+REMARK INTER + INTRA:          -7.873
+REMARK INTER:                  -7.873
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.288  62.746  72.620  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.721  63.346  72.254  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.718  63.413  71.432  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.151  64.013  71.066  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.148  64.081  70.244  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      62.586  64.545  71.523  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.018  65.145  71.157  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.453  65.678  71.614  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      63.016  65.213  70.334  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.283  62.881  70.976  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.851  62.282  71.341  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.416  61.749  70.886  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.414  61.817  70.063  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.846  62.417  69.697  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.281  62.949  70.154  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.663      4.380      5.566
+REMARK INTER + INTRA:          -7.663
+REMARK INTER:                  -7.663
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.844  64.622  72.860  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.618  64.684  72.069  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.731  64.048  71.557  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.505  64.110  70.765  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.618  63.475  70.253  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.165  64.810  70.488  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      59.939  64.872  69.697  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.600  65.572  69.418  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.053  64.236  69.183  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.070  63.349  71.835  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.296  63.287  72.625  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.635  62.588  72.904  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.748  61.952  72.390  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.522  62.014  71.600  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.183  62.714  71.322  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.658      4.830      6.844
+REMARK INTER + INTRA:          -7.658
+REMARK INTER:                  -7.658
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.979  66.844  72.173  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.759  66.227  71.672  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.159  66.114  70.959  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.939  65.496  70.456  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.338  65.383  69.744  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      63.321  64.993  70.668  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      63.102  64.375  70.166  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.483  63.871  70.378  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      63.501  64.262  69.453  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.777  66.617  70.747  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.996  67.234  71.249  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.614  67.738  71.038  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.014  67.624  70.325  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.794  67.007  69.823  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.176  66.504  70.035  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.601      2.838      4.053
+REMARK INTER + INTRA:          -7.601
+REMARK INTER:                  -7.601
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pheneturide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.487  61.508  70.752  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.461  62.270  71.067  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.434  62.923  70.562  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.408  63.686  70.877  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.381  64.338  70.374  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.409  63.795  71.695  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.383  64.557  72.009  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.385  64.667  72.828  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.356  65.211  71.505  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.432  62.813  69.745  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.458  62.051  69.431  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.457  61.941  68.614  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.430  62.594  68.110  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.404  63.357  68.424  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.405  63.466  69.242  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

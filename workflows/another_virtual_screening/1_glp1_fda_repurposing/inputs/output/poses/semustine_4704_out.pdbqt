@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.936      0.000      0.000
+REMARK INTER + INTRA:          -8.936
+REMARK INTER:                  -8.936
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.378  62.000  64.142  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.089  61.988  64.914  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.918  62.695  65.302  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.629  62.684  66.074  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.511  61.964  66.459  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.682  61.255  66.072  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.971  61.268  65.299  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.221  61.951  67.233  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.050  62.660  67.620  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.168  63.380  67.234  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.761  62.647  68.392  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.590  63.355  68.780  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.301  63.343  69.552  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      60.129  64.051  69.940  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      60.643  61.928  68.777  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.354  61.915  69.550  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.476      2.352      4.029
+REMARK INTER + INTRA:          -8.476
+REMARK INTER:                  -8.476
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.835  63.437  69.404  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.822  63.094  68.655  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.449  63.218  68.134  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.437  62.875  67.383  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.797  62.407  67.155  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.169  62.282  67.676  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.182  62.626  68.426  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.784  62.064  66.404  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.411  62.188  65.883  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.051  62.656  66.112  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.398  61.845  65.133  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      62.026  61.970  64.612  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.012  61.626  63.862  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      62.640  61.751  63.340  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      60.759  61.378  64.905  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.746  61.034  64.154  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.059      2.122      4.404
+REMARK INTER + INTRA:          -8.059
+REMARK INTER:                  -8.059
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.567  62.483  72.530  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.473  62.615  71.722  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.920  62.178  71.294  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.825  62.309  70.485  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.285  62.879  70.104  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.839  63.317  70.532  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.932  63.184  71.341  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.191  63.011  69.295  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.638  62.574  68.867  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.178  62.004  69.248  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.544  62.706  68.059  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.990  62.269  67.630  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.897  62.401  66.822  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      59.343  61.963  66.393  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.003  63.275  67.678  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.909  63.408  66.868  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.985      1.862      2.549
+REMARK INTER + INTRA:          -7.985
+REMARK INTER:                  -7.985
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.380  62.001  66.169  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.947  62.347  66.657  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.818  62.396  67.469  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.386  62.742  67.958  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.083  63.039  67.632  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.213  62.990  66.818  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.645  62.643  66.331  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.652  63.385  68.121  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.522  63.434  68.934  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.825  63.137  69.259  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.091  63.781  69.421  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.961  63.830  70.235  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.529  64.176  70.722  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      62.400  64.225  71.536  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.787  64.077  69.096  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      63.356  64.423  69.584  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.894      4.910      5.964
+REMARK INTER + INTRA:          -7.894
+REMARK INTER:                  -7.894
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.283  67.753  69.968  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.703  67.239  70.247  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.293  66.754  69.722  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.712  66.239  70.001  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.541  66.210  70.807  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.950  66.696  71.334  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.531  67.210  71.054  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.959  65.695  71.088  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.550  65.210  70.561  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.722  65.239  69.755  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.969  64.696  70.842  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      62.560  64.210  70.315  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.979  63.696  70.595  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      61.569  63.210  70.068  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.798  64.667  71.647  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      62.217  64.152  71.928  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.574      4.890      5.742
+REMARK INTER + INTRA:          -7.574
+REMARK INTER:                  -7.574
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.964  61.477  71.139  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.863  62.240  71.436  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.313  62.748  71.090  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.212  63.511  71.387  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.662  63.765  72.030  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.212  63.257  72.377  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.312  62.494  72.079  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.561  64.529  72.328  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.011  65.037  71.982  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.562  64.782  71.339  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.911  65.799  72.280  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.360  66.308  71.934  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.260  67.071  72.231  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      58.710  67.579  71.885  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      60.360  66.054  72.922  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      60.259  66.817  73.220  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.518      5.056      6.038
+REMARK INTER + INTRA:          -7.518
+REMARK INTER:                  -7.518
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.884  62.381  71.710  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.375  63.043  71.716  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.893  63.177  71.089  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.385  63.840  71.093  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.358  64.368  71.726  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.839  64.234  72.355  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.348  63.571  72.349  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.850  65.031  71.732  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.368  65.165  71.104  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.395  64.637  70.471  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.859  65.828  71.110  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      64.377  65.962  70.482  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.868  66.625  70.488  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      65.387  66.759  69.860  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      63.832  66.356  71.742  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      64.324  67.019  71.748  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.505     18.733     19.526
+REMARK INTER + INTRA:          -7.505
+REMARK INTER:                  -7.505
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.247  76.698  60.196  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.040  77.398  59.813  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.247  77.608  59.737  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.040  78.309  59.354  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.628  78.800  59.048  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.423  78.590  59.124  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      66.628  77.889  59.507  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      65.421  79.502  58.665  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.627  79.711  58.589  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.039  79.220  58.895  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      64.421  80.412  58.206  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      63.626  80.622  58.129  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.421  81.323  57.746  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      62.626  81.533  57.670  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      65.008  80.903  57.900  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      64.802  81.605  57.517  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.161      5.395      7.165
+REMARK INTER + INTRA:          -7.161
+REMARK INTER:                  -7.161
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = semustine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.156  69.113  73.222  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.062  68.344  72.941  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.425  67.886  73.197  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.331  67.116  72.916  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.874  66.804  72.379  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.512  67.262  72.123  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.605  68.032  72.405  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.780  66.034  72.097  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.143  65.577  72.353  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.599  65.889  72.890  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.049  64.807  72.071  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.411  64.349  72.327  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.318  63.580  72.045  0.00  0.00    +0.000 C 
+ATOM     14 CL   UNL     1      60.680  63.122  72.301  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.592  64.495  71.535  0.00  0.00    +0.000 NA
+ATOM     16  O   UNL     1      62.497  63.725  71.253  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.501      0.000      0.000
+REMARK INTER + INTRA:          -8.501
+REMARK INTER:                  -8.501
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.640  61.631  63.095  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.144  61.647  63.754  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.408  61.273  63.727  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.384  62.035  64.442  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.889  62.051  65.101  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.128  62.439  65.788  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.632  62.455  66.447  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.872  62.843  67.134  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.898  62.082  66.419  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.401  62.097  67.079  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.641  62.485  67.766  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.145  62.501  68.425  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.384  62.889  69.113  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.657  61.693  65.732  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.153  61.678  65.073  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.193      1.299      3.921
+REMARK INTER + INTRA:          -8.193
+REMARK INTER:                  -8.193
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.220  62.500  69.658  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.491  62.671  68.898  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.500  63.452  68.629  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.752  62.062  68.406  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.022  62.233  67.646  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.284  61.625  67.154  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.554  61.796  66.394  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.816  61.187  65.903  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.563  62.575  66.126  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.834  62.746  65.364  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.095  62.138  64.873  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.366  62.309  64.113  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.627  61.700  63.621  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.302  63.184  66.617  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.032  63.013  67.377  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.813      2.632      4.002
+REMARK INTER + INTRA:          -7.813
+REMARK INTER:                  -7.813
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.963  62.231  66.561  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.255  62.539  67.269  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.582  63.297  67.286  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.221  62.089  67.960  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.512  62.396  68.667  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.478  61.947  69.358  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.770  62.255  70.066  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.735  61.805  70.756  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.096  63.011  70.082  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.388  63.319  70.791  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.353  62.870  71.481  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.645  63.177  72.189  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.611  62.728  72.880  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.131  63.462  69.392  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.839  63.154  68.684  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.754      2.973      5.529
+REMARK INTER + INTRA:          -7.754
+REMARK INTER:                  -7.754
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.645  62.711  73.028  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.461  62.912  72.250  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.550  63.692  71.994  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.189  62.334  71.726  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.006  62.536  70.949  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.735  61.959  70.426  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.551  62.161  69.647  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.280  61.584  69.125  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.640  62.940  69.391  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.456  63.142  68.612  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.185  62.565  68.090  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.002  62.766  67.311  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.730  62.189  66.788  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.912  63.518  69.914  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.095  63.316  70.693  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.370      6.274      7.082
+REMARK INTER + INTRA:          -7.370
+REMARK INTER:                  -7.370
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.351  67.632  69.837  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.746  67.282  70.274  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.514  67.610  70.995  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.371  66.603  69.990  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.766  66.253  70.427  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.391  65.575  70.144  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.786  65.225  70.582  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      63.412  64.547  70.298  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      63.555  65.553  71.302  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.948  65.202  71.740  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.575  64.524  71.456  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.969  64.174  71.893  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.594  63.496  71.610  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.929  66.231  71.586  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.534  66.582  71.149  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.357      5.960      6.677
+REMARK INTER + INTRA:          -7.357
+REMARK INTER:                  -7.357
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.124  60.965  71.703  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.579  61.581  71.642  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.991  61.558  71.063  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.621  62.222  72.161  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.077  62.838  72.101  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.118  63.478  72.619  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.573  64.095  72.559  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.616  64.734  73.077  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      59.987  64.071  71.980  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.441  64.688  71.919  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.483  65.327  72.438  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.938  65.944  72.377  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      58.980  66.584  72.895  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.944  63.431  71.461  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.489  62.814  71.521  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.056      5.945      7.075
+REMARK INTER + INTRA:          -7.056
+REMARK INTER:                  -7.056
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.893  63.541  72.405  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.511  63.803  71.925  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.743  63.358  71.270  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.898  64.512  72.100  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.515  64.774  71.621  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.901  65.482  71.795  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.519  65.744  71.316  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      63.904  66.451  71.490  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      63.750  65.299  70.662  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      64.369  65.561  70.181  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.754  66.269  70.356  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.372  66.531  69.876  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.758  67.239  70.051  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.365  64.591  70.486  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.747  64.328  70.966  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.729     24.257     25.245
+REMARK INTER + INTRA:          -6.729
+REMARK INTER:                  -6.729
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      72.859  78.886  48.500  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      72.113  78.892  48.852  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      71.600  78.255  48.743  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.880  79.535  49.315  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.135  79.541  49.667  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.902  80.184  50.129  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.156  80.190  50.481  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      69.924  80.832  50.943  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      69.644  79.554  50.372  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      68.897  79.560  50.725  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      68.665  80.202  51.187  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      67.919  80.208  51.539  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      67.686  80.851  52.001  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      69.876  78.910  49.910  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      70.622  78.904  49.558  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.401      6.357      7.213
+REMARK INTER + INTRA:          -6.401
+REMARK INTER:                  -6.401
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alclofenac
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.538  64.642  71.001  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.871  64.973  71.357  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.913  65.727  71.691  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.162  64.550  71.380  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.497  64.881  71.736  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.788  64.459  71.759  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.122  64.789  72.115  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      59.414  64.367  72.137  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.163  65.542  72.448  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.496  65.873  72.805  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      58.789  65.451  72.828  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.122  65.781  73.184  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      57.414  65.359  73.207  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.872  65.965  72.426  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.538  65.634  72.070  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

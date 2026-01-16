@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.216      0.000      0.000
+REMARK INTER + INTRA:          -9.216
+REMARK INTER:                  -9.216
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.005  63.879  68.595  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.344  63.474  68.310  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.625  63.384  68.702  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.123  62.943  68.217  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.533  62.761  67.525  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.240  62.327  66.888  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      60.717  62.188  66.229  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      61.331  62.610  66.585  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.103  61.768  65.874  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.194  62.049  65.570  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.901  61.616  64.933  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.378  61.477  64.274  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.148  61.772  64.252  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.625  61.634  63.594  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.441  62.206  64.890  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.964  62.345  65.549  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      61.288  63.089  67.582  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.654      1.253      3.834
+REMARK INTER + INTRA:          -8.654
+REMARK INTER:                  -8.654
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.806  60.939  64.737  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.191  61.616  65.011  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.645  62.133  64.557  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.924  62.731  65.054  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.643  62.582  65.815  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.788  63.042  66.484  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      61.469  62.823  67.212  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      61.115  62.166  66.860  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.822  63.480  67.564  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.148  62.605  67.941  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.294  63.064  68.610  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.974  62.846  69.338  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.508  62.168  69.397  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.188  61.950  70.125  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.362  61.708  68.728  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.682  61.927  67.999  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      61.189  61.893  65.789  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.042      4.585      6.670
+REMARK INTER + INTRA:          -8.042
+REMARK INTER:                  -8.042
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.408  64.035  69.085  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.536  64.261  69.868  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.128  63.979  70.527  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.435  64.352  71.196  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.033  64.864  70.951  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      63.489  65.348  71.439  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      64.070  65.834  71.113  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      63.880  65.556  70.360  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      64.260  66.111  71.866  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.652  66.320  70.787  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.108  66.803  71.276  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.689  67.289  70.950  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.815  67.291  70.134  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      66.396  67.777  69.809  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      65.359  66.808  69.646  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.777  66.322  69.972  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      63.096  64.808  70.130  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.902      2.081      2.970
+REMARK INTER + INTRA:          -7.902
+REMARK INTER:                  -7.902
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.115  63.394  71.357  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.757  63.567  70.868  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.465  63.919  71.103  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.949  63.989  70.438  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.540  63.679  69.792  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.818  63.638  69.017  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      61.345  63.312  68.425  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      60.749  63.172  68.979  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.940  63.452  67.872  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.872  62.986  67.833  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.150  62.944  67.058  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.677  62.619  66.466  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.924  62.334  66.650  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.451  62.008  66.058  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.646  62.376  67.425  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.119  62.702  68.017  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      60.803  63.419  70.057  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.888      2.938      5.355
+REMARK INTER + INTRA:          -7.888
+REMARK INTER:                  -7.888
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.929  63.328  67.597  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.707  62.753  68.146  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.356  62.028  67.974  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.230  61.630  68.686  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.503  62.110  69.298  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.484  61.928  70.102  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      60.779  62.466  70.654  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      60.971  62.987  70.043  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.587  61.945  71.264  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.074  63.003  71.206  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.055  62.822  72.010  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.350  63.359  72.562  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.664  64.079  72.309  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.958  64.617  72.861  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.682  64.261  71.505  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.387  63.723  70.953  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      60.798  62.805  68.965  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.837      5.076      5.937
+REMARK INTER + INTRA:          -7.837
+REMARK INTER:                  -7.837
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.779  67.512  71.038  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.707  66.868  70.528  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.394  66.886  69.765  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.428  66.121  69.457  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.762  65.630  70.030  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.900  64.820  69.955  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      60.240  64.400  70.577  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      60.277  65.092  71.025  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.202  63.708  70.130  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.580  63.979  71.200  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.718  63.169  71.125  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.058  62.748  71.747  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.260  63.138  72.446  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.600  62.717  73.069  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.123  63.947  72.522  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.782  64.368  71.899  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      59.935  66.092  70.692  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.774      3.249      4.320
+REMARK INTER + INTRA:          -7.774
+REMARK INTER:                  -7.774
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.158  64.862  72.380  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.193  64.041  72.304  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.387  63.507  72.901  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.354  62.745  72.584  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.139  62.810  71.790  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.041  62.184  71.262  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      60.824  62.333  70.481  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      60.812  63.143  70.639  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.836  61.524  70.322  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.607  62.482  69.698  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.509  61.856  69.170  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.291  62.006  68.389  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.172  62.782  68.135  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.955  62.931  67.354  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.270  63.408  68.663  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.487  63.258  69.445  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      61.040  63.610  71.616  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.765      1.833      2.552
+REMARK INTER + INTRA:          -7.765
+REMARK INTER:                  -7.765
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.536  64.509  69.732  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.741  64.339  69.873  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.323  64.509  70.564  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.548  64.243  70.465  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.487  63.909  69.713  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.808  63.575  69.385  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      60.830  63.260  68.623  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      61.627  63.465  68.562  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.033  63.056  68.684  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.852  62.946  67.860  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.173  62.611  67.532  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.195  62.297  66.770  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.896  62.317  66.335  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.918  62.002  65.574  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.575  62.651  66.664  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.553  62.966  67.427  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      62.224  63.968  69.347  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.525      5.258      6.390
+REMARK INTER + INTRA:          -7.525
+REMARK INTER:                  -7.525
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfamethizole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.065  67.023  71.602  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.907  66.497  70.987  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.309  66.456  70.268  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      64.969  65.852  69.819  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.358  65.519  70.262  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      63.870  64.897  70.024  0.00  0.00    +0.000 NA
+ATOM      7  S   UNL     1      63.279  64.621  70.528  0.00  0.00    +0.000 S 
+ATOM      8  O   UNL     1      63.500  65.180  71.094  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      63.058  64.063  69.963  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.687  64.344  71.032  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.200  63.723  70.795  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.608  63.447  71.299  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.504  63.792  72.041  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.912  63.516  72.545  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.991  64.414  72.278  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.583  64.691  71.774  0.00  0.00    +0.000 A 
+ATOM     17  S   UNL     1      64.319  65.917  70.984  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

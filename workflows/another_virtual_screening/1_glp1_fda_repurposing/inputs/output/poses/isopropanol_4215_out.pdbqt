@@ -1,0 +1,153 @@
+MODEL 1
+REMARK VINA RESULT:    -3.192      0.000      0.000
+REMARK INTER + INTRA:          -3.192
+REMARK INTER:                  -3.192
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.845  78.081  59.754  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.101  77.723  59.762  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.997  76.996  60.139  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.462  78.092  59.393  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -2.943     16.773     17.077
+REMARK INTER + INTRA:          -2.943
+REMARK INTER:                  -2.943
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.336  61.458  64.367  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.083  61.798  64.283  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.408  62.239  64.901  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.505  61.698  63.581  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -2.564     14.618     15.081
+REMARK INTER + INTRA:          -2.564
+REMARK INTER:                  -2.564
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.417  67.296  71.052  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.146  67.410  70.680  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.172  67.677  69.899  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      66.846  67.256  71.087  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -2.477     15.048     15.123
+REMARK INTER + INTRA:          -2.477
+REMARK INTER:                  -2.477
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      77.806  67.521  56.467  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      77.033  67.796  56.567  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      76.396  67.280  56.469  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      76.898  68.585  56.765  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -2.463     11.559     11.826
+REMARK INTER + INTRA:          -2.463
+REMARK INTER:                  -2.463
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.189  78.856  48.351  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.878  78.487  49.021  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.443  78.926  49.569  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.001  77.681  49.143  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -2.397     19.181     19.411
+REMARK INTER + INTRA:          -2.397
+REMARK INTER:                  -2.397
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.443  61.863  69.178  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.669  62.132  69.924  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.407  61.740  70.602  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.158  62.794  69.994  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -2.274     19.239     19.736
+REMARK INTER + INTRA:          -2.274
+REMARK INTER:                  -2.274
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.843  63.913  72.117  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.341  63.307  72.367  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.635  62.697  72.839  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.547  63.312  72.145  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -2.099     15.873     16.343
+REMARK INTER + INTRA:          -2.099
+REMARK INTER:                  -2.099
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.654  65.776  69.532  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.666  65.225  70.146  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.732  65.480  70.929  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.613  64.419  69.978  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -2.041     17.034     17.239
+REMARK INTER + INTRA:          -2.041
+REMARK INTER:                  -2.041
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isopropanol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.311  62.013  53.989  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.051  61.647  54.024  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.738  62.104  54.017  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.102  60.825  54.067  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

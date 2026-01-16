@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.135      0.000      0.000
+REMARK INTER + INTRA:          -9.135
+REMARK INTER:                  -9.135
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.624  63.116  67.565  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.857  62.845  66.821  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.310  62.471  66.328  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.531  62.368  66.581  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.144  62.576  67.280  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.360  62.331  67.219  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      59.260  61.971  66.483  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.984  61.994  66.089  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.217  61.723  65.344  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.995  61.827  65.093  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.542  62.200  65.585  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.320  62.303  65.334  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.553  62.032  64.590  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.007  61.659  64.098  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      62.239  61.388  63.353  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.227  61.556  64.349  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.310      0.954      2.843
+REMARK INTER + INTRA:          -8.310
+REMARK INTER:                  -8.310
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.634  62.327  64.999  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.214  62.583  65.662  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.434  62.337  65.776  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.076  61.835  65.227  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.351  61.496  64.526  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.741  61.041  64.208  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.090  61.098  64.711  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.297  61.589  65.341  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.876  61.845  66.003  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.235  62.346  66.551  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.014  62.592  66.437  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.372  63.093  66.986  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.952  63.348  67.648  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.173  63.102  67.762  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      59.752  63.358  68.425  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.814  62.601  67.213  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.884      3.499      5.405
+REMARK INTER + INTRA:          -7.884
+REMARK INTER:                  -7.884
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.820  63.878  68.751  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.833  63.759  69.568  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.401  63.138  69.901  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.958  62.638  69.416  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.841  62.621  68.599  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.338  61.991  68.428  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.143  61.618  69.137  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.526  62.019  69.749  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.539  61.898  70.565  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.982  62.399  71.049  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.413  63.019  70.716  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.856  63.518  71.200  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.869  63.399  72.016  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.438  62.779  72.349  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      61.450  62.659  73.165  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.994  62.278  71.864  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.667      5.470      7.252
+REMARK INTER + INTRA:          -7.667
+REMARK INTER:                  -7.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.879  65.762  72.055  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.533  66.188  71.787  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.910  65.967  71.085  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.632  65.321  70.654  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.004  64.800  70.781  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.993  64.259  70.160  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      63.613  64.444  69.648  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.008  65.100  69.954  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.662  65.526  69.685  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.939  66.172  70.117  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.563  66.392  70.817  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.840  67.038  71.248  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.494  67.464  70.980  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.870  67.244  70.280  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      66.524  67.669  70.010  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      65.593  66.597  69.847  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.601      3.803      5.481
+REMARK INTER + INTRA:          -7.601
+REMARK INTER:                  -7.601
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.611  62.726  72.857  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.323  62.446  72.136  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.328  62.937  71.472  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.621  63.706  71.530  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.939  64.130  72.162  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.140  64.882  71.890  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.947  64.923  71.089  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.626  64.196  70.866  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.337  63.917  70.144  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.045  63.148  70.088  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.040  62.658  70.751  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.747  61.890  70.694  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.458  61.610  69.973  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.463  62.101  69.309  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.175  61.822  68.588  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.757  62.870  69.367  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.565      2.681      4.097
+REMARK INTER + INTRA:          -7.565
+REMARK INTER:                  -7.565
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.181  64.088  70.435  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.755  63.869  69.764  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.320  63.166  69.762  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.313  62.685  70.433  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.677  62.758  71.170  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.468  62.102  71.623  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.974  61.623  71.168  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.879  61.984  70.431  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.452  61.763  69.760  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.460  62.245  69.090  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.894  62.947  69.092  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.902  63.428  68.422  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.475  63.208  67.751  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.041  62.507  67.749  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      59.614  62.287  67.078  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.033  62.025  68.420  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.342      5.684      6.687
+REMARK INTER + INTRA:          -7.342
+REMARK INTER:                  -7.342
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.029  65.808  72.891  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.843  65.018  72.743  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.111  64.653  72.053  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.565  65.078  71.511  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.834  65.858  71.508  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.268  65.975  70.817  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      63.268  65.268  70.392  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.833  64.713  70.822  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.646  63.923  70.673  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.192  63.498  71.216  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.924  63.863  71.905  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.471  63.438  72.447  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.284  62.648  72.299  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.552  62.283  71.610  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      61.365  61.493  71.462  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.006  62.708  71.067  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.319      5.713      6.669
+REMARK INTER + INTRA:          -7.319
+REMARK INTER:                  -7.319
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.839  65.347  72.879  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.758  64.597  72.545  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.014  64.332  72.302  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.354  64.817  72.394  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.265  65.578  72.703  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.468  65.782  72.652  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      59.063  65.149  72.311  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.611  64.553  72.152  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.529  63.802  71.818  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.190  63.318  71.726  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.933  63.582  71.969  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.593  63.098  71.877  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.512  62.348  71.543  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.769  62.083  71.300  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      60.687  61.332  70.966  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.108  62.568  71.392  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.057      5.437      6.453
+REMARK INTER + INTRA:          -7.057
+REMARK INTER:                  -7.057
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = bergapten
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.568  62.643  70.998  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.138  63.183  70.742  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.247  63.892  71.152  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.787  64.059  71.816  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.188  63.636  72.195  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.928  64.082  72.837  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.365  64.781  72.857  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.897  64.767  72.225  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.466  65.308  71.970  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.925  65.139  71.306  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.816  64.431  70.897  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.275  64.264  70.233  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.844  64.803  69.977  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.954  65.511  70.386  0.00  0.00    +0.000 A 
+ATOM     15  O   UNL     1      64.523  66.052  70.131  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      63.494  65.680  71.051  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

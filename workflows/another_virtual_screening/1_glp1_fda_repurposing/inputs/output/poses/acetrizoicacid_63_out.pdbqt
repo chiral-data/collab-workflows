@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.221      0.000      0.000
+REMARK INTER + INTRA:          -8.221
+REMARK INTER:                  -8.221
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.047  60.936  63.615  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.232  61.349  64.305  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.006  61.603  64.439  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.643  61.508  64.861  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.828  61.920  65.550  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.239  62.079  66.106  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      59.467  61.825  65.971  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.424  62.492  66.796  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.836  62.651  67.351  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.062  62.397  67.218  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.021  63.064  68.042  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.197  62.746  66.930  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      61.382  63.160  67.620  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      61.786  62.588  66.374  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.601  62.175  65.684  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      62.191  62.016  65.128  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.592      3.860      5.085
+REMARK INTER + INTRA:          -7.592
+REMARK INTER:                  -7.592
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.553  61.951  68.393  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.656  62.160  69.185  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.333  61.688  69.781  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.081  62.840  69.381  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.183  63.048  70.172  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.607  63.728  70.368  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      61.929  64.198  69.772  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      61.710  63.936  71.160  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.134  64.615  71.355  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.457  65.087  70.760  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      62.237  64.824  72.148  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.388  63.465  71.755  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      61.490  63.674  72.548  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      60.963  62.786  71.560  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.860  62.577  70.768  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      60.435  61.897  70.572  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.534      3.437      5.070
+REMARK INTER + INTRA:          -7.534
+REMARK INTER:                  -7.534
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.549  63.284  72.560  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.326  63.003  71.817  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.053  62.229  71.732  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.376  63.497  71.157  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.153  63.217  70.415  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.202  63.710  69.755  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      61.475  64.484  69.840  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.979  63.430  69.012  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.029  63.923  68.354  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.302  64.697  68.437  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.806  63.642  67.610  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.707  62.656  68.928  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      60.483  62.376  68.184  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      60.657  62.162  69.587  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.880  62.443  70.330  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      60.830  61.949  70.990  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.531      6.005      7.298
+REMARK INTER + INTRA:          -7.531
+REMARK INTER:                  -7.531
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.139  67.380  70.265  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.473  67.081  70.649  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.180  67.458  71.323  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.098  66.404  70.359  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.433  66.106  70.743  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.058  65.430  70.454  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      64.351  65.053  69.781  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      63.392  65.131  70.838  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.018  64.455  70.548  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.310  64.078  69.875  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      62.351  64.156  70.932  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.100  65.508  71.510  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      62.433  65.208  71.894  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      63.474  66.184  71.800  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.140  66.483  71.416  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      64.515  67.159  71.706  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.524      3.642      4.975
+REMARK INTER + INTRA:          -7.524
+REMARK INTER:                  -7.524
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.845  64.995  71.605  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.505  64.670  70.928  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.621  65.030  70.194  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.048  63.985  70.983  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.708  63.660  70.307  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.251  62.975  70.362  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      61.135  62.616  71.095  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.911  62.650  69.684  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.455  61.965  69.740  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.338  61.605  70.473  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.114  61.639  69.062  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.027  63.009  68.951  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      60.687  62.683  68.273  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      61.484  63.694  68.895  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.824  64.019  69.573  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      62.281  64.705  69.517  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.410      6.087      6.786
+REMARK INTER + INTRA:          -7.410
+REMARK INTER:                  -7.410
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.876  66.501  69.816  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.326  65.957  70.102  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.229  65.230  69.722  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      63.872  66.139  70.767  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.322  65.595  71.052  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.869  65.776  71.717  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      62.966  66.502  72.096  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      62.319  65.232  72.003  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.866  65.414  72.667  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.962  66.140  73.047  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.315  64.869  72.953  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.222  64.506  71.623  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      61.671  63.961  71.909  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      62.675  64.324  70.958  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.225  64.868  70.673  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      63.679  64.687  70.007  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.330      4.174      5.181
+REMARK INTER + INTRA:          -7.330
+REMARK INTER:                  -7.330
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.635  62.025  70.192  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.519  62.799  69.932  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.645  62.992  69.139  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.276  63.382  70.465  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.160  64.155  70.205  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.918  64.737  70.737  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      59.792  64.544  71.529  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      59.801  65.512  70.477  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.559  66.093  71.009  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.433  65.901  71.801  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      59.443  66.868  70.748  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.927  65.704  69.685  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      59.811  66.479  69.425  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      60.170  65.122  69.152  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.286  64.348  69.412  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      60.529  63.765  68.879  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.240      5.588      6.664
+REMARK INTER + INTRA:          -7.240
+REMARK INTER:                  -7.240
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.400  62.141  71.075  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.534  62.872  71.432  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.150  63.063  72.138  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.052  63.413  71.084  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.186  64.143  71.441  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.703  64.684  71.094  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      63.086  64.492  70.389  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      62.837  65.415  71.452  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.355  65.955  71.104  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.738  65.764  70.399  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      63.489  66.687  71.462  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.454  65.606  72.156  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      62.589  66.338  72.514  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      61.937  65.066  72.505  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.802  64.335  72.147  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      61.284  63.794  72.495  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.161      4.823      5.822
+REMARK INTER + INTRA:          -7.161
+REMARK INTER:                  -7.161
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetrizoic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.492  66.640  69.464  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.774  65.889  69.654  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.952  65.351  69.053  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      59.879  65.674  70.444  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.160  64.923  70.633  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.264  64.708  71.423  0.00  0.00    +0.000 A 
+ATOM      7  I   UNL     1      60.086  65.246  72.022  0.00  0.00    +0.000 I 
+ATOM      8  C   UNL     1      60.546  63.956  71.612  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.650  63.742  72.402  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.473  64.279  73.002  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.933  62.989  72.591  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.724  63.419  71.012  0.00  0.00    +0.000 A 
+ATOM     13  I   UNL     1      61.006  62.667  71.202  0.00  0.00    +0.000 I 
+ATOM     14  C   UNL     1      60.620  63.633  70.222  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.338  64.385  70.033  0.00  0.00    +0.000 A 
+ATOM     16  I   UNL     1      60.234  64.600  69.242  0.00  0.00    +0.000 I 
+ENDROOT
+TORSDOF 0
+ENDMDL

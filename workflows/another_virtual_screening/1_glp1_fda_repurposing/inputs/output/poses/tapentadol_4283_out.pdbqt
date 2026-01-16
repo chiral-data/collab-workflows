@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.523      0.000      0.000
+REMARK INTER + INTRA:          -9.523
+REMARK INTER:                  -9.523
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.423  61.669  65.719  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.737  62.093  66.354  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.536  62.300  66.356  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.850  62.724  66.992  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.648  62.931  66.995  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.364  62.941  67.623  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.678  63.365  68.257  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.192  63.582  68.889  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.477  63.572  68.260  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.020  62.083  65.726  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.707  61.659  65.091  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.191  61.442  64.460  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.878  61.019  63.826  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.990  61.650  64.463  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.304  62.073  65.098  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.818  62.290  65.729  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.698      4.979      6.121
+REMARK INTER + INTRA:          -8.698
+REMARK INTER:                  -8.698
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.897  62.917  72.940  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.338  63.521  72.879  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.760  63.489  72.291  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.201  64.094  72.229  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.623  64.063  71.642  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.220  64.728  72.757  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      59.661  65.332  72.695  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.680  65.968  73.222  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.083  65.301  72.107  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.741  62.855  71.764  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.300  62.252  71.826  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.281  61.617  71.299  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.840  61.014  71.361  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.703  61.586  70.711  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.144  62.190  70.650  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.164  62.824  71.177  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.178      6.023      7.224
+REMARK INTER + INTRA:          -8.178
+REMARK INTER:                  -8.178
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.660  65.497  69.382  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.094  65.355  69.965  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.071  65.828  70.641  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.504  65.686  71.224  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.481  66.158  71.900  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.961  65.071  71.130  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.395  64.929  71.713  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.852  64.314  71.620  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.372  65.402  72.390  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.613  66.442  70.734  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.180  66.584  70.151  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.723  67.198  70.243  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      66.288  67.339  69.661  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      65.699  67.670  70.920  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.133  67.528  71.503  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.590  66.914  71.409  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.099      2.602      4.547
+REMARK INTER + INTRA:          -8.099
+REMARK INTER:                  -8.099
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.506  64.213  69.734  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.388  63.822  69.017  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.047  63.070  69.009  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.928  62.679  68.292  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.588  61.928  68.283  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.150  63.040  67.584  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.032  62.649  66.867  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.254  63.009  66.158  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.691  61.897  66.858  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.825  62.710  69.717  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.943  63.101  70.433  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.722  62.741  71.142  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.840  63.132  71.858  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.381  61.989  71.133  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.262  61.598  70.416  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.484  61.959  69.708  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.970      5.217      6.471
+REMARK INTER + INTRA:          -7.970
+REMARK INTER:                  -7.970
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.754  63.940  70.329  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.764  64.591  70.835  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.386  64.550  71.567  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.396  65.203  72.074  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.020  65.162  72.806  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.784  65.895  71.846  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.793  66.547  72.351  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.181  67.240  72.124  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.416  66.507  73.085  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.000  63.859  71.795  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.990  63.207  71.289  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.603  62.514  71.516  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.593  61.863  71.011  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.226  62.474  72.249  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.236  63.126  72.755  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.623  63.818  72.527  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.841      5.521      6.925
+REMARK INTER + INTRA:          -7.841
+REMARK INTER:                  -7.841
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.214  64.637  69.330  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.603  65.321  69.578  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.376  65.694  70.278  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.765  66.379  70.525  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.538  66.752  71.225  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.380  66.690  70.072  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      65.768  67.375  70.319  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      66.384  67.687  69.866  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.542  67.748  71.020  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.761  65.383  70.731  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.373  64.698  70.483  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.757  64.386  70.936  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.369  63.702  70.689  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.531  64.759  71.636  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.919  65.444  71.884  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.534  65.755  71.430  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.132      4.379      6.050
+REMARK INTER + INTRA:          -7.132
+REMARK INTER:                  -7.132
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.155  64.936  72.006  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.843  65.344  71.806  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.154  65.279  71.044  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.843  65.688  70.844  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.154  65.623  70.083  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.219  66.162  71.405  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      64.907  66.571  71.205  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      65.284  67.045  71.766  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.219  66.506  70.443  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.778  64.805  70.484  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.090  64.397  70.684  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.713  63.923  70.124  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.026  63.514  70.324  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.025  63.858  69.363  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.713  64.267  69.162  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.089  64.740  69.723  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.030      5.591      6.213
+REMARK INTER + INTRA:          -7.030
+REMARK INTER:                  -7.030
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.511  63.629  72.455  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.077  63.969  71.960  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.844  64.499  71.372  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.411  64.840  70.876  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.179  65.369  70.289  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.208  64.649  70.970  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      63.774  64.989  70.475  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.572  64.799  70.568  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.542  65.520  69.886  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.048  64.689  71.279  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.482  64.349  71.773  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.684  64.539  71.681  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      59.120  64.199  72.175  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.453  65.069  71.092  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.018  65.410  70.597  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.816  65.219  70.691  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.878     12.869     14.118
+REMARK INTER + INTRA:          -6.878
+REMARK INTER:                  -6.878
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tapentadol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.228  70.331  55.119  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.154  70.054  54.345  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.266  69.253  54.182  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.192  68.975  53.408  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.304  68.175  53.244  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.006  69.500  52.798  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.932  69.223  52.025  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.746  69.747  51.414  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.044  68.421  51.861  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.452  68.729  54.791  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.526  69.007  55.565  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.712  68.483  56.175  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.786  68.760  56.948  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.824  67.682  56.011  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.750  67.405  55.237  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.564  67.929  54.628  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

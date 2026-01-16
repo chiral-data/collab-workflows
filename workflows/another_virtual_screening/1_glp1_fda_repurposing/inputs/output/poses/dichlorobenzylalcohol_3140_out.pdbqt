@@ -1,0 +1,207 @@
+MODEL 1
+REMARK VINA RESULT:    -6.710      0.000      0.000
+REMARK INTER + INTRA:          -6.710
+REMARK INTER:                  -6.710
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.429  62.711  66.900  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.030  62.266  66.330  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.395  62.096  65.611  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.997  61.652  65.041  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.233  61.378  65.192  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.362  61.481  64.321  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.125  61.755  64.171  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      62.490  61.584  63.450  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      62.524  62.200  64.740  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.159  62.370  65.460  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.550      1.545      2.182
+REMARK INTER + INTRA:          -6.550
+REMARK INTER:                  -6.550
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.724  61.610  63.174  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.037  61.393  63.577  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.895  61.680  64.336  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.209  61.463  64.739  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.664  60.958  64.380  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.067  61.751  65.499  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.612  62.256  65.856  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.471  62.544  66.617  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      62.300  62.474  65.454  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.441  62.186  64.694  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.792      8.309      8.899
+REMARK INTER + INTRA:          -5.792
+REMARK INTER:                  -5.792
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.241  66.341  69.769  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.928  66.799  69.777  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.418  66.796  70.440  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      66.104  67.253  70.449  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      66.299  67.714  69.794  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      66.594  67.250  71.113  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      66.398  66.790  71.768  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      66.888  66.787  72.432  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      65.711  66.331  71.760  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.221  66.335  71.096  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.736      8.063      8.547
+REMARK INTER + INTRA:          -5.736
+REMARK INTER:                  -5.736
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.882  65.769  70.986  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.559  66.064  71.356  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.089  66.532  70.933  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.765  66.827  71.303  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      65.910  66.653  72.096  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      66.295  67.296  70.879  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      66.150  67.470  70.087  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      66.681  67.939  69.663  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      65.474  67.175  69.716  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.943  66.706  70.140  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.712      7.841      8.403
+REMARK INTER + INTRA:          -5.712
+REMARK INTER:                  -5.712
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.357  66.510  72.412  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.362  66.882  71.675  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.790  66.691  71.113  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.794  67.063  70.377  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      66.372  67.626  70.203  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      65.222  66.871  69.814  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.645  66.309  69.988  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      64.072  66.117  69.425  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      64.640  65.936  70.724  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.212  66.127  71.287  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.620      5.872      6.862
+REMARK INTER + INTRA:          -5.620
+REMARK INTER:                  -5.620
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.155  61.794  69.944  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.709  61.602  70.525  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.873  62.135  71.132  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.426  61.943  71.712  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.815  61.216  71.686  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.591  62.477  72.319  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.202  63.204  72.345  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.366  63.739  72.953  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.648  63.397  71.765  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.484  62.863  71.158  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.610      6.427      7.085
+REMARK INTER + INTRA:          -5.610
+REMARK INTER:                  -5.610
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.382  64.327  71.737  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.086  64.139  72.124  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.476  63.434  71.951  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.180  63.245  72.338  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      61.493  63.763  72.898  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.570  62.539  72.164  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.257  62.022  71.603  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.648  61.316  71.429  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.553  62.210  71.216  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.163  62.916  71.389  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.522      6.459      7.193
+REMARK INTER + INTRA:          -5.522
+REMARK INTER:                  -5.522
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.731  64.824  71.401  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.965  64.066  71.173  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.462  63.624  71.660  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.696  62.866  71.433  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.431  62.551  70.719  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      61.194  62.425  71.921  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.458  62.741  72.635  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.956  62.298  73.123  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.225  63.499  72.863  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.727  63.941  72.375  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.407      3.721      4.738
+REMARK INTER + INTRA:          -5.407
+REMARK INTER:                  -5.407
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dichlorobenzyl alcohol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.908  64.396  68.404  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.764  63.597  68.257  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.662  63.074  68.886  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.518  62.275  68.740  0.00  0.00    +0.000 A 
+ATOM      5 CL   UNL     1      60.476  62.000  67.964  0.00  0.00    +0.000 Cl
+ATOM      6  C   UNL     1      60.416  61.752  69.370  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.459  62.027  70.145  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.357  61.504  70.776  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.603  62.826  70.293  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.705  63.350  69.663  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

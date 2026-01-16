@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.485      0.000      0.000
+REMARK INTER + INTRA:          -4.485
+REMARK INTER:                  -4.485
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.526  62.421  65.090  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.837  61.992  64.944  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.107  61.817  64.184  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.646  61.358  63.678  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.567  62.165  65.704  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.028  62.625  66.210  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.148  61.561  64.797  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.038  61.196  64.066  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.435      0.943      1.793
+REMARK INTER + INTRA:          -4.435
+REMARK INTER:                  -4.435
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.566  61.382  63.854  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.612  61.696  64.614  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.303  62.098  64.407  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.688  62.571  64.961  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.922  61.296  64.823  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.537  60.822  64.267  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.659  62.012  65.376  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.280  62.517  65.576  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.035     17.005     17.294
+REMARK INTER + INTRA:          -4.035
+REMARK INTER:                  -4.035
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.743  77.412  60.079  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.035  77.672  59.745  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.418  78.344  59.456  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.997  78.904  59.023  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.652  77.001  60.033  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      66.073  76.440  60.467  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.327  77.933  59.410  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      65.305  78.644  58.993  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -3.902      2.057      2.696
+REMARK INTER + INTRA:          -3.902
+REMARK INTER:                  -3.902
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.158  61.918  65.828  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.472  62.359  66.450  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.217  62.327  66.098  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.861  62.693  66.459  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.727  62.393  66.803  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.083  62.026  66.441  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.786  62.802  67.072  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.588  62.994  67.078  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.894      2.312      2.684
+REMARK INTER + INTRA:          -3.894
+REMARK INTER:                  -3.894
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.256  62.822  67.576  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.270  62.446  66.842  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.447  62.378  66.861  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.048  62.018  66.236  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.091  62.514  66.822  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.490  62.874  67.448  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.283  62.070  66.108  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.578  61.823  65.757  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.888     17.431     17.752
+REMARK INTER + INTRA:          -3.888
+REMARK INTER:                  -3.888
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.990  78.099  59.227  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.760  78.274  59.463  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.849  77.504  59.746  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      66.560  77.270  60.092  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.673  79.044  59.181  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.961  79.277  58.835  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      66.532  78.449  59.699  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      66.994  77.869  60.062  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.782      8.733      9.237
+REMARK INTER + INTRA:          -3.782
+REMARK INTER:                  -3.782
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.285  66.891  70.295  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.863  67.006  70.872  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.454  66.502  71.382  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.749  66.350  72.136  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      66.273  67.509  70.363  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.977  67.661  69.609  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      66.441  67.120  71.450  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      66.375  66.742  72.180  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.720      3.016      3.575
+REMARK INTER + INTRA:          -3.720
+REMARK INTER:                  -3.720
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.843  63.020  68.938  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.925  62.555  68.262  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.313  63.175  67.881  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.578  63.083  67.106  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.536  61.934  68.642  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.272  62.028  69.418  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.007  62.089  67.586  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.384  62.394  66.918  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.695     24.493     24.911
+REMARK INTER + INTRA:          -3.695
+REMARK INTER:                  -3.695
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = trometamol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      70.179  78.452  49.665  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      70.759  78.952  49.360  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.934  78.395  48.777  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      71.524  78.548  48.222  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.585  79.511  49.941  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      69.995  79.356  50.497  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      71.341  79.453  49.054  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      71.782  79.220  48.397  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

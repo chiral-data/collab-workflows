@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.996      0.000      0.000
+REMARK INTER + INTRA:          -8.996
+REMARK INTER:                  -8.996
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.089  62.834  67.591  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.480  62.609  66.902  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.815  62.182  66.664  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.145  63.037  67.140  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.873  62.384  66.211  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.207  61.956  65.973  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.537  62.811  66.449  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.264  62.159  65.522  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.035  62.416  65.382  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.427  62.191  64.692  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.048  61.709  64.141  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      62.441  61.483  63.450  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      61.277  61.451  64.280  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.885  61.676  64.970  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.781      1.758      3.083
+REMARK INTER + INTRA:          -8.781
+REMARK INTER:                  -8.781
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.297  61.463  63.530  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.863  61.669  64.200  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.518  62.072  64.501  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.208  61.266  63.899  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.427  61.875  64.870  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.082  62.278  65.171  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.773  61.473  64.570  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.993  62.081  65.540  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.209  61.836  65.615  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.774  62.043  66.285  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.123  62.494  66.880  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      59.688  62.701  67.551  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      60.907  62.740  66.806  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.342  62.534  66.136  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.692      5.825      6.654
+REMARK INTER + INTRA:          -7.692
+REMARK INTER:                  -7.692
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.340  65.385  72.215  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.760  64.683  72.118  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.209  64.860  72.789  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.312  64.506  71.449  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.181  63.979  72.022  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.631  64.155  72.692  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.733  63.802  71.353  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.602  63.276  71.926  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.424  62.771  71.298  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.844  62.068  71.202  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.443  61.870  71.734  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      61.864  61.166  71.637  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      61.621  62.374  72.362  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.201  63.077  72.458  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.596      3.853      5.322
+REMARK INTER + INTRA:          -7.596
+REMARK INTER:                  -7.596
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.646  62.677  68.009  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.802  62.650  68.818  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.393  61.934  68.873  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.211  63.364  68.764  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.958  62.622  69.629  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.549  61.907  69.683  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.367  63.336  69.574  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.114  62.594  70.437  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.546  63.199  70.796  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.702  63.171  71.605  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.426  62.539  72.057  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      61.582  62.511  72.867  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      60.994  61.933  71.699  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.838  61.961  70.890  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.584      4.119      5.379
+REMARK INTER + INTRA:          -7.584
+REMARK INTER:                  -7.584
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.624  64.108  72.730  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.391  63.709  72.048  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.257  63.026  72.493  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.525  64.390  71.603  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.158  63.308  71.364  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.024  62.626  71.810  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.292  63.990  70.920  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.925  62.909  70.682  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.925  63.299  69.955  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.692  62.899  69.272  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.460  62.110  69.316  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      60.227  61.709  68.632  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      60.460  61.718  70.042  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.693  62.118  70.725  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.472      6.590      7.382
+REMARK INTER + INTRA:          -7.472
+REMARK INTER:                  -7.472
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.210  67.906  70.305  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.707  67.253  70.292  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.665  67.270  71.117  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.749  67.236  69.469  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.203  66.599  70.280  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.160  66.616  71.105  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.245  66.582  69.456  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.700  65.947  70.267  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.484  65.605  69.548  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.980  64.952  69.536  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.692  64.640  70.242  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      63.188  63.986  70.230  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      63.907  64.981  70.962  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.411  65.634  70.975  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.457      7.274      7.842
+REMARK INTER + INTRA:          -7.457
+REMARK INTER:                  -7.457
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.577  65.754  72.068  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.236  66.078  71.694  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.396  66.529  72.367  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.076  65.627  71.022  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.896  66.403  71.319  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.057  66.854  71.992  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.736  65.952  70.647  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.555  66.727  70.945  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.747  66.499  70.176  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.406  66.823  69.801  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.874  67.375  70.196  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      66.535  67.700  69.821  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      65.684  67.604  70.965  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.024  67.280  71.340  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.366      6.508      7.449
+REMARK INTER + INTRA:          -7.366
+REMARK INTER:                  -7.366
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.492  62.050  71.704  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.049  62.713  71.911  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.630  62.932  72.456  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.469  62.495  71.366  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.604  63.378  72.117  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.185  63.597  72.662  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.024  63.159  71.573  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.161  64.041  72.324  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.437  64.184  71.956  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      58.993  64.848  72.163  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.273  65.369  72.737  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      58.828  66.034  72.944  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      59.998  65.227  73.105  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.442  64.563  72.899  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.140      1.502      2.292
+REMARK INTER + INTRA:          -7.140
+REMARK INTER:                  -7.140
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenaglycodol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.182  63.294  69.957  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.133  63.066  69.166  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.460  62.619  69.337  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.805  63.513  68.996  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.084  62.838  68.374  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.411  62.391  68.545  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.756  63.285  68.204  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.035  62.611  67.584  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.592  62.883  67.040  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.542  62.655  66.249  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.936  62.155  66.001  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      60.887  61.927  65.209  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      60.378  61.882  66.544  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.427  62.109  67.335  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

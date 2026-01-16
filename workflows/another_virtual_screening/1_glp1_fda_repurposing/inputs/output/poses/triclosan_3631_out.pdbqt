@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.800      0.000      0.000
+REMARK INTER + INTRA:          -9.800
+REMARK INTER:                  -9.800
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.818  62.631  65.889  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.708  62.187  65.201  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.991  61.799  65.072  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.385  61.853  65.628  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.495  62.298  66.316  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.211  62.686  66.445  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.321  63.130  67.132  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.714  63.185  67.690  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      60.824  63.628  68.375  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      59.999  62.796  67.559  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.889  62.353  66.872  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      59.173  61.964  66.743  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      60.882  61.355  64.385  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.488  61.300  63.827  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.204  61.689  63.958  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      62.810  61.633  63.401  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      62.314  62.132  64.645  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.721      0.737      3.325
+REMARK INTER + INTRA:          -9.721
+REMARK INTER:                  -9.721
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.017  62.671  66.026  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.482  62.667  66.655  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.790  62.220  66.604  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.631  61.779  65.926  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.167  61.783  65.296  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.859  62.229  65.347  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.393  62.234  64.719  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.236  61.792  64.040  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      62.770  61.796  63.412  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      61.543  61.346  63.990  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.009  61.342  64.618  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      60.317  60.896  64.568  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      60.255  62.216  67.233  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.413  62.658  67.912  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.105  63.104  67.962  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      61.262  63.545  68.641  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      61.640  63.108  67.334  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.612      3.389      5.614
+REMARK INTER + INTRA:          -8.612
+REMARK INTER:                  -8.612
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.942  62.133  70.411  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.098  62.587  71.083  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.992  63.405  71.062  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.729  63.770  70.370  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.573  63.317  69.698  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.679  62.499  69.719  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.523  62.045  69.048  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.260  62.410  68.355  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      60.104  61.957  67.684  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      60.154  63.228  68.335  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.311  63.681  69.006  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      60.205  64.498  68.985  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      61.148  63.859  71.733  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.411  63.494  72.426  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.517  62.676  72.446  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      61.779  62.312  73.138  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      61.361  62.223  71.774  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.474      3.419      4.949
+REMARK INTER + INTRA:          -8.474
+REMARK INTER:                  -8.474
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.939  62.157  70.362  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.679  62.521  69.667  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.572  63.339  69.646  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.724  63.794  70.317  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.985  63.431  71.011  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.091  62.613  71.033  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.351  62.249  71.727  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.504  62.704  72.399  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      61.763  62.342  73.092  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      61.397  63.522  72.376  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.137  63.885  71.682  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      61.030  64.702  71.660  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      60.312  63.702  68.952  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.159  63.247  68.280  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.266  62.430  68.303  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      60.113  61.976  67.632  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      60.526  62.066  68.997  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.467      5.765      7.357
+REMARK INTER + INTRA:          -8.467
+REMARK INTER:                  -8.467
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.515  66.093  69.566  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.046  65.521  69.933  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.133  65.373  70.740  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      64.688  65.795  71.181  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.157  66.367  70.814  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.071  66.515  70.007  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.540  67.086  69.640  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.096  67.509  70.080  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      66.564  68.079  69.714  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      66.181  67.360  70.887  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.712  66.789  71.254  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      65.799  66.641  72.060  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      63.664  64.802  71.107  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.108  64.379  70.667  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.022  64.528  69.860  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      62.467  64.105  69.420  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      63.491  65.099  69.493  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.342      5.421      7.054
+REMARK INTER + INTRA:          -8.342
+REMARK INTER:                  -8.342
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.400  65.827  69.604  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.835  66.360  70.061  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.663  66.451  70.863  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      64.058  66.010  71.209  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.623  65.476  70.753  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.794  65.385  69.950  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.360  64.853  69.494  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.754  64.411  69.840  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      62.320  63.879  69.385  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      62.584  64.503  70.642  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.019  65.035  71.098  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      62.848  65.126  71.900  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      65.098  66.983  71.319  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.704  67.425  70.973  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.874  67.334  70.171  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      66.479  67.775  69.826  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      65.439  66.801  69.715  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.160      4.932      5.889
+REMARK INTER + INTRA:          -8.160
+REMARK INTER:                  -8.160
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.152  63.730  70.032  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.658  64.335  70.279  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.781  64.466  71.085  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      62.399  63.994  71.644  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.893  63.389  71.397  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.770  63.258  70.591  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.265  62.655  70.345  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.883  62.182  70.903  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      60.378  61.579  70.657  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      61.007  62.314  71.708  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.512  62.917  71.955  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      61.635  63.049  72.759  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      63.286  65.069  71.331  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.669  65.542  70.773  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.545  65.410  69.968  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      63.927  65.883  69.410  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      63.039  64.806  69.721  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.067      5.528      6.628
+REMARK INTER + INTRA:          -8.067
+REMARK INTER:                  -8.067
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.721  63.902  70.483  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.233  63.621  71.087  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.154  64.050  71.787  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      62.562  64.760  71.885  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.050  65.042  71.281  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.129  64.613  70.581  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.617  64.894  69.978  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.026  65.605  70.075  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      64.513  65.886  69.473  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      63.946  66.033  70.776  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.459  65.751  71.379  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      63.380  66.180  72.079  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      61.666  63.768  72.390  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.257  63.058  72.293  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.337  62.630  71.592  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      60.928  61.920  71.495  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      61.824  62.911  70.989  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.031      5.003      6.176
+REMARK INTER + INTRA:          -8.031
+REMARK INTER:                  -8.031
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = triclosan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.542  64.676  71.777  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.839  63.905  71.792  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.837  63.450  71.103  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.539  63.764  70.400  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.242  64.535  70.386  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.244  64.990  71.075  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.948  65.759  71.061  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.649  66.074  70.358  0.00  0.00    +0.000 A 
+ATOM      9 CL   UNL     1      59.353  66.843  70.344  0.00  0.00    +0.000 Cl
+ATOM     10  C   UNL     1      59.648  65.618  69.671  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.944  64.849  69.685  0.00  0.00    +0.000 A 
+ATOM     12 CL   UNL     1      59.943  64.394  68.997  0.00  0.00    +0.000 Cl
+ATOM     13  C   UNL     1      61.134  62.680  71.117  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.433  62.366  71.820  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.434  62.821  72.507  0.00  0.00    +0.000 A 
+ATOM     16 CL   UNL     1      61.732  62.507  73.209  0.00  0.00    +0.000 Cl
+ATOM     17  C   UNL     1      61.137  63.591  72.493  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

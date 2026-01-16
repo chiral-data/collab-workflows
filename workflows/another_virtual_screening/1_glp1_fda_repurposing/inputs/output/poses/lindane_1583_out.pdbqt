@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.956      0.000      0.000
+REMARK INTER + INTRA:          -6.956
+REMARK INTER:                  -6.956
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.789  62.451  64.983  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.027  62.137  65.012  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.750  61.666  64.395  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      62.237  61.508  63.748  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      60.988  61.352  64.424  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      60.712  60.881  63.807  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.502  61.510  65.072  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      59.739  61.196  65.101  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.778  61.982  65.690  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      60.292  62.140  66.338  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.540  62.295  65.660  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      61.817  62.768  66.279  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.870      0.204      2.610
+REMARK INTER + INTRA:          -6.870
+REMARK INTER:                  -6.870
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.692  61.255  65.414  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.448  61.559  65.295  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.785  62.060  65.857  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      60.365  62.255  66.539  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      61.542  62.365  65.737  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      61.879  62.866  66.299  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.962  62.170  65.055  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      62.720  62.476  64.935  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.626  61.669  64.492  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      62.046  61.473  63.809  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.869  61.364  64.612  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      60.532  60.863  64.049  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.986      5.749      6.748
+REMARK INTER + INTRA:          -5.986
+REMARK INTER:                  -5.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.110  64.256  71.368  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.521  63.548  71.457  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.540  63.001  70.840  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      60.146  63.163  70.134  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      60.952  62.292  70.929  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      60.970  61.745  70.313  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      61.345  62.130  71.636  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      61.758  61.420  71.725  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.328  62.677  72.253  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.721  62.515  72.960  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.916  63.386  72.164  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      60.897  63.933  72.782  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.970      5.714      6.674
+REMARK INTER + INTRA:          -5.970
+REMARK INTER:                  -5.970
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.650  62.507  72.908  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.270  62.704  72.204  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.300  62.189  71.560  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      61.711  61.477  71.622  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      60.919  62.386  70.856  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      60.949  61.871  70.213  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.507  63.098  70.795  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      60.126  63.296  70.089  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.476  63.614  71.438  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      60.065  64.327  71.378  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.858  63.417  72.143  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      60.827  63.932  72.787  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.890      4.287      5.521
+REMARK INTER + INTRA:          -5.890
+REMARK INTER:                  -5.890
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      60.493  63.187  68.324  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      60.437  63.105  69.142  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.393  63.774  69.622  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      60.405  64.525  69.282  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      60.337  63.691  70.441  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      60.293  64.361  70.920  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.325  62.940  70.780  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      60.269  62.858  71.600  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.369  62.270  70.300  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      60.358  61.517  70.639  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.425  62.352  69.481  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      60.470  61.682  69.001  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.781     24.722     25.538
+REMARK INTER + INTRA:          -5.781
+REMARK INTER:                  -5.781
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      69.920  78.583  49.749  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      70.622  79.011  49.695  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.200  78.791  49.150  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      71.074  78.141  48.658  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      71.903  79.220  49.097  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      72.480  78.998  48.551  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      72.027  79.869  49.588  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      72.731  80.299  49.535  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      71.450  80.091  50.134  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      71.574  80.741  50.627  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      70.747  79.662  50.188  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      70.169  79.884  50.734  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.769     24.690     25.566
+REMARK INTER + INTRA:          -5.769
+REMARK INTER:                  -5.769
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      69.882  78.498  49.618  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      70.568  78.954  49.619  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.636  79.598  50.130  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      70.016  79.785  50.640  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      71.324  80.054  50.131  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      71.391  80.697  50.642  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      71.943  79.865  49.621  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      72.632  80.322  49.622  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      71.877  79.221  49.109  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      72.497  79.033  48.599  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      71.189  78.765  49.109  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      71.122  78.121  48.597  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.647      4.892      6.046
+REMARK INTER + INTRA:          -5.647
+REMARK INTER:                  -5.647
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.001  63.871  71.896  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.629  63.444  71.297  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.092  62.847  71.487  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      60.928  62.679  72.277  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      60.721  62.420  70.887  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      60.184  61.824  71.078  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      60.886  62.589  70.097  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      60.513  62.161  69.497  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.423  63.186  69.906  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.588  63.356  69.116  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.794  63.614  70.506  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      62.332  64.211  70.315  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.563      6.993      8.412
+REMARK INTER + INTRA:          -5.563
+REMARK INTER:                  -5.563
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = lindane
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      63.593  65.760  69.595  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      64.011  66.163  70.180  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.699  66.224  70.942  0.00  0.00    +0.000 C 
+ATOM      4 CL   UNL     1      62.970  65.881  71.116  0.00  0.00    +0.000 Cl
+ATOM      5  C   UNL     1      64.117  66.628  71.528  0.00  0.00    +0.000 C 
+ATOM      6 CL   UNL     1      63.805  66.688  72.288  0.00  0.00    +0.000 Cl
+ATOM      7  C   UNL     1      64.846  66.970  71.352  0.00  0.00    +0.000 C 
+ATOM      8 CL   UNL     1      65.265  67.374  71.939  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      65.159  66.909  70.591  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      65.889  67.251  70.415  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      64.741  66.506  70.005  0.00  0.00    +0.000 C 
+ATOM     12 CL   UNL     1      65.053  66.445  69.243  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

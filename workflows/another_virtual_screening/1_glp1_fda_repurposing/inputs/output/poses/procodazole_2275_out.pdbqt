@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.178      0.000      0.000
+REMARK INTER + INTRA:          -8.178
+REMARK INTER:                  -8.178
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.134  62.024  69.064  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.704  62.409  68.607  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.149  63.021  68.933  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.829  62.180  67.825  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.398  62.564  67.368  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.523  62.335  66.585  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.122  61.735  66.186  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.421  61.695  65.418  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.007  62.271  65.343  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.070  62.666  66.064  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.408  62.360  64.627  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.223  61.874  63.987  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.637  61.299  64.063  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.235  61.209  64.778  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.807      2.099      3.600
+REMARK INTER + INTRA:          -7.807
+REMARK INTER:                  -7.807
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.834  61.260  63.792  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.037  61.879  64.298  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.539  62.478  64.037  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.737  61.898  65.066  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.938  62.516  65.573  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.638  62.535  66.341  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.132  61.978  66.678  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.972  62.213  67.452  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.379  62.917  67.594  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.791  63.116  66.908  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.322  63.285  68.330  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.859  62.950  68.924  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.452  62.247  68.783  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.508  61.878  68.047  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.339      5.582      6.741
+REMARK INTER + INTRA:          -7.339
+REMARK INTER:                  -7.339
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.476  63.549  70.558  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.819  64.072  70.020  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.585  64.064  69.229  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.396  64.604  70.273  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.739  65.128  69.736  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.317  65.660  69.990  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      64.606  65.732  70.759  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      65.174  66.329  70.763  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.237  66.627  69.996  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      64.707  66.213  69.518  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      65.768  67.237  69.833  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.237  67.548  70.435  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.174  67.251  71.202  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.643  66.641  71.367  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.093      3.445      4.235
+REMARK INTER + INTRA:          -7.093
+REMARK INTER:                  -7.093
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.735  62.306  73.149  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.530  62.898  72.612  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.548  63.689  72.843  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.305  62.698  71.844  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.100  63.289  71.306  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.875  63.089  70.538  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.831  62.325  70.229  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.584  62.382  69.445  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.476  63.181  69.268  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.656  63.618  69.944  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.228  63.406  68.514  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.088  62.834  67.937  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.196  62.035  68.114  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.444  61.809  68.867  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.913      5.425      6.323
+REMARK INTER + INTRA:          -6.913
+REMARK INTER:                  -6.913
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.806  66.392  70.089  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.459  65.665  69.908  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.677  65.263  69.222  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.894  65.341  70.415  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.547  64.615  70.235  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.982  64.290  70.742  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.711  64.627  71.444  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.151  64.117  71.771  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.076  63.465  71.270  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.590  63.572  70.634  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.550  62.859  71.459  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.098  62.904  72.148  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.173  63.556  72.648  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.699  64.163  72.460  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.683      5.555      6.752
+REMARK INTER + INTRA:          -6.683
+REMARK INTER:                  -6.683
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.384  67.639  69.627  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.971  67.343  70.277  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.140  67.620  71.035  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.388  66.769  70.169  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.975  66.472  70.817  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.393  65.898  70.708  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      64.164  65.569  69.987  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.567  65.020  70.135  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.426  65.009  70.948  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      63.936  65.551  71.303  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.851  64.506  71.259  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.418  64.014  70.759  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.559  64.025  69.946  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.133  64.528  69.634  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.559      5.075      5.682
+REMARK INTER + INTRA:          -6.559
+REMARK INTER:                  -6.559
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.973  63.287  72.655  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.364  63.184  71.935  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.186  62.535  71.458  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.932  63.730  71.694  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.324  63.629  70.975  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.892  64.175  70.733  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      63.127  64.847  71.149  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.705  65.233  70.706  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.829  64.799  70.015  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      63.326  64.145  70.031  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.383  65.056  69.461  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.813  65.746  69.596  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.690  66.180  70.287  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.136  65.924  70.842  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.429      6.481      7.701
+REMARK INTER + INTRA:          -6.429
+REMARK INTER:                  -6.429
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.742  62.613  72.080  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.292  63.266  72.307  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.494  63.174  72.492  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.641  64.013  72.349  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.192  64.667  72.576  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.541  65.413  72.617  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.329  65.590  72.449  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.438  66.399  72.563  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.718  66.723  72.801  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.163  66.114  72.835  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.660  67.531  72.956  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.322  68.016  72.873  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.043  67.692  72.635  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.101  66.884  72.480  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.195      5.355      6.250
+REMARK INTER + INTRA:          -5.195
+REMARK INTER:                  -5.195
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = procodazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.282  66.275  73.223  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.118  65.750  72.607  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      58.481  65.891  72.103  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.592  65.084  72.497  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.429  64.558  71.882  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.903  63.892  71.772  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.555  63.680  72.229  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.862  62.978  71.924  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.400  62.756  71.278  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      59.807  63.321  71.183  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.580  62.068  70.860  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.221  61.602  71.087  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.683  61.824  71.733  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.505  62.512  72.152  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

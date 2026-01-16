@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.924      0.000      0.000
+REMARK INTER + INTRA:          -7.924
+REMARK INTER:                  -7.924
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.718  61.272  63.474  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.579  61.577  64.228  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.855  61.444  64.599  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.716  61.750  65.353  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.992  61.617  65.726  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.301  62.189  65.735  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      62.025  62.322  65.362  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.165  62.017  64.609  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      62.889  62.150  64.237  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      61.162  62.495  66.488  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.469  62.407  66.927  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      60.570  62.801  67.646  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      61.326  63.131  67.651  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.658  63.573  68.263  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.223  63.717  68.950  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.692  62.942  66.936  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.670      2.037      3.423
+REMARK INTER + INTRA:          -7.670
+REMARK INTER:                  -7.670
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.127  63.493  68.723  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.365  63.177  67.999  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.851  62.695  67.571  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.089  62.379  66.847  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.575  61.897  66.418  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.840  62.546  66.551  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      61.355  63.029  66.980  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.117  63.344  67.704  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      61.632  63.827  68.132  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      61.078  62.230  65.827  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.627  61.741  65.339  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      61.079  61.556  64.674  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      61.810  61.931  64.750  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.432  61.896  64.210  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.352  61.455  63.517  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.810  62.348  65.463  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.280      1.663      2.142
+REMARK INTER + INTRA:          -7.280
+REMARK INTER:                  -7.280
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.296  61.285  64.956  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.406  61.753  65.626  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.163  62.008  65.831  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.273  62.476  66.501  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.030  62.731  66.706  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.626  62.689  66.966  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      59.868  62.434  66.761  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.758  61.966  66.091  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      59.000  61.711  65.886  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      60.737  63.158  67.637  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.457  63.452  67.909  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      61.311  63.890  68.594  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      60.501  63.866  68.744  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.113  64.230  69.374  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.544  64.668  69.925  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.145  63.413  68.152  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.259      3.037      4.553
+REMARK INTER + INTRA:          -7.259
+REMARK INTER:                  -7.259
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.284  62.662  71.482  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.450  62.674  70.674  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.691  63.375  70.313  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.856  63.387  69.505  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.098  64.087  69.143  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.780  62.698  69.057  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      60.538  61.996  69.419  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.373  61.984  70.227  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      60.131  61.283  70.588  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      60.945  62.710  68.249  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.191  63.366  67.814  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      61.291  63.129  67.030  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      61.107  62.326  66.980  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.133  61.864  66.298  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.359  62.202  65.579  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.893  62.067  67.734  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.968      2.917      4.035
+REMARK INTER + INTRA:          -6.968
+REMARK INTER:                  -6.968
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.651  62.480  67.015  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.853  62.650  67.796  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.420  63.226  67.959  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.622  63.396  68.741  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.189  63.973  68.905  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.258  62.989  69.360  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      60.691  62.412  69.196  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.489  62.242  68.414  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      59.922  61.665  68.252  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      61.461  63.159  70.141  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.014  63.718  70.388  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      62.041  63.704  71.213  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      61.503  63.136  71.476  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.351  62.939  72.262  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.755  63.326  72.869  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.144  62.799  70.813  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.813      6.120      6.964
+REMARK INTER + INTRA:          -6.813
+REMARK INTER:                  -6.813
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.151  67.675  70.268  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.577  67.090  70.360  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.428  66.559  69.747  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.854  65.973  69.838  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      64.705  65.441  69.226  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      64.429  65.919  70.543  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      64.578  66.451  71.157  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.152  67.036  71.065  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      65.300  67.567  71.679  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      63.855  65.333  70.635  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.647  64.766  70.073  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      63.051  64.294  70.396  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      62.891  64.570  71.157  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.334  64.258  71.678  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.874  63.611  71.452  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      63.388  65.212  71.305  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.743      5.886      6.577
+REMARK INTER + INTRA:          -6.743
+REMARK INTER:                  -6.743
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.634  61.285  71.354  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.273  61.992  71.578  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.641  62.487  72.126  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.280  63.194  72.350  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.648  63.690  72.898  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.552  63.407  72.027  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      60.184  62.911  71.479  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.544  62.204  71.254  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      60.176  61.709  70.706  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      60.191  64.114  72.252  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.491  64.662  72.790  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      59.952  65.284  72.848  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      59.318  65.121  72.345  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      58.654  65.596  72.231  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      58.583  66.309  72.641  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.466  64.397  71.976  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.715      3.778      5.388
+REMARK INTER + INTRA:          -6.715
+REMARK INTER:                  -6.715
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.994  65.536  70.971  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.339  65.181  70.616  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.676  64.995  71.069  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.021  64.640  70.715  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.357  64.454  71.168  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      63.029  64.471  69.908  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      63.694  64.657  69.455  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.349  65.012  69.809  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      65.012  65.198  69.355  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      62.374  64.115  69.554  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.675  63.899  69.934  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      61.172  63.564  69.372  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      61.560  63.573  68.644  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.259  63.292  67.930  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.502  62.963  67.903  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.304  63.914  68.756  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.707      4.541      6.070
+REMARK INTER + INTRA:          -6.707
+REMARK INTER:                  -6.707
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = emtricitabine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.145  66.238  72.209  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.389  65.727  71.610  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.517  66.016  70.848  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.761  65.505  70.249  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.890  65.794  69.487  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      59.878  64.705  70.410  0.00  0.00    +0.000 N 
+ATOM      7  C   UNL     1      59.750  64.415  71.173  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.506  64.926  71.772  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      59.378  64.636  72.534  0.00  0.00    +0.000 F 
+ATOM     10  C   UNL     1      60.123  64.194  69.810  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.272  64.402  69.026  0.00  0.00    +0.000 C 
+ATOM     12  S   UNL     1      60.502  63.722  68.621  0.00  0.00    +0.000 S 
+ATOM     13  C   UNL     1      60.496  63.092  69.154  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.690  62.309  68.983  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.916  62.099  68.217  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.261  63.384  69.890  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

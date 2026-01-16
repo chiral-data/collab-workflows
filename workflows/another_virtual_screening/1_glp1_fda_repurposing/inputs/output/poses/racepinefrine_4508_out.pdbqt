@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.706      0.000      0.000
+REMARK INTER + INTRA:          -7.706
+REMARK INTER:                  -7.706
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.296  63.494  68.080  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.932  63.005  67.524  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.321  62.818  66.821  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.957  62.330  66.264  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.203  62.029  66.411  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.346  62.143  65.562  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.983  61.655  65.005  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.373  61.468  64.303  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.009  60.980  63.747  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.126  61.769  64.157  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.516  61.582  63.453  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.491  62.258  64.713  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.101  62.445  65.416  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.667      1.621      3.479
+REMARK INTER + INTRA:          -6.667
+REMARK INTER:                  -6.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.900  60.927  63.748  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.345  61.352  64.299  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.990  61.624  64.992  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.433  62.049  65.544  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.231  62.201  65.401  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.079  62.321  66.236  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.522  62.745  66.787  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.167  63.017  67.481  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.610  63.442  68.031  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.370  62.865  67.623  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.014  63.137  68.317  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.926  62.440  67.072  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.280  62.168  66.379  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.419      2.384      4.628
+REMARK INTER + INTRA:          -6.419
+REMARK INTER:                  -6.419
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.329  62.481  65.861  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.308  62.951  66.539  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.084  62.621  67.262  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.063  63.091  67.940  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.266  63.889  67.895  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.840  62.762  68.662  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.819  63.231  69.341  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.595  62.902  70.063  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.574  63.371  70.741  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.393  62.104  70.108  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.169  61.774  70.831  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.413  61.634  69.430  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.637  61.963  68.707  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.348      4.075      6.400
+REMARK INTER + INTRA:          -6.348
+REMARK INTER:                  -6.348
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.467  61.889  68.274  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.365  62.438  68.882  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.686  62.291  69.628  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.585  62.839  70.236  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.163  63.534  70.098  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.906  62.692  70.981  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.805  63.240  71.590  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.126  63.093  72.335  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.025  63.641  72.943  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.548  62.398  72.472  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.869  62.251  73.219  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.650  61.849  71.864  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.329  61.997  71.119  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.340      1.626      2.508
+REMARK INTER + INTRA:          -6.340
+REMARK INTER:                  -6.340
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.421  64.131  69.869  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.882  63.875  69.234  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.531  63.465  68.610  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.992  63.208  67.974  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.802  63.363  67.963  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.642  62.798  67.351  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.101  62.542  66.715  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.750  62.131  66.091  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.210  61.875  65.457  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.941  61.977  66.103  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.590  61.566  65.478  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.480  62.233  66.738  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.830  62.644  67.362  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.315      6.023      6.727
+REMARK INTER + INTRA:          -6.315
+REMARK INTER:                  -6.315
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.226  66.029  73.222  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.945  65.468  72.686  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.367  64.770  72.560  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.086  64.208  72.024  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.383  64.345  71.614  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.507  63.511  71.899  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.227  62.950  71.364  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.649  62.252  71.238  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.368  61.691  70.703  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.351  62.115  71.649  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.773  61.416  71.523  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.632  62.676  72.185  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.210  63.374  72.310  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.281      6.684      7.893
+REMARK INTER + INTRA:          -6.281
+REMARK INTER:                  -6.281
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.330  64.883  71.406  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.759  65.323  70.855  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.497  65.631  71.060  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.927  66.071  70.509  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.619  66.202  69.756  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.664  66.378  70.713  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.095  66.818  70.164  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.832  67.126  70.368  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      66.262  67.565  69.819  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      66.139  66.994  71.122  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      66.878  67.302  71.326  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      65.710  66.554  71.672  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.972  66.246  71.468  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.191      6.003      7.282
+REMARK INTER + INTRA:          -6.191
+REMARK INTER:                  -6.191
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.509  67.918  69.748  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.979  67.614  70.303  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.542  66.937  70.126  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.011  66.632  70.680  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.917  67.006  71.410  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.574  65.956  70.504  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.044  65.651  71.057  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.607  64.974  70.881  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      63.076  64.670  71.434  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.700  64.602  70.152  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      63.263  63.924  69.975  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      64.231  64.905  69.597  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.668  65.583  69.774  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.998      6.665      7.646
+REMARK INTER + INTRA:          -5.998
+REMARK INTER:                  -5.998
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = racepinefrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.621  61.417  71.393  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.672  62.070  71.896  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.121  62.680  71.835  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.171  63.333  72.338  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.773  63.375  72.900  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.621  63.943  72.278  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.671  64.596  72.779  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.119  65.207  72.719  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.170  65.859  73.221  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.518  65.165  72.157  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      58.966  65.776  72.096  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.467  64.512  71.654  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.018  63.901  71.715  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

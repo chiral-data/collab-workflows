@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.030      0.000      0.000
+REMARK INTER + INTRA:          -7.030
+REMARK INTER:                  -7.030
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.369  62.065  68.521  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.899  62.279  67.927  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.829  61.952  67.173  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.360  62.167  66.579  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.960  62.709  66.739  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.290  61.840  65.826  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.820  62.054  65.231  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.421  62.597  65.391  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.749  61.727  64.477  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.679  61.399  63.723  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      62.402  62.164  64.226  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      61.096  61.290  64.728  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.663      1.741      3.049
+REMARK INTER + INTRA:          -6.663
+REMARK INTER:                  -6.663
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.599  61.628  63.442  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.406  61.902  64.196  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.631  61.838  64.472  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.438  62.112  65.226  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.020  62.450  65.703  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.664  62.048  65.502  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.470  62.322  66.256  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.052  62.660  66.734  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.695  62.258  66.532  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      58.921  62.194  66.808  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      59.920  62.611  67.243  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      59.471  61.905  65.821  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.256      1.819      2.356
+REMARK INTER + INTRA:          -6.256
+REMARK INTER:                  -6.256
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.330  61.957  70.648  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.668  62.056  69.903  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.197  62.009  69.227  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.535  62.109  68.480  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.344  62.254  68.411  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.065  62.062  67.805  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.402  62.161  67.059  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.212  62.307  66.989  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.932  62.114  66.383  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      59.461  62.068  65.707  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      60.594  62.256  65.912  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      59.269  61.973  66.854  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.243      3.508      4.242
+REMARK INTER + INTRA:          -6.243
+REMARK INTER:                  -6.243
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.373  62.042  66.127  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.867  62.361  66.705  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.835  62.075  67.478  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.330  62.394  68.057  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.855  62.999  67.862  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.298  62.107  68.829  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.792  62.426  69.408  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.318  63.032  69.214  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.761  62.139  70.181  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      60.729  61.853  70.954  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      61.349  62.673  70.403  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      60.172  61.605  69.959  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.039     18.021     18.668
+REMARK INTER + INTRA:          -6.039
+REMARK INTER:                  -6.039
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.389  81.132  57.977  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.369  80.377  58.309  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.063  80.032  58.590  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.044  79.276  58.922  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.329  78.867  58.972  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      65.737  78.931  59.203  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      65.718  78.176  59.535  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      65.003  77.766  59.585  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      66.412  77.830  59.816  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      67.106  77.485  60.097  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      65.988  77.158  60.037  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      66.836  78.503  59.595  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.898      6.677      7.305
+REMARK INTER + INTRA:          -5.898
+REMARK INTER:                  -5.898
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.800  64.286  69.579  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.374  64.605  70.078  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.820  65.253  69.831  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.395  65.573  70.330  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.522  65.244  71.075  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      64.841  66.221  70.083  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      65.415  66.541  70.581  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      65.542  66.212  71.328  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.862  67.189  70.334  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      66.308  67.837  70.087  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      66.267  67.184  71.053  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      65.456  67.194  69.616  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.771      4.086      4.843
+REMARK INTER + INTRA:          -5.771
+REMARK INTER:                  -5.771
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.199  65.557  69.865  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.766  64.952  69.511  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.340  64.422  69.978  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.906  63.815  69.623  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.899  63.740  68.802  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.480  63.286  70.089  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.046  62.680  69.736  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.039  62.604  68.913  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.620  62.150  70.203  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      60.194  61.620  70.670  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      60.366  61.757  69.524  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      60.875  62.543  70.882  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.668      5.752      6.421
+REMARK INTER + INTRA:          -5.668
+REMARK INTER:                  -5.668
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.018  66.001  69.811  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.589  65.300  69.872  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.219  65.103  70.583  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.789  64.401  70.645  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.730  63.896  69.995  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      62.420  64.204  71.355  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.991  63.503  71.417  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.931  62.998  70.766  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.621  63.306  72.127  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.252  63.109  72.838  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      61.339  62.609  71.788  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      61.904  64.003  72.467  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.605      6.550      7.095
+REMARK INTER + INTRA:          -5.605
+REMARK INTER:                  -5.605
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbocloral
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.364  67.248  71.495  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.370  66.429  71.402  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.939  65.975  71.790  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.946  65.154  71.698  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.384  64.789  71.217  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      60.514  64.700  72.086  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.522  63.881  71.993  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.959  63.515  71.512  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.090  63.427  72.382  0.00  0.00    +0.000 C 
+ATOM     10 CL   UNL     1      61.659  62.972  72.770  0.00  0.00    +0.000 Cl
+ATOM     11 CL   UNL     1      60.770  62.742  72.051  0.00  0.00    +0.000 Cl
+ATOM     12 CL   UNL     1      61.411  64.111  72.713  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

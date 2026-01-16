@@ -1,0 +1,858 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Screening Analysis Dashboard</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #075985 0%, #0284c7 100%);
+            min-height: 100vh;
+        }
+        
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .dashboard {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0284c7;
+        }
+        
+        .header h1 {
+            color: #0369a1;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+        
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #0284c7;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .card h3 {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .card-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #0369a1;
+        }
+        
+        .card-unit {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .plot-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .recommendation-panel {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #0284c7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .recommendation-panel h2 {
+            color: #0369a1;
+            margin-bottom: 15px;
+        }
+        
+        .statistics-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-box h3 {
+            color: #0369a1;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 5px;
+        }
+        
+        .stat-box p {
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+        
+        .table-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .table-container h2 {
+            color: #0369a1;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #0284c7;
+            padding-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        th, td {
+            border: 1px solid #e9ecef;
+            padding: 12px 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #0284c7;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="dashboard">
+            <div class="header">
+                <h1>Virtual Screening Analysis Dashboard</h1>
+                <p><strong>Job ID:</strong> screening_20250910 | <strong>Date:</strong> 2025-09-10</p>
+                <p><strong>Receptor:</strong> Unknown | <strong>Library Size:</strong> 49 compounds</p>
+                <p><strong>Success Rate:</strong> 100.0% | <strong>Box Center:</strong> (0.00, 0.00, 0.00)</p>
+            </div>
+    
+    <div class="summary-cards">
+        
+        <div class="card">
+            <h3>Compounds Screened</h3>
+            <div class="card-value">49</div>
+            <div class="card-unit">100.0% success</div>
+        </div>
+        
+        <div class="card">
+            <h3>Best Affinity</h3>
+            <div class="card-value">-17.96</div>
+            <div class="card-unit">kcal/mol</div>
+        </div>
+        
+        <div class="card">
+            <h3>Excellent Hits</h3>
+            <div class="card-value">25</div>
+            <div class="card-unit">< -10 kcal/mol</div>
+        </div>
+        
+        <div class="card">
+            <h3>Good Hits</h3>
+            <div class="card-value">11</div>
+            <div class="card-unit">< -8 kcal/mol</div>
+        </div>
+        
+        <div class="card">
+            <h3>Enrichment (Top 1%)</h3>
+            <div class="card-value">0.0x</div>
+            <div class="card-unit">fold enrichment</div>
+        </div>
+        
+        <div class="card">
+            <h3>Recommendation</h3>
+            <div class="card-value">Proceed</div>
+            <div class="card-unit">HIGH</div>
+        </div>
+        
+    </div>
+    
+    <div class="recommendation-panel">
+        <h2>Screening Recommendation: Proceed to Lead Optimization</h2>
+        <p><strong>Priority:</strong> HIGH | 
+           <strong>Confidence:</strong> Excellent hit rate with 25 strong binders</p>
+        <h3>Recommended Next Steps:</h3>
+        <ul>
+            <li>Prioritize top 20 compounds for experimental validation</li><li>Perform structural clustering to identify diverse scaffolds</li><li>Run molecular dynamics on top 5 hits</li><li>Analyze binding mode consensus</li><li>Consider ADMET predictions for lead selection</li>
+        </ul>
+    </div>
+    
+    <div class="statistics-panel">
+        <div class="stat-box">
+            <h3>Affinity Statistics</h3>
+            <p><strong>Best:</strong> -17.957 kcal/mol</p>
+            <p><strong>Mean:</strong> -10.165 ± 4.097 kcal/mol</p>
+            <p><strong>Median:</strong> -10.095 kcal/mol</p>
+            <p><strong>Q1:</strong> -12.159 | <strong>Q3:</strong> -7.906 kcal/mol</p>
+        </div>
+        
+        <div class="stat-box">
+            <h3>Hit Classification (Non-overlapping)</h3>
+            <p><strong>Excellent (< -10):</strong> 25 compounds (52.1%)</p>
+            <p><strong>Good (-10 to -8):</strong> 11 compounds (22.9%)</p>
+            <p><strong>Moderate (-8 to -6):</strong> 7 compounds (14.6%)</p>
+            <p><strong>Weak (≥ -6):</strong> 5 compounds (10.4%)</p>
+        </div>
+        
+        <div class="stat-box">
+            <h3>Enrichment Factors (< -15 kcal/mol)</h3>
+            <p><strong>Top 1%:</strong> 0.00x</p>
+            <p><strong>Top 5%:</strong> 4.44x</p>
+            <p><strong>Top 10%:</strong> 4.44x</p>
+            <p><em>Exceptional hits concentration in top compounds</em></p>
+            <p><em>High enrichment = ultra-strong binders clustered at top</em></p>
+        </div>
+    </div>
+    
+    <div class="plot-container">
+        <div id="top-hits-plot"></div>
+    </div>
+    
+    <div class="plot-container">
+        <div id="distribution-plot"></div>
+    </div>
+    
+    <div class="plot-container">
+        <div id="enrichment-plot"></div>
+    </div>
+    
+    <div class="table-container">
+        <h2>Detailed Results</h2>
+        <table border="1" class="dataframe results-table" id="results-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>Compound</th>
+      <th>Best Affinity (kcal/mol)</th>
+      <th>Mode 2 (kcal/mol)</th>
+      <th>Mode 3 (kcal/mol)</th>
+      <th>Num Modes</th>
+      <th>Quality</th>
+      <th>Z-Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>abarelix_35</td>
+      <td>-17.957</td>
+      <td>-16.819</td>
+      <td>-15.841</td>
+      <td>3</td>
+      <td>Excellent</td>
+      <td>-1.90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>SpiramycinI_2471</td>
+      <td>-16.871</td>
+      <td>-16.545</td>
+      <td>-16.012</td>
+      <td>6</td>
+      <td>Excellent</td>
+      <td>-1.64</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>SpiramycinIII_2473</td>
+      <td>-16.783</td>
+      <td>-16.646</td>
+      <td>-15.792</td>
+      <td>4</td>
+      <td>Excellent</td>
+      <td>-1.62</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>SpiramycinII_2472</td>
+      <td>-16.607</td>
+      <td>-16.475</td>
+      <td>-14.476</td>
+      <td>8</td>
+      <td>Excellent</td>
+      <td>-1.57</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>abemaciclib_5259</td>
+      <td>-16.580</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1</td>
+      <td>Excellent</td>
+      <td>-1.57</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>acarbose_39</td>
+      <td>-15.893</td>
+      <td>-13.364</td>
+      <td>-13.091</td>
+      <td>5</td>
+      <td>Excellent</td>
+      <td>-1.40</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>S-nicardipine_5</td>
+      <td>-15.591</td>
+      <td>-15.112</td>
+      <td>N/A</td>
+      <td>2</td>
+      <td>Excellent</td>
+      <td>-1.32</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>acalabrutinib_5260</td>
+      <td>-15.322</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1</td>
+      <td>Excellent</td>
+      <td>-1.26</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>StreptomycinB_2482</td>
+      <td>-15.235</td>
+      <td>-15.151</td>
+      <td>-14.702</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-1.24</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>abirateroneacetate_4176</td>
+      <td>-14.818</td>
+      <td>-14.465</td>
+      <td>-14.132</td>
+      <td>5</td>
+      <td>Excellent</td>
+      <td>-1.14</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>2-benzhydryloxyethyldiethyl-methylammoniumiodide_4327</td>
+      <td>-12.562</td>
+      <td>-11.402</td>
+      <td>-11.215</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.59</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>acemetacin_47</td>
+      <td>-12.334</td>
+      <td>-11.943</td>
+      <td>-11.939</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.53</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>aceclofenac_43</td>
+      <td>-12.101</td>
+      <td>-10.972</td>
+      <td>-10.913</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.47</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>acenocoumarol_48</td>
+      <td>-12.001</td>
+      <td>-11.430</td>
+      <td>-11.365</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.45</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>IoflupaneI-123_4230</td>
+      <td>-11.613</td>
+      <td>-11.182</td>
+      <td>-11.065</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.35</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>S-nitrendipine_6</td>
+      <td>-11.550</td>
+      <td>-11.063</td>
+      <td>-11.056</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.34</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>acebutolol_40</td>
+      <td>-11.437</td>
+      <td>-10.995</td>
+      <td>-8.708</td>
+      <td>6</td>
+      <td>Excellent</td>
+      <td>-0.31</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>acedapsone_3662</td>
+      <td>-11.287</td>
+      <td>-10.791</td>
+      <td>-10.698</td>
+      <td>6</td>
+      <td>Excellent</td>
+      <td>-0.27</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>acediasulfone_44</td>
+      <td>-11.142</td>
+      <td>-10.130</td>
+      <td>-9.929</td>
+      <td>5</td>
+      <td>Excellent</td>
+      <td>-0.24</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>acepromazine_73</td>
+      <td>-11.120</td>
+      <td>-10.916</td>
+      <td>-10.832</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.23</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>aceprometazine_50</td>
+      <td>-11.050</td>
+      <td>-10.596</td>
+      <td>-10.504</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.22</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>PadimateO_4270</td>
+      <td>-10.366</td>
+      <td>-9.946</td>
+      <td>-9.934</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.05</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>Flutemetamol18F_4301</td>
+      <td>-10.292</td>
+      <td>-10.050</td>
+      <td>-9.073</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.03</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>abacavir_34</td>
+      <td>-10.180</td>
+      <td>-9.710</td>
+      <td>-9.689</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>-0.00</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>abrocitinib_5504</td>
+      <td>-10.011</td>
+      <td>-9.956</td>
+      <td>-9.727</td>
+      <td>9</td>
+      <td>Excellent</td>
+      <td>0.04</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>FlorbetapirF-18_4285</td>
+      <td>-9.980</td>
+      <td>-9.427</td>
+      <td>-9.288</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>1-Octacosanol_4668</td>
+      <td>-9.691</td>
+      <td>-9.499</td>
+      <td>-9.167</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.12</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>N-Acetyltyrosine_4481</td>
+      <td>-9.233</td>
+      <td>-8.540</td>
+      <td>-8.001</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>PadimateA_4638</td>
+      <td>-9.039</td>
+      <td>-8.697</td>
+      <td>-8.643</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.27</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>aceglatone_45</td>
+      <td>-8.668</td>
+      <td>-8.516</td>
+      <td>-7.752</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.37</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>abametapir_5403</td>
+      <td>-8.423</td>
+      <td>-8.420</td>
+      <td>-7.704</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>5-aminolevulinicacidhexylester_167</td>
+      <td>-8.341</td>
+      <td>-8.175</td>
+      <td>-7.733</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>33</td>
+      <td>acadesine_37</td>
+      <td>-8.314</td>
+      <td>-8.277</td>
+      <td>-8.135</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>34</td>
+      <td>acecarbromal_42</td>
+      <td>-8.297</td>
+      <td>-7.517</td>
+      <td>-7.378</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.46</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>35</td>
+      <td>Iofetamine123I_1459</td>
+      <td>-8.107</td>
+      <td>-7.952</td>
+      <td>-7.865</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>acefylline_49</td>
+      <td>-8.031</td>
+      <td>-7.451</td>
+      <td>-7.336</td>
+      <td>9</td>
+      <td>Good</td>
+      <td>0.52</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>37</td>
+      <td>N-Acetylglucosamine_4615</td>
+      <td>-7.530</td>
+      <td>-7.455</td>
+      <td>-6.551</td>
+      <td>9</td>
+      <td>Moderate</td>
+      <td>0.64</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>38</td>
+      <td>aceclidine_4314</td>
+      <td>-7.433</td>
+      <td>-6.754</td>
+      <td>-6.404</td>
+      <td>9</td>
+      <td>Moderate</td>
+      <td>0.67</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>39</td>
+      <td>2-4-chlorphenoxy-ethanol_4328</td>
+      <td>-7.007</td>
+      <td>-6.149</td>
+      <td>-5.929</td>
+      <td>8</td>
+      <td>Moderate</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>40</td>
+      <td>aceglutamide_46</td>
+      <td>-6.925</td>
+      <td>-6.725</td>
+      <td>-6.310</td>
+      <td>9</td>
+      <td>Moderate</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>2-mercaptobenzothiazole_5522</td>
+      <td>-6.365</td>
+      <td>-5.552</td>
+      <td>-5.304</td>
+      <td>9</td>
+      <td>Moderate</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>42</td>
+      <td>4-dimethylaminophenol_4312</td>
+      <td>-6.299</td>
+      <td>-5.641</td>
+      <td>-5.234</td>
+      <td>9</td>
+      <td>Moderate</td>
+      <td>0.94</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>43</td>
+      <td>acamprosate_38</td>
+      <td>-6.076</td>
+      <td>-5.821</td>
+      <td>-5.709</td>
+      <td>9</td>
+      <td>Moderate</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>44</td>
+      <td>CholineC-11_4635</td>
+      <td>-3.962</td>
+      <td>-3.586</td>
+      <td>-3.450</td>
+      <td>9</td>
+      <td>Weak</td>
+      <td>1.51</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>45</td>
+      <td>DL-Alanine_4306</td>
+      <td>-3.771</td>
+      <td>-3.645</td>
+      <td>-3.509</td>
+      <td>9</td>
+      <td>Weak</td>
+      <td>1.56</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>UREAC14_5147</td>
+      <td>-2.434</td>
+      <td>-2.408</td>
+      <td>-2.145</td>
+      <td>9</td>
+      <td>Weak</td>
+      <td>1.89</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>47</td>
+      <td>UREAC-13_4323</td>
+      <td>-2.434</td>
+      <td>-2.404</td>
+      <td>-2.035</td>
+      <td>9</td>
+      <td>Weak</td>
+      <td>1.89</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>48</td>
+      <td>AMMONIAN-13_4472</td>
+      <td>-0.857</td>
+      <td>-0.637</td>
+      <td>-0.636</td>
+      <td>9</td>
+      <td>Weak</td>
+      <td>2.27</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>49</td>
+      <td>abaloparatide_5232</td>
+      <td>1217293996.677</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>1</td>
+      <td>Weak</td>
+      <td>297149262.15</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+            
+            <div class="footer">
+                <p>Generated with Claude Code Dashboard | 
+                   Co-Authored-By: Claude &lt;noreply@anthropic.com&gt;</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Plot top hits chart
+        Plotly.newPlot('top-hits-plot', {"data":[{"customdata":[9,9,9,9,9,9,9,9,9,9,9,5,6,6,9,9,9,9,9,9,5,9,1,2,5,1,8,4,6,3],"hovertemplate":"\u003cb\u003e%{y}\u003c\u002fb\u003e\u003cbr\u003eBest Affinity: %{x:.3f} kcal\u002fmol\u003cbr\u003eModes: %{customdata}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["#0369a1","#0369a1","#0369a1","#0369a1","#0369a1","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e","#0f766e"]},"orientation":"h","text":["-8.67","-9.04","-9.23","-9.69","-9.98","-10.01","-10.18","-10.29","-10.37","-11.05","-11.12","-11.14","-11.29","-11.44","-11.55","-11.61","-12.00","-12.10","-12.33","-12.56","-14.82","-15.23","-15.32","-15.59","-15.89","-16.58","-16.61","-16.78","-16.87","-17.96"],"textposition":"outside","x":[-8.668,-9.039,-9.233,-9.691,-9.98,-10.011,-10.18,-10.292,-10.366,-11.05,-11.12,-11.142,-11.287,-11.437,-11.55,-11.613,-12.001,-12.101,-12.334,-12.562,-14.818,-15.235,-15.322,-15.591,-15.893,-16.58,-16.607,-16.783,-16.871,-17.957],"y":["aceglatone_45","PadimateA_4638","N-Acetyltyrosine_4481","1-Octacosanol_4668","FlorbetapirF-18_4285","abrocitinib_5504","abacavir_34","Flutemetamol18F_4301","PadimateO_4270","aceprometazine_50","acepromazine_73","acediasulfone_44","acedapsone_3662","acebutolol_40","S-nitrendipine_6","IoflupaneI-123_4230","acenocoumarol_48","aceclofenac_43","acemetacin_47","2-benzhydryloxyethyldiethyl-methylammoniumiodide_4327","abirateroneacetate_4176","StreptomycinB_2482","acalabrutinib_5260","S-nicardipine_5","acarbose_39","abemaciclib_5259","SpiramycinII_2472","SpiramycinIII_2473","SpiramycinI_2471","abarelix_35"],"type":"bar"}],"layout":{"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"font":{"color":"#2c3e50"},"margin":{"l":200},"title":{"text":"Top 30 Compounds by Binding Affinity"},"xaxis":{"title":{"text":"Binding Affinity (kcal\u002fmol)"}},"yaxis":{"title":{"text":"Compound"}},"plot_bgcolor":"#ffffff","paper_bgcolor":"#ffffff","height":800,"shapes":[{"line":{"color":"#0f766e","dash":"dash"},"type":"line","x0":-10,"x1":-10,"xref":"x","y0":0,"y1":1,"yref":"y domain"},{"line":{"color":"#0369a1","dash":"dash"},"type":"line","x0":-8,"x1":-8,"xref":"x","y0":0,"y1":1,"yref":"y domain"},{"line":{"color":"#fb7c3c","dash":"dash"},"type":"line","x0":-6,"x1":-6,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"annotations":[{"showarrow":false,"text":"Excellent: -10","x":-10,"xanchor":"center","xref":"x","y":1,"yanchor":"bottom","yref":"y domain"},{"showarrow":false,"text":"Good: -8","x":-8,"xanchor":"center","xref":"x","y":1,"yanchor":"bottom","yref":"y domain"},{"showarrow":false,"text":"Moderate: -6","x":-6,"xanchor":"center","xref":"x","y":1,"yanchor":"bottom","yref":"y domain"}]}});
+        
+        // Plot distribution analysis
+        Plotly.newPlot('distribution-plot', {"data":[{"marker":{"color":"#0369a1"},"name":"Count","nbinsx":50,"showlegend":false,"x":[-17.957,-16.871,-16.783,-16.607,-16.58,-15.893,-15.591,-15.322,-15.235,-14.818,-12.562,-12.334,-12.101,-12.001,-11.613,-11.55,-11.437,-11.287,-11.142,-11.12,-11.05,-10.366,-10.292,-10.18,-10.011,-9.98,-9.691,-9.233,-9.039,-8.668,-8.423,-8.341,-8.314,-8.297,-8.107,-8.031,-7.53,-7.433,-7.007,-6.925,-6.365,-6.299,-6.076,-3.962,-3.771,-2.434,-2.434,-0.857,1217293996.677],"xbins":{"end":5,"size":0.5,"start":-25},"type":"histogram","xaxis":"x","yaxis":"y"},{"line":{"color":"#0369a1","width":2},"mode":"lines","name":"CDF","showlegend":false,"x":[-17.957,-16.871,-16.783,-16.607,-16.58,-15.893,-15.591,-15.322,-15.235,-14.818,-12.562,-12.334,-12.101,-12.001,-11.613,-11.55,-11.437,-11.287,-11.142,-11.12,-11.05,-10.366,-10.292,-10.18,-10.011,-9.98,-9.691,-9.233,-9.039,-8.668,-8.423,-8.341,-8.314,-8.297,-8.107,-8.031,-7.53,-7.433,-7.007,-6.925,-6.365,-6.299,-6.076,-3.962,-3.771,-2.434,-2.434,-0.857,1217293996.677],"y":{"dtype":"f8","bdata":"FbycgpdTAEAVvJyCl1MQQB8a60NjfRhAFbycgpdTIEAa60NjfWgkQB8a60NjfShAJEmSJEmSLEAVvJyCl1MwQJhT8HIKXjJAGutDY31oNECdgpdT8HI2QB8a60NjfThAorE+NNaHOkAkSZIkSZI8QKfg5RS8nD5AFbycgpdTQEDWh8b60FhBQJhT8HIKXkJAWR8a60NjQ0Aa60NjfWhEQNu2bdu2bUVAnYKXU\u002fByRkBeTsHLKXhHQB8a60NjfUhA4eUUvJyCSUCisT401odKQGJ9aKwPjUtAJEmSJEmSTEDmFLycgpdNQKfg5RS8nE5AaawPjfWhT0AVvJyCl1NQQPWhsT401lBA1ofG+tBYUUC3bdu2bdtRQJhT8HIKXlJAeDkFL6fgUkBZHxrrQ2NTQDkFL6fg5VNAGutDY31oVED70FgfGutUQNu2bdu2bVVAvJyCl1PwVUCdgpdT8HJWQH5orA+N9VZAXk7Byyl4V0A+NNaHxvpXQB8a60NjfVhAAAAAAAAAWUA="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"marker":{"color":"#0f766e"},"name":"Excellent\n\u003c -10","showlegend":false,"y":[-17.957,-16.871,-16.783,-16.607,-16.58,-15.893,-15.591,-15.322,-15.235,-14.818,-12.562,-12.334,-12.101,-12.001,-11.613,-11.55,-11.437,-11.287,-11.142,-11.12,-11.05,-10.366,-10.292,-10.18,-10.011],"type":"box","xaxis":"x3","yaxis":"y3"},{"marker":{"color":"#0369a1"},"name":"Good\n-10 to -8","showlegend":false,"y":[-9.98,-9.691,-9.233,-9.039,-8.668,-8.423,-8.341,-8.314,-8.297,-8.107,-8.031],"type":"box","xaxis":"x3","yaxis":"y3"},{"marker":{"color":"#fb7c3c"},"name":"Moderate\n-8 to -6","showlegend":false,"y":[-7.53,-7.433,-7.007,-6.925,-6.365,-6.299,-6.076],"type":"box","xaxis":"x3","yaxis":"y3"},{"marker":{"color":"#dc2626"},"name":"Weak\n\u2265 -6","showlegend":false,"y":[-3.962,-3.771,-2.434,-2.434,-0.857,1217293996.677],"type":"box","xaxis":"x3","yaxis":"y3"},{"marker":{"color":["#0f766e","#0369a1","#fb7c3c","#dc2626"]},"showlegend":false,"text":["52.1%","22.9%","14.6%","10.4%"],"textposition":"outside","x":["Excellent\n\u003c -10","Good\n-10 to -8","Moderate\n-8 to -6","Weak\n\u2265 -6"],"y":[52.083333333333336,22.916666666666664,14.583333333333334,10.416666666666668],"type":"bar","xaxis":"x4","yaxis":"y4"}],"layout":{"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,0.45],"title":{"text":"Binding Affinity (kcal\u002fmol)"},"range":[-25,5]},"yaxis":{"anchor":"x","domain":[0.625,1.0],"title":{"text":"Count"}},"xaxis2":{"anchor":"y2","domain":[0.55,1.0],"title":{"text":"Binding Affinity (kcal\u002fmol)"},"range":[-25,5]},"yaxis2":{"anchor":"x2","domain":[0.625,1.0],"title":{"text":"Cumulative %"}},"xaxis3":{"anchor":"y3","domain":[0.0,0.45],"title":{"text":"Category"}},"yaxis3":{"anchor":"x3","domain":[0.0,0.375],"title":{"text":"Binding Affinity (kcal\u002fmol)"},"range":[-25,5]},"xaxis4":{"anchor":"y4","domain":[0.55,1.0],"title":{"text":"Category"}},"yaxis4":{"anchor":"x4","domain":[0.0,0.375],"title":{"text":"Hit Rate (%)"}},"annotations":[{"font":{"size":16},"showarrow":false,"text":"Affinity Distribution","x":0.225,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Cumulative Distribution","x":0.775,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Box Plot by Category","x":0.225,"xanchor":"center","xref":"paper","y":0.375,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Hit Rate Analysis","x":0.775,"xanchor":"center","xref":"paper","y":0.375,"yanchor":"bottom","yref":"paper"}],"font":{"color":"#2c3e50"},"title":{"text":"Screening Results Distribution Analysis"},"plot_bgcolor":"#ffffff","paper_bgcolor":"#ffffff","height":800,"showlegend":false}});
+        
+        // Plot enrichment analysis
+        Plotly.newPlot('enrichment-plot', {"data":[{"hovertemplate":"\u003cb\u003eTop %{x}% of compounds\u003c\u002fb\u003e\u003cbr\u003eEnrichment: %{y:.2f}x\u003cbr\u003e\u003ci\u003e%{y:.2f}x better than random selection\u003c\u002fi\u003e\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#0369a1","width":3},"marker":{"color":"#0369a1","size":10},"mode":"lines+markers","name":"Enrichment Factor","x":[0.5,1,2,5,10,20,30,50],"y":[0,0,0,4.444444444444445,4.444444444444445,5.0,3.3333333333333335,2.0],"type":"scatter"}],"layout":{"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"shapes":[{"line":{"color":"gray","dash":"dash"},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":1.0,"y1":1.0,"yref":"y"},{"fillcolor":"rgba(255, 0, 0, 0.1)","line":{"width":0},"type":"rect","x0":0,"x1":1,"xref":"x domain","y0":1,"y1":5,"yref":"y"},{"fillcolor":"rgba(255, 165, 0, 0.1)","line":{"width":0},"type":"rect","x0":0,"x1":1,"xref":"x domain","y0":5,"y1":20,"yref":"y"}],"annotations":[{"showarrow":false,"text":"\u003cb\u003eExceptional Hits Analysis:\u003c\u002fb\u003e\u003cbr\u003e\u2022 Threshold: \u003c -15 kcal\u002fmol (ultra-strong binders)\u003cbr\u003e\u2022 Enrichment measures concentration in top %\u003cbr\u003e\u2022 Color zones: Red (\u003c5x), Orange (5-20x), Green (\u003e20x)\u003cbr\u003e\u2022 High values = exceptional compounds clustered at top","x":0.02,"xanchor":"left","xref":"paper","y":0.98,"yanchor":"middle","yref":"paper","font":{"size":10},"align":"left","bgcolor":"rgba(255,255,255,0.8)","bordercolor":"gray","borderwidth":1}],"font":{"color":"#2c3e50"},"title":{"text":"Enrichment Analysis - Exceptional Hits (\u003c -15 kcal\u002fmol)"},"xaxis":{"title":{"text":"Top Percentage of Compounds (%)"}},"yaxis":{"title":{"text":"Enrichment Factor (x-fold vs Random)"}},"plot_bgcolor":"#ffffff","paper_bgcolor":"#ffffff","height":500}});
+    </script>
+</body>
+</html>
+        

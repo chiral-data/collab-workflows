@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -6.976      0.000      0.000
+REMARK INTER + INTRA:          -6.976
+REMARK INTER:                  -6.976
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.345  62.010  66.281  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.143  62.111  66.101  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.520  61.862  65.411  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.314  62.076  65.462  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      61.429  62.458  66.184  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.706  62.480  66.579  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.568  62.812  67.321  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.187  63.163  67.737  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.050  63.496  68.480  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.945  63.183  67.411  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      61.893  61.934  64.892  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      62.472  61.791  64.321  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      62.456  62.302  65.369  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.331  61.565  64.413  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.965      1.003      2.768
+REMARK INTER + INTRA:          -6.965
+REMARK INTER:                  -6.965
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.374  62.006  66.102  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.062  62.307  66.445  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.117  62.665  67.185  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.904  62.882  67.305  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      61.334  62.658  66.638  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.814  62.302  66.106  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.011  61.996  65.366  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.792  62.031  65.100  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.989  61.725  64.360  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.375  62.372  65.574  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      61.207  63.257  67.975  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      61.509  63.633  68.644  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      61.959  63.253  67.637  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.454  63.262  68.313  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.614      1.834      2.844
+REMARK INTER + INTRA:          -6.614
+REMARK INTER:                  -6.614
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.028  64.005  69.082  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.581  63.471  68.641  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      61.514  63.456  67.819  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.013  62.834  67.615  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      60.771  62.463  68.311  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      61.121  62.856  68.945  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.029  62.669  69.743  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.549  62.036  69.965  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.456  61.849  70.763  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.161  61.590  69.389  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      60.793  62.619  66.849  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      60.574  62.404  66.084  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      60.334  62.005  67.153  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.253  63.233  66.545  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.275      2.335      4.020
+REMARK INTER + INTRA:          -6.275
+REMARK INTER:                  -6.275
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.060  64.267  68.875  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.607  63.583  68.964  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      61.340  63.268  69.678  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.910  62.585  69.510  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      60.913  62.477  68.692  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      61.343  63.093  68.354  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.485  63.202  67.550  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.184  62.664  67.001  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.326  62.773  66.196  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.741  62.017  67.258  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      60.543  62.094  70.063  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      60.176  61.605  70.616  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      60.279  61.605  69.454  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.807  62.584  70.673  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.145      5.627      6.215
+REMARK INTER + INTRA:          -6.145
+REMARK INTER:                  -6.145
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.849  65.937  72.446  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.162  65.902  71.684  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      59.168  66.516  71.133  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.534  66.241  70.448  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      59.754  65.456  70.574  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      59.524  65.246  71.338  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.637  64.511  71.693  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.010  63.904  71.277  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.122  63.168  71.633  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.271  64.033  70.505  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      59.659  66.674  69.756  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      59.783  67.107  69.066  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      60.021  66.019  69.410  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      59.296  67.330  70.102  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.143      3.327      4.533
+REMARK INTER + INTRA:          -6.143
+REMARK INTER:                  -6.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.180  64.740  70.795  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.377  63.996  70.498  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.233  63.726  69.732  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.519  62.955  69.675  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      60.840  62.747  70.406  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.752  63.390  70.915  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.996  63.423  71.702  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.366  62.771  72.046  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.611  62.803  72.834  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.492  62.086  71.603  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      60.490  62.475  69.004  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      60.460  61.995  68.334  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      60.865  61.870  69.420  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.114  63.080  68.587  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.112      3.752      5.378
+REMARK INTER + INTRA:          -6.112
+REMARK INTER:                  -6.112
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.394  64.207  69.441  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.006  63.767  70.021  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      62.102  63.848  70.836  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.609  63.301  71.206  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      61.208  62.881  70.620  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      61.453  63.169  69.887  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.193  62.906  69.151  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.635  62.299  69.103  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.374  62.036  68.366  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.338  61.956  69.792  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      61.530  63.191  72.021  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      61.452  63.083  72.834  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      60.978  62.593  71.888  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.083  63.790  72.154  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.983      5.565      6.806
+REMARK INTER + INTRA:          -5.983
+REMARK INTER:                  -5.983
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.560  66.991  72.175  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.668  66.419  71.590  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      63.217  65.735  71.491  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.516  65.324  70.842  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      64.151  65.754  70.538  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      64.246  66.430  71.000  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.816  67.016  70.893  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      65.360  66.952  70.276  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.932  67.538  70.168  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.334  66.304  69.767  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      63.229  64.609  70.547  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      62.942  63.894  70.253  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      63.806  64.620  69.958  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.651  64.597  71.136  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.921      7.341      8.309
+REMARK INTER + INTRA:          -5.921
+REMARK INTER:                  -5.921
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.127  67.251  72.890  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.449  66.784  72.929  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      59.678  67.056  73.034  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.175  66.403  73.040  0.00  0.00    +0.000 A 
+ATOM      5  S   UNL     1      59.636  65.726  72.939  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.423  65.961  72.870  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.070  65.462  72.762  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.959  64.646  72.713  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.607  64.147  72.604  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.199  64.329  72.772  0.00  0.00    +0.000 OA
+ATOM     11  S   UNL     1      58.355  66.422  73.131  0.00  0.00    +0.000 S 
+ATOM     12  N   UNL     1      57.536  66.442  73.222  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      58.328  65.600  73.072  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      58.381  67.245  73.190  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

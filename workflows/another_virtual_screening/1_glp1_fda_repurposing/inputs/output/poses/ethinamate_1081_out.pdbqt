@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.478      0.000      0.000
+REMARK INTER + INTRA:          -7.478
+REMARK INTER:                  -7.478
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.427  62.211  66.740  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.183  62.337  66.433  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.713  62.828  66.831  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.409  61.971  65.728  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.164  62.098  65.423  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.934  62.385  65.352  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.400  62.164  64.708  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.096  61.655  64.135  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.326  61.367  64.205  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.860  61.589  64.849  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.206  62.563  66.102  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.248  63.028  66.783  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.140      1.345      2.374
+REMARK INTER + INTRA:          -7.140
+REMARK INTER:                  -7.140
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.369  61.255  63.880  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.351  61.596  64.631  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.049  61.870  64.977  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.636  61.663  65.037  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.619  62.004  65.788  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.880  62.365  66.482  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.342  62.550  67.080  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.543  62.373  66.983  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.280  62.012  66.289  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.818  61.827  65.692  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.424  62.062  65.624  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.231  62.120  65.459  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.459      6.520      7.711
+REMARK INTER + INTRA:          -6.459
+REMARK INTER:                  -6.459
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.530  65.244  71.285  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.973  65.706  70.765  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.747  65.769  69.974  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      64.643  66.106  71.036  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.085  66.567  70.515  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.326  66.935  69.817  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.997  67.414  69.812  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.429  67.525  70.505  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.190  67.158  71.204  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.518  66.679  71.209  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.500  66.296  70.002  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.914  66.024  69.489  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.439      5.815      6.536
+REMARK INTER + INTRA:          -6.439
+REMARK INTER:                  -6.439
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.068  64.863  71.974  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.733  64.394  72.112  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.290  64.625  72.676  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.842  63.695  71.687  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.507  63.228  71.826  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.220  62.971  72.151  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.564  62.268  71.890  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.194  61.821  71.304  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.480  62.077  70.978  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.137  62.781  71.239  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.647  63.837  72.364  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.785  64.447  72.902  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.414      6.765      7.847
+REMARK INTER + INTRA:          -6.414
+REMARK INTER:                  -6.414
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.386  67.983  69.684  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.013  67.408  70.142  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.210  67.323  70.939  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      65.443  66.916  69.804  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.070  66.341  70.263  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.871  65.880  70.917  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.300  65.288  70.847  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.929  65.157  70.123  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.128  65.618  69.467  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.699  66.210  69.538  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.570  66.672  70.828  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.072  67.004  71.394  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.355      5.479      6.627
+REMARK INTER + INTRA:          -6.355
+REMARK INTER:                  -6.355
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.005  60.991  71.679  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.429  61.563  71.536  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.877  61.452  70.932  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.404  62.249  71.995  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.828  62.821  71.851  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.183  63.202  71.506  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.937  63.936  71.790  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.336  64.289  72.419  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.982  63.909  72.765  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.228  63.175  72.480  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.628  62.269  71.272  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.429  61.716  70.692  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.259      4.513      5.978
+REMARK INTER + INTRA:          -6.259
+REMARK INTER:                  -6.259
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.136  64.134  69.664  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.468  63.506  70.083  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.569  62.773  69.717  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.699  63.610  70.869  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.030  62.981  71.287  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.317  62.225  71.454  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.619  62.054  72.202  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.635  62.638  72.783  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.349  63.395  72.618  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.047  63.566  71.869  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.899  62.615  70.560  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.768  62.249  69.832  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.017      6.263      6.863
+REMARK INTER + INTRA:          -6.017
+REMARK INTER:                  -6.017
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.574  66.038  72.271  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.481  65.320  71.877  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.740  65.240  71.097  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      62.128  64.680  72.262  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.035  63.963  71.866  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.067  63.398  71.266  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.769  62.640  71.396  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.437  62.446  72.126  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.404  63.011  72.727  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.703  63.769  72.597  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.398  64.405  71.273  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.763  64.849  70.680  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.622      6.446      7.354
+REMARK INTER + INTRA:          -5.622
+REMARK INTER:                  -5.622
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ethinamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.515  65.851  72.425  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.145  66.166  71.997  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.526  66.848  72.265  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.395  65.801  71.300  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.026  66.118  70.873  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.644  66.621  70.660  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.078  66.475  69.974  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.894  65.826  69.501  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.276  65.322  69.712  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.842  65.468  70.398  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.991  66.658  71.495  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.955  67.198  72.118  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.616      0.000      0.000
+REMARK INTER + INTRA:          -5.616
+REMARK INTER:                  -5.616
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.726  62.322  66.102  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.118  62.236  65.381  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.757  61.826  64.763  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.397  61.417  64.143  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.788  61.331  63.423  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.097  61.689  65.237  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      60.455  61.267  64.939  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      62.418  61.963  64.287  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      62.435  61.677  63.513  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.530      0.935      2.016
+REMARK INTER + INTRA:          -5.530
+REMARK INTER:                  -5.530
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.583  61.671  63.496  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.845  61.448  63.790  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.611  61.694  64.542  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.376  61.939  65.294  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.638  61.717  65.589  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.327  62.092  64.636  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      62.482  62.503  65.333  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      60.894  61.296  64.448  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      60.332  61.309  65.053  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.470     16.887     17.313
+REMARK INTER + INTRA:          -5.470
+REMARK INTER:                  -5.470
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.481  78.886  58.998  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.340  78.149  59.340  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.952  77.747  59.719  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.564  77.345  60.099  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      66.424  76.608  60.441  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      66.468  78.366  59.543  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      67.256  78.327  59.783  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      65.436  77.128  59.896  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      65.708  76.470  60.313  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.991      8.328      9.156
+REMARK INTER + INTRA:          -4.991
+REMARK INTER:                  -4.991
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.781  66.608  69.465  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.978  66.471  70.255  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.616  66.867  70.595  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.254  67.264  70.936  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      66.451  67.127  71.725  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.757  67.255  69.881  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      66.379  67.791  69.818  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      65.475  66.480  71.310  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      65.957  66.630  71.963  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.871      8.477      9.069
+REMARK INTER + INTRA:          -4.871
+REMARK INTER:                  -4.871
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.167  66.541  72.263  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.371  67.000  71.609  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.931  66.944  70.914  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.492  66.888  70.217  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      65.695  67.347  69.563  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.443  66.381  71.267  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      64.819  66.051  70.841  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      66.420  67.507  70.560  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      66.283  67.740  69.780  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.814     17.110     17.483
+REMARK INTER + INTRA:          -4.814
+REMARK INTER:                  -4.814
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.559  76.687  60.387  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.276  76.999  60.122  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.279  77.655  59.623  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.284  78.312  59.123  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      66.999  78.624  58.858  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.455  77.674  59.640  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      65.046  78.251  59.216  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      67.104  77.637  59.605  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      67.520  78.196  59.164  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.622     24.195     24.867
+REMARK INTER + INTRA:          -4.622
+REMARK INTER:                  -4.622
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      72.253  79.650  48.957  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      71.627  79.753  49.483  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.005  79.212  49.493  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.382  78.671  49.504  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      69.755  78.774  50.030  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      71.369  78.781  48.892  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      71.013  78.096  48.601  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      70.639  79.644  50.095  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      69.918  79.391  50.405  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.591      7.246      7.783
+REMARK INTER + INTRA:          -4.591
+REMARK INTER:                  -4.591
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.556  64.248  71.649  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.191  64.086  72.150  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.597  63.371  72.082  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.004  62.656  72.015  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.638  62.493  72.515  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.099  63.146  71.465  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      60.201  62.415  71.097  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      61.096  63.596  72.700  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      61.697  63.089  72.950  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.461     24.437     25.096
+REMARK INTER + INTRA:          -4.461
+REMARK INTER:                  -4.461
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = loprodiol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      69.859  78.509  49.822  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.440  78.421  49.243  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.073  78.949  49.213  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.707  79.476  49.182  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      72.289  79.389  48.604  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      70.768  79.354  49.863  0.00  0.00    +0.000 C 
+ATOM      7 CL   UNL     1      71.163  80.013  50.161  0.00  0.00    +0.000 Cl
+ATOM      8  C   UNL     1      71.380  78.543  48.562  0.00  0.00    +0.000 C 
+ATOM      9 CL   UNL     1      72.081  78.798  48.211  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0
+ENDMDL

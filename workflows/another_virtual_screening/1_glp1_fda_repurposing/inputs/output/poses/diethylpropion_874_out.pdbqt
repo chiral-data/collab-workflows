@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.790      0.000      0.000
+REMARK INTER + INTRA:          -8.790
+REMARK INTER:                  -8.790
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.866  61.991  66.505  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.527  62.359  66.834  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.251  62.335  66.440  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.314  61.943  65.716  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.654  61.575  65.387  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.912  62.704  66.768  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.848  63.096  67.492  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.637  62.681  66.375  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.297  63.049  66.703  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.700  62.288  65.650  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.039  61.920  65.322  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.102  61.528  64.599  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.827  61.505  64.204  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.488  61.873  64.533  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.424  62.265  65.257  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.916      3.610      5.363
+REMARK INTER + INTRA:          -7.916
+REMARK INTER:                  -7.916
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.411  61.949  68.978  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.911  62.604  68.995  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.174  62.903  69.717  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.935  62.547  70.423  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.435  61.892  70.405  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.675  63.558  69.735  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.913  63.914  69.030  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.938  63.858  70.458  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.439  64.513  70.475  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.700  63.502  71.164  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.198  62.846  71.145  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.960  62.491  71.850  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.223  62.790  72.574  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.724  63.445  72.591  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.962  63.801  71.885  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.797      6.000      7.356
+REMARK INTER + INTRA:          -7.797
+REMARK INTER:                  -7.797
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.444  64.458  69.683  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.275  64.843  70.392  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.733  65.484  70.634  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.363  65.741  70.165  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.532  65.356  69.456  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.564  65.869  71.343  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.935  65.612  71.812  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.023  66.511  71.585  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.853  66.896  72.294  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.652  66.768  71.117  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.822  66.383  70.407  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.450  66.639  69.939  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.910  67.281  70.180  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.740  67.666  70.890  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.111  67.409  71.358  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.766      4.126      5.792
+REMARK INTER + INTRA:          -7.766
+REMARK INTER:                  -7.766
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.130  64.418  69.384  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.255  63.605  69.435  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.553  63.276  70.129  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.726  63.761  70.775  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.601  64.574  70.724  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.678  62.462  70.180  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.505  61.977  69.536  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.976  62.132  70.876  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.101  61.318  70.926  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.149  62.617  71.521  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.024  63.431  71.470  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.197  63.916  72.115  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.496  63.586  72.811  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.620  62.772  72.861  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.447  62.288  72.216  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.699      4.181      5.514
+REMARK INTER + INTRA:          -7.699
+REMARK INTER:                  -7.699
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.637  64.422  72.743  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.862  64.543  71.959  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.625  64.011  71.375  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.162  63.357  71.576  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.937  63.237  72.360  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.849  64.131  70.590  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.311  64.784  70.389  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.612  63.599  70.006  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.836  63.719  69.222  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.149  62.945  70.207  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.925  62.825  70.992  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.462  62.172  71.193  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.225  61.639  70.609  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.450  61.760  69.825  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.912  62.413  69.624  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.526      6.757      7.522
+REMARK INTER + INTRA:          -7.526
+REMARK INTER:                  -7.526
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.170  67.076  72.919  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.462  66.716  72.698  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.434  65.901  72.577  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.115  65.445  72.677  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.823  65.805  72.898  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.726  65.540  72.355  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.045  65.995  72.255  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.697  64.724  72.234  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      58.990  64.364  72.013  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.379  64.268  72.334  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.087  64.629  72.556  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.768  64.174  72.656  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.740  63.358  72.534  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.032  62.998  72.313  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.351  63.454  72.213  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.020      5.842      7.270
+REMARK INTER + INTRA:          -7.020
+REMARK INTER:                  -7.020
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.450  67.713  72.097  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.799  67.234  72.261  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.676  66.543  71.828  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.205  66.330  71.231  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.856  66.809  71.067  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.024  66.064  71.992  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.496  66.276  72.589  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.901  65.372  71.560  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.250  64.893  71.724  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.430  65.159  70.962  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.081  65.638  70.798  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.609  65.425  70.201  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.486  64.733  69.768  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.835  64.255  69.933  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.306  64.468  70.530  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.830     15.124     16.496
+REMARK INTER + INTRA:          -6.830
+REMARK INTER:                  -6.830
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.236  76.770  70.490  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      57.666  76.282  70.997  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      58.189  76.612  71.542  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      58.282  77.432  71.580  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      57.852  77.920  71.074  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      58.619  76.124  72.050  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      58.526  75.305  72.011  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.143  76.454  72.595  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.573  75.966  73.102  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.236  77.274  72.634  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      58.806  77.762  72.126  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      58.899  78.581  72.165  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.422  78.912  72.711  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.852  78.423  73.217  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.759  77.604  73.179  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.543     15.466     16.611
+REMARK INTER + INTRA:          -6.543
+REMARK INTER:                  -6.543
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethylpropion
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.684  79.455  71.206  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.441  78.889  70.658  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      58.207  78.141  70.914  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      58.216  77.959  71.719  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.459  78.525  72.267  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      57.964  77.574  70.366  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      57.955  77.756  69.561  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      57.730  76.825  70.621  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      57.487  76.259  70.073  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      57.738  76.643  71.427  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      57.981  77.210  71.975  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      57.990  77.028  72.780  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      57.755  76.279  73.036  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      57.513  75.713  72.487  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      57.504  75.895  71.683  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

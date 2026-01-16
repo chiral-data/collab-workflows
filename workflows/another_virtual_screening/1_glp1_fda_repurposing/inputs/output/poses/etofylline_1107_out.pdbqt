@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.551      0.000      0.000
+REMARK INTER + INTRA:          -7.551
+REMARK INTER:                  -7.551
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.358  63.208  67.653  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.006  62.800  67.027  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.453  62.599  66.364  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.102  62.191  65.738  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.677  62.067  65.159  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.564  61.680  64.439  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.194  61.598  63.913  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.081  61.211  63.193  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.384  62.399  65.427  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.246  62.727  66.171  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.303  61.985  65.777  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.952  61.578  65.152  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      59.857  62.187  66.441  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      59.059  61.982  66.479  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.209  62.595  67.066  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      59.763  62.797  67.729  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.916      2.454      3.784
+REMARK INTER + INTRA:          -6.916
+REMARK INTER:                  -6.916
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.465  61.986  70.771  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.886  62.472  70.253  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.774  62.400  69.438  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.195  62.886  68.920  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.972  62.691  68.150  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      61.257  63.041  67.459  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.981  62.787  66.724  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.266  63.137  66.033  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.413  62.085  68.192  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      60.291  61.905  68.988  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.727  63.443  69.217  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.147  63.928  68.700  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      61.838  63.513  70.031  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      62.370  64.070  70.327  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.418  63.028  70.549  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      61.529  63.099  71.363  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.698      3.553      5.237
+REMARK INTER + INTRA:          -6.698
+REMARK INTER:                  -6.698
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.275  62.965  71.403  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.264  63.318  70.657  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.046  64.111  70.580  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.035  64.464  69.834  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.798  65.249  69.928  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      59.712  65.805  69.324  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.471  66.574  69.503  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.384  67.129  68.899  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.664  65.381  70.732  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.817  64.678  71.134  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.240  64.025  69.166  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.229  64.378  68.422  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.458  63.233  69.244  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.663  62.795  68.576  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.469  62.880  69.990  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      60.686  62.088  70.067  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.637      4.056      6.147
+REMARK INTER + INTRA:          -6.637
+REMARK INTER:                  -6.637
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.325  64.031  68.588  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.174  64.266  69.365  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.975  65.050  69.528  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.825  65.284  70.305  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.642  66.088  70.298  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      59.455  66.549  70.957  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.284  67.351  70.864  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.097  67.811  71.523  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.680  66.352  69.517  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.885  65.710  69.041  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.874  64.733  70.919  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.724  64.967  71.695  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.073  63.950  70.755  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.122  63.401  71.368  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.223  63.716  69.978  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      60.422  62.933  69.814  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.634      2.826      4.450
+REMARK INTER + INTRA:          -6.634
+REMARK INTER:                  -6.634
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.504  61.926  70.453  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.807  62.408  69.854  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.295  63.045  70.046  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.598  63.527  69.449  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.061  64.111  69.802  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      62.470  64.710  69.408  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.913  65.258  69.838  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.321  65.857  69.444  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.045  63.990  70.619  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      61.572  63.331  70.769  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.412  63.371  68.659  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.714  63.852  68.062  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      60.924  62.734  68.469  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.738  62.579  67.680  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.621  62.253  69.066  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      60.133  61.616  68.875  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.613      4.068      5.639
+REMARK INTER + INTRA:          -6.613
+REMARK INTER:                  -6.613
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.400  66.846  70.205  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.521  66.096  70.531  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.767  65.473  70.050  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.888  64.724  70.375  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.129  64.218  69.769  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      60.310  63.417  69.850  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.544  62.980  69.191  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.725  62.178  69.271  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.157  64.655  69.069  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      59.933  65.429  69.242  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.763  64.600  71.182  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.883  63.852  71.507  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      59.517  65.224  71.662  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      59.392  65.099  72.467  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.396  65.972  71.336  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      59.150  66.596  71.816  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.564      5.957      7.412
+REMARK INTER + INTRA:          -6.564
+REMARK INTER:                  -6.564
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.678  65.879  72.371  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.203  65.747  71.747  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.812  66.285  71.600  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.336  66.153  70.977  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      64.878  66.776  70.965  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      65.501  66.866  70.430  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      66.000  67.520  70.486  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      66.623  67.610  69.952  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.688  67.292  71.580  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      64.029  66.989  71.973  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.253  65.484  70.501  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      64.777  65.352  69.879  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      63.645  64.947  70.649  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      63.562  64.278  70.174  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      63.120  65.078  71.272  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      62.512  64.541  71.420  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.429      3.641      5.127
+REMARK INTER + INTRA:          -6.429
+REMARK INTER:                  -6.429
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.048  65.507  69.950  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.576  64.920  70.287  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.196  64.369  69.805  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.724  63.782  70.143  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.420  63.317  69.532  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      60.919  62.667  69.621  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.658  62.254  68.957  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.158  61.604  69.046  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.704  63.617  68.818  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      62.183  64.266  68.986  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.632  63.747  70.962  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.160  63.161  71.299  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      62.012  64.299  71.443  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      61.920  64.263  72.262  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.484  64.885  71.106  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      62.864  65.436  71.587  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.354      5.958      7.206
+REMARK INTER + INTRA:          -6.354
+REMARK INTER:                  -6.354
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etofylline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.630  65.022  69.533  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.268  65.292  70.225  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.619  64.887  70.535  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.257  65.156  71.225  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.632  64.646  71.401  0.00  0.00    +0.000 N 
+ATOM      6  C   UNL     1      62.120  64.710  72.045  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.517  64.157  72.149  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.006  64.220  72.794  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.607  64.062  70.818  0.00  0.00    +0.000 A 
+ATOM     10  N   UNL     1      63.218  64.211  70.283  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.543  65.830  71.606  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      63.182  66.099  72.296  0.00  0.00    +0.000 OA
+ATOM     13  N   UNL     1      64.192  66.234  71.295  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      64.478  66.908  71.676  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.554  65.965  70.605  0.00  0.00    +0.000 A 
+ATOM     16  O   UNL     1      65.202  66.370  70.295  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

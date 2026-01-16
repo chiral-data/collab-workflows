@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.580      0.000      0.000
+REMARK INTER + INTRA:          -4.580
+REMARK INTER:                  -4.580
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      60.402  60.940  64.708  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      61.078  61.317  64.424  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      61.276  61.263  63.625  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      61.557  61.747  64.940  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      61.359  61.800  65.738  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      62.234  62.124  64.656  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      62.714  62.554  65.173  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      62.432  62.071  63.857  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.492      1.192      1.596
+REMARK INTER + INTRA:          -4.492
+REMARK INTER:                  -4.492
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      62.376  61.741  63.757  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      61.715  61.650  64.241  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      61.059  61.229  63.970  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      61.709  61.981  64.997  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      62.364  62.402  65.268  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      61.047  61.890  65.482  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      61.042  62.221  66.239  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      60.392  61.469  65.211  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.133      2.215      2.405
+REMARK INTER + INTRA:          -4.133
+REMARK INTER:                  -4.133
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      59.370  62.085  66.230  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      60.185  62.209  66.257  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      60.665  61.934  65.645  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      60.519  62.610  66.896  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      60.039  62.885  67.507  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      61.334  62.735  66.924  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      61.669  63.136  67.563  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      61.815  62.459  66.312  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.032      8.433      9.055
+REMARK INTER + INTRA:          -4.032
+REMARK INTER:                  -4.032
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      66.201  67.722  69.868  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      66.046  67.242  70.521  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      66.484  67.334  71.214  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      65.452  66.671  70.481  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      65.014  66.579  69.789  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      65.297  66.191  71.135  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      64.703  65.619  71.095  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      65.735  66.283  71.827  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.953     16.996     17.544
+REMARK INTER + INTRA:          -3.953
+REMARK INTER:                  -3.953
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      65.804  76.653  60.342  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      66.194  77.282  59.977  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      67.018  77.324  59.996  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      65.760  77.869  59.593  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      64.937  77.826  59.573  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      66.150  78.498  59.227  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      65.715  79.085  58.843  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      66.973  78.540  59.247  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.848     24.326     24.812
+REMARK INTER + INTRA:          -3.848
+REMARK INTER:                  -3.848
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      69.923  79.600  50.372  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      70.298  79.063  49.870  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      69.954  78.328  49.720  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      71.016  79.263  49.518  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      71.360  79.997  49.668  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      71.392  78.726  49.015  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      72.112  78.925  48.663  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      71.049  77.991  48.865  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.789      3.714      4.285
+REMARK INTER + INTRA:          -3.789
+REMARK INTER:                  -3.789
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      60.373  61.993  69.562  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      60.861  62.518  69.155  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      61.388  62.999  69.570  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      60.822  62.563  68.332  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      60.295  62.083  67.918  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      61.310  63.089  67.924  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      61.271  63.134  67.101  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      61.837  63.569  68.339  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.730     24.371     24.863
+REMARK INTER + INTRA:          -3.730
+REMARK INTER:                  -3.730
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      71.766  78.916  48.402  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      71.137  78.770  48.915  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      70.758  78.037  48.906  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      70.886  79.357  49.437  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      71.264  80.090  49.447  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      70.256  79.211  49.951  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      70.005  79.799  50.473  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      69.878  78.478  49.941  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.596      6.622      7.246
+REMARK INTER + INTRA:          -3.596
+REMARK INTER:                  -3.596
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = threonine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CG2 THR A   1      61.249  63.063  72.487  0.00  0.00    +0.000 C 
+ATOM      2  CB  THR A   1      61.742  63.590  72.088  0.00  0.00    +0.000 C 
+ATOM      3  OG1 THR A   1      62.011  64.272  72.466  0.00  0.00    +0.000 OA
+ATOM      4  CA  THR A   1      61.966  63.434  71.310  0.00  0.00    +0.000 C 
+ATOM      5  N   THR A   1      61.698  62.752  70.932  0.00  0.00    +0.000 NA
+ATOM      6  C   THR A   1      62.460  63.961  70.909  0.00  0.00    +0.000 C 
+ATOM      7  O   THR A   1      62.685  63.805  70.130  0.00  0.00    +0.000 OA
+ATOM      8  OXT THR A   1      62.729  64.643  71.288  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

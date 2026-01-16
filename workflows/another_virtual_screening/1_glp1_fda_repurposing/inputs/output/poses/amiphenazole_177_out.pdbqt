@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.891      0.000      0.000
+REMARK INTER + INTRA:          -7.891
+REMARK INTER:                  -7.891
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.463  63.445  67.913  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.164  63.008  67.279  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.388  62.743  67.197  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.333  62.331  66.484  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.655  61.971  66.182  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.076  62.342  66.125  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      61.590  62.761  66.617  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      61.271  61.995  65.402  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.696  61.592  64.970  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.891  61.246  64.247  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.662  61.303  63.957  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.236  61.706  64.389  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.041  62.053  65.113  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.492      1.724      2.941
+REMARK INTER + INTRA:          -7.492
+REMARK INTER:                  -7.492
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.039  61.288  63.497  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.848  61.610  64.233  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.365  62.006  64.738  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.943  62.233  65.409  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.245  62.644  66.058  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.164  61.976  65.319  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      61.105  61.591  64.591  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      60.551  62.086  65.861  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.693  62.483  66.569  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.081  62.593  67.111  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.326  62.304  66.943  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.184  61.906  66.235  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.797  61.797  65.693  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.921      3.866      5.765
+REMARK INTER + INTRA:          -6.921
+REMARK INTER:                  -6.921
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.423  62.004  68.584  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.521  62.447  69.274  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.326  63.242  69.370  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.515  63.459  70.144  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.411  64.207  70.478  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.826  62.797  70.525  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      60.830  62.171  69.987  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      61.088  62.766  71.308  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.050  63.440  71.781  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.312  63.410  72.564  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.612  62.704  72.870  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.649  62.031  72.396  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.387  62.062  71.614  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.854      2.310      4.274
+REMARK INTER + INTRA:          -6.854
+REMARK INTER:                  -6.854
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.392  62.360  66.534  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.629  62.594  67.290  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.078  63.261  67.471  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.185  63.281  68.289  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.602  63.855  68.711  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.803  62.625  68.612  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      60.459  62.200  67.994  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      60.770  62.429  69.414  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.142  62.909  69.971  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.109  62.712  70.772  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.703  62.035  71.014  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.332  61.556  70.456  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.364  61.752  69.655  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.823      5.770      6.416
+REMARK INTER + INTRA:          -6.823
+REMARK INTER:                  -6.823
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.107  65.510  71.981  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.696  64.938  72.066  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.357  64.994  72.556  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.797  64.301  72.469  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.503  64.122  72.857  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.407  63.818  71.925  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      59.726  64.212  71.676  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      60.655  63.072  71.674  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.352  62.747  71.973  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.599  62.000  71.722  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.149  61.580  71.172  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.453  61.906  70.874  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.206  62.652  71.125  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.718      4.670      5.838
+REMARK INTER + INTRA:          -6.718
+REMARK INTER:                  -6.718
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.752  65.317  69.878  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.080  64.588  70.088  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.172  63.937  69.590  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.522  63.331  70.027  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.714  62.579  69.745  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.647  63.608  70.794  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      60.373  64.386  70.832  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      60.985  63.182  71.414  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.234  62.405  71.293  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.573  61.979  71.914  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.662  62.331  72.655  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.414  63.107  72.775  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.075  63.534  72.155  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.513      6.507      7.507
+REMARK INTER + INTRA:          -6.513
+REMARK INTER:                  -6.513
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.504  67.995  69.773  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.971  67.515  70.183  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.750  67.602  70.972  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.208  67.005  71.151  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      64.843  66.884  71.882  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.096  66.550  70.472  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      65.567  66.866  69.873  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      64.598  65.895  70.404  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.158  65.642  71.054  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.661  64.987  70.986  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.605  64.585  70.267  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.046  64.838  69.618  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.543  65.493  69.686  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.416      5.922      6.635
+REMARK INTER + INTRA:          -6.416
+REMARK INTER:                  -6.416
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.480  65.589  69.849  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.082  65.330  70.524  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.930  65.777  71.199  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.520  65.301  71.734  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.257  65.527  72.483  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.418  64.559  71.389  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      62.766  64.576  70.640  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      62.037  63.912  71.732  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.714  63.978  72.488  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.332  63.331  72.831  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.274  62.620  72.416  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.596  62.555  71.660  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.978  63.202  71.317  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.300      6.736      7.540
+REMARK INTER + INTRA:          -6.300
+REMARK INTER:                  -6.300
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amiphenazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.103  67.704  72.992  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.241  66.951  72.681  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.875  66.734  72.201  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.794  65.933  72.019  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      63.308  65.487  71.552  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.110  65.656  72.387  0.00  0.00    +0.000 A 
+ATOM      7  S   UNL     1      61.767  66.286  72.796  0.00  0.00    +0.000 S 
+ATOM      8  C   UNL     1      61.819  64.884  72.352  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.223  64.311  71.919  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.932  63.539  71.884  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.236  63.343  72.282  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.833  63.917  72.715  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.124  64.688  72.750  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.640      0.000      0.000
+REMARK INTER + INTRA:          -7.640
+REMARK INTER:                  -7.640
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.828  62.748  67.578  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.563  62.800  67.207  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.682  62.433  66.478  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.067  62.015  66.120  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.418  62.484  66.106  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.032  62.902  66.464  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.537  62.118  65.377  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.272  62.168  65.005  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.392  61.802  64.276  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.777  61.384  63.919  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.042  61.333  64.290  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.922  61.700  65.019  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.374      1.084      2.663
+REMARK INTER + INTRA:          -7.374
+REMARK INTER:                  -7.374
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.401  61.599  63.849  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.287  61.950  64.586  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.544  61.924  64.944  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.916  61.545  64.564  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.428  62.275  65.682  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.056  62.653  66.061  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.686  62.249  66.040  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.570  62.600  66.777  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.827  62.573  67.135  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.200  62.196  66.755  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.315  61.844  66.018  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.058  61.870  65.660  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.603      4.030      5.974
+REMARK INTER + INTRA:          -6.603
+REMARK INTER:                  -6.603
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.292  61.967  68.821  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.434  62.605  69.324  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.724  62.473  70.085  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.871  61.703  70.343  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.866  63.111  70.589  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.719  63.881  70.331  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.156  62.979  71.349  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.298  63.616  71.853  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.588  63.484  72.615  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.735  62.715  72.872  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.593  62.077  72.368  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.303  62.209  71.607  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.570      6.677      7.535
+REMARK INTER + INTRA:          -6.570
+REMARK INTER:                  -6.570
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.188  64.356  69.943  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.455  64.869  70.532  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      64.031  65.433  70.357  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.341  65.483  69.593  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.298  65.947  70.945  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.988  65.896  71.708  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.874  66.509  70.770  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.141  67.023  71.358  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.718  67.587  71.183  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.027  67.637  70.420  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.760  67.123  69.832  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.184  66.560  70.007  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.496      5.850      6.527
+REMARK INTER + INTRA:          -6.496
+REMARK INTER:                  -6.496
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.449  65.425  71.429  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.691  64.704  71.108  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.162  64.193  71.553  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.389  64.402  72.319  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.405  63.472  71.233  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.177  63.263  70.468  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.875  62.961  71.677  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.118  62.241  71.358  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.588  61.729  71.802  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.815  61.938  72.567  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.573  62.659  72.888  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.102  63.170  72.443  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.395      2.466      4.525
+REMARK INTER + INTRA:          -6.395
+REMARK INTER:                  -6.395
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.031  63.105  66.828  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.711  62.560  67.359  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.836  62.652  68.169  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.280  63.289  68.449  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.516  62.107  68.701  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.072  61.471  68.421  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.640  62.199  69.510  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.321  61.655  70.041  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.446  61.746  70.852  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.890  62.382  71.131  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.210  62.928  70.600  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.085  62.836  69.790  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.320     24.574     25.276
+REMARK INTER + INTRA:          -6.320
+REMARK INTER:                  -6.320
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.719  80.533  51.772  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      69.654  79.942  51.200  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      70.259  79.833  50.650  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.929  80.315  50.672  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.195  79.242  50.077  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      69.526  78.760  50.056  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.799  79.133  49.528  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.736  78.542  48.956  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.341  78.433  48.406  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      72.010  78.914  48.428  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      72.075  79.506  49.000  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.469  79.615  49.550  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.295     25.649     26.530
+REMARK INTER + INTRA:          -6.295
+REMARK INTER:                  -6.295
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      73.235  81.470  48.265  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      73.077  80.662  48.212  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      72.409  80.348  48.581  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.900  80.842  49.003  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.250  79.539  48.529  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      72.759  79.046  48.107  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      71.583  79.225  48.897  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.424  78.418  48.845  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.757  78.103  49.214  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.248  78.597  49.635  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.406  79.405  49.688  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.074  79.719  49.319  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.127      5.601      6.498
+REMARK INTER + INTRA:          -6.127
+REMARK INTER:                  -6.127
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ephedrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.508  65.672  70.041  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.133  64.937  70.014  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.751  64.645  70.684  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.745  65.087  71.382  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.376  63.910  70.658  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.383  63.469  69.961  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.995  63.618  71.328  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.619  62.883  71.302  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.238  62.591  71.973  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.232  63.032  72.669  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.607  63.767  72.696  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.988  64.060  72.025  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

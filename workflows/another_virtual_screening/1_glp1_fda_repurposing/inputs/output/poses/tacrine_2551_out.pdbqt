@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.423      0.000      0.000
+REMARK INTER + INTRA:          -9.423
+REMARK INTER:                  -9.423
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.000  62.757  66.407  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.399  62.380  65.989  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.558  62.042  65.252  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.318  62.081  64.936  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.477  61.743  64.200  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.875  61.365  63.781  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.114  61.326  64.098  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.955  61.664  64.833  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.195  61.625  65.151  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.036  61.963  65.886  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.276  61.924  66.202  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.117  62.262  66.938  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.719  62.639  67.357  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.480  62.679  67.040  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.638  62.340  66.305  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.355      0.122      2.760
+REMARK INTER + INTRA:          -9.355
+REMARK INTER:                  -9.355
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.112  62.775  66.317  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.479  62.398  65.948  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.738  62.384  66.311  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.631  62.749  67.044  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.890  62.735  67.407  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.256  62.357  67.038  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.364  61.993  66.305  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.104  62.006  65.942  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.212  61.642  65.210  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.951  61.655  64.847  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.058  61.291  64.115  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.799  61.305  63.751  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.433  61.682  64.120  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.326  62.047  64.853  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.585  62.033  65.216  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.448      1.060      2.070
+REMARK INTER + INTRA:          -8.448
+REMARK INTER:                  -8.448
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.211  62.400  66.789  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.033  62.448  66.754  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.441  62.090  66.132  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.026  61.684  65.546  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.434  61.326  64.924  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.257  61.374  64.889  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.672  61.781  65.475  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.264  62.138  66.096  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.679  62.545  66.683  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.271  62.902  67.304  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.686  63.308  67.890  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.278  63.666  68.512  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.455  63.618  68.547  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.040  63.211  67.960  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.448  62.854  67.339  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.232      3.904      5.681
+REMARK INTER + INTRA:          -8.232
+REMARK INTER:                  -8.232
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.387  61.462  71.043  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.774  62.136  70.767  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.133  62.653  71.301  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.103  62.496  72.110  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.462  63.013  72.644  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.850  63.687  72.369  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.879  63.844  71.559  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.521  63.327  71.025  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.549  63.484  70.216  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.191  62.967  69.682  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.220  63.124  68.874  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.862  62.607  68.339  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.474  61.933  68.615  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.445  61.776  69.425  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.804  62.293  69.958  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.229      5.598      6.620
+REMARK INTER + INTRA:          -8.229
+REMARK INTER:                  -8.229
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.765  63.614  72.854  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.089  63.520  72.391  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.015  62.863  71.897  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.618  62.301  71.866  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.543  61.643  71.372  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.867  61.550  70.909  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.265  62.113  70.940  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.339  62.769  71.434  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.737  63.333  71.465  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.810  63.989  71.959  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.209  64.551  71.990  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.282  65.208  72.484  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.958  65.302  72.947  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.561  64.739  72.916  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.487  64.083  72.422  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.222      3.884      5.253
+REMARK INTER + INTRA:          -8.222
+REMARK INTER:                  -8.222
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.401  61.521  71.008  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.777  62.203  70.739  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.800  62.370  69.930  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.446  61.854  69.393  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.470  62.021  68.585  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.846  62.703  68.315  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.200  63.219  68.853  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.176  63.053  69.661  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.530  63.569  70.199  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.507  63.402  71.006  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.860  63.918  71.544  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.837  63.752  72.352  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.460  63.069  72.622  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.107  62.553  72.083  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.130  62.720  71.276  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.214      5.605      7.014
+REMARK INTER + INTRA:          -8.214
+REMARK INTER:                  -8.214
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.761  63.633  72.851  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.083  63.538  72.393  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.479  64.101  72.428  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.556  64.757  72.921  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.952  65.319  72.956  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.273  65.225  72.497  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.197  64.567  72.004  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.800  64.006  71.969  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      59.724  63.348  71.476  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.327  62.787  71.441  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.251  62.130  70.948  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.854  61.568  70.913  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.533  61.663  71.372  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.609  62.320  71.866  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.006  62.882  71.900  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.508      5.527      6.436
+REMARK INTER + INTRA:          -7.508
+REMARK INTER:                  -7.508
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.281  63.549  69.795  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.395  63.927  70.519  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.892  64.585  70.567  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.274  64.863  69.891  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.771  65.521  69.939  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.886  65.899  70.663  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.504  65.619  71.339  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.007  64.963  71.291  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.625  64.683  71.967  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.129  64.027  71.919  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.748  63.748  72.595  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.251  63.091  72.547  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.136  62.713  71.823  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.518  62.992  71.146  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.014  63.649  71.195  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.502      5.537      6.751
+REMARK INTER + INTRA:          -7.502
+REMARK INTER:                  -7.502
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tacrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.317  63.533  69.804  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.377  63.906  70.536  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.982  63.596  71.192  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.528  62.911  71.113  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.134  62.601  71.768  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.193  62.975  72.501  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.648  63.659  72.579  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.042  63.970  71.925  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.496  64.654  72.002  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.890  64.965  71.348  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.344  65.648  71.426  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.739  65.959  70.772  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.679  65.586  70.039  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.225  64.901  69.960  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.831  64.591  70.615  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

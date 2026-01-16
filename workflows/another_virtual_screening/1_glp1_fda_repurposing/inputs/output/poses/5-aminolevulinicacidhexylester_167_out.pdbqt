@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.399      0.000      0.000
+REMARK INTER + INTRA:          -8.399
+REMARK INTER:                  -8.399
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.423  61.602  63.483  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.387  62.082  64.154  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.032  61.800  64.843  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.996  62.280  65.513  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.641  61.999  66.203  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.605  62.479  66.873  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.250  62.197  67.563  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.214  62.677  68.233  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.532  63.438  68.213  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.859  62.396  68.923  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.823  62.876  69.593  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.468  62.594  70.283  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.150  61.833  70.303  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.432  63.074  70.953  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.077  62.793  71.644  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.164      2.422      5.259
+REMARK INTER + INTRA:          -8.164
+REMARK INTER:                  -8.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.369  62.749  71.732  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.125  62.647  70.950  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.685  62.545  70.354  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.440  62.443  69.573  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.001  62.341  68.975  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.756  62.239  68.194  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.317  62.137  67.597  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.072  62.035  66.815  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.268  62.036  66.631  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.633  61.933  66.218  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.388  61.831  65.437  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.948  61.729  64.839  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.753  61.729  65.024  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.704  61.628  64.058  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      62.264  61.525  63.461  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.726      3.930      5.114
+REMARK INTER + INTRA:          -7.726
+REMARK INTER:                  -7.726
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.368  67.754  70.076  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.759  67.266  70.345  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.341  66.797  69.810  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.732  66.310  70.078  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.313  65.841  69.543  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.704  65.353  69.812  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.285  64.885  69.277  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.676  64.397  69.545  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.486  64.378  70.348  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.257  63.928  69.010  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.649  63.441  69.279  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.230  62.972  68.743  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.420  62.991  67.941  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.621  62.484  69.012  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      60.202  62.015  68.477  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.571      2.927      3.623
+REMARK INTER + INTRA:          -7.571
+REMARK INTER:                  -7.571
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.245  61.998  66.092  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.485  62.275  66.832  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.234  62.608  66.924  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.473  62.885  67.663  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.223  63.219  67.755  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.462  63.496  68.494  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.212  63.830  68.586  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.451  64.107  69.326  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.942  64.051  69.972  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      63.201  64.440  69.418  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.440  64.718  70.157  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.190  65.051  70.249  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.699  65.107  69.603  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      64.429  65.328  70.988  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      65.178  65.662  71.081  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.340      4.593      5.640
+REMARK INTER + INTRA:          -7.340
+REMARK INTER:                  -7.340
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.652  67.885  69.834  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.119  67.593  70.393  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.511  67.088  70.158  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.978  66.797  70.717  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.369  66.292  70.482  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.837  66.001  71.041  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.227  65.496  70.806  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.695  65.205  71.365  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.771  65.419  72.158  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.086  64.700  71.130  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.554  64.409  71.689  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.944  63.904  71.454  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.868  63.690  70.660  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.412  63.613  72.013  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      59.803  63.107  71.778  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.060      3.230      4.951
+REMARK INTER + INTRA:          -7.060
+REMARK INTER:                  -7.060
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.470  66.263  71.415  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.697  66.185  71.133  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.500  65.554  70.640  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.729  65.476  70.359  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.531  64.845  69.866  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.760  64.767  69.584  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.562  64.135  69.091  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.790  64.058  68.810  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.216  64.612  69.021  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.593  63.426  68.317  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.821  63.349  68.035  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.624  62.717  67.542  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.197  62.164  67.331  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.852  62.640  67.261  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      59.654  62.008  66.768  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.761      6.819      7.017
+REMARK INTER + INTRA:          -6.761
+REMARK INTER:                  -6.761
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.018  66.861  71.447  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.275  67.221  71.466  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.622  66.801  71.743  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.879  67.161  71.762  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.225  66.741  72.039  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.483  67.100  72.057  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.828  66.680  72.335  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.086  67.040  72.353  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.998  67.818  72.095  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.431  66.620  72.630  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.689  66.979  72.649  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.035  66.559  72.926  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.123  65.780  73.184  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.293  66.919  72.945  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      58.638  66.499  73.222  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.420     19.366     20.430
+REMARK INTER + INTRA:          -6.420
+REMARK INTER:                  -6.420
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.909  77.758  59.844  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.542  78.417  59.509  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.735  78.398  59.340  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.369  79.057  59.006  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.561  79.039  58.837  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.195  79.698  58.503  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.387  79.680  58.334  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.021  80.339  57.999  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.462  81.016  57.834  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.213  80.320  57.830  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.847  80.979  57.496  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.039  80.961  57.327  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.598  80.283  57.492  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.673  81.620  56.992  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      59.865  81.602  56.823  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.192     13.882     15.990
+REMARK INTER + INTRA:          -6.192
+REMARK INTER:                  -6.192
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = 5-aminolevulinic acid hexyl ester
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.397  70.630  49.223  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.609  70.046  49.767  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.644  70.226  50.571  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.856  69.643  51.115  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.892  69.823  51.920  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.103  69.240  52.463  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.139  69.420  53.268  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.350  68.837  53.812  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.525  68.074  53.552  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.386  69.017  54.617  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.597  68.433  55.160  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.633  68.614  55.965  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.458  69.377  56.225  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.845  68.030  56.509  0.00  0.00    +0.000 C 
+ATOM     15  N   UNL     1      62.881  68.210  57.314  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

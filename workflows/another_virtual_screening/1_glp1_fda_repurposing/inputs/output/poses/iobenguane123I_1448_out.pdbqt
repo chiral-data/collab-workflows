@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.975      0.000      0.000
+REMARK INTER + INTRA:          -6.975
+REMARK INTER:                  -6.975
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.496  61.240  63.507  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.693  61.531  64.253  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.483  61.671  64.446  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.101  61.681  64.807  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.298  61.972  65.554  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.706  62.122  66.107  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.903  62.413  66.854  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.310  62.563  67.408  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      60.507  62.854  68.154  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      59.521  62.423  67.215  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.323  62.132  66.469  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.916  61.981  65.915  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.927      2.278      3.372
+REMARK INTER + INTRA:          -6.927
+REMARK INTER:                  -6.927
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.641  63.644  68.332  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.240  63.103  67.854  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.546  62.748  68.123  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.534  62.918  67.106  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.134  62.378  66.627  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.427  62.193  65.879  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.028  61.653  65.401  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.321  61.468  64.652  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      60.921  60.928  64.175  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      62.015  61.822  64.383  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.416  62.362  64.861  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.122  62.547  65.609  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.755     18.323     18.678
+REMARK INTER + INTRA:          -6.755
+REMARK INTER:                  -6.755
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.501  80.765  57.979  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.390  80.010  58.295  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.646  79.654  58.264  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      65.023  79.612  58.642  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.912  78.857  58.958  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.545  78.459  59.305  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.435  77.705  59.621  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.068  77.306  59.969  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      65.957  76.552  60.284  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      66.811  77.661  60.000  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.922  78.415  59.684  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.289  78.814  59.337  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.508      1.408      1.755
+REMARK INTER + INTRA:          -6.508
+REMARK INTER:                  -6.508
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.019  61.220  65.281  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.929  61.940  65.672  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.208  62.636  65.327  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.561  61.966  66.410  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.471  62.687  66.803  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.103  62.712  67.540  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.014  63.432  67.932  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.645  63.457  68.670  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      60.556  64.177  69.061  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      60.366  62.762  69.015  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.456  62.041  68.623  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.824  62.016  67.886  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.452      2.963      3.748
+REMARK INTER + INTRA:          -6.452
+REMARK INTER:                  -6.452
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.828  62.126  66.892  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.948  62.623  67.540  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.222  63.393  67.426  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.793  62.350  68.303  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.912  62.846  68.952  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.757  62.573  69.714  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.876  63.069  70.362  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.721  62.796  71.125  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      60.841  63.292  71.773  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      60.447  62.027  71.240  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.328  61.530  70.592  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.483  61.803  69.829  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.059      6.090      6.856
+REMARK INTER + INTRA:          -6.059
+REMARK INTER:                  -6.059
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.800  66.807  72.165  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.775  66.148  71.668  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.389  66.193  70.940  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.137  65.443  71.900  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.112  64.784  71.404  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.473  64.080  71.635  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.449  63.421  71.140  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.810  62.717  71.372  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      60.785  62.059  70.876  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      61.196  62.671  72.099  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.221  63.330  72.595  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.860  64.035  72.363  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.862      7.077      7.903
+REMARK INTER + INTRA:          -5.862
+REMARK INTER:                  -5.862
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.803  64.502  71.980  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.470  64.662  71.521  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.693  64.143  70.920  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.914  65.342  71.664  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.582  65.503  71.206  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.026  66.183  71.349  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.693  66.344  70.892  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.138  67.024  71.035  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      65.804  67.185  70.577  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      64.915  67.543  71.636  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.248  67.382  72.094  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.803  66.702  71.951  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.696      5.496      6.158
+REMARK INTER + INTRA:          -5.696
+REMARK INTER:                  -5.696
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.445  64.475  70.239  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.627  64.424  70.138  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.306  64.380  69.380  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.131  64.417  70.797  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.313  64.366  70.697  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.817  64.360  71.355  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.000  64.309  71.256  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.503  64.302  71.915  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      59.686  64.251  71.815  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      60.824  64.346  72.673  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.641  64.397  72.774  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.138  64.404  72.115  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.269     24.850     25.603
+REMARK INTER + INTRA:          -5.269
+REMARK INTER:                  -5.269
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = iobenguane (123I)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      68.933  81.405  52.397  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      68.933  80.791  51.846  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      68.253  80.337  51.732  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      69.614  80.630  51.409  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      69.614  80.016  50.857  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.294  79.855  50.420  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.296  79.241  49.869  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.976  79.080  49.432  0.00  0.00    +0.000 A 
+ATOM      9  I   UNL     1      70.977  78.467  48.881  0.00  0.00    +0.000 I 
+ATOM     10  C   UNL     1      71.656  79.533  49.546  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.656  80.147  50.097  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.975  80.308  50.534  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

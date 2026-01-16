@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.272      0.000      0.000
+REMARK INTER + INTRA:          -8.272
+REMARK INTER:                  -8.272
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.391  61.623  63.487  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.466  61.960  64.236  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.812  61.999  64.738  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.887  62.336  65.486  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.233  62.375  65.989  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.308  62.713  66.738  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.655  62.752  67.240  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.001  62.791  67.742  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      60.191  62.384  66.665  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      59.537  62.423  67.167  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.845  62.346  66.163  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      59.727  62.017  66.090  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      61.118  63.119  67.815  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      61.582  63.487  68.390  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.772  63.080  67.313  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.464  63.158  68.317  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.002      2.271      3.540
+REMARK INTER + INTRA:          -8.002
+REMARK INTER:                  -8.002
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.657  62.679  69.000  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.466  62.293  68.298  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.949  62.379  67.635  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.758  61.993  66.932  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.242  62.079  66.268  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.050  61.692  65.565  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.533  61.779  64.902  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.016  61.865  64.239  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      62.033  62.275  65.331  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      62.516  62.362  64.668  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.550  62.189  65.994  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.533  62.772  65.760  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      61.033  61.282  64.473  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      60.533  60.785  64.044  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.550  61.195  65.136  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.516  61.368  63.810  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.567      2.331      3.534
+REMARK INTER + INTRA:          -7.567
+REMARK INTER:                  -7.567
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.023  62.240  71.040  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.553  62.115  70.374  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.837  62.316  69.626  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.367  62.190  68.960  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.651  62.392  68.211  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.180  62.266  67.544  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.464  62.467  66.796  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.747  62.668  66.048  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      61.170  62.728  67.134  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      61.453  62.929  66.386  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.886  62.527  67.882  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.876  62.989  67.471  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      59.758  62.207  66.459  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      59.052  61.946  66.121  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      59.474  62.005  67.207  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.041  62.408  65.710  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.449      1.346      2.062
+REMARK INTER + INTRA:          -7.449
+REMARK INTER:                  -7.449
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.043  62.486  64.779  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.726  62.155  65.464  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.640  62.615  66.143  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.323  62.284  66.828  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.237  62.744  67.509  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.920  62.412  68.194  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.834  62.873  68.873  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.748  63.333  69.553  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      61.151  63.521  68.474  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      61.065  63.981  69.153  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.237  63.061  67.795  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.468  64.170  68.074  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      60.517  62.224  69.273  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      60.200  61.575  69.672  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.603  61.764  68.593  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.432  62.684  69.952  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.083      2.371      2.948
+REMARK INTER + INTRA:          -7.083
+REMARK INTER:                  -7.083
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.263  61.906  66.051  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.721  62.415  66.509  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.864  62.238  67.303  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.322  62.747  67.761  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.466  62.571  68.556  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.924  63.081  69.015  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.068  62.904  69.808  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.211  62.728  70.601  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      60.621  62.214  69.735  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      60.764  62.038  70.528  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.478  62.391  68.942  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.174  61.525  69.662  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      61.514  63.594  69.880  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      61.961  64.284  69.953  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      61.371  63.770  69.087  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.658  63.418  70.673  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.917      3.584      4.637
+REMARK INTER + INTRA:          -6.917
+REMARK INTER:                  -6.917
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.378  62.019  67.709  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.361  61.999  68.533  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.843  62.508  68.968  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.827  62.488  69.791  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.309  62.998  70.227  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.293  62.977  71.051  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.774  63.487  71.486  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.256  63.996  71.921  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      62.071  63.804  70.785  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      62.553  64.314  71.220  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.590  63.295  70.350  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.368  64.122  70.084  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      61.478  63.169  72.187  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      61.181  62.852  72.889  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.996  62.660  71.753  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.959  63.679  72.622  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.907      6.762      7.694
+REMARK INTER + INTRA:          -6.907
+REMARK INTER:                  -6.907
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.885  65.174  71.073  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.594  65.348  71.456  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.197  65.738  71.051  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.906  65.912  71.434  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.510  66.302  71.028  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.219  66.476  71.412  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.822  66.866  71.007  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      66.425  67.257  70.601  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      65.351  66.891  70.330  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      65.954  67.282  69.924  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      64.748  66.501  70.735  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      64.880  66.916  69.653  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      66.294  66.841  71.683  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      66.765  66.817  72.360  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      65.690  66.451  72.089  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      66.897  67.232  71.278  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.903      6.383      6.925
+REMARK INTER + INTRA:          -6.903
+REMARK INTER:                  -6.903
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.584  62.110  72.309  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.600  62.911  72.506  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.916  63.367  72.434  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.932  64.167  72.631  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.247  64.623  72.559  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.263  65.424  72.756  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.579  65.880  72.685  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      58.895  66.336  72.613  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      59.166  65.218  72.416  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      58.482  65.674  72.345  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      59.850  64.762  72.488  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      58.753  64.556  72.148  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      59.992  66.542  72.953  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      60.405  67.204  73.222  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      60.676  66.086  73.025  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.308  66.998  72.882  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.870     25.297     25.975
+REMARK INTER + INTRA:          -6.870
+REMARK INTER:                  -6.870
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = neridronic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      68.677  80.435  51.925  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      69.388  80.537  51.520  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      69.630  79.978  50.964  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.341  80.080  50.560  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.583  79.520  50.003  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.295  79.622  49.598  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      71.537  79.063  49.042  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      71.779  78.503  48.487  0.00  0.00    +0.000 OA
+ATOM      9  P   UNL     1      70.855  78.622  49.189  0.00  0.00    +0.000 P 
+ATOM     10  O   UNL     1      71.097  78.062  48.633  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      70.613  79.181  49.745  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      70.173  78.181  49.336  0.00  0.00    +0.000 OA
+ATOM     13  P   UNL     1      72.219  79.503  48.896  0.00  0.00    +0.000 P 
+ATOM     14  O   UNL     1      72.900  79.944  48.749  0.00  0.00    +0.000 OA
+ATOM     15  O   UNL     1      71.977  80.063  49.451  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      72.461  78.944  48.340  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

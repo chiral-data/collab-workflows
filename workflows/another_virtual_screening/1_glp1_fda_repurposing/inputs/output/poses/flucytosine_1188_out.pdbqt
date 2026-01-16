@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.169      0.000      0.000
+REMARK INTER + INTRA:          -5.169
+REMARK INTER:                  -5.169
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.500  61.668  63.451  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.030  61.722  64.126  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.306  62.128  64.789  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.835  62.183  65.465  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.111  62.588  66.127  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.090  61.831  65.477  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.813  61.425  64.814  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.283  61.370  64.139  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      61.007  60.964  63.475  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.016      1.549      2.085
+REMARK INTER + INTRA:          -5.016
+REMARK INTER:                  -5.016
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.907  62.630  66.067  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.777  62.185  65.386  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.102  61.716  65.322  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.972  61.271  64.640  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.297  60.802  64.576  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.517  61.294  64.022  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.193  61.764  64.085  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.323  62.209  64.767  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      62.999  62.679  64.831  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.876      1.494      1.990
+REMARK INTER + INTRA:          -4.876
+REMARK INTER:                  -4.876
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.436  61.115  64.919  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.146  61.534  64.915  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.585  61.597  64.220  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.296  62.016  64.217  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.734  62.078  63.522  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      62.567  62.372  64.909  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.128  62.310  65.605  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.418  61.891  65.608  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      60.978  61.828  66.305  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.601      1.486      2.151
+REMARK INTER + INTRA:          -4.601
+REMARK INTER:                  -4.601
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.359  62.009  66.090  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.180  62.081  66.085  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.563  62.484  66.694  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.385  62.556  66.689  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.767  62.958  67.298  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.823  62.225  66.074  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.441  61.822  65.464  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.619  61.750  65.469  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      60.236  61.347  64.859  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.553      8.762      9.050
+REMARK INTER + INTRA:          -4.553
+REMARK INTER:                  -4.553
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.404  67.837  69.792  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.075  67.323  70.346  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      66.418  67.246  71.093  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      66.090  66.731  71.647  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      66.433  66.655  72.393  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      65.418  66.293  71.456  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      65.074  66.369  70.709  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.403  66.884  70.155  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      65.059  66.961  69.408  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.460      2.322      2.864
+REMARK INTER + INTRA:          -4.460
+REMARK INTER:                  -4.460
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.377  62.002  66.139  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.133  62.252  66.350  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.704  62.377  65.768  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.461  62.628  65.979  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.031  62.752  65.397  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.647  62.753  66.773  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.077  62.628  67.356  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.320  62.378  67.145  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      59.749  62.253  67.728  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.405     16.481     16.986
+REMARK INTER + INTRA:          -4.405
+REMARK INTER:                  -4.405
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.710  74.980  72.236  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      58.615  75.759  72.488  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.276  76.217  72.672  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.180  76.997  72.924  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.841  77.454  73.108  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      58.424  77.318  72.993  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      57.762  76.860  72.809  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      57.858  76.081  72.557  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      57.196  75.622  72.373  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.245      4.083      4.846
+REMARK INTER + INTRA:          -4.245
+REMARK INTER:                  -4.245
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.620  62.618  70.480  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.755  62.615  69.667  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.186  63.226  69.317  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.321  63.223  68.503  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.752  63.833  68.155  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      61.025  62.610  68.039  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.593  61.998  68.387  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.458  62.001  69.201  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      60.027  61.390  69.550  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.242     24.574     24.877
+REMARK INTER + INTRA:          -4.242
+REMARK INTER:                  -4.242
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flucytosine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      70.291  79.959  50.287  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      70.671  79.419  49.793  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      71.408  79.602  49.472  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      71.788  79.062  48.977  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      72.525  79.245  48.656  0.00  0.00    +0.000 OA
+ATOM      6  N   UNL     1      71.431  78.340  48.803  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      70.693  78.156  49.124  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.313  78.696  49.619  0.00  0.00    +0.000 A 
+ATOM      9  F   UNL     1      69.575  78.513  49.940  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL

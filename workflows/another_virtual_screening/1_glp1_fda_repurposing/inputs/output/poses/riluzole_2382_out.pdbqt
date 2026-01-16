@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.429      0.000      0.000
+REMARK INTER + INTRA:          -8.429
+REMARK INTER:                  -8.429
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.170  63.218  67.600  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.116  62.790  66.897  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.491  62.301  66.673  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.667  61.985  65.932  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.401  62.279  65.697  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      61.679  62.776  66.293  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.720  62.055  64.970  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.307  61.538  64.479  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.626  61.314  63.753  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.361  61.608  63.517  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      63.095  61.902  63.282  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      62.306  61.180  62.813  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      62.415  62.035  64.220  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      60.573  61.244  64.714  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.252  61.467  65.441  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.070      2.509      3.318
+REMARK INTER + INTRA:          -8.070
+REMARK INTER:                  -8.070
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.705  61.528  63.367  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.325  61.769  64.058  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.661  62.210  64.669  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.086  62.324  65.248  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.393  61.953  64.995  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      61.541  61.610  64.261  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.718  61.977  65.469  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.734  62.370  66.193  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.059  62.393  66.666  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.366  62.022  66.413  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      58.674  61.652  66.161  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      58.986  62.263  67.106  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      59.746  61.782  65.723  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      61.427  62.741  66.445  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.103  62.718  65.973  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.892      2.421      3.235
+REMARK INTER + INTRA:          -7.892
+REMARK INTER:                  -7.892
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.647  61.633  63.477  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.175  61.759  64.142  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.393  61.514  64.235  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.137  61.756  64.980  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.761  62.152  65.348  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      62.402  62.155  64.830  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.662  62.460  66.107  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.942  62.372  66.499  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.845  62.679  67.257  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.468  63.075  67.625  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      62.092  63.471  67.993  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      60.995  63.202  68.290  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      61.940  62.949  66.961  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      60.319  61.976  66.131  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.416  61.668  65.372  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.506      7.952      9.029
+REMARK INTER + INTRA:          -7.506
+REMARK INTER:                  -7.506
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.449  65.343  69.773  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.111  65.771  70.016  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      64.457  66.401  69.612  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.102  66.663  70.053  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.156  66.195  70.730  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      64.544  65.644  70.708  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      65.756  66.333  71.279  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.302  66.937  71.152  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      66.902  67.074  71.701  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      66.955  66.606  72.378  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      67.009  66.138  73.055  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      67.618  67.035  72.622  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      66.294  66.178  72.135  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      66.249  67.405  70.474  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.649  67.269  69.925  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.388      5.338      6.400
+REMARK INTER + INTRA:          -7.388
+REMARK INTER:                  -7.388
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.433  63.512  67.940  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.272  63.187  68.681  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.822  62.511  68.827  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.806  62.387  69.642  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.246  62.986  70.000  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      61.535  63.480  69.407  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.327  63.003  70.821  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.968  62.423  71.284  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.049  62.440  72.104  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.489  63.039  72.462  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      61.929  63.638  72.820  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      61.328  62.713  73.204  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      61.649  63.364  71.722  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      60.528  61.824  70.925  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.446  61.806  70.105  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.294      5.832      6.579
+REMARK INTER + INTRA:          -7.294
+REMARK INTER:                  -7.294
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.291  65.383  71.037  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.768  64.778  71.239  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      62.491  64.609  71.997  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.982  63.963  71.945  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.944  63.732  71.153  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      62.429  64.236  70.717  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.471  63.093  70.933  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.037  62.684  71.503  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.565  62.046  71.282  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.526  61.815  70.491  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      60.488  61.584  69.700  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      60.002  61.209  70.693  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      61.049  62.419  70.290  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      61.075  62.915  72.294  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.547  63.554  72.515  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.248      2.790      3.449
+REMARK INTER + INTRA:          -7.248
+REMARK INTER:                  -7.248
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.166  63.354  70.360  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.099  63.228  69.548  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.670  63.407  68.980  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.373  63.191  68.243  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.618  62.878  68.353  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      60.448  62.901  69.160  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      60.183  62.612  67.705  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.502  62.660  66.946  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.066  62.394  66.298  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.311  62.081  66.409  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      58.556  61.768  66.520  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      59.244  61.955  65.595  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      59.378  62.207  67.221  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      61.257  62.973  66.835  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.693  63.238  67.483  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.144      7.515      8.079
+REMARK INTER + INTRA:          -7.144
+REMARK INTER:                  -7.144
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.476  66.039  72.511  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.061  66.054  71.929  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.228  65.449  71.394  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.851  65.698  70.915  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.070  66.457  71.154  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      63.582  66.677  71.781  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      64.686  66.849  70.769  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.083  66.483  70.146  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      65.698  66.875  69.762  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.916  67.634  70.001  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      66.135  68.392  70.241  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      66.502  67.649  69.419  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      65.332  67.618  70.583  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      64.864  65.724  69.907  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.249  65.331  70.291  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.968      8.248      8.662
+REMARK INTER + INTRA:          -6.968
+REMARK INTER:                  -6.968
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = riluzole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.149  67.993  72.830  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.721  67.288  72.832  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.899  67.219  72.847  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.710  66.416  72.844  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.416  65.989  72.827  0.00  0.00    +0.000 A 
+ATOM      6  S   UNL     1      62.040  66.527  72.820  0.00  0.00    +0.000 S 
+ATOM      7  C   UNL     1      61.397  65.164  72.821  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.674  64.767  72.831  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.656  63.943  72.825  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.361  63.515  72.808  0.00  0.00    +0.000 C 
+ATOM     11  F   UNL     1      62.067  63.087  72.791  0.00  0.00    +0.000 F 
+ATOM     12  F   UNL     1      60.933  62.809  72.810  0.00  0.00    +0.000 F 
+ATOM     13  F   UNL     1      61.789  64.219  72.806  0.00  0.00    +0.000 F 
+ATOM     14  C   UNL     1      59.969  65.195  72.848  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.987  66.019  72.855  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

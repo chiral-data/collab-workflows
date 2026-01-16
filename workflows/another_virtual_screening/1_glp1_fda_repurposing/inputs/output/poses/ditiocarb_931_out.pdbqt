@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.227      0.000      0.000
+REMARK INTER + INTRA:          -4.227
+REMARK INTER:                  -4.227
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.355  61.887  64.146  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.328  62.353  64.826  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.679  62.307  65.333  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.653  62.773  66.013  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.003  62.727  66.520  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.055  61.795  65.159  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      60.405  61.749  65.666  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      61.082  61.329  64.478  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -3.834      1.592      2.352
+REMARK INTER + INTRA:          -3.834
+REMARK INTER:                  -3.834
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.407  63.112  67.591  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.493  62.732  66.864  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.835  62.407  66.487  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.921  62.028  65.761  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.263  61.702  65.385  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.090  62.462  66.839  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      59.432  62.136  66.463  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      60.004  62.841  67.567  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -3.681      7.316      7.871
+REMARK INTER + INTRA:          -3.681
+REMARK INTER:                  -3.681
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.240  67.573  70.415  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.745  67.242  69.844  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.218  66.642  70.052  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      64.723  66.312  69.482  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.196  65.712  69.691  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.186  66.373  70.832  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      64.659  65.773  71.041  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      65.682  66.704  71.403  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -3.651      3.652      4.794
+REMARK INTER + INTRA:          -3.651
+REMARK INTER:                  -3.651
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.494  62.368  70.905  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.465  61.930  70.207  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.469  62.316  69.477  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.440  61.879  68.779  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.443  62.265  68.050  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.501  63.140  69.447  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      60.505  63.527  68.717  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      60.530  63.578  70.146  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -3.630      8.090      8.631
+REMARK INTER + INTRA:          -3.630
+REMARK INTER:                  -3.630
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.484  67.422  72.841  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.323  67.628  72.058  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.587  67.457  71.729  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.426  67.663  70.947  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.689  67.492  70.618  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.009  67.080  72.183  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      59.272  66.909  71.854  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      60.170  66.874  72.966  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -3.556      7.835      8.556
+REMARK INTER + INTRA:          -3.556
+REMARK INTER:                  -3.556
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.665  67.197  70.800  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.217  67.525  71.411  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      58.894  67.038  71.993  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      58.447  67.365  72.603  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.123  66.877  73.185  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.017  66.222  71.963  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      58.694  65.734  72.546  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      59.465  65.895  71.352  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.526     11.971     12.298
+REMARK INTER + INTRA:          -3.526
+REMARK INTER:                  -3.526
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.094  62.840  53.732  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.672  62.264  54.145  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.379  61.603  53.748  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.958  61.027  54.161  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.664  60.366  53.763  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.507  61.519  52.937  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      64.214  60.858  52.539  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      64.929  62.095  52.524  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.505     24.991     25.521
+REMARK INTER + INTRA:          -3.505
+REMARK INTER:                  -3.505
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.816  79.481  48.777  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.255  78.876  48.762  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      71.527  78.980  49.136  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      70.966  78.376  49.121  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.237  78.480  49.495  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.360  79.689  49.525  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      70.632  79.793  49.900  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      71.922  80.293  49.540  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.387      6.065      6.623
+REMARK INTER + INTRA:          -3.387
+REMARK INTER:                  -3.387
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = ditiocarb
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.183  63.074  71.385  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.821  63.710  71.766  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.755  64.438  71.384  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      59.394  65.073  71.765  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.327  65.801  71.381  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.050  64.529  70.618  0.00  0.00    +0.000 C 
+ATOM      7  S   UNL     1      59.983  65.258  70.234  0.00  0.00    +0.000 S 
+ATOM      8  S   UNL     1      60.411  63.893  70.236  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

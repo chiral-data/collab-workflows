@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.091      0.000      0.000
+REMARK INTER + INTRA:          -6.091
+REMARK INTER:                  -6.091
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.617  63.457  67.944  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.171  62.973  67.446  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.425  62.712  67.682  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.472  62.750  66.711  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.027  62.265  66.212  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.281  62.005  66.450  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      61.327  62.042  65.478  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.883  61.558  64.980  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.184  61.335  64.245  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.929  61.596  64.008  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.375  62.080  64.506  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.074  62.303  65.241  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.925      1.591      2.896
+REMARK INTER + INTRA:          -5.925
+REMARK INTER:                  -5.925
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.324  61.762  64.124  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.616  61.710  64.544  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.974  61.302  64.224  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.550  62.066  65.285  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.841  62.015  65.707  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.200  61.607  65.386  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.775  62.371  66.447  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.068  62.319  66.868  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.002  62.675  67.609  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.643  63.083  67.929  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.351  63.135  67.509  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.417  62.779  66.768  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.294      1.948      2.781
+REMARK INTER + INTRA:          -5.294
+REMARK INTER:                  -5.294
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.968  64.294  69.441  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.217  63.954  69.407  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.762  63.886  70.092  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.921  63.681  68.687  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.170  63.341  68.652  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.716  63.274  69.337  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.874  63.068  67.933  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.123  62.728  67.897  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.827  62.455  67.177  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.281  62.523  66.492  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.033  62.863  66.527  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.329  63.136  67.247  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.250      2.458      3.949
+REMARK INTER + INTRA:          -5.250
+REMARK INTER:                  -5.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.045  61.992  66.178  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.469  62.482  66.689  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.905  63.115  66.389  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.457  62.338  67.502  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.881  62.828  68.014  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.316  63.461  67.713  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.869  62.685  68.825  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      61.292  63.173  69.338  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.280  63.030  70.150  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.845  62.397  70.450  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.421  61.907  69.939  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.433  62.051  69.126  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.198      5.901      7.093
+REMARK INTER + INTRA:          -5.198
+REMARK INTER:                  -5.198
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.327  67.653  69.848  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.805  67.321  70.394  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.730  67.649  71.147  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      65.358  66.659  70.186  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.836  66.326  70.731  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.761  66.655  71.484  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      64.389  65.665  70.524  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      63.867  65.332  71.068  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.420  64.670  70.860  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.495  64.342  70.108  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.017  64.675  69.562  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.464  65.336  69.770  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.195      3.108      4.083
+REMARK INTER + INTRA:          -5.195
+REMARK INTER:                  -5.195
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.599  66.220  69.022  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.800  65.538  69.440  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.904  65.570  70.258  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.896  64.822  69.041  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.097  64.139  69.459  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.201  64.173  70.276  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.194  63.425  69.060  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      60.395  62.743  69.477  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.491  62.027  69.077  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.387  61.995  68.260  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.186  62.677  67.841  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.090  63.392  68.241  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.182     12.158     12.923
+REMARK INTER + INTRA:          -5.182
+REMARK INTER:                  -5.182
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.060  58.992  54.745  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.394  59.324  54.067  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.433  58.886  53.368  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.690  60.094  54.088  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.024  60.426  53.410  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.062  59.988  52.712  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      64.319  61.196  53.431  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      64.653  61.528  52.755  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.949  62.298  52.776  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.910  62.736  53.474  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.576  62.404  54.151  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.281  61.634  54.130  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.138      5.928      7.141
+REMARK INTER + INTRA:          -5.138
+REMARK INTER:                  -5.138
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.889  64.287  71.058  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.413  64.639  70.527  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.486  64.344  69.760  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.866  65.287  70.763  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.391  65.640  70.232  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.462  65.344  69.466  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      64.843  66.287  70.468  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      65.367  66.640  69.938  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.820  67.288  70.175  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.748  67.583  70.941  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.224  67.231  71.472  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.771  66.583  71.236  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.118      5.268      6.515
+REMARK INTER + INTRA:          -5.118
+REMARK INTER:                  -5.118
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = moroxydine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.910  66.934  72.930  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.057  66.959  72.118  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      58.974  67.667  71.704  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.288  66.274  71.720  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.435  66.298  70.908  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      59.351  67.007  70.495  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      59.665  65.614  70.511  0.00  0.00    +0.000 N 
+ATOM      8  C   UNL     1      59.812  65.637  69.699  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.042  64.952  69.301  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.126  64.244  69.714  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.979  64.219  70.526  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.748  64.904  70.924  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

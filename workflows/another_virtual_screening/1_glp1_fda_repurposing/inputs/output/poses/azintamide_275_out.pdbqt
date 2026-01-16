@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.551      0.000      0.000
+REMARK INTER + INTRA:          -8.551
+REMARK INTER:                  -8.551
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.733  63.518  69.493  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.491  63.039  68.867  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.941  63.004  68.177  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.634  63.448  68.112  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.876  63.927  68.739  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.699  62.525  67.551  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.006  62.081  67.614  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.149  62.490  66.860  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.907  62.011  66.233  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.357  61.975  65.543  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.114  61.496  64.917  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.565  61.461  64.226  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.257  61.905  64.163  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      62.707  61.869  63.471  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.499  62.384  64.789  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      62.049  62.419  65.479  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.399      1.124      1.434
+REMARK INTER + INTRA:          -8.399
+REMARK INTER:                  -8.399
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.680  62.829  70.109  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.019  63.136  69.423  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.994  62.704  68.721  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.629  61.964  68.705  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.289  61.656  69.391  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.333  63.011  68.035  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.698  63.751  68.050  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.307  62.578  67.332  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.647  62.886  66.646  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.621  62.453  65.945  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.960  62.761  65.258  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.935  62.328  64.555  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.570  61.588  64.540  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.544  61.156  63.838  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.230  61.281  65.227  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      61.256  61.713  65.928  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.143      1.888      3.991
+REMARK INTER + INTRA:          -8.143
+REMARK INTER:                  -8.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.344  61.252  63.850  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.871  61.380  64.513  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.173  61.791  65.161  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.948  62.075  65.147  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.421  61.947  64.483  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.700  61.919  65.825  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.925  61.636  65.841  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.001  62.331  66.474  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.528  62.459  67.138  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.830  62.870  67.785  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.357  62.998  68.449  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.658  63.410  69.098  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.433  63.693  69.082  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.735  64.105  69.731  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.906  63.565  68.418  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      61.604  63.154  67.771  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.730      1.961      2.734
+REMARK INTER + INTRA:          -7.730
+REMARK INTER:                  -7.730
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.319  63.015  72.310  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.926  62.644  71.687  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.136  62.813  70.908  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.739  63.353  70.751  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.132  63.725  71.374  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.743  62.441  70.285  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.140  61.901  70.441  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.954  62.610  69.504  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.561  62.239  68.881  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.771  62.408  68.102  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.378  62.036  67.479  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.589  62.205  66.699  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.192  62.746  66.543  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.402  62.915  65.763  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.585  63.117  67.166  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      61.374  62.948  67.945  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.555      5.552      6.528
+REMARK INTER + INTRA:          -7.555
+REMARK INTER:                  -7.555
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.790  67.282  70.207  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.355  66.622  69.971  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.794  66.295  70.479  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      64.668  66.627  71.224  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.103  67.286  71.460  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.358  65.636  70.242  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.483  65.304  69.497  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.796  65.308  70.750  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      63.360  64.649  70.514  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      62.799  64.322  71.022  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.363  63.663  70.785  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.801  63.335  71.294  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.676  63.667  72.038  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.114  63.340  72.547  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      62.112  64.327  72.275  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      62.673  64.654  71.767  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.552      5.172      5.908
+REMARK INTER + INTRA:          -7.552
+REMARK INTER:                  -7.552
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.893  62.741  71.576  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.372  63.045  70.977  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.940  63.615  71.153  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.031  63.883  71.928  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.553  63.579  72.528  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.419  63.919  70.554  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.329  63.653  69.778  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.988  64.490  70.729  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      63.467  64.794  70.130  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      64.036  65.365  70.306  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.514  65.668  69.707  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.084  66.240  69.882  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.174  66.506  70.658  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      65.744  67.077  70.834  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      64.695  66.202  71.257  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      64.127  65.632  71.081  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.454      5.062      5.767
+REMARK INTER + INTRA:          -7.454
+REMARK INTER:                  -7.454
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.872  66.105  70.790  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.193  65.899  71.212  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.744  65.249  70.978  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.971  64.803  70.322  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.649  65.009  69.900  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.065  65.044  71.401  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.837  65.488  72.057  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.615  64.392  71.167  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.936  64.187  71.589  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.487  63.537  71.356  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.808  63.331  71.778  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.358  62.680  71.544  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.586  62.236  70.888  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      60.135  61.585  70.654  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.264  62.441  70.466  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      61.714  63.091  70.699  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.382      5.174      5.809
+REMARK INTER + INTRA:          -7.382
+REMARK INTER:                  -7.382
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.441  67.075  69.108  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.602  66.266  69.108  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.903  65.907  69.787  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.042  66.356  70.465  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.881  67.165  70.464  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.064  65.098  69.788  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.925  64.648  69.110  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.365  64.738  70.467  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      60.527  63.929  70.468  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      60.827  63.569  71.146  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.989  62.760  71.147  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.290  62.400  71.826  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.429  62.850  72.504  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.730  62.489  73.183  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.267  63.659  72.503  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      60.967  64.018  71.824  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.150      3.082      5.105
+REMARK INTER + INTRA:          -7.150
+REMARK INTER:                  -7.150
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = azintamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.885  62.760  66.355  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.828  63.251  67.015  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.983  62.951  67.767  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.194  62.159  67.861  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.252  61.667  67.201  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.925  63.443  68.427  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.714  64.235  68.335  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.080  63.142  69.181  0.00  0.00    +0.000 C 
+ATOM      9  S   UNL     1      61.023  63.634  69.841  0.00  0.00    +0.000 S 
+ATOM     10  C   UNL     1      61.177  63.334  70.593  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.120  63.825  71.253  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.274  63.525  72.006  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.486  62.733  72.098  0.00  0.00    +0.000 A 
+ATOM     14 CL   UNL     1      61.641  62.433  72.852  0.00  0.00    +0.000 Cl
+ATOM     15  N   UNL     1      61.543  62.242  71.438  0.00  0.00    +0.000 NA
+ATOM     16  N   UNL     1      61.389  62.542  70.686  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

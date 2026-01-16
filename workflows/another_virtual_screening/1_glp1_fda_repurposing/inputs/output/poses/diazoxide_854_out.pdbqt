@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.257      0.000      0.000
+REMARK INTER + INTRA:          -8.257
+REMARK INTER:                  -8.257
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.602  62.145  66.804  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.244  62.131  66.285  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.195  61.707  65.580  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.836  61.693  65.062  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.788  61.269  64.356  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.430  61.255  63.838  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.121  61.667  64.025  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      62.762  61.653  63.507  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      62.169  62.091  64.730  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.527  62.105  65.249  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      61.576  62.529  65.954  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      62.325  62.682  65.644  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.884  63.007  66.552  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.935  62.543  66.472  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.869      1.633      2.570
+REMARK INTER + INTRA:          -7.869
+REMARK INTER:                  -7.869
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.314  61.143  63.858  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.174  61.516  64.581  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.422  61.493  64.919  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.283  61.866  65.640  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.531  61.843  65.979  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.391  62.216  66.701  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.004  62.614  67.085  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      59.864  62.988  67.807  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.756  62.638  66.747  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.896  62.264  66.025  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      61.647  62.288  65.686  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      61.786  62.722  66.374  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.447  62.463  65.587  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.787  61.915  64.965  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.463      1.503      1.995
+REMARK INTER + INTRA:          -7.463
+REMARK INTER:                  -7.463
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.076  63.609  68.683  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.292  63.220  67.988  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.717  62.849  67.527  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.933  62.460  66.833  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.358  62.089  66.372  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.574  61.700  65.677  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.366  61.682  65.443  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.581  61.293  64.748  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.940  62.053  65.904  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.725  62.442  66.599  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      61.299  62.813  67.060  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      61.772  62.517  66.452  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.038  63.081  67.309  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.084  63.201  67.754  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.980      7.565      8.123
+REMARK INTER + INTRA:          -6.980
+REMARK INTER:                  -6.980
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.549  68.040  69.809  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.059  67.455  70.123  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.527  67.056  69.635  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      65.038  66.472  69.949  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.506  66.072  69.462  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.017  65.487  69.776  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.060  65.301  70.579  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      63.570  64.716  70.893  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      64.591  65.700  71.067  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.081  66.285  70.753  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      65.613  66.684  71.241  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      65.267  66.177  71.791  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      66.025  66.907  71.920  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      66.102  67.269  70.926  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.975      7.348      7.880
+REMARK INTER + INTRA:          -6.975
+REMARK INTER:                  -6.975
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.878  65.525  71.712  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.494  65.846  71.267  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.018  66.381  71.611  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.633  66.701  71.166  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.158  67.237  71.510  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.773  67.556  71.065  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.866  67.340  70.273  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      66.482  67.660  69.828  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      65.342  66.805  69.929  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.726  66.484  70.374  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      64.202  65.949  70.030  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      64.696  66.101  69.386  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      63.850  65.466  69.461  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      63.587  65.629  70.475  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.923      4.073      5.220
+REMARK INTER + INTRA:          -6.923
+REMARK INTER:                  -6.923
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.415  62.156  67.726  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.621  62.374  68.495  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.417  61.889  69.130  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.623  62.107  69.898  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.419  61.622  70.534  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.625  61.840  71.302  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.036  62.544  71.435  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.242  62.762  72.204  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.240  63.029  70.800  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.034  62.811  70.031  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      61.238  63.296  69.396  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      61.553  63.735  70.019  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.551  63.933  68.978  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.032  63.078  68.628  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.751      6.509      7.168
+REMARK INTER + INTRA:          -6.751
+REMARK INTER:                  -6.751
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.430  65.648  73.175  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.444  64.963  72.716  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.965  64.352  72.903  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.979  63.667  72.444  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.500  63.055  72.631  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.514  62.370  72.172  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.006  62.296  71.525  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.020  61.610  71.066  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.485  62.907  71.338  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.471  63.593  71.797  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      59.950  64.204  71.610  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      59.760  63.667  71.014  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.363  64.629  71.215  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      59.936  64.889  72.068  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.652      6.103      6.827
+REMARK INTER + INTRA:          -6.652
+REMARK INTER:                  -6.652
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.028  65.963  71.777  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.736  65.212  71.601  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.325  64.784  72.173  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.034  64.033  71.997  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.623  63.604  72.570  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.331  62.854  72.394  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.451  62.530  71.643  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      61.160  61.778  71.468  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      61.862  62.958  71.071  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.154  63.709  71.247  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      62.565  64.137  70.674  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      62.396  63.452  70.247  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.917  64.327  69.953  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.856  64.888  70.850  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.603      3.781      4.568
+REMARK INTER + INTRA:          -6.603
+REMARK INTER:                  -6.603
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diazoxide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.493  63.847  71.423  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.459  63.395  70.734  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.456  63.765  69.997  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.422  63.313  69.309  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.419  63.683  68.571  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.384  63.232  67.882  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.353  62.408  67.930  0.00  0.00    +0.000 A 
+ATOM      8 CL   UNL     1      60.319  61.956  67.241  0.00  0.00    +0.000 Cl
+ATOM      9  C   UNL     1      60.356  62.037  68.667  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.390  62.489  69.357  0.00  0.00    +0.000 A 
+ATOM     11  S   UNL     1      60.393  62.119  70.093  0.00  0.00    +0.000 S 
+ATOM     12  O   UNL     1      60.355  61.458  69.601  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.383  61.519  70.659  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.428  62.571  70.782  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

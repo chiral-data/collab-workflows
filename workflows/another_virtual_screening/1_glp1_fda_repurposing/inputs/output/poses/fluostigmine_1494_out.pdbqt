@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.081      0.000      0.000
+REMARK INTER + INTRA:          -6.081
+REMARK INTER:                  -6.081
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.539  62.248  68.500  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.842  62.548  67.794  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.822  63.360  67.649  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.166  62.036  67.234  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      61.469  62.337  66.528  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      61.668  61.573  66.288  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      61.271  63.101  66.767  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.772  62.637  65.822  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.096  62.125  65.261  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.400  62.426  64.555  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.116  61.313  65.407  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.991      0.613      2.814
+REMARK INTER + INTRA:          -5.991
+REMARK INTER:                  -5.991
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.371  62.365  64.534  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.067  62.094  65.251  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.057  61.285  65.415  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.772  62.632  65.803  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      61.467  62.360  66.520  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      61.302  63.136  66.744  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      61.632  61.583  66.297  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.162  62.088  67.237  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.867  62.626  67.789  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.562  62.354  68.507  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.877  63.434  67.624  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.432      2.085      3.246
+REMARK INTER + INTRA:          -5.432
+REMARK INTER:                  -5.432
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.487  62.022  66.460  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.980  62.337  67.040  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.515  62.935  66.848  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.939  62.053  67.815  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      60.433  62.368  68.395  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      60.102  61.859  68.953  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      60.766  62.878  67.838  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.927  62.683  68.976  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.886  62.399  69.750  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.380  62.714  70.332  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.352  61.801  69.943  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.312      2.177      2.692
+REMARK INTER + INTRA:          -5.312
+REMARK INTER:                  -5.312
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.448  62.544  70.617  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.965  62.280  70.003  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.416  61.679  70.139  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.030  62.617  69.253  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      60.547  62.354  68.639  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      60.901  62.895  68.127  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      60.192  61.811  69.150  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.064  62.090  68.025  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.129  62.427  67.274  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.646  62.164  66.659  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.678  63.028  67.139  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.250      6.296      6.999
+REMARK INTER + INTRA:          -5.250
+REMARK INTER:                  -5.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.486  67.955  69.787  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.056  67.412  70.236  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.254  67.281  71.026  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.428  67.000  69.894  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      64.998  66.458  70.343  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      64.521  66.296  69.690  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      65.474  66.620  70.997  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      64.568  65.916  70.792  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.939  65.504  70.449  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.509  64.961  70.898  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.742  65.635  69.659  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.223      6.231      6.789
+REMARK INTER + INTRA:          -5.223
+REMARK INTER:                  -5.223
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.505  64.825  70.813  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.032  65.283  70.375  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.122  65.151  69.566  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.471  65.876  70.748  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      64.998  66.334  70.310  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      65.200  66.753  70.991  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      64.797  65.917  69.627  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      65.526  66.793  69.872  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.964  67.385  70.245  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.492  67.845  69.807  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.875  67.518  71.054  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.000      3.155      4.027
+REMARK INTER + INTRA:          -5.000
+REMARK INTER:                  -5.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.237  62.948  72.472  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.061  63.170  71.697  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.044  63.968  71.489  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.903  62.592  71.130  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      60.727  62.813  70.355  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      60.645  62.019  70.147  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      60.808  63.607  70.562  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.551  63.034  69.580  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.392  62.456  69.012  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.216  62.677  68.236  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.409  61.658  69.220  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.987      4.408      5.475
+REMARK INTER + INTRA:          -4.987
+REMARK INTER:                  -4.987
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.165  64.594  70.042  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.379  64.361  70.137  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.888  64.284  69.478  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.084  64.206  70.892  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      62.298  63.973  70.987  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      62.410  63.928  71.803  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      62.185  64.018  70.171  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.512  63.741  71.082  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.217  63.585  71.837  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.431  63.352  71.933  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.708  63.662  72.496  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.980     24.931     25.548
+REMARK INTER + INTRA:          -4.980
+REMARK INTER:                  -4.980
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluostigmine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.871  79.959  51.086  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.654  79.936  50.826  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.229  80.390  51.206  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      69.861  79.458  50.186  0.00  0.00    +0.000 OA
+ATOM      5  P   UNL     1      70.644  79.435  49.926  0.00  0.00    +0.000 P 
+ATOM      6  F   UNL     1      70.433  78.898  49.337  0.00  0.00    +0.000 F 
+ATOM      7  O   UNL     1      70.857  79.972  50.515  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      71.426  79.412  49.667  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      71.634  78.934  49.026  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      72.417  78.910  48.766  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      71.059  78.480  48.646  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

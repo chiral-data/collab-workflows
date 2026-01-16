@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.453      0.000      0.000
+REMARK INTER + INTRA:          -9.453
+REMARK INTER:                  -9.453
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.560  61.598  63.463  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.104  61.717  64.140  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.350  61.389  64.192  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.893  61.508  64.870  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.193  61.955  65.495  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.948  62.283  65.444  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.404  62.164  64.765  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.737  62.073  66.172  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.345  62.521  66.503  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.128  61.626  65.841  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.281  62.192  66.849  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.581  62.639  67.475  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.124  62.758  68.153  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.424  63.205  68.778  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.178  63.533  68.726  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.634  63.414  68.048  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.335  62.967  67.423  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.045      0.892      3.600
+REMARK INTER + INTRA:          -9.045
+REMARK INTER:                  -9.045
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.155  63.915  69.648  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.031  63.522  68.933  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.317  63.134  68.794  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.194  62.741  68.078  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.784  62.736  67.503  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.499  63.124  67.642  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.623  63.518  68.358  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.661  62.344  66.788  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.415  62.565  66.536  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.907  62.122  67.040  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.537  61.951  66.073  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.129  61.947  65.498  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.005  61.553  64.782  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.596  61.549  64.207  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.310  61.937  64.346  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.434  62.330  65.062  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.843  62.334  65.637  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.550      2.829      3.943
+REMARK INTER + INTRA:          -8.550
+REMARK INTER:                  -8.550
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.769  62.963  66.867  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.768  62.806  67.677  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.413  62.119  67.964  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.412  61.963  68.775  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.766  62.493  69.297  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.121  63.181  69.011  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.122  63.337  68.200  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.765  62.337  70.107  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.174  63.040  70.244  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.355  61.633  69.971  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.763  62.180  70.917  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.118  62.711  71.440  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.117  62.555  72.251  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.470  63.085  72.774  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.825  63.772  72.487  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.826  63.929  71.676  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.472  63.398  71.154  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.316      5.134      5.888
+REMARK INTER + INTRA:          -8.316
+REMARK INTER:                  -8.316
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.357  66.864  70.059  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.811  66.249  70.129  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.674  65.745  69.491  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.128  65.129  69.560  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.721  65.018  70.269  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.858  65.521  70.908  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.404  66.138  70.838  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      63.176  64.403  70.338  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      63.020  64.629  71.116  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      63.332  64.176  69.560  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.631  63.787  70.408  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.223  63.676  71.117  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.678  63.060  71.187  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.270  62.949  71.895  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.408  63.452  72.533  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.953  64.068  72.463  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      62.361  64.180  71.755  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.124      3.011      5.366
+REMARK INTER + INTRA:          -8.124
+REMARK INTER:                  -8.124
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.959  64.685  72.876  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.666  64.198  72.277  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.191  63.552  72.467  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.898  63.065  71.867  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.080  63.226  71.079  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.555  63.874  70.889  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.849  64.360  71.489  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.787  62.740  70.481  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.166  63.207  69.916  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.407  62.274  71.045  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.494  62.254  69.882  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.676  62.416  69.094  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.383  61.929  68.494  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.565  62.090  67.706  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.040  62.737  67.517  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.333  63.224  68.116  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.151  63.063  68.904  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.006      4.015      5.747
+REMARK INTER + INTRA:          -8.006
+REMARK INTER:                  -8.006
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.215  67.517  71.295  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.406  66.813  70.909  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.496  66.805  70.090  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.687  66.101  69.703  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.788  65.407  70.136  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.698  65.415  70.956  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.507  66.119  71.343  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      59.979  64.703  69.750  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      59.985  64.307  70.473  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.973  65.099  69.026  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.170  64.000  69.363  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.271  63.305  69.797  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.462  62.601  69.410  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.563  61.907  69.844  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.473  61.916  70.663  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.282  62.620  71.050  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      60.181  63.314  70.617  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.946      5.444      6.661
+REMARK INTER + INTRA:          -7.946
+REMARK INTER:                  -7.946
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.986  63.596  72.500  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.593  63.903  72.033  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.785  63.542  71.317  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.392  63.850  70.849  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.806  64.518  71.098  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.614  64.880  71.815  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.007  64.572  72.282  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      63.413  64.825  70.631  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      63.540  65.420  71.189  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      63.285  64.231  70.074  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      64.019  65.133  70.164  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      64.433  65.802  70.414  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.040  66.110  69.946  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.454  66.778  70.195  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.262  67.139  70.911  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.654  66.831  71.379  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      64.241  66.163  71.130  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.901      3.903      5.373
+REMARK INTER + INTRA:          -7.901
+REMARK INTER:                  -7.901
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.942  66.236  71.492  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.488  65.684  71.080  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      63.464  65.704  70.256  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.009  65.151  69.843  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.580  64.580  70.255  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.604  64.560  71.079  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.059  65.113  71.492  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      62.126  64.029  69.842  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.892  63.687  70.556  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.360  64.370  69.128  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.672  63.477  69.430  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.243  62.906  69.842  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.789  62.353  69.429  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.360  61.782  69.841  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.384  61.762  70.665  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.838  62.315  71.078  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      61.267  62.886  70.666  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.682      3.390      4.552
+REMARK INTER + INTRA:          -7.682
+REMARK INTER:                  -7.682
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfapyridine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.059  61.841  68.186  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.500  62.255  68.747  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.513  61.999  69.531  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.953  62.413  70.093  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.380  63.083  69.871  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.367  63.340  69.087  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.926  62.925  68.524  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      61.820  63.496  70.433  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      62.059  64.031  69.852  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.581  62.962  71.014  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.260  63.910  70.995  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.687  64.581  70.772  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.127  64.995  71.334  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.554  65.664  71.112  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.541  65.921  70.329  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      63.100  65.506  69.766  0.00  0.00    +0.000 A 
+ATOM     17  N   UNL     1      62.673  64.837  69.988  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

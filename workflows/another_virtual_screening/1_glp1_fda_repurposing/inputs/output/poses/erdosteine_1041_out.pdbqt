@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.475      0.000      0.000
+REMARK INTER + INTRA:          -7.475
+REMARK INTER:                  -7.475
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.000  63.747  69.762  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.347  63.601  69.028  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.086  63.922  68.851  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.957  63.134  68.472  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      61.304  62.988  67.738  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.913  62.521  67.182  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.260  62.375  66.448  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.999  62.696  66.270  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.870  61.908  65.892  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.217  61.762  65.158  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.894  61.308  64.550  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.426  61.310  63.920  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      62.078  61.765  64.138  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      61.950  62.045  64.903  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.463  62.523  65.338  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.472      1.232      4.024
+REMARK INTER + INTRA:          -7.472
+REMARK INTER:                  -7.472
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.016  61.563  63.834  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.009  61.992  64.539  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.396  62.720  64.583  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.614  61.695  65.199  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      61.606  62.124  65.904  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      61.212  61.827  66.564  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.204  62.256  67.269  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.592  62.983  67.313  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.810  61.959  67.929  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.802  62.388  68.634  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.433  62.163  69.335  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.565  62.754  69.895  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      61.017  63.345  69.539  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      61.163  63.120  68.760  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.595  63.550  68.203  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.742      1.854      2.699
+REMARK INTER + INTRA:          -6.742
+REMARK INTER:                  -6.742
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.181  62.753  72.525  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.362  62.867  71.728  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.061  63.251  71.516  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.847  62.597  71.145  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      61.028  62.712  70.348  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.512  62.442  69.764  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.693  62.556  68.967  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.392  62.941  68.755  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.178  62.286  68.383  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.359  62.401  67.587  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.899  62.163  66.945  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.289  62.388  66.254  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      60.990  62.766  66.468  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      61.034  62.774  67.292  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.644  63.098  67.742  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.732      1.164      1.487
+REMARK INTER + INTRA:          -6.732
+REMARK INTER:                  -6.732
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.982  64.904  70.508  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.422  64.555  69.903  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.242  64.640  69.888  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.042  64.121  69.314  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      60.481  63.772  68.709  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.102  63.338  68.120  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.541  62.989  67.515  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.362  63.074  67.500  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.161  62.555  66.926  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.601  62.206  66.321  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.299  61.758  65.698  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.932  61.519  65.226  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      61.625  61.819  65.557  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      61.421  62.243  66.234  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.944  62.636  66.736  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.559      2.193      4.617
+REMARK INTER + INTRA:          -6.559
+REMARK INTER:                  -6.559
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.877  62.152  65.840  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.001  62.384  66.622  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.406  62.277  67.183  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.720  62.722  66.844  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      60.844  62.954  67.626  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      61.563  63.292  67.847  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.687  63.524  68.629  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.091  63.417  69.190  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.405  63.862  68.850  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.530  64.094  69.633  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.216  64.437  69.934  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.099  64.578  70.738  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      62.340  64.321  70.934  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      61.988  64.022  70.251  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.228  63.706  70.196  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.464      4.500      5.866
+REMARK INTER + INTRA:          -6.464
+REMARK INTER:                  -6.464
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.483  67.797  69.908  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.942  67.267  70.234  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.921  67.150  71.051  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.422  66.854  69.746  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      64.880  66.324  70.072  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      64.360  65.911  69.583  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.818  65.381  69.910  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.797  65.265  70.726  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      63.298  64.968  69.421  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.757  64.439  69.748  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.206  63.989  69.331  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.780  63.538  69.875  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      62.068  63.709  70.628  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      62.672  64.266  70.550  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      63.113  64.592  71.166  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.418      3.455      5.860
+REMARK INTER + INTRA:          -6.418
+REMARK INTER:                  -6.418
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.789  61.997  68.140  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.554  62.493  68.756  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.380  62.176  69.497  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.494  63.306  68.631  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      60.260  63.803  69.247  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      60.200  64.615  69.123  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.965  65.112  69.739  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.791  64.794  70.480  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      59.905  65.924  69.614  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      59.671  66.421  70.230  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.586  67.240  70.188  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.343  67.510  70.928  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      59.277  66.858  71.428  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      59.479  66.184  70.997  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.489  65.410  71.282  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.330      5.001      6.536
+REMARK INTER + INTRA:          -6.330
+REMARK INTER:                  -6.330
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.042  63.503  70.899  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.607  64.007  70.572  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.581  64.189  69.768  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.198  64.330  71.048  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      62.763  64.834  70.722  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      63.353  65.157  71.198  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.919  65.661  70.871  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.893  65.843  70.067  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      64.509  65.984  71.348  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      65.074  66.488  71.021  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.694  66.850  71.426  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.121  67.305  70.886  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      65.765  67.224  70.147  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      65.118  66.719  70.229  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.605  66.486  69.627  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.327      4.484      5.383
+REMARK INTER + INTRA:          -6.327
+REMARK INTER:                  -6.327
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = erdosteine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.108  61.537  70.743  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.692  62.008  70.398  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.856  61.937  69.592  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.112  62.548  70.858  0.00  0.00    +0.000 C 
+ATOM      5  S   UNL     1      61.696  63.018  70.513  0.00  0.00    +0.000 S 
+ATOM      6  C   UNL     1      62.116  63.558  70.973  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.700  64.028  70.629  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.864  63.958  69.823  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      63.120  64.568  71.089  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.704  65.039  70.744  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.167  65.600  71.132  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.676  65.938  70.578  0.00  0.00    +0.000 C 
+ATOM     13  S   UNL     1      64.528  65.585  69.848  0.00  0.00    +0.000 S 
+ATOM     14  C   UNL     1      63.927  65.029  69.950  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      63.606  64.549  69.361  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

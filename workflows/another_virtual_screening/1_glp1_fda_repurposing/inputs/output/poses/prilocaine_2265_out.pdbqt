@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.144      0.000      0.000
+REMARK INTER + INTRA:          -9.144
+REMARK INTER:                  -9.144
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.505  63.168  70.409  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.945  63.161  69.712  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.654  62.774  69.044  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.094  62.768  68.346  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.802  62.380  67.679  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.072  62.000  67.709  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.243  62.374  66.980  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.974  62.755  66.950  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.951  61.987  66.313  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.392  61.980  65.615  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.100  61.593  64.948  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.370  61.213  64.978  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.541  61.587  64.249  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.272  61.967  64.219  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.563  62.354  64.887  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.123  62.361  65.585  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.572      0.931      4.030
+REMARK INTER + INTRA:          -8.572
+REMARK INTER:                  -8.572
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.630  61.632  63.481  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.387  62.159  64.067  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.142  61.874  64.801  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.898  62.402  65.388  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.653  62.117  66.122  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.651  61.306  66.270  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.410  62.645  66.709  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.412  63.456  66.560  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.165  62.360  67.443  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.921  62.887  68.030  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.676  62.602  68.764  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.674  61.792  68.912  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.433  63.130  69.350  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.435  63.942  69.202  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.681  64.225  68.467  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.924  63.699  67.881  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.475      1.040      4.581
+REMARK INTER + INTRA:          -8.475
+REMARK INTER:                  -8.475
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.817  61.888  65.010  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.624  61.672  65.783  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.466  62.254  66.345  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.273  62.038  67.119  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.114  62.620  67.681  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.149  63.416  67.472  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.921  62.404  68.454  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.887  61.607  68.664  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.763  62.986  69.017  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.569  62.770  69.790  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.411  63.352  70.353  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.445  64.148  70.144  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.218  63.136  71.126  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.183  62.338  71.335  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.342  61.757  70.772  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.535  61.972  70.000  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.460      2.162      5.209
+REMARK INTER + INTRA:          -8.460
+REMARK INTER:                  -8.460
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.563  62.238  66.388  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.647  62.652  67.096  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.014  62.293  67.742  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.098  62.707  68.451  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.465  62.348  69.096  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.747  61.576  69.034  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.550  62.763  69.806  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.267  63.535  69.868  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.916  62.403  70.451  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.001  62.818  71.160  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.368  62.458  71.806  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.650  61.687  71.744  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.452  62.873  72.515  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.169  63.645  72.578  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.803  64.004  71.931  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.718  63.590  71.223  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.227      5.409      6.595
+REMARK INTER + INTRA:          -8.227
+REMARK INTER:                  -8.227
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.804  63.462  72.400  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.378  64.051  72.467  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.864  64.227  71.825  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.439  64.816  71.892  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.926  64.991  71.250  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.839  64.579  70.541  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.500  65.581  71.316  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.587  65.994  72.025  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      63.987  65.756  70.674  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.561  66.346  70.741  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.048  66.521  70.099  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.961  66.109  69.391  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.622  67.111  70.166  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.709  67.524  70.875  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.221  67.347  71.516  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.648  66.759  71.450  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.094      3.989      5.405
+REMARK INTER + INTRA:          -8.094
+REMARK INTER:                  -8.094
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.026  66.593  69.823  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.487  65.996  69.641  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.038  65.651  70.240  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.498  65.053  70.059  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.049  64.708  70.658  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.138  64.960  71.438  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.509  64.110  70.476  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.420  63.858  69.696  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      62.060  63.765  71.076  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.520  63.167  70.894  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.070  62.822  71.493  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.160  63.074  72.273  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.531  62.224  71.311  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.442  61.972  70.531  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.892  62.318  69.932  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.431  62.915  70.113  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.051      5.064      6.761
+REMARK INTER + INTRA:          -8.051
+REMARK INTER:                  -8.051
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.369  67.646  69.867  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.756  67.431  70.375  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.329  66.739  70.235  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.715  66.523  70.743  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.288  65.832  70.602  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.473  65.357  69.955  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.674  65.616  71.111  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.488  66.092  71.759  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      63.247  64.925  70.970  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      62.633  64.709  71.479  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.206  64.018  71.338  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.391  63.543  70.691  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.592  63.802  71.846  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.406  64.277  72.494  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.835  64.969  72.634  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.447  65.184  72.127  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.931      2.950      4.386
+REMARK INTER + INTRA:          -7.931
+REMARK INTER:                  -7.931
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.291  67.554  71.514  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.432  67.012  70.909  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.588  66.223  71.091  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.730  65.680  70.486  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.886  64.891  70.669  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.900  64.644  71.455  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.027  64.348  70.063  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.013  64.594  69.276  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      60.183  63.559  70.246  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.325  63.016  69.640  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.480  62.226  69.823  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.495  61.980  70.609  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.622  61.683  69.217  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.607  61.930  68.430  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.451  62.720  68.249  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.310  63.262  68.853  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.511      4.285      5.675
+REMARK INTER + INTRA:          -7.511
+REMARK INTER:                  -7.511
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = prilocaine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.035  67.772  72.691  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.747  67.187  72.186  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.834  66.392  72.386  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.547  65.806  71.881  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.633  65.010  72.081  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.007  64.800  72.785  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.346  64.424  71.575  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.972  64.634  70.870  0.00  0.00    +0.000 OA
+ATOM      9  N   UNL     1      61.433  63.629  71.775  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.145  63.043  71.270  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.232  62.247  71.470  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.605  62.037  72.174  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.944  61.661  70.964  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.570  61.872  70.259  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.484  62.668  70.060  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.771  63.253  70.565  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

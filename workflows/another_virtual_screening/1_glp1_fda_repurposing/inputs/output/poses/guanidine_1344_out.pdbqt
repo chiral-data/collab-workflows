@@ -1,0 +1,153 @@
+MODEL 1
+REMARK VINA RESULT:    -2.442      0.000      0.000
+REMARK INTER + INTRA:          -2.442
+REMARK INTER:                  -2.442
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.414  61.902  63.996  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.288  62.004  64.806  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.443  61.384  65.329  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.009  62.726  65.092  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -2.431     16.726     17.104
+REMARK INTER + INTRA:          -2.431
+REMARK INTER:                  -2.431
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      67.000  78.130  59.739  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      66.227  77.840  59.732  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      66.046  77.138  60.127  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      65.635  78.253  59.331  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -1.996     16.158     16.207
+REMARK INTER + INTRA:          -1.996
+REMARK INTER:                  -1.996
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.936  75.809  72.444  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      58.168  75.824  72.141  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      57.548  75.489  72.570  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      58.021  76.175  71.409  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -1.978     10.942     11.283
+REMARK INTER + INTRA:          -1.978
+REMARK INTER:                  -1.978
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.687  62.071  54.206  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.340  61.451  53.786  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.586  61.286  53.015  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.748  60.996  54.137  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -1.914      3.550      3.891
+REMARK INTER + INTRA:          -1.914
+REMARK INTER:                  -1.914
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.846  62.345  67.538  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.464  62.298  68.084  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.183  62.671  67.926  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.362  61.877  68.786  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -1.788     11.245     11.660
+REMARK INTER + INTRA:          -1.788
+REMARK INTER:                  -1.788
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.692  68.001  55.489  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.218  67.932  54.857  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.799  67.345  54.866  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.164  68.448  54.216  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -1.743     18.769     19.156
+REMARK INTER + INTRA:          -1.743
+REMARK INTER:                  -1.743
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.785  79.670  58.071  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.438  79.953  58.490  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.991  79.423  58.800  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      64.539  80.764  58.599  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -1.640     19.886     20.357
+REMARK INTER + INTRA:          -1.640
+REMARK INTER:                  -1.640
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.830  80.262  71.356  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.397  80.953  71.487  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.552  81.629  71.038  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      64.810  80.968  72.067  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -1.555     15.801     15.900
+REMARK INTER + INTRA:          -1.555
+REMARK INTER:                  -1.555
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      77.375  57.503  65.480  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      77.550  57.676  64.692  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      77.376  57.128  64.100  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      77.898  58.398  64.496  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

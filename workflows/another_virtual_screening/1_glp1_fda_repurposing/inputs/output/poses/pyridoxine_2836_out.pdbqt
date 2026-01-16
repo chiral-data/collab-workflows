@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.861      0.000      0.000
+REMARK INTER + INTRA:          -6.861
+REMARK INTER:                  -6.861
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.209  62.465  66.959  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.749  62.363  66.345  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.543  61.916  65.683  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      59.796  61.571  65.637  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.085  61.814  65.069  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.878  61.367  64.408  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.420  61.265  63.793  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.832  62.159  65.116  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.373  62.057  64.501  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.167  61.610  63.840  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.039  62.607  65.778  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.498  62.709  66.392  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.815      0.827      2.253
+REMARK INTER + INTRA:          -6.815
+REMARK INTER:                  -6.815
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.467  61.624  63.588  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.101  61.854  64.289  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.334  61.600  64.457  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.935  61.115  63.922  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.967  61.830  65.159  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.201  61.575  65.327  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.833  61.806  66.029  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.366  62.314  65.694  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.999  62.545  66.397  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.233  62.290  66.564  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.133  62.569  65.527  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.500  62.339  64.825  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.018      1.433      2.386
+REMARK INTER + INTRA:          -6.018
+REMARK INTER:                  -6.018
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.618  63.490  68.098  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.031  63.121  67.653  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.222  62.753  66.941  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      62.003  62.755  66.673  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.634  62.384  66.495  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.826  62.016  65.783  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.238  61.646  65.337  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.855  62.382  66.763  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.266  62.012  66.317  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.458  61.645  65.605  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.662  62.750  67.476  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.250  63.120  67.921  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.637      5.881      6.639
+REMARK INTER + INTRA:          -5.637
+REMARK INTER:                  -5.637
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.493  64.620  72.754  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.758  63.894  72.467  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.387  63.546  71.818  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      59.750  63.926  71.456  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.652  62.820  71.531  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.281  62.472  70.882  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.547  61.745  70.595  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.289  62.441  71.894  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.555  61.714  71.607  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.183  61.367  70.958  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.661  62.788  72.543  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.395  63.515  72.830  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.634      3.376      4.219
+REMARK INTER + INTRA:          -5.634
+REMARK INTER:                  -5.634
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.517  62.744  71.368  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.711  62.870  70.577  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.531  62.298  70.011  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.155  61.599  70.238  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.725  62.424  69.219  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.544  61.851  68.654  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.739  61.978  67.862  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.101  63.122  68.994  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.296  63.248  68.201  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.115  62.676  67.636  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.282  63.696  69.559  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.087  63.570  70.350  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.624      7.685      8.518
+REMARK INTER + INTRA:          -5.624
+REMARK INTER:                  -5.624
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.472  67.589  70.034  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.771  67.193  70.208  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.494  67.165  70.984  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      65.920  67.534  71.586  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.792  66.768  71.159  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.516  66.741  71.935  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.813  66.343  72.110  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.366  66.400  70.556  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.663  66.003  70.731  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.388  65.975  71.507  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.642  66.427  69.779  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      65.344  66.824  69.605  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.572     24.936     25.489
+REMARK INTER + INTRA:          -5.572
+REMARK INTER:                  -5.572
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.869  79.993  50.962  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.249  79.603  50.345  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      70.967  79.888  50.056  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      71.304  80.565  50.386  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.348  79.497  49.437  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      72.066  79.782  49.149  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      72.447  79.391  48.530  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      71.011  78.820  49.108  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.393  78.429  48.489  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      72.111  78.714  48.201  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.293  78.534  49.396  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      69.912  78.925  50.015  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.570      5.246      6.619
+REMARK INTER + INTRA:          -5.570
+REMARK INTER:                  -5.570
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.498  61.985  69.675  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.776  62.180  70.426  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.586  62.910  70.760  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.117  63.444  70.342  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.865  63.106  71.511  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.674  63.835  71.845  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.954  64.031  72.597  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.334  62.571  71.929  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.613  62.767  72.681  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.423  63.497  73.014  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.525  61.841  71.595  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.246  61.646  70.844  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.503      7.611      8.232
+REMARK INTER + INTRA:          -5.503
+REMARK INTER:                  -5.503
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyridoxine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.149  65.641  71.078  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.804  66.037  70.772  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.320  66.435  71.278  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      64.179  66.437  72.091  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.975  66.831  70.972  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.490  67.229  71.478  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      66.147  67.625  71.171  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.115  66.829  70.159  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.772  67.226  69.852  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      66.286  67.623  70.358  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.600  66.431  69.652  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      63.944  66.035  69.959  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,216 @@
+MODEL 1
+REMARK VINA RESULT:    -6.088      0.000      0.000
+REMARK INTER + INTRA:          -6.088
+REMARK INTER:                  -6.088
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.739  61.632  63.182  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      62.030  61.373  63.514  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.798  61.646  64.257  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.275  62.178  64.669  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      62.043  62.450  65.412  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.334  62.191  65.743  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.856  61.659  65.332  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.088  61.386  64.589  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.102  62.464  66.488  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.579  62.996  66.899  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.392  62.204  66.819  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.084      1.614      2.889
+REMARK INTER + INTRA:          -6.084
+REMARK INTER:                  -6.084
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.963  62.677  67.160  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      61.632  62.730  66.680  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.636  62.371  65.938  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.972  61.959  65.675  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.977  61.600  64.932  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.645  61.653  64.453  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.310  62.065  64.715  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.306  62.424  65.458  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.650  61.294  63.709  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.986  60.882  63.446  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      62.319  61.347  63.230  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.839      1.386      2.922
+REMARK INTER + INTRA:          -5.839
+REMARK INTER:                  -5.839
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.094  63.104  67.901  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      59.706  62.673  67.314  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.123  62.404  66.656  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.928  62.565  66.584  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.346  62.296  65.925  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.957  61.866  65.339  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.151  61.704  65.410  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.734  61.973  66.069  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.375  61.596  64.679  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.181  61.757  64.608  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.986  61.165  64.093  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.307      4.677      5.645
+REMARK INTER + INTRA:          -5.307
+REMARK INTER:                  -5.307
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.499  62.018  68.442  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.346  61.685  69.181  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.600  62.067  69.866  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.008  62.781  69.813  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.263  63.163  70.498  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.110  62.831  71.237  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.701  62.115  71.291  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.447  61.734  70.606  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.365  63.213  71.923  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.773  63.927  71.869  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      61.211  62.879  72.662  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.196      1.790      3.871
+REMARK INTER + INTRA:          -5.196
+REMARK INTER:                  -5.196
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.662  63.746  69.938  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      61.094  63.224  69.646  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.081  63.034  68.845  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.637  63.365  68.333  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.624  63.175  67.530  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.056  62.653  67.239  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.500  62.321  67.750  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.513  62.511  68.553  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.044  62.462  66.436  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.599  62.794  65.925  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.475  61.940  66.145  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.181      3.628      5.609
+REMARK INTER + INTRA:          -5.181
+REMARK INTER:                  -5.181
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.984  63.223  72.237  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.688  62.557  71.851  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.687  62.524  71.028  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.981  63.157  70.589  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.980  63.123  69.764  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.684  62.457  69.379  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.389  61.824  69.818  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.390  61.857  70.642  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.683  62.424  68.554  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.978  63.057  68.116  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.386  61.757  68.169  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.179      5.969      7.381
+REMARK INTER + INTRA:          -5.179
+REMARK INTER:                  -5.179
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.615  65.158  72.657  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.265  64.692  72.862  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.435  64.009  72.433  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      59.957  63.791  71.797  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.127  63.108  71.368  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.776  62.643  71.574  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.255  62.860  72.209  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.085  63.544  72.639  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.947  61.959  71.144  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.468  61.741  70.509  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      61.596  61.493  71.350  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.168      7.228      8.600
+REMARK INTER + INTRA:          -5.168
+REMARK INTER:                  -5.168
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      67.159  66.826  72.457  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      66.994  67.167  71.724  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      66.332  66.926  71.296  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      65.834  66.343  71.600  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      65.171  66.102  71.172  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.007  66.443  70.440  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.505  67.026  70.135  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.168  67.267  70.563  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.344  66.201  70.012  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      63.846  65.619  70.316  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      64.180  66.543  69.278  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.084      3.269      4.234
+REMARK INTER + INTRA:          -5.084
+REMARK INTER:                  -5.084
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydracarbazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.881  63.256  66.917  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.737  62.563  67.339  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.651  62.588  68.158  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.710  63.308  68.557  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.625  63.334  69.377  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.481  62.640  69.799  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.422  61.919  69.401  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.507  61.894  68.581  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.395  62.666  70.620  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.454  63.385  71.018  0.00  0.00    +0.000 NA
+ATOM     11  O   UNL     1      60.251  61.971  71.041  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.544      0.000      0.000
+REMARK INTER + INTRA:          -7.544
+REMARK INTER:                  -7.544
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.523  62.035  64.667  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.045  62.271  65.298  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.272  61.991  65.356  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.508  61.612  64.662  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.271  61.727  64.370  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.303  62.466  66.029  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.994  62.877  66.211  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.643  62.530  66.520  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.952  62.119  66.338  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.920  61.643  65.664  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.580  61.579  65.173  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.548  61.103  64.500  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.413      0.848      2.432
+REMARK INTER + INTRA:          -7.413
+REMARK INTER:                  -7.413
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.619  61.891  66.054  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.168  61.682  65.474  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.923  62.011  65.483  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.600  62.380  66.146  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.822  62.218  66.369  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.986  61.529  64.817  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.342  61.072  64.578  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.691  61.504  64.389  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.334  61.961  64.629  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.273  62.444  65.295  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.567  62.469  65.722  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.505  62.952  66.389  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.744      7.445      8.223
+REMARK INTER + INTRA:          -6.744
+REMARK INTER:                  -6.744
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.407  67.730  70.291  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.007  67.265  70.844  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.372  66.797  70.605  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.575  67.140  69.883  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.205  67.672  69.841  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.389  66.616  71.410  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.955  66.966  71.898  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      64.842  66.086  71.726  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.277  65.736  71.237  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.259  65.917  70.432  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.807  66.447  70.116  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      64.789  66.628  69.310  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.513      5.437      6.388
+REMARK INTER + INTRA:          -6.513
+REMARK INTER:                  -6.513
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.432  63.186  72.800  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.057  63.202  72.065  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.087  62.542  71.573  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.526  62.262  72.213  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.652  62.746  72.869  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.639  63.050  71.103  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.457  63.807  71.374  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.372  62.801  70.363  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.554  62.044  70.093  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.003  61.535  70.562  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.270  61.784  71.302  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.719  61.274  71.771  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.480      6.747      7.115
+REMARK INTER + INTRA:          -6.480
+REMARK INTER:                  -6.480
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.737  62.914  72.655  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.337  63.636  72.634  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.633  63.705  72.212  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.807  62.912  72.068  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.488  62.575  72.390  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.702  64.474  72.501  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.346  64.680  72.973  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.127  65.038  72.319  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.483  64.832  71.847  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.413  64.062  71.557  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.988  63.499  71.739  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.918  62.729  71.449  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.375      3.738      4.867
+REMARK INTER + INTRA:          -6.375
+REMARK INTER:                  -6.375
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.477  61.629  70.615  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.433  61.900  69.836  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.420  62.710  69.682  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.466  62.723  70.505  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.493  62.014  70.928  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.378  62.417  68.912  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.376  61.602  68.781  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      60.340  62.938  68.274  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.343  63.752  68.405  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.384  64.046  69.175  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.423  63.525  69.813  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.464  63.819  70.584  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.299     24.783     25.449
+REMARK INTER + INTRA:          -6.299
+REMARK INTER:                  -6.299
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.380  78.529  48.402  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.380  79.222  48.850  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.828  79.322  49.454  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.608  78.575  49.184  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.018  78.226  48.558  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.238  80.035  49.515  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      71.866  80.194  49.005  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      71.020  80.589  50.086  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      70.392  80.430  50.596  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      69.981  79.717  50.536  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.199  79.163  49.965  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      69.788  78.450  49.904  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.286     15.780     16.589
+REMARK INTER + INTRA:          -6.286
+REMARK INTER:                  -6.286
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.489  75.178  72.193  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.089  75.894  72.089  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.417  76.593  72.375  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.001  76.059  72.607  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.916  75.256  72.435  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      57.720  76.886  72.045  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      57.190  76.371  71.679  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      57.552  77.693  72.082  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      58.082  78.208  72.448  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      58.780  77.916  72.778  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      58.947  77.109  72.742  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.645  76.817  73.073  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.265     25.110     25.920
+REMARK INTER + INTRA:          -6.265
+REMARK INTER:                  -6.265
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrithyldione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.115  78.860  49.613  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.725  78.774  49.064  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.433  79.184  49.166  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.020  79.445  49.832  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.253  79.174  49.973  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.600  78.782  48.466  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      71.035  78.282  48.133  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      72.333  78.880  48.099  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      72.897  79.381  48.432  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      72.730  79.783  49.133  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      71.998  79.685  49.500  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      71.830  80.088  50.201  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

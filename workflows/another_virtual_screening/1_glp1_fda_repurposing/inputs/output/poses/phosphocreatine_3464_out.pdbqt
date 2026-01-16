@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.508      0.000      0.000
+REMARK INTER + INTRA:          -6.508
+REMARK INTER:                  -6.508
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.867  63.146  66.785  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.115  62.362  66.845  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.924  61.919  67.516  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.485  62.262  68.125  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.295  61.820  68.794  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      60.238  63.046  68.063  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.553  62.020  66.237  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.802  61.235  66.297  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      61.745  62.462  65.567  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      62.183  62.119  64.958  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      62.622  61.777  64.349  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.150  62.828  64.536  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.216  61.411  65.380  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.442      1.526      3.297
+REMARK INTER + INTRA:          -6.442
+REMARK INTER:                  -6.442
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.652  61.525  65.018  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.353  61.910  65.222  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.978  61.939  64.683  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.902  61.584  63.943  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.526  61.613  63.405  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      61.200  61.199  63.740  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.428  62.265  65.961  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.130  62.650  66.165  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      60.804  62.235  66.500  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      60.880  62.591  67.240  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      60.956  62.946  67.981  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.115  62.352  67.434  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.646  62.830  67.047  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.771      2.157      3.341
+REMARK INTER + INTRA:          -5.771
+REMARK INTER:                  -5.771
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.294  62.740  66.882  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.665  62.907  67.389  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.899  62.675  67.186  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.763  62.277  66.476  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      58.998  62.046  66.273  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      60.393  62.111  65.970  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.801  63.304  68.098  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.171  63.471  68.605  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      61.566  63.535  68.302  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      61.702  63.933  69.011  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      61.838  64.331  69.721  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      62.508  63.971  68.836  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.897  63.896  69.187  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.700      6.142      6.755
+REMARK INTER + INTRA:          -5.700
+REMARK INTER:                  -5.700
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.744  66.603  71.175  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.930  66.326  70.420  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      65.507  66.709  69.971  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.899  67.367  70.278  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      66.476  67.749  69.830  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      65.713  67.643  71.033  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.538  65.669  70.114  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      64.724  65.393  69.358  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      63.961  65.286  70.561  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      63.569  64.628  70.255  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      63.178  63.970  69.948  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      63.129  64.566  70.950  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      64.010  64.689  69.560  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.664      2.065      2.857
+REMARK INTER + INTRA:          -5.664
+REMARK INTER:                  -5.664
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.495  61.632  69.363  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.680  62.436  69.375  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.632  62.858  70.083  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.400  62.477  70.777  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.353  62.900  71.483  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      60.216  61.673  70.763  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.912  62.817  68.682  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.097  63.621  68.695  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      60.960  62.395  67.975  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      61.192  62.776  67.282  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      61.424  63.157  66.588  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.113  62.068  66.866  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.271  63.484  67.697  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.545      5.032      5.893
+REMARK INTER + INTRA:          -5.545
+REMARK INTER:                  -5.545
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.518  66.126  71.019  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.690  65.637  70.377  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.671  65.941  69.610  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.481  66.734  69.485  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      59.463  67.038  68.719  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      59.309  67.223  70.128  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.880  64.845  70.502  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.052  64.355  69.860  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      59.898  64.540  71.268  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      60.089  63.747  71.393  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      60.279  62.954  71.518  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      60.000  63.854  72.207  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.177  63.640  70.580  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.538      6.179      6.683
+REMARK INTER + INTRA:          -5.538
+REMARK INTER:                  -5.538
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.355  65.338  69.449  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.284  65.450  70.263  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.775  64.970  70.702  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.339  64.379  70.327  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.831  63.900  70.765  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      63.411  64.268  69.512  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.720  66.040  70.638  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      64.648  66.151  71.453  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      65.228  66.519  70.200  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      65.665  67.110  70.576  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      66.101  67.701  70.951  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      65.999  67.323  69.852  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      65.330  66.898  71.299  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.526      3.720      5.337
+REMARK INTER + INTRA:          -5.526
+REMARK INTER:                  -5.526
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.537  61.879  70.507  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.800  62.629  70.285  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.763  62.861  69.494  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.464  62.343  68.925  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.427  62.576  68.135  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      60.202  61.593  69.148  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.099  63.146  70.853  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.361  63.896  70.631  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      61.135  62.914  71.644  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      61.435  63.432  72.212  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      61.734  63.950  72.781  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      61.304  62.865  72.797  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.565  63.999  71.627  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.424     12.719     13.654
+REMARK INTER + INTRA:          -5.424
+REMARK INTER:                  -5.424
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phosphocreatine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.503  59.927  54.111  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.884  60.080  53.396  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.886  59.510  52.799  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.507  58.787  52.919  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.508  58.217  52.323  0.00  0.00    +0.000 OA
+ATOM      6  O   UNL     1      63.126  58.635  53.635  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.263  60.802  53.277  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      64.644  60.955  52.560  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      64.262  61.373  53.872  0.00  0.00    +0.000 NA
+ATOM     10  P   UNL     1      64.641  62.096  53.753  0.00  0.00    +0.000 P 
+ATOM     11  O   UNL     1      65.021  62.819  53.633  0.00  0.00    +0.000 OA
+ATOM     12  O   UNL     1      64.420  62.337  54.510  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      64.862  61.855  52.995  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

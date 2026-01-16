@@ -1,0 +1,279 @@
+MODEL 1
+REMARK VINA RESULT:    -9.478      0.000      0.000
+REMARK INTER + INTRA:          -9.478
+REMARK INTER:                  -9.478
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.712  60.759  62.779  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.724  61.174  63.492  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.413  61.557  63.734  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.426  61.972  64.448  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.750  62.002  64.919  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.060  61.618  64.678  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.048  61.203  63.964  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      61.762  62.417  65.632  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      60.974  62.212  65.765  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.551  62.621  65.500  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.775  62.831  66.346  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.098  62.861  66.817  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.111  63.275  67.531  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.435  63.306  68.002  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.747  62.922  67.761  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      59.734  62.507  67.046  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      59.045  62.123  66.805  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      60.410  62.477  66.575  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.809      1.484      3.963
+REMARK INTER + INTRA:          -8.809
+REMARK INTER:                  -8.809
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.354  64.156  69.416  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.107  63.717  68.763  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.337  63.425  68.730  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.089  62.986  68.076  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.612  62.841  67.455  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.383  63.133  67.487  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.631  63.572  68.142  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.365  62.403  66.801  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.112  62.488  66.462  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.618  62.318  67.141  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.117  61.964  66.148  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.641  61.819  65.527  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.394  61.381  64.872  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.917  61.235  64.252  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.687  61.528  64.284  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.934  61.967  64.939  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      62.705  62.259  64.971  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      61.411  62.112  65.559  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.448      5.943      7.391
+REMARK INTER + INTRA:          -8.448
+REMARK INTER:                  -8.448
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.503  67.858  69.839  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.903  67.431  70.211  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.708  67.593  70.995  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.107  67.165  71.368  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.704  66.577  70.956  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.899  66.414  70.171  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.499  66.842  69.798  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      64.104  66.150  71.328  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      63.983  65.716  70.637  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      64.224  66.584  72.020  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.504  65.723  71.701  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.100  65.134  71.287  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.500  64.706  71.660  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.096  64.118  71.248  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      62.291  63.956  70.464  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.892  64.383  70.091  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      63.087  64.221  69.306  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      63.295  64.972  70.503  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.246      2.618      3.552
+REMARK INTER + INTRA:          -8.246
+REMARK INTER:                  -8.246
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.583  62.006  66.103  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.046  62.331  66.703  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.703  62.792  66.513  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.167  63.118  67.113  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.973  62.982  67.903  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.315  62.521  68.094  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.851  62.195  67.493  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      61.436  63.308  68.503  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      60.944  62.963  69.069  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.927  63.652  67.937  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.899  63.633  69.103  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.705  63.497  69.893  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.169  63.823  70.494  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.975  63.687  71.284  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.318  63.227  71.474  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.854  62.901  70.873  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      60.197  62.440  71.064  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      61.048  63.037  70.084  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.226      3.604      4.864
+REMARK INTER + INTRA:          -8.226
+REMARK INTER:                  -8.226
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.866  62.845  66.864  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.833  62.732  67.680  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.440  62.076  67.989  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.407  61.963  68.807  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.767  62.505  69.313  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.160  63.161  69.004  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.193  63.275  68.187  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.734  62.391  70.130  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.168  63.084  70.243  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.299  61.699  70.016  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.701  62.278  70.946  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.061  62.821  71.453  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.028  62.707  72.270  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.387  63.250  72.776  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.779  63.905  72.467  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.812  64.019  71.649  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      62.205  64.676  71.340  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      61.453  63.477  71.143  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.170      5.780      6.663
+REMARK INTER + INTRA:          -8.170
+REMARK INTER:                  -8.170
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.552  67.203  70.356  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.032  66.563  70.338  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      65.025  66.056  69.688  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.504  65.415  69.670  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.992  65.282  70.302  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.999  65.789  70.953  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.520  66.430  70.972  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      63.472  64.642  70.284  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      63.181  64.858  71.025  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      63.764  64.427  69.543  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.952  64.002  70.266  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.440  63.869  70.899  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.919  63.228  70.881  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.407  63.095  71.513  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.415  63.601  72.163  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.936  64.242  72.182  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      61.943  64.749  72.833  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      62.448  64.376  71.549  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.118      6.293      7.102
+REMARK INTER + INTRA:          -8.118
+REMARK INTER:                  -8.118
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.641  62.378  72.901  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.263  62.956  72.449  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.878  62.746  71.751  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.500  63.325  71.298  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.507  64.111  71.545  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.891  64.321  72.244  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.270  63.743  72.697  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.129  64.689  71.094  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      60.355  65.264  71.640  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.902  64.113  70.547  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.751  65.266  70.642  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.758  66.053  70.890  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.379  66.632  70.437  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.386  67.418  70.685  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.771  67.627  71.383  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.149  67.049  71.835  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      60.534  67.259  72.534  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      60.142  66.263  71.588  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.079      3.679      6.032
+REMARK INTER + INTRA:          -8.079
+REMARK INTER:                  -8.079
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.051  65.613  72.677  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.299  65.373  71.928  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      59.398  65.930  71.329  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.647  65.690  70.578  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.796  64.893  70.430  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.698  64.335  71.029  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.449  64.575  71.779  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      60.045  64.653  69.680  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      60.074  63.871  69.941  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.015  65.435  69.420  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.293  64.413  68.931  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.443  63.615  68.783  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.692  63.375  68.033  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.842  62.578  67.884  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.743  62.021  68.483  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.494  62.261  69.233  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      60.396  61.703  69.833  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      60.345  63.058  69.382  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.014      3.144      5.348
+REMARK INTER + INTRA:          -8.014
+REMARK INTER:                  -8.014
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = sulfachloropyrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.068  64.421  72.643  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.070  64.314  71.825  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.535  64.798  71.348  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.538  64.691  70.529  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.075  64.100  70.189  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.609  63.614  70.667  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.606  63.721  71.486  0.00  0.00    +0.000 A 
+ATOM      8  S   UNL     1      62.077  63.993  69.371  0.00  0.00    +0.000 S 
+ATOM      9  O   UNL     1      61.540  63.371  69.451  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.613  64.614  69.291  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.079  63.886  68.553  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.615  63.293  68.214  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.618  63.186  67.395  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.155  62.595  67.055  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.689  62.110  67.533  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.687  62.217  68.352  0.00  0.00    +0.000 A 
+ATOM     17 CL   UNL     1      60.221  61.732  68.830  0.00  0.00    +0.000 Cl
+ATOM     18  N   UNL     1      61.150  62.809  68.692  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

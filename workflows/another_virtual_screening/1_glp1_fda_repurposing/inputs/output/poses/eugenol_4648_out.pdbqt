@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.443      0.000      0.000
+REMARK INTER + INTRA:          -7.443
+REMARK INTER:                  -7.443
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.061  63.170  67.873  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.610  63.101  67.260  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.417  62.678  66.580  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.966  62.609  65.967  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.773  62.185  65.286  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.321  62.116  64.675  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.128  61.692  63.993  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.678  61.623  63.381  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.032  61.830  65.218  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.482  61.899  65.829  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.675  62.323  66.510  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.126  62.392  67.123  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.199      1.645      3.202
+REMARK INTER + INTRA:          -7.199
+REMARK INTER:                  -7.199
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.192  60.874  63.252  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.846  60.991  63.992  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.239  61.432  64.566  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.893  61.550  65.305  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.287  61.992  65.880  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.941  62.109  66.619  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.335  62.552  67.194  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.988  62.669  67.934  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.027  62.316  65.716  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.375  62.198  64.976  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.980  61.757  64.401  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.327  61.639  63.661  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.721      2.904      5.242
+REMARK INTER + INTRA:          -6.721
+REMARK INTER:                  -6.721
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.713  62.788  67.952  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.019  63.113  68.646  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.913  62.725  69.365  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.219  63.050  70.059  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.113  62.662  70.779  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.418  62.987  71.472  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.312  62.598  72.192  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.618  62.925  72.886  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.701  61.948  70.805  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.395  61.621  70.112  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.501  62.010  69.392  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.195  61.684  68.697  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.625      5.423      6.992
+REMARK INTER + INTRA:          -6.625
+REMARK INTER:                  -6.625
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.196  64.196  70.169  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.755  64.669  69.788  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      64.104  65.299  70.188  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.663  65.771  69.807  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      65.013  66.402  70.208  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.571  66.874  69.827  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.921  67.506  70.228  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.480  67.977  69.846  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.803  66.561  70.989  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.244  66.089  71.371  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.894  65.458  70.970  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      63.335  64.986  71.352  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.567      1.725      4.073
+REMARK INTER + INTRA:          -6.567
+REMARK INTER:                  -6.567
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.462  62.351  66.150  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.309  61.947  66.854  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.513  62.287  67.576  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.360  61.884  68.280  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.564  62.225  69.003  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.411  61.821  69.706  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.615  62.162  70.430  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.462  61.758  71.133  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.920  62.968  69.023  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.073  63.372  68.320  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.869  63.031  67.597  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.022  63.435  66.893  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.472      6.039      6.916
+REMARK INTER + INTRA:          -6.472
+REMARK INTER:                  -6.472
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.777  65.582  72.382  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      58.974  64.873  72.008  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      59.683  64.495  72.190  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.881  63.786  71.817  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.591  63.407  71.998  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.787  62.699  71.625  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.498  62.320  71.807  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.694  61.611  71.433  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.103  63.737  72.553  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.907  64.446  72.927  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.197  64.825  72.745  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.000  65.534  73.119  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.295     24.491     25.287
+REMARK INTER + INTRA:          -6.295
+REMARK INTER:                  -6.295
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.528  79.069  48.595  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      72.149  79.564  49.135  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      71.401  79.367  49.420  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      71.022  79.862  49.961  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      70.273  79.664  50.246  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      69.894  80.159  50.786  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      69.145  79.961  51.071  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      68.766  80.457  51.612  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      69.904  78.973  49.991  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      70.283  78.477  49.450  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.031  78.675  49.165  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      71.411  78.179  48.624  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.268      2.228      3.338
+REMARK INTER + INTRA:          -6.268
+REMARK INTER:                  -6.268
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.487  61.972  70.906  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.325  61.647  70.165  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.387  62.112  69.488  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.226  61.787  68.747  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.287  62.253  68.069  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.126  61.927  67.329  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.188  62.394  66.650  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.026  62.067  65.910  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.510  63.044  68.132  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.672  63.370  68.872  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.610  62.904  69.550  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.772  63.230  70.291  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.035      7.145      7.773
+REMARK INTER + INTRA:          -6.035
+REMARK INTER:                  -6.035
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = eugenol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.761  67.559  72.501  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.874  66.745  72.424  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.242  66.228  72.537  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.355  65.415  72.460  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.722  64.898  72.573  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.835  64.085  72.496  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.202  63.567  72.610  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.316  62.754  72.532  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.976  65.194  72.763  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.863  66.008  72.840  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.495  66.525  72.727  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.382  67.339  72.805  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

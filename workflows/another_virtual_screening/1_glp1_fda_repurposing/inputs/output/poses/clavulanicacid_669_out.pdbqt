@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.382      0.000      0.000
+REMARK INTER + INTRA:          -7.382
+REMARK INTER:                  -7.382
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.837  61.118  63.368  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.271  61.276  63.947  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.485  61.682  64.633  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.918  61.840  65.211  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.121  61.628  65.181  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.759  61.895  65.873  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.193  62.053  66.451  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.766  62.430  66.910  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.772  62.809  67.643  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.333  62.272  66.331  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.049  62.238  65.922  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.769  62.548  66.179  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.442  62.471  65.708  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.816  62.934  66.907  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.334      1.050      3.090
+REMARK INTER + INTRA:          -7.334
+REMARK INTER:                  -7.334
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.446  63.559  68.572  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.635  63.252  67.830  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.050  62.892  67.373  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.238  62.584  66.631  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.983  62.596  66.276  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.920  62.230  65.539  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.108  61.922  64.797  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.325  61.684  64.697  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.903  61.298  64.102  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.136  61.992  65.439  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.715  62.211  66.114  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.911  62.080  66.248  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.565  62.331  66.953  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      59.455  61.697  65.677  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.553      2.573      3.503
+REMARK INTER + INTRA:          -6.553
+REMARK INTER:                  -6.553
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.566  62.291  66.475  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.728  62.151  67.272  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.299  62.601  67.661  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.461  62.461  68.458  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.099  61.893  68.934  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.428  61.945  69.689  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.590  61.805  70.486  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.156  62.406  70.477  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.671  62.732  71.033  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.994  62.546  69.680  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.014  62.864  68.919  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.502  63.479  68.663  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.461  63.740  67.882  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      62.031  63.831  69.189  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.531      1.187      2.729
+REMARK INTER + INTRA:          -6.531
+REMARK INTER:                  -6.531
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.155  63.998  68.830  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.501  63.655  68.462  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.584  63.295  67.724  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.930  62.952  67.357  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.162  62.927  67.659  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.686  62.534  67.112  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.032  62.191  66.744  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.505  61.973  66.105  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      59.378  61.576  65.392  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      60.159  62.316  66.472  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.928  62.575  66.624  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.581  62.474  66.129  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.319  62.764  66.356  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.495  62.082  65.408  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.263      2.584      3.783
+REMARK INTER + INTRA:          -6.263
+REMARK INTER:                  -6.263
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.408  62.233  66.681  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.962  62.671  67.107  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.152  62.454  67.880  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.706  62.893  68.306  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.113  63.557  68.033  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.609  63.819  68.638  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.163  64.257  69.064  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.063  63.754  69.711  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.384  63.709  70.470  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.509  63.316  69.285  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.951  62.744  69.080  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.684  62.131  69.564  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.121  61.598  69.281  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.981  62.051  70.329  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.219      3.794      5.193
+REMARK INTER + INTRA:          -6.219
+REMARK INTER:                  -6.219
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.850  65.142  71.713  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.370  64.505  71.500  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.244  64.332  70.703  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.764  63.696  70.491  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.376  63.186  71.012  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.960  62.632  70.563  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.480  61.996  70.351  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.611  62.163  69.554  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.365  61.831  68.839  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.091  62.799  69.766  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.588  63.457  69.722  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.861  63.812  69.029  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.358  64.470  69.071  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.638  63.510  68.294  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.180      4.342      5.556
+REMARK INTER + INTRA:          -6.180
+REMARK INTER:                  -6.180
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.222  61.656  68.740  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.504  61.817  69.498  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.487  62.589  69.789  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.769  62.750  70.548  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.081  62.198  71.076  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.293  62.597  71.767  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.575  62.758  72.525  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.393  63.556  72.424  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      61.463  64.235  72.888  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      61.111  63.396  71.665  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.787  63.490  70.912  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.527  64.200  70.580  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.214  64.208  69.817  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      60.581  64.900  71.012  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.107      5.095      6.148
+REMARK INTER + INTRA:          -6.107
+REMARK INTER:                  -6.107
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.120  61.342  70.702  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.709  61.901  70.553  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.929  62.435  71.142  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.517  62.993  70.992  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.933  63.083  70.284  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.466  63.705  70.379  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.055  64.264  70.229  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.969  64.559  70.995  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.325  65.162  71.432  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      62.381  64.000  71.145  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.794  63.560  71.523  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.531  63.668  72.298  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.938  63.183  72.603  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      61.862  64.261  72.767  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.883     12.167     13.119
+REMARK INTER + INTRA:          -5.883
+REMARK INTER:                  -5.883
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = clavulanic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.017  62.758  54.057  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.625  62.038  54.153  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.455  61.570  53.495  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.064  60.850  53.592  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.811  60.528  54.308  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.447  59.804  54.148  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.056  59.084  54.245  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.085  58.960  53.430  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.828  58.363  52.921  0.00  0.00    +0.000 OA
+ATOM     10  N   UNL     1      63.476  59.679  53.333  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      63.857  60.326  52.990  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.004  60.430  52.184  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.393  61.108  51.921  0.00  0.00    +0.000 OA
+ATOM     14  O   UNL     1      63.764  59.856  51.643  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.123      0.000      0.000
+REMARK INTER + INTRA:          -8.123
+REMARK INTER:                  -8.123
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.053  61.964  66.096  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.671  62.389  66.444  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.559  62.754  67.175  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      59.831  62.695  67.558  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.177  63.178  67.521  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.399  62.447  66.059  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.015  62.871  66.407  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.510  62.082  65.329  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.237  62.140  64.944  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.349  61.775  64.213  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.732  61.351  63.866  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.004  61.292  64.250  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.893  61.658  64.981  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.027      5.526      6.487
+REMARK INTER + INTRA:          -7.027
+REMARK INTER:                  -7.027
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.036  63.986  72.833  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.410  64.198  72.339  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.005  64.906  72.467  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.227  65.401  73.089  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.379  65.117  71.973  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.188  63.702  71.718  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.562  63.915  71.224  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.592  62.996  71.590  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.372  62.500  70.969  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.776  61.792  70.841  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.402  61.581  71.334  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.624  62.076  71.956  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.219  62.784  72.084  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.006      3.725      5.761
+REMARK INTER + INTRA:          -7.006
+REMARK INTER:                  -7.006
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.875  61.739  70.294  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.739  62.504  70.016  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.479  62.622  69.241  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.356  61.975  68.745  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.343  63.388  68.965  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.862  63.152  70.513  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.726  63.916  70.235  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.121  63.034  71.286  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.244  63.680  71.784  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.504  63.562  72.558  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.639  62.798  72.835  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.516  62.150  72.339  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.257  62.268  71.564  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.001      5.715      7.383
+REMARK INTER + INTRA:          -7.001
+REMARK INTER:                  -7.001
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.355  65.549  69.493  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.033  65.463  70.249  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.447  64.900  70.386  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.181  64.422  69.767  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.126  64.815  71.141  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.299  65.942  70.867  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.978  65.855  71.622  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.885  66.505  70.730  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.151  66.983  71.347  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.738  67.546  71.210  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.059  67.632  70.456  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.793  67.154  69.837  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.207  66.590  69.974  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.835      6.289      7.060
+REMARK INTER + INTRA:          -6.835
+REMARK INTER:                  -6.835
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.484  64.564  71.584  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.850  64.966  72.205  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.581  65.713  72.430  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      58.945  66.058  72.033  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.948  66.113  73.051  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.486  64.620  72.602  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.852  65.021  73.222  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.755  63.874  72.378  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.391  63.528  72.774  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.660  62.781  72.549  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.293  62.380  71.929  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.658  62.725  71.532  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.388  63.472  71.756  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.585      5.129      6.385
+REMARK INTER + INTRA:          -6.585
+REMARK INTER:                  -6.585
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.719  65.038  71.566  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.754  64.657  70.834  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.132  65.022  70.198  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.474  65.767  70.293  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.167  64.641  69.467  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.412  63.912  70.740  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.448  63.532  70.008  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.035  63.548  71.375  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.693  62.803  71.281  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.315  62.439  71.918  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.280  62.819  72.648  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.622  63.564  72.744  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.999  63.928  72.107  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.514      3.541      4.764
+REMARK INTER + INTRA:          -6.514
+REMARK INTER:                  -6.514
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.908  62.222  71.197  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.904  63.047  71.157  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.053  63.493  71.835  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.205  63.115  72.553  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.049  64.318  71.794  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.752  63.425  70.439  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.748  64.249  70.400  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.603  62.979  69.762  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.451  63.356  69.045  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.303  62.909  68.367  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.306  62.086  68.407  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.458  61.707  69.125  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.607  62.154  69.802  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.352      5.774      7.132
+REMARK INTER + INTRA:          -6.352
+REMARK INTER:                  -6.352
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.043  66.235  69.583  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.015  66.472  70.373  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.496  67.088  70.636  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      66.004  67.468  70.109  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.467  67.324  71.426  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.506  66.091  70.900  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.479  66.328  71.690  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.026  65.475  70.637  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.517  65.095  71.164  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.036  64.478  70.901  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.064  64.242  70.111  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.573  64.621  69.584  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.053  65.238  69.847  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.752      7.541      8.164
+REMARK INTER + INTRA:          -5.752
+REMARK INTER:                  -5.752
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = metamfepramone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.790  67.186  72.856  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.762  66.389  72.643  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.076  65.950  72.777  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.419  66.308  73.126  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.048  65.153  72.564  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.419  66.031  72.294  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.390  65.235  72.081  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.104  66.469  72.160  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.761  66.112  71.812  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.447  66.551  71.677  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.475  67.347  71.891  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.818  67.705  72.239  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.133  67.266  72.374  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

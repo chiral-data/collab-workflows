@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.517      0.000      0.000
+REMARK INTER + INTRA:          -6.517
+REMARK INTER:                  -6.517
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.601  62.240  66.735  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.340  62.605  66.762  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.849  62.557  66.113  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.617  62.143  65.438  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      62.126  62.095  64.790  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.894  61.681  64.114  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.401  61.633  63.466  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      61.154  61.317  64.087  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      61.572  63.018  67.437  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.064  63.067  68.085  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.296  63.480  68.761  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.788  63.529  69.408  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      62.035  63.845  68.788  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.253      0.505      4.130
+REMARK INTER + INTRA:          -6.253
+REMARK INTER:                  -6.253
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.541  62.106  66.668  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.283  62.434  66.518  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.659  62.884  67.099  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.294  63.006  67.829  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.671  63.455  68.409  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.304  63.577  69.139  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.681  64.027  69.719  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.562  63.249  69.288  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      61.648  62.313  65.790  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.272  61.863  65.209  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.638  61.741  64.480  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.262  61.292  63.900  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      62.380  62.069  64.331  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.123      1.031      1.392
+REMARK INTER + INTRA:          -6.123
+REMARK INTER:                  -6.123
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.796  62.181  68.102  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.054  62.946  67.932  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.434  63.103  67.216  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.555  62.496  66.671  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.935  62.654  65.956  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.056  62.046  65.410  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.435  62.204  64.695  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      61.797  61.281  65.581  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      60.933  63.552  68.477  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.554  63.396  69.192  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.433  64.003  69.737  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.053  63.846  70.452  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      60.691  64.767  69.567  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.807      3.283      4.843
+REMARK INTER + INTRA:          -5.807
+REMARK INTER:                  -5.807
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.753  64.429  71.154  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.843  64.803  70.424  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.054  64.362  69.759  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.175  63.549  69.824  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.386  63.109  69.158  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.508  62.295  69.224  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.719  61.855  68.559  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.419  61.922  69.954  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      59.721  65.615  70.359  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.510  66.056  71.024  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.388  66.869  70.959  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.178  67.309  71.623  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      59.478  67.242  70.229  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.807      4.676      6.429
+REMARK INTER + INTRA:          -5.807
+REMARK INTER:                  -5.807
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.189  65.947  69.480  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.440  65.893  70.264  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.062  65.375  70.783  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.433  64.911  70.519  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      63.056  64.393  71.038  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.426  63.929  70.773  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      62.049  63.412  71.292  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      62.175  63.984  69.989  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      65.069  66.357  70.528  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      65.447  66.875  70.010  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      66.076  67.338  70.275  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      66.453  67.856  69.756  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      66.327  67.284  71.058  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.771      3.737      6.153
+REMARK INTER + INTRA:          -5.771
+REMARK INTER:                  -5.771
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.627  65.322  70.904  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.667  65.308  70.081  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.214  65.784  69.687  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.720  66.274  70.117  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      65.267  66.750  69.722  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.773  67.240  70.153  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      66.320  67.716  69.759  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      65.732  67.253  70.977  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      63.162  64.819  69.651  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      62.615  64.342  70.044  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.109  63.853  69.614  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.563  63.377  70.008  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      62.150  63.840  68.791  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.630      4.200      6.503
+REMARK INTER + INTRA:          -5.630
+REMARK INTER:                  -5.630
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.892  64.079  71.985  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.930  64.229  71.175  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.777  64.989  70.890  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      59.586  65.596  71.414  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      59.433  66.355  71.128  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.243  66.964  71.653  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      59.090  67.722  71.368  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      59.206  66.812  72.464  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      60.120  63.623  70.651  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.273  62.864  70.936  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.463  62.256  70.411  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.616  61.498  70.697  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      60.500  62.407  69.602  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.573      3.005      4.321
+REMARK INTER + INTRA:          -5.573
+REMARK INTER:                  -5.573
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.703  63.869  70.513  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.810  64.215  69.772  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.312  64.010  69.146  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.708  63.459  69.262  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.212  63.255  68.635  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.607  62.704  68.751  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.111  62.500  68.126  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.501  62.358  69.493  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      63.412  64.765  69.657  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      63.910  64.970  70.282  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.513  65.520  70.167  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      65.010  65.725  70.792  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      64.619  65.866  69.426  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.559      1.440      4.958
+REMARK INTER + INTRA:          -5.559
+REMARK INTER:                  -5.559
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = mitoguazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.836  63.795  68.669  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.101  63.453  68.518  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.507  63.481  69.090  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.648  63.853  69.813  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.053  63.881  70.385  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.195  64.253  71.109  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      59.601  64.281  71.680  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.930  64.595  71.259  0.00  0.00    +0.000 NA
+ATOM      9  N   UNL     1      60.960  63.082  67.795  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.553  63.053  67.223  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.412  62.682  66.500  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      62.005  62.653  65.929  0.00  0.00    +0.000 NA
+ATOM     13  N   UNL     1      60.677  62.339  66.349  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

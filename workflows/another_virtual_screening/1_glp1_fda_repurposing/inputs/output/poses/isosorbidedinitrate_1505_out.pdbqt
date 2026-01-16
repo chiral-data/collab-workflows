@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.930      0.000      0.000
+REMARK INTER + INTRA:          -7.930
+REMARK INTER:                  -7.930
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.904  60.806  63.166  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.324  61.237  63.730  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      62.091  61.495  63.565  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.978  61.412  64.458  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.399  61.844  65.022  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.165  62.136  64.936  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.366  62.531  65.631  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.725  62.484  66.147  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.451  62.698  66.895  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.685  62.406  66.981  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.484  62.010  66.286  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.127  62.058  65.770  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.872  63.130  67.459  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.526  63.304  68.188  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.946  63.736  68.751  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.760  63.047  68.352  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.854      0.145      3.882
+REMARK INTER + INTRA:          -7.854
+REMARK INTER:                  -7.854
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.765  63.798  68.864  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.377  63.355  68.288  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      60.616  63.068  68.429  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.749  63.196  67.568  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.360  62.752  66.991  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.603  62.432  67.054  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.436  62.033  66.352  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.089  62.107  65.855  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.391  61.906  65.114  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.148  62.226  65.050  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.315  62.625  65.753  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.661  62.551  66.250  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.002  61.462  64.537  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.374  61.304  63.817  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.986  60.861  63.241  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.135  61.590  63.675  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.071      1.735      2.468
+REMARK INTER + INTRA:          -7.071
+REMARK INTER:                  -7.071
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.760  61.357  65.382  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.631  61.957  65.932  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.769  62.744  65.724  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.364  61.773  66.690  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.235  62.374  67.241  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.349  63.181  67.112  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.154  63.579  67.808  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.921  63.019  68.366  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.656  62.918  69.141  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.542  62.111  69.269  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.737  61.713  68.573  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.971  62.274  68.015  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.527  63.519  69.691  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.260  63.335  70.450  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.132  63.935  70.999  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.122  62.548  70.658  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.029      1.364      4.089
+REMARK INTER + INTRA:          -7.029
+REMARK INTER:                  -7.029
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.163  63.173  70.672  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      60.652  63.300  70.021  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.278  63.837  70.072  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.519  62.890  69.317  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.009  63.017  68.666  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.652  63.533  68.636  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.982  63.485  67.882  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.545  62.939  67.446  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.478  62.571  66.710  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.836  62.055  66.740  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.505  62.104  67.494  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.943  62.650  67.930  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.969  62.698  66.059  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.835  62.289  65.355  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.325  62.415  64.704  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.210  61.752  65.303  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.810      5.135      7.075
+REMARK INTER + INTRA:          -6.810
+REMARK INTER:                  -6.810
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.598  67.995  69.670  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      66.125  67.523  70.153  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      66.152  67.615  70.973  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      65.626  66.958  69.818  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.153  66.486  70.302  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.121  66.515  71.126  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.578  65.948  71.380  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.274  65.569  70.714  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.751  64.985  70.458  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.783  64.956  69.634  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.326  65.522  69.380  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      64.630  65.902  70.048  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      63.278  64.513  70.942  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      62.779  63.948  70.607  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.307  63.476  71.090  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.752  63.856  69.788  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.687      4.184      5.506
+REMARK INTER + INTRA:          -6.687
+REMARK INTER:                  -6.687
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.402  67.251  68.717  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      59.504  66.663  69.285  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      59.375  66.831  70.083  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      59.735  65.904  69.057  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.836  65.315  69.626  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.728  65.402  70.439  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.889  64.676  70.796  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.097  64.141  70.205  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.324  63.361  70.059  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.432  63.274  69.246  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.271  64.000  68.889  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.064  64.536  69.481  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.426  62.772  70.628  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.657  62.013  70.400  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.759  61.424  70.968  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.786  61.844  69.603  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.633     12.081     13.131
+REMARK INTER + INTRA:          -6.633
+REMARK INTER:                  -6.633
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.764  58.691  55.130  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      63.118  59.052  54.478  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      63.151  58.656  53.754  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.440  59.808  54.549  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.794  60.169  53.896  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.867  59.843  53.143  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.255  60.391  52.665  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.422  61.056  53.122  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.765  61.806  53.111  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.693  62.133  53.865  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.304  61.584  54.343  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      64.137  60.919  53.884  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      65.120  62.167  52.458  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      65.442  62.924  52.529  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      65.795  63.284  51.878  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      65.409  63.319  53.252  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.571      4.132      5.882
+REMARK INTER + INTRA:          -6.571
+REMARK INTER:                  -6.571
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.627  63.357  68.428  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      61.963  63.636  69.127  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      61.638  63.425  69.856  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      62.625  64.128  69.099  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.962  64.407  69.799  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.698  64.243  70.563  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.194  64.635  71.093  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.764  65.040  70.657  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.423  65.533  70.714  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.687  65.698  69.950  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.191  65.306  69.421  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.620  64.900  69.857  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.760  65.813  71.414  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      65.422  66.305  71.386  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      65.758  66.584  72.085  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      65.748  66.516  70.659  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.433      3.805      5.411
+REMARK INTER + INTRA:          -6.433
+REMARK INTER:                  -6.433
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide dinitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.925  66.123  69.474  0.00  0.00    +0.000 OA
+ATOM      2  N   UNL     1      64.422  65.613  69.883  0.00  0.00    +0.000 N 
+ATOM      3  O   UNL     1      64.502  65.521  70.700  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.839  65.194  69.477  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.336  64.684  69.886  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.350  64.537  70.697  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.754  63.993  70.868  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.371  63.804  70.163  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.766  63.352  69.831  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.751  63.499  69.020  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.348  64.043  68.850  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.731  64.232  69.556  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      61.263  62.842  70.241  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.679  62.423  69.834  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.177  61.913  70.243  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.599  62.515  69.018  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

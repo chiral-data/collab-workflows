@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:   -13.725      0.000      0.000
+REMARK INTER + INTRA:         -13.725
+REMARK INTER:                 -13.725
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CU   UNL     1      62.244  63.840  68.541  0.00  0.00    +0.000 Cu
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.885  60.784  63.425  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.609  61.161  63.547  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.751  61.563  64.254  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.443  61.963  64.453  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.346  62.283  65.207  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.593  62.079  65.473  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.264  62.285  66.202  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.700  62.735  66.738  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.372  62.941  67.467  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.808  63.390  68.004  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.607  62.697  67.659  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.224  61.635  64.885  0.00  0.00    +0.000 C 
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.607  65.619  70.080  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.279  65.825  70.808  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.515  65.581  71.000  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.186  65.787  71.728  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.422  65.543  71.920  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.986  65.093  71.383  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.222  64.849  71.574  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.893  65.055  72.303  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.128  64.810  72.495  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.800  65.016  73.222  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      59.693  64.361  71.957  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.314  64.887  70.655  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.078  65.131  70.463  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:   -13.167      1.959      2.204
+REMARK INTER + INTRA:         -13.167
+REMARK INTER:                 -13.167
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CU   UNL     1      61.163  63.130  69.381  0.00  0.00    +0.000 Cu
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.811  61.709  63.472  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.121  61.250  64.083  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.010  61.479  64.868  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.285  61.078  65.533  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.050  61.500  66.202  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.628  62.162  65.949  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.290  62.737  66.436  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.361  62.676  67.255  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.022  63.251  67.742  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.093  63.190  68.561  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.615  63.886  67.408  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.603  62.149  65.125  0.00  0.00    +0.000 C 
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.888  62.163  72.489  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.550  62.737  72.975  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.142  63.372  72.642  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.804  63.947  73.129  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.396  64.582  72.795  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.327  64.642  71.975  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.919  65.276  71.642  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.581  65.851  72.128  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.173  66.486  71.795  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      58.835  67.060  72.281  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      59.103  66.546  70.975  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.664  64.068  71.489  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.072  63.433  71.822  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:   -12.379      1.597      2.759
+REMARK INTER + INTRA:         -12.379
+REMARK INTER:                 -12.379
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CU   UNL     1      60.999  63.960  69.425  0.00  0.00    +0.000 Cu
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.112  61.146  64.000  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.454  61.142  64.497  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.482  61.535  65.222  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.870  61.579  65.773  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.136  62.024  66.414  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.912  62.256  66.259  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.391  62.710  66.754  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.100  62.975  67.479  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.579  63.430  67.974  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.288  63.694  68.699  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      62.349  63.619  67.744  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.126  61.954  65.522  0.00  0.00    +0.000 C 
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.109  64.605  72.096  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.588  65.059  72.591  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.357  65.248  72.361  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.836  65.703  72.856  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.606  65.892  72.626  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.896  65.627  71.900  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.665  65.816  71.670  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.144  66.271  72.165  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.914  66.460  71.935  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.392  66.914  72.429  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      64.203  66.195  71.209  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.417  65.173  71.405  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.648  64.984  71.636  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:   -12.186      2.834      6.424
+REMARK INTER + INTRA:         -12.186
+REMARK INTER:                 -12.186
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CU   UNL     1      62.895  64.199  70.069  0.00  0.00    +0.000 Cu
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.101  68.618  69.690  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.972  68.175  70.374  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.393  67.587  70.381  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.202  67.103  71.021  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.595  66.597  70.786  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.410  66.769  70.001  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.833  66.394  69.545  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.380  65.788  69.872  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.802  65.413  69.416  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.349  64.806  69.743  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      63.679  65.645  68.634  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      65.903  67.381  69.751  0.00  0.00    +0.000 C 
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.547  61.917  72.092  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.971  61.542  71.637  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.848  61.774  70.855  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.270  61.400  70.399  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.147  61.632  69.617  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.601  62.239  69.291  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.478  62.471  68.509  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.901  62.096  68.053  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.777  62.329  67.271  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.201  61.954  66.816  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      60.232  62.936  66.945  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.178  62.613  69.746  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.301  62.381  70.528  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:   -10.763      4.123      6.222
+REMARK INTER + INTRA:         -10.763
+REMARK INTER:                 -10.763
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CU   UNL     1      62.586  65.745  71.029  0.00  0.00    +0.000 Cu
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.084  67.839  69.371  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      67.508  68.313  69.722  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.778  67.989  69.931  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.152  68.393  70.284  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.534  67.858  70.394  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.778  67.124  70.108  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.331  66.430  70.109  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.565  66.434  70.415  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.118  65.739  70.416  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.352  65.743  70.722  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      64.437  65.043  70.110  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      66.547  67.205  69.822  0.00  0.00    +0.000 C 
+REMARK  Name = copper naphthenate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.673  66.597  72.410  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.227  65.904  72.410  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.546  65.208  72.104  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.099  64.513  72.105  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.418  63.817  71.799  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.184  63.815  71.492  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.504  63.118  71.186  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.057  62.424  71.187  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.376  61.728  70.881  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.929  61.035  70.881  0.00  0.00    +0.000 OA
+ATOM     11  O   UNL     1      61.142  61.725  70.574  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.631  64.508  71.492  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.312  65.204  71.798  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

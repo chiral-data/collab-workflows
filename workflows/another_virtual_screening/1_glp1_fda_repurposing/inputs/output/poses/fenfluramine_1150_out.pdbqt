@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:   -10.406      0.000      0.000
+REMARK INTER + INTRA:         -10.406
+REMARK INTER:                 -10.406
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.355  63.615  68.790  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.126  63.160  68.140  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.607  63.127  67.471  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.378  62.672  66.822  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.669  62.252  66.842  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.859  62.638  66.152  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.630  62.183  65.503  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.112  62.149  64.833  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.883  61.695  64.184  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.174  61.275  64.204  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.693  61.309  64.873  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.922  61.763  65.523  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.364  61.661  63.514  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      62.845  61.627  62.845  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      61.823  61.156  63.151  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      62.906  62.166  63.878  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.028      5.612      7.585
+REMARK INTER + INTRA:          -9.028
+REMARK INTER:                  -9.028
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.009  63.731  69.684  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.571  64.153  70.117  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.043  64.716  69.742  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.604  65.137  70.176  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.694  64.995  70.983  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.077  65.701  69.801  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.638  66.122  70.234  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.111  66.685  69.859  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.672  67.106  70.293  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.762  66.964  71.100  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.290  66.401  71.475  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.728  65.980  71.041  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.145  67.670  69.918  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      66.617  68.233  69.543  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      66.520  67.831  70.634  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      65.768  67.508  69.201  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.977      6.014      7.030
+REMARK INTER + INTRA:          -8.977
+REMARK INTER:                  -8.977
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.652  66.863  73.222  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.097  66.172  73.148  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.839  65.569  72.647  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.284  64.878  72.572  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.984  64.790  72.998  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.026  64.275  72.071  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.471  63.584  71.997  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.214  62.980  71.495  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.658  62.289  71.421  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.358  62.201  71.846  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.616  62.804  72.347  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.171  63.496  72.422  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.401  61.686  70.920  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      60.144  61.083  70.419  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      61.062  61.236  71.122  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      59.739  62.136  70.717  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.919      4.590      6.441
+REMARK INTER + INTRA:          -8.919
+REMARK INTER:                  -8.919
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.906  62.622  67.095  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.109  62.290  67.823  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.323  62.779  68.453  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.526  62.447  69.180  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.515  61.629  69.278  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.739  62.936  69.811  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.942  62.604  70.538  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.156  63.092  71.169  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.359  62.761  71.896  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.348  61.943  71.994  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.135  61.454  71.364  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.932  61.786  70.636  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.573  63.249  72.526  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      61.786  63.738  73.156  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      61.684  62.585  73.003  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      61.461  63.914  72.049  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.895      5.901      6.810
+REMARK INTER + INTRA:          -8.895
+REMARK INTER:                  -8.895
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.678  65.535  69.319  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.964  65.205  70.020  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.251  64.432  70.024  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.536  64.102  70.724  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.535  64.545  71.419  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.824  63.328  70.728  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.109  62.999  71.428  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.397  62.224  71.432  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.682  61.895  72.132  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.681  62.338  72.827  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.394  63.111  72.823  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.108  63.441  72.123  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.969  61.121  72.136  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      62.256  60.347  72.139  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      62.134  61.186  72.941  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      61.805  61.056  71.329  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.578      2.315      3.290
+REMARK INTER + INTRA:          -8.578
+REMARK INTER:                  -8.578
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.596  62.420  71.689  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.835  62.564  70.912  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.358  62.322  70.283  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.596  62.466  69.507  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.310  62.851  69.359  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.119  62.225  68.878  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.358  62.369  68.102  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.881  62.128  67.472  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.120  62.272  66.696  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.833  62.656  66.548  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.310  62.897  67.177  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.072  62.753  67.954  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.643  62.030  66.067  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      59.166  61.789  65.438  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      60.192  62.335  65.533  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      59.092  61.725  66.601  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.452      5.517      6.358
+REMARK INTER + INTRA:          -8.452
+REMARK INTER:                  -8.452
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.433  66.012  70.834  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.775  65.637  71.164  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.441  64.985  70.785  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.783  64.611  71.114  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.461  64.889  71.820  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.448  63.958  70.736  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.790  63.584  71.065  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.455  62.932  70.687  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.798  62.558  71.016  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.476  62.835  71.722  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.810  63.487  72.100  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.468  63.862  71.771  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.462  61.905  70.638  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      60.128  61.253  70.259  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      59.897  61.849  71.235  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      61.029  61.961  70.039  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.200     24.262     24.956
+REMARK INTER + INTRA:          -8.200
+REMARK INTER:                  -8.200
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.074  80.884  52.077  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      68.404  80.355  51.536  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      69.190  80.443  51.302  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      69.520  79.915  50.761  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.065  79.299  50.456  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.307  80.002  50.527  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.637  79.474  49.986  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.423  79.561  49.752  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.753  79.033  49.211  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.298  78.417  48.906  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.512  78.329  49.140  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.182  78.858  49.681  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.540  79.120  48.977  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      73.326  79.208  48.742  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      72.468  78.460  48.488  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      72.612  79.782  49.466  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.176      6.004      7.215
+REMARK INTER + INTRA:          -8.176
+REMARK INTER:                  -8.176
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fenfluramine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.129  67.650  70.147  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.625  67.014  69.997  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.112  66.748  70.585  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.608  66.112  70.435  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.618  65.743  69.698  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.094  65.845  71.023  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.591  65.209  70.873  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.077  64.942  71.461  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.573  64.307  71.311  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.583  63.938  70.574  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.096  64.204  69.986  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.600  64.840  70.136  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.059  64.040  71.900  0.00  0.00    +0.000 C 
+ATOM     14  F   UNL     1      61.546  63.774  72.488  0.00  0.00    +0.000 F 
+ATOM     15  F   UNL     1      61.774  63.460  71.388  0.00  0.00    +0.000 F 
+ATOM     16  F   UNL     1      62.345  64.621  72.412  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL

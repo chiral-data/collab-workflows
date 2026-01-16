@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.522      0.000      0.000
+REMARK INTER + INTRA:          -8.522
+REMARK INTER:                  -8.522
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.650  64.100  69.917  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.922  63.953  69.152  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.509  63.436  68.660  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.781  63.289  67.895  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.368  62.772  67.403  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.684  62.402  67.675  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.640  62.624  66.638  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.227  62.107  66.146  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.499  61.960  65.380  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.086  61.442  64.889  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.358  61.295  64.123  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.043  61.666  63.851  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.456  62.183  64.344  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.184  62.330  65.108  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.797      3.756      6.536
+REMARK INTER + INTRA:          -7.797
+REMARK INTER:                  -7.797
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.532  63.342  69.001  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.098  63.936  68.922  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.554  64.159  69.572  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.121  64.754  69.494  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.578  64.976  70.144  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.468  64.605  70.871  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.145  65.571  70.065  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.601  65.794  70.715  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.168  66.389  70.636  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.624  66.612  71.286  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.191  67.207  71.207  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.301  67.578  70.479  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.844  67.354  69.829  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.278  66.760  69.908  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.706      2.727      5.527
+REMARK INTER + INTRA:          -7.706
+REMARK INTER:                  -7.706
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.698  62.371  66.608  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.903  62.739  67.318  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.135  62.283  67.965  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.340  62.650  68.675  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.572  62.194  69.322  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.600  61.373  69.260  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.777  62.562  70.033  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.010  62.106  70.680  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.215  62.473  71.391  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.447  62.017  72.038  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.652  62.385  72.748  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.624  63.207  72.811  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.392  63.662  72.163  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.187  63.295  71.453  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.697      1.894      4.523
+REMARK INTER + INTRA:          -7.697
+REMARK INTER:                  -7.697
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.038  62.133  64.664  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.837  61.851  65.412  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.643  62.381  66.014  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.442  62.098  66.763  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.249  62.629  67.364  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.256  63.439  67.218  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.047  62.346  68.114  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.854  62.876  68.715  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.653  62.594  69.465  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.459  63.124  70.066  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.258  62.842  70.816  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.251  62.030  70.962  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.444  61.501  70.360  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.645  61.782  69.611  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.476      1.438      1.988
+REMARK INTER + INTRA:          -7.476
+REMARK INTER:                  -7.476
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.786  64.479  70.797  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.697  64.124  70.058  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.944  63.926  69.786  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.854  63.571  69.046  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.101  63.372  68.774  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.439  63.529  69.239  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.010  63.017  68.034  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.257  62.819  67.761  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.167  62.464  67.021  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.414  62.265  66.749  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.324  61.910  66.009  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.986  61.753  65.543  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.739  61.952  65.817  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.830  62.307  66.555  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.365      4.886      5.783
+REMARK INTER + INTRA:          -7.365
+REMARK INTER:                  -7.365
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.313  67.010  68.798  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.624  66.649  69.470  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.791  65.841  69.463  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.103  65.478  70.136  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.269  64.670  70.129  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.124  64.225  69.451  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.581  64.308  70.802  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.747  63.500  70.795  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.059  63.137  71.468  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.225  62.329  71.461  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.537  61.967  72.134  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.682  62.413  72.813  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.516  63.221  72.819  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.204  63.583  72.147  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.263      5.555      6.642
+REMARK INTER + INTRA:          -7.263
+REMARK INTER:                  -7.263
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.544  68.634  73.061  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.356  67.847  73.221  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.377  67.288  72.615  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      62.190  66.500  72.775  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.211  65.940  72.169  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.419  66.167  71.405  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.023  65.152  72.329  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.044  64.593  71.723  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.857  63.805  71.883  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.878  63.245  71.277  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.690  62.457  71.437  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.482  62.230  72.202  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.461  62.791  72.808  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.648  63.577  72.648  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.164      5.559      6.306
+REMARK INTER + INTRA:          -7.164
+REMARK INTER:                  -7.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.392  67.007  69.804  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.936  66.322  69.861  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.430  66.217  70.504  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.973  65.532  70.561  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.467  65.427  71.203  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.416  66.005  71.788  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.010  64.741  71.261  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.504  64.636  71.903  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.047  63.950  71.960  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.541  63.845  72.603  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.084  63.160  72.660  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.134  62.581  72.075  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.641  62.687  71.433  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.097  63.371  71.375  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.910     24.111     24.982
+REMARK INTER + INTRA:          -6.910
+REMARK INTER:                  -6.910
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = idrocilamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      67.809  81.330  53.323  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      68.034  80.783  52.748  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      68.745  80.883  52.342  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      68.971  80.336  51.766  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      69.682  80.436  51.360  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      70.166  81.082  51.528  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      69.908  79.890  50.784  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.619  79.990  50.378  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.845  79.443  49.802  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.556  79.543  49.395  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.782  78.996  48.819  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.297  78.350  48.651  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.586  78.251  49.058  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.360  78.797  49.633  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

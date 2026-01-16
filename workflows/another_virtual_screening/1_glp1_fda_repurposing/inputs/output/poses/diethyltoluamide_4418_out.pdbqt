@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.664      0.000      0.000
+REMARK INTER + INTRA:          -8.664
+REMARK INTER:                  -8.664
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.054  62.851  67.882  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.712  62.869  67.385  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.697  62.465  66.666  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.023  62.043  66.443  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.007  61.640  65.725  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.356  62.482  66.168  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.029  62.903  66.391  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.340  62.078  65.450  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.998  62.095  64.953  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.982  61.691  64.233  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.640  61.708  63.737  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.309  61.270  64.012  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.650  61.253  64.508  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.666  61.657  65.228  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.492      1.239      3.110
+REMARK INTER + INTRA:          -8.492
+REMARK INTER:                  -8.492
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.851  61.587  63.332  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.090  61.450  63.619  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.856  61.778  64.339  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.383  62.243  64.772  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.149  62.571  65.491  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.094  61.641  64.627  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.567  61.176  64.194  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.860  61.969  65.346  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.099  61.832  65.634  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.865  62.160  66.354  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.105  62.024  66.641  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.392  62.625  66.785  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.153  62.762  66.498  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.387  62.434  65.778  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.854      6.272      7.640
+REMARK INTER + INTRA:          -7.854
+REMARK INTER:                  -7.854
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.080  64.195  70.438  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.635  64.628  70.008  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.022  65.266  70.361  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.852  65.471  71.142  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.238  66.109  71.494  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.578  65.700  69.932  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.747  65.495  69.151  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.964  66.338  70.283  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.519  66.771  69.855  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.906  67.410  70.207  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.461  67.843  69.778  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.736  67.614  70.988  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.181  67.181  71.417  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.794  66.543  71.065  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.749      5.521      6.806
+REMARK INTER + INTRA:          -7.749
+REMARK INTER:                  -7.749
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.017  65.981  73.079  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.780  65.412  72.531  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.219  64.719  72.439  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.895  64.596  72.896  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.334  63.904  72.804  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.982  64.150  71.890  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.306  64.274  71.434  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.420  63.458  71.799  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.184  62.889  71.250  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.623  62.197  71.159  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.386  61.628  70.611  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.299  62.073  71.615  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.536  62.642  72.164  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.097  63.335  72.255  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.598      2.532      4.977
+REMARK INTER + INTRA:          -7.598
+REMARK INTER:                  -7.598
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.452  62.715  67.030  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.441  63.171  67.718  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.432  62.803  68.456  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.434  61.978  68.506  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.425  61.611  69.244  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.420  63.258  69.145  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.418  64.081  69.094  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.411  62.890  69.882  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.400  63.345  70.570  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.391  62.976  71.308  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.379  63.431  71.996  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.393  62.153  71.358  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.405  61.698  70.670  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.414  62.066  69.932  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.451      3.510      4.870
+REMARK INTER + INTRA:          -7.451
+REMARK INTER:                  -7.451
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.612  62.898  72.802  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.483  63.293  72.089  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.231  62.873  71.425  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.107  62.058  71.474  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.855  61.639  70.811  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.101  63.268  70.712  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.225  64.082  70.663  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.849  62.849  70.049  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.720  63.242  69.335  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.467  62.823  68.672  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.338  63.217  67.959  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.344  62.009  68.721  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.473  61.614  69.434  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.726  62.034  70.098  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.433      7.225      7.976
+REMARK INTER + INTRA:          -7.433
+REMARK INTER:                  -7.433
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.266  66.248  72.869  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.923  66.715  72.690  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.374  66.550  72.019  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.169  65.920  71.527  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.620  65.756  70.857  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.032  67.017  71.839  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.237  67.647  72.331  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.483  66.853  71.169  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.139  67.318  70.989  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.591  67.154  70.319  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.247  67.620  70.140  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.386  66.524  69.828  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.729  66.058  70.007  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.277  66.222  70.678  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.356      5.985      6.770
+REMARK INTER + INTRA:          -7.356
+REMARK INTER:                  -7.356
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.068  66.391  71.103  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.980  65.614  70.842  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.586  65.063  71.314  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.281  65.290  72.047  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.888  64.740  72.518  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.497  64.285  71.053  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.802  64.058  70.321  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.104  63.735  71.524  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.015  62.957  71.264  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.621  62.406  71.736  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.533  61.629  71.475  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.317  62.633  72.467  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.406  63.411  72.729  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.799  63.962  72.257  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.256     24.615     25.389
+REMARK INTER + INTRA:          -7.256
+REMARK INTER:                  -7.256
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = diethyltoluamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.116  80.442  51.682  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.867  80.507  51.347  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      70.098  79.986  50.750  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      69.577  79.402  50.487  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.807  78.883  49.890  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.849  80.050  50.414  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      71.370  80.634  50.677  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      71.080  79.530  49.818  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.831  79.593  49.482  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      72.061  79.073  48.885  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      72.812  79.137  48.550  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.541  78.490  48.623  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.789  78.426  48.957  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      70.559  78.946  49.555  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:   -10.091      0.000      0.000
+REMARK INTER + INTRA:         -10.091
+REMARK INTER:                 -10.091
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.580  60.885  64.082  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.881  61.373  64.674  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.397  61.612  65.297  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.698  62.101  65.891  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.368  62.022  65.416  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.418  61.585  64.717  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.187  61.659  64.425  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.611  62.141  64.944  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.104  62.365  65.555  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.923  62.010  66.160  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.390  61.549  65.731  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      59.682  62.380  66.856  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.216  62.841  67.284  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.975  63.212  67.981  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      60.991  62.932  67.015  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.232  62.562  66.318  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      62.007  62.653  66.049  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.742      1.358      2.537
+REMARK INTER + INTRA:          -9.742
+REMARK INTER:                  -9.742
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.164  61.913  66.467  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.946  62.090  66.272  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.269  61.808  65.568  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.051  61.984  65.372  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.992  62.375  66.097  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.323  62.403  66.579  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.510  62.852  67.247  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.293  63.100  67.177  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.591  62.805  66.466  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.839  61.532  64.716  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.076  61.220  64.660  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      61.387  61.393  64.116  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.148  61.705  64.172  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.698  61.565  63.572  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.362  62.157  64.830  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.812  62.297  65.430  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      62.026  62.749  66.086  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.873      6.847      7.878
+REMARK INTER + INTRA:          -8.873
+REMARK INTER:                  -8.873
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.153  67.904  69.781  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.864  67.275  70.229  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.300  66.766  69.908  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.010  66.135  70.355  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.538  66.465  70.897  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.010  67.130  70.770  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      66.450  67.265  71.455  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.249  66.684  72.005  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.686  66.190  71.660  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.584  66.023  69.658  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.690  66.539  69.023  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      64.051  65.397  69.597  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.945  64.882  70.232  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      63.412  64.254  70.171  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      64.372  64.993  70.930  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      64.905  65.620  70.991  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      65.332  65.731  71.689  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.811      4.225      6.101
+REMARK INTER + INTRA:          -8.811
+REMARK INTER:                  -8.811
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.750  62.433  73.111  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.370  62.750  72.452  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.285  62.297  71.768  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.904  62.614  71.108  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.850  63.254  71.625  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.140  63.278  72.398  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.966  64.022  72.712  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.570  64.457  72.134  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.499  63.982  71.462  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.089  61.864  70.819  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.489  61.324  71.299  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.876  61.653  70.051  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.477  62.192  69.571  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.263  61.982  68.802  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      60.291  62.943  69.860  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.505  63.154  70.629  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      60.319  63.904  70.917  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.663      5.068      6.242
+REMARK INTER + INTRA:          -8.663
+REMARK INTER:                  -8.663
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.670  62.481  72.946  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.257  62.749  72.284  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.957  63.516  72.268  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.544  63.785  71.606  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.723  63.018  71.362  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.142  62.456  71.798  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.192  61.767  71.345  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.804  61.904  70.630  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.514  62.677  70.640  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.508  64.460  72.079  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.859  64.458  72.826  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      60.122  65.135  71.806  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      59.772  65.137  71.060  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.385  65.813  70.786  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      59.807  64.462  70.585  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      60.193  63.786  70.859  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      60.229  63.111  70.385  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.293      6.814      7.828
+REMARK INTER + INTRA:          -8.293
+REMARK INTER:                  -8.293
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.866  65.792  69.346  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.776  66.206  70.054  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.129  66.052  70.541  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.037  66.466  71.250  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.737  66.804  70.975  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.124  66.615  70.270  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.800  67.085  70.215  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.831  67.565  70.886  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.174  67.392  71.355  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.369  65.984  71.279  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      63.216  65.452  70.666  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      62.852  66.033  71.920  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      63.004  66.564  72.532  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.488  66.614  73.175  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      63.674  67.047  72.503  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      64.190  66.998  71.861  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      64.859  67.480  71.833  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.197     24.711     25.567
+REMARK INTER + INTRA:          -8.197
+REMARK INTER:                  -8.197
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.712  79.852  49.155  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.956  79.602  49.370  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.541  80.004  49.958  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.784  79.754  50.175  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.958  79.198  49.591  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.657  79.156  49.154  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      71.595  78.517  48.635  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.858  78.165  48.751  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.465  78.586  49.342  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.873  80.397  50.684  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      71.569  80.841  50.670  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      70.266  80.597  51.205  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      69.571  80.154  51.219  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      68.964  80.354  51.741  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      69.482  79.510  50.710  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      70.090  79.310  50.188  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      70.000  78.667  49.679  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.922      6.604      7.891
+REMARK INTER + INTRA:          -7.922
+REMARK INTER:                  -7.922
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.095  64.767  70.652  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.534  65.422  70.895  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.152  65.700  70.424  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.593  66.355  70.666  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.064  66.297  71.297  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.467  65.732  71.378  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.073  65.879  72.089  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.426  66.533  72.446  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.039  66.791  71.956  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.968  66.187  69.952  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      64.712  65.552  69.491  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      65.601  66.652  69.698  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.857  67.286  70.159  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      66.489  67.752  69.906  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      65.481  67.455  70.875  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      64.848  66.989  71.128  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      64.473  67.158  71.843  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.823      6.122      7.375
+REMARK INTER + INTRA:          -7.823
+REMARK INTER:                  -7.823
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cyclopentobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.114  63.162  71.049  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.933  63.788  71.554  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.410  64.461  71.564  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.230  65.088  72.070  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.615  64.570  72.258  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.491  63.825  71.926  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.816  63.500  72.273  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.524  64.045  72.819  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.018  64.706  72.810  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.906  65.388  71.707  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      63.301  64.941  71.136  0.00  0.00    +0.000 OA
+ATOM     12  N   UNL     1      63.189  66.135  71.914  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.795  66.581  72.485  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      63.078  67.328  72.693  0.00  0.00    +0.000 OA
+ATOM     15  N   UNL     1      62.117  66.281  72.849  0.00  0.00    +0.000 NA
+ATOM     16  C   UNL     1      61.835  65.534  72.641  0.00  0.00    +0.000 C 
+ATOM     17  O   UNL     1      61.157  65.234  73.004  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

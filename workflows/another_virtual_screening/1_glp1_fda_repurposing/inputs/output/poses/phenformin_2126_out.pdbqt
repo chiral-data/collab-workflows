@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.878      0.000      0.000
+REMARK INTER + INTRA:          -8.878
+REMARK INTER:                  -8.878
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.092  63.587  69.878  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.903  63.176  69.188  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.217  62.719  69.155  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.401  63.222  68.532  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.212  62.811  67.842  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.526  62.354  67.808  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      61.710  62.858  67.186  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.521  62.446  66.495  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.019  62.493  65.839  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.830  62.081  65.149  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.328  62.128  64.493  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.139  61.717  63.802  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.454  61.259  63.768  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.956  61.214  64.425  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.144  61.624  65.115  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.210      1.395      4.423
+REMARK INTER + INTRA:          -8.210
+REMARK INTER:                  -8.210
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.329  62.450  64.359  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.073  62.164  65.088  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.975  61.352  65.203  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.914  62.690  65.704  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.657  62.404  66.434  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.560  61.592  66.549  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      61.499  62.930  67.050  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.242  62.643  67.780  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.083  63.169  68.396  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.826  62.883  69.126  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.668  63.409  69.742  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.411  63.123  70.473  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.313  62.312  70.587  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.472  61.787  69.971  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.729  62.072  69.241  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.977      4.459      6.352
+REMARK INTER + INTRA:          -7.977
+REMARK INTER:                  -7.977
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.404  63.265  69.116  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.954  63.649  69.596  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.004  63.463  70.398  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.453  64.220  69.272  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.004  64.606  69.752  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      63.054  64.420  70.554  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      63.504  65.177  69.428  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.054  65.562  69.908  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.554  66.133  69.584  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.104  66.519  70.064  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.604  67.090  69.740  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.154  67.475  70.220  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.205  67.289  71.022  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.704  66.718  71.345  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.155  66.333  70.866  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.930      2.425      5.451
+REMARK INTER + INTRA:          -7.930
+REMARK INTER:                  -7.930
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.009  62.002  66.548  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.061  62.395  67.272  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.774  63.165  67.346  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.401  62.016  67.921  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.453  62.409  68.646  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.166  63.179  68.720  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.793  62.031  69.295  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.845  62.423  70.020  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.185  62.045  70.669  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.238  62.437  71.394  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.577  62.059  72.043  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.630  62.452  72.768  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.343  63.222  72.842  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.003  63.599  72.191  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.951  63.207  71.468  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.629     18.486     19.124
+REMARK INTER + INTRA:          -7.629
+REMARK INTER:                  -7.629
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.511  81.694  57.455  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.753  80.999  57.828  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.193  80.445  58.073  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.556  80.858  57.955  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.798  80.163  58.328  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      63.238  79.609  58.573  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      64.601  80.022  58.456  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.843  79.327  58.829  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.646  79.186  58.957  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.889  78.491  59.330  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.691  78.350  59.457  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.934  77.655  59.830  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.374  77.101  60.075  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.571  77.242  59.947  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.328  77.937  59.575  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.513      5.440      6.284
+REMARK INTER + INTRA:          -7.513
+REMARK INTER:                  -7.513
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.456  67.650  70.800  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.652  66.854  70.713  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.499  66.465  70.002  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.002  66.446  71.339  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.198  65.648  71.253  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.044  65.260  70.542  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.547  65.241  71.880  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.743  64.443  71.794  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.093  64.035  72.420  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.289  63.238  72.334  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.638  62.830  72.960  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.834  62.032  72.874  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.681  61.644  72.162  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.331  62.053  71.537  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.135  62.849  71.622  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.343      5.328      6.441
+REMARK INTER + INTRA:          -7.343
+REMARK INTER:                  -7.343
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.655  66.950  69.858  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.108  66.631  70.387  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.006  66.973  71.131  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      64.664  65.971  70.171  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.117  65.651  70.701  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      64.015  65.992  71.445  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      63.673  64.990  70.485  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.126  64.671  71.014  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.682  64.010  70.799  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.135  63.690  71.328  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.691  63.029  71.112  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.143  62.710  71.642  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.041  63.051  72.386  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.486  63.712  72.600  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.032  64.032  72.072  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.108     24.256     25.171
+REMARK INTER + INTRA:          -7.108
+REMARK INTER:                  -7.108
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      67.817  81.115  53.176  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      68.503  81.020  52.728  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      69.168  81.482  52.887  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      68.523  80.463  52.120  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      69.209  80.367  51.671  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      69.874  80.829  51.830  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      69.229  79.810  51.063  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      69.915  79.715  50.614  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      69.935  79.157  50.006  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.622  79.062  49.557  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.642  78.505  48.949  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.328  78.409  48.500  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.993  78.871  48.659  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.971  79.428  49.267  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      71.286  79.524  49.716  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.938      1.915      4.778
+REMARK INTER + INTRA:          -6.938
+REMARK INTER:                  -6.938
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenformin
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.763  62.055  66.112  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.413  62.416  66.470  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.086  62.590  66.025  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.389  62.603  67.273  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.039  62.964  67.631  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.712  63.138  67.187  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      61.015  63.151  68.434  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.665  63.513  68.793  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.641  63.700  69.596  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.291  64.062  69.955  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.267  64.249  70.758  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.917  64.610  71.116  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.589  64.784  70.671  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.612  64.596  69.868  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.963  64.235  69.510  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

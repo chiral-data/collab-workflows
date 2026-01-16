@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -8.555      0.000      0.000
+REMARK INTER + INTRA:          -8.555
+REMARK INTER:                  -8.555
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      62.682  61.763  63.870  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      61.954  61.716  64.256  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      62.265  62.133  64.895  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      61.642  61.298  63.616  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      61.226  61.669  64.641  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      61.132  62.006  65.387  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      60.403  61.960  65.773  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      59.770  61.575  65.411  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      60.309  62.297  66.519  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      59.582  62.250  66.905  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      59.487  62.588  67.651  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      60.121  62.973  68.012  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      60.027  63.311  68.760  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      60.849  63.020  67.628  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      61.484  63.405  67.989  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      62.211  63.452  67.604  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      60.944  62.682  66.881  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.373      1.186      3.504
+REMARK INTER + INTRA:          -8.373
+REMARK INTER:                  -8.373
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      61.570  63.989  68.946  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      61.036  63.562  68.484  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      61.620  63.450  67.912  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      60.452  63.674  69.056  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      60.502  63.135  68.023  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      60.740  62.824  67.296  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      60.206  62.397  66.834  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      59.434  62.281  67.099  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      60.445  62.087  66.109  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      59.911  61.660  65.647  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      60.150  61.350  64.921  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      60.922  61.466  64.657  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      61.161  61.156  63.930  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      61.457  61.893  65.118  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      62.230  62.010  64.854  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      62.764  62.437  65.315  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      61.218  62.204  65.844  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.164      1.422      1.943
+REMARK INTER + INTRA:          -8.164
+REMARK INTER:                  -8.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      62.038  62.380  65.086  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      61.560  62.203  65.734  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      62.000  62.721  66.201  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      61.120  61.684  65.267  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      61.082  62.024  66.382  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      61.224  62.384  67.111  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      60.745  62.206  67.760  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      60.125  61.668  67.679  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      60.887  62.566  68.488  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      60.410  62.388  69.136  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      60.552  62.748  69.865  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      61.172  63.285  69.945  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      61.314  63.646  70.674  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      61.650  63.464  69.297  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      62.271  64.002  69.377  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      62.749  64.180  68.729  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      61.508  63.104  68.568  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.143      3.006      5.234
+REMARK INTER + INTRA:          -8.143
+REMARK INTER:                  -8.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      61.654  63.906  72.839  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      61.473  63.299  72.311  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      61.333  63.854  71.719  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      61.613  62.742  72.905  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      61.292  62.690  71.784  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      61.080  62.868  71.007  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      60.898  62.260  70.479  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      60.929  61.474  70.729  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      60.686  62.437  69.703  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      60.505  61.830  69.175  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      60.293  62.007  68.398  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      60.262  62.793  68.148  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      60.050  62.971  67.370  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      60.443  63.401  68.675  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      60.413  64.187  68.426  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      60.594  64.795  68.953  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      60.655  63.223  69.453  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.877      3.851      5.195
+REMARK INTER + INTRA:          -7.877
+REMARK INTER:                  -7.877
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      60.517  61.752  70.615  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      60.454  62.420  70.136  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      60.233  62.870  70.790  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      60.676  61.970  69.480  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      60.392  63.088  69.655  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      60.169  63.812  69.983  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      60.107  64.481  69.503  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      60.267  64.425  68.696  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      59.884  65.204  69.830  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      59.822  65.872  69.351  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      59.599  66.596  69.679  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      59.438  66.651  70.486  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      59.215  67.375  70.814  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      59.501  65.983  70.966  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      59.340  66.037  71.774  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      59.402  65.370  72.253  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      59.723  65.259  70.638  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.749      5.238      6.554
+REMARK INTER + INTRA:          -7.749
+REMARK INTER:                  -7.749
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      61.197  63.535  72.491  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      61.643  63.602  71.801  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      62.048  64.244  72.124  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      61.238  62.960  71.477  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      62.089  63.669  71.110  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      62.663  64.258  71.045  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      63.109  64.325  70.353  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      62.981  63.802  69.728  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      63.682  64.913  70.288  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      64.128  64.981  69.598  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      64.702  65.570  69.533  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      64.830  66.092  70.158  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      65.404  66.682  70.092  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      64.384  66.026  70.849  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      64.511  66.548  71.475  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      64.065  66.481  72.166  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      63.810  65.436  70.914  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.665      2.859      4.512
+REMARK INTER + INTRA:          -7.665
+REMARK INTER:                  -7.665
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      60.338  62.339  67.626  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      60.896  62.798  68.024  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      60.489  62.683  68.731  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      61.305  62.914  67.316  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      61.455  63.258  68.421  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      61.381  63.387  69.232  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      61.940  63.847  69.630  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      62.572  64.176  69.216  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      61.866  63.976  70.440  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      62.424  64.435  70.838  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      62.349  64.565  71.650  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      61.717  64.235  72.063  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      61.643  64.365  72.876  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      61.158  63.776  71.666  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      60.525  63.446  72.080  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      59.967  62.987  71.683  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      61.232  63.646  70.855  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.498      4.598      6.086
+REMARK INTER + INTRA:          -7.498
+REMARK INTER:                  -7.498
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      61.616  62.006  71.894  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      61.368  62.775  72.057  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      61.148  62.872  71.269  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      61.589  62.678  72.847  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      61.120  63.545  72.222  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      60.805  64.014  71.621  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      60.557  64.784  71.785  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      60.624  65.084  72.550  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      60.242  65.252  71.184  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      59.994  66.021  71.348  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      59.679  66.490  70.746  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      59.612  66.190  69.982  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      59.297  66.659  69.380  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      59.860  65.420  69.817  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      59.793  65.119  69.052  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      60.041  64.350  68.888  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      60.175  64.951  70.418  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.376     24.536     25.927
+REMARK INTER + INTRA:          -7.376
+REMARK INTER:                  -7.376
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pirbuterol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNK A   0      69.487  81.190  52.249  0.00  0.00    +0.000 C 
+ATOM      2  C   UNK A   0      69.495  80.594  51.678  0.00  0.00    +0.000 C 
+ATOM      3  C   UNK A   0      70.262  80.808  51.464  0.00  0.00    +0.000 C 
+ATOM      4  C   UNK A   0      68.727  80.379  51.892  0.00  0.00    +0.000 C 
+ATOM      5  N   UNK A   0      69.502  79.998  51.107  0.00  0.00    +0.000 NA
+ATOM      6  C   UNK A   0      70.170  79.886  50.637  0.00  0.00    +0.000 C 
+ATOM      7  C   UNK A   0      70.177  79.289  50.065  0.00  0.00    +0.000 C 
+ATOM      8  O   UNK A   0      69.516  78.806  49.966  0.00  0.00    +0.000 OA
+ATOM      9  C   UNK A   0      70.845  79.177  49.595  0.00  0.00    +0.000 A 
+ATOM     10  C   UNK A   1      70.852  78.582  49.024  0.00  0.00    +0.000 A 
+ATOM     11  C   UNK A   1      71.520  78.470  48.554  0.00  0.00    +0.000 A 
+ATOM     12  C   UNK A   1      72.181  78.953  48.653  0.00  0.00    +0.000 A 
+ATOM     13  O   UNK A   1      72.850  78.841  48.182  0.00  0.00    +0.000 OA
+ATOM     14  C   UNK A   1      72.174  79.549  49.224  0.00  0.00    +0.000 A 
+ATOM     15  C   UNK A   1      72.835  80.033  49.324  0.00  0.00    +0.000 C 
+ATOM     16  O   UNK A   1      72.828  80.629  49.894  0.00  0.00    +0.000 OA
+ATOM     17  N   UNK A   1      71.506  79.661  49.695  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

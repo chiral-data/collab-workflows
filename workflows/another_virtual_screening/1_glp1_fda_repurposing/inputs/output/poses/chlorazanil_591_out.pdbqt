@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.389      0.000      0.000
+REMARK INTER + INTRA:          -8.389
+REMARK INTER:                  -8.389
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.342  63.620  68.858  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.129  63.193  68.185  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.647  63.147  67.544  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.435  62.720  66.871  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.952  62.674  66.231  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.740  62.248  65.559  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.258  62.202  64.918  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.045  61.775  64.245  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.314  61.393  64.213  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.102  60.965  63.539  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.797  61.438  64.853  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.009  61.866  65.526  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      60.703  62.338  66.839  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      60.186  62.384  67.479  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      60.399  62.811  68.152  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.532      1.098      1.912
+REMARK INTER + INTRA:          -7.532
+REMARK INTER:                  -7.532
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.257  64.353  69.893  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.556  63.982  69.218  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.044  63.596  68.699  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.343  63.226  68.025  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.832  62.839  67.506  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.130  62.469  66.832  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.619  62.082  66.313  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.917  61.712  65.639  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.728  61.729  65.484  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.027  61.359  64.809  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.239  62.116  66.002  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.940  62.486  66.677  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      61.153  63.243  67.870  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.664  63.630  68.389  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      61.366  64.000  69.063  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.429      2.969      4.793
+REMARK INTER + INTRA:          -7.429
+REMARK INTER:                  -7.429
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.221  61.999  66.424  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.232  62.347  67.173  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.899  61.952  67.816  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.911  62.300  68.564  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.578  61.906  69.208  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.590  62.253  69.955  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.257  61.858  70.599  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.268  62.206  71.347  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.612  62.949  71.451  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.623  63.298  72.200  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.944  63.344  70.808  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.933  62.996  70.060  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      61.254  63.043  68.668  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.587  63.437  68.024  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      61.575  63.089  67.277  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.351      5.410      6.946
+REMARK INTER + INTRA:          -7.351
+REMARK INTER:                  -7.351
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.023  63.914  71.332  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.606  64.359  70.953  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.017  64.940  71.370  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      63.600  65.385  70.992  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      64.012  65.966  71.408  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.594  66.410  71.029  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.006  66.991  71.447  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.589  67.436  71.068  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.759  67.299  70.272  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      66.342  67.745  69.893  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      65.347  66.719  69.855  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.765  66.274  70.234  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      63.771  65.249  70.195  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      63.358  64.668  69.779  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      62.776  64.224  70.158  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.127      5.847      6.634
+REMARK INTER + INTRA:          -7.127
+REMARK INTER:                  -7.127
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.366  66.919  73.214  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.451  66.208  72.803  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      60.047  65.678  73.015  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.131  64.968  72.604  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.726  64.437  72.815  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.811  63.727  72.404  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.406  63.196  72.616  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.491  62.486  72.205  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.980  62.307  71.582  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.065  61.596  71.170  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.386  62.837  71.370  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.301  63.547  71.781  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      59.621  64.788  71.980  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.026  65.319  71.769  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      58.941  66.029  72.180  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.090      3.908      4.886
+REMARK INTER + INTRA:          -7.090
+REMARK INTER:                  -7.090
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.609  66.876  69.195  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.713  66.172  69.615  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      59.908  65.478  69.215  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.011  64.775  69.635  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.205  64.080  69.235  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.309  63.378  69.655  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.503  62.683  69.254  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.607  61.980  69.674  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.516  61.973  70.495  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.620  61.270  70.915  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      60.322  62.668  70.894  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.219  63.370  70.474  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      59.921  64.767  70.455  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      59.727  65.463  70.855  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      59.623  66.165  70.435  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.874      4.790      5.672
+REMARK INTER + INTRA:          -6.874
+REMARK INTER:                  -6.874
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.294  65.927  70.995  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.801  65.297  70.790  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      63.218  65.042  71.316  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      62.726  64.413  71.111  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.143  64.157  71.636  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.651  63.528  71.431  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.068  63.272  71.957  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.576  62.643  71.752  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.666  62.269  71.022  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      60.173  61.639  70.817  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      61.248  62.525  70.497  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.741  63.154  70.702  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      62.816  64.038  70.381  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      63.399  64.294  69.856  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      63.891  64.924  70.061  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.567      6.685      7.677
+REMARK INTER + INTRA:          -6.567
+REMARK INTER:                  -6.567
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.146  67.632  70.279  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      65.513  67.128  70.444  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      65.038  67.266  71.104  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      64.405  66.763  71.269  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      63.929  66.900  71.928  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.297  66.397  72.092  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.821  66.534  72.753  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.188  66.031  72.917  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.032  65.390  72.422  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      61.399  64.886  72.586  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      62.508  65.252  71.762  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.140  65.756  71.598  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      64.248  66.121  70.773  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      64.724  65.984  70.114  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      65.357  66.488  69.949  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.547      3.660      5.321
+REMARK INTER + INTRA:          -6.547
+REMARK INTER:                  -6.547
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorazanil
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.355  62.002  68.959  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.899  62.622  69.005  0.00  0.00    +0.000 A 
+ATOM      3  N   UNL     1      61.181  62.869  69.740  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.725  63.488  69.786  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.007  63.736  70.520  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.550  64.354  70.566  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.833  64.602  71.301  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.376  65.221  71.347  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.636  65.593  70.658  0.00  0.00    +0.000 A 
+ATOM     10 CL   UNL     1      64.180  66.213  70.704  0.00  0.00    +0.000 Cl
+ATOM     11  C   UNL     1      63.354  65.346  69.924  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.811  64.727  69.878  0.00  0.00    +0.000 A 
+ATOM     13  N   UNL     1      61.986  63.861  69.097  0.00  0.00    +0.000 NA
+ATOM     14  C   UNL     1      61.703  63.613  68.363  0.00  0.00    +0.000 A 
+ATOM     15  N   UNL     1      61.160  62.994  68.317  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

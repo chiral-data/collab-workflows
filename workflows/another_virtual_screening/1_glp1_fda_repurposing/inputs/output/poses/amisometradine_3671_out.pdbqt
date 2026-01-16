@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -7.487      0.000      0.000
+REMARK INTER + INTRA:          -7.487
+REMARK INTER:                  -7.487
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.518  63.265  67.599  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.995  62.859  67.107  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.211  62.750  67.338  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      59.950  63.047  68.062  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.688  62.343  66.846  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.950  62.046  66.123  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.426  61.639  65.630  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.734  62.155  65.891  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.996  61.857  65.167  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.780  61.966  64.935  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.041  61.669  64.212  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.303  62.372  65.428  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.257  62.561  66.383  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.042  62.670  66.151  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.120      0.900      2.437
+REMARK INTER + INTRA:          -7.120
+REMARK INTER:                  -7.120
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.265  62.002  65.345  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.475  62.002  65.577  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.907  61.629  65.109  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.132  61.256  64.409  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.115  61.629  65.342  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      59.891  62.001  66.042  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      59.099  62.001  66.274  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.458  62.375  66.511  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.234  62.748  67.212  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.801  63.121  67.680  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.577  63.494  68.381  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.593  63.122  67.448  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.250  62.375  66.279  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.818  62.749  66.748  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.590      3.223      4.791
+REMARK INTER + INTRA:          -6.590
+REMARK INTER:                  -6.590
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.745  63.782  68.935  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.358  63.197  69.368  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.909  62.624  68.980  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.848  62.637  68.157  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.522  62.039  69.414  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.584  62.026  70.235  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.196  61.440  70.670  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      61.032  62.599  70.625  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.094  62.587  71.448  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.542  63.159  71.837  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.604  63.147  72.659  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.929  63.744  71.403  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.419  63.184  70.192  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.868  63.758  70.581  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.492      6.134      7.250
+REMARK INTER + INTRA:          -6.492
+REMARK INTER:                  -6.492
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.642  66.566  72.213  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.910  66.254  71.499  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.561  65.574  71.189  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      62.944  65.207  71.594  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.830  65.262  70.474  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.447  65.630  70.069  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      64.716  65.317  69.354  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      64.797  66.310  70.379  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      65.414  66.679  69.975  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.763  67.359  70.285  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.380  67.726  69.880  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.495  67.671  70.999  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.528  66.623  71.094  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      64.877  67.303  71.405  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.421      2.745      3.827
+REMARK INTER + INTRA:          -6.421
+REMARK INTER:                  -6.421
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.283  64.124  70.124  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.767  63.493  70.248  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.633  63.213  71.012  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      62.016  63.565  71.652  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.117  62.582  71.136  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.735  62.230  70.495  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.218  61.598  70.620  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.868  62.510  69.730  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.485  62.158  69.089  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.618  62.438  68.325  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.236  62.087  67.685  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.135  63.069  68.201  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.384  63.141  69.607  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.518  63.421  68.841  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.281      3.639      4.609
+REMARK INTER + INTRA:          -6.281
+REMARK INTER:                  -6.281
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.735  65.263  70.951  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.917  64.773  70.313  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.906  65.074  69.545  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      59.713  65.866  69.417  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.089  64.584  68.907  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.282  63.794  69.037  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.464  63.303  68.398  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.293  63.491  69.805  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.486  62.700  69.935  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.497  62.398  70.702  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.690  61.607  70.832  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.314  62.888  71.340  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.110  63.981  70.443  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.121  63.679  71.211  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.111      5.443      6.405
+REMARK INTER + INTRA:          -6.111
+REMARK INTER:                  -6.111
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.745  66.243  72.315  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.746  65.652  71.741  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.120  65.781  71.017  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      63.493  66.502  70.869  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.122  65.189  70.442  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.750  64.469  70.591  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.751  63.877  70.015  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      62.375  64.339  71.314  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.002  63.618  71.463  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.628  63.488  72.186  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.256  62.768  72.335  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.626  64.080  72.762  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.373  64.930  71.889  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.999  64.801  72.614  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.089     25.108     25.998
+REMARK INTER + INTRA:          -6.089
+REMARK INTER:                  -6.089
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.802  80.416  49.869  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      72.211  79.876  49.675  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      72.354  79.292  49.111  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      73.090  79.250  48.741  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.762  78.751  48.916  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.027  78.794  49.286  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      70.435  78.252  49.092  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      70.882  79.378  49.851  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      70.146  79.421  50.222  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.002  80.004  50.787  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      69.267  80.047  51.157  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      70.594  80.545  50.981  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      71.474  79.919  50.046  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      71.330  80.503  50.611  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.956      5.376      6.223
+REMARK INTER + INTRA:          -5.956
+REMARK INTER:                  -5.956
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amisometradine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.584  63.166  71.452  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.888  63.889  71.706  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.562  64.267  72.362  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.930  63.921  72.764  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.866  64.991  72.616  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.497  65.336  72.214  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.802  66.060  72.468  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      62.825  64.959  71.557  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      63.457  65.304  71.154  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.784  64.927  70.498  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.415  65.272  70.095  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      63.479  64.203  70.244  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.521  64.235  71.303  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.848  63.857  70.646  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

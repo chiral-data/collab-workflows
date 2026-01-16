@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -6.844      0.000      0.000
+REMARK INTER + INTRA:          -6.844
+REMARK INTER:                  -6.844
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.398  61.998  66.051  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.055  62.331  66.424  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.795  62.299  66.061  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.452  62.632  66.434  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.108  62.517  65.946  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.856  62.113  65.271  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      62.332  61.884  64.638  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      61.045  61.978  65.343  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.368  62.997  67.170  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.023  63.329  67.542  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.627  63.028  67.531  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.544  63.393  68.266  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.971  62.695  67.159  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.231  62.727  67.521  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.389      1.690      2.654
+REMARK INTER + INTRA:          -6.389
+REMARK INTER:                  -6.389
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.079  64.143  68.846  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.584  63.482  68.865  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.423  63.067  68.170  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.929  62.406  68.190  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.870  62.109  67.422  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.328  62.587  66.928  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      61.426  62.489  66.115  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      61.669  63.178  67.391  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.597  62.160  68.905  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.104  61.500  68.924  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.759  62.576  69.599  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.427  62.329  70.313  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.253  63.236  69.579  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.414  63.651  70.273  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.203      3.191      4.473
+REMARK INTER + INTRA:          -6.203
+REMARK INTER:                  -6.203
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.206  64.166  69.477  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.699  63.521  69.576  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.516  63.255  70.335  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.010  62.611  70.435  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.929  62.472  71.245  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.386  63.031  71.645  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      61.465  63.095  72.464  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      61.748  63.515  71.084  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.687  62.233  69.775  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.182  61.590  69.874  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.872  62.500  69.017  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.549  62.123  68.358  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.378  63.144  68.917  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.561  63.411  68.159  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.118      4.812      5.742
+REMARK INTER + INTRA:          -6.118
+REMARK INTER:                  -6.118
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.472  66.612  72.017  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      59.558  66.274  71.268  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.714  65.468  71.195  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.800  65.130  70.447  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      59.951  64.325  70.545  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      59.960  64.165  71.355  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      60.092  63.428  71.702  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      59.814  64.871  71.756  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      59.728  65.600  69.771  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.813  65.263  69.024  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.571  66.407  69.845  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      59.500  66.875  69.171  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.486  66.744  70.594  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.329  67.550  70.667  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.924      5.456      6.511
+REMARK INTER + INTRA:          -5.924
+REMARK INTER:                  -5.924
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.778  66.215  72.184  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.192  65.754  71.637  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      63.953  65.975  71.406  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.367  65.515  70.860  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      65.103  65.867  70.737  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.144  66.544  71.207  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      65.783  67.063  71.254  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      64.433  66.611  71.620  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.020  64.835  70.546  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      64.434  64.375  70.001  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.260  64.615  70.778  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      62.913  63.936  70.464  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.846  65.075  71.324  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.085  64.855  71.555  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.916      3.329      4.212
+REMARK INTER + INTRA:          -5.916
+REMARK INTER:                  -5.916
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.589  63.595  68.495  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.727  63.608  69.309  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.411  63.962  69.605  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.549  63.976  70.418  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      63.267  64.361  70.549  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.573  64.586  69.816  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      64.282  64.987  69.688  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      63.044  64.340  69.233  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.003  63.635  70.935  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.141  63.648  71.748  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.320  63.281  70.638  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.775  62.941  71.155  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.182  63.268  69.825  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.499  62.914  69.529  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.885      3.423      4.564
+REMARK INTER + INTRA:          -5.885
+REMARK INTER:                  -5.885
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.636  64.212  69.851  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.098  63.846  70.360  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.541  63.316  70.060  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.004  62.951  70.569  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.521  62.457  70.117  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.760  62.518  69.329  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      60.427  62.117  68.690  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      61.390  63.048  69.294  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.024  63.116  71.377  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.487  62.751  71.885  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.581  63.645  71.677  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.600  63.809  72.485  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.118  64.010  71.168  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.675  64.539  71.468  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.877      5.392      6.244
+REMARK INTER + INTRA:          -5.877
+REMARK INTER:                  -5.877
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.729  66.250  72.419  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.852  65.709  71.808  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.496  64.965  71.839  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.618  64.424  71.228  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.199  63.737  71.408  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.817  63.853  72.131  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      61.336  63.306  72.519  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      62.001  64.612  72.397  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.096  64.627  70.586  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      63.218  64.087  69.976  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.451  65.371  70.556  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      63.928  65.574  69.914  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.329  65.912  71.167  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      63.684  66.655  71.136  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.724     13.147     14.087
+REMARK INTER + INTRA:          -5.724
+REMARK INTER:                  -5.724
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pamabrom
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.598  61.102  51.467  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      64.637  61.418  52.229  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      64.294  61.013  52.861  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.333  61.328  53.622  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      63.946  60.808  54.134  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.668  60.171  53.688  0.00  0.00    +0.000 A 
+ATOM      7 BR   UNL     1      63.249  59.523  53.977  0.00  0.00    +0.000 Br
+ATOM      8  N   UNL     1      63.883  60.298  52.901  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.716  62.048  53.752  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      64.755  62.362  54.513  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      65.059  62.452  53.120  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      65.441  63.171  53.250  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.020  62.137  52.359  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      65.363  62.541  51.727  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

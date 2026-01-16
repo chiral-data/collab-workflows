@@ -1,0 +1,208 @@
+MODEL 1
+REMARK VINA RESULT:    -9.257      0.000      0.000
+REMARK INTER + INTRA:          -9.257
+REMARK INTER:                  -9.257
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.607  62.117  66.458  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.272  62.245  65.986  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.887  62.721  66.261  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.321  61.897  65.241  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.639  61.743  65.680  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.089  61.600  64.903  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.726  62.068  65.140  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.407  62.221  64.700  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.452  61.905  64.023  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.815  61.436  63.788  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.134  61.283  64.227  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.365  61.580  64.564  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.957  62.365  65.476  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.199      0.954      2.153
+REMARK INTER + INTRA:          -9.199
+REMARK INTER:                  -9.199
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.165  61.297  63.202  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.654  61.352  63.849  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.915  60.987  63.821  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      61.882  61.771  64.520  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.423  61.741  63.898  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.248  62.045  64.736  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.501  61.696  64.750  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.961  61.726  65.373  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.168  62.106  65.983  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.916  62.456  65.968  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.455  62.426  65.346  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.090  62.152  65.130  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.136  61.422  64.534  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.274      0.975      2.235
+REMARK INTER + INTRA:          -8.274
+REMARK INTER:                  -8.274
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.101  62.162  65.643  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.550  62.367  66.223  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.799  62.750  66.910  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.753  62.189  66.115  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.270  61.966  65.511  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.410  61.981  65.807  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.616  62.364  66.507  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.099  62.587  67.111  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.375  62.425  67.013  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.170  62.042  66.312  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.686  61.820  65.709  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.029  62.027  66.017  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.958  62.572  66.815  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.229      5.710      6.942
+REMARK INTER + INTRA:          -8.229
+REMARK INTER:                  -8.229
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.480  61.634  70.571  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.965  61.887  71.189  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.619  61.436  71.411  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.795  62.590  71.584  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.285  62.374  70.973  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.482  62.986  71.616  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.145  62.565  71.869  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.654  62.783  72.480  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.501  63.421  72.839  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.837  63.841  72.585  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.328  63.624  71.974  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.642  63.229  71.943  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.458  62.171  71.837  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.181      5.988      6.888
+REMARK INTER + INTRA:          -8.181
+REMARK INTER:                  -8.181
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.770  64.210  72.722  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.489  63.709  72.129  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.801  63.902  71.718  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      60.897  63.016  71.949  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.211  63.488  72.547  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.297  62.727  72.058  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.614  62.882  71.624  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.299  62.409  71.025  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.670  61.780  70.861  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.353  61.625  71.297  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.667  62.098  71.895  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.267  62.387  71.785  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.214  63.171  71.514  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.768     24.574     25.527
+REMARK INTER + INTRA:          -7.768
+REMARK INTER:                  -7.768
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      72.740  79.382  48.265  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.144  79.600  48.793  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      72.156  80.347  49.143  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      71.537  79.071  48.971  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.112  78.814  48.438  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.347  78.611  48.885  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      71.322  79.347  49.256  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.746  79.604  49.788  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.195  79.124  49.949  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.221  78.388  49.577  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      70.796  78.131  49.046  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      70.986  78.591  49.132  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      71.511  79.807  49.342  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.765     15.818     16.784
+REMARK INTER + INTRA:          -7.765
+REMARK INTER:                  -7.765
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.575  74.915  72.168  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.112  75.544  72.436  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      57.294  75.456  72.496  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      58.467  76.258  72.642  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.966  75.656  72.380  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      58.902  76.512  72.681  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      58.082  76.466  72.756  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      57.584  77.069  73.018  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      57.906  77.718  73.205  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      58.726  77.762  73.130  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.224  77.160  72.868  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.789  76.907  72.829  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      57.647  76.214  72.717  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.312     15.576     16.097
+REMARK INTER + INTRA:          -7.312
+REMARK INTER:                  -7.312
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = rimantadine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      58.702  75.548  72.504  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.125  76.044  72.183  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      57.576  76.410  72.677  0.00  0.00    +0.000 NA
+ATOM      4  C   UNL     1      58.099  76.173  71.369  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.691  75.670  71.648  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      58.311  76.066  70.923  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      57.744  76.451  71.381  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      57.152  76.953  71.101  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      57.128  77.070  70.363  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      57.696  76.685  69.906  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      58.287  76.183  70.185  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.075  76.290  70.631  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      57.532  76.558  71.827  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

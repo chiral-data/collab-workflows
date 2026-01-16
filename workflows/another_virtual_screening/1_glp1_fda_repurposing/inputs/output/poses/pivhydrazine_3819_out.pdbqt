@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -9.241      0.000      0.000
+REMARK INTER + INTRA:          -9.241
+REMARK INTER:                  -9.241
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.501  62.586  69.682  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.860  62.644  68.941  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.321  63.271  69.213  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.398  62.016  68.668  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.218  62.701  68.200  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.797  63.273  68.065  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      60.997  62.186  67.594  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      61.356  62.244  66.853  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.135  61.729  66.247  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.493  61.786  65.507  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.273  61.272  64.901  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.632  61.330  64.160  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.210  61.901  64.025  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.431  62.417  64.631  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.073  62.359  65.372  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.925      1.051      4.109
+REMARK INTER + INTRA:          -8.925
+REMARK INTER:                  -8.925
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.336  61.981  63.774  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.965  61.895  64.505  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.540  61.250  64.214  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.390  62.540  64.797  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.593  61.809  65.237  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.040  61.208  65.350  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.776  62.324  65.855  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      61.405  62.238  66.586  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.587  62.754  67.205  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.216  62.668  67.936  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.398  63.183  68.554  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.026  63.097  69.286  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.473  62.496  69.399  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.290  61.981  68.781  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.662  62.067  68.050  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.268      0.918      4.274
+REMARK INTER + INTRA:          -8.268
+REMARK INTER:                  -8.268
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.596  61.953  65.448  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.440  62.270  66.193  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.533  63.031  65.888  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.346  61.509  66.498  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.283  62.588  66.938  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.286  63.405  67.046  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.125  62.087  67.574  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.969  62.405  68.320  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.810  61.905  68.957  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.654  62.222  69.701  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.495  61.722  70.338  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.339  62.040  71.083  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.342  62.857  71.192  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.501  63.358  70.555  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.657  63.040  69.810  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.163      2.437      5.212
+REMARK INTER + INTRA:          -8.163
+REMARK INTER:                  -8.163
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.962  62.914  67.243  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.241  62.668  67.980  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.371  61.911  67.677  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.110  63.425  68.283  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.519  62.421  68.716  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.770  61.643  68.822  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      60.545  62.953  69.346  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.823  62.706  70.083  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.849  63.238  70.714  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.127  62.992  71.449  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.154  63.523  72.080  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.432  63.276  72.816  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.683  62.498  72.922  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.657  61.966  72.292  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.379  62.213  71.555  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.006      5.128      6.161
+REMARK INTER + INTRA:          -8.006
+REMARK INTER:                  -8.006
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.232  63.486  72.320  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.793  63.849  71.836  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.596  63.333  71.222  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.990  64.365  72.450  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.354  64.211  71.351  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.464  63.946  70.578  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      62.804  64.839  71.641  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      63.365  65.202  71.157  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.816  65.830  71.446  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.376  66.192  70.962  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.827  66.820  71.251  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.388  67.183  70.766  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.497  66.918  69.993  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.047  66.290  69.704  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.486  65.927  70.188  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.967     18.279     19.340
+REMARK INTER + INTRA:          -7.967
+REMARK INTER:                  -7.967
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.371  81.538  57.619  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.608  80.830  57.969  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.825  80.570  57.975  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.392  81.090  57.963  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.846  80.122  58.320  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.287  79.543  58.500  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      64.643  79.994  58.490  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      64.881  79.286  58.840  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      65.678  79.156  59.011  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.916  78.449  59.361  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.712  78.320  59.532  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.950  77.612  59.882  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.391  77.033  60.062  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.594  77.162  59.892  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.356  77.870  59.542  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.940      5.142      6.285
+REMARK INTER + INTRA:          -7.940
+REMARK INTER:                  -7.940
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.154  66.504  69.884  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.616  66.150  70.399  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.802  66.708  70.978  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.429  65.592  69.820  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.077  65.797  70.914  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.970  66.103  71.672  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      63.646  65.136  70.671  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      63.108  64.782  71.186  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.677  64.122  70.943  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.139  63.768  71.457  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.708  63.108  71.215  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.169  62.754  71.730  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.062  63.061  72.488  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.493  63.721  72.732  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.031  64.075  72.216  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.795      1.547      2.188
+REMARK INTER + INTRA:          -7.795
+REMARK INTER:                  -7.795
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.734  62.519  71.743  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.890  62.585  70.936  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.615  62.940  71.106  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.164  62.230  70.766  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.047  62.651  70.129  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.752  62.991  69.872  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      60.496  62.376  69.579  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      60.653  62.442  68.771  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.102  62.168  68.220  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.259  62.233  67.414  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.709  61.959  66.863  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.866  62.025  66.056  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.572  62.365  65.799  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.122  62.640  66.349  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.966  62.574  67.157  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.682      3.819      5.040
+REMARK INTER + INTRA:          -7.682
+REMARK INTER:                  -7.682
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pivhydrazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.238  61.655  70.872  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.751  62.229  70.575  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.535  62.024  69.806  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.967  62.434  71.346  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.263  62.804  70.279  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.332  62.913  69.464  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.706  63.268  70.797  0.00  0.00    +0.000 NA
+ATOM      8  N   UNL     1      62.219  63.842  70.500  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.662  64.307  71.019  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.174  64.881  70.722  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.618  65.346  71.239  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.130  65.920  70.943  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.200  66.030  70.129  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.757  65.565  69.610  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.244  64.991  69.907  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

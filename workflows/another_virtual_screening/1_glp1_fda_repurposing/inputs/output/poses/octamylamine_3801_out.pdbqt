@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.583      0.000      0.000
+REMARK INTER + INTRA:          -8.583
+REMARK INTER:                  -8.583
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.131  62.092  70.776  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.498  62.400  70.105  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.869  63.136  70.139  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.494  61.973  69.399  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.860  62.281  68.728  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.856  61.854  68.022  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.223  62.162  67.350  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.594  62.898  67.385  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.218  61.735  66.645  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.585  62.043  65.973  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.581  61.616  65.268  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.948  61.924  64.596  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.943  61.497  63.891  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.319  62.660  64.630  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.541      0.443      4.552
+REMARK INTER + INTRA:          -8.541
+REMARK INTER:                  -8.541
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.980  61.508  63.827  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.963  61.918  64.542  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.300  62.670  64.594  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.610  61.578  65.206  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.594  61.988  65.921  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.241  61.647  66.583  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.224  62.057  67.299  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.560  62.809  67.351  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.871  61.717  67.962  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.854  62.127  68.678  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.501  61.786  69.340  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.484  62.196  70.056  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.131  61.856  70.719  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.820  62.948  70.108  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.827      5.183      6.116
+REMARK INTER + INTRA:          -7.827
+REMARK INTER:                  -7.827
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.882  63.019  72.057  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.339  63.695  72.169  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.211  64.175  72.828  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.926  63.893  71.623  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.383  64.570  71.736  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.969  64.767  71.190  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.427  65.444  71.302  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.299  65.924  71.961  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      64.013  65.641  70.757  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.471  66.318  70.869  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.056  66.516  70.323  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.515  67.193  70.435  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.100  67.390  69.890  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.386  67.672  71.094  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.428      1.865      4.490
+REMARK INTER + INTRA:          -7.428
+REMARK INTER:                  -7.428
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.109  61.707  65.351  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.066  62.078  66.087  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.336  62.168  66.460  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.752  62.358  66.449  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.709  62.729  67.184  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.395  63.009  67.546  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.352  63.380  68.282  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.622  63.470  68.656  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      62.037  63.659  68.644  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.995  64.030  69.380  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      62.680  64.310  69.741  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.638  64.681  70.477  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.323  64.961  70.839  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.908  64.772  70.851  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.197      1.803      2.845
+REMARK INTER + INTRA:          -7.197
+REMARK INTER:                  -7.197
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.159  64.645  72.911  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.492  64.198  72.304  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.191  63.780  72.436  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.128  64.168  71.564  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.461  63.722  70.957  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.097  63.692  70.218  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.431  63.245  69.610  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.129  62.827  69.742  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.066  63.215  68.872  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.400  62.768  68.264  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.035  62.739  67.525  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.369  62.292  66.917  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.004  62.262  66.178  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.068  61.873  67.049  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.994      4.400      5.016
+REMARK INTER + INTRA:          -6.994
+REMARK INTER:                  -6.994
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.016  60.990  72.096  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.725  61.758  72.163  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.671  62.116  72.904  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.486  62.170  71.489  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.195  62.938  71.556  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.957  63.350  70.882  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.665  64.119  70.949  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.611  64.476  71.691  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.427  64.530  70.275  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.135  65.299  70.342  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.897  65.710  69.668  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.605  66.479  69.735  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.367  66.890  69.061  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.552  66.836  70.477  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.754     24.533     25.998
+REMARK INTER + INTRA:          -6.754
+REMARK INTER:                  -6.754
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.250  78.439  48.240  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.250  78.879  48.937  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.957  79.185  49.232  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.543  79.013  49.341  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.542  79.452  50.038  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.836  79.586  50.442  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      69.835  80.025  51.140  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.542  80.332  51.435  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      69.128  80.159  51.543  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      69.128  80.599  52.241  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      68.421  80.732  52.644  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      68.420  81.172  53.342  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      67.714  81.306  53.746  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      69.127  81.478  53.637  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.740      4.375      5.521
+REMARK INTER + INTRA:          -6.740
+REMARK INTER:                  -6.740
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.438  67.156  68.787  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.692  66.768  69.468  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.727  67.173  70.186  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.911  65.973  69.433  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.165  65.584  70.114  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.384  64.790  70.079  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.639  64.400  70.760  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.674  64.806  71.478  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.858  63.607  70.724  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.112  63.217  71.406  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.331  62.423  71.370  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.586  62.033  72.052  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.805  61.240  72.016  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.621  62.439  72.769  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.658      6.409      7.128
+REMARK INTER + INTRA:          -6.658
+REMARK INTER:                  -6.658
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = octamylamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.308  66.791  73.213  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.913  66.656  72.670  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.741  66.319  71.937  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.691  66.859  72.858  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.295  66.724  72.314  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.072  66.926  72.502  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.678  66.792  71.958  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.506  66.454  71.226  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.454  66.994  72.147  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.060  66.860  71.603  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      64.837  67.062  71.791  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.443  66.927  71.247  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.219  67.130  71.436  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.271  66.590  70.514  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -6.931      0.000      0.000
+REMARK INTER + INTRA:          -6.931
+REMARK INTER:                  -6.931
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      60.134  62.458  68.217  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      60.866  62.837  68.244  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      61.366  62.818  67.587  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      61.132  62.419  66.904  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      61.632  62.399  66.247  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      61.399  62.000  65.564  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      61.898  61.981  64.907  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      62.630  62.360  64.933  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      61.665  61.581  64.224  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      62.165  61.562  63.567  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      60.933  61.202  64.197  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      61.100  63.237  68.927  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      60.600  63.256  69.584  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      61.831  63.616  68.954  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.919      0.211      4.331
+REMARK INTER + INTRA:          -6.919
+REMARK INTER:                  -6.919
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      62.727  62.378  64.901  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      61.997  62.004  64.808  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      61.449  62.009  65.425  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      61.632  62.388  66.135  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      61.084  62.393  66.753  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      61.267  62.771  67.462  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      60.718  62.776  68.080  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      59.989  62.403  67.987  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      60.901  63.155  68.789  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      60.353  63.160  69.406  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      61.631  63.529  68.882  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      61.815  61.626  64.098  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      62.363  61.621  63.481  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      61.085  61.252  64.005  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.218      1.626      4.649
+REMARK INTER + INTRA:          -6.218
+REMARK INTER:                  -6.218
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      61.035  63.269  66.461  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      61.266  62.494  66.626  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      61.202  62.198  67.394  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      60.906  62.678  67.997  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      60.842  62.382  68.765  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      60.547  62.862  69.368  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      60.483  62.566  70.136  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      60.714  61.791  70.300  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      60.187  63.046  70.738  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      60.123  62.750  71.506  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      59.956  63.820  70.574  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      61.561  62.014  66.024  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      61.626  62.310  65.255  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      61.793  61.240  66.188  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.080      2.111      4.482
+REMARK INTER + INTRA:          -6.080
+REMARK INTER:                  -6.080
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      61.222  62.942  66.277  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      60.621  62.743  66.806  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      60.695  62.935  67.606  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      61.370  63.327  67.874  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      61.444  63.519  68.674  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      62.118  63.910  68.943  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      62.192  64.102  69.742  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      61.592  63.903  70.272  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      62.867  64.494  70.011  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      62.940  64.685  70.810  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      63.467  64.693  69.482  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      59.947  62.352  66.537  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      59.873  62.160  65.738  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      59.346  62.153  67.067  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.047      3.182      5.311
+REMARK INTER + INTRA:          -6.047
+REMARK INTER:                  -6.047
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      60.145  63.149  67.858  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      60.319  62.959  68.642  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      60.287  63.543  69.225  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      60.081  64.316  69.023  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      60.049  64.899  69.607  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      59.842  65.672  69.405  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      59.810  66.255  69.988  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      59.985  66.066  70.772  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      59.604  67.028  69.787  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      59.572  67.611  70.370  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      59.429  67.218  69.003  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      60.526  62.187  68.843  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      60.558  61.603  68.260  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      60.700  61.997  69.627  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.994      4.695      6.042
+REMARK INTER + INTRA:          -5.994
+REMARK INTER:                  -5.994
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      65.404  66.796  69.836  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      65.359  66.526  70.614  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      64.817  65.936  70.816  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      64.321  65.618  70.239  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      63.779  65.029  70.441  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      63.283  64.711  69.864  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      62.741  64.121  70.066  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      62.696  63.851  70.844  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      62.244  63.803  69.489  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      61.703  63.214  69.691  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      62.289  64.073  68.711  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      65.855  66.844  71.191  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      66.397  67.433  70.989  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      65.810  66.573  71.969  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.982      4.677      6.449
+REMARK INTER + INTRA:          -5.982
+REMARK INTER:                  -5.982
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      62.626  63.894  70.865  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      62.685  64.145  70.081  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      63.240  64.719  69.872  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      63.736  65.042  70.447  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      64.291  65.616  70.238  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      64.787  65.938  70.813  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      65.342  66.512  70.604  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      65.401  66.763  69.820  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      65.837  66.835  71.179  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      66.392  67.408  70.970  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      65.778  66.584  71.963  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      62.190  63.822  69.506  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      61.634  63.248  69.715  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      62.249  64.073  68.722  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.926      2.178      2.686
+REMARK INTER + INTRA:          -5.926
+REMARK INTER:                  -5.926
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      60.123  62.396  70.925  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      60.884  62.622  70.700  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      61.081  62.672  69.900  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      60.516  62.496  69.325  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      60.713  62.545  68.525  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      60.148  62.369  67.950  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      60.345  62.419  67.150  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      61.106  62.644  66.925  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      59.780  62.242  66.575  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      59.977  62.292  65.776  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      59.019  62.017  66.800  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      61.449  62.798  71.275  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      61.252  62.749  72.075  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      62.210  63.024  71.050  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.900      4.701      6.476
+REMARK INTER + INTRA:          -5.900
+REMARK INTER:                  -5.900
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = cystine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   CYS A   1      60.190  62.908  71.734  0.00  0.00    +0.000 NA
+ATOM      2  CA  CYS A   1      60.288  63.086  70.935  0.00  0.00    +0.000 C 
+ATOM      3  CB  CYS A   1      60.149  63.852  70.662  0.00  0.00    +0.000 C 
+ATOM      4  SG  CYS A   1      59.912  64.441  71.189  0.00  0.00    +0.000 S 
+ATOM      5  SG  CYS A   1      59.773  65.207  70.916  0.00  0.00    +0.000 S 
+ATOM      6  CB  CYS A   1      59.536  65.796  71.444  0.00  0.00    +0.000 C 
+ATOM      7  CA  CYS A   1      59.397  66.562  71.171  0.00  0.00    +0.000 C 
+ATOM      8  N   CYS A   1      59.496  66.740  70.371  0.00  0.00    +0.000 NA
+ATOM      9  C   CYS A   1      59.161  67.151  71.698  0.00  0.00    +0.000 C 
+ATOM     10  O   CYS A   1      59.022  67.916  71.425  0.00  0.00    +0.000 OA
+ATOM     11  OXT CYS A   1      59.062  66.973  72.498  0.00  0.00    +0.000 OA
+ATOM     12  C   CYS A   1      60.525  62.497  70.407  0.00  0.00    +0.000 C 
+ATOM     13  O   CYS A   1      60.663  61.731  70.680  0.00  0.00    +0.000 OA
+ATOM     14  OXT CYS A   1      60.623  62.675  69.607  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.391      0.000      0.000
+REMARK INTER + INTRA:          -9.391
+REMARK INTER:                  -9.391
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.482  61.627  65.182  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.095  61.901  65.858  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.509  62.338  66.421  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.113  62.201  65.876  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.959  61.767  65.191  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.562  61.629  64.646  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.408  61.195  63.961  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.320  61.923  64.785  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.762  62.325  66.770  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.139  61.935  66.396  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      59.638  62.701  67.494  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.261  63.091  67.868  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.137  63.468  68.593  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.008  63.105  67.519  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.132  62.729  66.795  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.880  62.742  66.446  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.383      1.847      3.339
+REMARK INTER + INTRA:          -9.383
+REMARK INTER:                  -9.383
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.955  62.594  66.464  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.549  62.497  65.898  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.399  62.062  65.214  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.665  62.000  65.585  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.541  62.361  66.317  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.808  62.300  66.690  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.685  62.661  67.421  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.198  61.878  66.331  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.184  62.274  65.079  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.588  62.731  65.635  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.565  62.031  64.389  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.161  61.575  63.834  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.542  61.331  63.143  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.375  61.362  63.968  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.994  61.606  64.658  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.207  61.393  64.792  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.383      3.059      4.973
+REMARK INTER + INTRA:          -8.383
+REMARK INTER:                  -8.383
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.999  62.191  71.513  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.744  62.015  70.748  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.906  62.534  70.130  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.261  62.941  70.753  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.241  62.624  71.516  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.596  63.030  72.140  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.576  62.714  72.902  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.971  63.751  72.004  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.495  61.948  69.720  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.209  61.288  70.123  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.370  62.023  68.908  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.656  62.683  68.506  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.531  62.758  67.693  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      61.067  63.270  68.915  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      61.193  63.196  69.727  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.604  63.782  70.137  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.348      5.662      6.964
+REMARK INTER + INTRA:          -8.348
+REMARK INTER:                  -8.348
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.207  66.377  69.846  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.693  65.736  69.769  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.199  65.526  70.395  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.587  66.172  70.730  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.157  66.582  70.296  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.545  67.228  70.631  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      66.115  67.637  70.196  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.364  67.465  71.399  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.982  64.953  69.843  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.342  64.939  69.101  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.405  64.394  70.034  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      63.046  64.409  70.775  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      62.469  63.849  70.966  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      63.262  64.982  71.328  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      63.839  65.541  71.138  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      64.056  66.115  71.690  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.287      5.191      6.229
+REMARK INTER + INTRA:          -8.287
+REMARK INTER:                  -8.287
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.548  62.726  72.292  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.269  63.468  72.524  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.578  63.770  72.192  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.620  63.048  71.797  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.244  62.529  71.952  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.288  61.806  71.558  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.911  61.289  71.713  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.708  61.600  71.009  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.774  64.389  72.701  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.451  64.336  73.170  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.294  65.058  72.742  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.618  65.110  72.273  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.138  65.781  72.314  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      59.421  64.492  71.763  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      59.901  63.822  71.722  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.704  63.204  71.212  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.806      6.277      7.707
+REMARK INTER + INTRA:          -7.806
+REMARK INTER:                  -7.806
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.808  66.051  71.631  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.400  66.616  71.520  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.801  66.657  70.801  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.288  66.031  70.642  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.756  65.777  71.220  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.243  65.150  71.062  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.712  64.897  71.639  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.261  64.778  70.326  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.175  67.269  71.208  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.951  67.445  71.982  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      65.772  67.705  70.842  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      65.995  67.528  70.068  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      66.593  67.964  69.702  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      65.622  66.916  69.660  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      65.025  66.481  70.026  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      64.651  65.868  69.618  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.763     25.069     26.013
+REMARK INTER + INTRA:          -7.763
+REMARK INTER:                  -7.763
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.717  79.208  50.160  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.292  78.894  49.658  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.026  79.262  49.590  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.665  79.766  50.134  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.892  79.617  50.383  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.529  80.119  50.927  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      68.757  79.970  51.176  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      69.938  80.771  51.223  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      71.134  78.632  49.070  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      70.525  78.089  48.949  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      71.851  78.544  48.670  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      72.459  79.087  48.791  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      73.177  78.999  48.391  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      72.352  79.718  49.312  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      71.636  79.806  49.711  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      71.528  80.437  50.232  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.739      1.682      2.708
+REMARK INTER + INTRA:          -7.739
+REMARK INTER:                  -7.739
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.470  63.143  67.404  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.461  63.140  68.230  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.980  62.608  68.635  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.798  62.400  67.857  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.159  62.797  67.230  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.979  62.590  66.452  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.340  62.986  65.825  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.437  61.987  66.301  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.327  63.000  69.272  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.872  63.604  69.136  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.131  62.787  70.044  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.587  62.183  70.180  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.390  61.970  70.953  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      60.238  61.790  69.543  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      60.435  62.003  68.770  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.086  61.610  68.133  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.631     24.822     25.431
+REMARK INTER + INTRA:          -7.631
+REMARK INTER:                  -7.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = amobarbital
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.189  78.995  49.593  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.800  79.363  50.221  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.215  79.869  50.723  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.822  79.651  50.208  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.667  79.129  49.587  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.273  78.911  49.071  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      71.119  78.390  48.451  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      72.033  79.213  49.176  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      69.466  79.912  51.064  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      68.841  79.482  50.741  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      69.341  80.385  51.729  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      69.966  80.815  52.051  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      69.841  81.289  52.717  0.00  0.00    +0.000 OA
+ATOM     14  N   UNL     1      70.716  80.772  51.711  0.00  0.00    +0.000 NA
+ATOM     15  C   UNL     1      70.841  80.299  51.047  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      71.591  80.256  50.705  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

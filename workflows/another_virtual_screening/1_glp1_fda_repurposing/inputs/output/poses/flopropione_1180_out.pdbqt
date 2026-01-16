@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.574      0.000      0.000
+REMARK INTER + INTRA:          -7.574
+REMARK INTER:                  -7.574
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.472  62.196  66.775  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.938  61.998  66.124  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.707  62.294  66.062  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.007  62.788  66.650  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.173  62.095  65.412  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.940  62.390  65.348  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      62.241  62.885  65.937  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.407  62.192  64.698  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.106  61.698  64.110  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      62.573  61.499  63.459  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.338  61.402  64.173  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.872  61.600  64.823  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.103  61.305  64.886  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.292      0.760      2.493
+REMARK INTER + INTRA:          -7.292
+REMARK INTER:                  -7.292
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.599  61.678  63.734  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.919  61.675  64.201  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.908  62.084  64.918  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.578  62.496  65.167  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.228  62.082  65.384  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.217  62.490  66.101  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.887  62.902  66.349  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.537  62.488  66.567  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.868  62.076  66.318  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      59.187  62.073  66.785  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      59.878  61.666  65.601  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.558  61.669  65.135  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.569  61.260  64.418  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.303      4.168      5.394
+REMARK INTER + INTRA:          -6.303
+REMARK INTER:                  -6.303
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.533  62.827  72.669  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.255  62.546  71.945  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.307  63.020  71.271  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.638  63.774  71.321  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.029  62.739  70.547  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.081  63.212  69.873  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      61.412  63.966  69.924  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.803  62.931  69.149  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.473  62.177  69.099  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      60.194  61.896  68.374  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.420  61.703  69.773  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.698  61.984  70.497  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.646  61.511  71.171  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.206      7.635      8.583
+REMARK INTER + INTRA:          -6.206
+REMARK INTER:                  -6.206
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.653  65.879  69.561  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.201  65.998  70.166  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.846  66.498  70.046  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.943  66.879  69.321  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.393  66.617  70.651  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      66.039  67.117  70.531  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      66.135  67.498  69.806  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      66.586  67.236  71.137  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.489  66.856  71.861  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      67.037  66.975  72.467  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      65.844  66.355  71.982  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.296  66.236  71.377  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      64.650  65.735  71.496  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.165      3.960      5.574
+REMARK INTER + INTRA:          -6.165
+REMARK INTER:                  -6.165
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.615  62.563  67.875  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.878  62.745  68.636  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.650  62.274  69.275  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.160  61.622  69.151  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.913  62.455  70.035  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.685  61.984  70.673  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.195  61.333  70.550  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.948  62.166  71.434  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.438  62.817  71.556  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.701  62.999  72.318  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.666  63.288  70.918  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.404  63.107  70.157  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.631  63.578  69.519  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.152      7.152      8.165
+REMARK INTER + INTRA:          -6.152
+REMARK INTER:                  -6.152
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.327  67.759  69.867  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.766  67.166  69.981  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.340  67.131  70.688  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      65.477  67.689  71.279  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.779  66.538  70.802  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.353  66.503  71.507  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      64.490  67.061  72.099  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.791  65.910  71.622  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.655  65.352  71.030  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      63.092  64.758  71.144  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.080  65.386  70.324  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.642  65.979  70.209  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      65.068  66.014  69.503  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.102      3.084      4.267
+REMARK INTER + INTRA:          -6.102
+REMARK INTER:                  -6.102
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.993  63.119  71.395  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.124  63.217  70.587  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.789  62.689  70.047  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.323  62.065  70.317  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.921  62.787  69.240  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.586  62.260  68.700  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      60.120  61.636  68.970  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.718  62.358  67.892  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.184  62.982  67.622  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      61.316  63.080  66.813  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.519  63.510  68.161  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.388  63.412  68.970  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.723  63.940  69.509  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.082     24.415     25.421
+REMARK INTER + INTRA:          -6.082
+REMARK INTER:                  -6.082
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.591  80.126  51.125  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.257  80.036  50.647  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.306  79.401  50.122  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      69.689  78.856  50.076  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      70.972  79.311  49.645  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.021  78.676  49.120  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      70.404  78.132  49.074  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      71.688  78.587  48.642  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      72.305  79.131  48.689  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      72.972  79.041  48.210  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      72.257  79.766  49.214  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.590  79.856  49.691  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      71.541  80.491  50.217  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.817     24.944     26.051
+REMARK INTER + INTRA:          -5.817
+REMARK INTER:                  -5.817
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = flopropione
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      73.270  80.988  48.776  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      72.595  80.628  49.083  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      72.318  79.922  48.755  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      72.717  79.579  48.120  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.643  79.562  49.062  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      71.366  78.857  48.734  0.00  0.00    +0.000 A 
+ATOM      7  O   UNL     1      71.766  78.514  48.099  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      70.691  78.496  49.041  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.292  78.840  49.675  0.00  0.00    +0.000 A 
+ATOM     10  O   UNL     1      69.616  78.479  49.983  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      70.568  79.545  50.004  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.244  79.906  49.697  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      71.521  80.611  50.025  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

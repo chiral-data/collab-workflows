@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.550      0.000      0.000
+REMARK INTER + INTRA:          -8.550
+REMARK INTER:                  -8.550
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.370  61.628  70.358  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.473  62.151  69.729  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.769  61.876  69.009  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.872  62.400  68.379  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.167  62.125  67.659  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.270  62.648  67.030  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.078  63.444  67.119  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.566  62.373  66.310  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.669  62.896  65.680  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.965  62.621  64.960  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.157  61.824  64.870  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.453  61.549  64.151  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.054  61.301  65.501  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.759  61.575  66.220  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.987      1.959      4.016
+REMARK INTER + INTRA:          -7.987
+REMARK INTER:                  -7.987
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.162  61.828  64.524  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.021  62.373  65.126  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.752  62.114  65.863  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.611  62.660  66.465  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.343  62.401  67.202  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.202  62.946  67.804  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.329  63.750  67.671  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.933  62.687  68.540  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.792  63.233  69.143  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.523  62.974  69.879  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.396  62.169  70.012  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.127  61.911  70.747  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.537  61.624  69.409  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.805  61.883  68.673  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.470      1.920      2.845
+REMARK INTER + INTRA:          -7.470
+REMARK INTER:                  -7.470
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.507  63.497  72.840  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.169  63.004  72.272  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.270  63.170  71.469  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.931  62.676  70.901  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.033  62.842  70.099  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.694  62.349  69.531  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.255  61.692  69.764  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.795  62.515  68.728  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.457  62.022  68.160  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.558  62.188  67.357  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.997  62.846  67.124  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.098  63.011  66.323  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.336  63.338  67.694  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.235  63.173  68.495  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.318      2.432      4.630
+REMARK INTER + INTRA:          -7.318
+REMARK INTER:                  -7.318
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.682  62.721  65.715  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.255  62.365  66.324  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.394  62.584  67.108  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.967  62.228  67.717  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.106  62.446  68.501  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.679  62.090  69.110  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.113  61.517  68.937  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.818  62.309  69.894  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.391  61.953  70.503  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.530  62.172  71.287  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.096  62.746  71.461  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      61.235  62.965  72.244  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.523  63.102  70.851  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.384  62.884  70.068  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.287      5.578      6.201
+REMARK INTER + INTRA:          -7.287
+REMARK INTER:                  -7.287
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.410  63.703  72.473  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.723  64.008  71.773  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.397  64.484  71.795  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.709  64.789  71.095  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.383  65.265  71.118  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.696  65.569  70.418  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.336  65.399  69.696  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.370  66.046  70.440  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.682  66.350  69.740  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.357  66.826  69.763  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.717  66.997  70.485  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      66.390  67.473  70.507  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      65.404  66.692  71.184  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.731  66.217  71.162  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.095      5.769      7.023
+REMARK INTER + INTRA:          -7.095
+REMARK INTER:                  -7.095
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.112  67.657  70.198  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.690  66.949  70.160  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.034  66.833  70.648  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.613  66.125  70.610  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.957  66.009  71.099  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.536  65.301  71.061  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.768  64.710  70.536  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.880  65.185  71.550  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.458  64.477  71.512  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.803  64.361  72.000  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.571  64.953  72.526  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.916  64.836  73.014  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      61.993  65.660  72.563  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.648  65.777  72.076  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.941      6.024      7.331
+REMARK INTER + INTRA:          -6.941
+REMARK INTER:                  -6.941
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.647  62.008  72.080  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.244  62.693  72.302  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.646  63.413  72.338  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.244  64.098  72.560  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.645  64.819  72.596  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.243  65.504  72.819  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.441  65.469  73.005  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.645  66.224  72.854  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.242  66.909  73.077  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.644  67.630  73.113  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.447  67.665  72.926  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      62.847  68.384  72.962  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      62.848  66.979  72.704  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.447  66.259  72.668  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.783     25.048     25.895
+REMARK INTER + INTRA:          -6.783
+REMARK INTER:                  -6.783
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      68.232  81.220  52.398  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      68.376  80.574  51.906  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      69.077  80.534  51.471  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      69.220  79.888  50.979  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      69.921  79.848  50.545  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      70.064  79.202  50.052  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      69.508  78.597  49.994  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      70.766  79.162  49.618  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      70.909  78.516  49.126  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.610  78.476  48.692  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      72.167  79.082  48.750  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      72.867  79.042  48.317  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      72.022  79.728  49.243  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      71.322  79.768  49.677  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.601      3.017      4.112
+REMARK INTER + INTRA:          -6.601
+REMARK INTER:                  -6.601
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = butamben
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.477  66.151  71.682  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.108  65.414  71.715  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.733  65.110  71.046  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.364  64.373  71.079  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.989  64.069  70.410  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.620  63.332  70.443  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.625  62.899  71.145  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.245  63.028  69.774  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.876  62.291  69.807  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.501  61.987  69.137  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.495  62.420  68.435  0.00  0.00    +0.000 A 
+ATOM     12  N   UNL     1      60.121  62.116  67.767  0.00  0.00    +0.000 NA
+ATOM     13  C   UNL     1      60.865  63.157  68.403  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.239  63.461  69.071  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

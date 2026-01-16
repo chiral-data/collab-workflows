@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.559      0.000      0.000
+REMARK INTER + INTRA:          -7.559
+REMARK INTER:                  -7.559
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.115  61.999  66.420  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      59.681  61.834  65.842  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.447  62.129  65.918  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.649  62.589  66.572  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.416  62.885  66.648  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.981  62.720  66.071  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.779  62.259  65.417  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.344  62.093  64.839  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.143  61.633  64.185  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.376  61.337  64.109  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.811  61.503  64.686  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.012  61.963  65.341  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.048      1.813      2.741
+REMARK INTER + INTRA:          -7.048
+REMARK INTER:                  -7.048
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.754  61.611  63.116  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      62.567  61.872  63.876  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.847  61.661  64.220  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.315  61.188  63.804  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.595  60.976  64.149  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.409  61.238  64.908  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.941  61.710  65.324  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.755  61.972  66.084  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.288  62.445  66.499  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.008  62.657  66.155  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.194  62.395  65.395  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.661  61.922  64.979  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.559      5.820      6.506
+REMARK INTER + INTRA:          -6.559
+REMARK INTER:                  -6.559
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.319  64.804  71.814  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      59.613  64.074  71.565  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.283  63.754  71.925  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.658  64.164  72.534  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      61.329  63.844  72.895  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.622  63.115  72.646  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.247  62.705  72.037  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.540  61.976  71.787  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.165  61.566  71.178  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.494  61.886  70.817  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.201  62.615  71.066  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.576  63.026  71.676  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.425      5.279      6.157
+REMARK INTER + INTRA:          -6.425
+REMARK INTER:                  -6.425
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.510  61.974  69.329  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.815  61.971  70.095  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.742  62.641  70.571  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.363  63.313  70.281  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.290  63.983  70.758  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.595  63.980  71.524  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.974  63.307  71.814  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.280  63.303  72.580  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.659  62.631  72.870  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.733  61.961  72.393  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.427  61.964  71.627  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.048  62.637  71.337  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.412      6.989      8.033
+REMARK INTER + INTRA:          -6.412
+REMARK INTER:                  -6.412
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.283  65.972  69.477  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      64.011  66.347  69.574  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      64.356  66.392  70.322  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      63.973  66.064  70.973  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      64.318  66.110  71.722  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.047  66.484  71.818  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.430  66.812  71.166  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.159  67.187  71.262  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.543  67.516  70.610  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.197  67.470  69.861  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.469  67.096  69.766  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.085  66.767  70.417  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.354      6.126      7.015
+REMARK INTER + INTRA:          -6.354
+REMARK INTER:                  -6.354
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.990  65.511  73.061  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.402  64.800  72.990  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.337  64.352  72.300  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      59.860  64.615  71.681  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      59.796  64.167  70.990  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.207  63.456  70.920  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.684  63.193  71.539  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.097  62.482  71.469  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.573  62.218  72.088  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.638  62.667  72.779  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.226  63.377  72.849  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.749  63.641  72.230  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.339      7.416      8.298
+REMARK INTER + INTRA:          -6.339
+REMARK INTER:                  -6.339
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.759  68.001  69.707  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      66.098  67.508  69.698  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.838  67.153  70.395  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      66.239  67.290  71.102  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      65.978  66.935  71.801  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      65.317  66.442  71.790  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.916  66.305  71.083  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.254  65.812  71.072  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.853  65.674  70.365  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.114  66.030  69.667  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.775  66.523  69.677  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.177  66.660  70.385  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.150      3.984      4.947
+REMARK INTER + INTRA:          -6.150
+REMARK INTER:                  -6.150
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.139  65.104  69.516  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      60.239  64.413  69.955  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.317  63.688  69.571  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.296  63.653  68.747  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      60.374  62.927  68.362  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.474  62.236  68.802  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.495  62.271  69.625  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.595  61.580  70.065  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.617  61.614  70.888  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.538  62.341  71.273  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.438  63.031  70.834  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.417  62.997  70.010  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.059      6.125      6.949
+REMARK INTER + INTRA:          -6.059
+REMARK INTER:                  -6.059
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = hydralazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.137  64.959  70.153  0.00  0.00    +0.000 NA
+ATOM      2  N   UNL     1      62.745  64.348  70.544  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.401  64.483  71.282  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.450  65.230  71.628  0.00  0.00    +0.000 NA
+ATOM      5  N   UNL     1      62.105  65.365  72.367  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.714  64.754  72.757  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.665  64.008  72.411  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.273  63.395  72.802  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.225  62.649  72.456  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.569  62.513  71.717  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.961  63.124  71.327  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.010  63.872  71.673  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

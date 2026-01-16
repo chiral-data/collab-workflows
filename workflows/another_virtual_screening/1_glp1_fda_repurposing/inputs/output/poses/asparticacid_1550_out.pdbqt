@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -4.990      0.000      0.000
+REMARK INTER + INTRA:          -4.990
+REMARK INTER:                  -4.990
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      62.548  62.394  65.117  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      61.879  61.980  64.870  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      61.236  61.895  65.378  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      61.260  62.225  66.134  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      60.616  62.140  66.642  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      61.929  62.639  66.381  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      61.854  61.651  64.114  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      62.498  61.735  63.605  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      61.184  61.236  63.867  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.977      0.710      2.560
+REMARK INTER + INTRA:          -4.977
+REMARK INTER:                  -4.977
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      60.639  61.500  65.064  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      61.318  61.899  65.311  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      61.963  61.967  64.802  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      61.931  61.637  64.047  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      62.577  61.705  63.539  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      61.252  61.238  63.800  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      61.350  62.229  66.065  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      60.704  62.161  66.574  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      62.030  62.628  66.312  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.523     17.270     17.565
+REMARK INTER + INTRA:          -4.523
+REMARK INTER:                  -4.523
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      66.614  78.486  59.360  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      65.801  78.342  59.357  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      65.502  77.661  59.711  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      66.015  77.121  60.068  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      65.716  76.439  60.422  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      66.827  77.265  60.071  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      65.289  78.881  59.001  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      65.588  79.563  58.646  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      64.476  78.737  58.998  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.417      2.202      2.859
+REMARK INTER + INTRA:          -4.417
+REMARK INTER:                  -4.417
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      60.859  63.464  67.598  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      61.053  62.674  67.457  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      60.848  62.095  68.005  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      60.448  62.303  68.697  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      60.242  61.723  69.245  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      60.254  63.092  68.838  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      61.453  62.466  66.766  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      61.659  63.046  66.217  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      61.647  61.676  66.625  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.304     17.701     18.042
+REMARK INTER + INTRA:          -4.304
+REMARK INTER:                  -4.304
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      65.100  77.768  59.565  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      65.809  78.187  59.519  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      65.827  78.929  59.160  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      65.136  79.253  58.846  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      65.153  79.994  58.487  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      64.427  78.834  58.892  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      66.500  77.864  59.833  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      66.483  77.122  60.193  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      67.210  78.284  59.786  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.233     24.507     25.245
+REMARK INTER + INTRA:          -4.233
+REMARK INTER:                  -4.233
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      71.154  78.232  48.729  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      71.444  78.955  49.001  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      71.034  79.372  49.582  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      70.333  79.066  49.893  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      69.923  79.483  50.474  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      70.043  78.343  49.621  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      72.144  79.260  48.691  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      72.555  78.844  48.109  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      72.435  79.984  48.962  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.193     24.378     25.024
+REMARK INTER + INTRA:          -4.193
+REMARK INTER:                  -4.193
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      70.135  78.442  49.649  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      70.573  79.133  49.751  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      71.254  79.259  49.304  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      71.497  78.695  48.754  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      72.178  78.821  48.306  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      71.059  78.003  48.652  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      70.330  79.698  50.301  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      69.649  79.572  50.749  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      70.769  80.390  50.403  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.164      3.769      5.221
+REMARK INTER + INTRA:          -4.164
+REMARK INTER:                  -4.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      60.524  63.215  69.905  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      60.466  62.394  69.960  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      60.563  61.928  69.287  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      60.719  62.282  68.558  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      60.817  61.816  67.885  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      60.778  63.103  68.503  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      60.310  62.039  70.688  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      60.213  62.505  71.362  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      60.252  61.217  70.743  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.070      7.188      8.104
+REMARK INTER + INTRA:          -4.070
+REMARK INTER:                  -4.070
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aspartic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASP A   1      65.531  67.114  69.750  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASP A   1      65.119  66.609  70.256  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASP A   1      65.356  66.530  71.041  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASP A   1      66.005  66.955  71.322  0.00  0.00    +0.000 C 
+ATOM      5  OD1 ASP A   1      66.242  66.876  72.108  0.00  0.00    +0.000 OA
+ATOM      6  OD2 ASP A   1      66.417  67.460  70.816  0.00  0.00    +0.000 OA
+ATOM      7  C   ASP A   1      64.470  66.185  69.976  0.00  0.00    +0.000 C 
+ATOM      8  O   ASP A   1      64.232  66.264  69.189  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASP A   1      64.057  65.680  70.482  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

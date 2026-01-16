@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.175      0.000      0.000
+REMARK INTER + INTRA:          -8.175
+REMARK INTER:                  -8.175
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.149  62.016  69.363  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.706  62.303  68.826  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.264  62.858  69.069  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.704  62.033  68.046  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.261  62.319  67.510  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.259  62.049  66.730  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.816  62.336  66.193  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.814  62.066  65.413  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.372  62.353  64.877  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.370  62.083  64.096  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.811  61.526  63.854  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.254  61.240  64.391  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.256  61.510  65.170  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.413     18.407     19.060
+REMARK INTER + INTRA:          -7.413
+REMARK INTER:                  -7.413
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.231  80.395  58.072  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.055  80.380  58.094  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.489  80.982  57.735  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.446  79.762  58.477  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.270  79.747  58.500  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.661  79.128  58.882  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.485  79.113  58.905  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.876  78.494  59.288  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.700  78.479  59.310  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      67.091  77.861  59.693  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.657  77.258  60.053  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.832  77.275  60.029  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.442  77.892  59.647  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.294      5.498      6.709
+REMARK INTER + INTRA:          -7.294
+REMARK INTER:                  -7.294
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.062  63.496  70.394  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.498  64.036  69.949  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.360  64.112  69.140  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      63.074  64.502  70.315  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.510  65.043  69.870  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.086  65.508  70.235  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.522  66.049  69.790  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.098  66.514  70.156  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.534  67.055  69.711  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      66.109  67.520  70.077  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.248  67.444  70.887  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.811  66.903  71.331  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.236  66.438  70.966  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.236      1.855      4.592
+REMARK INTER + INTRA:          -7.236
+REMARK INTER:                  -7.236
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.403  61.674  65.626  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.342  62.234  66.229  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.476  63.031  66.067  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.148  61.995  66.996  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.088  62.555  67.598  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.894  62.316  68.365  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.834  62.876  68.968  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.640  62.637  69.734  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.579  63.197  70.337  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.385  62.958  71.103  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.252  62.160  71.265  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.312  61.601  70.661  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.506  61.839  69.896  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.221      2.252      3.960
+REMARK INTER + INTRA:          -7.221
+REMARK INTER:                  -7.221
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.687  61.299  63.765  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.860  61.841  64.362  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.364  62.475  64.210  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.529  61.747  65.112  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.702  62.289  65.709  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.371  62.196  66.460  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.544  62.738  67.057  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.212  62.644  67.807  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.386  63.186  68.405  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.054  63.093  69.155  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.550  62.457  69.307  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.378  61.916  68.709  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.709  62.009  67.960  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.210      2.798      5.551
+REMARK INTER + INTRA:          -7.210
+REMARK INTER:                  -7.210
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.741  62.741  67.309  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.175  62.346  67.889  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.562  61.642  67.708  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.221  62.658  68.652  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.655  62.264  69.233  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.700  62.576  69.996  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.134  62.182  70.576  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.180  62.494  71.340  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.614  62.099  71.920  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.660  62.411  72.683  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.272  63.116  72.865  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.838  63.510  72.283  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.792  63.199  71.521  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.920      5.112      6.061
+REMARK INTER + INTRA:          -6.920
+REMARK INTER:                  -6.920
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.509  66.187  69.589  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.718  65.389  69.593  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.591  64.925  68.924  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.057  65.055  70.269  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.266  64.258  70.273  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.604  63.924  70.949  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.814  63.127  70.953  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.152  62.793  71.629  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.362  61.996  71.633  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.700  61.662  72.309  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.828  62.127  72.979  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.618  62.925  72.973  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.280  63.258  72.299  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.681     24.710     25.306
+REMARK INTER + INTRA:          -6.681
+REMARK INTER:                  -6.681
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      67.277  80.745  52.198  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      68.052  80.861  51.939  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      68.474  81.525  52.186  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      68.404  80.312  51.433  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      69.179  80.428  51.175  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.531  79.879  50.669  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.305  79.995  50.410  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.658  79.446  49.904  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.432  79.562  49.645  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.785  79.013  49.139  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.362  78.349  48.893  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.587  78.234  49.152  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.235  78.782  49.657  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.371      5.257      5.765
+REMARK INTER + INTRA:          -6.371
+REMARK INTER:                  -6.371
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenprobamate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.411  67.144  69.016  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.913  66.501  69.138  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.604  65.738  69.176  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.725  66.623  69.222  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.227  65.980  69.344  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.040  66.102  69.428  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.542  65.459  69.549  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.354  65.580  69.633  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.856  64.937  69.755  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.669  65.059  69.839  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.978  65.823  69.801  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.474  66.466  69.679  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.663  66.344  69.595  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

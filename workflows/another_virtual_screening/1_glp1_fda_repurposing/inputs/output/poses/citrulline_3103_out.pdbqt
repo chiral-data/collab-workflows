@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.425      0.000      0.000
+REMARK INTER + INTRA:          -6.425
+REMARK INTER:                  -6.425
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.728  62.305  64.969  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      62.013  61.915  64.837  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.466  61.837  65.450  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.635  62.148  66.195  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.088  62.069  66.809  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.257  62.380  67.553  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.710  62.302  68.167  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.880  62.613  68.912  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      59.995  61.913  68.035  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.844  61.604  64.092  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.391  61.683  63.478  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      61.128  61.215  63.959  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.164      0.840      3.811
+REMARK INTER + INTRA:          -6.164
+REMARK INTER:                  -6.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.675  63.371  68.039  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      61.161  62.730  67.968  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.122  62.309  67.258  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.597  62.530  66.622  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.558  62.109  65.912  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.033  62.331  65.275  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      61.994  61.910  64.566  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.469  62.131  63.929  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      61.480  61.269  64.495  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.686  62.508  68.605  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.725  62.929  69.314  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      60.172  61.867  68.533  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.724      2.089      2.884
+REMARK INTER + INTRA:          -5.724
+REMARK INTER:                  -5.724
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.351  62.811  67.215  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      60.601  62.477  67.297  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.339  62.229  68.039  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.827  62.314  68.699  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.564  62.065  69.441  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      61.052  62.151  70.100  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.790  61.902  70.842  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.278  61.988  71.502  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.040  61.568  70.924  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.113  62.392  66.638  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      60.376  62.641  65.895  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      59.363  62.058  66.719  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.674      1.993      2.567
+REMARK INTER + INTRA:          -5.674
+REMARK INTER:                  -5.674
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.092  62.172  66.006  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      60.420  62.324  66.459  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.487  62.728  67.176  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.227  62.981  67.438  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.295  63.385  68.155  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      62.035  63.638  68.417  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.102  64.042  69.134  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.842  64.294  69.396  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      61.429  64.193  69.587  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.680  62.071  66.197  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      59.612  61.667  65.480  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      59.007  62.222  66.650  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.568      6.042      7.334
+REMARK INTER + INTRA:          -5.568
+REMARK INTER:                  -5.568
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      63.808  64.395  69.939  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      63.579  64.821  70.607  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.959  65.529  70.795  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.569  65.810  70.315  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.949  66.518  70.503  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      65.558  66.798  70.023  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      65.939  67.506  70.212  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      66.548  67.787  69.731  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      65.710  67.933  70.879  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.969  64.541  71.087  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      62.589  63.833  70.899  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      62.740  64.968  71.755  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.511      8.096      8.308
+REMARK INTER + INTRA:          -5.511
+REMARK INTER:                  -5.511
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      66.490  66.888  71.651  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      66.070  67.214  71.020  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.245  67.242  71.045  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.842  66.945  71.700  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.017  66.973  71.725  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      63.614  66.676  72.380  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.789  66.704  72.405  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.386  66.407  73.060  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      62.369  67.030  71.774  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      66.472  67.512  70.365  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      67.297  67.483  70.341  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      66.052  67.837  69.735  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.507      5.940      7.052
+REMARK INTER + INTRA:          -5.507
+REMARK INTER:                  -5.507
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      65.484  66.920  69.824  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      65.410  66.561  70.564  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.870  65.946  70.672  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.404  65.691  70.041  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.864  65.076  70.149  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      63.399  64.820  69.518  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      62.859  64.205  69.627  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      62.393  63.950  68.995  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      62.785  63.847  70.366  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.875  66.816  71.195  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      66.415  67.431  71.087  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      65.801  66.458  71.934  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.465      3.119      5.731
+REMARK INTER + INTRA:          -5.465
+REMARK INTER:                  -5.465
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.730  61.758  71.629  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      61.331  62.480  71.637  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.990  62.771  70.944  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.048  62.339  70.244  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.706  62.629  69.550  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.764  62.197  68.850  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.423  62.487  68.157  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.481  62.055  67.457  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      60.024  63.210  68.165  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.273  62.913  72.337  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      61.615  62.622  73.030  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      60.875  63.635  72.345  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.145      5.230      7.146
+REMARK INTER + INTRA:          -5.145
+REMARK INTER:                  -5.145
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = citrulline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.460  65.009  72.591  0.00  0.00    +0.000 NA
+ATOM      2  CA  UNL     1      58.999  65.399  72.104  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.553  64.965  71.670  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.565  64.142  71.725  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.118  63.709  71.292  0.00  0.00    +0.000 C 
+ATOM      6  N   UNL     1      60.131  62.886  71.347  0.00  0.00    +0.000 NA
+ATOM      7  C   UNL     1      60.684  62.452  70.913  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.697  61.629  70.969  0.00  0.00    +0.000 NA
+ATOM      9  O   UNL     1      61.224  62.842  70.426  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      58.987  66.222  72.048  0.00  0.00    +0.000 C 
+ATOM     11  O   UNL     1      58.434  66.655  72.482  0.00  0.00    +0.000 OA
+ATOM     12  OXT UNL     1      59.526  66.611  71.561  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

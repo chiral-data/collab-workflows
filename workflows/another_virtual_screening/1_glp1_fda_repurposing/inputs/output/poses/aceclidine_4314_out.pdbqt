@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.427      0.000      0.000
+REMARK INTER + INTRA:          -7.427
+REMARK INTER:                  -7.427
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.373  62.048  66.445  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.102  62.096  66.063  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.707  62.556  66.384  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.227  61.685  65.358  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.957  61.734  64.976  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.081  61.323  64.272  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.811  61.371  63.889  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.415  61.831  64.211  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.291  62.242  64.915  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.562  62.194  65.297  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.773  61.968  64.822  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.856  61.694  64.352  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.778      1.305      2.588
+REMARK INTER + INTRA:          -6.778
+REMARK INTER:                  -6.778
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.364  61.956  64.690  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.810  62.119  65.278  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.041  62.514  65.965  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.024  61.886  65.181  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.470  62.049  65.770  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.684  61.816  65.672  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      59.129  61.979  66.262  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.361  62.374  66.948  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.146  62.607  67.045  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.700  62.444  66.457  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.145  62.343  66.514  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.622  62.188  66.449  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.736     17.667     18.146
+REMARK INTER + INTRA:          -6.736
+REMARK INTER:                  -6.736
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.960  79.625  58.357  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.669  79.329  58.656  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.361  79.776  58.597  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      64.688  78.585  59.014  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.398  78.289  59.313  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.416  77.546  59.671  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      66.127  77.250  59.970  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      66.817  77.697  59.911  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.798  78.440  59.553  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.089  78.736  59.254  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.236  78.255  59.516  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.248  77.760  59.755  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.622      1.305      2.146
+REMARK INTER + INTRA:          -6.622
+REMARK INTER:                  -6.622
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.866  60.471  62.897  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.258  60.951  63.440  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.006  61.251  63.261  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.903  61.132  64.163  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.296  61.613  64.706  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.941  61.794  65.429  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.334  62.275  65.973  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.082  62.574  65.793  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.437  62.393  65.071  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.044  61.913  64.528  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.917  62.108  65.045  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.680  62.229  65.526  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.409      8.996      9.632
+REMARK INTER + INTRA:          -6.409
+REMARK INTER:                  -6.409
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      67.589  66.555  72.910  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      67.029  66.658  72.314  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.280  66.321  72.387  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      67.219  67.098  71.641  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      66.659  67.200  71.044  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.848  67.640  70.372  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      66.288  67.743  69.774  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      65.539  67.405  69.849  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.350  66.966  70.521  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.909  66.863  71.118  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.910  67.134  70.620  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.036  67.427  70.172  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.301      1.844      2.764
+REMARK INTER + INTRA:          -6.301
+REMARK INTER:                  -6.301
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.654  63.697  68.563  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.063  63.347  68.108  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.281  63.351  68.371  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      61.254  62.993  67.386  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.661  62.643  66.930  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.851  62.289  66.210  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.259  61.938  65.753  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.478  61.943  66.018  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.288  62.297  66.738  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.879  62.646  67.194  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.874  62.377  66.695  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.001  62.141  66.215  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.291      7.933      8.471
+REMARK INTER + INTRA:          -6.291
+REMARK INTER:                  -6.291
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.623  65.081  70.974  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.160  65.638  70.689  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.112  65.898  69.908  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      64.748  65.937  71.187  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.286  66.494  70.902  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.872  66.792  71.400  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      66.411  67.350  71.115  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      66.361  67.609  70.334  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.774  67.311  69.836  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.237  66.754  70.121  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.675  67.031  70.350  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.066  67.230  70.681  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.227     15.981     16.799
+REMARK INTER + INTRA:          -6.227
+REMARK INTER:                  -6.227
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.632  78.566  73.222  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.439  77.785  73.041  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.995  77.185  73.152  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      58.689  77.603  72.747  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      58.496  76.821  72.565  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      57.747  76.639  72.272  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      57.553  75.857  72.090  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      58.110  75.259  72.202  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.859  75.441  72.495  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.052  76.221  72.677  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      58.587  75.968  72.474  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      58.088  75.846  72.279  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.006      4.254      5.232
+REMARK INTER + INTRA:          -6.006
+REMARK INTER:                  -6.006
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aceclidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.667  63.523  72.131  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.618  63.047  71.460  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.587  62.226  71.536  0.00  0.00    +0.000 OA
+ATOM      4  O   UNL     1      60.598  63.393  70.710  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.549  62.916  70.038  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.530  63.261  69.288  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.481  62.785  68.616  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.450  61.964  68.694  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.469  61.619  69.443  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.519  62.095  70.114  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.498  62.200  69.558  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.486  62.430  69.058  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

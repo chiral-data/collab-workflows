@@ -1,0 +1,208 @@
+MODEL 1
+REMARK VINA RESULT:    -7.852      0.000      0.000
+REMARK INTER + INTRA:          -7.852
+REMARK INTER:                  -7.852
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.326  62.980  67.775  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.140  62.530  67.109  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.696  62.435  66.507  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.438  62.791  66.571  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.510  61.985  65.841  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.768  61.629  65.777  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.065  61.890  65.239  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.880  61.440  64.573  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.436  61.346  63.971  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.177  61.701  64.035  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.733  61.607  63.432  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.363  62.152  64.700  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.808  62.246  65.303  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.427      1.458      2.971
+REMARK INTER + INTRA:          -7.427
+REMARK INTER:                  -7.427
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.753  61.758  63.597  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.997  61.547  63.849  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      61.695  61.858  64.552  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.150  62.380  65.001  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.938  61.647  64.805  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.484  61.125  64.355  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.637  61.957  65.506  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.881  61.746  65.760  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.579  62.057  66.462  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.034  62.578  66.911  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.732  62.889  67.614  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.790  62.789  66.658  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.092  62.479  65.956  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.673      6.742      7.799
+REMARK INTER + INTRA:          -6.673
+REMARK INTER:                  -6.673
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.966  64.280  70.554  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.308  64.879  71.007  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      63.875  65.376  70.672  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.099  65.275  69.883  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.218  65.976  71.124  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.994  66.077  71.911  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.784  66.472  70.789  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.127  67.071  71.241  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.693  67.569  70.905  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.917  67.467  70.119  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      66.484  67.965  69.783  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      65.574  66.868  69.666  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.008  66.371  70.001  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.615      6.135      6.873
+REMARK INTER + INTRA:          -6.615
+REMARK INTER:                  -6.615
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.386  65.917  73.163  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.045  65.362  72.656  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.437  64.655  72.495  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.171  64.501  72.842  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.096  64.099  71.988  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.363  64.253  71.643  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.488  63.392  71.828  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.148  62.837  71.321  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.540  62.129  71.161  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.272  61.977  71.507  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.665  61.268  71.346  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.614  62.531  72.014  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.222  63.239  72.174  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.511     24.449     25.193
+REMARK INTER + INTRA:          -6.511
+REMARK INTER:                  -6.511
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.505  80.640  51.865  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      69.458  80.031  51.310  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      70.078  79.908  50.780  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.745  80.394  50.805  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.033  79.299  50.224  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      69.366  78.814  50.199  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.652  79.177  49.695  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      70.607  78.568  49.140  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.227  78.446  48.610  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.893  78.931  48.636  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      72.514  78.808  48.105  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      71.940  79.540  49.191  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      71.319  79.663  49.720  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.204      6.238      7.390
+REMARK INTER + INTRA:          -6.204
+REMARK INTER:                  -6.204
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.125  67.629  70.242  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.762  66.991  69.866  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      65.166  66.570  70.252  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.934  66.788  71.014  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.803  65.931  69.877  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.035  65.713  69.116  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.208  65.511  70.262  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.844  64.872  69.888  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.248  64.451  70.274  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.017  64.669  71.034  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.420  64.248  71.421  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.380  65.308  71.410  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.975  65.729  71.024  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.911      5.416      7.020
+REMARK INTER + INTRA:          -5.911
+REMARK INTER:                  -5.911
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.779  61.971  70.644  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.642  62.740  70.378  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      60.270  63.286  70.872  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.036  63.064  71.632  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.131  64.056  70.607  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.365  64.277  69.847  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.760  64.601  71.100  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.622  65.370  70.835  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.250  65.916  71.329  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.017  65.694  72.088  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      58.644  66.241  72.582  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.155  64.925  72.354  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.526  64.379  71.860  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.840      4.825      5.983
+REMARK INTER + INTRA:          -5.840
+REMARK INTER:                  -5.840
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = oxilofrine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.669  64.249  69.171  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.378  64.040  69.538  0.00  0.00    +0.000 NA
+ATOM      3  C   UNL     1      62.007  64.574  69.552  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.926  65.317  69.200  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.717  64.366  69.919  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.797  63.625  70.270  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.345  64.900  69.933  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.054  64.693  70.299  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.683  65.227  70.314  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.602  65.968  69.962  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      65.231  66.503  69.977  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      63.892  66.176  69.596  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      63.264  65.642  69.581  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

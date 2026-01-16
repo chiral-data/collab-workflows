@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.093      0.000      0.000
+REMARK INTER + INTRA:          -8.093
+REMARK INTER:                  -8.093
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.010  63.670  69.142  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.861  63.240  68.453  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.163  62.806  68.381  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.409  63.246  67.837  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.260  62.817  67.148  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.808  62.822  66.532  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.659  62.393  65.843  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.266  62.463  65.289  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.404  62.165  64.533  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.990  61.671  64.017  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.268  61.272  64.043  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.661  61.201  64.598  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.524  61.501  65.354  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.937  61.994  65.870  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.547      1.399      3.612
+REMARK INTER + INTRA:          -7.547
+REMARK INTER:                  -7.547
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.882  61.580  63.134  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.279  61.648  63.694  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.534  61.328  63.540  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.422  62.036  64.407  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.819  62.104  64.968  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.962  62.492  65.681  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.359  62.560  66.241  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.602  62.964  66.918  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.242  63.184  67.627  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.490  63.090  67.953  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.786  62.738  67.704  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.543  62.334  67.027  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.904  62.115  66.318  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.656  62.208  65.992  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.295      1.598      4.409
+REMARK INTER + INTRA:          -7.295
+REMARK INTER:                  -7.295
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.779  62.762  65.600  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.538  62.488  66.340  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.378  61.686  66.451  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.457  63.016  66.969  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.216  62.741  67.709  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.136  63.269  68.338  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.895  62.994  69.079  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.845  63.598  69.638  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.640  63.638  70.436  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.400  63.091  71.005  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.266  62.277  71.012  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.316  61.673  70.452  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.521  61.633  69.654  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.760  62.180  69.085  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.217      3.780      4.915
+REMARK INTER + INTRA:          -7.217
+REMARK INTER:                  -7.217
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.567  67.127  68.991  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.667  66.450  69.454  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.565  66.490  70.271  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.869  65.734  69.097  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.969  65.057  69.559  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.171  64.341  69.203  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.271  63.664  69.665  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.471  63.003  69.216  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.631  62.211  69.382  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.656  61.753  70.069  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.532  61.897  70.871  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.331  62.560  71.320  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.172  63.352  71.153  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.147  63.809  70.468  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.063      5.328      6.525
+REMARK INTER + INTRA:          -7.063
+REMARK INTER:                  -7.063
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      58.634  66.928  72.456  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.150  66.293  72.563  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.659  66.280  73.212  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.155  65.671  72.021  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.671  65.035  72.128  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.677  64.414  71.586  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      60.193  63.778  71.693  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.121  63.210  71.100  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.486  62.489  70.935  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.074  62.037  71.297  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.540  62.118  71.973  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.611  62.687  72.567  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.246  63.408  72.731  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.659  63.860  72.369  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.986      4.968      6.989
+REMARK INTER + INTRA:          -6.986
+REMARK INTER:                  -6.986
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.813  63.635  70.302  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.422  64.165  70.129  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.699  64.238  69.356  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.753  64.622  70.731  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.362  65.152  70.559  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.693  65.608  71.161  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      64.303  66.138  70.988  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.564  66.546  71.655  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.138  67.120  71.801  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.689  67.524  71.337  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      65.893  67.522  70.538  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.631  67.114  69.871  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.056  66.540  69.726  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.506  66.136  70.189  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.826      6.178      7.037
+REMARK INTER + INTRA:          -6.826
+REMARK INTER:                  -6.826
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.343  68.091  73.102  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.869  67.473  72.829  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.142  67.637  72.475  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.123  66.693  72.909  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.648  66.075  72.636  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.902  65.294  72.717  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.427  64.676  72.443  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.769  63.936  72.570  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.548  63.157  72.414  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.893  62.796  72.065  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.189  63.062  71.729  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.847  63.803  71.602  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.069  64.582  71.759  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.723  64.944  72.107  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.785      3.757      4.961
+REMARK INTER + INTRA:          -6.785
+REMARK INTER:                  -6.785
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.280  65.960  69.579  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.816  65.388  69.952  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.907  65.245  70.760  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.262  64.960  69.517  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.798  64.388  69.890  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.243  63.959  69.455  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.780  63.387  69.828  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.258  63.016  69.308  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.687  62.425  69.377  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.402  61.960  69.996  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.568  61.893  70.801  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.090  62.264  71.321  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.661  62.856  71.251  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.947  63.321  70.633  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.393      3.746      4.873
+REMARK INTER + INTRA:          -6.393
+REMARK INTER:                  -6.393
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanethidine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.542  66.815  70.526  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.247  66.113  70.207  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.180  66.028  69.389  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      62.020  65.497  70.705  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.724  64.795  70.386  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.497  64.179  70.885  0.00  0.00    +0.000 C 
+ATOM      7  N   UNL     1      61.202  63.477  70.565  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.004  62.925  71.144  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.696  62.160  71.141  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.459  61.630  70.554  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.431  61.645  69.730  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.630  62.197  69.150  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.938  62.963  69.155  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.175  63.493  69.740  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.574      0.000      0.000
+REMARK INTER + INTRA:          -8.574
+REMARK INTER:                  -8.574
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.844  63.402  69.329  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.341  63.442  68.673  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.017  63.914  68.694  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.163  63.008  67.993  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.660  63.048  67.336  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.482  62.614  66.657  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.829  62.120  66.555  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.869  61.799  65.795  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.546  62.095  65.429  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.107  61.579  64.958  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.361  61.402  64.193  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      62.054  61.742  63.899  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.492  62.258  64.371  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.238  62.434  65.135  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.925  62.599  65.961  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.810      1.932      3.980
+REMARK INTER + INTRA:          -7.810
+REMARK INTER:                  -7.810
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.086  62.380  64.480  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.702  62.003  65.105  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.344  61.269  64.987  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.676  62.359  65.849  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.292  61.981  66.474  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.266  62.338  67.217  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.598  63.066  67.418  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.440  63.207  68.216  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.012  62.565  68.508  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.163  63.152  69.068  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.890  63.063  69.842  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.466  62.387  70.055  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.316  61.801  69.495  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.589  61.890  68.721  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.904  62.028  67.891  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.524      3.981      4.822
+REMARK INTER + INTRA:          -7.524
+REMARK INTER:                  -7.524
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.521  67.114  68.773  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      59.610  66.595  69.407  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.526  66.869  70.181  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      59.782  65.800  69.268  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.871  65.279  69.903  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.043  64.485  69.763  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.142  64.133  69.024  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.307  63.333  69.143  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.310  63.191  69.956  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.466  62.523  69.498  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.608  61.797  69.863  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.592  61.739  70.686  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.436  62.407  71.143  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.295  63.133  70.778  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.147  63.903  70.339  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.519      4.844      6.669
+REMARK INTER + INTRA:          -7.519
+REMARK INTER:                  -7.519
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      62.104  63.516  70.217  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.586  64.065  69.835  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.526  64.168  69.018  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.128  64.512  70.268  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.610  65.061  69.884  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.152  65.507  70.318  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.273  65.465  71.133  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.864  66.006  71.331  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      65.107  66.383  70.637  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.503  66.637  71.316  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.085  67.220  71.259  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      66.271  67.548  70.524  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.874  67.292  69.847  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.293  66.710  69.904  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.667  66.074  70.012  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.471      1.502      2.128
+REMARK INTER + INTRA:          -7.471
+REMARK INTER:                  -7.471
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      61.940  64.355  70.597  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      62.070  64.113  69.820  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.813  64.213  69.475  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.456  63.770  69.387  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.586  63.528  68.608  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.973  63.186  68.175  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.205  63.051  68.445  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.778  62.700  67.833  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.282  62.618  67.184  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.517  62.339  67.053  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.317  62.014  66.321  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      59.882  61.968  65.721  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.647  62.248  65.854  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.847  62.573  66.585  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.020  62.919  67.396  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.338      3.162      5.515
+REMARK INTER + INTRA:          -7.338
+REMARK INTER:                  -7.338
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      59.841  62.867  67.357  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      60.249  62.466  67.950  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.626  61.751  67.782  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      60.282  62.779  68.713  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.692  62.378  69.307  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.725  62.691  70.069  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.377  63.396  70.319  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.549  63.495  71.120  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.002  62.850  71.365  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.848  63.399  71.962  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.141  63.274  72.723  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.589  62.600  72.887  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.743  62.052  72.290  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.449  62.177  71.529  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      61.111  62.354  70.716  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.129      5.604      6.329
+REMARK INTER + INTRA:          -7.129
+REMARK INTER:                  -7.129
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.919  66.519  69.877  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      64.560  65.778  69.907  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.761  65.198  69.355  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.997  65.615  70.489  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.638  64.872  70.518  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.076  64.710  71.100  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.819  65.231  71.686  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.256  64.840  72.146  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.166  64.077  71.844  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.690  64.239  72.498  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.181  63.659  72.792  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.150  62.917  72.431  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.626  62.756  71.777  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.134  63.337  71.484  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.672  63.997  71.198  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.121      4.017      4.830
+REMARK INTER + INTRA:          -7.121
+REMARK INTER:                  -7.121
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      64.175  66.013  69.509  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      63.911  65.445  70.044  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      64.272  65.373  70.782  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      63.283  64.948  69.842  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      63.018  64.379  70.378  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.392  63.883  70.176  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.978  63.890  69.462  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      61.399  63.302  69.497  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.455  62.933  70.233  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.860  62.630  69.749  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.386  62.010  70.018  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.507  61.694  70.771  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.102  61.998  71.254  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.577  62.618  70.985  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.069  63.291  70.652  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.630      4.527      5.158
+REMARK INTER + INTRA:          -6.630
+REMARK INTER:                  -6.630
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = guanadrel
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   UNL     1      60.300  62.019  70.733  0.00  0.00    +0.000 NA
+ATOM      2  C   UNL     1      61.073  62.269  70.871  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.575  61.815  71.344  0.00  0.00    +0.000 NA
+ATOM      4  N   UNL     1      61.346  62.972  70.536  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.121  63.221  70.674  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.393  63.924  70.340  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.958  64.432  69.857  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.445  65.065  69.648  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.182  64.947  70.001  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.131  65.637  69.551  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.784  66.137  69.488  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.489  65.946  69.875  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      64.538  65.256  70.324  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.885  64.757  70.387  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      63.149  64.242  70.429  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

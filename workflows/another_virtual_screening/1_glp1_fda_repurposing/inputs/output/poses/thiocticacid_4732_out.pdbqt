@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -6.900      0.000      0.000
+REMARK INTER + INTRA:          -6.900
+REMARK INTER:                  -6.900
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.742  61.654  63.415  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.062  61.616  63.880  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.394  61.221  63.600  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      62.049  61.972  64.624  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.369  61.934  65.089  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.357  62.290  65.833  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.677  62.251  66.297  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.664  62.607  67.042  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.028  62.614  67.565  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.257  63.030  68.240  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      61.035  63.280  68.133  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      61.288  63.019  67.393  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.888      2.766      3.942
+REMARK INTER + INTRA:          -6.888
+REMARK INTER:                  -6.888
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.138  61.900  69.247  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.677  62.237  68.723  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.179  62.840  68.978  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.716  61.971  67.943  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.256  62.307  67.418  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.295  62.042  66.638  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.835  62.378  66.114  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.874  62.113  65.334  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.382  62.395  64.750  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.233  61.974  64.056  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      61.632  61.432  64.211  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      61.409  61.517  65.001  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.312      3.417      4.581
+REMARK INTER + INTRA:          -6.312
+REMARK INTER:                  -6.312
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.120  62.326  71.541  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.679  62.086  70.887  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.999  61.631  70.993  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.918  62.300  70.126  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.477  62.060  69.473  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.715  62.274  68.712  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.274  62.034  68.058  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.513  62.248  67.298  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.130  62.049  66.595  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.557  62.377  65.971  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      61.204  62.778  66.287  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      61.177  62.699  67.107  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.165      6.103      6.938
+REMARK INTER + INTRA:          -6.165
+REMARK INTER:                  -6.165
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.351  67.938  69.789  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      66.004  67.366  70.271  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.272  67.260  71.043  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.389  66.900  69.980  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.042  66.327  70.461  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.426  65.861  70.171  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.079  65.288  70.652  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.464  64.822  70.362  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.066  64.231  70.776  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.495  63.909  70.276  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      62.540  64.300  69.552  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      63.139  64.865  69.604  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.143      5.994      6.779
+REMARK INTER + INTRA:          -6.143
+REMARK INTER:                  -6.143
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.208  63.675  70.280  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.682  64.185  69.838  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.621  64.194  69.015  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      63.217  64.685  70.217  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.691  65.194  69.775  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.227  65.694  70.155  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.701  66.203  69.713  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.237  66.703  70.092  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.744  67.239  69.725  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.179  67.622  70.312  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      65.941  67.322  71.042  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      65.358  66.754  70.907  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.904      5.880      6.506
+REMARK INTER + INTRA:          -5.904
+REMARK INTER:                  -5.904
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.868  61.299  71.471  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.214  61.776  71.315  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.671  61.554  70.734  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.102  62.476  71.738  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.449  62.953  71.581  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.337  63.652  72.004  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.683  64.130  71.847  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.571  64.829  72.271  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.947  65.359  72.175  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.055  65.979  72.709  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      59.746  65.832  73.135  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      60.065  65.121  72.864  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.841     18.643     19.016
+REMARK INTER + INTRA:          -5.841
+REMARK INTER:                  -5.841
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.679  81.720  57.666  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.654  80.943  57.940  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.946  80.520  57.916  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      64.336  80.587  58.239  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.310  79.810  58.512  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.993  79.454  58.811  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.967  78.677  59.084  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.649  78.321  59.383  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.708  77.553  59.675  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.488  77.429  59.914  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      66.911  78.122  59.770  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      66.393  78.674  59.442  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.776     24.694     25.608
+REMARK INTER + INTRA:          -5.776
+REMARK INTER:                  -5.776
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      68.998  80.674  52.296  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      69.052  80.264  51.583  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      68.375  79.931  51.248  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      69.781  80.185  51.205  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.834  79.775  50.492  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.563  79.696  50.114  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      70.616  79.285  49.401  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      71.345  79.207  49.023  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      71.483  78.814  48.311  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      72.288  78.872  48.139  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      72.647  79.301  48.744  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      72.065  79.509  49.291  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.648      2.307      3.147
+REMARK INTER + INTRA:          -5.648
+REMARK INTER:                  -5.648
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = thioctic acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      58.997  62.003  66.105  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.708  62.156  66.492  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.425  62.029  66.103  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      59.705  62.434  67.269  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.417  62.586  67.656  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.414  62.865  68.433  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.125  63.017  68.820  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.122  63.296  69.596  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.786  63.472  70.052  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.528  63.732  70.790  0.00  0.00    +0.000 C 
+ATOM     11  S   UNL     1      60.703  63.717  70.792  0.00  0.00    +0.000 S 
+ATOM     12  S   UNL     1      60.452  63.447  70.054  0.00  0.00    +0.000 S 
+ENDROOT
+TORSDOF 0
+ENDMDL

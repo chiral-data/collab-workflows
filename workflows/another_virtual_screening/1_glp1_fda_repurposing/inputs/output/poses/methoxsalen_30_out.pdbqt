@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.005      0.000      0.000
+REMARK INTER + INTRA:          -9.005
+REMARK INTER:                  -9.005
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.799  63.127  67.095  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.070  62.823  66.378  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.553  62.412  65.882  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.824  62.109  65.164  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.565  62.128  64.801  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.505  61.729  64.082  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.729  61.463  64.000  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.307  61.698  64.669  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.519  61.591  64.892  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.250  61.895  65.610  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.766  62.306  66.105  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.495  62.609  66.822  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.708  62.502  67.045  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.437  62.806  67.763  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.192  62.092  66.550  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      59.462  61.788  65.832  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.368      1.002      3.247
+REMARK INTER + INTRA:          -8.368
+REMARK INTER:                  -8.368
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.291  60.785  64.209  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.998  61.110  64.907  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.453  61.654  65.331  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.159  61.979  66.031  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.447  61.871  66.435  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.462  62.347  67.107  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.182  62.750  67.121  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.613  62.523  66.454  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.360  62.740  66.179  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.653  62.414  65.480  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.199  61.871  65.056  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.492  61.545  64.358  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.239  61.762  64.082  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.532  61.437  63.383  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.692  62.306  64.506  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.399  62.632  65.206  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.268      1.179      2.749
+REMARK INTER + INTRA:          -8.268
+REMARK INTER:                  -8.268
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.169  62.367  65.708  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.086  62.754  66.431  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.350  62.777  66.804  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.267  63.164  67.528  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.807  63.569  68.004  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.405  63.842  68.669  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.617  63.607  68.607  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.532  63.187  67.902  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.879  62.824  67.551  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.963  62.437  66.827  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.698  62.414  66.454  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.781  62.027  65.730  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.130  61.663  65.379  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.212  61.276  64.655  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.394  61.686  65.752  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      59.311  62.073  66.477  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.018      2.798      3.782
+REMARK INTER + INTRA:          -8.018
+REMARK INTER:                  -8.018
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.161  64.207  69.903  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.949  63.972  69.143  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.475  63.304  69.035  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.262  63.068  68.273  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.435  63.381  67.529  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.069  62.908  66.963  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.669  62.302  67.354  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.789  62.401  68.165  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.528  61.970  68.819  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.741  62.207  69.580  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.214  62.874  69.688  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.426  63.109  70.449  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.166  62.679  71.103  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.378  62.915  71.864  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.692  62.012  70.995  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.479  61.776  70.233  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.961      4.159      5.544
+REMARK INTER + INTRA:          -7.961
+REMARK INTER:                  -7.961
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.237  64.999  70.449  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.015  64.334  70.015  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.962  63.598  70.387  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.739  62.933  69.953  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.541  62.832  69.158  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.365  62.035  69.039  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.455  61.643  69.759  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.686  62.198  70.324  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.855  62.128  71.129  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.078  62.794  71.562  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.131  63.529  71.191  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.353  64.195  71.624  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.522  64.126  72.429  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.745  64.792  72.863  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.469  63.391  72.800  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.247  62.725  72.366  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.944      3.725      5.369
+REMARK INTER + INTRA:          -7.944
+REMARK INTER:                  -7.944
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.825  64.467  69.461  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.826  64.312  70.270  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.496  63.612  70.557  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.498  63.457  71.368  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      61.783  63.887  72.012  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.629  63.453  72.696  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.249  62.755  72.476  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.167  62.758  71.655  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.835  62.213  71.131  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.833  62.369  70.321  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.164  63.068  70.034  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.162  63.223  69.225  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.829  62.679  68.700  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.827  62.833  67.890  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.499  61.979  68.987  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.501  61.824  69.798  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.708      4.760      6.517
+REMARK INTER + INTRA:          -7.708
+REMARK INTER:                  -7.708
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.557  62.039  70.138  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.264  62.787  70.325  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.455  63.137  71.048  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.161  63.885  71.234  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.675  64.407  70.819  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.566  65.078  71.285  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      59.984  64.973  71.988  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.352  64.235  71.957  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.836  63.836  72.493  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.129  63.088  72.306  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.939  62.738  71.584  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.232  61.991  71.397  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.716  61.591  71.933  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.010  60.843  71.747  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.907  61.941  72.656  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.613  62.690  72.842  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.540      5.852      7.360
+REMARK INTER + INTRA:          -7.540
+REMARK INTER:                  -7.540
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.135  66.276  72.291  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.774  66.700  71.989  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      64.178  66.421  71.325  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.817  66.846  71.023  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      65.173  67.552  71.259  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      65.796  67.709  70.743  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.826  67.101  70.186  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.221  66.567  70.359  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.985  65.863  69.998  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.346  65.439  70.301  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.942  65.718  70.965  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      63.304  65.293  71.267  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      63.068  64.589  70.907  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.428  64.164  71.209  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.471  64.310  70.244  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.111  64.735  69.941  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.505      5.393      6.928
+REMARK INTER + INTRA:          -7.505
+REMARK INTER:                  -7.505
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxsalen
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.752  63.885  70.209  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.755  64.586  70.642  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.381  64.619  71.378  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.384  65.321  71.811  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.708  66.065  71.656  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.534  66.556  72.295  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.103  66.117  72.845  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.010  65.354  72.546  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.633  64.684  72.847  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.631  63.983  72.414  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.005  63.950  71.679  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.002  63.249  71.246  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.625  62.579  71.547  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.622  61.876  71.114  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.252  62.611  72.281  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.254  63.314  72.715  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

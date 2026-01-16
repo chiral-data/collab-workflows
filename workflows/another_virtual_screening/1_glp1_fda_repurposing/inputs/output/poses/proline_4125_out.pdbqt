@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.883      0.000      0.000
+REMARK INTER + INTRA:          -4.883
+REMARK INTER:                  -4.883
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      60.274  60.850  64.662  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      60.932  61.182  64.289  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      61.066  61.041  63.488  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      61.455  61.654  64.718  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      62.131  62.022  64.423  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      62.487  62.436  65.040  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      62.030  62.326  65.718  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      61.392  61.843  65.520  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.882      1.864      2.212
+REMARK INTER + INTRA:          -4.882
+REMARK INTER:                  -4.882
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      61.215  63.218  66.763  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      61.452  62.445  66.598  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      61.351  61.853  67.164  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      61.791  62.264  65.868  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      62.053  61.520  65.626  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      62.351  61.592  64.860  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      62.272  62.380  64.629  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      61.926  62.795  65.251  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.619     16.555     16.990
+REMARK INTER + INTRA:          -4.619
+REMARK INTER:                  -4.619
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      65.709  76.296  60.976  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      65.877  76.488  60.191  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      65.819  75.911  59.605  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      66.101  77.257  59.993  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      66.285  77.529  59.236  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      66.479  78.328  59.293  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      66.416  78.550  60.085  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      66.182  77.889  60.518  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.489     17.685     18.117
+REMARK INTER + INTRA:          -4.489
+REMARK INTER:                  -4.489
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      64.369  78.871  58.948  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      65.189  78.973  58.958  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      65.525  79.635  58.601  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      65.669  78.412  59.326  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      66.492  78.440  59.380  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      66.743  77.771  59.791  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      66.075  77.329  59.992  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      65.412  77.725  59.704  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.155      7.856      8.420
+REMARK INTER + INTRA:          -4.155
+REMARK INTER:                  -4.155
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      64.658  65.346  70.807  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      64.837  65.889  70.211  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      64.497  65.807  69.464  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      65.356  66.512  70.363  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      65.586  67.094  69.826  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      66.108  67.604  70.210  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      66.200  67.337  70.986  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      65.736  66.663  71.081  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.134      8.189      8.809
+REMARK INTER + INTRA:          -4.134
+REMARK INTER:                  -4.134
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      66.278  67.951  69.729  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      66.117  67.409  70.330  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      66.554  67.427  71.029  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      65.518  66.849  70.232  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      65.295  66.276  70.781  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      64.677  65.838  70.455  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      64.518  66.141  69.705  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      65.037  66.766  69.566  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.132     16.729     17.237
+REMARK INTER + INTRA:          -4.132
+REMARK INTER:                  -4.132
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      58.514  77.933  73.126  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      58.953  77.258  72.945  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      59.776  77.273  73.006  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      58.570  76.568  72.704  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      58.934  75.855  72.506  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      58.345  75.317  72.298  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      57.616  75.698  72.367  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      57.755  76.471  72.618  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.048     25.291     25.745
+REMARK INTER + INTRA:          -4.048
+REMARK INTER:                  -4.048
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      72.847  80.084  48.856  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      72.494  79.371  48.636  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      72.872  78.874  48.098  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      71.764  79.156  48.955  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      71.347  78.464  48.788  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      70.649  78.476  49.226  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      70.634  79.174  49.665  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      71.323  79.595  49.497  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.983      4.684      5.275
+REMARK INTER + INTRA:          -3.983
+REMARK INTER:                  -3.983
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = proline
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   PRO A   1      60.611  62.894  70.918  0.00  0.00    +0.000 OA
+ATOM      2  C   PRO A   1      60.449  62.280  70.390  0.00  0.00    +0.000 C 
+ATOM      3  OXT PRO A   1      60.198  61.548  70.675  0.00  0.00    +0.000 OA
+ATOM      4  CA  PRO A   1      60.539  62.399  69.579  0.00  0.00    +0.000 C 
+ATOM      5  CB  PRO A   1      60.398  61.841  68.988  0.00  0.00    +0.000 C 
+ATOM      6  CG  PRO A   1      60.557  62.194  68.261  0.00  0.00    +0.000 C 
+ATOM      7  CD  PRO A   1      60.796  62.971  68.401  0.00  0.00    +0.000 C 
+ATOM      8  N   PRO A   1      60.785  63.098  69.216  0.00  0.00    +0.000 NA
+ENDROOT
+TORSDOF 0
+ENDMDL

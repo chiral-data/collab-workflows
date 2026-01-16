@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -7.367      0.000      0.000
+REMARK INTER + INTRA:          -7.367
+REMARK INTER:                  -7.367
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      61.210  61.256  64.126  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      61.559  61.652  64.760  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      62.370  61.803  64.757  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      61.096  61.897  65.399  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      60.285  61.745  65.402  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      61.445  62.292  66.033  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      60.981  62.537  66.671  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      61.330  62.933  67.305  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      60.867  63.177  67.944  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      61.216  63.573  68.578  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      60.753  63.818  69.216  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      62.027  63.724  68.574  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      60.170  62.386  66.675  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      59.708  62.630  67.312  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      59.823  61.990  66.040  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.249      0.985      3.358
+REMARK INTER + INTRA:          -7.249
+REMARK INTER:                  -7.249
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      60.303  63.624  69.033  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      60.868  63.539  68.438  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      61.615  63.877  68.527  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      60.685  63.116  67.753  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      59.938  62.778  67.664  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      61.250  63.031  67.158  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      61.067  62.608  66.473  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      61.632  62.523  65.878  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      61.449  62.100  65.193  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      62.014  62.015  64.598  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      61.832  61.592  63.914  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      62.762  62.353  64.687  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      60.320  62.270  66.384  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      60.138  61.847  65.700  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      59.756  62.355  66.980  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.813      2.326      3.338
+REMARK INTER + INTRA:          -6.813
+REMARK INTER:                  -6.813
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      60.365  62.378  67.077  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      60.730  62.766  67.707  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      61.176  63.447  67.570  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      60.649  62.474  68.475  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      60.202  61.794  68.612  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      61.014  62.862  69.104  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      60.932  62.570  69.872  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      61.297  62.958  70.501  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      61.216  62.666  71.269  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      61.581  63.054  71.899  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      61.499  62.762  72.667  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      62.027  63.734  71.761  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      60.486  61.890  70.009  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      60.405  61.598  70.776  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      60.121  61.502  69.379  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.776      2.341      4.656
+REMARK INTER + INTRA:          -6.776
+REMARK INTER:                  -6.776
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      61.438  62.938  72.535  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      61.552  63.209  71.764  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      62.010  63.881  71.625  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      61.206  62.808  71.131  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      60.748  62.136  71.269  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      61.319  63.079  70.360  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      60.973  62.677  69.727  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      61.087  62.948  68.956  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      60.741  62.546  68.323  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      60.854  62.817  67.552  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      60.509  62.415  66.919  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      61.312  63.489  67.414  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      60.515  62.005  69.865  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      60.170  61.604  69.233  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      60.403  61.735  70.637  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.736      5.224      6.560
+REMARK INTER + INTRA:          -6.736
+REMARK INTER:                  -6.736
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      66.127  67.577  70.121  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      65.548  67.219  70.587  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      65.375  67.520  71.336  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      65.141  66.559  70.304  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      65.314  66.258  69.555  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      64.562  66.201  70.770  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      64.156  65.540  70.486  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      63.577  65.182  70.952  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      63.170  64.522  70.669  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      62.591  64.163  71.135  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      62.185  63.503  70.851  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      62.419  64.464  71.883  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      64.328  65.239  69.738  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      63.922  64.580  69.455  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      64.907  65.599  69.273  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.574      4.380      5.236
+REMARK INTER + INTRA:          -6.574
+REMARK INTER:                  -6.574
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      60.620  61.770  70.600  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      60.501  62.525  70.289  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      60.635  62.667  69.487  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      60.249  63.138  70.781  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      60.116  62.996  71.582  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      60.131  63.893  70.470  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      59.878  64.506  70.961  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      59.760  65.261  70.650  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      59.508  65.875  71.142  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      59.389  66.629  70.831  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      59.137  67.243  71.323  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      59.522  66.771  70.030  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      59.745  64.364  71.763  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      59.493  64.977  72.254  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      59.864  63.609  72.073  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.463      5.189      6.095
+REMARK INTER + INTRA:          -6.463
+REMARK INTER:                  -6.463
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      61.013  63.338  72.342  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      61.496  64.004  72.293  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      61.426  64.608  72.851  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      62.051  64.067  71.685  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      62.122  63.464  71.127  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      62.535  64.733  71.636  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      63.090  64.796  71.028  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      63.574  65.462  70.979  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      64.129  65.525  70.371  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      64.612  66.191  70.322  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      65.167  66.254  69.714  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      64.542  66.795  70.880  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      63.160  64.193  70.470  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      63.715  64.256  69.863  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      62.676  63.527  70.520  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.348      2.483      4.801
+REMARK INTER + INTRA:          -6.348
+REMARK INTER:                  -6.348
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      64.560  65.282  70.872  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      64.228  65.013  70.167  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      64.657  65.059  69.464  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      63.465  64.698  70.164  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      63.035  64.652  70.867  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      63.133  64.429  69.459  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      62.370  64.113  69.456  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      62.038  63.844  68.751  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      61.274  63.529  68.748  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      60.942  63.260  68.043  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      60.179  62.944  68.040  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      61.372  63.306  67.340  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      61.940  64.067  70.159  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      61.178  63.752  70.156  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      62.273  64.337  70.864  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.319      3.066      5.102
+REMARK INTER + INTRA:          -6.319
+REMARK INTER:                  -6.319
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = alanyl glutamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  CB  ALA A   1      59.383  66.852  70.917  0.00  0.00    +0.000 C 
+ATOM      2  CA  ALA A   1      59.514  66.040  70.978  0.00  0.00    +0.000 C 
+ATOM      3  N   ALA A   1      59.426  65.661  71.705  0.00  0.00    +0.000 NA
+ATOM      4  C   ALA A   1      59.735  65.607  70.311  0.00  0.00    +0.000 C 
+ATOM      5  O   ALA A   1      59.823  65.986  69.583  0.00  0.00    +0.000 OA
+ATOM      6  N   GLN A   2      59.867  64.795  70.372  0.00  0.00    +0.000 NA
+ATOM      7  CA  GLN A   2      60.088  64.362  69.704  0.00  0.00    +0.000 C 
+ATOM      8  CB  GLN A   2      60.219  63.550  69.766  0.00  0.00    +0.000 C 
+ATOM      9  CG  GLN A   2      60.440  63.117  69.098  0.00  0.00    +0.000 C 
+ATOM     10  CD  GLN A   2      60.572  62.305  69.159  0.00  0.00    +0.000 C 
+ATOM     11  NE2 GLN A   2      60.792  61.872  68.492  0.00  0.00    +0.000 NA
+ATOM     12  OE1 GLN A   2      60.484  61.926  69.887  0.00  0.00    +0.000 OA
+ATOM     13  C   GLN A   2      60.176  64.741  68.977  0.00  0.00    +0.000 C 
+ATOM     14  O   GLN A   2      60.396  64.308  68.311  0.00  0.00    +0.000 OA
+ATOM     15  OXT GLN A   2      60.044  65.553  68.917  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

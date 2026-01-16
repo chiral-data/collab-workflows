@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -8.156      0.000      0.000
+REMARK INTER + INTRA:          -8.156
+REMARK INTER:                  -8.156
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.621  61.391  64.156  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.778  61.839  64.832  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.185  61.964  65.390  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.771  61.506  64.844  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.149  61.235  64.162  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.804  62.379  65.744  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.541  62.412  65.374  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.687  62.761  66.466  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      60.950  62.727  66.834  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.330  62.313  66.482  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      59.593  62.279  66.850  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.448  61.931  65.760  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      59.828  61.516  65.406  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.112      0.830      2.064
+REMARK INTER + INTRA:          -8.112
+REMARK INTER:                  -8.112
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.436  62.167  66.473  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.222  62.419  66.442  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.709  62.175  65.824  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.010  61.790  65.614  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.337  61.872  66.085  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.239  62.644  66.247  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.994  63.021  66.938  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      62.015  62.735  65.980  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      62.259  62.357  65.289  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.730  61.887  64.865  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      61.974  61.509  64.174  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.954  61.796  65.132  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.424  61.327  64.708  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.244      7.115      8.211
+REMARK INTER + INTRA:          -7.244
+REMARK INTER:                  -7.244
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.453  67.760  70.317  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.060  67.292  70.872  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.423  66.825  70.638  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.616  67.171  69.915  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.246  67.704  69.869  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      65.449  66.640  71.442  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      66.020  66.987  71.925  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      64.905  66.107  71.761  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      64.336  65.760  71.277  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      64.308  65.945  70.473  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.738  65.597  69.988  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.852  66.477  70.154  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.825  66.662  69.349  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.109      3.079      4.281
+REMARK INTER + INTRA:          -7.109
+REMARK INTER:                  -7.109
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.675  61.900  70.856  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.007  62.477  70.368  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.848  62.474  69.560  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.406  61.818  69.793  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.393  61.591  70.587  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.344  63.131  69.605  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.656  63.361  70.334  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.528  63.559  68.924  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.215  63.328  68.197  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.718  62.671  68.150  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.405  62.440  67.422  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.535  62.244  68.831  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.038  61.586  68.785  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.029      7.211      8.198
+REMARK INTER + INTRA:          -7.029
+REMARK INTER:                  -7.029
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.172  67.515  70.024  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.551  66.973  69.968  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.021  66.889  70.593  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.515  67.471  70.904  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.155  67.748  70.462  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.710  66.336  70.065  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.070  66.219  69.333  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      64.039  65.901  70.271  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      63.680  66.019  71.003  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.990  66.572  71.531  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      63.631  66.691  72.265  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.660  67.007  71.326  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      64.971  67.561  71.854  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.868     24.813     25.417
+REMARK INTER + INTRA:          -6.868
+REMARK INTER:                  -6.868
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.414  78.434  48.655  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      71.505  79.113  49.117  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.913  79.333  49.647  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.575  78.650  49.332  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.978  78.218  48.756  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.456  79.940  49.778  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      72.165  79.956  49.358  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      71.289  80.530  50.330  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      70.580  80.514  50.750  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      70.036  79.907  50.620  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      69.327  79.890  51.040  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      70.203  79.317  50.068  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      69.659  78.709  49.936  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.853      2.697      3.514
+REMARK INTER + INTRA:          -6.853
+REMARK INTER:                  -6.853
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.653  62.655  67.297  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.996  62.983  67.973  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.861  62.641  68.711  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.418  62.133  68.236  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.382  62.257  67.420  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.351  63.267  68.931  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.639  63.785  68.357  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      61.552  63.376  69.723  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      61.263  62.858  70.296  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.773  62.231  70.077  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      60.483  61.712  70.650  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.572  62.123  69.284  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      60.081  61.496  69.065  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.768     25.260     25.961
+REMARK INTER + INTRA:          -6.768
+REMARK INTER:                  -6.768
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.981  78.743  49.741  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.652  78.654  49.269  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.292  79.165  49.361  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.783  79.469  49.935  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.042  79.124  50.054  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      71.579  78.685  48.755  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      71.115  78.068  48.464  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      72.330  78.821  48.441  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      72.793  79.437  48.733  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      72.507  79.918  49.339  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      72.970  80.535  49.632  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      71.756  79.782  49.653  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      71.469  80.263  50.260  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.731      6.883      8.047
+REMARK INTER + INTRA:          -6.731
+REMARK INTER:                  -6.731
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methyprylon
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.572  65.760  70.235  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.069  66.086  70.808  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.728  66.526  70.581  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.425  66.331  69.839  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.739  65.875  69.781  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.803  66.570  71.401  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.249  66.198  71.885  0.00  0.00    +0.000 OA
+ATOM      8  N   UNL     1      65.432  66.986  71.736  0.00  0.00    +0.000 NA
+ATOM      9  C   UNL     1      65.985  67.358  71.252  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.911  67.315  70.431  0.00  0.00    +0.000 C 
+ATOM     11  C   UNL     1      66.465  67.687  69.945  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      65.282  66.899  70.095  0.00  0.00    +0.000 C 
+ATOM     13  O   UNL     1      65.207  66.855  69.274  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

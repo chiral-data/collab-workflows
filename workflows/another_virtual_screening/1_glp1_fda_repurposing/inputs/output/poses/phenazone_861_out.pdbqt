@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.504      0.000      0.000
+REMARK INTER + INTRA:          -8.504
+REMARK INTER:                  -8.504
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.623  62.969  66.965  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.865  62.670  66.828  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.626  62.242  66.165  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      59.828  62.055  66.257  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.364  61.630  65.723  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.574  62.369  66.977  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.215  62.749  67.330  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.207  63.139  68.057  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.101  62.036  65.523  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.895  62.263  65.508  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.370  62.056  64.866  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.052  61.624  64.239  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.259  61.398  64.255  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.784  61.604  64.896  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.958      0.696      2.703
+REMARK INTER + INTRA:          -7.958
+REMARK INTER:                  -7.958
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.366  62.485  65.345  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.749  62.036  65.029  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      61.010  61.919  65.374  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.568  61.436  64.871  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.794  61.179  65.001  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.035  61.257  64.215  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.766  61.628  64.313  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.400  61.594  63.786  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.756  62.228  66.096  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.262  62.704  66.541  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.008  63.013  67.262  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.249  62.847  67.538  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.743  62.371  67.093  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.997  62.062  66.372  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.389      3.405      5.315
+REMARK INTER + INTRA:          -7.389
+REMARK INTER:                  -7.389
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.609  63.717  69.494  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.171  63.027  69.619  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      61.014  62.679  70.349  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.560  62.003  70.216  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.278  61.486  70.795  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.437  61.934  69.403  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.815  62.568  69.033  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.833  62.714  68.222  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.265  62.957  71.084  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.719  63.646  71.131  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.970  63.923  71.866  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.769  63.514  72.553  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.315  62.826  72.505  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.064  62.549  71.771  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.070      5.584      6.424
+REMARK INTER + INTRA:          -7.070
+REMARK INTER:                  -7.070
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.336  64.162  71.752  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.049  64.303  72.145  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.709  63.810  72.143  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.293  64.164  72.606  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.046  63.859  72.755  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.993  64.877  72.893  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.223  64.963  72.608  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.719  65.598  72.761  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.775  63.088  71.749  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.140  62.802  71.305  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.206  62.080  70.911  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.905  61.645  70.960  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.539  61.932  71.404  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.473  62.652  71.798  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.039      3.021      4.215
+REMARK INTER + INTRA:          -7.039
+REMARK INTER:                  -7.039
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.693  63.928  70.395  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.283  63.294  70.731  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.899  62.693  70.319  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.564  62.179  70.872  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      60.128  61.500  70.701  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.743  62.464  71.625  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.187  63.154  71.538  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.483  63.620  72.152  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.855  62.617  69.499  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.219  63.177  69.014  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.176  63.101  68.193  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.769  62.466  67.858  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.406  61.907  68.344  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.449  61.983  69.163  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.026      6.115      7.414
+REMARK INTER + INTRA:          -7.026
+REMARK INTER:                  -7.026
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.143  65.056  69.799  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      63.814  65.278  70.524  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      64.052  65.916  70.988  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.574  65.934  71.661  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      63.621  66.483  72.276  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.041  65.306  71.611  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.189  64.901  70.908  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      62.782  64.236  70.638  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.661  66.444  70.813  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.093  66.357  70.115  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.702  66.885  69.939  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.879  67.500  70.460  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.446  67.587  71.157  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      64.838  67.059  71.333  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.926      5.780      6.716
+REMARK INTER + INTRA:          -6.926
+REMARK INTER:                  -6.926
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.032  64.227  70.361  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.902  64.756  70.982  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      62.445  64.613  71.652  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.467  65.289  72.125  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.085  65.387  72.850  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      62.938  65.850  71.746  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.208  65.520  71.039  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.696  65.892  70.487  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.037  63.916  71.822  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.066  63.282  71.293  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.658  62.586  71.463  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.221  62.523  72.160  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.192  63.156  72.688  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.600  63.852  72.518  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.792      6.894      7.557
+REMARK INTER + INTRA:          -6.792
+REMARK INTER:                  -6.792
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.409  66.011  72.622  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.605  66.173  72.720  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      60.995  65.619  72.707  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.283  66.020  72.826  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      59.532  65.680  72.854  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.455  66.823  72.914  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.273  66.917  72.848  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.683  67.631  72.901  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.078  64.806  72.593  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.829  64.482  72.480  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.913  63.669  72.366  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.248  63.181  72.367  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.498  63.506  72.480  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.414  64.318  72.594  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.711      5.749      6.434
+REMARK INTER + INTRA:          -6.711
+REMARK INTER:                  -6.711
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = phenazone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.184  63.322  71.042  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.129  63.944  71.583  0.00  0.00    +0.000 N 
+ATOM      3  N   UNL     1      62.578  64.635  71.572  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.343  65.102  72.212  0.00  0.00    +0.000 A 
+ATOM      5  O   UNL     1      62.648  65.842  72.411  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.749  64.697  72.617  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.617  63.981  72.228  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.068  63.405  72.447  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.160  64.829  71.021  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.336  64.304  70.408  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.918  64.498  69.856  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.324  65.214  69.916  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.147  65.737  70.529  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      63.565  65.544  71.080  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

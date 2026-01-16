@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -9.693      0.000      0.000
+REMARK INTER + INTRA:          -9.693
+REMARK INTER:                  -9.693
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.106  61.479  65.148  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.733  61.721  65.843  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.141  62.186  66.390  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      59.768  62.428  67.085  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.176  62.893  67.631  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.803  63.135  68.326  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.956  63.115  67.483  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.329  62.873  66.787  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.110  63.096  66.639  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.921  62.408  66.241  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.295  62.166  65.546  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.074  62.389  65.397  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.447  62.147  64.703  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.039  61.682  64.156  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      62.412  61.440  63.461  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      61.259  61.459  64.305  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.887  61.701  64.999  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.810      3.511      4.972
+REMARK INTER + INTRA:          -8.810
+REMARK INTER:                  -8.810
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.474  61.781  70.339  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.389  61.812  69.519  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.767  62.407  69.087  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.682  62.438  68.268  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.059  63.032  67.837  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.975  63.064  67.017  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      61.521  63.594  68.225  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.606  63.562  69.046  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.069  64.124  69.435  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.229  62.968  69.477  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.314  62.937  70.297  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.776  63.499  70.686  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.860  63.467  71.505  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.483  62.873  71.937  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      61.568  62.842  72.757  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      61.021  62.311  71.548  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.936  62.343  70.729  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.537      5.242      6.183
+REMARK INTER + INTRA:          -8.537
+REMARK INTER:                  -8.537
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.246  63.431  72.827  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.874  64.160  72.722  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.504  64.334  72.005  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.132  65.063  71.900  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.762  65.237  71.183  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.390  65.965  71.077  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      59.764  64.683  70.572  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.137  63.954  70.678  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.139  63.399  70.066  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.506  63.779  71.394  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.879  63.050  71.499  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.881  62.496  70.889  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.253  61.768  70.994  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.623  61.594  71.711  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      61.995  60.865  71.816  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      61.620  62.148  72.322  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.249  62.876  72.217  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.474      3.144      4.485
+REMARK INTER + INTRA:          -8.474
+REMARK INTER:                  -8.474
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.496  61.641  70.204  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.495  61.940  70.973  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.483  62.756  71.097  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      60.482  63.056  71.865  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.470  63.871  71.990  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.469  64.172  72.758  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.459  64.387  71.347  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.459  64.087  70.578  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.448  64.603  69.933  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      60.472  63.272  70.453  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.472  62.972  69.684  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.461  63.487  69.040  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.462  63.188  68.272  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.474  62.371  68.147  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      60.475  62.072  67.378  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      60.485  61.856  68.791  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.484  62.156  69.559  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.459      5.976      7.065
+REMARK INTER + INTRA:          -8.459
+REMARK INTER:                  -8.459
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.628  65.526  69.480  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.017  64.998  69.650  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.593  65.071  70.354  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      62.983  64.544  70.525  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.558  64.617  71.228  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.948  64.089  71.399  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      62.744  65.218  71.762  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.356  65.746  71.591  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      63.542  66.347  72.125  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      63.780  65.672  70.888  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.391  66.201  70.718  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      64.577  66.801  71.251  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.187  67.329  71.080  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.612  67.256  70.376  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      66.223  67.784  70.206  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      65.426  66.655  69.843  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      64.815  66.127  70.013  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.066      6.515      7.580
+REMARK INTER + INTRA:          -8.066
+REMARK INTER:                  -8.066
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.991  65.026  70.001  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.621  65.469  69.705  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.882  66.138  70.112  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      65.511  66.581  69.816  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      65.771  67.250  70.223  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      66.401  67.694  69.928  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      65.402  67.476  70.925  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.772  67.032  71.221  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      64.402  67.258  71.924  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      64.512  66.363  70.814  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      63.882  65.920  71.110  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      63.512  66.145  71.812  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.883  65.702  72.108  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.622  65.033  71.700  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      61.992  64.589  71.996  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      62.992  64.807  70.999  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      63.621  65.250  70.703  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.915     24.718     25.553
+REMARK INTER + INTRA:          -7.915
+REMARK INTER:                  -7.915
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      70.338  78.604  49.348  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      69.781  78.849  49.906  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      69.947  79.490  50.400  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      69.392  79.735  50.957  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      69.557  80.375  51.451  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      69.002  80.621  52.009  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      70.279  80.770  51.387  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      70.835  80.524  50.828  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      71.557  80.919  50.764  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      70.669  79.884  50.335  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      71.226  79.639  49.777  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      71.947  80.033  49.713  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      72.503  79.788  49.155  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      72.337  79.147  48.661  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      72.893  78.902  48.104  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      71.616  78.753  48.726  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      71.060  78.998  49.283  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.721     24.951     25.734
+REMARK INTER + INTRA:          -7.721
+REMARK INTER:                  -7.721
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.780  78.831  49.855  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.340  78.591  49.298  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      71.069  78.975  49.254  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      71.629  78.736  48.698  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      72.358  79.120  48.654  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      72.918  78.880  48.098  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      72.527  79.743  49.167  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      71.967  79.983  49.724  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      72.137  80.607  50.237  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      71.238  79.599  49.768  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.679  79.839  50.325  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      70.848  80.462  50.837  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      70.289  80.702  51.394  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      69.559  80.318  51.437  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      68.999  80.558  51.994  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      69.390  79.695  50.925  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      69.949  79.455  50.368  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.688      5.501      6.686
+REMARK INTER + INTRA:          -7.688
+REMARK INTER:                  -7.688
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = pyrimethamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.743  64.262  70.929  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.388  63.587  70.615  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.681  63.304  70.936  0.00  0.00    +0.000 A 
+ATOM      4  N   UNL     1      61.326  62.630  70.623  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.620  62.348  70.944  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.265  61.673  70.631  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.270  62.741  71.579  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.626  63.416  71.893  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.275  63.810  72.528  0.00  0.00    +0.000 NA
+ATOM     10  C   UNL     1      61.331  63.698  71.571  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.686  64.374  71.886  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.336  64.767  72.520  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.691  65.442  72.834  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.398  65.724  72.512  0.00  0.00    +0.000 A 
+ATOM     15 CL   UNL     1      62.753  66.399  72.826  0.00  0.00    +0.000 Cl
+ATOM     16  C   UNL     1      62.748  65.331  71.878  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      62.393  64.656  71.564  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

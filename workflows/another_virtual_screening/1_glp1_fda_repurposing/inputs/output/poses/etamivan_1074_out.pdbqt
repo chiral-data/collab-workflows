@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.804      0.000      0.000
+REMARK INTER + INTRA:          -8.804
+REMARK INTER:                  -8.804
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.183  62.832  67.761  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.042  62.392  67.077  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.621  62.345  66.491  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.341  62.737  66.589  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.919  62.690  66.004  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.480  61.905  65.807  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.761  61.513  65.709  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.058  61.858  65.221  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.919  61.418  64.537  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.497  61.371  63.951  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.357  60.932  63.268  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.638  60.539  63.170  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.216  61.763  64.049  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.796  61.715  63.463  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.357  62.202  64.733  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.778  62.250  65.319  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.754      1.309      3.488
+REMARK INTER + INTRA:          -8.754
+REMARK INTER:                  -8.754
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.412  61.317  63.225  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.491  61.747  63.925  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.864  61.781  64.460  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.158  61.386  64.295  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.532  61.420  64.830  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.942  62.211  65.161  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.648  62.606  65.325  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.316  62.246  65.695  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.394  62.675  66.395  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.767  62.710  66.930  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.845  63.139  67.629  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      61.550  63.535  67.795  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.062  62.315  66.765  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.435  62.349  67.301  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.983  61.885  66.066  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.610  61.850  65.530  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.405      0.945      1.746
+REMARK INTER + INTRA:          -8.405
+REMARK INTER:                  -8.405
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.128  63.354  68.325  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.704  63.268  67.740  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.556  62.790  67.084  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      59.832  62.399  67.013  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.685  61.921  66.358  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.132  62.703  66.499  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.854  63.094  66.570  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.984  62.226  65.843  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.559  62.138  65.258  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.411  61.660  64.602  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.986  61.574  64.018  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.709  61.964  64.088  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.689  61.270  64.531  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.541  60.791  63.874  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.113  61.356  65.116  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.260  61.834  65.772  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.827      4.280      6.536
+REMARK INTER + INTRA:          -7.827
+REMARK INTER:                  -7.827
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.198  62.006  68.221  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.525  62.618  68.667  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.688  62.503  69.467  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.524  61.776  69.822  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.686  61.661  70.621  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.016  63.115  69.914  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.180  63.842  69.559  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.178  63.001  70.714  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.505  63.612  71.161  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.668  63.497  71.961  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.995  64.108  72.407  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.160  64.835  72.053  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.504  62.771  72.315  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.667  62.655  73.116  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.177  62.158  71.869  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.014  62.273  71.068  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.562      6.141      7.536
+REMARK INTER + INTRA:          -7.562
+REMARK INTER:                  -7.562
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.027  67.601  70.509  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.443  67.226  70.955  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      65.001  66.614  70.624  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      65.141  66.377  69.845  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.699  65.766  69.514  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.417  66.238  71.070  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.276  66.474  71.848  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.975  65.626  70.739  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.391  65.250  71.184  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.948  64.638  70.853  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      62.365  64.263  71.299  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      62.224  64.499  72.077  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.089  64.402  70.075  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.646  63.789  69.743  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      63.673  64.778  69.629  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.115  65.390  69.960  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.436      6.088      7.308
+REMARK INTER + INTRA:          -7.436
+REMARK INTER:                  -7.436
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.236  66.513  71.694  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.401  65.781  71.350  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      59.861  65.229  71.756  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.156  65.409  72.505  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.616  64.858  72.911  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.026  64.497  71.412  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.731  64.318  70.663  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.486  63.946  71.817  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.651  63.214  71.474  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.111  62.662  71.879  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      61.276  61.931  71.536  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.982  61.751  70.786  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.406  62.842  72.628  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.866  62.289  73.034  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.241  63.574  72.972  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.781  64.125  72.567  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.424      5.297      6.935
+REMARK INTER + INTRA:          -7.424
+REMARK INTER:                  -7.424
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.633  61.901  70.524  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.514  62.619  70.134  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.262  63.281  70.557  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.128  63.225  71.370  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.875  63.886  71.792  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.143  63.999  70.168  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.277  64.054  69.356  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.891  64.660  70.590  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.772  65.378  70.202  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.519  66.039  70.624  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      59.400  66.756  70.235  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      59.534  66.813  69.423  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.385  65.983  71.436  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      59.132  66.646  71.859  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      59.504  65.266  71.826  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      59.756  64.604  71.403  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.329      6.939      8.163
+REMARK INTER + INTRA:          -7.329
+REMARK INTER:                  -7.329
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.187  65.022  69.697  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.818  65.515  69.496  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.401  65.686  70.053  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.354  65.364  70.812  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      63.937  65.535  71.369  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.032  66.179  69.853  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.079  66.501  69.095  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.615  66.350  70.410  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.245  66.843  70.210  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.829  67.014  70.768  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      66.459  67.507  70.568  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      66.506  67.829  69.809  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.781  66.692  71.526  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      66.365  66.864  72.084  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      65.151  66.199  71.727  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.568  66.028  71.169  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.131      3.843      5.292
+REMARK INTER + INTRA:          -7.131
+REMARK INTER:                  -7.131
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = etamivan
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.832  65.711  70.106  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.450  65.190  69.593  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      62.061  64.528  69.893  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.053  64.387  70.707  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.664  63.725  71.007  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.678  64.006  69.381  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.686  64.147  68.568  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.289  63.345  69.681  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.907  62.823  69.169  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.517  62.160  69.469  0.00  0.00    +0.000 A 
+ATOM     11  O   UNL     1      60.135  61.640  68.957  0.00  0.00    +0.000 OA
+ATOM     12  C   UNL     1      60.142  61.780  68.144  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.510  62.020  70.281  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.120  61.357  70.582  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.892  62.541  70.794  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.282  63.203  70.494  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

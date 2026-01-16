@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.001      0.000      0.000
+REMARK INTER + INTRA:          -9.001
+REMARK INTER:                  -9.001
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.393  63.721  68.561  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.821  63.244  68.204  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      59.986  62.871  67.487  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      59.414  62.395  67.129  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      59.579  62.021  66.412  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.314  62.124  66.052  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.885  62.600  66.410  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.721  62.974  67.127  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.478  61.750  65.335  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      59.908  61.275  64.978  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.213  61.853  64.975  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.456  61.517  64.262  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.228  61.766  64.112  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.463  62.257  64.732  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.836  62.311  65.266  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.832  62.745  65.967  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.778      1.016      3.589
+REMARK INTER + INTRA:          -8.778
+REMARK INTER:                  -8.778
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.166  60.518  62.745  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.791  60.926  63.098  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.680  61.301  63.824  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.305  61.709  64.177  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.194  62.084  64.903  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.459  62.052  65.277  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.836  61.644  64.924  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.945  61.268  64.198  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.350  62.427  66.004  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.973  62.835  66.356  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.615  62.394  66.377  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.423  62.741  67.101  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      59.632  62.570  67.264  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.335  62.118  66.641  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      59.943  62.009  66.093  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      59.888  61.590  65.385  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.737      3.483      5.068
+REMARK INTER + INTRA:          -7.737
+REMARK INTER:                  -7.737
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.875  65.201  72.502  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.746  64.439  72.793  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.510  63.837  72.282  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.381  63.075  72.573  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.144  62.473  72.062  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.036  62.632  71.259  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.165  63.392  70.968  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.402  63.995  71.479  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.799  62.028  70.748  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.670  61.268  71.039  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      60.691  62.187  69.946  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      60.457  61.644  69.371  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.420  62.038  68.647  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.631  62.825  68.774  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.799  62.918  69.577  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.033  63.617  69.946  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.670      3.354      5.555
+REMARK INTER + INTRA:          -7.670
+REMARK INTER:                  -7.670
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.343  62.036  68.161  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.192  61.658  68.880  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.445  62.001  69.586  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.294  61.623  70.305  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.547  61.967  71.011  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.949  62.687  70.999  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.099  63.063  70.282  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.847  62.721  69.574  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.201  63.029  71.707  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.051  62.652  72.424  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.604  63.749  71.695  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.888  64.156  72.354  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.253  64.848  72.088  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.194  64.867  71.266  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.793  64.188  71.022  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.612  63.985  70.244  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.535      5.683      7.352
+REMARK INTER + INTRA:          -7.535
+REMARK INTER:                  -7.535
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.500  67.722  69.852  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      66.087  67.819  70.560  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      65.477  67.299  70.755  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      65.063  67.396  71.463  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.453  66.876  71.658  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.256  66.260  71.147  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      64.670  66.163  70.440  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.280  66.683  70.244  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      63.646  65.741  71.343  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.233  65.837  72.050  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.449  65.124  70.831  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      62.856  64.564  70.952  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      62.851  64.053  70.304  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.442  64.297  69.783  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      63.812  64.959  70.108  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      64.434  65.382  69.771  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.476      5.621      6.938
+REMARK INTER + INTRA:          -7.476
+REMARK INTER:                  -7.476
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.816  64.137  71.965  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.140  63.964  71.225  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.770  64.412  70.937  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.094  64.238  70.198  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.724  64.686  69.909  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.029  65.307  70.359  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.705  65.480  71.097  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.075  65.032  71.386  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      64.659  65.754  70.069  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      64.984  65.581  69.331  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      64.965  66.375  70.518  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      65.590  66.868  70.303  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.710  67.409  70.914  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.160  67.251  71.507  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.699  66.611  71.263  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      64.081  66.269  71.688  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.359      5.231      6.574
+REMARK INTER + INTRA:          -7.359
+REMARK INTER:                  -7.359
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.496  67.116  70.775  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      65.362  66.634  70.118  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      64.767  66.063  70.140  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.633  65.582  69.483  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.038  65.011  69.506  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.578  64.921  70.184  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      63.712  65.402  70.840  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      64.306  65.974  70.819  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.983  64.349  70.205  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.849  63.868  69.549  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.522  64.259  70.884  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.911  63.715  70.986  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.602  63.818  71.745  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.023  64.425  72.111  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.592  64.699  71.579  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      63.134  65.304  71.718  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.275      5.356      6.517
+REMARK INTER + INTRA:          -7.275
+REMARK INTER:                  -7.275
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.820  61.879  70.877  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.630  62.333  71.540  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.057  63.018  71.706  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.867  63.472  72.370  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.294  64.158  72.536  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.911  64.391  72.040  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.100  63.937  71.378  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.674  63.251  71.210  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.337  65.077  72.207  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      62.148  65.530  72.869  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.954  65.310  71.711  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      63.427  65.978  71.806  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      63.972  65.997  71.186  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.835  65.339  70.707  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      63.206  64.914  71.031  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.885  64.217  70.730  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.228      5.774      6.804
+REMARK INTER + INTRA:          -7.228
+REMARK INTER:                  -7.228
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = aniracetam
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.530  65.724  69.573  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      64.243  66.138  70.228  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.698  65.782  70.734  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.412  66.196  71.388  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.867  65.839  71.895  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.608  65.070  71.747  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      62.894  64.657  71.094  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      63.439  65.012  70.587  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.063  64.714  72.255  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.777  65.127  72.908  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.804  63.945  72.107  0.00  0.00    +0.000 N 
+ATOM     12  C   UNL     1      61.263  63.520  72.563  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.165  62.777  72.216  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.645  62.744  71.545  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      62.040  63.466  71.478  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.576  63.672  70.887  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.615      0.000      0.000
+REMARK INTER + INTRA:          -8.615
+REMARK INTER:                  -8.615
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.694  61.646  63.445  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.144  61.767  64.049  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.380  62.113  64.759  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.829  62.233  65.362  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.065  62.580  66.074  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.516  62.700  66.676  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.752  63.047  67.386  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.730  62.474  66.569  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.179  62.595  67.171  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.394  62.369  67.064  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.158  62.022  66.353  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.707  61.902  65.750  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.494  62.128  65.857  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.044  62.007  65.255  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.180      1.840      3.053
+REMARK INTER + INTRA:          -8.180
+REMARK INTER:                  -8.180
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      61.618  63.875  68.718  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      61.629  63.490  67.988  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.945  63.128  67.702  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.957  62.743  66.972  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.272  62.381  66.685  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.283  61.997  65.956  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.599  61.635  65.670  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.978  61.973  65.513  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.990  61.588  64.783  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.685  61.565  64.340  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.370  61.927  64.626  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.358  62.312  65.355  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.663  62.335  65.799  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.652  62.720  66.528  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.370      2.721      3.574
+REMARK INTER + INTRA:          -7.370
+REMARK INTER:                  -7.370
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.369  62.208  66.282  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      59.655  62.225  67.056  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.105  62.866  67.316  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.391  62.883  68.089  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.841  63.525  68.349  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.126  63.542  69.122  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.576  64.183  69.381  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.963  62.919  69.636  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.249  62.935  70.410  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.086  62.312  70.924  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.635  61.670  70.665  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.350  61.653  69.892  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.513  62.277  69.377  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.227  62.260  68.604  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.316      5.707      6.637
+REMARK INTER + INTRA:          -7.316
+REMARK INTER:                  -7.316
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      58.853  65.716  71.991  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      59.258  65.011  71.846  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.857  64.767  72.358  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.262  64.063  72.213  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.862  63.819  72.725  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.266  63.115  72.580  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.866  62.871  73.092  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.073  62.656  71.924  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.477  61.951  71.778  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.283  61.492  71.122  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.684  61.736  70.609  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.279  62.440  70.754  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.473  62.900  71.411  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.068  63.603  71.556  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.993      6.403      7.502
+REMARK INTER + INTRA:          -6.993
+REMARK INTER:                  -6.993
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.752  63.888  69.832  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      63.265  64.517  69.983  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.230  64.915  70.705  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.743  65.543  70.855  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      63.708  65.941  71.578  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      64.221  66.569  71.728  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.185  66.966  72.450  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      64.768  66.800  71.157  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      65.282  67.428  71.307  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.829  67.659  70.736  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.865  67.262  70.013  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.352  66.634  69.863  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.804  66.402  70.434  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      64.291  65.774  70.284  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.950      5.733      6.276
+REMARK INTER + INTRA:          -6.950
+REMARK INTER:                  -6.950
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      64.526  64.956  69.511  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      63.938  64.667  70.012  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.651  65.137  70.627  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.063  64.847  71.128  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.776  65.318  71.743  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.188  65.029  72.243  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.902  65.499  72.858  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.886  64.270  72.130  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.298  63.980  72.631  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.996  63.221  72.517  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.283  62.751  71.902  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.871  63.040  71.401  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.173  63.799  71.515  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.761  64.088  71.014  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.925      5.169      6.140
+REMARK INTER + INTRA:          -6.925
+REMARK INTER:                  -6.925
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      59.440  66.358  70.321  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      59.787  65.694  70.667  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.797  64.975  70.262  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.144  64.311  70.608  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.153  63.592  70.203  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.500  62.928  70.549  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.509  62.210  70.144  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.837  62.983  71.299  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.184  62.319  71.645  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.521  62.374  72.395  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.512  63.093  72.801  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.165  63.757  72.455  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.828  63.703  71.704  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      60.481  64.366  71.359  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.910      6.027      6.952
+REMARK INTER + INTRA:          -6.910
+REMARK INTER:                  -6.910
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.541  67.012  73.075  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.369  66.234  72.859  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.566  65.962  72.105  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.393  65.184  71.890  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      62.590  64.912  71.136  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.418  64.135  70.920  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.615  63.862  70.167  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.049  63.630  71.457  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.876  62.852  71.242  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.507  62.348  71.779  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.309  62.620  72.533  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.482  63.397  72.749  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.851  63.903  72.212  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      62.024  64.680  72.427  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.865      7.407      8.073
+REMARK INTER + INTRA:          -6.865
+REMARK INTER:                  -6.865
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = chlorthenoxazine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1      62.416  68.298  72.745  0.00  0.00    +0.000 Cl
+ATOM      2  C   UNL     1      62.177  67.508  72.717  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.399  67.305  72.904  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.161  66.516  72.876  0.00  0.00    +0.000 C 
+ATOM      5  N   UNL     1      60.383  66.313  73.063  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.144  65.524  73.035  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.367  65.321  73.222  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.683  64.938  72.821  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.444  64.148  72.793  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.983  63.562  72.578  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.761  63.765  72.391  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.000  64.554  72.419  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.461  65.141  72.634  0.00  0.00    +0.000 A 
+ATOM     14  O   UNL     1      61.699  65.929  72.661  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

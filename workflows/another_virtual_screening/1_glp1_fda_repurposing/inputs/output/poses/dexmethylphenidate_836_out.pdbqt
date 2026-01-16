@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:   -10.171      0.000      0.000
+REMARK INTER + INTRA:         -10.171
+REMARK INTER:                 -10.171
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.082  63.054  67.234  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.826  63.079  66.876  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.948  62.706  66.151  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.691  62.732  65.793  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.327  62.307  65.783  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.583  62.281  66.141  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.962  61.882  65.773  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.219  61.856  66.131  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.097  62.230  66.857  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.719  62.629  67.224  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.462  62.655  66.866  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.448  61.933  65.058  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.191  61.959  64.700  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.313  61.586  63.975  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.692  61.186  63.607  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.949  61.161  63.964  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.828  61.534  64.690  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.462      1.375      3.295
+REMARK INTER + INTRA:          -9.462
+REMARK INTER:                  -9.462
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.562  61.153  64.403  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.887  61.153  64.879  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      59.883  61.572  65.589  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.209  61.572  66.064  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.553  61.991  65.824  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.228  61.991  65.347  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.899  62.410  65.583  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.573  62.410  65.108  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.577  61.990  64.397  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.906  61.571  64.162  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.232  61.572  64.638  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.550  62.411  66.534  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.876  62.411  67.009  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.872  62.830  67.720  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.543  63.250  67.955  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.217  63.249  67.479  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.220  62.830  66.769  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.960      3.665      5.500
+REMARK INTER + INTRA:          -8.960
+REMARK INTER:                  -8.960
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.058  64.247  69.195  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.157  64.650  69.909  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.457  64.254  70.567  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.555  64.656  71.281  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.659  63.457  70.513  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.560  63.054  69.798  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.762  62.256  69.744  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.664  61.853  69.031  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.363  62.249  68.371  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.162  63.047  68.427  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.260  63.449  69.140  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.959  63.060  71.171  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.058  63.463  71.885  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.358  63.068  72.544  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.560  62.269  72.489  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.462  61.867  71.775  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.161  62.263  71.117  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.739      3.817      5.282
+REMARK INTER + INTRA:          -8.739
+REMARK INTER:                  -8.739
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.184  64.782  71.248  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.143  64.843  70.425  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.784  64.246  69.985  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.743  64.307  69.163  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.465  63.588  70.366  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.506  63.527  71.188  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.187  62.868  71.569  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.228  62.807  72.390  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.587  63.405  72.832  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.906  64.063  72.450  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.865  64.124  71.628  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.106  62.990  69.925  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.065  63.051  69.104  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.706  62.454  68.662  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.387  61.795  69.044  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.427  61.734  69.866  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.787  62.332  70.306  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.684      5.951      7.555
+REMARK INTER + INTRA:          -8.684
+REMARK INTER:                  -8.684
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.828  65.358  71.709  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      63.079  66.024  72.129  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.715  66.470  71.852  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.965  67.135  72.271  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.101  66.251  71.158  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.850  65.585  70.738  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.237  65.366  70.043  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.987  64.701  69.624  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.350  64.254  69.901  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      62.964  64.474  70.596  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      63.214  65.139  71.015  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      64.738  66.696  70.881  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      64.988  67.362  71.300  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.625  67.808  71.024  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      66.011  67.588  70.328  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      65.761  66.923  69.910  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      65.124  66.478  70.186  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.418      7.232      8.180
+REMARK INTER + INTRA:          -8.418
+REMARK INTER:                  -8.418
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.581  67.198  73.115  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      59.989  66.625  73.174  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.164  65.834  73.021  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.573  65.262  73.080  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.930  65.615  72.810  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.523  66.188  72.751  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.289  65.968  72.540  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.881  66.540  72.481  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.705  67.332  72.634  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.939  67.551  72.846  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.347  66.979  72.904  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.106  64.824  72.657  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.515  64.251  72.715  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.689  63.460  72.562  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.457  63.240  72.351  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.048  63.813  72.292  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.872  64.604  72.445  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -8.385      4.670      6.086
+REMARK INTER + INTRA:          -8.385
+REMARK INTER:                  -8.385
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.056  64.212  69.444  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.400  63.465  69.370  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.718  63.091  70.033  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.061  62.344  69.959  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.693  63.463  70.768  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.349  64.210  70.841  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.325  64.582  71.578  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.981  65.328  71.651  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.663  65.703  70.988  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      59.688  65.331  70.252  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.031  64.584  70.179  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.012  63.089  71.431  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.355  62.342  71.358  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.673  61.967  72.020  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.648  62.340  72.757  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.305  63.087  72.830  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      60.987  63.461  72.167  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -8.332      4.822      6.002
+REMARK INTER + INTRA:          -8.332
+REMARK INTER:                  -8.332
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.407  64.667  72.193  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.846  64.199  72.579  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.440  63.616  72.161  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.880  63.148  72.546  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.593  63.500  71.359  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.153  63.969  70.974  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.306  63.852  70.171  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.866  64.320  69.787  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.274  64.904  70.205  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.120  65.019  71.007  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.560  64.552  71.392  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.186  62.917  70.941  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.626  62.449  71.326  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.218  61.865  70.909  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.372  61.750  70.106  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.932  62.218  69.721  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.339  62.801  70.139  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -8.304      5.102      6.560
+REMARK INTER + INTRA:          -8.304
+REMARK INTER:                  -8.304
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = dexmethylphenidate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.969  65.106  69.547  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.603  64.387  69.369  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      62.266  63.936  69.971  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.901  63.218  69.793  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.294  64.202  70.751  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.659  64.921  70.929  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.687  65.187  71.710  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.052  65.905  71.887  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.389  66.357  71.285  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      63.361  66.090  70.505  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.996  65.372  70.327  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.956  63.751  71.354  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.591  63.033  71.176  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.254  62.581  71.778  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.282  62.848  72.559  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.647  63.566  72.737  0.00  0.00    +0.000 A 
+ATOM     17  C   UNL     1      61.984  64.017  72.133  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

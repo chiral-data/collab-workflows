@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -8.196      0.000      0.000
+REMARK INTER + INTRA:          -8.196
+REMARK INTER:                  -8.196
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.378  61.623  63.598  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.470  61.972  64.341  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      61.825  62.028  64.852  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      62.303  62.397  65.414  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.347  61.659  64.290  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.180  62.085  65.363  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.271  62.433  66.105  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.626  62.489  66.617  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      59.860  62.224  66.463  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.605  61.855  65.770  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.395  62.392  67.122  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.873  62.761  67.684  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.633  62.822  67.372  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.287  63.155  67.748  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      61.210  63.467  68.508  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.017  63.177  67.366  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.978      1.453      3.117
+REMARK INTER + INTRA:          -7.978
+REMARK INTER:                  -7.978
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.008  63.631  68.548  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.484  63.453  67.899  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      61.183  62.999  67.279  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      61.907  63.055  66.886  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.460  62.943  67.672  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.882  62.545  66.659  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.357  62.367  66.009  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.056  61.913  65.390  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.294  61.600  65.343  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.699  61.687  65.908  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.232  61.186  64.633  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.955  61.243  64.240  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.465  61.691  64.707  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.245  61.885  64.526  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.581  61.623  63.819  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.690  62.341  65.050  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.335      1.341      1.701
+REMARK INTER + INTRA:          -7.335
+REMARK INTER:                  -7.335
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.716  61.904  64.833  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.967  62.385  65.455  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      61.595  62.336  66.190  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      62.100  62.919  66.484  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.091  61.753  65.896  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.224  62.287  66.925  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.474  62.767  67.547  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.102  62.718  68.282  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.476  62.218  68.476  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.111  61.678  67.970  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.279  62.351  69.266  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.783  62.935  69.559  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.292  63.161  68.952  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.886  63.730  69.004  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.012  64.131  69.714  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.355  63.900  68.346  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.038      2.948      4.081
+REMARK INTER + INTRA:          -7.038
+REMARK INTER:                  -7.038
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.900  62.289  67.271  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.407  62.769  67.711  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      60.534  62.609  68.511  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      61.046  63.255  68.558  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.023  61.964  68.463  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.662  62.450  69.310  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.168  62.929  69.751  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.296  62.769  70.550  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.957  62.154  70.982  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.430  61.589  70.690  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.236  62.202  71.756  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.747  62.848  71.804  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.785  63.198  71.059  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      62.232  63.861  70.856  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.697  64.234  71.426  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      62.214  64.151  70.084  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.035      3.216      5.154
+REMARK INTER + INTRA:          -7.035
+REMARK INTER:                  -7.035
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.198  64.760  72.600  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.227  64.836  71.779  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      60.293  64.164  71.305  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      60.288  64.639  70.630  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.297  63.689  71.979  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.358  63.491  70.831  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.387  63.566  70.010  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.452  62.894  69.536  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.494  62.114  69.803  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.478  61.870  70.591  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.555  61.622  69.144  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.551  62.097  68.470  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.487  62.883  68.712  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      60.463  63.542  68.217  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.504  63.445  67.399  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      60.398  64.299  68.540  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.022      5.789      6.805
+REMARK INTER + INTRA:          -7.022
+REMARK INTER:                  -7.022
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.106  67.646  70.172  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.724  66.939  69.982  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      65.084  66.682  70.435  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      65.012  66.015  69.955  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      65.156  67.349  70.915  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.444  66.425  70.888  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.062  65.719  70.699  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.422  65.462  71.152  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      63.104  65.850  71.806  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      63.370  66.564  72.123  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      62.473  65.400  72.088  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      62.401  64.733  71.608  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.987  64.771  71.029  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      63.117  64.217  70.432  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      62.635  63.549  70.378  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      63.728  64.329  69.889  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.002      2.675      4.210
+REMARK INTER + INTRA:          -7.002
+REMARK INTER:                  -7.002
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.137  64.810  70.972  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.954  64.638  70.186  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      62.399  64.053  70.011  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      62.508  64.192  69.205  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      62.290  63.915  70.816  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.844  63.469  69.835  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.661  63.296  69.050  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.106  62.711  68.874  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.692  62.255  69.423  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.759  62.304  70.244  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.198  61.743  69.007  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.307  61.881  68.201  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.868  62.479  68.119  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      61.143  62.792  67.407  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      60.853  62.503  66.691  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      61.708  63.393  67.410  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.836      4.378      5.727
+REMARK INTER + INTRA:          -6.836
+REMARK INTER:                  -6.836
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.528  63.496  68.493  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.297  64.250  68.736  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      60.107  64.387  69.527  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      59.950  65.178  69.352  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      60.264  63.597  69.702  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      59.917  64.525  70.318  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.686  65.278  70.563  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.496  65.415  71.354  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      59.512  64.856  71.960  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.720  64.061  71.882  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.283  65.231  72.658  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      59.126  66.022  72.483  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.258  66.136  71.677  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.167  66.845  71.266  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      58.923  67.525  71.666  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.320  66.876  70.456  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.690      6.791      7.359
+REMARK INTER + INTRA:          -6.690
+REMARK INTER:                  -6.690
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tinidazole
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.556  62.782  72.707  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.998  63.354  72.501  0.00  0.00    +0.000 C 
+ATOM      3  S   UNL     1      61.217  64.148  72.462  0.00  0.00    +0.000 S 
+ATOM      4  O   UNL     1      60.446  64.350  72.248  0.00  0.00    +0.000 OA
+ATOM      5  O   UNL     1      61.988  63.946  72.676  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.436  64.943  72.422  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.879  65.515  72.217  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.098  66.309  72.178  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.850  66.613  72.328  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.515  66.175  72.544  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      61.820  67.430  72.224  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.049  67.632  72.010  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.603  66.940  71.981  0.00  0.00    +0.000 A 
+ATOM     14  N   UNL     1      59.803  66.886  71.790  0.00  0.00    +0.000 N 
+ATOM     15  O   UNL     1      59.376  67.568  71.604  0.00  0.00    +0.000 OA
+ATOM     16  O   UNL     1      59.427  66.151  71.784  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

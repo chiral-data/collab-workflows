@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -5.316      0.000      0.000
+REMARK INTER + INTRA:          -5.316
+REMARK INTER:                  -5.316
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      65.640  75.962  60.689  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      65.877  76.662  60.322  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      66.667  76.455  60.439  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      65.087  76.870  60.204  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      66.115  77.361  59.955  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.551  77.890  59.670  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.789  78.590  59.303  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.224  79.119  59.017  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.040     16.189     16.630
+REMARK INTER + INTRA:          -5.040
+REMARK INTER:                  -5.040
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      62.176  61.299  63.085  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      62.258  61.736  63.779  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      62.834  62.203  63.418  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      61.683  61.269  64.143  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      62.341  62.172  64.474  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.885  61.987  65.135  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.968  62.424  65.830  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.511  62.238  66.492  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.700     14.088     15.043
+REMARK INTER + INTRA:          -4.700
+REMARK INTER:                  -4.700
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      66.426  67.995  69.426  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      66.248  67.629  70.144  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      65.447  67.636  69.949  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      67.050  67.621  70.340  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      66.071  67.263  70.861  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      66.675  67.074  71.389  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      66.497  66.708  72.107  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      67.102  66.519  72.635  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.652     16.846     17.362
+REMARK INTER + INTRA:          -4.652
+REMARK INTER:                  -4.652
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      59.036  62.401  66.655  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      59.587  62.102  66.118  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      59.003  61.622  65.787  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      60.171  62.582  66.449  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      60.137  61.803  65.582  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.917  62.069  65.600  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.468  61.769  65.062  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.249  62.035  65.080  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.636     17.824     18.283
+REMARK INTER + INTRA:          -4.636
+REMARK INTER:                  -4.636
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      60.552  61.646  69.667  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      60.457  62.013  68.934  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      61.008  62.587  69.150  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      59.905  61.439  68.718  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      60.362  62.379  68.201  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.838  62.065  67.648  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.743  62.432  66.915  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.219  62.118  66.361  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.489     11.056     11.403
+REMARK INTER + INTRA:          -4.489
+REMARK INTER:                  -4.489
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      70.972  77.698  48.868  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      70.790  78.413  49.238  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      71.417  78.776  48.843  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      70.163  78.051  49.633  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      70.608  79.128  49.607  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      69.975  79.171  50.133  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      69.794  79.887  50.502  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      69.160  79.931  51.029  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.479     14.036     14.720
+REMARK INTER + INTRA:          -4.479
+REMARK INTER:                  -4.479
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      66.316  68.237  69.822  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      65.880  67.595  70.102  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      65.820  67.958  70.840  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      65.940  67.231  69.364  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      65.445  66.953  70.382  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.280  66.318  69.884  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.844  65.675  70.165  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.679  65.039  69.667  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.343     12.006     12.307
+REMARK INTER + INTRA:          -4.343
+REMARK INTER:                  -4.343
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      69.783  78.443  49.688  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      70.549  78.441  49.380  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      70.548  77.616  49.385  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      70.550  79.266  49.375  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      71.314  78.438  49.073  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      71.697  79.151  48.915  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      72.464  79.148  48.607  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      72.847  79.861  48.449  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.326     19.212     19.614
+REMARK INTER + INTRA:          -4.326
+REMARK INTER:                  -4.326
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluroxene
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  F   UNL     1      61.877  62.562  73.222  0.00  0.00    +0.000 F 
+ATOM      2  C   UNL     1      61.555  62.694  72.474  0.00  0.00    +0.000 C 
+ATOM      3  F   UNL     1      61.632  63.508  72.585  0.00  0.00    +0.000 F 
+ATOM      4  F   UNL     1      61.477  61.880  72.362  0.00  0.00    +0.000 F 
+ATOM      5  C   UNL     1      61.234  62.826  71.726  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.006  62.189  71.256  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.684  62.321  70.507  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.456  61.683  70.037  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,243 @@
+MODEL 1
+REMARK VINA RESULT:    -8.379      0.000      0.000
+REMARK INTER + INTRA:          -8.379
+REMARK INTER:                  -8.379
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.722  64.208  69.910  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.986  64.046  69.146  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.562  63.526  68.666  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.826  63.363  67.901  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.403  62.843  67.421  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.717  62.486  67.705  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.667  62.680  66.656  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.243  62.160  66.176  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.508  61.997  65.411  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.084  61.476  64.931  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.348  61.314  64.166  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.035  61.671  63.882  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.458  62.191  64.363  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      62.195  62.354  65.127  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.523     18.491     19.025
+REMARK INTER + INTRA:          -7.523
+REMARK INTER:                  -7.523
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.712  82.252  57.043  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.323  81.804  57.368  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.157  81.078  57.723  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.768  80.629  58.049  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.602  79.903  58.403  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.827  79.626  58.432  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      65.213  79.454  58.729  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      65.047  78.728  59.084  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.659  78.279  59.410  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.492  77.553  59.764  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.104  77.104  60.090  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.880  77.381  60.061  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      67.045  78.108  59.706  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      66.435  78.556  59.381  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.488      1.971      4.614
+REMARK INTER + INTRA:          -7.488
+REMARK INTER:                  -7.488
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.998  62.578  64.949  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.809  62.254  65.683  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.625  62.750  66.317  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.437  62.425  67.052  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.253  62.921  67.685  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.257  63.739  67.584  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.064  62.597  68.421  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.880  63.092  69.054  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.692  62.768  69.790  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.508  63.264  70.423  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.319  62.940  71.159  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.315  62.121  71.260  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.499  61.626  70.626  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.688  61.950  69.891  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.377      3.704      6.424
+REMARK INTER + INTRA:          -7.377
+REMARK INTER:                  -7.377
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.468  63.299  68.827  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.037  63.894  68.775  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.465  64.114  69.445  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.034  64.710  69.393  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.462  64.930  70.063  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.321  64.556  70.783  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      64.032  65.525  70.011  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.459  65.745  70.681  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.029  66.341  70.629  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.457  66.561  71.299  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.026  67.157  71.247  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.167  67.531  70.526  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.738  67.310  69.856  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.170  66.716  69.908  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.343      1.828      4.105
+REMARK INTER + INTRA:          -7.343
+REMARK INTER:                  -7.343
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.688  61.934  63.428  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.456  62.350  64.101  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.177  61.942  64.762  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.945  62.358  65.436  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.666  61.950  66.096  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.620  61.127  66.083  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      61.433  62.366  66.770  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.155  61.958  67.431  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.922  62.374  68.105  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.644  61.965  68.765  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.411  62.381  69.439  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.457  63.205  69.452  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.736  63.612  68.791  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      60.969  63.197  68.118  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.331      2.805      5.509
+REMARK INTER + INTRA:          -7.331
+REMARK INTER:                  -7.331
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.592  62.317  66.601  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.830  62.721  67.279  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.034  62.299  67.959  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.273  62.703  68.638  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.476  62.282  69.317  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.442  61.459  69.318  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      60.715  62.686  69.997  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.918  62.264  70.676  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.157  62.668  71.356  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.361  62.247  72.035  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.599  62.650  72.714  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.634  63.475  72.714  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.430  63.895  72.034  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.192  63.492  71.355  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.229      4.893      5.796
+REMARK INTER + INTRA:          -7.229
+REMARK INTER:                  -7.229
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      59.194  67.149  68.761  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      59.498  66.788  69.438  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.678  65.983  69.429  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.982  65.621  70.106  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.163  64.816  70.097  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.041  64.374  69.413  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      60.467  64.454  70.774  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.648  63.650  70.765  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.952  63.288  71.442  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.133  62.483  71.433  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.436  62.121  72.110  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.559  62.564  72.795  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.377  63.369  72.803  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      61.074  63.731  72.127  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.073      6.213      6.908
+REMARK INTER + INTRA:          -7.073
+REMARK INTER:                  -7.073
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.912  64.622  72.740  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.654  64.983  72.735  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.994  65.215  72.021  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.736  65.576  72.016  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.076  65.808  71.301  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.675  65.679  70.592  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      63.819  66.169  71.296  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.159  66.401  70.581  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      64.901  66.762  70.576  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.241  66.994  69.861  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.984  67.355  69.856  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.385  67.484  70.565  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.043  67.252  71.279  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      65.302  66.891  71.285  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.019      1.920      2.625
+REMARK INTER + INTRA:          -7.019
+REMARK INTER:                  -7.019
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = buramate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.748  62.971  72.179  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.349  62.799  71.478  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.750  62.829  70.759  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.351  62.657  70.057  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.752  62.687  69.337  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.551  62.888  69.318  0.00  0.00    +0.000 OA
+ATOM      7  N   UNL     1      60.353  62.515  68.635  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.754  62.545  67.915  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.355  62.373  67.213  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.756  62.402  66.493  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.357  62.231  65.791  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.557  62.029  65.810  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.157  62.000  66.531  0.00  0.00    +0.000 A 
+ATOM     14  C   UNL     1      59.555  62.172  67.232  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

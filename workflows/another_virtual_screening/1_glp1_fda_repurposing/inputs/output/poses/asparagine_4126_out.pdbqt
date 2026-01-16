@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -4.988      0.000      0.000
+REMARK INTER + INTRA:          -4.988
+REMARK INTER:                  -4.988
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      62.539  62.386  65.155  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      61.875  61.982  64.878  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      61.210  61.905  65.359  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      61.208  62.231  66.117  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      60.543  62.153  66.599  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      61.873  62.634  66.394  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      61.876  61.656  64.121  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      62.542  61.734  63.639  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      61.211  61.252  63.844  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.887      0.864      2.567
+REMARK INTER + INTRA:          -4.887
+REMARK INTER:                  -4.887
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      60.547  61.590  65.275  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      61.219  61.999  65.524  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      61.870  62.066  65.023  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      61.850  61.725  64.272  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      62.501  61.793  63.770  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      61.178  61.316  64.022  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      61.239  62.340  66.275  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      60.587  62.272  66.777  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      61.911  62.749  66.524  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.513     17.259     17.576
+REMARK INTER + INTRA:          -4.513
+REMARK INTER:                  -4.513
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      66.680  78.467  59.334  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      65.866  78.330  59.339  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      65.564  77.651  59.695  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      66.075  77.107  60.048  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      65.774  76.428  60.405  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      66.889  77.244  60.044  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      65.355  78.873  58.987  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      65.657  79.553  58.629  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      64.541  78.736  58.991  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.313      2.228      3.704
+REMARK INTER + INTRA:          -4.313
+REMARK INTER:                  -4.313
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      61.411  63.295  68.183  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      61.001  62.581  68.230  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      60.984  62.072  67.581  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      61.376  62.277  66.885  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      61.359  61.768  66.236  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      61.787  62.991  66.838  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      60.608  62.377  68.925  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      60.625  62.885  69.574  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      60.197  61.662  68.972  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.286      7.150      7.982
+REMARK INTER + INTRA:          -4.286
+REMARK INTER:                  -4.286
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      64.969  66.443  71.338  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      65.053  66.217  70.549  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      65.474  66.696  70.027  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      65.812  67.401  70.292  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      66.233  67.879  69.770  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      65.728  67.626  71.081  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      64.716  65.513  70.284  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      64.294  65.034  70.806  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      64.800  65.288  69.494  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.275     17.685     18.034
+REMARK INTER + INTRA:          -4.275
+REMARK INTER:                  -4.275
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      65.101  77.761  59.570  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      65.806  78.188  59.525  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      65.813  78.937  59.182  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      65.115  79.262  58.884  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      65.121  80.011  58.541  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      64.410  78.835  58.929  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      66.503  77.864  59.822  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      66.497  77.113  60.165  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      67.209  78.291  59.776  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.250     24.480     25.171
+REMARK INTER + INTRA:          -4.250
+REMARK INTER:                  -4.250
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      71.109  78.224  48.838  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      71.388  78.955  49.099  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      70.959  79.386  49.655  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      70.249  79.087  49.951  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      69.819  79.518  50.507  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      69.969  78.356  49.690  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      72.098  79.254  48.804  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      72.528  78.823  48.247  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      72.378  79.986  49.065  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.203     24.403     25.048
+REMARK INTER + INTRA:          -4.203
+REMARK INTER:                  -4.203
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      70.142  78.472  49.597  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      70.574  79.158  49.747  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      71.276  79.301  49.339  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      71.547  78.757  48.781  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      72.249  78.900  48.372  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      71.115  78.071  48.630  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      70.304  79.702  50.305  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      69.601  79.559  50.714  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      70.736  80.389  50.456  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.126      7.308      8.151
+REMARK INTER + INTRA:          -4.126
+REMARK INTER:                  -4.126
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = asparagine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  N   ASN A   1      65.130  66.862  69.506  0.00  0.00    +0.000 NA
+ATOM      2  CA  ASN A   1      65.453  66.889  70.265  0.00  0.00    +0.000 C 
+ATOM      3  CB  ASN A   1      65.088  66.481  70.881  0.00  0.00    +0.000 C 
+ATOM      4  CG  ASN A   1      64.401  66.046  70.741  0.00  0.00    +0.000 C 
+ATOM      5  ND2 ASN A   1      64.037  65.638  71.358  0.00  0.00    +0.000 NA
+ATOM      6  OD1 ASN A   1      64.079  66.019  69.982  0.00  0.00    +0.000 OA
+ATOM      7  C   ASN A   1      66.139  67.323  70.406  0.00  0.00    +0.000 C 
+ATOM      8  O   ASN A   1      66.504  67.731  69.788  0.00  0.00    +0.000 OA
+ATOM      9  OXT ASN A   1      66.462  67.350  71.165  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,198 @@
+MODEL 1
+REMARK VINA RESULT:    -5.016      0.000      0.000
+REMARK INTER + INTRA:          -5.016
+REMARK INTER:                  -5.016
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.404  61.438  64.628  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.862  61.935  65.103  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.319  62.431  65.577  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.335  61.822  65.728  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.467  62.196  66.451  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.941  62.083  67.076  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.388  62.047  64.479  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.256  61.673  63.754  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      62.782  61.785  63.129  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.882      2.153      2.725
+REMARK INTER + INTRA:          -4.882
+REMARK INTER:                  -4.882
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.632  62.823  65.904  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.831  62.057  65.667  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.030  61.292  65.431  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.088  62.349  64.939  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.388  61.832  64.371  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.644  62.124  63.643  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.575  61.766  66.394  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.274  62.283  66.964  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      61.017  61.991  67.692  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.512      2.596      3.054
+REMARK INTER + INTRA:          -4.512
+REMARK INTER:                  -4.512
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.830  62.499  66.449  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.490  62.751  67.158  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.151  63.004  67.867  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.226  63.028  67.412  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.299  63.385  68.152  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.034  63.661  68.405  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.756  62.475  66.905  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.683  62.118  66.164  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      58.948  61.841  65.911  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.382      4.328      5.123
+REMARK INTER + INTRA:          -4.382
+REMARK INTER:                  -4.382
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.846  62.831  70.098  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.697  62.467  69.372  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.548  62.102  68.647  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.993  63.130  68.978  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.011  63.145  68.154  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.307  63.807  67.761  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.402  61.805  69.765  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.383  61.789  70.590  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      60.088  61.127  70.983  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.370      7.329      7.905
+REMARK INTER + INTRA:          -4.370
+REMARK INTER:                  -4.370
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.682  66.866  70.942  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.213  66.586  70.322  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      64.746  66.307  69.703  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.844  66.058  70.839  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      64.255  65.553  70.561  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.886  65.026  71.077  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.582  67.113  69.806  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.172  67.619  70.085  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      66.541  68.146  69.569  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.345     17.287     17.593
+REMARK INTER + INTRA:          -4.345
+REMARK INTER:                  -4.345
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.483  78.083  59.935  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.727  78.045  59.604  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      64.972  78.008  59.273  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.810  78.819  59.326  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.198  79.172  58.901  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      65.281  79.944  58.623  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.644  77.274  59.882  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.257  76.920  60.307  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      66.174  76.148  60.585  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.266      7.586      8.160
+REMARK INTER + INTRA:          -4.266
+REMARK INTER:                  -4.266
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.795  66.237  69.842  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.255  66.595  70.428  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      65.714  66.952  71.013  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.578  67.104  69.863  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.136  67.667  70.088  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      66.459  68.176  69.524  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      64.933  66.087  70.991  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.373  65.523  70.766  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      64.050  65.014  71.330  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -4.164     24.565     25.095
+REMARK INTER + INTRA:          -4.164
+REMARK INTER:                  -4.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.003  79.701  49.937  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      71.038  79.056  49.423  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      71.073  78.411  48.910  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      71.800  79.279  49.193  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      72.209  78.832  48.635  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      72.970  79.055  48.406  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      70.279  78.833  49.652  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      69.868  79.280  50.211  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      69.107  79.057  50.440  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.079      6.971      7.347
+REMARK INTER + INTRA:          -4.079
+REMARK INTER:                  -4.079
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fluoroethylcholine (18F)
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.428  63.719  71.517  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.637  63.837  71.726  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.848  63.954  71.935  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.529  64.306  71.055  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.792  64.641  70.901  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      59.684  65.110  70.231  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.745  63.368  72.396  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.483  63.032  72.550  0.00  0.00    +0.000 C 
+ATOM      9  F   UNL     1      61.591  62.564  73.221  0.00  0.00    +0.000 F 
+ENDROOT
+TORSDOF 0
+ENDMDL

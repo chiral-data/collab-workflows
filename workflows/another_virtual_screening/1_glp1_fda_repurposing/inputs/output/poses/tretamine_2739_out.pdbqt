@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -6.691      0.000      0.000
+REMARK INTER + INTRA:          -6.691
+REMARK INTER:                  -6.691
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.634  63.482  67.955  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.011  63.183  68.405  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.669  63.513  68.778  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.069  63.722  69.470  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.728  63.566  70.205  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      62.128  63.774  70.896  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.867  64.138  70.852  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.206  64.294  70.116  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.807  64.085  69.425  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      63.945  64.658  70.073  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      64.603  64.988  70.445  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      64.568  64.958  69.622  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.788  63.619  71.633  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      61.165  63.319  72.083  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.823  63.649  72.456  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.685      0.122      2.501
+REMARK INTER + INTRA:          -6.685
+REMARK INTER:                  -6.685
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.981  63.196  68.398  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.605  63.469  67.932  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.642  63.538  68.753  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.045  63.777  69.433  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.787  64.132  69.368  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.190  64.371  70.048  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.851  64.254  70.791  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.110  63.898  70.855  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.707  63.660  70.175  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.772  63.782  71.598  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.808  63.851  72.419  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.148  63.509  72.064  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      63.933  64.726  69.984  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      64.557  64.999  69.518  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.593  65.069  70.339  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.613      2.661      3.814
+REMARK INTER + INTRA:          -6.613
+REMARK INTER:                  -6.613
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.751  65.570  69.828  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.888  65.735  69.031  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.022  64.976  69.325  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.257  64.193  69.203  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.492  63.946  68.451  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.726  63.164  68.329  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.725  62.630  68.959  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.490  62.878  69.710  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.256  63.660  69.831  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.490  62.344  70.338  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.625  61.585  70.632  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.354  62.179  71.135  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.961  62.916  67.578  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      61.097  63.081  66.781  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.232  62.322  67.074  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.588      2.650      3.173
+REMARK INTER + INTRA:          -6.588
+REMARK INTER:                  -6.588
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.030  65.774  69.084  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.877  65.592  69.874  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      60.122  65.001  69.354  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      60.316  64.211  69.210  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      60.281  63.659  69.823  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      60.475  62.871  69.679  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      60.704  62.633  68.922  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.739  63.185  68.310  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.545  63.974  68.454  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.968  62.948  67.554  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.213  62.356  67.034  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.121  63.130  66.764  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      60.440  62.318  70.291  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      60.288  62.136  71.081  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.532  61.545  70.561  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.556      0.240      3.065
+REMARK INTER + INTRA:          -6.556
+REMARK INTER:                  -6.556
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.388  64.934  70.453  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.324  64.956  69.631  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.729  64.606  70.082  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      63.004  64.214  70.128  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.586  64.038  69.438  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.862  63.646  69.484  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.554  63.431  70.220  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.972  63.608  70.908  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.697  64.000  70.863  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.665  63.393  71.643  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.070  63.043  72.094  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.729  63.371  72.465  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.443  63.469  68.795  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      61.379  63.491  67.972  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      60.784  63.141  68.424  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.527      0.298      2.516
+REMARK INTER + INTRA:          -6.527
+REMARK INTER:                  -6.527
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.247  64.987  69.638  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.322  64.956  70.459  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      63.663  64.623  70.092  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.944  64.219  70.142  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.650  63.991  70.879  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.932  63.588  70.929  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.508  63.413  70.243  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.802  63.642  69.507  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      62.521  64.045  69.457  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.378  63.467  68.821  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.719  63.133  68.454  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.304  63.497  68.000  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.637  63.360  71.666  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      61.712  63.329  72.487  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.053  62.996  72.119  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.501      0.147      3.083
+REMARK INTER + INTRA:          -6.501
+REMARK INTER:                  -6.501
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.068  63.599  72.116  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.735  63.930  72.471  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.707  63.834  71.652  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.061  63.914  70.910  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.816  64.241  70.847  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.170  64.321  70.106  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.768  64.074  69.428  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.014  63.747  69.492  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.660  63.667  70.233  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.614  63.500  68.815  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.586  63.403  67.996  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.946  63.168  68.461  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      63.925  64.648  70.042  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      64.592  64.980  70.396  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.564  64.883  69.578  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.473      1.987      3.066
+REMARK INTER + INTRA:          -6.473
+REMARK INTER:                  -6.473
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.242  62.327  66.837  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.481  63.083  66.606  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.287  62.933  67.394  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      61.201  63.197  68.172  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      61.364  63.984  68.360  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      61.278  64.248  69.137  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      61.028  63.725  69.726  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.865  62.939  69.536  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      60.951  62.675  68.759  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.616  62.418  70.124  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      60.422  62.268  70.912  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      60.377  61.662  70.355  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      61.441  65.035  69.326  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      61.680  65.790  69.096  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      61.486  65.641  69.884  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.449      2.135      3.934
+REMARK INTER + INTRA:          -6.449
+REMARK INTER:                  -6.449
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = tretamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.251  67.220  72.881  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.876  67.629  72.530  0.00  0.00    +0.000 C 
+ATOM      3  N   UNL     1      61.832  66.808  72.465  0.00  0.00    +0.000 N 
+ATOM      4  C   UNL     1      62.143  66.096  72.186  0.00  0.00    +0.000 A 
+ATOM      5  N   UNL     1      62.839  66.095  71.743  0.00  0.00    +0.000 NA
+ATOM      6  C   UNL     1      63.150  65.383  71.465  0.00  0.00    +0.000 A 
+ATOM      7  N   UNL     1      62.764  64.672  71.630  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.069  64.674  72.073  0.00  0.00    +0.000 A 
+ATOM      9  N   UNL     1      61.758  65.386  72.351  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.684  63.963  72.237  0.00  0.00    +0.000 N 
+ATOM     11  C   UNL     1      61.640  63.142  72.172  0.00  0.00    +0.000 C 
+ATOM     12  C   UNL     1      61.060  63.553  72.588  0.00  0.00    +0.000 C 
+ATOM     13  N   UNL     1      63.846  65.382  71.021  0.00  0.00    +0.000 N 
+ATOM     14  C   UNL     1      64.470  65.792  70.670  0.00  0.00    +0.000 C 
+ATOM     15  C   UNL     1      64.427  64.971  70.605  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,252 @@
+MODEL 1
+REMARK VINA RESULT:    -8.122      0.000      0.000
+REMARK INTER + INTRA:          -8.122
+REMARK INTER:                  -8.122
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.747  61.612  63.465  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.978  61.518  63.752  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.774  61.818  64.491  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.006  61.725  64.777  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.802  62.026  65.518  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.035  61.933  65.803  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.470  61.538  65.349  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.830  62.234  66.545  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.062  62.140  66.830  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.394  62.628  66.999  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.366  62.420  65.972  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.162  62.721  66.714  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.727  63.116  67.168  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.135  62.514  65.687  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.339  62.213  64.947  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.788      1.127      3.016
+REMARK INTER + INTRA:          -7.788
+REMARK INTER:                  -7.788
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.669  63.857  68.808  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.951  63.515  68.111  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.429  63.135  67.599  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.710  62.793  66.903  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.188  62.413  66.389  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.470  62.071  65.694  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.273  62.110  65.510  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.947  61.690  65.180  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.229  61.349  64.484  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.144  61.652  65.363  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.385  62.374  66.572  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.863  61.993  66.058  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.059  61.955  66.242  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.103  62.716  67.268  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.625  63.096  67.782  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.992      6.555      8.299
+REMARK INTER + INTRA:          -6.992
+REMARK INTER:                  -6.992
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.269  66.001  72.869  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.905  66.496  72.688  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.356  66.357  72.013  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.991  66.851  71.832  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.443  66.712  71.156  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.078  67.206  70.975  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.262  67.840  71.470  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.531  67.067  70.299  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.166  67.562  70.119  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      65.348  66.433  69.804  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      64.260  66.078  70.661  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      64.713  65.939  69.984  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      64.529  65.305  69.489  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.625  65.583  70.841  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      63.173  65.723  71.517  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.990      2.595      4.033
+REMARK INTER + INTRA:          -6.990
+REMARK INTER:                  -6.990
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.434  62.390  66.400  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.875  62.886  66.891  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.867  62.772  67.707  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      61.307  63.268  68.198  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      61.300  63.153  69.015  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.740  63.649  69.504  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.189  64.260  69.178  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.732  63.535  70.322  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.173  64.031  70.812  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      61.284  62.925  70.649  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.851  62.544  69.341  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.843  62.429  70.159  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.394  61.818  70.485  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.410  62.047  68.851  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.418  62.161  68.034  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.910      5.651      7.353
+REMARK INTER + INTRA:          -6.910
+REMARK INTER:                  -6.910
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.146  67.616  70.064  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      65.595  67.452  70.656  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      65.052  66.840  70.556  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      64.501  66.676  71.148  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      63.957  66.064  71.047  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      63.407  65.900  71.639  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.400  66.348  72.332  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.863  65.287  71.539  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      62.312  65.124  72.131  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.870  64.839  70.847  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.964  65.616  70.355  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      63.420  65.003  70.255  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      63.427  64.555  69.562  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      64.515  65.779  69.763  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.059  66.391  69.863  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.907      3.419      5.162
+REMARK INTER + INTRA:          -6.907
+REMARK INTER:                  -6.907
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.280  62.978  72.596  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.174  62.535  71.907  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.924  62.904  71.214  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.819  62.463  70.525  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.568  62.832  69.832  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.463  62.390  69.144  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.608  61.577  69.149  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.212  62.760  68.449  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.107  62.316  67.761  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      60.067  63.571  68.444  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.423  63.644  69.826  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.173  64.014  69.132  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.028  64.826  69.127  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.529  64.087  70.514  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.779  63.717  71.208  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.695      5.516      7.319
+REMARK INTER + INTRA:          -6.695
+REMARK INTER:                  -6.695
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.256  64.198  69.520  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      62.953  64.606  69.349  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      63.248  65.159  69.885  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      63.945  65.567  69.715  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      64.240  66.120  70.251  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      64.936  66.527  70.081  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      65.338  66.383  69.374  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.233  67.081  70.617  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.929  67.489  70.446  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      64.832  67.226  71.323  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      63.840  66.264  70.957  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      64.136  66.818  71.494  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      63.735  66.963  72.200  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      63.143  65.857  71.128  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.847  65.304  70.592  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.628      5.169      5.973
+REMARK INTER + INTRA:          -6.628
+REMARK INTER:                  -6.628
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.889  61.641  70.970  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      60.839  62.285  70.456  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      60.491  62.988  70.709  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      60.441  63.632  70.196  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      60.093  64.336  70.449  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.043  64.979  69.935  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.343  64.919  69.168  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      59.694  65.683  70.188  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      59.645  66.327  69.674  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      59.395  65.743  70.954  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.793  64.395  71.214  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.444  65.100  71.467  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.145  65.159  72.234  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.842  63.752  71.729  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.191  63.048  71.476  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.617      5.472      6.498
+REMARK INTER + INTRA:          -6.617
+REMARK INTER:                  -6.617
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methoxamine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.577  61.666  70.857  0.00  0.00    +0.000 C 
+ATOM      2  O   UNL     1      61.204  62.113  70.558  0.00  0.00    +0.000 OA
+ATOM      3  C   UNL     1      61.460  62.784  70.961  0.00  0.00    +0.000 A 
+ATOM      4  C   UNL     1      62.086  63.231  70.663  0.00  0.00    +0.000 A 
+ATOM      5  C   UNL     1      62.342  63.904  71.067  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.968  64.350  70.768  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.339  64.124  70.066  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.224  65.023  71.172  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      63.851  65.469  70.873  0.00  0.00    +0.000 C 
+ATOM     10  N   UNL     1      62.855  65.249  71.874  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.972  64.129  71.768  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.229  64.803  72.172  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      61.858  65.028  72.874  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.346  63.683  72.067  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.090  63.011  71.664  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

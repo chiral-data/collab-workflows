@@ -1,0 +1,270 @@
+MODEL 1
+REMARK VINA RESULT:    -8.556      0.000      0.000
+REMARK INTER + INTRA:          -8.556
+REMARK INTER:                  -8.556
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.797  60.870  63.805  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      61.178  61.379  64.332  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.953  61.652  64.266  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.105  62.145  64.911  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.813  62.538  65.064  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.423  62.176  65.373  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.249  62.574  66.075  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.503  62.498  66.419  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      60.329  62.896  67.120  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.902  63.370  67.478  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.730  63.768  68.179  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.302  64.242  68.537  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      59.983  63.692  68.523  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.931  62.024  66.061  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.184  61.949  66.405  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.103  61.626  65.360  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      60.850  61.702  65.016  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -8.164      0.986      3.865
+REMARK INTER + INTRA:          -8.164
+REMARK INTER:                  -8.164
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.029  63.383  67.989  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.648  62.938  67.407  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.863  62.688  67.425  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.715  62.260  66.735  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      58.999  61.908  66.527  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.410  62.246  66.291  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.592  61.906  65.562  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.351  61.984  65.248  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.534  61.644  64.519  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.957  61.225  64.103  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.138  60.885  63.374  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      60.562  60.466  62.959  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      61.898  60.964  63.060  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.927  62.403  65.663  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.687  62.482  65.349  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.746  62.744  66.393  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      60.986  62.665  66.707  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.788      1.419      2.254
+REMARK INTER + INTRA:          -7.788
+REMARK INTER:                  -7.788
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.476  62.000  66.029  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.234  62.245  66.245  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.919  62.156  65.794  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.548  62.479  66.220  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.335  62.508  65.975  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.252  62.767  66.933  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.616  63.142  67.571  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.169  63.373  68.224  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.533  63.749  68.863  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      62.345  63.893  68.847  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.710  64.268  69.484  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      63.522  64.413  69.469  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      62.262  64.500  70.138  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.356  63.229  68.240  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.908  63.460  68.893  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      59.991  62.854  67.602  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      60.440  62.623  66.948  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.713      1.469      3.821
+REMARK INTER + INTRA:          -7.713
+REMARK INTER:                  -7.713
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.235  63.733  70.099  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.831  63.704  69.528  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.590  64.015  69.604  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.000  63.861  68.904  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      62.779  64.077  68.741  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.493  63.455  68.396  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.595  63.160  67.633  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.976  62.768  67.255  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.078  62.474  66.491  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.801  62.571  66.105  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.905  62.277  65.341  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      62.627  62.375  64.955  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      61.284  61.885  64.963  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.254  62.671  67.640  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.633  62.279  67.262  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.150  62.965  68.404  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      60.770  63.357  68.782  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.578      2.604      4.008
+REMARK INTER + INTRA:          -7.578
+REMARK INTER:                  -7.578
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.350  62.007  67.404  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.714  62.532  67.925  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      61.136  63.209  67.716  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.403  63.569  68.409  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      61.848  64.261  68.456  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      61.146  63.113  69.047  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.244  63.198  69.862  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.917  62.644  70.377  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.015  62.729  71.192  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      61.441  63.370  71.491  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      61.539  63.456  72.305  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      61.965  64.096  72.604  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      61.212  62.901  72.821  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.491  62.004  70.078  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      60.164  61.449  70.594  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.393  61.918  69.264  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      60.720  62.473  68.748  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.501      5.873      7.291
+REMARK INTER + INTRA:          -7.501
+REMARK INTER:                  -7.501
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.170  67.572  69.848  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      65.634  67.288  70.408  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      65.491  67.616  71.151  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      64.917  67.157  71.526  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      64.609  67.287  72.280  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      64.705  66.547  71.014  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.165  65.927  71.087  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      64.069  65.388  70.470  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      63.529  64.768  70.543  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      63.086  64.687  71.234  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      62.546  64.068  71.308  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      62.103  63.987  71.999  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      62.450  63.529  70.690  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      64.513  65.469  69.779  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      64.416  64.930  69.161  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      65.052  66.089  69.705  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      65.148  66.628  70.323  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.467      1.127      2.151
+REMARK INTER + INTRA:          -7.467
+REMARK INTER:                  -7.467
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.965  61.283  64.941  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.484  61.662  65.495  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      59.663  61.603  65.545  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      59.412  62.071  66.177  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      58.632  62.173  66.425  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.078  62.419  66.517  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.168  62.933  67.155  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      60.919  63.195  67.373  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      61.009  63.709  68.012  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      60.346  63.962  68.433  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      60.434  64.477  69.072  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.772  64.729  69.493  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      61.187  64.738  69.289  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.582  62.942  66.951  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      62.334  63.203  67.169  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      61.493  62.427  66.313  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      60.741  62.166  66.095  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.408      3.873      4.994
+REMARK INTER + INTRA:          -7.408
+REMARK INTER:                  -7.408
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.592  61.642  70.953  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      60.524  62.233  70.381  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      60.656  62.143  69.572  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      60.525  62.873  69.209  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      60.595  63.033  68.404  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      60.312  63.413  69.794  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.118  64.215  69.762  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      59.924  64.621  70.453  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      59.730  65.422  70.420  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      59.731  65.817  69.696  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      59.538  66.618  69.662  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      59.538  67.013  68.938  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      59.343  67.025  70.354  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.923  64.226  71.177  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      59.729  64.632  71.869  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      60.117  63.424  71.211  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      60.311  63.018  70.519  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.203      5.847      7.304
+REMARK INTER + INTRA:          -7.203
+REMARK INTER:                  -7.203
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = carbazochrome
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.609  64.569  72.171  0.00  0.00    +0.000 C 
+ATOM      2  N   UNL     1      62.233  64.662  71.639  0.00  0.00    +0.000 N 
+ATOM      3  C   UNL     1      62.436  64.140  71.034  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      63.092  64.448  70.639  0.00  0.00    +0.000 C 
+ATOM      5  O   UNL     1      63.477  64.104  69.997  0.00  0.00    +0.000 OA
+ATOM      6  C   UNL     1      63.293  65.161  71.001  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.892  65.708  70.848  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      63.960  66.386  71.312  0.00  0.00    +0.000 C 
+ATOM      9  N   UNL     1      64.559  66.933  71.159  0.00  0.00    +0.000 NA
+ATOM     10  N   UNL     1      65.090  66.801  70.541  0.00  0.00    +0.000 NA
+ATOM     11  C   UNL     1      65.689  67.347  70.387  0.00  0.00    +0.000 C 
+ATOM     12  N   UNL     1      66.219  67.215  69.769  0.00  0.00    +0.000 NA
+ATOM     13  O   UNL     1      65.757  68.026  70.852  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      63.430  66.518  71.929  0.00  0.00    +0.000 C 
+ATOM     15  O   UNL     1      63.498  67.197  72.394  0.00  0.00    +0.000 OA
+ATOM     16  C   UNL     1      62.831  65.972  72.083  0.00  0.00    +0.000 C 
+ATOM     17  C   UNL     1      62.763  65.293  71.618  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -7.708      0.000      0.000
+REMARK INTER + INTRA:          -7.708
+REMARK INTER:                  -7.708
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.360  63.669  68.753  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.671  63.457  68.018  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.230  62.984  67.506  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.541  62.773  66.771  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.100  62.300  66.258  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.349  62.039  66.479  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.411  62.088  65.524  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.970  61.615  65.010  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.219  61.354  65.232  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.281  61.404  64.276  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.031  61.664  64.055  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      62.472  62.137  64.568  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.161  62.349  65.303  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.358      1.359      3.261
+REMARK INTER + INTRA:          -7.358
+REMARK INTER:                  -7.358
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.755  61.625  63.303  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.076  61.626  63.773  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.086  61.999  64.509  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.408  62.000  64.979  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.418  62.373  65.716  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.105  62.744  65.981  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.740  62.374  66.185  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.750  62.747  66.922  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.437  63.118  67.188  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.071  62.749  67.391  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.385  62.379  67.126  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.375  62.006  66.390  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.053  62.004  65.919  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.667      1.561      3.983
+REMARK INTER + INTRA:          -6.667
+REMARK INTER:                  -6.667
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.738  62.641  65.180  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.457  62.348  65.899  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.479  62.821  66.574  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.198  62.528  67.292  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.221  63.002  67.968  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.524  63.768  67.924  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.940  62.709  68.685  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.962  63.183  69.361  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.265  63.949  69.318  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.681  62.890  70.079  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.378  62.124  70.122  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.356  61.651  69.447  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.637  61.944  68.729  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.658      3.266      5.819
+REMARK INTER + INTRA:          -6.658
+REMARK INTER:                  -6.658
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.299  62.000  67.838  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.603  61.882  68.596  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.484  62.452  69.181  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.788  62.334  69.938  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.669  62.904  70.524  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.246  63.591  70.351  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.973  62.785  71.282  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.854  63.355  71.867  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.431  64.042  71.694  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.158  63.237  72.625  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.580  62.551  72.797  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.699  61.981  72.213  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.395  62.099  71.454  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.514      5.877      6.667
+REMARK INTER + INTRA:          -6.514
+REMARK INTER:                  -6.514
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      58.379  66.108  72.677  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      58.627  65.408  72.316  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.359  65.083  72.510  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.607  64.383  72.149  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.340  64.057  72.342  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.825  64.431  72.895  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      60.587  63.357  71.982  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.321  63.031  72.175  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      61.806  63.405  72.728  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.568  62.332  71.815  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.084  61.958  71.263  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.351  62.284  71.070  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.103  62.984  71.430  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.414      5.521      7.233
+REMARK INTER + INTRA:          -6.414
+REMARK INTER:                  -6.414
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.447  63.761  70.491  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.035  64.229  70.834  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.434  64.788  70.377  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.021  65.256  70.719  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.421  65.815  70.262  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      64.232  65.907  69.464  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      65.008  66.283  70.604  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      65.408  66.842  70.147  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      65.219  66.934  69.349  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.995  67.310  70.489  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      66.183  67.218  71.286  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.784  66.659  71.743  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.196  66.191  71.401  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.337      5.571      6.603
+REMARK INTER + INTRA:          -6.337
+REMARK INTER:                  -6.337
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.143  67.293  72.263  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.781  66.583  72.480  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.755  65.954  71.946  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.394  65.245  72.163  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.367  64.616  71.629  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.702  64.697  70.879  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.006  63.907  71.845  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.979  63.278  71.311  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      62.315  63.359  70.562  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.618  62.569  71.528  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.283  62.488  72.277  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.309  63.117  72.810  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.671  63.827  72.594  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.313      4.890      5.836
+REMARK INTER + INTRA:          -6.313
+REMARK INTER:                  -6.313
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      64.662  64.914  69.362  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.204  64.730  70.024  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.477  64.353  69.930  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.020  64.170  70.592  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.292  63.792  70.498  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.021  63.599  69.743  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.835  63.608  71.160  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.107  63.231  71.067  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.836  63.038  70.312  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.650  63.047  71.729  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.921  63.240  72.483  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.648  63.617  72.577  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      62.106  63.801  71.914  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.288      3.637      4.447
+REMARK INTER + INTRA:          -6.288
+REMARK INTER:                  -6.288
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glycol salicylate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.655  66.171  69.489  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.313  65.528  69.879  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.030  64.886  69.444  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.689  64.244  69.834  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.406  63.602  69.400  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.465  63.601  68.577  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.064  62.960  69.790  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.781  62.317  69.355  0.00  0.00    +0.000 A 
+ATOM      9  O   UNL     1      60.840  62.317  68.532  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.440  61.675  69.745  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.381  61.675  70.567  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.663  62.317  71.001  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.005  62.960  70.611  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -9.083      0.000      0.000
+REMARK INTER + INTRA:          -9.083
+REMARK INTER:                  -9.083
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.867  63.685  70.377  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.253  63.593  69.653  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.989  63.944  69.531  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.901  63.150  69.053  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.287  63.059  68.328  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.935  62.616  67.728  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.199  62.265  67.851  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.321  62.524  67.004  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.969  62.081  66.403  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.355  61.990  65.679  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.003  61.547  65.078  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.389  61.455  64.354  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.037  61.012  63.754  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      62.125  61.806  64.231  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.476  62.249  64.833  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.091  62.340  65.556  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.071      1.410      4.814
+REMARK INTER + INTRA:          -9.071
+REMARK INTER:                  -9.071
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.008  62.386  64.843  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.813  62.088  65.587  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.817  61.274  65.720  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.615  62.605  66.198  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.419  62.308  66.943  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.221  62.825  67.554  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.217  63.638  67.421  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.026  62.527  68.299  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.827  63.045  68.910  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.632  62.747  69.655  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.433  63.264  70.266  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.238  62.967  71.011  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.040  63.484  71.622  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.242  62.153  71.144  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      60.441  61.636  70.532  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      60.636  61.933  69.788  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.744     18.687     19.397
+REMARK INTER + INTRA:          -8.744
+REMARK INTER:                  -8.744
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.351  82.250  57.036  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.990  81.789  57.280  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.760  82.017  57.091  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      63.858  81.101  57.715  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.497  80.639  57.959  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.365  79.950  58.393  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.596  79.723  58.583  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      65.005  79.488  58.638  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.873  78.799  59.072  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      65.512  78.337  59.316  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.380  77.649  59.750  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      66.020  77.187  59.995  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      65.888  76.498  60.429  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      66.789  77.414  59.805  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      66.920  78.104  59.371  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      66.282  78.565  59.126  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.415      5.127      6.564
+REMARK INTER + INTRA:          -8.415
+REMARK INTER:                  -8.415
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.861  63.111  71.382  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.486  63.588  71.630  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.676  63.637  72.432  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.922  64.016  71.076  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.549  64.494  71.324  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.984  64.922  70.769  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.794  64.873  69.969  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.611  65.399  71.017  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      64.046  65.827  70.463  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.673  66.305  70.711  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.108  66.733  70.156  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.735  67.210  70.404  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.170  67.639  69.850  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.925  67.259  71.205  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      65.488  66.830  71.759  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.863  66.353  71.512  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.207      1.919      5.252
+REMARK INTER + INTRA:          -8.207
+REMARK INTER:                  -8.207
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.843  62.002  66.164  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.218  62.426  66.764  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.624  63.122  66.587  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      60.186  62.154  67.542  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.561  62.578  68.143  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.529  62.305  68.921  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.123  61.610  69.098  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.904  62.729  69.522  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.872  62.457  70.300  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      61.248  62.881  70.901  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.216  62.608  71.679  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.591  63.032  72.280  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      61.559  62.759  73.058  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.998  63.728  72.102  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      62.029  63.999  71.323  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.654  63.576  70.723  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.204      4.956      5.982
+REMARK INTER + INTRA:          -8.204
+REMARK INTER:                  -8.204
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.612  67.047  70.220  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.084  66.648  70.713  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.023  66.857  71.509  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      64.618  66.040  70.408  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.089  65.640  70.900  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.623  65.031  70.596  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      63.684  64.823  69.801  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      63.094  64.631  71.088  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      62.628  64.023  70.783  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      62.099  63.623  71.276  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.633  63.015  70.971  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      61.104  62.615  71.463  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      60.638  62.007  71.159  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      61.043  62.823  72.259  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.510  63.432  72.563  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      62.038  63.832  72.071  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.645      1.699      2.389
+REMARK INTER + INTRA:          -7.645
+REMARK INTER:                  -7.645
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.338  66.454  70.622  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.418  65.885  70.030  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.168  65.666  69.766  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.746  65.535  69.703  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.826  64.966  69.110  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.154  64.616  68.783  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.405  64.834  69.047  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      61.234  64.046  68.190  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.562  63.696  67.863  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      60.642  63.127  67.270  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.970  62.777  66.943  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      60.050  62.207  66.350  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.378  61.857  66.023  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      60.800  61.989  66.086  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      61.471  62.340  66.414  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      61.392  62.908  67.006  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.455      6.455      7.198
+REMARK INTER + INTRA:          -7.455
+REMARK INTER:                  -7.455
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.727  66.493  73.223  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.304  66.370  72.646  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.116  65.964  71.953  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.070  66.653  72.763  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.648  66.530  72.186  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.413  66.814  72.304  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      62.602  67.219  72.996  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      62.991  66.691  71.727  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      63.757  66.974  71.844  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      64.335  66.852  71.267  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      65.100  67.135  71.385  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      65.678  67.012  70.808  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      66.444  67.296  70.925  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      65.490  66.607  70.114  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      64.723  66.324  69.998  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      64.146  66.446  70.574  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.369      2.085      5.221
+REMARK INTER + INTRA:          -7.369
+REMARK INTER:                  -7.369
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = toliprolol
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.580  61.619  66.452  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.335  62.378  66.664  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.298  62.975  66.096  0.00  0.00    +0.000 C 
+ATOM      4  N   UNL     1      61.126  62.538  67.446  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.881  63.297  67.660  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.672  63.457  68.442  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      60.709  62.861  69.009  0.00  0.00    +0.000 OA
+ATOM      8  C   UNL     1      60.427  64.216  68.655  0.00  0.00    +0.000 C 
+ATOM      9  O   UNL     1      60.218  64.377  69.437  0.00  0.00    +0.000 OA
+ATOM     10  C   UNL     1      59.973  65.136  69.651  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      59.764  65.296  70.432  0.00  0.00    +0.000 A 
+ATOM     12  C   UNL     1      59.519  66.055  70.646  0.00  0.00    +0.000 A 
+ATOM     13  C   UNL     1      59.310  66.215  71.428  0.00  0.00    +0.000 C 
+ATOM     14  C   UNL     1      59.483  66.652  70.078  0.00  0.00    +0.000 A 
+ATOM     15  C   UNL     1      59.692  66.490  69.296  0.00  0.00    +0.000 A 
+ATOM     16  C   UNL     1      59.937  65.733  69.083  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

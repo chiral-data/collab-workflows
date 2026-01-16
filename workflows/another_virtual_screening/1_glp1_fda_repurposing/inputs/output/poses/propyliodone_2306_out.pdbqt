@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.949      0.000      0.000
+REMARK INTER + INTRA:          -7.949
+REMARK INTER:                  -7.949
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.117  62.337  64.367  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.978  61.944  65.078  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.720  62.366  65.739  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.581  61.972  66.450  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.323  62.394  67.111  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.204  63.209  67.060  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.184  62.001  67.823  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.926  62.423  68.484  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.787  62.030  69.195  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.529  62.452  69.856  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.390  62.058  70.568  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.410  63.267  69.805  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.153  63.688  70.465  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.550  63.659  69.093  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      60.431  64.475  69.041  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      60.807  63.238  68.433  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.763      1.933      2.511
+REMARK INTER + INTRA:          -7.763
+REMARK INTER:                  -7.763
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.047  61.996  66.425  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.735  62.433  66.552  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.004  62.565  67.321  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.692  63.002  67.448  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.960  63.134  68.218  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.540  62.829  68.859  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.648  63.571  68.344  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.917  63.703  69.114  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.605  64.140  69.240  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.873  64.272  70.010  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      63.561  64.709  70.137  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      62.453  63.968  70.652  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      62.722  64.100  71.420  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.765  63.531  70.524  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      61.345  63.226  71.166  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      61.497  63.399  69.755  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.630      3.794      5.025
+REMARK INTER + INTRA:          -7.630
+REMARK INTER:                  -7.630
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.812  61.677  70.421  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.378  62.065  71.006  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.265  62.882  70.961  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.832  63.271  71.545  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.719  64.087  71.500  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.038  64.514  70.870  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.286  64.476  72.084  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      59.172  65.293  72.039  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      58.739  65.681  72.624  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      58.626  66.498  72.578  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      58.193  66.886  73.163  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      58.945  66.924  71.949  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      58.832  67.740  71.904  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      59.378  66.535  71.365  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      59.699  66.962  70.734  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      59.492  65.719  71.409  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.485      2.621      3.925
+REMARK INTER + INTRA:          -7.485
+REMARK INTER:                  -7.485
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      64.729  66.127  71.133  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.358  65.884  70.437  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.781  65.294  70.461  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.411  65.052  69.765  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.834  64.462  69.790  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.628  64.115  70.510  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.463  64.219  69.094  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.886  63.629  69.118  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.515  63.387  68.423  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.938  62.797  68.447  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.567  62.554  67.751  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.732  62.450  69.167  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.156  61.861  69.191  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.104  62.694  69.862  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      60.898  62.347  70.583  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      61.680  63.283  69.838  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -7.424      2.207      4.499
+REMARK INTER + INTRA:          -7.424
+REMARK INTER:                  -7.424
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.294  67.329  71.848  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.361  67.025  71.084  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.578  66.236  70.971  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.645  65.933  70.207  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.861  65.144  70.094  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.010  64.660  70.745  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      59.928  64.841  69.330  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      60.145  64.052  69.217  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      60.212  63.749  68.453  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.428  62.960  68.340  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      60.495  62.657  67.576  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.577  62.476  68.992  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.793  61.688  68.879  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.510  62.781  69.756  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      60.659  62.296  70.408  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      60.294  63.568  69.869  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -7.395      4.081      5.006
+REMARK INTER + INTRA:          -7.395
+REMARK INTER:                  -7.395
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.187  67.624  69.850  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.757  67.260  70.453  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.132  66.754  70.266  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.702  66.390  70.868  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.076  65.885  70.681  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.881  65.745  69.892  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.647  65.520  71.284  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.021  65.015  71.097  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      62.592  64.651  71.699  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.966  64.146  71.512  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      61.537  63.781  72.115  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      61.771  64.006  70.723  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      61.146  63.502  70.536  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      62.201  64.371  70.121  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      62.005  64.231  69.331  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      62.826  64.876  70.307  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.379      2.042      3.886
+REMARK INTER + INTRA:          -7.379
+REMARK INTER:                  -7.379
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.863  65.155  70.769  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.212  64.819  70.102  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.748  64.411  69.555  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.098  64.075  68.887  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.634  63.667  68.340  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.821  63.594  68.461  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      61.983  63.332  67.672  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.519  62.923  67.125  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.869  62.588  66.458  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.405  62.179  65.911  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      61.754  61.844  65.243  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.592  62.106  66.032  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      60.129  61.698  65.485  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      60.243  62.442  66.700  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      59.429  62.370  66.821  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      60.706  62.850  67.246  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.283      3.821      5.080
+REMARK INTER + INTRA:          -7.283
+REMARK INTER:                  -7.283
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.471  61.924  70.720  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.197  62.261  70.518  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.425  62.979  70.854  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.151  63.316  70.652  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.380  64.035  70.988  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.883  64.416  71.525  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      63.105  64.371  70.786  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      63.334  65.090  71.122  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      64.059  65.427  70.919  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      64.288  66.146  71.255  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      65.013  66.482  71.053  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      63.791  66.527  71.793  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      64.020  67.244  72.128  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      63.066  66.189  71.994  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      62.568  66.570  72.532  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      62.837  65.471  71.659  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.108      5.506      6.134
+REMARK INTER + INTRA:          -7.108
+REMARK INTER:                  -7.108
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = propyliodone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.821  66.940  71.336  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.108  67.252  71.607  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.462  66.754  71.734  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      63.748  67.067  72.005  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.102  66.569  72.132  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.170  65.759  71.988  0.00  0.00    +0.000 OA
+ATOM      7  C   UNL     1      62.388  66.881  72.402  0.00  0.00    +0.000 C 
+ATOM      8  N   UNL     1      61.742  66.383  72.529  0.00  0.00    +0.000 N 
+ATOM      9  C   UNL     1      61.028  66.695  72.800  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.382  66.197  72.927  0.00  0.00    +0.000 A 
+ATOM     11  I   UNL     1      59.668  66.510  73.198  0.00  0.00    +0.000 I 
+ATOM     12  C   UNL     1      60.450  65.388  72.783  0.00  0.00    +0.000 A 
+ATOM     13  O   UNL     1      59.805  64.891  72.910  0.00  0.00    +0.000 OA
+ATOM     14  C   UNL     1      61.165  65.077  72.512  0.00  0.00    +0.000 A 
+ATOM     15  I   UNL     1      61.233  64.266  72.368  0.00  0.00    +0.000 I 
+ATOM     16  C   UNL     1      61.810  65.574  72.386  0.00  0.00    +0.000 A 
+ENDROOT
+TORSDOF 0
+ENDMDL

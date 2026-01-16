@@ -1,0 +1,225 @@
+MODEL 1
+REMARK VINA RESULT:    -7.719      0.000      0.000
+REMARK INTER + INTRA:          -7.719
+REMARK INTER:                  -7.719
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.712  62.441  67.001  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.383  62.408  66.524  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.070  62.806  66.751  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.742  62.773  66.274  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.729  62.343  65.569  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.041  61.945  65.342  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.027  61.515  64.639  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.699  61.483  64.162  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      62.386  61.880  64.389  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      62.400  62.310  65.092  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.369  61.978  65.820  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.683  61.581  65.593  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.674      0.749      2.281
+REMARK INTER + INTRA:          -7.674
+REMARK INTER:                  -7.674
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.392  61.632  63.814  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.983  61.888  64.482  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.350  62.393  65.023  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.941  62.649  65.692  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.165  62.401  65.822  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.797  61.895  65.282  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.022  61.647  65.411  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      59.613  61.902  66.080  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.981  62.408  66.620  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.756  62.656  66.491  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.207  61.639  64.613  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.840  61.135  64.073  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.672      1.343      2.331
+REMARK INTER + INTRA:          -6.672
+REMARK INTER:                  -6.672
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.561  63.523  68.283  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.978  63.171  67.819  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.188  63.193  68.061  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      59.605  62.840  67.597  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.808  62.465  66.891  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.598  62.442  66.648  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.802  62.068  65.943  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.218  61.715  65.479  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      59.429  61.737  65.722  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      59.225  62.112  66.427  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      61.181  62.795  67.113  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.970  62.773  66.871  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.564      4.795      6.155
+REMARK INTER + INTRA:          -6.564
+REMARK INTER:                  -6.564
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.459  61.721  69.682  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.625  62.277  70.268  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.459  63.075  70.138  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.626  63.631  70.725  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.959  63.390  71.440  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      61.125  62.592  71.570  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.457  62.351  72.285  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.624  62.907  72.870  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.457  63.705  72.741  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.125  63.946  72.026  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.958  62.036  70.983  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      61.124  61.238  71.113  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.511      5.634      6.458
+REMARK INTER + INTRA:          -6.511
+REMARK INTER:                  -6.511
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.305  64.925  72.597  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.636  64.194  72.409  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      61.317  63.936  72.799  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      61.648  63.204  72.610  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.298  62.729  72.033  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.617  62.986  71.643  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.268  62.512  71.067  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.598  61.781  70.879  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.279  61.523  71.268  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.629  61.997  71.845  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.286  63.719  71.832  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      59.606  63.976  71.443  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.510      6.607      7.733
+REMARK INTER + INTRA:          -6.510
+REMARK INTER:                  -6.510
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.479  65.243  69.818  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      64.095  65.599  70.234  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      64.262  65.362  71.007  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      64.879  65.720  71.423  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      65.328  66.314  71.068  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      65.160  66.551  70.294  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      65.609  67.144  69.939  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      66.225  67.501  70.355  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      66.392  67.264  71.128  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      65.944  66.671  71.484  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      64.544  66.193  69.878  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      64.376  66.430  69.106  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.460      2.983      4.472
+REMARK INTER + INTRA:          -6.460
+REMARK INTER:                  -6.460
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.470  63.025  67.440  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.455  63.062  68.263  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      60.432  63.794  68.644  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      60.417  63.830  69.468  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.425  63.135  69.913  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      60.448  62.402  69.532  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      60.457  61.708  69.976  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      60.441  61.744  70.799  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      60.418  62.477  71.180  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      60.410  63.171  70.736  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      60.463  62.367  68.708  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      60.487  61.635  68.328  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.305     24.563     25.340
+REMARK INTER + INTRA:          -6.305
+REMARK INTER:                  -6.305
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      69.680  80.228  51.355  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.243  80.034  50.786  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      70.953  80.456  50.747  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      71.517  80.261  50.177  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      71.373  79.647  49.645  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      70.664  79.225  49.684  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      70.520  78.611  49.153  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      71.083  78.418  48.584  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      71.793  78.839  48.545  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      71.937  79.453  49.076  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      70.100  79.420  50.254  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      69.391  78.999  50.293  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.209      5.720      6.755
+REMARK INTER + INTRA:          -6.209
+REMARK INTER:                  -6.209
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = methylchromone
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      63.179  65.573  71.072  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.814  64.837  71.135  0.00  0.00    +0.000 A 
+ATOM      3  C   UNL     1      62.850  64.303  70.505  0.00  0.00    +0.000 A 
+ATOM      4  O   UNL     1      62.484  63.566  70.568  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.081  63.362  71.259  0.00  0.00    +0.000 A 
+ATOM      6  C   UNL     1      62.045  63.896  71.888  0.00  0.00    +0.000 A 
+ATOM      7  C   UNL     1      61.643  63.692  72.579  0.00  0.00    +0.000 A 
+ATOM      8  C   UNL     1      61.277  62.956  72.641  0.00  0.00    +0.000 A 
+ATOM      9  C   UNL     1      61.314  62.422  72.012  0.00  0.00    +0.000 A 
+ATOM     10  C   UNL     1      61.716  62.626  71.322  0.00  0.00    +0.000 A 
+ATOM     11  C   UNL     1      62.411  64.632  71.826  0.00  0.00    +0.000 A 
+ATOM     12  O   UNL     1      62.375  65.166  72.454  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

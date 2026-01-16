@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -9.280      0.000      0.000
+REMARK INTER + INTRA:          -9.280
+REMARK INTER:                  -9.280
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.149  61.479  63.476  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      62.131  61.830  64.221  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.774  62.015  63.738  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.369  62.141  64.542  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.352  62.459  65.219  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.711  62.275  65.702  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      61.693  62.626  66.449  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.115  62.148  64.898  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.084  61.773  65.511  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.101  61.455  64.834  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.418  60.993  64.801  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.743  61.639  64.349  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      61.506  61.329  64.030  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -9.168      0.338      1.743
+REMARK INTER + INTRA:          -9.168
+REMARK INTER:                  -9.168
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.115  62.158  66.196  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.600  62.130  65.530  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.853  62.605  66.156  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      62.029  62.296  65.319  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      62.469  62.270  64.715  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.217  61.797  64.090  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.703  61.769  63.423  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      62.041  62.105  64.926  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      61.526  61.347  64.066  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      61.086  61.373  64.671  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      60.450  60.880  64.490  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      61.338  61.847  65.297  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.909  61.682  65.507  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -8.587     17.000     17.529
+REMARK INTER + INTRA:          -8.587
+REMARK INTER:                  -8.587
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.783  79.140  58.922  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.706  78.412  59.300  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      65.015  78.757  59.011  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.385  78.049  59.445  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.315  77.388  59.788  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.006  77.043  60.077  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      65.929  76.314  60.455  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.637  77.751  59.643  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      66.767  77.357  60.024  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      66.837  78.018  59.681  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      67.643  78.188  59.712  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      66.146  78.364  59.391  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.467  78.726  59.247  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -8.343      7.495      8.708
+REMARK INTER + INTRA:          -8.343
+REMARK INTER:                  -8.343
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.574  67.789  70.426  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.967  67.246  70.297  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.193  67.713  69.655  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      65.641  67.057  69.960  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.090  66.565  69.843  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.865  66.099  70.484  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.257  65.555  70.355  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      65.417  66.754  70.181  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.188  66.123  71.243  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.739  66.616  71.360  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      65.948  66.515  72.151  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      65.966  67.083  70.718  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      66.291  67.271  71.055  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -8.282      6.050      7.418
+REMARK INTER + INTRA:          -8.282
+REMARK INTER:                  -8.282
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.392  63.397  72.924  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.224  62.882  72.303  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.840  62.668  72.809  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      61.350  62.448  72.076  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.198  61.981  71.511  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.583  62.194  71.005  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.416  61.679  70.383  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      61.073  62.415  71.738  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      60.119  62.874  71.062  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      60.271  63.341  71.626  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      59.729  63.957  71.542  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      60.886  63.128  72.133  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      60.761  63.561  72.360  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -8.208     16.931     17.419
+REMARK INTER + INTRA:          -8.208
+REMARK INTER:                  -8.208
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      65.691  76.683  59.574  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      66.026  77.351  59.922  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      66.243  76.619  60.235  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      66.339  77.522  60.280  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      66.642  78.129  60.596  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.425  78.860  60.283  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      66.760  79.529  60.631  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      66.330  77.958  60.237  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      65.905  78.987  59.656  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      65.601  78.381  59.340  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      65.116  78.675  58.742  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      65.818  77.648  59.653  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      65.506  77.478  59.295  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -7.901     24.154     24.727
+REMARK INTER + INTRA:          -7.901
+REMARK INTER:                  -7.901
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      71.545  78.451  48.784  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      70.945  78.711  49.285  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      70.832  77.982  48.915  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      70.492  78.606  49.483  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      69.947  78.842  49.937  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      70.059  79.570  50.307  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      69.458  79.831  50.808  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      70.400  78.948  49.739  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      70.715  80.063  50.223  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      71.260  79.827  49.768  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      71.830  80.422  49.795  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      71.148  79.098  49.398  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      71.601  79.203  49.200  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -7.892     15.890     17.036
+REMARK INTER + INTRA:          -7.892
+REMARK INTER:                  -7.892
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.893  75.441  72.147  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      58.453  75.972  72.434  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      58.688  75.184  72.365  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      58.927  76.028  72.603  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      59.435  76.511  72.864  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.201  77.298  72.934  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.762  77.830  73.222  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      58.962  76.454  72.695  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.459  77.605  72.744  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      57.951  77.122  72.483  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      57.278  77.579  72.344  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      58.185  76.334  72.412  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      57.712  76.278  72.244  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -7.037     15.910     16.590
+REMARK INTER + INTRA:          -7.037
+REMARK INTER:                  -7.037
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = memantine
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      57.408  77.147  70.233  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      57.818  76.635  70.731  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      57.862  76.483  69.921  0.00  0.00    +0.000 C 
+ATOM      4  C   UNL     1      58.115  76.227  70.756  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      58.488  75.762  71.209  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      58.444  75.914  72.018  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      58.855  75.402  72.517  0.00  0.00    +0.000 C 
+ATOM      8  C   UNL     1      58.191  76.171  71.184  0.00  0.00    +0.000 C 
+ATOM      9  C   UNL     1      58.029  76.531  72.376  0.00  0.00    +0.000 C 
+ATOM     10  C   UNL     1      57.656  76.995  71.924  0.00  0.00    +0.000 C 
+ATOM     11  N   UNL     1      57.302  77.543  72.429  0.00  0.00    +0.000 NA
+ATOM     12  C   UNL     1      57.700  76.843  71.113  0.00  0.00    +0.000 C 
+ATOM     13  C   UNL     1      57.403  77.251  71.089  0.00  0.00    +0.000 C 
+ENDROOT
+TORSDOF 0
+ENDMDL

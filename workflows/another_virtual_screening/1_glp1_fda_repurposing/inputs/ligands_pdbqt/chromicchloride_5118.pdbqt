@@ -1,0 +1,10 @@
+ROOT
+REMARK  Name = chromic chloride
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1 CL   UNL     1       1.238   0.715   0.000  0.00  0.00    +0.000 Cl
+ATOM      2 CR   UNL     1       0.825   0.000   0.000  0.00  0.00    +0.000 Cr
+ATOM      3 CL   UNL     1       1.238  -0.715   0.000  0.00  0.00    +0.000 Cl
+ATOM      4 CL   UNL     1       0.000   0.000   0.000  0.00  0.00    +0.000 Cl
+ENDROOT
+TORSDOF 0

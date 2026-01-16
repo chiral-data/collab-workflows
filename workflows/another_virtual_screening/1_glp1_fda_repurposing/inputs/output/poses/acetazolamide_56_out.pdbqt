@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.743      0.000      0.000
+REMARK INTER + INTRA:          -6.743
+REMARK INTER:                  -6.743
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.603  62.617  68.618  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.586  62.377  67.829  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.910  62.016  67.522  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.244  62.498  67.346  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.226  62.258  66.557  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.594  61.892  66.175  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.815  61.751  65.393  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.585  62.029  65.292  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      61.839  62.343  66.010  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      62.024  61.999  64.593  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      62.462  61.968  63.895  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      62.656  62.365  64.975  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.390  61.632  64.211  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.626      1.113      3.083
+REMARK INTER + INTRA:          -6.626
+REMARK INTER:                  -6.626
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.424  61.640  63.634  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.881  61.729  64.249  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.109  61.451  64.162  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.109  62.097  64.951  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.567  62.187  65.566  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.781  61.938  65.559  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.444  62.138  66.284  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.021  62.512  66.740  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      61.716  62.542  66.296  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      60.922  62.804  67.505  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      60.823  63.096  68.270  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      61.708  63.053  67.512  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.135  62.554  67.498  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.117      1.990      2.853
+REMARK INTER + INTRA:          -6.117
+REMARK INTER:                  -6.117
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.411  62.656  71.430  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.420  62.390  70.649  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.149  61.632  70.467  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.700  62.882  70.049  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.709  62.617  69.268  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      60.457  61.877  69.004  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      60.565  61.848  68.187  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      60.883  62.570  67.946  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      60.972  63.045  68.613  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      61.077  62.779  67.171  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      61.272  62.989  66.398  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      61.329  63.519  67.435  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.825  62.038  66.908  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -6.023      2.325      3.678
+REMARK INTER + INTRA:          -6.023
+REMARK INTER:                  -6.023
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      59.235  61.994  66.173  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      59.892  62.328  66.545  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.587  62.456  66.118  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      59.856  62.533  67.343  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      60.513  62.866  67.714  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      61.240  63.027  67.361  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      61.734  63.357  67.932  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      61.312  63.401  68.640  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      60.557  63.098  68.505  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      61.595  63.697  69.356  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      61.878  63.993  70.072  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      60.868  63.537  69.710  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.323  63.857  69.002  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.963      5.926      6.891
+REMARK INTER + INTRA:          -5.963
+REMARK INTER:                  -5.963
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      66.226  67.653  69.957  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      65.690  67.141  70.319  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      65.555  67.190  71.132  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      65.288  66.579  69.868  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.751  66.066  70.229  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.561  66.050  71.032  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      64.004  65.455  71.150  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.849  65.102  70.420  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      64.311  65.480  69.851  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      63.324  64.480  70.284  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      62.800  63.858  70.147  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      63.514  64.495  69.482  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      63.134  64.464  71.087  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.859      5.302      5.806
+REMARK INTER + INTRA:          -5.859
+REMARK INTER:                  -5.859
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      60.306  62.746  71.399  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      60.054  63.525  71.294  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      59.656  63.915  71.904  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      60.198  63.913  70.581  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      59.945  64.692  70.477  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      59.544  65.150  71.033  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      59.401  65.890  70.697  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      59.714  65.888  69.934  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      60.050  65.148  69.797  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      59.693  66.518  69.400  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      59.673  67.147  68.867  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      60.094  66.060  68.845  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.291  66.977  69.957  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.650     12.436     13.038
+REMARK INTER + INTRA:          -5.650
+REMARK INTER:                  -5.650
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      62.933  58.975  54.110  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      63.394  59.545  53.731  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      63.679  59.406  52.969  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      63.570  60.255  54.114  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      64.031  60.825  53.736  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      64.353  60.764  52.979  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      64.772  61.457  52.824  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      64.709  61.946  53.485  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      64.251  61.556  54.048  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      65.045  62.696  53.567  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      65.381  63.445  53.649  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      64.723  62.757  54.323  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      65.367  62.634  52.809  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.554      5.449      5.757
+REMARK INTER + INTRA:          -5.554
+REMARK INTER:                  -5.554
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.399  63.533  72.462  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.907  63.628  71.818  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.970  63.031  71.251  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      62.352  64.318  71.742  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      62.860  64.412  71.098  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      62.980  63.868  70.491  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      63.531  64.187  69.967  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      63.751  64.930  70.251  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      63.337  65.069  70.950  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      64.292  65.443  69.897  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      64.833  65.956  69.544  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      64.172  65.988  70.504  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      64.412  64.897  69.289  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.509      6.773      7.613
+REMARK INTER + INTRA:          -5.509
+REMARK INTER:                  -5.509
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = acetazolamide
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  C   UNL     1      61.405  62.916  72.472  0.00  0.00    +0.000 C 
+ATOM      2  C   UNL     1      61.731  63.640  72.250  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.306  63.671  71.658  0.00  0.00    +0.000 OA
+ATOM      4  N   UNL     1      61.484  64.335  72.619  0.00  0.00    +0.000 NA
+ATOM      5  C   UNL     1      61.810  65.060  72.397  0.00  0.00    +0.000 A 
+ATOM      6  N   UNL     1      62.385  65.176  71.818  0.00  0.00    +0.000 NA
+ATOM      7  N   UNL     1      62.549  65.983  71.778  0.00  0.00    +0.000 NA
+ATOM      8  C   UNL     1      62.074  66.366  72.333  0.00  0.00    +0.000 A 
+ATOM      9  S   UNL     1      61.617  65.797  72.715  0.00  0.00    +0.000 S 
+ATOM     10  S   UNL     1      62.058  67.179  72.479  0.00  0.00    +0.000 S 
+ATOM     11  N   UNL     1      62.043  67.990  72.626  0.00  0.00    +0.000 NA
+ATOM     12  O   UNL     1      61.483  67.063  73.058  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.635  67.294  71.900  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

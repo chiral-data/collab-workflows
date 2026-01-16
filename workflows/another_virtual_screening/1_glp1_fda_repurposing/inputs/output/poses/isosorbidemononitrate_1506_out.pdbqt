@@ -1,0 +1,234 @@
+MODEL 1
+REMARK VINA RESULT:    -6.632      0.000      0.000
+REMARK INTER + INTRA:          -6.632
+REMARK INTER:                  -6.632
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.219  61.249  63.819  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.594  61.684  64.412  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.349  62.012  64.369  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.500  62.398  65.082  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.839  62.308  65.566  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.523  62.491  66.306  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.768  62.163  66.349  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.616  61.777  65.636  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.279  61.867  65.152  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.898  62.926  66.899  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.512  63.066  67.615  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      61.886  63.501  68.207  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.751  62.771  67.737  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.631      1.332      3.183
+REMARK INTER + INTRA:          -6.631
+REMARK INTER:                  -6.631
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.677  63.212  67.631  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.287  62.779  67.047  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.516  62.489  67.093  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.352  62.092  66.389  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.020  62.136  65.909  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.332  61.918  65.177  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.103  62.208  65.131  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      62.267  62.605  65.835  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      61.598  62.561  66.316  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      60.942  61.486  64.593  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.326  61.308  63.884  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      60.935  60.875  63.301  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.100  61.562  63.760  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -6.004      0.931      1.353
+REMARK INTER + INTRA:          -6.004
+REMARK INTER:                  -6.004
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.356  61.590  65.236  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.909  62.006  65.686  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.665  62.227  65.440  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.026  62.631  66.061  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.495  62.660  66.691  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.389  62.927  67.464  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.633  62.705  67.710  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.272  62.301  67.088  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.804  62.273  66.458  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.942  63.343  67.913  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.759  63.576  68.683  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      62.311  63.991  69.132  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      61.021  63.392  69.004  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.701      5.992      7.124
+REMARK INTER + INTRA:          -5.701
+REMARK INTER:                  -5.701
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.526  67.751  68.737  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.100  67.243  69.229  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      59.784  66.512  69.014  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      59.404  66.196  69.674  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      59.484  66.731  70.296  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.299  66.867  71.089  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      59.614  67.598  71.303  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      59.995  67.914  70.643  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      59.914  67.378  70.021  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      58.872  66.360  71.581  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      58.728  66.570  72.365  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      58.302  66.063  72.857  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      59.011  67.287  72.658  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.671     12.164     12.857
+REMARK INTER + INTRA:          -5.671
+REMARK INTER:                  -5.671
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.313  62.800  52.776  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.884  62.346  53.316  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.634  62.590  54.063  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.226  61.964  54.411  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.224  61.333  53.881  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.971  60.556  53.767  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.221  60.313  53.020  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.629  60.939  52.671  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      64.631  61.570  53.203  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.542  60.103  54.307  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.326  59.329  54.116  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      62.898  58.876  54.656  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      63.539  59.010  53.386  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.611      1.989      3.650
+REMARK INTER + INTRA:          -5.611
+REMARK INTER:                  -5.611
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.707  64.645  69.810  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.198  64.273  69.260  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.022  64.266  69.274  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      62.283  63.831  68.624  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.621  63.570  68.208  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.372  63.141  67.549  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      60.548  63.148  67.535  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      60.286  63.583  68.186  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      60.950  63.844  68.602  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.863  62.768  67.000  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      61.534  62.356  66.365  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      62.024  61.984  65.816  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      60.715  62.316  66.279  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.443     12.312     13.112
+REMARK INTER + INTRA:          -5.443
+REMARK INTER:                  -5.443
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.193  59.603  54.490  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      63.632  59.969  53.894  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      63.839  59.633  53.170  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.276  60.191  52.747  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      64.338  60.870  53.209  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.646  61.636  53.234  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      64.438  61.971  53.958  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      64.002  61.414  54.381  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      63.940  60.733  53.918  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      65.085  62.001  52.639  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      65.358  62.773  52.741  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      65.797  63.138  52.146  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      65.192  63.179  53.440  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.052     11.703     12.846
+REMARK INTER + INTRA:          -5.052
+REMARK INTER:                  -5.052
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.014  70.298  53.954  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.637  69.740  54.431  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      62.119  69.903  55.052  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.874  69.185  55.374  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.239  68.578  54.953  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      62.315  67.759  54.891  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      62.832  67.595  54.270  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.077  68.314  53.948  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.711  68.921  54.370  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      61.938  67.200  55.368  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      62.066  66.395  55.241  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      61.690  65.837  55.717  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      62.571  66.148  54.638  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -4.995     12.163     12.437
+REMARK INTER + INTRA:          -4.995
+REMARK INTER:                  -4.995
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = isosorbide mononitrate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.455  65.222  53.538  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.377  64.409  53.657  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.668  63.992  53.703  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.848  63.197  53.826  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      62.668  63.122  53.856  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      63.287  62.585  53.950  0.00  0.00    +0.000 C 
+ATOM      7  C   UNL     1      63.997  63.003  53.904  0.00  0.00    +0.000 C 
+ATOM      8  O   UNL     1      63.817  63.798  53.782  0.00  0.00    +0.000 OA
+ATOM      9  C   UNL     1      62.995  63.872  53.752  0.00  0.00    +0.000 C 
+ATOM     10  O   UNL     1      63.210  61.772  54.070  0.00  0.00    +0.000 OA
+ATOM     11  N   UNL     1      63.882  61.301  54.155  0.00  0.00    +0.000 N 
+ATOM     12  O   UNL     1      63.805  60.489  54.275  0.00  0.00    +0.000 OA
+ATOM     13  O   UNL     1      64.632  61.644  54.122  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

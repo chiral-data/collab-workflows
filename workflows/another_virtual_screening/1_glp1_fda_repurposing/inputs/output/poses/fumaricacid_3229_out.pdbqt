@@ -1,0 +1,189 @@
+MODEL 1
+REMARK VINA RESULT:    -4.661      0.000      0.000
+REMARK INTER + INTRA:          -4.661
+REMARK INTER:                  -4.661
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.688  62.165  66.585  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.329  62.233  66.072  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      62.008  62.636  66.310  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.292  61.897  65.318  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.934  61.965  64.805  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.897  61.629  64.052  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.219  61.227  63.813  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      62.540  61.697  63.537  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -4.652      0.083      2.609
+REMARK INTER + INTRA:          -4.652
+REMARK INTER:                  -4.652
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.600  61.652  63.592  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.929  61.639  64.071  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.237  61.280  63.801  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      61.950  61.984  64.820  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      61.278  61.970  65.300  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.300  62.315  66.049  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.992  62.674  66.319  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.628  62.302  66.529  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -4.154      2.133      2.670
+REMARK INTER + INTRA:          -4.154
+REMARK INTER:                  -4.154
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.754  63.278  67.750  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.455  62.866  67.102  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      61.966  62.598  66.512  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.644  62.721  67.042  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.345  62.309  66.393  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      59.535  62.164  66.335  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      59.024  62.431  66.924  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      59.236  61.751  65.685  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -4.130      6.974      8.052
+REMARK INTER + INTRA:          -4.130
+REMARK INTER:                  -4.130
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      66.299  68.095  69.643  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      65.949  67.558  70.161  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      66.018  67.666  70.976  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.529  66.912  69.865  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.178  66.375  70.384  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      64.759  65.729  70.088  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      64.689  65.621  69.274  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      64.408  65.192  70.607  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.097      1.983      2.792
+REMARK INTER + INTRA:          -4.097
+REMARK INTER:                  -4.097
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.273  61.865  69.205  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.370  62.378  68.567  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.036  63.132  68.590  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.800  62.137  67.905  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.897  62.650  67.267  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      61.328  62.409  66.605  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.661  61.656  66.582  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      61.425  62.923  65.966  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.070      7.021      8.139
+REMARK INTER + INTRA:          -4.070
+REMARK INTER:                  -4.070
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      63.809  66.067  69.439  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.443  66.115  69.963  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      64.514  65.568  70.576  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      65.008  66.710  69.874  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      65.643  66.758  70.399  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      66.208  67.353  70.309  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      66.137  67.900  69.697  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      66.844  67.401  70.834  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -4.020      2.414      4.029
+REMARK INTER + INTRA:          -4.020
+REMARK INTER:                  -4.020
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.048  63.095  66.425  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.645  62.597  66.944  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      60.069  62.081  66.657  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      60.818  62.614  67.751  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      60.416  62.115  68.270  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      60.589  62.133  69.077  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      61.165  62.648  69.364  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      60.186  61.633  69.596  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.901     24.227     24.875
+REMARK INTER + INTRA:          -3.901
+REMARK INTER:                  -3.901
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      71.697  78.613  48.394  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      71.138  78.518  48.993  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      70.900  77.761  49.218  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      70.817  79.180  49.367  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      70.258  79.084  49.966  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      69.937  79.746  50.340  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      70.174  80.503  50.115  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      69.377  79.651  50.940  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.876     24.711     25.529
+REMARK INTER + INTRA:          -3.876
+REMARK INTER:                  -3.876
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = fumaric acid
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      70.193  78.159  49.567  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      70.662  78.836  49.557  0.00  0.00    +0.000 C 
+ATOM      3  O   UNL     1      70.401  79.524  49.930  0.00  0.00    +0.000 OA
+ATOM      4  C   UNL     1      71.393  78.826  49.175  0.00  0.00    +0.000 C 
+ATOM      5  C   UNL     1      71.863  79.505  49.165  0.00  0.00    +0.000 C 
+ATOM      6  C   UNL     1      72.594  79.494  48.783  0.00  0.00    +0.000 C 
+ATOM      7  O   UNL     1      72.856  78.807  48.411  0.00  0.00    +0.000 OA
+ATOM      8  O   UNL     1      73.064  80.173  48.773  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL

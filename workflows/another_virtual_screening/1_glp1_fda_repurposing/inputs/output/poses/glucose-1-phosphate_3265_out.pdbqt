@@ -1,0 +1,261 @@
+MODEL 1
+REMARK VINA RESULT:    -7.721      0.000      0.000
+REMARK INTER + INTRA:          -7.721
+REMARK INTER:                  -7.721
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.930  60.781  63.442  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.509  61.031  64.106  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.873  61.509  64.670  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.453  61.759  65.334  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.818  62.238  65.898  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.397  62.487  66.561  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      59.610  62.258  66.662  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      58.825  62.029  66.762  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      59.579  62.679  67.371  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      59.643  61.837  65.952  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.603  62.467  65.797  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.968  62.947  66.362  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.025  62.218  65.133  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      62.811  62.448  65.033  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.660  61.739  64.569  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.081  61.490  63.905  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -7.648      1.283      3.372
+REMARK INTER + INTRA:          -7.648
+REMARK INTER:                  -7.648
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.305  63.430  68.291  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.596  63.171  67.563  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.096  62.789  67.031  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.387  62.531  66.304  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.887  62.149  65.771  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.178  61.891  65.044  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.971  62.014  64.849  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.762  62.138  64.655  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.849  61.644  64.122  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.091  62.384  65.577  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.095  62.025  65.965  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.594  61.643  65.431  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      59.803  62.283  66.692  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.011  62.160  66.887  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.303  62.665  67.225  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.012  62.924  67.953  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -7.523      1.106      2.137
+REMARK INTER + INTRA:          -7.523
+REMARK INTER:                  -7.523
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.515  61.790  64.570  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.378  62.158  65.297  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.624  62.149  65.628  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.487  62.516  66.353  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.731  62.507  66.685  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.595  62.875  67.410  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.214  63.252  67.805  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.832  63.628  68.199  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.698  63.458  68.415  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.729  63.044  67.194  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.113  62.131  66.291  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      59.357  62.121  66.623  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.249  61.763  65.565  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      59.630  61.385  65.170  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.004  61.772  65.233  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.141  61.404  64.507  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -7.057      2.714      4.387
+REMARK INTER + INTRA:          -7.057
+REMARK INTER:                  -7.057
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.340  64.491  69.816  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      62.197  64.166  69.071  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.680  63.529  68.991  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.537  63.204  68.247  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.020  62.566  68.167  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      60.877  62.241  67.423  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.251  62.554  66.757  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.625  62.866  66.093  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.870  61.998  66.282  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      61.633  63.110  67.234  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.646  62.254  68.832  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.128  61.615  68.753  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.788  62.578  69.578  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.414  62.266  70.243  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      61.305  63.216  69.657  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      61.448  63.541  70.402  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -6.808      3.481      4.854
+REMARK INTER + INTRA:          -6.808
+REMARK INTER:                  -6.808
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.137  61.575  70.641  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.660  62.214  70.635  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.909  62.536  69.918  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.432  63.174  69.911  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.682  63.496  69.194  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      62.204  64.133  69.188  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      62.477  64.450  69.899  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      62.750  64.767  70.610  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      62.923  65.005  69.481  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      62.031  63.896  70.317  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      61.409  63.179  68.483  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      61.659  63.501  67.765  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.886  62.541  68.489  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.613  62.223  67.777  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.636  62.219  69.206  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.113  61.580  69.212  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -6.604      4.345      5.658
+REMARK INTER + INTRA:          -6.604
+REMARK INTER:                  -6.604
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      60.138  64.582  68.861  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.372  64.466  69.644  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      60.470  63.701  69.936  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.704  63.585  70.718  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      60.801  62.820  71.011  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.035  62.704  71.793  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      61.172  63.353  72.283  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      61.308  64.002  72.773  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      61.363  62.844  72.904  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.980  63.862  71.662  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      60.665  62.171  70.521  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      60.762  61.405  70.814  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      60.430  62.286  69.738  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      60.294  61.637  69.247  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      60.333  63.051  69.445  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      60.099  63.167  68.662  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -6.446     11.679     12.935
+REMARK INTER + INTRA:          -6.446
+REMARK INTER:                  -6.446
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      65.023  62.713  54.028  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      64.638  61.998  54.178  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      64.449  61.493  53.555  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      64.065  60.778  53.705  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      63.876  60.273  53.081  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      63.492  59.559  53.231  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      63.297  59.349  54.005  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      63.102  59.140  54.778  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      62.966  58.645  53.731  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      63.628  60.054  54.279  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      64.070  60.481  52.308  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      63.881  59.975  51.683  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      64.454  61.196  52.157  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      64.649  61.406  51.383  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      64.644  61.702  52.780  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      65.028  62.417  52.630  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -6.405      4.753      6.113
+REMARK INTER + INTRA:          -6.405
+REMARK INTER:                  -6.405
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      62.007  64.732  72.842  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      61.649  64.154  72.373  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.857  64.080  71.579  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      61.500  63.503  71.111  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.708  63.430  70.316  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.350  62.853  69.848  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.784  62.349  70.174  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      60.218  61.845  70.500  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.698  61.973  69.444  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.871  62.725  70.904  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.273  63.933  69.990  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.482  63.859  69.194  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.631  64.511  70.457  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      63.198  65.015  70.131  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.423  64.584  71.252  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.781  65.162  71.721  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -6.351      4.301      5.311
+REMARK INTER + INTRA:          -6.351
+REMARK INTER:                  -6.351
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+ROOT
+REMARK  Name = glucose-1-phosphate
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ATOM      1  O   UNL     1      61.064  63.681  68.023  0.00  0.00    +0.000 OA
+ATOM      2  C   UNL     1      60.738  63.734  68.780  0.00  0.00    +0.000 C 
+ATOM      3  C   UNL     1      61.227  63.853  69.432  0.00  0.00    +0.000 C 
+ATOM      4  O   UNL     1      60.902  63.906  70.188  0.00  0.00    +0.000 OA
+ATOM      5  C   UNL     1      61.392  64.024  70.841  0.00  0.00    +0.000 C 
+ATOM      6  O   UNL     1      61.066  64.077  71.597  0.00  0.00    +0.000 OA
+ATOM      7  P   UNL     1      60.250  64.011  71.700  0.00  0.00    +0.000 P 
+ATOM      8  O   UNL     1      59.434  63.946  71.803  0.00  0.00    +0.000 OA
+ATOM      9  O   UNL     1      60.345  64.110  72.514  0.00  0.00    +0.000 OA
+ATOM     10  O   UNL     1      60.155  63.913  70.886  0.00  0.00    +0.000 OA
+ATOM     11  C   UNL     1      62.207  64.089  70.738  0.00  0.00    +0.000 C 
+ATOM     12  O   UNL     1      62.698  64.208  71.392  0.00  0.00    +0.000 OA
+ATOM     13  C   UNL     1      62.534  64.036  69.982  0.00  0.00    +0.000 C 
+ATOM     14  O   UNL     1      63.350  64.102  69.879  0.00  0.00    +0.000 OA
+ATOM     15  C   UNL     1      62.044  63.918  69.329  0.00  0.00    +0.000 C 
+ATOM     16  O   UNL     1      62.370  63.865  68.573  0.00  0.00    +0.000 OA
+ENDROOT
+TORSDOF 0
+ENDMDL
