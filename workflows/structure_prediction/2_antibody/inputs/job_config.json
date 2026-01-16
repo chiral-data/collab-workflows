@@ -1,0 +1,26 @@
+{
+  "job_id": "fmc63_antibody_prediction", 
+  "meta": {
+    "app": "boltz_2",
+    "project": "2_structure_prediction"
+  },
+  "inputs": [
+    {
+      "filename": "fmc63.fasta",
+      "type": "fasta"
+    }
+  ],
+  "parameters": {
+    "output_format": "pdb",
+    "recycling_steps": 7,
+    "sampling_steps": 200,
+    "diffusion_samples": 15,
+    "step_scale": 1.638,
+    "devices": 1,
+    "accelerator": "gpu",
+    "use_msa_server": true
+  },
+  "output": {
+    "directory": "outputs"
+  }
+}
