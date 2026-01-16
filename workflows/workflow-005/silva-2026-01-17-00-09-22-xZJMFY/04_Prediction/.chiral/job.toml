@@ -1,0 +1,9 @@
+name = "Prediction"
+description = "Predict affinity for new molecules and visualize results in 2D/3D."
+outputs = ["outputs/predictions.csv", "outputs/data.json", "outputs/report.html"]
+
+[container]
+image = "qsar-workflow:latest"
+
+[scripts]
+run = "run_prediction.sh"
