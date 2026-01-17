@@ -23,8 +23,9 @@ def r_square(y_true, y_pred):
 def run():
     print("--- Node 3: Model Training ---")
     os.makedirs("outputs", exist_ok=True)
-    
-    input_file = "../02_Feature_Engineering/outputs/processed_data.npz"
+
+    # Silva copies dependency outputs to current job folder
+    input_file = "processed_data.npz"
     if not os.path.exists(input_file):
         print("Processed data not found.")
         return

@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+import glob
 import json
 import base64
 from io import BytesIO
@@ -64,13 +65,16 @@ def generate_images(df, n=24):
 def run():
     print("--- Node 1: Data Preparation ---")
     os.makedirs("outputs", exist_ok=True)
-    
-    # Load Data
-    input_file = "data/SpikeRBD_DD.csv"
-    if not os.path.exists(input_file):
-        print(f"Error: {input_file} not found.")
+
+    # Find CSV file in current directory (copied from input_files/ by silva)
+    csv_files = glob.glob("*.csv")
+    if not csv_files:
+        print("Error: No CSV file found in current directory.")
         return
-        
+
+    input_file = csv_files[0]  # Use the first CSV file found
+    print(f"Using input file: {input_file}")
+
     data = pd.read_csv(input_file)
     print(f"Loaded {len(data)} rows.")
     

@@ -6,4 +6,4 @@ outputs = ["outputs/processed_data.npz", "outputs/scaler.pkl", "outputs/ad_stats
 image = "chiral.sakuracr.jp/qsar:20260107_v1"
 
 [scripts]
-run = "run_feature_eng.sh"
+run = "run.sh"

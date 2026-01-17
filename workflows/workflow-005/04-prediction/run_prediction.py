@@ -61,11 +61,11 @@ def run():
         "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"
     ]
     
-    # Paths
-    model_path = "../03_Model_Training/outputs/model.h5"
-    scaler_path = "../02_Feature_Engineering/outputs/scaler.pkl"
-    ad_path = "../02_Feature_Engineering/outputs/ad_stats.json"
-    
+    # Paths - Silva copies dependency outputs to current job folder
+    model_path = "model.h5"
+    scaler_path = "scaler.pkl"
+    ad_path = "ad_stats.json"
+
     if not os.path.exists(model_path):
         print("Model not found.")
         return
