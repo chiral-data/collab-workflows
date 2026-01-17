@@ -3,10 +3,10 @@ description = "Machine Learning-Based Drug Discovery with Premium Interactive Vi
 
 [dependencies]
 # Node 2 depends on Node 1
-02_Feature_Engineering = ["01_Data_Preparation"]
+02-feature-engineering = ["01-data-preparation"]
 
 # Node 3 depends on Node 2
-03_Model_Training = ["02_Feature_Engineering"]
+03-model-training = ["02-feature-engineering"]
 
 # Node 4 depends on Node 3
-04_Prediction = ["03_Model_Training"]
+04-prediction = ["03-model-training"]
