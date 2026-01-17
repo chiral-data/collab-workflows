@@ -1,0 +1,9 @@
+name = "Data Preparation"
+description = "Ingest raw SMILES data, compute physicochemical descriptors, and generate MACCS keys."
+outputs = ["outputs/data.json", "outputs/report.html", "outputs/descriptors.csv"]
+
+[container]
+image = "qsar-workflow:latest"
+
+[scripts]
+run = "run_data_prep.sh"

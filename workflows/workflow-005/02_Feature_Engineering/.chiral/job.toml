@@ -1,0 +1,9 @@
+name = "Feature Engineering"
+description = "Clean data, normalize features (StandardScaler), and perform dimensionality reduction (PCA)."
+outputs = ["outputs/processed_data.npz", "outputs/scaler.pkl", "outputs/ad_stats.json", "outputs/data.json", "outputs/report.html"]
+
+[container]
+image = "qsar-workflow:latest"
+
+[scripts]
+run = "run_feature_eng.sh"

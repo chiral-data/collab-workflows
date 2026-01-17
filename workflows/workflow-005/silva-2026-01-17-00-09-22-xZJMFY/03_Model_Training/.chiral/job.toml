@@ -1,0 +1,9 @@
+name = "Model Training"
+description = "Train a Deep Neural Network (DNN) to predict binding affinity (pIC50)."
+outputs = ["outputs/model.h5", "outputs/data.json", "outputs/report.html"]
+
+[container]
+image = "qsar-workflow:latest"
+
+[scripts]
+run = "run_training.sh"
