@@ -12,7 +12,14 @@ import pocketeer as pt
 
 # PDB ID (from global workflow parameter)
 pdb_id = os.environ.get("PARAM_PDB_ID", "4TOS")
+
+# Input/Output directories (silva 0.4.0+)
+input_dir = "inputs"
+output_dir = "outputs"
+
+# Input file path
 pdb_filename = f"{pdb_id.upper()}.pdb"
+pdb_path = os.path.join(input_dir, pdb_filename)
 
 # Pocketeer find_pockets parameters (from job parameters)
 r_min = float(os.environ.get("PARAM_R_MIN", "3.0"))
@@ -24,14 +31,18 @@ ignore_hydrogens = os.environ.get("PARAM_IGNORE_HYDROGENS", "true").lower() == "
 ignore_water = os.environ.get("PARAM_IGNORE_WATER", "true").lower() == "true"
 ignore_hetero = os.environ.get("PARAM_IGNORE_HETERO", "true").lower() == "true"
 
-# Output JSON file for pocket data
-output_json = "pockets.json"
+# Output files
+output_json = os.path.join(output_dir, "pockets.json")
+output_pdb = os.path.join(output_dir, pdb_filename)
 
 # =============================================================================
 
+# Ensure output directory exists
+os.makedirs(output_dir, exist_ok=True)
+
 # Load structure
-print("Loading structure...", flush=True)
-atomarray = pt.load_structure(pdb_filename)
+print(f"Loading structure from {pdb_path}...", flush=True)
+atomarray = pt.load_structure(pdb_path)
 
 # Detect pockets with configurable parameters
 print(f"Detecting pockets with parameters:", flush=True)
@@ -65,3 +76,8 @@ for pocket in pockets[:5]:  # Show top 5
 print(f"\nSaving pockets to {output_json}...", flush=True)
 pt.write_pockets_json(output_json, pockets)
 print(f"Pockets saved to {output_json}", flush=True)
+
+# Copy PDB file to outputs for next step
+import shutil
+shutil.copy(pdb_path, output_pdb)
+print(f"Copied PDB to {output_pdb}", flush=True)

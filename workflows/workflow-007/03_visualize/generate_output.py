@@ -16,8 +16,15 @@ from pocketeer.core.types import AlphaSphere
 
 # PDB ID (from global workflow parameter)
 pdb_id = os.environ.get("PARAM_PDB_ID", "4TOS")
+
+# Input/Output directories (silva 0.4.0+)
+input_dir = "inputs"
+output_dir = "outputs"
+
+# Input files
 pdb_filename = f"{pdb_id.upper()}.pdb"
-pockets_json = "pockets.json"
+pdb_path = os.path.join(input_dir, pdb_filename)
+pockets_json = os.path.join(input_dir, "pockets.json")
 
 # Visualization parameters (from job parameters)
 # Pocket visualization style: "filled_surfaces" or "single_sphere"
@@ -73,9 +80,12 @@ print(f"  render_method={render_method}", flush=True)
 print(f"  representation={representation}", flush=True)
 print(f"  output_format={output_format}", flush=True)
 
+# Ensure output directory exists
+os.makedirs(output_dir, exist_ok=True)
+
 # Load structure and pockets
-print("Loading structure...", flush=True)
-atomarray = pt.load_structure(pdb_filename)
+print(f"Loading structure from {pdb_path}...", flush=True)
+atomarray = pt.load_structure(pdb_path)
 
 print("Loading pockets from JSON...", flush=True)
 pockets = load_pockets_json(pockets_json)
@@ -294,9 +304,10 @@ if output_format in ("html", "both"):
 </body>
 </html>"""
 
-    with open("pocket_visualization.html", "w") as f:
+    html_output = os.path.join(output_dir, "pocket_visualization.html")
+    with open(html_output, "w") as f:
         f.write(html_content)
-    print("Visualization saved to pocket_visualization.html")
+    print(f"Visualization saved to {html_output}")
 
 # Generate rotating GIF using PyMOL if requested
 if output_format in ("gif", "both"):
@@ -320,7 +331,7 @@ if output_format in ("gif", "both"):
     cmd.set("max_threads", num_cpus)
     print(f"Using {num_cpus} CPU threads for ray tracing", flush=True)
 
-    cmd.load(pdb_filename, "structure")
+    cmd.load(pdb_path, "structure")
 
     # Style the protein based on representation choice
     print(f"Using '{representation}' representation", flush=True)
@@ -407,7 +418,7 @@ if output_format in ("gif", "both"):
 
     # Create GIF
     print("\nAssembling GIF...", flush=True)
-    gif_path = f"protein_pockets_rotation_{representation}.gif"
+    gif_path = os.path.join(output_dir, f"protein_pockets_rotation_{representation}.gif")
     imageio.mimsave(gif_path, images, duration=0.1, loop=0)
     print(f"\nRotating GIF saved to {gif_path}", flush=True)
 
