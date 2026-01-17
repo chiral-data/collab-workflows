@@ -3,7 +3,7 @@ description = "Predict affinity for new molecules and visualize results in 2D/3D
 outputs = ["outputs/predictions.csv", "outputs/data.json", "outputs/report.html"]
 
 [container]
-image = "qsar-workflow:latest"
+image = "chiral.sakuracr.jp/qsar:20260107_v1"
 
 [scripts]
 run = "run_prediction.sh"

@@ -1,5 +1,5 @@
-# Dockerfile for QSAR Workflow
-# Inspired by Autodock Vina workflow architecture
+# QSAR Workflow Environment
+# Base image for quantitative structure-activity relationship modeling
 
 FROM continuumio/miniconda3:latest
 
@@ -34,15 +34,4 @@ WORKDIR /workspace
 LABEL description="QSAR Workflow Environment"
 LABEL tools="RDKit, TensorFlow, Scikit-learn"
 
-# Copy workflow files
-COPY . /workspace
-
-# Ensure scripts are executable
-RUN chmod +x /workspace/run_workflow.sh \
-    /workspace/01_Data_Preparation/run_data_prep.sh \
-    /workspace/02_Feature_Engineering/run_feature_eng.sh \
-    /workspace/03_Model_Training/run_training.sh \
-    /workspace/04_Prediction/run_prediction.sh
-
-# Default command
-CMD ["bash", "run_workflow.sh"]
+CMD ["python", "-c", "import rdkit; import tensorflow; import sklearn; print('qsar ready')"]

@@ -3,7 +3,7 @@ description = "Train a Deep Neural Network (DNN) to predict binding affinity (pI
 outputs = ["outputs/model.h5", "outputs/data.json", "outputs/report.html"]
 
 [container]
-image = "qsar-workflow:latest"
+image = "chiral.sakuracr.jp/qsar:20260107_v1"
 
 [scripts]
 run = "run_training.sh"
