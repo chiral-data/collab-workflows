@@ -66,10 +66,10 @@ def run():
     print("--- Node 1: Data Preparation ---")
     os.makedirs("outputs", exist_ok=True)
 
-    # Find CSV file in current directory (copied from input_files/ by silva)
-    csv_files = glob.glob("*.csv")
+    # Find CSV file in inputs/ directory (copied from input_files/ by silva)
+    csv_files = glob.glob("inputs/*.csv")
     if not csv_files:
-        print("Error: No CSV file found in current directory.")
+        print("Error: No CSV file found in inputs/ directory.")
         return
 
     input_file = csv_files[0]  # Use the first CSV file found

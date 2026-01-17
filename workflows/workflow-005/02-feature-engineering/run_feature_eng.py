@@ -12,8 +12,8 @@ def run():
     print("--- Node 2: Feature Engineering ---")
     os.makedirs("outputs", exist_ok=True)
 
-    # Silva copies dependency outputs to current job folder
-    input_path = "descriptors.csv"
+    # Silva copies dependency outputs to inputs/ folder
+    input_path = "inputs/descriptors.csv"
     if not os.path.exists(input_path):
         print(f"Error: {input_path} not found.")
         return

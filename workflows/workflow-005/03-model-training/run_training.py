@@ -24,8 +24,8 @@ def run():
     print("--- Node 3: Model Training ---")
     os.makedirs("outputs", exist_ok=True)
 
-    # Silva copies dependency outputs to current job folder
-    input_file = "processed_data.npz"
+    # Silva copies dependency outputs to inputs/ folder
+    input_file = "inputs/processed_data.npz"
     if not os.path.exists(input_file):
         print("Processed data not found.")
         return
