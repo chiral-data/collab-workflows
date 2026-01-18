@@ -25,9 +25,34 @@ Write-Host "DEBUG: Script Directory: $ScriptDir"
 Write-Host "DEBUG: Root Directory:   $RootDir"
 Write-Host ""
 
-# Check if outputs exist
-if (-not (Test-Path "$ScriptDir\outputs\model.h5")) {
-    Write-Host "Error: Model file not found at $ScriptDir\outputs\model.h5" -ForegroundColor Red
+# Check and Copy missing artifacts (Model, Scaler, AD Stats)
+$OutputsDir = "$ScriptDir\outputs"
+if (-not (Test-Path $OutputsDir)) { New-Item -ItemType Directory -Path $OutputsDir -Force | Out-Null }
+
+# Helper to find and copy file
+function Ensure-Artifact ($FileName, $UpstreamRelPath) {
+    if (-not (Test-Path "$OutputsDir\$FileName")) {
+        $SourcePath = Join-Path $RootDir $UpstreamRelPath
+        if (Test-Path $SourcePath) {
+            Write-Host "Copying $FileName from upstream..." -ForegroundColor Gray
+            Copy-Item $SourcePath -Destination "$OutputsDir\$FileName"
+        }
+        else {
+            Write-Host "Warning: $FileName not found at $SourcePath" -ForegroundColor Yellow
+        }
+    }
+}
+
+# 1. Model (Node 3)
+Ensure-Artifact "model.h5" "03-model-training\outputs\model.h5"
+
+# 2. Scaler & AD Stats (Node 2)
+Ensure-Artifact "scaler.pkl" "02-feature-engineering\outputs\scaler.pkl"
+Ensure-Artifact "ad_stats.json" "02-feature-engineering\outputs\ad_stats.json"
+
+# Final Check
+if (-not (Test-Path "$OutputsDir\model.h5")) {
+    Write-Host "Error: Model file 'model.h5' missing in $OutputsDir" -ForegroundColor Red
     Write-Host "Please run 'silva .' first to generate the model."
     exit 1
 }

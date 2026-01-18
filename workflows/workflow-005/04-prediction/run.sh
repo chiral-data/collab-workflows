@@ -16,7 +16,15 @@ echo "Checking for Flask web server..."
 echo "========================================="
 
 if python -c "import flask" 2>/dev/null; then
-    echo "✓ Flask found - Starting web application..."
+    echo "✓ Flask found - Preparing Web Application..."
+    
+    # Copy artifacts locally so app.py can find them
+    echo "Copying model files for web app..."
+    cp ../03-model-training/outputs/model.h5 outputs/ 2>/dev/null || echo "Warning: Could not copy model.h5"
+    cp ../02-feature-engineering/outputs/scaler.pkl outputs/ 2>/dev/null || echo "Warning: Could not copy scaler.pkl"
+    cp ../02-feature-engineering/outputs/ad_stats.json outputs/ 2>/dev/null || echo "Warning: Could not copy ad_stats.json"
+    
+    echo "Starting web application..."
     python app.py
 else
     echo "⚠️  Flask not installed - Skipping web server"

@@ -10,6 +10,8 @@ A comprehensive, modular Deep Learning pipeline for Quantitative Structure-Activ
     - [Node 02: Feature Engineering](#node-02-feature-engineering)
     - [Node 03: Model Training](#node-03-model-training)
     - [Node 04: Prediction & Dashboard](#node-04-prediction--dashboard)
+- [Installation & Docker](#-installation--docker)
+- [Usage Guide](#-usage-guide)
 - [Inputs & Configuration](#-inputs--configuration)
 
 ---
