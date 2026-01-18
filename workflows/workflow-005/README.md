@@ -22,13 +22,13 @@ This workflow follows a linear, 4-stage pipeline architecture where each stage (
 
 ```mermaid
 graph TD
-    A[Raw Data (CSV)] -->|Inputs| N1
+    A["Raw Data (CSV)"] -->|Inputs| N1
     subgraph Workflow
-        N1[01: Data Preparation] -->|Descriptors| N2[02: Feature Engineering]
-        N2 -->|Scaled Data + AD Stats| N3[03: Model Training]
-        N3 -->|Model.h5| N4[04: Prediction]
-        N2 -->|Scaler + AD Stats| N4
-        N4 -->|Dashboard| WebApp[Interactive Web App]
+        N1["01: Data Preparation"] -->|Descriptors| N2["02: Feature Engineering"]
+        N2 -->|"Scaled Data + AD Stats"| N3["03: Model Training"]
+        N3 -->|"Model.h5"| N4["04: Prediction"]
+        N2 -->|"Scaler + AD Stats"| N4
+        N4 -->|Dashboard| WebApp["Interactive Web App"]
     end
 ```
 
