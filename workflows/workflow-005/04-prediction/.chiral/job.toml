@@ -1,9 +1,31 @@
 name = "Prediction"
-description = "Predict affinity for new molecules and visualize results in 2D/3D."
-outputs = ["outputs/predictions.csv", "outputs/data.json", "outputs/report.html"]
+description = "Make predictions on test SMILES"
+depends_on = ["02-feature-engineering", "03-model-training"]
+inputs = ["scaler.pkl", "ad_stats.json", "model.h5"]
+outputs = ["outputs/data.json", "outputs/report.html", "outputs/predictions.csv"]
 
 [container]
-image = "chiral.sakuracr.jp/qsar:20260107_v1"
+image = "chiral.sakuracr.jp/qsar:20260118_v2"
 
 [scripts]
 run = "run.sh"
+
+[params.test_smiles]
+type = "string"
+default = ""
+hint = "JSON array of SMILES strings to predict, e.g., [\"CCO\", \"c1ccccc1\"]. Leave empty if using predict_all_data=true"
+
+[params.predict_all_data]
+type = "string"
+default = "true"
+hint = "If true, predict on all compounds from input dataset. If false, requires test_smiles parameter"
+
+[params.server_port]
+type = "string"
+default = "5000"
+hint = "Port for Flask web server (default: 5000)"
+
+[params.server_host]
+type = "string"
+default = "0.0.0.0"
+hint = "Host for Flask web server (0.0.0.0 = all interfaces)"

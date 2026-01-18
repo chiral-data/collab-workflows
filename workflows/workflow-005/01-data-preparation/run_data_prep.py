@@ -67,27 +67,61 @@ def run():
     os.makedirs("outputs", exist_ok=True)
 
     # Find CSV file in inputs/ directory (copied from input_files/ by silva)
-    csv_files = glob.glob("inputs/*.csv")
-    if not csv_files:
-        print("Error: No CSV file found in inputs/ directory.")
-        return
+    input_csv_name = os.environ.get("INPUT_CSV", "").strip()
+    
+    if input_csv_name:
+        input_file = os.path.join("inputs", input_csv_name)
+        if not os.path.exists(input_file):
+             # Fallback to glob if specific file not found (or raise error? Plan said look for specific)
+             # Let's try to be smart, if not found, warn and fallback
+             print(f"Warning: Specified input file {input_file} not found. Falling back to auto-detection.")
+             input_file = ""
 
-    input_file = csv_files[0]  # Use the first CSV file found
+    if not input_csv_name or not os.path.exists(os.path.join("inputs", input_csv_name)):
+        csv_files = glob.glob("inputs/*.csv")
+        if not csv_files:
+            print("Error: No CSV file found in inputs/ directory.")
+            return
+        input_file = csv_files[0]
+
     print(f"Using input file: {input_file}")
 
     data = pd.read_csv(input_file)
     print(f"Loaded {len(data)} rows.")
     
+    # Find SMILES column (case-insensitive)
+    smiles_col = next((col for col in data.columns if col.lower() == 'smiles'), None)
+    if not smiles_col:
+        print("Error: No 'smiles' or 'SMILES' column found in CSV.")
+        print(f"Available columns: {list(data.columns)}")
+        return
+    
+    # Find DockingScore column (case-insensitive)
+    score_col = next((col for col in data.columns if col.lower() == 'dockingscore'), None)
+    if not score_col:
+        print("Error: No 'DockingScore' column found in CSV.")
+        print(f"Available columns: {list(data.columns)}")
+        return
+    
     # Compute Descriptors
     print("Computing descriptors...")
-    desc_eng = RDKit_2D(data['smiles'])
+    desc_eng = RDKit_2D(data[smiles_col])
     x1 = desc_eng.compute_2Drdkit()
     x2 = desc_eng.compute_MACCS()
     
     # Merge
     x3 = x2.iloc[:, 1:] # Drop duplicated smiles col
-    # Keep DockingScore, smiles, then descriptors
-    final_df = pd.concat([data['DockingScore'], x1, x3], axis=1)
+    
+    # Find Drug Name column if it exists (case-insensitive)
+    drug_name_col = next((col for col in data.columns if col.lower().replace(' ', '').replace('_', '') == 'drugname'), None)
+    
+    # Keep Drug Name (if available), DockingScore, smiles, then descriptors
+    if drug_name_col:
+        final_df = pd.concat([data[drug_name_col], data[score_col], x1, x3], axis=1)
+        # Rename to standardize
+        final_df.rename(columns={drug_name_col: 'Drug_Name'}, inplace=True)
+    else:
+        final_df = pd.concat([data[score_col], x1, x3], axis=1)
     
     # Save CSV
     final_df.to_csv("outputs/descriptors.csv", index=False)

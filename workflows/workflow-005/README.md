@@ -1,214 +1,153 @@
-# 🧪 QSAR Modeling & Prediction Workflow 005
+# QSAR Prediction Workflow (Workflow-005)
 
-**Machine Learning-Based Drug Discovery with Interactive Visualization**
+A comprehensive, modular Deep Learning pipeline for Quantitative Structure-Activity Relationship (QSAR) modeling, designed for the Silva platform. This repository works end-to-end: from raw SMILES data to a deployed, interactive web application.
 
-A fully modular, production-ready pipeline for Quantitative Structure-Activity Relationship (QSAR) analysis. This workflow automates data ingestion, feature engineering, deep learning model training, and binding affinity prediction, all wrapped in a standardized containerized environment.
+## 📋 Table of Contents
+- [Architecture & Data Architecture](#-architecture--data-flow)
+- [Technological Stack](#-technological-stack)
+- [Workflow Nodes](#-workflow-nodes-deep-dive)
+    - [Node 01: Preparation](#node-01-data-preparation)
+    - [Node 02: Feature Engineering](#node-02-feature-engineering)
+    - [Node 03: Model Training](#node-03-model-training)
+    - [Node 04: Prediction & Dashboard](#node-04-prediction--dashboard)
+- [Installation & Docker](#-installation--docker)
+- [Usage Guide](#-usage-guide)
+- [Inputs & Configuration](#-inputs--configuration)
 
 ---
 
-## 🧩 Workflow Structure
+## 🏗 Architecture & Data Flow
 
+This workflow follows a linear, 4-stage pipeline architecture where each stage (Node) is an independent execution unit. The nodes communicate via file-based input/output contracts.
+
+```mermaid
+graph TD
+    A[Raw Data (CSV)] -->|Inputs| N1
+    subgraph Workflow
+        N1[01: Data Preparation] -->|Descriptors| N2[02: Feature Engineering]
+        N2 -->|Scaled Data + AD Stats| N3[03: Model Training]
+        N3 -->|Model.h5| N4[04: Prediction]
+        N2 -->|Scaler + AD Stats| N4
+        N4 -->|Dashboard| WebApp[Interactive Web App]
+    end
+```
+
+### Key Artifacts
+- **Data**: `processed_data.npz` (Compressed NumPy arrays for training)
+- **Model**: `model.h5` (Keras/TensorFlow SavedModel)
+- **Scaler**: `scaler.pkl` (Scikit-learn StandardScaler)
+- **AD Stats**: `ad_stats.json` (Applicability Domain thresholds)
+
+---
+
+## 🛠 Technological Stack
+
+The entire pipeline runs inside a unified **Docker Container** (`chiral.sakuracr.jp/qsar:20260118_v2`).
+
+- **Python**: 3.11
+- **Deep Learning**: TensorFlow 2.19.1, Keras
+- **Cheminformatics**: RDKit (for molecular descriptor calculation)
+- **Data Processing**: NumPy, Pandas, Scikit-learn
+- **Web Application**: Flask, Flask-CORS
+- **Visualization**: Plotly (Python), HTML5/JS (Dashboard)
+
+---
+
+## 📦 Workflow Nodes: Deep Dive
+
+### Node 01: Data Preparation
+**Goal**: Convert raw SMILES strings into numerical molecular descriptors.
+- **Input**: `SpikeRBD_DD.csv`
+- **Process**:
+    1.  **Canonicalization**: Normalizes SMILES using RDKit.
+    2.  **Descriptor Calculation**: Computes ~200 RDKit descriptors (e.g., MolLogP, TPSA, MolWt, NumRotatableBonds).
+    3.  **Cleaning**: Removes invalid molecules and NaNs.
+- **Output**: `descriptors.csv` (Numerical feature matrix).
+
+### Node 02: Feature Engineering
+**Goal**: Prepare data for Deep Learning and define the Applicability Domain.
+- **Process**:
+    1.  **Scaling**: Applies `StandardScaler` (Mean=0, Std=1) to all features.
+    2.  **Applicability Domain (AD)**:
+        -   Computes Centroid and Mean Euclidean Distance of the training set.
+        -   Calculates **Threshold**: $D_{cutoff} = \bar{D} + Z \cdot \sigma$ (Configurable Z-score).
+    3.  **Splitting**: 80/20 Train/Test split (Random seed=42).
+- **Outlier Handling**: Identifies outliers based on the calculated AD threshold.
+- **Outputs**: `processed_data.npz` (Train/Test sets), `scaler.pkl` (for transforming future inputs), `ad_stats.json` (AD parameters).
+
+### Node 03: Model Training
+**Goal**: Train a Deep Neural Network (DNN) regressor.
+- **Architecture**:
+    -   **Input Layer**: Matches descriptor count (~200).
+    -   **Hidden Layers**: Dense(600, ReLU) -> Dense(100, ReLU) -> Dense(100, ReLU).
+    -   **Output Layer**: Dense(1, Linear) for continuous regression target.
+- **Training Config**:
+    -   **Optimizer**: Adam
+    -   **Loss**: Mean Squared Error (MSE)
+    -   **Metrics**: MAE, RMSE, $R^2$
+    -   **Early Stopping**: Monitors `val_r_square` with patience=200.
+- **Outputs**: `model.h5` (The trained artifact).
+
+### Node 04: Prediction & Dashboard
+**Goal**: Predict on new data and host the user interface.
+- **Process**:
+    1.  **Batch Prediction**: Loads Model, Scaler, and AD Stats. Predicts on the *entire* input dataset (3,010 compounds) to verify performance.
+    2.  **Interactive Server**: Starts a Flask Web App.
+- **Web App Features**:
+    -   Search bar for new SMILES.
+    -   Source Detection: "Is this compound in the training set?" vs "Is this new?".
+    -   Real-time AD calculation (Is the new molecule similar to training data?).
+- **Outputs**: `report.html`, `predictions.csv`, and the live server.
+
+---
+
+## ⚙️ Inputs & Configuration
+
+The workflow is highly configurable via `.chiral/job.toml` files in each node directory.
+
+| Parameter | Node | Default | Description |
+|-----------|------|---------|-------------|
+| `test_size` | 02 | `0.2` | Fraction of data to split for testing. |
+| `z_cutoff` | 02 | `0.5` | Threshold for Applicability Domain (Outlier detection). |
+| `epochs` | 03 | `1000` | Maximum training epochs. |
+| `batch_size` | 03 | `32` | Training batch size. |
+| `server_port`| 04 | `5000` | Port for the Flask web application. |
+
+---
+
+## 📂 Repository Structure
 ```text
-QSAR-workflow/
 ├── .chiral/
-│   └── workflow.toml                 # Master DAG Definition
-├── 01_Data_Preparation/
-│   ├── .chiral/
-│   │   └── job.toml              # Node Configuration
-│   ├── run_data_prep.sh          # Entrypoint
-│   ├── run_data_prep.py          # Logic: Descriptors & MACCS Keys
-│   └── generate_data_prep_report.py # Viz: Heatmaps & Data Grid
-│
-├── 02_Feature_Engineering/
-│   ├── .chiral/
-│   │   └── job.toml
-│   ├── run_feature_eng.sh
-│   ├── run_feature_eng.py        # Logic: Scaling, PCA, Split
-│   └── generate_feature_eng_report.py # Viz: PCA Outliers
-│
-├── 03_Model_Training/
-│   ├── .chiral/
-│   │   └── job.toml
-│   ├── run_training.sh
-│   ├── run_training.py           # Logic: Neural Network Training
-│   └── generate_training_report.py # Viz: Loss Curves & Parity Plots
-│
-├── 04_Prediction/
-    ├── .chiral/
-    │   └── job.toml
-    ├── run_prediction.sh
-    ├── run_prediction.py         # Logic: Inference & AD Check
-    └── generate_prediction_report.py # Viz: Dual 2D/3D Cards
- 
-
-
-```
-
-Each node generates:
-- **Processed data artifacts** (.csv, .npz, .h5, .pkl)
-- **Metadata JSON** (`outputs/data.json`)
-- **Interactive HTML report** (`report.html`)
-
----
-
-## 🔗 Workflow Dependency Diagram
-
-```text
-┌─────────────────────┐
-│ 01_Data_Preparation │
-│   (Descriptors)     │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ 02_Feature_Engineering
-│   (PCA & Scaling)   │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ 03_Model_Training   │
-│   (Deep Learning)   │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│ 04_Prediction       │
-│   (Inference & AD)  │
-└─────────────────────┘
-```
-
----
-
-## 🔬 Node Descriptions
-
-### ① Data Preparation – `01_Data_Preparation`
-
-**Purpose:** Ingest raw SMILES data, compute physicochemical descriptors, and generate MACCS keys.
-
-**Input:** `data/raw_data.csv` (SMILES, Activity)
-
-**Outputs:**
-```text
-outputs/
-├── data.json                  # Metadata, Correlation Matrix, Sample Images
-└── report.html                # Interactive Heatmap & Data Grid
-```
-
-**Features:**
-- ✅ **RDKit Integration**: Computes MolWt, LogP, TPSA, H-Donors, H-Acceptors.
-- ✅ **MACCS Keys**: Generates 167-bit structural fingerprints.
-- ✅ **Correlation Heatmap**: "008-Style" interactive matrix with threshold filtering.
-- ✅ **Data Preview**: Vina-style grid of training molecule structures.
-
----
-
-### ② Feature Engineering – `02_Feature_Engineering`
-
-**Purpose:** Clean data, normalize features (StandardScaler), and perform dimensionality reduction (PCA).
-
-**Input:** `descriptors.csv` from Node 1
-
-**Outputs:**
-```text
-outputs/
-├── processed_data.npz         # Train/Test arrays
-├── scaler.pkl                 # Saved StandardScaler
-├── ad_stats.json              # Applicability Domain Min/Max
-├── data.json                  # PCA Coordinates
-└── report.html                # Interactive PCA Plot
-```
-
-**Features:**
-- ✅ **Outlier Detection**: Identifies outliers via Isolation Forest or Variance logic.
-- ✅ **Normalization**: Z-score standardization for Neural Network stability.
-- ✅ **PCA Visualization**: Interactive 2D scatter plot showing data distribution.
-- ✅ **Applicability Domain**: Calculates feature ranges for future AD checks.
-
----
-
-### ③ Model Training – `03_Model_Training`
-
-**Purpose:** Train a Deep Neural Network (DNN) to predict binding affinity (pIC50).
-
-**Inputs:** `processed_data.npz` from Node 2
-
-**Outputs:**
-```text
-outputs/
-├── model.h5                   # Trained Keras Model
-├── data.json                  # Training History & Metrics
-└── report.html                # Learning Curves
-```
-
-**Model Architecture:**
-- **Input Layer**: Matches feature dimension.
-- **Hidden Layers**: Dense (64, 32) with ReLU activation and Dropout (0.2).
-- **Output Layer**: Linear (Regression).
-- **Optimizer**: Adam (lr=0.001).
-
-**Features:**
-- ✅ **Live Metrics**: Tracks MSE, MAE, and R² per epoch.
-- ✅ **Parity Plot**: Interactive Actual vs. Predicted scatter plot.
-- ✅ **Loss Curves**: Zoomable training/validation loss history.
-
----
-
-### ④ Prediction – `04_Prediction`
-
-**Purpose:** Predict affinity for new molecules and visualize results in 2D/3D.
-
-**Inputs:** 
-- `model.h5` and `scaler.pkl` from Node 3.
-- `ad_stats.json` from Node 2.
-- New SMILES strings.
-
-**Outputs:**
-```text
-outputs/
-├── predictions.csv            # Results Table
-├── data.json                  # Predictions + 3D PDB Blocks + Images
-└── report.html                # Dual 2D/3D Dashboard
-```
-
-**Features:**
-- ✅ **Dual Visualization**: Hybrid cards with **toggle switch** for 2D Image / 3D Model.
-- ✅ **NGL Viewer**: Fully interactive 3D molecule inspection.
-- ✅ **Applicability Domain**: Flags molecules outside of training distribution.
-- ✅ **Switchable Layout**: Toggle between "Grid View" and "Table View".
-
----
-
-## 🎨 Visualization Features
-
-### Interactive HTML Reports
-
-Each node generates a responsive, high-aesthetic HTML dashboard:
-
-**Design Elements:**
-- 🌈 **Modern Typography**: Inter font family.
-- 📱 **Responsive Grid**: Adapts to any screen size.
-- ✨ **Interactive Charts**: Plotly.js for zooming, panning, and tooltips.
-- 🧪 **Chemical Intelligence**: RDKit and NGL.js integration.
-
-| Node | Visualization | Key Interaction |
-|------|---------------|-----------------|
-| **01** | **Correlation Heatmap** | Slider to filter weak correlations; Search to highlight descriptors. |
-| **02** | **PCA Scatter** | Zoom into clusters; Hover to see sample indices. |
-| **03** | **Learning Curves** | Toggle train/val traces; Inspect specific epochs. |
-| **04** | **Structure Grid** | **2D/3D Toggle**: Switch between static image and rotating 3D model. |
-
----
-
-## 📊 Output Formats
-
-### 4. Prediction Metadata (`outputs/data.json`)
-```json
-{
-  "smiles": ["CC(=O)Oc1ccccc1C(=O)O", "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"],
-  "predictions": [4.5, 6.2],
-  "ad_results": ["IN", "OUT"],
-  "images": ["data:image/png;base64...", "..."],
-  "structures_3d": ["ATOM      1  C   UNL     1...", "..."]
-}
+│   └── workflow.toml             # Main Workflow Definition
+├── 01-data-preparation/
+│   ├── .chiral/job.toml
+│   ├── outputs/                  # Generated Artifacts
+│   ├── run_data_prep.py          # Descriptor calculation script
+│   ├── generate_data_prep_report.py # Report generation
+│   └── run.sh                    # Execution entry point
+├── 02-feature-engineering/
+│   ├── .chiral/job.toml
+│   ├── outputs/
+│   ├── run_feature_eng.py        # Scaling & AD logic
+│   ├── generate_feature_eng_report.py
+│   └── run.sh
+├── 03-model-training/
+│   ├── .chiral/job.toml
+│   ├── outputs/
+│   ├── run_training.py           # Deep Learning Model Training
+│   ├── generate_training_report.py
+│   └── run.sh
+├── 04-prediction/
+│   ├── .chiral/job.toml
+│   ├── outputs/
+│   ├── app.py                    # Flask Web App (Backend)
+│   ├── run_prediction.py         # Batch Prediction Logic
+│   ├── generate_prediction_report.py
+│   ├── start_server.ps1          # Server Launcher Script
+│   ├── run.sh
+│   └── static/
+│       └── index.html            # Web Dashboard
+├── input_files/
+│   └── SpikeRBD_DD.csv           # Source Dataset
+└── README.md
 ```
