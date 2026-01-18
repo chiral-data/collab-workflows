@@ -1,35 +1,17 @@
-# 🧪 QSAR Modeling & Prediction Workflow
+# 🧪 QSAR Modeling & Prediction Workflow 005
 
-**Machine Learning-Based Drug Discovery with Premium Interactive Visualization**
+**Machine Learning-Based Drug Discovery with Interactive Visualization**
 
 A fully modular, production-ready pipeline for Quantitative Structure-Activity Relationship (QSAR) analysis. This workflow automates data ingestion, feature engineering, deep learning model training, and binding affinity prediction, all wrapped in a standardized containerized environment.
-
----
-
-## 📌 Overview
-
-This workflow provides an **end-to-end, reproducible, and flexible pipeline** for computational chemistry and drug design:
-
-- **Four Standardized Nodes** with independent execution and state-of-the-art reporting.
-- **Advanced Machine Learning** using TensorFlow/Keras Neural Networks.
-- **Premium "008-Style" Visualizations** for deep data insights.
-- **Dual 2D/3D Visualization** for molecular structure analysis.
-- **Reproducible Science** with comprehensive JSON metadata tracking.
-
-**Key Features:**
-
-✨ **Modular Design**: Run the full pipeline or individual stages independently.  
-🐳 **Containerized**: Fully Dockerized environment (RDKit, TensorFlow, Scikit-learn).  
-🎨 **Rich Visualization**: Interactive Heatmaps, PCA Scatter Plots, and 3D Molecular Viewers.  
-📊 **Deep Analytics**: Automatic calculation of R², RMSE, and Applicability Domain (AD).  
-🔍 **Interactive dashboards**: Client-side rendered HTML reports with Plotly.js and NGL.js.
 
 ---
 
 ## 🧩 Workflow Structure
 
 ```text
-QSAR-workflow-script/
+QSAR-workflow/
+├── .chiral/
+│   └── workflow.toml                 # Master DAG Definition
 ├── 01_Data_Preparation/
 │   ├── .chiral/
 │   │   └── job.toml              # Node Configuration
@@ -52,16 +34,14 @@ QSAR-workflow-script/
 │   └── generate_training_report.py # Viz: Loss Curves & Parity Plots
 │
 ├── 04_Prediction/
-│   ├── .chiral/
-│   │   └── job.toml
-│   ├── run_prediction.sh
-│   ├── run_prediction.py         # Logic: Inference & AD Check
-│   └── generate_prediction_report.py # Viz: Dual 2D/3D Cards
-│
-├── Dockerfile                    # Container Definition
-├── workflow.toml                 # Master DAG Definition
-├── run_workflow.sh               # Master Execution Script
-└── build_image.ps1               # Build Helper
+    ├── .chiral/
+    │   └── job.toml
+    ├── run_prediction.sh
+    ├── run_prediction.py         # Logic: Inference & AD Check
+    └── generate_prediction_report.py # Viz: Dual 2D/3D Cards
+ 
+
+
 ```
 
 Each node generates:
@@ -201,7 +181,7 @@ outputs/
 
 ## 🎨 Visualization Features
 
-### Interactive HTML Reports ("Premium Style")
+### Interactive HTML Reports
 
 Each node generates a responsive, high-aesthetic HTML dashboard:
 
@@ -220,29 +200,6 @@ Each node generates a responsive, high-aesthetic HTML dashboard:
 
 ---
 
-## ⚙️ Installation & Usage
-
-### 1. Build the Environment
-This pipeline uses a unified Docker image (`qsar-workflow`).
-```powershell
-./build_image.ps1
-```
-
-### 2. Run the Workflow
-Execute the master script to run the full pipeline:
-```bash
-./run_workflow.sh
-```
-
-### 3. Run Individual Nodes
-You can debug or re-run specific stages:
-```bash
-cd 02_Feature_Engineering
-bash run_feature_eng.sh
-```
-
----
-
 ## 📊 Output Formats
 
 ### 4. Prediction Metadata (`outputs/data.json`)
@@ -255,16 +212,3 @@ bash run_feature_eng.sh
   "structures_3d": ["ATOM      1  C   UNL     1...", "..."]
 }
 ```
-
----
-
-## 📚 References
-
-- **RDKit**: Open-Source Chemoinformatics. https://www.rdkit.org
-- **TensorFlow**: End-to-End Machine Learning Platform. https://www.tensorflow.org
-- **Plotly**: Interactive Graphing Library. https://plotly.com
-- **NGL Viewer**: WebGL Protein/Molecule Viewer. http://nglviewer.org
-- **Scikit-learn**: Machine Learning in Python. https://scikit-learn.org
-
----
-*Created for the Chiral Blueprint Migration Project.*
