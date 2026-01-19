@@ -62,6 +62,7 @@ def validate_protein(input_path: str, output_path: str) -> bool:
 
     # Copy the validated protein
     output_file = Path(output_path)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(input_file, output_file)
 
     logger.info(f"Validated protein saved to: {output_path}")

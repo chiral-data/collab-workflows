@@ -2,7 +2,7 @@
 set -e
 
 # Find the ligand SMILES file from previous step (contains atom map numbers)
-LIGAND_FILE=$(ls *.smi 2>/dev/null | head -1)
+LIGAND_FILE=$(ls inputs/*.smi 2>/dev/null | head -1)
 
 if [ -z "$LIGAND_FILE" ]; then
     echo "Error: No SMILES file found from previous step"
@@ -12,7 +12,7 @@ fi
 workflow-run python create_scaffold.py \
     --ligand "${LIGAND_FILE}" \
     --attachment-id "${PARAM_ATTACHMENT_ID}" \
-    --output scaffold.pkl
+    --output outputs/scaffold.pkl
 
 # Generate visualization HTML
-workflow-run python visualize.py scaffold.pkl scaffold_viz.html
+workflow-run python visualize.py outputs/scaffold.pkl outputs/scaffold_viz.html

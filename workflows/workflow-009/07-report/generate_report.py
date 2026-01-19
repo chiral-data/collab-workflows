@@ -53,7 +53,7 @@ def generate_report(input_path: str, top_n: int, output_dir: str) -> bool:
         return False
 
     output_path = Path(output_dir)
-    output_path.mkdir(exist_ok=True)
+    output_path.mkdir(parents=True, exist_ok=True)
 
     # Load molecules from SDF
     molecules = []
