@@ -22,5 +22,8 @@ workflow-run python create_chemspace.py \
     --num-rgroups "${PARAM_NUM_RGROUPS:-5}" \
     --output outputs/chemspace.pkl
 
+# Copy protein file to outputs for downstream nodes
+cp "${PROTEIN_FILE}" outputs/rec_final.pdb
+
 # Generate visualization HTML
 workflow-run python visualize.py outputs/chemspace.pkl outputs/chemspace_viz.html
