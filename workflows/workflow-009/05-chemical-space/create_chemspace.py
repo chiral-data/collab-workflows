@@ -101,6 +101,7 @@ def create_chemical_space(
 
         # Save chemical space
         output_file = Path(output_path)
+        output_file.parent.mkdir(parents=True, exist_ok=True)
         with open(output_file, "wb") as f:
             cloudpickle.dump(cs, f)
         logger.info(f"Chemical space saved to: {output_path}")

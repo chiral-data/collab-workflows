@@ -57,6 +57,7 @@ def validate_ligand(input_path: str, output_path: str) -> bool:
 
     # Write SMILES with atom map numbers (for attachment point selection in visualization)
     output_file = Path(output_path)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     smiles = Chem.MolToSmiles(mol)
     with open(output_file, "w") as f:
         f.write(smiles)

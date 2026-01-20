@@ -9,10 +9,11 @@ import urllib.request
 # ------------------------------------------------------------------------------
 
 
-def download_pdb_file(pdb_id, output_dir="."):
+def download_pdb_file(pdb_id, output_dir="outputs"):
     """Download PDB file"""
     print("\n=== Downloading PDB file ===")
-    pdb_file = f"./{pdb_id}.pdb"
+    os.makedirs(output_dir, exist_ok=True)
+    pdb_file = f"{output_dir}/{pdb_id}.pdb"
     url = f"https://files.rcsb.org/download/{pdb_id}.pdb"
 
     try:

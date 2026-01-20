@@ -34,8 +34,9 @@ def generate_variants(smiles):
     return results
 
 
-def save_variant_figure(base_smiles, variants, filename="variants.svg"):
+def save_variant_figure(base_smiles, variants, filename="outputs/variants.svg"):
     """Save all variant molecules as an SVG figure."""
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     mols = [Chem.MolFromSmiles(base_smiles)]
     labels = ["original"]
     for name, smiles_list in variants.items():
@@ -56,7 +57,7 @@ def save_variant_figure(base_smiles, variants, filename="variants.svg"):
     print(f"Saved SVG figure as '{filename}'")
 
 
-def generate_3d_structures(base_smiles, variants, out_dir="ligand_library"):
+def generate_3d_structures(base_smiles, variants, out_dir="outputs/ligand_library"):
     """Generate 3D coordinates for all unique variants and the original molecule."""
     os.makedirs(out_dir, exist_ok=True)
     base_mol = Chem.MolFromSmiles(base_smiles)
@@ -118,7 +119,7 @@ def sdf_to_smiles(sdf_filepath):
 
 # ligand_name = "2TK"
 ligand_name = os.getenv("PARAM_LIGAND_NAME")
-smiles_output = sdf_to_smiles(f"{ligand_name}.sdf")
+smiles_output = sdf_to_smiles(f"inputs/{ligand_name}.sdf")
 for s in smiles_output:
     print(s)
 
@@ -133,5 +134,5 @@ if len(smiles_output) > 0:
             print("  ", s)
 
     # Save 2D figure and 3D models
-    save_variant_figure(base_smiles, variants, "variants.svg")
+    save_variant_figure(base_smiles, variants)
     generate_3d_structures(base_smiles, variants)

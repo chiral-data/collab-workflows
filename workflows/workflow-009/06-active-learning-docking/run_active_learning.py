@@ -132,7 +132,7 @@ def run_active_learning(
     else:
         logger.warning("No receptor attached to ChemSpace - will reload from file")
         # Reload protein from rec_final.pdb (passed as input to this node)
-        protein_file = Path("rec_final.pdb")
+        protein_file = Path("inputs/rec_final.pdb")
         if protein_file.exists():
             cs.add_protein(str(protein_file))
             logger.info(f"Reloaded protein from: {protein_file}")
@@ -226,6 +226,7 @@ def run_active_learning(
         # Save chemical space to SDF
         logger.info(f"Saving evaluated chemical space to {output_path}...")
         output_file = Path(output_path)
+        output_file.parent.mkdir(parents=True, exist_ok=True)
 
         with Chem.SDWriter(str(output_file)) as SD:
             columns = cs.df.columns.to_list()
