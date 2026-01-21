@@ -11,14 +11,14 @@ library(Rsubread)
 
 # Get parameters from environment
 threads <- as.integer(Sys.getenv("PARAM_THREADS", "8"))
-strandedness <- as.integer(Sys.getenv("PARAM_STRANDEDNESS", "1"))
-feature_type <- Sys.getenv("PARAM_FEATURE_TYPE", "gene")
-attribute_type <- Sys.getenv("PARAM_ATTRIBUTE_TYPE", "locus_tag")
+strandedness <- as.integer(Sys.getenv("PARAM_STRANDEDNESS", "0"))
+feature_type <- Sys.getenv("PARAM_FEATURE_TYPE", "exon")
+attribute_type <- Sys.getenv("PARAM_ATTRIBUTE_TYPE", "gene_id")
 long_read <- tolower(Sys.getenv("PARAM_LONG_READ", "false")) == "true"
-allow_multi_overlap <- tolower(Sys.getenv("PARAM_ALLOW_MULTI_OVERLAP", "true")) == "true"
-use_fraction <- tolower(Sys.getenv("PARAM_USE_FRACTION", "true")) == "true"
+allow_multi_overlap <- tolower(Sys.getenv("PARAM_ALLOW_MULTI_OVERLAP", "false")) == "true"
+use_fraction <- tolower(Sys.getenv("PARAM_USE_FRACTION", "false")) == "true"
 extra_attributes <- Sys.getenv("PARAM_EXTRA_ATTRIBUTES",
-                               "ID,gene_biotype,Dbxref,locus_tag,Name,ECOCYC,gene_synonym,gene,orig_transcript_id")
+                               "")
 
 # =============================================================================
 # FIND INPUT FILES
@@ -79,7 +79,7 @@ fc <- featureCounts(
   GTF.attrType = attribute_type,
 
   # Feature-level counting (not meta-features)
-  useMetaFeatures = FALSE,
+  useMetaFeatures = TRUE,
 
   # Overlapping + fractional counts
   allowMultiOverlap = allow_multi_overlap,
