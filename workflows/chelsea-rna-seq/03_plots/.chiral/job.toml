@@ -1,6 +1,6 @@
 name = "Visualization Plots"
 description = "Generate MA plot and Volcano plot for differential expression results"
-inputs = ["dds.rds", "res.rds", "merged.csv"]
+inputs = ["dds.rds", "res.rds", "merged.csv", "pca_data.csv"]
 outputs = ["ma_plot.png", "volcano_plot.png", "pca_plot.png", "merged_with_regulation.csv"]
 
 [container]

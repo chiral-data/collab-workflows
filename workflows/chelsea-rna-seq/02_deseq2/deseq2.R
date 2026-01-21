@@ -28,10 +28,13 @@ cat("  Alpha (significance threshold):", alpha, "\n")
 
 cat("\n--- Loading count data ---\n")
 
-# Find counts file
-count_files <- list.files(pattern = "counts\\.csv$", full.names = TRUE)
+# Find counts file (check inputs/ folder first, then root)
+count_files <- list.files("inputs", pattern = "counts\\.csv$", full.names = TRUE)
 if (length(count_files) == 0) {
-  stop("No counts.csv file found")
+  count_files <- list.files(pattern = "counts\\.csv$", full.names = TRUE)
+}
+if (length(count_files) == 0) {
+  stop("No counts.csv file found in inputs/ or root folder")
 }
 count_file <- count_files[1]
 cat("Loading:", count_file, "\n")
@@ -202,11 +205,12 @@ cat("\n--- Saving results ---\n")
 # Convert DESeq2 results to a data frame
 res_df <- as.data.frame(res_alpha)
 
-# Add gene names as a column
-res_df$Geneid <- rownames(res_df)
+# Add gene names as a column (use the actual gene ID column name from count.file)
+gene_col <- intersect(c("GeneID", "Geneid", "gene_id", "Gene"), colnames(count.file))[1]
+res_df[[gene_col]] <- rownames(res_df)
 
 # Merge DESeq2 results with full featureCounts file
-merged <- merge(count.file, res_df, by = "Geneid", all.x = TRUE)
+merged <- merge(count.file, res_df, by = gene_col, all.x = TRUE)
 
 # Save outputs
 write.csv(merged, file = "merged.csv", row.names = FALSE)

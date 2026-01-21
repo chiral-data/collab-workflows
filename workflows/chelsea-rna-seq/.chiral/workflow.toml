@@ -17,8 +17,13 @@ hint = "Strandedness: 0=unstranded, 1=stranded, 2=reversely stranded"
 
 [params.feature_type]
 type = "string"
-default = "gene"
-hint = "Feature type to count (must match GTF 3rd column, e.g., gene, exon, CDS)"
+default = "exon"
+hint = "Feature type to count (must match GTF 3rd column, e.g., exon, gene, CDS)"
+
+[params.paired_end]
+type = "boolean"
+default = true
+hint = "Set to true for paired-end sequencing data"
 
 [params.attribute_type]
 type = "string"

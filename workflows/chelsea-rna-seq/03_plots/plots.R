@@ -39,14 +39,18 @@ cat("  DPI:", plot_dpi, "\n")
 
 cat("\n--- Loading data ---\n")
 
-# Load DESeq2 objects
-dds <- readRDS("dds.rds")
-res <- readRDS("res.rds")
-cat("Loaded: dds.rds, res.rds\n")
+# Load DESeq2 objects (check inputs/ folder first)
+dds_path <- if (file.exists("inputs/dds.rds")) "inputs/dds.rds" else "dds.rds"
+res_path <- if (file.exists("inputs/res.rds")) "inputs/res.rds" else "res.rds"
+merged_path <- if (file.exists("inputs/merged.csv")) "inputs/merged.csv" else "merged.csv"
+
+dds <- readRDS(dds_path)
+res <- readRDS(res_path)
+cat("Loaded:", dds_path, ",", res_path, "\n")
 
 # Load merged data
-merged <- read.csv("merged.csv")
-cat("Loaded: merged.csv (", nrow(merged), "rows)\n")
+merged <- read.csv(merged_path)
+cat("Loaded:", merged_path, "(", nrow(merged), "rows)\n")
 
 # =============================================================================
 # PERFORM SHRINKAGE FOR MA PLOT
@@ -59,10 +63,13 @@ shrunk_MA <- lfcShrink(dds = dds, res = res, coef = 2, type = "ashr")
 
 # Convert to data frame and add gene IDs
 shrunk_MA <- as.data.frame(shrunk_MA)
-shrunk_MA$Geneid <- rownames(shrunk_MA)
+
+# Detect gene ID column name from merged data
+gene_col <- intersect(c("GeneID", "Geneid", "gene_id", "Gene"), colnames(merged))[1]
+shrunk_MA[[gene_col]] <- rownames(shrunk_MA)
 
 # Keep only shrunken LFC and gene ID
-shrunk_MA <- dplyr::select(shrunk_MA, log2FoldChange, Geneid)
+shrunk_MA <- dplyr::select(shrunk_MA, log2FoldChange, all_of(gene_col))
 colnames(shrunk_MA)[1] <- "log2FoldChange.shrink"
 
 cat("Shrinkage complete\n")
@@ -74,7 +81,7 @@ cat("Shrinkage complete\n")
 cat("\n--- Processing data for plotting ---\n")
 
 # Merge with original data
-merged <- dplyr::inner_join(merged, shrunk_MA, by = "Geneid")
+merged <- dplyr::inner_join(merged, shrunk_MA, by = gene_col)
 
 # Flag significant genes
 merged$regulated <- merged$padj < alpha
@@ -116,8 +123,9 @@ for (col in label_cols) {
 }
 
 if (is.null(label_col)) {
-  # Use Geneid as label
-  merged$Label <- merged$Geneid
+  # Use GeneID as label (detect actual column name)
+  gene_col <- intersect(c("GeneID", "Geneid", "gene_id"), colnames(merged))[1]
+  merged$Label <- merged[[gene_col]]
   label_col <- "Label"
 } else {
   merged$Label <- merged[[label_col]]
@@ -174,8 +182,12 @@ if (any(!is.na(merged$Label) & merged$Label != "")) {
 }
 
 # Save MA plot
-ggsave("ma_plot.png", plot = ma_plot, width = plot_width, height = plot_height, dpi = plot_dpi)
-cat("Saved: ma_plot.png\n")
+tryCatch({
+  ggsave("ma_plot.png", plot = ma_plot, width = plot_width, height = plot_height, dpi = plot_dpi)
+  cat("Saved: ma_plot.png\n")
+}, error = function(e) {
+  cat("Error saving MA plot:", conditionMessage(e), "\n")
+})
 
 # =============================================================================
 # VOLCANO PLOT
@@ -226,8 +238,12 @@ if (any(!is.na(merged$Label) & merged$Label != "")) {
 }
 
 # Save Volcano plot
-ggsave("volcano_plot.png", plot = volcano_plot, width = plot_width, height = plot_height, dpi = plot_dpi)
-cat("Saved: volcano_plot.png\n")
+tryCatch({
+  ggsave("volcano_plot.png", plot = volcano_plot, width = plot_width, height = plot_height, dpi = plot_dpi)
+  cat("Saved: volcano_plot.png\n")
+}, error = function(e) {
+  cat("Error saving Volcano plot:", conditionMessage(e), "\n")
+})
 
 # =============================================================================
 # PCA PLOT
@@ -235,9 +251,10 @@ cat("Saved: volcano_plot.png\n")
 
 cat("\n--- Generating PCA plot ---\n")
 
-# Check if PCA data exists
-if (file.exists("pca_data.csv")) {
-  pca_data <- read.csv("pca_data.csv")
+# Check if PCA data exists (check inputs/ folder first)
+pca_path <- if (file.exists("inputs/pca_data.csv")) "inputs/pca_data.csv" else "pca_data.csv"
+if (file.exists(pca_path)) {
+  pca_data <- read.csv(pca_path)
 
   # Create PCA plot
   pca_plot <- ggplot(pca_data, aes(x = PC1, y = PC2, colour = condition)) +

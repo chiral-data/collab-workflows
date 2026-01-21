@@ -1,8 +1,9 @@
 {
   "threads": 8,
   "strandedness": 1,
-  "feature_type": "gene",
+  "feature_type": "exon",
   "attribute_type": "gene_id",
+  "paired_end": true,
   "long_read": false,
   "allow_multi_overlap": true,
   "use_fraction": true,

@@ -107,18 +107,21 @@ close(log_con)
 
 cat("\n--- Saving outputs ---\n")
 
+# Ensure outputs directory exists
+dir.create("outputs", showWarnings = FALSE)
+
 # Save counts matrix
-write.csv(fc$counts, file = "counts_table.csv")
-cat("Saved: counts_table.csv\n")
+write.csv(fc$counts, file = "outputs/counts_table.csv")
+cat("Saved: outputs/counts_table.csv\n")
 
 # Save annotation
-write.csv(fc$annotation, file = "counts_annotation.csv")
-cat("Saved: counts_annotation.csv\n")
+write.csv(fc$annotation, file = "outputs/counts_annotation.csv")
+cat("Saved: outputs/counts_annotation.csv\n")
 
 # Create combined output (annotation + counts)
 combined_table <- cbind(fc$annotation, fc$counts)
-write.csv(combined_table, file = "counts.csv", row.names = FALSE)
-cat("Saved: counts.csv (combined annotation + counts)\n")
+write.csv(combined_table, file = "outputs/counts.csv", row.names = FALSE)
+cat("Saved: outputs/counts.csv (combined annotation + counts)\n")
 
 # Print summary statistics
 cat("\n--- Summary ---\n")
