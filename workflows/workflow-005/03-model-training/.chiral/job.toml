@@ -5,7 +5,7 @@ inputs = ["processed_data.npz"]
 outputs = ["outputs/model.h5", "outputs/data.json", "outputs/report.html"]
 
 [container]
-image = "chiral.sakuracr.jp/qsar:20260118_v2"
+image = "chiral.sakuracr.jp/qsar:20260107_v1"
 
 [scripts]
 run = "run.sh"

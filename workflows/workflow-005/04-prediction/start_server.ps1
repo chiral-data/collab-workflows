@@ -3,7 +3,7 @@
 
 # Configuration
 $Port = "5000"
-$Image = "chiral.sakuracr.jp/qsar:20260118_v2"
+$Image = "chiral.sakuracr.jp/qsar:20260107_v1"
 
 # Determine paths dynamically
 # This allows running the script from anywhere (root or inside directory)

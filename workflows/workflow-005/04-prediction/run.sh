@@ -56,8 +56,10 @@ if python -c "import flask" 2>/dev/null; then
     echo "Verifying local artifacts in outputs/:"
     ls -l outputs/
 
-    echo "Starting web application..."
-    python app.py
+    # DISABLED: Flask server blocks workflow execution
+    # echo "Starting web application..."
+    # python app.py
+    echo "Web server disabled for batch workflow execution."
 else
     echo "⚠️  Flask not installed - Skipping web server"
     

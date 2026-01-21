@@ -42,7 +42,7 @@ graph TD
 
 ## 🛠 Technological Stack
 
-The entire pipeline runs inside a unified **Docker Container** (`chiral.sakuracr.jp/qsar:20260118_v2`).
+The entire pipeline runs inside a unified **Docker Container** (`chiral.sakuracr.jp/qsar:20260107_v1`).
 
 - **Python**: 3.11
 - **Deep Learning**: TensorFlow 2.19.1, Keras
