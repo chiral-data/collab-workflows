@@ -14,6 +14,7 @@ threads <- as.integer(Sys.getenv("PARAM_THREADS", "8"))
 strandedness <- as.integer(Sys.getenv("PARAM_STRANDEDNESS", "0"))
 feature_type <- Sys.getenv("PARAM_FEATURE_TYPE", "exon")
 attribute_type <- Sys.getenv("PARAM_ATTRIBUTE_TYPE", "gene_id")
+paired_end <- tolower(Sys.getenv("PARAM_PAIRED_END", "true")) == "true"
 long_read <- tolower(Sys.getenv("PARAM_LONG_READ", "false")) == "true"
 allow_multi_overlap <- tolower(Sys.getenv("PARAM_ALLOW_MULTI_OVERLAP", "false")) == "true"
 use_fraction <- tolower(Sys.getenv("PARAM_USE_FRACTION", "false")) == "true"
@@ -50,6 +51,7 @@ cat("  Threads:", threads, "\n")
 cat("  Strandedness:", strandedness, "(0=unstranded, 1=stranded, 2=reverse)\n")
 cat("  Feature type:", feature_type, "\n")
 cat("  Attribute type:", attribute_type, "\n")
+cat("  Paired-end:", paired_end, "\n")
 cat("  Long read mode:", long_read, "\n")
 cat("  Allow multi-overlap:", allow_multi_overlap, "\n")
 cat("  Fractional counting:", use_fraction, "\n")
@@ -74,6 +76,9 @@ fc <- featureCounts(
   # Strandedness
   strandSpecific = strandedness,
 
+  # Paired-end Illumina support
+  isPairedEnd = paired_end,
+  
   # Feature & attribute
   GTF.featureType = feature_type,
   GTF.attrType = attribute_type,
