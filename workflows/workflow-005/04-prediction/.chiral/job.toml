@@ -13,19 +13,10 @@ run = "run.sh"
 [params.test_smiles]
 type = "string"
 default = ""
-hint = "JSON array of SMILES strings to predict, e.g., [\"CCO\", \"c1ccccc1\"]. Leave empty if using predict_all_data=true"
+hint = "Comma-separated SMILES strings to predict, e.g., CCO,c1ccccc1. Leave empty if using predict_all_data=true"
 
 [params.predict_all_data]
 type = "string"
 default = "true"
 hint = "If true, predict on all compounds from input dataset. If false, requires test_smiles parameter"
 
-[params.server_port]
-type = "string"
-default = "5000"
-hint = "Port for Flask web server (default: 5000)"
-
-[params.server_host]
-type = "string"
-default = "0.0.0.0"
-hint = "Host for Flask web server (0.0.0.0 = all interfaces)"
