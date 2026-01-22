@@ -115,6 +115,7 @@ def create_scaffold(ligand_path: str, attachment_id: int, output_path: str) -> b
 
     # Save scaffold as pickle
     output_file = Path(output_path)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     with open(output_file, "wb") as f:
         pickle.dump(scaffold, f)
 

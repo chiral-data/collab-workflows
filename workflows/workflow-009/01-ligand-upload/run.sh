@@ -2,8 +2,8 @@
 set -e
 
 workflow-run python validate_ligand.py \
-    --input "${PARAM_LIGAND_FILE}" \
-    --output ligand.smi
+    --input "inputs/${PARAM_LIGAND_FILE}" \
+    --output outputs/ligand.smi
 
 # Generate visualization HTML
-workflow-run python visualize.py ligand.smi ligand_viz.html
+workflow-run python visualize.py outputs/ligand.smi outputs/ligand_viz.html

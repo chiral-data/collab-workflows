@@ -20,7 +20,7 @@ def main():
     try:
         # Configuration
         SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-        INPUT_FILE = "data_standardized.pkl" 
+        INPUT_FILE = "inputs/data_standardized.pkl" 
         OUTPUT_DIR = "outputs"
 
         if not os.path.exists(OUTPUT_DIR):
