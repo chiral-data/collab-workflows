@@ -15,7 +15,7 @@ treatment_condition <- Sys.getenv("PARAM_TREATMENT_CONDITION", "treatment")
 alpha <- as.numeric(Sys.getenv("PARAM_ALPHA", "0.05"))
 gene_id_column <- Sys.getenv("PARAM_GENE_ID_COLUMN", "Geneid")
 count_columns_param <- Sys.getenv("PARAM_COUNT_COLUMNS", "")
-conditions_param <- Sys.getenv("PARAM_CONDITIONS", "")
+conditions_param <- Sys.getenv("PARAM_CONDITIONS", "control,control,treatment,treatment")
 
 cat("DESeq2 Analysis Parameters:\n")
 cat("  Control condition:", control_condition, "\n")
@@ -106,38 +106,30 @@ cat("Count matrix dimensions:", nrow(count_matrix), "genes x", ncol(count_matrix
 
 cat("\n--- Preparing sample metadata ---\n")
 
-sample_names <- colnames(count_matrix)
+n_samples <- ncol(count_matrix)  # Determine conditions for each sample
 
-# Determine conditions for each sample                       
 if (conditions_param != "" && conditions_param != "null") {
   conditions <- strsplit(conditions_param, ",")[[1]]
   conditions <- trimws(conditions)
-
-  if (length(conditions) != length(sample_names)) {
-    stop("Number of conditions does not match number of samples. Using alternating pattern.")
-  }
-
 } else {
-  # Infer condition from sample names
-  conditions <- ifelse(
-    grepl(control_condition, sample_names, ignore.case = TRUE),
-    control_condition,
-    ifelse(
-      grepl(treatment_condition, sample_names, ignore.case = TRUE),
-      treatment_condition,
-      NA
-    )
-  )
-
-  if (any(is.na(conditions))) {
-    stop("Could not infer condition for all samples from column names")
+  # Default: alternate between conditions or use sample names
+  if (n_samples == 2) {
+    conditions <- c(control_condition, treatment_condition)
+  } else {
+    # Try to infer from column names
+    conditions <- rep(c(control_condition, treatment_condition), length.out = n_samples)
   }
 }
 
+if (length(conditions) != n_samples) {
+  warning("Number of conditions does not match number of samples. Using alternating pattern.")
+  conditions <- rep(c(control_condition, treatment_condition), length.out = n_samples)
+}
+
 col_data <- data.frame(
-  row.names = sample_names,
-  condition = factor(conditions, levels = c(control_condition, treatment_condition))
-)
+  row.names = colnames(count_matrix),
+  condition = factor(c(conditions))
+) 
 
 cat("Sample metadata:\n")
 print(col_data)
@@ -168,23 +160,22 @@ cat("\n--- Extracting results ---\n")
 available_conditions <- levels(col_data$condition)
 cat("Available conditions:", paste(available_conditions, collapse = ", "), "\n")
 
-# Results with no alpha
-res <- results(dds, contrast = c("condition", treatment_condition, control_condition))
+# Set reference and comparison from levels
+control <- available_conditions[1]
+treatment <- available_conditions[2]                    
 
+# Results with no alpha
+res <- results(dds, contrast = c("condition", treatment, control))
 # Results with specified alpha
 res_alpha <- results(dds,
-                     contrast = c("condition", treatment_condition, control_condition),
+                     contrast = c("condition", treatment, control),
                      alpha = alpha)
 
 # Print summaries
 cat("\n--- Results Summary (no alpha) ---\n")
-summary(res)
-
-cat("\n--- Results Summary (alpha =", alpha, ") ---\n")
-summary(res_alpha)
-
-# Capture summaries
 summary <- summary(res)
+                       
+cat("\n--- Results Summary (alpha =", alpha, ") ---\n")
 summary_alpha <- summary(res_alpha)
                        
 # Convert summaries to data frames
