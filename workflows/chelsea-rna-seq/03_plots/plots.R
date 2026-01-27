@@ -150,7 +150,7 @@ ma_plot <- ggplot(merged, aes(x = log10(baseMean),
   labs(
     title = "MA Plot",
     subtitle = paste0("Upregulated: ", n_up, " | Downregulated: ", n_down, " (padj < ", alpha, ")"),
-    x = "log10(Mean Expression)",
+    x = "log10 Mean Normalized Counts",
     y = "log2 Fold Change (shrunk)"
   ) +
   theme(
@@ -208,7 +208,7 @@ volcano_plot <- ggplot(merged, aes(x = log2FoldChange.shrink,
     title = "Volcano Plot",
     subtitle = paste0("Upregulated: ", n_up, " | Downregulated: ", n_down, " (padj < ", alpha, ")"),
     x = "log2 Fold Change (shrunk)",
-    y = "-log10(Adjusted p-value)"
+    y = "-log10 Adjusted p-value (FDR)"
   ) +
   theme(
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
@@ -256,14 +256,17 @@ pca_path <- if (file.exists("inputs/pca_data.csv")) "inputs/pca_data.csv" else "
 if (file.exists(pca_path)) {
   pca_data <- read.csv(pca_path)
 
+  # Extract PCA variance
+  percent_var <- c(unique(pca_data$PC1_var), unique(pca_data$PC2_var))
+  
   # Create PCA plot
   pca_plot <- ggplot(pca_data, aes(x = PC1, y = PC2, colour = condition)) +
     geom_point(size = 4) +
     theme_classic() +
     labs(
       title = "PCA Plot",
-      x = paste0("PC1"),
-      y = paste0("PC2")
+      x = paste0("PC1: ", percent_var[1], "% Variance"),
+      y = paste0("PC2: ", percent_var[2], "% Variance")
     ) +
     scale_color_manual(values = c('#E69F00', '#56B4E9')) +
     theme(
