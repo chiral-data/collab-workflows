@@ -202,18 +202,18 @@ cat("\n--- Performing PCA ---\n")
 
 # r-log transform data
 rld <- rlog(dds, blind = FALSE)
-
+                    
 # Extract PCA data
-pca_data <- plotPCA(rld, intgroup = c("condition"), returnData = TRUE)
-percent_var <- round(attr(pca_data, "percentVar") * 100, digits = 1)
+pca_data <- plotPCA(rld, intgroup = "condition", returnData = TRUE)
+percent_var <- round(attr(pca_data, "percentVar") * 100, 1)
 
-cat("PC1 variance:", percent_var[1], "%\n")
-cat("PC2 variance:", percent_var[2], "%\n")
+pca_data$PC1_var <- percent_var[1]
+pca_data$PC2_var <- percent_var[2]
 
 # Save PCA data for plotting node
 write.csv(pca_data, file = "pca_data.csv", row.names = FALSE)
 cat("Saved: pca_data.csv\n")
-
+                       
 # =============================================================================
 # MERGE AND SAVE RESULTS
 # =============================================================================
