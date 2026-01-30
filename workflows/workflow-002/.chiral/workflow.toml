@@ -3,7 +3,7 @@ description = "Virtual screening using Smina docking against target protein"
 
 [dependencies]
 02-prepare = ["01-download"]
-03-screening = ["02-prepare"]
+03-screening = ["01-download", "02-prepare"]
 04-report = ["03-screening"]
 
 [params.pdb_id]

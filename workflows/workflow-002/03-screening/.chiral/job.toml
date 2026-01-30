@@ -1,6 +1,6 @@
 name = "Virtual Screening"
 description = "Performs molecular docking with Smina"
-inputs = ["*.pdb", "config.txt", "constructed_library/*.sdf"]
+inputs = ["*.pdb", "config.txt", "*.sdf"]
 outputs = ["docking_results/*.sdf", "docking_results/*.txt"]
 
 [container]

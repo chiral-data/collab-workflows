@@ -1,6 +1,6 @@
 name = "Generate Report"
 description = "Analyzes results and generates rankings"
-inputs = ["docking_results/*.txt", "docking_results/*.sdf", "*.pdb"]
+inputs = ["*.txt", "*.sdf", "*.pdb"]
 outputs = ["results/*.txt", "results/*.sdf", "results/*.pdb"]
 
 [container]

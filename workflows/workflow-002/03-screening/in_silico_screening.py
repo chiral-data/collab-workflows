@@ -12,6 +12,7 @@ import subprocess
 # Read parameters from environment variables
 test_mode = os.environ.get("PARAM_TEST_MODE", "true").lower() == "true"
 exhaustiveness = int(os.environ.get("PARAM_EXHAUSTIVENESS", "8"))
+pdb_id = os.environ.get("PARAM_PDB_ID", "5Y7J")
 
 
 def main():
@@ -72,11 +73,12 @@ def run_docking_screening():
     print("\n=== Running docking screening ===")
 
     # Select ligands based on test_mode
+    # Note: Silva copies input files to ./inputs/ subdirectory
     if test_mode:
-        ligands = glob.glob("./constructed_library/clean_drug108*.sdf")
+        ligands = glob.glob("./inputs/clean_drug108*.sdf")
         print("Test mode: screening 11 compounds")
     else:
-        ligands = glob.glob("./constructed_library/clean_drug*.sdf")
+        ligands = glob.glob("./inputs/clean_drug*.sdf")
         print("Full mode: screening all compounds")
 
     print(f"Number of ligand files found: {len(ligands)}")
@@ -91,16 +93,17 @@ def run_docking_screening():
 
         print(f"\n[{i}/{len(ligands)}] Docking {fname}...")
 
+        receptor_file = f"./inputs/{pdb_id}_AB_chains_fixed.pdb"
         try:
             result = subprocess.run(
                 [
                     smina_path,
                     "-r",
-                    "./5Y7J_AB_chains_fixed.pdb",
+                    receptor_file,
                     "-l",
                     lig,
                     "--config",
-                    "config.txt",
+                    "./inputs/config.txt",
                     "-o",
                     out_sdf,
                     "--log",
