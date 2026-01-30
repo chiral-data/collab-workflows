@@ -1,0 +1,17 @@
+name = "In-Silico Virtual Screening"
+description = "Virtual screening using Smina docking against target protein"
+
+[dependencies]
+02-prepare = ["01-download"]
+03-screening = ["02-prepare"]
+04-report = ["03-screening"]
+
+[params.pdb_id]
+type = "string"
+default = "5Y7J"
+hint = "PDB ID of target protein"
+
+[params.ligand_name]
+type = "string"
+default = "8OL"
+hint = "Reference ligand residue name for binding site"

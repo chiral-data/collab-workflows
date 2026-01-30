@@ -1,0 +1,9 @@
+name = "Download Library"
+description = "Downloads compound library from Zenodo"
+outputs = ["constructed_library/*.sdf"]
+
+[container]
+image = "chiral.sakuracr.jp/smina:2025_10_17_v2"
+
+[scripts]
+run = "run.sh"
