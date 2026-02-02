@@ -32,7 +32,7 @@ def generate_report():
             Plotly.newPlot('loss_plot', [
                 {{ y: hist.loss, name: 'Train Loss', type: 'scatter' }},
                 {{ y: hist.val_loss, name: 'Val Loss', type: 'scatter' }}
-            ], {{title: 'Loss over Epochs'}});
+            ], {{title: 'Loss over Epochs', yaxis: {{type: 'log', title: 'Loss (log)'}}}});
 
             // Parity Plot
             var trace = {{
@@ -49,7 +49,9 @@ def generate_report():
             }};
             Plotly.newPlot('parity_plot', [trace, line], {{
                 title: 'Predicted vs Actual (Test Set)',
-                xaxis: {{title: 'Actual'}}, yaxis: {{title: 'Predicted'}}
+                width: 600, height: 600,
+                xaxis: {{title: 'Actual'}},
+                yaxis: {{title: 'Predicted', scaleanchor: 'x', scaleratio: 1}}
             }});
         </script>
     </body>
