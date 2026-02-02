@@ -55,7 +55,13 @@ def generate_report():
                     type: 'heatmap',
                     colorscale: 'Viridis'
                 }}];
-                Plotly.newPlot('heatmap', plotData);
+                var layout = {{
+                    width: 700,
+                    height: 700,
+                    margin: {{ l: 150, r: 50, t: 50, b: 150 }},
+                    yaxis: {{ scaleanchor: 'x', scaleratio: 1 }}
+                }};
+                Plotly.newPlot('heatmap', plotData, layout);
             }}
         </script>
     </body>
