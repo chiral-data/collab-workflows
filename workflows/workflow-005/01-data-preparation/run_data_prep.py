@@ -47,6 +47,8 @@ class RDKit_2D:
 def generate_images(df, n=24):
     """Generate base64 images for top N molecules for visualization"""
     images = []
+    # Find drug name column (case-insensitive)
+    drug_name_col = next((col for col in df.columns if col.lower().replace(' ', '').replace('_', '') == 'drugname'), None)
     for _, row in df.head(n).iterrows():
         smi = row.get('smiles')
         if not smi: continue
@@ -57,7 +59,8 @@ def generate_images(df, n=24):
                 buffer = BytesIO()
                 img.save(buffer, format="PNG")
                 img_str = base64.b64encode(buffer.getvalue()).decode("utf-8")
-                images.append({"smiles": smi, "img": f"data:image/png;base64,{img_str}"})
+                drug_name = row.get(drug_name_col, '') if drug_name_col else ''
+                images.append({"smiles": smi, "img": f"data:image/png;base64,{img_str}", "name": drug_name})
         except:
             pass
     return images

@@ -41,7 +41,7 @@ def generate_report():
         <div class="card">
             <h2>Sample Molecules</h2>
             <div class="grid">
-                {''.join([f'<div class="mol-item"><img src="{item["img"]}"><p>{item["smiles"][:15]}...</p></div>' for item in data['sample_images']])}
+                {''.join([f'<div class="mol-item"><img src="{item["img"]}"><p><strong>{item.get("name", "")}</strong></p><p>{item["smiles"][:15]}...</p></div>' for item in data['sample_images']])}
             </div>
         </div>
 
