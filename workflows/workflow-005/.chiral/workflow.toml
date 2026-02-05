@@ -1,12 +1,12 @@
 name = "QSAR_Modeling_Pipeline"
-description = "Machine Learning-Based Drug Discovery with Premium Interactive Visualization"
+description = "Machine Learning-Based Drug Discovery with Interactive Visualization"
 
 [dependencies]
 # Node 2 depends on Node 1
-02-feature-engineering = ["01-data-preparation"]
+2_model_train = ["1_data_prep"]
 
-# Node 3 depends on Node 2
-03-model-training = ["02-feature-engineering"]
+# Node 3 depends on Node 1 (data) and Node 2 (model)
+3_analyze_overfitting = ["1_data_prep", "2_model_train"]
 
-# Node 4 depends on Node 2 (scaler, ad_stats) and Node 3 (model)
-04-prediction = ["02-feature-engineering", "03-model-training"]
+# Node 4 depends on Node 2 (model & pipeline)
+4_predict_from_csv = ["2_model_train"]
