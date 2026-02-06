@@ -1,0 +1,15 @@
+name = "Sample Inputs"
+description = "Download sample input files from the collab-workflows GitHub repository"
+outputs = ["*.pdb", "*.sdf"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+run = "run.sh"
+
+[params.source]
+type = "enum"
+default = "Chiral Challenge #1"
+hint = "Source of sample input files"
+enum_values = ["FEGrow", "Chiral Challenge #1"]
