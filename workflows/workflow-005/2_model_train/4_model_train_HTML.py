@@ -32,6 +32,9 @@ def generate_report():
     scaler_str = str(pipeline_meta.get('scaler', 'StandardScaler')).replace('"', "'")
     selector_str = str(pipeline_meta.get('selector', 'SelectKBest')).replace('"', "'")
 
+    # Define empty_dict for safe .get() calls in f-string
+    empty_dict = {}
+
     # ----------------------------------------
     # HTML Template
     # ----------------------------------------
@@ -125,10 +128,11 @@ def generate_report():
             <div style="font-size: 0.8rem; color: #9ca3af;">Ultimate Hybrid Model</div>
         </div>
         <div class="nav-links">
-            <div class="nav-item active" onclick="showStage('s1')"><i class="fas fa-layer-group"></i> 1. Setup & Arch</div>
-            <div class="nav-item" onclick="showStage('s2')"><i class="fas fa-magic"></i> 2. Augmentation</div>
-            <div class="nav-item" onclick="showStage('s4')"><i class="fas fa-history"></i> 3. Callbacks</div>
-            <div class="nav-item" onclick="showStage('s8')"><i class="fas fa-project-diagram"></i> 4. Pipeline</div>
+            <div class="nav-item active" onclick="showStage('s1', event)"><i class="fas fa-layer-group"></i> 1. Setup & Arch</div>
+            <div class="nav-item" onclick="showStage('s2', event)"><i class="fas fa-magic"></i> 2. Augmentation</div>
+            <div class="nav-item" onclick="showStage('s3', event)"><i class="fas fa-chart-line"></i> 3. Progress</div>
+            <div class="nav-item" onclick="showStage('s4', event)"><i class="fas fa-history"></i> 4. Callbacks</div>
+            <div class="nav-item" onclick="showStage('s8', event)"><i class="fas fa-project-diagram"></i> 5. Pipeline</div>
         </div>
     </div>
 
@@ -161,10 +165,10 @@ def generate_report():
                     <h3>Hyperparameter Configuration</h3>
                     <table>
                         <tr><th>Parameter</th><th>Value</th></tr>
-                        <tr><td>Optimizer</td><td>{setup.get('s1_hyperparams', {}).get('optimizer', 'Adam')}</td></tr>
-                        <tr><td>Learning Rate</td><td>{setup.get('s1_hyperparams', {}).get('learning_rate', 0.001)}</td></tr>
-                        <tr><td>Batch Size</td><td>{setup.get('s1_hyperparams', {}).get('batch_size', 256)}</td></tr>
-                        <tr><td>Epochs</td><td>{setup.get('s1_hyperparams', {}).get('epochs', 200)}</td></tr>
+                        <tr><td>Optimizer</td><td>{setup.get('s1_hyperparams', empty_dict).get('optimizer', 'Adam')}</td></tr>
+                        <tr><td>Learning Rate</td><td>{setup.get('s1_hyperparams', empty_dict).get('learning_rate', 0.001)}</td></tr>
+                        <tr><td>Batch Size</td><td>{setup.get('s1_hyperparams', empty_dict).get('batch_size', 256)}</td></tr>
+                        <tr><td>Epochs</td><td>{setup.get('s1_hyperparams', empty_dict).get('epochs', 200)}</td></tr>
                         <tr><td>Regularizers</td><td>L2 + BatchNormalization + Dropout</td></tr>
                     </table>
                 </div>
@@ -188,9 +192,24 @@ def generate_report():
             </div>
         </div>
 
-        <!-- STAGE 4: CALLBACK ACTIONS (Renumbered to 3 in UI) -->
+        <!-- STAGE 3: TRAINING PROGRESS -->
+        <div id="s3" class="stage-view">
+            <h2>Stage 3: Training Progress (Loss & Metrics)</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Loss Curve</h3>
+                    <div id="lossPlot" class="plot-box"></div>
+                </div>
+                <div class="card">
+                    <h3>R² Metric Evolution</h3>
+                    <div id="r2Plot" class="plot-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STAGE 4: CALLBACK ACTIONS -->
         <div id="s4" class="stage-view">
-            <h2>Stage 3: Callback Actions & Events</h2>
+            <h2>Stage 4: Callback Actions & Events</h2>
             <div class="card">
                 <h3>Event Timeline</h3>
                 <p>Visualization of ModelCheckpoint, ReduceLROnPlateau, and EarlyStopping events.</p>
@@ -198,9 +217,9 @@ def generate_report():
             </div>
         </div>
 
-        <!-- STAGE 8: PIPELINE METADATA (Renumbered to 4 in UI) -->
+        <!-- STAGE 8: PIPELINE METADATA -->
         <div id="s8" class="stage-view">
-             <h2>Stage 4: Pipeline Metadata</h2>
+             <h2>Stage 5: Pipeline Metadata</h2>
              <div class="card">
                  <h3>Preprocessing Flow</h3>
                  <div class="mermaid">
@@ -224,7 +243,7 @@ def generate_report():
         
         // DATA
         const aug = {json.dumps(aug)};
-        const history = {json.dumps(training.get('history', {}))};
+        const history = {json.dumps(training.get('history', empty_dict))};
         
         // Render Mermaid on Load
         document.addEventListener('DOMContentLoaded', () => {{
@@ -232,9 +251,11 @@ def generate_report():
         }});
 
         // NAV LOGIC
-        function showStage(id) {{
+        function showStage(id, event) {{
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            if (event && event.currentTarget) {{
+                event.currentTarget.classList.add('active');
+            }}
             document.querySelectorAll('.stage-view').forEach(el => el.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             
@@ -249,6 +270,8 @@ def generate_report():
         }}
 
         // --- PLOTS --- //
+
+        const epochs = history.loss ? history.loss.map((_, i) => i + 1) : [];
 
         // 1. Augmentation (Smoothing)
         if (document.getElementById('smoothPlot')) {{
@@ -266,12 +289,29 @@ def generate_report():
             ], {{ title: 'Feature Noise Injection Effect (Sample)' }});
         }}
 
-        // 3. Timeline
+        // 3. Loss Curve
+        if (document.getElementById('lossPlot') && history.loss) {{
+            Plotly.newPlot('lossPlot', [
+                {{ x: epochs, y: history.loss, name: 'Train Loss', line: {{color: '#1e3a8a'}} }},
+                {{ x: epochs, y: history.val_loss, name: 'Val Loss', line: {{color: '#059669'}} }}
+            ], {{ title: 'Model Loss (MSE)', xaxis: {{title: 'Epoch'}}, yaxis: {{title: 'Loss'}} }});
+        }}
+
+        // 4. R2 Metric
+        if (document.getElementById('r2Plot') && history.train_r2) {{
+            Plotly.newPlot('r2Plot', [
+                {{ x: epochs, y: history.train_r2, name: 'Train R²', line: {{color: '#1e3a8a'}} }},
+                {{ x: epochs, y: history.val_r2, name: 'Val R²', line: {{color: '#059669'}} }}
+            ], {{ title: 'R² Accuracy Metric', xaxis: {{title: 'Epoch'}}, yaxis: {{title: 'R²'}} }});
+        }}
+
+        // 5. Timeline
         if (document.getElementById('timelinePlot') && history.loss) {{
-            const epochs = history.loss.map((_, i) => i + 1);
             const lrDrops = [];
-            for(let i=1; i<history.lr.length; i++) {{
-                if(history.lr[i] < history.lr[i-1]) lrDrops.push(i);
+            if (history.lr) {{
+                for(let i=1; i<history.lr.length; i++) {{
+                    if(history.lr[i] < history.lr[i-1]) lrDrops.push(i);
+                }}
             }}
             
             Plotly.newPlot('timelinePlot', [
