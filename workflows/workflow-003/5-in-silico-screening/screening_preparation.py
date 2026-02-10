@@ -16,9 +16,10 @@ from pdbfixer import PDBFixer
 
 def main():
     """Main execution function"""
+    os.makedirs("outputs", exist_ok=True)
     pdb_id = os.getenv("PARAM_PDB_ID")
-    pdb_file = f"./{pdb_id}.pdb"
-    output_pdb_file = f"{os.path.splitext(pdb_file)[0]}_A_NAD.pdb"
+    pdb_file = f"inputs/{pdb_id}.pdb"
+    output_pdb_file = f"inputs/{pdb_id}_A_NAD.pdb"
 
     # Calculate ligand center (2TK coordinates)
     center_coords = calculate_ligand_center(pdb_file)  # use original for 2TK coords
@@ -98,7 +99,7 @@ def generate_docking_config(center_data):
     num_modes = os.getenv("PARAM_NUM_MODES")
     energy_range = os.getenv("PARAM_ENERGY_RANGE")
 
-    config_path = "config.txt"
+    config_path = "outputs/config.txt"
     config_lines = [
         f"center_x = {center[0]:.3f}",
         f"center_y = {center[1]:.3f}",
@@ -126,7 +127,8 @@ def fix_pdb_structure(output_pdb_file):
     """Fix structure using PDBFixer, keeping NAD"""
     print(f"\n=== Fixing {output_pdb_file} with PDBFixer ===")
 
-    fixed_pdb_file = f"{os.path.splitext(output_pdb_file)[0]}_fixed.pdb"
+    basename = os.path.basename(output_pdb_file)
+    fixed_pdb_file = f"outputs/{os.path.splitext(basename)[0]}_fixed.pdb"
     fixer = PDBFixer(filename=output_pdb_file)
 
     fixer.findMissingResidues()
@@ -151,7 +153,8 @@ def fix_pdb_structure(output_pdb_file):
 
 def reattach_nad(original_pdb, fixed_pdb):
     """Reattach NAD residues from original PDB if missing after fixing"""
-    output_pdb = f"{os.path.splitext(fixed_pdb)[0]}_with_NAD.pdb"
+    basename = os.path.basename(fixed_pdb)
+    output_pdb = f"outputs/{os.path.splitext(basename)[0]}_with_NAD.pdb"
 
     with (
         open(original_pdb) as orig,
@@ -186,7 +189,8 @@ def reattach_nad(original_pdb, fixed_pdb):
 def add_amber_charges(fixed_pdb_file):
     """Add AMBER charges using PDB2PQR (optional)"""
     print(f"\n=== Adding AMBER charges to {fixed_pdb_file} ===")
-    pqr_file = f"{os.path.splitext(fixed_pdb_file)[0]}.pqr"
+    basename = os.path.basename(fixed_pdb_file)
+    pqr_file = f"outputs/{os.path.splitext(basename)[0]}.pqr"
 
     try:
         subprocess.run(
@@ -216,7 +220,7 @@ def copy_to_visualization(fixed_pdb_file):
     print("\n=== Copying results ===")
     import shutil
 
-    results_dir = "./results"
+    results_dir = "outputs/results"
     os.makedirs(results_dir, exist_ok=True)
     shutil.copy(
         fixed_pdb_file, os.path.join(results_dir, os.path.basename(fixed_pdb_file))

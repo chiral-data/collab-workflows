@@ -59,7 +59,7 @@ def generate_docking_ranking():
     print("\n=== Generating docking result ranking ===")
 
     # Get docking log files
-    log_files = glob.glob("docking_results/*_docking.log")
+    log_files = glob.glob("inputs/docking_results/*_docking.log")
 
     # Extract affinity values from each log
     results = []
@@ -73,7 +73,8 @@ def generate_docking_ranking():
     results.sort(key=lambda x: x[1])
 
     # Output results to a text file
-    output_file = "./results/docking_ranking.txt"
+    os.makedirs("outputs/results", exist_ok=True)
+    output_file = "outputs/results/docking_ranking.txt"
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("Docking Result Ranking (Strongest Binding First)\n")
@@ -94,11 +95,11 @@ def generate_docking_ranking():
 
 
 def copy_top_compound():
-    """Copy the top compound’s file"""
+    """Copy the top compound's file"""
     print("\n=== Copying Top Compound File ===")
 
     # Read ranking file
-    with open("./results/docking_ranking.txt", encoding="utf-8") as f:
+    with open("outputs/results/docking_ranking.txt", encoding="utf-8") as f:
         text = f.read()
 
     # Extract top compound name
@@ -109,10 +110,10 @@ def copy_top_compound():
     print(f"Top ligand: {top_ligand}")
 
     # Source SDF file path
-    src = Path(f"docking_results/{top_ligand}_docked.sdf")
+    src = Path(f"inputs/docking_results/{top_ligand}_docked.sdf")
 
     # Destination directory (results)
-    dst_dir = Path("./results")
+    dst_dir = Path("outputs/results")
     dst_dir.mkdir(exist_ok=True)
 
     # Destination path
@@ -128,8 +129,8 @@ def copy_ranking_file():
     """Copy ranking file to Visualization directory"""
     print("\n=== Copying Ranking File ===")
 
-    # Ranking file is already in ./results, so this is just a message
-    print("Ranking file already saved in ./results/.")
+    # Ranking file is already in outputs/results, so this is just a message
+    print("Ranking file already saved in outputs/results/.")
 
 
 if __name__ == "__main__":
