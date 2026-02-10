@@ -13,7 +13,7 @@ SOURCE_MAP = {
     },
     "Chiral Challenge #1": {
         "path": "workflow-010/input_files",
-        "files": ["2GOG_A_prepared_for_dock.pdb"],
+        "files": ["2GQG_A_prepared_for_dock.pdb"],
     },
 }
 
