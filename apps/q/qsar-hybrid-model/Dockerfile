@@ -49,8 +49,8 @@ RUN chmod +x /app/1_data_prep/run.sh \
     /app/3_analyze_overfitting/run.sh \
     /app/4_predict_from_csv/run.sh
 
-# Switch back to mambauser
-USER $MAMBA_USER
+# NOTE: Keep running as root so mounted volumes from host are writable.
+# Proper fix: silva executor should set container user to match host UID:GID.
 
 # Expose data volumes for explicit input/output handling
 VOLUME ["/app/input_files", "/app/4_predict_from_csv/inputs"]
