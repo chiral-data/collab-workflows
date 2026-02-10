@@ -8,7 +8,7 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 2. :checkered_flag:
 3. Virtual screening (by [Diego Lima](https://www.linkedin.com/in/diego-de-souza-lima-3113b8128/)) $^{silva :white_check_mark:  potter :white_check_mark:}$
 4. :construction:
-5. :construction:
+5. [QSAR Modeling Pipeline](#workflow-005--qsar-modeling-pipeline) - ML-based drug binding prediction based on [Divya Karade's QSAR model](https://github.com/charulagrl/QSAR) by [Divya Karade](https://www.linkedin.com/in/divya-karade) $^{silva :white_check_mark: potter :construction:}$
 6. :construction:
 7. Protein pocket detection based on [Pocketeer](https://github.com/cch1999/pocketeer) from [Charlie Harris](https://www.linkedin.com/in/charlie-harris-388285156/) by Chiral Dev Team $^{silva :white_check_mark:  potter :white_check_mark:}$
 8. Proteomics data processing by [Abdelrahman Mohamed Taha MAHMOUD](https://www.linkedin.com/in/abdelrahman-mohamed-taha-mahmoud/) $^{silva :white_check_mark:  potter :white_check_mark:}$
