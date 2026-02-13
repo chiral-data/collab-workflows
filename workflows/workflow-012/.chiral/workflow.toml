@@ -1,0 +1,22 @@
+name = "Boltz-2 Structure Prediction"
+description = "AI-based 3D protein structure prediction using Boltz-2"
+
+[dependencies]
+02-structure-prediction = ["01-sequence-upload"]
+03-report = ["02-structure-prediction"]
+04-molstar-visualization = ["02-structure-prediction"]
+
+[params.diffusion_samples]
+type = "integer"
+default = 10
+hint = "Number of structure models to generate"
+
+[params.recycling_steps]
+type = "integer"
+default = 5
+hint = "Number of recycling steps"
+
+[params.use_msa_server]
+type = "boolean"
+default = true
+hint = "Use MSA server for evolutionary information"

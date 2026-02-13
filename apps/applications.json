@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2025-10-18",
+  "last_updated": "2026-02-13",
   "applications": [
     {
       "id": "boltz",
@@ -181,6 +181,42 @@
         "cuda_version": null
       },
       "documentation_url": "https://bibiserv.cebitec.uni-bielefeld.de/rnahybrid"
+    },
+    {
+      "id": "boltzgen",
+      "name": "BoltzGen",
+      "version": "2026_02_13",
+      "category": "Protein Design",
+      "description": "AI-based protein/peptide binder design using generative diffusion",
+      "long_description": "BoltzGen designs protein and peptide binders using generative diffusion models. It supports antibody (Fab) and peptide binder design with scaffold libraries and de novo generation, including confidence scoring and binding affinity prediction.",
+      "base_image": "nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04",
+      "registry": "chiral.sakuracr.jp",
+      "image_path": "/boltzgen:2026_02_13",
+      "tags": ["protein", "design", "binder", "ml", "gpu"],
+      "requirements": {
+        "gpu": true,
+        "memory_gb": 10,
+        "cuda_version": "12.1"
+      },
+      "documentation_url": "https://github.com/HannesStark/boltzgen"
+    },
+    {
+      "id": "boltz_report",
+      "name": "Boltz Report",
+      "version": "2026_02_13",
+      "category": "Reporting",
+      "description": "Report generator for Boltz-2 and BoltzGen results",
+      "long_description": "Generates interactive HTML dashboards for protein structure prediction (Boltz-2) and binder design (BoltzGen) results. Includes quality assessment, confidence plots, and model ranking tables.",
+      "base_image": "python:3.8",
+      "registry": "chiral.sakuracr.jp",
+      "image_path": "/boltz_report:2026_02_13",
+      "tags": ["reporting", "visualization", "dashboard"],
+      "requirements": {
+        "gpu": false,
+        "memory_gb": 2,
+        "cuda_version": null
+      },
+      "documentation_url": ""
     }
   ]
 }

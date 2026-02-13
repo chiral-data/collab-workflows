@@ -1,0 +1,19 @@
+name = "Target Upload"
+description = "Upload and validate target structure and design specification for BoltzGen"
+outputs = ["*.yaml", "*.cif", "*.pdb", "target_summary.json"]
+
+[container]
+image = "chiral.sakuracr.jp/boltzgen:2026_02_13"
+
+[scripts]
+run = "run.sh"
+
+[params.design_spec]
+type = "file"
+default = ".chiral/test_inputs/beetletert.yaml"
+hint = "BoltzGen design specification YAML file"
+
+[params.target_structure]
+type = "file"
+default = ""
+hint = "Target structure file (PDB/CIF) - optional if not referenced in design spec"

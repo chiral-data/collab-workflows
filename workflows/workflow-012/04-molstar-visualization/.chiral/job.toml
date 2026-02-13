@@ -1,0 +1,11 @@
+name = "Mol* 3D Visualization"
+description = "Select top predicted structures for interactive 3D visualization with Mol*"
+inputs = ["*_model_*.pdb", "confidence_*.json"]
+outputs = ["top_model_*.pdb", "molstar_config.json"]
+node_type = "mol_star_visualization"
+
+[container]
+image = "chiral.sakuracr.jp/boltz:2025_09_05"
+
+[scripts]
+run = "run.sh"

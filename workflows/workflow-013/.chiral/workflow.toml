@@ -1,0 +1,23 @@
+name = "BoltzGen Binder Design"
+description = "AI-based protein/peptide binder design using BoltzGen"
+
+[dependencies]
+02-binder-design = ["01-target-upload"]
+03-report = ["02-binder-design"]
+04-molstar-visualization = ["02-binder-design"]
+
+[params.protocol]
+type = "enum"
+default = "protein-anything"
+hint = "Design protocol"
+enum_values = ["protein-anything", "protein-protein", "protein-peptide"]
+
+[params.num_designs]
+type = "integer"
+default = 50
+hint = "Number of binder candidates to generate"
+
+[params.budget]
+type = "integer"
+default = 10
+hint = "Final designs after filtering"
