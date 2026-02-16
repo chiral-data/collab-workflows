@@ -47,8 +47,22 @@ def mol_to_molblock(mol):
 
 
 def get_score(mol):
-    """Get binding score from molecule properties."""
-    for prop in ['score', 'minimizedAffinity', 'Binding_Energy']:
+    """Get binding energy from molecule properties.
+
+    Converts pK (score) to ΔG (kcal/mol) using: ΔG ≈ -1.36 × pK at 298K
+    minimizedAffinity and Binding_Energy are already in kcal/mol.
+    """
+    # Check for score (pK value) first - needs conversion
+    if mol.HasProp('score'):
+        try:
+            pk_value = float(mol.GetProp('score'))
+            # Convert pK to ΔG (kcal/mol): ΔG ≈ -1.36 × pK at 298K
+            return -1.36 * pk_value
+        except:
+            pass
+
+    # minimizedAffinity and Binding_Energy are already in kcal/mol
+    for prop in ['minimizedAffinity', 'Binding_Energy']:
         if mol.HasProp(prop):
             try:
                 return float(mol.GetProp(prop))

@@ -12,8 +12,8 @@ from scipy import stats
 from html_generator import generate_confounders_html
 
 # Configuration
-INPUT_FILE = "data_standardized.pkl"
-AA_COLS_FILE = "aa_cols.txt"
+INPUT_FILE = "inputs/data_standardized.pkl"
+AA_COLS_FILE = "inputs/aa_cols.txt"
 OUTPUT_DIR = "outputs"
 
 if not os.path.exists(OUTPUT_DIR):

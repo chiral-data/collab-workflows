@@ -63,6 +63,7 @@ def prepare_protein(input_path: str, output_path: str) -> bool:
 
     # Fix receptor using FEgrow
     output_file = Path(output_path)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     try:
         fegrow.fix_receptor(str(intermediate_path), str(output_file))
         logger.info(f"Fixed receptor saved to: {output_path}")

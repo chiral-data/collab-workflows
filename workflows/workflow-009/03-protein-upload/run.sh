@@ -2,5 +2,5 @@
 set -e
 
 workflow-run python validate_protein.py \
-    --input "${PARAM_PROTEIN_FILE}" \
-    --output protein.pdb
+    --input "inputs/${PARAM_PROTEIN_FILE}" \
+    --output outputs/protein.pdb
