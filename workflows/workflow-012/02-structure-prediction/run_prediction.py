@@ -26,6 +26,7 @@ def run_boltz_predict(input_file, output_dir, diffusion_samples, recycling_steps
         "--recycling_steps", str(recycling_steps),
         "--devices", "1",
         "--accelerator", "gpu",
+        "--no_kernels",
     ]
 
     if use_msa_server.lower() == "true":

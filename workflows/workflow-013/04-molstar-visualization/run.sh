@@ -3,6 +3,9 @@ set -e
 
 echo "Starting Node 04: Mol* 3D Visualization"
 
+# Copy input files from silva's inputs/ directory to working directory
+cp inputs/* . 2>/dev/null || true
+
 # Select top designs for Mol* viewer
 python select_top_designs.py \
     --input-dir "." \

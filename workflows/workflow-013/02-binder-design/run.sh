@@ -3,6 +3,9 @@ set -e
 
 echo "Starting Node 02: BoltzGen Binder Design"
 
+# Copy input files from silva's inputs/ directory to working directory
+cp inputs/* . 2>/dev/null || true
+
 # Find design spec from previous node
 DESIGN_SPEC=$(ls design_spec.yaml 2>/dev/null | head -1)
 

@@ -16,4 +16,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Create a working directory
 WORKDIR /workspace
 
-ENTRYPOINT ["/bin/sh"]
+CMD ["tail", "-f", "/dev/null"]

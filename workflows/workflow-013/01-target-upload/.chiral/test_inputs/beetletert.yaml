@@ -1,18 +1,13 @@
-version: 1
 # Peptide binder design against BeetleTERT (5cqg)
 # Source: HannesStark/boltzgen example vanilla_peptide_with_target_binding_site/beetletert.yaml
-sequences:
+# Updated for BoltzGen 0.1.4 schema
+entities:
   - protein:
       id: A
       sequence: TRRKALFSSPQMIEDLGLDYAMTPEDIVRDLLERTGRIPVDERFPMHPNIQNYAPGIEITNDPFDALFNGLRVITRVYQAHYQESITDRKITNPAAGLKKKQLQFYTATKRDTSGPHSGTAKMHALHIAGTSRDVTPHFQMPLTLNELEDFGEQYDKEIYPKVLQKHIRTFDLPRLVISLELDEEDPYENISIRGFNVTNFATFLESLTNDLKLRYEEFKVEAPFTEDTRILLQGVFKFDPGEEFTHQWNNPRMFFLHRAQVIYEQFTRDLGVSYWSATPTRHYVTGSRVTGIKDAVIVNQYPQKTGEIVAMHPTYLHTKGWRVNLDGR
+      binding_types:
+        binding: 145..150,180..184
   - protein:
       id: B
       # Peptide binder to be designed (12-20 residues)
-      msa: empty
-      design:
-        type: de_novo
-        min_length: 12
-        max_length: 20
-        binding_site:
-          chain: A
-          residues: [145, 146, 147, 148, 149, 150, 180, 181, 182, 183, 184]
+      sequence: 12..20

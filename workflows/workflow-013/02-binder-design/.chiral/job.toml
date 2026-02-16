@@ -2,10 +2,10 @@ name = "Binder Design"
 description = "Run BoltzGen binder design with GPU acceleration"
 inputs = ["design_spec.yaml", "*.cif", "*.pdb"]
 outputs = ["*.cif", "aggregate_metrics_analyze.csv", "results_overview.pdf"]
-use_gpu = true
 
 [container]
 image = "chiral.sakuracr.jp/boltzgen:2026_02_13"
+use_gpu = true
 
 [scripts]
 run = "run.sh"

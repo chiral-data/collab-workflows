@@ -18,13 +18,14 @@ from pathlib import Path
 def run_boltzgen_design(design_spec, output_dir, protocol, num_designs, budget):
     """Run BoltzGen design and collect results."""
     # Build command
+    boltzgen_output = "boltzgen_output"
     cmd = [
         "boltzgen", "run", design_spec,
         "--protocol", protocol,
         "--num_designs", str(num_designs),
         "--budget", str(budget),
         "--devices", "1",
-        "--accelerator", "gpu",
+        "--output", boltzgen_output,
     ]
 
     print(f"Running: {' '.join(cmd)}")
@@ -37,6 +38,8 @@ def run_boltzgen_design(design_spec, output_dir, protocol, num_designs, budget):
     # Collect results from BoltzGen output directory
     input_basename = Path(design_spec).stem
     results_patterns = [
+        f"{boltzgen_output}/**/*",
+        f"{boltzgen_output}/*",
         f"boltzgen_results_{input_basename}/**/*",
         f"boltzgen_results_{input_basename}/*",
         f"results_{input_basename}/**/*",

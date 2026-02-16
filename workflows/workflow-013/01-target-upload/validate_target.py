@@ -41,14 +41,15 @@ def validate_design_spec(filepath):
         if not isinstance(data, dict):
             raise ValueError("YAML root must be a mapping")
 
-        sequences = data.get('sequences', [])
-        if not sequences:
-            raise ValueError("No sequences defined in design spec")
+        # Support both old 'sequences' and new 'entities' format
+        entities = data.get('entities', data.get('sequences', []))
+        if not entities:
+            raise ValueError("No entities/sequences defined in design spec")
 
-        for i, seq_entry in enumerate(sequences):
-            if not isinstance(seq_entry, dict):
+        for i, entry in enumerate(entities):
+            if not isinstance(entry, dict):
                 continue
-            for entity_type, entity_data in seq_entry.items():
+            for entity_type, entity_data in entry.items():
                 entity_id = entity_data.get('id', f'chain_{i}')
                 entity_info = {
                     'type': entity_type,
@@ -56,27 +57,33 @@ def validate_design_spec(filepath):
                 }
 
                 if 'sequence' in entity_data:
-                    entity_info['length'] = len(entity_data['sequence'])
+                    seq = str(entity_data['sequence'])
+                    # New format: numeric sequence means design chain (e.g. "12..20")
+                    import re
+                    if re.search(r'\d', seq) and not re.search(r'[A-Z]{3,}', seq):
+                        entity_info['design'] = seq
+                        summary['design_chains'].append(str(entity_id))
+                    else:
+                        entity_info['length'] = len(seq)
 
                 if 'design' in entity_data:
                     design = entity_data['design']
-                    entity_info['design_type'] = design.get('type', 'unknown')
-                    summary['design_chains'].append(str(entity_id))
+                    if isinstance(design, dict):
+                        entity_info['design_type'] = design.get('type', 'unknown')
+                        summary['design_chains'].append(str(entity_id))
 
-                    if design.get('type') == 'de_novo':
-                        entity_info['min_length'] = design.get('min_length')
-                        entity_info['max_length'] = design.get('max_length')
-                    elif design.get('type') == 'scaffold_library':
-                        entity_info['scaffold_path'] = design.get('path', '')
+                        if design.get('type') == 'de_novo':
+                            entity_info['min_length'] = design.get('min_length')
+                            entity_info['max_length'] = design.get('max_length')
+                        elif design.get('type') == 'scaffold_library':
+                            entity_info['scaffold_path'] = design.get('path', '')
 
                 summary['entities'].append(entity_info)
     else:
         with open(path, 'r') as f:
             content = f.read()
-        if 'sequences' not in content:
-            raise ValueError("Missing 'sequences' field in design spec")
-        if 'design' not in content:
-            raise ValueError("No design specification found")
+        if 'entities' not in content and 'sequences' not in content:
+            raise ValueError("Missing 'entities' or 'sequences' field in design spec")
         summary['entities'].append({'type': 'unknown', 'note': 'PyYAML not available'})
 
     return summary

@@ -3,6 +3,9 @@ set -e
 
 echo "Starting Node 02: Boltz-2 Structure Prediction"
 
+# Copy input files from silva's inputs/ directory to working directory
+cp inputs/* . 2>/dev/null || true
+
 # Find validated YAML input from previous node
 INPUT_FILE=$(ls validated_input.yaml *.yaml 2>/dev/null | head -1)
 
