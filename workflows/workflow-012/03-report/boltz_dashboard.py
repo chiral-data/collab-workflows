@@ -282,40 +282,41 @@ class BoltzDashboard:
     
     def _create_confidence_plot(self) -> str:
         """Create horizontal bar chart of confidence scores."""
-        df = pd.DataFrame([
-            {
-                'Model': f"Model {model.model_id}",
-                'Confidence': model.confidence_score,
-                'Quality': self._get_confidence_quality(model.confidence_score),
-                'Rank': model.rank
-            }
-            for model in self.models
-        ])
-        
-        # Use GROMACS color scheme
         color_map = {
             'excellent': self.COLORS['excellent'],
             'good': self.COLORS['good'],
             'moderate': self.COLORS['moderate'],
             'poor': self.COLORS['poor']
         }
-        
+
+        # Build plain lists per model to avoid binary data encoding issues
+        model_labels = []
+        model_scores = []
+        model_colors = []
+        model_texts = []
+        for model in reversed(self.models):  # reversed so rank 1 is on top
+            quality = self._get_confidence_quality(model.confidence_score)
+            model_labels.append(f"Model {model.model_id} (Rank {model.rank})")
+            model_scores.append(round(model.confidence_score, 6))
+            model_colors.append(color_map[quality])
+            model_texts.append(f"{model.confidence_score:.3f}")
+
         fig = go.Figure()
-        
-        for quality in ['excellent', 'good', 'moderate', 'poor']:
-            quality_data = df[df['Quality'] == quality]
-            if not quality_data.empty:
-                fig.add_trace(go.Bar(
-                    y=quality_data['Model'],
-                    x=quality_data['Confidence'],
-                    name=quality.title(),
-                    marker_color=color_map[quality],
-                    orientation='h',
-                    text=[f"{conf:.3f}" for conf in quality_data['Confidence']],
-                    textposition='inside',
-                    textfont=dict(color='white', size=12)
-                ))
-        
+        fig.add_trace(go.Bar(
+            y=model_labels,
+            x=model_scores,
+            orientation='h',
+            marker_color=model_colors,
+            text=model_texts,
+            textposition='inside',
+            textfont=dict(color='white', size=12),
+            width=0.6,
+        ))
+
+        # Zoom x-axis to data range for better visual differentiation
+        x_min = max(0, min(model_scores) - 0.05)
+        x_max = min(1.0, max(model_scores) + 0.02)
+
         fig.update_layout(
             title=dict(
                 text="Model Confidence Scores",
@@ -324,26 +325,19 @@ class BoltzDashboard:
             ),
             xaxis=dict(
                 title="Confidence Score",
-                range=[0, 1.0],
-                tickformat='.2f',
+                range=[x_min, x_max],
+                tickformat='.3f',
                 gridcolor='lightgray'
             ),
             yaxis=dict(
                 title="Models",
-                categoryorder="total ascending"
             ),
-            height=400,
+            height=max(300, 120 + len(self.models) * 50),
             template="plotly_white",
-            legend=dict(
-                orientation="h",
-                yanchor="bottom",
-                y=1.02,
-                xanchor="right",
-                x=1
-            ),
-            margin=dict(l=80, r=20, t=80, b=60)
+            showlegend=False,
+            margin=dict(l=120, r=20, t=80, b=60)
         )
-        
+
         return pyo.plot(fig, output_type='div', include_plotlyjs=False)
     
     def _create_quality_analysis_plots(self) -> str:
@@ -351,37 +345,42 @@ class BoltzDashboard:
         # Create subplot with 2 rows, 2 columns for better analysis
         fig = make_subplots(
             rows=2, cols=2,
-            subplot_titles=('Confidence Score Distribution', 'pLDDT Score Distribution',
+            subplot_titles=('Confidence Score by Model', 'pLDDT Score by Model',
                            'Model Quality Overview', 'Confidence vs pLDDT Correlation'),
             specs=[[{"secondary_y": False}, {"secondary_y": False}],
                    [{"type": "domain"}, {"secondary_y": False}]]
         )
         
-        # Data preparation
-        confidence_scores = [model.confidence_score for model in self.models]
-        plddt_scores = [model.plddt_mean for model in self.models]
-        
-        # 1. Confidence Score Distribution (top-left)
+        # Data preparation - use plain lists to avoid binary serialization
+        model_labels = [f"Model {m.model_id}" for m in self.models]
+        confidence_scores = [round(m.confidence_score, 6) for m in self.models]
+        plddt_scores = [round(m.plddt_mean, 6) for m in self.models]
+
+        # 1. Confidence Score per Model (top-left)
+        colors_conf = [self.COLORS[self._get_confidence_quality(c)] for c in confidence_scores]
         fig.add_trace(
-            go.Histogram(
-                x=confidence_scores,
-                nbinsx=8,
-                name="Confidence Distribution",
-                marker_color=self.COLORS['excellent'],
-                opacity=0.7,
+            go.Bar(
+                x=model_labels,
+                y=confidence_scores,
+                name="Confidence",
+                marker_color=colors_conf,
+                text=[f"{c:.3f}" for c in confidence_scores],
+                textposition='outside',
                 showlegend=False
             ),
             row=1, col=1
         )
-        
-        # 2. pLDDT Score Distribution (top-right) 
+
+        # 2. pLDDT Score per Model (top-right)
+        colors_plddt = [self.COLORS[self._get_plddt_quality(p)] for p in plddt_scores]
         fig.add_trace(
-            go.Histogram(
-                x=plddt_scores,
-                nbinsx=8,
-                name="pLDDT Distribution",
-                marker_color=self.COLORS['good'],
-                opacity=0.7,
+            go.Bar(
+                x=model_labels,
+                y=plddt_scores,
+                name="pLDDT",
+                marker_color=colors_plddt,
+                text=[f"{p:.3f}" for p in plddt_scores],
+                textposition='outside',
                 showlegend=False
             ),
             row=1, col=2
@@ -430,13 +429,18 @@ class BoltzDashboard:
             row=2, col=2
         )
         
-        # Update subplot layouts with appropriate axis ranges and labels
-        fig.update_xaxes(title_text="Confidence Score", range=[0, 1], row=1, col=1)
-        fig.update_yaxes(title_text="Count", row=1, col=1)
-        fig.update_xaxes(title_text="pLDDT Score", range=[0, 1], row=1, col=2)
-        fig.update_yaxes(title_text="Count", row=1, col=2)
-        fig.update_xaxes(title_text="Confidence Score", range=[0, 1], row=2, col=2)
-        fig.update_yaxes(title_text="pLDDT Score", range=[0, 1], row=2, col=2)
+        # Update subplot layouts
+        conf_min = max(0, min(confidence_scores) - 0.05)
+        conf_max = min(1.0, max(confidence_scores) + 0.02)
+        plddt_min = max(0, min(plddt_scores) - 0.05)
+        plddt_max = min(1.0, max(plddt_scores) + 0.02)
+
+        fig.update_xaxes(title_text="Model", row=1, col=1)
+        fig.update_yaxes(title_text="Confidence Score", range=[conf_min, conf_max], tickformat='.3f', row=1, col=1)
+        fig.update_xaxes(title_text="Model", row=1, col=2)
+        fig.update_yaxes(title_text="pLDDT Score", range=[plddt_min, plddt_max], tickformat='.3f', row=1, col=2)
+        fig.update_xaxes(title_text="Confidence Score", range=[conf_min, conf_max], tickformat='.3f', row=2, col=2)
+        fig.update_yaxes(title_text="pLDDT Score", range=[plddt_min, plddt_max], tickformat='.3f', row=2, col=2)
         
         fig.update_layout(
             height=600,

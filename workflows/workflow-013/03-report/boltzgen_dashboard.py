@@ -109,15 +109,36 @@ class BoltzGenDashboard:
         self.metrics_df = pd.read_csv(csv_path)
 
         for _, row in self.metrics_df.iterrows():
-            design_id = str(row.get('design_id', row.get('name', row.name)))
+            design_id = str(row.get('id', row.get('design_id', row.get('name', row.name))))
 
             # Find corresponding CIF file
             cif_candidates = list(self.results_dir.glob(f'*{design_id}*.cif'))
             cif_file = cif_candidates[0].name if cif_candidates else ''
 
+            # Map BoltzGen CSV columns to DesignResult fields
+            # BoltzGen outputs: id, iptm, ptm, complex_plddt, bb_rmsd, delta_sasa_refolded
+            confidence = float(row.get('confidence_score',
+                               row.get('design_to_target_iptm',
+                               row.get('iptm', 0.0))))
+            plddt = float(row.get('complex_plddt',
+                          row.get('plddt',
+                          row.get('plddt_mean', 0.0))))
+            iptm = float(row.get('iptm',
+                         row.get('design_iptm', 0.0)))
+            ptm = float(row.get('ptm', 0.0))
+            rmsd = float(row.get('bb_rmsd',
+                         row.get('rmsd', 0.0)))
+            binding_energy = float(row.get('binding_energy',
+                                   row.get('delta_sasa_refolded', 0.0)))
+            sequence_recovery = float(row.get('sequence_recovery', 0.0))
+
             extra = {}
-            standard_cols = {'design_id', 'name', 'confidence_score', 'plddt', 'iptm',
-                             'ptm', 'binding_energy', 'sequence_recovery', 'rmsd'}
+            standard_cols = {'id', 'design_id', 'name', 'file_name',
+                             'confidence_score', 'plddt', 'plddt_mean',
+                             'complex_plddt', 'iptm', 'design_iptm',
+                             'design_to_target_iptm', 'ptm',
+                             'binding_energy', 'delta_sasa_refolded',
+                             'sequence_recovery', 'rmsd', 'bb_rmsd'}
             for col in row.index:
                 if col not in standard_cols:
                     val = row[col]
@@ -127,13 +148,13 @@ class BoltzGenDashboard:
             design = DesignResult(
                 design_id=design_id,
                 cif_file=cif_file,
-                confidence_score=float(row.get('confidence_score', 0.0)),
-                plddt_mean=float(row.get('plddt', row.get('plddt_mean', 0.0))),
-                iptm=float(row.get('iptm', 0.0)),
-                ptm=float(row.get('ptm', 0.0)),
-                binding_energy=float(row.get('binding_energy', 0.0)),
-                sequence_recovery=float(row.get('sequence_recovery', 0.0)),
-                rmsd=float(row.get('rmsd', 0.0)),
+                confidence_score=confidence,
+                plddt_mean=plddt,
+                iptm=iptm,
+                ptm=ptm,
+                binding_energy=binding_energy,
+                sequence_recovery=sequence_recovery,
+                rmsd=rmsd,
                 extra_metrics=extra,
             )
             self.designs.append(design)
@@ -204,16 +225,16 @@ class BoltzGenDashboard:
 
         best = self.designs[0]
 
-        # Determine primary scoring metric
+        # Primary scoring metric is iPTM (design_to_target_iptm)
         if confidences:
             best_score = max(confidences)
-            score_label = "Confidence"
+            score_label = "iPTM"
         elif iptms:
             best_score = max(iptms)
             score_label = "iPTM"
         else:
             best_score = 0.0
-            score_label = "Score"
+            score_label = "iPTM"
 
         quality = self._get_quality(best_score)
 
@@ -272,7 +293,7 @@ class BoltzGenDashboard:
 
         fig.update_layout(
             title=dict(text="Design Ranking (Top 20)", x=0.5, font=dict(size=18)),
-            xaxis=dict(title="Score", range=[0, 1.0], tickformat='.2f'),
+            xaxis=dict(title="iPTM Score", range=[0, 1.0], tickformat='.2f'),
             yaxis=dict(title="Designs", categoryorder="total ascending"),
             height=max(400, len(labels) * 25),
             template="plotly_white",
@@ -283,29 +304,43 @@ class BoltzGenDashboard:
 
     def _create_analysis_plots(self) -> str:
         """Create quality analysis subplot grid."""
-        scores = [d.confidence_score if d.confidence_score > 0 else d.iptm for d in self.designs]
-        plddts = [d.plddt_mean for d in self.designs if d.plddt_mean > 0]
-        iptms = [d.iptm for d in self.designs if d.iptm > 0]
+        scores = [round(d.confidence_score if d.confidence_score > 0 else d.iptm, 6) for d in self.designs]
+        rmsds = [round(d.rmsd, 6) for d in self.designs]
+        design_labels = [d.design_id for d in self.designs]
 
         fig = make_subplots(
             rows=2, cols=2,
-            subplot_titles=('Score Distribution', 'pLDDT Distribution',
-                            'Quality Overview', 'Score vs pLDDT'),
+            subplot_titles=('iPTM Score by Design', 'RMSD by Design',
+                            'Quality Overview', 'iPTM vs RMSD'),
             specs=[[{}, {}], [{"type": "domain"}, {}]],
         )
 
-        # Score distribution
-        fig.add_trace(go.Histogram(
-            x=scores, nbinsx=10, name="Score",
-            marker_color=self.COLORS['excellent'], opacity=0.7, showlegend=False,
+        # iPTM per design bar chart
+        score_colors = [self.COLORS[self._get_quality(s)] for s in scores]
+        fig.add_trace(go.Bar(
+            x=design_labels, y=scores, name="iPTM",
+            marker_color=score_colors,
+            text=[f"{s:.3f}" for s in scores],
+            textposition='outside', showlegend=False,
         ), row=1, col=1)
 
-        # pLDDT distribution
-        if plddts:
-            fig.add_trace(go.Histogram(
-                x=plddts, nbinsx=10, name="pLDDT",
-                marker_color=self.COLORS['good'], opacity=0.7, showlegend=False,
-            ), row=1, col=2)
+        # RMSD per design bar chart (lower is better)
+        rmsd_colors = []
+        for r in rmsds:
+            if r < 2.0:
+                rmsd_colors.append(self.COLORS['excellent'])
+            elif r < 4.0:
+                rmsd_colors.append(self.COLORS['good'])
+            elif r < 6.0:
+                rmsd_colors.append(self.COLORS['moderate'])
+            else:
+                rmsd_colors.append(self.COLORS['poor'])
+        fig.add_trace(go.Bar(
+            x=design_labels, y=rmsds, name="RMSD",
+            marker_color=rmsd_colors,
+            text=[f"{r:.2f}" for r in rmsds],
+            textposition='outside', showlegend=False,
+        ), row=1, col=2)
 
         # Quality pie
         quality_counts = {}
@@ -319,23 +354,25 @@ class BoltzGenDashboard:
             marker=dict(colors=[self.COLORS[q] for q in quality_counts]),
         ), row=2, col=1)
 
-        # Score vs pLDDT scatter
-        if plddts and len(plddts) == len(scores):
-            colors_scatter = [self.COLORS[self._get_quality(s)] for s in scores]
-            fig.add_trace(go.Scatter(
-                x=scores, y=plddts, mode='markers', showlegend=False,
-                marker=dict(size=10, color=colors_scatter, line=dict(width=1, color='white')),
-                text=[f"Design {d.design_id}" for d in self.designs],
-                hovertemplate="<b>%{text}</b><br>Score: %{x:.3f}<br>pLDDT: %{y:.3f}<extra></extra>",
-            ), row=2, col=2)
+        # iPTM vs RMSD scatter (high iPTM + low RMSD = best)
+        fig.add_trace(go.Scatter(
+            x=scores, y=rmsds, mode='markers+text', showlegend=False,
+            marker=dict(size=10, color=score_colors, line=dict(width=1, color='white')),
+            text=design_labels,
+            textposition='top center',
+            hovertemplate="<b>%{text}</b><br>iPTM: %{x:.3f}<br>RMSD: %{y:.2f}<extra></extra>",
+        ), row=2, col=2)
 
-        fig.update_xaxes(title_text="Score", range=[0, 1], row=1, col=1)
-        fig.update_xaxes(title_text="pLDDT", range=[0, 1], row=1, col=2)
-        fig.update_xaxes(title_text="Score", range=[0, 1], row=2, col=2)
-        fig.update_yaxes(title_text="pLDDT", range=[0, 1], row=2, col=2)
+        fig.update_xaxes(title_text="Design", row=1, col=1)
+        fig.update_yaxes(title_text="iPTM", range=[0, max(scores) * 1.15], tickformat='.2f', row=1, col=1)
+        fig.update_xaxes(title_text="Design", row=1, col=2)
+        rmsd_max = max(rmsds) if rmsds else 10
+        fig.update_yaxes(title_text="RMSD (\u00c5)", range=[0, rmsd_max * 1.2], row=1, col=2)
+        fig.update_xaxes(title_text="iPTM", range=[0, max(scores) * 1.15], tickformat='.2f', row=2, col=2)
+        fig.update_yaxes(title_text="RMSD (\u00c5)", range=[0, rmsd_max * 1.2], row=2, col=2)
 
         fig.update_layout(
-            height=600, template="plotly_white",
+            height=700, template="plotly_white",
             title=dict(text="Design Quality Analysis", x=0.5, font=dict(size=20)),
         )
 
@@ -356,6 +393,8 @@ class BoltzGenDashboard:
             cif_link = (f'<a href="{d.cif_file}" class="btn btn-sm btn-outline-primary">CIF</a>'
                         if d.cif_file else '-')
 
+            sequence = d.extra_metrics.get('designed_chain_sequence', '')
+
             table_rows.append(f"""
                 <tr>
                     <td><strong>{d.design_id}</strong></td>
@@ -363,9 +402,10 @@ class BoltzGenDashboard:
                     <td>{score:.4f}</td>
                     <td><span class="badge" style="background-color: {badge_color}; color: white; padding: 3px 8px; border-radius: 12px; font-size: 11px;">{quality.title()}</span></td>
                     <td>{d.plddt_mean:.3f}</td>
-                    <td>{d.iptm:.4f}</td>
                     <td>{d.ptm:.4f}</td>
-                    <td>{d.binding_energy:.3f}</td>
+                    <td>{d.rmsd:.3f}</td>
+                    <td>{d.binding_energy:.1f}</td>
+                    <td><code style="font-size: 11px;">{sequence}</code></td>
                     <td>{cif_link}</td>
                 </tr>
             """)
@@ -543,12 +583,13 @@ class BoltzGenDashboard:
                             <tr>
                                 <th>Design</th>
                                 <th>Rank</th>
-                                <th>Score</th>
+                                <th>iPTM</th>
                                 <th>Quality</th>
                                 <th>pLDDT</th>
-                                <th>iPTM</th>
                                 <th>PTM</th>
-                                <th>Binding E</th>
+                                <th>RMSD</th>
+                                <th>dSASA</th>
+                                <th>Sequence</th>
                                 <th>Structure</th>
                             </tr>
                         </thead>
