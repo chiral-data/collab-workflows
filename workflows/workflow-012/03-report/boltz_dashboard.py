@@ -474,6 +474,8 @@ class BoltzDashboard:
             conf_badge_color = self.COLORS[confidence_quality]
             plddt_badge_color = self.COLORS[plddt_quality]
             
+            iptm_display = f"{model.iptm:.4f}" if model.iptm > 0 else "N/A"
+
             table_rows.append(f"""
                 <tr>
                     <td><strong>Model {model.model_id}</strong></td>
@@ -483,7 +485,7 @@ class BoltzDashboard:
                     <td>{model.plddt_mean:.3f}</td>
                     <td><span class="badge" style="background-color: {plddt_badge_color}; color: white; padding: 3px 8px; border-radius: 12px; font-size: 11px;">{plddt_quality.title()}</span></td>
                     <td>{model.ptm:.4f}</td>
-                    <td>{model.iptm:.4f}</td>
+                    <td>{iptm_display}</td>
                     <td>{model.pde_mean:.4f}</td>
                     <td><a href="{model.structure_file}" class="btn btn-sm btn-outline-primary">PDB</a></td>
                 </tr>
@@ -691,7 +693,7 @@ class BoltzDashboard:
             
             <div class="summary-card">
                 <div class="icon"><i class="fas fa-chart-line" style="color: var(--good-color);"></i></div>
-                <div class="value">{metrics['best_plddt']:.1f}</div>
+                <div class="value">{metrics['best_plddt']:.3f}</div>
                 <div class="label">Best pLDDT</div>
             </div>
             
@@ -703,8 +705,8 @@ class BoltzDashboard:
             
             <div class="summary-card">
                 <div class="icon"><i class="fas fa-balance-scale" style="color: var(--primary-color);"></i></div>
-                <div class="value">{metrics['model_consistency']:.3f}</div>
-                <div class="label">Model Consistency</div>
+                <div class="value">{metrics['model_consistency']:.4f}</div>
+                <div class="label">Model CV (lower=better)</div>
             </div>
         </div>
         
@@ -722,8 +724,8 @@ class BoltzDashboard:
                             <strong>Quality Metrics:</strong>
                             <ul class="mt-2">
                                 <li>Best Confidence: {metrics['best_confidence']:.3f}</li>
-                                <li>Best pLDDT: {metrics['best_plddt']:.1f}</li>
-                                <li>Model Consistency: {metrics['model_consistency']:.3f}</li>
+                                <li>Best pLDDT: {metrics['best_plddt']:.3f}</li>
+                                <li>Model CV: {metrics['model_consistency']:.4f} (lower = more consistent)</li>
                             </ul>
                         </div>
                         <div class="col-md-6">

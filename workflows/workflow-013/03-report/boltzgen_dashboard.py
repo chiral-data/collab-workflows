@@ -243,8 +243,8 @@ class BoltzGenDashboard:
             'best_design_id': best.design_id,
             'best_score': best_score,
             'score_label': score_label,
-            'best_plddt': max(plddts) if plddts else 0.0,
-            'best_iptm': max(iptms) if iptms else 0.0,
+            'best_plddt': (max(plddts) if plddts else 0.0),
+            'best_rmsd': min([d.rmsd for d in self.designs if d.rmsd > 0]) if any(d.rmsd > 0 for d in self.designs) else 0.0,
             'mean_score': np.mean(confidences) if confidences else (np.mean(iptms) if iptms else 0.0),
             'design_quality': quality,
             'target_name': self.target_name,
@@ -292,7 +292,7 @@ class BoltzGenDashboard:
         ))
 
         fig.update_layout(
-            title=dict(text="Design Ranking (Top 20)", x=0.5, font=dict(size=18)),
+            title=dict(text=f"Design Ranking (Top {min(20, len(labels))})", x=0.5, font=dict(size=18)),
             xaxis=dict(title="iPTM Score", range=[0, 1.0], tickformat='.2f'),
             yaxis=dict(title="Designs", categoryorder="total ascending"),
             height=max(400, len(labels) * 25),
@@ -509,13 +509,13 @@ class BoltzGenDashboard:
             </div>
             <div class="summary-card">
                 <div class="icon"><i class="fas fa-chart-line" style="color: var(--good-color);"></i></div>
-                <div class="value">{metrics['best_plddt']:.1f}</div>
+                <div class="value">{metrics['best_plddt']:.3f}</div>
                 <div class="label">Best pLDDT</div>
             </div>
             <div class="summary-card">
-                <div class="icon"><i class="fas fa-link" style="color: var(--moderate-color);"></i></div>
-                <div class="value">{metrics['best_iptm']:.3f}</div>
-                <div class="label">Best iPTM</div>
+                <div class="icon"><i class="fas fa-ruler" style="color: var(--moderate-color);"></i></div>
+                <div class="value">{metrics['best_rmsd']:.2f} &Aring;</div>
+                <div class="label">Lowest RMSD</div>
             </div>
             <div class="summary-card">
                 <div class="icon"><i class="fas fa-medal" style="color: var(--primary-color);"></i></div>
@@ -537,8 +537,8 @@ class BoltzGenDashboard:
                             <strong>Quality Metrics:</strong>
                             <ul class="mt-2">
                                 <li>Best {metrics['score_label']}: {metrics['best_score']:.3f}</li>
-                                <li>Best pLDDT: {metrics['best_plddt']:.1f}</li>
-                                <li>Best iPTM: {metrics['best_iptm']:.3f}</li>
+                                <li>Best pLDDT: {metrics['best_plddt']:.3f}</li>
+                                <li>Lowest RMSD: {metrics['best_rmsd']:.2f} &Aring;</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
@@ -587,8 +587,8 @@ class BoltzGenDashboard:
                                 <th>Quality</th>
                                 <th>pLDDT</th>
                                 <th>PTM</th>
-                                <th>RMSD</th>
-                                <th>dSASA</th>
+                                <th>RMSD (&Aring;)</th>
+                                <th>dSASA (&Aring;&sup2;)</th>
                                 <th>Sequence</th>
                                 <th>Structure</th>
                             </tr>
