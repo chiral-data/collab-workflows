@@ -4,7 +4,6 @@ description = "AI-based 3D protein structure prediction using Boltz-2"
 [dependencies]
 02-structure-prediction = ["01-sequence-upload"]
 03-report = ["02-structure-prediction"]
-04-molstar-visualization = ["02-structure-prediction"]
 
 [params.diffusion_samples]
 type = "integer"

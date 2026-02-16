@@ -378,6 +378,163 @@ class BoltzGenDashboard:
 
         return pyo.plot(fig, output_type='div', include_plotlyjs=False)
 
+    def _read_structure_files(self, top_n: int = 5) -> List[Dict[str, Any]]:
+        """Read top N CIF structure files for 3D viewer embedding."""
+        structures = []
+        for design in self.designs[:top_n]:
+            if not design.cif_file:
+                continue
+            cif_path = self.results_dir / design.cif_file
+            if not cif_path.exists():
+                print(f"Warning: Structure file not found: {cif_path}")
+                continue
+            try:
+                raw = cif_path.read_text(encoding='utf-8')
+                # Escape for safe JS template literal embedding
+                escaped = raw.replace('\\', '\\\\').replace('`', '\\`').replace('${', '\\${')
+                score = design.confidence_score if design.confidence_score > 0 else design.iptm
+                structures.append({
+                    'design_id': design.design_id,
+                    'rank': design.rank,
+                    'score': score,
+                    'label': f"Rank {design.rank} - {design.design_id} (iPTM: {score:.3f})",
+                    'data': escaped,
+                    'format': 'cif',
+                })
+            except Exception as e:
+                print(f"Warning: Could not read {cif_path}: {e}")
+        return structures
+
+    def _generate_viewer_section(self) -> str:
+        """Generate 3Dmol.js viewer card HTML for embedding in dashboard."""
+        structures = self._read_structure_files()
+        if not structures:
+            return """
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-cube"></i> 3D Structure Viewer
+            </div>
+            <div class="card-body">
+                <p class="text-muted text-center py-4">No structure files (CIF) found for 3D viewing.</p>
+            </div>
+        </div>
+"""
+
+        # Build dropdown options
+        options_html = ""
+        for s in structures:
+            selected = ' selected' if s['rank'] == 1 else ''
+            options_html += f'<option value="{s["rank"]}"{selected}>{s["label"]}</option>\n'
+
+        # Build JS structure data object
+        struct_entries = []
+        for s in structures:
+            struct_entries.append(
+                f'            {s["rank"]}: {{data: `{s["data"]}`, format: "{s["format"]}"}}'
+            )
+        struct_js = ',\n'.join(struct_entries)
+
+        return f"""
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-cube"></i> 3D Structure Viewer
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                    <div>
+                        <label for="structureSelect" class="form-label mb-1" style="font-size: 0.85rem; color: #64748b;">Select Design</label>
+                        <select id="structureSelect" class="form-select form-select-sm" style="min-width: 300px;" onchange="loadStructure(this.value)">
+                            {options_html}
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label mb-1" style="font-size: 0.85rem; color: #64748b;">Style</label>
+                        <div class="btn-group btn-group-sm" role="group" id="styleButtons">
+                            <button type="button" class="btn btn-outline-primary active" onclick="setViewerStyle('cartoon', this)">Cartoon</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="setViewerStyle('stick', this)">Stick</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="setViewerStyle('sphere', this)">Sphere</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="setViewerStyle('line', this)">Line</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="setViewerStyle('surface', this)">Surface</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="viewer3d" style="height: 500px; width: 100%; position: relative; background: #1a1a2e; border-radius: 10px;"></div>
+            </div>
+        </div>
+
+        <script>
+        (function() {{
+            var structureData = {{
+{struct_js}
+            }};
+
+            var viewer = null;
+            var currentStyle = 'cartoon';
+
+            function initViewer() {{
+                var container = document.getElementById('viewer3d');
+                viewer = $3Dmol.createViewer(container, {{backgroundColor: '#1a1a2e'}});
+                // Load the first structure (rank 1)
+                var firstRank = Object.keys(structureData)[0];
+                loadStructure(firstRank);
+            }}
+
+            window.loadStructure = function(rank) {{
+                if (!viewer || !structureData[rank]) return;
+                viewer.removeAllModels();
+                viewer.removeAllSurfaces();
+                viewer.addModel(structureData[rank].data, structureData[rank].format);
+                applyStyle(currentStyle);
+                viewer.zoomTo();
+                viewer.render();
+            }};
+
+            function applyStyle(style) {{
+                if (!viewer) return;
+                viewer.removeAllSurfaces();
+                viewer.setStyle({{}}, {{}});
+                var styleSpec = {{}};
+                switch(style) {{
+                    case 'cartoon':
+                        styleSpec = {{cartoon: {{colorscheme: 'chainHetatm'}}}};
+                        break;
+                    case 'stick':
+                        styleSpec = {{stick: {{colorscheme: 'chainHetatm', radius: 0.12}}}};
+                        break;
+                    case 'sphere':
+                        styleSpec = {{sphere: {{colorscheme: 'chainHetatm', scale: 0.3}}}};
+                        break;
+                    case 'line':
+                        styleSpec = {{line: {{colorscheme: 'chainHetatm'}}}};
+                        break;
+                    case 'surface':
+                        styleSpec = {{cartoon: {{colorscheme: 'chainHetatm'}}}};
+                        viewer.addSurface($3Dmol.SurfaceType.VDW, {{opacity: 0.7, color: 'white'}});
+                        break;
+                }}
+                viewer.setStyle({{}}, styleSpec);
+                viewer.render();
+            }}
+
+            window.setViewerStyle = function(style, btn) {{
+                currentStyle = style;
+                document.querySelectorAll('#styleButtons .btn').forEach(function(b) {{
+                    b.classList.remove('active');
+                }});
+                if (btn) btn.classList.add('active');
+                applyStyle(style);
+            }};
+
+            // Initialize when DOM and 3Dmol.js are ready
+            if (document.readyState === 'loading') {{
+                document.addEventListener('DOMContentLoaded', initViewer);
+            }} else {{
+                initViewer();
+            }}
+        }})();
+        </script>
+"""
+
     def _generate_html_dashboard(self) -> str:
         """Generate the complete HTML dashboard."""
         metrics = self._calculate_summary_metrics()
@@ -414,6 +571,7 @@ class BoltzGenDashboard:
 
         ranking_plot = self._create_ranking_plot()
         analysis_plots = self._create_analysis_plots()
+        viewer_section = self._generate_viewer_section()
 
         quality_bg = {
             'excellent': '#d4edda', 'good': '#d1ecf1',
@@ -428,6 +586,7 @@ class BoltzGenDashboard:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoltzGen Binder Design Results - {metrics['target_name']}</title>
     <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -571,6 +730,8 @@ class BoltzGenDashboard:
                 <div class="plot-container">{analysis_plots}</div>
             </div>
         </div>
+
+        {viewer_section}
 
         <div class="card">
             <div class="card-header">

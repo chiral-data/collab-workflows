@@ -4,7 +4,6 @@ description = "AI-based protein/peptide binder design using BoltzGen"
 [dependencies]
 02-binder-design = ["01-target-upload"]
 03-report = ["02-binder-design"]
-04-molstar-visualization = ["02-binder-design"]
 
 [params.protocol]
 type = "enum"
