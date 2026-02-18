@@ -1,0 +1,27 @@
+name = "Binder Design"
+description = "Run BoltzGen binder design with GPU acceleration"
+inputs = ["design_spec.yaml", "*.cif", "*.pdb"]
+outputs = ["*.cif", "aggregate_metrics_analyze.csv", "results_overview.pdf"]
+
+[container]
+image = "chiral.sakuracr.jp/boltzgen:2026_02_13"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.protocol]
+type = "enum"
+default = "protein-anything"
+hint = "Design protocol"
+enum_values = ["protein-anything", "protein-protein", "protein-peptide"]
+
+[params.num_designs]
+type = "integer"
+default = 50
+hint = "Number of binder candidates to generate"
+
+[params.budget]
+type = "integer"
+default = 10
+hint = "Final designs after filtering"
