@@ -15,3 +15,5 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 9. [FEgrow](https://github.com/cole-group/FEgrow) An Open-Source Molecular Builder and Free Energy Preparation Workflow by [Koki Shinbara](https://www.linkedin.com/in/koki-shinbara-07244919a/) and Chiral Dev Team $^{silva :white_check_mark: potter :white_check_mark:}$
 10. Chiral #1 Online Challenge - Molecular Docking $^{silva :white_check_mark:  potter :white_check_mark:}$
 11. [QSAR Modeling Pipeline](#workflow-011--qsar-modeling-pipeline) - ML-based drug binding prediction by [Abdelrahman Mohamed Taha MAHMOUD](https://www.linkedin.com/in/abdelrahman-mohamed-taha-mahmoud/) $^{silva :white_check_mark: potter :construction:}$
+12. [Boltz-2](https://github.com/jwohlwend/boltz) Structure Prediction by Chiral Dev Team $^{silva :white_check_mark: potter :construction:}$
+13. [BoltzGen](https://github.com/HannesStark/boltzgen) Binder Design by Chiral Dev Team $^{silva :white_check_mark: potter :construction:}$
