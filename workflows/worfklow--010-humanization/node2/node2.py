@@ -1,0 +1,177 @@
+"""
+Node 2 – PLM Embedding Generation (ProtT5)
+==========================================
+Loads each .pt file produced by Node 1, generates a per-residue
+ProtT5 protein language model embedding for the concatenated
+heavy+light sequence, and saves an enriched .pt file that Node 3
+can optionally consume for the ABB3-LM variant.
+
+This node is OPTIONAL.  If you want to run plain ABB3 (no language
+model), skip directly from Node 1 → Node 3, pointing Node 3 at the
+Node 1 outputs.
+
+Outputs
+-------
+results/node2/<pair_id>.pt
+    Same dict as Node 1 output, extended with:
+        {
+            ...                         # everything from node1
+            "plm_embedding": Tensor,    # shape (L, 1024)  float32
+        }
+
+Notes
+-----
+* ProtT5 is large (~3 GB).  A GPU is strongly recommended.
+* If a pre-computed embedding .pt file lives alongside the input
+  (as produced by download.sh), it is loaded directly instead of
+  recomputing, saving significant time and memory.
+"""
+
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+from typing import Any, Dict, Optional
+
+import torch
+
+
+# ---------------------------------------------------------------------------
+# PLM helpers
+# ---------------------------------------------------------------------------
+
+def load_or_compute_embedding(
+    pair_id: str,
+    heavy: str,
+    light: str,
+    precomputed_dir: Optional[Path],
+    model,          # ProtT5 instance (lazy-loaded)
+    device: torch.device,
+) -> torch.Tensor:
+    """
+    Return a PLM embedding tensor of shape (L, D).
+
+    Looks for a pre-computed file at
+        <precomputed_dir>/<pair_id>.pt
+    before falling back to on-the-fly ProtT5 inference.
+    """
+    if precomputed_dir is not None:
+        candidate = precomputed_dir / f"{pair_id}.pt"
+        if candidate.exists():
+            cached = torch.load(candidate, map_location="cpu")
+            embedding = cached["plm_embedding"]
+            print(f"[Node 2]   Loaded cached embedding from {candidate}  shape={tuple(embedding.shape)}")
+            return embedding
+
+    # On-the-fly inference
+    if model is None:
+        raise RuntimeError(
+            "ProtT5 model is not loaded and no pre-computed embedding was found.  "
+            "Either provide --precomputed_dir or ensure ProtT5 can be imported."
+        )
+    print(f"[Node 2]   Computing ProtT5 embedding for {pair_id} …")
+    # ProtT5 expects the concatenated H+L sequence (space-separated residues)
+    full_seq = heavy + light
+    spaced = " ".join(list(full_seq))
+    with torch.no_grad():
+        embedding = model.get_embeddings([spaced], device=device)[0]   # (L, D)
+    print(f"[Node 2]   Computed embedding shape={tuple(embedding.shape)}")
+    return embedding.cpu()
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Node 2: Generate ProtT5 PLM embeddings for ABB3-LM."
+    )
+    parser.add_argument(
+        "--inputs", required=True,
+        help="Directory of Node 1 .pt files"
+    )
+    parser.add_argument(
+        "--outputs", required=True,
+        help="Directory to write enriched .pt files"
+    )
+    parser.add_argument(
+        "--precomputed_dir", default=None,
+        help="(Optional) Directory containing pre-computed <pair_id>.pt embedding files"
+    )
+    parser.add_argument(
+        "--device", default="auto", choices=["auto", "cpu", "cuda"],
+        help="Compute device for ProtT5 inference (default: auto)"
+    )
+    args = parser.parse_args()
+
+    inputs_dir = Path(args.inputs)
+    outputs_dir = Path(args.outputs)
+    outputs_dir.mkdir(parents=True, exist_ok=True)
+
+    precomputed_dir = Path(args.precomputed_dir) if args.precomputed_dir else None
+
+    if args.device == "auto":
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    else:
+        device = torch.device(args.device)
+
+    print(f"[Node 2] Device: {device}")
+
+    # Collect input files
+    pt_files = sorted(inputs_dir.glob("*.pt"))
+    if not pt_files:
+        raise RuntimeError(f"No .pt files found in {inputs_dir}")
+
+    print(f"[Node 2] Found {len(pt_files)} input file(s).")
+
+    # Lazy-load ProtT5 only if we actually need it
+    plm_model = None
+
+    def get_plm_model():
+        nonlocal plm_model
+        if plm_model is not None:
+            return plm_model
+        print("[Node 2] Loading ProtT5 model (this may take a while) …")
+        try:
+            from abodybuilder3.language.model import ProtT5
+            plm_model = ProtT5()
+            plm_model.to(device)
+            plm_model.eval()
+        except ImportError as e:
+            raise ImportError(
+                "abodybuilder3 (with ProtT5) is not installed or not on the Python path."
+            ) from e
+        return plm_model
+
+    for pt_file in pt_files:
+        obj: Dict[str, Any] = torch.load(pt_file, map_location="cpu")
+        pair_id: str = obj["id"]
+        heavy: str = obj["heavy"]
+        light: str = obj["light"]
+
+        print(f"[Node 2] Processing: {pair_id}")
+
+        # Check if we need the live model
+        need_model = precomputed_dir is None or not (precomputed_dir / f"{pair_id}.pt").exists()
+        model_instance = get_plm_model() if need_model else None
+
+        embedding = load_or_compute_embedding(
+            pair_id=pair_id,
+            heavy=heavy,
+            light=light,
+            precomputed_dir=precomputed_dir,
+            model=model_instance,
+            device=device,
+        )
+
+        out_obj = {**obj, "plm_embedding": embedding}
+        out_path = outputs_dir / f"{pair_id}.pt"
+        torch.save(out_obj, out_path)
+        print(f"[Node 2]   Saved → {out_path}")
+
+    print(f"[Node 2] Done. {len(pt_files)} file(s) written to {outputs_dir}")
+
+
+if __name__ == "__main__":
+    main()
