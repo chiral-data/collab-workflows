@@ -1,0 +1,6 @@
+use_gpu = true
+
+[container]
+docker_image = "chiral.sakuracr.jp/workflow-010-antibody-structure-prediction:2025_11_12"
+
+[scripts]

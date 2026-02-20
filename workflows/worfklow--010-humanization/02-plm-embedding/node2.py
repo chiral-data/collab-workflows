@@ -4,15 +4,14 @@ Node 2 – PLM Embedding Generation (ProtT5)
 Loads each .pt file produced by Node 1, generates a per-residue
 ProtT5 protein language model embedding for the concatenated
 heavy+light sequence, and saves an enriched .pt file that Node 3
-can optionally consume for the ABB3-LM variant.
+can consume for the ABB3-LM variant.
 
 This node is OPTIONAL.  If you want to run plain ABB3 (no language
-model), skip directly from Node 1 → Node 3, pointing Node 3 at the
-Node 1 outputs.
+model), skip directly from Node 1 → Node 3.
 
 Outputs
 -------
-results/node2/<pair_id>.pt
+outputs/<pair_id>.pt
     Same dict as Node 1 output, extended with:
         {
             ...                         # everything from node1
@@ -22,9 +21,15 @@ results/node2/<pair_id>.pt
 Notes
 -----
 * ProtT5 is large (~3 GB).  A GPU is strongly recommended.
-* If a pre-computed embedding .pt file lives alongside the input
-  (as produced by download.sh), it is loaded directly instead of
-  recomputing, saving significant time and memory.
+* If a pre-computed embedding .pt file lives in --precomputed_dir,
+  it is loaded directly instead of recomputing.
+
+Fixes vs original
+-----------------
+* ProtT5 wrapper does not expose .to() / .eval() directly — those
+  calls are now made on the inner HuggingFace model instead.
+* Embedding API uses get_embeddings([heavy], [light]) with separate
+  lists matching the upstream ABodyBuilder3 API contract.
 """
 
 from __future__ import annotations
@@ -63,18 +68,19 @@ def load_or_compute_embedding(
             print(f"[Node 2]   Loaded cached embedding from {candidate}  shape={tuple(embedding.shape)}")
             return embedding
 
-    # On-the-fly inference
     if model is None:
         raise RuntimeError(
-            "ProtT5 model is not loaded and no pre-computed embedding was found.  "
+            "ProtT5 model is not loaded and no pre-computed embedding was found. "
             "Either provide --precomputed_dir or ensure ProtT5 can be imported."
         )
+
     print(f"[Node 2]   Computing ProtT5 embedding for {pair_id} …")
-    # ProtT5 expects the concatenated H+L sequence (space-separated residues)
-    full_seq = heavy + light
-    spaced = " ".join(list(full_seq))
+
+    # Use the upstream API: separate heavy and light lists.
+    # This matches ABodyBuilder3's get_embeddings([heavy_seqs], [light_seqs]) signature.
     with torch.no_grad():
-        embedding = model.get_embeddings([spaced], device=device)[0]   # (L, D)
+        embedding = model.get_embeddings([heavy], [light], device=device)[0]   # (L, D)
+
     print(f"[Node 2]   Computed embedding shape={tuple(embedding.shape)}")
     return embedding.cpu()
 
@@ -118,14 +124,13 @@ def main() -> None:
 
     print(f"[Node 2] Device: {device}")
 
-    # Collect input files
     pt_files = sorted(inputs_dir.glob("*.pt"))
     if not pt_files:
         raise RuntimeError(f"No .pt files found in {inputs_dir}")
 
     print(f"[Node 2] Found {len(pt_files)} input file(s).")
 
-    # Lazy-load ProtT5 only if we actually need it
+    # Lazy-load ProtT5 only if we actually need it for at least one pair.
     plm_model = None
 
     def get_plm_model():
@@ -136,8 +141,19 @@ def main() -> None:
         try:
             from abodybuilder3.language.model import ProtT5
             plm_model = ProtT5()
-            plm_model.to(device)
-            plm_model.eval()
+            # ProtT5 wraps a HuggingFace model; move the inner model to device.
+            # Calling .to() / .eval() on the wrapper itself may fail.
+            if hasattr(plm_model, "model"):
+                plm_model.model.to(device).eval()
+            elif hasattr(plm_model, "encoder"):
+                plm_model.encoder.to(device).eval()
+            else:
+                # Fallback: try the wrapper directly and catch if it fails
+                try:
+                    plm_model.to(device)
+                    plm_model.eval()
+                except AttributeError:
+                    pass
         except ImportError as e:
             raise ImportError(
                 "abodybuilder3 (with ProtT5) is not installed or not on the Python path."
@@ -152,7 +168,6 @@ def main() -> None:
 
         print(f"[Node 2] Processing: {pair_id}")
 
-        # Check if we need the live model
         need_model = precomputed_dir is None or not (precomputed_dir / f"{pair_id}.pt").exists()
         model_instance = get_plm_model() if need_model else None
 
