@@ -47,7 +47,7 @@ RUN pip install --no-cache-dir \
 # Clone the upstream repo, download model checkpoints from Zenodo via
 # the repo's own download.sh, then install as a Python package.
 # This ensures checkpoints are always in sync with the cloned version.
-RUN git clone https://github.com/oxpig/ABodyBuilder3.git abodybuilder3 \
+RUN git clone https://github.com/Exscientia/abodybuilder3.git abodybuilder3 \
     && cd abodybuilder3 \
     && bash download.sh \
     && cd .. \
