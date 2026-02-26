@@ -21,8 +21,8 @@ inputs/light.fasta  ─┘→ [01] → outputs/*.pt
                                      │
                               (optional) [02] → outputs/*.pt (+ PLM embedding)
                                                       │
-                              inputs/checkpoint.ckpt ─┤
-                                                   [03] → outputs/*.pdb
+                              (checkpoint baked in image) ─┤
+                                                        [03] → outputs/*.pdb
                                                                │
                                                            [04] → outputs/report.html
 ```
@@ -31,7 +31,7 @@ inputs/light.fasta  ─┘→ [01] → outputs/*.pt
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `PARAM_DEVICE` | `cpu` | Compute device: `cpu` or `cuda` |
+| `PARAM_DEVICE` | `cuda` | Compute device: `cpu` or `cuda` |
 | `PARAM_USE_PLM` | `0` | Set `1` to run Node 02 (ABB3-LM) |
 | `PARAM_REPORT_TITLE` | `ABB3 Structure Predictions` | Title for HTML report |
 
@@ -42,7 +42,7 @@ inputs/light.fasta  ─┘→ [01] → outputs/*.pt
 docker build -t abodybuilder3:latest .
 
 # Node 01 – Input Preparation
-docker run --rm \
+docker run --rm --gpus all \
   -v $(pwd)/data:/workflow/01-input-preparation/inputs \
   -v $(pwd)/results/01:/workflow/01-input-preparation/outputs \
   -w /workflow/01-input-preparation \
@@ -50,7 +50,7 @@ docker run --rm \
   bash run.sh
 
 # Node 03 – Structure Prediction (skip 02 for plain ABB3)
-docker run --rm \
+docker run --rm --gpus all \
   -v $(pwd)/results/01:/workflow/03-structure-prediction/inputs \
   -v $(pwd)/results/03:/workflow/03-structure-prediction/outputs \
   -w /workflow/03-structure-prediction \
@@ -58,7 +58,7 @@ docker run --rm \
   bash run.sh
 
 # Node 04 – Visualization Report
-docker run --rm \
+docker run --rm --gpus all \
   -v $(pwd)/results/03:/workflow/04-visualization-report/inputs \
   -v $(pwd)/results/04:/workflow/04-visualization-report/outputs \
   -w /workflow/04-visualization-report \
