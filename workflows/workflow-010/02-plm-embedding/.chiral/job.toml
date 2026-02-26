@@ -1,0 +1,15 @@
+name = "PLM Embedding"
+description = "Generate ProtT5 protein language model embeddings for ABB3-LM (optional)"
+inputs = ["*.pt"]
+outputs = ["*.pt"]
+
+[container]
+image = "chiral.sakuracr.jp/abodybuilder3:2026_02_26"
+
+[scripts]
+run = "run.sh"
+
+[params.DEVICE]
+type = "string"
+default = "cuda"
+hint = "Compute device: cpu or cuda"

@@ -1,0 +1,9 @@
+name = "Input Preparation"
+description = "Read, validate, and pair heavy/light chain FASTA sequences into .pt files for ABB3"
+outputs = ["*.pt"]
+
+[container]
+image = "chiral.sakuracr.jp/abodybuilder3:2026_02_26"
+
+[scripts]
+run = "run.sh"

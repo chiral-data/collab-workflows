@@ -1,0 +1,15 @@
+name = "Structure Prediction"
+description = "Run ABB3 forward pass to predict antibody Fv structure; outputs one PDB per pair"
+inputs = ["*.pt"]
+outputs = ["*.pdb"]
+
+[container]
+image = "chiral.sakuracr.jp/abodybuilder3:2026_02_26"
+
+[scripts]
+run = "run.sh"
+
+[params.DEVICE]
+type = "string"
+default = "cuda"
+hint = "Compute device: cpu or cuda"
