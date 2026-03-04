@@ -4,8 +4,3 @@ description = "Downloads a PDB file, detects protein pockets, and generates visu
 [dependencies]
 02_pocket = ["01_download"]
 03_visualize = ["02_pocket"]
-
-[params.pdb_id]
-type = "string"
-default = "4TOS"
-hint = "PDB ID to download and analyze (e.g., 4TOS, 1A2B)"

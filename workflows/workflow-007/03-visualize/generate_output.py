@@ -11,18 +11,21 @@ import pocketeer as pt
 from pocketeer.core.types import AlphaSphere
 
 # =============================================================================
-# CONFIGURATION FROM ENVIRONMENT VARIABLES
+# CONFIGURATION
 # =============================================================================
-
-# PDB ID (from global workflow parameter)
-pdb_id = os.environ.get("PARAM_PDB_ID", "4TOS")
 
 # Input/Output directories (silva 0.4.0+)
 input_dir = "inputs"
 output_dir = "outputs"
 
+# Read PDB ID from config.json (produced by upstream jobs)
+config_path = os.path.join(input_dir, "config.json")
+with open(config_path, "r") as f:
+    config = json.load(f)
+pdb_id = config["pdb_id"]
+
 # Input files
-pdb_filename = f"{pdb_id.upper()}.pdb"
+pdb_filename = f"{pdb_id}.pdb"
 pdb_path = os.path.join(input_dir, pdb_filename)
 pockets_json = os.path.join(input_dir, "pockets.json")
 

@@ -1,6 +1,11 @@
 name = "Download PDB"
 description = "Downloads a PDB file from RCSB database"
-outputs = ["*.pdb"]
+outputs = ["*.pdb", "*.json"]
+
+[params.pdb_id]
+type = "string"
+default = "4TOS"
+hint = "PDB ID to download and analyze (e.g., 4TOS, 1A2B)"
 
 [container]
 image = "chiral.sakuracr.jp/pocketeer:2025_12_08"

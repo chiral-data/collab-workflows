@@ -2,23 +2,28 @@
 # github repo: https://github.com/cch1999/pocketeer
 # doc: https://pocketeer.readthedocs.io/en/latest/
 
+import json
 import os
+import shutil
 
 import pocketeer as pt
 
 # =============================================================================
-# CONFIGURATION FROM ENVIRONMENT VARIABLES
+# CONFIGURATION
 # =============================================================================
-
-# PDB ID (from global workflow parameter)
-pdb_id = os.environ.get("PARAM_PDB_ID", "4TOS")
 
 # Input/Output directories (silva 0.4.0+)
 input_dir = "inputs"
 output_dir = "outputs"
 
+# Read PDB ID from config.json (produced by 01-download)
+config_path = os.path.join(input_dir, "config.json")
+with open(config_path, "r") as f:
+    config = json.load(f)
+pdb_id = config["pdb_id"]
+
 # Input file path
-pdb_filename = f"{pdb_id.upper()}.pdb"
+pdb_filename = f"{pdb_id}.pdb"
 pdb_path = os.path.join(input_dir, pdb_filename)
 
 # Pocketeer find_pockets parameters (from job parameters)
@@ -78,6 +83,10 @@ pt.write_pockets_json(output_json, pockets)
 print(f"Pockets saved to {output_json}", flush=True)
 
 # Copy PDB file to outputs for next step
-import shutil
 shutil.copy(pdb_path, output_pdb)
 print(f"Copied PDB to {output_pdb}", flush=True)
+
+# Forward config.json to outputs for downstream jobs
+output_config = os.path.join(output_dir, "config.json")
+shutil.copy(config_path, output_config)
+print(f"Config forwarded to {output_config}", flush=True)
