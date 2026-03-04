@@ -2,5 +2,5 @@ name = "Protein Pocket Analysis"
 description = "Downloads a PDB file, detects protein pockets, and generates visualization"
 
 [dependencies]
-02_pocket = ["01_download"]
-03_visualize = ["02_pocket"]
+02-pocket = ["01-download"]
+03-visualize = ["02-pocket"]
