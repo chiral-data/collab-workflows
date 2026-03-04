@@ -94,6 +94,23 @@ print("Loading pockets from JSON...", flush=True)
 pockets = load_pockets_json(pockets_json)
 print(f"Loaded {len(pockets)} pockets", flush=True)
 
+if len(pockets) == 0:
+    print("WARNING: No pockets to visualize.", flush=True)
+    # Write a minimal HTML report indicating no pockets were found
+    if output_format in ("html", "both"):
+        html_output = os.path.join(output_dir, "pocket_visualization.html")
+        with open(html_output, "w") as f:
+            f.write(f"""<!DOCTYPE html>
+<html><head><title>Pocket Visualization - {pdb_id}</title></head>
+<body style="font-family: sans-serif; padding: 40px; text-align: center;">
+<h1>Protein Pocket Visualization: {pdb_id}</h1>
+<p style="color: #888; font-size: 1.2rem;">No pockets were detected for this protein with the current parameters.</p>
+<p>Try adjusting detection parameters (lower <code>min_spheres</code>, wider <code>r_min</code>/<code>r_max</code> range).</p>
+</body></html>""")
+        print(f"No-pockets report saved to {html_output}", flush=True)
+    import sys
+    sys.exit(0)
+
 # Generate HTML visualization if requested
 if output_format in ("html", "both"):
     # Configure visualization based on representation option

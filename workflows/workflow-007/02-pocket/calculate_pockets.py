@@ -69,7 +69,9 @@ pockets = pt.find_pockets(
 )
 
 # Display results
-print(f"\nFound {len(pockets)} pockets:")
+print(f"\nFound {len(pockets)} pockets:", flush=True)
+if len(pockets) == 0:
+    print("  WARNING: No pockets detected. Try adjusting parameters (lower min_spheres, wider r_min/r_max range).", flush=True)
 for pocket in pockets[:5]:  # Show top 5
     print(
         f"  Pocket {pocket.pocket_id}: score={pocket.score:.2f}, "

@@ -11,6 +11,12 @@ import urllib.request
 # =============================================================================
 
 # PDB ID to analyze (from job parameter)
+# 1FME — HIV-1 protease (classic drug target, clear binding pocket)
+# 2RH1 — Beta-2 adrenergic receptor (GPCR with well-defined ligand pocket)
+# 3HTB — CDK2 kinase (common benchmark for pocket detection)
+# 4TOS — Tankyrase 1 (PARP family, Wnt signaling drug target with clear inhibitor binding pocket)
+
+
 pdb_id = os.environ.get("PARAM_PDB_ID", "4TOS")
 
 # Output directory (silva 0.4.0+)
