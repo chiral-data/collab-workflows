@@ -1,11 +1,10 @@
-# Part 3: Generate visualization output (HTML/GIF)
+# Part 3: Generate multi-protein visualization (HTML)
 # github repo: https://github.com/cch1999/pocketeer
 # doc: https://pocketeer.readthedocs.io/en/latest/
 
 import json
 import os
 
-import imageio.v2 as imageio
 import numpy as np
 import pocketeer as pt
 from pocketeer.core.types import AlphaSphere
@@ -14,32 +13,19 @@ from pocketeer.core.types import AlphaSphere
 # CONFIGURATION
 # =============================================================================
 
-# Input/Output directories (silva 0.4.0+)
 input_dir = "inputs"
 output_dir = "outputs"
 
-# Read PDB ID from config.json (produced by upstream jobs)
+# Read PDB IDs from config.json
 config_path = os.path.join(input_dir, "config.json")
 with open(config_path, "r") as f:
     config = json.load(f)
-pdb_id = config["pdb_id"]
+pdb_ids = config["pdb_ids"]
 
-# Input files
-pdb_filename = f"{pdb_id}.pdb"
-pdb_path = os.path.join(input_dir, pdb_filename)
-pockets_json = os.path.join(input_dir, "pockets.json")
-
-# Visualization parameters (from job parameters)
-# Pocket visualization style: "filled_surfaces" or "single_sphere"
+# Visualization parameters
 pocket_style = os.environ.get("PARAM_POCKET_STYLE", "filled_surfaces")
-
-# Rendering method: "ray" (higher quality, slower) or "draw" (faster)
 render_method = os.environ.get("PARAM_RENDER_METHOD", "draw")
-
-# Protein visualization representation: "cartoon" or "surface"
 representation = os.environ.get("PARAM_REPRESENTATION", "surface")
-
-# Output format: "html", "gif", or "both"
 output_format = os.environ.get("PARAM_OUTPUT_FORMAT", "html")
 
 # =============================================================================
@@ -52,7 +38,6 @@ def load_pockets_json(json_path: str) -> list[pt.Pocket]:
 
     pockets = []
     for p in data:
-        # Reconstruct AlphaSphere objects
         spheres = [
             AlphaSphere(
                 sphere_id=s["sphere_id"],
@@ -63,7 +48,6 @@ def load_pockets_json(json_path: str) -> list[pt.Pocket]:
             )
             for s in p["spheres"]
         ]
-        # Create Pocket object
         pocket = pt.Pocket(
             pocket_id=p["pocket_id"],
             spheres=spheres,
@@ -72,377 +56,487 @@ def load_pockets_json(json_path: str) -> list[pt.Pocket]:
             score=p["score"],
         )
         pockets.append(pocket)
-
     return pockets
 
 
-# Print configuration
-print(f"Visualization configuration:", flush=True)
-print(f"  pocket_style={pocket_style}", flush=True)
-print(f"  render_method={render_method}", flush=True)
-print(f"  representation={representation}", flush=True)
-print(f"  output_format={output_format}", flush=True)
+# =============================================================================
 
-# Ensure output directory exists
 os.makedirs(output_dir, exist_ok=True)
 
-# Load structure and pockets
-print(f"Loading structure from {pdb_path}...", flush=True)
-atomarray = pt.load_structure(pdb_path)
+print(f"Generating visualization for {len(pdb_ids)} protein(s)", flush=True)
+print(f"  pocket_style={pocket_style}, representation={representation}", flush=True)
+print(f"  render_method={render_method}, output_format={output_format}", flush=True)
 
-print("Loading pockets from JSON...", flush=True)
-pockets = load_pockets_json(pockets_json)
-print(f"Loaded {len(pockets)} pockets", flush=True)
+# Load all protein data and generate viewer HTML fragments
+protein_data = []  # list of { id, pockets_count, top_score, viewer_html | None }
 
-if len(pockets) == 0:
-    print("WARNING: No pockets to visualize.", flush=True)
-    # Write a minimal HTML report indicating no pockets were found
-    if output_format in ("html", "both"):
-        html_output = os.path.join(output_dir, "pocket_visualization.html")
-        with open(html_output, "w") as f:
-            f.write(f"""<!DOCTYPE html>
-<html><head><title>Pocket Visualization - {pdb_id}</title></head>
-<body style="font-family: sans-serif; padding: 40px; text-align: center;">
-<h1>Protein Pocket Visualization: {pdb_id}</h1>
-<p style="color: #888; font-size: 1.2rem;">No pockets were detected for this protein with the current parameters.</p>
-<p>Try adjusting detection parameters (lower <code>min_spheres</code>, wider <code>r_min</code>/<code>r_max</code> range).</p>
-</body></html>""")
-        print(f"No-pockets report saved to {html_output}", flush=True)
-    import sys
-    sys.exit(0)
+receptor_cartoon = representation == "cartoon"
+receptor_surface = representation == "surface"
+sphere_scale = 2.0 if pocket_style == "single_sphere" else 1.0
 
-# Generate HTML visualization if requested
-if output_format in ("html", "both"):
-    # Configure visualization based on representation option
-    receptor_cartoon = representation == "cartoon"
-    receptor_surface = representation == "surface"
+for pdb_id in pdb_ids:
+    pdb_path = os.path.join(input_dir, f"{pdb_id}.pdb")
+    pockets_path = os.path.join(input_dir, f"{pdb_id}_pockets.json")
 
-    # Configure sphere scale based on pocket_style
-    # For single_sphere style, use larger spheres; for filled_surfaces, use normal scale
-    sphere_scale = 2.0 if pocket_style == "single_sphere" else 1.0
+    print(f"  Loading {pdb_id}...", flush=True)
+    atomarray = pt.load_structure(pdb_path)
 
-    print(f"\nGenerating HTML with:", flush=True)
-    print(f"  receptor_cartoon={receptor_cartoon}, receptor_surface={receptor_surface}", flush=True)
-    print(f"  sphere_scale={sphere_scale} (pocket_style={pocket_style})", flush=True)
+    pockets = load_pockets_json(pockets_path)
+    pocket_count = len(pockets)
+    top_score = f"{pockets[0].score:.2f}" if pockets else "—"
 
-    # Create visualization with options
-    viewer = pt.view_pockets(
-        atomarray,
-        pockets,
-        receptor_cartoon=receptor_cartoon,
-        receptor_surface=receptor_surface,
-        sphere_scale=sphere_scale,
-    )
+    viewer_html = None
+    if pockets:
+        viewer = pt.view_pockets(
+            atomarray,
+            pockets,
+            receptor_cartoon=receptor_cartoon,
+            receptor_surface=receptor_surface,
+            sphere_scale=sphere_scale,
+        )
+        viewer_html = viewer._make_html()
 
-    # Save visualization to HTML file (works in non-notebook environments)
-    viewer_html = viewer._make_html()
+    protein_data.append({
+        "id": pdb_id,
+        "pocket_count": pocket_count,
+        "top_score": top_score,
+        "viewer_html": viewer_html,
+    })
+    print(f"    {pocket_count} pockets (top score: {top_score})", flush=True)
 
-    # Wrap in a complete HTML document with full-page layout and controls
-    html_content = f"""<!DOCTYPE html>
+# Build protein cards HTML
+cards_html = ""
+for p in protein_data:
+    if p["viewer_html"]:
+        viewer_block = f'<div class="viewer-content">{p["viewer_html"]}</div>'
+    else:
+        viewer_block = '<div class="viewer-content no-pockets"><p>No pockets detected</p><p class="hint">Try adjusting parameters</p></div>'
+
+    cards_html += f"""
+    <div class="protein-card" data-id="{p['id']}">
+        <div class="card-header">
+            <div class="card-info">
+                <input type="checkbox" class="compare-check" data-id="{p['id']}" title="Select for compare">
+                <h2>{p['id']}</h2>
+                <span class="badge">{p['pocket_count']} pockets</span>
+                <span class="score">top: {p['top_score']}</span>
+            </div>
+            <div class="card-actions">
+                <button class="btn btn-focus" onclick="toggleFocus('{p['id']}')" title="Focus view">&#x2922;</button>
+            </div>
+        </div>
+        {viewer_block}
+    </div>"""
+
+title = f"Pocket Analysis: {', '.join(pdb_ids)}"
+
+html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocket Visualization - {pdb_id}</title>
+    <title>{title}</title>
     <style>
-        * {{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }}
-        html, body {{
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }}
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        html, body {{ height: 100%; overflow: auto; }}
         body {{
-            display: flex;
-            flex-direction: column;
-            background-color: #f5f5f5;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f2f5;
         }}
         header {{
             padding: 12px 20px;
             background: white;
             border-bottom: 1px solid #e0e0e0;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }}
-        h1 {{
-            color: #333;
-            font-size: 1.25rem;
-            font-weight: 500;
-        }}
-        .controls {{
+        h1 {{ color: #333; font-size: 1.15rem; font-weight: 500; }}
+        .toolbar {{
             display: flex;
             gap: 8px;
             align-items: center;
         }}
-        .controls label {{
-            font-size: 0.875rem;
-            color: #666;
-            margin-right: 4px;
-        }}
-        .btn-group {{
-            display: flex;
-            gap: 4px;
-        }}
         .btn {{
-            padding: 6px 12px;
+            padding: 6px 14px;
             font-size: 0.8rem;
             border: 1px solid #ddd;
             background: #fff;
             color: #333;
             border-radius: 4px;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all 0.15s;
         }}
-        .btn:hover {{
-            background: #f0f0f0;
-            border-color: #ccc;
-        }}
-        .btn.active {{
-            background: #0066cc;
-            color: white;
-            border-color: #0066cc;
-        }}
-        .viewer-container {{
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .btn:hover {{ background: #f0f0f0; border-color: #ccc; }}
+        .btn.active {{ background: #0066cc; color: white; border-color: #0066cc; }}
+        .btn-focus {{ font-size: 1rem; padding: 4px 8px; line-height: 1; }}
+
+        /* Grid layout */
+        .grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+            gap: 16px;
             padding: 16px;
-            min-height: 0;
         }}
-        .viewer-wrapper {{
-            width: 100%;
-            height: 100%;
-            max-width: 1400px;
+        .grid.compare-mode {{
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }}
+
+        /* Cards */
+        .protein-card {{
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }}
-        /* Override 3Dmol viewer size to fill wrapper */
-        .viewer-wrapper > div {{
+        .protein-card.hidden {{ display: none; }}
+        .protein-card.focused {{
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 200;
+            border-radius: 0;
+            margin: 0;
+        }}
+        .card-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+            background: #fafafa;
+        }}
+        .card-info {{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }}
+        .card-info h2 {{ font-size: 1rem; font-weight: 600; color: #333; }}
+        .badge {{
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: #e8f4fd;
+            color: #0066cc;
+        }}
+        .score {{ font-size: 0.75rem; color: #888; }}
+        .compare-check {{ width: 16px; height: 16px; cursor: pointer; }}
+
+        /* Viewer */
+        .viewer-content {{
+            flex: 1;
+            min-height: 400px;
+            position: relative;
+        }}
+        .viewer-content > div {{
             width: 100% !important;
             height: 100% !important;
+            min-height: 400px;
         }}
+        .focused .viewer-content {{
+            min-height: calc(100vh - 50px);
+        }}
+        .no-pockets {{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #999;
+            font-size: 1.1rem;
+            min-height: 400px;
+            background: #fafafa;
+        }}
+        .no-pockets .hint {{ font-size: 0.85rem; margin-top: 8px; color: #bbb; }}
+
+        /* Compare mode indicator */
+        .compare-bar {{
+            display: none;
+            padding: 8px 20px;
+            background: #0066cc;
+            color: white;
+            font-size: 0.85rem;
+            align-items: center;
+            gap: 12px;
+        }}
+        .compare-bar.visible {{ display: flex; }}
     </style>
 </head>
 <body>
     <header>
-        <h1>Protein Pocket Visualization: {pdb_id}</h1>
-        <div class="controls">
-            <label>Style:</label>
-            <div class="btn-group">
-                <button class="btn active" data-style="cartoon">Cartoon</button>
-                <button class="btn" data-style="stick">Stick</button>
-                <button class="btn" data-style="sphere">Sphere</button>
-                <button class="btn" data-style="line">Line</button>
-                <button class="btn" data-style="surface">Surface</button>
+        <h1>{title}</h1>
+        <div class="toolbar">
+            <label style="font-size:0.85rem;color:#666;">Style:</label>
+            <div class="btn-group" style="display:flex;gap:4px;">
+                <button class="btn style-btn active" data-style="cartoon">Cartoon</button>
+                <button class="btn style-btn" data-style="stick">Stick</button>
+                <button class="btn style-btn" data-style="sphere">Sphere</button>
+                <button class="btn style-btn" data-style="line">Line</button>
+                <button class="btn style-btn" data-style="surface">Surface</button>
             </div>
+            <span style="color:#ddd;">|</span>
+            <button class="btn" onclick="showAll()">Grid View</button>
+            <button class="btn" id="compareBtn" onclick="enterCompare()">Compare Selected</button>
         </div>
     </header>
-    <div class="viewer-container">
-        <div class="viewer-wrapper">
-            {viewer_html}
-        </div>
+    <div class="compare-bar" id="compareBar">
+        <span id="compareCount">0 selected</span>
+        <button class="btn" style="background:rgba(255,255,255,0.2);color:white;border-color:rgba(255,255,255,0.3);" onclick="exitCompare()">Exit Compare</button>
+    </div>
+    <div class="grid" id="grid">
+        {cards_html}
     </div>
     <script>
-        var globalViewer = null;
+        var focusedId = null;
+        var compareMode = false;
+        var allViewers = [];
 
-        // Initialize viewer and set up controls
-        if (typeof $3Dmolpromise !== 'undefined') {{
-            $3Dmolpromise.then(function() {{
-                setTimeout(function() {{
-                    // Find the viewer
-                    var viewers = document.querySelectorAll('[id^="3dmolviewer_"]');
-                    viewers.forEach(function(el) {{
-                        var viewerId = el.id.replace('3dmolviewer_', '');
-                        globalViewer = window['viewer_' + viewerId];
-                        if (globalViewer) {{
-                            globalViewer.zoom(0.7);
-                            // Set default representation to Cartoon
-                            setStyle('cartoon');
-                        }}
-                    }});
-                }}, 100);
+        // Collect all 3Dmol viewers once loaded
+        function initViewers() {{
+            allViewers = [];
+            document.querySelectorAll('[id^="3dmolviewer_"]').forEach(function(el) {{
+                var vid = el.id.replace('3dmolviewer_', '');
+                var v = window['viewer_' + vid];
+                if (v) {{
+                    allViewers.push(v);
+                    v.zoom(0.7);
+                }}
+            }});
+            // Set default style to cartoon
+            setStyle('cartoon');
+        }}
+
+        // Apply style to all viewers
+        function setStyle(style) {{
+            allViewers.forEach(function(viewer) {{
+                viewer.removeAllSurfaces();
+                viewer.setStyle({{}}, {{}});
+                var styleSpec = {{}};
+                switch(style) {{
+                    case 'cartoon':
+                        styleSpec = {{cartoon: {{color: 'spectrum'}}}};
+                        break;
+                    case 'stick':
+                        styleSpec = {{stick: {{colorscheme: 'Jmol'}}}};
+                        break;
+                    case 'sphere':
+                        styleSpec = {{sphere: {{colorscheme: 'Jmol', scale: 0.3}}}};
+                        break;
+                    case 'line':
+                        styleSpec = {{line: {{colorscheme: 'Jmol'}}}};
+                        break;
+                    case 'surface':
+                        styleSpec = {{cartoon: {{color: 'spectrum'}}}};
+                        viewer.addSurface($3Dmol.SurfaceType.VDW, {{opacity: 0.7, color: 'white'}});
+                        break;
+                }}
+                viewer.setStyle({{}}, styleSpec);
+                viewer.render();
             }});
         }}
 
-        // Style change handler
-        function setStyle(style) {{
-            if (!globalViewer) return;
+        // Style button handlers
+        document.querySelectorAll('.style-btn').forEach(function(btn) {{
+            btn.addEventListener('click', function() {{
+                document.querySelectorAll('.style-btn').forEach(function(b) {{ b.classList.remove('active'); }});
+                this.classList.add('active');
+                setStyle(this.dataset.style);
+            }});
+        }});
 
-            // Clear all styles and surfaces first
-            globalViewer.removeAllSurfaces();
-            globalViewer.setStyle({{}}, {{}});
-
-            // Apply new style to protein
-            var styleSpec = {{}};
-            switch(style) {{
-                case 'cartoon':
-                    styleSpec = {{cartoon: {{color: 'spectrum'}}}};
-                    break;
-                case 'stick':
-                    styleSpec = {{stick: {{colorscheme: 'Jmol'}}}};
-                    break;
-                case 'sphere':
-                    styleSpec = {{sphere: {{colorscheme: 'Jmol', scale: 0.3}}}};
-                    break;
-                case 'line':
-                    styleSpec = {{line: {{colorscheme: 'Jmol'}}}};
-                    break;
-                case 'surface':
-                    styleSpec = {{cartoon: {{color: 'spectrum'}}}};
-                    globalViewer.addSurface($3Dmol.SurfaceType.VDW, {{opacity: 0.7, color: 'white'}});
-                    break;
-            }}
-            globalViewer.setStyle({{}}, styleSpec);
-            globalViewer.render();
+        // Initialize viewers when 3Dmol is ready
+        if (typeof $3Dmolpromise !== 'undefined') {{
+            $3Dmolpromise.then(function() {{ setTimeout(initViewers, 200); }});
         }}
 
-        // Set up button click handlers
-        document.querySelectorAll('.btn[data-style]').forEach(function(btn) {{
-            btn.addEventListener('click', function() {{
-                // Update active state
-                document.querySelectorAll('.btn[data-style]').forEach(function(b) {{
-                    b.classList.remove('active');
-                }});
-                this.classList.add('active');
+        function toggleFocus(id) {{
+            var card = document.querySelector('.protein-card[data-id="' + id + '"]');
+            if (focusedId === id) {{
+                card.classList.remove('focused');
+                focusedId = null;
+                document.body.style.overflow = 'auto';
+            }} else {{
+                if (focusedId) {{
+                    document.querySelector('.protein-card[data-id="' + focusedId + '"]').classList.remove('focused');
+                }}
+                card.classList.remove('hidden');
+                card.classList.add('focused');
+                focusedId = id;
+                document.body.style.overflow = 'hidden';
+            }}
+            resizeViewers();
+        }}
 
-                // Apply style
-                setStyle(this.dataset.style);
+        function showAll() {{
+            exitCompare();
+            if (focusedId) {{
+                document.querySelector('.protein-card[data-id="' + focusedId + '"]').classList.remove('focused');
+                focusedId = null;
+                document.body.style.overflow = 'auto';
+            }}
+            document.querySelectorAll('.protein-card').forEach(function(c) {{ c.classList.remove('hidden'); }});
+            document.getElementById('grid').classList.remove('compare-mode');
+            resizeViewers();
+        }}
+
+        function enterCompare() {{
+            var checked = document.querySelectorAll('.compare-check:checked');
+            if (checked.length < 2) {{ alert('Select at least 2 proteins to compare'); return; }}
+
+            compareMode = true;
+            var selectedIds = Array.from(checked).map(function(cb) {{ return cb.dataset.id; }});
+
+            document.querySelectorAll('.protein-card').forEach(function(card) {{
+                if (selectedIds.indexOf(card.dataset.id) >= 0) {{
+                    card.classList.remove('hidden');
+                }} else {{
+                    card.classList.add('hidden');
+                }}
+            }});
+            document.getElementById('grid').classList.add('compare-mode');
+            document.getElementById('compareBar').classList.add('visible');
+            document.getElementById('compareCount').textContent = checked.length + ' selected';
+            resizeViewers();
+        }}
+
+        function exitCompare() {{
+            compareMode = false;
+            document.querySelectorAll('.protein-card').forEach(function(c) {{ c.classList.remove('hidden'); }});
+            document.querySelectorAll('.compare-check').forEach(function(cb) {{ cb.checked = false; }});
+            document.getElementById('grid').classList.remove('compare-mode');
+            document.getElementById('compareBar').classList.remove('visible');
+            resizeViewers();
+        }}
+
+        function resizeViewers() {{
+            setTimeout(function() {{
+                if (typeof $3Dmol !== 'undefined') {{
+                    document.querySelectorAll('[id^="3dmolviewer_"]').forEach(function(el) {{
+                        var vid = el.id.replace('3dmolviewer_', '');
+                        var v = window['viewer_' + vid];
+                        if (v) v.resize();
+                    }});
+                }}
+            }}, 100);
+        }}
+
+        // ESC to exit focus
+        document.addEventListener('keydown', function(e) {{
+            if (e.key === 'Escape') {{
+                if (focusedId) toggleFocus(focusedId);
+                else if (compareMode) exitCompare();
+            }}
+        }});
+
+        // Update compare count on checkbox change
+        document.querySelectorAll('.compare-check').forEach(function(cb) {{
+            cb.addEventListener('change', function() {{
+                var count = document.querySelectorAll('.compare-check:checked').length;
+                document.getElementById('compareBtn').textContent = count > 0 ? 'Compare (' + count + ')' : 'Compare Selected';
             }});
         }});
     </script>
 </body>
 </html>"""
 
+if output_format in ("html", "both"):
     html_output = os.path.join(output_dir, "pocket_visualization.html")
     with open(html_output, "w") as f:
         f.write(html_content)
-    print(f"Visualization saved to {html_output}")
+    print(f"Visualization saved to {html_output}", flush=True)
 
 # Generate rotating GIF using PyMOL if requested
 if output_format in ("gif", "both"):
-    print("Initializing PyMOL...", flush=True)
+    import multiprocessing
+    import shutil
+
+    import imageio.v2 as imageio
     from pymol import cmd
 
-    print("PyMOL initialized.", flush=True)
-
-    print("\n" + "=" * 50, flush=True)
-    print("Generating rotating GIF...", flush=True)
-    print("=" * 50, flush=True)
-
-    # Initialize PyMOL in headless mode
-    print("Setting up PyMOL scene...", flush=True)
-    cmd.reinitialize()
-
-    # Enable multi-threading for faster ray tracing
-    import multiprocessing
-
+    print("\nInitializing PyMOL...", flush=True)
     num_cpus = multiprocessing.cpu_count()
     cmd.set("max_threads", num_cpus)
     print(f"Using {num_cpus} CPU threads for ray tracing", flush=True)
 
-    cmd.load(pdb_path, "structure")
+    for p in protein_data:
+        pdb_id = p["id"]
+        pockets = load_pockets_json(os.path.join(input_dir, f"{pdb_id}_pockets.json"))
 
-    # Style the protein based on representation choice
-    print(f"Using '{representation}' representation", flush=True)
-    cmd.hide("everything", "structure")
-    cmd.show(representation, "structure")
-    cmd.color("cyan", "structure")
+        if not pockets:
+            print(f"\nSkipping GIF for {pdb_id} (no pockets)", flush=True)
+            continue
 
-    if representation == "cartoon":
-        cmd.set("cartoon_fancy_helices", 1)
-    elif representation == "surface":
-        cmd.set("surface_quality", 1)
-        cmd.set("transparency", 0.3, "structure")
+        print(f"\n{'='*50}", flush=True)
+        print(f"Generating GIF for {pdb_id}", flush=True)
+        print(f"{'='*50}", flush=True)
 
-    cmd.set("ray_opaque_background", 1)
-    cmd.bg_color("white")
+        cmd.reinitialize()
+        pdb_path = os.path.join(input_dir, f"{pdb_id}.pdb")
+        cmd.load(pdb_path, "structure")
 
-    # Highlight top pockets based on pocket_style
-    colors = ["red", "orange", "yellow", "green", "magenta"]
-    print(
-        f"Adding {len(pockets[:5])} pockets using '{pocket_style}' style...", flush=True
-    )
+        # Style the protein
+        cmd.hide("everything", "structure")
+        cmd.show(representation, "structure")
+        cmd.color("cyan", "structure")
+        if representation == "cartoon":
+            cmd.set("cartoon_fancy_helices", 1)
+        elif representation == "surface":
+            cmd.set("surface_quality", 1)
+            cmd.set("transparency", 0.3, "structure")
+        cmd.set("ray_opaque_background", 1)
+        cmd.bg_color("white")
 
-    if pocket_style == "filled_surfaces":
-        # Show all alpha spheres that define each pocket
-        for i, pocket in enumerate(pockets[:5]):
-            pocket_name = f"pocket_{i}"
-            # Create a pseudoatom for each alpha sphere in the pocket
-            for j, sphere in enumerate(pocket.spheres):
-                atom_name = f"{pocket_name}_s{j}"
-                cmd.pseudoatom(atom_name, pos=list(sphere.center), vdw=sphere.radius)
+        # Highlight top pockets
+        colors = ["red", "orange", "yellow", "green", "magenta"]
+        if pocket_style == "filled_surfaces":
+            for i, pocket in enumerate(pockets[:5]):
+                pocket_name = f"pocket_{i}"
+                for j, sphere in enumerate(pocket.spheres):
+                    atom_name = f"{pocket_name}_s{j}"
+                    cmd.pseudoatom(atom_name, pos=list(sphere.center), vdw=sphere.radius)
+                cmd.group(pocket_name, f"{pocket_name}_s*")
+                cmd.show("spheres", pocket_name)
+                cmd.color(colors[i], pocket_name)
+                cmd.set("sphere_transparency", 0.3, pocket_name)
+        elif pocket_style == "single_sphere":
+            for i, pocket in enumerate(pockets[:5]):
+                pocket_name = f"pocket_{i}"
+                cmd.pseudoatom(pocket_name, pos=list(pocket.centroid))
+                cmd.show("spheres", pocket_name)
+                cmd.color(colors[i], pocket_name)
+                cmd.set("sphere_scale", 2.0, pocket_name)
 
-            # Group all spheres of this pocket and show as surface
-            cmd.group(pocket_name, f"{pocket_name}_s*")
-            cmd.show("spheres", pocket_name)
-            cmd.color(colors[i], pocket_name)
-            # Make pocket spheres slightly transparent
-            cmd.set("sphere_transparency", 0.3, pocket_name)
-            print(f"  Pocket {i + 1}: {len(pocket.spheres)} spheres added", flush=True)
+        cmd.zoom("all", buffer=5)
 
-    elif pocket_style == "single_sphere":
-        # Show a single sphere at each pocket's centroid
-        for i, pocket in enumerate(pockets[:5]):
-            centroid = pocket.centroid
-            pocket_name = f"pocket_{i}"
-            # Create a pseudoatom at pocket centroid
-            cmd.pseudoatom(pocket_name, pos=list(centroid))
-            cmd.show("spheres", pocket_name)
-            cmd.color(colors[i], pocket_name)
-            cmd.set("sphere_scale", 2.0, pocket_name)
-            print(f"  Pocket {i + 1}: centroid sphere added", flush=True)
+        # Generate frames
+        step = 10
+        total_frames = 360 // step
+        images = []
+        frame_dir = "/tmp/frames"
+        os.makedirs(frame_dir, exist_ok=True)
 
-    cmd.zoom("all", buffer=5)
-    print("Scene setup complete.", flush=True)
-
-    # Generate frames for rotation
-    step = 10  # degrees per frame
-    total_frames = 360 // step
-    images = []
-    frame_dir = "/tmp/frames"
-    os.makedirs(frame_dir, exist_ok=True)
-
-    if render_method == "ray":
-        print(
-            f"\nRendering {total_frames} frames (ray tracing - this takes time)...",
-            flush=True,
-        )
-    else:
-        print(f"\nRendering {total_frames} frames (using OpenGL draw)...", flush=True)
-
-    for i, angle in enumerate(range(0, 360, step)):
-        cmd.rotate("y", float(step))
-
-        if render_method == "ray":
-            cmd.ray(512, 512)
+        print(f"Rendering {total_frames} frames ({render_method})...", flush=True)
+        for i, angle in enumerate(range(0, 360, step)):
+            cmd.rotate("y", float(step))
             frame_path = f"{frame_dir}/frame_{angle:03d}.png"
-            cmd.png(frame_path)
-        else:  # draw
-            cmd.draw(512, 512)
-            frame_path = f"{frame_dir}/frame_{angle:03d}.png"
-            cmd.png(frame_path, ray=0)  # ray=0 to use the drawn image
+            if render_method == "ray":
+                cmd.ray(512, 512)
+                cmd.png(frame_path)
+            else:
+                cmd.draw(512, 512)
+                cmd.png(frame_path, ray=0)
+            images.append(imageio.imread(frame_path))
 
-        images.append(imageio.imread(frame_path))
-        print(f"  Frame {i + 1}/{total_frames} ({angle}°) complete", flush=True)
+        # Save GIF
+        gif_path = os.path.join(output_dir, f"{pdb_id}_pockets_{representation}.gif")
+        imageio.mimsave(gif_path, images, duration=0.1, loop=0)
+        print(f"GIF saved to {gif_path}", flush=True)
 
-    # Create GIF
-    print("\nAssembling GIF...", flush=True)
-    gif_path = os.path.join(output_dir, f"protein_pockets_rotation_{representation}.gif")
-    imageio.mimsave(gif_path, images, duration=0.1, loop=0)
-    print(f"\nRotating GIF saved to {gif_path}", flush=True)
-
-    # Cleanup temporary frames
-    for f in os.listdir(frame_dir):
-        os.remove(os.path.join(frame_dir, f))
-    os.rmdir(frame_dir)
+        # Cleanup frames
+        shutil.rmtree(frame_dir)
