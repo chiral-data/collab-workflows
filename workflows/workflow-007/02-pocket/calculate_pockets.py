@@ -2,9 +2,12 @@
 # github repo: https://github.com/cch1999/pocketeer
 # doc: https://pocketeer.readthedocs.io/en/latest/
 
+import glob
 import json
 import os
+import re
 import shutil
+import sys
 
 import pocketeer as pt
 
@@ -16,11 +19,21 @@ import pocketeer as pt
 input_dir = "inputs"
 output_dir = "outputs"
 
-# Read PDB IDs from config.json (produced by 01-download)
-config_path = os.path.join(input_dir, "config.json")
-with open(config_path, "r") as f:
-    config = json.load(f)
-pdb_ids = config["pdb_ids"]
+# Derive PDB IDs from *.pdb filenames in inputs/
+pdb_files = sorted(glob.glob(os.path.join(input_dir, "*.pdb")))
+if not pdb_files:
+    print("ERROR: No .pdb files found in inputs/", flush=True)
+    sys.exit(1)
+
+# Validate filenames — reject unsafe characters that would break HTML/JS in 03-visualize
+VALID_STEM = re.compile(r'^[A-Za-z0-9._-]+$')
+pdb_ids = []
+for pdb_file in pdb_files:
+    stem = os.path.splitext(os.path.basename(pdb_file))[0]
+    if not VALID_STEM.match(stem):
+        print(f'ERROR: Invalid filename "{os.path.basename(pdb_file)}" — filenames must only contain alphanumeric characters, hyphens, underscores, and dots.', flush=True)
+        sys.exit(1)
+    pdb_ids.append(stem)
 
 # Pocketeer find_pockets parameters (from job parameters)
 r_min = float(os.environ.get("PARAM_R_MIN", "3.0"))
@@ -90,8 +103,9 @@ for pdb_id in pdb_ids:
     shutil.copy(pdb_path, output_pdb)
     print(f"Copied PDB to {output_pdb}", flush=True)
 
-# Forward config.json to outputs for downstream jobs
+# Generate config.json for downstream jobs (03-visualize)
 output_config = os.path.join(output_dir, "config.json")
-shutil.copy(config_path, output_config)
-print(f"\nConfig forwarded to {output_config}", flush=True)
+with open(output_config, "w") as f:
+    json.dump({"pdb_ids": pdb_ids}, f)
+print(f"\nConfig saved to {output_config}", flush=True)
 print(f"All {len(pdb_ids)} protein(s) processed.", flush=True)

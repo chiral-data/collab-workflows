@@ -2,7 +2,6 @@
 # github repo: https://github.com/cch1999/pocketeer
 # doc: https://pocketeer.readthedocs.io/en/latest/
 
-import json
 import os
 import urllib.request
 
@@ -37,8 +36,4 @@ for pdb_id in pdb_ids:
     urllib.request.urlretrieve(url, output_path)
     print(f"  Saved {output_path}", flush=True)
 
-# Write config.json for downstream jobs
-config_path = os.path.join(output_dir, "config.json")
-with open(config_path, "w") as f:
-    json.dump({"pdb_ids": pdb_ids}, f)
-print(f"Config saved to {config_path} ({len(pdb_ids)} protein(s))", flush=True)
+print(f"All {len(pdb_ids)} PDB file(s) downloaded.", flush=True)
