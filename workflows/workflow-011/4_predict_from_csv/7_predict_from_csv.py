@@ -84,8 +84,7 @@ class RDKit_2D:
 def load_ensemble_model():
     """Load all 5 ensemble models and preprocessing pipeline"""
     # Node paths
-    NODE1_OUTPUT = "../1_data_prep/outputs"  # For pipeline (scaler/selector)
-    NODE2_OUTPUT = "../2_model_train/outputs"  # For trained models
+    NODE2_OUTPUT = "inputs"
 
     print("="*70)
     print("ULTIMATE HYBRID QSAR MODEL - CSV PREDICTION")

@@ -5,7 +5,7 @@ inputs = ["processed_data.pkl"]
 outputs = ["outputs/hybrid_model.keras", "outputs/training_history.pkl", "outputs/hybrid_ultimate_pipeline.pkl", "outputs/data.json", "outputs/report.html"]
 
 [container]
-image = "qsar-hybrid-model:v3"
+image = "chiral.sakuracr.jp/qsar-hybrid-model:v3"
 
 [scripts]
 run = "run.sh"
