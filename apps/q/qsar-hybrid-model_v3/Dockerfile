@@ -26,34 +26,6 @@ ENV TF_CPP_MIN_LOG_LEVEL=2
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 
-# Switch to root to perform file operations
-USER root
+WORKDIR /workspace
 
-# Copy source code (respecting .dockerignore if present, but we copy widely here)
-# We copy specific directories to avoid clutter
-COPY 1_data_prep /app/1_data_prep
-COPY 2_model_train /app/2_model_train
-COPY 3_analyze_overfitting /app/3_analyze_overfitting
-COPY 4_predict_from_csv /app/4_predict_from_csv
-COPY input_files /app/input_files
-
-# Create output directories to ensure they exist/persist
-RUN mkdir -p /app/1_data_prep/outputs \
-    /app/2_model_train/outputs \
-    /app/3_analyze_overfitting/outputs \
-    /app/4_predict_from_csv/outputs
-
-# Make run scripts executable
-RUN chmod +x /app/1_data_prep/run.sh \
-    /app/2_model_train/run.sh \
-    /app/3_analyze_overfitting/run.sh \
-    /app/4_predict_from_csv/run.sh
-
-# NOTE: Keep running as root so mounted volumes from host are writable.
-# Proper fix: silva executor should set container user to match host UID:GID.
-
-# Expose data volumes for explicit input/output handling
-VOLUME ["/app/input_files", "/app/4_predict_from_csv/inputs"]
-
-# Default command: Open a shell
 CMD ["/bin/bash"]
