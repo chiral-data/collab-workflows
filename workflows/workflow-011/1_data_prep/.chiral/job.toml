@@ -4,6 +4,7 @@ outputs = ["outputs/processed_data.pkl", "outputs/data.json", "outputs/report.ht
 
 [container]
 image = "chiral.sakuracr.jp/qsar-hybrid-model:v3"
+use_gpu = true
 
 [scripts]
 run = "run.sh"
