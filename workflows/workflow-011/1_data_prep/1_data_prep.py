@@ -138,11 +138,11 @@ if __name__ == "__main__":
     stats = {}
 
     # 1. Load Data
-    input_path = "SpikeRBD_DD.csv"
+    input_path = "inputs/SpikeRBD_DD.csv"
     if not os.path.exists(input_path):
-        if os.path.exists("../input_files/SpikeRBD_DD.csv"):
-            input_path = "../input_files/SpikeRBD_DD.csv"
-            
+        print(f"❌ Error: {input_path} not found!")
+        sys.exit(1)
+
     print(f"Step 1: Loading data from {input_path}...")
     data = pd.read_csv(input_path)
     print(f"✓ Loaded {len(data)} molecules")

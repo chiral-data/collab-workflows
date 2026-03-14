@@ -129,17 +129,12 @@ if __name__ == "__main__":
     print("="*80)
 
     # 1. Load Data from Node 1 output
-    input_file = "processed_data.pkl"
-    node1_output = "../1_data_prep/outputs/processed_data.pkl"
-    
-    if os.path.exists(node1_output):
-        loaded_path = node1_output
-    elif os.path.exists(input_file):
-        loaded_path = input_file
-    else:
-        print(f"❌ Error: {input_file} not found! Did Node 1 run successfully?")
+    loaded_path = "inputs/processed_data.pkl"
+
+    if not os.path.exists(loaded_path):
+        print(f"❌ Error: {loaded_path} not found! Did Node 1 run successfully?")
         sys.exit(1)
-        
+
     print(f"Step 1: Loading data from {loaded_path}...")
     with open(loaded_path, 'rb') as f:
         data = pickle.load(f)
@@ -288,6 +283,16 @@ if __name__ == "__main__":
     with open(history_path, 'wb') as f:
         pickle.dump(history.history, f)
     print(f"  ✓ Saved model and history: {model_path}")
+
+    # Save preprocessing pipeline (scaler, selector, feature names)
+    pipeline_path = os.path.join(OUTPUT_DIR, 'hybrid_ultimate_pipeline.pkl')
+    with open(pipeline_path, 'wb') as f:
+        pickle.dump({
+            'scaler': data['scaler'],
+            'selector': data['selector'],
+            'feature_names': data.get('feature_names', [])
+        }, f)
+    print(f"  ✓ Saved pipeline: {pipeline_path}")
 
     # 5. Final Evaluation & Data Export
     print("\nStep 5: Final Evaluation & Dashboard Export...")

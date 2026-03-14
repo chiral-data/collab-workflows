@@ -47,7 +47,7 @@ print("="*80)
 
 # 1. Load Data from Node 1
 print("\n1. Loading preprocessed data from Node 1...")
-node1_output = "../1_data_prep/outputs/processed_data.pkl"
+node1_output = "inputs/processed_data.pkl"
 
 if not os.path.exists(node1_output):
     print(f"❌ Error: {node1_output} not found! Did Node 1 run successfully?")
@@ -66,7 +66,7 @@ print(f"   ✓ Test set: {X_test.shape}")
 
 # 2. Load Model and Training History from Node 2
 print("\n2. Loading model and training history from Node 2...")
-node2_output = "../2_model_train/outputs"
+node2_output = "inputs"
 
 # Load model
 model_path = os.path.join(node2_output, 'hybrid_model.keras')

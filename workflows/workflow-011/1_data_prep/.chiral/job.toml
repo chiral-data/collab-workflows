@@ -3,7 +3,8 @@ description = "Ingest raw SMILES data and compute descriptors"
 outputs = ["outputs/processed_data.pkl", "outputs/data.json", "outputs/report.html"]
 
 [container]
-image = "qsar-hybrid-model:v3"
+image = "chiral.sakuracr.jp/qsar-hybrid-model:v3"
+use_gpu = true
 
 [scripts]
 run = "run.sh"

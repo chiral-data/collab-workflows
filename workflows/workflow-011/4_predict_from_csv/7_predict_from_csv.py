@@ -84,8 +84,7 @@ class RDKit_2D:
 def load_ensemble_model():
     """Load all 5 ensemble models and preprocessing pipeline"""
     # Node paths
-    NODE1_OUTPUT = "../1_data_prep/outputs"  # For pipeline (scaler/selector)
-    NODE2_OUTPUT = "../2_model_train/outputs"  # For trained models
+    NODE2_OUTPUT = "inputs"
 
     print("="*70)
     print("ULTIMATE HYBRID QSAR MODEL - CSV PREDICTION")
@@ -137,43 +136,27 @@ def mol_to_base64(mol):
 # -------------------------
 # Prediction Function
 # -------------------------
-def predict_from_csv(input_csv, output_csv=None, smiles_column='smiles'):
+def predict_from_file(input_file, output_csv=None):
     """
-    Predict docking scores from CSV file
+    Predict docking scores from a text file (one SMILES per line)
     """
     # Load model
     model, pipeline = load_ensemble_model()
     if model is None:
         raise ValueError("Failed to load models")
-    
+
     scaler = pipeline['scaler']
     selector = pipeline['selector']
-    
-    # Read input CSV
-    print(f"Reading input file: {input_csv}")
+
+    # Read input file
+    print(f"Reading input file: {input_file}")
     try:
-        df_input = pd.read_csv(input_csv)
-        print(f"  ✓ Loaded {len(df_input)} rows")
+        with open(input_file, 'r') as f:
+            smiles_list = [line.strip() for line in f if line.strip()]
+        print(f"  ✓ Loaded {len(smiles_list)} SMILES")
     except Exception as e:
-        print(f"  ✗ Error reading CSV: {e}")
+        print(f"  ✗ Error reading file: {e}")
         return None
-    
-    # Find SMILES column (case-insensitive)
-    smiles_col = None
-    for col in df_input.columns:
-        if col.lower() == smiles_column.lower():
-            smiles_col = col
-            break
-    
-    if smiles_col is None:
-        print(f"  ✗ Error: Column '{smiles_column}' not found!")
-        print(f"  Available columns: {list(df_input.columns)}")
-        return None
-    
-    print(f"  ✓ Found SMILES column: '{smiles_col}'")
-    
-    # Extract SMILES
-    smiles_list = df_input[smiles_col].tolist()
     
     # Validate SMILES & Calculate Props
     print(f"\nValidating SMILES & Computing Props...")
@@ -186,7 +169,7 @@ def predict_from_csv(input_csv, output_csv=None, smiles_column='smiles'):
     invalid_count = 0
     
     for idx, smi in enumerate(smiles_list):
-        if pd.isna(smi) or smi == '': 
+        if not smi:
             invalid_count += 1
             continue
             
@@ -262,19 +245,10 @@ def predict_from_csv(input_csv, output_csv=None, smiles_column='smiles'):
     json_predictions = []
     predictions_flat = final_prediction.flatten()
     
-    df_results = df_input.iloc[valid_indices].copy()
-    
-    for i, idx in enumerate(valid_indices):
+    for i in range(len(valid_smiles)):
         pred_val = float(predictions_flat[i])
-        
-        # Try to find a name column
         name_val = f"Mol_{i+1}"
-        for col in df_results.columns:
-            col_lower = col.lower()
-            if 'name' in col_lower or 'id' == col_lower or 'compound' in col_lower:
-                name_val = str(df_results.iloc[i][col])
-                break
-                
+
         json_obj = {
             "smiles": valid_smiles[i],
             "name": name_val,
@@ -305,10 +279,13 @@ def predict_from_csv(input_csv, output_csv=None, smiles_column='smiles'):
     print(f"  ✓ Dashboard data saved to: {json_out}")
     
     # Create results DataFrame for CSV
-    df_results['Predicted_DockingScore'] = predictions_flat
-    df_results['AD_Status'] = ad_status
-    df_results['AD_Score'] = ad_scores
-    
+    df_results = pd.DataFrame({
+        'smiles': valid_smiles,
+        'Predicted_DockingScore': predictions_flat,
+        'AD_Status': ad_status,
+        'AD_Score': ad_scores
+    })
+
     print("\n" + "="*70)
     print("PREDICTION SUMMARY")
     print("="*70)
@@ -316,12 +293,12 @@ def predict_from_csv(input_csv, output_csv=None, smiles_column='smiles'):
     print(f"Mean predicted score: {df_results['Predicted_DockingScore'].mean():.3f}")
     print(f"Applicability Domain: {ad_status.count('IN')} IN, {ad_status.count('OUT')} OUT")
     print("="*70)
-    
+
     # Save to CSV if output path provided
     if output_csv:
         df_results.to_csv(output_csv, index=False)
         print(f"\n✓ Results saved to: {output_csv}")
-    
+
     return df_results
 
 # -------------------------
@@ -329,18 +306,18 @@ def predict_from_csv(input_csv, output_csv=None, smiles_column='smiles'):
 # -------------------------
 def main():
     """Main function with command-line interface"""
-    
-    # Parse arguments with defaults - read from Node 4's own inputs folder
-    input_csv = sys.argv[1] if len(sys.argv) > 1 else "inputs/molecules_to_predict.csv"
+
+    input_file = sys.argv[1] if len(sys.argv) > 1 else "inputs/molecules_to_predict.txt"
     output_csv = sys.argv[2] if len(sys.argv) > 2 else 'outputs/predictions.csv'
-    
-    if not os.path.exists(input_csv):
-        print(f"❌ Error: Input file '{input_csv}' not found!")
+
+    if not os.path.exists(input_file):
+        input_file = "molecules_to_predict.txt"
+    if not os.path.exists(input_file):
+        print(f"❌ Error: No molecules_to_predict.txt found in inputs/ or current directory!")
         return
-    
-    # Run prediction
-    results = predict_from_csv(input_csv, output_csv)
-    
+
+    results = predict_from_file(input_file, output_csv)
+
     if results is not None:
         print("\n✓ Prediction complete!")
         print(f"\nFirst 5 predictions:")
