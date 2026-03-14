@@ -284,6 +284,16 @@ if __name__ == "__main__":
         pickle.dump(history.history, f)
     print(f"  ✓ Saved model and history: {model_path}")
 
+    # Save preprocessing pipeline (scaler, selector, feature names)
+    pipeline_path = os.path.join(OUTPUT_DIR, 'hybrid_ultimate_pipeline.pkl')
+    with open(pipeline_path, 'wb') as f:
+        pickle.dump({
+            'scaler': data['scaler'],
+            'selector': data['selector'],
+            'feature_names': data.get('feature_names', [])
+        }, f)
+    print(f"  ✓ Saved pipeline: {pipeline_path}")
+
     # 5. Final Evaluation & Data Export
     print("\nStep 5: Final Evaluation & Dashboard Export...")
     x_pred_train = model.predict(X_train, verbose=0).flatten()

@@ -6,6 +6,7 @@ outputs = ["outputs/hybrid_model.keras", "outputs/training_history.pkl", "output
 
 [container]
 image = "chiral.sakuracr.jp/qsar-hybrid-model:v3"
+use_gpu = true
 
 [scripts]
 run = "run.sh"
