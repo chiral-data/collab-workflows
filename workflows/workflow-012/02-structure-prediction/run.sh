@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+# Workaround: container runs as host UID which may not exist in /etc/passwd,
+# causing getpass.getuser() to fail inside PyTorch/Lightning cache init.
+export LOGNAME="${LOGNAME:-user}"
+export NUMBA_CACHE_DIR="/tmp/numba_cache"
+
 echo "Starting Node 02: Boltz-2 Structure Prediction"
 
 # Copy input files from silva's inputs/ directory to working directory
