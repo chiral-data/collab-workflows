@@ -2,10 +2,10 @@ name = "Compute ADMET Predictions"
 description = "Runs ADMET-AI prediction engine on validated molecules"
 
 inputs = ["standardized_molecules.csv"]
-outputs = ["raw_predictions.csv"]
+outputs = ["outputs/raw_predictions.csv"]
 
 [container]
-image = "admet-ai_2026_03_25"
+image = "admet-compute:2026_03_25"
 
 [scripts]
 run = "run.sh"

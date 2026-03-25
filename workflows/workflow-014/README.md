@@ -120,3 +120,6 @@ workflows/workflow-014/
 ```
 
 ## Outputs
+Outputs from test runs on drugbank_approved.csv are temporarily saved in 'test_run_outputs'
+- can view these outputs from the IDE folder, or 
+- in terminal, run python3 -m http.server 8080 and open in web browser http://localhost/8080

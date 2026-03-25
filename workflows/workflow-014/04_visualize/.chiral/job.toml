@@ -2,10 +2,10 @@ name = "Generate Report"
 description = "Generates a self-contained HTML dashboard with radar charts and data tables"
 
 inputs = ["filtered_candidates.csv"]
-outputs = ["report.html"]
+outputs = ["outputs/report.html"]
 
 [container]
-image = "admet-visualize_2026_03_25"
+image = "python:3.11-slim"
 
 [scripts]
 run = "run.sh"

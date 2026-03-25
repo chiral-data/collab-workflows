@@ -11,7 +11,7 @@ import sys
 # =============================================================================
 
 CANDIDATES_PATH = "./inputs/filtered_candidates.csv"
-OUTPUT_HTML = "report.html"
+OUTPUT_HTML = "./outputs/report.html"
 
 # ADMET properties for the radar chart (classification probabilities, 0-1 range)
 RADAR_PROPS = [
