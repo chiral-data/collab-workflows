@@ -1,9 +1,10 @@
 #!/bin/bash
 set -e
-echo "Starting Node 01: Validate SMILE Inputs"
+echo "Starting Node 01: Validate SMILES Inputs"
+mkdir -p outputs
 
 python validate.py \
     --input "${PARAM_INPUT_FILE}" \
-    --output standardized_molecules.csv
+    --smiles-column "${PARAM_SMILES_COLUMN:-smiles}"
 
 echo "Node 01 completed"

@@ -5,7 +5,7 @@ inputs = ["standardized_molecules.csv"]
 outputs = ["outputs/raw_predictions.csv"]
 
 [container]
-image = "python:3.11-slim"
+image = "continuumio/miniconda3"
 
 [scripts]
 pre = "pre_run.sh"

@@ -1,25 +1,13 @@
 #!/usr/bin/env python3
 """Run ADMET-AI predictions on validated molecules."""
 
-import json
 import os
 import subprocess
 import sys
 
 
-def load_params():
-    global_params = {}
-    for path in ["./inputs/global_params.json", "../global_params.json"]:
-        if os.path.exists(path):
-            with open(path) as f:
-                global_params = json.load(f)
-            break
-    return global_params
-
-
 def main():
-    params = load_params()
-    smiles_column = params.get("smiles_column", "smiles")
+    smiles_column = os.environ.get("PARAM_SMILES_COLUMN", "smiles")
 
     input_path = "./inputs/standardized_molecules.csv"
     if not os.path.exists(input_path):

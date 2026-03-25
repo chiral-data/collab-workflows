@@ -1,5 +1,5 @@
 name = "Validate Inputs"
-description = "Validates the input CSV and standardizes SMILES strings"
+description = "Validates the input CSV and standardizes SMILES strings using RDKit"
 
 inputs = ["*.csv"]
 outputs = ["outputs/standardized_molecules.csv", "outputs/validation_report.json"]
@@ -10,3 +10,8 @@ image = "python:3.11-slim"
 [scripts]
 pre = "pre_run.sh"
 run = "run.sh"
+
+[params.input_file]
+type = "file"
+default = ".chiral/test_inputs/sample_molecules.csv"
+hint = "Input CSV file containing molecules with a SMILES column"
