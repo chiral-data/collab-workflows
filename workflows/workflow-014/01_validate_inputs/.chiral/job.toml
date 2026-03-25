@@ -2,13 +2,12 @@ name = "Validate Inputs"
 description = "Validates the input CSV and standardizes SMILES strings using RDKit"
 
 inputs = ["*.csv"]
-outputs = ["outputs/standardized_molecules.csv", "outputs/validation_report.json"]
+outputs = ["standardized_molecules.csv", "validation_report.json"]
 
 [container]
-image = "python:3.11-slim"
+image = "admet-validate_2026_03_25"
 
 [scripts]
-pre = "pre_run.sh"
 run = "run.sh"
 
 [params.input_file]

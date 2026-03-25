@@ -92,8 +92,7 @@ def main():
     print(f"Duplicates removed: {duplicate_count}", flush=True)
 
     # Write standardized CSV
-    os.makedirs("outputs", exist_ok=True)
-    df.to_csv("outputs/standardized_molecules.csv", index=False)
+    df.to_csv("standardized_molecules.csv", index=False)
 
     # Write validation report
     report = {
@@ -105,7 +104,7 @@ def main():
         "input_file": os.path.basename(input_path),
         "rdkit_available": HAS_RDKIT,
     }
-    with open("outputs/validation_report.json", "w") as f:
+    with open("validation_report.json", "w") as f:
         json.dump(report, f, indent=2)
 
     print("Validation complete.", flush=True)

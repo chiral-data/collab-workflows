@@ -2,13 +2,12 @@ name = "Filter and Rank"
 description = "Computes MPO scores, applies configurable ADMET filters, and ranks top N candidates"
 
 inputs = ["raw_predictions.csv"]
-outputs = ["outputs/filtered_candidates.csv", "outputs/analysis_summary.json"]
+outputs = ["filtered_candidates.csv", "analysis_summary.json"]
 
 [container]
-image = "python:3.11-slim"
+image = "admet-analyze_2026_03_25"
 
 [scripts]
-pre = "pre_run.sh"
 run = "run.sh"
 
 [params.top_n]

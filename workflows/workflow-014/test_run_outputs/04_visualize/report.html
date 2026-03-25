@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADMET-AI Prediction Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+  body { background: #f8f9fa; }
+  .smiles-cell { font-family: monospace; font-size: 0.8em; max-width: 220px;
+                  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .stat-value { font-size: 2rem; font-weight: 700; }
+  .table-sm td, .table-sm th { padding: 0.4rem 0.5rem; font-size: 0.85rem; }
+  .table thead th { position: sticky; top: 0; z-index: 1; }
+  #radar-chart { min-height: 500px; }
+</style>
+</head>
+<body>
+<div class="container-fluid py-4">
+  <div class="row mb-4">
+    <div class="col">
+      <h1 class="h3">ADMET-AI Prediction Dashboard</h1>
+      <p class="text-muted mb-0">Filtered and ranked candidates with multi-parameter optimization scores</p>
+    </div>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="stat-value text-primary">20</div>
+          <div class="text-muted">Candidates</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="stat-value text-success">0.343</div>
+          <div class="text-muted">Avg MPO Score</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="stat-value text-info">0.356</div>
+          <div class="text-muted">Best MPO Score</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="stat-value text-warning">20</div>
+          <div class="text-muted">Pass Safety Panel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Radar Chart -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Top Candidates — ADMET Radar</h5>
+          <small class="text-muted">Risk properties (hERG, DILI, AMES, ClinTox) are inverted so higher = better for all axes</small>
+        </div>
+        <div class="card-body">
+          <div id="radar-chart"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Table -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title mb-0">All Candidates</h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-sm table-striped table-hover mb-0">
+              <thead class="table-dark">
+                <tr><th>#</th><th>Name</th><th>SMILES</th><th>MPO Score</th><th>AMES</th><th>BBB_Martins</th><th>Bioavailability_Ma</th><th>ClinTox</th><th>DILI</th><th>HIA_Hou</th><th>hERG</th><th>Lipinski</th><th>QED</th><th>CYP1A2_Veith</th><th>CYP2C19_Veith</th><th>CYP2C9_Veith</th><th>CYP2D6_Veith</th><th>CYP3A4_Veith</th><th>Caco2_Wang</th><th>Clearance_Hepatocyte_AZ</th><th>Half_Life_Obach</th><th>Lipophilicity_AstraZeneca</th><th>PPBR_AZ</th><th>Solubility_AqSolDB</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Flurothyl</td><td class='smiles-cell'>FC(F)(F)COCC(F)(F)F</td><td><strong>0.3559</strong></td><td style="color:#198754">0.082</td><td style="color:#198754">0.994</td><td style="color:#198754">0.965</td><td style="color:#198754">0.007</td><td style="color:#ffc107">0.306</td><td style="color:#198754">1.000</td><td style="color:#198754">0.018</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.594</td><td style="color:#6c757d">0.211</td><td style="color:#6c757d">0.061</td><td style="color:#6c757d">0.004</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.876</td><td style="color:#6c757d">45.517</td><td style="color:#6c757d">32.625</td><td style="color:#6c757d">1.862</td><td style="color:#6c757d">47.599</td><td style="color:#6c757d">-1.908</td></tr>
+<tr><td>2</td><td>Propyl alcohol</td><td class='smiles-cell'>CCCO</td><td><strong>0.3536</strong></td><td style="color:#198754">0.077</td><td style="color:#198754">0.977</td><td style="color:#198754">0.949</td><td style="color:#198754">0.014</td><td style="color:#198754">0.164</td><td style="color:#198754">1.000</td><td style="color:#198754">0.010</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.464</td><td style="color:#6c757d">0.078</td><td style="color:#6c757d">0.015</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.884</td><td style="color:#6c757d">62.539</td><td style="color:#6c757d">12.611</td><td style="color:#6c757d">0.024</td><td style="color:#6c757d">15.826</td><td style="color:#6c757d">0.595</td></tr>
+<tr><td>3</td><td>Pentafluoropropane</td><td class='smiles-cell'>FC(F)CC(F)(F)F</td><td><strong>0.3529</strong></td><td style="color:#198754">0.055</td><td style="color:#198754">0.996</td><td style="color:#198754">0.954</td><td style="color:#198754">0.005</td><td style="color:#198754">0.250</td><td style="color:#198754">1.000</td><td style="color:#198754">0.020</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.482</td><td style="color:#6c757d">0.548</td><td style="color:#6c757d">0.118</td><td style="color:#6c757d">0.006</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.853</td><td style="color:#6c757d">54.777</td><td style="color:#6c757d">30.279</td><td style="color:#6c757d">1.824</td><td style="color:#6c757d">47.309</td><td style="color:#6c757d">-2.108</td></tr>
+<tr><td>4</td><td>Sevoflurane</td><td class='smiles-cell'>FCOC(C(F)(F)F)C(F)(F)F</td><td><strong>0.3525</strong></td><td style="color:#198754">0.047</td><td style="color:#198754">0.991</td><td style="color:#198754">0.916</td><td style="color:#198754">0.005</td><td style="color:#ffc107">0.305</td><td style="color:#198754">1.000</td><td style="color:#198754">0.021</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.622</td><td style="color:#6c757d">0.246</td><td style="color:#6c757d">0.265</td><td style="color:#6c757d">0.019</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">-3.959</td><td style="color:#6c757d">72.984</td><td style="color:#6c757d">34.954</td><td style="color:#6c757d">2.313</td><td style="color:#6c757d">60.580</td><td style="color:#6c757d">-3.026</td></tr>
+<tr><td>5</td><td>Desflurane</td><td class='smiles-cell'>FC(F)OC(F)C(F)(F)F</td><td><strong>0.3523</strong></td><td style="color:#198754">0.089</td><td style="color:#198754">0.995</td><td style="color:#198754">0.956</td><td style="color:#198754">0.006</td><td style="color:#ffc107">0.310</td><td style="color:#198754">1.000</td><td style="color:#198754">0.018</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.573</td><td style="color:#6c757d">0.422</td><td style="color:#6c757d">0.116</td><td style="color:#6c757d">0.006</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.860</td><td style="color:#6c757d">65.704</td><td style="color:#6c757d">28.288</td><td style="color:#6c757d">1.904</td><td style="color:#6c757d">48.100</td><td style="color:#6c757d">-2.078</td></tr>
+<tr><td>6</td><td>Hydroxycitronellal</td><td class='smiles-cell'>CC(CC=O)CCCC(C)(C)O</td><td><strong>0.3515</strong></td><td style="color:#198754">0.151</td><td style="color:#198754">0.975</td><td style="color:#198754">0.878</td><td style="color:#198754">0.024</td><td style="color:#198754">0.066</td><td style="color:#198754">1.000</td><td style="color:#198754">0.099</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.623</td><td style="color:#6c757d">0.040</td><td style="color:#6c757d">0.050</td><td style="color:#6c757d">0.006</td><td style="color:#6c757d">0.015</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">-3.946</td><td style="color:#6c757d">78.483</td><td style="color:#6c757d">20.027</td><td style="color:#6c757d">0.828</td><td style="color:#6c757d">30.356</td><td style="color:#6c757d">-1.040</td></tr>
+<tr><td>7</td><td>Isopropyl alcohol</td><td class='smiles-cell'>CC(C)O</td><td><strong>0.3497</strong></td><td style="color:#198754">0.108</td><td style="color:#198754">0.977</td><td style="color:#198754">0.951</td><td style="color:#198754">0.013</td><td style="color:#198754">0.133</td><td style="color:#198754">1.000</td><td style="color:#198754">0.017</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.428</td><td style="color:#6c757d">0.104</td><td style="color:#6c757d">0.021</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.003</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.875</td><td style="color:#6c757d">52.580</td><td style="color:#6c757d">13.873</td><td style="color:#6c757d">-0.376</td><td style="color:#6c757d">8.381</td><td style="color:#6c757d">0.845</td></tr>
+<tr><td>8</td><td>Norflurane</td><td class='smiles-cell'>FCC(F)(F)F</td><td><strong>0.3448</strong></td><td style="color:#198754">0.073</td><td style="color:#198754">0.996</td><td style="color:#198754">0.957</td><td style="color:#198754">0.008</td><td style="color:#198754">0.255</td><td style="color:#198754">1.000</td><td style="color:#198754">0.017</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.407</td><td style="color:#6c757d">0.585</td><td style="color:#6c757d">0.072</td><td style="color:#6c757d">0.004</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.807</td><td style="color:#6c757d">54.486</td><td style="color:#6c757d">24.128</td><td style="color:#6c757d">1.486</td><td style="color:#6c757d">38.913</td><td style="color:#6c757d">-1.618</td></tr>
+<tr><td>9</td><td>Valproic acid</td><td class='smiles-cell'>CCCC(CCC)C(=O)O</td><td><strong>0.3435</strong></td><td style="color:#198754">0.033</td><td style="color:#198754">0.915</td><td style="color:#198754">0.943</td><td style="color:#198754">0.026</td><td style="color:#198754">0.276</td><td style="color:#198754">0.999</td><td style="color:#198754">0.015</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.642</td><td style="color:#6c757d">0.009</td><td style="color:#6c757d">0.009</td><td style="color:#6c757d">0.004</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-4.116</td><td style="color:#6c757d">77.701</td><td style="color:#6c757d">-11.492</td><td style="color:#6c757d">0.611</td><td style="color:#6c757d">50.579</td><td style="color:#6c757d">-1.496</td></tr>
+<tr><td>10</td><td>Halothane</td><td class='smiles-cell'>FC(F)(F)C(Cl)Br</td><td><strong>0.3415</strong></td><td style="color:#198754">0.064</td><td style="color:#198754">0.994</td><td style="color:#198754">0.948</td><td style="color:#198754">0.004</td><td style="color:#ffc107">0.366</td><td style="color:#198754">1.000</td><td style="color:#198754">0.021</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.524</td><td style="color:#6c757d">0.797</td><td style="color:#6c757d">0.281</td><td style="color:#6c757d">0.021</td><td style="color:#6c757d">0.004</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">-3.872</td><td style="color:#6c757d">101.217</td><td style="color:#6c757d">34.473</td><td style="color:#6c757d">2.137</td><td style="color:#6c757d">56.056</td><td style="color:#6c757d">-2.212</td></tr>
+<tr><td>11</td><td>Benzyl alcohol</td><td class='smiles-cell'>OCc1ccccc1</td><td><strong>0.3412</strong></td><td style="color:#198754">0.113</td><td style="color:#198754">0.978</td><td style="color:#198754">0.938</td><td style="color:#198754">0.021</td><td style="color:#198754">0.177</td><td style="color:#198754">1.000</td><td style="color:#198754">0.046</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.572</td><td style="color:#6c757d">0.318</td><td style="color:#6c757d">0.067</td><td style="color:#6c757d">0.007</td><td style="color:#6c757d">0.022</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">-4.121</td><td style="color:#6c757d">85.241</td><td style="color:#6c757d">0.632</td><td style="color:#6c757d">1.208</td><td style="color:#6c757d">41.857</td><td style="color:#6c757d">-0.588</td></tr>
+<tr><td>12</td><td>Ethanol</td><td class='smiles-cell'>CCO</td><td><strong>0.3399</strong></td><td style="color:#198754">0.120</td><td style="color:#198754">0.979</td><td style="color:#198754">0.948</td><td style="color:#198754">0.019</td><td style="color:#198754">0.173</td><td style="color:#198754">1.000</td><td style="color:#198754">0.010</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.407</td><td style="color:#6c757d">0.062</td><td style="color:#6c757d">0.011</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.907</td><td style="color:#6c757d">51.561</td><td style="color:#6c757d">10.151</td><td style="color:#6c757d">-0.323</td><td style="color:#6c757d">10.945</td><td style="color:#6c757d">0.922</td></tr>
+<tr><td>13</td><td>Betahistine</td><td class='smiles-cell'>CNCCc1ccccn1</td><td><strong>0.3395</strong></td><td style="color:#198754">0.075</td><td style="color:#198754">0.952</td><td style="color:#198754">0.964</td><td style="color:#198754">0.033</td><td style="color:#198754">0.095</td><td style="color:#198754">1.000</td><td style="color:#198754">0.055</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.666</td><td style="color:#6c757d">0.033</td><td style="color:#6c757d">0.003</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">0.018</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-4.536</td><td style="color:#6c757d">20.269</td><td style="color:#6c757d">5.179</td><td style="color:#6c757d">-1.328</td><td style="color:#6c757d">1.870</td><td style="color:#6c757d">0.651</td></tr>
+<tr><td>14</td><td>Diethylcarbamazine</td><td class='smiles-cell'>CCN(CC)C(=O)N1CCN(C)CC1</td><td><strong>0.3368</strong></td><td style="color:#198754">0.160</td><td style="color:#198754">0.980</td><td style="color:#198754">0.932</td><td style="color:#198754">0.055</td><td style="color:#198754">0.054</td><td style="color:#198754">1.000</td><td style="color:#198754">0.166</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.654</td><td style="color:#6c757d">0.013</td><td style="color:#6c757d">0.014</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">0.022</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">-4.198</td><td style="color:#6c757d">49.523</td><td style="color:#6c757d">15.645</td><td style="color:#6c757d">-0.016</td><td style="color:#6c757d">4.602</td><td style="color:#6c757d">-0.380</td></tr>
+<tr><td>15</td><td>Methylhexaneamine</td><td class='smiles-cell'>CCC(C)CC(C)N</td><td><strong>0.3368</strong></td><td style="color:#198754">0.031</td><td style="color:#198754">0.949</td><td style="color:#198754">0.866</td><td style="color:#198754">0.017</td><td style="color:#198754">0.026</td><td style="color:#198754">1.000</td><td style="color:#198754">0.165</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.596</td><td style="color:#6c757d">0.116</td><td style="color:#6c757d">0.040</td><td style="color:#6c757d">0.004</td><td style="color:#6c757d">0.090</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">-4.283</td><td style="color:#6c757d">23.494</td><td style="color:#6c757d">23.110</td><td style="color:#6c757d">-0.466</td><td style="color:#6c757d">10.521</td><td style="color:#6c757d">-0.159</td></tr>
+<tr><td>16</td><td>Perflutren</td><td class='smiles-cell'>FC(F)(F)C(F)(F)C(F)(F)F</td><td><strong>0.3348</strong></td><td style="color:#198754">0.010</td><td style="color:#198754">0.991</td><td style="color:#198754">0.879</td><td style="color:#198754">0.003</td><td style="color:#198754">0.288</td><td style="color:#198754">1.000</td><td style="color:#198754">0.026</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.512</td><td style="color:#6c757d">0.488</td><td style="color:#6c757d">0.417</td><td style="color:#6c757d">0.063</td><td style="color:#6c757d">0.004</td><td style="color:#6c757d">0.001</td><td style="color:#6c757d">-4.085</td><td style="color:#6c757d">84.795</td><td style="color:#6c757d">44.113</td><td style="color:#6c757d">2.671</td><td style="color:#6c757d">71.169</td><td style="color:#6c757d">-3.938</td></tr>
+<tr><td>17</td><td>Isoflurane</td><td class='smiles-cell'>FC(F)OC(Cl)C(F)(F)F</td><td><strong>0.3337</strong></td><td style="color:#198754">0.134</td><td style="color:#198754">0.993</td><td style="color:#198754">0.943</td><td style="color:#198754">0.005</td><td style="color:#ffc107">0.305</td><td style="color:#198754">1.000</td><td style="color:#198754">0.020</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.473</td><td style="color:#6c757d">0.552</td><td style="color:#6c757d">0.177</td><td style="color:#6c757d">0.008</td><td style="color:#6c757d">0.003</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.884</td><td style="color:#6c757d">68.468</td><td style="color:#6c757d">29.255</td><td style="color:#6c757d">1.890</td><td style="color:#6c757d">47.442</td><td style="color:#6c757d">-1.816</td></tr>
+<tr><td>18</td><td>Butylene glycol</td><td class='smiles-cell'>CC(O)CCO</td><td><strong>0.3331</strong></td><td style="color:#198754">0.066</td><td style="color:#198754">0.945</td><td style="color:#198754">0.921</td><td style="color:#198754">0.016</td><td style="color:#198754">0.096</td><td style="color:#198754">0.999</td><td style="color:#198754">0.016</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.491</td><td style="color:#6c757d">0.019</td><td style="color:#6c757d">0.009</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.003</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-4.326</td><td style="color:#6c757d">47.473</td><td style="color:#6c757d">15.130</td><td style="color:#6c757d">-0.910</td><td style="color:#6c757d">5.244</td><td style="color:#6c757d">1.067</td></tr>
+<tr><td>19</td><td>Synthetic camphor</td><td class='smiles-cell'>CC12CCC(CC1=O)C2(C)C</td><td><strong>0.3328</strong></td><td style="color:#198754">0.049</td><td style="color:#198754">0.991</td><td style="color:#198754">0.791</td><td style="color:#198754">0.012</td><td style="color:#198754">0.146</td><td style="color:#198754">1.000</td><td style="color:#198754">0.125</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.521</td><td style="color:#6c757d">0.201</td><td style="color:#6c757d">0.531</td><td style="color:#6c757d">0.106</td><td style="color:#6c757d">0.014</td><td style="color:#6c757d">0.017</td><td style="color:#6c757d">-3.953</td><td style="color:#6c757d">110.108</td><td style="color:#6c757d">11.657</td><td style="color:#6c757d">1.760</td><td style="color:#6c757d">49.055</td><td style="color:#6c757d">-2.087</td></tr>
+<tr><td>20</td><td>Enflurane</td><td class='smiles-cell'>FC(F)OC(F)(F)C(F)Cl</td><td><strong>0.3315</strong></td><td style="color:#198754">0.099</td><td style="color:#198754">0.995</td><td style="color:#198754">0.946</td><td style="color:#198754">0.006</td><td style="color:#ffc107">0.366</td><td style="color:#198754">1.000</td><td style="color:#198754">0.020</td><td style="color:#6c757d">4.000</td><td style="color:#6c757d">0.483</td><td style="color:#6c757d">0.589</td><td style="color:#6c757d">0.204</td><td style="color:#6c757d">0.011</td><td style="color:#6c757d">0.002</td><td style="color:#6c757d">0.000</td><td style="color:#6c757d">-3.900</td><td style="color:#6c757d">87.241</td><td style="color:#6c757d">28.587</td><td style="color:#6c757d">1.929</td><td style="color:#6c757d">50.282</td><td style="color:#6c757d">-2.242</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var traces = [{"type": "scatterpolar", "r": [0.994, 0.965, 1.0, 0.982, 0.694, 0.918, 0.993, 4.0, 0.594, 0.994], "theta": ["BBB Permeability", "Bioavailability", "Intestinal Absorption", "hERG Risk", "DILI Risk", "AMES Mutagenicity", "Clinical Toxicity", "Lipinski", "QED", "BBB Permeability"], "fill": "toself", "name": "Flurothyl", "opacity": 0.6}, {"type": "scatterpolar", "r": [0.977, 0.949, 1.0, 0.99, 0.836, 0.923, 0.986, 4.0, 0.464, 0.977], "theta": ["BBB Permeability", "Bioavailability", "Intestinal Absorption", "hERG Risk", "DILI Risk", "AMES Mutagenicity", "Clinical Toxicity", "Lipinski", "QED", "BBB Permeability"], "fill": "toself", "name": "Propyl alcohol", "opacity": 0.6}, {"type": "scatterpolar", "r": [0.996, 0.954, 1.0, 0.98, 0.75, 0.945, 0.995, 4.0, 0.482, 0.996], "theta": ["BBB Permeability", "Bioavailability", "Intestinal Absorption", "hERG Risk", "DILI Risk", "AMES Mutagenicity", "Clinical Toxicity", "Lipinski", "QED", "BBB Permeability"], "fill": "toself", "name": "Pentafluoropropane", "opacity": 0.6}, {"type": "scatterpolar", "r": [0.991, 0.916, 1.0, 0.979, 0.695, 0.953, 0.995, 4.0, 0.622, 0.991], "theta": ["BBB Permeability", "Bioavailability", "Intestinal Absorption", "hERG Risk", "DILI Risk", "AMES Mutagenicity", "Clinical Toxicity", "Lipinski", "QED", "BBB Permeability"], "fill": "toself", "name": "Sevoflurane", "opacity": 0.6}, {"type": "scatterpolar", "r": [0.995, 0.956, 1.0, 0.982, 0.69, 0.911, 0.994, 4.0, 0.573, 0.995], "theta": ["BBB Permeability", "Bioavailability", "Intestinal Absorption", "hERG Risk", "DILI Risk", "AMES Mutagenicity", "Clinical Toxicity", "Lipinski", "QED", "BBB Permeability"], "fill": "toself", "name": "Desflurane", "opacity": 0.6}];
+  var layout = {
+    polar: {
+      radialaxis: {
+        visible: true,
+        range: [0, 1]
+      }
+    },
+    showlegend: true,
+    legend: { orientation: "h", y: -0.1 },
+    margin: { t: 30, b: 60, l: 60, r: 60 }
+  };
+  Plotly.newPlot('radar-chart', traces, layout, { responsive: true });
+</script>
+</body>
+</html>

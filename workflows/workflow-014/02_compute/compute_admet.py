@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Run ADMET-AI predictions on validated molecules."""
 
-import os
 import subprocess
+import os
 import sys
 
 
@@ -14,8 +14,7 @@ def main():
         print("ERROR: standardized_molecules.csv not found in inputs/", flush=True)
         sys.exit(1)
 
-    os.makedirs("outputs", exist_ok=True)
-    output_path = "outputs/raw_predictions.csv"
+    output_path = "raw_predictions.csv"
 
     print(f"Running ADMET-AI predictions (smiles_column={smiles_column})...", flush=True)
 

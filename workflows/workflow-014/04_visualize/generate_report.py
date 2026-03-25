@@ -11,7 +11,7 @@ import sys
 # =============================================================================
 
 CANDIDATES_PATH = "./inputs/filtered_candidates.csv"
-OUTPUT_HTML = "outputs/report.html"
+OUTPUT_HTML = "report.html"
 
 # ADMET properties for the radar chart (classification probabilities, 0-1 range)
 RADAR_PROPS = [
@@ -279,7 +279,6 @@ def main():
 </body>
 </html>"""
 
-    os.makedirs("outputs", exist_ok=True)
     with open(OUTPUT_HTML, "w") as f:
         f.write(html)
 

@@ -8,8 +8,8 @@ description = "Predicts ADMET properties for drug-like molecules using ADMET-AI 
 
 [params.input_file]
 type = "string"
-default = "drugbank_approved.csv"
-hint = "Input CSV filename (must be in input_files/)"
+default = "inputs/drugbank_approved.csv"
+hint = "Path to input CSV (silva copies input_files/ into inputs/)"
 
 [params.smiles_column]
 type = "string"

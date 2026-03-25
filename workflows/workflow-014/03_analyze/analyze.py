@@ -13,8 +13,8 @@ import pandas as pd
 # =============================================================================
 
 INPUT_PATH = "./inputs/raw_predictions.csv"
-OUTPUT_CSV = "outputs/filtered_candidates.csv"
-OUTPUT_JSON = "outputs/analysis_summary.json"
+OUTPUT_CSV = "filtered_candidates.csv"
+OUTPUT_JSON = "analysis_summary.json"
 
 TOP_N = int(os.environ.get("PARAM_TOP_N", "20"))
 
@@ -150,7 +150,6 @@ def main():
     print(f"Top {TOP_N} candidates selected (returning {len(top)}).", flush=True)
 
     # Write output CSV
-    os.makedirs("outputs", exist_ok=True)
     top.to_csv(OUTPUT_CSV, index=False)
 
     # Write analysis summary JSON
