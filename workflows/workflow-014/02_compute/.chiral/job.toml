@@ -1,0 +1,12 @@
+name = "Compute ADMET Predictions"
+description = "Runs ADMET-AI prediction engine on validated molecules"
+
+inputs = ["validated_molecules.csv"]
+outputs = ["outputs/admet_predictions.csv"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+pre = "pre_run.sh"
+run = "run.sh"

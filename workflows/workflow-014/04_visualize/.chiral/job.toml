@@ -1,0 +1,11 @@
+name = "Generate Report"
+description = "Generates an interactive HTML dashboard of ADMET predictions and filtered candidates"
+
+inputs = ["filtered_candidates.csv", "analysis_summary.json"]
+outputs = ["outputs/report.html", "outputs/data.json"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+run = "run.sh"

@@ -1,0 +1,16 @@
+name = "Filter and Rank"
+description = "Applies threshold-based filtering and ranks molecules by ADMET properties"
+
+inputs = ["admet_predictions.csv"]
+outputs = ["outputs/filtered_candidates.csv", "outputs/analysis_summary.json"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+run = "run.sh"
+
+[params.top_n]
+type = "integer"
+default = 20
+hint = "Number of top-ranked candidates to select"

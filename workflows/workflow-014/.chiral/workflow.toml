@@ -1,0 +1,17 @@
+name = "ADMET-AI Prediction"
+description = "Predicts ADMET properties for drug-like molecules using ADMET-AI machine learning models"
+
+[dependencies]
+02_compute = ["01_validate_inputs"]
+03_analyze = ["02_compute"]
+04_visualize = ["03_analyze"]
+
+[params.input_file]
+type = "string"
+default = "drugbank_approved.csv"
+hint = "Input CSV filename (must be in input_files/)"
+
+[params.smiles_column]
+type = "string"
+default = "smiles"
+hint = "Name of column containing SMILES strings"
