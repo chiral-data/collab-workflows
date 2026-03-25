@@ -27,7 +27,7 @@ def main():
         sys.exit(1)
 
     os.makedirs("outputs", exist_ok=True)
-    output_path = "outputs/admet_predictions.csv"
+    output_path = "outputs/raw_predictions.csv"
 
     print(f"Running ADMET-AI predictions (smiles_column={smiles_column})...", flush=True)
 

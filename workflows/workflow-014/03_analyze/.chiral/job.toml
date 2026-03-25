@@ -1,7 +1,7 @@
 name = "Filter and Rank"
-description = "Applies threshold-based filtering and ranks molecules by ADMET properties"
+description = "Computes MPO scores, applies configurable ADMET filters, and ranks top N candidates"
 
-inputs = ["admet_predictions.csv"]
+inputs = ["raw_predictions.csv"]
 outputs = ["outputs/filtered_candidates.csv", "outputs/analysis_summary.json"]
 
 [container]
@@ -14,4 +14,39 @@ run = "run.sh"
 [params.top_n]
 type = "integer"
 default = 20
-hint = "Number of top-ranked candidates to select"
+hint = "Number of top-ranked candidates to return"
+
+[params.filter_hERG]
+type = "string"
+default = "safe"
+hint = "hERG filter: 'safe' (prob < 0.5), 'strict' (prob < 0.3), or a numeric max threshold"
+
+[params.filter_Caco2]
+type = "string"
+default = ">-5.15"
+hint = "Caco2 permeability filter, e.g. '>-5.15' or '>0.5'"
+
+[params.filter_BBB]
+type = "string"
+default = ">0.5"
+hint = "BBB permeability min probability, e.g. '>0.5'"
+
+[params.filter_HIA]
+type = "string"
+default = ">0.5"
+hint = "Human Intestinal Absorption min probability, e.g. '>0.5'"
+
+[params.filter_DILI]
+type = "string"
+default = "<0.5"
+hint = "Drug-Induced Liver Injury max probability, e.g. '<0.5'"
+
+[params.filter_AMES]
+type = "string"
+default = "<0.5"
+hint = "AMES mutagenicity max probability, e.g. '<0.5'"
+
+[params.filter_ClinTox]
+type = "string"
+default = "<0.3"
+hint = "Clinical Toxicity max probability, e.g. '<0.3'"

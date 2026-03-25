@@ -1,8 +1,8 @@
 name = "Generate Report"
-description = "Generates an interactive HTML dashboard of ADMET predictions and filtered candidates"
+description = "Generates a self-contained HTML dashboard with radar charts and data tables"
 
-inputs = ["filtered_candidates.csv", "analysis_summary.json"]
-outputs = ["outputs/report.html", "outputs/data.json"]
+inputs = ["filtered_candidates.csv"]
+outputs = ["outputs/report.html"]
 
 [container]
 image = "python:3.11-slim"
