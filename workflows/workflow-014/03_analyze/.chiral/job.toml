@@ -8,6 +8,7 @@ outputs = ["outputs/filtered_candidates.csv", "outputs/analysis_summary.json"]
 image = "python:3.11-slim"
 
 [scripts]
+pre = "pre_run.sh"
 run = "run.sh"
 
 [params.top_n]

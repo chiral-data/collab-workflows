@@ -21,9 +21,9 @@ def main():
     params = load_params()
     smiles_column = params.get("smiles_column", "smiles")
 
-    input_path = "./inputs/validated_molecules.csv"
+    input_path = "./inputs/standardized_molecules.csv"
     if not os.path.exists(input_path):
-        print("ERROR: validated_molecules.csv not found in inputs/", flush=True)
+        print("ERROR: standardized_molecules.csv not found in inputs/", flush=True)
         sys.exit(1)
 
     os.makedirs("outputs", exist_ok=True)

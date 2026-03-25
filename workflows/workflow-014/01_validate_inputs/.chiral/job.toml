@@ -2,7 +2,7 @@ name = "Validate Inputs"
 description = "Validates the input CSV and standardizes SMILES strings"
 
 inputs = ["*.csv"]
-outputs = ["outputs/validated_molecules.csv", "outputs/validation_report.json"]
+outputs = ["outputs/standardized_molecules.csv", "outputs/validation_report.json"]
 
 [container]
 image = "python:3.11-slim"

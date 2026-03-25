@@ -98,7 +98,7 @@ def main():
 
     # Write validated CSV
     os.makedirs("outputs", exist_ok=True)
-    with open("outputs/validated_molecules.csv", "w", newline="") as f:
+    with open("outputs/standardized_molecules.csv", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(valid_rows)
