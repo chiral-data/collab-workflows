@@ -1,0 +1,11 @@
+name = "Preprocessing"
+description = "Convert validated input to Boltz-2 (YAML) and Chai-1 (FASTA) formats"
+inputs = ["*.yaml", "*.fasta", "*.fa"]
+outputs = ["boltz_input.yaml", "chai_input.fasta", "preprocessing_summary.json"]
+
+[container]
+image = "chiral.sakuracr.jp/boltz:2025_09_05"
+use_gpu = false
+
+[scripts]
+run = "run.sh"

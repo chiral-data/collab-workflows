@@ -1,0 +1,18 @@
+name = "Boltz-2 vs Chai-1 Comparison"
+description = "Side-by-side comparison of Boltz-2 and Chai-1 structure predictions"
+
+[dependencies]
+02-preprocessing = ["01-validate-inputs"]
+03-predict-boltz = ["02-preprocessing"]
+04-predict-chai = ["02-preprocessing"]
+05-visualize = ["03-predict-boltz", "04-predict-chai"]
+
+[params.input_file]
+type = "file"
+default = "input_files/test_sequence.yaml"
+hint = "Protein sequence input file (YAML or FASTA)"
+
+[params.diffusion_samples]
+type = "integer"
+default = 5
+hint = "Number of structure samples per model"

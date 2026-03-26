@@ -1,0 +1,16 @@
+name = "Boltz-2 Structure Prediction"
+description = "Run Boltz-2 structure prediction from preprocessed YAML input"
+inputs = ["boltz_input.yaml"]
+outputs = ["*.pdb", "confidence_*.json", "boltz_summary.json"]
+
+[container]
+image = "chiral.sakuracr.jp/boltz:2025_09_05"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params]
+diffusion_samples = 2
+recycling_steps = 3
+use_msa_server = true
