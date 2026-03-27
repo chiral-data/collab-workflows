@@ -81,8 +81,34 @@ def resolve_filter(prop, raw_value):
     return parse_filter(val)
 
 
+def _sigmoid(x, midpoint, steepness=2.0):
+    """Logistic sigmoid mapping to [0, 1], centered at midpoint."""
+    return 1.0 / (1.0 + np.exp(-steepness * (x - midpoint)))
+
+
+# Normalizers: map each property's raw value to [0, 1].
+# Properties already in [0, 1] (probabilities / QED) use identity.
+NORMALIZERS = {
+    "BBB_Martins": lambda v: np.clip(v, 0.0, 1.0),
+    "Bioavailability_Ma": lambda v: np.clip(v, 0.0, 1.0),
+    "HIA_Hou": lambda v: np.clip(v, 0.0, 1.0),
+    "hERG": lambda v: np.clip(v, 0.0, 1.0),
+    "DILI": lambda v: np.clip(v, 0.0, 1.0),
+    "AMES": lambda v: np.clip(v, 0.0, 1.0),
+    "ClinTox": lambda v: np.clip(v, 0.0, 1.0),
+    "QED": lambda v: np.clip(v, 0.0, 1.0),
+    "Lipinski": lambda v: np.clip(v / 4.0, 0.0, 1.0),
+    "Caco2_Wang": lambda v: _sigmoid(v, midpoint=-5.15),
+}
+
+
 def compute_mpo_score(row):
-    """Compute a multi-parameter optimization (MPO) score for a molecule."""
+    """Compute a multi-parameter optimization (MPO) score for a molecule.
+
+    Each property is normalized to [0, 1] before applying weights so that
+    properties on different scales (log-scale Caco2, 0-4 Lipinski, 0-1
+    probabilities) contribute proportionally.
+    """
     scores = []
     weights = []
     for prop, weight in MPO_WEIGHTS.items():
@@ -90,9 +116,10 @@ def compute_mpo_score(row):
         if pd.notna(val):
             try:
                 v = float(val)
-                scores.append(v * weight)
+                norm = NORMALIZERS[prop](v)
+                scores.append(norm * weight)
                 weights.append(abs(weight))
-            except (ValueError, TypeError):
+            except (ValueError, TypeError, KeyError):
                 pass
     if not weights:
         return np.nan
