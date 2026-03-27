@@ -22,7 +22,7 @@ This workflow follows a linear, 4-stage pipeline architecture where each stage (
 ```mermaid
 graph TD
     A["Input CSV (drugbank_approved.csv)"] -->|2845 molecules| N1
-    subgraph Workflow
+    subgraph 
         N1["01: Validate Inputs"] -->|standardized_molecules.csv| N2["02: Compute ADMET"]
         N2 -->|raw_predictions.csv| N3["03: Filter & Rank"]
         N3 -->|filtered_candidates.csv| N4["04: Visualize Results"]
@@ -102,7 +102,7 @@ graph TD
 
 ---
 
-## Inputs & Configuration
+## Configuration
 
 The workflow is configurable via `.chiral/job.toml` files in each node directory. Parameters are passed as `PARAM_*` environment variables at runtime.
 
@@ -113,7 +113,7 @@ The workflow is configurable via `.chiral/job.toml` files in each node directory
 | `input_file`    | `inputs/drugbank_approved.csv` | Path to input CSV file                         |
 | `smiles_column` | `smiles`                     | Name of the column containing SMILES strings   |
 
-### Node 03 Filter Parameters
+### Node 03 Filter Parameters - params.json
 
 | Parameter        | Default  | Description                                              |
 | ---------------- | -------- | -------------------------------------------------------- |
@@ -129,6 +129,22 @@ The workflow is configurable via `.chiral/job.toml` files in each node directory
 ### Container
 
 All nodes use the `admet-pipeline:latest` Docker image, built from the included `Dockerfile` (based on `continuumio/miniconda3` with `admet-ai` pre-installed).
+
+## Input Files
+- `sample_molecules.csv` — Any CSV with a SMILES column 
+
+## Output Files
+- `report.html` — HTML dashboard with radar charts and data tables of filtered and ranked molecules 
+
+## Running
+1. Place input files in `input_files/`
+2. Set `SILVA_WORKFLOW_HOME` to the parent directory
+3. Launch Silva and select this workflow
+4. Press Enter to run
+
+## Requirements
+- Docker
+- Silva (https://github.com/chiral-data/silva)
 
 ---
 
