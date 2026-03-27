@@ -5,7 +5,7 @@ inputs = ["standardized_molecules.csv"]
 outputs = ["outputs/raw_predictions.csv"]
 
 [container]
-image = "admet-compute:2026_03_25"
+image = "admet-pipeline:latest"
 
 [scripts]
 run = "run.sh"

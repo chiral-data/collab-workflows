@@ -5,7 +5,7 @@ inputs = ["filtered_candidates.csv"]
 outputs = ["outputs/report.html"]
 
 [container]
-image = "python:3.11-slim"
+image = "admet-pipeline:latest"
 
 [scripts]
 run = "run.sh"
