@@ -1,0 +1,21 @@
+name = "Feature Engineering"
+description = "Process and engineer features from descriptors"
+depends_on = ["01-data-preparation"]
+inputs = ["descriptors.csv"]
+outputs = ["outputs/processed_data.npz", "outputs/scaler.pkl", "outputs/ad_stats.json", "outputs/data.json", "outputs/report.html"]
+
+[container]
+image = "chiral.sakuracr.jp/qsar:20260107_v1"
+
+[scripts]
+run = "run.sh"
+
+[params.test_size]
+type = "string"
+default = "0.3"
+hint = "Test set size (30% - matches original workflow)"
+
+[params.contamination]
+type = "string"
+default = "0.1"
+hint = "Outlier contamination rate"

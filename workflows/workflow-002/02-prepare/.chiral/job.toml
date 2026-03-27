@@ -1,0 +1,9 @@
+name = "Prepare Protein"
+description = "Downloads and prepares target protein structure"
+outputs = ["*.pdb", "*.pqr", "config.txt"]
+
+[container]
+image = "chiral.sakuracr.jp/smina:2025_10_17_v2"
+
+[scripts]
+run = "run.sh"

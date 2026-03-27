@@ -1,0 +1,14 @@
+version: 1
+# Fab antibody binder design against PD-L1 (7uxq)
+# Source: HannesStark/boltzgen example fab_targets/pdl1.yaml
+sequences:
+  - protein:
+      id: A
+      sequence: FTVTVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELPLAHPPNER
+  - protein:
+      id: [H, L]
+      # Fab heavy and light chains to be designed
+      msa: empty
+      design:
+        type: scaffold_library
+        path: fab_scaffolds

@@ -1,9 +1,0 @@
-name = "Download PDB"
-description = "Downloads a PDB file from RCSB database"
-outputs = ["*.pdb"]
-
-[container]
-image = "chiral.sakuracr.jp/pocketeer:2025_12_08"
-
-[scripts]
-run = "run.sh"

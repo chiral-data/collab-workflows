@@ -1,0 +1,20 @@
+name = "Virtual Screening"
+description = "Performs molecular docking with Smina"
+inputs = ["*.pdb", "config.txt", "*.sdf"]
+outputs = ["docking_results/*.sdf", "docking_results/*.txt"]
+
+[container]
+image = "chiral.sakuracr.jp/smina:2025_10_17_v2"
+
+[scripts]
+run = "run.sh"
+
+[params.test_mode]
+type = "boolean"
+default = true
+hint = "Run with 11 compounds (true) or full library (false)"
+
+[params.exhaustiveness]
+type = "integer"
+default = 8
+hint = "Search exhaustiveness (higher = slower but more thorough)"

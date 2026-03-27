@@ -1,0 +1,12 @@
+name = "4_predict_from_csv"
+description = "Generate predictions for new SMILES"
+depends_on = ["2_model_train"]
+inputs = ["hybrid_model.keras", "hybrid_ultimate_pipeline.pkl"]
+outputs = ["outputs/data.json", "outputs/report.html", "outputs/predictions.csv"]
+
+[container]
+image = "chiral.sakuracr.jp/qsar-hybrid-model:v3"
+use_gpu = true
+
+[scripts]
+run = "run.sh"

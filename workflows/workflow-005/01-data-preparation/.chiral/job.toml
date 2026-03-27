@@ -1,0 +1,14 @@
+name = "Data Preparation"
+description = "Ingest raw SMILES data, compute physicochemical descriptors"
+outputs = ["outputs/descriptors.csv", "outputs/data.json", "outputs/report.html"]
+
+[container]
+image = "chiral.sakuracr.jp/qsar:20260107_v1"
+
+[scripts]
+run = "run.sh"
+
+[params.input_csv]
+type = "string"
+default = ""
+hint = "Name of the input CSV file in inputs directory (leave empty to auto-detect)"

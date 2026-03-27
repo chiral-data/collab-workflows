@@ -1,0 +1,22 @@
+name = "3_analyze_overfitting"
+description = "Analyze model performance and overfitting"
+depends_on = ["1_data_prep", "2_model_train"]
+inputs = ["processed_data.pkl", "hybrid_model.keras", "training_history.pkl"]
+outputs = ["outputs/data.json", "outputs/report.html"]
+
+[container]
+image = "chiral.sakuracr.jp/qsar-hybrid-model:v3"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.epochs]
+type = "string"
+default = "200"
+hint = "Number of training epochs"
+
+[params.batch_size]
+type = "string"
+default = "400"
+hint = "Batch size"
