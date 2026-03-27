@@ -1,125 +1,164 @@
-# Create a silva-runnable workflow for ADMET-AI Prediction from the node structure
+# ADMET-AI Prediction Workflow (Workflow-014)
 
-- Node structure '~/dev/collab-workflows/workflows/workflow-014/'
-- Draft workflow 'https://github.com/chiral-data/collab-workflows/issues/81' and Sample Directory Structure (below)
-- Workflow references
-    - ‘~/dev/collab-workflows/workflows/workflow-007’
-    - '~/dev/collab-workflows/workflows/workflow-005/'
-    - '~/dev/collab-workflows/workflows/workflow-011/'
-- Silva source code ‘~/dev/silva’ 
-- Silva migration guide 'https://github.com/chiral-data/collab-workflows/blob/main/SILVA_MIGRATION_GUIDE.md#5-step-3--implementation' (5. Step 3 — Implementation)
-- ADMET-AI project: ‘https://github.com/swansonk14/admet_ai' 
+A modular drug discovery pipeline for predicting ADMET (Absorption, Distribution, Metabolism, Excretion, and Toxicity) properties of molecules using the [ADMET-AI](https://github.com/swansonk14/admet_ai) machine learning engine, designed for the Silva platform. This workflow takes a CSV of SMILES strings and produces a ranked list of drug candidates with an interactive HTML dashboard.
 
-## Tasks
-- [x] Investigate the ADMET Prediction Pipeline (Training Assignment) issue and ADMET-AI repo; create a summary.
-- [x] Using existing examples and references, and the sample node structure, create a workflow by building one node at a time. Make it silva runnable.
-- [x] Run ‘silva ~/dev/collab-workflows/workflows/workflow-014’, debug and fix.
+## 📋 Table of Contents
+
+- [Architecture & Data Flow](#architecture--data-flow)
+- [Workflow Nodes](#workflow-nodes-deep-dive)
+  - [Node 01: Validate Inputs](#node-01-validate-inputs)
+  - [Node 02: Compute ADMET Predictions](#node-02-compute)
+  - [Node 03: Filter & Rank Candidates](#node-03-analyze)
+  - [Node 04: Visualize Results](#node-04-visualize)
+- [Inputs & Configuration](#inputs--configuration)
+- [Repository Structure](#repository-structure)
 
 ---
 
-## Task 1: ADMET-AI Summary
+## 🏗 Architecture & Data Flow
 
-### What is ADMET-AI?
+This workflow follows a linear, 4-stage pipeline architecture where each stage (Node) is an independent execution unit. Nodes communicate via file-based input/output contracts, with Silva wiring each node's `outputs/` directory into the next node's `inputs/` directory.
 
-ADMET-AI is a machine learning tool for predicting **Absorption, Distribution, Metabolism, Excretion, and Toxicity** (ADMET) properties of drug-like molecules. It takes SMILES strings as input and outputs predicted values for ~59 pharmacological properties.
+```mermaid
+graph TD
+    A["Input CSV (drugbank_approved.csv)"] -->|2845 molecules| N1
+    subgraph Workflow
+        N1["01: Validate Inputs"] -->|standardized_molecules.csv| N2["02: Compute ADMET"]
+        N2 -->|raw_predictions.csv| N3["03: Filter & Rank"]
+        N3 -->|filtered_candidates.csv| N4["04: Visualize Results"]
+        N4 -->|report.html| Dashboard["Interactive HTML Dashboard"]
+    end
+```
 
-- **Repository:** https://github.com/swansonk14/admet_ai
-- **Dependencies:** `admet-ai`, `chemprop` (message-passing neural networks), `torch`, `rdkit`
-- **CLI:** `admet_predict --data_path <in.csv> --save_path <out.csv> --smiles_column <col>`
+### Key Artifacts
 
-### Properties Predicted
-
-| Category | Properties |
-|----------|-----------|
-| Safety/Toxicity | hERG, AMES, DILI, ClinTox, Carcinogens_Lagunin, LD50_Zhu, Skin_Reaction |
-| Absorption | BBB_Martins, HIA_Hou, Bioavailability_Ma, PAMPA_NCATS, Pgp_Broccatelli, Caco2_Wang |
-| Metabolism (CYP450) | CYP1A2, CYP2C19, CYP2C9, CYP2D6, CYP3A4 (Veith + Substrate variants) |
-| Distribution | PPBR_AZ, VDss_Lombardo, Lipophilicity_AstraZeneca |
-| Excretion | Clearance_Hepatocyte_AZ, Clearance_Microsome_AZ, Half_Life_Obach |
-| Tox21 panels | NR-AR, NR-AhR, NR-Aromatase, NR-ER, NR-PPAR-gamma, SR-ARE, SR-ATAD5, SR-HSE, SR-MMP, SR-p53 |
-| Drug-likeness | Lipinski, QED, Solubility_AqSolDB, HydrationFreeEnergy_FreeSolv |
-
-### Input/Output
-
-- **Input:** CSV with a SMILES column (e.g., `drugbank_approved.csv` with 2845 FDA-approved drugs)
-- **Output:** Same CSV extended with all predicted ADMET property columns (classification properties are 0–1 probabilities)
+- **Validated Data**: `standardized_molecules.csv` (Canonicalized, deduplicated SMILES)
+- **Raw Predictions**: `raw_predictions.csv` (All ~59 ADMET properties per molecule)
+- **Ranked Candidates**: `filtered_candidates.csv` (Top N molecules passing safety/efficacy filters)
+- **Dashboard**: `report.html` (Self-contained HTML with radar charts and data tables)
 
 ---
 
-## Task 2: Silva-Runnable Workflow
-
-### Workflow-Level Config (`.chiral/workflow.toml`)
-
-Linear DAG: `01_validate_inputs → 02_compute → 03_analyze → 04_visualize`
-
-Global params: `input_file` (default: `drugbank_approved.csv`), `smiles_column` (default: `smiles`)
+## 📦 Workflow Nodes: Deep Dive
 
 ### Node 01: Validate Inputs
 
-- **What:** Reads input CSV, validates SMILES column exists, standardizes/canonicalizes SMILES via RDKit, removes invalid entries and duplicates
-- **Container:** `python:3.11-slim` | **Packages:** pandas, rdkit-pypi
-- **Params:** `input_file` (type: file) — uses `${PARAM_INPUT_FILE}` in run.sh (same pattern as workflow-012)
-- **Inputs:** `*.csv` | **Outputs:** `outputs/standardized_molecules.csv`, `outputs/validation_report.json`
+**Goal**: Validate the input CSV and standardize all SMILES strings using RDKit.
+
+- **Input**: `drugbank_approved.csv` (or any CSV with a SMILES column)
+- **Process**:
+  1. **Column Validation**: Verifies the configured SMILES column exists.
+  2. **Standardization**: Uses RDKit to canonicalize SMILES — applies `Uncharger` and `Cleanup` for consistent representation.
+  3. **Deduplication**: Removes duplicate molecules by canonical SMILES (keeps first occurrence).
+  4. **Fallback**: If RDKit is unavailable, falls back to basic string validation.
+- **Outputs**: `standardized_molecules.csv`, `validation_report.json` (counts of invalid/duplicate entries removed).
 
 ### Node 02: Compute ADMET Predictions
 
-- **What:** Runs `admet_predict` CLI on standardized molecules, produces raw predictions CSV
-- **Container:** `continuumio/miniconda3` (torch/chemprop need conda for reliable installs)
-- **Packages:** admet-ai, chemprop, torch (via `pre_run.sh`)
-- **Params:** Inherits `smiles_column` from workflow globals via `PARAM_SMILES_COLUMN`
-- **Inputs:** `standardized_molecules.csv` | **Outputs:** `outputs/raw_predictions.csv`
+**Goal**: Run the ADMET-AI prediction engine on all validated molecules.
 
-### Node 03: Analyze (Filter & Rank)
+- **Process**:
+  1. Invokes the `admet_predict` CLI tool, which uses Chemprop message-passing neural networks and PyTorch under the hood.
+  2. Predicts ~59 pharmacological properties per molecule across safety, absorption, metabolism, distribution, excretion, and drug-likeness categories.
+- **Predicted Property Categories**:
 
-- **What:** Computes MPO scores (weighted multi-parameter optimization), applies configurable safety/efficacy filters, ranks and selects top N candidates
-- **Container:** `python:3.11-slim` | **Packages:** pandas, numpy
-- **Params:** `top_n` (default: 20), `filter_hERG` ("safe"), `filter_Caco2` (">-5.15"), `filter_BBB` (">0.5"), `filter_HIA` (">0.5"), `filter_DILI` ("<0.5"), `filter_AMES` ("<0.5"), `filter_ClinTox` ("<0.3")
-- **Inputs:** `raw_predictions.csv` | **Outputs:** `outputs/filtered_candidates.csv`, `outputs/analysis_summary.json`
+  | Category | Example Properties |
+  |----------|-------------------|
+  | Safety/Toxicity | hERG, AMES, DILI, ClinTox, Skin_Reaction, LD50_Zhu |
+  | Absorption | BBB_Martins, HIA_Hou, Bioavailability_Ma, Caco2_Wang, Pgp_Broccatelli |
+  | Metabolism (CYP450) | CYP1A2, CYP2C19, CYP2C9, CYP2D6, CYP3A4 |
+  | Distribution | PPBR_AZ, VDss_Lombardo, Lipophilicity_AstraZeneca |
+  | Excretion | Clearance_Hepatocyte_AZ, Clearance_Microsome_AZ, Half_Life_Obach |
+  | Drug-likeness | Lipinski, QED, Solubility_AqSolDB |
 
-### Node 04: Visualize (Dashboard)
+- **Output**: `raw_predictions.csv` (original data extended with all predicted ADMET columns).
 
-- **What:** Generates a self-contained HTML dashboard (Bootstrap 5 + Plotly.js CDN) with summary cards, radar charts for top 5 candidates, and a color-coded data table
-- **Container:** `python:3.11-slim` | **Packages:** none (pure Python, stdlib only)
-- **Inputs:** `filtered_candidates.csv` | **Outputs:** `outputs/report.html`
+### Node 03: Filter & Rank Candidates
 
-### Local Test Results (drugbank_approved.csv, 2845 molecules)
+**Goal**: Apply configurable safety/efficacy filters and rank candidates using a multi-parameter optimization (MPO) score.
 
-| Node | Status | Notes |
-|------|--------|-------|
-| 01 validate | Pass | 2845/2845 valid (RDKit fallback on Python 3.12; full RDKit in container) |
-| 02 compute | Skipped | Requires admet-ai install; test data already has ADMET columns |
-| 03 analyze | Pass | 359/2845 pass all filters → top 20 by MPO score |
-| 04 visualize | Pass | 22KB self-contained HTML dashboard |
+- **Process**:
+  1. **Filtering**: Applies user-configurable threshold filters (e.g., hERG < 0.5, BBB > 0.5). Supports operators `>`, `<`, `>=`, `<=` and named presets like `"safe"` / `"strict"`.
+  2. **MPO Scoring**: Computes a weighted composite score across key ADMET properties:
+     - **Positive weights** (higher is better): BBB, Bioavailability, HIA, QED (weight 1.0); Lipinski, Caco2 (weight 0.5)
+     - **Negative weights** (lower is better): hERG, DILI, AMES, ClinTox (weight -1.0)
+  3. **Ranking**: Sorts by MPO score descending and selects the top N candidates.
+- **Outputs**: `filtered_candidates.csv` (top N candidates), `analysis_summary.json` (filter statistics, MPO weights, candidate list).
 
-**Sample Directory Structure**
-```
+### Node 04: Visualize Results
+
+**Goal**: Generate a self-contained HTML dashboard for visual analysis of ranked candidates.
+
+- **Process**:
+  1. Builds summary cards (total candidates, average/best MPO scores, safety panel pass count).
+  2. Generates Plotly.js radar charts for the top 5 candidates across 9 ADMET dimensions (risk properties are inverted so higher = better on all axes).
+  3. Builds a color-coded data table with all candidates and 20 ADMET properties (green/yellow/red thresholds).
+- **Dashboard Features**:
+  - Bootstrap 5 responsive layout
+  - Interactive Plotly.js radar chart with hover details
+  - Color-coded table: green for favorable values, red for concerning values
+  - Sticky headers and SMILES monospace formatting
+- **Output**: `report.html` (self-contained, no server required).
+
+---
+
+## Inputs & Configuration
+
+The workflow is configurable via `.chiral/job.toml` files in each node directory. Parameters are passed as `PARAM_*` environment variables at runtime.
+
+### Global Parameters
+
+| Parameter       | Default                      | Description                                    |
+| --------------- | ---------------------------- | ---------------------------------------------- |
+| `input_file`    | `inputs/drugbank_approved.csv` | Path to input CSV file                         |
+| `smiles_column` | `smiles`                     | Name of the column containing SMILES strings   |
+
+### Node 03 Filter Parameters
+
+| Parameter        | Default  | Description                                              |
+| ---------------- | -------- | -------------------------------------------------------- |
+| `top_n`          | `20`     | Number of top-ranked candidates to return                |
+| `filter_hERG`    | `safe`   | hERG filter: `"safe"` (< 0.5), `"strict"` (< 0.3), or a threshold |
+| `filter_Caco2`   | `>-5.15` | Caco2 permeability threshold                             |
+| `filter_BBB`     | `>0.5`   | Blood-brain barrier permeability min probability         |
+| `filter_HIA`     | `>0.5`   | Human Intestinal Absorption min probability              |
+| `filter_DILI`    | `<0.5`   | Drug-Induced Liver Injury max probability                |
+| `filter_AMES`    | `<0.5`   | AMES mutagenicity max probability                        |
+| `filter_ClinTox` | `<0.3`   | Clinical Toxicity max probability                        |
+
+### Container
+
+All nodes use the `admet-pipeline:latest` Docker image, built from the included `Dockerfile` (based on `continuumio/miniconda3` with `admet-ai` pre-installed).
+
+---
+
+## Repository Structure
+
+```text
 workflows/workflow-014/
-├── .chiral/workflow.toml
-├── input_files/drugbank_approved.csv
+├── .chiral/
+│   └── workflow.toml                # Workflow definition (DAG + global params)
+├── Dockerfile                       # Container image for all nodes
+├── global_params.json               # Default parameter values
+├── input_files/
+│   └── drugbank_approved.csv        # Source dataset (2845 FDA-approved drugs)
 ├── 01_validate_inputs/
-│   ├── .chiral/job.toml
-│   ├── .chiral/test_inputs/sample_molecules.csv
-│   ├── pre_run.sh           # pip install rdkit-pypi pandas
-│   ├── run.sh
-│   └── validate.py
+│   ├── .chiral/job.toml             # Node config (inputs, outputs, params)
+│   ├── .chiral/test_inputs/
+│   │   └── sample_molecules.csv     # Test data for local development
+│   ├── run.sh                       # Execution entry point
+│   └── validate.py                  # SMILES validation & standardization
 ├── 02_compute/
 │   ├── .chiral/job.toml
-│   ├── pre_run.sh            # pip install admet-ai chemprop torch
 │   ├── run.sh
-│   └── compute_admet.py
+│   └── compute_admet.py             # ADMET-AI CLI wrapper
 ├── 03_analyze/
 │   ├── .chiral/job.toml
-│   ├── pre_run.sh            # pip install pandas numpy
 │   ├── run.sh
-│   └── analyze.py
+│   └── analyze.py                   # MPO scoring, filtering, ranking
 ├── 04_visualize/
 │   ├── .chiral/job.toml
 │   ├── run.sh
-│   └── generate_report.py
+│   └── generate_report.py           # HTML dashboard generator
 └── README.md
 ```
-
-## Outputs
-Outputs from test runs on drugbank_approved.csv are temporarily saved in 'test_run_outputs'
-- can view these outputs from the IDE folder, or 
-- in terminal, run python3 -m http.server 8080 and open in web browser http://localhost/8080
