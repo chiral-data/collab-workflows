@@ -1,0 +1,11 @@
+name = "Generate Report"
+description = "Generates a self-contained HTML dashboard with radar charts and data tables"
+
+inputs = ["filtered_candidates.csv"]
+outputs = ["outputs/report.html"]
+
+[container]
+image = "admet-pipeline:latest"
+
+[scripts]
+run = "run.sh"
