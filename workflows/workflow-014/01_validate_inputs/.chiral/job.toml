@@ -1,0 +1,16 @@
+name = "Validate Inputs"
+description = "Validates the input CSV and standardizes SMILES strings using RDKit"
+
+inputs = ["*.csv"]
+outputs = ["outputs/standardized_molecules.csv", "outputs/validation_report.json"]
+
+[container]
+image = "admet-pipeline:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.input_file]
+type = "string"
+default = "./inputs/drugbank_approved.csv"
+hint = "Input CSV file containing molecules with a SMILES column"
