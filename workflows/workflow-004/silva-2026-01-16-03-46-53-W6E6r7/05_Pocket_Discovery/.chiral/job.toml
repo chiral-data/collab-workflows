@@ -1,9 +1,0 @@
-name = "Pocket Discovery"
-description = "Predict binding pockets using P2Rank and define grid box"
-outputs = ["outputs/pocket_discovery_metadata.json", "outputs/pockets.pdb", "outputs/grid_config.json", "outputs/report.html"]
-
-[container]
-image = "vina-workflow:latest"
-
-[scripts]
-run = "run.sh"
