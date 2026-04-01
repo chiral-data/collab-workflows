@@ -17,3 +17,5 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 11. [QSAR Modeling Pipeline](#workflow-011--qsar-modeling-pipeline) - ML-based drug binding prediction by [Abdelrahman Mohamed Taha MAHMOUD](https://www.linkedin.com/in/abdelrahman-mohamed-taha-mahmoud/) $^{silva :white_check_mark: potter :construction:}$
 12. [Boltz-2](https://github.com/jwohlwend/boltz) Structure Prediction by Chiral Dev Team $^{silva :white_check_mark: potter :construction:}$
 13. [BoltzGen](https://github.com/HannesStark/boltzgen) Binder Design by Chiral Dev Team $^{silva :white_check_mark: potter :construction:}$
+14. [ADMET-AI](https://github.com/swansonk14/admet_ai) Prediction Pipeline by [Allison Cheng](https://github.com/allisongcheng) $^{silva :white_check_mark: potter :construction:}$
+15. Boltz-2 vs Chai-1 Structure Comparison by [Priyam Baruah](https://github.com/PriyamBaruah1199) $^{silva :construction: potter :construction:}$
