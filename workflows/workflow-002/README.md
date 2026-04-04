@@ -104,7 +104,7 @@ Analyzes results and generates rankings:
 
 ## Container
 
-All stages use: `chiral.sakuracr.jp/smina:2025_10_17_v2`
+All stages use: `ghcr.io/chiral-data/smina:2025_10_17_v2`
 
 ## Interpreting Results
 

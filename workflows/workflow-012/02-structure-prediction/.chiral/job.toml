@@ -4,7 +4,7 @@ inputs = ["*.yaml"]
 outputs = ["*_model_*.pdb", "confidence_*.json", "pae_*.npz", "pde_*.npz", "plddt_*.npz"]
 
 [container]
-image = "chiral.sakuracr.jp/boltz:2025_09_05"
+image = "ghcr.io/chiral-data/boltz:2025_09_05"
 use_gpu = true
 
 [scripts]

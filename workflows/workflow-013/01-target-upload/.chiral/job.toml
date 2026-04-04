@@ -3,7 +3,7 @@ description = "Upload and validate target structure and design specification for
 outputs = ["*.yaml", "*.cif", "*.pdb", "target_summary.json"]
 
 [container]
-image = "chiral.sakuracr.jp/boltzgen:2026_02_13"
+image = "ghcr.io/chiral-data/boltzgen:2026_02_13"
 use_gpu = true
 
 [scripts]

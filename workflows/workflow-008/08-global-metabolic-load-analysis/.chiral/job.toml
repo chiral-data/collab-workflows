@@ -4,7 +4,7 @@ inputs = ["data_standardized.pkl"]
 outputs = ["Fig8_TotalAA_Type.png", "metabolic_load_data.json", "metabolic_load.html"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
 
 [scripts]
 run = "run.sh"

@@ -4,7 +4,7 @@ inputs = ["chemspace_evaluated.sdf"]
 outputs = ["top_compounds.sdf", "top_compounds_report.csv", "summary.txt", "report_viz.html"]
 
 [container]
-image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
+image = "ghcr.io/chiral-data/fegrow:2026_01_10_v4"
 
 [scripts]
 run = "run.sh"

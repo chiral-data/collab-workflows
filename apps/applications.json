@@ -10,7 +10,7 @@
       "description": "Protein structure prediction using deep learning",
       "long_description": "Boltz is an advanced tool for predicting protein structures using state-of-the-art deep learning models. It leverages CUDA acceleration for fast inference and includes pre-downloaded model weights for immediate use.",
       "base_image": "nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/boltz:2025_09_05",
       "tags": ["protein", "ml", "gpu", "structure-prediction"],
       "requirements": {
@@ -28,7 +28,7 @@
       "description": "Molecular dynamics simulation package",
       "long_description": "GROMACS is a versatile package for molecular dynamics simulations, primarily designed for biochemical molecules. It provides high performance through GPU acceleration and optimized algorithms.",
       "base_image": "nvcr.io/hpc/gromacs:2023.2",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/gromacs:2025_09_05",
       "tags": ["simulation", "molecular-dynamics", "hpc", "gpu"],
       "requirements": {
@@ -46,7 +46,7 @@
       "description": "Basic Local Alignment Search Tool",
       "long_description": "BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance of matches.",
       "base_image": "ubuntu:22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/blast:2025_10_14",
       "tags": ["alignment", "sequence", "bioinformatics"],
       "requirements": {
@@ -64,7 +64,7 @@
       "description": "Message passing neural network for protein design",
       "long_description": "ProteinMPNN is a deep learning method for computational protein design. It uses message passing neural networks to predict amino acid sequences that will fold into desired protein structures.",
       "base_image": "nvidia/cuda:11.8.0-runtime-ubuntu22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/proteinmpnn:2025_09_10",
       "tags": ["protein", "design", "ml", "gpu"],
       "requirements": {
@@ -82,7 +82,7 @@
       "description": "Diffusion-based protein structure generation",
       "long_description": "RFdiffusion2 uses denoising diffusion probabilistic models to generate novel protein structures. It can design proteins with specific functional properties and structural motifs.",
       "base_image": "nvidia/cuda:12.0.0-runtime-ubuntu22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/rfdiffusion2:2025_09_19",
       "tags": ["protein", "diffusion", "generation", "gpu"],
       "requirements": {
@@ -100,7 +100,7 @@
       "description": "RNA secondary structure prediction using deep learning",
       "long_description": "UFold is a deep learning-based method for predicting RNA secondary structure from sequence. It uses a U-Net inspired architecture to directly predict base pairing probabilities.",
       "base_image": "nvidia/cuda:11.3.0-runtime-ubuntu20.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/ufold:2025_09_18",
       "tags": ["rna", "structure", "ml", "gpu"],
       "requirements": {
@@ -118,7 +118,7 @@
       "description": "RNA-RNA interaction prediction",
       "long_description": "IntaRNA efficiently predicts RNA-RNA interactions, considering both hybridization and accessibility. It uses dynamic programming algorithms for accurate interaction site prediction.",
       "base_image": "ubuntu:22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/intarna:2025_09_18",
       "tags": ["rna", "interaction", "prediction"],
       "requirements": {
@@ -136,7 +136,7 @@
       "description": "RNA-small molecule binding prediction",
       "long_description": "RNAmigos2 predicts RNA-small molecule interactions using graph neural networks. It enables virtual screening of compounds for RNA-targeted drug discovery.",
       "base_image": "nvidia/cuda:11.6.0-runtime-ubuntu20.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/rnamigos2:2025_09_19",
       "tags": ["rna", "ligand", "ml", "gpu", "drug-discovery"],
       "requirements": {
@@ -154,7 +154,7 @@
       "description": "Free energy calculation for protein-ligand binding",
       "long_description": "FreeBindCraft performs accurate free energy calculations for protein-ligand complexes. It combines molecular dynamics simulations with advanced sampling techniques.",
       "base_image": "nvidia/cuda:11.8.0-runtime-ubuntu22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/freebindcraft:2025_09_19",
       "tags": ["protein", "ligand", "free-energy", "gpu"],
       "requirements": {
@@ -172,7 +172,7 @@
       "description": "MicroRNA target prediction tool",
       "long_description": "RNAhybrid is a tool for finding the minimum free energy hybridization of a long and a short RNA. It is particularly useful for microRNA target prediction.",
       "base_image": "ubuntu:22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/rnahybrid:2025_10_14",
       "tags": ["rna", "mirna", "target-prediction"],
       "requirements": {
@@ -190,7 +190,7 @@
       "description": "AI-based protein/peptide binder design using generative diffusion",
       "long_description": "BoltzGen designs protein and peptide binders using generative diffusion models. It supports antibody (Fab) and peptide binder design with scaffold libraries and de novo generation, including confidence scoring and binding affinity prediction.",
       "base_image": "nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/boltzgen:2026_02_13",
       "tags": ["protein", "design", "binder", "ml", "gpu"],
       "requirements": {
@@ -208,7 +208,7 @@
       "description": "Report generator for Boltz-2 and BoltzGen results",
       "long_description": "Generates interactive HTML dashboards for protein structure prediction (Boltz-2) and binder design (BoltzGen) results. Includes quality assessment, confidence plots, and model ranking tables.",
       "base_image": "python:3.8",
-      "registry": "chiral.sakuracr.jp",
+      "registry": "ghcr.io/chiral-data",
       "image_path": "/boltz_report:2026_02_13",
       "tags": ["reporting", "visualization", "dashboard"],
       "requirements": {

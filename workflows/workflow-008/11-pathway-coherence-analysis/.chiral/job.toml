@@ -4,7 +4,7 @@ inputs = ["data_standardized.pkl", "aa_cols.txt"]
 outputs = ["Fig12_Split_Corr.png", "coherence_data.json", "coherence.html"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
 
 [scripts]
 run = "run.sh"

@@ -4,7 +4,7 @@ inputs = ["data_standardized.pkl", "aa_cols.txt"]
 outputs = ["Fig6_Corr_MS_MG.png", "Fig7_Corr_Control.png", "clustering_data.json", "clustering.html"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
 
 [scripts]
 run = "run.sh"

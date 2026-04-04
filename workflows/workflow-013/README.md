@@ -72,5 +72,5 @@ sequences:
 
 | Node | Image |
 |------|-------|
-| 01, 02, 04 | `chiral.sakuracr.jp/boltzgen:2026_02_13` |
-| 03 | `chiral.sakuracr.jp/boltz_report:2026_02_13` |
+| 01, 02, 04 | `ghcr.io/chiral-data/boltzgen:2026_02_13` |
+| 03 | `ghcr.io/chiral-data/boltz_report:2026_02_13` |

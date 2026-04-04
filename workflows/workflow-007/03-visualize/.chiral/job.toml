@@ -4,7 +4,7 @@ inputs = ["*.pdb", "*.json"]
 outputs = ["*.html", "*.gif"]
 
 [container]
-image = "chiral.sakuracr.jp/pocketeer:2025_12_08"
+image = "ghcr.io/chiral-data/pocketeer:2025_12_08"
 
 [scripts]
 run = "run.sh"

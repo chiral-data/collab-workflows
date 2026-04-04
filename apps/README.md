@@ -2,11 +2,11 @@
 
 ## How to use
 
-Application container images are hosted on our private registry at `chiral.sakuracr.jp`.
+Application container images are hosted on our public registry at `ghcr.io/chiral-data`.
 To pull a specific application image, use the following format:
 
 ```bash
-docker pull chiral.sakuracr.jp/<app_name>:<date_tag>
+docker pull ghcr.io/chiral-data/<app_name>:<date_tag>
 ```
 
 Where:
@@ -17,7 +17,7 @@ Where:
   **Example:** To pull the `gromacs` application image using the current tag:
 
 ```bash
-docker pull chiral.sakuracr.jp:/gromacs:2025_09_05
+docker pull ghcr.io/chiral-data/gromacs:2025_09_05
 ```
 
 ## How to build a new image
