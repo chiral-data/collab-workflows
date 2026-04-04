@@ -64,6 +64,16 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.image }}
 
+      - name: Make package public
+        if: ${{ inputs.force_rebuild || steps.check.outputs.exists != 'true' }}
+        continue-on-error: true
+        run: |
+          gh api --method PATCH \
+            /orgs/chiral-data/packages/container/${{ steps.meta.outputs.app_name }} \
+            -f visibility=public
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Skip (image already exists)
         if: ${{ !inputs.force_rebuild && steps.check.outputs.exists == 'true' }}
         run: echo "Image ${{ steps.meta.outputs.image }} already exists, skipping build."
