@@ -480,7 +480,7 @@ The `silva` command discovers all `job.toml` files, resolves dependencies, and e
 1. Reads `.chiral/workflow.toml` in the root directory for workflow-level configuration and dependencies
 2. Scans each node's `.chiral/job.toml` for inputs, outputs, and container settings
 3. Builds a dependency graph based on the `[dependencies]` section in `workflow.toml`
-4. Pulls or reuses the Docker image (`chiral.sakuracr.jp/proteomics:2025_12_31`)
+4. Pulls or reuses the Docker image (`ghcr.io/chiral-data/proteomics:2025_12_31`)
 5. Executes each node's `run.sh` script inside the container
 6. Copies input files between nodes as specified in `job.toml`
 7. Collects outputs to a timestamped folder (e.g., `C:\Windows\TEMP\silva-2026-01-03-...`)
@@ -539,7 +539,7 @@ The database file should be present in Node 01 directory:
 01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.csv
 ```
 
-**Note:** Python packages are pre-installed in the Docker image (`chiral.sakuracr.jp/proteomics:2025_12_31`). No local Python environment setup is required.
+**Note:** Python packages are pre-installed in the Docker image (`ghcr.io/chiral-data/proteomics:2025_12_31`). No local Python environment setup is required.
 
 ### Execution Commands
 
@@ -553,7 +553,7 @@ This command executes all 11 nodes with proper dependency ordering. Outputs are 
 ```bash
 # Navigate to node directory and run the script directly
 cd 03_MS_Pathology_Overview
-docker run -v $(pwd):/workspace chiral.sakuracr.jp/proteomics:2025_12_31 bash run.sh
+docker run -v $(pwd):/workspace ghcr.io/chiral-data/proteomics:2025_12_31 bash run.sh
 ```
 
 ### Output Summary

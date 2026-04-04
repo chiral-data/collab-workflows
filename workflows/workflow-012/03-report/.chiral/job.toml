@@ -4,7 +4,7 @@ inputs = ["*_model_*.pdb", "confidence_*.json", "pae_*.npz", "pde_*.npz", "plddt
 outputs = ["boltz_dashboard_*.html"]
 
 [container]
-image = "chiral.sakuracr.jp/boltz_report:2026_02_13"
+image = "ghcr.io/chiral-data/boltz_report:2026_02_13"
 
 [scripts]
 run = "run.sh"

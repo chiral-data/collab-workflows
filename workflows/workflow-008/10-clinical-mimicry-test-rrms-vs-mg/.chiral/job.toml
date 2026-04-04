@@ -4,7 +4,7 @@ inputs = ["data_standardized.pkl", "aa_cols.txt"]
 outputs = ["Fig10_TotalAA_RRMS_MG.png", "Fig11_RRMS_vs_MG_Grid.png", "mimicry_data.json", "mimicry.html"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
 
 [scripts]
 run = "run.sh"

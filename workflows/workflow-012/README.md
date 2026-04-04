@@ -45,8 +45,8 @@ sequences:
 
 | Node | Image |
 |------|-------|
-| 01, 02 | `chiral.sakuracr.jp/boltz:2025_09_05` |
-| 03 | `chiral.sakuracr.jp/boltz_report:2026_02_13` |
+| 01, 02 | `ghcr.io/chiral-data/boltz:2025_09_05` |
+| 03 | `ghcr.io/chiral-data/boltz_report:2026_02_13` |
 
 ## Example
 

@@ -8,7 +8,7 @@ default = "1FME, 2RH1, 4TOS"
 hint = "Comma-separated PDB IDs to download and analyze (e.g., 4TOS, 1FME, 2RH1)"
 
 [container]
-image = "chiral.sakuracr.jp/pocketeer:2025_12_08"
+image = "ghcr.io/chiral-data/pocketeer:2025_12_08"
 
 [scripts]
 run = "run.sh"
