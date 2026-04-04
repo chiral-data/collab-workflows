@@ -30,7 +30,7 @@ RUN conda config --set channel_priority strict && \
     conda clean -afy
 
 # Install OpenMM with CUDA support using conda (preferred method)
-RUN conda install -c conda-forge openmm cuda-version=12.2
+RUN conda install -c conda-forge python=3.12 openmm cuda-version=12.2
 
 # Verify OpenMM installation
 RUN python -m openmm.testInstallation
