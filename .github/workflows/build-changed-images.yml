@@ -1,0 +1,71 @@
+name: Build and Push Changed Images
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/*/*/**"
+
+env:
+  REGISTRY: ghcr.io/chiral-data
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.changed.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect changed app directories
+        id: changed
+        run: |
+          DIRS=$(git diff --name-only HEAD~1 HEAD \
+            | grep '^apps/' \
+            | awk -F'/' '{print $2"/"$3}' \
+            | sort -u \
+            | jq -R . | jq -sc .)
+          echo "matrix=$DIRS" >> $GITHUB_OUTPUT
+          echo "Changed: $DIRS"
+
+  build:
+    needs: detect
+    if: ${{ needs.detect.outputs.matrix != '[]' && needs.detect.outputs.matrix != '' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        app_dir: ${{ fromJson(needs.detect.outputs.matrix) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse image name and tag
+        id: meta
+        run: |
+          FULLNAME=$(basename "${{ matrix.app_dir }}")
+          APP_NAME=$(echo "$FULLNAME" | cut -d'_' -f1)
+          DATE=$(echo "$FULLNAME" | cut -d'_' -f2-)
+          echo "image=${{ env.REGISTRY }}/${APP_NAME}:${DATE}" >> $GITHUB_OUTPUT
+
+      - name: Log in to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/${{ matrix.app_dir }}
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.image }}
