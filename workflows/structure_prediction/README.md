@@ -138,7 +138,7 @@ These examples showcase:
 4. **Documentation** → Generate analysis reports for Nobel Prize connections
 
 ## Container Information
-**Container Image**: `chiral.sakuracr.jp/boltz_dok_nvidia_2`
+**Container Image**: `ghcr.io/chiral-data/boltz_dok_nvidia_2`
 - Boltz-2 AI structure prediction model
 - NVIDIA GPU acceleration support
 - Includes MSA server connectivity
@@ -157,10 +157,10 @@ cd ../../2_antibody/inputs && ./job_script.sh
 ## Container Usage
 ```bash
 # Pull container (if needed)
-singularity pull chiral.sakuracr.jp/boltz_dok_nvidia_2
+singularity pull ghcr.io/chiral-data/boltz_dok_nvidia_2
 
 # Run prediction manually
-singularity exec --nv chiral.sakuracr.jp/boltz_dok_nvidia_2 \
+singularity exec --nv ghcr.io/chiral-data/boltz_dok_nvidia_2 \
     python3 -m boltz.main predict spike_rbd.fasta \
     --use_msa_server --output_format pdb
 ```
@@ -172,7 +172,7 @@ singularity exec --nv chiral.sakuracr.jp/boltz_dok_nvidia_2 \
 **Command Used:**
 ```bash
 cd /home/ubuntu/chiral/container-images-for-potter/sept_workflows/2_structure_prediction/1_mRNA/inputs
-docker run --rm --gpus all -v $(pwd):/workspace -w /workspace chiral.sakuracr.jp/boltz_dok_nvidia_2:latest ./job_script.sh
+docker run --rm --gpus all -v $(pwd):/workspace -w /workspace ghcr.io/chiral-data/boltz_dok_nvidia_2:latest ./job_script.sh
 ```
 
 **Issues Found & Fixes:**

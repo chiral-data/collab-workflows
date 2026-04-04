@@ -4,7 +4,7 @@ inputs = ["data_standardized.pkl", "aa_cols.txt"]
 outputs = ["Fig1A_MS_vs_Control.png", "Fig1B_MS_Subtypes.png", "pathology_data.json", "pathology.html"]
 
 [container]
-image = "chiral.sakuracr.jp/proteomics:2025_12_31"
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
 
 [scripts]
 run = "run.sh"

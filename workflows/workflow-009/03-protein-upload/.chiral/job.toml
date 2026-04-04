@@ -3,7 +3,7 @@ description = "Upload and validate the protein PDB file"
 outputs = ["*.pdb"]
 
 [container]
-image = "chiral.sakuracr.jp/fegrow:2026_01_10_v4"
+image = "ghcr.io/chiral-data/fegrow:2026_01_10_v4"
 
 [scripts]
 run = "run.sh"
