@@ -62,12 +62,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Parse app name
-        id: meta2
-        run: |
-          FULLNAME=$(basename "${{ matrix.app_dir }}")
-          echo "app_name=$(echo "$FULLNAME" | cut -d'_' -f1)" >> $GITHUB_OUTPUT
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
@@ -75,12 +69,3 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.image }}
-
-      - name: Make package public
-        continue-on-error: true
-        run: |
-          gh api --method PATCH \
-            /orgs/chiral-data/packages/container/${{ steps.meta2.outputs.app_name }} \
-            -f visibility=public
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
