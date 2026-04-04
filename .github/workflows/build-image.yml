@@ -66,6 +66,7 @@ jobs:
 
       - name: Make package public
         if: ${{ inputs.force_rebuild || steps.check.outputs.exists != 'true' }}
+        continue-on-error: true
         run: |
           gh api --method PATCH \
             /orgs/chiral-data/packages/container/${{ steps.meta.outputs.app_name }} \
