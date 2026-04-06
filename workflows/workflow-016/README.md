@@ -177,7 +177,7 @@ General accepted inputs:
 ```bash
 conda activate diffdock_abag
 
-python 1_complex_splitting/1_complex_split_science.py.py \
+python 1_complex_splitting/1_complex_split_science.py \
   --input_pdb input_files/5B8C.pdb \
   --output_dir 1_complex_splitting/outputs
 python 1_complex_splitting/2_complex_split_html.py \
