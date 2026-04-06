@@ -1,0 +1,15 @@
+name = "6_comparison"
+description = "Compare predicted docking with original complex"
+outputs = [
+  "outputs/rmsd_analysis.json",
+  "outputs/best_match.pdb",
+  "outputs/final_comparison_report.txt",
+  "outputs/data.json",
+  "outputs/align_structures.pml",
+  "outputs/report.html"
+]
+[container]
+image = "diffdock_abag:v1"
+use_gpu = true
+[scripts]
+run = "6_comparison_run.sh"

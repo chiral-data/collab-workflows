@@ -1,0 +1,23 @@
+name = "1_complex_split"
+description = "Split antibody-antigen complex into separate PDB files"
+outputs = [
+  "outputs/antibody.pdb",
+  "outputs/antigen.pdb",
+  "outputs/original_complex.pdb",
+  "outputs/chain_info.json",
+  "outputs/data.json",
+  "outputs/report.html"
+]
+[container]
+image = "diffdock_abag:v1"
+use_gpu = true
+[scripts]
+run = "1_complex_splitting_run.sh"
+[params.input_pdb]
+type = "string"
+default = "complex.pdb"
+hint = "Name of the input complex PDB file in the inputs/ folder"
+[params.antibody_chains]
+type = "string"
+default = ""
+hint = "Comma-separated antibody chains (e.g., H,L). Leave empty for auto-detection"

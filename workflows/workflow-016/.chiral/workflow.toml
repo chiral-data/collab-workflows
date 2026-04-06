@@ -1,0 +1,13 @@
+name = "Workflow-016 DiffDock-PP Antibody-Antigen Docking Pipeline"
+description = "Antibody-antigen docking using DiffDock-PP for workflow-016"
+
+[container]
+image = "diffdock_abag:v1"
+use_gpu = true
+
+[dependencies]
+2_diffdock_prep = ["1_complex_splitting"]
+3_diffdock_features = ["2_diffdock_prep"]
+4_diffdock_inference = ["2_diffdock_prep", "3_diffdock_features"]
+5_diffdock_analysis = ["4_diffdock_inference", "2_diffdock_prep"]
+6_docking_comparison = ["4_diffdock_inference", "1_complex_splitting"]

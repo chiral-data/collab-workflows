@@ -1,0 +1,14 @@
+name = "5_analysis"
+description = "Interface analysis of docked poses"
+outputs = [
+  "outputs/interface_analysis.txt",
+  "outputs/contact_residues.json",
+  "outputs/final_complex.pdb",
+  "outputs/data.json",
+  "outputs/report.html"
+]
+[container]
+image = "diffdock_abag:v1"
+use_gpu = true
+[scripts]
+run = "5_analysis_run.sh"

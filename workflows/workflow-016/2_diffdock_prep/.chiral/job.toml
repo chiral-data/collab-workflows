@@ -1,0 +1,13 @@
+name = "2_structure_prep"
+description = "Clean and renumber structures for DiffDock-PP"
+outputs = [
+  "outputs/processed_antibody.pdb",
+  "outputs/processed_antigen.pdb",
+  "outputs/data.json",
+  "outputs/report.html"
+]
+[container]
+image = "diffdock_abag:v1"
+use_gpu = true
+[scripts]
+run = "2_structure_prep_run.sh"

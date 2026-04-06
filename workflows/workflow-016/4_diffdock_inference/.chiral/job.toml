@@ -1,0 +1,21 @@
+name = "4_diffdock_inference"
+description = "Run DiffDock-PP to generate docked poses"
+outputs = [
+  "outputs/rank1.pdb",
+  "outputs/confidence_scores.json",
+  "outputs/data.json",
+  "outputs/report.html"
+]
+[container]
+image = "diffdock_abag:v1"
+use_gpu = true
+[scripts]
+run = "4_diffdock_inference_run.sh"
+[params.num_samples]
+type = "integer"
+default = 10
+hint = "Number of diffusion samples"
+[params.inference_steps]
+type = "integer"
+default = 20
+hint = "Number of denoising steps"
