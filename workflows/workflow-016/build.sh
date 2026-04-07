@@ -8,5 +8,5 @@ IMAGE_NAME="diffdock_abag"
 VERSION="v1"
 
 echo "Building Docker image: ${IMAGE_NAME}:${VERSION}"
-docker build --file "${SCRIPT_DIR}/Dockerfile" --tag "${IMAGE_NAME}:${VERSION}" --tag "${IMAGE_NAME}:latest" "${REPO_ROOT}"
+docker build --file "${SCRIPT_DIR}/Dockerfile" --tag "${IMAGE_NAME}:${VERSION}" --tag "${IMAGE_NAME}:latest" "${SCRIPT_DIR}"
 echo "Build complete!"
