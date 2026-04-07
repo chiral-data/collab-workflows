@@ -47,8 +47,8 @@ python 7_diffdock_inference_science.py \
     --receptor_features "$RECEPTOR_FEATURES" \
     --ligand_features "$LIGAND_FEATURES" \
     --diffdock_path "${DIFFDOCK_PP_PATH:-}" \
-    --num_samples "${NUM_SAMPLES:-40}" \
-    --inference_steps "${INFERENCE_STEPS:-50}" \
+    --num_samples "${NUM_SAMPLES:-10}" \
+    --inference_steps "${INFERENCE_STEPS:-20}" \
     --output_dir "outputs" \
     "${GPU_FLAG[@]}" \
     "${MOCK_FLAG[@]}"
