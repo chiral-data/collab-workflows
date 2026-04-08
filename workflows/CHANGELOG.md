@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-04-08]
+
+### Added
+
+- workflow-016: DiffDock-PP Antibody-Antigen Docking Pipeline (6 nodes: complex-splitting, structure-prep, feature-extraction, inference, analysis, comparison)
+  - Comprehensive pipeline for rigid-body docking of antibody-antigen complexes.
+  - Aligned with Silva v0.5.1 standards:
+    - Implemented `PARAM_` prefix for all runtime environment variables.
+    - Leveraged automatic GPU detection (removed manual `use_gpu` flags).
+    - Added `params.json` for headless execution support.
+  - Performance Optimizations:
+    - Pre-downloaded ESM-2 model weights (`esm2_t33_650M_UR50D`) in Docker image to eliminate 2.5-minute runtime download bottleneck.
+    - Forced GPU acceleration for inference node.
+  - Improved Stability:
+    - Fixed fragile `grep` patterns for input resolution in comparison node.
+    - Synchronized parameter defaults (10 samples, 20 steps) across all scripts.
+
 ## [2026-02-13]
 
 ### Added
