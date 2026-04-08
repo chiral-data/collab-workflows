@@ -8,7 +8,6 @@ outputs = [
 ]
 [container]
 image = "diffdock_abag:v1"
-use_gpu = true
 [scripts]
 run = "4_diffdock_inference_run.sh"
 [params.num_samples]

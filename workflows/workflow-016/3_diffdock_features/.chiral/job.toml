@@ -12,6 +12,5 @@ outputs = [
 ]
 [container]
 image = "diffdock_abag:v1"
-use_gpu = true
 [scripts]
 run = "3_feature_extract_run.sh"

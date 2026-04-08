@@ -10,7 +10,6 @@ outputs = [
 ]
 [container]
 image = "diffdock_abag:v1"
-use_gpu = true
 [scripts]
 run = "1_complex_splitting_run.sh"
 [params.input_pdb]

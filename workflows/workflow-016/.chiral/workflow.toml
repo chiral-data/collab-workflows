@@ -3,7 +3,6 @@ description = "Antibody-antigen docking using DiffDock-PP for workflow-016"
 
 [container]
 image = "diffdock_abag:v1"
-use_gpu = true
 
 [dependencies]
 2_diffdock_prep = ["1_complex_splitting"]

@@ -13,7 +13,7 @@ ROOT_DIR="$(dirname "$PWD")"
 
 # Define paths
 CHAIN_INFO_FILE="$(find inputs -type f -name chain_info.json | head -n 1)"
-CHAIN_DATA_FILE="$(find inputs -type f -name data.json | grep -m1 '1_complex_splitting\|1_complex_split\|node1' || true)"
+CHAIN_DATA_FILE="inputs/data.json"
 ORIG_COMPLEX="$(find inputs -type f -name original_complex.pdb | head -n 1)"
 PRED_POSE="$(find inputs -type f -name rank1.pdb | head -n 1)"
 OUTPUT_DIR="outputs"

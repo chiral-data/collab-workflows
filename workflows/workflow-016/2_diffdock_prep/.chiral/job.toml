@@ -8,6 +8,5 @@ outputs = [
 ]
 [container]
 image = "diffdock_abag:v1"
-use_gpu = true
 [scripts]
 run = "2_structure_prep_run.sh"

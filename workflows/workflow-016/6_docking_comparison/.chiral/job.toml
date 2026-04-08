@@ -10,6 +10,5 @@ outputs = [
 ]
 [container]
 image = "diffdock_abag:v1"
-use_gpu = true
 [scripts]
 run = "6_comparison_run.sh"
