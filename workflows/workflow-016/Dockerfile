@@ -51,3 +51,8 @@ RUN echo 'source /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc && \
 
 WORKDIR /workspace
 CMD ["/bin/bash"]
+# Pre-download ESM models to avoid runtime downloads
+ENV TORCH_HOME=/opt/torch_cache
+RUN mkdir -p /opt/torch_cache && \
+    /opt/conda/envs/diffdock_abag/bin/python -c "import torch; torch.hub.set_dir('/opt/torch_cache'); torch.hub.load('facebookresearch/esm:main', 'esm2_t33_650M_UR50D')" && \
+    chmod -R a+rX /opt/torch_cache

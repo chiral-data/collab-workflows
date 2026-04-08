@@ -33,9 +33,9 @@ if [[ "${ALLOW_MOCK_FALLBACK:-0}" == "1" ]]; then
 fi
 
 GPU_FLAG=()
-if [[ "${USE_GPU:-auto}" == "1" || "${USE_GPU:-auto}" == "true" ]]; then
+if [[ "${USE_GPU:-1}" == "1" || "${USE_GPU:-1}" == "true" ]]; then
     GPU_FLAG+=(--use_gpu)
-elif [[ "${USE_GPU:-auto}" == "auto" ]]; then
+elif [[ "${USE_GPU:-1}" == "auto" ]]; then
     if command -v nvidia-smi >/dev/null 2>&1 && nvidia-smi >/dev/null 2>&1; then
         GPU_FLAG+=(--use_gpu)
     fi
