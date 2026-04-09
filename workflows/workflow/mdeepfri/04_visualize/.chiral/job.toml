@@ -1,0 +1,21 @@
+name = "Generate Visualization"
+description = "Generates a self-contained HTML report with GO term prediction summaries and score distributions"
+
+inputs = ["results.tsv", "alignment_summary.tsv"]
+outputs = ["report.html"]
+
+[container]
+image = "mdeepfri:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.min_score]
+type = "float"
+default = 0.3
+hint = "Minimum confidence score threshold for GO term predictions to include in report"
+
+[params.top_n_terms]
+type = "integer"
+default = 10
+hint = "Maximum number of GO terms to display per protein per prediction mode"
