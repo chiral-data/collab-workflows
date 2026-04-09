@@ -1,0 +1,7 @@
+name = "mDeepFRI Protein Function Prediction"
+description = "Annotates protein sequences with GO terms using Metagenomic-DeepFRI deep learning"
+
+[dependencies]
+02_align = ["01_validate_inputs"]
+03_predict = ["02_align"]
+04_visualize = ["03_predict"]
