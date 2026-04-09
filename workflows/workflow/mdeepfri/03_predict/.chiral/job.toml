@@ -1,0 +1,31 @@
+name = "Predict Protein Function"
+description = "Runs mDeepFRI predict-function to assign GO terms to protein sequences"
+
+inputs = ["validated.fasta", "*.onnx", "*.json"]
+outputs = ["results.tsv", "alignment_summary.tsv"]
+
+[container]
+image = "mdeepfri:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.prediction_modes]
+type = "string"
+default = "mf bp cc"
+hint = "Space-separated prediction modes: mf (Molecular Function), bp (Biological Process), cc (Cellular Component)"
+
+[params.skip_pdb]
+type = "boolean"
+default = true
+hint = "Skip automatic PDB100 database download and search (set false only if you have time and disk space)"
+
+[params.threads]
+type = "integer"
+default = 1
+hint = "Number of CPU threads for MMseqs2 search"
+
+[params.mmseqs_sensitivity]
+type = "float"
+default = 5.7
+hint = "MMseqs2 search sensitivity (1.0–7.5; higher = more sensitive but slower)"
