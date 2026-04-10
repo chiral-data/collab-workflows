@@ -12,7 +12,7 @@
 ## Tasks 
 - [x] Investigate the mDeepFRI issue and repo; create a summary of what's happening and how it works.  
 - [x] Using existing examples and references, and the sample node structure, create a workflow by building one node at a time. Make it silva runnable. 
-- [ ] Run 'silva ~/dev/collab-workflows/workflows/workflow/mdeepfri, debug and fix.
+- [x] Run 'silva ~/dev/collab-workflows/workflows/workflow/mdeepfri, debug and fix.
 
 ## Investigation Summary
 
@@ -85,4 +85,4 @@ cd ~/dev/collab-workflows/workflows/workflow/mdeepfri
 docker build -t mdeepfri:latest .
 ```
 
-The image installs `mdeepfri` via pip (Python 3.12). Model weights (~600 MB) are downloaded at runtime in node 02.
+The image installs `mdeepfri` via pip (Python 3.12). 
