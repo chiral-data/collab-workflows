@@ -50,8 +50,6 @@ def main():
     parser.add_argument("--max-length", type=int, default=5000, help="Maximum sequence length")
     args = parser.parse_args()
 
-    os.makedirs("./outputs", exist_ok=True)
-
     input_files = []
     for fname in sorted(os.listdir("./inputs")):
         if fname.lower().endswith((".fasta", ".fa", ".faa")):
@@ -68,7 +66,7 @@ def main():
     seen_ids = set()
     duplicates = 0
 
-    with open("./outputs/validated.fasta", "w") as out:
+    with open("./validated.fasta", "w") as out:
         for fpath in input_files:
             for header, seq in parse_fasta(fpath):
                 total += 1
@@ -120,7 +118,7 @@ def main():
         "max_length": args.max_length,
         "input_files": [os.path.basename(f) for f in input_files],
     }
-    with open("./outputs/validation_report.json", "w") as f:
+    with open("./validation_report.json", "w") as f:
         json.dump(report, f, indent=2)
 
     print(f"\nValidation summary: {valid}/{total} sequences passed", flush=True)
