@@ -50,6 +50,10 @@ def main():
     parser.add_argument("--max-length", type=int, default=5000, help="Maximum sequence length")
     args = parser.parse_args()
 
+    if not os.path.isdir("./inputs"):
+        print("ERROR: ./inputs directory not found", flush=True)
+        sys.exit(1)
+
     input_files = []
     for fname in sorted(os.listdir("./inputs")):
         if fname.lower().endswith((".fasta", ".fa", ".faa")):
