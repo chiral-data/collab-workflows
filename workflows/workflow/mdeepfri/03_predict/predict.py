@@ -9,8 +9,10 @@ mDeepFRI pipeline:
 """
 
 import os
+import shutil
 import subprocess
 import sys
+import tempfile
 
 
 def main():
@@ -19,8 +21,6 @@ def main():
     skip_pdb = os.environ.get("PARAM_SKIP_PDB", "true").lower() in ("true", "1", "yes")
     threads = os.environ.get("PARAM_THREADS", "1")
     sensitivity = os.environ.get("PARAM_MMSEQS_SENSITIVITY", "5.7")
-
-    os.makedirs("./outputs", exist_ok=True)
 
     fasta = "./inputs/validated.fasta"
     if not os.path.exists(fasta):
@@ -38,12 +38,15 @@ def main():
         sys.exit(1)
     print(f"Model weights: {len(onnx_files)} .onnx file(s) found", flush=True)
 
+    # Use a temp subdir for mDeepFRI output to avoid conflicts with silva's output collection
+    outdir = tempfile.mkdtemp(prefix="mdf_out_", dir=".")
+
     # Build predict-function command
     cmd = [
         "mDeepFRI", "predict-function",
         "-i", fasta,
         "-w", "./inputs",
-        "-o", "./outputs",
+        "-o", outdir,
         "-t", threads,
         "-s", sensitivity,
         "--remove-intermediate",
@@ -64,18 +67,27 @@ def main():
 
     if result.returncode != 0:
         print(f"ERROR: mDeepFRI failed (exit code {result.returncode})", flush=True)
+        shutil.rmtree(outdir, ignore_errors=True)
         sys.exit(result.returncode)
 
-    # Report output files
+    # Copy output files to CWD (silva collects from CWD, not subdirs)
+    copied = []
     for fname in ("results.tsv", "alignment_summary.tsv"):
-        path = os.path.join("./outputs", fname)
-        if os.path.exists(path):
-            with open(path) as f:
-                lines = f.readlines()
-            n_data = max(0, len(lines) - 1)  # subtract header
+        src = os.path.join(outdir, fname)
+        if os.path.exists(src):
+            shutil.copy(src, f"./{fname}")
+            with open(f"./{fname}") as f:
+                n_data = max(0, sum(1 for _ in f) - 1)
             print(f"  {fname}: {n_data} data row(s)", flush=True)
+            copied.append(fname)
         else:
-            print(f"  WARNING: {fname} not found in ./outputs/", flush=True)
+            print(f"  WARNING: {fname} not found in mDeepFRI output", flush=True)
+
+    shutil.rmtree(outdir, ignore_errors=True)
+
+    if not copied:
+        print("ERROR: No output files produced by mDeepFRI", flush=True)
+        sys.exit(1)
 
     print("Prediction complete.", flush=True)
 

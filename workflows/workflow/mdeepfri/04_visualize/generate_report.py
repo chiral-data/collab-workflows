@@ -13,7 +13,7 @@ import sys
 
 RESULTS_PATH = "./inputs/results.tsv"
 ALIGNMENT_PATH = "./inputs/alignment_summary.tsv"
-OUTPUT_HTML = "./outputs/report.html"
+OUTPUT_HTML = "./report.html"
 
 MODE_LABELS = {
     "mf": "Molecular Function",
@@ -257,8 +257,6 @@ def main():
     parser.add_argument("--min-score", type=float, default=0.3)
     parser.add_argument("--top-n", type=int, default=10)
     args = parser.parse_args()
-
-    os.makedirs("./outputs", exist_ok=True)
 
     print(f"Loading {RESULTS_PATH} ...", flush=True)
     rows = load_tsv(RESULTS_PATH)
