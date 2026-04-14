@@ -4,7 +4,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget curl build-essential && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir mdeepfri && \
+
+RUN pip install --no-cache-dir mdeepfri==<version> && \
+    mDeepFRI get-models -o /opt/mdeepfri-weights -v 1.1
     python3 - <<'PYEOF'
 import re, pathlib
 p = pathlib.Path('/usr/local/lib/python3.12/site-packages/mDeepFRI/pipeline.py')

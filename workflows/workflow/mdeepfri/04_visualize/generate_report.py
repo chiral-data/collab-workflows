@@ -10,6 +10,7 @@ import csv
 import json
 import os
 import sys
+import html
 
 RESULTS_PATH = "./inputs/results.tsv"
 ALIGNMENT_PATH = "./inputs/alignment_summary.tsv"
@@ -22,6 +23,9 @@ MODE_LABELS = {
     "ec": "Enzyme Commission",
 }
 
+html.escape(protein)
+html.escape(p['go_name'])
+html.escape(p['go_id'])
 
 def load_tsv(path):
     if not os.path.exists(path):
