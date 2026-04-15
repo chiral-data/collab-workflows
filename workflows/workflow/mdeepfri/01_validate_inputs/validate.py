@@ -104,8 +104,13 @@ def main():
                     continue
                 seen_ids.add(seq_id)
 
+                # Normalize Swiss-Prot/TrEMBL headers (sp|ACC|NAME or tr|ACC|NAME)
+                # MMseqs2 extracts only ACC from these, so we normalize to match.
+                parts = seq_id.split("|")
+                out_id = parts[1] if len(parts) == 3 and parts[0] in ("sp", "tr") else seq_id
+
                 # Write in 80-char lines
-                out.write(f">{header}\n")
+                out.write(f">{out_id}\n")
                 for i in range(0, len(seq_residues), 80):
                     out.write(seq_residues[i:i + 80] + "\n")
                 valid += 1
