@@ -21,6 +21,9 @@ MODE_LABELS = {
     "bp": "Biological Process",
     "cc": "Cellular Component",
     "ec": "Enzyme Commission",
+    "go molecular function": "Molecular Function",
+    "go biological process": "Biological Process",
+    "go cellular component": "Cellular Component",
 }
 
 
@@ -43,15 +46,12 @@ def build_report(rows, align_rows, min_score, top_n):
     """Organise rows by protein and mode; apply score filter."""
     by_protein = {}
     for row in rows:
-        # mDeepFRI results.tsv columns vary by version; handle common variants
-        protein = (
-            row.get("Protein_ID") or row.get("query") or row.get("protein") or "unknown"
-        )
-        mode = (row.get("Mode") or row.get("mode") or "").lower()
-        score = safe_float(row.get("Score") or row.get("score") or row.get("confidence"))
-        go_id = row.get("GO_ID") or row.get("go_term") or row.get("GO_term") or ""
-        go_name = row.get("GO_Name") or row.get("go_name") or row.get("description") or ""
-        network = (row.get("Network") or row.get("network") or "cnn").lower()
+        protein = row.get("protein", "unknown")
+        mode = row.get("prediction_mode", "").lower()
+        score = safe_float(row.get("score"))
+        go_id = row.get("go_term", "")
+        go_name = row.get("go_name", "")
+        network = row.get("network_type", "cnn").lower()
 
         if score < min_score:
             continue
@@ -73,7 +73,7 @@ def build_report(rows, align_rows, min_score, top_n):
     # Build alignment lookup
     align_lookup = {}
     for row in align_rows:
-        qid = row.get("query") or row.get("Protein_ID") or ""
+        qid = row.get("query_id", "")
         if qid:
             align_lookup[qid] = row
 
@@ -163,7 +163,7 @@ def build_html(by_protein, align_lookup, min_score, top_n, results_path):
         align_info = align_lookup.get(protein, {})
         align_html = ""
         if align_info:
-            fields = {k: v for k, v in align_info.items() if k not in ("query", "Protein_ID")}
+            fields = {k: v for k, v in align_info.items() if k != "query_id"}
             if fields:
                 items = " &nbsp;|&nbsp; ".join(
                     f"<b>{html.escape(k)}</b>: {html.escape(str(v))}" for k, v in list(fields.items())[:6]
