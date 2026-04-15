@@ -32,4 +32,7 @@ PYEOF
 # Download model weights at image build time (v1.1: MF, BP, CC modes)
 RUN mDeepFRI get-models -o /opt/mdeepfri-weights -v 1.1
 
+# Pre-build PDB100 MMseqs2 index at build time so runtime skips download
+RUN python3 -c "from mDeepFRI.pdb import create_pdb_mmseqs; create_pdb_mmseqs(threads=4)"
+
 WORKDIR /workspace
