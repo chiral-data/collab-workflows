@@ -35,4 +35,10 @@ RUN mDeepFRI get-models -o /opt/mdeepfri-weights -v 1.1
 # Pre-build PDB100 MMseqs2 index at build time so runtime skips download
 RUN python3 -c "from mDeepFRI.pdb import create_pdb_mmseqs; create_pdb_mmseqs(threads=4)"
 
+# Patch utils.py to write the temporary decompressed FASTA to /tmp (writable)
+# instead of the site-packages directory (read-only at runtime)
+RUN sed -i \
+  's|Path(fasta_file).parent / Path(fasta_file).stem|Path("/tmp") / Path(fasta_file).stem|' \
+  /usr/local/lib/python3.12/site-packages/mDeepFRI/utils.py
+
 WORKDIR /workspace

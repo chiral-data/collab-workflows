@@ -54,7 +54,6 @@ def main():
         "-o", outdir,
         "-t", threads,
         "-s", sensitivity,
-        "--remove-intermediate",
         "--skip-matrix",
     ]
 
