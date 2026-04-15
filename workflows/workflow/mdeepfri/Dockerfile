@@ -4,10 +4,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget curl build-essential && \
     rm -rf /var/lib/apt/lists/*
 
+RUN pip install --no-cache-dir mdeepfri
 
-RUN pip install --no-cache-dir mdeepfri==<version> && \
-    mDeepFRI get-models -o /opt/mdeepfri-weights -v 1.1
-    python3 - <<'PYEOF'
+# Patch mDeepFRI pipeline.py to fix IndexError in score dict comprehension
+RUN python3 - <<'PYEOF'
 import re, pathlib
 p = pathlib.Path('/usr/local/lib/python3.12/site-packages/mDeepFRI/pipeline.py')
 t = p.read_text()
@@ -28,5 +28,8 @@ changed = 'zip(terms, scores)' in t
 print(f'pipeline.py patch {"applied" if changed else "NOT applied — pattern not found"}')
 assert changed, 'patch failed'
 PYEOF
+
+# Download model weights at image build time (v1.1: MF, BP, CC modes)
+RUN mDeepFRI get-models -o /opt/mdeepfri-weights -v 1.1
 
 WORKDIR /workspace

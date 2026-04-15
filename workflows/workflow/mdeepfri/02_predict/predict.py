@@ -6,6 +6,8 @@ mDeepFRI pipeline:
 2. Structural hits → contact maps → GCN prediction (structure-aware).
 3. Sequence-only proteins → CNN prediction (sequence-based fallback).
 4. Results written to results.tsv and alignment_summary.tsv.
+
+Model weights are pre-installed in the Docker image at /opt/mdeepfri-weights.
 """
 
 import os
@@ -13,6 +15,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
+
+WEIGHTS_DIR = "/opt/mdeepfri-weights"
 
 
 def main():
@@ -31,21 +35,23 @@ def main():
         n_seqs = sum(1 for line in f if line.startswith(">"))
     print(f"Input: {n_seqs} protein sequence(s)", flush=True)
 
-    # Verify model weight files are present
-    onnx_files = [f for f in os.listdir("./inputs") if f.endswith(".onnx")]
-    if not onnx_files:
-        print("ERROR: No .onnx model files found in ./inputs/", flush=True)
+    # Verify model weights are present in the Docker image
+    if not os.path.isdir(WEIGHTS_DIR):
+        print(f"ERROR: Model weights directory not found: {WEIGHTS_DIR}", flush=True)
         sys.exit(1)
-    print(f"Model weights: {len(onnx_files)} .onnx file(s) found", flush=True)
+    onnx_files = [f for f in os.listdir(WEIGHTS_DIR) if f.endswith(".onnx")]
+    if not onnx_files:
+        print(f"ERROR: No .onnx model files found in {WEIGHTS_DIR}", flush=True)
+        sys.exit(1)
+    print(f"Model weights: {len(onnx_files)} .onnx file(s) in {WEIGHTS_DIR}", flush=True)
 
     # Use a temp subdir for mDeepFRI output to avoid conflicts with silva's output collection
     outdir = tempfile.mkdtemp(prefix="mdf_out_", dir=".")
 
-    # Build predict-function command
     cmd = [
         "mDeepFRI", "predict-function",
         "-i", fasta,
-        "-w", "./inputs",
+        "-w", WEIGHTS_DIR,
         "-o", outdir,
         "-t", threads,
         "-s", sensitivity,
@@ -53,7 +59,6 @@ def main():
         "--skip-matrix",
     ]
 
-    # Add prediction modes (mf, bp, cc, ec)
     for mode in modes_str.split():
         mode = mode.strip().lower()
         if mode:

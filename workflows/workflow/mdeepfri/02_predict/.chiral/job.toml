@@ -1,7 +1,7 @@
 name = "Predict Protein Function"
-description = "Runs mDeepFRI predict-function to assign GO terms to protein sequences"
+description = "Runs mDeepFRI predict-function (MMseqs2 alignment + GCN/CNN inference) to assign GO terms. Model weights are pre-installed in the Docker image."
 
-inputs = ["validated.fasta", "*.onnx", "*.json"]
+inputs = ["validated.fasta"]
 outputs = ["results.tsv", "alignment_summary.tsv"]
 
 [container]

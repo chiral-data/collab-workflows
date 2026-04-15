@@ -13,6 +13,7 @@
 - [x] Investigate the mDeepFRI issue and repo; create a summary of what's happening and how it works.  
 - [x] Using existing examples and references, and the sample node structure, create a workflow by building one node at a time. Make it silva runnable. 
 - [x] Run 'silva ~/dev/collab-workflows/workflows/workflow/mdeepfri, debug and fix.
+- [x] Simplify to 3 nodes: validate inputs, predict (align + predict combined), visualize. Model weights baked into Dockerfile.
 
 ## Investigation Summary
 
@@ -27,28 +28,29 @@
 
 **Key CLI**:
 ```bash
-# Download model weights (one-time setup)
-mDeepFRI get-models -o ./weights -v 1.1
+# Download model weights (baked into Docker image at /opt/mdeepfri-weights)
+mDeepFRI get-models -o /opt/mdeepfri-weights -v 1.1
 
 # Run prediction
 mDeepFRI predict-function \
   -i sequences.fasta \
-  -w ./weights \          # model weights directory
-  -d ./foldcomp_db/ \     # optional FoldComp database(s)
+  -w /opt/mdeepfri-weights \   # model weights directory
+  -d ./foldcomp_db/ \          # optional FoldComp database(s)
   -o ./output/ \
-  -p mf -p bp -p cc \     # prediction modes
-  --skip-pdb              # skip auto-download of PDB100 (large)
+  -p mf -p bp -p cc \          # prediction modes
+  --skip-pdb                   # skip auto-download of PDB100 (large)
 ```
 
 **Prediction modes**: `mf` (Molecular Function), `bp` (Biological Process), `cc` (Cellular Component), `ec` (Enzyme Commission; v1.0 only).
 
 **Installation**: `pip install mdeepfri` (Python 3.11–3.12). Requires ~1GB for model weights. FoldComp databases are optional but improve accuracy (PDB100 is ~50 GB).
 
-**Why 4 nodes**: The mDeepFRI `predict-function` command internally runs alignment + prediction in one call. The 4-node split in this workflow separates (1) validation, (2) model download/setup, (3) prediction, and (4) visualization — making each stage inspectable and its outputs cacheable in silva.
+**Why 3 nodes**: The mDeepFRI `predict-function` command internally runs alignment + prediction in one call, so they are kept together in node 02. Model weights are downloaded once at image build time (Dockerfile) rather than at runtime, keeping node 02 to a single responsibility.
 
 ---
 
 **Sample Directory Structure**
+```
 workflows/workflow/mdeepfri/
 ├── .chiral/workflow.toml
 ├── Dockerfile
@@ -58,19 +60,16 @@ workflows/workflow/mdeepfri/
 │   ├── .chiral/test_inputs/sample_proteins.fasta
 │   ├── run.sh
 │   └── validate.py
-├── 02_align/
-│   ├── .chiral/job.toml
-│   ├── run.sh
-│   └── align.py
-├── 03_predict/
+├── 02_predict/
 │   ├── .chiral/job.toml
 │   ├── run.sh
 │   └── predict.py
-├── 04_visualize/
+├── 03_visualize/
 │   ├── .chiral/job.toml
 │   ├── run.sh
 │   └── generate_report.py
 └── README.md
+```
 
 ## Outputs
 
@@ -85,4 +84,4 @@ cd ~/dev/collab-workflows/workflows/workflow/mdeepfri
 docker build -t mdeepfri:latest .
 ```
 
-The image installs `mdeepfri` via pip (Python 3.12). 
+The image installs `mdeepfri` via pip (Python 3.12) and downloads model weights (~1 GB) to `/opt/mdeepfri-weights` at build time.
