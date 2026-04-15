@@ -1,5 +1,5 @@
 name = "Predict Protein Function"
-description = "Runs mDeepFRI predict-function (MMseqs2 alignment + GCN/CNN inference) to assign GO terms. Model weights are pre-installed in the Docker image."
+description = "Runs mDeepFRI predict-function (MMseqs2 alignment + GCN/CNN inference) to assign GO terms. Model weights and PDB100 index are pre-installed in the Docker image."
 
 inputs = ["validated.fasta"]
 outputs = ["results.tsv", "alignment_summary.tsv"]
@@ -14,11 +14,6 @@ run = "run.sh"
 type = "string"
 default = "mf bp cc"
 hint = "Space-separated prediction modes: mf (Molecular Function), bp (Biological Process), cc (Cellular Component)"
-
-[params.skip_pdb]
-type = "boolean"
-default = true
-hint = "Skip automatic PDB100 database download and search (set false only if you have time and disk space)"
 
 [params.threads]
 type = "integer"

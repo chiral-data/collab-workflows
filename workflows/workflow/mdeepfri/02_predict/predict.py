@@ -22,7 +22,6 @@ WEIGHTS_DIR = "/opt/mdeepfri-weights"
 def main():
     # Parameters from silva environment variables
     modes_str = os.environ.get("PARAM_PREDICTION_MODES", "mf bp cc")
-    skip_pdb = os.environ.get("PARAM_SKIP_PDB", "true").lower() in ("true", "1", "yes")
     threads = os.environ.get("PARAM_THREADS", "1")
     sensitivity = os.environ.get("PARAM_MMSEQS_SENSITIVITY", "5.7")
 
@@ -63,9 +62,6 @@ def main():
         mode = mode.strip().lower()
         if mode:
             cmd.extend(["-p", mode])
-
-    if skip_pdb:
-        cmd.append("--skip-pdb")
 
     print(f"\nRunning: {' '.join(cmd)}\n", flush=True)
     result = subprocess.run(cmd, text=True)
