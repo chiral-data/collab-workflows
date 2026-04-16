@@ -1,0 +1,17 @@
+name = "LightDock Protein-Protein Docking"
+description = "Docks two proteins using the LightDock Glowworm Swarm Optimization algorithm and generates ranked binding pose predictions"
+
+[dependencies]
+02_prepare = ["01_validate_inputs"]
+03_compute = ["02_prepare"]
+04_visualize = ["03_compute"]
+
+[params.receptor_file]
+type = "string"
+default = "inputs/protein2_barnase.pdb"
+hint = "Path to receptor PDB file (silva copies input_files/ into inputs/)"
+
+[params.ligand_file]
+type = "string"
+default = "inputs/protein1_barstar.pdb"
+hint = "Path to ligand PDB file"
