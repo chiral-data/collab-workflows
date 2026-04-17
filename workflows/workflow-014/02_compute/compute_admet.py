@@ -14,7 +14,7 @@ def main():
         print("ERROR: standardized_molecules.csv not found in inputs/", flush=True)
         sys.exit(1)
 
-    output_path = "./outputs/raw_predictions.csv"
+    output_path = "./raw_predictions.csv"
 
     print(f"Running ADMET-AI predictions (smiles_column={smiles_column})...", flush=True)
 

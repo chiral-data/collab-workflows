@@ -2,7 +2,7 @@ name = "Filter and Rank"
 description = "Computes MPO scores, applies configurable ADMET filters, and ranks top N candidates"
 
 inputs = ["raw_predictions.csv"]
-outputs = ["outputs/filtered_candidates.csv", "outputs/analysis_summary.json"]
+outputs = ["filtered_candidates.csv", "analysis_summary.json"]
 
 [container]
 image = "admet-pipeline:latest"
