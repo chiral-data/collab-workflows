@@ -1,7 +1,7 @@
 name = "DESeq2 Analysis"
 description = "Statistical analysis of differentially expressed genes using DESeq2"
 inputs = ["counts.csv"]
-outputs = ["merged.csv", "dds.rds", "res.rds", "pca_data.csv"]
+outputs = ["outputs/merged.csv", "outputs/dds.rds", "outputs/res.rds", "outputs/pca_data.csv"]
 
 [container]
 image = "chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1"

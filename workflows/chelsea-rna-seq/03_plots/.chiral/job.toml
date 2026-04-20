@@ -1,7 +1,7 @@
 name = "Visualization Plots"
 description = "Generate MA plot and Volcano plot for differential expression results"
 inputs = ["dds.rds", "res.rds", "merged.csv", "pca_data.csv"]
-outputs = ["ma_plot.png", "volcano_plot.png", "pca_plot.png", "merged_with_regulation.csv"]
+outputs = ["outputs/ma_plot.png", "outputs/volcano_plot.png", "outputs/pca_plot.png", "outputs/merged_with_regulation.csv"]
 
 [container]
 image = "chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1"
