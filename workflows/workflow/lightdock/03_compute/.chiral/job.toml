@@ -1,0 +1,32 @@
+name = "Run LightDock Docking"
+description = "Runs LightDock GSO simulation, generates conformations, clusters poses, and ranks results"
+
+inputs = ["receptor.pdb", "ligand.pdb", "lightdock_workspace.tar.gz"]
+outputs = ["top_predictions.pdb", "rank_results.json"]
+
+[container]
+image = "lightdock-pipeline:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.steps]
+type = "integer"
+default = 100
+hint = "Number of GSO optimization steps (100 for testing, 200+ for production)"
+
+[params.scoring_function]
+type = "enum"
+default = "fastdfire"
+hint = "LightDock scoring function"
+enum_values = ["fastdfire", "dfire", "dfire2", "pydock"]
+
+[params.num_conformations]
+type = "integer"
+default = 200
+hint = "Number of conformations to generate per swarm"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of top-ranked poses to collect into top_predictions.pdb"
