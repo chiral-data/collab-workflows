@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Run LightDock docking simulation, post-process results, and collect top poses."""
 
-import glob
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -98,25 +98,31 @@ def main():
             os.chdir(orig_dir)
 
     print("\nRanking poses...", flush=True)
-    run_cmd(["lgd_rank.py", str(num_swarms), str(num_conformations)], check=False)
+    # lgd_rank.py takes num_swarms and steps (not conformations)
+    run_cmd(["lgd_rank.py", str(num_swarms), str(steps)], check=False)
 
     top_poses = []
 
-    if os.path.exists("rank.list"):
-        print("Parsing rank.list...", flush=True)
-        with open("rank.list") as f:
+    # lightdock produces rank_by_scoring.list (sorted best→worst by scoring function)
+    rank_file = "rank_by_scoring.list"
+    if os.path.exists(rank_file):
+        print(f"Parsing {rank_file}...", flush=True)
+        with open(rank_file) as f:
             for line in f:
                 line = line.strip()
-                if not line or line.startswith("#") or not line[0].isdigit():
+                if not line or line.startswith("Swarm"):
                     continue
                 parts = line.split()
                 try:
-                    score = float(parts[1]) if len(parts) > 1 else float(parts[0])
-                    pdb_ref = next((p for p in parts if p.startswith("swarm_") and p.endswith(".pdb")), None)
-                    top_poses.append({"score": score, "pdb_file": pdb_ref, "rank": len(top_poses) + 1})
-                except (ValueError, IndexError):
+                    swarm_id = int(parts[0])
+                    score = float(parts[-1])
+                    # PDB name is like "lightdock_N.pdb"; build path relative to CWD
+                    pdb_match = re.search(r'lightdock_\d+\.pdb', line)
+                    pdb_file = f"swarm_{swarm_id}/{pdb_match.group()}" if pdb_match else None
+                    top_poses.append({"score": score, "pdb_file": pdb_file, "rank": len(top_poses) + 1})
+                except (ValueError, IndexError, AttributeError):
                     pass
-        print(f"Parsed {len(top_poses)} ranked poses from rank.list", flush=True)
+        print(f"Parsed {len(top_poses)} ranked poses from {rank_file}", flush=True)
 
     if not top_poses:
         print("Falling back to per-swarm gso score extraction...", flush=True)
