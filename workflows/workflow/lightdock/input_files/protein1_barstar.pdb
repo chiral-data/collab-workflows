@@ -1,0 +1,28 @@
+REMARK  Barstar ligand — minimal synthetic structure for workflow testing (chain B)
+REMARK  For real docking, replace with barstar chain from PDB 1BRS (chain D)
+ATOM      1  N   ALA B   1      20.000  20.000  20.000  1.00  0.00           N
+ATOM      2  CA  ALA B   1      18.736  20.775  20.000  1.00  0.00           C
+ATOM      3  C   ALA B   1      17.556  19.817  20.000  1.00  0.00           C
+ATOM      4  O   ALA B   1      17.702  18.603  20.000  1.00  0.00           O
+ATOM      5  CB  ALA B   1      18.522  21.617  18.747  1.00  0.00           C
+ATOM      6  N   ALA B   2      16.437  20.399  20.000  1.00  0.00           N
+ATOM      7  CA  ALA B   2      15.236  19.589  20.000  1.00  0.00           C
+ATOM      8  C   ALA B   2      14.056  20.531  20.000  1.00  0.00           C
+ATOM      9  O   ALA B   2      14.210  21.745  20.000  1.00  0.00           O
+ATOM     10  CB  ALA B   2      15.022  18.747  18.747  1.00  0.00           C
+ATOM     11  N   ALA B   3      12.937  19.949  20.000  1.00  0.00           N
+ATOM     12  CA  ALA B   3      11.736  20.775  20.000  1.00  0.00           C
+ATOM     13  C   ALA B   3      10.556  19.817  20.000  1.00  0.00           C
+ATOM     14  O   ALA B   3      10.702  18.603  20.000  1.00  0.00           O
+ATOM     15  CB  ALA B   3      11.522  21.617  18.747  1.00  0.00           C
+ATOM     16  N   ALA B   4       9.437  20.399  20.000  1.00  0.00           N
+ATOM     17  CA  ALA B   4       8.236  19.589  20.000  1.00  0.00           C
+ATOM     18  C   ALA B   4       7.056  20.531  20.000  1.00  0.00           C
+ATOM     19  O   ALA B   4       7.210  21.745  20.000  1.00  0.00           O
+ATOM     20  CB  ALA B   4       8.022  18.747  18.747  1.00  0.00           C
+ATOM     21  N   ALA B   5       5.937  19.949  20.000  1.00  0.00           N
+ATOM     22  CA  ALA B   5       4.736  20.775  20.000  1.00  0.00           C
+ATOM     23  C   ALA B   5       3.556  19.817  20.000  1.00  0.00           C
+ATOM     24  O   ALA B   5       3.702  18.603  20.000  1.00  0.00           O
+ATOM     25  CB  ALA B   5       4.522  21.617  18.747  1.00  0.00           C
+END
