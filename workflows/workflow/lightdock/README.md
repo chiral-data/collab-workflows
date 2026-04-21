@@ -14,8 +14,8 @@
 - LightDock project: 'https://github.com/lightdock/lightdock' 
 
 ## Tasks 
-- [] Investigate the LightDock issue and repo.
-- [] Use the existing examples and references, and the sample node structure, to build one node at a time to create a workflow. Make the workflow silva runnable. 
+- [X] Investigate the LightDock issue and repo.
+- [X] Use the existing examples and references, and the sample node structure, to build one node at a time to create a workflow. Make the workflow silva runnable. 
 - [] Run 'silva ~/dev/collab-workflows/workflows/workflow/lightdock, debug and fix.
 
 ## Sample Node Structure
