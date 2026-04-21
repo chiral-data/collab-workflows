@@ -55,8 +55,13 @@ def main():
             tar.add("init")
         for swarm_dir in swarm_dirs:
             tar.add(swarm_dir)
+        # lightdock3.py reads these processed files from the working directory
+        for fname in os.listdir("."):
+            if fname.startswith("lightdock_") and not fname.endswith(".tar.gz"):
+                tar.add(fname)
 
-    print(f"Archived setup.json, init/, and {len(swarm_dirs)} swarm directories.", flush=True)
+    archived_ld = [f for f in os.listdir(".") if f.startswith("lightdock_") and not f.endswith(".tar.gz")]
+    print(f"Archived setup.json, init/, {len(swarm_dirs)} swarm dirs, and {len(archived_ld)} lightdock files.", flush=True)
 
 
 if __name__ == "__main__":
