@@ -64,7 +64,8 @@ def main():
 <head>
   <meta charset="UTF-8">
   <title>LightDock Docking Report</title>
-  <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css">
+  <script src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
   <style>
     body {{ font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; color: #333; }}
     h1 {{ color: #2c3e50; }}
@@ -124,31 +125,31 @@ def main():
 </div>
 
 <script>
-window.addEventListener('load', function() {{
-  var el = document.getElementById('viewer');
-  var w = el.parentElement.clientWidth - 48;
-  el.style.width = w + 'px';
-
+(function() {{
   var pdbData = `{top_pdb_content}`;
   if (!pdbData.trim()) {{
     document.getElementById('viewer-container').innerHTML +=
       '<p style="color:#999">No structure data available for visualization.</p>';
     return;
   }}
-  var chains = {chains};
-  var colors = ['#3498db', '#e74c3c', '#2ecc71', '#e67e22', '#9b59b6'];
-  var viewer = $3Dmol.createViewer(el, {{ backgroundColor: 'white' }});
-  viewer.addModel(pdbData, 'pdb');
-  if (chains.length > 0) {{
-    chains.forEach(function(ch, i) {{
-      viewer.setStyle({{ chain: ch }}, {{ cartoon: {{ color: colors[i % colors.length] }} }});
-    }});
-  }} else {{
-    viewer.setStyle({{}}, {{ cartoon: {{ colorscheme: 'chain' }} }});
-  }}
-  viewer.zoomTo();
-  viewer.render();
-}});
+  molstar.Viewer.create('viewer', {{
+    layoutIsExpanded: false,
+    layoutShowControls: false,
+    layoutShowLeftPanel: false,
+    layoutShowSequence: false,
+    layoutShowLog: false,
+    layoutShowRemoteState: false,
+    viewportShowAnimation: false,
+    viewportShowExpand: true,
+    viewportShowSelectionMode: false,
+  }}).then(function(viewer) {{
+    return viewer.loadStructureFromData(pdbData, 'pdb');
+  }}).catch(function(err) {{
+    console.error('Mol* error:', err);
+    document.getElementById('viewer').innerHTML =
+      '<p style="color:red;padding:16px">Viewer error: ' + err + '</p>';
+  }});
+}})();
 </script>
 </body>
 </html>
