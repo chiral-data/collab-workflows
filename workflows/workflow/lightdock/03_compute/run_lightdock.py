@@ -45,7 +45,7 @@ def parse_gso_scores(gso_path):
 
 
 def main():
-    steps = int(os.environ.get("PARAM_STEPS", "100"))
+    steps = int(os.environ.get("PARAM_STEPS", "50"))
     scoring_function = os.environ.get("PARAM_SCORING_FUNCTION", "fastdfire")
     num_conformations = int(os.environ.get("PARAM_NUM_CONFORMATIONS", "200"))
     top_n = int(os.environ.get("PARAM_TOP_N", "10"))

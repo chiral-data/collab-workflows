@@ -12,8 +12,8 @@ run = "run.sh"
 
 [params.steps]
 type = "integer"
-default = 100
-hint = "Number of GSO optimization steps (100 for testing, 200+ for production)"
+default = 50
+hint = "Number of GSO optimization steps (50 for testing, 200+ for production)"
 
 [params.scoring_function]
 type = "enum"

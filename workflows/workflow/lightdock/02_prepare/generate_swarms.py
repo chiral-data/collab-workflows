@@ -21,7 +21,7 @@ def run_cmd(cmd):
 
 
 def main():
-    num_swarms = int(os.environ.get("PARAM_NUM_SWARMS", "25"))
+    num_swarms = int(os.environ.get("PARAM_NUM_SWARMS", "10"))
     num_glowworms = int(os.environ.get("PARAM_NUM_GLOWWORMS", "200"))
 
     for fname in ["receptor.pdb", "ligand.pdb"]:

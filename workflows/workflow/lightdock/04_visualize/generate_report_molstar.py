@@ -51,6 +51,7 @@ def main():
 
     top_poses = rank_data.get("top_poses", [])
     top_pdb_content, chains = read_first_model_pdb(pdb_path)
+    top_pdb_content = top_pdb_content.replace("`", "\\`").replace("${", "\\${")
 
     table_rows = ""
     for pose in top_poses:
