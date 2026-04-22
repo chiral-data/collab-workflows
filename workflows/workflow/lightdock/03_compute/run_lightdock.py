@@ -91,15 +91,15 @@ def main():
             run_cmd(
                 ["lgd_generate_conformations.py", "../receptor.pdb", "../ligand.pdb",
                  gso_file, str(num_conformations)],
-                check=False,
+                check=True,
             )
-            run_cmd(["lgd_cluster_bsas.py", gso_file], check=False)
+            run_cmd(["lgd_cluster_bsas.py", gso_file], check=True)
         finally:
             os.chdir(orig_dir)
 
     print("\nRanking poses...", flush=True)
     # lgd_rank.py takes num_swarms and steps (not conformations)
-    run_cmd(["lgd_rank.py", str(num_swarms), str(steps)], check=False)
+    run_cmd(["lgd_rank.py", str(num_swarms), str(steps)], check=True)
 
     top_poses = []
 
