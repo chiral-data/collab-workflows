@@ -4,7 +4,7 @@ inputs = ["*.yaml", "*.fasta", "*.fa"]
 outputs = ["boltz_input.yaml", "chai_input.fasta", "preprocessing_summary.json"]
 
 [container]
-image = "chiral.sakuracr.jp/boltz:2025_09_05"
+image = "ghcr.io/chiral-data/boltz:2025_09_05"
 use_gpu = false
 
 [scripts]
