@@ -8,8 +8,7 @@ export NUMBA_CACHE_DIR="/tmp/numba_cache"
 
 echo "Starting Node 03: Boltz-2 Structure Prediction"
 
-# Copy preprocessed inputs from node 02
-cp ../02-preprocessing/boltz_input.yaml . 2>/dev/null || true
+cp inputs/* . 2>/dev/null || true
 
 # Expect boltz_input.yaml specifically from node 02
 INPUT_FILE=$(ls boltz_input.yaml *.yaml 2>/dev/null | head -1)

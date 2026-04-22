@@ -5,10 +5,6 @@ echo "Starting Node 05: Visualization"
 
 cp inputs/* . 2>/dev/null || true
 
-# Pull summaries from prediction nodes
-cp ../03-predict-boltz/boltz_summary.json . 2>/dev/null || true
-cp ../04-predict-chai/chai_summary.json . 2>/dev/null || true
-
 # Verify inputs
 if [ ! -f boltz_summary.json ]; then
     echo "Error: boltz_summary.json not found — did node 03 run?"

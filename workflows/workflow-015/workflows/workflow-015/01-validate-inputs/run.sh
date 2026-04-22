@@ -3,8 +3,7 @@ set -e
 
 echo "Starting Node 01: Validate Inputs (Boltz + Chai)"
 
-# Copy input files to working directory
-cp ../input/prot.yaml . 2>/dev/null || true
+cp inputs/* . 2>/dev/null || true
 
 # Detect input files
 YAML_FILE=$(ls *.yaml *.yml 2>/dev/null | head -1)

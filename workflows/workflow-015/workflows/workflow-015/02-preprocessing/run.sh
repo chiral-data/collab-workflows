@@ -3,8 +3,6 @@ set -e
 
 echo "Starting Node 02: Preprocessing"
 
-# Copy validated outputs from node 01
-cp ../input/prot.yaml . 2>/dev/null || true
 cp inputs/* . 2>/dev/null || true
 
 # Find the validated YAML from node 01

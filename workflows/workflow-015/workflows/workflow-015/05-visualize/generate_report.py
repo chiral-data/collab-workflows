@@ -16,40 +16,19 @@ from datetime import datetime
 from pathlib import Path
 
 
-# ── Mock data (used when real summary JSONs are not yet available) ────────────
-
-MOCK_BOLTZ = {
-    "tool": "boltz2",
-    "params": {"diffusion_samples": 2, "recycling_steps": 3},
-    "confidence": [
-        {"sample": "model_0", "plddt": 0.87, "ptm": 0.82, "iptm": 0.79, "pae_mean": 3.2, "pde_mean": 2.8},
-        {"sample": "model_1", "plddt": 0.84, "ptm": 0.80, "iptm": 0.76, "pae_mean": 3.6, "pde_mean": 3.1},
-    ]
-}
-
-MOCK_CHAI = {
-    "tool": "chai1",
-    "params": {"num_trunk_recycles": 3, "num_diffusion_timesteps": 200},
-    "confidence": [
-        {"sample": "model_0", "plddt": 0.81, "ptm": 0.78, "iptm": 0.74, "pae_mean": 4.1, "pde_mean": 3.5},
-        {"sample": "model_1", "plddt": 0.79, "ptm": 0.75, "iptm": 0.71, "pae_mean": 4.4, "pde_mean": 3.8},
-    ]
-}
-
 
 # ── Parsing ───────────────────────────────────────────────────────────────────
 
-def load_summary(path, mock_fallback):
-    """Load a summary JSON, falling back to mock data if file is missing."""
+def load_summary(path):
+    """Load a summary JSON; exit with error if file is missing."""
     p = Path(path)
-    if p.exists():
-        with open(p) as f:
-            data = json.load(f)
-        print(f"  Loaded: {path}")
-        return data, False
-    else:
-        print(f"  Warning: {path} not found — using mock data")
-        return mock_fallback, True
+    if not p.exists():
+        print(f"Error: {path} not found — did the prediction node run successfully?", file=__import__('sys').stderr)
+        __import__('sys').exit(1)
+    with open(p) as f:
+        data = json.load(f)
+    print(f"  Loaded: {path}")
+    return data
 
 
 def normalize_plddt(confidence_list, tool):
@@ -116,7 +95,7 @@ def _table_row(tool, entry, color):
 
 # ── HTML generation ───────────────────────────────────────────────────────────
 
-def generate_html(boltz_data, chai_data, using_mock):
+def generate_html(boltz_data, chai_data):
     boltz_conf = normalize_plddt(boltz_data['confidence'], 'boltz2')
     chai_conf  = normalize_plddt(chai_data['confidence'],  'chai1')
 
@@ -131,11 +110,7 @@ def generate_html(boltz_data, chai_data, using_mock):
             return '—'
         return 'Boltz-2 ✓' if (b < c if lower_is_better else b > c) else 'Chai-1 ✓'
 
-    mock_banner = """
-        <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:12px 20px;
-                    border-radius:8px;margin-bottom:20px;font-weight:500;">
-            ⚠️ Using mock data — real prediction outputs not found.
-        </div>""" if using_mock else ""
+    mock_banner = ""
 
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -362,12 +337,11 @@ def main():
     args = parser.parse_args()
 
     print("\nLoading summaries:")
-    boltz_data, boltz_mock = load_summary(args.boltz_summary, MOCK_BOLTZ)
-    chai_data,  chai_mock  = load_summary(args.chai_summary,  MOCK_CHAI)
-    using_mock = boltz_mock or chai_mock
+    boltz_data = load_summary(args.boltz_summary)
+    chai_data  = load_summary(args.chai_summary)
 
     print("\nGenerating report...")
-    html = generate_html(boltz_data, chai_data, using_mock)
+    html = generate_html(boltz_data, chai_data)
 
     with open(args.output, 'w') as f:
         f.write(html)
