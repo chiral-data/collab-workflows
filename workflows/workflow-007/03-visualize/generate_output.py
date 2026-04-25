@@ -31,7 +31,7 @@ output_format = os.environ.get("PARAM_OUTPUT_FORMAT", "html")
 # =============================================================================
 
 
-def load_pockets_json(json_path: str) -> list[pt.Pocket]:
+def load_pockets_json(json_path: str, atomarray) -> list[pt.Pocket]:
     """Load pockets from a JSON file created by pt.write_pockets_json()."""
     with open(json_path, "r") as f:
         data = json.load(f)
@@ -48,12 +48,21 @@ def load_pockets_json(json_path: str) -> list[pt.Pocket]:
             )
             for s in p["spheres"]
         ]
+        residues = [(r["chain_id"], r["res_id"], r["res_name"]) for r in p["residues"]]
+        residue_set = set(residues)
+        mask = np.array(
+            [(c, r, n) in residue_set
+             for c, r, n in zip(atomarray.chain_id, atomarray.res_id, atomarray.res_name)],
+            dtype=bool,
+        )
         pocket = pt.Pocket(
             pocket_id=p["pocket_id"],
             spheres=spheres,
             centroid=np.array(p["centroid"]),
             volume=p["volume"],
             score=p["score"],
+            residues=residues,
+            mask=mask,
         )
         pockets.append(pocket)
     return pockets
@@ -81,7 +90,7 @@ for pdb_id in pdb_ids:
     print(f"  Loading {pdb_id}...", flush=True)
     atomarray = pt.load_structure(pdb_path)
 
-    pockets = load_pockets_json(pockets_path)
+    pockets = load_pockets_json(pockets_path, atomarray)
     pocket_count = len(pockets)
     top_score = f"{pockets[0].score:.2f}" if pockets else "—"
 
@@ -466,7 +475,8 @@ if output_format in ("gif", "both"):
 
     for p in protein_data:
         pdb_id = p["id"]
-        pockets = load_pockets_json(os.path.join(input_dir, f"{pdb_id}_pockets.json"))
+        gif_atomarray = pt.load_structure(os.path.join(input_dir, f"{pdb_id}.pdb"))
+        pockets = load_pockets_json(os.path.join(input_dir, f"{pdb_id}_pockets.json"), gif_atomarray)
 
         if not pockets:
             print(f"\nSkipping GIF for {pdb_id} (no pockets)", flush=True)
