@@ -12,7 +12,3 @@ type = "file"
 default = "input_files/test_sequence.yaml"
 hint = "Protein sequence input file (YAML or FASTA)"
 
-[params.diffusion_samples]
-type = "integer"
-default = 5
-hint = "Number of structure samples per model"

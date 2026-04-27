@@ -41,6 +41,8 @@ def normalize_plddt(confidence_list, tool):
 
 def best_model(confidence_list):
     """Return the model entry with the highest pLDDT."""
+    if not confidence_list:
+        return {}
     return max(confidence_list, key=lambda x: x.get('plddt') or 0)
 
 
@@ -78,7 +80,9 @@ def _table_row(tool, entry, color):
     pde   = entry.get('pde_mean', '—')
     agg   = entry.get('aggregate_score', '—')
 
-    def fmt(v): return f'{v:.4f}' if isinstance(v, float) else v
+    def fmt(v):
+        if v is None: return '—'
+        return f'{v:.4f}' if isinstance(v, float) else v
 
     return f"""
         <tr>
