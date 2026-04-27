@@ -5,16 +5,15 @@ Node 05: Boltz-2 vs Chai-1 comparison dashboard.
 Reads boltz_summary.json and chai_summary.json from prediction nodes,
 generates a self-contained HTML report using Plotly.js + Bootstrap 5.
 
-All metrics are displayed on a unified 0-1 scale:
-  - Boltz pLDDT is already 0-1
-  - Chai pLDDT is 0-100 in B-factor column → divided by 100 here
+Shared metrics (both tools): pLDDT (0-1), pTM (0-1), ipTM (0-1)
+Boltz-only:  PAE mean (Å), PDE mean (Å)
+Chai-only:   aggregate_score (0.2*pTM + 0.8*ipTM - clash_penalty)
 """
 
 import argparse
 import json
 from datetime import datetime
 from pathlib import Path
-
 
 
 # ── Parsing ───────────────────────────────────────────────────────────────────
@@ -32,7 +31,7 @@ def load_summary(path):
 
 
 def normalize_plddt(confidence_list, tool):
-    """Normalize pLDDT to 0-1 scale. Chai stores 0-100 in B-factor."""
+    """Normalize pLDDT to 0-1 scale. Chai stores 0-100 from CIF B-factors."""
     for entry in confidence_list:
         if entry.get('plddt') is not None:
             if tool == 'chai1' and entry['plddt'] > 1.0:
@@ -42,7 +41,7 @@ def normalize_plddt(confidence_list, tool):
 
 def best_model(confidence_list):
     """Return the model entry with the highest pLDDT."""
-    return max(confidence_list, key=lambda x: x.get('plddt', 0))
+    return max(confidence_list, key=lambda x: x.get('plddt') or 0)
 
 
 # ── Chart data helpers ────────────────────────────────────────────────────────
@@ -55,8 +54,8 @@ def metric_comparison_data(boltz_conf, chai_conf):
     b_best = best_model(boltz_conf)
     c_best = best_model(chai_conf)
 
-    boltz_vals = [round(b_best.get(m, 0) or 0, 4) for m in metrics]
-    chai_vals  = [round(c_best.get(m, 0) or 0, 4) for m in metrics]
+    boltz_vals = [round(b_best.get(m) or 0, 4) for m in metrics]
+    chai_vals  = [round(c_best.get(m) or 0, 4) for m in metrics]
 
     return labels, boltz_vals, chai_vals
 
@@ -75,8 +74,9 @@ def _table_row(tool, entry, color):
     plddt = entry.get('plddt', 'N/A')
     ptm   = entry.get('ptm',   'N/A')
     iptm  = entry.get('iptm',  'N/A')
-    pae   = entry.get('pae_mean', 'N/A')
-    pde   = entry.get('pde_mean', 'N/A')
+    pae   = entry.get('pae_mean', '—')
+    pde   = entry.get('pde_mean', '—')
+    agg   = entry.get('aggregate_score', '—')
 
     def fmt(v): return f'{v:.4f}' if isinstance(v, float) else v
 
@@ -90,6 +90,7 @@ def _table_row(tool, entry, color):
             <td>{fmt(iptm)}</td>
             <td>{fmt(pae)}</td>
             <td>{fmt(pde)}</td>
+            <td>{fmt(agg)}</td>
         </tr>"""
 
 
@@ -104,15 +105,16 @@ def generate_html(boltz_data, chai_data):
     c_best = best_model(chai_conf)
     table_rows = all_models_table(boltz_conf, chai_conf)
 
-    # Winner callout per metric
     def winner(b, c, lower_is_better=False):
         if b is None or c is None:
             return '—'
         return 'Boltz-2 ✓' if (b < c if lower_is_better else b > c) else 'Chai-1 ✓'
 
-    mock_banner = ""
-
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    b_pae = round(b_best.get('pae_mean') or 0, 4)
+    b_pde = round(b_best.get('pde_mean') or 0, 4)
+    c_agg = round(c_best.get('aggregate_score') or 0, 4)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -128,9 +130,6 @@ def generate_html(boltz_data, chai_data):
             --boltz: #0284c7;
             --chai:  #7c3aed;
             --excellent: #0f766e;
-            --good:      #0369a1;
-            --moderate:  #fb7c3c;
-            --poor:      #dc2626;
         }}
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -173,12 +172,8 @@ def generate_html(boltz_data, chai_data):
         .summary-card .metric-name {{ color: #64748b; font-size: 0.85rem; }}
         .boltz-label {{ color: var(--boltz); }}
         .chai-label  {{ color: var(--chai);  }}
-        .winner-badge {{
-            display: inline-block; padding: 3px 10px; border-radius: 12px;
-            font-size: 0.75rem; font-weight: 600; color: white;
-            background: var(--excellent);
-        }}
         .plot-container {{ padding: 20px; }}
+        .note {{ font-size: 0.8rem; color: #64748b; padding: 8px 20px 0; }}
         .table th {{ background: #f8fafc; font-weight: 600; color: #075985; }}
         .table tbody tr:hover {{ background: rgba(7,89,133,0.05); }}
     </style>
@@ -191,53 +186,57 @@ def generate_html(boltz_data, chai_data):
         <h1><i class="fas fa-balance-scale"></i> Boltz-2 vs Chai-1 Structure Prediction</h1>
         <p class="subtitle">
             <strong>Generated:</strong> {timestamp} &nbsp;|&nbsp;
-            <strong>Metrics on unified 0–1 scale</strong> (lower is better for PAE/PDE in Å)
+            Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
+            PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
         </p>
     </div>
-
-    {mock_banner}
 
     <!-- Top metric summary cards -->
     <div class="summary-grid">
         <div class="summary-card">
             <div class="tool-label boltz-label">Boltz-2</div>
-            <div class="value boltz-label">{b_best.get('plddt', 0):.3f}</div>
+            <div class="value boltz-label">{b_best.get('plddt') or 0:.3f}</div>
             <div class="metric-name">pLDDT (best model)</div>
         </div>
         <div class="summary-card">
             <div class="tool-label chai-label">Chai-1</div>
-            <div class="value chai-label">{c_best.get('plddt', 0):.3f}</div>
+            <div class="value chai-label">{c_best.get('plddt') or 0:.3f}</div>
             <div class="metric-name">pLDDT (best model)</div>
         </div>
         <div class="summary-card">
             <div class="tool-label boltz-label">Boltz-2</div>
-            <div class="value boltz-label">{b_best.get('ptm', 0):.3f}</div>
+            <div class="value boltz-label">{b_best.get('ptm') or 0:.3f}</div>
             <div class="metric-name">pTM (best model)</div>
         </div>
         <div class="summary-card">
             <div class="tool-label chai-label">Chai-1</div>
-            <div class="value chai-label">{c_best.get('ptm', 0):.3f}</div>
+            <div class="value chai-label">{c_best.get('ptm') or 0:.3f}</div>
             <div class="metric-name">pTM (best model)</div>
         </div>
         <div class="summary-card">
-            <div class="tool-label" style="color:#475569;">PAE Winner</div>
+            <div class="tool-label" style="color:#475569;">pLDDT Winner</div>
             <div class="value" style="font-size:1.1rem;color:#0f766e;">
-                {winner(b_best.get('pae_mean'), c_best.get('pae_mean'), lower_is_better=True)}
+                {winner(b_best.get('plddt'), c_best.get('plddt'))}
             </div>
-            <div class="metric-name">Lower PAE = better</div>
+            <div class="metric-name">Higher pLDDT = better</div>
         </div>
     </div>
 
-    <!-- Side-by-side metric bar chart -->
+    <!-- Side-by-side shared metric bar chart -->
     <div class="card">
-        <div class="card-header"><i class="fas fa-chart-bar"></i> Metric Comparison (Best Models)</div>
+        <div class="card-header"><i class="fas fa-chart-bar"></i> Shared Metrics Comparison (Best Models)</div>
         <div class="plot-container" id="metricChart"></div>
     </div>
 
-    <!-- PAE mean comparison -->
+    <!-- Additional tool-specific metrics -->
     <div class="card">
-        <div class="card-header"><i class="fas fa-th"></i> PAE &amp; PDE Comparison (Å)</div>
-        <div class="plot-container" id="errorChart"></div>
+        <div class="card-header"><i class="fas fa-th"></i> Additional Metrics (Tool-Specific)</div>
+        <p class="note">
+            Boltz-2 reports PAE &amp; PDE (error in Å, lower is better).
+            Chai-1 reports Aggregate Score = 0.2×pTM + 0.8×ipTM − clash penalty (higher is better).
+            These metrics are not directly comparable across tools.
+        </p>
+        <div class="plot-container" id="extraChart"></div>
     </div>
 
     <!-- Detailed table -->
@@ -251,6 +250,7 @@ def generate_html(boltz_data, chai_data):
                             <th>Tool</th><th>Sample</th>
                             <th>pLDDT (0–1)</th><th>pTM (0–1)</th><th>ipTM (0–1)</th>
                             <th>PAE mean (Å)</th><th>PDE mean (Å)</th>
+                            <th>Aggregate Score</th>
                         </tr>
                     </thead>
                     <tbody>{table_rows}</tbody>
@@ -262,7 +262,7 @@ def generate_html(boltz_data, chai_data):
 </div>
 
 <script>
-// ── Metric comparison chart ──
+// ── Shared metric comparison chart ──
 Plotly.newPlot('metricChart', [
     {{
         name: 'Boltz-2',
@@ -284,7 +284,7 @@ Plotly.newPlot('metricChart', [
     }}
 ], {{
     barmode: 'group',
-    yaxis: {{ title: 'Score (0–1)', range: [0, 1.05] }},
+    yaxis: {{ title: 'Score (0–1)', range: [0, 1.1] }},
     xaxis: {{ title: 'Metric' }},
     template: 'plotly_white',
     legend: {{ orientation: 'h', y: -0.2 }},
@@ -292,35 +292,33 @@ Plotly.newPlot('metricChart', [
     margin: {{ t: 30, b: 80 }}
 }});
 
-// ── PAE / PDE comparison chart ──
-Plotly.newPlot('errorChart', [
+// ── Tool-specific additional metrics ──
+Plotly.newPlot('extraChart', [
     {{
-        name: 'Boltz-2',
+        name: 'Boltz-2 — PAE mean (Å)',
         type: 'bar',
-        x: ['PAE mean', 'PDE mean'],
-        y: [{round(b_best.get('pae_mean') or 0, 4)}, {round(b_best.get('pde_mean') or 0, 4)}],
-        marker: {{ color: '#0284c7' }}
+        x: ['PAE mean (Å)', 'PDE mean (Å)'],
+        y: [{b_pae}, {b_pde}],
+        marker: {{ color: '#0284c7' }},
+        text: ['{b_pae}', '{b_pde}'],
+        textposition: 'outside'
     }},
     {{
-        name: 'Chai-1',
+        name: 'Chai-1 — Aggregate Score',
         type: 'bar',
-        x: ['PAE mean', 'PDE mean'],
-        y: [{round(c_best.get('pae_mean') or 0, 4)}, {round(c_best.get('pde_mean') or 0, 4)}],
-        marker: {{ color: '#7c3aed' }}
+        x: ['Aggregate Score'],
+        y: [{c_agg}],
+        marker: {{ color: '#7c3aed' }},
+        text: ['{c_agg}'],
+        textposition: 'outside'
     }}
 ], {{
     barmode: 'group',
-    yaxis: {{ title: 'Error (Å)' }},
+    yaxis: {{ title: 'Value' }},
     template: 'plotly_white',
     legend: {{ orientation: 'h', y: -0.2 }},
     height: 350,
-    margin: {{ t: 30, b: 80 }},
-    annotations: [{{
-        text: 'Lower is better',
-        showarrow: false, x: 0.5, y: 1.08,
-        xref: 'paper', yref: 'paper',
-        font: {{ color: '#64748b', size: 12 }}
-    }}]
+    margin: {{ t: 30, b: 80 }}
 }});
 </script>
 </body>
