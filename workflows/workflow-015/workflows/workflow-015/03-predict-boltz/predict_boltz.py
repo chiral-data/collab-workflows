@@ -86,7 +86,16 @@ def collect_outputs(input_file, output_dir):
 # ── Confidence parsing ────────────────────────────────────────────────────────
 
 def parse_confidence_files(output_dir):
-    """Extract pLDDT, pTM, ipTM, PAE, PDE from Boltz confidence JSONs."""
+    """Extract pLDDT, pTM, ipTM, PAE, PDE from Boltz confidence JSONs and NPZ files.
+
+    Boltz confidence JSON fields:
+      complex_plddt: mean per-complex pLDDT (0-1)
+      ptm, iptm: TM-score metrics (0-1)
+      complex_pde: mean PDE over complex (Å)
+    PAE is in a separate pae_<name>.npz file (matrix → take mean).
+    """
+    import numpy as np
+
     confidence_files = glob.glob(os.path.join(output_dir, "confidence_*.json"))
     metrics = []
 
@@ -94,32 +103,24 @@ def parse_confidence_files(output_dir):
         with open(cf, 'r') as f:
             data = json.load(f)
 
-        sample_name = Path(cf).stem  # e.g. confidence_boltz_input_model_0
+        stem = Path(cf).stem  # confidence_boltz_input_model_0
+        sample_name = stem.replace('confidence_', '', 1)
 
         entry = {
-            'sample':  sample_name,
-            'plddt':   data.get('plddt',  None),
-            'ptm':     data.get('ptm',    None),
-            'iptm':    data.get('iptm',   None),
+            'sample': sample_name,
+            'plddt':  data.get('complex_plddt', None),
+            'ptm':    data.get('ptm',           None),
+            'iptm':   data.get('iptm',          None),
+            'pde_mean': round(data['complex_pde'], 4) if 'complex_pde' in data else None,
         }
 
-        # PAE and PDE may be nested or top-level depending on Boltz version
-        if 'pae' in data:
-            pae = data['pae']
-            # If it's a matrix, store the mean
-            if isinstance(pae, list):
-                flat = [v for row in pae for v in (row if isinstance(row, list) else [row])]
-                entry['pae_mean'] = round(sum(flat) / len(flat), 4) if flat else None
-            else:
-                entry['pae_mean'] = pae
-
-        if 'pde' in data:
-            pde = data['pde']
-            if isinstance(pde, list):
-                flat = [v for row in pde for v in (row if isinstance(row, list) else [row])]
-                entry['pde_mean'] = round(sum(flat) / len(flat), 4) if flat else None
-            else:
-                entry['pde_mean'] = pde
+        # PAE is in pae_<sample_name>.npz (residue×residue matrix)
+        pae_path = os.path.join(output_dir, f"pae_{sample_name}.npz")
+        if os.path.exists(pae_path):
+            pae_data = np.load(pae_path)
+            key = list(pae_data.files)[0]
+            mat = pae_data[key]
+            entry['pae_mean'] = round(float(mat.mean()), 4)
 
         metrics.append(entry)
         print(f"  {sample_name}: pLDDT={entry['plddt']}, pTM={entry['ptm']}, "
