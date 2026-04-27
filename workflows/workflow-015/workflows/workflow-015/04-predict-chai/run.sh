@@ -18,6 +18,6 @@ python3 predict_chai.py \
     --input "$FASTA_FILE" \
     --num-trunk-recycles "${PARAM_NUM_TRUNK_RECYCLES:-3}" \
     --num-diffusion-timesteps "${PARAM_NUM_DIFFUSION_TIMESTEPS:-200}" \
-    --output-dir "."
+    --output-dir "./chai_output"
 
 echo "Node 04 completed"

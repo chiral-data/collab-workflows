@@ -5,15 +5,25 @@ Node 04: Chai-1 structure prediction.
 Wraps the `chai-lab fold` CLI, collects output CIF files and
 confidence metrics (pLDDT, pTM, ipTM) into chai_summary.json
 for use by the visualization node.
+
+Chai-1 CLI signature:
+  chai-lab fold <fasta_file> <output_dir> [OPTIONS]
+
+Chai-1 output files:
+  pred.model_idx_N.cif        — structure (CIF format); B-factor column = per-atom pLDDT (0-100)
+  scores.model_idx_N.npz     — NumPy archive with pTM, ipTM, aggregate_score
 """
 
 import argparse
 import glob
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+import numpy as np
 
 
 # ── Prediction ────────────────────────────────────────────────────────────────
@@ -21,10 +31,9 @@ from pathlib import Path
 def run_chai_fold(input_file, output_dir, num_trunk_recycles, num_diffusion_timesteps):
     """Run the chai-lab fold CLI command."""
     cmd = [
-        "chai-lab", "fold", input_file,
-        "--output-dir", output_dir,
+        "chai-lab", "fold", input_file, output_dir,
         "--num-trunk-recycles", str(num_trunk_recycles),
-        "--num-diffusion-timesteps", str(num_diffusion_timesteps),
+        "--num-diffn-timesteps", str(num_diffusion_timesteps),
     ]
 
     print(f"\nRunning: {' '.join(cmd)}\n")
@@ -38,9 +47,9 @@ def run_chai_fold(input_file, output_dir, num_trunk_recycles, num_diffusion_time
 # ── Output collection ─────────────────────────────────────────────────────────
 
 def collect_outputs(output_dir):
-    """Collect CIF and scores JSON files from Chai output directory."""
+    """Collect CIF and scores NPZ files from Chai output directory."""
     collected = []
-    for pattern in ["*.cif", "scores.*.json"]:
+    for pattern in ["pred.*.cif", "scores.*.npz"]:
         for filepath in glob.glob(os.path.join(output_dir, pattern)):
             collected.append(os.path.basename(filepath))
             print(f"  Found: {os.path.basename(filepath)}")
@@ -49,44 +58,57 @@ def collect_outputs(output_dir):
 
 # ── Confidence parsing ────────────────────────────────────────────────────────
 
-def parse_confidence_files(output_dir):
-    """Extract pLDDT, pTM, ipTM from Chai scores JSONs.
+def parse_plddt_from_cif(cif_path):
+    """Extract mean pLDDT from B-factor column in Chai CIF file (0-100 scale).
 
-    Chai outputs scores.model_idx_N.json with:
-      - plddt: list of per-token values (0-100 scale)
-      - ptm: float (0-1)
-      - iptm: float (0-1)
-      - aggregate_score: float
+    Chai writes per-atom pLDDT as _atom_site.B_iso_or_equiv (column index 17).
     """
-    score_files = sorted(glob.glob(os.path.join(output_dir, "scores.*.json")))
+    b_factors = []
+    with open(cif_path) as f:
+        for line in f:
+            if line.startswith('ATOM') or line.startswith('HETATM'):
+                parts = line.split()
+                if len(parts) > 17:
+                    try:
+                        b_factors.append(float(parts[17]))
+                    except ValueError:
+                        pass
+    return round(sum(b_factors) / len(b_factors), 4) if b_factors else None
+
+
+def parse_confidence_files(output_dir):
+    """Extract pLDDT, pTM, ipTM, aggregate_score from Chai output files.
+
+    pLDDT: averaged from B-factors in pred.model_idx_N.cif (0-100 scale)
+    pTM, ipTM, aggregate_score: from scores.model_idx_N.npz
+    """
+    score_files = sorted(glob.glob(os.path.join(output_dir, "scores.*.npz")))
     metrics = []
 
     for sf in score_files:
-        with open(sf, 'r') as f:
-            data = json.load(f)
+        data = np.load(sf, allow_pickle=False)
 
-        # Extract model index from filename: scores.model_idx_0.json → model_0
-        stem = Path(sf).stem  # scores.model_idx_0
+        # scores.model_idx_0.npz → model_0, pred.model_idx_0.cif
+        stem = Path(sf).stem
         parts = stem.split('.')
-        model_label = parts[-1].replace('model_idx_', 'model_') if len(parts) > 1 else stem
+        idx_part = parts[-1]  # e.g. model_idx_0
+        model_label = idx_part.replace('model_idx_', 'model_')
+        cif_path = os.path.join(output_dir, f"pred.{idx_part}.cif")
 
-        plddt_raw = data.get('plddt', None)
-        if isinstance(plddt_raw, list) and plddt_raw:
-            plddt = round(sum(plddt_raw) / len(plddt_raw) / 100.0, 4)
-        elif isinstance(plddt_raw, (int, float)):
-            plddt = round(float(plddt_raw) / 100.0, 4) if plddt_raw > 1.0 else round(float(plddt_raw), 4)
-        else:
-            plddt = None
+        plddt = parse_plddt_from_cif(cif_path) if os.path.exists(cif_path) else None
+
+        def scalar(key):
+            return round(float(data[key].item()), 4) if key in data else None
 
         entry = {
             'sample': model_label,
             'plddt': plddt,
-            'ptm': data.get('ptm', None),
-            'iptm': data.get('iptm', None),
-            'aggregate_score': data.get('aggregate_score', None),
+            'ptm': scalar('ptm'),
+            'iptm': scalar('iptm'),
+            'aggregate_score': scalar('aggregate_score'),
         }
         metrics.append(entry)
-        print(f"  {model_label}: pLDDT={entry['plddt']}, pTM={entry['ptm']}, ipTM={entry['iptm']}")
+        print(f"  {model_label}: pLDDT={entry['plddt']}, pTM={entry['ptm']}, ipTM={entry['iptm']}, agg={entry['aggregate_score']}")
 
     return metrics
 
@@ -117,7 +139,7 @@ def write_summary(output_dir, collected_files, metrics, params):
 def main():
     parser = argparse.ArgumentParser(description='Run Chai-1 structure prediction')
     parser.add_argument('--input',                    required=True,       help='Input FASTA file from node 02')
-    parser.add_argument('--output-dir',               default='.',         help='Output directory')
+    parser.add_argument('--output-dir',               default='./chai_output', help='Output directory (must be empty; chai-lab requirement)')
     parser.add_argument('--num-trunk-recycles',       type=int, default=3, help='Number of trunk recycling steps')
     parser.add_argument('--num-diffusion-timesteps',  type=int, default=200, help='Number of diffusion timesteps')
     args = parser.parse_args()
@@ -145,13 +167,20 @@ def main():
     if not cif_files:
         print("Warning: No CIF files found in output")
     if not metrics:
-        print("Warning: No scores JSON files found")
+        print("Warning: No scores NPZ files found")
 
     params = {
         'num_trunk_recycles': args.num_trunk_recycles,
         'num_diffusion_timesteps': args.num_diffusion_timesteps,
     }
     write_summary(args.output_dir, collected, metrics, params)
+
+    # Copy outputs to workspace root so Silva's output glob picks them up
+    print("\nCopying outputs to workspace root:")
+    for pattern in ["pred.*.cif", "scores.*.npz", "chai_summary.json"]:
+        for src in Path(args.output_dir).glob(pattern):
+            shutil.copy(src, ".")
+            print(f"  Copied: {src.name}")
 
     print("\nNode 04 completed ✓")
 
