@@ -1,0 +1,21 @@
+name = "Validate Inputs"
+description = "Validates receptor and ligand PDB files: checks ATOM records, CA atoms, and chain completeness"
+
+inputs = ["*.pdb"]
+outputs = ["receptor.pdb", "ligand.pdb", "validation_report.json"]
+
+[container]
+image = "lightdock-pipeline:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.receptor_file]
+type = "string"
+default = "inputs/protein2_barnase.pdb"
+hint = "Path to receptor PDB file"
+
+[params.ligand_file]
+type = "string"
+default = "inputs/protein1_barstar.pdb"
+hint = "Path to ligand PDB file"
