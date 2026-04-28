@@ -20,4 +20,5 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 14. [ADMET-AI](https://github.com/swansonk14/admet_ai) Prediction Pipeline by [Allison Cheng](https://github.com/allisongcheng)
 15. [mDeepFRI Protein Function Prediction](workflows/workflow-015/README.md) based on [Metagenomic-DeepFRI](https://github.com/bioinf-mcb/Metagenomic-DeepFRI) by [Allison Cheng](https://github.com/allisongcheng)
 16. [DiffDock-PP Antibody-Antigen Docking Pipeline](workflows/workflow-016/README.md) by [Abdelrahman Mohamed Taha MAHMOUD](https://www.linkedin.com/in/abdelrahman-mohamed-taha-mahmoud/)
-17. Boltz-2 vs Chai-1 Structure Comparison by [Priyam Baruah](https://github.com/PriyamBaruah1199) :construction:
+17. [LightDock Protein-Protein Docking](workflows/workflow-017/README.md) based on [LightDock](https://github.com/lightdock/lightdock) by [Allison Cheng](https://github.com/allisongcheng)
+18. Boltz-2 vs Chai-1 Structure Comparison by [Priyam Baruah](https://github.com/PriyamBaruah1199) :construction:
