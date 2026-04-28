@@ -61,18 +61,33 @@ def collect_outputs(output_dir):
 def parse_plddt_from_cif(cif_path):
     """Extract mean pLDDT from B-factor column in Chai CIF file (0-100 scale).
 
-    Chai writes per-atom pLDDT as _atom_site.B_iso_or_equiv (column index 17).
+    Chai writes per-atom pLDDT as _atom_site.B_iso_or_equiv. The column index
+    is determined by reading the loop_ header, not hardcoded, to handle any
+    column ordering Chai may use.
     """
+    col_idx = None
     b_factors = []
+    col_headers = []
+    in_atom_loop = False
     with open(cif_path) as f:
         for line in f:
-            if line.startswith('ATOM') or line.startswith('HETATM'):
-                parts = line.split()
-                if len(parts) > 17:
-                    try:
-                        b_factors.append(float(parts[17]))
-                    except ValueError:
-                        pass
+            line = line.rstrip()
+            if line.startswith('loop_'):
+                col_headers = []
+                in_atom_loop = False
+            elif line.startswith('_atom_site.'):
+                col_headers.append(line.strip())
+                if line.strip() == '_atom_site.B_iso_or_equiv':
+                    col_idx = len(col_headers) - 1
+                    in_atom_loop = True
+            elif in_atom_loop and col_idx is not None:
+                if line.startswith('ATOM') or line.startswith('HETATM'):
+                    parts = line.split()
+                    if len(parts) > col_idx:
+                        try:
+                            b_factors.append(float(parts[col_idx]))
+                        except ValueError:
+                            pass
     return round(sum(b_factors) / len(b_factors), 4) if b_factors else None
 
 

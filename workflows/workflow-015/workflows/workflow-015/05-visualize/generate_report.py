@@ -34,7 +34,7 @@ def normalize_plddt(confidence_list, tool):
     """Normalize pLDDT to 0-1 scale. Chai stores 0-100 from CIF B-factors."""
     for entry in confidence_list:
         if entry.get('plddt') is not None:
-            if tool == 'chai1' and entry['plddt'] > 1.0:
+            if tool == 'chai1':
                 entry['plddt'] = round(entry['plddt'] / 100.0, 4)
     return confidence_list
 

@@ -66,7 +66,7 @@ def collect_outputs(input_file, output_dir):
     # Fallback: walk any predictions/ subdirectory
     if not collected:
         for dirpath, _, filenames in os.walk('.'):
-            if 'predictions' in dirpath:
+            if os.path.basename(dirpath) == 'predictions':
                 for f in filenames:
                     src = os.path.join(dirpath, f)
                     dest = os.path.join(output_dir, f)
