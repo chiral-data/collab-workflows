@@ -17,7 +17,6 @@ Chai FASTA structure:
 """
 
 import argparse
-import json
 import shutil
 from pathlib import Path
 
@@ -98,33 +97,6 @@ def write_chai_fasta(data, output_path):
     print(f"  Chai FASTA written to: {output_path}")
 
 
-# ── Summary ──────────────────────────────────────────────────────────────────
-
-def write_summary(data, boltz_out, chai_out):
-    """Write a preprocessing summary JSON."""
-    sequences = data.get('sequences', [])
-    entities = []
-    for i, seq_entry in enumerate(sequences):
-        for entity_type, entity_data in seq_entry.items():
-            entities.append({
-                'type': entity_type,
-                'id': entity_data.get('id', f'chain_{i}'),
-                'length': len(entity_data.get('sequence', '')) or None,
-            })
-
-    summary = {
-        'entities': entities,
-        'outputs': {
-            'boltz': str(boltz_out),
-            'chai':  str(chai_out),
-        }
-    }
-
-    with open('preprocessing_summary.json', 'w') as f:
-        json.dump(summary, f, indent=2)
-    print(f"  Summary written to: preprocessing_summary.json")
-
-
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
@@ -140,7 +112,6 @@ def main():
     print("\nWriting outputs:")
     write_boltz_yaml(data, args.boltz_output)
     write_chai_fasta(data, args.chai_output)
-    write_summary(data, args.boltz_output, args.chai_output)
 
     print("\nNode 02 completed ✓")
 

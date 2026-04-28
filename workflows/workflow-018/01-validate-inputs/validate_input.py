@@ -16,7 +16,6 @@ Chai checks:
 """
 
 import argparse
-import json
 import re
 import shutil
 import sys
@@ -168,8 +167,6 @@ def main():
         print("Error: provide at least one of --yaml or --fasta")
         sys.exit(1)
 
-    combined_summary = {'inputs': [], 'valid': True}
-
     if args.yaml:
         print(f"\nValidating Boltz YAML: {args.yaml}")
         summary = validate_boltz_yaml(args.yaml)
@@ -177,7 +174,6 @@ def main():
         print("  Copied to: validated_boltz_input.yaml")
         for e in summary['entities']:
             print(f"  Entity: {e.get('id')} ({e['type']}, length={e.get('length', 'N/A')})")
-        combined_summary['inputs'].append(summary)
         print("  Boltz YAML validation passed ✓")
 
     if args.fasta:
@@ -187,12 +183,8 @@ def main():
         print("  Copied to: validated_chai_input.fasta")
         for e in summary['entities']:
             print(f"  Entity: {e.get('id')} ({e['type']}, length={e.get('length', 'N/A')})")
-        combined_summary['inputs'].append(summary)
         print("  Chai FASTA validation passed ✓")
 
-    with open('input_summary.json', 'w') as f:
-        json.dump(combined_summary, f, indent=2)
-    print(f"\nSummary written to: input_summary.json")
     print("\nNode 01 completed ✓")
 
 
