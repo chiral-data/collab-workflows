@@ -1,7 +1,0 @@
-name = "LightDock Protein-Protein Docking"
-description = "Protein-protein docking using the LightDock GSO algorithm: validates inputs, generates swarms, runs simulation, and produces an HTML report."
-
-[dependencies]
-02_prepare = ["01_validate_inputs"]
-03_compute = ["02_prepare"]
-04_visualize = ["03_compute"]
