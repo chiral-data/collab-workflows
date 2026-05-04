@@ -22,4 +22,4 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 16. [DiffDock-PP Antibody-Antigen Docking Pipeline](workflows/workflow-016/README.md) by [Abdelrahman Mohamed Taha MAHMOUD](https://www.linkedin.com/in/abdelrahman-mohamed-taha-mahmoud/)
 17. Boltz-2 vs Chai-1 Structure Comparison by [Priyam Baruah](https://github.com/PriyamBaruah1199) :construction:
 18. :construction:
-19. [Cyclic AMP Antimicrobial Peptide Design Pipeline](workflows/workflow-019/README.md) — DPO-aligned generative design with biophysics scoring and physics validation by [Saurav Kulkarni](https://www.linkedin.com/in/sauravkulkarni/)
+19. [Cyclic AMP Antimicrobial Peptide Design Pipeline](https://github.com/SauravKulkarni3999/cyclic-amp-design-pipeline) — DPO-aligned generative design with biophysics scoring and physics validation by [Saurav Kulkarni](https://www.linkedin.com/in/sauravkulkarni/)
