@@ -55,6 +55,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Pull and retag local base images
+        if: ${{ inputs.force_rebuild || steps.check.outputs.exists != 'true' }}
+        run: |
+          FROM_IMAGE=$(grep '^FROM' workflows/${{ inputs.job_dir }}/Dockerfile | head -1 | awk '{print $2}')
+          if [[ "$FROM_IMAGE" != *"/"* ]]; then
+            REGISTRY_IMAGE="${{ env.REGISTRY }}/${FROM_IMAGE}"
+            if docker pull "$REGISTRY_IMAGE" 2>/dev/null; then
+              docker tag "$REGISTRY_IMAGE" "$FROM_IMAGE"
+            fi
+          fi
+
       - name: Build and push
         if: ${{ inputs.force_rebuild || steps.check.outputs.exists != 'true' }}
         uses: docker/build-push-action@v6
