@@ -14,7 +14,8 @@ jobs:
   detect:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.changed.outputs.matrix }}
+      independent: ${{ steps.changed.outputs.independent }}
+      dependent: ${{ steps.changed.outputs.dependent }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +25,14 @@ jobs:
       - name: Detect changed job directories
         id: changed
         run: |
-          DIRS=$(git diff --name-only HEAD~1 HEAD \
+          ALL_JOB_IMAGES=$(find workflows -name "job.toml" | while read f; do
+            job_dir=$(dirname "$(dirname "$f")")
+            if [ -f "$job_dir/Dockerfile" ]; then
+              grep -A20 '\[container\]' "$f" | grep '^image' | head -1 | sed 's/image = "\(.*\)"/\1/' | cut -d: -f1
+            fi
+          done | sort -u)
+
+          CHANGED=$(git diff --name-only HEAD~1 HEAD \
             | grep '^workflows/' \
             | awk -F'/' 'NF>=4 {print $2"/"$3}' \
             | sort -u \
@@ -32,21 +40,99 @@ jobs:
                 if [ -f "workflows/$dir/Dockerfile" ] && [ -f "workflows/$dir/.chiral/job.toml" ]; then
                   echo "$dir"
                 fi
-              done \
-            | jq -R . | jq -sc .)
-          echo "matrix=$DIRS" >> $GITHUB_OUTPUT
-          echo "Changed: $DIRS"
+              done)
 
-  build:
+          INDEPENDENT=""
+          DEPENDENT=""
+          while IFS= read -r dir; do
+            [ -z "$dir" ] && continue
+            FROM_NAME=$(grep '^FROM' "workflows/$dir/Dockerfile" | head -1 | awk '{print $2}' | cut -d: -f1)
+            if echo "$ALL_JOB_IMAGES" | grep -qx "$FROM_NAME"; then
+              DEPENDENT="$DEPENDENT$dir\n"
+            else
+              INDEPENDENT="$INDEPENDENT$dir\n"
+            fi
+          done <<< "$CHANGED"
+
+          IND=$(printf "$INDEPENDENT" | grep -v '^$' | jq -R . | jq -sc .)
+          DEP=$(printf "$DEPENDENT" | grep -v '^$' | jq -R . | jq -sc .)
+          echo "independent=$IND" >> $GITHUB_OUTPUT
+          echo "dependent=$DEP" >> $GITHUB_OUTPUT
+          echo "Independent: $IND"
+          echo "Dependent: $DEP"
+
+  build-independent:
     needs: detect
-    if: ${{ needs.detect.outputs.matrix != '[]' && needs.detect.outputs.matrix != '' }}
+    if: ${{ needs.detect.outputs.independent != '[]' && needs.detect.outputs.independent != '' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     strategy:
       matrix:
-        job_dir: ${{ fromJson(needs.detect.outputs.matrix) }}
+        job_dir: ${{ fromJson(needs.detect.outputs.independent) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read image name from job.toml
+        id: meta
+        run: |
+          TOML="workflows/${{ matrix.job_dir }}/.chiral/job.toml"
+          RAW=$(grep -A20 '\[container\]' "$TOML" | grep '^image' | head -1 | sed 's/image = "\(.*\)"/\1/')
+          IMAGE_NAME=$(echo "$RAW" | cut -d: -f1)
+          IMAGE_TAG=$(echo "$RAW" | cut -d: -f2)
+          echo "image=${{ env.REGISTRY }}/${IMAGE_NAME}:${IMAGE_TAG}" >> $GITHUB_OUTPUT
+          echo "image_name=${IMAGE_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Log in to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull and retag local base images
+        run: |
+          FROM_IMAGE=$(grep '^FROM' workflows/${{ matrix.job_dir }}/Dockerfile | head -1 | awk '{print $2}')
+          if [[ "$FROM_IMAGE" != *"/"* ]]; then
+            REGISTRY_IMAGE="${{ env.REGISTRY }}/${FROM_IMAGE}"
+            if docker pull "$REGISTRY_IMAGE" 2>/dev/null; then
+              docker tag "$REGISTRY_IMAGE" "$FROM_IMAGE"
+            fi
+          fi
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: workflows/${{ matrix.job_dir }}
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.image }}
+
+      - name: Make package public
+        continue-on-error: true
+        run: |
+          gh api --method PATCH \
+            /orgs/chiral-data/packages/container/${{ steps.meta.outputs.image_name }} \
+            -f visibility=public
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-dependent:
+    needs: [detect, build-independent]
+    if: |
+      always() &&
+      needs.detect.outputs.dependent != '[]' && needs.detect.outputs.dependent != '' &&
+      (needs.build-independent.result == 'success' || needs.build-independent.result == 'skipped')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        job_dir: ${{ fromJson(needs.detect.outputs.dependent) }}
 
     steps:
       - name: Checkout
