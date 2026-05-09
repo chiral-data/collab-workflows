@@ -6,6 +6,11 @@ on:
       - main
     paths:
       - "workflows/*/*/**"
+  workflow_dispatch:
+    inputs:
+      workflow_dirs:
+        description: "Space-separated list of workflow dirs to build (e.g. workflow-014 workflow-015)"
+        required: true
 
 env:
   REGISTRY: ghcr.io/chiral-data
@@ -25,20 +30,25 @@ jobs:
       - name: Detect changed job directories using shared workflow Dockerfile
         id: changed
         run: |
-          DIRS=$(git diff --name-only HEAD~1 HEAD \
-            | grep '^workflows/' \
-            | awk -F'/' 'NF>=4 {print $2"/"$3}' \
-            | sort -u \
-            | while read dir; do
-                workflow=$(echo "$dir" | cut -d'/' -f1)
-                if [ -f "workflows/$dir/.chiral/job.toml" ] \
-                    && [ ! -f "workflows/$dir/Dockerfile" ] \
-                    && [ -f "workflows/$workflow/Dockerfile" ]; then
-                  echo "$workflow"
-                fi
-              done \
-            | sort -u \
-            | jq -R . | jq -sc .)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            DIRS=$(echo "${{ github.event.inputs.workflow_dirs }}" \
+              | tr ' ' '\n' | jq -R . | jq -sc .)
+          else
+            DIRS=$(git diff --name-only HEAD~1 HEAD \
+              | grep '^workflows/' \
+              | awk -F'/' 'NF>=4 {print $2"/"$3}' \
+              | sort -u \
+              | while read dir; do
+                  workflow=$(echo "$dir" | cut -d'/' -f1)
+                  if [ -f "workflows/$dir/.chiral/job.toml" ] \
+                      && [ ! -f "workflows/$dir/Dockerfile" ] \
+                      && [ -f "workflows/$workflow/Dockerfile" ]; then
+                    echo "$workflow"
+                  fi
+                done \
+              | sort -u \
+              | jq -R . | jq -sc .)
+          fi
           echo "matrix=$DIRS" >> $GITHUB_OUTPUT
           echo "Changed: $DIRS"
 
