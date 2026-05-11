@@ -1,0 +1,14 @@
+name = "Download Input Files"
+description = "Download BAM and GTF input files from a Zenodo record"
+outputs = ["*.bam", "*.gtf"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+run = "run.sh"
+
+[params.zenodo_record_id]
+type = "string"
+default = "18301020"
+hint = "Zenodo record ID to download files from"

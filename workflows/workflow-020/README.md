@@ -5,40 +5,28 @@ Quantify mapped reads and identify differentially expressed genes from RNA-Seq d
 ## Pipeline
 
 ```
-01_featurecounts  →  02_deseq2  →  03_plots
+00_download_inputs  →  01_featurecounts  →  02_deseq2  →  03_plots
 ```
 
-1. **featureCounts** — counts reads per gene from BAM files against a GTF annotation
-2. **DESeq2** — statistical differential expression analysis (size-factor normalization, negative binomial model)
-3. **Plots** — MA plot, Volcano plot, PCA plot
+1. **Download inputs** — fetches BAM and GTF files from a Zenodo record
+2. **featureCounts** — counts reads per gene from BAM files against a GTF annotation
+3. **DESeq2** — statistical differential expression analysis (size-factor normalization, negative binomial model)
+4. **Plots** — MA plot, Volcano plot, PCA plot
+
+Nodes 01–03 use `chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1`. Node 00 uses `python:3.11-slim`.
 
 ## Input Files
 
-- One or more sorted BAM files (aligned reads)
-- A GTF annotation file matching the reference genome used for alignment
-
-### Test data (Saccharomyces cerevisiae)
-
-A test dataset is hosted on Zenodo (record [18301020](https://zenodo.org/records/18301020)):
+The `00_download_inputs` node downloads files automatically from Zenodo. The default record is [18301020](https://zenodo.org/records/18301020) (Saccharomyces cerevisiae test data):
 
 - 4 BAM files: `Ctrl_1.bam`, `Ctrl_2.bam`, `Treat_1.bam`, `Treat_2.bam`
 - 1 GTF annotation: `Saccharomyces_cerevisiae.gtf`
 
-Download with:
+To use a different dataset, set `zenodo_record_id` in `00_download_inputs/params.json`:
 
-```bash
-mkdir -p input_files && cd input_files
-
-curl -s "https://zenodo.org/api/records/18301020" \
-  | jq -r '.files[].links.self' \
-  | while read -r url; do
-      filename=$(basename "$(dirname "$url")")
-      echo "Downloading $filename..."
-      curl -L -o "$filename" "$url"
-    done
+```json
+{ "zenodo_record_id": "YOUR_RECORD_ID" }
 ```
-
-Requires `curl` and `jq`.
 
 ## Outputs
 

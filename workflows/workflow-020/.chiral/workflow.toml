@@ -2,6 +2,7 @@ name = "RNA-seq Differential Expression Analysis"
 description = "From mapped data to differential expression results using featureCounts + DESeq2"
 
 [dependencies]
+01_featurecounts = ["00_download_inputs"]
 02_deseq2 = ["01_featurecounts"]
 03_plots = ["02_deseq2"]
 
