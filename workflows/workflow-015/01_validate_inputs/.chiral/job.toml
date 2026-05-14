@@ -1,7 +1,7 @@
 name = "Validate Inputs"
 description = "Validates FASTA format, confirms protein sequences, and filters by length"
 
-inputs = ["*.fasta", "*.fa", "*.faa"]
+inputs = ["*.{fasta,fa,faa}"]
 outputs = ["validated.fasta", "validation_report.json"]
 
 [container]
