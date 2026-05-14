@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-02-13",
+  "last_updated": "2026-05-14",
   "applications": [
     {
       "id": "boltz",
@@ -12,7 +12,12 @@
       "base_image": "nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/boltz:2025_09_05",
-      "tags": ["protein", "ml", "gpu", "structure-prediction"],
+      "tags": [
+        "protein",
+        "ml",
+        "gpu",
+        "structure-prediction"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 8,
@@ -30,7 +35,12 @@
       "base_image": "nvcr.io/hpc/gromacs:2023.2",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/gromacs:2025_09_05",
-      "tags": ["simulation", "molecular-dynamics", "hpc", "gpu"],
+      "tags": [
+        "simulation",
+        "molecular-dynamics",
+        "hpc",
+        "gpu"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 4,
@@ -48,7 +58,11 @@
       "base_image": "ubuntu:22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/blast:2025_10_14",
-      "tags": ["alignment", "sequence", "bioinformatics"],
+      "tags": [
+        "alignment",
+        "sequence",
+        "bioinformatics"
+      ],
       "requirements": {
         "gpu": false,
         "memory_gb": 2,
@@ -66,7 +80,12 @@
       "base_image": "nvidia/cuda:11.8.0-runtime-ubuntu22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/proteinmpnn:2025_09_10",
-      "tags": ["protein", "design", "ml", "gpu"],
+      "tags": [
+        "protein",
+        "design",
+        "ml",
+        "gpu"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 6,
@@ -84,7 +103,12 @@
       "base_image": "nvidia/cuda:12.0.0-runtime-ubuntu22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/rfdiffusion2:2025_09_19",
-      "tags": ["protein", "diffusion", "generation", "gpu"],
+      "tags": [
+        "protein",
+        "diffusion",
+        "generation",
+        "gpu"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 10,
@@ -102,7 +126,12 @@
       "base_image": "nvidia/cuda:11.3.0-runtime-ubuntu20.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/ufold:2025_09_18",
-      "tags": ["rna", "structure", "ml", "gpu"],
+      "tags": [
+        "rna",
+        "structure",
+        "ml",
+        "gpu"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 4,
@@ -120,7 +149,11 @@
       "base_image": "ubuntu:22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/intarna:2025_09_18",
-      "tags": ["rna", "interaction", "prediction"],
+      "tags": [
+        "rna",
+        "interaction",
+        "prediction"
+      ],
       "requirements": {
         "gpu": false,
         "memory_gb": 2,
@@ -138,7 +171,13 @@
       "base_image": "nvidia/cuda:11.6.0-runtime-ubuntu20.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/rnamigos2:2025_09_19",
-      "tags": ["rna", "ligand", "ml", "gpu", "drug-discovery"],
+      "tags": [
+        "rna",
+        "ligand",
+        "ml",
+        "gpu",
+        "drug-discovery"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 5,
@@ -156,7 +195,12 @@
       "base_image": "nvidia/cuda:11.8.0-runtime-ubuntu22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/freebindcraft:2025_09_19",
-      "tags": ["protein", "ligand", "free-energy", "gpu"],
+      "tags": [
+        "protein",
+        "ligand",
+        "free-energy",
+        "gpu"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 8,
@@ -174,7 +218,11 @@
       "base_image": "ubuntu:22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/rnahybrid:2025_10_14",
-      "tags": ["rna", "mirna", "target-prediction"],
+      "tags": [
+        "rna",
+        "mirna",
+        "target-prediction"
+      ],
       "requirements": {
         "gpu": false,
         "memory_gb": 1,
@@ -192,7 +240,13 @@
       "base_image": "nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/boltzgen:2026_02_13",
-      "tags": ["protein", "design", "binder", "ml", "gpu"],
+      "tags": [
+        "protein",
+        "design",
+        "binder",
+        "ml",
+        "gpu"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 10,
@@ -210,7 +264,14 @@
       "base_image": "nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/mvrbind:2026_05_14",
-      "tags": ["rna", "ligand", "binding-site", "ml", "gpu", "drug-discovery"],
+      "tags": [
+        "rna",
+        "ligand",
+        "binding-site",
+        "ml",
+        "gpu",
+        "drug-discovery"
+      ],
       "requirements": {
         "gpu": true,
         "memory_gb": 6,
@@ -228,13 +289,44 @@
       "base_image": "python:3.8",
       "registry": "ghcr.io/chiral-data",
       "image_path": "/boltz_report:2026_02_13",
-      "tags": ["reporting", "visualization", "dashboard"],
+      "tags": [
+        "reporting",
+        "visualization",
+        "dashboard"
+      ],
       "requirements": {
         "gpu": false,
         "memory_gb": 2,
         "cuda_version": null
       },
       "documentation_url": ""
+    },
+    {
+      "id": "rinalmo",
+      "name": "RiNALMo",
+      "version": "2026_05_14",
+      "category": "RNA-Structure",
+      "description": "General-purpose RNA language model for structure and function prediction",
+      "long_description": "RiNALMo (RiboNucleic Acid Language Model) is a 650M-parameter BERT-style Transformer pre-trained on 36M non-coding RNA sequences. It achieves state-of-the-art performance on secondary structure prediction, splice-site prediction, ncRNA family classification, ribosome loading, translation efficiency, and expression level tasks. The model generalises to RNA families not seen during training. Available in three sizes: Giga (650M), Mega (150M), and Micro (35M).",
+      "base_image": "nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04",
+      "registry": "ghcr.io/chiral-data",
+      "image_path": "/rinalmo:2026_05_14",
+      "tags": [
+        "rna",
+        "language-model",
+        "secondary-structure",
+        "ncRNA",
+        "splice-site",
+        "expression",
+        "ml",
+        "gpu"
+      ],
+      "requirements": {
+        "gpu": true,
+        "memory_gb": 8,
+        "cuda_version": "11.8"
+      },
+      "documentation_url": "https://github.com/lbcb-sci/RiNALMo"
     }
   ]
 }
