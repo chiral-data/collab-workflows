@@ -25,3 +25,4 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 19. [Cyclic AMP Antimicrobial Peptide Design Pipeline](https://github.com/SauravKulkarni3999/cyclic-amp-design-pipeline) — DPO-aligned generative design with biophysics scoring and physics validation by [Saurav Kulkarni](https://www.linkedin.com/in/sauravkulkarni/)
 20. :checkered_flag:
 21. [MVRBind RNA Binding Site Prediction](https://github.com/rogerwq/mvrbind-workflow) — per-nucleotide RNA-small molecule binding site prediction using multi-view GCN by Chiral Dev Team
+22. [RiNALMo RNA Secondary Structure Prediction](https://github.com/rogerwq/rinalmo-workflow) — secondary structure prediction using the 650M-param RiNALMo language model (bpRNA fine-tuned) by Chiral Dev Team
