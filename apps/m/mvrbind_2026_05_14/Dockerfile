@@ -43,7 +43,8 @@ RUN pip install --no-cache-dir \
     scipy==1.15.3 \
     matplotlib==3.10.3 \
     tqdm==4.67.1 \
-    pyyaml==6.0.2
+    pyyaml==6.0.2 \
+    pandas==2.2.3
 
 # Clone MVRBind (includes bundled ClustalW binary)
 WORKDIR /opt
