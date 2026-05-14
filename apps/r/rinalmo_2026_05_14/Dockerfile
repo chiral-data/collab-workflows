@@ -18,16 +18,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1 \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip setuptools wheel packaging
 
-# PyTorch 2.1.0 + CUDA 11.8 (matches environment.yml)
+# PyTorch 2.1.0 + CUDA 11.8 (matches environment.yml); numpy pinned to 1.x
+# because PyTorch 2.1.0 was compiled against NumPy 1.x ABI
 RUN pip install --no-cache-dir \
     torch==2.1.0 \
     torchvision==0.16.0 \
     torchaudio==2.1.0 \
+    numpy==1.26.0 \
     --index-url https://download.pytorch.org/whl/cu118
 
-# flash-attn 2.3.2 — requires CUDA devel headers + ninja for compilation
+# flash-attn 2.3.2 — requires CUDA devel headers + ninja; packaging must be
+# pre-installed because --no-build-isolation skips the isolated build env
 RUN pip install --no-cache-dir flash-attn==2.3.2 --no-build-isolation
 
 # Clone and install RiNALMo (installs: torch, numpy, ml_collections, packaging, gdown)
