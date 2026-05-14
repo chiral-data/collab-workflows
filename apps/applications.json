@@ -201,6 +201,24 @@
       "documentation_url": "https://github.com/HannesStark/boltzgen"
     },
     {
+      "id": "mvrbind",
+      "name": "MVRBind",
+      "version": "2026_05_14",
+      "category": "RNA-Ligand",
+      "description": "RNA-small molecule binding site prediction",
+      "long_description": "MVRBind predicts RNA-small molecule binding sites using a multi-view graph convolutional network that integrates primary, secondary, and tertiary structural information. It outperforms baseline methods on both holo and apo-form RNA structures, making it practical for RNA-targeted drug discovery where ligand-free structures are the norm.",
+      "base_image": "nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04",
+      "registry": "ghcr.io/chiral-data",
+      "image_path": "/mvrbind:2026_05_14",
+      "tags": ["rna", "ligand", "binding-site", "ml", "gpu", "drug-discovery"],
+      "requirements": {
+        "gpu": true,
+        "memory_gb": 6,
+        "cuda_version": "12.1"
+      },
+      "documentation_url": "https://github.com/cschen-y/MVRBind"
+    },
+    {
       "id": "boltz_report",
       "name": "Boltz Report",
       "version": "2026_02_13",
