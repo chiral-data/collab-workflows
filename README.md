@@ -23,3 +23,5 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 17. [LightDock Protein-Protein Docking](workflows/workflow-017/README.md) based on [LightDock](https://github.com/lightdock/lightdock) by [Allison Cheng](https://github.com/allisongcheng)
 18. [Boltz-2 vs Chai-1 Structure Comparison](workflows/workflow-018/README.md) based on [Boltz-2](https://github.com/jwohlwend/boltz) and [Chai-1](https://github.com/chaidiscovery/chai-lab) by [Priyam Baruah](https://github.com/PriyamBaruah1199)
 19. [Cyclic AMP Antimicrobial Peptide Design Pipeline](https://github.com/SauravKulkarni3999/cyclic-amp-design-pipeline) — DPO-aligned generative design with biophysics scoring and physics validation by [Saurav Kulkarni](https://www.linkedin.com/in/sauravkulkarni/)
+20. :checkered_flag:
+21. [MVRBind RNA Binding Site Prediction](https://github.com/rogerwq/mvrbind-workflow) — per-nucleotide RNA-small molecule binding site prediction using multi-view GCN by Chiral Dev Team
