@@ -45,7 +45,8 @@ RUN pip install --no-cache-dir \
     einops==0.7.0 \
     biopython==1.81 \
     pytorch-lightning==2.1.3 \
-    torchmetrics==1.2.1
+    torchmetrics==1.2.1 \
+    scikit-learn==1.3.1
 
 # Bake in fine-tuned weights for secondary structure prediction (bpRNA, ~2.5 GB).
 # The checkpoint includes the full model (LM + head) so no separate base weights needed.
