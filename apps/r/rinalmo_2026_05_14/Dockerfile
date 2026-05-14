@@ -47,16 +47,13 @@ RUN pip install --no-cache-dir \
     pytorch-lightning==2.1.3 \
     torchmetrics==1.2.1
 
-# Model weights (~2.5 GB for Giga) are NOT baked in.
-# Download at runtime via gdown, or mount a weights volume:
-#   docker run --gpus all -v /path/to/weights:/weights ...
-# Weights are auto-downloaded on first get_pretrained_model() call to ~/.cache/rinalmo/
+# Bake in fine-tuned weights for secondary structure prediction (bpRNA, ~2.5 GB).
+# The checkpoint includes the full model (LM + head) so no separate base weights needed.
+RUN mkdir -p /weights && \
+    wget -q --show-progress \
+         https://zenodo.org/records/15043668/files/rinalmo_giga_ss_bprna_ft.pt \
+         -O /weights/rinalmo_giga_ss_bprna_ft.pt
 
 WORKDIR /workspace
 
-# Usage:
-#   from rinalmo.pretrained import get_pretrained_model
-#   model, alphabet = get_pretrained_model(model_name="giga-v1")   # 650M
-#   model, alphabet = get_pretrained_model(model_name="mega-v1")   # 150M
-#   model, alphabet = get_pretrained_model(model_name="micro-v1")  # 35M
 CMD ["python", "-c", "from rinalmo.pretrained import get_pretrained_model; print('RiNALMo ready')"]
