@@ -1,4 +1,4 @@
-# Workflow-016: DiffDock-PP Antibody-Antigen Docking Pipeline
+# DiffDock-PP Antibody-Antigen Docking Pipeline
 
 ## Overview
 This repository provides a six-node workflow for antibody-antigen docking with DiffDock-PP.
