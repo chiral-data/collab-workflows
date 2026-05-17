@@ -1,4 +1,4 @@
-# Workflow 015: mDeepFRI Protein Function Prediction
+# mDeepFRI Protein Function Prediction
 
 AI-based protein function annotation using [Metagenomic-DeepFRI](https://github.com/bioinf-mcb/Metagenomic-DeepFRI).
 
