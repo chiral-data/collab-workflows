@@ -9,7 +9,7 @@ description = "Predicts ADMET properties for drug-like molecules using ADMET-AI 
 
 [params.input_file]
 type = "string"
-default = "drugbank_approved.csv"
+default = "inputs/drugbank_approved.csv"
 hint = "Input CSV file containing molecules with a SMILES column"
 
 [params.smiles_column]

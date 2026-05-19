@@ -12,10 +12,10 @@ run = "run.sh"
 
 [params.receptor_file]
 type = "string"
-default = "protein2_barnase.pdb"
+default = "inputs/protein2_barnase.pdb"
 hint = "Path to receptor PDB file"
 
 [params.ligand_file]
 type = "string"
-default = "protein1_barstar.pdb"
+default = "inputs/protein1_barstar.pdb"
 hint = "Path to ligand PDB file"

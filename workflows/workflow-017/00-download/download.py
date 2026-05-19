@@ -2,12 +2,10 @@ import os
 import tempfile
 import urllib.request
 
-os.makedirs("outputs", exist_ok=True)
-
 url = "https://files.rcsb.org/download/1BRS.pdb"
 print("Downloading 1BRS.pdb from RCSB ...", flush=True)
-with tempfile.NamedTemporaryFile(suffix=".pdb", delete=False) as tmp:
-    tmp_path = tmp.name
+tmp_fd, tmp_path = tempfile.mkstemp(suffix=".pdb")
+os.close(tmp_fd)
 urllib.request.urlretrieve(url, tmp_path)
 
 with open(tmp_path) as f:
@@ -25,5 +23,5 @@ def write_chain(lines, chain_id, output):
     print(f"Saved {output} ({atom_count} ATOM records)", flush=True)
 
 
-write_chain(lines, "A", os.path.join("outputs", "protein2_barnase.pdb"))
-write_chain(lines, "D", os.path.join("outputs", "protein1_barstar.pdb"))
+write_chain(lines, "A", "protein2_barnase.pdb")
+write_chain(lines, "D", "protein1_barstar.pdb")
