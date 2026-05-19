@@ -1,14 +1,18 @@
 import os
+import tempfile
 import urllib.request
 
 os.makedirs("outputs", exist_ok=True)
 
 url = "https://files.rcsb.org/download/1BRS.pdb"
 print("Downloading 1BRS.pdb from RCSB ...", flush=True)
-urllib.request.urlretrieve(url, "1BRS.pdb")
+with tempfile.NamedTemporaryFile(suffix=".pdb", delete=False) as tmp:
+    tmp_path = tmp.name
+urllib.request.urlretrieve(url, tmp_path)
 
-with open("1BRS.pdb") as f:
+with open(tmp_path) as f:
     lines = f.readlines()
+os.remove(tmp_path)
 
 
 def write_chain(lines, chain_id, output):
@@ -23,4 +27,3 @@ def write_chain(lines, chain_id, output):
 
 write_chain(lines, "A", os.path.join("outputs", "protein2_barnase.pdb"))
 write_chain(lines, "D", os.path.join("outputs", "protein1_barstar.pdb"))
-os.remove("1BRS.pdb")
