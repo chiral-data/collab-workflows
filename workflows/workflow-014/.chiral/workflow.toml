@@ -2,14 +2,15 @@ name = "ADMET-AI Prediction"
 description = "Predicts ADMET properties for drug-like molecules using ADMET-AI machine learning models"
 
 [dependencies]
+01_validate_inputs = ["00-download"]
 02_compute = ["01_validate_inputs"]
 03_analyze = ["02_compute"]
 04_visualize = ["03_analyze"]
 
 [params.input_file]
 type = "string"
-default = "inputs/drugbank_approved.csv"
-hint = "Path to input CSV (silva copies input_files/ into inputs/)"
+default = "drugbank_approved.csv"
+hint = "Input CSV file containing molecules with a SMILES column"
 
 [params.smiles_column]
 type = "string"

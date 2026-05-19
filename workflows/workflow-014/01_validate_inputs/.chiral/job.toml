@@ -12,5 +12,5 @@ run = "run.sh"
 
 [params.input_file]
 type = "string"
-default = "./inputs/drugbank_approved.csv"
+default = "drugbank_approved.csv"
 hint = "Input CSV file containing molecules with a SMILES column"
