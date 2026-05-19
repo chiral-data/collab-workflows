@@ -1,0 +1,9 @@
+name = "Download Sample Inputs"
+description = "Downloads sample protein FASTA from the collab-workflows GitHub repository"
+outputs = ["*.fasta"]
+
+[container]
+image = "mdeepfri:latest"
+
+[scripts]
+run = "run.sh"
