@@ -2,6 +2,7 @@ name = "Boltz-2 vs Chai-1 Comparison"
 description = "Side-by-side comparison of Boltz-2 and Chai-1 structure predictions"
 
 [dependencies]
+01-validate-inputs = ["00-download"]
 02-preprocessing = ["01-validate-inputs"]
 03-predict-boltz = ["02-preprocessing"]
 04-predict-chai = ["02-preprocessing"]
