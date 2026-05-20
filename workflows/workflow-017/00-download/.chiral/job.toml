@@ -1,0 +1,9 @@
+name = "Download Sample Inputs"
+description = "Downloads barnase (chain A) and barstar (chain D) from RCSB PDB 1BRS"
+outputs = ["*.pdb"]
+
+[container]
+image = "lightdock-pipeline:latest"
+
+[scripts]
+run = "run.sh"

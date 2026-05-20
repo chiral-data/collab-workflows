@@ -1,0 +1,9 @@
+name = "Download Sample Inputs"
+description = "Downloads sample DrugBank CSV from the ADMET-AI GitHub repository"
+outputs = ["*.csv"]
+
+[container]
+image = "admet-pipeline:latest"
+
+[scripts]
+run = "run.sh"
