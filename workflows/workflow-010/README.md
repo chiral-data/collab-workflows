@@ -43,7 +43,7 @@ docker build -t abodybuilder3:latest .
 
 # Node 01 – Input Preparation
 docker run --rm --gpus all \
-  -v $(pwd)/data:/workflow/01-input-preparation/inputs \
+  -v $(pwd)/input_files:/workflow/01-input-preparation/inputs \
   -v $(pwd)/results/01:/workflow/01-input-preparation/outputs \
   -w /workflow/01-input-preparation \
   abodybuilder3:latest \

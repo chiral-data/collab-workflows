@@ -1,5 +1,6 @@
 name = "Input Preparation"
 description = "Read, validate, and pair heavy/light chain FASTA sequences into .pt files for ABB3"
+inputs = ["*.fasta"]
 outputs = ["*.pt"]
 
 [container]
