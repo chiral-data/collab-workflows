@@ -70,7 +70,11 @@ FROM ubuntu:22.04 AS runtime
 ARG CHAI_VERSION
 LABEL org.opencontainers.image.title="chai-lab" \
       org.opencontainers.image.version="${CHAI_VERSION}" \
-      org.opencontainers.image.description="Chai-1 molecular structure prediction"
+      org.opencontainers.image.description="Chai-1 molecular structure prediction" \
+      com.nvidia.cudnn.version="8.9.0"
+
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 
 ENV LD_LIBRARY_PATH=""
 ENV \
