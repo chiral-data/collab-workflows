@@ -5,6 +5,7 @@ outputs = ["*.pdb"]
 
 [container]
 image = "chiral.sakuracr.jp/abodybuilder3:2026_02_26"
+use_gpu = true
 
 [scripts]
 run = "run.sh"
