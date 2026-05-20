@@ -17,5 +17,5 @@ hint = "Number of trunk recycling steps"
 
 [params.num_diffusion_timesteps]
 type = "integer"
-default = 200
-hint = "Number of diffusion timesteps (200 for production, 50 for testing)"
+default = 50
+hint = "Number of diffusion timesteps (50 recommended, 200 for higher quality but requires >8GB VRAM)"
