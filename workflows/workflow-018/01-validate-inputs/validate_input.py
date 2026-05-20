@@ -241,7 +241,8 @@ def main():
     if args.yaml:
         print(f"\nValidating Boltz YAML: {args.yaml}")
         summary = validate_boltz_yaml(args.yaml)
-        shutil.copy2(args.yaml, 'validated_input.yaml')
+        if os.path.abspath(args.yaml) != os.path.abspath('validated_input.yaml'):
+            shutil.copy2(args.yaml, 'validated_input.yaml')
         print("  Copied to: validated_input.yaml")
         for e in summary['entities']:
             print(f"  Entity: {e.get('id')} ({e['type']}, length={e.get('length', 'N/A')})")

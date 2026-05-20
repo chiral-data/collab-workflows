@@ -67,7 +67,7 @@
     <div class="header">
         <h1><i class="fas fa-balance-scale"></i> Boltz-2 vs Chai-1 Structure Prediction</h1>
         <p class="subtitle">
-            <strong>Generated:</strong> 2026-04-28 02:58:35 &nbsp;|&nbsp;
+            <strong>Generated:</strong> 2026-05-20 06:23:16 &nbsp;|&nbsp;
             Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
             PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
         </p>
@@ -77,17 +77,17 @@
     <div class="summary-grid">
         <div class="summary-card">
             <div class="tool-label boltz-label">Boltz-2</div>
-            <div class="value boltz-label">0.900</div>
+            <div class="value boltz-label">0.953</div>
             <div class="metric-name">pLDDT (best model)</div>
         </div>
         <div class="summary-card">
             <div class="tool-label chai-label">Chai-1</div>
-            <div class="value chai-label">0.927</div>
+            <div class="value chai-label">0.928</div>
             <div class="metric-name">pLDDT (best model)</div>
         </div>
         <div class="summary-card">
             <div class="tool-label boltz-label">Boltz-2</div>
-            <div class="value boltz-label">0.823</div>
+            <div class="value boltz-label">0.928</div>
             <div class="metric-name">pTM (best model)</div>
         </div>
         <div class="summary-card">
@@ -98,7 +98,7 @@
         <div class="summary-card">
             <div class="tool-label" style="color:#475569;">pLDDT Winner</div>
             <div class="value" style="font-size:1.1rem;color:#0f766e;">
-                Chai-1 ✓
+                Boltz-2 ✓
             </div>
             <div class="metric-name">Higher pLDDT = better</div>
         </div>
@@ -140,11 +140,11 @@
             <td><span style="background:#0284c7;color:white;padding:2px 8px;
                 border-radius:10px;font-size:11px;">Boltz-2</span></td>
             <td>boltz_input_model_0</td>
-            <td>0.8999</td>
-            <td>0.8230</td>
+            <td>0.9525</td>
+            <td>0.9281</td>
             <td>0.0000</td>
-            <td>4.4129</td>
-            <td>0.5166</td>
+            <td>2.8196</td>
+            <td>0.3731</td>
             <td>—</td>
         </tr>
 
@@ -152,11 +152,11 @@
             <td><span style="background:#0284c7;color:white;padding:2px 8px;
                 border-radius:10px;font-size:11px;">Boltz-2</span></td>
             <td>boltz_input_model_1</td>
-            <td>0.8866</td>
-            <td>0.7878</td>
+            <td>0.9511</td>
+            <td>0.9254</td>
             <td>0.0000</td>
-            <td>4.8085</td>
-            <td>0.5654</td>
+            <td>2.8825</td>
+            <td>0.3799</td>
             <td>—</td>
         </tr>
 
@@ -164,20 +164,20 @@
             <td><span style="background:#7c3aed;color:white;padding:2px 8px;
                 border-radius:10px;font-size:11px;">Chai-1</span></td>
             <td>model_0</td>
-            <td>0.9252</td>
-            <td>0.9259</td>
+            <td>0.9274</td>
+            <td>0.9270</td>
             <td>0.0000</td>
             <td>—</td>
             <td>—</td>
-            <td>0.1852</td>
+            <td>0.1854</td>
         </tr>
 
         <tr>
             <td><span style="background:#7c3aed;color:white;padding:2px 8px;
                 border-radius:10px;font-size:11px;">Chai-1</span></td>
             <td>model_1</td>
-            <td>0.9274</td>
-            <td>0.9271</td>
+            <td>0.9273</td>
+            <td>0.9269</td>
             <td>0.0000</td>
             <td>—</td>
             <td>—</td>
@@ -188,8 +188,8 @@
             <td><span style="background:#7c3aed;color:white;padding:2px 8px;
                 border-radius:10px;font-size:11px;">Chai-1</span></td>
             <td>model_2</td>
-            <td>0.9271</td>
-            <td>0.9268</td>
+            <td>0.9269</td>
+            <td>0.9269</td>
             <td>0.0000</td>
             <td>—</td>
             <td>—</td>
@@ -200,24 +200,24 @@
             <td><span style="background:#7c3aed;color:white;padding:2px 8px;
                 border-radius:10px;font-size:11px;">Chai-1</span></td>
             <td>model_3</td>
-            <td>0.9265</td>
-            <td>0.9265</td>
+            <td>0.9274</td>
+            <td>0.9272</td>
             <td>0.0000</td>
             <td>—</td>
             <td>—</td>
-            <td>0.1853</td>
+            <td>0.1854</td>
         </tr>
 
         <tr>
             <td><span style="background:#7c3aed;color:white;padding:2px 8px;
                 border-radius:10px;font-size:11px;">Chai-1</span></td>
             <td>model_4</td>
-            <td>0.9270</td>
-            <td>0.9267</td>
+            <td>0.9276</td>
+            <td>0.9273</td>
             <td>0.0000</td>
             <td>—</td>
             <td>—</td>
-            <td>0.1853</td>
+            <td>0.1855</td>
         </tr></tbody>
                 </table>
             </div>
@@ -233,18 +233,18 @@ Plotly.newPlot('metricChart', [
         name: 'Boltz-2',
         type: 'bar',
         x: ["pLDDT", "pTM", "ipTM"],
-        y: [0.8999, 0.823, 0],
+        y: [0.9525, 0.9281, 0],
         marker: { color: '#0284c7' },
-        text: ["0.8999", "0.823", "0"],
+        text: ["0.9525", "0.9281", "0"],
         textposition: 'outside'
     },
     {
         name: 'Chai-1',
         type: 'bar',
         x: ["pLDDT", "pTM", "ipTM"],
-        y: [0.9274, 0.9271, 0],
+        y: [0.9276, 0.9273, 0],
         marker: { color: '#7c3aed' },
-        text: ["0.9274", "0.9271", "0"],
+        text: ["0.9276", "0.9273", "0"],
         textposition: 'outside'
     }
 ], {
@@ -263,18 +263,18 @@ Plotly.newPlot('extraChart', [
         name: 'Boltz-2 — PAE mean (Å)',
         type: 'bar',
         x: ['PAE mean (Å)', 'PDE mean (Å)'],
-        y: [4.4129, 0.5166],
+        y: [2.8196, 0.3731],
         marker: { color: '#0284c7' },
-        text: ['4.4129', '0.5166'],
+        text: ['2.8196', '0.3731'],
         textposition: 'outside'
     },
     {
         name: 'Chai-1 — Aggregate Score',
         type: 'bar',
         x: ['Aggregate Score'],
-        y: [0.1854],
+        y: [0.1855],
         marker: { color: '#7c3aed' },
-        text: ['0.1854'],
+        text: ['0.1855'],
         textposition: 'outside'
     }
 ], {
