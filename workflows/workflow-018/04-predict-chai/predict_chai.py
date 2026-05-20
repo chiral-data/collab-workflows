@@ -30,6 +30,11 @@ import numpy as np
 
 def run_chai_fold(input_file, output_dir, num_trunk_recycles, num_diffusion_timesteps):
     """Run the chai-lab fold CLI command."""
+    out = Path(output_dir)
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True)
+
     cmd = [
         "chai-lab", "fold", input_file, output_dir,
         "--num-trunk-recycles", str(num_trunk_recycles),

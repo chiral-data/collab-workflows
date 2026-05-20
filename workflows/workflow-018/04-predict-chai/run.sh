@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+export MPLCONFIGDIR=/tmp/matplotlib
+
 echo "Starting Node 04: Chai-1 Structure Prediction"
 
 cp inputs/* . 2>/dev/null || true
@@ -17,7 +20,7 @@ echo "Input file: $FASTA_FILE"
 python3 predict_chai.py \
     --input "$FASTA_FILE" \
     --num-trunk-recycles "${PARAM_NUM_TRUNK_RECYCLES:-3}" \
-    --num-diffusion-timesteps "${PARAM_NUM_DIFFUSION_TIMESTEPS:-200}" \
+    --num-diffusion-timesteps "${PARAM_NUM_DIFFUSION_TIMESTEPS:-50}" \
     --output-dir "./chai_output"
 
 echo "Node 04 completed"
