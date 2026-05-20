@@ -161,7 +161,7 @@ def main():
     parser.add_argument('--input',                    required=True,       help='Input FASTA file from node 02')
     parser.add_argument('--output-dir',               default='./chai_output', help='Output directory (must be empty; chai-lab requirement)')
     parser.add_argument('--num-trunk-recycles',       type=int, default=3, help='Number of trunk recycling steps')
-    parser.add_argument('--num-diffusion-timesteps',  type=int, default=200, help='Number of diffusion timesteps')
+    parser.add_argument('--num-diffusion-timesteps',  type=int, default=50, help='Number of diffusion timesteps')
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
