@@ -6,7 +6,7 @@ echo "Starting Node 02: Preprocessing"
 cp inputs/* . 2>/dev/null || true
 
 # Find the validated YAML from node 01
-YAML_FILE=$(ls boltz_input.yaml *.yaml 2>/dev/null | head -1)
+YAML_FILE=$(ls validated_input.yaml *.yaml 2>/dev/null | head -1)
 
 if [ -z "$YAML_FILE" ]; then
     echo "Error: No YAML input file found"

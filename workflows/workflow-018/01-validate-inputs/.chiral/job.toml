@@ -1,7 +1,7 @@
 name = "Sequence Upload"
 description = "Upload and validate protein sequence YAML file for Boltz-2 prediction"
 inputs = ["*.fasta"]
-outputs = ["boltz_input.yaml", "chai_input.fasta"]
+outputs = ["validated_input.yaml"]
 
 [container]
 image = "ghcr.io/chiral-data/boltz:2025_09_05"

@@ -121,42 +121,46 @@ def _uniprot_id_from_header(header):
     return parts[0].split()[0]
 
 
-def convert_generic_fasta(filepath):
-    """Convert UniProt/generic FASTA to boltz_input.yaml and chai_input.fasta."""
+def _write_boltz_yaml(sequences):
+    """Write validated_input.yaml from a list of Boltz sequence dicts."""
+    data = {'version': 1, 'sequences': sequences}
+    if yaml is not None:
+        with open('validated_input.yaml', 'w') as f:
+            yaml.dump(data, f, default_flow_style=False, allow_unicode=True)
+    else:
+        with open('validated_input.yaml', 'w') as f:
+            f.write('version: 1\nsequences:\n')
+            for entry in sequences:
+                p = entry['protein']
+                f.write(f"- protein:\n    id: {p['id']}\n    sequence: {p['sequence']}\n")
+
+
+def _write_validated_yaml_from_fasta(filepath):
+    """Convert UniProt/generic FASTA to validated_input.yaml."""
     records = _parse_fasta_records(filepath)
     if not records:
         raise ValueError("FASTA file contains no records")
-
-    boltz_sequences = []
-    chai_lines = []
+    sequences = []
     for i, (header, seq) in enumerate(records):
         if not seq:
             raise ValueError(f"Empty sequence in record: {header}")
         chain_id = chr(ord('A') + i)
         acc = _uniprot_id_from_header(header)
-        boltz_sequences.append({'protein': {'id': chain_id, 'sequence': seq}})
-        chai_lines.append(f'>protein|name={acc}')
-        chai_lines.append(seq)
+        sequences.append({'protein': {'id': chain_id, 'sequence': seq}})
+        print(f"  Chain {chain_id}: {acc} ({len(seq)} aa)")
+    _write_boltz_yaml(sequences)
 
-    # Write boltz_input.yaml
-    boltz_data = {'version': 1, 'sequences': boltz_sequences}
-    if yaml is not None:
-        with open('boltz_input.yaml', 'w') as f:
-            yaml.dump(boltz_data, f, default_flow_style=False, allow_unicode=True)
-    else:
-        with open('boltz_input.yaml', 'w') as f:
-            f.write('version: 1\nsequences:\n')
-            for entry in boltz_sequences:
-                p = entry['protein']
-                f.write(f"- protein:\n    id: {p['id']}\n    sequence: {p['sequence']}\n")
 
-    # Write chai_input.fasta
-    Path('chai_input.fasta').write_text('\n'.join(chai_lines) + '\n')
-
-    print(f"  Converted {len(records)} sequence(s) from generic FASTA")
+def _write_validated_yaml_from_chai_fasta(filepath, summary):
+    """Convert Chai-format FASTA to validated_input.yaml."""
+    records = _parse_fasta_records(filepath)
+    sequences = []
     for i, (header, seq) in enumerate(records):
-        acc = _uniprot_id_from_header(header)
-        print(f"  Chain {chr(ord('A') + i)}: {acc} ({len(seq)} aa)")
+        chain_id = chr(ord('A') + i)
+        sequences.append({'protein': {'id': chain_id, 'sequence': seq}})
+    _write_boltz_yaml(sequences)
+    for e in summary['entities']:
+        print(f"  Entity: {e.get('id')} ({e['type']}, length={e.get('length', 'N/A')})")
 
 
 # ── Chai (FASTA) ─────────────────────────────────────────────────────────────
@@ -237,28 +241,23 @@ def main():
     if args.yaml:
         print(f"\nValidating Boltz YAML: {args.yaml}")
         summary = validate_boltz_yaml(args.yaml)
-        shutil.copy2(args.yaml, 'boltz_input.yaml')
-        print("  Copied to: boltz_input.yaml")
+        shutil.copy2(args.yaml, 'validated_input.yaml')
+        print("  Copied to: validated_input.yaml")
         for e in summary['entities']:
             print(f"  Entity: {e.get('id')} ({e['type']}, length={e.get('length', 'N/A')})")
         print("  Boltz YAML validation passed ✓")
 
     if args.fasta:
         print(f"\nProcessing FASTA: {args.fasta}")
-        # Peek at header to decide format
         first_line = Path(args.fasta).read_text().splitlines()[0]
         if _is_uniprot_or_generic_fasta(first_line):
-            print("  Detected UniProt/generic FASTA — converting for Boltz + Chai")
-            convert_generic_fasta(args.fasta)
-            print("  Wrote boltz_input.yaml + chai_input.fasta ✓")
+            print("  Detected UniProt/generic FASTA — converting to Boltz YAML")
+            _write_validated_yaml_from_fasta(args.fasta)
         else:
-            print("  Detected Chai-format FASTA — validating")
+            print("  Detected Chai-format FASTA — converting to Boltz YAML")
             summary = validate_chai_fasta(args.fasta)
-            shutil.copy2(args.fasta, 'chai_input.fasta')
-            print("  Copied to: chai_input.fasta")
-            for e in summary['entities']:
-                print(f"  Entity: {e.get('id')} ({e['type']}, length={e.get('length', 'N/A')})")
-            print("  Chai FASTA validation passed ✓")
+            _write_validated_yaml_from_chai_fasta(args.fasta, summary)
+        print("  Wrote validated_input.yaml ✓")
 
     print("\nNode 01 completed ✓")
 
