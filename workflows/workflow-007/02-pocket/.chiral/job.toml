@@ -1,6 +1,6 @@
 name = "Calculate Pockets"
 description = "Detects protein pockets using pocketeer library"
-inputs = ["*.pdb", "*.json"]
+inputs = ["*.pdb"]
 outputs = ["*.pdb", "*.json"]
 
 [container]
