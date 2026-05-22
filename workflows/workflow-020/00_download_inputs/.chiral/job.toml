@@ -3,7 +3,7 @@ description = "Download BAM and GTF input files from a Zenodo record"
 outputs = ["*.bam", "*.gtf"]
 
 [container]
-image = "python:3.11-slim"
+image = "docker.io/library/python:3.11-slim"
 
 [scripts]
 run = "run.sh"

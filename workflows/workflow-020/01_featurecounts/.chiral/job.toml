@@ -4,7 +4,7 @@ inputs = ["*.bam", "*.gtf"]
 outputs = ["outputs/counts.csv", "outputs/counts_annotation.csv", "outputs/counts_table.csv"]
 
 [container]
-image = "chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1"
+image = "bioconductor:rna_seq_r_2025_12_27_v1"
 
 [scripts]
 run = "run.sh"
