@@ -4,7 +4,7 @@ inputs = ["counts.csv"]
 outputs = ["outputs/merged.csv", "outputs/dds.rds", "outputs/res.rds", "outputs/pca_data.csv"]
 
 [container]
-image = "chiral.sakuracr.jp/bioconductor:rna_seq_r_2025_12_27_v1"
+image = "bioconductor:rna_seq_r_2025_12_27_v1"
 
 [scripts]
 run = "run.sh"
