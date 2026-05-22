@@ -211,3 +211,7 @@ temp-*/
 
 # Claude context file - internal documentation
 CLAUDE.md
+
+workflow/*/input_files/*
+workflows/workflow-020/input_files/*.bam
+workflows/workflow-020/01_featurecounts/inputs/
