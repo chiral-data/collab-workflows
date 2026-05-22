@@ -1,0 +1,10 @@
+name = "MS vs MG Autoimmune Comparison"
+description = "Generate Figure 3 (MS+MG vs Controls)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig3_MS_MG_vs_Control.png", "autoimmune_data.json", "autoimmune.html"]
+
+[container]
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"

@@ -1,0 +1,107 @@
+# Ubuntu-based Dockerfile for workflow-functional-group environment
+FROM ubuntu:24.04
+
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CONDA_DIR=/opt/conda
+ENV PATH=$CONDA_DIR/bin:$PATH
+
+# Install system dependencies including CUDA libraries for gnina
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    git \
+    build-essential \
+    libgl1-mesa-dri \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
+    libgcc-s1 \
+    gnupg \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add NVIDIA CUDA repository and install CUDA libraries
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb && \
+    dpkg -i cuda-keyring_1.1-1_all.deb && \
+    rm cuda-keyring_1.1-1_all.deb && \
+    apt-get update && \
+    apt-get install -y \
+    libcudnn9-cuda-12 \
+    libcublas-12-6 \
+    libcusparse-12-6 \
+    libcusolver-12-6 \
+    cuda-cudart-12-6 \
+    libcufft-12-6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install gnina binary
+RUN wget https://github.com/gnina/gnina/releases/download/v1.3.2/gnina.1.3.2 -O /usr/local/bin/gnina && \
+    chmod +x /usr/local/bin/gnina && \
+    echo "gnina installed to /usr/local/bin/gnina"
+
+# Install Miniconda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh && \
+    bash /tmp/miniconda.sh -b -p $CONDA_DIR && \
+    rm /tmp/miniconda.sh
+
+# Initialize conda
+RUN conda init bash
+
+# Accept conda terms of service and configure channels
+RUN conda config --set channel_priority strict && \
+    conda config --add channels conda-forge && \
+    conda config --set auto_activate_base false && \
+    conda config --set always_yes true
+
+# Accept terms of service for required channels
+RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+
+# Install mamba for faster package management
+RUN conda install -c conda-forge mamba -y
+
+# Clone the project
+RUN git clone https://github.com/cole-group/FEgrow.git /opt/FEgrow
+
+# Create conda environment from environment.yml
+RUN mamba env create -f /opt/FEgrow/environment.yml
+
+# Install essential packages first
+RUN mamba run -n fegrow pip install "numpy<2.0" pandas matplotlib seaborn scipy scikit-learn biopython
+
+# Install rdkit and prody for validation scripts
+RUN mamba install -n fegrow -c conda-forge rdkit -y
+RUN mamba run -n fegrow pip install prody
+
+# Try to install additional packages from requirements.txt (skip problematic ones)
+RUN mamba run -n fegrow pip install -r /opt/FEgrow/requirements.txt --ignore-requires-python || echo "Some packages failed to install, continuing..."
+
+# ADD THIS LINE - force numpy downgrade after requirements.txt
+RUN mamba run -n fegrow pip install "numpy<2.0" --force-reinstall --no-deps
+
+
+# Install FEgrow package 
+RUN mamba run -n fegrow pip install --no-deps /opt/FEgrow
+
+# Create a wrapper script to activate the environment
+RUN echo '#!/bin/bash\nsource /opt/conda/etc/profile.d/conda.sh\nconda activate fegrow\nexec "$@"' > /usr/local/bin/workflow-run && \
+    chmod +x /usr/local/bin/workflow-run
+
+# Set default conda environment
+RUN echo 'conda activate fegrow' >> /root/.bashrc
+
+# Set the default command
+CMD ["/bin/bash"]
+
+# Expose port for Jupyter notebook if needed
+EXPOSE 8888
+
+# Add labels for metadata
+LABEL maintainer="Workflow Functional Group Docker Environment"
+LABEL description="Ubuntu-based Docker environment for workflow-functional-group"
+
+# Set working directory
+WORKDIR /workspace

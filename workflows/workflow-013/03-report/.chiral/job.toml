@@ -1,0 +1,10 @@
+name = "Report Generation"
+description = "Generate interactive HTML dashboard for BoltzGen binder design results"
+inputs = ["*.cif", "aggregate_metrics_analyze.csv"]
+outputs = ["boltzgen_dashboard_*.html"]
+
+[container]
+image = "ghcr.io/chiral-data/boltz_report:2026_02_13"
+
+[scripts]
+run = "run.sh"

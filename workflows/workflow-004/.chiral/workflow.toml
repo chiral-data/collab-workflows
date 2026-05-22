@@ -1,0 +1,8 @@
+name = "AutoDock Vina Virtual Screening Workflow"
+description = "End-to-end protein-ligand docking pipeline with P2Rank pocket prediction"
+
+[dependencies]
+03_Receptor_Preparation = ["01_Receptor_Acquisition"]
+04_Ligand_Preparation = ["02_Ligand_Collection"]
+05_Pocket_Discovery = ["03_Receptor_Preparation"]
+06_VS_Analytics = ["05_Pocket_Discovery", "04_Ligand_Preparation"]

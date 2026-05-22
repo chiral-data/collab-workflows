@@ -1,0 +1,10 @@
+name = "Clinical Confounders and Validation"
+description = "Generate Figure 2A (Age), 2B (Duration), 2C (EDSS)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig2A_Age_Grid.png", "Fig2B_Duration_Grid.png", "Fig2C_EDSS_Grid.png", "confounders_data.json", "confounders.html"]
+
+[container]
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"

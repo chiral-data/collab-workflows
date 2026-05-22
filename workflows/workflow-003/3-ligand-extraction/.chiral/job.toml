@@ -4,7 +4,7 @@ inputs = ["*.pdb"]
 outputs = ["*.sdf"]
 
 [container]
-image = "chiral.sakuracr.jp/smina:2025_11_06"
+image = "ghcr.io/chiral-data/smina:2025_11_06"
 
 [scripts]
 run = "run.sh"

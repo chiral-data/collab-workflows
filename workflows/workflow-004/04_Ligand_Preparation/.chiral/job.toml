@@ -1,0 +1,9 @@
+name = "Ligand Preparation"
+description = "Convert ligands to PDBQT format with torsion tree generation"
+outputs = ["outputs/refined_ligands_metadata.json", "outputs/*.pdbqt", "outputs/report.html"]
+
+[container]
+image = "vina-workflow:latest"
+
+[scripts]
+run = "run.sh"

@@ -1,0 +1,26 @@
+name = "Structure Prediction"
+description = "Run Boltz-2 protein structure prediction with GPU acceleration"
+inputs = ["*.yaml"]
+outputs = ["*_model_*.pdb", "confidence_*.json", "pae_*.npz", "pde_*.npz", "plddt_*.npz"]
+
+[container]
+image = "ghcr.io/chiral-data/boltz:2025_09_05"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.diffusion_samples]
+type = "integer"
+default = 10
+hint = "Number of structure models to generate"
+
+[params.recycling_steps]
+type = "integer"
+default = 5
+hint = "Number of recycling steps"
+
+[params.use_msa_server]
+type = "boolean"
+default = true
+hint = "Use MSA server for evolutionary information"

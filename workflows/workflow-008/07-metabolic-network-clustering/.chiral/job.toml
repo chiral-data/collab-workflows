@@ -1,0 +1,10 @@
+name = "Metabolic Network Clustering"
+description = "Generate Figure 6 (MS+MG Correlation) and Figure 7 (Control Correlation)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig6_Corr_MS_MG.png", "Fig7_Corr_Control.png", "clustering_data.json", "clustering.html"]
+
+[container]
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"

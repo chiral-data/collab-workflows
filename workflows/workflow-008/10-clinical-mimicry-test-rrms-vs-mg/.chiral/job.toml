@@ -1,0 +1,10 @@
+name = "Clinical Mimicry Test"
+description = "Generate Figure 10 (Total AA) and Figure 11 (RRMS vs MG Grid)"
+inputs = ["data_standardized.pkl", "aa_cols.txt"]
+outputs = ["Fig10_TotalAA_RRMS_MG.png", "Fig11_RRMS_vs_MG_Grid.png", "mimicry_data.json", "mimicry.html"]
+
+[container]
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"

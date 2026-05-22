@@ -1,0 +1,10 @@
+name = "Cohort Demographics"
+description = "Generate demographic tables (Table 1: MS vs Controls, Table 2: MS vs MG)"
+inputs = ["data_standardized.pkl"]
+outputs = ["Table1_Demographics.png", "Table2_MS_MG_Demographics.png", "demographics_data.json", "demographics.html"]
+
+[container]
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"

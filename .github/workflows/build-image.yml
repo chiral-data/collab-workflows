@@ -1,0 +1,79 @@
+name: Build and Push Docker Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_dir:
+        description: "App directory relative to apps/ (e.g. b/blast_2025_10_14)"
+        required: true
+        type: string
+      force_rebuild:
+        description: "Force rebuild even if image already exists"
+        required: false
+        default: false
+        type: boolean
+
+env:
+  REGISTRY: ghcr.io/chiral-data
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse image name and tag
+        id: meta
+        run: |
+          FULLNAME=$(basename "${{ inputs.app_dir }}")
+          APP_NAME=$(echo "$FULLNAME" | cut -d'_' -f1)
+          DATE=$(echo "$FULLNAME" | cut -d'_' -f2-)
+          echo "app_name=$APP_NAME" >> $GITHUB_OUTPUT
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          echo "image=${{ env.REGISTRY }}/${APP_NAME}:${DATE}" >> $GITHUB_OUTPUT
+
+      - name: Check if image already exists
+        id: check
+        if: ${{ !inputs.force_rebuild }}
+        run: |
+          if docker manifest inspect ${{ steps.meta.outputs.image }} > /dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Log in to ghcr.io
+        if: ${{ inputs.force_rebuild || steps.check.outputs.exists != 'true' }}
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        if: ${{ inputs.force_rebuild || steps.check.outputs.exists != 'true' }}
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/${{ inputs.app_dir }}
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.image }}
+
+      - name: Make package public
+        if: ${{ inputs.force_rebuild || steps.check.outputs.exists != 'true' }}
+        continue-on-error: true
+        run: |
+          gh api --method PATCH \
+            /orgs/chiral-data/packages/container/${{ steps.meta.outputs.app_name }} \
+            -f visibility=public
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Skip (image already exists)
+        if: ${{ !inputs.force_rebuild && steps.check.outputs.exists == 'true' }}
+        run: echo "Image ${{ steps.meta.outputs.image }} already exists, skipping build."

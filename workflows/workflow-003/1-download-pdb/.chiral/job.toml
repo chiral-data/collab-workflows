@@ -3,7 +3,7 @@ description = "Download a PDB file from the RCSB Protein Data Bank."
 outputs = ["*.pdb"]
 
 [container]
-image = "chiral.sakuracr.jp/smina:2025_11_06"
+image = "ghcr.io/chiral-data/smina:2025_11_06"
 
 [scripts]
 run = "run.sh"

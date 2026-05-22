@@ -31,6 +31,7 @@ RUN conda config --set channel_priority strict && \
 
 # Install OpenMM FEP toolkits and dependencies
 RUN conda install -c conda-forge \
+    python=3.12 \
     openmm \
     cuda-version=12.2 \
     openmmtools \

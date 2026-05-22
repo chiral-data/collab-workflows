@@ -1,0 +1,9 @@
+name = "Receptor Preparation"
+description = "Prepare receptor for docking (PDBFixer, Protonation, PDBQT conversion)"
+outputs = ["outputs/refined_receptor_metadata.json", "outputs/receptor.pdbqt", "outputs/protein_fixed.pdb", "outputs/report.html"]
+
+[container]
+image = "vina-workflow:latest"
+
+[scripts]
+run = "run.sh"

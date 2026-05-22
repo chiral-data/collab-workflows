@@ -20,8 +20,10 @@ class LigandSelect(Select):
         # return residue.get_resname() == "2TK"
 
 
-def extract_ligand_from_pdb(pdb_path, ligand_name):
+def extract_ligand_from_pdb(pdb_path, ligand_name, output_dir="outputs"):
     """Extract the ligand from a PDB file and save as SDF (keeping original conformation)"""
+    os.makedirs(output_dir, exist_ok=True)
+
     if not os.path.exists(pdb_path):
         print(f"File not found: {pdb_path}")
         return
@@ -42,12 +44,13 @@ def extract_ligand_from_pdb(pdb_path, ligand_name):
         return
 
     # Save to SDF (preserves PDB coordinates)
-    writer = Chem.SDWriter(f"{ligand_name}.sdf")
+    output_sdf = f"{output_dir}/{ligand_name}.sdf"
+    writer = Chem.SDWriter(output_sdf)
     writer.write(mol)
     writer.close()
 
     os.remove(temp_pdb)
-    print(f"Extracted {ligand_name} ligand and saved as: {ligand_name}.sdf")
+    print(f"Extracted {ligand_name} ligand and saved as: {output_sdf}")
 
 
 if __name__ == "__main__":
@@ -55,4 +58,4 @@ if __name__ == "__main__":
     pdb_id = os.getenv("PARAM_PDB_ID")
     # ligand_name = "2TK"
     ligand_name = os.getenv("PARAM_LIGAND_NAME")
-    extract_ligand_from_pdb(f"{pdb_id}_A_NAD.pdb", ligand_name)
+    extract_ligand_from_pdb(f"inputs/{pdb_id}_A_NAD.pdb", ligand_name)

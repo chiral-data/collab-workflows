@@ -1,0 +1,21 @@
+name = "Validate Inputs"
+description = "Validates FASTA format, confirms protein sequences, and filters by length"
+
+inputs = ["*.{fasta,fa,faa}"]
+outputs = ["validated.fasta", "validation_report.json"]
+
+[container]
+image = "mdeepfri:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.min_length]
+type = "integer"
+default = 10
+hint = "Minimum protein sequence length (amino acids) to include"
+
+[params.max_length]
+type = "integer"
+default = 5000
+hint = "Maximum protein sequence length (amino acids) to include"

@@ -1,0 +1,10 @@
+name = "Differential Diagnosis Biomarkers"
+description = "Generate Figure 4 (Specific AAs) and Figure 5 (Females Only)"
+inputs = ["data_standardized.pkl"]
+outputs = ["Fig4_Specific_Diffs.png", "Fig5_Female_Specific.png", "biomarkers_data.json", "biomarkers.html"]
+
+[container]
+image = "ghcr.io/chiral-data/proteomics:2025_12_31"
+
+[scripts]
+run = "run.sh"

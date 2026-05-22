@@ -1,0 +1,11 @@
+name = "Compute ADMET Predictions"
+description = "Runs ADMET-AI prediction engine on validated molecules"
+
+inputs = ["standardized_molecules.csv"]
+outputs = ["raw_predictions.csv"]
+
+[container]
+image = "admet-pipeline:latest"
+
+[scripts]
+run = "run.sh"

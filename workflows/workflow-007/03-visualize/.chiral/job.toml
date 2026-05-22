@@ -1,0 +1,34 @@
+name = "Generate Visualization"
+description = "Generates HTML visualization of protein pockets"
+inputs = ["*.pdb", "*.json"]
+outputs = ["*.html", "*.gif"]
+
+[container]
+image = "ghcr.io/chiral-data/pocketeer:2025_12_08"
+
+[scripts]
+run = "run.sh"
+
+[params.pocket_style]
+type = "enum"
+default = "filled_surfaces"
+hint = "Pocket visualization style"
+enum_values = ["filled_surfaces", "single_sphere"]
+
+[params.render_method]
+type = "enum"
+default = "draw"
+hint = "Rendering method (ray=higher quality but slower, draw=faster)"
+enum_values = ["ray", "draw"]
+
+[params.representation]
+type = "enum"
+default = "surface"
+hint = "Protein visualization representation"
+enum_values = ["cartoon", "surface"]
+
+[params.output_format]
+type = "enum"
+default = "html"
+hint = "Output format to generate"
+enum_values = ["html", "gif", "both"]

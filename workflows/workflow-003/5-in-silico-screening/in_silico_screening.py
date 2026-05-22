@@ -18,8 +18,8 @@ def main():
     receptor_pdbqt = prepare_receptor(pdb_id)
 
     # Prepare folders
-    ligand_dir = "ligand_library"
-    output_dir = "docking_results"
+    ligand_dir = "inputs/ligand_library"
+    output_dir = "outputs/docking_results"
     os.makedirs(output_dir, exist_ok=True)
 
     if not os.path.isdir(ligand_dir):
@@ -64,8 +64,10 @@ def prepare_receptor(pdb_id):
     """Prepare receptor PDBQT (preserve NAD)."""
     print("\n--- Preparing receptor ---")
 
-    receptor_pdb = f"./{pdb_id}_A_NAD_fixed_with_NAD.pdb"
-    receptor_pdbqt = f"./{pdb_id}_A_NAD_fixed_with_NAD.pdbqt"
+    # Fixed receptor from screening_preparation.py is in outputs/
+    receptor_pdb = f"outputs/{pdb_id}_A_NAD_fixed_with_NAD.pdb"
+    receptor_pdbqt = f"outputs/{pdb_id}_A_NAD_fixed_with_NAD.pdbqt"
+    os.makedirs("outputs", exist_ok=True)
 
     if os.path.exists(receptor_pdbqt):
         print(f"✔ Using existing receptor file: {receptor_pdbqt}")
@@ -98,7 +100,7 @@ def run_docking(ligand_name, receptor_pdbqt, ligand_path, output_dir):
     """Dock a single ligand using Smina."""
     print(f"\n--- Docking {ligand_name} ---")
 
-    config_file = "./config.txt"
+    config_file = "outputs/config.txt"
     out_sdf = os.path.join(output_dir, f"{ligand_name}_docked.sdf")
     out_log = os.path.join(output_dir, f"{ligand_name}_docking.log")
 

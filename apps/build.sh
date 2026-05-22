@@ -2,7 +2,7 @@
 #
 set -e
 
-REGISTRY_URL="chiral.sakuracr.jp"
+REGISTRY_URL="ghcr.io/chiral-data"
 FORCE_REBUILD=false
 
 # Parse command line arguments
