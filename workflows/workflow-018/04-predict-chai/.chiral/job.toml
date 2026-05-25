@@ -4,7 +4,7 @@ inputs = ["chai_input.fasta"]
 outputs = ["*.cif", "chai_summary.json"]
 
 [container]
-image = "ghcr.io/chiral-data/chai:2026_05_20"
+image = "chai:2026_05_20"
 use_gpu = true
 
 [scripts]
