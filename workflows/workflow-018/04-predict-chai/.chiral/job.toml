@@ -1,0 +1,21 @@
+name = "Chai-1 Structure Prediction"
+description = "Run Chai-1 structure prediction from preprocessed FASTA input"
+inputs = ["chai_input.fasta"]
+outputs = ["*.cif", "chai_summary.json"]
+
+[container]
+image = "chai:2026_05_20"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.num_trunk_recycles]
+type = "integer"
+default = 3
+hint = "Number of trunk recycling steps"
+
+[params.num_diffusion_timesteps]
+type = "integer"
+default = 50
+hint = "Number of diffusion timesteps (50 recommended, 200 for higher quality but requires >8GB VRAM)"

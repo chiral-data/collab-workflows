@@ -1,0 +1,26 @@
+name = "Boltz-2 Structure Prediction"
+description = "Run Boltz-2 structure prediction from preprocessed YAML input"
+inputs = ["boltz_input.yaml"]
+outputs = ["*.pdb", "confidence_*.json", "boltz_summary.json"]
+
+[container]
+image = "ghcr.io/chiral-data/boltz:2025_09_05"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.diffusion_samples]
+type = "integer"
+default = 2
+hint = "Number of diffusion samples (2 for testing, 5+ for production)"
+
+[params.recycling_steps]
+type = "integer"
+default = 3
+hint = "Number of recycling steps for structure refinement"
+
+[params.use_msa_server]
+type = "boolean"
+default = true
+hint = "Use MSA server for multiple sequence alignment"

@@ -1,0 +1,15 @@
+name = "Download Sequence"
+description = "Download a protein sequence from UniProt by accession ID"
+outputs = ["*.fasta"]
+
+[container]
+image = "ghcr.io/chiral-data/boltz:2025_09_05"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.uniprot_id]
+type = "string"
+default = "P69905"
+hint = "UniProt accession ID (e.g. P69905 for human hemoglobin alpha chain)"

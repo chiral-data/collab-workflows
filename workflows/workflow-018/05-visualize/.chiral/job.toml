@@ -1,0 +1,11 @@
+name = "Visualization"
+description = "Generate comparison dashboard for Boltz-2 and Chai-1 predictions"
+inputs = ["boltz_summary.json", "chai_summary.json", "*.pdb", "*.cif"]
+outputs = ["comparison_report.html"]
+
+[container]
+image = "ghcr.io/chiral-data/boltz:2025_09_05"
+use_gpu = false
+
+[scripts]
+run = "run.sh"

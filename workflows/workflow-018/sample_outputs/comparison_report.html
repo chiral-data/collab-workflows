@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boltz-2 vs Chai-1 Comparison</title>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --boltz: #0284c7;
+            --chai:  #7c3aed;
+            --excellent: #0f766e;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #075985 0%, #0284c7 100%);
+            min-height: 100vh; margin: 0; color: #1f2937;
+        }
+        .main-container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header {
+            background: rgba(255,255,255,0.95); border-radius: 15px;
+            padding: 30px; margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .header h1 { color: #075985; font-size: 2.2rem; font-weight: 700; margin: 0 0 8px 0; }
+        .header .subtitle { color: #64748b; font-size: 1rem; margin: 0; }
+        .card {
+            background: rgba(255,255,255,0.95); border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1); margin-bottom: 30px;
+            transition: transform 0.2s ease;
+        }
+        .card:hover { transform: translateY(-2px); }
+        .card-header {
+            background: linear-gradient(135deg, #075985 0%, #0284c7 100%);
+            color: white; border-radius: 15px 15px 0 0 !important;
+            padding: 18px 25px; font-weight: 600; font-size: 1.05rem;
+        }
+        .summary-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; margin-bottom: 30px;
+        }
+        .summary-card {
+            background: rgba(255,255,255,0.95); border-radius: 15px;
+            padding: 22px; text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .summary-card .tool-label {
+            font-size: 0.8rem; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 6px;
+        }
+        .summary-card .value { font-size: 1.8rem; font-weight: 700; }
+        .summary-card .metric-name { color: #64748b; font-size: 0.85rem; }
+        .boltz-label { color: var(--boltz); }
+        .chai-label  { color: var(--chai);  }
+        .plot-container { padding: 20px; }
+        .note { font-size: 0.8rem; color: #64748b; padding: 8px 20px 0; }
+        .table th { background: #f8fafc; font-weight: 600; color: #075985; }
+        .table tbody tr:hover { background: rgba(7,89,133,0.05); }
+    </style>
+</head>
+<body>
+<div class="main-container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1><i class="fas fa-balance-scale"></i> Boltz-2 vs Chai-1 Structure Prediction</h1>
+        <p class="subtitle">
+            <strong>Generated:</strong> 2026-05-20 06:23:16 &nbsp;|&nbsp;
+            Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
+            PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
+        </p>
+    </div>
+
+    <!-- Top metric summary cards -->
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="tool-label boltz-label">Boltz-2</div>
+            <div class="value boltz-label">0.953</div>
+            <div class="metric-name">pLDDT (best model)</div>
+        </div>
+        <div class="summary-card">
+            <div class="tool-label chai-label">Chai-1</div>
+            <div class="value chai-label">0.928</div>
+            <div class="metric-name">pLDDT (best model)</div>
+        </div>
+        <div class="summary-card">
+            <div class="tool-label boltz-label">Boltz-2</div>
+            <div class="value boltz-label">0.928</div>
+            <div class="metric-name">pTM (best model)</div>
+        </div>
+        <div class="summary-card">
+            <div class="tool-label chai-label">Chai-1</div>
+            <div class="value chai-label">0.927</div>
+            <div class="metric-name">pTM (best model)</div>
+        </div>
+        <div class="summary-card">
+            <div class="tool-label" style="color:#475569;">pLDDT Winner</div>
+            <div class="value" style="font-size:1.1rem;color:#0f766e;">
+                Boltz-2 ✓
+            </div>
+            <div class="metric-name">Higher pLDDT = better</div>
+        </div>
+    </div>
+
+    <!-- Side-by-side shared metric bar chart -->
+    <div class="card">
+        <div class="card-header"><i class="fas fa-chart-bar"></i> Shared Metrics Comparison (Best Models)</div>
+        <div class="plot-container" id="metricChart"></div>
+    </div>
+
+    <!-- Additional tool-specific metrics -->
+    <div class="card">
+        <div class="card-header"><i class="fas fa-th"></i> Additional Metrics (Tool-Specific)</div>
+        <p class="note">
+            Boltz-2 reports PAE &amp; PDE (error in Å, lower is better).
+            Chai-1 reports Aggregate Score = 0.2×pTM + 0.8×ipTM − clash penalty (higher is better).
+            These metrics are not directly comparable across tools.
+        </p>
+        <div class="plot-container" id="extraChart"></div>
+    </div>
+
+    <!-- Detailed table -->
+    <div class="card">
+        <div class="card-header"><i class="fas fa-table"></i> All Models — Detailed Metrics</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Tool</th><th>Sample</th>
+                            <th>pLDDT (0–1)</th><th>pTM (0–1)</th><th>ipTM (0–1)</th>
+                            <th>PAE mean (Å)</th><th>PDE mean (Å)</th>
+                            <th>Aggregate Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        <tr>
+            <td><span style="background:#0284c7;color:white;padding:2px 8px;
+                border-radius:10px;font-size:11px;">Boltz-2</span></td>
+            <td>boltz_input_model_0</td>
+            <td>0.9525</td>
+            <td>0.9281</td>
+            <td>0.0000</td>
+            <td>2.8196</td>
+            <td>0.3731</td>
+            <td>—</td>
+        </tr>
+
+        <tr>
+            <td><span style="background:#0284c7;color:white;padding:2px 8px;
+                border-radius:10px;font-size:11px;">Boltz-2</span></td>
+            <td>boltz_input_model_1</td>
+            <td>0.9511</td>
+            <td>0.9254</td>
+            <td>0.0000</td>
+            <td>2.8825</td>
+            <td>0.3799</td>
+            <td>—</td>
+        </tr>
+
+        <tr>
+            <td><span style="background:#7c3aed;color:white;padding:2px 8px;
+                border-radius:10px;font-size:11px;">Chai-1</span></td>
+            <td>model_0</td>
+            <td>0.9274</td>
+            <td>0.9270</td>
+            <td>0.0000</td>
+            <td>—</td>
+            <td>—</td>
+            <td>0.1854</td>
+        </tr>
+
+        <tr>
+            <td><span style="background:#7c3aed;color:white;padding:2px 8px;
+                border-radius:10px;font-size:11px;">Chai-1</span></td>
+            <td>model_1</td>
+            <td>0.9273</td>
+            <td>0.9269</td>
+            <td>0.0000</td>
+            <td>—</td>
+            <td>—</td>
+            <td>0.1854</td>
+        </tr>
+
+        <tr>
+            <td><span style="background:#7c3aed;color:white;padding:2px 8px;
+                border-radius:10px;font-size:11px;">Chai-1</span></td>
+            <td>model_2</td>
+            <td>0.9269</td>
+            <td>0.9269</td>
+            <td>0.0000</td>
+            <td>—</td>
+            <td>—</td>
+            <td>0.1854</td>
+        </tr>
+
+        <tr>
+            <td><span style="background:#7c3aed;color:white;padding:2px 8px;
+                border-radius:10px;font-size:11px;">Chai-1</span></td>
+            <td>model_3</td>
+            <td>0.9274</td>
+            <td>0.9272</td>
+            <td>0.0000</td>
+            <td>—</td>
+            <td>—</td>
+            <td>0.1854</td>
+        </tr>
+
+        <tr>
+            <td><span style="background:#7c3aed;color:white;padding:2px 8px;
+                border-radius:10px;font-size:11px;">Chai-1</span></td>
+            <td>model_4</td>
+            <td>0.9276</td>
+            <td>0.9273</td>
+            <td>0.0000</td>
+            <td>—</td>
+            <td>—</td>
+            <td>0.1855</td>
+        </tr></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// ── Shared metric comparison chart ──
+Plotly.newPlot('metricChart', [
+    {
+        name: 'Boltz-2',
+        type: 'bar',
+        x: ["pLDDT", "pTM", "ipTM"],
+        y: [0.9525, 0.9281, 0],
+        marker: { color: '#0284c7' },
+        text: ["0.9525", "0.9281", "0"],
+        textposition: 'outside'
+    },
+    {
+        name: 'Chai-1',
+        type: 'bar',
+        x: ["pLDDT", "pTM", "ipTM"],
+        y: [0.9276, 0.9273, 0],
+        marker: { color: '#7c3aed' },
+        text: ["0.9276", "0.9273", "0"],
+        textposition: 'outside'
+    }
+], {
+    barmode: 'group',
+    yaxis: { title: 'Score (0–1)', range: [0, 1.1] },
+    xaxis: { title: 'Metric' },
+    template: 'plotly_white',
+    legend: { orientation: 'h', y: -0.2 },
+    height: 380,
+    margin: { t: 30, b: 80 }
+});
+
+// ── Tool-specific additional metrics ──
+Plotly.newPlot('extraChart', [
+    {
+        name: 'Boltz-2 — PAE mean (Å)',
+        type: 'bar',
+        x: ['PAE mean (Å)', 'PDE mean (Å)'],
+        y: [2.8196, 0.3731],
+        marker: { color: '#0284c7' },
+        text: ['2.8196', '0.3731'],
+        textposition: 'outside'
+    },
+    {
+        name: 'Chai-1 — Aggregate Score',
+        type: 'bar',
+        x: ['Aggregate Score'],
+        y: [0.1855],
+        marker: { color: '#7c3aed' },
+        text: ['0.1855'],
+        textposition: 'outside'
+    }
+], {
+    barmode: 'group',
+    yaxis: { title: 'Value' },
+    template: 'plotly_white',
+    legend: { orientation: 'h', y: -0.2 },
+    height: 350,
+    margin: { t: 30, b: 80 }
+});
+</script>
+</body>
+</html>
