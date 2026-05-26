@@ -25,9 +25,9 @@ if python -c "import flask" 2>/dev/null; then
     echo "Copying model files for web app..."
     
     # Define paths
-    MODEL_SRC="../03-model-training/outputs/model.h5"
-    SCALER_SRC="../02-feature-engineering/outputs/scaler.pkl"
-    AD_SRC="../02-feature-engineering/outputs/ad_stats.json"
+    MODEL_SRC="inputs/model.h5"
+    SCALER_SRC="inputs/scaler.pkl"
+    AD_SRC="inputs/ad_stats.json"
 
     # Copy with verbose output
     if [ -f "$MODEL_SRC" ]; then
@@ -36,7 +36,7 @@ if python -c "import flask" 2>/dev/null; then
     else
         echo "⚠️  WARNING: Could not find $MODEL_SRC"
         # Debug: Look for it elsewhere
-        find .. -name "model.h5"
+        find inputs/ -name "model.h5"
     fi
 
     if [ -f "$SCALER_SRC" ]; then
