@@ -2,6 +2,9 @@ name = "QSAR_Modeling_Pipeline"
 description = "Machine Learning-Based Drug Discovery with Premium Interactive Visualization"
 
 [dependencies]
+# Node 1 depends on Node 0
+01-data-preparation = ["00-download-inputs"]
+
 # Node 2 depends on Node 1
 02-feature-engineering = ["01-data-preparation"]
 

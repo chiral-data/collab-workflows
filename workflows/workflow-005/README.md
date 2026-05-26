@@ -6,6 +6,7 @@ A comprehensive, modular Deep Learning pipeline for Quantitative Structure-Activ
 
 - [Architecture & Data Architecture](#-architecture--data-flow)
 - [Workflow Nodes](#-workflow-nodes-deep-dive)
+  - [Node 00: Download Inputs](#node-00-download-inputs)
   - [Node 01: Preparation](#node-01-data-preparation)
   - [Node 02: Feature Engineering](#node-02-feature-engineering)
   - [Node 03: Model Training](#node-03-model-training)
@@ -22,9 +23,9 @@ This workflow follows a linear, 4-stage pipeline architecture where each stage (
 
 ```mermaid
 graph TD
-    A["Raw Data (CSV)"] -->|Inputs| N1
     subgraph Workflow
-        N1["01: Data Preparation"] -->|Descriptors| N2["02: Feature Engineering"]
+        N0["00: Download Inputs"] -->|"SpikeRBD_DD.csv"| N1["01: Data Preparation"]
+        N1 -->|Descriptors| N2["02: Feature Engineering"]
         N2 -->|"Scaled Data + AD Stats"| N3["03: Model Training"]
         N3 -->|"Model.h5"| N4["04: Prediction"]
         N2 -->|"Scaler + AD Stats"| N4
@@ -42,6 +43,13 @@ graph TD
 ---
 
 ## 📦 Workflow Nodes: Deep Dive
+
+### Node 00: Download Inputs
+
+**Goal**: Fetch the sample QSAR dataset before the pipeline begins.
+
+- **Process**: Downloads `SpikeRBD_DD.csv` from the repository's `input_files/` directory via HTTPS. The source URL is configurable via the `csv_url` parameter.
+- **Output**: `SpikeRBD_DD.csv`
 
 ### Node 01: Data Preparation
 
@@ -116,6 +124,10 @@ The workflow is highly configurable via `.chiral/job.toml` files in each node di
 ```text
 ├── .chiral/
 │   └── workflow.toml             # Main Workflow Definition
+├── 00-download-inputs/
+│   ├── .chiral/job.toml
+│   ├── download.py               # Downloads SpikeRBD_DD.csv
+│   └── run.sh
 ├── 01-data-preparation/
 │   ├── .chiral/job.toml
 │   ├── outputs/                  # Generated Artifacts
