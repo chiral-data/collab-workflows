@@ -28,6 +28,7 @@ jobs:
             | grep '^apps/' \
             | awk -F'/' '{print $2"/"$3}' \
             | sort -u \
+            | while read dir; do [ -f "apps/$dir/Dockerfile" ] && echo "$dir"; done \
             | jq -R . | jq -sc .)
           echo "matrix=$DIRS" >> $GITHUB_OUTPUT
           echo "Changed: $DIRS"
