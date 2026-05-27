@@ -26,6 +26,8 @@ RUN apt-get update -qq && apt-get install -y -q patchelf && \
     find /opt/conda -name "libtensorflow_cc.so*" -exec patchelf --clear-execstack {} \; && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+ENV PATH=/opt/conda/bin:$PATH
+
 WORKDIR /workspace
 
 LABEL description="QSAR Workflow Environment"
