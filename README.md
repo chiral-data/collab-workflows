@@ -26,3 +26,4 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 20. [RNA-Seq Differential Expression Analysis](workflows/workflow-020/README.md) — featureCounts → DESeq2 → MA/Volcano/PCA plots by [Chelsea Uju Amajirionwu](https://github.com/ChelseaSeqs)
 21. [MVRBind RNA Binding Site Prediction](https://github.com/rogerwq/mvrbind-workflow) — per-nucleotide RNA-small molecule binding site prediction using multi-view GCN by Chiral Dev Team
 22. [RiNALMo RNA Secondary Structure Prediction](https://github.com/rogerwq/rinalmo-workflow) — secondary structure prediction using the 650M-param RiNALMo language model (bpRNA fine-tuned) by Chiral Dev Team
+23. [AI-ADMET Property Prediction](https://github.com/AliGhiami/ai-admet-chiral-workflow) — 49 ADMET property predictions with DrugBank percentile scoring and MPO-ranked HTML report by [Ali Ghiami](https://github.com/AliGhiami)
