@@ -28,6 +28,11 @@ RUN mamba install -y -c conda-forge \
     keras \
     && mamba clean -afy
 
+# Fix TensorFlow execstack issue on kernels with noexecstack
+RUN apt-get update -qq && apt-get install -y -q patchelf && \
+    find /opt/conda -name "libtensorflow_cc.so*" -exec patchelf --clear-execstack {} \; && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /workspace
 
 # Metadata
