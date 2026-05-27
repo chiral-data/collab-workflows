@@ -18,10 +18,7 @@ RUN micromamba install -y -n base -c conda-forge \
     && micromamba clean -afy
 
 # Install Deep Learning Framework (TensorFlow/Keras)
-RUN micromamba install -y -n base -c conda-forge \
-    tensorflow \
-    keras \
-    && micromamba clean -afy
+RUN pip install --no-cache-dir tensorflow keras
 
 # Fix TensorFlow execstack issue on kernels with noexecstack
 USER root
