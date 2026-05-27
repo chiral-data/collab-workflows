@@ -5,7 +5,7 @@ inputs = ["scaler.pkl", "ad_stats.json", "model.h5"]
 outputs = ["outputs/data.json", "outputs/report.html", "outputs/predictions.csv"]
 
 [container]
-image = "ghcr.io/chiral-data/qsar:20260107_v1"
+image = "qsar:20260527"
 
 [scripts]
 run = "run.sh"

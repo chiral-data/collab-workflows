@@ -1,0 +1,14 @@
+name = "Download Input Files"
+description = "Download sample QSAR dataset (SpikeRBD_DD.csv)"
+outputs = ["*.csv"]
+
+[container]
+image = "docker.io/library/python:3.11-slim"
+
+[scripts]
+run = "run.sh"
+
+[params.csv_url]
+type = "string"
+default = "https://raw.githubusercontent.com/chiral-data/collab-workflows/main/workflows/workflow-005/input_files/SpikeRBD_DD.csv"
+hint = "Direct URL to the input CSV file"
