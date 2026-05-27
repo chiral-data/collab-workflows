@@ -6,6 +6,12 @@ on:
       - main
     paths:
       - "apps/*/*/**"
+  workflow_dispatch:
+    inputs:
+      app_dir:
+        description: "App directory to build (e.g. q/qsar_20260527)"
+        required: true
+        type: string
 
 env:
   REGISTRY: ghcr.io/chiral-data
@@ -24,12 +30,16 @@ jobs:
       - name: Detect changed app directories
         id: changed
         run: |
-          DIRS=$(git diff --name-only HEAD~1 HEAD \
-            | grep '^apps/' \
-            | awk -F'/' '{print $2"/"$3}' \
-            | sort -u \
-            | while read dir; do [ -f "apps/$dir/Dockerfile" ] && echo "$dir"; done \
-            | jq -R . | jq -sc .)
+          if [ -n "${{ inputs.app_dir }}" ]; then
+            DIRS=$(echo "${{ inputs.app_dir }}" | jq -R . | jq -sc .)
+          else
+            DIRS=$(git diff --name-only HEAD~1 HEAD \
+              | grep '^apps/' \
+              | awk -F'/' '{print $2"/"$3}' \
+              | sort -u \
+              | while read dir; do [ -f "apps/$dir/Dockerfile" ] && echo "$dir"; done \
+              | jq -R . | jq -sc .)
+          fi
           echo "matrix=$DIRS" >> $GITHUB_OUTPUT
           echo "Changed: $DIRS"
 
