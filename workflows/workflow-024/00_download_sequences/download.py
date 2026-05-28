@@ -32,6 +32,7 @@ def _load_params():
         "organism":          os.environ.get("PARAM_ORGANISM") or      gp.get("organism", ""),
         "email":             os.environ.get("PARAM_EMAIL",             gp.get("email", "user@example.com")),
         "ncbi_api_key":      os.environ.get("PARAM_NCBI_API_KEY",      gp.get("ncbi_api_key", "")),
+        "target_fasta":      os.environ.get("PARAM_TARGET_FASTA",      gp.get("target_fasta", "")),
         "target_gene":       os.environ.get("PARAM_TARGET_GENE",       gp.get("target_gene", "")),
         "max_target_seqs":   int(os.environ.get("PARAM_MAX_TARGET_SEQS",  str(gp.get("max_target_seqs", 3)))),
         "max_relative_seqs": int(os.environ.get("PARAM_MAX_RELATIVE_SEQS", str(gp.get("max_relative_seqs", 5)))),
@@ -155,13 +156,14 @@ def _get_close_relatives(organism, n, email, api_key):
 
 
 def main():
-    params    = _load_params()
-    organism  = params["organism"]
-    email     = params["email"]
-    api_key   = params["ncbi_api_key"]
-    gene      = params["target_gene"]
-    max_tgt   = params["max_target_seqs"]
-    max_rel   = params["max_relative_seqs"]
+    params       = _load_params()
+    organism     = params["organism"]
+    email        = params["email"]
+    api_key      = params["ncbi_api_key"]
+    target_fasta = params["target_fasta"]
+    gene         = params["target_gene"]
+    max_tgt      = params["max_target_seqs"]
+    max_rel      = params["max_relative_seqs"]
 
     os.makedirs("./outputs", exist_ok=True)
 
@@ -174,9 +176,44 @@ def main():
         with open("./outputs/global_params.json", "w") as f:
             json.dump({"organism": organism, "email": email}, f, indent=2)
 
-    # Offline mode: only fall back to user-provided FASTAs when no organism is specified
-    tgt_in  = "./inputs/target.fasta"
     excl_in = "./inputs/exclusion.fasta"
+
+    # target_fasta mode: use a named FASTA from inputs/ as the target sequence
+    if target_fasta:
+        tgt_path = f"./inputs/{target_fasta}"
+        if not os.path.exists(tgt_path):
+            log.error("target_fasta '%s' not found in inputs/ — check the filename in global_params.json", target_fasta)
+            sys.exit(1)
+        log.info("Using user-provided target FASTA: %s", target_fasta)
+        shutil.copy(tgt_path, "./outputs/target.fasta")
+
+        # Exclusion: use inputs/exclusion.fasta if present, otherwise fetch from NCBI
+        if os.path.exists(excl_in):
+            log.info("Using user-provided exclusion.fasta from inputs/")
+            shutil.copy(excl_in, "./outputs/exclusion.fasta")
+        elif organism:
+            log.info("Fetching exclusion sequences from NCBI for organism: '%s'", organism)
+            from Bio import SeqIO
+            if gene:
+                excl_recs = _get_close_relative_gene_sequences(organism, gene, max_rel, email, api_key)
+            else:
+                excl_recs = _get_close_relatives(organism, max_rel, email, api_key)
+            total_bp = sum(len(r.seq) for r in excl_recs)
+            if total_bp > 10_000_000 and len(excl_recs) > 5:
+                log.warning("Large exclusion set (%.1f MB) — capping to 5 sequences", total_bp / 1e6)
+                excl_recs = excl_recs[:5]
+            log.info("Fetched %d exclusion sequence(s)", len(excl_recs))
+            with open("./outputs/exclusion.fasta", "w") as fh:
+                SeqIO.write(excl_recs, fh, "fasta")
+        else:
+            log.warning("No exclusion source — writing empty exclusion.fasta (all ROIs will score 1.0)")
+            open("./outputs/exclusion.fasta", "w").close()
+
+        log.info("Download complete.")
+        return
+
+    # Full offline mode: both FASTAs present in inputs/ and no organism specified
+    tgt_in = "./inputs/target.fasta"
     if not organism and os.path.exists(tgt_in) and os.path.exists(excl_in):
         log.info("No organism specified — using user-provided FASTAs in inputs/")
         shutil.copy(tgt_in,  "./outputs/target.fasta")

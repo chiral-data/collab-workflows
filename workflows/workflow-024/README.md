@@ -6,15 +6,15 @@ End-to-end design and validation of qPCR primer/probe sets for any target organi
 
 ## Overview
 
-Given a target organism name, this workflow:
+Given a target organism and sequence source, this workflow:
 
-1. Downloads target genome sequences and close-relative sequences from NCBI Entrez (or accepts user-provided FASTAs)
-2. Validates the FASTA inputs
-3. Scans for Regions of Interest (ROIs) unique to the target using k-mer subtraction against close-relative sequences
-4. Designs a forward primer, reverse primer, and hydrolysis TaqMan probe for each ROI using Primer3, enforcing Tm, GC, amplicon size, self-dimer, and hairpin constraints
-5. Validates the top primer sets for specificity using local BLAST+, then generates JSON, TSV, and human-readable TXT reports
+1. Resolves target and exclusion FASTA sequences — from a user-supplied file (`target_fasta`), from `input_files/target.fasta` + `exclusion.fasta` (full offline mode), or by downloading from NCBI Entrez using `organism`
+2. Validates the FASTA inputs (format, sequence count, length, nucleotide alphabet)
+3. Scans for Regions of Interest (ROIs) unique to the target using a sliding-window k-mer subtraction against close-relative exclusion sequences
+4. Designs a forward primer, reverse primer, and hydrolysis TaqMan probe for each ROI using Primer3, enforcing Tm, GC%, amplicon size, probe Tm-delta, self-dimer, and hairpin constraints
+5. Validates the top primer sets for specificity using a local organism-scoped BLAST+ database, then generates JSON, TSV, and human-readable TXT reports
 
-Supports whole-genome mode and gene-targeted mode (e.g. `cpn60`, `rpoB`, `rnaseh`).
+Supports whole-genome mode, gene-targeted mode (e.g. `cpn60`, `rpoB`), and reference-FASTA mode via `target_fasta`.
 
 ## Pipeline
 
@@ -24,26 +24,28 @@ Supports whole-genome mode and gene-targeted mode (e.g. `cpn60`, `rpoB`, `rnaseh
 
 ## Nodes
 
-| Node | Name                    | Description                                                          | Key Outputs                                    |
-|------|-------------------------|----------------------------------------------------------------------|------------------------------------------------|
-| 00   | Download Sequences      | Fetch target + exclusion FASTAs from NCBI, or copy from input_files/ | `target.fasta`, `exclusion.fasta`              |
-| 01   | Validate Inputs         | Check FASTA format, sequence count, length, nucleotide content       | `validation_summary.json`                       |
-| 02   | ROI Selection           | K-mer uniqueness scan; top-N non-overlapping ROI windows             | `rois.json`                                    |
-| 03   | Primer Design           | Primer3 design + thermodynamic constraint check                      | `primer_sets.json`                             |
-| 04   | BLAST Validation/Report | Local BLAST+ specificity check + JSON/TSV/TXT reports                | `results.json`, `results.tsv`, `report.txt`    |
+| Node | Name                    | Description                                                                               | Key Outputs                                 |
+|------|-------------------------|-------------------------------------------------------------------------------------------|---------------------------------------------|
+| 00   | Download Sequences      | Resolve target + exclusion FASTAs from inputs/ or NCBI                                   | `target.fasta`, `exclusion.fasta`           |
+| 01   | Validate Inputs         | Check FASTA format, sequence count, length, nucleotide content                            | `validation_summary.json`                   |
+| 02   | ROI Selection           | Sliding-window k-mer uniqueness scan; select top-N non-overlapping ROI windows            | `rois.json`                                 |
+| 03   | Primer Design           | Primer3 design + thermodynamic constraint filtering (exit code 2 = no primers, not error) | `primer_sets.json`                          |
+| 04   | BLAST Validation/Report | Local BLAST+ specificity check + JSON/TSV/TXT reports (exit code 2 = no sets pass)       | `results.json`, `results.tsv`, `report.txt` |
 
 ## Input Files
 
-Place these in `input_files/` to run in **offline mode** (skips NCBI download):
+Place files in `input_files/` for offline or hybrid operation.
 
 | File | Description |
 |------|-------------|
-| `target.fasta` | One or more target organism sequences (FASTA format) |
-| `exclusion.fasta` | Close-relative sequences for specificity screening (FASTA format). An empty file is accepted — all ROI windows score 1.0 |
+| `<name>.fasta` | Any target sequence FASTA — reference via `target_fasta` in global_params.json |
+| `exclusion.fasta` | Close-relative sequences for specificity screening. An empty file is accepted — all ROI windows score 1.0 |
 
-Sample test files for *Rickettsia rickettsii* are included.
+### Operating modes (Node 00 resolution order)
 
-If these files are absent, Node 00 downloads from NCBI using the `organism` parameter.
+1. **`target_fasta` mode** (hybrid): `target_fasta` is set in `global_params.json` → Node 00 copies `inputs/<target_fasta>` as the target. For exclusion, it uses `inputs/exclusion.fasta` if present, otherwise fetches close relatives from NCBI using `organism`.
+2. **Full offline mode**: `target_fasta` is empty, `organism` is empty, and both `target.fasta` and `exclusion.fasta` are present in `input_files/` → Node 00 copies both files through.
+3. **NCBI download mode**: fetches target sequences (whole-genome or gene-targeted via `target_gene`) and close-relative exclusion sequences from NCBI Entrez.
 
 ## Parameters
 
@@ -51,10 +53,11 @@ If these files are absent, Node 00 downloads from NCBI using the `organism` para
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `organism` | string | `"Rickettsia rickettsii"` | Target organism scientific name |
-| `email` | string | `"user@example.com"` | Email for NCBI Entrez (required) |
+| `organism` | string | `""` | Target organism scientific name (for NCBI queries and BLAST database scoping) |
+| `email` | string | `"user@example.com"` | Email for NCBI Entrez API (required for NCBI modes) |
 | `ncbi_api_key` | string | `""` | NCBI API key (optional; raises rate limit to 10 req/sec) |
-| `target_gene` | string | `""` | Gene name for gene-targeted mode (e.g. `cpn60`, `rpoB`) |
+| `target_fasta` | string | `""` | Filename of a FASTA in `input_files/` to use as the target (skips NCBI target fetch) |
+| `target_gene` | string | `""` | Gene name for gene-targeted NCBI mode (e.g. `cpn60`, `rpoB`). Ignored when `target_fasta` is set. |
 | `max_target_seqs` | integer | `3` | Max target sequences to fetch from NCBI |
 | `max_relative_seqs` | integer | `5` | Max close-relative sequences for exclusion |
 | `roi_window` | integer | `500` | ROI window size in bp |
@@ -63,20 +66,22 @@ If these files are absent, Node 00 downloads from NCBI using the `organism` para
 | `top_rois` | integer | `3` | Top ROIs to pass to Primer3 |
 | `primer_min_size` | integer | `19` | Min primer length (nt) |
 | `primer_opt_size` | integer | `20` | Optimal primer length (nt) |
-| `primer_max_size` | integer | `26` | Max primer length (nt) — increase to 28 for difficult organisms |
+| `primer_max_size` | integer | `26` | Max primer length (nt) |
 | `primer_min_tm` | float | `59.0` | Min primer Tm (°C) |
 | `primer_opt_tm` | float | `60.0` | Optimal primer Tm (°C) |
 | `primer_max_tm` | float | `62.0` | Max primer Tm (°C) |
+| `primer_min_gc` | float | `40.0` | Min primer GC% |
+| `primer_max_gc` | float | `60.0` | Max primer GC% |
 | `amplicon_min` | integer | `70` | Min amplicon size (bp) |
 | `amplicon_max` | integer | `200` | Max amplicon size (bp) |
-| `blast_sets` | integer | `3` | Number of top sets to BLAST |
+| `blast_sets` | integer | `3` | Number of top primer sets to BLAST |
 | `skip_blast` | boolean | `false` | Skip BLAST validation (design-only mode) |
 
 ## Output Files
 
 | File | Description |
 |------|-------------|
-| `results.json` | Machine-readable full results: all primer sets with Tm, GC, BLAST hits |
+| `results.json` | Machine-readable full results: all primer sets with Tm, GC%, amplicon size, BLAST hits |
 | `results.tsv` | Spreadsheet-friendly summary of all primer sets |
 | `report.txt` | Human-readable ranked report with per-oligo stats and BLAST results |
 
@@ -85,17 +90,17 @@ If these files are absent, Node 00 downloads from NCBI using the `organism` para
 | Exit Code | Meaning |
 |-----------|---------|
 | `0` | Pipeline completed and at least one primer set passed all constraints. |
-| `2` | Pipeline completed successfully but **no primer sets passed all constraints**. This is a scientific result, not a technical failure — the pipeline ran to completion and all outputs were written. |
+| `2` | Pipeline completed successfully but **no primer sets were designed or passed all constraints**. This is a scientific result, not a technical failure — the pipeline ran to completion and all outputs were written. Nodes 03 and 04 both return exit code 2 for their respective no-result conditions; the harness treats this as success. |
 
 ### What to do when exit code 2 is returned
 
 Inspect the output files in `04_blast_report/outputs/` to understand which constraints failed:
 
-- **`report.txt`** — Human-readable ranked report. Each primer set shows which thermodynamic, GC, and BLAST constraints it passed or failed, making it easy to identify the binding constraint.
-- **`results.tsv`** — Spreadsheet-friendly summary of all designed sets with per-oligo stats. Open in Excel or any TSV viewer to sort and filter by Tm, GC%, amplicon size, etc.
-- **`results.json`** — Machine-readable full results with all constraint values for every set. Useful for scripted analysis.
+- **`report.txt`** — Human-readable ranked report. Each primer set shows which thermodynamic, GC, and BLAST constraints it passed or failed.
+- **`results.tsv`** — Spreadsheet-friendly summary. Sort and filter by Tm, GC%, amplicon size.
+- **`results.json`** — Machine-readable full results with all constraint values.
 
-Then relax the offending parameters in `global_params.json` and re-run. Common adjustments:
+Then relax the offending parameters in `global_params.json` and re-run:
 
 | Symptom (from report.txt) | Parameter to relax |
 |---------------------------|--------------------|
@@ -106,28 +111,30 @@ Then relax the offending parameters in `global_params.json` and re-run. Common a
 
 ## Running
 
+### With a local reference FASTA (target_fasta mode)
+
+1. Place the reference FASTA in `input_files/` (e.g. `vly_reference.fasta`)
+2. Set `target_fasta` to the filename in `global_params.json`
+3. Optionally place `exclusion.fasta` in `input_files/`; if absent, close relatives are fetched from NCBI using `organism`
+4. Launch Silva and select `workflow-024`
+
 ### With NCBI download (online mode)
 
 1. Set `organism` and `email` in `global_params.json`
-2. Set `SILVA_WORKFLOW_HOME` to the parent of `workflow-024/`
+2. Optionally set `target_gene` for gene-targeted mode (e.g. `cpn60`, `rpoB`)
 3. Launch Silva and select `workflow-024`
-4. Press Enter
 
-### With local FASTAs (offline mode)
+### Full offline mode
 
 1. Place `target.fasta` and `exclusion.fasta` in `input_files/`
-2. Set `organism` in `global_params.json` (used for BLAST specificity evaluation)
-3. Follow steps 2–4 above
-
-### Gene-targeted mode
-
-For organisms where whole-genome ROIs are impractical (e.g. large or fragmentary assemblies), set `target_gene` to a specific gene (e.g. `cpn60`, `rpoB`). The pipeline will fetch gene sequences for both target and exclusion, and auto-adjust the ROI window to fit shorter sequences.
+2. Leave `organism` and `target_fasta` empty in `global_params.json`
+3. Launch Silva and select `workflow-024`
 
 ## Requirements
 
 - Docker
 - Silva (https://github.com/chiral-data/silva)
-- Internet access (online mode only)
+- Internet access (NCBI modes only)
 
 Build the Docker image:
 
