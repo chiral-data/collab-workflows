@@ -1,0 +1,11 @@
+name        = "Validate Inputs"
+description = "Validate input YAML: check required fields and sequence characters"
+inputs      = ["*.yaml"]
+outputs     = ["validated.yaml"]
+
+[container]
+image   = "esmfold2:2026_05_28"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
