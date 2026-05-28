@@ -266,14 +266,14 @@ def generate_report():
         function createCard(item, index) {{
             const drugName = item.drug_name || `Compound ${{index + 1}}`;
             const adClass = item.ad_status === 'IN' ? 'ad-in' : 'ad-out';
-            const escapedSmiles = item.smiles.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+            const smilesAttr = item.smiles.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 
             return `
                 <div class="card" data-ad="${{item.ad_status}}" data-score="${{item.prediction}}">
-                    <div class="mol-canvas mol-placeholder" data-smiles="${{item.smiles.replace(/"/g, '&quot;')}}"></div>
+                    <div class="mol-canvas mol-placeholder" data-smiles="${{smilesAttr}}"></div>
                     <div class="card-content">
                         <h3>${{drugName}}</h3>
-                        <div class="smiles-box" onclick="copyToClipboard('${{escapedSmiles}}')" title="Click to copy SMILES">
+                        <div class="smiles-box" data-smiles="${{smilesAttr}}" onclick="copyToClipboard(this.dataset.smiles)" title="Click to copy SMILES">
                             <code>${{item.smiles}}</code>
                             <span class="copy-indicator">&#128203;</span>
                         </div>
