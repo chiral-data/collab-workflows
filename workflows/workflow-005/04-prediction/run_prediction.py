@@ -92,10 +92,6 @@ def get_param(param_name, default_if_missing=None):
     raise ValueError(f"Parameter {param_name} missing (Env Var and job.toml default)")
 
 def run():
-    with open("outputs/debug_env.txt", "w") as f:
-        for k, v in os.environ.items():
-            f.write(f"{k}={v}\n")
-    
     # Check if we should predict on all data from input CSV
     predict_all = os.environ.get("PREDICT_ALL_DATA", "true").lower() == "true"
     
