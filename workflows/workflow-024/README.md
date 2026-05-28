@@ -109,6 +109,19 @@ Then relax the offending parameters in `global_params.json` and re-run:
 | No ROIs found upstream | Lower `min_uniqueness` or increase `roi_window` |
 | All sets fail BLAST specificity | Review exclusion sequences, or set `skip_blast: true` to inspect designs first |
 
+## Requirements
+
+- Docker
+- Silva (https://github.com/chiral-data/silva)
+- Internet access (NCBI modes only)
+
+Build the Docker image:
+
+```bash
+cd workflow-024
+./build.sh
+```
+
 ## Running
 
 ### With a local reference FASTA (target_fasta mode)
@@ -130,15 +143,4 @@ Then relax the offending parameters in `global_params.json` and re-run:
 2. Leave `organism` and `target_fasta` empty in `global_params.json`
 3. Launch Silva and select `workflow-024`
 
-## Requirements
 
-- Docker
-- Silva (https://github.com/chiral-data/silva)
-- Internet access (NCBI modes only)
-
-Build the Docker image:
-
-```bash
-cd workflow-024
-./build.sh
-```
