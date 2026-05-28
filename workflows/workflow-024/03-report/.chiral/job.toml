@@ -1,0 +1,11 @@
+name        = "Generate Report"
+description = "HTML dashboard with 3Dmol.js structure viewer, pLDDT colouring, and PAE heatmap"
+inputs      = ["structure.cif", "confidence.json"]
+outputs     = ["report.html"]
+
+[container]
+image   = "esmfold2:2026_05_28"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
