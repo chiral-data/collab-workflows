@@ -73,7 +73,7 @@
     <div class="header">
         <h1><i class="fas fa-balance-scale"></i> Boltz-2 vs Chai-1 Structure Prediction</h1>
         <p class="subtitle">
-            <strong>Generated:</strong> 2026-05-28 08:35:54 &nbsp;|&nbsp;
+            <strong>Generated:</strong> 2026-05-28 08:41:26 &nbsp;|&nbsp;
             Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
             PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
         </p>
@@ -278,7 +278,7 @@ Plotly.newPlot('metricChart', [
     legend: { orientation: 'h', y: -0.2 },
     height: 380,
     margin: { t: 30, b: 80 }
-});
+}, {responsive: true});
 
 // ── Tool-specific additional metrics ──
 Plotly.newPlot('extraChart', [
@@ -307,7 +307,7 @@ Plotly.newPlot('extraChart', [
     legend: { orientation: 'h', y: -0.2 },
     height: 350,
     margin: { t: 30, b: 80 }
-});
+}, {responsive: true});
 
 // ── Mol* 3D viewers ──
 

@@ -74,7 +74,7 @@ def find_best_structure(summary_data, tool):
             for f in summary_data.get('cif_files', [])
         }
 
-    best = max(confidence, key=lambda x: x.get('plddt') or 0, default=None)
+    best = best_model(confidence)
     if not best:
         return None, None, None
 
@@ -148,7 +148,7 @@ def _table_row(tool, entry, color):
 
 def _viewer_panel(viewer_id, label, plddt, label_color, structure_content):
     """Return HTML for one Mol* viewer panel."""
-    plddt_str = f'{plddt:.3f}' if isinstance(plddt, float) else '—'
+    plddt_str = f'{plddt:.3f}' if isinstance(plddt, (int, float)) else '—'
     if structure_content is None:
         viewer_body = '<div style="height:480px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:0.9rem;">Structure file not available</div>'
     else:
@@ -160,11 +160,7 @@ def _viewer_panel(viewer_id, label, plddt, label_color, structure_content):
         </div>"""
 
 
-def _viewer_js(viewer_id, structure_content, fmt):
-    """Return JS block to initialise one Mol* viewer."""
-    if structure_content is None:
-        return ''
-    molstar_config = """{
+_MOLSTAR_CONFIG = """{
     layoutIsExpanded: false,
     layoutShowControls: false,
     layoutShowLeftPanel: false,
@@ -175,10 +171,16 @@ def _viewer_js(viewer_id, structure_content, fmt):
     viewportShowExpand: true,
     viewportShowSelectionMode: false,
   }"""
+
+
+def _viewer_js(viewer_id, structure_content, fmt):
+    """Return JS block to initialise one Mol* viewer."""
+    if structure_content is None:
+        return ''
     return f"""
   (function() {{
     var data = `{structure_content}`;
-    molstar.Viewer.create('{viewer_id}', {molstar_config})
+    molstar.Viewer.create('{viewer_id}', {_MOLSTAR_CONFIG})
       .then(function(v) {{ return v.loadStructureFromData(data, '{fmt}'); }})
       .catch(function(e) {{
         document.getElementById('{viewer_id}').innerHTML =
@@ -410,7 +412,7 @@ Plotly.newPlot('metricChart', [
     legend: {{ orientation: 'h', y: -0.2 }},
     height: 380,
     margin: {{ t: 30, b: 80 }}
-}});
+}}, {{responsive: true}});
 
 // ── Tool-specific additional metrics ──
 Plotly.newPlot('extraChart', [
@@ -439,7 +441,7 @@ Plotly.newPlot('extraChart', [
     legend: {{ orientation: 'h', y: -0.2 }},
     height: 350,
     margin: {{ t: 30, b: 80 }}
-}});
+}}, {{responsive: true}});
 
 // ── Mol* 3D viewers ──
 {boltz_js}
