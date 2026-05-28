@@ -20,10 +20,13 @@ log = logging.getLogger("download")
 
 def _load_params():
     gp = {}
-    gp_path = "./inputs/global_params.json"
-    if os.path.exists(gp_path):
-        with open(gp_path) as f:
-            gp = json.load(f)
+    # Probe multiple locations: inputs/ (standard Chiral forwarded file), then
+    # the workflow root mounted at the container CWD, then the local dev path.
+    for gp_path in ("./inputs/global_params.json", "./global_params.json", "../global_params.json"):
+        if os.path.exists(gp_path):
+            with open(gp_path) as f:
+                gp = json.load(f)
+            break
 
     return {
         "organism":          os.environ.get("PARAM_ORGANISM") or      gp.get("organism", ""),

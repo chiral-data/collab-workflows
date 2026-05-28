@@ -38,8 +38,9 @@ def _load_params():
 
 # ── BLAST db builder ──────────────────────────────────────────────────────────
 
-def _build_blast_db(target_fasta, exclusion_fasta):
-    db_dir = "/tmp/blast_db"
+def _build_blast_db(target_fasta, exclusion_fasta, organism="unknown"):
+    organism_slug = "".join(c if c.isalnum() else "_" for c in organism).lower().strip("_")
+    db_dir = os.path.join("/tmp/blast_db", organism_slug)
     os.makedirs(db_dir, exist_ok=True)
     combined_fasta = os.path.join(db_dir, "combined.fasta")
     db_prefix      = os.path.join(db_dir, "qpcr_db")
@@ -370,7 +371,7 @@ def main():
     log.info("Loaded %d primer set(s) for organism: %s", len(primer_sets), organism)
 
     if not skip_blast:
-        db_path = _build_blast_db("./inputs/target.fasta", "./inputs/exclusion.fasta")
+        db_path = _build_blast_db("./inputs/target.fasta", "./inputs/exclusion.fasta", organism)
         if db_path:
             log.info("Running BLAST validation on top %d set(s)...", blast_n)
             primer_sets = _validate_primer_sets(primer_sets, organism, db_path, blast_n)
