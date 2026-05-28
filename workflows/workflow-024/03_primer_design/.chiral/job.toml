@@ -39,6 +39,16 @@ type = "float"
 default = 62.0
 hint = "Maximum primer melting temperature (°C)"
 
+[params.primer_min_gc]
+type = "float"
+default = 40.0
+hint = "Minimum primer GC content (%)"
+
+[params.primer_max_gc]
+type = "float"
+default = 60.0
+hint = "Maximum primer GC content (%)"
+
 [params.amplicon_min]
 type = "integer"
 default = 70

@@ -2,7 +2,7 @@
 
 End-to-end design and validation of qPCR primer/probe sets for any target organism.
 
-**Original tool:** https://github.com/ajaypavan1004/qpcr_pipeline
+**Original Tool:** https://github.com/ajaypavan1004/qpcr_pipeline
 
 ## Overview
 
