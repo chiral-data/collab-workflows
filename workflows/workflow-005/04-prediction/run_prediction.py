@@ -111,13 +111,13 @@ def run():
         
         try:
             import glob
-            csv_files = glob.glob("../01-data-preparation/inputs/*.csv")
+            csv_files = glob.glob("inputs/*.csv")
             if csv_files:
                 import pandas as pd
                 original_data = pd.read_csv(csv_files[0])
                 # Find SMILES column (case-insensitive)
                 smiles_col = next((col for col in original_data.columns if col.lower() == 'smiles'), None)
-                
+
                 if smiles_col:
                     test_smiles = original_data[smiles_col].dropna().tolist()
                     print(f"Loaded {len(test_smiles)} compounds from {csv_files[0]}")
@@ -125,7 +125,7 @@ def run():
                     print("ERROR: No 'smiles' column found in input CSV")
                     return
             else:
-                print("ERROR: No CSV file found in ../01-data-preparation/inputs/")
+                print("ERROR: No CSV file found in inputs/")
                 return
         except Exception as e:
             print(f"ERROR loading SMILES from input CSV: {e}")
@@ -203,7 +203,7 @@ def run():
     drug_names = {}
     try:
         import glob
-        csv_files = glob.glob("../01-data-preparation/inputs/*.csv")
+        csv_files = glob.glob("inputs/*.csv")
         if csv_files:
             import pandas as pd
             original_data = pd.read_csv(csv_files[0])
