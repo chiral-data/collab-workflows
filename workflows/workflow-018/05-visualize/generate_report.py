@@ -210,6 +210,7 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
     b_pae = round(b_best.get('pae_mean') or 0, 4)
     b_pde = round(b_best.get('pde_mean') or 0, 4)
     c_agg = round(c_best.get('aggregate_score') or 0, 4)
+    extra_y_max = round(max(b_pae, b_pde, c_agg, 0.01) * 1.3, 2)
 
     # 3D viewer section
     b_sample, b_content, b_fmt = boltz_struct
@@ -256,7 +257,7 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
         .card {{
             background: rgba(255,255,255,0.95); border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1); margin-bottom: 30px;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease; overflow: hidden;
         }}
         .card:hover {{ transform: translateY(-2px); }}
         .card-header {{
@@ -436,11 +437,11 @@ Plotly.newPlot('extraChart', [
     }}
 ], {{
     barmode: 'group',
-    yaxis: {{ title: 'Value' }},
+    yaxis: {{ title: 'Value', range: [0, {extra_y_max}] }},
     template: 'plotly_white',
     legend: {{ orientation: 'h', y: -0.2 }},
     height: 350,
-    margin: {{ t: 30, b: 80 }}
+    margin: {{ t: 50, b: 80 }}
 }}, {{responsive: true}});
 
 // ── Mol* 3D viewers ──

@@ -31,7 +31,7 @@
         .card {
             background: rgba(255,255,255,0.95); border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1); margin-bottom: 30px;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease; overflow: hidden;
         }
         .card:hover { transform: translateY(-2px); }
         .card-header {
@@ -73,7 +73,7 @@
     <div class="header">
         <h1><i class="fas fa-balance-scale"></i> Boltz-2 vs Chai-1 Structure Prediction</h1>
         <p class="subtitle">
-            <strong>Generated:</strong> 2026-05-28 08:41:26 &nbsp;|&nbsp;
+            <strong>Generated:</strong> 2026-05-28 08:47:12 &nbsp;|&nbsp;
             Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
             PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
         </p>
@@ -302,11 +302,11 @@ Plotly.newPlot('extraChart', [
     }
 ], {
     barmode: 'group',
-    yaxis: { title: 'Value' },
+    yaxis: { title: 'Value', range: [0, 3.64] },
     template: 'plotly_white',
     legend: { orientation: 'h', y: -0.2 },
     height: 350,
-    margin: { t: 30, b: 80 }
+    margin: { t: 50, b: 80 }
 }, {responsive: true});
 
 // ── Mol* 3D viewers ──
