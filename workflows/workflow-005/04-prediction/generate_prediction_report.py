@@ -238,38 +238,42 @@ def generate_report():
         let filteredData = [...allData];
         let RDKitInstance = null;
 
+        let observer = null;
+
         window.initRDKitModule().then(RDKit => {{
             RDKitInstance = RDKit;
             renderCards();
         }});
 
-        function molToSVG(smiles) {{
-            if (!RDKitInstance) return '';
+        function renderMol(placeholder) {{
+            if (!RDKitInstance) return;
+            const smiles = placeholder.dataset.smiles;
             try {{
                 const mol = RDKitInstance.get_mol(smiles);
-                if (!mol) return '';
-                const svg = mol.get_svg();
-                mol.delete();
-                return svg;
+                if (mol) {{
+                    placeholder.innerHTML = mol.get_svg();
+                    mol.delete();
+                }} else {{
+                    placeholder.textContent = 'No structure';
+                    placeholder.style.color = '#aaa';
+                }}
             }} catch (e) {{
-                return '';
+                placeholder.textContent = 'No structure';
+                placeholder.style.color = '#aaa';
             }}
         }}
 
         function createCard(item, index) {{
             const drugName = item.drug_name || `Compound ${{index + 1}}`;
             const adClass = item.ad_status === 'IN' ? 'ad-in' : 'ad-out';
-            const svg = molToSVG(item.smiles);
-            const molHTML = svg
-                ? `<div class="mol-canvas">${{svg}}</div>`
-                : `<div class="mol-canvas" style="color:#aaa;font-size:0.9em;">No structure</div>`;
+            const escapedSmiles = item.smiles.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
 
             return `
                 <div class="card" data-ad="${{item.ad_status}}" data-score="${{item.prediction}}">
-                    ${{molHTML}}
+                    <div class="mol-canvas mol-placeholder" data-smiles="${{item.smiles.replace(/"/g, '&quot;')}}"></div>
                     <div class="card-content">
                         <h3>${{drugName}}</h3>
-                        <div class="smiles-box" onclick="copyToClipboard('${{item.smiles.replace(/'/g, "\\\\'")}}')" title="Click to copy SMILES">
+                        <div class="smiles-box" onclick="copyToClipboard('${{escapedSmiles}}')" title="Click to copy SMILES">
                             <code>${{item.smiles}}</code>
                             <span class="copy-indicator">&#128203;</span>
                         </div>
@@ -290,6 +294,20 @@ def generate_report():
             const grid = document.getElementById('cardsGrid');
             grid.innerHTML = filteredData.map((item, idx) => createCard(item, idx)).join('');
             updateStats();
+            observePlaceholders();
+        }}
+
+        function observePlaceholders() {{
+            if (observer) observer.disconnect();
+            observer = new IntersectionObserver((entries) => {{
+                entries.forEach(entry => {{
+                    if (entry.isIntersecting) {{
+                        renderMol(entry.target);
+                        observer.unobserve(entry.target);
+                    }}
+                }});
+            }}, {{ rootMargin: '200px' }});
+            document.querySelectorAll('.mol-placeholder').forEach(el => observer.observe(el));
         }}
 
         function applyFilters() {{
