@@ -51,11 +51,6 @@ def check_ad(features, ad_stats_path):
         results.append("IN" if is_in else "OUT")
     return results
 
-def find_file(filename, search_path):
-    for root, dirs, files in os.walk(search_path):
-        if filename in files:
-            return os.path.join(root, filename)
-    return None
 
 import re
 
@@ -165,23 +160,15 @@ def run():
     print(f"\nPredicting on {len(test_smiles)} compounds...")
 
     
-    # Silva shared workspace: read directly from previous nodes' outputs
-    model_path = os.path.join("..", "03-model-training", "outputs", "model.h5")
-    if not os.path.exists(model_path): model_path = find_file("model.h5", "..")
-    
-    scaler_path = os.path.join("..", "02-feature-engineering", "outputs", "scaler.pkl")
-    if not os.path.exists(scaler_path): scaler_path = find_file("scaler.pkl", "..")
-    
-    ad_path = os.path.join("..", "02-feature-engineering", "outputs", "ad_stats.json")
-    if not os.path.exists(ad_path): ad_path = find_file("ad_stats.json", "..")
-    
-    if not model_path:
-        print("Model not found.")
-        for root, dirs, files in os.walk(".."):
-            if "model.h5" in files:
-                print(f"  Found in: {root}")
-        return
-        
+    model_path = "inputs/model.h5"
+    scaler_path = "inputs/scaler.pkl"
+    ad_path = "inputs/ad_stats.json"
+
+    for path in [model_path, scaler_path, ad_path]:
+        if not os.path.exists(path):
+            print(f"Required input not found: {path}")
+            return
+
     print(f"Found inputs: {model_path}, {scaler_path}, {ad_path}")
 
     # 1. Compute Descriptors
