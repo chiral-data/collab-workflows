@@ -19,9 +19,9 @@ RUN python3.12 -m ensurepip --upgrade \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1 \
     && update-alternatives --install /usr/bin/pip     pip     /usr/local/bin/pip3.12 1
 
-# PyTorch 2.3 + CUDA 12.1 (install before esm to ensure CUDA build is used)
+# PyTorch 2.4+ required for nn.RMSNorm (used by ESMFold2 backbone)
 RUN pip install --no-cache-dir \
-    torch==2.3.0 \
+    torch==2.4.0 \
     --index-url https://download.pytorch.org/whl/cu121
 
 # ESMFold2 package — pulls in Biohub transformers fork + all declared deps
@@ -33,7 +33,7 @@ ENV HF_HOME=/models
 RUN --mount=type=secret,id=hf_token \
     huggingface-cli download biohub/ESMFold2 \
       --token "$(cat /run/secrets/hf_token)" --local-dir-use-symlinks False && \
-    huggingface-cli download Biohub/ESMC-6B \
+    huggingface-cli download biohub/ESMC-6B \
       --token "$(cat /run/secrets/hf_token)" --local-dir-use-symlinks False
 
 # Smoke test (requires --gpus all):

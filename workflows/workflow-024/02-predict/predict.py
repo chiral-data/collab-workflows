@@ -1,5 +1,6 @@
 import json
 import os
+import torch
 import yaml
 
 from esm.models.esmfold2 import (
@@ -13,7 +14,11 @@ from esm.models.esmfold2 import (
 from transformers.models.esmfold2.modeling_esmfold2 import ESMFold2Model
 
 print("Loading ESMFold2 model...", flush=True)
-model = ESMFold2Model.from_pretrained("biohub/ESMFold2").cuda().eval()
+model = ESMFold2Model.from_pretrained(
+    "biohub/ESMFold2",
+    dtype=torch.bfloat16,
+    device_map="auto",
+).eval()
 print("Model loaded.", flush=True)
 
 data = yaml.safe_load(open("./inputs/validated.yaml"))
