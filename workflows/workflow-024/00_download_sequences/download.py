@@ -171,11 +171,11 @@ def main():
         with open("./outputs/global_params.json", "w") as f:
             json.dump({"organism": organism, "email": email}, f, indent=2)
 
-    # Offline mode: user dropped FASTAs into input_files/
+    # Offline mode: only fall back to user-provided FASTAs when no organism is specified
     tgt_in  = "./inputs/target.fasta"
     excl_in = "./inputs/exclusion.fasta"
-    if os.path.exists(tgt_in) and os.path.exists(excl_in):
-        log.info("User-provided FASTAs found in inputs/ — skipping NCBI download")
+    if not organism and os.path.exists(tgt_in) and os.path.exists(excl_in):
+        log.info("No organism specified — using user-provided FASTAs in inputs/")
         shutil.copy(tgt_in,  "./outputs/target.fasta")
         shutil.copy(excl_in, "./outputs/exclusion.fasta")
         log.info("Copied target.fasta and exclusion.fasta to outputs/")
