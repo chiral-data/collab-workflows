@@ -60,7 +60,7 @@
             display: grid; grid-template-columns: 1fr 1fr;
             gap: 16px; padding: 20px;
         }
-        .plot-container { padding: 20px; }
+        .plot-container { padding: 20px; overflow: hidden; min-width: 0; }
         .note { font-size: 0.8rem; color: #64748b; padding: 8px 20px 0; }
         .table th { background: #f8fafc; font-weight: 600; color: #075985; }
         .table tbody tr:hover { background: rgba(7,89,133,0.05); }
@@ -73,7 +73,7 @@
     <div class="header">
         <h1><i class="fas fa-balance-scale"></i> Boltz-2 vs Chai-1 Structure Prediction</h1>
         <p class="subtitle">
-            <strong>Generated:</strong> 2026-05-28 08:47:12 &nbsp;|&nbsp;
+            <strong>Generated:</strong> 2026-05-28 08:52:15 &nbsp;|&nbsp;
             Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
             PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
         </p>
@@ -289,7 +289,7 @@ Plotly.newPlot('extraChart', [
         y: [2.7996, 0.3713],
         marker: { color: '#0284c7' },
         text: ['2.7996', '0.3713'],
-        textposition: 'outside'
+        textposition: 'auto'
     },
     {
         name: 'Chai-1 — Aggregate Score',
@@ -298,7 +298,7 @@ Plotly.newPlot('extraChart', [
         y: [0.1855],
         marker: { color: '#7c3aed' },
         text: ['0.1855'],
-        textposition: 'outside'
+        textposition: 'auto'
     }
 ], {
     barmode: 'group',

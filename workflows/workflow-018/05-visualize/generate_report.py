@@ -286,7 +286,7 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
             display: grid; grid-template-columns: 1fr 1fr;
             gap: 16px; padding: 20px;
         }}
-        .plot-container {{ padding: 20px; }}
+        .plot-container {{ padding: 20px; overflow: hidden; min-width: 0; }}
         .note {{ font-size: 0.8rem; color: #64748b; padding: 8px 20px 0; }}
         .table th {{ background: #f8fafc; font-weight: 600; color: #075985; }}
         .table tbody tr:hover {{ background: rgba(7,89,133,0.05); }}
@@ -424,7 +424,7 @@ Plotly.newPlot('extraChart', [
         y: [{b_pae}, {b_pde}],
         marker: {{ color: '#0284c7' }},
         text: ['{b_pae}', '{b_pde}'],
-        textposition: 'outside'
+        textposition: 'auto'
     }},
     {{
         name: 'Chai-1 — Aggregate Score',
@@ -433,7 +433,7 @@ Plotly.newPlot('extraChart', [
         y: [{c_agg}],
         marker: {{ color: '#7c3aed' }},
         text: ['{c_agg}'],
-        textposition: 'outside'
+        textposition: 'auto'
     }}
 ], {{
     barmode: 'group',
