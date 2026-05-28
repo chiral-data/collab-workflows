@@ -1,7 +1,7 @@
 name = "Prediction"
 description = "Make predictions on test SMILES"
-depends_on = ["02-feature-engineering", "03-model-training"]
-inputs = ["scaler.pkl", "ad_stats.json", "model.h5"]
+depends_on = ["00-download-inputs", "02-feature-engineering", "03-model-training"]
+inputs = ["scaler.pkl", "ad_stats.json", "model.h5", "*.csv"]
 outputs = ["outputs/data.json", "outputs/report.html", "outputs/predictions.csv"]
 
 [container]

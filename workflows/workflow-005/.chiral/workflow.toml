@@ -11,5 +11,5 @@ description = "Machine Learning-Based Drug Discovery with Premium Interactive Vi
 # Node 3 depends on Node 2
 03-model-training = ["02-feature-engineering"]
 
-# Node 4 depends on Node 2 (scaler, ad_stats) and Node 3 (model)
-04-prediction = ["02-feature-engineering", "03-model-training"]
+# Node 4 depends on Node 0 (input CSV), Node 2 (scaler, ad_stats) and Node 3 (model)
+04-prediction = ["00-download-inputs", "02-feature-engineering", "03-model-training"]
