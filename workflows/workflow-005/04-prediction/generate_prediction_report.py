@@ -16,7 +16,7 @@ def generate_report():
 <head>
     <title>Predicted Binding Affinities - Interactive Dashboard</title>
     <meta charset="UTF-8">
-    <script src="https://unpkg.com/@rdkit/rdkit/Code/MinimalLib/dist/RDKit_minimal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smiles-drawer@2.1.0/dist/smiles-drawer.min.js"></script>
     <style>
         * {{ box-sizing: border-box; }}
         body {{
@@ -102,17 +102,11 @@ def generate_report():
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }}
-        .mol-canvas {{
+        canvas.mol-canvas {{
             width: 100%;
             height: 220px;
             background: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }}
-        .mol-canvas svg {{
-            width: 100%;
-            height: 100%;
+            display: block;
         }}
         .card-content {{ padding: 20px; }}
         h3 {{
@@ -236,31 +230,22 @@ def generate_report():
     <script>
         const allData = {js_data};
         let filteredData = [...allData];
-        let RDKitInstance = null;
 
         let observer = null;
+        const drawer = new SmilesDrawer.Drawer({{ width: 300, height: 220 }});
 
-        window.initRDKitModule().then(RDKit => {{
-            RDKitInstance = RDKit;
-            renderCards();
-        }});
-
-        function renderMol(placeholder) {{
-            if (!RDKitInstance) return;
-            const smiles = placeholder.dataset.smiles;
-            try {{
-                const mol = RDKitInstance.get_mol(smiles);
-                if (mol) {{
-                    placeholder.innerHTML = mol.get_svg();
-                    mol.delete();
-                }} else {{
-                    placeholder.textContent = 'No structure';
-                    placeholder.style.color = '#aaa';
+        function renderMol(canvas) {{
+            SmilesDrawer.parse(
+                canvas.dataset.smiles,
+                function(tree) {{ drawer.draw(tree, canvas, 'light', false); }},
+                function() {{
+                    const ctx = canvas.getContext('2d');
+                    ctx.fillStyle = '#aaa';
+                    ctx.font = '14px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('No structure', canvas.width / 2, canvas.height / 2);
                 }}
-            }} catch (e) {{
-                placeholder.textContent = 'No structure';
-                placeholder.style.color = '#aaa';
-            }}
+            );
         }}
 
         function createCard(item, index) {{
@@ -270,7 +255,7 @@ def generate_report():
 
             return `
                 <div class="card" data-ad="${{item.ad_status}}" data-score="${{item.prediction}}">
-                    <div class="mol-canvas mol-placeholder" data-smiles="${{smilesAttr}}"></div>
+                    <canvas class="mol-canvas mol-placeholder" data-smiles="${{smilesAttr}}" width="300" height="220"></canvas>
                     <div class="card-content">
                         <h3>${{drugName}}</h3>
                         <div class="smiles-box" data-smiles="${{smilesAttr}}" onclick="copyToClipboard(this.dataset.smiles)" title="Click to copy SMILES">
@@ -294,10 +279,10 @@ def generate_report():
             const grid = document.getElementById('cardsGrid');
             grid.innerHTML = filteredData.map((item, idx) => createCard(item, idx)).join('');
             updateStats();
-            observePlaceholders();
+            observeCanvases();
         }}
 
-        function observePlaceholders() {{
+        function observeCanvases() {{
             if (observer) observer.disconnect();
             observer = new IntersectionObserver((entries) => {{
                 entries.forEach(entry => {{
@@ -309,6 +294,8 @@ def generate_report():
             }}, {{ rootMargin: '200px' }});
             document.querySelectorAll('.mol-placeholder').forEach(el => observer.observe(el));
         }}
+
+        renderCards();
 
         function applyFilters() {{
             const adFilter = document.getElementById('filterAD').value;
