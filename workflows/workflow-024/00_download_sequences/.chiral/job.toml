@@ -10,7 +10,7 @@ run = "run.sh"
 
 [params.organism]
 type = "string"
-default = "Rickettsia rickettsii"
+default = ""
 hint = "Target organism scientific name (e.g. 'Cyclospora cayetanensis')"
 
 [params.email]

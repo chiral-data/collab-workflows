@@ -192,8 +192,10 @@ def main():
 
     rois = roi_data.get("rois", [])
     if not rois:
-        log.error("rois.json contains no ROI candidates")
-        sys.exit(1)
+        log.warning("rois.json contains no ROI candidates — no primers to design")
+        with open("./outputs/primer_sets.json", "w") as f:
+            json.dump({"n_sets": 0, "primer_sets": []}, f, indent=2)
+        sys.exit(2)
 
     log.info("Designing primers for %d ROI(s)", len(rois))
     global_args = _build_primer3_globals(p)
@@ -207,8 +209,10 @@ def main():
         all_sets.extend(sets)
 
     if not all_sets:
-        log.error("Primer3 returned no primer sets for any ROI. Try relaxing constraints.")
-        sys.exit(1)
+        log.warning("Primer3 returned no primer sets for any ROI — try relaxing constraints")
+        with open("./outputs/primer_sets.json", "w") as f:
+            json.dump({"n_sets": 0, "primer_sets": []}, f, indent=2)
+        sys.exit(2)
 
     # Sort: passing sets first, then by penalty
     all_sets.sort(key=lambda ps: (not ps["passed_constraints"], ps["penalty"]))

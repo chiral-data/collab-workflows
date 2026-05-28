@@ -26,7 +26,7 @@ def _load_params():
             gp = json.load(f)
 
     return {
-        "organism":          os.environ.get("PARAM_ORGANISM",          gp.get("organism", "Rickettsia rickettsii")),
+        "organism":          os.environ.get("PARAM_ORGANISM") or      gp.get("organism", ""),
         "email":             os.environ.get("PARAM_EMAIL",             gp.get("email", "user@example.com")),
         "ncbi_api_key":      os.environ.get("PARAM_NCBI_API_KEY",      gp.get("ncbi_api_key", "")),
         "target_gene":       os.environ.get("PARAM_TARGET_GENE",       gp.get("target_gene", "")),
