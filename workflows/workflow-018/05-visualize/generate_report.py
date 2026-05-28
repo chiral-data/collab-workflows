@@ -3,7 +3,7 @@
 Node 05: Boltz-2 vs Chai-1 comparison dashboard.
 
 Reads boltz_summary.json and chai_summary.json from prediction nodes,
-generates a self-contained HTML report using Plotly.js + Bootstrap 5.
+generates a self-contained HTML report using Plotly.js + Bootstrap 5 + Mol*.
 
 Shared metrics (both tools): pLDDT (0-1), pTM (0-1), ipTM (0-1)
 Boltz-only:  PAE mean (Å), PDE mean (Å)
@@ -44,6 +44,52 @@ def best_model(confidence_list):
     if not confidence_list:
         return {}
     return max(confidence_list, key=lambda x: x.get('plddt') or 0)
+
+
+# ── Structure file loading ────────────────────────────────────────────────────
+
+def load_structure_file(path):
+    """Read structure file; escape backticks and ${ for JS template literal embedding."""
+    with open(path) as f:
+        content = f.read()
+    return content.replace("`", "\\`").replace("${", "\\${")
+
+
+def find_best_structure(summary_data, tool):
+    """Return (sample_name, content, fmt) for the best model (highest pLDDT).
+
+    Boltz: sample 'boltz_input_model_0' → 'boltz_input_model_0.pdb'
+    Chai:  sample 'model_0' → 'pred.model_idx_0.cif'
+    """
+    confidence = summary_data.get('confidence', [])
+
+    if tool == 'boltz2':
+        fmt = 'pdb'
+        name_to_file = {Path(f).stem: f for f in summary_data.get('pdb_files', [])}
+    else:
+        fmt = 'mmcif'
+        # "pred.model_idx_0" stem → strip prefix to get "model_0"
+        name_to_file = {
+            Path(f).stem.replace('pred.model_idx_', 'model_'): f
+            for f in summary_data.get('cif_files', [])
+        }
+
+    best = max(confidence, key=lambda x: x.get('plddt') or 0, default=None)
+    if not best:
+        return None, None, None
+
+    filename = name_to_file.get(best['sample'])
+    if not filename:
+        print(f"  Warning: no structure file found for sample '{best['sample']}'")
+        return best['sample'], None, fmt
+
+    p = Path(filename)
+    if not p.exists():
+        print(f"  Warning: structure file not found: {filename}")
+        return best['sample'], None, fmt
+
+    print(f"  Loading structure: {filename}")
+    return best['sample'], load_structure_file(str(p)), fmt
 
 
 # ── Chart data helpers ────────────────────────────────────────────────────────
@@ -98,9 +144,52 @@ def _table_row(tool, entry, color):
         </tr>"""
 
 
+# ── 3D viewer HTML helpers ────────────────────────────────────────────────────
+
+def _viewer_panel(viewer_id, label, plddt, label_color, structure_content):
+    """Return HTML for one Mol* viewer panel."""
+    plddt_str = f'{plddt:.3f}' if isinstance(plddt, float) else '—'
+    if structure_content is None:
+        viewer_body = '<div style="height:480px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:0.9rem;">Structure file not available</div>'
+    else:
+        viewer_body = f'<div id="{viewer_id}" style="width:100%;height:480px;position:relative;"></div>'
+    return f"""
+        <div>
+            <h6 style="font-weight:600;margin-bottom:8px;color:{label_color};">{label} &nbsp;<span style="font-weight:400;color:#64748b;font-size:0.85rem;">pLDDT {plddt_str}</span></h6>
+            {viewer_body}
+        </div>"""
+
+
+def _viewer_js(viewer_id, structure_content, fmt):
+    """Return JS block to initialise one Mol* viewer."""
+    if structure_content is None:
+        return ''
+    molstar_config = """{
+    layoutIsExpanded: false,
+    layoutShowControls: false,
+    layoutShowLeftPanel: false,
+    layoutShowSequence: false,
+    layoutShowLog: false,
+    layoutShowRemoteState: false,
+    viewportShowAnimation: false,
+    viewportShowExpand: true,
+    viewportShowSelectionMode: false,
+  }"""
+    return f"""
+  (function() {{
+    var data = `{structure_content}`;
+    molstar.Viewer.create('{viewer_id}', {molstar_config})
+      .then(function(v) {{ return v.loadStructureFromData(data, '{fmt}'); }})
+      .catch(function(e) {{
+        document.getElementById('{viewer_id}').innerHTML =
+          '<p style="color:red;padding:16px">Viewer error: ' + e + '</p>';
+      }});
+  }})();"""
+
+
 # ── HTML generation ───────────────────────────────────────────────────────────
 
-def generate_html(boltz_data, chai_data):
+def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
     boltz_conf = normalize_plddt(boltz_data['confidence'], 'boltz2')
     chai_conf  = normalize_plddt(chai_data['confidence'],  'chai1')
 
@@ -120,6 +209,18 @@ def generate_html(boltz_data, chai_data):
     b_pde = round(b_best.get('pde_mean') or 0, 4)
     c_agg = round(c_best.get('aggregate_score') or 0, 4)
 
+    # 3D viewer section
+    b_sample, b_content, b_fmt = boltz_struct
+    c_sample, c_content, c_fmt = chai_struct
+
+    b_label = f'Boltz-2 — {b_sample}' if b_sample else 'Boltz-2'
+    c_label = f'Chai-1 — {c_sample}'  if c_sample else 'Chai-1'
+
+    boltz_panel = _viewer_panel('boltz-viewer', b_label, b_best.get('plddt'), '#0284c7', b_content)
+    chai_panel  = _viewer_panel('chai-viewer',  c_label, c_best.get('plddt'), '#7c3aed', c_content)
+    boltz_js    = _viewer_js('boltz-viewer', b_content, b_fmt)
+    chai_js     = _viewer_js('chai-viewer',  c_content, c_fmt)
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,6 +230,8 @@ def generate_html(boltz_data, chai_data):
     <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css">
+    <script src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
     <style>
         :root {{
             --boltz: #0284c7;
@@ -176,6 +279,10 @@ def generate_html(boltz_data, chai_data):
         .summary-card .metric-name {{ color: #64748b; font-size: 0.85rem; }}
         .boltz-label {{ color: var(--boltz); }}
         .chai-label  {{ color: var(--chai);  }}
+        .viewer-grid {{
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 16px; padding: 20px;
+        }}
         .plot-container {{ padding: 20px; }}
         .note {{ font-size: 0.8rem; color: #64748b; padding: 8px 20px 0; }}
         .table th {{ background: #f8fafc; font-weight: 600; color: #075985; }}
@@ -223,6 +330,15 @@ def generate_html(boltz_data, chai_data):
                 {winner(b_best.get('plddt'), c_best.get('plddt'))}
             </div>
             <div class="metric-name">Higher pLDDT = better</div>
+        </div>
+    </div>
+
+    <!-- 3D Structure Comparison -->
+    <div class="card">
+        <div class="card-header"><i class="fas fa-cube"></i> 3D Structure Comparison (Best Models)</div>
+        <div class="viewer-grid">
+            {boltz_panel}
+            {chai_panel}
         </div>
     </div>
 
@@ -324,6 +440,10 @@ Plotly.newPlot('extraChart', [
     height: 350,
     margin: {{ t: 30, b: 80 }}
 }});
+
+// ── Mol* 3D viewers ──
+{boltz_js}
+{chai_js}
 </script>
 </body>
 </html>"""
@@ -342,8 +462,12 @@ def main():
     boltz_data = load_summary(args.boltz_summary)
     chai_data  = load_summary(args.chai_summary)
 
+    print("\nLocating best-model structure files:")
+    boltz_struct = find_best_structure(boltz_data, 'boltz2')
+    chai_struct  = find_best_structure(chai_data,  'chai1')
+
     print("\nGenerating report...")
-    html = generate_html(boltz_data, chai_data)
+    html = generate_html(boltz_data, chai_data, boltz_struct, chai_struct)
 
     with open(args.output, 'w') as f:
         f.write(html)
