@@ -31,10 +31,10 @@ RUN pip install --no-cache-dir \
 # Pre-download model weights at build time (token passed via --secret, never baked in)
 ENV HF_HOME=/models
 RUN --mount=type=secret,id=hf_token \
-    huggingface-cli download biohub/ESMFold2 \
-      --token "$(cat /run/secrets/hf_token)" --local-dir-use-symlinks False && \
-    huggingface-cli download biohub/ESMC-6B \
-      --token "$(cat /run/secrets/hf_token)" --local-dir-use-symlinks False
+    hf download biohub/ESMFold2 \
+      --token "$(cat /run/secrets/hf_token)" && \
+    hf download biohub/ESMC-6B \
+      --token "$(cat /run/secrets/hf_token)"
 
 # Smoke test (requires --gpus all):
 #   docker run --gpus all <image> python -c "
