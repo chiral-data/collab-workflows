@@ -1,0 +1,29 @@
+name        = "ESMFold2 Prediction"
+description = "Run ESMFold2 local inference to predict all-atom structure"
+inputs      = ["validated.yaml"]
+outputs     = ["structure.cif", "confidence.json"]
+
+[container]
+image   = "esmfold2:2026_05_28"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.num_loops]
+type    = "integer"
+default = "3"
+hint    = "Refinement iterations (3–5; more = better accuracy, slower)"
+env     = "PARAM_NUM_LOOPS"
+
+[params.num_sampling_steps]
+type    = "integer"
+default = "50"
+hint    = "Diffusion sampling steps (32–400; more = better, slower)"
+env     = "PARAM_NUM_SAMPLING_STEPS"
+
+[params.num_diffusion_samples]
+type    = "integer"
+default = "1"
+hint    = "Number of structure samples per run"
+env     = "PARAM_NUM_DIFFUSION_SAMPLES"
