@@ -4,12 +4,10 @@ import os
 import json
 import ast
 import pickle
-import base64
-from io import BytesIO
 from tensorflow.keras.models import load_model
 from tensorflow.keras import backend as K
 from rdkit import Chem, RDLogger
-from rdkit.Chem import Descriptors, MACCSkeys, Draw
+from rdkit.Chem import Descriptors, MACCSkeys
 from rdkit.ML.Descriptors import MoleculeDescriptors
 
 RDLogger.DisableLog("rdApp.*")
@@ -188,17 +186,6 @@ def run():
     # 4. Applicability Domain
     ad_status = check_ad(features, ad_path)
     
-    # 5. Generate Images for Report
-    images = []
-    for s in test_smiles:
-        mol = Chem.MolFromSmiles(s)
-        img_str = ""
-        if mol:
-            buf = BytesIO()
-            Draw.MolToImage(mol, size=(200,200)).save(buf, format="PNG")
-            img_str = base64.b64encode(buf.getvalue()).decode("utf-8")
-        images.append(f"data:image/png;base64,{img_str}")
-
     # Try to load drug names from original input CSV (best effort)
     drug_names = {}
     try:
@@ -225,7 +212,6 @@ def run():
             "smiles": s,
             "prediction": float(preds[i]),
             "ad_status": ad_status[i],
-            "image": images[i]
         })
         
     with open("outputs/data.json", "w") as f:
