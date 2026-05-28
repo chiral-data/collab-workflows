@@ -80,6 +80,30 @@ If these files are absent, Node 00 downloads from NCBI using the `organism` para
 | `results.tsv` | Spreadsheet-friendly summary of all primer sets |
 | `report.txt` | Human-readable ranked report with per-oligo stats and BLAST results |
 
+## Exit Codes
+
+| Exit Code | Meaning |
+|-----------|---------|
+| `0` | Pipeline completed and at least one primer set passed all constraints. |
+| `2` | Pipeline completed successfully but **no primer sets passed all constraints**. This is a scientific result, not a technical failure — the pipeline ran to completion and all outputs were written. |
+
+### What to do when exit code 2 is returned
+
+Inspect the output files in `04_blast_report/outputs/` to understand which constraints failed:
+
+- **`report.txt`** — Human-readable ranked report. Each primer set shows which thermodynamic, GC, and BLAST constraints it passed or failed, making it easy to identify the binding constraint.
+- **`results.tsv`** — Spreadsheet-friendly summary of all designed sets with per-oligo stats. Open in Excel or any TSV viewer to sort and filter by Tm, GC%, amplicon size, etc.
+- **`results.json`** — Machine-readable full results with all constraint values for every set. Useful for scripted analysis.
+
+Then relax the offending parameters in `global_params.json` and re-run. Common adjustments:
+
+| Symptom (from report.txt) | Parameter to relax |
+|---------------------------|--------------------|
+| All sets fail Tm check | Widen `primer_min_tm` / `primer_max_tm` range |
+| All sets fail amplicon size | Widen `amplicon_min` / `amplicon_max` |
+| No ROIs found upstream | Lower `min_uniqueness` or increase `roi_window` |
+| All sets fail BLAST specificity | Review exclusion sequences, or set `skip_blast: true` to inspect designs first |
+
 ## Running
 
 ### With NCBI download (online mode)
