@@ -1,0 +1,50 @@
+name = "Primer Design"
+description = "Designs forward primer, reverse primer, and hydrolysis probe for each ROI using Primer3. Applies thermodynamic and structural constraints. Outputs ranked primer sets JSON."
+inputs = ["rois.json", "target.fasta", "exclusion.fasta", "global_params.json"]
+outputs = ["primer_sets.json", "target.fasta", "exclusion.fasta", "global_params.json"]
+
+[container]
+image = "qpcr-pipeline:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.primer_min_size]
+type = "integer"
+default = 19
+hint = "Minimum primer length (nt)"
+
+[params.primer_opt_size]
+type = "integer"
+default = 20
+hint = "Optimal primer length (nt)"
+
+[params.primer_max_size]
+type = "integer"
+default = 26
+hint = "Maximum primer length (nt). Increase to 28 for difficult organisms."
+
+[params.primer_min_tm]
+type = "float"
+default = 59.0
+hint = "Minimum primer melting temperature (°C)"
+
+[params.primer_opt_tm]
+type = "float"
+default = 60.0
+hint = "Optimal primer melting temperature (°C)"
+
+[params.primer_max_tm]
+type = "float"
+default = 62.0
+hint = "Maximum primer melting temperature (°C)"
+
+[params.amplicon_min]
+type = "integer"
+default = 70
+hint = "Minimum amplicon size (bp)"
+
+[params.amplicon_max]
+type = "integer"
+default = 200
+hint = "Maximum amplicon size (bp)"

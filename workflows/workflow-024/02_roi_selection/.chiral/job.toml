@@ -1,0 +1,30 @@
+name = "ROI Selection"
+description = "Identifies Regions of Interest (ROIs) unique to the target organism using k-mer subtraction against close-relative sequences. Outputs top ROI candidates ranked by uniqueness score."
+inputs = ["target.fasta", "exclusion.fasta", "global_params.json"]
+outputs = ["rois.json", "target.fasta", "exclusion.fasta", "global_params.json"]
+
+[container]
+image = "qpcr-pipeline:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.roi_window]
+type = "integer"
+default = 500
+hint = "Sliding window size in bp for ROI scanning (auto-reduced for short gene sequences)"
+
+[params.roi_step]
+type = "integer"
+default = 100
+hint = "Step size in bp between consecutive windows"
+
+[params.min_uniqueness]
+type = "float"
+default = 0.8
+hint = "Minimum fraction of k-mers absent from exclusion set (0–1). Retries at 0.60 if no ROIs found."
+
+[params.top_rois]
+type = "integer"
+default = 3
+hint = "Number of top-scoring ROIs to pass to primer design"
