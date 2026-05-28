@@ -1,0 +1,16 @@
+name        = "Download Sequence"
+description = "Download a protein sequence from UniProt by accession ID"
+outputs     = ["*.yaml"]
+
+[container]
+image   = "esmfold2:2026_05_28"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.uniprot_id]
+type    = "string"
+default = "P69905"
+hint    = "UniProt accession ID (e.g. P69905 for human hemoglobin alpha chain)"
+env     = "PARAM_UNIPROT_ID"
