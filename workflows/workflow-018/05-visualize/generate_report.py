@@ -56,7 +56,7 @@ def load_structure_file(path):
 
 
 def find_best_structure(summary_data, tool):
-    """Return (sample_name, content, fmt) for the best model (highest pLDDT).
+    """Return (sample_name, content, file_format) for the best model (highest pLDDT).
 
     Boltz: sample 'boltz_input_model_0' → 'boltz_input_model_0.pdb'
     Chai:  sample 'model_0' → 'pred.model_idx_0.cif'
@@ -64,10 +64,10 @@ def find_best_structure(summary_data, tool):
     confidence = summary_data.get('confidence', [])
 
     if tool == 'boltz2':
-        fmt = 'pdb'
+        file_format = 'pdb'
         name_to_file = {Path(f).stem: f for f in summary_data.get('pdb_files', [])}
     else:
-        fmt = 'mmcif'
+        file_format = 'mmcif'
         # "pred.model_idx_0" stem → strip prefix to get "model_0"
         name_to_file = {
             Path(f).stem.replace('pred.model_idx_', 'model_'): f
@@ -81,15 +81,28 @@ def find_best_structure(summary_data, tool):
     filename = name_to_file.get(best['sample'])
     if not filename:
         print(f"  Warning: no structure file found for sample '{best['sample']}'")
-        return best['sample'], None, fmt
+        return best['sample'], None, file_format
 
     p = Path(filename)
     if not p.exists():
         print(f"  Warning: structure file not found: {filename}")
-        return best['sample'], None, fmt
+        return best['sample'], None, file_format
 
     print(f"  Loading structure: {filename}")
-    return best['sample'], load_structure_file(str(p)), fmt
+    return best['sample'], load_structure_file(str(p)), file_format
+
+
+def load_reference_structure(path):
+    """Return (content, file_format) for the ground truth structure, or (None, None)."""
+    if not path:
+        return None, None
+    p = Path(path)
+    if not p.exists():
+        print(f"  Warning: reference structure not found: {path}")
+        return None, None
+    file_format = 'mmcif' if p.suffix.lower() in ('.cif', '.mmcif') else 'pdb'
+    print(f"  Loading reference structure: {p.name}")
+    return load_structure_file(str(p)), file_format
 
 
 # ── Chart data helpers ────────────────────────────────────────────────────────
@@ -144,54 +157,92 @@ def _table_row(tool, entry, color):
         </tr>"""
 
 
-# ── 3D viewer HTML helpers ────────────────────────────────────────────────────
+# ── 3D viewer ─────────────────────────────────────────────────────────────────
 
-def _viewer_panel(viewer_id, label, plddt, label_color, structure_content):
-    """Return HTML for one Mol* viewer panel."""
-    plddt_str = f'{plddt:.3f}' if isinstance(plddt, (int, float)) else '—'
-    if structure_content is None:
-        viewer_body = '<div style="height:480px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:0.9rem;">Structure file not available</div>'
-    else:
-        viewer_body = f'<div id="{viewer_id}" style="width:100%;height:480px;position:relative;"></div>'
-    return f"""
-        <div>
-            <h6 style="font-weight:600;margin-bottom:8px;color:{label_color};">{label} &nbsp;<span style="font-weight:400;color:#64748b;font-size:0.85rem;">pLDDT {plddt_str}</span></h6>
-            {viewer_body}
-        </div>"""
+def _combined_viewer_js(viewer_id, structures):
+    """Return JS to load multiple structures into one Mol* viewer with toggle support.
 
-
-_MOLSTAR_CONFIG = """{
-    layoutIsExpanded: false,
-    layoutShowControls: false,
-    layoutShowLeftPanel: false,
-    layoutShowSequence: false,
-    layoutShowLog: false,
-    layoutShowRemoteState: false,
-    viewportShowAnimation: false,
-    viewportShowExpand: true,
-    viewportShowSelectionMode: false,
-  }"""
-
-
-def _viewer_js(viewer_id, structure_content, fmt):
-    """Return JS block to initialise one Mol* viewer."""
-    if structure_content is None:
+    structures: list of (label, content, file_format, color) — only entries with content.
+    Uses plugin.builders directly so structures are added without clearing each other.
+    Exposes window.toggleStruct(idx) for the toggle buttons.
+    """
+    if not structures:
         return ''
+
+    entries = []
+    for label, content, file_format, _color in structures:
+        entries.append(
+            f'  {{label: {json.dumps(label)}, data: `{content}`, format: {json.dumps(file_format)}}}'
+        )
+    entries_js = ',\n'.join(entries)
+
     return f"""
   (function() {{
-    var data = `{structure_content}`;
-    molstar.Viewer.create('{viewer_id}', {_MOLSTAR_CONFIG})
-      .then(function(v) {{ return v.loadStructureFromData(data, '{fmt}'); }})
-      .catch(function(e) {{
+    var structures = [
+{entries_js}
+    ];
+    var visible = structures.map(function() {{ return true; }});
+    var molPlugin = null;
+
+    window.toggleStruct = function(idx) {{
+      if (!molPlugin) return;
+      visible[idx] = !visible[idx];
+      var show = visible[idx];
+      var structs = molPlugin.managers.structure.hierarchy.current.structures;
+      if (!structs[idx]) return;
+      var isHidden = !!structs[idx].cell.state.isHidden;
+      if ((show && isHidden) || (!show && !isHidden)) {{
+        try {{
+          molPlugin.managers.structure.hierarchy.toggleVisibility([structs[idx]]);
+        }} catch(e) {{
+          try {{
+            molstar.PluginCommands.State.ToggleVisibility(molPlugin, {{
+              state: molPlugin.state.data,
+              ref: structs[idx].cell.transform.ref
+            }});
+          }} catch(e2) {{
+            console.warn('Cannot toggle structure visibility:', e2);
+          }}
+        }}
+      }}
+      var btn = document.getElementById('toggle-struct-' + idx);
+      if (btn) btn.style.opacity = show ? '1' : '0.35';
+    }};
+
+    molstar.Viewer.create('{viewer_id}', {{
+      layoutIsExpanded: false,
+      layoutShowControls: false,
+      layoutShowLeftPanel: true,
+      layoutShowSequence: false,
+      layoutShowLog: false,
+      layoutShowRemoteState: false,
+      viewportShowAnimation: false,
+      viewportShowExpand: true,
+      viewportShowSelectionMode: false,
+    }}).then(function(viewer) {{
+      molPlugin = viewer.plugin;
+      var p = molPlugin;
+      var chain = Promise.resolve();
+      structures.forEach(function(s) {{
+        chain = chain
+          .then(function() {{ return p.builders.data.rawData({{ data: s.data, label: s.label }}); }})
+          .then(function(d) {{ return p.builders.structure.parseTrajectory(d, s.format); }})
+          .then(function(t) {{ return p.builders.structure.hierarchy.applyPreset(t, 'default'); }});
+      }});
+      chain.catch(function(e) {{
         document.getElementById('{viewer_id}').innerHTML =
           '<p style="color:red;padding:16px">Viewer error: ' + e + '</p>';
       }});
+    }}).catch(function(e) {{
+      document.getElementById('{viewer_id}').innerHTML =
+        '<p style="color:red;padding:16px">Viewer error: ' + e + '</p>';
+    }});
   }})();"""
 
 
 # ── HTML generation ───────────────────────────────────────────────────────────
 
-def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
+def generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct):
     boltz_conf = normalize_plddt(boltz_data['confidence'], 'boltz2')
     chai_conf  = normalize_plddt(chai_data['confidence'],  'chai1')
 
@@ -212,17 +263,37 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
     c_agg = round(c_best.get('aggregate_score') or 0, 4)
     extra_y_max = round(max(b_pae, b_pde, c_agg, 0.01) * 1.3, 2)
 
-    # 3D viewer section
+    # Build structure list for combined viewer
     b_sample, b_content, b_fmt = boltz_struct
     c_sample, c_content, c_fmt = chai_struct
+    ref_content, ref_fmt       = ref_struct
 
     b_label = f'Boltz-2 — {b_sample}' if b_sample else 'Boltz-2'
     c_label = f'Chai-1 — {c_sample}'  if c_sample else 'Chai-1'
 
-    boltz_panel = _viewer_panel('boltz-viewer', b_label, b_best.get('plddt'), '#0284c7', b_content)
-    chai_panel  = _viewer_panel('chai-viewer',  c_label, c_best.get('plddt'), '#7c3aed', c_content)
-    boltz_js    = _viewer_js('boltz-viewer', b_content, b_fmt)
-    chai_js     = _viewer_js('chai-viewer',  c_content, c_fmt)
+    viewer_structures = []
+    if ref_content:
+        viewer_structures.append(('Ground Truth', ref_content, ref_fmt, '#475569'))
+    if b_content:
+        viewer_structures.append((b_label, b_content, b_fmt, '#0284c7'))
+    if c_content:
+        viewer_structures.append((c_label, c_content, c_fmt, '#7c3aed'))
+
+    viewer_js = _combined_viewer_js('combined-viewer', viewer_structures)
+
+    if viewer_structures:
+        toggle_buttons = ''.join(
+            f'<button id="toggle-struct-{i}" onclick="toggleStruct({i})" '
+            f'style="background:{color};color:white;border:none;padding:5px 16px;'
+            f'border-radius:20px;font-size:0.83rem;cursor:pointer;margin-right:6px;'
+            f'transition:opacity 0.2s;">{label}</button>'
+            for i, (label, _, _, color) in enumerate(viewer_structures)
+        )
+        viewer_note = f'<div style="margin-bottom:12px;">{toggle_buttons}</div>'
+        viewer_body = '<div id="combined-viewer" style="width:100%;height:540px;position:relative;"></div>'
+    else:
+        viewer_note = ''
+        viewer_body = '<div style="height:200px;display:flex;align-items:center;justify-content:center;color:#94a3b8;">No structure files available</div>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -282,10 +353,7 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
         .summary-card .metric-name {{ color: #64748b; font-size: 0.85rem; }}
         .boltz-label {{ color: var(--boltz); }}
         .chai-label  {{ color: var(--chai);  }}
-        .viewer-grid {{
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 16px; padding: 20px;
-        }}
+        .viewer-container {{ padding: 20px; }}
         .plot-container {{ padding: 20px; overflow: hidden; min-width: 0; }}
         .note {{ font-size: 0.8rem; color: #64748b; padding: 8px 20px 0; }}
         .table th {{ background: #f8fafc; font-weight: 600; color: #075985; }}
@@ -338,10 +406,10 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
 
     <!-- 3D Structure Comparison -->
     <div class="card">
-        <div class="card-header"><i class="fas fa-cube"></i> 3D Structure Comparison (Best Models)</div>
-        <div class="viewer-grid">
-            {boltz_panel}
-            {chai_panel}
+        <div class="card-header"><i class="fas fa-cube"></i> 3D Structure Comparison</div>
+        <div class="viewer-container">
+            {viewer_note}
+            {viewer_body}
         </div>
     </div>
 
@@ -444,9 +512,8 @@ Plotly.newPlot('extraChart', [
     margin: {{ t: 50, r: 30, b: 80 }}
 }}, {{responsive: true}});
 
-// ── Mol* 3D viewers ──
-{boltz_js}
-{chai_js}
+// ── Mol* 3D viewer ──
+{viewer_js}
 </script>
 </body>
 </html>"""
@@ -456,21 +523,24 @@ Plotly.newPlot('extraChart', [
 
 def main():
     parser = argparse.ArgumentParser(description='Generate Boltz-2 vs Chai-1 comparison report')
-    parser.add_argument('--boltz-summary', default='boltz_summary.json')
-    parser.add_argument('--chai-summary',  default='chai_summary.json')
-    parser.add_argument('--output',        default='comparison_report.html')
+    parser.add_argument('--boltz-summary',  default='boltz_summary.json')
+    parser.add_argument('--chai-summary',   default='chai_summary.json')
+    parser.add_argument('--reference-pdb',  default=None,
+                        help='Ground truth PDB/mmCIF file (e.g. P69905_reference.pdb)')
+    parser.add_argument('--output',         default='comparison_report.html')
     args = parser.parse_args()
 
     print("\nLoading summaries:")
     boltz_data = load_summary(args.boltz_summary)
     chai_data  = load_summary(args.chai_summary)
 
-    print("\nLocating best-model structure files:")
+    print("\nLocating structure files:")
+    ref_struct   = load_reference_structure(args.reference_pdb)
     boltz_struct = find_best_structure(boltz_data, 'boltz2')
     chai_struct  = find_best_structure(chai_data,  'chai1')
 
     print("\nGenerating report...")
-    html = generate_html(boltz_data, chai_data, boltz_struct, chai_struct)
+    html = generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct)
 
     with open(args.output, 'w') as f:
         f.write(html)
