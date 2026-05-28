@@ -412,7 +412,7 @@ Plotly.newPlot('metricChart', [
     template: 'plotly_white',
     legend: {{ orientation: 'h', y: -0.2 }},
     height: 380,
-    margin: {{ t: 30, b: 80 }}
+    margin: {{ t: 30, r: 30, b: 80 }}
 }}, {{responsive: true}});
 
 // ── Tool-specific additional metrics ──
@@ -441,7 +441,7 @@ Plotly.newPlot('extraChart', [
     template: 'plotly_white',
     legend: {{ orientation: 'h', y: -0.2 }},
     height: 350,
-    margin: {{ t: 50, b: 80 }}
+    margin: {{ t: 50, r: 30, b: 80 }}
 }}, {{responsive: true}});
 
 // ── Mol* 3D viewers ──
