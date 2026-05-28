@@ -16,7 +16,7 @@ def generate_report():
 <head>
     <title>Predicted Binding Affinities - Interactive Dashboard</title>
     <meta charset="UTF-8">
-    <script src="https://cdn.jsdelivr.net/npm/smiles-drawer@2.1.0/dist/smiles-drawer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smiles-drawer/dist/smiles-drawer.min.js"></script>
     <style>
         * {{ box-sizing: border-box; }}
         body {{
