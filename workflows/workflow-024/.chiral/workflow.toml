@@ -1,0 +1,27 @@
+name = "ESMFold2 Structure Prediction"
+description = "Predict all-atom 3D structures from protein/DNA/RNA sequences using ESMFold2 (local inference)"
+
+[dependencies]
+01-validate-inputs = ["00-download"]
+02-predict         = ["01-validate-inputs"]
+03-report          = ["02-predict"]
+
+[params.uniprot_id]
+type    = "string"
+default = "P69905"
+hint    = "UniProt accession ID to download (used by 00-download node)"
+
+[params.num_loops]
+type    = "integer"
+default = "3"
+hint    = "Refinement iterations (3–5; more = better accuracy, slower)"
+
+[params.num_sampling_steps]
+type    = "integer"
+default = "50"
+hint    = "Diffusion sampling steps (32–400; more = better, slower)"
+
+[params.num_diffusion_samples]
+type    = "integer"
+default = "1"
+hint    = "Number of structure samples per run"
