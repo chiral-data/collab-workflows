@@ -15,7 +15,7 @@ import sys
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)-8s %(message)s")
 log = logging.getLogger("validate")
 
-VALID_BASES = set("ACGTNacgtn")
+VALID_BASES = set("ACGTURYSWKMBDHVNacgturyswkmbdhvn")
 MIN_SEQUENCE_LENGTH = 100  # bp — sequences shorter than this can't yield a 500bp ROI window
 
 
