@@ -348,7 +348,7 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
     <!-- Side-by-side shared metric bar chart -->
     <div class="card">
         <div class="card-header"><i class="fas fa-chart-bar"></i> Shared Metrics Comparison (Best Models)</div>
-        <div class="plot-container" id="metricChart"></div>
+        <div class="plot-container"><div id="metricChart"></div></div>
     </div>
 
     <!-- Additional tool-specific metrics -->
@@ -359,7 +359,7 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct):
             Chai-1 reports Aggregate Score = 0.2×pTM + 0.8×ipTM − clash penalty (higher is better).
             These metrics are not directly comparable across tools.
         </p>
-        <div class="plot-container" id="extraChart"></div>
+        <div class="plot-container"><div id="extraChart"></div></div>
     </div>
 
     <!-- Detailed table -->
