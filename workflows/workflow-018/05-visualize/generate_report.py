@@ -52,7 +52,7 @@ def load_structure_file(path):
     """Read structure file; escape backticks and ${ for JS template literal embedding."""
     with open(path) as f:
         content = f.read()
-    return content.replace("`", "\\`").replace("${", "\\${")
+    return content.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
 
 
 def find_best_structure(summary_data, tool):
