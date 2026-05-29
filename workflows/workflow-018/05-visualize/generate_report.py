@@ -157,6 +157,28 @@ def _table_row(tool, entry, color):
         </tr>"""
 
 
+# ── Sequence display ─────────────────────────────────────────────────────────
+
+def format_sequence_blocks(sequences):
+    """Render one block per chain with FASTA-style wrapped sequence."""
+    blocks = []
+    for s in sequences:
+        seq = s.get('sequence', '')
+        if not seq:
+            continue
+        wrapped = '\n'.join(seq[i:i+60] for i in range(0, len(seq), 60))
+        blocks.append(f"""
+        <div style="margin-bottom:12px;">
+            <span style="font-weight:600;color:#075985;">Chain {s['id']}</span>
+            <span style="color:#64748b;font-size:0.85rem;margin-left:8px;">{s['type']} &middot; {len(seq)} residues</span>
+            <pre style="margin-top:6px;padding:12px;background:#f8fafc;border-radius:8px;
+                        font-size:0.8rem;line-height:1.6;overflow-x:auto;white-space:pre-wrap;
+                        word-break:break-all;margin-bottom:0;">{wrapped}</pre>
+        </div>""")
+    return ''.join(blocks) if blocks else \
+        '<p style="color:#94a3b8;margin:0;">No sequence data available.</p>'
+
+
 # ── 3D viewer ─────────────────────────────────────────────────────────────────
 
 def _combined_viewer_js(viewer_id, structures):
@@ -262,6 +284,8 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct):
     b_pde = round(b_best.get('pde_mean') or 0, 4)
     c_agg = round(c_best.get('aggregate_score') or 0, 4)
     extra_y_max = round(max(b_pae, b_pde, c_agg, 0.01) * 1.3, 2)
+
+    sequence_blocks = format_sequence_blocks(boltz_data.get('sequences', []))
 
     # Build structure list for combined viewer
     b_sample, b_content, b_fmt = boltz_struct
@@ -371,6 +395,12 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct):
             Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
             PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
         </p>
+    </div>
+
+    <!-- Input Sequences -->
+    <div class="card">
+        <div class="card-header"><i class="fas fa-dna"></i> Input Sequence(s)</div>
+        <div style="padding:20px;">{sequence_blocks}</div>
     </div>
 
     <!-- Top metric summary cards -->

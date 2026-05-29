@@ -131,13 +131,33 @@ def parse_confidence_files(output_dir):
 
 # ── Summary ───────────────────────────────────────────────────────────────────
 
-def write_summary(output_dir, collected_files, metrics, params):
+def parse_sequences(input_file):
+    """Extract chain sequences from Boltz input YAML."""
+    try:
+        import yaml
+        with open(input_file) as f:
+            data = yaml.safe_load(f)
+        seqs = []
+        for item in data.get('sequences', []):
+            for entity_type, entity in item.items():
+                seqs.append({
+                    'id':       entity.get('id', '?'),
+                    'type':     entity_type,
+                    'sequence': entity.get('sequence', ''),
+                })
+        return seqs
+    except Exception:
+        return []
+
+
+def write_summary(output_dir, collected_files, metrics, params, input_file):
     """Write boltz_summary.json for the visualization node."""
     pdb_files = [f for f in collected_files if f.endswith('.pdb')]
 
     summary = {
         'tool':       'boltz2',
         'params':     params,
+        'sequences':  parse_sequences(input_file),
         'pdb_files':  pdb_files,
         'confidence': metrics,
     }
@@ -198,7 +218,7 @@ def main():
         'recycling_steps':   args.recycling_steps,
         'use_msa_server':    args.use_msa_server,
     }
-    write_summary(args.output_dir, collected, metrics, params)
+    write_summary(args.output_dir, collected, metrics, params, args.input)
 
     print("\nNode 03 completed ✓")
 
