@@ -1,6 +1,6 @@
 name = "Download Sequence"
 description = "Download a protein sequence from UniProt by accession ID"
-outputs = ["*.fasta"]
+outputs = ["*.fasta", "*.pdb"]
 
 [container]
 image = "ghcr.io/chiral-data/boltz:2025_09_05"

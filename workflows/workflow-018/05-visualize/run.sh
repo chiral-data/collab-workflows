@@ -15,9 +15,18 @@ if [ ! -f chai_summary.json ]; then
     exit 1
 fi
 
+# Detect ground truth structure from node 00-download (optional)
+REFERENCE_PDB=$(ls *_reference.pdb 2>/dev/null | head -1)
+REF_ARG=""
+if [ -n "$REFERENCE_PDB" ]; then
+    echo "Found reference structure: $REFERENCE_PDB"
+    REF_ARG="--reference-pdb $REFERENCE_PDB"
+fi
+
 python3 generate_report.py \
     --boltz-summary boltz_summary.json \
     --chai-summary  chai_summary.json \
-    --output        comparison_report.html
+    --output        comparison_report.html \
+    $REF_ARG
 
 echo "Node 05 completed"
