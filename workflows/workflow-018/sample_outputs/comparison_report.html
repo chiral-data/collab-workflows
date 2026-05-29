@@ -56,10 +56,7 @@
         .summary-card .metric-name { color: #64748b; font-size: 0.85rem; }
         .boltz-label { color: var(--boltz); }
         .chai-label  { color: var(--chai);  }
-        .viewer-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 16px; padding: 20px;
-        }
+        .viewer-container { padding: 20px; }
         .plot-container { padding: 20px; overflow: hidden; min-width: 0; }
         .note { font-size: 0.8rem; color: #64748b; padding: 8px 20px 0; }
         .table th { background: #f8fafc; font-weight: 600; color: #075985; }
@@ -73,7 +70,7 @@
     <div class="header">
         <h1><i class="fas fa-balance-scale"></i> Boltz-2 vs Chai-1 Structure Prediction</h1>
         <p class="subtitle">
-            <strong>Generated:</strong> 2026-05-29 03:05:43 &nbsp;|&nbsp;
+            <strong>Generated:</strong> 2026-05-29 03:48:03 &nbsp;|&nbsp;
             Shared metrics (pLDDT, pTM, ipTM) on 0–1 scale &nbsp;|&nbsp;
             PAE/PDE: Boltz-2 only &nbsp;|&nbsp; Aggregate score: Chai-1 only
         </p>
@@ -127,18 +124,10 @@ AVHASLDKFLASVSTVLTSKYR</pre>
 
     <!-- 3D Structure Comparison -->
     <div class="card">
-        <div class="card-header"><i class="fas fa-cube"></i> 3D Structure Comparison (Best Models)</div>
-        <div class="viewer-grid">
-            
-        <div>
-            <h6 style="font-weight:600;margin-bottom:8px;color:#0284c7;">Boltz-2 — boltz_input_model_0 &nbsp;<span style="font-weight:400;color:#64748b;font-size:0.85rem;">pLDDT 0.952</span></h6>
-            <div id="boltz-viewer" style="width:100%;height:480px;position:relative;"></div>
-        </div>
-            
-        <div>
-            <h6 style="font-weight:600;margin-bottom:8px;color:#7c3aed;">Chai-1 — model_3 &nbsp;<span style="font-weight:400;color:#64748b;font-size:0.85rem;">pLDDT 0.927</span></h6>
-            <div id="chai-viewer" style="width:100%;height:480px;position:relative;"></div>
-        </div>
+        <div class="card-header"><i class="fas fa-cube"></i> 3D Structure Comparison</div>
+        <div class="viewer-container">
+            <div style="margin-bottom:12px;"><button id="toggle-struct-0" onclick="toggleStruct(0)" style="background:#0284c7;color:white;border:none;padding:5px 16px;border-radius:20px;font-size:0.83rem;cursor:pointer;margin-right:6px;transition:opacity 0.2s;">Boltz-2 — boltz_input_model_0</button><button id="toggle-struct-1" onclick="toggleStruct(1)" style="background:#7c3aed;color:white;border:none;padding:5px 16px;border-radius:20px;font-size:0.83rem;cursor:pointer;margin-right:6px;transition:opacity 0.2s;">Chai-1 — model_3</button></div>
+            <div id="combined-viewer" style="width:100%;height:540px;position:relative;"></div>
         </div>
     </div>
 
@@ -324,10 +313,11 @@ Plotly.newPlot('extraChart', [
     margin: { t: 50, r: 30, b: 80 }
 }, {responsive: true});
 
-// ── Mol* 3D viewers ──
+// ── Mol* 3D viewer ──
 
   (function() {
-    var data = `ATOM      1  N   MET A   1      -1.968  10.549 -13.052  1.00 70.21           N  
+    var structures = [
+  {label: "Boltz-2 \u2014 boltz_input_model_0", data: `ATOM      1  N   MET A   1      -1.968  10.549 -13.052  1.00 70.21           N  
 ATOM      2  CA  MET A   1      -1.220  11.784 -12.795  1.00 70.21           C  
 ATOM      3  C   MET A   1       0.228  11.627 -13.238  1.00 70.21           C  
 ATOM      4  O   MET A   1       0.819  10.560 -13.090  1.00 70.21           O  
@@ -1404,27 +1394,8 @@ ATOM   1074  CZ  ARG A 142     -13.037 -10.160 -17.177  1.00 49.54           C
 ATOM   1075  NH1 ARG A 142     -11.751  -9.863 -17.102  1.00 49.54           N  
 ATOM   1076  NH2 ARG A 142     -13.585 -10.917 -16.226  1.00 49.54           N  
 END                                                                             
-                                                                                `;
-    molstar.Viewer.create('boltz-viewer', {
-    layoutIsExpanded: false,
-    layoutShowControls: false,
-    layoutShowLeftPanel: false,
-    layoutShowSequence: false,
-    layoutShowLog: false,
-    layoutShowRemoteState: false,
-    viewportShowAnimation: false,
-    viewportShowExpand: true,
-    viewportShowSelectionMode: false,
-  })
-      .then(function(v) { return v.loadStructureFromData(data, 'pdb'); })
-      .catch(function(e) {
-        document.getElementById('boltz-viewer').innerHTML =
-          '<p style="color:red;padding:16px">Viewer error: ' + e + '</p>';
-      });
-  })();
-
-  (function() {
-    var data = `data_model
+                                                                                `, format: "pdb"},
+  {label: "Chai-1 \u2014 model_3", data: `data_model
 _entry.id model
 _struct.entry_id model
 _struct.pdbx_model_details .
@@ -3124,23 +3095,64 @@ _ma_qa_metric_local.metric_value
 141 1 A 141 TYR 1 76.227
 142 1 A 142 ARG 1 71.528
 #
-`;
-    molstar.Viewer.create('chai-viewer', {
-    layoutIsExpanded: false,
-    layoutShowControls: false,
-    layoutShowLeftPanel: false,
-    layoutShowSequence: false,
-    layoutShowLog: false,
-    layoutShowRemoteState: false,
-    viewportShowAnimation: false,
-    viewportShowExpand: true,
-    viewportShowSelectionMode: false,
-  })
-      .then(function(v) { return v.loadStructureFromData(data, 'mmcif'); })
-      .catch(function(e) {
-        document.getElementById('chai-viewer').innerHTML =
+`, format: "mmcif"}
+    ];
+    var visible = structures.map(function() { return true; });
+    var molPlugin = null;
+
+    window.toggleStruct = function(idx) {
+      if (!molPlugin) return;
+      visible[idx] = !visible[idx];
+      var show = visible[idx];
+      var structs = molPlugin.managers.structure.hierarchy.current.structures;
+      if (!structs[idx]) return;
+      var isHidden = !!structs[idx].cell.state.isHidden;
+      if ((show && isHidden) || (!show && !isHidden)) {
+        try {
+          molPlugin.managers.structure.hierarchy.toggleVisibility([structs[idx]]);
+        } catch(e) {
+          try {
+            molstar.PluginCommands.State.ToggleVisibility(molPlugin, {
+              state: molPlugin.state.data,
+              ref: structs[idx].cell.transform.ref
+            });
+          } catch(e2) {
+            console.warn('Cannot toggle structure visibility:', e2);
+          }
+        }
+      }
+      var btn = document.getElementById('toggle-struct-' + idx);
+      if (btn) btn.style.opacity = show ? '1' : '0.35';
+    };
+
+    molstar.Viewer.create('combined-viewer', {
+      layoutIsExpanded: false,
+      layoutShowControls: false,
+      layoutShowLeftPanel: true,
+      layoutShowSequence: false,
+      layoutShowLog: false,
+      layoutShowRemoteState: false,
+      viewportShowAnimation: false,
+      viewportShowExpand: true,
+      viewportShowSelectionMode: false,
+    }).then(function(viewer) {
+      molPlugin = viewer.plugin;
+      var p = molPlugin;
+      var chain = Promise.resolve();
+      structures.forEach(function(s) {
+        chain = chain
+          .then(function() { return p.builders.data.rawData({ data: s.data, label: s.label }); })
+          .then(function(d) { return p.builders.structure.parseTrajectory(d, s.format); })
+          .then(function(t) { return p.builders.structure.hierarchy.applyPreset(t, 'default'); });
+      });
+      chain.catch(function(e) {
+        document.getElementById('combined-viewer').innerHTML =
           '<p style="color:red;padding:16px">Viewer error: ' + e + '</p>';
       });
+    }).catch(function(e) {
+      document.getElementById('combined-viewer').innerHTML =
+        '<p style="color:red;padding:16px">Viewer error: ' + e + '</p>';
+    });
   })();
 </script>
 </body>
