@@ -61,7 +61,9 @@ try:
         record = line[:6].strip()
         if record in ('ATOM', 'HETATM', 'ANISOU', 'TER') and len(line) > 21:
             if line[21] == best_chain:
-                kept.append(line)
+                resname = line[17:20].strip()
+                if resname != 'HOH':  # strip water molecules
+                    kept.append(line)
         elif record in ('HEADER', 'TITLE', 'REMARK', 'SEQRES', 'CRYST1'):
             kept.append(line)
     kept.append('END\n')
