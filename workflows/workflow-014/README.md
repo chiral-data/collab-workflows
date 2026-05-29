@@ -102,6 +102,37 @@ graph TD
 
 ---
 
+## Quick Start: Using Your Own Data
+
+To run the workflow on your own molecule library instead of the built-in DrugBank dataset:
+
+**1. Prepare your CSV file**
+
+Your CSV must have a SMILES column. A `molecule_id` column is optional but recommended:
+
+```csv
+molecule_id,smiles
+aspirin,CC(=O)Oc1ccccc1C(=O)O
+caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C
+ibuprofen,CC(C)Cc1ccc(cc1)C(C)C(=O)O
+```
+
+If your SMILES column has a different name (e.g. `canonical_smiles`), set the `smiles_column` parameter accordingly.
+
+**2. Place the file in the input directory**
+
+```
+workflows/workflow-014/
+└── input_files/
+    └── your_molecules.csv   ← place your CSV here
+```
+
+**3. Set the `input_file` parameter when starting the workflow**
+
+Change `input_file` from the default `inputs/drugbank_approved.csv` to `inputs/your_molecules.csv`. All other parameters (filters, `top_n`) can be left at their defaults or adjusted as needed.
+
+---
+
 ## Configuration
 
 The workflow is configurable via `.chiral/job.toml` files in each node directory. Parameters are passed as `PARAM_*` environment variables at runtime.

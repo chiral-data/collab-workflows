@@ -16,3 +16,43 @@ hint = "Input CSV file containing molecules with a SMILES column"
 type = "string"
 default = "smiles"
 hint = "Name of column containing SMILES strings"
+
+[params.top_n]
+type = "integer"
+default = 20
+hint = "Number of top-ranked candidates to return"
+
+[params.filter_hERG]
+type = "string"
+default = "safe"
+hint = "hERG filter: 'safe' (<0.5), 'strict' (<0.3), or a numeric max e.g. '0.4'"
+
+[params.filter_Caco2]
+type = "string"
+default = ">-5.15"
+hint = "Caco2 permeability threshold (log scale), e.g. '>-5.15'"
+
+[params.filter_BBB]
+type = "string"
+default = ">0.5"
+hint = "Blood-brain barrier permeability min probability, e.g. '>0.5'"
+
+[params.filter_HIA]
+type = "string"
+default = ">0.5"
+hint = "Human Intestinal Absorption min probability, e.g. '>0.5'"
+
+[params.filter_DILI]
+type = "string"
+default = "<0.5"
+hint = "Drug-Induced Liver Injury max probability, e.g. '<0.5'"
+
+[params.filter_AMES]
+type = "string"
+default = "<0.5"
+hint = "AMES mutagenicity max probability, e.g. '<0.5'"
+
+[params.filter_ClinTox]
+type = "string"
+default = "<0.3"
+hint = "Clinical Toxicity max probability, e.g. '<0.3'"
