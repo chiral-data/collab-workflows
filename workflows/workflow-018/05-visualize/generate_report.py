@@ -48,15 +48,18 @@ def best_model(confidence_list):
 
 # ── Structure file loading ────────────────────────────────────────────────────
 
-def load_structure_file(path):
-    """Read structure file; escape backticks and ${ for JS template literal embedding."""
+def _read_raw(path):
     with open(path) as f:
-        content = f.read()
+        return f.read()
+
+
+def _escape_for_js(content):
+    """Escape for JS template literal embedding."""
     return content.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
 
 
 def find_best_structure(summary_data, tool):
-    """Return (sample_name, content, file_format) for the best model (highest pLDDT).
+    """Return (sample_name, raw_content, file_format) for the best model (highest pLDDT).
 
     Boltz: sample 'boltz_input_model_0' → 'boltz_input_model_0.pdb'
     Chai:  sample 'model_0' → 'pred.model_idx_0.cif'
@@ -89,11 +92,11 @@ def find_best_structure(summary_data, tool):
         return best['sample'], None, file_format
 
     print(f"  Loading structure: {filename}")
-    return best['sample'], load_structure_file(str(p)), file_format
+    return best['sample'], _read_raw(str(p)), file_format
 
 
 def load_reference_structure(path):
-    """Return (content, file_format) for the ground truth structure, or (None, None)."""
+    """Return (raw_content, file_format) for the ground truth structure, or (None, None)."""
     if not path:
         return None, None
     p = Path(path)
@@ -102,7 +105,47 @@ def load_reference_structure(path):
         return None, None
     file_format = 'mmcif' if p.suffix.lower() in ('.cif', '.mmcif') else 'pdb'
     print(f"  Loading reference structure: {p.name}")
-    return load_structure_file(str(p)), file_format
+    return _read_raw(str(p)), file_format
+
+
+def superpose_onto_reference(ref_raw, pred_raw, pred_fmt):
+    """Superpose prediction onto reference via Cα least-squares fit (BioPython).
+
+    Returns (aligned_pdb_string, rmsd) or (pred_raw, None) on failure.
+    The returned format is always 'pdb' on success (BioPython PDBIO output).
+    """
+    try:
+        import io
+        from Bio.PDB import PDBParser, MMCIFParser, PDBIO, Superimposer
+
+        ref_struct  = PDBParser(QUIET=True).get_structure('ref',  io.StringIO(ref_raw))
+        pred_parser = MMCIFParser(QUIET=True) if pred_fmt == 'mmcif' else PDBParser(QUIET=True)
+        pred_struct = pred_parser.get_structure('pred', io.StringIO(pred_raw))
+
+        ref_ca  = [a for a in ref_struct.get_atoms()  if a.name == 'CA']
+        pred_ca = [a for a in pred_struct.get_atoms() if a.name == 'CA']
+
+        n = min(len(ref_ca), len(pred_ca))
+        if n < 3:
+            print(f"  Warning: only {n} Cα pairs — skipping superposition")
+            return pred_raw, None
+
+        si = Superimposer()
+        si.set_atoms(ref_ca[:n], pred_ca[:n])
+        si.apply(list(pred_struct.get_atoms()))
+
+        buf = io.StringIO()
+        pdbio = PDBIO()
+        pdbio.set_structure(pred_struct)
+        pdbio.save(buf)
+
+        rmsd = round(si.rms, 3)
+        print(f"  RMSD = {rmsd:.3f} Å ({n} Cα pairs)")
+        return buf.getvalue(), rmsd
+
+    except Exception as e:
+        print(f"  Warning: superposition failed ({e}) — using original coordinates")
+        return pred_raw, None
 
 
 # ── Chart data helpers ────────────────────────────────────────────────────────
@@ -264,7 +307,7 @@ def _combined_viewer_js(viewer_id, structures):
 
 # ── HTML generation ───────────────────────────────────────────────────────────
 
-def generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct):
+def generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct, alignment_info=None):
     boltz_conf = normalize_plddt(boltz_data['confidence'], 'boltz2')
     chai_conf  = normalize_plddt(chai_data['confidence'],  'chai1')
 
@@ -313,7 +356,18 @@ def generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct):
             f'transition:opacity 0.2s;">{label}</button>'
             for i, (label, _, _, color) in enumerate(viewer_structures)
         )
-        viewer_note = f'<div style="margin-bottom:12px;">{toggle_buttons}</div>'
+        rmsd_parts = []
+        if alignment_info:
+            if alignment_info.get('boltz_rmsd') is not None:
+                rmsd_parts.append(f'Boltz-2: {alignment_info["boltz_rmsd"]:.2f} Å')
+            if alignment_info.get('chai_rmsd') is not None:
+                rmsd_parts.append(f'Chai-1: {alignment_info["chai_rmsd"]:.2f} Å')
+        rmsd_note = (
+            f'<p style="font-size:0.78rem;color:#64748b;margin:8px 0 0;">'
+            f'Aligned to ground truth — RMSD: {" &nbsp;·&nbsp; ".join(rmsd_parts)}</p>'
+            if rmsd_parts else ''
+        )
+        viewer_note = f'<div style="margin-bottom:12px;">{toggle_buttons}{rmsd_note}</div>'
         viewer_body = '<div id="combined-viewer" style="width:100%;height:540px;position:relative;"></div>'
     else:
         viewer_note = ''
@@ -565,12 +619,26 @@ def main():
     chai_data  = load_summary(args.chai_summary)
 
     print("\nLocating structure files:")
-    ref_struct   = load_reference_structure(args.reference_pdb)
-    boltz_struct = find_best_structure(boltz_data, 'boltz2')
-    chai_struct  = find_best_structure(chai_data,  'chai1')
+    ref_raw, ref_fmt         = load_reference_structure(args.reference_pdb)
+    b_sample, b_raw, b_fmt   = find_best_structure(boltz_data, 'boltz2')
+    c_sample, c_raw, c_fmt   = find_best_structure(chai_data,  'chai1')
+
+    alignment_info = None
+    if ref_raw:
+        print("\nSuperposing predictions onto ground truth:")
+        b_aligned, b_rmsd = superpose_onto_reference(ref_raw, b_raw, b_fmt) if b_raw else (None, None)
+        c_aligned, c_rmsd = superpose_onto_reference(ref_raw, c_raw, c_fmt) if c_raw else (None, None)
+        b_raw, b_fmt = (b_aligned, 'pdb') if b_aligned else (b_raw, b_fmt)
+        c_raw, c_fmt = (c_aligned, 'pdb') if c_aligned else (c_raw, c_fmt)
+        alignment_info = {'boltz_rmsd': b_rmsd, 'chai_rmsd': c_rmsd}
+
+    # Escape raw content for JS template literal embedding
+    ref_struct   = (_escape_for_js(ref_raw) if ref_raw else None, ref_fmt)
+    boltz_struct = (b_sample, _escape_for_js(b_raw) if b_raw else None, b_fmt)
+    chai_struct  = (c_sample, _escape_for_js(c_raw) if c_raw else None, c_fmt)
 
     print("\nGenerating report...")
-    html = generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct)
+    html = generate_html(boltz_data, chai_data, boltz_struct, chai_struct, ref_struct, alignment_info)
 
     with open(args.output, 'w') as f:
         f.write(html)
