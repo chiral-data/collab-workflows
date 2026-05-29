@@ -140,7 +140,7 @@ cd workflow-024
 
 ### Full offline mode
 
-1. Place `target.fasta` and `exclusion.fasta` in `input_files/`
+1. Place `target.fasta` and `exclusion.fasta` in `input_files/` Note: the file names must be exactly target.fasta and exclusion.fasta - the pipeline looks for these specific names.
 2. Leave `organism` and `target_fasta` empty in `global_params.json`
 3. **Set `skip_blast: true` in `global_params.json`** — BLAST requires an organism name to scope its database; without one the pipeline auto-sets `skip_blast=true` and logs a warning anyway, but setting it explicitly avoids the warning and makes the intent clear.
 4. Launch Silva and select `workflow-024`
