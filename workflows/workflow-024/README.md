@@ -30,7 +30,7 @@ Supports whole-genome mode, gene-targeted mode (e.g. `cpn60`, `rpoB`), and refer
 | 01   | Validate Inputs         | Check FASTA format, sequence count, length, nucleotide content                            | `validation_summary.json`                   |
 | 02   | ROI Selection           | Sliding-window k-mer uniqueness scan; select top-N non-overlapping ROI windows            | `rois.json`                                 |
 | 03   | Primer Design           | Primer3 design + thermodynamic constraint filtering (exit code 2 = no primers, not error) | `primer_sets.json`                          |
-| 04   | BLAST Validation/Report | Local BLAST+ specificity check + JSON/TSV/TXT reports (exit code 2 = no sets pass)       | `results.json`, `results.tsv`, `report.txt` |
+| 04   | BLAST Validation/Report | Local BLAST+ specificity check + JSON/TSV/TXT/HTML reports (exit code 2 = no sets pass)  | `results.json`, `results.tsv`, `report.txt`, `report.html` |
 
 ## Input Files
 
@@ -84,6 +84,7 @@ Place files in `input_files/` for offline or hybrid operation.
 | `results.json` | Machine-readable full results: all primer sets with Tm, GC%, amplicon size, BLAST hits |
 | `results.tsv` | Spreadsheet-friendly summary of all primer sets |
 | `report.txt` | Human-readable ranked report with per-oligo stats and BLAST results |
+| `report.html` | Self-contained visual HTML report: ranked primer sets with sequences, Tm, GC%, amplicon size, BLAST results, and pass/fail status |
 
 ## Exit Codes
 
@@ -141,6 +142,7 @@ cd workflow-024
 
 1. Place `target.fasta` and `exclusion.fasta` in `input_files/`
 2. Leave `organism` and `target_fasta` empty in `global_params.json`
-3. Launch Silva and select `workflow-024`
+3. **Set `skip_blast: true` in `global_params.json`** — BLAST requires an organism name to scope its database; without one the pipeline auto-sets `skip_blast=true` and logs a warning anyway, but setting it explicitly avoids the warning and makes the intent clear.
+4. Launch Silva and select `workflow-024`
 
 

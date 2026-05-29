@@ -354,19 +354,209 @@ def _write_txt(primer_sets, organism, skip_blast, outdir):
     return path
 
 
+# ── HTML Report ──────────────────────────────────────────────────────────────
+
+def _write_html(primer_sets, organism, skip_blast, outdir):
+    path = os.path.join(outdir, "report.html")
+    ts = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
+    passed_count = sum(
+        1 for ps in primer_sets
+        if ps["passed_constraints"] and (skip_blast or ps.get("blast_pass"))
+    )
+
+    def _badge(ok):
+        if ok:
+            return '<span class="badge pass">PASS</span>'
+        return '<span class="badge fail">FAIL</span>'
+
+    def _blast_row(label, br):
+        if br is None:
+            return f'<tr><td>{label}</td><td colspan="4"><em>not run</em></td></tr>'
+        spec = br.get("specific")
+        spec_cell = ('<span class="ok">specific</span>' if spec
+                     else '<span class="bad">not specific</span>')
+        rows = [f'<tr><td>{label}</td><td>{spec_cell}</td><td colspan="3"></td></tr>']
+        for h in br.get("hits", [])[:3]:
+            tgt = "+" if h.get("is_target") else "&#x2715;"
+            tgt_cls = "ok" if h.get("is_target") else "bad"
+            title_short = h["title"][:60] + ("…" if len(h["title"]) > 60 else "")
+            rows.append(
+                f'<tr class="hit-row"><td></td>'
+                f'<td><span class="{tgt_cls}">{tgt}</span> {title_short}</td>'
+                f'<td>{h["identity"]:.1f}%</td>'
+                f'<td>{h["coverage"]:.1f}%</td>'
+                f'<td>{h["evalue"]:.1e}</td></tr>'
+            )
+        return "\n".join(rows)
+
+    cards = []
+    for rank, ps in enumerate(primer_sets, start=1):
+        blast_ok = ps.get("blast_pass") if ps.get("blast_pass") is not None else True
+        ok = ps["passed_constraints"] and (skip_blast or blast_ok)
+        badge = _badge(ok)
+        notes_html = ""
+        if ps.get("constraint_notes"):
+            items = "".join(f"<li>{n}</li>" for n in ps["constraint_notes"])
+            notes_html = f'<div class="notes"><strong>Constraint issues:</strong><ul>{items}</ul></div>'
+
+        probe_row = ""
+        if ps.get("probe_seq"):
+            delta = ps["probe_tm"] - (ps["fwd_tm"] + ps["rev_tm"]) / 2
+            probe_row = f"""
+            <tr>
+              <td>Probe</td>
+              <td class="seq">5&#x2032;-{ps['probe_seq']}-3&#x2032;</td>
+              <td>{len(ps['probe_seq'])}</td>
+              <td>{ps['probe_tm']:.1f}</td>
+              <td>{ps['probe_gc']:.1f}</td>
+              <td><em>ΔTm {delta:+.1f}°C vs primers</em></td>
+            </tr>"""
+
+        blast_section = ""
+        if not skip_blast:
+            blast_overall = _badge(bool(ps.get("blast_pass"))) if ps.get("blast_pass") is not None else "<em>not run</em>"
+            blast_section = f"""
+            <h4>BLAST Specificity &nbsp;{blast_overall}</h4>
+            <table class="blast-tbl">
+              <thead><tr><th>Oligo</th><th>Hit / Status</th><th>Identity</th><th>Coverage</th><th>E-value</th></tr></thead>
+              <tbody>
+                {_blast_row("Forward", ps.get("blast_fwd"))}
+                {_blast_row("Reverse", ps.get("blast_rev"))}
+                {_blast_row("Probe", ps.get("blast_probe"))}
+              </tbody>
+            </table>"""
+
+        cards.append(f"""
+        <div class="card {'card-pass' if ok else 'card-fail'}">
+          <div class="card-header">
+            <span class="rank">#{rank}</span>
+            <span class="pair-label">Primer3 pair #{ps['pair_index']}</span>
+            {badge}
+            <span class="roi-label">ROI {ps['roi']['record_id']}:{ps['roi']['start']}–{ps['roi']['end']}
+              &nbsp;<small>(uniqueness {ps['roi']['uniqueness_score']:.3f})</small></span>
+          </div>
+          <table class="oligo-tbl">
+            <thead><tr><th>Oligo</th><th>Sequence (5&#x2032;→3&#x2032;)</th><th>Len</th><th>Tm (°C)</th><th>GC%</th><th>Amplicon / Penalty</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Forward</td>
+                <td class="seq">5&#x2032;-{ps['fwd_seq']}-3&#x2032;</td>
+                <td>{len(ps['fwd_seq'])}</td>
+                <td>{ps['fwd_tm']:.1f}</td>
+                <td>{ps['fwd_gc']:.1f}</td>
+                <td rowspan="2" class="amplicon">{ps['amplicon_size']} bp<br><small>P3 penalty {ps['penalty']:.4f}</small></td>
+              </tr>
+              <tr>
+                <td>Reverse</td>
+                <td class="seq">5&#x2032;-{ps['rev_seq']}-3&#x2032;</td>
+                <td>{len(ps['rev_seq'])}</td>
+                <td>{ps['rev_tm']:.1f}</td>
+                <td>{ps['rev_gc']:.1f}</td>
+              </tr>
+              {probe_row}
+            </tbody>
+          </table>
+          {notes_html}
+          {blast_section}
+        </div>""")
+
+    empty_msg = '<p class="empty">No primer sets were available in this run.</p>' if not primer_sets else ""
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>qPCR Primer Report — {organism}</title>
+<style>
+  *{{box-sizing:border-box;margin:0;padding:0}}
+  body{{font-family:'Segoe UI',Arial,sans-serif;background:#f5f6fa;color:#222;padding:24px}}
+  h1{{font-size:1.5rem;margin-bottom:4px}}
+  h4{{font-size:.95rem;margin:12px 0 6px}}
+  .meta{{color:#555;font-size:.85rem;margin-bottom:18px}}
+  .summary{{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:22px}}
+  .stat{{background:#fff;border-radius:8px;padding:12px 20px;box-shadow:0 1px 4px #0001;text-align:center}}
+  .stat .val{{font-size:1.8rem;font-weight:700;line-height:1.1}}
+  .stat .lbl{{font-size:.75rem;color:#666;margin-top:2px}}
+  .card{{background:#fff;border-radius:10px;box-shadow:0 1px 5px #0001;margin-bottom:18px;overflow:hidden;border-left:5px solid #ccc}}
+  .card-pass{{border-left-color:#22a06b}}
+  .card-fail{{border-left-color:#e5483e}}
+  .card-header{{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fafbfc;border-bottom:1px solid #eee;flex-wrap:wrap}}
+  .rank{{font-size:1.2rem;font-weight:700;color:#444}}
+  .pair-label{{font-size:.85rem;color:#666}}
+  .roi-label{{font-size:.82rem;color:#555;margin-left:auto}}
+  .badge{{border-radius:4px;padding:2px 10px;font-size:.78rem;font-weight:700;letter-spacing:.03em}}
+  .badge.pass{{background:#d4f5e9;color:#1a7a50}}
+  .badge.fail{{background:#fde8e7;color:#a8261e}}
+  table{{width:100%;border-collapse:collapse;font-size:.85rem;margin:0}}
+  .oligo-tbl,.blast-tbl{{padding:0 16px 12px}}
+  .oligo-tbl{{display:block}}
+  .oligo-tbl table,.blast-tbl table{{margin-top:0}}
+  th{{background:#f0f1f5;padding:6px 10px;text-align:left;font-weight:600;font-size:.78rem;color:#444}}
+  td{{padding:5px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top}}
+  tr:last-child td{{border-bottom:none}}
+  .seq{{font-family:'Courier New',monospace;font-size:.8rem;word-break:break-all;color:#1a5ca8}}
+  .amplicon{{text-align:center;vertical-align:middle;color:#444}}
+  .notes{{padding:6px 16px 10px;font-size:.82rem;color:#7a4800;background:#fffbf0}}
+  .notes ul{{padding-left:18px;margin-top:4px}}
+  .blast-tbl{{padding:0 16px 14px;overflow-x:auto}}
+  .hit-row td{{font-size:.78rem;color:#555;padding:3px 10px}}
+  .ok{{color:#1a7a50;font-weight:600}}
+  .bad{{color:#a8261e;font-weight:600}}
+  .empty{{padding:30px;text-align:center;color:#888;font-style:italic}}
+  @media(max-width:600px){{.card-header{{flex-direction:column;align-items:flex-start}}.roi-label{{margin-left:0}}}}
+</style>
+</head>
+<body>
+<h1>qPCR Primer/Probe Design Report</h1>
+<div class="meta">Target: <strong>{organism or "—"}</strong> &nbsp;|&nbsp; Generated: {ts}
+{' &nbsp;|&nbsp; <em>BLAST skipped (skip_blast=true)</em>' if skip_blast else ''}</div>
+<div class="summary">
+  <div class="stat"><div class="val">{len(primer_sets)}</div><div class="lbl">Sets designed</div></div>
+  <div class="stat"><div class="val">{passed_count}</div><div class="lbl">Fully passed</div></div>
+  <div class="stat"><div class="val">{'skipped' if skip_blast else sum(1 for ps in primer_sets if ps.get('blast_pass'))}</div><div class="lbl">BLAST specific</div></div>
+</div>
+{empty_msg}
+{''.join(cards)}
+</body>
+</html>"""
+
+    with open(path, "w") as f:
+        f.write(html)
+    log.info("HTML report → %s", path)
+    return path
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
     organism, blast_n, skip_blast = _load_params()
     os.makedirs("./outputs", exist_ok=True)
 
+    # Guard: BLAST requires an organism for database scoping; without one it
+    # would produce a meaningless organism-agnostic db.  Auto-skip instead of
+    # silently doing the wrong thing.
+    if not skip_blast and (not organism.strip() or organism.strip() in ("unknown",)):
+        log.warning(
+            "PARAM_ORGANISM is empty or 'unknown' — BLAST validation requires an organism "
+            "for database scoping.  Automatically setting skip_blast=true.  "
+            "Set PARAM_ORGANISM or add 'organism' to global_params.json to enable BLAST, "
+            "or set skip_blast: true explicitly to suppress this warning."
+        )
+        skip_blast = True
+
     with open("./inputs/primer_sets.json") as f:
         data = json.load(f)
     primer_sets = data.get("primer_sets", [])
 
     if not primer_sets:
-        log.error("primer_sets.json contains no primer sets")
-        sys.exit(1)
+        log.warning("primer_sets.json contains no primer sets — writing empty reports")
+        _write_json([], organism, "./outputs")
+        _write_tsv([], "./outputs")
+        _write_txt([], organism, skip_blast, "./outputs")
+        _write_html([], organism, skip_blast, "./outputs")
+        sys.exit(2)
 
     log.info("Loaded %d primer set(s) for organism: %s", len(primer_sets), organism)
 
@@ -384,6 +574,7 @@ def main():
     _write_json(primer_sets, organism, "./outputs")
     _write_tsv(primer_sets, "./outputs")
     _write_txt(primer_sets, organism, skip_blast, "./outputs")
+    _write_html(primer_sets, organism, skip_blast, "./outputs")
 
     fully_passed = [ps for ps in primer_sets
                     if ps["passed_constraints"] and (skip_blast or ps.get("blast_pass"))]
