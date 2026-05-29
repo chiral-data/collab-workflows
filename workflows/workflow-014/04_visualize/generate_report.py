@@ -39,6 +39,19 @@ TABLE_PROPS = [
 # Properties where lower is better (for color coding)
 LOWER_IS_BETTER = {"AMES", "hERG", "DILI", "ClinTox"}
 
+# Key properties for the sortable summary table (column_key, display_label, tooltip)
+SUMMARY_PROPS = [
+    ("mpo_score",          "MPO Score",  "Multi-Parameter Optimization score — composite of all key ADMET properties. Higher is better."),
+    ("hERG",               "hERG",       "hERG cardiac toxicity — probability of hERG channel blockade (IC50 ≤ 10 µM). Model classification boundary: 0.5. Green: <0.3 (low risk), Yellow: 0.3–0.5 (moderate), Red: ≥0.5 (high risk)."),
+    ("DILI",               "DILI",       "Drug-Induced Liver Injury — probability based on DILIst dataset (Thakkar et al. 2020). Model classification boundary: 0.5. Green: <0.3, Yellow: 0.3–0.5, Red: ≥0.5."),
+    ("AMES",               "AMES",       "Ames mutagenicity — probability of bacterial mutagenicity (ICH S2(R1)). Model classification boundary: 0.5. Green: <0.3, Yellow: 0.3–0.5, Red: ≥0.5."),
+    ("ClinTox",            "ClinTox",    "Clinical Toxicity — probability of FDA clinical trial failure due to toxicity (Gayvert et al. 2016). Model classification boundary: 0.5. Green: <0.3, Yellow: 0.3–0.5, Red: ≥0.5."),
+    ("BBB_Martins",        "BBB",        "Blood-Brain Barrier permeability — probability of CNS penetration (Martins et al. 2012, logBB ≥ −1 threshold). High needed for CNS drugs; low preferred for peripheral targets. Green: >0.7, Yellow: 0.5–0.7, Red: ≤0.5."),
+    ("HIA_Hou",            "HIA",        "Human Intestinal Absorption — probability of oral absorption (Hou et al. 2007, ≥30% absorption threshold). Green: >0.7 (high confidence), Yellow: 0.5–0.7, Red: ≤0.5."),
+    ("QED",                "QED",        "Quantitative Estimate of Druglikeness (Bickerton et al. 2012, Nature Chemistry). Green: ≥0.67 (drug-like), Yellow: 0.34–0.67 (borderline), Red: <0.34 (non-drug-like). Median of FDA-approved oral drugs: 0.49."),
+    ("Solubility_AqSolDB", "Solubility", "Aqueous solubility (log mol/L) — higher (less negative) is better. Acceptable oral solubility: LogS > −4 (BCS guideline). No color coding applied as values are on a log scale."),
+]
+
 
 def load_candidates(path):
     with open(path, newline="") as f:
@@ -126,6 +139,41 @@ def build_table_html(candidates):
     return header_row, "\n".join(rows)
 
 
+def build_summary_table_html(candidates):
+    """Build a compact sortable summary table with key ADMET properties and tooltips."""
+    headers = "".join(
+        f'<th data-tip="{tip}" style="cursor:pointer;white-space:nowrap">{label} ↕</th>'
+        for _, label, tip in SUMMARY_PROPS
+    )
+    header_row = f"<tr><th>#</th><th>Name</th>{headers}</tr>"
+
+    rows = []
+    for i, row in enumerate(candidates, 1):
+        name = row.get("name", "N/A")
+        cells = ""
+        for prop, _, _ in SUMMARY_PROPS:
+            val = safe_float(row.get(prop))
+            if val is not None:
+                if prop in LOWER_IS_BETTER:
+                    color = "#198754" if val < 0.3 else ("#ffc107" if val < 0.5 else "#dc3545")
+                elif prop in ("BBB_Martins", "HIA_Hou"):
+                    # Martins 2012 / Hou 2007: model boundary = 0.5; >0.7 = high confidence
+                    color = "#198754" if val > 0.7 else ("#ffc107" if val > 0.5 else "#dc3545")
+                elif prop == "QED":
+                    # Bickerton 2012 (Nature Chemistry): >=0.67 drug-like, <0.34 non-drug-like
+                    color = "#198754" if val >= 0.67 else ("#ffc107" if val >= 0.34 else "#dc3545")
+                elif prop == "mpo_score":
+                    color = "#198754" if val > 0.6 else ("#ffc107" if val > 0.4 else "#dc3545")
+                else:
+                    color = "#6c757d"
+                cells += f'<td style="color:{color}">{val:.3f}</td>'
+            else:
+                cells += "<td class='text-muted'>-</td>"
+        rows.append(f"<tr><td>{i}</td><td>{name}</td>{cells}</tr>")
+
+    return header_row, "\n".join(rows)
+
+
 def build_summary_cards(candidates):
     """Build summary statistics for the dashboard header."""
     total = len(candidates)
@@ -158,6 +206,7 @@ def main():
     total, avg_score, max_score, safe_count = build_summary_cards(candidates)
     radar_traces_js = build_radar_traces_js(candidates)
     header_row, table_body = build_table_html(candidates)
+    summary_header_row, summary_table_body = build_summary_table_html(candidates)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -222,6 +271,30 @@ def main():
     </div>
   </div>
 
+  <!-- Summary Table -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="card-title mb-0">Summary — Key ADMET Properties</h5>
+          <small class="text-muted">Click column headers to sort &nbsp;·&nbsp; Hover headers for property descriptions</small>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table id="summary-table" class="table table-sm table-striped table-hover mb-0">
+              <thead class="table-dark">
+                {summary_header_row}
+              </thead>
+              <tbody>
+                {summary_table_body}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Radar Chart -->
   <div class="row mb-4">
     <div class="col-12">
@@ -275,6 +348,33 @@ def main():
     margin: {{ t: 30, b: 60, l: 60, r: 60 }}
   }};
   Plotly.newPlot('radar-chart', traces, layout, {{ responsive: true }});
+
+  // Sortable summary table — sync data-tip to title, then wire click handlers
+  document.querySelectorAll('#summary-table thead th').forEach(function(th) {{
+    if (th.dataset.tip) th.title = th.dataset.tip;
+    th.addEventListener('click', function() {{
+      var tbody = th.closest('table').querySelector('tbody');
+      var col = th.cellIndex;
+      var asc = th.dataset.dir !== 'asc';
+      th.dataset.dir = asc ? 'asc' : 'desc';
+      // Update sort indicator; restore title from data-tip after textContent change
+      th.closest('tr').querySelectorAll('th').forEach(function(t) {{
+        t.textContent = t.textContent.replace(/ [↕↑↓]$/, '') + ' ↕';
+        if (t.dataset.tip) t.title = t.dataset.tip;
+      }});
+      th.textContent = th.textContent.replace(/ [↕↑↓]$/, '') + (asc ? ' ↑' : ' ↓');
+      if (th.dataset.tip) th.title = th.dataset.tip;
+      var rows = Array.from(tbody.rows);
+      rows.sort(function(a, b) {{
+        var av = parseFloat(a.cells[col].textContent);
+        var bv = parseFloat(b.cells[col].textContent);
+        if (isNaN(av)) av = a.cells[col].textContent;
+        if (isNaN(bv)) bv = b.cells[col].textContent;
+        return asc ? (av > bv ? 1 : -1) : (av < bv ? 1 : -1);
+      }});
+      rows.forEach(function(r) {{ tbody.appendChild(r); }});
+    }});
+  }});
 </script>
 </body>
 </html>"""
