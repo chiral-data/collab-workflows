@@ -212,13 +212,25 @@ def main():
         log.info("Download complete.")
         return
 
-    # Full offline mode: both FASTAs present in inputs/ and no organism specified
+    # Offline / no-organism mode: skip NCBI entirely when organism is not set
     tgt_in = "./inputs/target.fasta"
-    if not organism and os.path.exists(tgt_in) and os.path.exists(excl_in):
-        log.info("No organism specified — using user-provided FASTAs in inputs/")
-        shutil.copy(tgt_in,  "./outputs/target.fasta")
-        shutil.copy(excl_in, "./outputs/exclusion.fasta")
-        log.info("Copied target.fasta and exclusion.fasta to outputs/")
+    if not organism:
+        if not os.path.exists(tgt_in):
+            log.error(
+                "No organism specified and no target.fasta found in inputs/ — "
+                "provide 'organism' in global_params.json for NCBI download mode, "
+                "or place target.fasta (and optionally exclusion.fasta) in input_files/ "
+                "for offline mode."
+            )
+            sys.exit(1)
+        log.info("No organism specified — using local FASTAs from inputs/ (offline mode)")
+        shutil.copy(tgt_in, "./outputs/target.fasta")
+        if os.path.exists(excl_in):
+            shutil.copy(excl_in, "./outputs/exclusion.fasta")
+            log.info("Copied target.fasta and exclusion.fasta to outputs/")
+        else:
+            open("./outputs/exclusion.fasta", "w").close()
+            log.warning("No exclusion.fasta found in inputs/ — writing empty exclusion.fasta (all ROIs will score 1.0)")
         return
 
     log.info("Downloading sequences for organism: '%s'", organism)
