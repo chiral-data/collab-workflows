@@ -104,10 +104,22 @@ def build_radar_traces_js(candidates, max_traces=5):
     return json.dumps(traces)
 
 
+def property_color(prop, val):
+    if prop in LOWER_IS_BETTER:
+        return "#198754" if val < 0.3 else ("#ffc107" if val < 0.5 else "#dc3545")
+    if prop in ("BBB_Martins", "Bioavailability_Ma", "HIA_Hou"):
+        return "#198754" if val > 0.7 else ("#ffc107" if val > 0.5 else "#dc3545")
+    if prop == "QED":
+        return "#198754" if val >= 0.67 else ("#ffc107" if val >= 0.34 else "#dc3545")
+    if prop == "mpo_score":
+        return "#198754" if val > 0.6 else ("#ffc107" if val > 0.4 else "#dc3545")
+    return "#6c757d"
+
+
 def build_table_html(candidates):
     """Build the HTML table rows for all candidates."""
     headers = "".join(f"<th>{p}</th>" for p in TABLE_PROPS)
-    header_row = f"<tr><th>#</th><th>Name</th><th>SMILES</th><th>MPO Score</th>{headers}</tr>"
+    header_row = f"<tr><th>MPO Rank</th><th>Name</th><th>SMILES</th><th>MPO Score</th>{headers}</tr>"
 
     rows = []
     for i, row in enumerate(candidates, 1):
@@ -120,13 +132,7 @@ def build_table_html(candidates):
         for prop in TABLE_PROPS:
             val = safe_float(row.get(prop))
             if val is not None:
-                if prop in LOWER_IS_BETTER:
-                    color = "#198754" if val < 0.3 else ("#ffc107" if val < 0.5 else "#dc3545")
-                elif prop in ("BBB_Martins", "Bioavailability_Ma", "HIA_Hou"):
-                    color = "#198754" if val > 0.7 else ("#ffc107" if val > 0.5 else "#dc3545")
-                else:
-                    color = "#6c757d"
-                cells += f'<td style="color:{color}">{val:.3f}</td>'
+                cells += f'<td style="color:{property_color(prop, val)}">{val:.3f}</td>'
             else:
                 cells += "<td class='text-muted'>-</td>"
 
@@ -145,7 +151,7 @@ def build_summary_table_html(candidates):
         f'<th data-tip="{tip}" style="cursor:pointer;white-space:nowrap">{label} ↕</th>'
         for _, label, tip in SUMMARY_PROPS
     )
-    header_row = f"<tr><th>#</th><th>Name</th>{headers}</tr>"
+    header_row = f"<tr><th>MPO Rank</th><th>Name</th>{headers}</tr>"
 
     rows = []
     for i, row in enumerate(candidates, 1):
@@ -154,19 +160,7 @@ def build_summary_table_html(candidates):
         for prop, _, _ in SUMMARY_PROPS:
             val = safe_float(row.get(prop))
             if val is not None:
-                if prop in LOWER_IS_BETTER:
-                    color = "#198754" if val < 0.3 else ("#ffc107" if val < 0.5 else "#dc3545")
-                elif prop in ("BBB_Martins", "HIA_Hou"):
-                    # Martins 2012 / Hou 2007: model boundary = 0.5; >0.7 = high confidence
-                    color = "#198754" if val > 0.7 else ("#ffc107" if val > 0.5 else "#dc3545")
-                elif prop == "QED":
-                    # Bickerton 2012 (Nature Chemistry): >=0.67 drug-like, <0.34 non-drug-like
-                    color = "#198754" if val >= 0.67 else ("#ffc107" if val >= 0.34 else "#dc3545")
-                elif prop == "mpo_score":
-                    color = "#198754" if val > 0.6 else ("#ffc107" if val > 0.4 else "#dc3545")
-                else:
-                    color = "#6c757d"
-                cells += f'<td style="color:{color}">{val:.3f}</td>'
+                cells += f'<td style="color:{property_color(prop, val)}">{val:.3f}</td>'
             else:
                 cells += "<td class='text-muted'>-</td>"
         rows.append(f"<tr><td>{i}</td><td>{name}</td>{cells}</tr>")

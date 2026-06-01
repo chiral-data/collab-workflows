@@ -129,7 +129,7 @@ workflows/workflow-014/
 
 **3. Set the `input_file` parameter when starting the workflow**
 
-Change `input_file` from the default `inputs/drugbank_approved.csv` to `inputs/your_molecules.csv`. All other parameters (filters, `top_n`) can be left at their defaults or adjusted as needed.
+Change `input_file` from the default `input_files/drugbank_approved.csv` to `input_files/your_molecules.csv`. All other parameters (filters, `top_n`) can be left at their defaults or adjusted as needed.
 
 ---
 
