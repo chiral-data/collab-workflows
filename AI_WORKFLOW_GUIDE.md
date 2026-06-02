@@ -81,7 +81,7 @@ Share one example of each config file so Claude knows the exact format:
 
 Key things Claude needs to know about the format:
 - Dependencies are declared centrally in `workflow.toml`, not in individual `job.toml` files
-- Parameters use `env = "PARAM_..."` to map to environment variables
+- Silva auto-maps each parameter key to an environment variable: `[params.my_param]` → `PARAM_MY_PARAM`. Scripts read these with shell defaults (e.g., `${PARAM_MY_PARAM:-value}`) or `os.environ.get()` in Python. You do **not** need to add an `env` field.
 - Only nodes with upstream dependencies appear in `[dependencies]` (the first node is omitted)
 
 ---
@@ -111,12 +111,33 @@ For tools with heavy native dependencies. Example: `workflows/workflow-016/Docke
 **Prompt:**
 > "Create a Dockerfile for [tool] based on `nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04`. It needs a conda environment with [packages]. Install Miniconda, create the environment from an environment.yml, and set the conda env as default. Follow the pattern in `workflows/workflow-016/Dockerfile`."
 
-### Pattern 3: GPU + model weight caching
+### Pattern 3: Pre-caching model weights
 
-For ML models that download large weights at runtime. Pre-download them at build time so prediction runs offline.
+Many ML tools download large model weights (often several GB) on first run. If you don't pre-download them into the Docker image at build time, every prediction run has to re-download — slow and may fail without internet access.
+
+There are several ways to handle this, depending on how the tool loads its models:
+
+**a) Tool's built-in download command** (simplest). Example: `workflows/workflow-015/Dockerfile`
+```dockerfile
+# mDeepFRI provides its own download command
+RUN mDeepFRI get-models -o /opt/mdeepfri-weights -v 1.1
+```
+
+**b) PyTorch Hub** (for models loaded via `torch.hub.load`). Example: `workflows/workflow-016/Dockerfile`
+```dockerfile
+ENV TORCH_HOME=/opt/torch_cache
+RUN python -c "import torch; torch.hub.set_dir('/opt/torch_cache'); \
+    torch.hub.load('facebookresearch/esm:main', 'esm2_t33_650M_UR50D')"
+```
+
+**c) HuggingFace CLI** (for models hosted on HuggingFace Hub)
+```dockerfile
+ENV HF_HOME=/models
+RUN huggingface-cli download [org/model-name]
+```
 
 **Prompt:**
-> "Create a Dockerfile for [tool]. It downloads model weights from HuggingFace on first run — we need to pre-cache them at build time. Use `huggingface-cli download [model]` or the tool's download command. Set `HF_HOME=/models`. Add a smoke test: `CMD python -c 'import [tool]; print(\"OK\")'`."
+> "Create a Dockerfile for [tool]. It downloads model weights on first run — we need to pre-cache them at build time. [Describe how the tool loads weights: torch.hub, HuggingFace, or a built-in download command]. Add a smoke test: `CMD python -c 'import [tool]; print(\"OK\")'`."
 
 ### Pattern 4: Package patching
 
@@ -143,11 +164,15 @@ For tools with known bugs in installed packages. Example: `workflows/workflow-01
 docker build -t my-tool:test -f workflows/workflow-XXX/Dockerfile .
 ```
 
+This reads the Dockerfile and builds an image named `my-tool:test`. The `-t` flag gives it a name (tag) so you can reference it later. The `.` at the end means "use the current directory as the build context."
+
 ### Smoke test
 
 ```bash
 docker run --rm my-tool:test python -c "import my_tool; print('OK')"
 ```
+
+`docker run` creates a temporary container from the image and runs a command inside it. `--rm` automatically deletes the container when it exits (otherwise stopped containers pile up on disk).
 
 ### GPU test (if applicable)
 
@@ -165,6 +190,17 @@ Copy the full error output and paste it to Claude:
 ---
 
 ## 4. How to Build Node Structure with AI
+
+### Node naming convention
+
+Existing workflows in the repo use mixed naming styles (hyphens, underscores, etc.). For **new workflows**, use `NN-kebab-case` — two-digit zero-padded number followed by a hyphenated name. This matches `workflows/workflow-018/` which is the most consistent reference:
+
+```
+00-download/
+01-validate-inputs/
+02-predict/
+03-report/
+```
 
 ### Step 1: Scaffold
 
@@ -217,10 +253,11 @@ docker run --rm \
 ```
 
 Key points:
-- Mount `inputs/` and `outputs/` as volumes
-- Mount the node directory to `/workspace` so `run.sh` and scripts are available
-- Set `PARAM_*` environment variables manually (Silva does this automatically in production)
-- For GPU nodes, add `--gpus all`
+- The `-v host_path:container_path` flag is a **volume mount** — it makes a directory on your machine visible inside the container. For example, `-v /tmp/test-node/inputs:/workspace/inputs` means the container sees your local `/tmp/test-node/inputs` folder as `/workspace/inputs`.
+- Mount `inputs/` and `outputs/` so the container can read test data and write results back to your machine
+- Mount the node directory to `/workspace` so `run.sh` and scripts are available inside the container
+- `-e PARAM_NUM_LOOPS=3` sets environment variables inside the container (Silva does this automatically in production)
+- For GPU nodes, add `--gpus all` (requires [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) installed on the host)
 
 ### The debug loop
 
