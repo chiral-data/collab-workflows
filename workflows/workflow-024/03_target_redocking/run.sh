@@ -7,6 +7,7 @@ cp inputs/receptor.pdb . 2>/dev/null || true
 cp inputs/receptor.pdbqt . 2>/dev/null || true
 cp inputs/native_ligand.pdbqt . 2>/dev/null || true
 cp inputs/pocket_config.txt . 2>/dev/null || true
+cp inputs/optimized_screening_library.pdbqt . 2>/dev/null || true
 
 python3 redock_target.py \
     --receptor-pdbqt "${PARAM_RECEPTOR_PDBQT:-receptor.pdbqt}" \
