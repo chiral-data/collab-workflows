@@ -116,6 +116,8 @@ Then relax the offending parameters in `global_params.json` and re-run:
 - Silva (https://github.com/chiral-data/silva)
 - Internet access (NCBI modes only)
 
+> **Tested BLAST version:** ncbi-blast+ 2.12.0 (Debian Bookworm package `2.12.0+ds-3+b1`). The Dockerfile pins this version explicitly.
+
 Build the Docker image:
 
 ```bash
@@ -133,6 +135,8 @@ cd workflow-024
 4. Launch Silva and select `workflow-024`
 
 ### With NCBI download (online mode)
+
+> **Note:** Replace the `email` placeholder (`user@example.com`) in `global_params.json` with your real email before running in NCBI mode. NCBI Entrez requires a valid email to identify requests.
 
 1. Set `organism` and `email` in `global_params.json`
 2. Optionally set `target_gene` for gene-targeted mode (e.g. `cpn60`, `rpoB`)

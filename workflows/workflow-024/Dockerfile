@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ncbi-blast+ \
+    ncbi-blast+=2.12.0+ds-3+b1 \
     wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*

@@ -40,7 +40,7 @@ def _load_params():
         env_key = f"PARAM_{key.upper()}"
         if env_key in os.environ:
             val = os.environ[env_key]
-            p[key] = float(val) if "." in val or key in ("primer_min_tm", "primer_opt_tm", "primer_max_tm") else int(val)
+            p[key] = float(val) if isinstance(DEFAULTS[key], float) else int(val)
         elif key in gp:
             p[key] = gp[key]
     return p
