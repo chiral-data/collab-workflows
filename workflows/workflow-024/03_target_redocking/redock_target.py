@@ -112,7 +112,7 @@ def run_gnina(receptor_pdbqt, ligand_pdbqt, crystal_pdbqt, cfg, out_sdf, log_fil
         "--num_modes",      "9",
         "--exhaustiveness", "32",
         "--cnn_scoring",    "rescore",
-        "--crystal_pose",   str(crystal_pdbqt),
+        "--no_gpu",
         "-o", str(out_sdf),
         "--log", str(log_file),
     ]
@@ -132,9 +132,9 @@ def parse_gnina_scores(sdf_path, log_path):
     """
     Return (cnn_score, rmsd) for the top-ranked pose.
 
-    Priority:
-    1. SDF properties <CNNscore> and <RMSD> (most reliable)
-    2. Score table in the log file as fallback
+    CNNscore comes from SDF properties or the log score table (column 3).
+    RMSD is NOT parsed from the log: without --crystal_pose the 4th column
+    is CNN affinity, not RMSD.  The caller must compute RMSD via RDKit.
     """
     cnn_score, rmsd = None, None
 
@@ -153,41 +153,44 @@ def parse_gnina_scores(sdf_path, log_path):
     except Exception as e:
         print(f"  WARNING: could not parse SDF properties: {e}", flush=True)
 
-    # Fall back to log file score table
-    if cnn_score is None or rmsd is None:
+    # Fall back to log score table for CNNscore only (column 3 = CNN pose score)
+    if cnn_score is None:
         log_text = Path(log_path).read_text() if Path(log_path).exists() else ""
         for line in log_text.splitlines():
-            # Score table line: "   1    -7.5    0.93   -6.8    1.45"
-            m = re.match(r'\s*1\s+([-\d.]+)\s+([\d.]+)\s+([-\d.]+)\s+([\d.]+)', line)
+            # "   1   -3.55   0.87   0.3807   2.923"
+            # cols: mode  affinity  intramol  CNNscore  CNNaffinity
+            m = re.match(r'\s*1\s+[-\d.]+\s+[\d.]+\s+([\d.]+)', line)
             if m:
-                if cnn_score is None:
-                    cnn_score = float(m.group(2))
-                if rmsd is None:
-                    rmsd = float(m.group(4))
+                cnn_score = float(m.group(1))
                 break
 
     return cnn_score, rmsd
 
 
-def compute_rmsd_rdkit(docked_sdf, crystal_pdb):
+def compute_rmsd_rdkit(docked_sdf, crystal_pdbqt):
     """
-    Fallback RMSD via RDKit heavy-atom coordinate RMSD after centroid alignment.
-    Used when GNINA's --crystal_pose RMSD is unavailable.
+    Heavy-atom RMSD between the top docked pose and the crystal pose.
+
+    Reads reference coords from crystal_ligand.pdbqt (not the PDB) because
+    OpenBabel reorders atoms during PDB→PDBQT conversion and GNINA's SDF output
+    preserves the PDBQT atom ordering.  Direct positional RMSD is correct here
+    since both structures share that ordering.
     """
     try:
         import numpy as np
         from rdkit import Chem
 
-        # Docked top pose
+        # Docked top pose (heavy atoms only)
         suppl = Chem.SDMolSupplier(str(docked_sdf), removeHs=True, sanitize=False)
         docked = next((m for m in suppl if m is not None), None)
         if docked is None:
             return None
+        docked_pos = np.array(docked.GetConformer().GetPositions())
 
-        # Crystal pose: parse PDB HETATM coords
+        # Crystal coords from PDBQT (same atom ordering as the docked SDF)
         crystal_coords = []
-        for line in Path(crystal_pdb).read_text().splitlines():
-            if line.startswith("HETATM"):
+        for line in Path(crystal_pdbqt).read_text().splitlines():
+            if line.startswith(("ATOM", "HETATM")):
                 try:
                     crystal_coords.append([
                         float(line[30:38]), float(line[38:46]), float(line[46:54])
@@ -196,23 +199,12 @@ def compute_rmsd_rdkit(docked_sdf, crystal_pdb):
                     pass
         if not crystal_coords:
             return None
-
-        docked_pos = np.array(docked.GetConformer().GetPositions())
         ref_pos = np.array(crystal_coords)
 
-        # Use only heavy atoms; align centroids
-        if len(docked_pos) != len(ref_pos):
-            # Compute centroid-aligned RMSD using closest-atom matching
-            d_c = docked_pos - docked_pos.mean(axis=0)
-            r_c = ref_pos   - ref_pos.mean(axis=0)
-            n = min(len(d_c), len(r_c))
-            rmsd = float(np.sqrt(np.mean(np.sum((d_c[:n] - r_c[:n])**2, axis=1))))
-        else:
-            d_c = docked_pos - docked_pos.mean(axis=0)
-            r_c = ref_pos   - ref_pos.mean(axis=0)
-            rmsd = float(np.sqrt(np.mean(np.sum((d_c - r_c)**2, axis=1))))
-
-        print(f"  Fallback RMSD (centroid-aligned heavy atoms): {rmsd:.3f} A", flush=True)
+        n = min(len(docked_pos), len(ref_pos))
+        rmsd = float(np.sqrt(np.mean(np.sum((docked_pos[:n] - ref_pos[:n])**2, axis=1))))
+        print(f"  Fallback RMSD (heavy-atom, PDBQT-ordered): {rmsd:.3f} A "
+              f"({len(docked_pos)} docked, {len(ref_pos)} crystal atoms)", flush=True)
         return rmsd
     except Exception as e:
         print(f"  WARNING: fallback RMSD failed: {e}", flush=True)
@@ -256,13 +248,15 @@ def main():
     log_file = Path("gnina_redock_log.txt")
 
     gnina_ok = False
+    # Prefer crystal_pdbqt as ligand: it has the correct bound-state geometry
+    # extracted from the PDB, vs native_ligand_pdbqt which may come from a 2D SDF.
+    ligand_for_docking = str(crystal_pdbqt) if has_crystal_pdbqt else args.native_ligand_pdbqt
     if has_crystal_pdbqt:
         gnina_ok = run_gnina(
-            args.receptor_pdbqt, args.native_ligand_pdbqt,
+            args.receptor_pdbqt, ligand_for_docking,
             crystal_pdbqt, cfg, out_sdf, log_file
         )
     else:
-        # Run without --crystal_pose; compute RMSD manually
         cmd_no_crystal = [
             "gnina",
             "-r", args.receptor_pdbqt,
@@ -276,6 +270,7 @@ def main():
             "--num_modes",      "9",
             "--exhaustiveness", "32",
             "--cnn_scoring",    "rescore",
+            "--no_gpu",
             "-o", str(out_sdf),
             "--log", str(log_file),
         ]
@@ -294,7 +289,7 @@ def main():
     # Fallback RMSD if GNINA didn't report it
     if rmsd is None:
         print("  GNINA did not report RMSD; computing via RDKit fallback ...", flush=True)
-        rmsd = compute_rmsd_rdkit(out_sdf, crystal_pdb)
+        rmsd = compute_rmsd_rdkit(out_sdf, crystal_pdbqt)
 
     print(f"  CNNscore (top pose): {cnn_score}", flush=True)
     print(f"  RMSD vs crystal:     {rmsd} A", flush=True)

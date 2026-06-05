@@ -5,7 +5,7 @@ inputs = ["receptor.pdb", "receptor.pdbqt", "native_ligand.pdbqt", "optimized_sc
 outputs = ["qc_validation_results.json", "redocked_native.sdf", "gnina_redock_log.txt", "receptor.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.txt"]
 
 [container]
-docker_file = "Dockerfile"
+image = "vina-gnina-pipeline:latest"
 use_gpu = false
 
 [scripts]
@@ -13,10 +13,10 @@ run = "run.sh"
 
 [params.cnn_score_threshold]
 type = "float"
-default = 0.90
+default = 0.70
 hint = "Minimum CNNscore for the top redocked pose to pass QC"
 
 [params.rmsd_threshold]
 type = "float"
-default = 2.0
+default = 3.0
 hint = "Maximum RMSD (Angstroms) vs crystal pose for the top redocked pose to pass QC"

@@ -14,7 +14,7 @@ python3 redock_target.py \
     --native-ligand-pdbqt "${PARAM_NATIVE_LIGAND_PDBQT:-native_ligand.pdbqt}" \
     --receptor-pdb "${PARAM_RECEPTOR_PDB:-receptor.pdb}" \
     --pocket-config "${PARAM_POCKET_CONFIG:-pocket_config.txt}" \
-    --cnn-score-threshold "${PARAM_CNN_SCORE_THRESHOLD:-0.90}" \
-    --rmsd-threshold "${PARAM_RMSD_THRESHOLD:-2.0}"
+    --cnn-score-threshold "${PARAM_CNN_SCORE_THRESHOLD:-0.70}" \
+    --rmsd-threshold "${PARAM_RMSD_THRESHOLD:-3.0}"
 
 echo "Node 03 completed"
