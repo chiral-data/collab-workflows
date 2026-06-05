@@ -20,10 +20,8 @@ RCSB_ENTRY_URL = "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}"
 
 # Try multiple SDF source URLs in order until one succeeds
 LIGAND_SDF_URLS = [
-    "https://www.rcsb.org/ccd/download?id={ligand_id}&type=ideal&format=SDF",
-    "https://files.rcsb.org/ligands/{ligand_id}_ideal.sdf",
-    "https://files.rcsb.org/ligands/{ligand_id}_model.sdf",
-    "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{ligand_id}/SDF",
+    "https://files.rcsb.org/ligands/download/{ligand_id}_ideal.sdf",
+    "https://files.rcsb.org/ligands/download/{ligand_id}_model.sdf",
 ]
 
 # Non-ligand HETATM residues to skip when identifying the native ligand

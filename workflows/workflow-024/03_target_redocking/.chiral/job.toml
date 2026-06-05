@@ -20,3 +20,8 @@ hint = "Minimum CNNscore for the top redocked pose to pass QC"
 type = "float"
 default = 3.0
 hint = "Maximum RMSD (Angstroms) vs crystal pose for the top redocked pose to pass QC"
+
+[params.cnn_scoring]
+type = "string"
+default = "rescore"
+hint = "GNINA CNN scoring mode: 'all' (CNN guides full search), 'rescore' (Vina search + CNN rescore), or 'none'"

@@ -93,6 +93,7 @@ def dock_with_gnina(receptor, ligand_path, cfg, out_sdf, exhaustiveness, num_mod
         "--exhaustiveness",    str(exhaustiveness),
         "--num_modes",         str(num_modes),
         "--cnn_scoring",       "rescore",
+        "--no_gpu",
         "-o",                  str(out_sdf),
     ]
     res = subprocess.run(cmd, capture_output=True, text=True)

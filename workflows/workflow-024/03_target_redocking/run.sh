@@ -15,6 +15,7 @@ python3 redock_target.py \
     --receptor-pdb "${PARAM_RECEPTOR_PDB:-receptor.pdb}" \
     --pocket-config "${PARAM_POCKET_CONFIG:-pocket_config.txt}" \
     --cnn-score-threshold "${PARAM_CNN_SCORE_THRESHOLD:-0.70}" \
-    --rmsd-threshold "${PARAM_RMSD_THRESHOLD:-3.0}"
+    --rmsd-threshold "${PARAM_RMSD_THRESHOLD:-3.0}" \
+    --cnn-scoring "${PARAM_CNN_SCORING:-rescore}"
 
 echo "Node 03 completed"

@@ -97,7 +97,8 @@ def pdb_to_pdbqt(pdb_path, pdbqt_path):
 
 # ── GNINA docking ─────────────────────────────────────────────────────────────
 
-def run_gnina(receptor_pdbqt, ligand_pdbqt, crystal_pdbqt, cfg, out_sdf, log_file):
+def run_gnina(receptor_pdbqt, ligand_pdbqt, crystal_pdbqt, cfg, out_sdf, log_file,
+              cnn_scoring="all"):
     """Run GNINA redocking; return True on success."""
     cmd = [
         "gnina",
@@ -109,9 +110,9 @@ def run_gnina(receptor_pdbqt, ligand_pdbqt, crystal_pdbqt, cfg, out_sdf, log_fil
         "--size_x",   str(cfg["size_x"]),
         "--size_y",   str(cfg["size_y"]),
         "--size_z",   str(cfg["size_z"]),
-        "--num_modes",      "9",
+        "--num_modes",      "15",
         "--exhaustiveness", "32",
-        "--cnn_scoring",    "rescore",
+        "--cnn_scoring",    cnn_scoring,
         "--no_gpu",
         "-o", str(out_sdf),
         "--log", str(log_file),
@@ -221,13 +222,17 @@ def main():
     parser.add_argument("--pocket-config",       default="pocket_config.txt")
     parser.add_argument("--cnn-score-threshold", type=float, default=0.90)
     parser.add_argument("--rmsd-threshold",      type=float, default=2.0)
+    parser.add_argument("--cnn-scoring",         default="rescore",
+                        choices=["all", "rescore", "none"])
     args = parser.parse_args()
 
     cnn_thr  = args.cnn_score_threshold
     rmsd_thr = args.rmsd_threshold
+    cnn_scoring = args.cnn_scoring
 
     print(f"CNN score threshold : >= {cnn_thr}", flush=True)
     print(f"RMSD threshold      : <= {rmsd_thr} A", flush=True)
+    print(f"CNN scoring mode    : {cnn_scoring}", flush=True)
 
     # 1. Parse pocket box
     print("\n--- Step 1: Parse pocket grid box ---", flush=True)
@@ -254,7 +259,8 @@ def main():
     if has_crystal_pdbqt:
         gnina_ok = run_gnina(
             args.receptor_pdbqt, ligand_for_docking,
-            crystal_pdbqt, cfg, out_sdf, log_file
+            crystal_pdbqt, cfg, out_sdf, log_file,
+            cnn_scoring=cnn_scoring
         )
     else:
         cmd_no_crystal = [
@@ -267,9 +273,9 @@ def main():
             "--size_x",   str(cfg["size_x"]),
             "--size_y",   str(cfg["size_y"]),
             "--size_z",   str(cfg["size_z"]),
-            "--num_modes",      "9",
+            "--num_modes",      "15",
             "--exhaustiveness", "32",
-            "--cnn_scoring",    "rescore",
+            "--cnn_scoring",    cnn_scoring,
             "--no_gpu",
             "-o", str(out_sdf),
             "--log", str(log_file),
@@ -300,8 +306,10 @@ def main():
     rmsd_pass = (rmsd       is not None) and (rmsd       <= rmsd_thr)
     qc_pass   = cnn_pass and rmsd_pass
 
-    print(f"  CNN score  {cnn_score:.3f} >= {cnn_thr}: {'PASS' if cnn_pass  else 'FAIL'}", flush=True)
-    print(f"  RMSD       {rmsd:.3f} A <= {rmsd_thr} A: {'PASS' if rmsd_pass else 'FAIL'}", flush=True)
+    cnn_str  = f"{cnn_score:.3f}" if cnn_score is not None else "None"
+    rmsd_str = f"{rmsd:.3f}"     if rmsd      is not None else "None"
+    print(f"  CNN score  {cnn_str} >= {cnn_thr}: {'PASS' if cnn_pass  else 'FAIL'}", flush=True)
+    print(f"  RMSD       {rmsd_str} A <= {rmsd_thr} A: {'PASS' if rmsd_pass else 'FAIL'}", flush=True)
     print(f"  Overall QC: {'PASS' if qc_pass else 'FAIL'}", flush=True)
 
     result = {
