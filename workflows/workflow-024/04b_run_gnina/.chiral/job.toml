@@ -5,7 +5,7 @@ inputs = ["receptor.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.
 outputs = ["gnina_screening_poses.sdf", "gnina_screening_scores.csv", "gnina_runtime_log.txt", "gnina_docking_report.json"]
 
 [container]
-docker_file = "Dockerfile"
+image = "vina-gnina-pipeline:latest"
 use_gpu = false
 
 [scripts]
