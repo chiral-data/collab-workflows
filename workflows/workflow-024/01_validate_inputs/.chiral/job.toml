@@ -4,7 +4,7 @@ description = "Validate ligand file format; fetch receptor and co-crystal ligand
 outputs = ["receptor.pdb", "native_ligand.sdf", "validated_ligands.smiles", "validation_report.json"]
 
 [container]
-image = "python:3.11-slim"
+image = "vina-gnina-pipeline:latest"
 use_gpu = false
 
 [scripts]
