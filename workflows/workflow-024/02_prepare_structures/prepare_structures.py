@@ -90,26 +90,28 @@ def compute_pocket_box(native_sdf_path, padding, receptor_pdb="receptor.pdb"):
     """Return (center_x, center_y, center_z, size_x, size_y, size_z).
 
     Priority for coords:
-    1. native_ligand.sdf if it has 3D coordinates
-    2. HETATM records in receptor.pdb (crystal binding pose — preferred for 1OKL)
+    1. HETATM records in receptor.pdb (crystal binding pose — always preferred)
+    2. native_ligand.sdf if it has 3D coordinates
     3. OpenBabel --gen3d fallback (last resort; pose may not match binding site)
     """
     import numpy as np
 
-    coords = _coords_from_sdf(native_sdf_path)
+    coords = None
 
-    if coords is None:
-        print("  native_ligand.sdf is 2D — extracting crystal coords from receptor.pdb", flush=True)
-        # Infer ligand residue name from validation_report.json if available
-        lig_id = None
-        report_path = Path("validation_report.json")
-        if report_path.exists():
-            import json
-            lig_id = json.load(open(report_path)).get("native_ligand_id")
-        if lig_id:
-            coords = _coords_from_receptor_hetatm(receptor_pdb, lig_id)
-            if coords is not None and len(coords) > 0:
-                print(f"  Extracted {len(coords)} atoms for ligand {lig_id} from receptor.pdb", flush=True)
+    # Prefer crystal pose from receptor.pdb (actual binding site coordinates)
+    lig_id = None
+    report_path = Path("validation_report.json")
+    if report_path.exists():
+        import json
+        lig_id = json.load(open(report_path)).get("native_ligand_id")
+    if lig_id:
+        coords = _coords_from_receptor_hetatm(receptor_pdb, lig_id)
+        if coords is not None and len(coords) > 0:
+            print(f"  Using crystal pose from receptor.pdb: {len(coords)} atoms for {lig_id}", flush=True)
+
+    if coords is None or len(coords) == 0:
+        print("  No crystal coords in receptor.pdb — trying native_ligand.sdf", flush=True)
+        coords = _coords_from_sdf(native_sdf_path)
 
     if coords is None or len(coords) == 0:
         print("  WARNING: falling back to OpenBabel 3D generation for pocket box", flush=True)
