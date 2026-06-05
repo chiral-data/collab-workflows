@@ -1,0 +1,21 @@
+name = "FASTA Validation"
+description = "Validate input FASTA: sequence lengths, amino acid character set, monomer/multimer detection"
+inputs = ["sequences.fasta"]
+outputs = ["outputs/validated_sequences.fasta"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+pre = "pre_run.sh"
+run = "run.sh"
+
+[params.min_length]
+type = "integer"
+default = 10
+hint = "Minimum allowed sequence length in amino acids"
+
+[params.max_length]
+type = "integer"
+default = 2500
+hint = "Maximum allowed sequence length in amino acids"
