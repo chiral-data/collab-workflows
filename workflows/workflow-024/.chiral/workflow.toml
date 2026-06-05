@@ -1,0 +1,62 @@
+name = "ColabFold Structure Prediction"
+description = "AlphaFold2-based 3D structure prediction via ColabFold with MSA from MMseqs2"
+
+[dependencies]
+02_predict = ["01_validate_fasta"]
+03_analyze_confidence = ["02_predict"]
+04_pymol_render = ["02_predict", "03_analyze_confidence"]
+
+[params.min_length]
+type = "integer"
+default = 10
+hint = "Minimum allowed sequence length in amino acids"
+
+[params.max_length]
+type = "integer"
+default = 2500
+hint = "Maximum allowed sequence length in amino acids"
+
+[params.num_models]
+type = "integer"
+default = 5
+hint = "Number of AlphaFold2 models to run (1–5)"
+
+[params.num_recycle]
+type = "integer"
+default = 3
+hint = "Number of recycling iterations (use 6–12 for multimers)"
+
+[params.msa_mode]
+type = "string"
+default = "mmseqs2_uniref_env"
+hint = "MSA mode: mmseqs2_uniref_env, mmseqs2_uniref, or single_sequence"
+
+[params.pair_mode]
+type = "string"
+default = "auto"
+hint = "Pair mode for multimers: auto (detect), unpaired, or unpaired_paired"
+
+[params.use_templates]
+type = "boolean"
+default = false
+hint = "Enable template search during prediction"
+
+[params.host_url]
+type = "string"
+default = "https://api.colabfold.com"
+hint = "MSA server URL passed to colabfold_batch --host-url"
+
+[params.server_timeout_seconds]
+type = "integer"
+default = 300
+hint = "Timeout in seconds for MSA server requests"
+
+[params.top_n_models]
+type = "integer"
+default = 5
+hint = "Number of ranked models to include in confidence summary"
+
+[params.color_by]
+type = "string"
+default = "pLDDT"
+hint = "Coloring scheme for structure visualization: pLDDT, chain, or rainbow"
