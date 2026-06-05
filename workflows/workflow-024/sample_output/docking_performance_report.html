@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vina vs GNINA Docking Comparison</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { background: #f1f5f9; color: #1e293b; }
+    .hero {
+      background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+      color: white; border-radius: 16px; padding: 32px 36px; margin-bottom: 28px;
+    }
+    .hero h1 { font-size: 1.9rem; font-weight: 700; margin: 0 0 6px; }
+    .hero .sub { font-size: 0.92rem; opacity: 0.85; margin: 0; }
+    .stat-card {
+      background: white; border-radius: 14px; padding: 22px 20px; text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07); height: 100%;
+    }
+    .stat-card .value { font-size: 2rem; font-weight: 700; line-height: 1.1; }
+    .stat-card .label { font-size: 0.78rem; text-transform: uppercase;
+                         letter-spacing: .8px; color: #64748b; margin-top: 4px; }
+    .section-card {
+      background: white; border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 24px; overflow: hidden;
+    }
+    .section-header {
+      padding: 16px 24px; font-weight: 600; font-size: 1rem; color: #1e293b;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .section-body { padding: 20px 24px; }
+    .vina-badge  { background:#3b82f6; color:white; padding:3px 10px;
+                    border-radius:12px; font-size:11px; }
+    .gnina-badge { background:#8b5cf6; color:white; padding:3px 10px;
+                    border-radius:12px; font-size:11px; }
+    .table th { font-size: 0.82rem; color: #475569; font-weight: 600; }
+    .table td { font-size: 0.85rem; vertical-align: middle; }
+    .note { font-size: 0.78rem; color: #94a3b8; margin-top: 8px; }
+  </style>
+</head>
+<body>
+<div class="container-fluid py-4" style="max-width:1300px; margin:0 auto;">
+
+  <!-- Hero header -->
+  <div class="hero">
+    <h1>&#9878; Vina vs GNINA: Docking Comparison</h1>
+    <p class="sub">
+      Target: Carbonic Anhydrase II (PDB: 1OKL) &nbsp;·&nbsp;
+      10 compounds screened &nbsp;·&nbsp;
+      Generated: 2026-06-05 06:05:58
+    </p>
+  </div>
+
+  <!-- Summary stats cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="value" style="color:#1d4ed8;">10</div>
+        <div class="label">Compounds Screened</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="value" style="color:#16a34a">
+          0.758
+        </div>
+        <div class="label">Spearman &#961; (ranks)</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="value" style="color:#7c3aed;">0.600</div>
+        <div class="label">Kendall &#964; (ranks)</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="value" style="color:#0891b2;">4 / 5</div>
+        <div class="label">Top-5 Overlap</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Score correlation scatter -->
+  <div class="section-card">
+    <div class="section-header">&#128202; Score Correlation: Vina &#916;G vs GNINA CNNscore</div>
+    <div class="section-body">
+      <div id="corr-chart" style="height:380px;"></div>
+      <p class="note">
+        Vina &#916;G (kcal/mol, more negative = stronger predicted binding) vs
+        GNINA CNNscore (0–1, higher = CNN-predicted binder). Compounds in the
+        upper-left are ranked highly by GNINA but weakly by Vina — suggesting the
+        CNN detects metal-coordination geometry that Vina&#8217;s additive terms miss.
+      </p>
+    </div>
+  </div>
+
+  <!-- Rank agreement scatter -->
+  <div class="section-card">
+    <div class="section-header">&#128257; Ranking Agreement: Vina Rank vs GNINA Rank</div>
+    <div class="section-body">
+      <div id="rank-chart" style="height:380px;"></div>
+      <p class="note">
+        Points on the diagonal (y&#8239;=&#8239;x) indicate both tools agree on the rank.
+        Points above the diagonal are ranked higher by Vina; below by GNINA.
+        Spearman &#961; = 0.758 &nbsp;·&nbsp; Kendall &#964; = 0.600.
+      </p>
+    </div>
+  </div>
+
+  <!-- Score distributions -->
+  <div class="section-card">
+    <div class="section-header">&#128200; Score Distributions</div>
+    <div class="section-body row g-3">
+      <div class="col-12 col-md-6">
+        <div id="vina-hist" style="height:300px;"></div>
+        <p class="note">Vina &#916;G distribution (kcal/mol)</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <div id="gnina-hist" style="height:300px;"></div>
+        <p class="note">GNINA CNNscore distribution (0–1)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Affinity correlation -->
+  <div class="section-card">
+    <div class="section-header">&#9881; Affinity Correlation: Vina &#916;G vs GNINA CNN Affinity</div>
+    <div class="section-body">
+      <div id="aff-chart" style="height:340px;"></div>
+      <p class="note">
+        Both axes report kcal/mol; more negative = stronger predicted binding.
+        Spearman &#961; = -0.673.
+        Divergence here reflects the scoring function, not pose generation
+        (both tools share the same MCMC sampler).
+      </p>
+    </div>
+  </div>
+
+  <!-- Top-5 tables -->
+  <div class="row g-3 mb-4">
+    <div class="col-12 col-md-6">
+      <div class="section-card h-100">
+        <div class="section-header">
+          <span class="vina-badge">Vina</span> Top-5 by &#916;G Affinity
+        </div>
+        <div class="section-body p-0">
+          <table class="table table-hover mb-0">
+            <thead><tr>
+              <th>Name</th><th>Vina Rank</th><th>Vina &#916;G</th>
+              <th>GNINA Rank</th><th>CNN Score</th><th>CNN Aff.</th><th>&#916;Rank</th>
+            </tr></thead>
+            <tbody><tr><td>naphthalene-2-sulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#1</span></td><td>-7.837 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#1</span></td><td>0.976</td><td>6.505 kcal/mol</td><td>0</td></tr>
+<tr><td>ethoxzolamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#2</span></td><td>-6.699 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#7</span></td><td>0.953</td><td>6.747 kcal/mol</td><td>-5</td></tr>
+<tr><td>4-fluorobenzenesulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#3</span></td><td>-6.695 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#4</span></td><td>0.968</td><td>6.432 kcal/mol</td><td>-1</td></tr>
+<tr><td>4-chlorobenzenesulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#4</span></td><td>-6.590 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#3</span></td><td>0.969</td><td>6.529 kcal/mol</td><td>1</td></tr>
+<tr><td>4-methylbenzenesulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#5</span></td><td>-6.584 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#2</span></td><td>0.973</td><td>6.669 kcal/mol</td><td>3</td></tr>
+</tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="section-card h-100">
+        <div class="section-header">
+          <span class="gnina-badge">GNINA</span> Top-5 by CNNscore
+        </div>
+        <div class="section-body p-0">
+          <table class="table table-hover mb-0">
+            <thead><tr>
+              <th>Name</th><th>Vina Rank</th><th>Vina &#916;G</th>
+              <th>GNINA Rank</th><th>CNN Score</th><th>CNN Aff.</th><th>&#916;Rank</th>
+            </tr></thead>
+            <tbody><tr><td>naphthalene-2-sulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#1</span></td><td>-7.837 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#1</span></td><td>0.976</td><td>6.505 kcal/mol</td><td>0</td></tr>
+<tr><td>4-methylbenzenesulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#5</span></td><td>-6.584 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#2</span></td><td>0.973</td><td>6.669 kcal/mol</td><td>3</td></tr>
+<tr><td>4-chlorobenzenesulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#4</span></td><td>-6.590 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#3</span></td><td>0.969</td><td>6.529 kcal/mol</td><td>1</td></tr>
+<tr><td>4-fluorobenzenesulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#3</span></td><td>-6.695 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#4</span></td><td>0.968</td><td>6.432 kcal/mol</td><td>-1</td></tr>
+<tr><td>benzenesulfonamide</td><td><span style="background:#3b82f6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#7</span></td><td>-6.455 kcal/mol</td><td><span style="background:#8b5cf6;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">#5</span></td><td>0.966</td><td>6.344 kcal/mol</td><td>2</td></tr>
+</tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full comparison table -->
+  <div class="section-card">
+    <div class="section-header">&#128203; Full Comparison Table</div>
+    <div class="section-body p-0">
+      <div class="table-responsive">
+        <table class="table table-sm table-striped table-hover mb-0" id="full-table">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Vina Rank &#8597;</th><th>Vina &#916;G (kcal/mol)</th>
+              <th>GNINA Rank &#8597;</th><th>CNN Score</th><th>CNN Aff. (kcal/mol)</th>
+              <th title="Vina rank − GNINA rank (+ = Vina ranks it higher)">&#916;Rank</th>
+            </tr>
+          </thead>
+          <tbody><tr><td>naphthalene-2-sulfonamide</td><td>1</td><td>-7.837</td><td>1</td><td>0.976</td><td>6.505</td><td style="color:#64748b;font-weight:600">0</td></tr>
+<tr><td>ethoxzolamide</td><td>2</td><td>-6.699</td><td>7</td><td>0.953</td><td>6.747</td><td style="color:#dc2626;font-weight:600">-5</td></tr>
+<tr><td>4-fluorobenzenesulfonamide</td><td>3</td><td>-6.695</td><td>4</td><td>0.968</td><td>6.432</td><td style="color:#dc2626;font-weight:600">-1</td></tr>
+<tr><td>4-chlorobenzenesulfonamide</td><td>4</td><td>-6.590</td><td>3</td><td>0.969</td><td>6.529</td><td style="color:#16a34a;font-weight:600">+1</td></tr>
+<tr><td>4-methylbenzenesulfonamide</td><td>5</td><td>-6.584</td><td>2</td><td>0.973</td><td>6.669</td><td style="color:#16a34a;font-weight:600">+3</td></tr>
+<tr><td>acetazolamide</td><td>6</td><td>-6.477</td><td>6</td><td>0.960</td><td>6.876</td><td style="color:#64748b;font-weight:600">0</td></tr>
+<tr><td>benzenesulfonamide</td><td>7</td><td>-6.455</td><td>5</td><td>0.966</td><td>6.344</td><td style="color:#16a34a;font-weight:600">+2</td></tr>
+<tr><td>ibuprofen</td><td>8</td><td>-6.443</td><td>8</td><td>0.944</td><td>5.758</td><td style="color:#64748b;font-weight:600">0</td></tr>
+<tr><td>indole</td><td>9</td><td>-5.532</td><td>9</td><td>0.743</td><td>3.500</td><td style="color:#64748b;font-weight:600">0</td></tr>
+<tr><td>benzene</td><td>10</td><td>-4.032</td><td>10</td><td>0.704</td><td>3.178</td><td style="color:#64748b;font-weight:600">0</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Score correlation scatter ──
+Plotly.newPlot('corr-chart', [{
+  type: 'scatter', mode: 'markers+text',
+  x: [-6.59, -6.695, -6.584, -6.477, -4.032, -6.455, -6.699, -6.443, -5.532, -7.837], y: [0.968935132, 0.968133569, 0.972554862, 0.959764421, 0.703509212, 0.965735674, 0.953379691, 0.944337189, 0.743262351, 0.975747049], text: ["4-chlorobenzenesulfonamide", "4-fluorobenzenesulfonamide", "4-methylbenzenesulfonamide", "acetazolamide", "benzene", "benzenesulfonamide", "ethoxzolamide", "ibuprofen", "indole", "naphthalene-2-sulfonamide"],
+  textposition: 'top center', textfont: { size: 10 },
+  marker: { size: 12, color: [-6.59, -6.695, -6.584, -6.477, -4.032, -6.455, -6.699, -6.443, -5.532, -7.837],
+             colorscale: 'RdBu', reversescale: true,
+             showscale: true, colorbar: { title: 'Vina ΔG' } },
+  hovertemplate: '<b>%{text}</b><br>Vina ΔG: %{x:.2f} kcal/mol<br>GNINA CNN: %{y:.3f}<extra></extra>'
+}], {
+  xaxis: { title: 'Vina ΔG (kcal/mol)' },
+  yaxis: { title: 'GNINA CNNscore' },
+  template: 'plotly_white', height: 380,
+  margin: { t: 20, b: 50, l: 60, r: 20 }
+}, {responsive: true});
+
+// ── Rank agreement scatter ──
+var maxRank = Math.max(...[4.0, 3.0, 5.0, 6.0, 10.0, 7.0, 2.0, 8.0, 9.0, 1.0].concat([3.0, 4.0, 2.0, 6.0, 10.0, 5.0, 7.0, 8.0, 9.0, 1.0]));
+Plotly.newPlot('rank-chart', [
+  {
+    type: 'scatter', mode: 'lines',
+    x: [1, maxRank], y: [1, maxRank],
+    line: { color: '#cbd5e1', dash: 'dot', width: 1.5 },
+    hoverinfo: 'none', showlegend: false
+  },
+  {
+    type: 'scatter', mode: 'markers+text',
+    x: [4.0, 3.0, 5.0, 6.0, 10.0, 7.0, 2.0, 8.0, 9.0, 1.0], y: [3.0, 4.0, 2.0, 6.0, 10.0, 5.0, 7.0, 8.0, 9.0, 1.0], text: ["4-chlorobenzenesulfonamide", "4-fluorobenzenesulfonamide", "4-methylbenzenesulfonamide", "acetazolamide", "benzene", "benzenesulfonamide", "ethoxzolamide", "ibuprofen", "indole", "naphthalene-2-sulfonamide"],
+    textposition: 'top center', textfont: { size: 10 },
+    marker: { size: 12, color: '#6366f1' },
+    hovertemplate: '<b>%{text}</b><br>Vina rank: %{x}<br>GNINA rank: %{y}<extra></extra>',
+    name: 'Compounds'
+  }
+], {
+  xaxis: { title: 'Vina Rank (1 = best)', dtick: 1 },
+  yaxis: { title: 'GNINA Rank (1 = best)', dtick: 1 },
+  template: 'plotly_white', height: 380,
+  margin: { t: 20, b: 50, l: 60, r: 20 }
+}, {responsive: true});
+
+// ── Vina ΔG histogram ──
+Plotly.newPlot('vina-hist', [{
+  type: 'histogram', x: [-6.59, -6.695, -6.584, -6.477, -4.032, -6.455, -6.699, -6.443, -5.532, -7.837],
+  marker: { color: '#3b82f6', opacity: 0.8 },
+  xbins: { size: 0.5 }, name: 'Vina ΔG'
+}], {
+  xaxis: { title: 'Vina ΔG (kcal/mol)' },
+  yaxis: { title: 'Count' },
+  template: 'plotly_white', height: 300,
+  margin: { t: 20, b: 50, l: 50, r: 20 },
+  showlegend: false
+}, {responsive: true});
+
+// ── GNINA CNNscore histogram ──
+Plotly.newPlot('gnina-hist', [{
+  type: 'histogram', x: [0.968935132, 0.968133569, 0.972554862, 0.959764421, 0.703509212, 0.965735674, 0.953379691, 0.944337189, 0.743262351, 0.975747049],
+  marker: { color: '#8b5cf6', opacity: 0.8 },
+  xbins: { size: 0.05 }, name: 'GNINA CNNscore'
+}], {
+  xaxis: { title: 'GNINA CNNscore (0–1)', range: [0, 1] },
+  yaxis: { title: 'Count' },
+  template: 'plotly_white', height: 300,
+  margin: { t: 20, b: 50, l: 50, r: 20 },
+  showlegend: false
+}, {responsive: true});
+
+// ── Affinity correlation scatter ──
+Plotly.newPlot('aff-chart', [{
+  type: 'scatter', mode: 'markers+text',
+  x: [-6.59, -6.695, -6.584, -6.477, -4.032, -6.455, -6.699, -6.443, -5.532, -7.837], y: [6.52947378, 6.43211985, 6.66918421, 6.87558985, 3.17831802, 6.34378958, 6.74746704, 5.75765038, 3.49997497, 6.50463295], text: ["4-chlorobenzenesulfonamide", "4-fluorobenzenesulfonamide", "4-methylbenzenesulfonamide", "acetazolamide", "benzene", "benzenesulfonamide", "ethoxzolamide", "ibuprofen", "indole", "naphthalene-2-sulfonamide"],
+  textposition: 'top center', textfont: { size: 10 },
+  marker: { size: 12, color: '#0891b2' },
+  hovertemplate: '<b>%{text}</b><br>Vina: %{x:.2f}<br>GNINA CNN aff: %{y:.2f}<extra></extra>'
+}], {
+  xaxis: { title: 'Vina ΔG (kcal/mol)' },
+  yaxis: { title: 'GNINA CNN Affinity (kcal/mol)' },
+  template: 'plotly_white', height: 340,
+  margin: { t: 20, b: 50, l: 70, r: 20 }
+}, {responsive: true});
+
+// ── Sortable full table ──
+document.querySelectorAll('#full-table thead th').forEach(function(th) {
+  th.style.cursor = 'pointer';
+  th.addEventListener('click', function() {
+    var tbody = th.closest('table').querySelector('tbody');
+    var col = th.cellIndex;
+    var asc = th.dataset.dir !== 'asc';
+    th.dataset.dir = asc ? 'asc' : 'desc';
+    var rows = Array.from(tbody.rows);
+    rows.sort(function(a, b) {
+      var av = parseFloat(a.cells[col].textContent.replace(/[^0-9.-]/g,''));
+      var bv = parseFloat(b.cells[col].textContent.replace(/[^0-9.-]/g,''));
+      if (isNaN(av)) av = a.cells[col].textContent;
+      if (isNaN(bv)) bv = b.cells[col].textContent;
+      return asc ? (av > bv ? 1 : -1) : (av < bv ? 1 : -1);
+    });
+    rows.forEach(function(r) { tbody.appendChild(r); });
+  });
+});
+</script>
+</body>
+</html>
