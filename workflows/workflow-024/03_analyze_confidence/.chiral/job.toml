@@ -1,0 +1,16 @@
+name = "Confidence Analysis"
+description = "Parse ColabFold score JSONs and emit structured confidence summary"
+inputs = ["*_scores_rank_*.json", "validated_sequences.fasta"]
+outputs = ["outputs/confidence_summary.json"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+pre = "pre_run.sh"
+run = "run.sh"
+
+[params.top_n_models]
+type = "integer"
+default = 5
+hint = "Number of ranked models to include in summary"
