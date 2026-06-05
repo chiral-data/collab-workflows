@@ -48,26 +48,6 @@ def prepare_receptor(pdb_path, out_pdbqt):
 
 # ── Pocket grid box ───────────────────────────────────────────────────────────
 
-def _coords_from_sdf(sdf_path):
-    """Return Nx3 numpy array of heavy-atom coords from SDF, or None if 2D/unreadable."""
-    import numpy as np
-    from rdkit import Chem
-
-    mol = Chem.MolFromMolFile(str(sdf_path), removeHs=True, sanitize=False)
-    if mol is None or mol.GetNumConformers() == 0:
-        return None
-    conf = mol.GetConformer()
-    coords = np.array([
-        [conf.GetAtomPosition(i).x,
-         conf.GetAtomPosition(i).y,
-         conf.GetAtomPosition(i).z]
-        for i in range(mol.GetNumAtoms())
-    ])
-    if np.std(coords[:, 2]) < 0.01:   # flat → 2D file
-        return None
-    return coords
-
-
 def _coords_from_receptor_hetatm(receptor_pdb, ligand_res_name):
     """Extract HETATM coords for ligand_res_name from the receptor PDB (crystal binding pose)."""
     import numpy as np
@@ -89,38 +69,26 @@ def _coords_from_receptor_hetatm(receptor_pdb, ligand_res_name):
 def compute_pocket_box(native_sdf_path, padding, receptor_pdb="receptor.pdb"):
     """Return (center_x, center_y, center_z, size_x, size_y, size_z).
 
-    Priority for coords:
-    1. HETATM records in receptor.pdb (crystal binding pose — always preferred)
-    2. native_ligand.sdf if it has 3D coordinates
-    3. OpenBabel --gen3d fallback (last resort; pose may not match binding site)
+    Extracts crystal binding pose coordinates from receptor.pdb HETATM records.
     """
     import numpy as np
 
-    coords = None
-
-    # Prefer crystal pose from receptor.pdb (actual binding site coordinates)
     lig_id = None
     report_path = Path("validation_report.json")
     if report_path.exists():
         import json
         lig_id = json.load(open(report_path)).get("native_ligand_id")
-    if lig_id:
-        coords = _coords_from_receptor_hetatm(receptor_pdb, lig_id)
-        if coords is not None and len(coords) > 0:
-            print(f"  Using crystal pose from receptor.pdb: {len(coords)} atoms for {lig_id}", flush=True)
 
-    if coords is None or len(coords) == 0:
-        print("  No crystal coords in receptor.pdb — trying native_ligand.sdf", flush=True)
-        coords = _coords_from_sdf(native_sdf_path)
+    if not lig_id:
+        print("ERROR: native_ligand_id not found in validation_report.json", flush=True)
+        sys.exit(1)
 
+    coords = _coords_from_receptor_hetatm(receptor_pdb, lig_id)
     if coords is None or len(coords) == 0:
-        print("  WARNING: falling back to OpenBabel 3D generation for pocket box", flush=True)
-        tmp_sdf = Path("native_ligand_3d.sdf")
-        _run(["obabel", str(native_sdf_path), "-O", str(tmp_sdf), "--gen3d"],
-             "native ligand 3D generation")
-        coords = _coords_from_sdf(tmp_sdf)
-        if coords is None:
-            raise ValueError("Could not obtain 3D coordinates for the native ligand")
+        print(f"ERROR: no HETATM coords for {lig_id} in {receptor_pdb}", flush=True)
+        sys.exit(1)
+
+    print(f"  Using crystal pose from receptor.pdb: {len(coords)} atoms for {lig_id}", flush=True)
 
     center = coords.mean(axis=0)
     extent = coords.max(axis=0) - coords.min(axis=0) + 2 * padding
