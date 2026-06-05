@@ -5,7 +5,7 @@ inputs = ["vina_screening_scores.csv", "gnina_screening_scores.csv", "vina_scree
 outputs = ["comparative_screening_metrics.csv", "docking_performance_report.html"]
 
 [container]
-docker_file = "Dockerfile"
+image = "vina-gnina-pipeline:latest"
 use_gpu = false
 
 [scripts]
