@@ -483,7 +483,7 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
 <script>
 // ── Score correlation scatter ──
 Plotly.newPlot('corr-chart', [{{
-  type: 'scatter', mode: 'markers+text',
+  type: 'scatter', mode: 'markers',
   x: {corr_x_js}, y: {corr_y_js}, text: {corr_n_js},
   textposition: 'top center', textfont: {{ size: 10 }},
   marker: {{ size: 12, color: {corr_x_js},
@@ -507,7 +507,7 @@ Plotly.newPlot('rank-chart', [
     hoverinfo: 'none', showlegend: false
   }},
   {{
-    type: 'scatter', mode: 'markers+text',
+    type: 'scatter', mode: 'markers',
     x: {vina_rk_js}, y: {gnina_rk_js}, text: {names_js},
     textposition: 'top center', textfont: {{ size: 10 }},
     marker: {{ size: 12, color: '#6366f1' }},
@@ -549,7 +549,7 @@ Plotly.newPlot('gnina-hist', [{{
 
 // ── Affinity correlation scatter ──
 Plotly.newPlot('aff-chart', [{{
-  type: 'scatter', mode: 'markers+text',
+  type: 'scatter', mode: 'markers',
   x: {aff_x_js}, y: {aff_y_js}, text: {aff_n_js},
   textposition: 'top center', textfont: {{ size: 10 }},
   marker: {{ size: 12, color: '#0891b2' }},
