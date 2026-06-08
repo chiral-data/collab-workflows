@@ -478,6 +478,76 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
     </div>
   </div>
 
+  <!-- Methods -->
+  <div class="section-card">
+    <div class="section-header">&#128221; Methods</div>
+    <div class="section-body">
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6">
+          <h6 class="fw-semibold mb-2" style="color:#1d4ed8;">
+            <span class="vina-badge me-2">Vina</span> AutoDock Vina
+          </h6>
+          <table class="table table-sm table-borderless mb-0" style="font-size:0.84rem;">
+            <tbody>
+              <tr><td class="text-secondary pe-3" style="white-space:nowrap;">Scoring function</td>
+                  <td>Empirical energy function (Vina weights)</td></tr>
+              <tr><td class="text-secondary pe-3">Exhaustiveness</td>
+                  <td>{vina_meta.get("exhaustiveness", 8)}</td></tr>
+              <tr><td class="text-secondary pe-3">Num. output modes</td>
+                  <td>{vina_meta.get("num_modes", 9)}</td></tr>
+              <tr><td class="text-secondary pe-3">Hardware</td>
+                  <td>CPU-only</td></tr>
+              <tr><td class="text-secondary pe-3">Output format</td>
+                  <td>PDBQT</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <h6 class="fw-semibold mb-2" style="color:#7c3aed;">
+            <span class="gnina-badge me-2">GNINA</span> GNINA
+          </h6>
+          <table class="table table-sm table-borderless mb-0" style="font-size:0.84rem;">
+            <tbody>
+              <tr><td class="text-secondary pe-3" style="white-space:nowrap;">CNN scoring mode</td>
+                  <td><code>--cnn_scoring rescore</code> — Vina poses rescored by CNN; CNN score used for ranking</td></tr>
+              <tr><td class="text-secondary pe-3">Exhaustiveness</td>
+                  <td>{gnina_meta.get("exhaustiveness", 8)}</td></tr>
+              <tr><td class="text-secondary pe-3">Num. output modes</td>
+                  <td>{gnina_meta.get("num_modes", 9)}</td></tr>
+              <tr><td class="text-secondary pe-3">Hardware</td>
+                  <td>CPU-only (<code>--no_gpu</code>)</td></tr>
+              <tr><td class="text-secondary pe-3">Output format</td>
+                  <td>SDF</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-12">
+          <h6 class="fw-semibold mb-2" style="color:#0f172a;">Shared Experimental Settings</h6>
+          <table class="table table-sm table-borderless mb-0" style="font-size:0.84rem;">
+            <tbody>
+              <tr><td class="text-secondary pe-3" style="width:200px;">Target protein</td>
+                  <td>Carbonic Anhydrase II (CA-II), PDB: 1OKL</td></tr>
+              <tr><td class="text-secondary pe-3">Compounds screened</td>
+                  <td>{n_screened}</td></tr>
+              <tr><td class="text-secondary pe-3">Pose format (downstream)</td>
+                  <td>Top-5 poses per tool converted to MOL2 via OpenBabel</td></tr>
+              <tr><td class="text-secondary pe-3">Ranking metric — Vina</td>
+                  <td>&#916;G (kcal/mol); lower (more negative) = stronger predicted binding</td></tr>
+              <tr><td class="text-secondary pe-3">Ranking metric — GNINA</td>
+                  <td>CNNscore (0&#8211;1); higher = CNN-predicted binder; CNN affinity (kcal/mol) also reported</td></tr>
+              <tr><td class="text-secondary pe-3">Report generated</td>
+                  <td>{timestamp}</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script>
