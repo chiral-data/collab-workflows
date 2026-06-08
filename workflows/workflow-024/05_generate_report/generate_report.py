@@ -302,6 +302,197 @@ def compute_pose_rmsds():
     return rmsds
 
 
+# ── Mol* 3D viewer helpers ────────────────────────────────────────────────────
+
+def _escape_for_js(content):
+    """Escape structure file content for safe embedding in a JS template literal."""
+    return content.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
+
+
+def _pdbqt_ligand_as_pdb(pdbqt_path):
+    """
+    Strip PDBQT-only records (ROOT/BRANCH/TORSDOF) and return a PDB-compatible
+    string from the first MODEL block of a Vina output PDBQT.
+    """
+    _PDBQT_ONLY = frozenset(["ROOT", "ENDROOT", "BRANCH", "ENDBRANCH", "TORSDOF"])
+    text = Path(pdbqt_path).read_text()
+    has_model = "MODEL" in text
+    lines = []
+    capturing = not has_model
+    for line in text.splitlines():
+        tag = line.split()[0] if line.split() else ""
+        if tag == "MODEL":
+            capturing = True
+        elif tag == "ENDMDL":
+            break
+        elif capturing and tag not in _PDBQT_ONLY:
+            lines.append(line[:80])
+    lines.append("END")
+    return "\n".join(lines)
+
+
+def _gnina_top_sdf(sdf_path):
+    """Return only the first molecule record from a GNINA SDF output."""
+    text = Path(sdf_path).read_text()
+    end = text.find("$$$$")
+    return text[:end + 4] if end >= 0 else text
+
+
+def _build_name_to_paths():
+    """Map compound name → (vina_pdbqt_path, gnina_sdf_path | None)."""
+    vina_dir  = Path("vina_poses")
+    gnina_dir = Path("gnina_poses")
+    mapping = {}
+    if not vina_dir.exists():
+        return mapping
+    for vp in sorted(vina_dir.glob("*.pdbqt")):
+        name = None
+        for line in vp.read_text().splitlines():
+            m = re.search(r"REMARK\s+Name\s*=\s*(.+)", line)
+            if m:
+                name = m.group(1).strip()
+                break
+        if name is None:
+            continue
+        gs = gnina_dir / (vp.stem + ".sdf") if gnina_dir.exists() else None
+        mapping[name] = (vp, gs if gs and gs.exists() else None)
+    return mapping
+
+
+def load_viewer_structures(merged, n=3):
+    """
+    Return [(label, escaped_content, file_format, hex_color), ...] for the Mol* viewer.
+
+    Loads (in order): receptor, crystal ligand, top-n Vina poses (PDB-ified PDBQT),
+    top-n GNINA poses (SDF first record).  All file loading is optional — missing
+    files are silently skipped.
+    """
+    structures = []
+    _PDB_KEEP = frozenset(["ATOM", "HETATM", "TER", "END", "REMARK", "MODEL", "ENDMDL"])
+
+    # Receptor: prefer .pdb (full crystal structure); fall back to .pdbqt (strip extras)
+    for rpath in ("receptor.pdb", "receptor.pdbqt"):
+        p = Path(rpath)
+        if not p.exists():
+            continue
+        raw = p.read_text()
+        if rpath.endswith(".pdbqt"):
+            raw = "\n".join(
+                ln[:80] for ln in raw.splitlines()
+                if (ln.split()[0] if ln.split() else "") in _PDB_KEEP
+            ) + "\nEND"
+        structures.append(("Receptor (CA-II)", _escape_for_js(raw), "pdb", "#94a3b8"))
+        print(f"  Viewer: loaded {rpath}", flush=True)
+        break
+
+    # Crystal reference ligand
+    for cpath in ("crystal_ligand.pdb", "crystal_ligand.pdbqt"):
+        p = Path(cpath)
+        if not p.exists():
+            continue
+        raw = p.read_text()
+        lines = [ln[:80] for ln in raw.splitlines()
+                 if (ln.split()[0] if ln.split() else "") in {"ATOM", "HETATM", "TER", "END", "REMARK"}]
+        raw = "\n".join(lines) + "\nEND"
+        structures.append(("Crystal ligand", _escape_for_js(raw), "pdb", "#f59e0b"))
+        print(f"  Viewer: loaded {cpath}", flush=True)
+        break
+
+    name_map = _build_name_to_paths()
+    both = [r for r in merged if r["vina_rank"] is not None and r["gnina_rank"] is not None]
+
+    # Top-n Vina poses (blue)
+    for r in sorted(both, key=lambda x: x["vina_rank"])[:n]:
+        vp, _ = name_map.get(r["name"], (None, None))
+        if vp and vp.exists():
+            content = _pdbqt_ligand_as_pdb(vp)
+            label = f"Vina #{int(r['vina_rank'])}: {r['name']}"
+            structures.append((label, _escape_for_js(content), "pdb", "#3b82f6"))
+
+    # Top-n GNINA poses (purple)
+    for r in sorted(both, key=lambda x: x["gnina_rank"])[:n]:
+        _, gs = name_map.get(r["name"], (None, None))
+        if gs and gs.exists():
+            content = _gnina_top_sdf(gs)
+            label = f"GNINA #{int(r['gnina_rank'])}: {r['name']}"
+            structures.append((label, _escape_for_js(content), "sdf", "#8b5cf6"))
+
+    return structures
+
+
+def _molstar_viewer_js(viewer_id, structures):
+    """
+    Return JS that loads structures sequentially into a Mol* viewer instance
+    and exposes window.toggleStruct(idx) for per-structure visibility buttons.
+    """
+    if not structures:
+        return ""
+    entries = ",\n".join(
+        f'  {{label: {json.dumps(label)}, data: `{content}`, format: {json.dumps(fmt)}}}'
+        for label, content, fmt, _ in structures
+    )
+    n = len(structures)
+    return f"""(function() {{
+  var structs = [
+{entries}
+  ];
+  var visible = Array({n}).fill(true);
+  var molPlugin = null;
+
+  window.toggleStruct = function(idx) {{
+    if (!molPlugin) return;
+    visible[idx] = !visible[idx];
+    var show = visible[idx];
+    var hierarchy = molPlugin.managers.structure.hierarchy.current.structures;
+    if (!hierarchy[idx]) return;
+    var isHidden = !!hierarchy[idx].cell.state.isHidden;
+    if ((show && isHidden) || (!show && !isHidden)) {{
+      try {{
+        molPlugin.managers.structure.hierarchy.toggleVisibility([hierarchy[idx]]);
+      }} catch(e) {{
+        try {{
+          molstar.PluginCommands.State.ToggleVisibility(molPlugin, {{
+            state: molPlugin.state.data,
+            ref: hierarchy[idx].cell.transform.ref
+          }});
+        }} catch(e2) {{ console.warn('toggle failed:', e2); }}
+      }}
+    }}
+    var btn = document.getElementById('toggle-struct-' + idx);
+    if (btn) btn.style.opacity = show ? '1' : '0.35';
+  }};
+
+  molstar.Viewer.create('{viewer_id}', {{
+    layoutIsExpanded: false,
+    layoutShowControls: false,
+    layoutShowLeftPanel: true,
+    layoutShowSequence: false,
+    layoutShowLog: false,
+    layoutShowRemoteState: false,
+    viewportShowAnimation: false,
+    viewportShowExpand: true,
+    viewportShowSelectionMode: false
+  }}).then(function(viewer) {{
+    molPlugin = viewer.plugin;
+    var p = molPlugin;
+    var chain = Promise.resolve();
+    structs.forEach(function(s) {{
+      chain = chain
+        .then(function() {{ return p.builders.data.rawData({{data: s.data, label: s.label}}); }})
+        .then(function(d) {{ return p.builders.structure.parseTrajectory(d, s.format); }})
+        .then(function(t) {{ return p.builders.structure.hierarchy.applyPreset(t, 'default'); }});
+    }});
+    chain.catch(function(e) {{
+      document.getElementById('{viewer_id}').innerHTML =
+        '<p style="color:red;padding:16px;">Mol* error: ' + e + '</p>';
+    }});
+  }}).catch(function(e) {{
+    document.getElementById('{viewer_id}').innerHTML =
+      '<p style="color:red;padding:16px;">Mol* failed to initialize: ' + e + '</p>';
+  }});
+}})();"""
+
+
 # ── HTML report generation ────────────────────────────────────────────────────
 
 def _fmt(v, decimals=3):
@@ -310,7 +501,8 @@ def _fmt(v, decimals=3):
     return f"{v:.{decimals}f}"
 
 
-def generate_html(merged, stats, vina_meta, gnina_meta, timestamp, pose_rmsds=None):
+def generate_html(merged, stats, vina_meta, gnina_meta, timestamp,
+                  pose_rmsds=None, viewer_structures=None):
     both = [r for r in merged
             if r["vina_rank"] is not None and r["gnina_rank"] is not None]
     both_sorted_vina  = sorted(both, key=lambda r: r["vina_rank"])
@@ -481,6 +673,39 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp, pose_rmsds=No
         rmsd_section_html = ""
         rmsd_chart_js = ""
 
+    # 3D viewer — built as plain strings to avoid nested f-string quoting issues
+    viewer_structures = viewer_structures or []
+    if viewer_structures:
+        toggle_buttons = "".join(
+            f'<button id="toggle-struct-{i}" onclick="toggleStruct({i})" '
+            f'style="background:{color};color:white;border:none;padding:5px 16px;'
+            f'border-radius:20px;font-size:0.83rem;cursor:pointer;margin-right:6px;margin-bottom:6px;'
+            f'transition:opacity 0.2s;">{label}</button>'
+            for i, (label, _, _, color) in enumerate(viewer_structures)
+        )
+        viewer_section_html = (
+            '<div class="section-card">'
+            '<div class="section-header">&#9881; 3D Pose Visualization (Mol*)</div>'
+            '<div class="section-body">'
+            '<p style="font-size:0.82rem;color:#475569;margin-bottom:8px;">Toggle structures:</p>'
+            '<div style="margin-bottom:14px;display:flex;flex-wrap:wrap;">'
+            + toggle_buttons
+            + '</div>'
+            '<div id="molstar-viewer" style="width:100%;height:520px;position:relative;'
+            'border-radius:8px;overflow:hidden;border:1px solid #e2e8f0;"></div>'
+            '<p class="note" style="margin-top:10px;">'
+            'Receptor as cartoon &nbsp;·&nbsp; ligand poses as ball-and-stick. '
+            'Vina top-3 in blue &nbsp;·&nbsp; GNINA top-3 in purple &nbsp;·&nbsp; '
+            'crystal reference in amber. '
+            'Scroll to zoom &nbsp;·&nbsp; drag to rotate &nbsp;·&nbsp; right-click to pan.'
+            '</p>'
+            '</div></div>'
+        )
+        viewer_js = _molstar_viewer_js("molstar-viewer", viewer_structures)
+    else:
+        viewer_section_html = ""
+        viewer_js = ""
+
     # Runtime comparison — built as plain strings to avoid nested f-string quoting issues
     if has_timing:
         runtime_section_html = (
@@ -545,7 +770,9 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp, pose_rmsds=No
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vina vs GNINA Docking Comparison</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css">
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
   <style>
     body {{ background: #f1f5f9; color: #1e293b; }}
     .hero {{
@@ -734,6 +961,9 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp, pose_rmsds=No
     </div>
   </div>
 
+  <!-- 3D Pose Visualization -->
+  {viewer_section_html}
+
   <!-- Pose RMSD comparison -->
   {rmsd_section_html}
 
@@ -899,6 +1129,9 @@ Plotly.newPlot('aff-chart', [{{
 // ── Runtime bar chart ──
 {runtime_chart_js}
 
+// ── Mol* 3D viewer ──
+{viewer_js}
+
 // ── Sortable full table ──
 document.querySelectorAll('#full-table thead th').forEach(function(th) {{
   th.style.cursor = 'pointer';
@@ -975,10 +1208,15 @@ def main():
     else:
         print("  pose dirs not found — skipping RMSD section", flush=True)
 
+    print("\nLoading structures for 3D viewer ...", flush=True)
+    viewer_structures = load_viewer_structures(merged, n=3)
+    print(f"  {len(viewer_structures)} structure(s) loaded for Mol* viewer", flush=True)
+
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print("Generating HTML report ...", flush=True)
     html = generate_html(merged, stats, vina_meta, gnina_meta, timestamp,
-                         pose_rmsds=pose_rmsds)
+                         pose_rmsds=pose_rmsds,
+                         viewer_structures=viewer_structures)
     Path("docking_performance_report.html").write_text(html)
     print(f"Wrote docking_performance_report.html ({len(html):,} chars)", flush=True)
 
