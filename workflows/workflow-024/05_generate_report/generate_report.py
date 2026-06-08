@@ -84,22 +84,44 @@ def compute_statistics(merged):
     gnina_cnn   = [r["gnina_cnn_score"]              for r in both]
     gnina_aff   = [r["gnina_cnn_affinity_kcal_mol"]  for r in both]
 
+    def _rank_list(xs):
+        sorted_idx = sorted(range(len(xs)), key=lambda i: xs[i])
+        ranks = [0] * len(xs)
+        for r, i in enumerate(sorted_idx, 1):
+            ranks[i] = r
+        return ranks
+
+    def _spearmanr(x, y):
+        rx, ry = _rank_list(x), _rank_list(y)
+        n = len(x)
+        d2 = sum((a - b) ** 2 for a, b in zip(rx, ry))
+        return 1 - 6 * d2 / (n * (n ** 2 - 1))
+
+    def _kendalltau(x, y):
+        n = len(x)
+        conc = disc = 0
+        for i in range(n):
+            for j in range(i + 1, n):
+                s = (x[i] - x[j]) * (y[i] - y[j])
+                if s > 0:
+                    conc += 1
+                elif s < 0:
+                    disc += 1
+        return (conc - disc) / (n * (n - 1) / 2)
+
     try:
-        from scipy.stats import spearmanr, kendalltau
-        rho_rank,  p_rho   = spearmanr(vina_ranks,  gnina_ranks)
-        tau_rank,  p_tau   = kendalltau(vina_ranks,  gnina_ranks)
-        rho_score, p_score = spearmanr(
-            [v for v, g in zip(vina_aff, gnina_cnn) if v is not None and g is not None],
-            [g for v, g in zip(vina_aff, gnina_cnn) if v is not None and g is not None],
-        )
-        rho_aff, p_aff = spearmanr(
-            [v for v, g in zip(vina_aff, gnina_aff) if v is not None and g is not None],
-            [g for v, g in zip(vina_aff, gnina_aff) if v is not None and g is not None],
-        )
+        from scipy.stats import spearmanr as _sp, kendalltau as _kt
+        def _spearmanr(x, y): return _sp(x, y)[0]
+        def _kendalltau(x, y): return _kt(x, y)[0]
     except ImportError:
-        rho_rank = tau_rank = rho_score = rho_aff = None
-        p_rho = p_tau = p_score = p_aff = None
-        print("  WARNING: scipy not available; skipping correlation stats", flush=True)
+        print("  INFO: scipy not available; using pure-Python rank correlations", flush=True)
+
+    rho_rank  = _spearmanr(vina_ranks, gnina_ranks)
+    tau_rank  = _kendalltau(vina_ranks, gnina_ranks)
+    aff_pairs = [(v, g) for v, g in zip(vina_aff, gnina_aff) if v is not None and g is not None]
+    rho_aff   = _spearmanr([p[0] for p in aff_pairs], [p[1] for p in aff_pairs]) if aff_pairs else None
+    cnn_pairs = [(v, g) for v, g in zip(vina_aff, gnina_cnn) if v is not None and g is not None]
+    rho_score = _spearmanr([p[0] for p in cnn_pairs], [p[1] for p in cnn_pairs]) if cnn_pairs else None
 
     def topn_overlap(n):
         vt = {r["name"] for r in sorted(both, key=lambda r: r["vina_rank"])[:n]}
@@ -110,9 +132,9 @@ def compute_statistics(merged):
     return {
         "n_compounds":          n,
         "spearman_rho_rank":    round(rho_rank,  4) if rho_rank  is not None else None,
-        "spearman_p_rank":      round(p_rho,     4) if p_rho     is not None else None,
+        "spearman_p_rank":      None,
         "kendall_tau_rank":     round(tau_rank,  4) if tau_rank  is not None else None,
-        "kendall_p_rank":       round(p_tau,     4) if p_tau     is not None else None,
+        "kendall_p_rank":       None,
         "spearman_rho_affinity": round(rho_aff,  4) if rho_aff   is not None else None,
         "spearman_rho_vina_cnn": round(rho_score,4) if rho_score is not None else None,
         "top3_overlap":  topn_overlap(min(3, n)),
@@ -223,17 +245,13 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
     def _top5_rows(rows, tool_ranks_by_vina=True):
         html = ""
         for r in rows[:5]:
-            rank_badge = (f'<span style="background:#3b82f6;color:white;padding:2px 8px;'
-                          f'border-radius:10px;font-size:11px;">#{int(r["vina_rank"])}</span>'
-                          if r.get("vina_rank") else "—")
-            gnina_badge = (f'<span style="background:#8b5cf6;color:white;padding:2px 8px;'
-                           f'border-radius:10px;font-size:11px;">#{int(r["gnina_rank"])}</span>'
-                           if r.get("gnina_rank") else "—")
+            vina_rank  = int(r["vina_rank"])  if r.get("vina_rank")  else "—"
+            gnina_rank = int(r["gnina_rank"]) if r.get("gnina_rank") else "—"
             html += (
                 f'<tr><td>{r["name"]}</td>'
-                f'<td>{rank_badge}</td>'
+                f'<td>{vina_rank}</td>'
                 f'<td>{_fmt(r["vina_affinity_kcal_mol"])} kcal/mol</td>'
-                f'<td>{gnina_badge}</td>'
+                f'<td>{gnina_rank}</td>'
                 f'<td>{_fmt(r["gnina_cnn_score"])}</td>'
                 f'<td>{_fmt(r["gnina_cnn_affinity_kcal_mol"])} kcal/mol</td>'
                 f'<td>{_fmt(r.get("rank_difference"), 0)}</td></tr>\n'
@@ -249,8 +267,6 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
         for r in sorted(merged, key=lambda x: (x["vina_rank"] or 999)):
             rd = r.get("rank_difference")
             rd_str = f'+{rd}' if rd and rd > 0 else (str(rd) if rd is not None else "—")
-            rd_color = ("#16a34a" if rd and rd > 0 else
-                        ("#dc2626" if rd and rd < 0 else "#64748b"))
             html += (
                 f'<tr>'
                 f'<td>{r["name"]}</td>'
@@ -259,7 +275,7 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
                 f'<td>{_fmt(r["gnina_rank"], 0)}</td>'
                 f'<td>{_fmt(r["gnina_cnn_score"])}</td>'
                 f'<td>{_fmt(r["gnina_cnn_affinity_kcal_mol"])}</td>'
-                f'<td style="color:{rd_color};font-weight:600">{rd_str}</td>'
+                f'<td>{rd_str}</td>'
                 f'</tr>\n'
             )
         return html
@@ -448,7 +464,7 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
     <div class="section-body p-0">
       <div class="table-responsive">
         <table class="table table-sm table-striped table-hover mb-0" id="full-table">
-          <thead class="table-dark">
+          <thead>
             <tr>
               <th>Name</th>
               <th>Vina Rank &#8597;</th><th>Vina &#916;G (kcal/mol)</th>
