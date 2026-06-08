@@ -11,6 +11,7 @@ Node 05: Generate Comparison Report
 
 import csv
 import json
+import math
 import re
 import subprocess
 import sys
@@ -194,6 +195,113 @@ def convert_top_poses_mol2(vina_pdbqt, gnina_sdf, n=5):
     return results
 
 
+# ── Pose RMSD (Vina top pose vs GNINA top pose, per compound) ─────────────────
+
+def _vina_top_pose_coords(pdbqt_path):
+    """Heavy-atom XYZ from the first MODEL block of a Vina output PDBQT."""
+    text = Path(pdbqt_path).read_text()
+    has_model = "MODEL" in text
+    coords = []
+    capturing = not has_model
+    for line in text.splitlines():
+        if line.startswith("MODEL"):
+            capturing = True
+            continue
+        if line.startswith("ENDMDL"):
+            break
+        if capturing and line.startswith(("ATOM", "HETATM")):
+            atom_name = line[12:16].strip()
+            if atom_name.upper().startswith("H"):
+                continue
+            try:
+                coords.append((float(line[30:38]), float(line[38:46]), float(line[46:54])))
+            except ValueError:
+                pass
+    return coords
+
+
+def _gnina_top_pose_coords(sdf_path):
+    """Heavy-atom XYZ from the first molecule in a GNINA SDF output."""
+    try:
+        from rdkit import Chem
+        suppl = Chem.SDMolSupplier(str(sdf_path), removeHs=True, sanitize=False)
+        mol = next((m for m in suppl if m is not None), None)
+        if mol is not None:
+            conf = mol.GetConformer()
+            return [(conf.GetAtomPosition(i)[0],
+                     conf.GetAtomPosition(i)[1],
+                     conf.GetAtomPosition(i)[2])
+                    for i in range(mol.GetNumAtoms())]
+    except Exception:
+        pass
+    # Pure-Python V2000 molblock fallback
+    lines = Path(sdf_path).read_text().splitlines()
+    counts_idx = next(
+        (i for i, ln in enumerate(lines) if "V2000" in ln or "V3000" in ln),
+        3 if len(lines) > 4 else None
+    )
+    if counts_idx is None:
+        return []
+    coords = []
+    try:
+        n_atoms = int(lines[counts_idx][:3].strip())
+        for i in range(counts_idx + 1, counts_idx + 1 + n_atoms):
+            parts = lines[i].split()
+            if len(parts) >= 4 and parts[3].upper() != "H":
+                coords.append((float(parts[0]), float(parts[1]), float(parts[2])))
+    except (IndexError, ValueError):
+        pass
+    return coords
+
+
+def _positional_rmsd(a, b):
+    """RMSD over the first min(len(a), len(b)) atom pairs."""
+    n = min(len(a), len(b))
+    if n == 0:
+        return None
+    d2 = sum((a[i][0] - b[i][0])**2 + (a[i][1] - b[i][1])**2 + (a[i][2] - b[i][2])**2
+             for i in range(n))
+    return round(math.sqrt(d2 / n), 3)
+
+
+def compute_pose_rmsds():
+    """
+    Compute per-compound Vina-vs-GNINA top-pose RMSD (Angstroms).
+
+    Both tools receive the same input PDBQT from ligands_split/, so atom ordering
+    is preserved across tools and direct positional RMSD is valid.
+
+    Returns dict: compound_name -> float | None.
+    Silently returns {} if pose directories are absent.
+    """
+    vina_dir  = Path("vina_poses")
+    gnina_dir = Path("gnina_poses")
+    if not vina_dir.exists() or not gnina_dir.exists():
+        return {}
+
+    rmsds = {}
+    for vina_pdbqt in sorted(vina_dir.glob("*.pdbqt")):
+        # Extract compound name from the REMARK Name header written by run_vina.py
+        name = None
+        for line in vina_pdbqt.read_text().splitlines():
+            m = re.search(r"REMARK\s+Name\s*=\s*(.+)", line)
+            if m:
+                name = m.group(1).strip()
+                break
+        if name is None:
+            continue
+
+        gnina_sdf = gnina_dir / (vina_pdbqt.stem + ".sdf")
+        if not gnina_sdf.exists():
+            continue
+
+        vc = _vina_top_pose_coords(vina_pdbqt)
+        gc = _gnina_top_pose_coords(gnina_sdf)
+        rmsds[name] = _positional_rmsd(vc, gc)
+
+    return rmsds
+
+
 # ── HTML report generation ────────────────────────────────────────────────────
 
 def _fmt(v, decimals=3):
@@ -202,7 +310,7 @@ def _fmt(v, decimals=3):
     return f"{v:.{decimals}f}"
 
 
-def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
+def generate_html(merged, stats, vina_meta, gnina_meta, timestamp, pose_rmsds=None):
     both = [r for r in merged
             if r["vina_rank"] is not None and r["gnina_rank"] is not None]
     both_sorted_vina  = sorted(both, key=lambda r: r["vina_rank"])
@@ -299,6 +407,79 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
         return html
 
     full_table_rows = _full_table_rows()
+
+    # Pose RMSD chart — built as plain strings to avoid nested f-string quoting issues
+    pose_rmsds = pose_rmsds or {}
+    rmsd_pairs = sorted(
+        [(name, v) for name, v in pose_rmsds.items() if v is not None],
+        key=lambda t: t[1]
+    )
+    if rmsd_pairs:
+        rmsd_names  = [p[0] for p in rmsd_pairs]
+        rmsd_vals   = [p[1] for p in rmsd_pairs]
+        rmsd_colors = ["#16a34a" if v < 2.0 else "#f59e0b" if v < 3.0 else "#dc2626"
+                       for v in rmsd_vals]
+        n_lt2  = sum(1 for v in rmsd_vals if v < 2.0)
+        n_lt3  = sum(1 for v in rmsd_vals if v < 3.0)
+        pct_lt2 = round(100 * n_lt2 / len(rmsd_vals))
+        rmsd_names_js  = json.dumps(rmsd_names)
+        rmsd_vals_js   = json.dumps(rmsd_vals)
+        rmsd_colors_js = json.dumps(rmsd_colors)
+        avg_rmsd       = round(sum(rmsd_vals) / len(rmsd_vals), 2)
+        max_rmsd       = max(rmsd_vals)
+        rmsd_ymax      = round(max_rmsd * 1.15 + 0.5)
+        rmsd_section_html = (
+            '<div class="section-card">'
+            '<div class="section-header">&#128207; Pose Agreement: Vina vs GNINA Top-Pose RMSD per Compound</div>'
+            '<div class="section-body">'
+            '<div class="row g-3 mb-3">'
+            f'<div class="col-6 col-md-3"><div class="stat-card">'
+            f'<div class="value" style="color:#1d4ed8;">{len(rmsd_vals)}</div>'
+            f'<div class="label">Compounds with both poses</div></div></div>'
+            f'<div class="col-6 col-md-3"><div class="stat-card">'
+            f'<div class="value" style="color:#16a34a;">{n_lt2} / {len(rmsd_vals)}</div>'
+            f'<div class="label">RMSD &lt; 2 &#8491; (same binding mode)</div></div></div>'
+            f'<div class="col-6 col-md-3"><div class="stat-card">'
+            f'<div class="value" style="color:#f59e0b;">{pct_lt2}%</div>'
+            f'<div class="label">Agreement rate (2 &#8491; cutoff)</div></div></div>'
+            f'<div class="col-6 col-md-3"><div class="stat-card">'
+            f'<div class="value" style="color:#64748b;">{avg_rmsd}</div>'
+            f'<div class="label">Mean RMSD (&#8491;)</div></div></div>'
+            '</div>'
+            '<div id="rmsd-chart" style="height:320px;"></div>'
+            '<p class="note">RMSD between Vina and GNINA top-ranked pose for each compound '
+            '(heavy atoms only; both tools use the same input PDBQT atom ordering). '
+            'Green &lt; 2 &#8491;: tools agree on binding mode. '
+            'Amber 2&#8211;3 &#8491;: moderate deviation. '
+            'Red &gt; 3 &#8491;: divergent poses &#8212; inspect manually.</p>'
+            '</div></div>'
+        )
+        rmsd_chart_js = (
+            "Plotly.newPlot('rmsd-chart', ["
+            "{"
+            f"  type: 'bar', x: {rmsd_names_js}, y: {rmsd_vals_js},"
+            f"  marker: {{ color: {rmsd_colors_js} }},"
+            "  hovertemplate: '<b>%{x}</b><br>RMSD: %{y:.3f} Å<extra></extra>',"
+            "  name: 'Vina vs GNINA RMSD'"
+            "},"
+            "{"
+            "  type: 'scatter', mode: 'lines',"
+            f"  x: {rmsd_names_js},"
+            f"  y: Array({len(rmsd_names)}).fill(2.0),"
+            "  line: { color: '#64748b', dash: 'dash', width: 1.5 },"
+            "  hoverinfo: 'none', showlegend: true, name: '2 Å threshold'"
+            "}"
+            "], {"
+            "  xaxis: { title: 'Compound', tickangle: -40, automargin: true },"
+            f"  yaxis: {{ title: 'RMSD (Å)', range: [0, {rmsd_ymax}] }},"
+            "  template: 'plotly_white', height: 320,"
+            "  margin: { t: 20, b: 100, l: 60, r: 20 },"
+            "  legend: { orientation: 'h', y: 1.08 }"
+            "}, {responsive: true});"
+        )
+    else:
+        rmsd_section_html = ""
+        rmsd_chart_js = ""
 
     # Runtime comparison — built as plain strings to avoid nested f-string quoting issues
     if has_timing:
@@ -553,6 +734,9 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
     </div>
   </div>
 
+  <!-- Pose RMSD comparison -->
+  {rmsd_section_html}
+
   <!-- Runtime comparison -->
   {runtime_section_html}
 
@@ -709,6 +893,9 @@ Plotly.newPlot('aff-chart', [{{
   margin: {{ t: 20, b: 50, l: 70, r: 20 }}
 }}, {{responsive: true}});
 
+// ── Pose RMSD bar chart ──
+{rmsd_chart_js}
+
 // ── Runtime bar chart ──
 {runtime_chart_js}
 
@@ -779,9 +966,19 @@ def main():
     gnina_meta = json.loads(Path("gnina_docking_report.json").read_text()) \
                  if Path("gnina_docking_report.json").exists() else {}
 
+    print("\nComputing pose RMSDs (Vina vs GNINA top pose per compound) ...", flush=True)
+    pose_rmsds = compute_pose_rmsds()
+    if pose_rmsds:
+        n_computed = sum(1 for v in pose_rmsds.values() if v is not None)
+        n_lt2 = sum(1 for v in pose_rmsds.values() if v is not None and v < 2.0)
+        print(f"  {n_computed} RMSDs computed, {n_lt2} < 2 Å", flush=True)
+    else:
+        print("  pose dirs not found — skipping RMSD section", flush=True)
+
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print("Generating HTML report ...", flush=True)
-    html = generate_html(merged, stats, vina_meta, gnina_meta, timestamp)
+    html = generate_html(merged, stats, vina_meta, gnina_meta, timestamp,
+                         pose_rmsds=pose_rmsds)
     Path("docking_performance_report.html").write_text(html)
     print(f"Wrote docking_performance_report.html ({len(html):,} chars)", flush=True)
 
