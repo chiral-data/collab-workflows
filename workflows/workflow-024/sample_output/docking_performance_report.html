@@ -219,7 +219,7 @@
 <script>
 // ── Score correlation scatter ──
 Plotly.newPlot('corr-chart', [{
-  type: 'scatter', mode: 'markers+text',
+  type: 'scatter', mode: 'markers',
   x: [-6.59, -6.695, -6.584, -6.477, -4.032, -6.455, -6.699, -6.443, -5.532, -7.837], y: [0.968935132, 0.968133569, 0.972554862, 0.959764421, 0.703509212, 0.965735674, 0.953379691, 0.944337189, 0.743262351, 0.975747049], text: ["4-chlorobenzenesulfonamide", "4-fluorobenzenesulfonamide", "4-methylbenzenesulfonamide", "acetazolamide", "benzene", "benzenesulfonamide", "ethoxzolamide", "ibuprofen", "indole", "naphthalene-2-sulfonamide"],
   textposition: 'top center', textfont: { size: 10 },
   marker: { size: 12, color: [-6.59, -6.695, -6.584, -6.477, -4.032, -6.455, -6.699, -6.443, -5.532, -7.837],
@@ -243,7 +243,7 @@ Plotly.newPlot('rank-chart', [
     hoverinfo: 'none', showlegend: false
   },
   {
-    type: 'scatter', mode: 'markers+text',
+    type: 'scatter', mode: 'markers',
     x: [4.0, 3.0, 5.0, 6.0, 10.0, 7.0, 2.0, 8.0, 9.0, 1.0], y: [3.0, 4.0, 2.0, 6.0, 10.0, 5.0, 7.0, 8.0, 9.0, 1.0], text: ["4-chlorobenzenesulfonamide", "4-fluorobenzenesulfonamide", "4-methylbenzenesulfonamide", "acetazolamide", "benzene", "benzenesulfonamide", "ethoxzolamide", "ibuprofen", "indole", "naphthalene-2-sulfonamide"],
     textposition: 'top center', textfont: { size: 10 },
     marker: { size: 12, color: '#6366f1' },
@@ -285,7 +285,7 @@ Plotly.newPlot('gnina-hist', [{
 
 // ── Affinity correlation scatter ──
 Plotly.newPlot('aff-chart', [{
-  type: 'scatter', mode: 'markers+text',
+  type: 'scatter', mode: 'markers',
   x: [-6.59, -6.695, -6.584, -6.477, -4.032, -6.455, -6.699, -6.443, -5.532, -7.837], y: [6.52947378, 6.43211985, 6.66918421, 6.87558985, 3.17831802, 6.34378958, 6.74746704, 5.75765038, 3.49997497, 6.50463295], text: ["4-chlorobenzenesulfonamide", "4-fluorobenzenesulfonamide", "4-methylbenzenesulfonamide", "acetazolamide", "benzene", "benzenesulfonamide", "ethoxzolamide", "ibuprofen", "indole", "naphthalene-2-sulfonamide"],
   textposition: 'top center', textfont: { size: 10 },
   marker: { size: 12, color: '#0891b2' },
