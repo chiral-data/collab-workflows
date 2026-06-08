@@ -15,6 +15,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 
@@ -161,6 +162,7 @@ def main():
     log_lines = []
     results = []
 
+    t_dock_start = time.monotonic()
     for name, lig_path in ligands:
         out_sdf = out_dir / f"{lig_path.stem}_out.sdf"
         ok, log = dock_with_gnina(
@@ -187,6 +189,9 @@ def main():
             print(f"  {name}: FAILED", flush=True)
             results.append({"name": name, "status": "failed",
                              "cnn_score": None, "cnn_affinity": None, "vina_affinity": None})
+    t_dock_end = time.monotonic()
+    wall_clock_s = round(t_dock_end - t_dock_start, 1)
+    print(f"\n  Docking wall-clock: {wall_clock_s} s", flush=True)
 
     # Write combined log
     Path("gnina_runtime_log.txt").write_text("\n\n".join(log_lines))
@@ -235,20 +240,23 @@ def main():
     print("  Wrote gnina_screening_scores.csv", flush=True)
 
     # Report JSON
+    n_total = len(results)
     report = {
         "tool":           "GNINA",
         "scoring":        "CNN rescore",
-        "total_ligands":  len(results),
+        "total_ligands":  n_total,
         "successful":     len(successful),
-        "failed":         len(results) - len(successful),
+        "failed":         n_total - len(successful),
         "top_hits": [
             {"rank": r["rank"], "name": r["name"],
              "cnn_score": r["cnn_score"],
              "cnn_affinity_kcal_mol": r["cnn_affinity"]}
             for r in successful[:5]
         ],
-        "exhaustiveness": args.exhaustiveness,
-        "num_modes":      args.num_modes,
+        "exhaustiveness":               args.exhaustiveness,
+        "num_modes":                    args.num_modes,
+        "wall_clock_seconds":           wall_clock_s,
+        "wall_clock_per_ligand_seconds": round(wall_clock_s / n_total, 2) if n_total else None,
     }
     with open("gnina_docking_report.json", "w") as f:
         json.dump(report, f, indent=2)

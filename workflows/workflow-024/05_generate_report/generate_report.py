@@ -214,6 +214,24 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
     top5_ol     = stats.get("top5_overlap", "—")
     rho_aff     = stats.get("spearman_rho_affinity")
 
+    vina_wall   = vina_meta.get("wall_clock_seconds")
+    gnina_wall  = gnina_meta.get("wall_clock_seconds")
+    vina_per    = vina_meta.get("wall_clock_per_ligand_seconds")
+    gnina_per   = gnina_meta.get("wall_clock_per_ligand_seconds")
+
+    def _fmt_time(s):
+        if s is None:
+            return "—"
+        if s < 60:
+            return f"{s:.1f} s"
+        return f"{s / 60:.1f} min ({s:.0f} s)"
+
+    has_timing  = vina_wall is not None or gnina_wall is not None
+    timing_bar_js = json.dumps([
+        vina_wall  if vina_wall  is not None else 0,
+        gnina_wall if gnina_wall is not None else 0,
+    ])
+
     # Plotly data — rank agreement scatter
     names_js   = json.dumps([r["name"] for r in both])
     vina_rk_js = json.dumps([r["vina_rank"]  for r in both])
@@ -281,6 +299,63 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
         return html
 
     full_table_rows = _full_table_rows()
+
+    # Runtime comparison — built as plain strings to avoid nested f-string quoting issues
+    if has_timing:
+        runtime_section_html = (
+            '<div class="section-card">'
+            '<div class="section-header">&#9201; Runtime Comparison: Vina vs GNINA'
+            ' (wall-clock, docking phase)</div>'
+            '<div class="section-body">'
+            '<div class="row g-4 align-items-center">'
+            '<div class="col-12 col-md-7">'
+            '<div id="runtime-chart" style="height:220px;"></div>'
+            '</div>'
+            '<div class="col-12 col-md-5">'
+            '<table class="table table-sm table-borderless mb-0" style="font-size:0.85rem;">'
+            '<thead><tr><th></th>'
+            '<th class="text-center" style="color:#3b82f6;">Vina</th>'
+            '<th class="text-center" style="color:#8b5cf6;">GNINA</th>'
+            '</tr></thead>'
+            '<tbody>'
+            '<tr><td class="text-secondary">Total wall-clock</td>'
+            f'<td class="text-center fw-semibold">{_fmt_time(vina_wall)}</td>'
+            f'<td class="text-center fw-semibold">{_fmt_time(gnina_wall)}</td></tr>'
+            '<tr><td class="text-secondary">Per-ligand avg</td>'
+            f'<td class="text-center">{_fmt_time(vina_per)}</td>'
+            f'<td class="text-center">{_fmt_time(gnina_per)}</td></tr>'
+            '<tr><td class="text-secondary">Compounds</td>'
+            f'<td class="text-center">{vina_meta.get("total_ligands", "&#8212;")}</td>'
+            f'<td class="text-center">{gnina_meta.get("total_ligands", "&#8212;")}</td></tr>'
+            '</tbody></table>'
+            '<p class="note mt-2">'
+            'Timing covers the docking loop only (excludes library splitting and CSV/JSON writing). '
+            'GNINA includes CNN rescoring overhead (<code>--cnn_scoring rescore</code>); both tools ran CPU-only.'
+            '</p>'
+            '</div></div></div></div>'
+        )
+        _vt = vina_wall  if vina_wall  is not None else 0
+        _gt = gnina_wall if gnina_wall is not None else 0
+        runtime_chart_js = (
+            "Plotly.newPlot('runtime-chart', [{"
+            "type: 'bar', orientation: 'h',"
+            f"x: [{_vt}, {_gt}],"
+            "y: ['Vina', 'GNINA'],"
+            f"text: ['{_fmt_time(vina_wall)}', '{_fmt_time(gnina_wall)}'],"
+            "textposition: 'outside',"
+            "marker: { color: ['#3b82f6', '#8b5cf6'] },"
+            "hovertemplate: '%{y}: %{x:.1f} s<extra></extra>'"
+            "}], {"
+            "xaxis: { title: 'Wall-clock time (seconds)', zeroline: true },"
+            "yaxis: { automargin: true },"
+            "template: 'plotly_white', height: 220,"
+            "margin: { t: 10, b: 50, l: 70, r: 80 },"
+            "showlegend: false"
+            "}, {responsive: true});"
+        )
+    else:
+        runtime_section_html = ""
+        runtime_chart_js = ""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -478,6 +553,9 @@ def generate_html(merged, stats, vina_meta, gnina_meta, timestamp):
     </div>
   </div>
 
+  <!-- Runtime comparison -->
+  {runtime_section_html}
+
   <!-- Methods -->
   <div class="section-card">
     <div class="section-header">&#128221; Methods</div>
@@ -630,6 +708,9 @@ Plotly.newPlot('aff-chart', [{{
   template: 'plotly_white', height: 340,
   margin: {{ t: 20, b: 50, l: 70, r: 20 }}
 }}, {{responsive: true}});
+
+// ── Runtime bar chart ──
+{runtime_chart_js}
 
 // ── Sortable full table ──
 document.querySelectorAll('#full-table thead th').forEach(function(th) {{
