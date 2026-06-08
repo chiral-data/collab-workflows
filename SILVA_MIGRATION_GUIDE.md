@@ -3,7 +3,7 @@
 A step-by-step guide for transforming open-source computational biology tools into Silva-runnable workflows for the Potter platform.
 
 **Authors:** Dev-App Team, Chiral Inc.
-**Last Updated:** March 2026
+**Last Updated:** June 2026
 
 ---
 
@@ -25,7 +25,7 @@ A step-by-step guide for transforming open-source computational biology tools in
 
 ### What is Silva?
 
-Silva is Chiral's workflow execution system. It runs multi-step computational pipelines inside isolated Docker containers. Each pipeline step is defined as a **numbered job folder** containing a configuration file (`@job.toml`) and shell scripts. Silva manages execution order, dependency resolution, and file passing between steps.
+Silva is Chiral's workflow execution system. It runs multi-step computational pipelines inside isolated Docker containers. Each pipeline step is defined as a **numbered job folder** containing a `.chiral/job.toml` configuration file and shell scripts. Silva manages execution order, dependency resolution, and file passing between steps.
 
 - **GitHub:** https://github.com/chiral-data/silva
 - **Reference workflows:** https://github.com/chiral-data/collab-workflows
@@ -50,20 +50,21 @@ Discovery → Analysis → Silva Workflow → Verification → Potter Migration
 
 ### Workflow Structure
 
-A Silva workflow is a directory containing numbered job folders. Each job folder has a `@job.toml` config and associated scripts.
+A Silva workflow is a directory containing numbered job folders and a `.chiral/workflow.toml` that defines the pipeline DAG and shared parameters. Each job folder has its own `.chiral/job.toml` config and associated scripts.
 
 ```
 my-workflow/
+├── .chiral/
+│   └── workflow.toml       ← Workflow-level config (DAG + shared params)
 ├── input_files/            ← User drops input files here
-├── global_params.json      ← Shared parameters across all jobs
 ├── 01_first_step/
-│   ├── @job.toml
+│   ├── .chiral/
+│   │   └── job.toml        ← Job-specific config
 │   ├── run.sh
 │   └── outputs/
 ├── 02_second_step/
-│   ├── @job.toml
-│   ├── params.json
-│   ├── pre_run.sh
+│   ├── .chiral/
+│   │   └── job.toml
 │   ├── run.sh
 │   ├── my_script.py
 │   └── outputs/
@@ -72,61 +73,102 @@ my-workflow/
 └── README.md
 ```
 
-### @job.toml — The Job Configuration File
+### workflow.toml — The Workflow Configuration File
 
-Every job folder must contain a `@job.toml` file. This declares what the job needs and produces.
+The `.chiral/workflow.toml` at the workflow root defines the pipeline name, the dependency graph (DAG), and shared parameters available to all jobs.
 
 ```toml
-# Dependencies: which previous jobs must complete first
-depends_on = ["01_first_step"]
+name = "My Workflow"
+description = "Brief description of what this workflow does"
 
-# What files this job reads from previous jobs' outputs
-inputs = ["data.csv"]
+[dependencies]
+02_second_step = ["01_first_step"]
+03_third_step  = ["02_second_step"]
 
-# What files this job produces
-outputs = ["result.csv", "plot.png"]
+[params.input_file]
+type    = "string"
+default = "input.sdf"
+hint    = "Input file name"
 
-# Docker image to run inside
-[container]
-docker_image = "python:3.11-slim"
-
-# Scripts to execute (in order: pre → run → post)
-[scripts]
-pre = "pre_run.sh"    # Optional: install dependencies
-run = "run.sh"         # Required: main execution
-# post = "post_run.sh" # Optional: cleanup
+[params.threshold]
+type    = "float"
+default = 0.5
+hint    = "Filtering threshold"
 ```
 
-**Key fields explained:**
+### job.toml — The Job Configuration File
+
+Every job folder must contain a `.chiral/job.toml` file. This declares what the job needs, produces, and which container to run in.
+
+```toml
+name        = "Second Step"
+description = "Process the input data"
+inputs      = ["data.csv"]
+outputs     = ["result.csv", "plot.png"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+run = "run.sh"
+
+[params.threshold]
+type    = "float"
+default = 0.5
+hint    = "Filtering threshold"
+```
+
+Silva automatically maps each parameter key to an environment variable named `PARAM_<UPPERCASE_KEY>`. For example, `[params.threshold]` becomes `PARAM_THRESHOLD` — you do **not** need to declare an `env` field. Your scripts read these with defaults:
+
+```bash
+THRESHOLD="${PARAM_THRESHOLD:-0.5}"
+```
+
+```python
+threshold = float(os.environ.get("PARAM_THRESHOLD", "0.5"))
+```
+
+**Key fields in job.toml:**
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| `depends_on` | No | List of job folder names that must finish before this one starts |
+| `name` | Yes | Human-readable name for this job |
 | `inputs` | No | List of filenames this job needs. Silva copies them from dependency outputs into `./inputs/` |
 | `outputs` | Yes | List of filenames this job produces. Must be written to `./outputs/` |
-| `[container].docker_image` | Yes | Docker image name and tag |
-| `[scripts].pre` | No | Runs before `run`. Typically installs pip packages |
+| `[container].image` | Yes | Docker image name and tag |
 | `[scripts].run` | Yes | Main execution script |
-| `[scripts].post` | No | Runs after `run`. Cleanup or post-processing |
+
+> **Note:** Job dependencies are declared centrally in `workflow.toml` under `[dependencies]`, not in individual `job.toml` files.
 
 ### File Passing Between Jobs
 
-Silva uses a simple convention for passing data between jobs:
+Silva automatically handles data flow between jobs — you don't copy files manually. Here's how it works:
 
 - Each job writes its output files to `./outputs/`
-- Downstream jobs declare `depends_on` and `inputs` in their `@job.toml`
-- Silva automatically copies the matching output files into `./inputs/` of the dependent job
+- Downstream jobs declare `inputs` in their `.chiral/job.toml` (dependencies are set in `workflow.toml`)
+- When a job finishes, Silva copies its output files into `./inputs/` of every dependent job that lists them
 
 ```
-01_prepare/outputs/data.csv  →  02_process/inputs/data.csv
+01_prepare/outputs/data.csv  →  (Silva copies automatically)  →  02_process/inputs/data.csv
 ```
 
-### Parameters: global_params.json vs params.json
+You only need to make sure the filenames match: what one job writes to `./outputs/` must match what the next job declares in `inputs`.
 
-- **`global_params.json`** — Placed in the workflow root directory. Contains parameters shared across all jobs (e.g., input filenames, atom selection strings). Every job can read this from `./inputs/global_params.json` or the workflow root.
-- **`params.json`** — Placed inside a specific job folder. Contains parameters specific to that job (e.g., reference frame index, figure dimensions).
+### Parameters
 
-Both are read by your Python scripts at runtime using `json.load()`.
+Parameters are defined in TOML config files and passed to scripts as **environment variables**.
+
+- **Workflow-level parameters** — Defined in `.chiral/workflow.toml` under `[params.*]`. These are shared across all jobs.
+- **Job-level parameters** — Defined in `.chiral/job.toml` under `[params.*]`. These are specific to a single job. Silva auto-maps each param key to `PARAM_<UPPERCASE_KEY>` (e.g., `[params.threshold]` → `PARAM_THRESHOLD`).
+
+Your Python scripts read parameters at runtime using `os.environ.get()`:
+
+```python
+import os
+
+threshold = float(os.environ.get("PARAM_THRESHOLD", "0.5"))
+top_n = int(os.environ.get("PARAM_TOP_N", "20"))
+```
 
 ---
 
@@ -221,7 +263,7 @@ For each node, document:
 5. **Dependencies** (which previous nodes)
 6. **Docker image** needed
 7. **Python/system packages** needed
-8. **Key parameters** (what goes in params.json)
+8. **Key parameters** (what goes in `[params.*]` with `env` mapping)
 
 **Write this out as a document and get it reviewed before you start coding.** This is the most important step — getting the node design right saves a lot of rework later.
 
@@ -236,31 +278,40 @@ For each node, document:
 ```bash
 mkdir my-workflow
 cd my-workflow
-mkdir input_files
-mkdir 01_validate_inputs 02_prepare 03_compute 04_visualize
+mkdir -p .chiral input_files
+mkdir -p 01_validate_inputs/.chiral 02_prepare/.chiral 03_compute/.chiral 04_visualize/.chiral
 ```
 
-#### 5.2 Write global_params.json
+#### 5.2 Write workflow.toml
 
-Place shared parameters in the workflow root:
+Place the workflow-level config in `.chiral/workflow.toml`:
 
-```json
-{
-    "input_file": "input.sdf",
-    "output_format": "csv"
-}
+```toml
+name = "My Workflow"
+description = "Brief description"
+
+[dependencies]
+02_prepare   = ["01_validate_inputs"]
+03_compute   = ["02_prepare"]
+04_visualize = ["03_compute"]
+
+[params.input_file]
+type    = "string"
+default = "input.sdf"
+hint    = "Input file name"
 ```
 
 #### 5.3 Implement Node 1 — Input Validation
 
 This node typically uses a lightweight image (like `ubuntu:22.04`) and just checks that files exist.
 
-**`01_validate_inputs/@job.toml`:**
+**`01_validate_inputs/.chiral/job.toml`:**
 ```toml
+name    = "Validate Inputs"
 outputs = ["input.sdf"]
 
 [container]
-docker_image = "ubuntu:22.04"
+image = "ubuntu:22.04"
 
 [scripts]
 run = "run.sh"
@@ -294,94 +345,59 @@ echo "Input validation complete."
 
 For nodes that run Python code:
 
-**`02_compute/@job.toml`:**
+**`02_compute/.chiral/job.toml`:**
 ```toml
-depends_on = ["01_validate_inputs"]
-inputs = ["input.sdf"]
+name    = "Compute"
+inputs  = ["input.sdf"]
 outputs = ["results.csv"]
 
 [container]
-docker_image = "python:3.11-slim"
+image = "my-tool:1.0"
 
 [scripts]
-pre = "pre_run.sh"
 run = "run.sh"
+
+[params.threshold]
+type    = "float"
+default = 0.5
+hint    = "Filtering threshold"
+
+[params.method]
+type    = "string"
+default = "default"
+hint    = "Computation method"
 ```
 
-**`02_compute/pre_run.sh`:**
-```bash
-#!/bin/bash
-set -e
-pip install some-package another-package
-```
+> **Note:** All dependencies are baked into the Docker image (via the Dockerfile). The container image listed here should already have everything installed. See the [AI Workflow Guide](./AI_WORKFLOW_GUIDE.md#2-how-to-prepare-a-dockerfile) for Dockerfile patterns.
 
 **`02_compute/run.sh`:**
 ```bash
 #!/bin/bash
 set -e
-echo "Running computation..."
+
+# Silva auto-maps param keys to PARAM_<UPPERCASE_KEY> env vars
+THRESHOLD="${PARAM_THRESHOLD:-0.5}"
+METHOD="${PARAM_METHOD:-default}"
+
+echo "Running computation (threshold=$THRESHOLD, method=$METHOD)..."
 python3 compute.py
 echo "Done. Results written to outputs/"
 ```
 
-**`02_compute/params.json`:**
-```json
-{
-    "threshold": 0.5,
-    "method": "default"
-}
-```
-
 #### 5.5 Writing Standalone Python Scripts
 
-Your Python scripts should be self-contained files that:
+Your Python scripts should be self-contained files that follow these conventions:
 
-1. Read parameters from `global_params.json` and/or `params.json`
-2. Read input files from `./inputs/`
-3. Do the computation
-4. Write output files to `./outputs/`
+1. **Read parameters** from `PARAM_*` environment variables (set by Silva from `job.toml`), using `os.environ.get("PARAM_NAME", "default")` with sensible defaults.
+2. **Read input files** from `./inputs/`.
+3. **Write output files** to `./outputs/` (create the directory with `os.makedirs("./outputs", exist_ok=True)`).
+4. **Print progress** with `flush=True` so Silva can stream logs in real time.
 
-**Template:**
-
-```python
-#!/usr/bin/env python3
-"""Brief description of what this script does."""
-
-import json
-import os
-
-def load_params():
-    """Load global and local parameters."""
-    global_params = {}
-    if os.path.exists("./inputs/global_params.json"):
-        with open("./inputs/global_params.json") as f:
-            global_params = json.load(f)
-
-    local_params = {}
-    if os.path.exists("params.json"):
-        with open("params.json") as f:
-            local_params = json.load(f)
-
-    return global_params, local_params
-
-def main():
-    global_params, local_params = load_params()
-
-    # Read inputs
-    input_file = f"./inputs/{global_params.get('input_file', 'input.sdf')}"
-
-    # Do computation
-    # ... your code here ...
-
-    # Write outputs
-    os.makedirs("./outputs", exist_ok=True)
-    # ... write results to ./outputs/ ...
-
-if __name__ == "__main__":
-    main()
-```
+Browse existing workflows in this repo for concrete examples — each tool's script looks different, but the I/O conventions above are consistent.
 
 ### Docker Image Selection Guide
+
+A **Docker image** is a pre-built package containing an operating system, programming language, and libraries — everything your script needs to run. You specify which image each node uses in `job.toml`.
 
 | Use Case | Recommended Image |
 |----------|-------------------|
@@ -390,17 +406,11 @@ if __name__ == "__main__":
 | Needs conda packages | `continuumio/miniconda3` |
 | Heavy scientific stack (numpy, scipy, etc.) | `python:3.11-slim` + pip install |
 | GPU-accelerated computation | `nvidia/cuda:12.x-runtime-ubuntu22.04` |
-| Custom/complex environment | Write a `Dockerfile` in the job folder |
+| Custom/complex environment | Write a `Dockerfile` in the workflow root |
 
 **Prefer `python:3.11-slim`** unless you have a specific reason for another image. It's small, fast to pull, and works with pip for most Python packages.
 
-### pre_run.sh Best Practices
-
-- Always start with `set -e` to fail fast on errors
-- Install packages with `pip install` — avoid `pip install --upgrade pip` unless needed
-- For GitHub-hosted packages: `pip install git+https://github.com/user/repo.git`
-- Pin versions when possible: `pip install numpy==1.26.4 pandas==2.2.0`
-- Keep it minimal — only install what this specific node needs
+For workflows that need packages not available in a standard image, write a `Dockerfile` that installs everything at **build time** (not at runtime). See the [AI Workflow Guide](./AI_WORKFLOW_GUIDE.md#2-how-to-prepare-a-dockerfile) for common Dockerfile patterns.
 
 ---
 
@@ -414,7 +424,7 @@ if __name__ == "__main__":
    cd silva
    cargo build --release
    ```
-   (Requires Rust toolchain and Docker)
+   (Requires [Rust toolchain](https://rustup.rs/) and Docker)
 
 2. **Set the workflow home directory:**
    ```bash
@@ -450,7 +460,7 @@ Before submitting your workflow, confirm all of the following:
 - [ ] The workflow runs from scratch with no modifications (clean `input_files/` → green checkmarks)
 - [ ] No hardcoded absolute paths in any scripts
 - [ ] All file paths use `./inputs/` and `./outputs/` conventions
-- [ ] `global_params.json` and `params.json` values are actually used (not ignored)
+- [ ] Parameters defined in `job.toml` are read correctly via `PARAM_*` environment variables
 
 ### Deliverable Proof
 
@@ -488,15 +498,17 @@ Brief description of what this workflow computes and why it's useful.
 
 ## Parameters
 
-### global_params.json
+Parameters are defined in `.chiral/workflow.toml` (shared) and `.chiral/job.toml` (per-node).
+
+### Workflow Parameters (workflow.toml)
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | ... | ... | ... | ... |
 
-### Node XX — params.json
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| ... | ... | ... | ... |
+### Node XX Parameters (job.toml)
+| Parameter | Type | Default | Env Variable | Description |
+|-----------|------|---------|--------------|-------------|
+| ... | ... | ... | `PARAM_...` | ... |
 
 ## Output Files
 - `result.csv` — Description
@@ -601,10 +613,13 @@ Build your workflow following the implementation steps in Sections 3-7 of this g
 ```bash
 # Your workflow lives here
 workflows/workflow-XXX/
+├── .chiral/
+│   └── workflow.toml
 ├── input_files/
-├── global_params.json
 ├── 01_.../
+│   └── .chiral/job.toml
 ├── 02_.../
+│   └── .chiral/job.toml
 └── README.md
 ```
 
@@ -626,7 +641,7 @@ git commit -m "Add README and test data"
 
 **Good commit messages:**
 - `Add node 01: input validation for ADMET workflow`
-- `Fix pre_run.sh: pin numpy version to avoid compatibility issue`
+- `Fix Dockerfile: pin numpy version to avoid compatibility issue`
 - `Add verification screenshots`
 
 **Bad commit messages:**
@@ -700,7 +715,7 @@ Rongjun will review your PR and may leave comments or request changes. This is n
 ```bash
 # Make fixes
 git add .
-git commit -m "Address review: fix params.json handling in node 03"
+git commit -m "Address review: fix parameter handling in node 03"
 git push origin workflow/<tool-name>
 ```
 
@@ -791,11 +806,11 @@ git commit -m "Your message"
 
 3. **Not creating the `outputs/` directory.** In Python scripts, always include `os.makedirs("./outputs", exist_ok=True)`.
 
-4. **Installing packages in `run.sh` instead of `pre_run.sh`.** Package installation goes in `pre_run.sh` (the `pre` script). Keep `run.sh` for actual computation only.
+4. **Installing packages at runtime instead of in the Dockerfile.** All dependencies should be baked into the Docker image at build time. Don't `pip install` in `run.sh` — it slows down every run and makes results non-reproducible.
 
-5. **Declaring outputs that aren't actually written.** If your `@job.toml` says `outputs = ["result.csv"]`, your script must write exactly `./outputs/result.csv`. Mismatches cause silent failures.
+5. **Declaring outputs that aren't actually written.** If your `job.toml` says `outputs = ["result.csv"]`, your script must write exactly `./outputs/result.csv`. Mismatches cause silent failures.
 
-6. **Not reading parameters from JSON.** Don't hardcode values that should come from `params.json` or `global_params.json`. The whole point is that users can modify parameters without editing code.
+6. **Not reading parameters from environment variables.** Don't hardcode values that should come from `PARAM_*` env vars (defined in `job.toml`). The whole point is that users can modify parameters without editing code.
 
 7. **Using `latest` Docker image tags.** Always pin a specific tag (e.g., `python:3.11-slim`, not `python:latest`) for reproducibility.
 
@@ -806,7 +821,7 @@ git commit -m "Your message"
 - **Look at the tool's test suite** for example usage and test data.
 - **Read the tool's source code**, not just the README. The API often supports more than what's documented.
 - **Use `python:3.11-slim` as your default image.** Only switch to something else if you have a reason.
-- **Keep pre_run.sh minimal.** Every extra package adds to container startup time.
+- **Bake all dependencies into the Docker image.** Don't install packages at runtime — it's slow and fragile.
 
 ### Useful Resources
 
