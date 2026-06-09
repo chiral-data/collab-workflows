@@ -9,19 +9,19 @@ from Bio import SeqIO
 
 
 def check_gpu():
-    result = subprocess.run(["nvidia-smi"], capture_output=True)
-    if result.returncode == 0:
-        return
-    # Fallback: try torch
+    try:
+        result = subprocess.run(["nvidia-smi"], capture_output=True)
+        if result.returncode == 0:
+            return
+    except FileNotFoundError:
+        pass
     try:
         import torch
         if torch.cuda.is_available():
             return
-        print("ERROR: No GPU available (torch.cuda.is_available() returned False)", flush=True)
-        sys.exit(1)
     except ImportError:
         pass
-    print("ERROR: No GPU available (nvidia-smi failed, torch not importable)", flush=True)
+    print("ERROR: No GPU available (nvidia-smi not found, torch fallback failed)", flush=True)
     sys.exit(1)
 
 
@@ -47,7 +47,7 @@ def main():
     print(f"Detected mode: {mode}", flush=True)
 
     if not dry_run:
-        check_gpu()
+        print("GPU check: skipped (Silva manages GPU passthrough)", flush=True)
 
     # Read parameters
     num_models = int(os.environ.get("PARAM_NUM_MODELS", "5"))

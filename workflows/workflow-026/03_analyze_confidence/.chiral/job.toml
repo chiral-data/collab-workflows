@@ -5,9 +5,9 @@ outputs = ["confidence_summary.json"]
 
 [container]
 image = "ghcr.io/sokrypton/colabfold:1.6.1-cuda12"
+use_gpu = false
 
 [scripts]
-pre = "pre_run.sh"
 run = "run.sh"
 
 [params.top_n_models]
