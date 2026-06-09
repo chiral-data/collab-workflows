@@ -37,7 +37,7 @@ def main():
     job_id = os.environ.get("PARAM_JOB_ID", "")
 
     # Find score JSONs
-    score_files = glob.glob("./inputs/*_scores_rank_*.json")
+    score_files = glob.glob("./inputs/predictions/*_scores_rank_*.json")
     if not score_files:
         print("ERROR: No score JSON files found in ./inputs/", flush=True)
         sys.exit(1)
