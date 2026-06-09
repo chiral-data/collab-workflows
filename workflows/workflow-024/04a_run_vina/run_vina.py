@@ -165,6 +165,8 @@ def main():
         log_lines.append(f"=== {name} ===\n{log}")
 
         if ok and out_pdbqt.exists():
+            # Prepend REMARK Name so individual pose files are self-describing
+            out_pdbqt.write_text(f"REMARK Name = {name}\n" + out_pdbqt.read_text())
             scores = parse_vina_scores(out_pdbqt)
             best = scores[0][1] if scores else None
             print(f"  {name}: best ΔG = {best:.2f} kcal/mol  ({len(scores)} poses)", flush=True)
