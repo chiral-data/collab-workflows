@@ -4,11 +4,10 @@ inputs = ["*_unrelaxed_rank_001_*.pdb", "confidence_summary.json"]
 outputs = ["structure_plddt.png", "pae_matrix.png"]
 
 [container]
-image = "ghcr.io/sokrypton/colabfold:1.6.1-cuda12"
+image = "colabfold:2026_06_09"
 use_gpu = false
 
 [scripts]
-pre = "pre_run.sh"
 run = "run.sh"
 
 [params.color_by]

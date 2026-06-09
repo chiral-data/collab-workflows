@@ -4,7 +4,7 @@ inputs = ["*_scores_rank_*.json", "validated_sequences.fasta"]
 outputs = ["confidence_summary.json"]
 
 [container]
-image = "ghcr.io/sokrypton/colabfold:1.6.1-cuda12"
+image = "colabfold:2026_06_09"
 use_gpu = false
 
 [scripts]
