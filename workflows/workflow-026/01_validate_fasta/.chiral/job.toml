@@ -5,7 +5,7 @@ outputs = ["validated_sequences.fasta"]
 
 [container]
 image = "colabfold:2026_06_09"
-use_gpu = false
+use_gpu = true
 
 [scripts]
 run = "run.sh"
