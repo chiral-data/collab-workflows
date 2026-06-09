@@ -1,7 +1,7 @@
 # Create a silva-runnable workflow for Docking Comparison of Autodock Vina vs gnina from the node structure
 
 Key Files and References: 
-- Node structure | '~/dev/collab-workflows/workflows/workflow-024/'
+- Node structure | '~/dev/collab-workflows/workflows/workflow-025/'
 - GitHub Issue | 'https://github.com/chiral-data/collab-workflows/issues/138' 
 - Workflow references
     - ‘~/dev/collab-workflows/workflows/workflow-014’
@@ -86,7 +86,7 @@ Build a reproducible, Silva-runnable pipeline that:
 
 **Sample Directory Structure**
 ```
-workflows/workflow-024/
+workflows/workflow-025/
 ├── .chiral/workflow.toml
 ├── input_files/
 │   └── ligands.smiles
