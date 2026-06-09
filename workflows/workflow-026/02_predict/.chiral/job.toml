@@ -2,9 +2,9 @@ name = "Structure Prediction"
 description = "Build MSA via MMseqs2 and run AlphaFold2 inference via colabfold_batch"
 inputs = ["validated_sequences.fasta"]
 outputs = [
-  "outputs/*_unrelaxed_rank_*.pdb",
-  "outputs/*_scores_rank_*.json",
-  "outputs/validated_sequences.fasta",
+  "*_unrelaxed_rank_*.pdb",
+  "*_scores_rank_*.json",
+  "validated_sequences.fasta",
 ]
 
 [container]

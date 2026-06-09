@@ -1,10 +1,10 @@
 name = "Structure Visualization"
 description = "Render pLDDT-colored structure PNG and PAE heatmap"
 inputs = ["*_unrelaxed_rank_001_*.pdb", "confidence_summary.json"]
-outputs = ["outputs/structure_plddt.png", "outputs/pae_matrix.png"]
+outputs = ["structure_plddt.png", "pae_matrix.png"]
 
 [container]
-image = "condaforge/mambaforge:latest"
+image = "ghcr.io/sokrypton/colabfold:1.6.1-cuda12"
 
 [scripts]
 pre = "pre_run.sh"

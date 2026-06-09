@@ -1,10 +1,10 @@
 name = "Confidence Analysis"
 description = "Parse ColabFold score JSONs and emit structured confidence summary"
 inputs = ["*_scores_rank_*.json", "validated_sequences.fasta"]
-outputs = ["outputs/confidence_summary.json"]
+outputs = ["confidence_summary.json"]
 
 [container]
-image = "python:3.11-slim"
+image = "ghcr.io/sokrypton/colabfold:1.6.1-cuda12"
 
 [scripts]
 pre = "pre_run.sh"

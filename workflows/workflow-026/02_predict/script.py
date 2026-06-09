@@ -99,6 +99,8 @@ def main():
 
     if copied == 0:
         print("ERROR: No output files found from colabfold_batch", flush=True)
+        print("Keeping ./cf_output/ for debugging", flush=True)
+        shutil.rmtree("./cf_input", ignore_errors=True)
         sys.exit(1)
 
     # Pass validated_sequences.fasta through so node 03 can read chain lengths

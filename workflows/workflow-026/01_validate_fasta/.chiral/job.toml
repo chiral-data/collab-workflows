@@ -1,10 +1,10 @@
 name = "FASTA Validation"
 description = "Validate input FASTA: sequence lengths, amino acid character set, monomer/multimer detection"
 inputs = ["sequences.fasta"]
-outputs = ["outputs/validated_sequences.fasta"]
+outputs = ["validated_sequences.fasta"]
 
 [container]
-image = "python:3.11-slim"
+image = "ghcr.io/sokrypton/colabfold:1.6.1-cuda12"
 
 [scripts]
 pre = "pre_run.sh"
