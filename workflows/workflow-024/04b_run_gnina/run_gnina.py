@@ -174,7 +174,10 @@ def main():
         if ok and out_sdf.exists():
             cnn, cnn_a, vina_a = parse_gnina_top_scores(out_sdf)
             n_poses = count_sdf_mols(out_sdf)
-            print(f"  {name}: CNNscore={cnn:.3f}  CNN_affinity={cnn_a:.2f}  Vina_affinity={vina_a:.2f}  ({n_poses} poses)",
+            cnn_str  = f"{cnn:.3f}"    if cnn    is not None else "N/A"
+            cnna_str = f"{cnn_a:.2f}"  if cnn_a  is not None else "N/A"
+            vina_str = f"{vina_a:.2f}" if vina_a is not None else "N/A"
+            print(f"  {name}: CNNscore={cnn_str}  CNN_affinity={cnna_str}  Vina_affinity={vina_str}  ({n_poses} poses)",
                   flush=True)
             results.append({
                 "name":          name,
