@@ -1,211 +1,229 @@
-# ADMET-AI Prediction Workflow (Workflow-014)
-
-A modular drug discovery pipeline for predicting ADMET (Absorption, Distribution, Metabolism, Excretion, and Toxicity) properties of molecules using the [ADMET-AI](https://github.com/swansonk14/admet_ai) machine learning engine, designed for the Silva platform. This workflow takes a CSV of SMILES strings and produces a ranked list of drug candidates with an interactive HTML dashboard.
-
-## 📋 Table of Contents
-
-- [Architecture & Data Flow](#architecture--data-flow)
-- [Workflow Nodes](#workflow-nodes-deep-dive)
-  - [Node 01: Validate Inputs](#node-01-validate-inputs)
-  - [Node 02: Compute ADMET Predictions](#node-02-compute)
-  - [Node 03: Filter & Rank Candidates](#node-03-analyze)
-  - [Node 04: Visualize Results](#node-04-visualize)
-- [Inputs & Configuration](#inputs--configuration)
-- [Repository Structure](#repository-structure)
-
+---
+doc_id: workflow-014
+domain: admet
+doc_type: workflow
+version: "1.0.0"
+deprecated: false
+description: >
+  Predicts ADMET properties for drug-like molecules using ADMET-AI
+  and produces a ranked list of candidates with an interactive dashboard.
+tags: [admet, drug-discovery, chemprop, molecular-properties, mpo]
 ---
 
-## 🏗 Architecture & Data Flow
+# Workflow 014: ADMET-AI Prediction
 
-This workflow follows a linear, 4-stage pipeline architecture where each stage (Node) is an independent execution unit. Nodes communicate via file-based input/output contracts, with Silva wiring each node's `outputs/` directory into the next node's `inputs/` directory.
+A modular drug discovery pipeline that predicts Absorption, Distribution, Metabolism, Excretion, and Toxicity (ADMET) properties of molecules using the ADMET-AI machine learning engine. The workflow takes a CSV of SMILES strings and produces a ranked list of drug candidates with an interactive HTML dashboard.
+
+## Overview
+
+ADMET-AI uses Chemprop graph neural networks with message-passing architecture to predict 41 pharmacological properties per molecule, trained on curated datasets from the Therapeutics Data Commons (TDC). An additional 8 physicochemical descriptors are computed via RDKit, giving 49 total properties. The pipeline validates and standardizes input SMILES using RDKit, runs batch ADMET predictions, applies configurable safety and efficacy filters, computes a multi-parameter optimization (MPO) score to rank candidates, and generates a self-contained HTML dashboard for visual analysis.
+
+This workflow is designed for early-stage drug discovery screening where researchers need to rapidly triage large compound libraries by predicted ADMET profiles before committing to synthesis or experimental assays (Swanson et al., 2024).
+
+## When to use this workflow
+
+Use this workflow when you have a library of drug-like small molecules (as SMILES strings in a CSV) and need to predict their ADMET properties for lead optimization or compound triage. It is well suited for screening libraries of 100–10,000 molecules. The default input is the DrugBank approved drugs dataset (2,845 molecules), but any CSV with a SMILES column works.
+
+Do not use this workflow for macromolecules (proteins, antibodies, nucleic acids) or for predicting binding affinity to a specific target — use workflow-005 (QSAR) for target-specific quantitative predictions, or workflow-003/workflow-004 for molecular docking against a protein structure. ADMET-AI predicts general pharmacokinetic and toxicity properties, not target engagement. Note that ADMET-AI predictions are based on chemical structure alone and do not account for formulation, prodrug activation, or in vivo pharmacokinetics beyond what the training data captures.
+
+## Architecture and data flow
 
 ```mermaid
 graph TD
-    A["Input CSV (drugbank_approved.csv)"] -->|2845 molecules| N1
-    subgraph Workflow
-        N1["01: Validate Inputs"] -->|standardized_molecules.csv| N2["02: Compute ADMET"]
-        N2 -->|raw_predictions.csv| N3["03: Filter & Rank"]
-        N3 -->|filtered_candidates.csv| N4["04: Visualize Results"]
-        N4 -->|report.html| Dashboard["Interactive HTML Dashboard"]
-    end
+    A["Input CSV (SMILES)"] --> N0["00: Download"]
+    N0 -->|drugbank_approved.csv| N1["01: Validate Inputs"]
+    N1 -->|standardized_molecules.csv| N2["02: Compute ADMET"]
+    N2 -->|raw_predictions.csv| N3["03: Filter & Rank"]
+    N3 -->|filtered_candidates.csv| N4["04: Visualize"]
+    N4 -->|report.html| D["Interactive HTML Dashboard"]
 ```
 
-### Key Artifacts
+Nodes run sequentially: 00 → 01 → 02 → 03 → 04.
 
-- **Validated Data**: `standardized_molecules.csv` (Canonicalized, deduplicated SMILES)
-- **Raw Predictions**: `raw_predictions.csv` (All ~59 ADMET properties per molecule)
-- **Ranked Candidates**: `filtered_candidates.csv` (Top N molecules passing safety/efficacy filters)
-- **Dashboard**: `report.html` (Self-contained HTML with radar charts and data tables)
+## Input requirements
 
----
+- **Format:** CSV file with a SMILES column (default column name: `smiles`). An optional `molecule_id` column is recommended for tracking.
+- **Constraints:** Molecules must be valid small-molecule SMILES parseable by RDKit. No size limit is enforced, but the pipeline is optimized for libraries up to ~10,000 molecules.
+- **Placement:** Place your CSV in `input_files/` and set the `input_file` parameter to point to it.
+- **Sample data:** The workflow includes a download node (Node 00) that fetches the DrugBank approved drugs dataset (2,845 FDA-approved molecules) from the ADMET-AI repository for testing.
 
-## 📦 Workflow Nodes: Deep Dive
+## Workflow nodes
+
+### Node 00: Download Sample Inputs
+
+**Goal:** Fetch the default DrugBank approved drugs dataset from the ADMET-AI GitHub repository.
+
+**Process:** Downloads `drugbank_approved.csv` via HTTP from the ADMET-AI repository's resource data directory. This step is skipped if you provide your own input file.
+
+**Scientific notes:** The DrugBank approved dataset contains 2,845 FDA-approved drugs with known SMILES, providing a validated reference set for benchmarking ADMET predictions against clinically established compounds.
+
+**Outputs:**
+- `drugbank_approved.csv` — CSV with molecule names and SMILES strings
 
 ### Node 01: Validate Inputs
 
-**Goal**: Validate the input CSV and standardize all SMILES strings using RDKit.
+**Goal:** Validate the input CSV and standardize all SMILES strings using RDKit.
 
-- **Input**: `drugbank_approved.csv` (or any CSV with a SMILES column)
-- **Process**:
-  1. **Column Validation**: Verifies the configured SMILES column exists.
-  2. **Standardization**: Uses RDKit to canonicalize SMILES — applies `Uncharger` and `Cleanup` for consistent representation.
-  3. **Deduplication**: Removes duplicate molecules by canonical SMILES (keeps first occurrence).
-  4. **Fallback**: If RDKit is unavailable, falls back to basic string validation.
-- **Outputs**: `standardized_molecules.csv`, `validation_report.json` (counts of invalid/duplicate entries removed).
+**Process:** Reads the input CSV, verifies the configured SMILES column exists, then canonicalizes each SMILES string using RDKit's `MolFromSmiles`, `Uncharger` (neutralization), and `Cleanup` standardization. Duplicate molecules (by canonical SMILES) are removed, keeping the first occurrence. If RDKit is unavailable, falls back to basic string validation.
+
+**Scientific notes:** SMILES canonicalization ensures that different string representations of the same molecule (e.g., `C(=O)O` vs `OC=O`) are unified before prediction. Neutralization via `Uncharger` removes charge states that could bias predictions, since most ADMET training data uses neutral forms.
+
+**Outputs:**
+- `standardized_molecules.csv` — deduplicated, canonicalized molecules
+- `validation_report.json` — counts of invalid and duplicate entries removed
 
 ### Node 02: Compute ADMET Predictions
 
-**Goal**: Run the ADMET-AI prediction engine on all validated molecules.
+**Goal:** Run the ADMET-AI prediction engine on all validated molecules.
 
-- **Process**:
-  1. Invokes the `admet_predict` CLI tool, which uses Chemprop message-passing neural networks and PyTorch under the hood.
-  2. Predicts ~59 pharmacological properties per molecule across safety, absorption, metabolism, distribution, excretion, and drug-likeness categories.
-- **Predicted Property Categories**:
+**Process:** Invokes the `admet_predict` CLI tool, which uses Chemprop message-passing neural networks to predict 41 ADMET properties per molecule across safety, absorption, metabolism, distribution, excretion, and drug-likeness categories. Properties include both classification tasks (e.g., hERG inhibition, AMES mutagenicity) and regression tasks (e.g., Caco-2 permeability, clearance).
 
-  | Category | Example Properties |
-  |----------|-------------------|
-  | Safety/Toxicity | hERG, AMES, DILI, ClinTox, Skin_Reaction, LD50_Zhu |
-  | Absorption | BBB_Martins, HIA_Hou, Bioavailability_Ma, Caco2_Wang, Pgp_Broccatelli |
-  | Metabolism (CYP450) | CYP1A2, CYP2C19, CYP2C9, CYP2D6, CYP3A4 |
-  | Distribution | PPBR_AZ, VDss_Lombardo, Lipophilicity_AstraZeneca |
-  | Excretion | Clearance_Hepatocyte_AZ, Clearance_Microsome_AZ, Half_Life_Obach |
-  | Drug-likeness | Lipinski, QED, Solubility_AqSolDB |
+**Scientific notes:** Chemprop learns molecular representations directly from the molecular graph (atoms as nodes, bonds as edges) rather than relying on precomputed fingerprints. Models were trained on curated datasets from the Therapeutics Data Commons (TDC), covering 22 ADMET-relevant benchmarks. Classification outputs are probabilities in [0, 1]; regression outputs are in dataset-specific units (e.g., log cm/s for Caco-2).
 
-- **Output**: `raw_predictions.csv` (original data extended with all predicted ADMET columns).
+**Outputs:**
+- `raw_predictions.csv` — original data extended with all predicted ADMET columns
 
-### Node 03: Filter & Rank Candidates
+### Node 03: Filter and Rank
 
-**Goal**: Apply configurable safety/efficacy filters and rank candidates using a multi-parameter optimization (MPO) score.
+**Goal:** Apply configurable safety and efficacy filters and rank candidates using a multi-parameter optimization (MPO) score.
 
-- **Process**:
-  1. **Filtering**: Applies user-configurable threshold filters (e.g., hERG < 0.5, BBB > 0.5). Supports operators `>`, `<`, `>=`, `<=` and named presets like `"safe"` / `"strict"`.
-  2. **MPO Scoring**: Computes a weighted composite score across key ADMET properties:
-     - **Positive weights** (higher is better): BBB, Bioavailability, HIA, QED (weight 1.0); Lipinski, Caco2 (weight 0.5)
-     - **Negative weights** (lower is better): hERG, DILI, AMES, ClinTox (weight -1.0)
-  3. **Ranking**: Sorts by MPO score descending and selects the top N candidates.
-- **Outputs**: `filtered_candidates.csv` (top N candidates), `analysis_summary.json` (filter statistics, MPO weights, candidate list).
+**Process:** Applies threshold filters for key safety properties (hERG, DILI, AMES, ClinTox) and absorption properties (Caco-2, BBB, HIA). Supports comparison operators (`>`, `<`, `>=`, `<=`) and named presets (`"safe"`, `"strict"`). Computes a weighted MPO score across 10 normalized ADMET properties: positive weights for desirable properties (BBB, Bioavailability, HIA, QED at weight 1.0; Caco-2, Lipinski at 0.5) and negative weights for risk properties (hERG, DILI, AMES, ClinTox at -1.0). Candidates passing all filters are ranked by MPO score and the top N are returned.
+
+**Scientific notes:** Multi-parameter optimization balances competing objectives inherent in drug design — a molecule with excellent absorption may have unacceptable toxicity. The MPO approach avoids selecting molecules that excel in one dimension but fail in others. The default filter thresholds reflect standard pharmaceutical industry cutoffs (e.g., Caco-2 > -5.15 log cm/s for adequate oral absorption, hERG < 0.5 probability for cardiac safety).
+
+**Outputs:**
+- `filtered_candidates.csv` — top N candidates passing all filters, ranked by MPO score
+- `analysis_summary.json` — filter statistics, MPO weights, and candidate metadata
 
 ### Node 04: Visualize Results
 
-**Goal**: Generate a self-contained HTML dashboard for visual analysis of ranked candidates.
+**Goal:** Generate a self-contained HTML dashboard for visual analysis of ranked candidates.
 
-- **Process**:
-  1. Builds summary cards (total candidates, average/best MPO scores, safety panel pass count).
-  2. Generates Plotly.js radar charts for the top 5 candidates across 9 ADMET dimensions (risk properties are inverted so higher = better on all axes).
-  3. Builds a color-coded data table with all candidates and 20 ADMET properties (green/yellow/red thresholds).
-- **Dashboard Features**:
-  - Bootstrap 5 responsive layout
-  - Interactive Plotly.js radar chart with hover details
-  - Color-coded table: green for favorable values, red for concerning values
-  - Sticky headers and SMILES monospace formatting
-- **Output**: `report.html` (self-contained, no server required).
+**Process:** Builds summary cards (total candidates, average/best MPO scores, safety panel pass count), generates Plotly.js radar charts for the top 5 candidates across 9 ADMET dimensions (risk properties are inverted so higher = better on all axes), and creates color-coded data tables with green/yellow/red thresholds for 20 ADMET properties.
 
----
+**Scientific notes:** The radar chart visualization enables rapid comparison of candidate profiles across multiple ADMET dimensions simultaneously, which is more informative than ranking by a single score. Color thresholds in the data table follow pharmaceutical industry conventions: for example, hERG probability < 0.3 (green/safe), 0.3–0.5 (yellow/caution), ≥ 0.5 (red/concern).
 
-## Quick Start: Using Your Own Data
+**Outputs:**
+- `report.html` — self-contained HTML dashboard (Bootstrap 5 + Plotly.js, no server required)
 
-To run the workflow on your own molecule library instead of the built-in DrugBank dataset:
+## Parameters
 
-**1. Prepare your CSV file**
+### input_file
 
-Your CSV must have a SMILES column. A `molecule_id` column is optional but recommended:
+- **Type:** string
+- **Default:** `inputs/drugbank_approved.csv`
+- **Description:** Path to the input CSV file containing molecules with a SMILES column.
+- **Guidance:** Change this to point to your own molecule library. The file must be placed in `input_files/`.
 
-```csv
-molecule_id,smiles
-aspirin,CC(=O)Oc1ccccc1C(=O)O
-caffeine,Cn1cnc2c1c(=O)n(C)c(=O)n2C
-ibuprofen,CC(C)Cc1ccc(cc1)C(C)C(=O)O
+### smiles_column
+
+- **Type:** string
+- **Default:** `smiles`
+- **Description:** Name of the CSV column containing SMILES strings.
+- **Guidance:** Change if your CSV uses a different column name (e.g., `canonical_smiles`, `SMILES`).
+
+### top_n
+
+- **Type:** integer
+- **Default:** `20`
+- **Description:** Number of top-ranked candidates to return after filtering and MPO scoring.
+- **Guidance:** Increase for broader screening (e.g., 100 for initial triage); decrease for focused lead selection (e.g., 5–10).
+
+### filter_hERG
+
+| Value | Description |
+|-------|-------------|
+| `safe` (default) | Excludes molecules with hERG inhibition probability ≥ 0.5 (standard cardiac safety cutoff) |
+| `strict` | Excludes molecules with hERG inhibition probability ≥ 0.3 (conservative cutoff) |
+| numeric (e.g., `0.4`) | Custom maximum probability threshold |
+
+**Trade-off:** Stricter thresholds reduce cardiac toxicity risk but may eliminate otherwise promising candidates. The `safe` threshold (0.5) is the standard TDC benchmark cutoff; `strict` (0.3) is appropriate for risk-averse programs.
+
+### filter_Caco2
+
+- **Type:** string
+- **Default:** `>-5.15`
+- **Description:** Caco-2 permeability threshold in log cm/s (log apparent permeability coefficient).
+- **Guidance:** The -5.15 log cm/s cutoff is the established literature threshold separating high-permeability from low-permeability compounds for oral absorption prediction. Lower this value only if screening for compounds that may rely on active transport.
+
+### filter_BBB
+
+- **Type:** string
+- **Default:** `>0.5`
+- **Description:** Minimum probability for blood-brain barrier penetration.
+- **Guidance:** Set to `<0.5` instead if designing peripherally-acting drugs that should NOT cross the BBB. The default selects for CNS-penetrant compounds.
+
+### filter_HIA, filter_DILI, filter_AMES, filter_ClinTox
+
+| Parameter | Default | What it filters |
+|-----------|---------|----------------|
+| `filter_HIA` | `>0.5` | Minimum Human Intestinal Absorption probability |
+| `filter_DILI` | `<0.5` | Maximum Drug-Induced Liver Injury probability |
+| `filter_AMES` | `<0.5` | Maximum AMES mutagenicity probability |
+| `filter_ClinTox` | `<0.3` | Maximum clinical trial toxicity probability |
+
+**Test vs production:** Defaults are suitable for both testing and production screening. For publication-quality results with conservative safety margins, consider using `strict` for hERG and lowering DILI/AMES thresholds to `<0.3`.
+
+## Outputs and interpretation
+
+### MPO score
+
+The multi-parameter optimization score is a weighted composite of 10 normalized ADMET properties. Higher values indicate a more favorable overall ADMET profile. Typical range for drug-like molecules is 0.3–0.8. Scores above 0.6 indicate a well-balanced candidate; scores below 0.3 suggest significant liabilities in one or more dimensions. The score is relative within a dataset and should not be compared across different screening runs with different filter settings.
+
+### hERG inhibition probability
+
+Predicts whether a compound blocks the hERG potassium ion channel (encoded by KCNH2). Probability > 0.5 indicates predicted hERG blockade, which can cause QT interval prolongation and potentially fatal cardiac arrhythmias. This is one of the most common reasons for drug withdrawal from market. Dataset: TDC hERG benchmark (binary classification at 10 μM threshold).
+
+### AMES mutagenicity probability
+
+Predicts whether a compound is mutagenic based on the Ames bacterial reverse mutation assay. Probability > 0.5 indicates predicted mutagenicity. A positive Ames result is a regulatory red flag for genotoxic carcinogenicity. Dataset: 7,255 compounds from literature.
+
+### ClinTox probability
+
+Predicts likelihood of clinical trial failure due to toxicity, based on the MoleculeNet ClinTox dataset (1,484 drugs that failed vs. succeeded in clinical trials). Probability > 0.3 warrants caution; > 0.5 indicates high predicted clinical toxicity risk.
+
+### Caco-2 permeability (log cm/s)
+
+Predicted apparent permeability through Caco-2 human colon epithelial cells, an in vitro model of intestinal absorption. Values > -5.15 log cm/s indicate high permeability (good oral absorption); values < -5.15 indicate low permeability. Dataset: 906 compounds (Wang et al.).
+
+### BBB penetration probability
+
+Predicts whether a compound crosses the blood-brain barrier. Probability > 0.5 indicates predicted BBB penetration. Desirable for CNS drugs; undesirable for peripherally-acting drugs where CNS side effects are a concern. Dataset: 1,975 compounds (Martins et al.).
+
+### report.html
+
+Self-contained HTML dashboard with summary cards, interactive Plotly.js radar charts for the top 5 candidates, and color-coded data tables. Green cells indicate favorable values, yellow indicates caution, and red indicates concerning values based on pharmaceutical industry thresholds. Can be opened directly in any browser.
+
+## Quick start
+
+### Running with Docker
+
+The workflow uses the `admet-pipeline:latest` image built from the included `Dockerfile` (based on `continuumio/miniconda3` with `admet-ai` pre-installed).
+
+```bash
+docker build -t admet-pipeline:latest -f workflows/workflow-014/Dockerfile .
 ```
 
-If your SMILES column has a different name (e.g. `canonical_smiles`), set the `smiles_column` parameter accordingly.
+### Running on Silva
 
-**2. Place the file in the input directory**
+1. Select workflow-014 from the workflow list
+2. Upload your input CSV to `input_files/` (or use the built-in DrugBank dataset)
+3. Adjust parameters if needed (see Parameters section)
+4. Click Run
 
-```
-workflows/workflow-014/
-└── input_files/
-    └── your_molecules.csv   ← place your CSV here
-```
+### Test vs production settings
 
-**3. Set the `input_file` parameter when starting the workflow**
+| Setting | Test (default) | Production |
+|---------|---------------|------------|
+| `input_file` | `inputs/drugbank_approved.csv` (2,845 drugs) | Your molecule library |
+| `top_n` | `20` | `50`–`100` for broader screening |
+| `filter_hERG` | `safe` (< 0.5) | `strict` (< 0.3) for safety-critical programs |
+| `filter_ClinTox` | `<0.3` | `<0.3` (same) |
 
-Change `input_file` from the default `input_files/drugbank_approved.csv` to `input_files/your_molecules.csv`. All other parameters (filters, `top_n`) can be left at their defaults or adjusted as needed.
+A successful test run with the default DrugBank dataset produces a `report.html` with 20 ranked candidates and radar charts.
 
----
+## References
 
-## Configuration
-
-The workflow is configurable via `.chiral/job.toml` files in each node directory. Parameters are passed as `PARAM_*` environment variables at runtime.
-
-### Global Parameters
-
-| Parameter       | Default                      | Description                                    |
-| --------------- | ---------------------------- | ---------------------------------------------- |
-| `input_file`    | `inputs/drugbank_approved.csv` | Path to input CSV file                         |
-| `smiles_column` | `smiles`                     | Name of the column containing SMILES strings   |
-
-### Node 03 Filter Parameters - params.json
-
-| Parameter        | Default  | Description                                              |
-| ---------------- | -------- | -------------------------------------------------------- |
-| `top_n`          | `20`     | Number of top-ranked candidates to return                |
-| `filter_hERG`    | `safe`   | hERG filter: `"safe"` (< 0.5), `"strict"` (< 0.3), or a threshold |
-| `filter_Caco2`   | `>-5.15` | Caco2 permeability threshold                             |
-| `filter_BBB`     | `>0.5`   | Blood-brain barrier permeability min probability         |
-| `filter_HIA`     | `>0.5`   | Human Intestinal Absorption min probability              |
-| `filter_DILI`    | `<0.5`   | Drug-Induced Liver Injury max probability                |
-| `filter_AMES`    | `<0.5`   | AMES mutagenicity max probability                        |
-| `filter_ClinTox` | `<0.3`   | Clinical Toxicity max probability                        |
-
-### Container
-
-All nodes use the `admet-pipeline:latest` Docker image, built from the included `Dockerfile` (based on `continuumio/miniconda3` with `admet-ai` pre-installed).
-
-### Input Files
-- `sample_molecules.csv` — Any CSV with a SMILES column 
-
-### Output Files
-- `report.html` — HTML dashboard with radar charts and data tables of filtered and ranked molecules 
-
-### Running
-1. Place input files in `input_files/`
-2. Set `SILVA_WORKFLOW_HOME` to the parent directory
-3. Launch Silva and select this workflow
-4. Press Enter to run
-
-### Requirements
-- Docker
-- Silva (https://github.com/chiral-data/silva)
-
----
-
-## Repository Structure
-
-```text
-workflows/workflow-014/
-├── .chiral/
-│   └── workflow.toml                # Workflow definition (DAG + global params)
-├── Dockerfile                       # Container image for all nodes
-├── global_params.json               # Default parameter values
-├── input_files/
-│   └── drugbank_approved.csv        # Source dataset (2845 FDA-approved drugs)
-├── 01_validate_inputs/
-│   ├── .chiral/job.toml             # Node config (inputs, outputs, params)
-│   ├── .chiral/test_inputs/
-│   │   └── sample_molecules.csv     # Test data for local development
-│   ├── run.sh                       # Execution entry point
-│   └── validate.py                  # SMILES validation & standardization
-├── 02_compute/
-│   ├── .chiral/job.toml
-│   ├── run.sh
-│   └── compute_admet.py             # ADMET-AI CLI wrapper
-├── 03_analyze/
-│   ├── .chiral/job.toml
-│   ├── run.sh
-│   └── analyze.py                   # MPO scoring, filtering, ranking
-├── 04_visualize/
-│   ├── .chiral/job.toml
-│   ├── run.sh
-│   └── generate_report.py           # HTML dashboard generator
-└── README.md
-```
+- Swanson K, Walther P, Leitz J, Mukherjee S, Wu JC, Shivnaraine RV, Zou J. "ADMET-AI: A machine learning ADMET platform for evaluation of large-scale chemical libraries." *Bioinformatics* 40(7):btae416, 2024. DOI: https://doi.org/10.1093/bioinformatics/btae416
+- [ADMET-AI documentation](https://github.com/swansonk14/admet_ai)
+- [Therapeutics Data Commons (TDC)](https://tdcommons.ai/) — source of ADMET training datasets

@@ -1,384 +1,218 @@
-# DiffDock-PP Antibody-Antigen Docking Pipeline
+---
+doc_id: workflow-016
+domain: protein-protein-docking
+doc_type: workflow
+version: "1.0.0"
+deprecated: false
+description: >
+  Antibody-antigen docking using DiffDock-PP diffusion models, with
+  interface analysis and RMSD-based comparison to reference structures.
+tags: [antibody, antigen, docking, diffdock-pp, diffusion-model, protein-protein]
+---
+
+# Workflow 016: DiffDock-PP Antibody-Antigen Docking
+
+A protein-protein docking pipeline that uses DiffDock-PP, a diffusion generative model for rigid-body protein-protein docking, to predict antibody-antigen binding poses. The workflow splits a co-crystal complex, generates ranked docking poses with confidence scores, analyzes the predicted binding interface, and validates predictions against the reference structure via RMSD metrics.
 
 ## Overview
-This repository provides a six-node workflow for antibody-antigen docking with DiffDock-PP.
 
-The pipeline is designed to be:
-- Modular: each node can be run independently.
-- Reproducible: each node writes machine-readable outputs.
-- Interpretable: each node provides an HTML report.
+DiffDock-PP applies a score-based diffusion model to the SE(3) space of rigid-body transformations (translations and rotations) to generate protein-protein docking poses. It represents proteins as heterogeneous geometric graphs at residue level, with node features derived from ESM-2 language model embeddings. A separate confidence model ranks the generated poses. The pipeline is designed for re-docking benchmarks and prospective antibody-antigen docking, producing ranked poses, interface contact analysis, and quantitative comparison to experimental structures (Ketata et al., 2023).
 
-Core scientific goals:
-- Predict antigen pose relative to an antibody receptor.
-- Analyze interface interactions in the top-ranked pose.
-- Quantify structural agreement with a wet-lab complex when available.
+## When to use this workflow
 
-## Node Dependency Graph
-The diagram below shows the Silva execution dependencies in a KNIME-like left-to-right node flow.
+Use this workflow when you have an antibody-antigen co-crystal structure (PDB file) and want to benchmark DiffDock-PP's docking accuracy, or when you have separate antibody and antigen structures and want to predict their binding pose. The input must be a PDB file containing protein chains only (standard amino acids). The workflow auto-detects antibody chains (H/L convention) but supports manual chain specification.
+
+Do not use this workflow for small-molecule docking — use workflow-004 (AutoDock Vina) or workflow-003 (Smina) instead. Do not use this workflow for flexible docking where backbone conformational changes are expected — DiffDock-PP performs rigid-body docking only. For general protein-protein docking beyond antibody-antigen systems, the workflow will still function but the auto-detection heuristic assumes antibody H/L chain naming. For protein structure prediction (not docking), use workflow-012 (Boltz-2) or workflow-018 (Boltz-2 vs Chai-1).
+
+## Architecture and data flow
 
 ```mermaid
-flowchart LR
-  N1["1 Complex Splitting\n(input complex -> antibody/antigen)"]
-  N2["2 Structure Prep\n(clean + renumber)"]
-  N3["3 Feature Extract\nFASTA + embedding files"]
-  N4["4 DiffDock Inference\nranked docking poses"]
-  N5["5 Interface Analysis\ncontacts + interaction classes"]
-  N6["6 Wet-Lab Comparison\nRMSD validation"]
-
-  N1 --> N2
-  N2 --> N3
-  N2 --> N4
-  N3 --> N4
-  N2 --> N5
-  N4 --> N5
-  N1 --> N6
-  N4 --> N6
-
-  classDef prep fill:#E8F4FD,stroke:#1D70B8,stroke-width:2px,color:#0B2239;
-  classDef infer fill:#EAFBEA,stroke:#2E8540,stroke-width:2px,color:#102A16;
-  classDef analysis fill:#FFF4E5,stroke:#B26A00,stroke-width:2px,color:#3B2400;
-  classDef validate fill:#FDECEC,stroke:#A61B1B,stroke-width:2px,color:#3D0A0A;
-
-  class N1,N2,N3 prep;
-  class N4 infer;
-  class N5 analysis;
-  class N6 validate;
+graph TD
+    A["Input PDB (complex)"] --> N1["1: Complex Splitting"]
+    N1 -->|antibody.pdb, antigen.pdb| N2["2: Structure Prep"]
+    N2 -->|processed PDBs| N3["3: Feature Extraction"]
+    N2 --> N4["4: DiffDock-PP Inference"]
+    N3 -->|ESM-2 embeddings| N4
+    N4 -->|ranked poses| N5["5: Interface Analysis"]
+    N2 --> N5
+    N4 --> N6["6: Docking Comparison"]
+    N1 -->|original_complex.pdb| N6
 ```
 
-## Node Data Flow Graph
-The diagram below shows the main files passed between nodes (KNIME-style data channels).
+Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 and 6 both depend on node 4 and can run in parallel.
 
-```mermaid
-flowchart LR
-  IN["input_files/5B8C.pdb"]
+## Input requirements
 
-  N1["1 Complex Splitting"]
-  N2["2 Structure Prep"]
-  N3["3 Feature Extract"]
-  N4["4 DiffDock Inference"]
-  N5["5 Interface Analysis"]
-  N6["6 Wet-Lab Comparison"]
+- **Format:** PDB file containing an antibody-antigen co-crystal structure with standard amino acid residues.
+- **Constraints:** The antibody chains should follow standard naming (H for heavy chain, L for light chain) for auto-detection. Non-standard residues, water molecules, and heteroatoms are removed during structure preparation.
+- **Placement:** Place the PDB file in `input_files/` and set the `input_pdb` parameter to its filename.
+- **Sample data:** `input_files/5B8C.pdb` — an antibody-antigen co-crystal structure used as the default test case.
 
-  IN -->|complex.pdb| N1
+## Workflow nodes
 
-  N1 -->|antibody.pdb\nantigen.pdb| N2
-  N2 -->|processed_antibody.pdb\nprocessed_antigen.pdb| N3
-  N2 -->|processed_antibody.pdb\nprocessed_antigen.pdb| N4
-  N3 -->|antibody_features.pt\nantigen_features.pt| N4
+### Node 1: Complex Splitting
 
-  N4 -->|rank1.pdb\nconfidence_scores.json| N5
-  N2 -->|processed_antibody.pdb| N5
+**Goal:** Separate the antibody-antigen co-crystal complex into individual protein components.
 
-  N1 -->|original_complex.pdb\nchain_info.json| N6
-  N4 -->|rank1.pdb| N6
+**Process:** Parses the input PDB using BioPython, auto-detects antibody chains by looking for H+L chain identifiers (falls back to VH+VL naming, then first two chains). Extracts antibody and antigen into separate PDB files. Records chain metadata (residue counts, atom counts, detection method) in `chain_info.json`. The user can override auto-detection by specifying `antibody_chains` explicitly.
 
-  N6 -->|rmsd_analysis.json\nfinal_comparison_report.txt\nreport.html| OUT["Validation Outputs"]
+**Scientific notes:** Standard antibody nomenclature designates the heavy chain as "H" and the light chain as "L". The Fv (fragment variable) region containing the CDR loops is sufficient for docking — the constant domains (Fc) do not participate in antigen recognition and are typically excluded from docking calculations.
 
-  classDef input fill:#EEF2FF,stroke:#3B5BCC,stroke-width:2px,color:#0A1A4F;
-  classDef prep fill:#E8F4FD,stroke:#1D70B8,stroke-width:2px,color:#0B2239;
-  classDef infer fill:#EAFBEA,stroke:#2E8540,stroke-width:2px,color:#102A16;
-  classDef analysis fill:#FFF4E5,stroke:#B26A00,stroke-width:2px,color:#3B2400;
-  classDef validate fill:#FDECEC,stroke:#A61B1B,stroke-width:2px,color:#3D0A0A;
+**Outputs:**
+- `antibody.pdb` — extracted antibody chains
+- `antigen.pdb` — extracted antigen chains
+- `original_complex.pdb` — copy of the input complex for later comparison
+- `chain_info.json` — chain detection metadata and statistics
 
-  class IN,OUT input;
-  class N1,N2,N3 prep;
-  class N4 infer;
-  class N5 analysis;
-  class N6 validate;
-```
+### Node 2: Structure Preparation
 
-## Pipeline Outputs
-At the end of a full run, the main deliverables are:
-- `4_diffdock_inference/outputs/rank1.pdb`: top predicted docked pose.
-- `5_diffdock_analysis/outputs/interface_analysis.txt`: interface interaction summary.
-- `6_docking_comparison/outputs/final_comparison_report.txt` (or enhanced output dir): RMSD-based validation summary.
+**Goal:** Clean and standardize protein structures for DiffDock-PP inference.
 
-## Repository Layout
-```text
-workflows/workflow-016/
-|- 1_complex_splitting/
-|  |- 1_complex_split_science.py
-|  |- 2_complex_split_html.py
-|  |- 1_complex_splitting_run.sh
-|  |- outputs/
-|- 2_diffdock_prep/
-|  |- 3_structure_prep_science.py
-|  |- 4_structure_prep_html.py
-|  |- 2_structure_prep_run.sh
-|  |- outputs/
-|- 3_diffdock_features/
-|  |- 5_feature_extract_science.py
-|  |- 6_feature_extract_html.py
-|  |- 3_feature_extract_run.sh
-|  |- outputs/
-|- 4_diffdock_inference/
-|  |- 7_diffdock_inference_science.py
-|  |- 8_diffdock_inference_html.py
-|  |- 4_diffdock_inference_run.sh
-|  |- outputs/
-|- 5_diffdock_analysis/
-|  |- 9_analysis_science.py
-|  |- 10_analysis_html.py
-|  |- 5_analysis_run.sh
-|  |- outputs/
-|- 6_docking_comparison/
-|  |- 11_comparison_science.py
-|  |- 12_comparison_html.py
-|  |- 6_comparison_run.sh
-|  |- outputs/
-|- input_files/
-|- docker/
-|- scripts/
-|- environment.yml
-|- README.md
-```
+**Process:** Removes water molecules (HOH, WAT), heteroatoms (ligands, ions), and non-standard amino acid residues. Renumbers residues per chain starting from 1 to ensure consistent indexing. Retains only standard amino acid residues classified by BioPython's `is_aa(standard=True)`.
 
-## Requirements
-- Linux environment (recommended).
-- Conda (or Mamba).
-- Python dependencies from `environment.yml`.
-- DiffDock-PP available either:
-  - in Docker image, or
-  - locally in your conda environment, or
-  - via `DIFFDOCK_PP_PATH`.
+**Scientific notes:** DiffDock-PP operates on protein backbone geometry and requires clean, standard protein structures. Non-standard residues and solvent molecules from crystallography can introduce artifacts in the geometric graph representation. Renumbering ensures compatibility with the model's residue-level featurization.
 
-Optional:
-- NVIDIA GPU + CUDA stack for acceleration.
+**Outputs:**
+- `processed_antibody.pdb` — cleaned antibody structure
+- `processed_antigen.pdb` — cleaned antigen structure
 
-## Installation
-### 1. Create environment
-```bash
-conda env create -f environment.yml
-conda activate diffdock_abag
-```
+### Node 3: Feature Extraction
 
-### 2. Build Docker image (optional)
-```bash
-chmod +x docker/build.sh
-./docker/build.sh
-```
+**Goal:** Extract amino acid sequences and prepare ESM-2 language model embeddings for DiffDock-PP.
 
-### 3. Install DiffDock-PP locally (optional)
-```bash
-conda activate diffdock_abag
-bash scripts/install_diffdock_pp.sh
-```
+**Process:** Converts PDB residues to FASTA sequences using standard IUPAC three-to-one letter mapping. Generates ESM-2 embeddings using the `esm2_t33_650M_UR50D` model (33 Transformer layers, 1024-dimensional per-residue embeddings). Outputs separate FASTA and feature tensor files for antibody and antigen.
 
-## Input Data
-Primary expected input:
-- `input_files/5B8C.pdb` (example wet-lab complex in this repository).
+**Scientific notes:** ESM-2 embeddings capture evolutionary and structural information learned from approximately 250 million protein sequences (Lin et al., 2023). These embeddings provide rich sequence-level context that complements the 3D structural features (alpha-carbon coordinates) used by DiffDock-PP's geometric graph network, improving docking accuracy over sequence-naive approaches.
 
-General accepted inputs:
-- A single complex PDB containing both antibody and antigen chains.
-- Optional known wet-lab reference complex for Node 6 validation.
+**Outputs:**
+- `antibody.fasta`, `antigen.fasta` — extracted sequences
+- `antibody_features.pt`, `antigen_features.pt` — ESM-2 embedding tensors
+- `sequence_info.json` — chain lengths and amino acid composition
 
-## Running the Pipeline
-### Full manual run (node-by-node)
-```bash
-conda activate diffdock_abag
+### Node 4: DiffDock-PP Inference
 
-python 1_complex_splitting/1_complex_split_science.py \
-  --input_pdb input_files/5B8C.pdb \
-  --output_dir 1_complex_splitting/outputs
-python 1_complex_splitting/2_complex_split_html.py \
-  --data_json 1_complex_splitting/outputs/data.json \
-  --output_html 1_complex_splitting/outputs/report.html
+**Goal:** Generate ranked antibody-antigen docking poses using the DiffDock-PP diffusion model.
 
-python 2_diffdock_prep/3_structure_prep_science.py \
-  --antibody_pdb 1_complex_splitting/outputs/antibody.pdb \
-  --antigen_pdb 1_complex_splitting/outputs/antigen.pdb \
-  --output_dir 2_diffdock_prep/outputs
-python 2_diffdock_prep/4_structure_prep_html.py \
-  --data_json 2_diffdock_prep/outputs/data.json \
-  --output_html 2_diffdock_prep/outputs/report.html
+**Process:** Runs DiffDock-PP inference using two model checkpoints: a score model (`large_model_dips`) for pose generation via iterative denoising over SE(3) transformations, and a confidence model (`confidence_model_dips`) for pose ranking. Generates `num_samples` candidate poses through `inference_steps` denoising steps, ranks them by confidence score (descending), and exports the top-ranked pose as `rank1.pdb`.
 
-python 3_diffdock_features/5_feature_extract_science.py \
-  --antibody_pdb 2_diffdock_prep/outputs/processed_antibody.pdb \
-  --antigen_pdb 2_diffdock_prep/outputs/processed_antigen.pdb \
-  --output_dir 3_diffdock_features/outputs
-python 3_diffdock_features/6_feature_extract_html.py \
-  --data_json 3_diffdock_features/outputs/data.json \
-  --output_html 3_diffdock_features/outputs/report.html
+**Scientific notes:** DiffDock-PP models protein-protein docking as a generative diffusion process over the space of rigid-body transformations (translations and rotations). Starting from a random initial placement, the score model iteratively denoises the ligand protein's pose relative to the fixed receptor. The confidence model is a separate classification network trained to predict pose quality. Higher confidence scores correlate with lower RMSD to the native structure (Spearman ρ ≈ 0.68), but the scores are not calibrated probabilities of success. The model uses E3-equivariant graph neural networks (e3nn) with KNN-based graph construction (k=20).
 
-python 4_diffdock_inference/7_diffdock_inference_science.py \
-  --receptor_pdb 2_diffdock_prep/outputs/processed_antibody.pdb \
-  --ligand_pdb 2_diffdock_prep/outputs/processed_antigen.pdb \
-  --receptor_features 3_diffdock_features/outputs/antibody_features.pt \
-  --ligand_features 3_diffdock_features/outputs/antigen_features.pt \
-  --diffdock_path /home/abdo/DiffDock-PP \
-  --num_samples 1 \
-  --inference_steps 1 \
-  --batch_size 1 \
-  --use_gpu \
-  --output_dir 4_diffdock_inference/outputs
-python 4_diffdock_inference/8_diffdock_inference_html.py \
-  --data_json 4_diffdock_inference/outputs/data.json \
-  --output_html 4_diffdock_inference/outputs/report.html
+**Outputs:**
+- `rank1.pdb` — top-ranked docking pose
+- `confidence_scores.json` — confidence scores for all generated poses
 
-python 5_diffdock_analysis/9_analysis_science.py \
-  --receptor_pdb 2_diffdock_prep/outputs/processed_antibody.pdb \
-  --rank1_pdb 4_diffdock_inference/outputs/rank1.pdb \
-  --confidence_json 4_diffdock_inference/outputs/confidence_scores.json \
-  --output_dir 5_diffdock_analysis/outputs
-python 5_diffdock_analysis/10_analysis_html.py \
-  --data_json 5_diffdock_analysis/outputs/data.json \
-  --output_html 5_diffdock_analysis/outputs/report.html
+### Node 5: Interface Analysis
 
-python 6_docking_comparison/11_comparison_science.py \
-  --original_complex 1_complex_splitting/outputs/original_complex.pdb \
-  --pred_pose 4_diffdock_inference/outputs/rank1.pdb \
-  --ab_chains H,L \
-  --ag_chains A,B,C,D,E,F,G,I,J,K \
-  --output_dir 6_docking_comparison/outputs
-python 6_docking_comparison/12_comparison_html.py \
-  --data_json 6_docking_comparison/outputs/data.json \
-  --output_html 6_docking_comparison/outputs/report.html
-```
+**Goal:** Characterize the predicted antibody-antigen binding interface contacts.
 
-## Node Specifications
+**Process:** Identifies interface residues using a 5.0 Å distance cutoff between antibody and antigen atoms. Classifies contacts by interaction type: hydrogen bonds (< 3.5 Å involving polar residues), hydrophobic (both residues hydrophobic), electrostatic (opposite charges), and polar interactions. Reports contact statistics, interface residue lists, and the top 20 closest contacts.
 
-## Node 1: Complex Splitting
-Science script: `1_complex_splitting/1_complex_split_science.py.py`
+**Scientific notes:** The binding interface between antibody CDR loops and antigen epitope typically involves 15–25 contact residues per side. A balanced mix of hydrogen bonds and hydrophobic contacts is characteristic of high-affinity antibody-antigen interactions. The 5.0 Å distance cutoff is standard for defining protein-protein interface contacts in structural biology.
 
-Inputs:
-- Complex PDB file, for example `input_files/5B8C.pdb`.
-- Optional antibody chain hints.
+**Outputs:**
+- `interface_analysis.txt` — human-readable interface summary
+- `contact_residues.json` — machine-readable interface residue lists
+- `final_complex.pdb` — combined antibody-antigen complex
 
-Outputs in `1_complex_splitting/outputs/`:
-- `antibody.pdb`
-- `antigen.pdb`
-- `original_complex.pdb`
-- `chain_info.json`
-- `data.json`
-- `report.html` (generated by HTML script)
+### Node 6: Docking Comparison
 
-Purpose:
-- Separate complex into antibody and antigen components.
-- Preserve chain metadata for downstream nodes.
+**Goal:** Validate the predicted docking pose against the original experimental co-crystal structure.
 
-## Node 2: Structure Preparation
-Science script: `2_diffdock_prep/3_structure_prep_science.py`
+**Process:** Superimposes the predicted complex onto the reference structure by aligning antibody Cα atoms (the receptor is the fixed anchor). Computes full RMSD (all antigen Cα atoms after superposition) and interface RMSD (antigen residues within 5.0 Å of the antibody in the reference). Classifies prediction quality and generates a PyMOL visualization script for manual inspection.
 
-Inputs:
-- `1_complex_splitting/outputs/antibody.pdb`
-- `1_complex_splitting/outputs/antigen.pdb`
+**Scientific notes:** RMSD after receptor superposition measures how accurately the model predicted the antigen's binding pose. Quality thresholds follow structural biology conventions: < 2.0 Å (excellent), 2.0–5.0 Å (good), 5.0–10.0 Å (moderate), > 10.0 Å (poor). For reference, the CAPRI (Critical Assessment of PRediction of Interactions) criteria classify protein-protein docking predictions as acceptable when LRMSD < 10 Å and fnat ≥ 0.1. Interface RMSD is more relevant than full RMSD for assessing binding specificity, as it focuses on the residues that form the actual contact.
 
-Outputs in `2_diffdock_prep/outputs/`:
-- `processed_antibody.pdb`
-- `processed_antigen.pdb`
-- `data.json`
-- `report.html`
+**Outputs:**
+- `rmsd_analysis.json` — full RMSD, interface RMSD, atom counts, pairing statistics
+- `best_match.pdb` — copy of the top-ranked predicted pose
+- `final_comparison_report.txt` — human-readable quality assessment
+- `align_structures.pml` — PyMOL script for visual inspection
 
-Purpose:
-- Remove non-protein artifacts as configured.
-- Standardize/renumber structures for inference.
+## Parameters
 
-## Node 3: Feature Extraction
-Science script: `3_diffdock_features/5_feature_extract_science.py`
+### input_pdb
 
-Inputs:
-- `2_diffdock_prep/outputs/processed_antibody.pdb`
-- `2_diffdock_prep/outputs/processed_antigen.pdb`
+- **Type:** string
+- **Default:** `complex.pdb`
+- **Description:** Filename of the input antibody-antigen complex PDB in `input_files/`.
+- **Guidance:** Set to the name of your PDB file. The sample input is `5B8C.pdb`.
 
-Outputs in `3_diffdock_features/outputs/`:
-- `antibody.fasta`
-- `antigen.fasta`
-- `sequence_info.json`
-- `antibody_features.pt`
-- `antigen_features.pt`
-- `generate_embeddings.py`
-- `data.json`
-- `report.html`
+### antibody_chains
 
-Purpose:
-- Extract sequences and prepare embedding artifacts for DiffDock-PP.
+- **Type:** string
+- **Default:** `""` (auto-detect)
+- **Description:** Comma-separated antibody chain IDs (e.g., `H,L`).
+- **Guidance:** Leave empty for standard H/L chain naming. Set explicitly if your PDB uses non-standard chain identifiers (e.g., `A,B` for heavy and light chains).
 
-## Node 4: DiffDock-PP Inference
-Science script: `4_diffdock_inference/7_diffdock_inference_science.py`
+### num_samples
 
-Inputs:
-- `2_diffdock_prep/outputs/processed_antibody.pdb`
-- `2_diffdock_prep/outputs/processed_antigen.pdb`
-- `3_diffdock_features/outputs/antibody_features.pt`
-- `3_diffdock_features/outputs/antigen_features.pt`
-- DiffDock-PP installation path or environment variable.
+| Value | Description |
+|-------|-------------|
+| `10` (default) | Generates 10 candidate poses. Sufficient for testing and most benchmarks. |
+| `20`–`40` | More poses increase the chance of sampling a near-native conformation. |
 
-Outputs in `4_diffdock_inference/outputs/`:
-- `rank1.pdb` (top pose)
-- `confidence_scores.json`
-- `data.json`
-- `report.html`
-- `poses_raw/`
-- `inference_config.yaml`
-- `inference_log.txt`
-- `diffdock_storage/`
-- `temp_inference_data/`
+**Trade-off:** More samples improve coverage of the conformational space but increase runtime linearly. For benchmarking, 10 samples is standard; for prospective docking where accuracy is critical, 20–40 is recommended.
 
-Purpose:
-- Run docking and rank generated poses by confidence.
+**Test vs production:** Default of 10 is suitable for testing. For publication-quality results, use 20–40.
 
-## Node 5: Interface Analysis
-Science script: `5_diffdock_analysis/9_analysis_science.py`
+### inference_steps
 
-Inputs:
-- `2_diffdock_prep/outputs/processed_antibody.pdb`
-- `4_diffdock_inference/outputs/rank1.pdb`
-- `4_diffdock_inference/outputs/confidence_scores.json`
+| Value | Description |
+|-------|-------------|
+| `20` (default) | Number of denoising diffusion steps per sample. Standard for DiffDock-PP. |
+| `40` | More steps can improve pose quality at the cost of longer runtime. |
 
-Outputs in `5_diffdock_analysis/outputs/`:
-- `interface_analysis.txt`
-- `contact_residues.json`
-- `final_complex.pdb`
-- `data.json`
-- `report.html`
+**Trade-off:** More denoising steps allow finer refinement of the pose but with diminishing returns beyond 20 steps.
 
-Purpose:
-- Quantify and classify predicted antibody-antigen interface interactions.
+## Outputs and interpretation
 
-## Node 6: Wet-Lab Comparison and Validation
-Science script: `6_docking_comparison/11_comparison_science.py`
+### Confidence scores
 
-Inputs:
-- `1_complex_splitting/outputs/original_complex.pdb`
-- `4_diffdock_inference/outputs/rank1.pdb`
-- Chain definitions from `1_complex_splitting/outputs/chain_info.json`
+DiffDock-PP's confidence model produces a score for each generated pose. Higher scores indicate higher predicted quality. The scores are used for ranking poses (best first) but are not calibrated probabilities — a confidence of 0.8 does not mean 80% chance of success. Use the top-ranked pose (rank1.pdb) for downstream analysis.
 
-Outputs in `6_docking_comparison/outputs/` (or chosen output directory):
-- `data.json`
-- `rmsd_analysis.json`
-- `final_comparison_report.txt`
-- `best_match.pdb`
-- `align_structures.pml`
-- `report.html`
+### RMSD metrics
 
-Precise behavior:
-1. Uses tolerant CA parsing to support non-standard predicted PDB coordinate formatting.
-2. Performs antibody-based superposition when antibody anchor chains are present in both structures.
-3. Computes full antigen RMSD and interface RMSD.
-4. Records quality class using these thresholds:
-- `< 2.0 A`: excellent
-- `2.0-5.0 A`: good
-- `5.0-10.0 A`: moderate
-- `> 10.0 A`: poor
-5. If antibody anchors are missing in predicted pose, computes RMSD in original frame and records:
-- `superposition_mode = none_missing_antibody`
-- `fallback_note`
+- **Full RMSD:** Backbone Cα RMSD of the antigen after superposing the antibody chains. Measures overall positioning accuracy. Values < 5.0 Å indicate good global agreement with the reference structure.
+- **Interface RMSD:** RMSD computed only for antigen residues at the binding interface (< 5.0 Å from antibody in the reference). More informative than full RMSD for assessing binding mode accuracy, as it focuses on the contact region.
 
-## DiffDock-PP Path Resolution (Node 4)
-Node 4 checks locations in this order:
-1. `--diffdock_path`
-2. `DIFFDOCK_PP_PATH`
-3. `$CONDA_PREFIX/DiffDock-PP`
-4. `/opt/DiffDock-PP`
-5. `/workspace/DiffDock-PP`
-6. common local relative paths
+Quality classification:
+| RMSD (Å) | Quality |
+|-----------|---------|
+| < 2.0 | Excellent — very close to experimental structure |
+| 2.0–5.0 | Good — reasonable agreement |
+| 5.0–10.0 | Moderate — significant differences, binding site may be partially correct |
+| > 10.0 | Poor — substantial deviation from native pose |
 
-## Logs and Reports
-- Scientific outputs are written per node in each node's `outputs/` directory.
-- HTML dashboards are generated by each node's companion HTML script.
-- Runtime logs may be emitted by shell wrappers and conda execution context.
+### Interface contacts
 
-## Citation
-If you use this pipeline in academic work, please cite:
-- DiffDock-PP: Ketata et al., 2023. https://github.com/ketatam/DiffDock-PP
-- Silva workflow engine: https://github.com/chiral-data/silva
+The interface analysis reports the number and type of antibody-antigen contacts. A well-predicted binding interface typically shows 15–25 contact residues per side with a mix of hydrogen bonds (30–40%) and hydrophobic contacts (20–30%). Dominance of a single interaction type may indicate a non-specific or artifactual interface.
+
+## Quick start
+
+### Running with Docker
+
+The workflow uses the `diffdock_abag:v1` Docker image (NVIDIA CUDA 11.8, PyTorch 2.0.1, ESM-2, DiffDock-PP). GPU is required for inference.
+
+### Running on Silva
+
+1. Select workflow-016 from the workflow list
+2. Upload your antibody-antigen complex PDB to `input_files/`
+3. Set `input_pdb` to your filename; adjust `antibody_chains` if needed
+4. Click Run
+
+### Test vs production settings
+
+| Setting | Test (default) | Production |
+|---------|---------------|------------|
+| `input_pdb` | `complex.pdb` (sample 5B8C) | Your target complex |
+| `num_samples` | `10` | `20`–`40` |
+| `inference_steps` | `20` | `20`–`40` |
+
+A successful test run with the sample 5B8C complex produces ranked docking poses, an interface analysis report, and RMSD comparison against the original crystal structure.
+
+## References
+
+- Ketata MA, Laue C, Mammadov R, Stark H, Wu M, Corso G, Marquet C, Barzilay R, Jaakkola TS. "DiffDock-PP: Rigid Protein-Protein Docking with Diffusion Models." *ICLR 2023 Workshop on Machine Learning for Drug Discovery*. arXiv:2304.03889.
+- [DiffDock-PP source code](https://github.com/ketatam/DiffDock-PP)
+- Lin Z et al. "Evolutionary-scale prediction of atomic-level protein structure with a language model." *Science* 379(6637):1123-1130, 2023. DOI: https://doi.org/10.1126/science.ade2574
+- Basu S, Wallner B. "DockQ: A Quality Measure for Protein-Protein Docking Models." *PLOS ONE* 11(8):e0161879, 2016. DOI: https://doi.org/10.1371/journal.pone.0161879
