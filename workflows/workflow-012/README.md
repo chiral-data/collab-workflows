@@ -145,7 +145,7 @@ Confidence in the overall fold topology. Range 0–1. Values > 0.5 indicate the 
 
 ### iPTM (interface predicted TM-score)
 
-Confidence in the predicted interface geometry for multi-chain complexes. Range 0–1. Higher values indicate reliable inter-chain contact prediction. Weighted heavily in the ranking score because interface accuracy is critical for complex modeling.
+Confidence in the predicted interface geometry for multi-chain complexes. Range 0–1. Higher values indicate reliable inter-chain contact prediction. Contributes to the ranking score alongside pLDDT (see confidence score formula above) for assessing complex modeling quality.
 
 ### PAE (Predicted Aligned Error)
 

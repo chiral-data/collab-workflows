@@ -121,7 +121,7 @@ Nodes 01 and 03 run in parallel. Node 02 depends on 01; Node 04 depends on 03. N
 
 **Goal:** Rank evaluated compounds and generate a final report.
 
-**Process:** Loads the evaluated chemical space SDF, converts pK scores to binding energy in kcal/mol using the thermodynamic relationship (deltaG = -1.36 x pK at 298 K), ranks compounds by binding energy (most negative = strongest binder), and extracts the top `top_n` compounds. Generates an SDF file of top compounds, a CSV report with SMILES, scores, and classifications, and a text summary.
+**Process:** Loads the evaluated chemical space SDF, converts pK scores to binding energy in kcal/mol using the thermodynamic relationship (deltaG = -1.364 x pK at 298 K), ranks compounds by binding energy (most negative = strongest binder), and extracts the top `top_n` compounds. Generates an SDF file of top compounds, a CSV report with SMILES, scores, and classifications, and a text summary.
 
 **Scientific notes:** The pK-to-deltaG conversion derives from deltaG = -RT ln(K) = -2.303 RT log10(K). At 298 K, RT = 0.593 kcal/mol, giving deltaG = -1.364 x pK kcal/mol. Compounds are classified by binding energy: excellent (< -8 kcal/mol, nanomolar binders), good (-8 to -5, low micromolar), fair (-5 to 0, weak binding), poor (>= 0, no meaningful binding).
 
