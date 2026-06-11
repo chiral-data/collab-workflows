@@ -26,16 +26,15 @@ Do not use this workflow if you only need a single prediction from one tool — 
 
 ## Architecture and data flow
 
-```mermaid
-graph TD
-    N0["00: Download"] -->|sequence.fasta, ref.pdb| N1["01: Validate"]
-    N1 -->|validated_input.yaml| N2["02: Preprocess"]
-    N2 -->|boltz_input.yaml| N3["03: Boltz-2 Prediction"]
-    N2 -->|chai_input.fasta| N4["04: Chai-1 Prediction"]
-    N3 -->|*.pdb, boltz_summary.json| N5["05: Visualization"]
-    N4 -->|*.cif, chai_summary.json| N5
-    N0 -->|ref.pdb| N5
-    N5 -->|comparison_report.html| Report["Comparison Dashboard"]
+```text
+[00: Download] ──> [01: Validate] ──> [02: Preprocess] ──┬──> [03: Boltz-2 Prediction] ──┐
+      │                                                   │                                │
+  sequence.fasta                                          └──> [04: Chai-1 Prediction] ──┐ │
+  ref.pdb ──────────────────────────────────────────────────────────────────────────────┐ │ │
+                                                                                        ▼ ▼ ▼
+                                                                                  [05: Visualization]
+                                                                                        │
+                                                                                comparison_report.html
 ```
 
 Nodes 00 → 01 → 02 run sequentially. Nodes 03 (Boltz-2) and 04 (Chai-1) run **in parallel** after Node 02. Node 05 waits for both predictions to complete.
@@ -57,7 +56,7 @@ Nodes 00 → 01 → 02 run sequentially. Nodes 03 (Boltz-2) and 04 (Chai-1) run 
 
 **Goal:** Download a protein sequence and optional reference structure from UniProt.
 
-**Process:** Fetches the FASTA sequence and, if available, a reference PDB structure from UniProt/PDB using the configured accession ID. The reference structure is used for RMSD comparison in Node 05.
+**Process:** Fetches the FASTA sequence from UniProt using the configured accession ID. Queries UniProt for associated experimental PDB structures and selects the best available reference by method priority (X-ray crystallography and cryo-EM preferred) and resolution. Extracts only the relevant chain from the selected PDB. The reference structure is used for RMSD comparison in Node 05.
 
 **Scientific notes:** Using a UniProt accession ensures the sequence is from a curated, canonical source. The reference PDB (when available) enables quantitative validation of predictions against experimental structures.
 
@@ -99,7 +98,7 @@ Nodes 00 → 01 → 02 run sequentially. Nodes 03 (Boltz-2) and 04 (Chai-1) run 
 **Outputs:**
 - `*.pdb` — predicted structures
 - `confidence_*.json` — per-model confidence metrics
-- `boltz_summary.json` — aggregated results with all metrics
+- `boltz_summary.json` — aggregated results with all metrics, including parsed input sequences with chain metadata
 
 ### Node 04: Chai-1 Prediction
 
@@ -107,7 +106,7 @@ Nodes 00 → 01 → 02 run sequentially. Nodes 03 (Boltz-2) and 04 (Chai-1) run 
 
 **Process:** Invokes `chai-lab fold` with configurable `num_trunk_recycles` and `num_diffusion_timesteps`. Collects mmCIF structure files and confidence metrics (pLDDT, pTM, iPTM, aggregate_score) into a `chai_summary.json`.
 
-**Scientific notes:** Chai-1's aggregate score is computed as 0.2 × pTM + 0.8 × iPTM − 100 × has_inter_chain_clashes. Unlike Boltz-2, pLDDT is not included in the ranking score, and an explicit clash penalty eliminates structures with inter-chain steric clashes. Chai-1's pLDDT is extracted from the B-factor column of CIF output (scale 0–100, normalized to 0–1 for comparison).
+**Scientific notes:** Chai-1's aggregate score is computed as 0.2 × pTM + 0.8 × iPTM − 100 × has_inter_chain_clashes (the large penalty is intentional — any inter-chain clash effectively disqualifies the model). Unlike Boltz-2, pLDDT is not included in the ranking score, and the explicit clash penalty eliminates structures with inter-chain steric clashes. Chai-1's pLDDT is extracted from the B-factor column of CIF output (scale 0–100, normalized to 0–1 for comparison).
 
 **Outputs:**
 - `*.cif` — predicted structures (mmCIF format)

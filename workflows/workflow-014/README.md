@@ -28,14 +28,12 @@ Do not use this workflow for macromolecules (proteins, antibodies, nucleic acids
 
 ## Architecture and data flow
 
-```mermaid
-graph TD
-    A["Input CSV (SMILES)"] --> N0["00: Download"]
-    N0 -->|drugbank_approved.csv| N1["01: Validate Inputs"]
-    N1 -->|standardized_molecules.csv| N2["02: Compute ADMET"]
-    N2 -->|raw_predictions.csv| N3["03: Filter & Rank"]
-    N3 -->|filtered_candidates.csv| N4["04: Visualize"]
-    N4 -->|report.html| D["Interactive HTML Dashboard"]
+```text
+input.csv (SMILES)
+      │
+[00: Download] ──> [01: Validate Inputs] ──> [02: Compute ADMET] ──> [03: Filter & Rank] ──> [04: Visualize]
+      │                    │                        │                       │                       │
+drugbank_approved.csv  standardized_molecules.csv  raw_predictions.csv  filtered_candidates.csv  report.html
 ```
 
 Nodes run sequentially: 00 → 01 → 02 → 03 → 04.
@@ -99,7 +97,7 @@ Nodes run sequentially: 00 → 01 → 02 → 03 → 04.
 
 **Goal:** Generate a self-contained HTML dashboard for visual analysis of ranked candidates.
 
-**Process:** Builds summary cards (total candidates, average/best MPO scores, safety panel pass count), generates Plotly.js radar charts for the top 5 candidates across 9 ADMET dimensions (risk properties are inverted so higher = better on all axes), and creates color-coded data tables with green/yellow/red thresholds for 20 ADMET properties.
+**Process:** Builds summary cards (total candidates, average/best MPO scores, safety panel pass count), a sortable summary table of key ADMET properties with color-coded values, Plotly.js radar charts for the top 5 candidates across 9 ADMET dimensions (risk properties are inverted so higher = better on all axes), and color-coded data tables with green/yellow/red thresholds for 20 ADMET properties.
 
 **Scientific notes:** The radar chart visualization enables rapid comparison of candidate profiles across multiple ADMET dimensions simultaneously, which is more informative than ranking by a single score. Color thresholds in the data table follow pharmaceutical industry conventions: for example, hERG probability < 0.3 (green/safe), 0.3–0.5 (yellow/caution), ≥ 0.5 (red/concern).
 
@@ -172,7 +170,7 @@ The multi-parameter optimization score is a weighted composite of 10 normalized 
 
 ### hERG inhibition probability
 
-Predicts whether a compound blocks the hERG potassium ion channel (encoded by KCNH2). Probability > 0.5 indicates predicted hERG blockade, which can cause QT interval prolongation and potentially fatal cardiac arrhythmias. This is one of the most common reasons for drug withdrawal from market. Dataset: TDC hERG benchmark (binary classification at 10 μM threshold).
+Predicts whether a compound blocks the hERG potassium ion channel (encoded by KCNH2). Probability ≥ 0.5 indicates predicted hERG blockade, which can cause QT interval prolongation and potentially fatal cardiac arrhythmias. This is one of the most common reasons for drug withdrawal from market. Dataset: TDC hERG benchmark (binary classification at 10 μM threshold).
 
 ### AMES mutagenicity probability
 

@@ -16,7 +16,7 @@ A modular Deep Learning pipeline for Quantitative Structure-Activity Relationshi
 
 ## Overview
 
-QSAR modeling relates molecular structure to biological activity, enabling virtual screening without explicit docking simulations. This workflow computes over 200 RDKit molecular descriptors and 167-bit MACCS structural fingerprints for each molecule, trains a deep neural network regressor to predict docking scores, and provides an interactive Flask web application for querying new compounds with applicability domain checking.
+QSAR modeling relates molecular structure to biological activity, enabling virtual screening without explicit docking simulations. This workflow computes over 200 RDKit molecular descriptors and 166-key MACCS structural fingerprints for each molecule, trains a deep neural network regressor to predict docking scores, and provides an interactive Flask web application for querying new compounds with applicability domain checking.
 
 The default dataset contains docking scores of drug-like compounds against the SARS-CoV-2 Spike protein Receptor-Binding Domain (RBD), but the pipeline generalizes to any CSV with SMILES strings and a continuous target variable.
 
@@ -28,15 +28,16 @@ Do not use this workflow for ADMET property prediction — use workflow-014 inst
 
 ## Architecture and data flow
 
-```mermaid
-graph TD
-    N0["00: Download Inputs"] -->|SpikeRBD_DD.csv| N1["01: Data Preparation"]
-    N1 -->|descriptors.csv| N2["02: Feature Engineering"]
-    N2 -->|processed_data.npz| N3["03: Model Training"]
-    N3 -->|model.h5| N4["04: Prediction"]
-    N2 -->|scaler.pkl, ad_stats.json| N4
-    N0 -->|SpikeRBD_DD.csv| N4
-    N4 -->|report.html, predictions.csv| Dashboard["Interactive Web App"]
+```text
+SpikeRBD_DD.csv
+      │
+[00: Download Inputs] ──> [01: Data Preparation] ──> [02: Feature Engineering] ──> [03: Model Training]
+                                                        │                              │
+                                                   scaler.pkl                       model.h5
+                                                   ad_stats.json                       │
+                                                        │       ┌──────────────────────┘
+                                                        ▼       ▼
+                                                    [04: Prediction] ──> report.html, predictions.csv
 ```
 
 Nodes 00 through 03 run sequentially. Node 04 depends on nodes 00, 02, and 03 (it needs the original CSV, the scaler/AD stats, and the trained model).
@@ -65,7 +66,7 @@ Nodes 00 through 03 run sequentially. Node 04 depends on nodes 00, 02, and 03 (i
 
 **Goal:** Convert raw SMILES strings into numerical molecular descriptors.
 
-**Process:** Canonicalizes SMILES using RDKit, then computes two feature sets per molecule: (1) over 200 RDKit 2D molecular descriptors (e.g., MolLogP, TPSA, MolWt, NumRotatableBonds) using `MolecularDescriptorCalculator`, and (2) 167-bit MACCS structural key fingerprints. Invalid molecules that fail RDKit parsing are removed. Features are concatenated into a single descriptor matrix.
+**Process:** Canonicalizes SMILES using RDKit, then computes two feature sets per molecule: (1) over 200 RDKit 2D molecular descriptors (e.g., MolLogP, TPSA, MolWt, NumRotatableBonds) using `MolecularDescriptorCalculator`, and (2) 166-key MACCS structural fingerprints. Invalid molecules that fail RDKit parsing are removed. Features are concatenated into a single descriptor matrix.
 
 **Scientific notes:** RDKit 2D descriptors capture physicochemical properties (lipophilicity, polarity, size, flexibility) that influence biological activity. MACCS keys encode the presence or absence of 166 predefined structural patterns (functional groups, ring systems), providing complementary structural information. Using both descriptor types gives the model access to both continuous physicochemical properties and discrete structural features.
 
@@ -93,7 +94,7 @@ Nodes 00 through 03 run sequentially. Node 04 depends on nodes 00, 02, and 03 (i
 
 **Process:** Builds a sequential Keras model: Dense(600, ReLU) → Dense(100, ReLU) → Dense(100, ReLU) → Dense(1, Linear). Trains with Adam optimizer, MSE loss, and early stopping monitoring validation R² (patience=200, restores best weights). Reports MAE, RMSE, and R² on both training and test sets.
 
-**Scientific notes:** The architecture follows a tapering pattern (wide first layer narrowing to smaller layers), which is standard for QSAR deep learning. The wide first layer (600 units) allows the network to learn diverse feature combinations from the ~370 input descriptors (200+ RDKit + 167 MACCS). Early stopping on validation R² prevents overfitting while allowing sufficient training time for convergence. For docking score prediction, R² values of 0.6–0.8 on the test set are considered good; above 0.8 is excellent.
+**Scientific notes:** The architecture follows a tapering pattern (wide first layer narrowing to smaller layers), which is standard for QSAR deep learning. The wide first layer (600 units) allows the network to learn diverse feature combinations from the ~370 input descriptors (200+ RDKit + 166 MACCS). Early stopping on validation R² prevents overfitting while allowing sufficient training time for convergence. For docking score prediction, R² values of 0.6–0.8 on the test set are considered good; above 0.8 is excellent.
 
 **Outputs:**
 - `model.h5` — trained Keras model
@@ -130,21 +131,21 @@ Nodes 00 through 03 run sequentially. Node 04 depends on nodes 00, 02, and 03 (i
 
 ### test_size (Node 02)
 
-- **Type:** string
+- **Type:** float
 - **Default:** `0.3`
 - **Description:** Fraction of data reserved for the test set.
 - **Guidance:** 0.3 (30%) is the workflow default. For smaller datasets (< 500 molecules), consider reducing to 0.2 to retain more training data. For larger datasets (> 5,000), 0.3 is appropriate.
 
 ### contamination (Node 02)
 
-- **Type:** string
+- **Type:** float
 - **Default:** `0.1`
 - **Description:** Expected proportion of outliers for Isolation Forest outlier detection.
 - **Guidance:** 0.1 (10%) is a conservative default. Increase to 0.15–0.2 if the dataset is known to contain noisy or erroneous measurements. Decrease to 0.05 for curated datasets with few expected outliers.
 
 ### epochs (Node 03)
 
-- **Type:** string
+- **Type:** integer
 - **Default:** `200`
 - **Description:** Maximum number of training epochs.
 - **Guidance:** Early stopping typically halts training before reaching the maximum. Increase to 500–1000 for complex datasets where the model converges slowly.
@@ -153,7 +154,7 @@ Nodes 00 through 03 run sequentially. Node 04 depends on nodes 00, 02, and 03 (i
 
 ### batch_size (Node 03)
 
-- **Type:** string
+- **Type:** integer
 - **Default:** `400`
 - **Description:** Number of samples per gradient update during training.
 - **Guidance:** 400 works well for the default dataset (~3,000 compounds). For smaller datasets (< 500), reduce to 32–64 to ensure sufficient gradient updates per epoch.
@@ -218,7 +219,7 @@ A successful test run with the default Spike RBD dataset produces a trained mode
 
 ## References
 
-- Tropsha A. "Best Practices for QSAR Model Development, Validation, and Exploitation." *Molecular Informatics* 29(6-7):476-488, 2010. DOI: https://doi.org/10.1002/minf.201000061
+- Tropsha, A. "Best Practices for QSAR Model Development, Validation, and Exploitation." *Molecular Informatics* 29(6-7):476–488, 2010. DOI: https://doi.org/10.1002/minf.201000061
 - [RDKit: Open-Source Cheminformatics](https://www.rdkit.org/)
 - [TensorFlow / Keras documentation](https://www.tensorflow.org/)
-- Sahigara F et al. "Comparison of Different Approaches to Define the Applicability Domain of QSAR Models." *Molecules* 17(5):4791-4810, 2012. DOI: https://doi.org/10.3390/molecules17054791
+- Sahigara, F. et al. "Comparison of Different Approaches to Define the Applicability Domain of QSAR Models." *Molecules* 17(5):4791–4810, 2012. DOI: https://doi.org/10.3390/molecules17054791

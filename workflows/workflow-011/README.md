@@ -18,7 +18,7 @@ Quantitative structure-activity relationship (QSAR) modeling using RDKit molecul
 
 ## Overview
 
-The pipeline builds a QSAR model that predicts molecular docking scores from 2D molecular structure. Features are computed as a combination of RDKit 2D descriptors (~200 physicochemical properties) and 167-bit MACCS structural keys. The dataset is augmented via SMILES enumeration (Bjerrum, 2017) -- generating multiple valid SMILES representations per molecule to expand the training set. After feature selection with Random Forest importance, a 3-layer dense neural network with batch normalization, dropout, and L2 regularization is trained. The model is evaluated for overfitting via train/test R-squared gap analysis, and new molecules can be scored with applicability domain flags based on descriptor-space distance from the training set (Roy et al., 2015).
+The pipeline builds a QSAR model that predicts molecular docking scores from 2D molecular structure. Features are computed as a combination of RDKit 2D descriptors (~200 physicochemical properties) and 166-key MACCS structural fingerprints. The dataset is augmented via SMILES enumeration (Bjerrum, 2017) -- generating multiple valid SMILES representations per molecule to expand the training set. After feature selection with Random Forest importance, a 3-layer dense neural network with batch normalization, dropout, and L2 regularization is trained. The model is evaluated for overfitting via train/test R-squared gap analysis, and new molecules can be scored with applicability domain flags based on descriptor-space distance from the training set (Roy et al., 2015).
 
 ## When to use this workflow
 
@@ -29,12 +29,12 @@ For ADMET property prediction using pre-trained models (no training data needed)
 ## Architecture and data flow
 
 ```text
-                                ┌──> [3: Analyze Overfitting] ──> overfitting report
-[1: Data Prep] ──> [2: Train] ─┤
-                                └──> [4: Predict from CSV] ──> predictions.csv
+                                  ┌──> [03: Analyze Overfitting] ──> overfitting report
+[01: Data Prep] ──> [02: Train] ─┤
+                                  └──> [04: Predict from CSV] ──> predictions.csv
 ```
 
-Node 1 runs first. Node 2 depends on Node 1. Nodes 3 and 4 run independently after Node 2: Node 3 requires both Node 1 and Node 2 outputs; Node 4 requires only Node 2 outputs.
+Node 01 runs first. Node 02 depends on Node 01. Nodes 03 and 04 run independently after Node 02: Node 03 requires both Node 01 and Node 02 outputs; Node 04 requires only Node 02 outputs.
 
 ## Input requirements
 
@@ -43,13 +43,13 @@ Node 1 runs first. Node 2 depends on Node 1. Nodes 3 and 4 run independently aft
 
 ## Workflow nodes
 
-### Node 1: Data Preparation
+### Node 01: Data Preparation
 
 **Goal:** Compute molecular descriptors, select features, split data, and remove outliers.
 
 **Process:**
 1. Loads training CSV and augments SMILES using random enumeration (3 variants per molecule)
-2. Computes RDKit 2D descriptors and 167-bit MACCS keys for each SMILES variant
+2. Computes RDKit 2D descriptors and 166-key MACCS fingerprints for each SMILES variant
 3. Trains a Random Forest regressor and selects features above median importance
 4. Splits data 70/30 train/test with StandardScaler normalization
 5. Removes outliers using Isolation Forest (contamination=0.1) on PCA-projected descriptor space
@@ -61,7 +61,7 @@ Node 1 runs first. Node 2 depends on Node 1. Nodes 3 and 4 run independently aft
 - `data.json` -- visualization data (feature importances, PCA outlier map, distributions, correlation matrix)
 - `report.html` -- interactive data preparation dashboard
 
-### Node 2: Model Training
+### Node 02: Model Training
 
 **Goal:** Train a regularized deep neural network to predict docking scores.
 
@@ -76,7 +76,7 @@ Node 1 runs first. Node 2 depends on Node 1. Nodes 3 and 4 run independently aft
 - `data.json` -- training dashboard data (architecture, learning curves, predictions)
 - `report.html` -- interactive training dashboard
 
-### Node 3: Analyze Overfitting
+### Node 03: Analyze Overfitting
 
 **Goal:** Diagnose model overfitting by comparing train and test performance.
 
@@ -88,7 +88,7 @@ Node 1 runs first. Node 2 depends on Node 1. Nodes 3 and 4 run independently aft
 - `data.json` -- metrics, residuals, training history for dashboard
 - `report.html` -- interactive overfitting analysis dashboard
 
-### Node 4: Predict from CSV
+### Node 04: Predict from CSV
 
 **Goal:** Generate docking score predictions for new molecules with applicability domain assessment.
 
@@ -107,21 +107,21 @@ Node 1 runs first. Node 2 depends on Node 1. Nodes 3 and 4 run independently aft
 
 - **Type:** string
 - **Default:** (empty -- uses `SpikeRBD_DD.csv` from input_files)
-- **Node:** 1
+- **Node:** 01
 - **Description:** Name of the input CSV file in the input_files directory. Must contain `smiles` and `DockingScore` columns.
 
 ### epochs
 
 - **Type:** string
 - **Default:** `"200"`
-- **Node:** 3
+- **Node:** 03
 - **Description:** Number of training epochs (used in overfitting analysis context). The actual training in Node 2 uses early stopping with patience=40, so training typically stops before 200 epochs.
 
 ### batch_size
 
 - **Type:** string
 - **Default:** `"400"`
-- **Node:** 3
+- **Node:** 03
 - **Description:** Batch size for model training reference. Node 2 uses a fixed batch size of 256.
 
 ## Outputs and interpretation
@@ -167,7 +167,7 @@ docker pull ghcr.io/chiral-data/qsar-hybrid-model:v3
 
 1. Select "QSAR Modeling Pipeline" from the workflow list
 2. Upload a CSV with `smiles` and `DockingScore` columns
-3. Run the pipeline (Nodes 1-2 train the model; Node 3 analyzes overfitting; Node 4 predicts new molecules)
+3. Run the pipeline (Nodes 01–02 train the model; Node 03 analyzes overfitting; Node 04 predicts new molecules)
 4. Check the overfitting analysis dashboard before trusting predictions
 
 ### Test vs production settings

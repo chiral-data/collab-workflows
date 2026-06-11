@@ -26,20 +26,23 @@ Do not use this workflow for small-molecule docking — use workflow-004 (AutoDo
 
 ## Architecture and data flow
 
-```mermaid
-graph TD
-    A["Input PDB (complex)"] --> N1["1: Complex Splitting"]
-    N1 -->|antibody.pdb, antigen.pdb| N2["2: Structure Prep"]
-    N2 -->|processed PDBs| N3["3: Feature Extraction"]
-    N2 --> N4["4: DiffDock-PP Inference"]
-    N3 -->|ESM-2 embeddings| N4
-    N4 -->|ranked poses| N5["5: Interface Analysis"]
-    N2 --> N5
-    N4 --> N6["6: Docking Comparison"]
-    N1 -->|original_complex.pdb| N6
+```text
+input.pdb ──> [01: Complex Splitting] ──> [02: Structure Prep] ──> [03: Feature Extraction]
+                     │                          │                         │
+               original_complex.pdb       processed PDBs           ESM-2 embeddings
+                     │                          │                         │
+                     │                          ├─────────────────────────┘
+                     │                          ▼
+                     │                    [04: DiffDock-PP Inference]
+                     │                          │
+                     │                    ranked poses
+                     │                     ┌────┴────┐
+                     │                     ▼         ▼
+                     │              [05: Interface] [06: Docking Comparison] ◄──┘
+                     └──────────────────────────────────────┘
 ```
 
-Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 and 6 both depend on node 4 and can run in parallel.
+Nodes 01 → 02 → 03 run sequentially. Node 04 depends on nodes 02 and 03. Nodes 05 and 06 both depend on node 04 and can run in parallel.
 
 ## Input requirements
 
@@ -50,7 +53,7 @@ Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 a
 
 ## Workflow nodes
 
-### Node 1: Complex Splitting
+### Node 01: Complex Splitting
 
 **Goal:** Separate the antibody-antigen co-crystal complex into individual protein components.
 
@@ -64,7 +67,7 @@ Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 a
 - `original_complex.pdb` — copy of the input complex for later comparison
 - `chain_info.json` — chain detection metadata and statistics
 
-### Node 2: Structure Preparation
+### Node 02: Structure Preparation
 
 **Goal:** Clean and standardize protein structures for DiffDock-PP inference.
 
@@ -76,7 +79,7 @@ Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 a
 - `processed_antibody.pdb` — cleaned antibody structure
 - `processed_antigen.pdb` — cleaned antigen structure
 
-### Node 3: Feature Extraction
+### Node 03: Feature Extraction
 
 **Goal:** Extract amino acid sequences and prepare ESM-2 language model embeddings for DiffDock-PP.
 
@@ -89,7 +92,7 @@ Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 a
 - `antibody_features.pt`, `antigen_features.pt` — ESM-2 embedding tensors
 - `sequence_info.json` — chain lengths and amino acid composition
 
-### Node 4: DiffDock-PP Inference
+### Node 04: DiffDock-PP Inference
 
 **Goal:** Generate ranked antibody-antigen docking poses using the DiffDock-PP diffusion model.
 
@@ -101,7 +104,7 @@ Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 a
 - `rank1.pdb` — top-ranked docking pose
 - `confidence_scores.json` — confidence scores for all generated poses
 
-### Node 5: Interface Analysis
+### Node 05: Interface Analysis
 
 **Goal:** Characterize the predicted antibody-antigen binding interface contacts.
 
@@ -114,7 +117,7 @@ Nodes 1 → 2 → 3 run sequentially. Node 4 depends on nodes 2 and 3. Nodes 5 a
 - `contact_residues.json` — machine-readable interface residue lists
 - `final_complex.pdb` — combined antibody-antigen complex
 
-### Node 6: Docking Comparison
+### Node 06: Docking Comparison
 
 **Goal:** Validate the predicted docking pose against the original experimental co-crystal structure.
 
@@ -212,7 +215,7 @@ A successful test run with the sample 5B8C complex produces ranked docking poses
 
 ## References
 
-- Ketata MA, Laue C, Mammadov R, Stark H, Wu M, Corso G, Marquet C, Barzilay R, Jaakkola TS. "DiffDock-PP: Rigid Protein-Protein Docking with Diffusion Models." *ICLR 2023 Workshop on Machine Learning for Drug Discovery*. arXiv:2304.03889.
+- Ketata, M.A., Laue, C., Mammadov, R., Stark, H., Wu, M., Corso, G., Marquet, C., Barzilay, R. & Jaakkola, T.S. "DiffDock-PP: Rigid Protein-Protein Docking with Diffusion Models." *ICLR 2023 Workshop on Machine Learning for Drug Discovery*. arXiv:2304.03889.
 - [DiffDock-PP source code](https://github.com/ketatam/DiffDock-PP)
-- Lin Z et al. "Evolutionary-scale prediction of atomic-level protein structure with a language model." *Science* 379(6637):1123-1130, 2023. DOI: https://doi.org/10.1126/science.ade2574
-- Basu S, Wallner B. "DockQ: A Quality Measure for Protein-Protein Docking Models." *PLOS ONE* 11(8):e0161879, 2016. DOI: https://doi.org/10.1371/journal.pone.0161879
+- Lin, Z. et al. "Evolutionary-scale prediction of atomic-level protein structure with a language model." *Science* 379(6637):1123–1130, 2023. DOI: https://doi.org/10.1126/science.ade2574
+- Basu, S. & Wallner, B. "DockQ: A Quality Measure for Protein-Protein Docking Models." *PLOS ONE* 11(8):e0161879, 2016. DOI: https://doi.org/10.1371/journal.pone.0161879

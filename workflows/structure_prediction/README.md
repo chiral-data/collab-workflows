@@ -48,7 +48,7 @@ Each case study (1_mRNA, 2_antibody) is an independent prediction run with its o
 
 **Process:** Extracts the RBD region (194 residues, positions 331–524) from the full SARS-CoV-2 Spike protein (UniProt P0DTC2, 1273 residues), converts to Boltz-2 format, and runs prediction with 10 diffusion samples and 5 recycling steps.
 
-**Scientific notes:** The Spike RBD is the key domain that binds human ACE2 receptor, making it a primary target for COVID-19 vaccines and therapeutics. The 2023 Nobel Prize in Physiology or Medicine was awarded to Karikó and Weissman for nucleoside base modifications enabling mRNA vaccines targeting this domain.
+**Scientific notes:** The Spike RBD is the key domain that binds human ACE2 receptor, making it a primary target for COVID-19 vaccines and therapeutics. The 2023 Nobel Prize in Physiology or Medicine was awarded to Karikó and Weissman for nucleoside base modifications that enabled effective mRNA vaccines — including COVID-19 vaccines targeting this domain.
 
 **Parameters:**
 - `recycling_steps`: 5
