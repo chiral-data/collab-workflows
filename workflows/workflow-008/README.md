@@ -1,727 +1,311 @@
-# Serum Amino Acid Profiles in MS and MG
-
-This project analyzes clinical and metabolomics data to identify metabolic differences between patients with **Multiple Sclerosis (MS)**, **Myasthenia Gravis (MG)**, and healthy controls. The workflow processes raw LC-MS/MS amino acid profiles through an 11-node analytical pipeline to uncover significant biomarkers distinguishing autoimmune neurological diseases.
-
+---
+doc_id: workflow-008
+domain: metabolomics
+doc_type: workflow
+version: "1.0.0"
+deprecated: false
+description: >
+  Serum amino acid profiling for autoimmune neurological disease differential
+  diagnosis. Analyzes LC-MS/MS amino acid concentrations across Multiple
+  Sclerosis, Myasthenia Gravis, and healthy controls through an 11-node
+  statistical and visualization pipeline.
+tags: [metabolomics, amino-acids, multiple-sclerosis, myasthenia-gravis, biomarkers, lc-msms, clinical]
 ---
 
-## Part 1: Dataset Documentation
+# Workflow 008: Serum Amino Acid Profiles in MS and MG
 
-## 1. Overview
-This dataset contains serum amino acid profiles and clinical metadata for patients with Multiple Sclerosis (MS), Myasthenia Gravis (MG), and healthy controls. The data supports research into metabolic biomarkers for autoimmune neurological diseases and has been utilized in two published studies focusing on clinical outcome differentiation and comparative disease profiling.
+Serum amino acid profiling for differential diagnosis of autoimmune neurological diseases. This workflow processes LC-MS/MS amino acid concentration data from patients with Multiple Sclerosis (MS), Myasthenia Gravis (MG), and healthy controls through an 11-node analytical pipeline, producing publication-quality figures and interactive HTML dashboards for biomarker discovery and clinical decision support.
 
-### Clinical Rationale
-This dataset specifically targets the **"Diagnostic Gray Zone"** between Multiple Sclerosis (MS) and Myasthenia Gravis (MG).
+## Overview
 
-* **Clinical Mimicry**: Both diseases share early symptoms like fatigue and diplopia (double vision), leading to potential misdiagnosis.
-* **Shared Pathology**: Both are T-cell mediated autoimmune disorders, yet they attack different targets (Myelin in MS vs. Neuromuscular Junction in MG).
-* **Goal**: The dataset is designed to identify peripheral metabolic biomarkers (e.g., 3-MHIS vs. Citrulline) that can differentiate these conditions when clinical presentation is ambiguous.
+The workflow addresses the diagnostic gray zone between MS and MG — two T-cell-mediated autoimmune diseases that share early symptoms (fatigue, diplopia) but attack different targets (CNS myelin in MS vs. neuromuscular junction in MG). It identifies peripheral metabolic biomarkers (e.g., 3-methylhistidine, citrulline) that can differentiate these conditions when clinical presentation is ambiguous.
 
-### Key Features
-* **Disease Groups**: Multiple Sclerosis (RRMS, SPMS, PPMS), Myasthenia Gravis (Generalized, Ocular), and Healthy Controls.
-* **Biomarkers**: Concentrations of 29 amino acids and derivatives measured via LC-MS/MS.
-* **Clinical Data**: Disease duration, EDSS scores, age, gender, and medication history.
+The input dataset contains serum concentrations of 29 amino acids and derivatives measured via LC-MS/MS, plus clinical metadata (disease subtype, EDSS score, disease duration, age, sex) for 208 samples across three groups: MS (RRMS, SPMS, PPMS subtypes, n~121), MG (generalized and ocular subtypes, n~27), and healthy controls (n~52). Data were collected under controlled conditions (morning fasting blood draws, steroid washout, relapse-free period) using the EZ:faast LC-MS kit on a Shimadzu LCMS-8045 triple quadrupole (Rzepinski et al., 2023; Koslinski et al., 2024).
 
-## 2. File Information
-* **Filename**: `database-multiple-sclerosis-myasthenia.csv`
-* **Format**: Tab-separated values (TSV/CSV)
-* **Rows**: 208
-* **Columns**: 38
-* **Encoding**: UTF-8 (implied)
+Node 01 preprocesses and Z-score standardizes the raw concentrations. Nodes 02–11 run in parallel, each performing a distinct statistical analysis with dual output: static PNG figures (matplotlib/seaborn) and interactive HTML dashboards (Plotly.js).
 
-## 3. Data Dictionary
-The dataset uses Polish column headers. The table below provides the mapping to English descriptions and variable types.
+## When to use this workflow
 
-### Identifiers & Demographics
-| Column Name (Raw) | Description | Data Type | Notes |
-| :--- | :--- | :--- | :--- |
-| `ID Pacjenta` | Patient ID | String | Unique identifier (e.g., "1 Sanitas"). *Note: Some IDs appear in multiple rows (replicates).* |
-| `status` | Group Status | String | Categories: `case` (Patients), `control` (Healthy Controls). |
-| `miejsce` | Recruitment Site | String | e.g., "Sanitas", "Borne". |
-| `wiek` | Age | Float | Age in years (Range: 19–81). |
-| `Plec` | Gender | String | `Female`, `Male`. |
+Use this workflow when you have serum amino acid concentration data and want to perform comparative metabolomics analysis across disease groups, identify potential biomarkers, or validate clinical confounders. The pipeline is designed for the specific MS/MG/control dataset but the analytical framework (Z-score normalization, Mann-Whitney U tests, correlation clustering) applies to similar multi-group metabolomics studies.
 
-### Clinical Variables
-| Column Name (Raw) | Description | Data Type | Notes |
-| :--- | :--- | :--- | :--- |
-| `postać` | Disease Form | String | **MS Types**: `RRMS` (Relapsing-Remitting), `SPMS` (Secondary Progressive), `PPMS` (Primary Progressive)<br>**MG Types**: `general` (Generalized), `eye-type` (Ocular) |
-| `Czas trwania` | Disease Duration | Float | Duration of the disease in years. |
-| `EDSS` | EDSS Score | Float | Expanded Disability Status Scale (MS only). |
-| `Lek` | Medication | String | Disease-modifying therapies or other drugs (e.g., "mestinon", "Tysabri"). |
+Do not use this workflow for protein structure prediction — use workflow-012 (Boltz-2). For protein function annotation, use workflow-015 (mDeepFRI). For ADMET property prediction of small molecules, use workflow-014 (ADMET-AI). For QSAR modeling, use workflow-005.
 
-### Serum Biomarker Panels (nmol/mL)
-The following columns represent serum concentrations determined by LC-MS/MS, grouped by biological function.
+## Architecture and data flow
 
-**Panel A: Immune Regulators & Urea Cycle**
-*Relevant for NO production and immune suppression.*
-* `ARG_conc` (Arginine) – Precursor for Nitric Oxide (NO)
-* `CIT_conc` (Citrulline) – Marker of urea cycle and NO synthesis
-* `ORN_conc` (Ornithine) – Product of Arginase activity
-* `TRP_conc` (Tryptophan) – Modulates T-cell response via kynurenine pathway
+```text
+                              ┌─> [02: Cohort Demographics]
+                              ├─> [03: MS Pathology Overview]
+                              ├─> [04: Clinical Confounders]
+                              ├─> [05: MS vs MG Autoimmune]
+[01: Data Ingestion] ─────────├─> [06: Differential Diagnosis]
+                              ├─> [07: Metabolic Network Clustering]
+                              ├─> [08: Global Metabolic Load]
+                              ├─> [09: Subtype Trajectories]
+                              ├─> [10: Clinical Mimicry Test]
+                              └─> [11: Pathway Coherence]
+```
 
-**Panel B: Muscle Metabolism & Catabolism**
-*Relevant for Myasthenia Gravis and progressive MS neuromuscular atrophy.*
-* `3MHIS_conc` (3-Methyl-L-histidine) – Specific marker of myofibrillar protein breakdown
-* `1MHIS_conc` (1-Methyl-L-histidine) – Anserine/Carnosine metabolite
-* `BAIB_conc` (Beta-aminoisobutyric acid) – "Myokine" released by contracting skeletal muscle
-* `GABA_conc` (Gamma-aminobutyric acid) – Neuromuscular tone regulator
+Node 01 runs first. Nodes 02–11 all depend only on Node 01 and run in parallel.
 
-**Panel C: Excitatory & Oxidative Stress Markers**
-*Relevant for neurodegeneration and excitotoxicity.*
-* `AAA_conc` (α-Aminoadipic acid) – Modulator of glutamate uptake; linked to oxidative stress
-* `ASP_conc` (Aspartic acid) – Excitatory neurotransmitter
-* `GLN_conc` (Glutamine) – Major fuel for immune cells
+## Input requirements
 
-**Panel D: Standard Amino Acid Profile**
-*Branched-Chain Amino Acids (BCAAs):*
-* `LEU_conc` (Leucine)
-* `ILE_conc` (Isoleucine)
-* `VAL_conc` (Valine)
+- **Dataset:** `database-multiple-sclerosis-myasthenia.csv` — tab-separated file with 208 rows and 38 columns containing patient demographics, clinical variables, and 29 amino acid concentrations in nmol/mL.
+- **Column headers are in Polish** — Node 01 translates them to English equivalents.
+- **Key columns:**
+  - Demographics: `ID Pacjenta` (patient ID), `wiek` (age), `Plec` (gender), `miejsce` (recruitment site)
+  - Clinical: `status` (case/control), `postać` (disease form: RRMS/SPMS/PPMS/general/eye-type), `Czas trwania` (disease duration), `EDSS` (disability score), `Lek` (medication)
+  - Biomarkers: 29 amino acid `*_conc` columns (ARG, CIT, ORN, TRP, 3MHIS, 1MHIS, BAIB, GABA, AAA, ASP, GLN, LEU, ILE, VAL, PHE, TYR, MET, C-C, LYS, HIS, THR, PRO, ALA, SER, GLY, ASN, HYP, SAR, ABA)
 
-*Aromatic & Sulfur-Containing:*
-* `PHE_conc` (Phenylalanine)
-* `TYR_conc` (Tyrosine)
-* `MET_conc` (Methionine)
-* `C-C_conc` (Cysteine/Cystine)
+### Data quality notes
 
-*Other Essential & Non-Essential:*
-* `LYS_conc` (Lysine)
-* `HIS_conc` (Histidine)
-* `THR_conc` (Threonine)
-* `PRO_conc` (Proline)
-* `ALA_conc` (Alanine)
-* `SER_conc` (Serine)
-* `GLY_conc` (Glycine)
-* `ASN_conc` (Asparagine)
+- Some patient IDs appear in multiple rows (technical replicates) — Node 01 handles deduplication
+- `postać` is NaN for healthy controls and ~8 cases
+- `Lek` (medication) has significant missing values
+- Raw concentrations span a 100-fold range (glutamine ~600 vs GABA ~5 nmol/mL), requiring Z-score standardization
 
-*Other Metabolites:*
-* `HYP_conc` (4-Hydroxyproline)
-* `SAR_conc` (Sarcosine)
-* `ABA_conc` (α-Aminobutyric acid)
+### Biomarker panels
 
-## 4. Cohort Composition
+| Panel | Amino acids | Biological relevance |
+|-------|-------------|---------------------|
+| Immune regulators | ARG, CIT, ORN, TRP | NO production, urea cycle, kynurenine pathway |
+| Muscle catabolism | 3MHIS, 1MHIS, BAIB, GABA | Myofibrillar breakdown, exercise-induced myokine signaling |
+| Excitatory/oxidative | AAA, ASP, GLN | Glutamate excitotoxicity, oxidative stress |
+| BCAAs | LEU, ILE, VAL | Energy metabolism, immune cell fuel |
 
-1.  **Multiple Sclerosis (MS)** (n=121 unique patients)
-    * **Subtypes**: Secondary Progressive (SPMS), Relapsing-Remitting (RRMS), Primary Progressive (PPMS).
-    * **Clinical**: Median EDSS ~6.0.
-2.  **Myasthenia Gravis (MG)** (n=27-28 unique patients)
-    * **Subtypes**: Generalized MG (`general`) and Ocular MG (`eye-type`).
-3.  **Healthy Controls** (n=52-53 unique participants)
-    * No evidence of central or peripheral nervous system disorders.
+## Workflow nodes
 
-## 5. Methodological Notes & Study Design
+### Node 01: Data Ingestion and Preprocessing
 
-### Sample Collection Standards
-* **Timing**: Blood samples were drawn in the morning (7–9 a.m.) following an overnight fast.
-* **Storage**: Samples were immediately centrifuged and stored at -80°C until batch analysis.
-* **Dietary Restrictions (Crucial)**: Participants were explicitly instructed to maintain current dietary habits but avoid supplementation and protein-rich meals for 7 days prior to collection. This control minimizes diet-induced noise in the amino acid profiles.
+**Goal:** Load, clean, translate, and Z-score standardize raw LC-MS/MS amino acid concentrations.
 
-### Exclusion Criteria
-* **Steroid Washout**: Patients treated with steroids within 3 months preceding the blood draw were excluded to prevent drug-induced metabolic shifts.
-* **Relapse-Free**: Patients experiencing a disease relapse within 3 months were excluded to capture baseline metabolic state.
-* **Neurological Controls**: Healthy controls were screened to exclude any evidence of central or peripheral nervous system disorders.
+**Process:** Ingests the CSV with Polish column headers, maps them to English equivalents, calculates `Total_AA` (sum of all 29 amino acids per patient), and applies Z-score standardization (mean=0, SD=1) to all amino acid concentrations. Exports the standardized DataFrame as a pickle file and the list of amino acid column names.
 
-### Analytical Chemistry
-* **Sample Preparation**: A 3-step procedure involving:
-    1. Solid-phase extraction (SPE) for protein removal
-    2. Chemical derivatization to enhance ionization
-    3. Liquid-liquid extraction to separate amino acids from interfering compounds
-* **Instrumentation**:
-    * **Kit**: EZ:faast™ LC-MS Free Amino Acid Analysis Kit (Phenomenex)
-    * **Platform**: Shimadzu Nexera XR HPLC coupled with LCMS-8045 Triple Quadrupole
-    * **Ionization**: Positive ion mode electrospray ionization (ESI+)
-* **Quantification**: Internal standard method using:
-    * Homoarginine
-    * Methionone-d3 (deuterated)
-    * Homophenylalanine
-
-## 6. Data Quality & Usage Notes
-
-### Technical Replicates
-* **Observation**: The dataset contains 208 rows. Inspection reveals that some `ID Pacjenta` values are duplicated (e.g., ID "37 Sanitas" appears twice). These rows share identical demographic/clinical data but have varying amino acid concentrations, indicating technical replicates or repeated measures.
-* **Recommendation**: Users should handle these duplicates (e.g., by averaging) before statistical analysis to avoid pseudoreplication bias.
-
-### Missing Values
-* `postać` (Disease Form) is `NaN` for healthy controls and a small subset of cases (n=8).
-* `Lek` (Medication) contains significantly missing values, indicating either no treatment or incomplete medication history.
-* **Impact**: Medication-stratified analyses may have reduced statistical power.
-
-### Standardization Status
-* **Current State**: The values in this dataset are **Raw Concentrations (nmol/mL)**.
-* **Publication Methods**: The source publications explicitly state that data was "centered and standardized prior to analysis" to account for the high variance between high-abundance amino acids (like Glutamine ~600 nmol/mL) and trace metabolites (like GABA ~50 nmol/mL).
-* **Action Required**: Users must apply **Z-score standardization** (as per Pipeline Node 1) to replicate the statistical significance and effect sizes reported in the referenced studies. Without standardization, low-abundance biomarkers will be statistically underweighted.
-
----
-
-## Part 2: Technical Documentation (Pipeline Architecture)
-
-The analysis is implemented as a **modular, parallelizable 11-node workflow** orchestrated by the `silva` command-line tool. It features dual output generation (static PNG visualizations + interactive JSON/HTML web presentations) and is designed for both local execution and remote deployment via TOML-based configuration.
-
-### Architecture Overview
-
-**Execution Model:**
-* **Orchestration**: The `silva` tool manages the workflow execution based on dependencies defined in the node-level `job.toml` files.
-* **Sequential Foundation**: Node 01 (Data Ingestion) is executed first as other nodes depend on its output.
-* **Parallel Analysis**: Nodes 02-11 are executed in parallel after Node 01 completes.
-* **Dual Output System**: Each analysis node generates:
-  - **Static PNG images** for publication-quality figures.
-  - **JSON data files** storing plot data in a structured format.
-  - **Interactive HTML files** with Plotly.js visualizations for web-based exploration.
-
-**Configuration System:**
-* **Workflow Definition**: The workflow is defined by the collection of `job.toml` files within each node's directory. The `silva` tool discovers and executes these jobs.
-* **Node Configuration**: Each node has a `job.toml` file specifying its inputs, outputs, and execution parameters.
-
-**Technology Stack:**
-* **Core**: Python 3.11 with a virtual environment (`.venv`).
-* **Analysis**: pandas, numpy, scipy (statistical analysis).
-* **Visualization**: matplotlib, seaborn (static plots), Plotly.js 2.27.0 (interactive).
-* **Web Technologies**: Plain JavaScript ES6+ (async/await, classes, arrow functions).
-* **Modular Architecture**: Each analysis node (02-11) contains its own `html_generator.py` file for self-contained HTML generation.
-  - **Benefits**: Easier debugging, isolated development, and no cross-node dependencies.
-  - **Size**: ~118 lines, ~12 KB per generator.
-  - **Customization**: Node-specific rendering functions (e.g., `renderGridPlot()`, `renderBoxPlot()`, `renderTable()`).
-
----
-
-### **Node 01: Data Ingestion and Preprocessing**
-
-**Purpose:** Loads, cleans, and standardizes raw LC-MS/MS data to prepare for cross-group statistical comparison.
-
-**Input:**
-* `database-multiple-sclerosis-myasthenia.csv` (raw amino acid concentrations)
-
-**Processing:**
-1. **Data Loading**: Ingests CSV/TSV with Polish column headers
-2. **Translation**: Maps Polish clinical variables to English equivalents
-3. **Feature Engineering**: Calculates `Total_AA` (sum of all 29 amino acids per patient)
-4. **Z-Score Standardization**: Transforms all amino acid concentrations to Mean=0, SD=1
-   - Rationale: Accounts for 100-fold concentration differences (Glutamine ~600 vs GABA ~5 nmol/mL)
-5. **Data Export**: Saves standardized DataFrame and amino acid column list
+**Scientific notes:** Z-score standardization is essential because raw concentrations span two orders of magnitude. Without it, high-abundance amino acids (glutamine, alanine) dominate statistical models, masking dysregulation in trace metabolites that serve as critical biomarkers (3-MHIS for muscle breakdown, BAIB as a contraction-induced myokine). This matches the methodology of the source publications.
 
 **Outputs:**
-* `outputs/data_standardized.pkl` (65KB) - Pandas DataFrame with standardized concentrations
-* `outputs/aa_cols.txt` (294B) - List of 29 amino acid column names
-* `outputs/preprocessing_data.json` - Raw vs Standardized distribution data
-* `outputs/preprocessing_report.html` - Interactive dashboard with side-by-side boxplots and sortable data tables
+- `data_standardized.pkl` — pandas DataFrame with standardized concentrations
+- `aa_cols.txt` — list of 29 amino acid column names
+- `preprocessing_data.json` — raw vs standardized distribution data
+- `preprocessing_report.html` — interactive dashboard with side-by-side boxplots
 
-**Script:** `load_data.py` | **HTML Generator:** `html_generator.py` | **Execution:** `python3 load_data.py`
+### Node 02: Cohort Demographics
 
-**Biological Context:** Without standardization, high-abundance amino acids dominate statistical models, masking dysregulation in trace metabolites that serve as critical biomarkers (e.g., 3-MHIS for muscle breakdown, GABA for neuromuscular tone).
+**Goal:** Generate baseline population statistics for study cohorts.
 
----
+**Process:** Extracts age, gender, disease duration statistics. Computes mean +/- SD for continuous variables and sex ratios. Generates two demographic tables: MS vs Controls (Paper 1 cohort) and MS vs MG (Paper 2 cohort).
 
-### **Node 02: Cohort Demographics**
-
-**Purpose:** Generates baseline population statistics for both study cohorts (MS vs Controls, MS vs MG).
-
-**Input:**
-* `../01_Data_Ingestion_and_Preprocessing/outputs/data_standardized.pkl`
-
-**Processing:**
-* Extracts Age, Gender, Disease Duration statistics
-* Computes Mean ± SD for continuous variables
-* Calculates Sex ratios (Female:Male)
-* Generates styled dataframe tables
+**Scientific notes:** Establishes cohort comparability and validates age/sex matching between groups, critical for ensuring metabolic signatures are disease-specific rather than demographic artifacts.
 
 **Outputs:**
-* `outputs/Table1_Demographics.png` - MS vs Controls demographics (Paper 1 cohort)
-* `outputs/Table2_MS_MG_Demographics.png` - MS vs MG demographics (Paper 2 cohort)
-* `outputs/demographics_data.json` (2.7KB) - Structured table data for web display
-* `outputs/demographics.html` (7.7KB) - Interactive demographic tables with hover tooltips
+- `Table1_Demographics.png`, `Table2_MS_MG_Demographics.png` — publication-quality demographic tables
+- `demographics_data.json`, `demographics.html` — interactive demographic tables
 
-**Script:** `generate_tables.py` | **Configuration:** `job.toml` | **HTML Generator:** `html_generator.py`
+### Node 03: MS Pathology Overview
 
-**HTML Implementation Details:**
-* Self-contained module with `generate_demographics_html(json_filename='demographics_data.json')`
-* Custom `renderTable()` function for demographic table rendering
-* No dependencies on other nodes
+**Goal:** Identify global metabolic dysregulation in MS vs controls and across MS subtypes.
 
-**Biological Context:** Establishes cohort heterogeneity and validates age/sex matching between groups, critical for identifying disease-specific metabolic signatures independent of demographic confounders.
+**Process:** Generates 29-panel boxplot grids: (A) all MS vs healthy controls, (B) stratified by MS subtype (RRMS, SPMS, PPMS). Statistical annotation via Mann-Whitney U tests.
 
----
-
-### **Node 03: MS Pathology Overview**
-
-**Purpose:** Identifies global metabolic dysregulation in MS vs Controls and phenotypic differences across MS subtypes.
-
-**Input:**
-* `data_standardized.pkl`
-* `aa_cols.txt` (29 amino acids)
-
-**Processing:**
-* **Figure 1A**: 29-panel boxplot grid comparing MS patients (all subtypes) vs Healthy Controls
-* **Figure 1B**: 29-panel boxplot grid stratifying by MS subtype (RRMS, SPMS, PPMS)
-* Statistical annotation via Mann-Whitney U tests
-* JSON export includes all datapoints, medians, quartiles, and p-values
+**Scientific notes:** Detects key immune dysregulations — arginine and tryptophan depression indicates kynurenine pathway activation. IFN-gamma-induced IDO (indoleamine 2,3-dioxygenase) catabolizes tryptophan, producing kynurenines that suppress T-cell responses. BAIB elevation in PPMS suggests skeletal muscle wasting in progressive phenotypes.
 
 **Outputs:**
-* `outputs/Fig1A_MS_vs_Control.png` (64KB) - Global MS metabolic shifts
-* `outputs/Fig1B_MS_Subtypes.png` (67KB) - Subtype-specific patterns
-* `outputs/pathology_data.json` (328KB) - Complete boxplot data for 58 comparisons (29 AA × 2 figures)
-* `outputs/pathology.html` (9.4KB) - Interactive grid with zoom/pan, statistical overlays
+- `Fig1A_MS_vs_Control.png`, `Fig1B_MS_Subtypes.png` — 29-amino-acid boxplot grids
+- `pathology_data.json`, `pathology.html` — interactive grid with zoom/pan and statistical overlays
 
-**Script:** `generate_figures.py` | **HTML Generator:** `html_generator.py`
+### Node 04: Clinical Confounders and Validation
 
-**HTML Implementation Details:**
-* Self-contained module with `generate_pathology_html(json_filename='pathology_data.json')`
-* Custom `renderGridPlot()` function with 5-column layout optimized for 29 amino acids
-* CONFIG object includes color schemes for MS subtypes and statistical annotations
+**Goal:** Validate that metabolic changes are disease-driven rather than artifacts of aging, disease chronicity, or disability.
 
-**Biological Context:** Detects key immune dysregulations (ARG↓, TRP↓ indicating kynurenine pathway activation) and identifies progressive subtype markers (BAIB elevation in PPMS suggesting muscle wasting).
+**Process:** Linear regression analysis of each amino acid against age, disease duration, and EDSS score. Generates scatter plots with regression lines, 95% CI shading, and correlation coefficient/p-value annotations.
 
----
-
-### **Node 04: Clinical Confounders and Validation**
-
-**Purpose:** Validates that metabolic changes are disease-driven rather than artifacts of aging, disease chronicity, or physical disability.
-
-**Input:**
-* `data_standardized.pkl`
-* `aa_cols.txt`
-
-**Processing:**
-* Linear regression analysis: Age vs 29 amino acids
-* Linear regression analysis: Disease Duration vs 29 amino acids
-* Linear regression analysis: EDSS (disability score) vs 29 amino acids
-* Scatter plots with regression lines and 95% CI shading
-* Correlation coefficient (r) and p-value annotations
+**Scientific notes:** Weak age correlations confirm metabolic shifts are not normal aging. Strong EDSS correlations for specific amino acids (e.g., 3-MHIS) validate biomarker relevance to disability progression rather than disease duration alone.
 
 **Outputs:**
-* `outputs/Fig2A_Age_Grid.png` - Age correlation grid (29 amino acids)
-* `outputs/Fig2B_Duration_Grid.png` - Disease duration correlation grid
-* `outputs/Fig2C_EDSS_Grid.png` - Disability correlation grid
-* `outputs/confounders_data.json` (537KB) - Scatter plot coordinates, regression parameters, statistics
-* `outputs/confounders.html` (9.5KB) - Interactive scatter plots with dynamic regression lines
+- `Fig2A_Age_Grid.png`, `Fig2B_Duration_Grid.png`, `Fig2C_EDSS_Grid.png` — correlation grids
+- `confounders_data.json`, `confounders.html` — interactive scatter plots with regression lines
 
-**Script:** `generate_figures.py`
+### Node 05: MS vs MG Autoimmune Comparison
 
-**Biological Context:** Distinguishes primary disease mechanisms from secondary effects. For example, weak Age correlations confirm metabolic shifts are not normal aging; strong EDSS correlations for specific amino acids (e.g., 3-MHIS) validate biomarker relevance to disability progression.
+**Goal:** Identify shared autoimmune metabolic dysregulation common to both MS and MG.
 
----
+**Process:** Pools MS and MG patients into a combined autoimmune group. Generates 29-panel boxplot grid comparing (MS+MG) vs controls with Mann-Whitney U tests and FDR correction.
 
-### **Node 05: MS vs MG Autoimmune Comparison**
-
-**Purpose:** Identifies shared "autoimmune background" dysregulation common to both MS and MG when compared to healthy controls.
-
-**Input:**
-* `data_standardized.pkl`
-* `aa_cols.txt`
-
-**Processing:**
-* Pools MS and MG patients into combined "Autoimmune" group
-* Generates 29-panel boxplot grid: (MS+MG) vs Controls
-* Mann-Whitney U tests with FDR correction
+**Scientific notes:** Reveals universal T-cell-mediated autoimmune metabolic patterns (arginine/tryptophan dysregulation) that transcend organ-specific pathology. Arginine depletion reflects iNOS overstimulation consuming arginine for proinflammatory NO production, a hallmark of systemic autoimmune metabolic reprogramming.
 
 **Outputs:**
-* `outputs/Fig3_MS_MG_vs_Control.png` - Shared autoimmune metabolic signature
-* `outputs/autoimmune_data.json` - Boxplot data with statistical annotations
-* `outputs/autoimmune.html` - Interactive comparison with toggle controls
+- `Fig3_MS_MG_vs_Control.png` — shared autoimmune metabolic signature
+- `autoimmune_data.json`, `autoimmune.html` — interactive comparison
 
-**Script:** `generate_figure.py`
+### Node 06: Differential Diagnosis Biomarkers
 
-**Biological Context:** Reveals universal T-cell-mediated autoimmune metabolic patterns (e.g., ARG/TRP dysregulation) that transcend organ-specific pathology, supporting the concept of systemic metabolic reprogramming in autoimmunity.
+**Goal:** Identify amino acids that specifically distinguish MS from MG, with sex-stratified validation.
 
----
+**Process:** Targeted boxplots for discriminatory amino acids (ARG, PRO, CIT) in MS vs MG (full cohort and female-only subset). Mann-Whitney U tests with Bonferroni correction.
 
-### **Node 06: Differential Diagnosis Biomarkers**
-
-**Purpose:** Identifies amino acids that specifically distinguish central demyelination (MS) from neuromuscular autoimmunity (MG), with sex-stratified validation.
-
-**Input:**
-* `data_standardized.pkl`
-
-**Processing:**
-* **Figure 4**: Targeted boxplots for discriminatory amino acids (ARG, PRO, CIT) in MS vs MG
-* **Figure 5**: Same analysis restricted to female patients (controls for sex-hormone effects)
-* Mann-Whitney U tests with Bonferroni correction
+**Scientific notes:** Citrulline, a byproduct of NOS-mediated NO synthesis and a key urea cycle intermediate, shows differential levels between MS and MG. Female-only analysis controls for sex-hormone effects on amino acid metabolism.
 
 **Outputs:**
-* `outputs/Fig4_Specific_Diffs.png` - Key biomarker panel (full cohort)
-* `outputs/Fig5_Female_Specific.png` - Female-only validation
-* `outputs/biomarkers_data.json` - Boxplot data for targeted amino acids
-* `outputs/biomarkers.html` - Interactive biomarker explorer
+- `Fig4_Specific_Diffs.png`, `Fig5_Female_Specific.png` — biomarker panels
+- `biomarkers_data.json`, `biomarkers.html` — interactive biomarker explorer
 
-**Script:** `generate_figures.py`
+### Node 07: Metabolic Network Clustering
 
-**Biological Context:** Highlights **Citrulline** (urea cycle, lower in MS) and **GABA** (neuromuscular tone, higher in MG) as clinical decision-support biomarkers for ambiguous early-stage presentations (e.g., fatigue + diplopia).
+**Goal:** Visualize metabolic pathway dysregulation via unsupervised hierarchical clustering.
 
----
+**Process:** Computes Pearson correlation matrices (29x29 amino acids) separately for patients (MS+MG) and healthy controls. Generates clustered heatmaps with dendrograms.
 
-### **Node 07: Metabolic Network Clustering**
-
-**Purpose:** Visualizes metabolic pathway dysregulation via unsupervised hierarchical clustering of amino acid correlations.
-
-**Input:**
-* `data_standardized.pkl`
-
-**Processing:**
-* Computes Pearson correlation matrices (29×29 amino acids)
-* Generates clustered heatmaps separately for:
-  - MS+MG patients
-  - Healthy controls
-* Hierarchical clustering reveals disrupted metabolic coordination
+**Scientific notes:** Demonstrates "loss of homeostasis" in autoimmunity — controls show tight metabolic coordination (strong positive correlations), while patients exhibit weakened, fragmented correlation structures indicating dysregulated metabolic networks.
 
 **Outputs:**
-* `outputs/Fig6_Corr_MS_MG.png` - Patient correlation network
-* `outputs/Fig7_Corr_Control.png` - Control correlation network
-* `outputs/clustering_data.json` - Correlation matrices with cluster assignments
-* `outputs/clustering.html` - Interactive heatmap with dendrogram navigation
+- `Fig6_Corr_MS_MG.png`, `Fig7_Corr_Control.png` — clustered correlation heatmaps
+- `clustering_data.json`, `clustering.html` — interactive heatmaps with dendrogram navigation
 
-**Script:** `generate_figures.py`
+### Node 08: Global Metabolic Load Analysis
 
-**Biological Context:** Demonstrates "loss of homeostasis" in autoimmunity – controls show tight metabolic coordination (strong positive correlations), while patients exhibit chaotic, weakened correlation structures indicating dysregulated metabolic networks.
+**Goal:** Assess total amino acid burden across disease subtypes.
 
----
+**Process:** Boxplot comparison of total serum amino acid concentrations stratified by MS subtypes (RRMS, SPMS, PPMS), MG subtypes (generalized, ocular), and controls. Kruskal-Wallis H-test with post-hoc pairwise comparisons.
 
-### **Node 08: Global Metabolic Load Analysis**
-
-**Purpose:** Assesses total amino acid burden across disease subtypes.
-
-**Input:**
-* `data_standardized.pkl` (`Total_AA` column)
-
-**Processing:**
-* Boxplot comparison of total serum amino acid concentrations
-* Stratified by: MS subtypes (RRMS, SPMS, PPMS), MG subtypes (Generalized, Ocular), Controls
-* Kruskal-Wallis H-test with post-hoc pairwise comparisons
+**Scientific notes:** Validates hypermetabolism in progressive phenotypes — SPMS and PPMS show elevated total amino acid levels, suggesting increased protein catabolism or impaired peripheral utilization in advanced neurodegeneration.
 
 **Outputs:**
-* `outputs/Fig8_TotalAA_Type.png` - Total AA load by subtype
-* `outputs/metabolic_load_data.json` - Boxplot data with statistics
-* `outputs/metabolic_load.html` - Interactive load comparison
+- `Fig8_TotalAA_Type.png` — total amino acid load by subtype
+- `metabolic_load_data.json`, `metabolic_load.html` — interactive load comparison
 
-**Script:** `generate_figure.py`
+### Node 09: Subtype Trajectories
 
-**Biological Context:** Validates observations of hypermetabolism in progressive phenotypes (SPMS, PPMS show elevated total AA), suggesting increased protein catabolism or impaired peripheral utilization in advanced neurodegeneration.
+**Goal:** Simulate longitudinal disease progression by plotting amino acid concentrations vs disease duration.
 
----
+**Process:** Scatter plots of disease duration (x-axis) vs each of 29 amino acids (y-axis) with separate regression lines per MS/MG subtype.
 
-### **Node 09: Subtype Trajectories**
-
-**Purpose:** Simulates longitudinal disease progression by plotting amino acid concentrations vs disease duration, stratified by subtype.
-
-**Input:**
-* `data_standardized.pkl`
-* `aa_cols.txt`
-
-**Processing:**
-* Scatter plots: Disease Duration (x-axis) vs 29 amino acids (y-axis)
-* Separate regression lines for each MS/MG subtype
-* Identifies amino acids with subtype-divergent trajectories
+**Scientific notes:** Amino acids with steep positive slopes in progressive subtypes (SPMS/PPMS) indicate accelerating metabolic dysregulation over time. Stable trajectories in RRMS suggest relapse-remission metabolic resilience. This cross-sectional analysis simulates longitudinal trends.
 
 **Outputs:**
-* `outputs/Fig9_Duration_Grid.png` - 29-panel duration trajectory grid
-* `outputs/trajectories_data.json` - Scatter data with subtype-specific regression parameters
-* `outputs/trajectories.html` - Interactive trajectory explorer with subtype filtering
+- `Fig9_Duration_Grid.png` — 29-panel duration trajectory grid
+- `trajectories_data.json`, `trajectories.html` — interactive trajectory explorer with subtype filtering
 
-**Script:** `generate_figure.py`
+### Node 10: Clinical Mimicry Test (RRMS vs MG)
 
-**Biological Context:** Reveals prognostic markers – amino acids with steep positive slopes in progressive subtypes (SPMS/PPMS) indicate accelerated metabolic dysregulation over time, while stable trajectories in RRMS suggest relapse-remission metabolic resilience.
+**Goal:** Distinguish early-stage MS (RRMS) from MG in the diagnostic gray zone.
 
----
+**Process:** Total amino acid load comparison and 29-panel amino acid grid comparing RRMS vs MG specifically. Mann-Whitney U tests for each amino acid.
 
-### **Node 10: Clinical Mimicry Test (RRMS vs MG)**
-
-**Purpose:** Distinguishes early-stage MS (RRMS) from MG in the diagnostic gray zone where symptoms overlap.
-
-**Input:**
-* `data_standardized.pkl` (filtered for RRMS and MG only)
-
-**Processing:**
-* **Figure 10**: Total AA load comparison (RRMS vs MG)
-* **Figure 11**: 29-panel amino acid grid (RRMS vs MG)
-* Mann-Whitney U tests for each amino acid
+**Scientific notes:** 3-Methylhistidine (3-MHIS) emerges as a critical early discriminator. 3-MHIS is formed by post-translational methylation of histidine in actin and myosin and cannot be reused for protein synthesis, making it a specific marker of myofibrillar protein breakdown. It is elevated in MG due to increased muscle proteolysis at the neuromuscular junction but remains normal in RRMS where pathology is confined to CNS myelin.
 
 **Outputs:**
-* `outputs/Fig10_TotalAA_RRMS_MG.png` - Global metabolic load comparison
-* `outputs/Fig11_RRMS_vs_MG_Grid.png` - Full amino acid profile comparison
-* `outputs/mimicry_data.json` - Complete boxplot data for early-stage differentiation
-* `outputs/mimicry.html` - Interactive diagnostic decision-support tool
+- `Fig10_TotalAA_RRMS_MG.png`, `Fig11_RRMS_vs_MG_Grid.png` — early-stage differentiation
+- `mimicry_data.json`, `mimicry.html` — interactive diagnostic decision-support tool
 
-**Script:** `generate_figures.py`
+### Node 11: Pathway Coherence Analysis
 
-**Biological Context:** Identifies **3-Methylhistidine (3-MHIS)** as a critical early discriminator – elevated in MG due to muscle protein breakdown at neuromuscular junction, normal in RRMS where pathology is confined to CNS myelin. Supports differential diagnosis when clinical presentation is ambiguous.
+**Goal:** Contrast metabolic network organization between MS and MG.
 
----
+**Process:** Side-by-side triangular correlation heatmaps (MS vs MG) with identical amino acid ordering for direct visual comparison. Pearson correlation with hierarchical clustering.
 
-### **Node 11: Pathway Coherence Analysis**
-
-**Purpose:** Contrasts metabolic network organization between MS and MG to reveal disease-specific metabolic architectures.
-
-**Input:**
-* `data_standardized.pkl`
-* `aa_cols.txt`
-
-**Processing:**
-* Side-by-side triangular correlation heatmaps (MS vs MG)
-* Identical amino acid ordering for direct visual comparison
-* Pearson correlation with hierarchical clustering
+**Scientific notes:** MS shows a highly fragmented correlation structure (reflecting diffuse CNS demyelination effects on systemic metabolism) while MG retains more organized peripheral metabolic networks (reflecting localized neuromuscular pathology). Validates that MS and MG exhibit distinct systemic metabolic architectures despite shared autoimmune mechanisms.
 
 **Outputs:**
-* `outputs/Fig12_Split_Corr.png` - Split-panel correlation comparison (MS | MG)
-* `outputs/coherence_data.json` - Dual correlation matrices with cluster metrics
-* `outputs/coherence.html` - Interactive side-by-side network explorer
+- `Fig12_Split_Corr.png` — split-panel correlation comparison
+- `coherence_data.json`, `coherence.html` — interactive side-by-side network explorer
 
-**Script:** `generate_figure.py`
+## Parameters
 
-**Biological Context:** Demonstrates fundamental metabolic architectural differences – MS shows highly fragmented correlation structure (chaotic central demyelination effects), while MG retains more organized peripheral metabolic networks (localized neuromuscular pathology). Validates that MS and MG, despite shared autoimmune mechanisms, exhibit distinct systemic metabolic dysregulation patterns.
+### data_file
 
----
+- **Type:** string
+- **Default:** `"database-multiple-sclerosis-myasthenia.csv"`
+- **Node:** 01
+- **Description:** Input CSV/TSV file with raw amino acid concentrations and clinical metadata.
 
-### Workflow Execution
+Nodes 02–11 have no user-configurable parameters. All analysis settings (statistical tests, correction methods, figure layouts) are hardcoded for reproducibility of the published results.
 
-**Run Complete Workflow:**
+## Outputs and interpretation
+
+### Output structure
+
+Each analysis node (02–11) generates three output types:
+- **PNG files** — publication-ready figures (300 DPI, matplotlib/seaborn)
+- **JSON files** — structured plot data (coordinates, statistics, metadata) for web rendering
+- **HTML files** — self-contained interactive dashboards (Plotly.js 2.27.0 with zoom, pan, hover tooltips)
+
+Total: 38 files per complete run (4 from Node 01 + 18 PNG + 10 JSON + 10 HTML from Nodes 02–11).
+
+### Output summary by node
+
+| Node | PNG outputs | JSON/HTML outputs |
+|------|-------------|-------------------|
+| 01 | — | preprocessing_data.json, preprocessing_report.html |
+| 02 | Table1_Demographics, Table2_MS_MG_Demographics | demographics_data.json, demographics.html |
+| 03 | Fig1A_MS_vs_Control, Fig1B_MS_Subtypes | pathology_data.json, pathology.html |
+| 04 | Fig2A_Age_Grid, Fig2B_Duration_Grid, Fig2C_EDSS_Grid | confounders_data.json, confounders.html |
+| 05 | Fig3_MS_MG_vs_Control | autoimmune_data.json, autoimmune.html |
+| 06 | Fig4_Specific_Diffs, Fig5_Female_Specific | biomarkers_data.json, biomarkers.html |
+| 07 | Fig6_Corr_MS_MG, Fig7_Corr_Control | clustering_data.json, clustering.html |
+| 08 | Fig8_TotalAA_Type | metabolic_load_data.json, metabolic_load.html |
+| 09 | Fig9_Duration_Grid | trajectories_data.json, trajectories.html |
+| 10 | Fig10_TotalAA_RRMS_MG, Fig11_RRMS_vs_MG_Grid | mimicry_data.json, mimicry.html |
+| 11 | Fig12_Split_Corr | coherence_data.json, coherence.html |
+
+### Statistical methods
+
+- **Group comparisons:** Mann-Whitney U test (non-parametric, does not assume normality)
+- **Multiple testing correction:** FDR (Nodes 03, 05) or Bonferroni (Node 06) depending on analysis type
+- **Correlations:** Pearson correlation with 95% CI for confounder analysis (Node 04) and network clustering (Nodes 07, 11)
+- **Multi-group comparisons:** Kruskal-Wallis H-test with post-hoc pairwise tests (Node 08)
+
+## Quick start
+
+### Running with Docker
+
+All nodes use the same container image:
+
 ```bash
-silva .
-```
-The `silva` command discovers all `job.toml` files, resolves dependencies, and executes nodes in the correct order. Node 01 runs first, then Nodes 02-11 execute in parallel inside Docker containers.
-
-**How Silva Works:**
-1. Reads `.chiral/workflow.toml` in the root directory for workflow-level configuration and dependencies
-2. Scans each node's `.chiral/job.toml` for inputs, outputs, and container settings
-3. Builds a dependency graph based on the `[dependencies]` section in `workflow.toml`
-4. Pulls or reuses the Docker image (`ghcr.io/chiral-data/proteomics:2025_12_31`)
-5. Executes each node's `run.sh` script inside the container
-6. Copies input files between nodes as specified in `job.toml`
-7. Collects outputs to a timestamped folder (e.g., `C:\Windows\TEMP\silva-2026-01-03-...`)
-8. Cleans up containers after workflow completion
-
-**Node Configuration (`.chiral/job.toml`):**
-Each node contains a `.chiral/job.toml` file that specifies:
-* `name` - Human-readable node name
-* `description` - What the node does
-* `inputs` - Files required from other nodes
-* `outputs` - Files produced by this node
-* `container.image` - Docker image to use
-* `scripts.run` - Shell script to execute (typically `run.sh`)
-
-**Output Structure:**
-Each node generates 3 output types in its `outputs/` directory:
-1. **PNG files** - Publication-ready figures (300 DPI, matplotlib/seaborn)
-2. **JSON files** - Structured data (plot coordinates, statistics, metadata)
-3. **HTML files** - Interactive visualizations (Plotly.js, responsive design)
-
-**Total Outputs:** 38 files per complete workflow execution
-* Node 01: 2 files (data + metadata)
-* Nodes 02-11: 36 files (18 PNG + 10 JSON + 10 HTML)
-
-**Modular HTML Generation Infrastructure:**
-Each analysis node (02-11) contains its own `html_generator.py` module with:
-* **Self-Contained Design**: No shared dependencies between nodes
-* **Node-Specific Functions**: 
-  - Node 02: `generate_demographics_html()` with `renderTable()`
-  - Node 03: `generate_pathology_html()` with 5-column grid layout for 29 amino acids
-  - Nodes 04-11: Dual-mode generators with `renderGridPlot()` and `renderBoxPlot()`
-* **Configuration Objects**: Each generator includes its own `CONFIG` object with color schemes, layout parameters, and plot styling
-* **Plotly.js Integration**: CDN v2.27.0 for interactive plotting
-* **Features**: Zoom, pan, hover tooltips, data export, responsive design
-* **Debugging Benefits**: Smaller files (~118 lines vs 572-line shared template) for easier troubleshooting
-
-**How to Modify Visualizations:**
-1. Navigate to node directory: `cd 03_MS_Pathology_Overview/`
-2. Edit `html_generator.py` to customize rendering functions or CONFIG settings
-3. Regenerate HTML: `bash run.sh`
-4. Changes affect only this node - no impact on other nodes
-
----
-
-## Part 3: Quick Start Guide
-
-### Prerequisites
-
-**Required Software:**
-* **Docker**: Must be installed and running (containers execute the analysis)
-* **Silva**: Workflow orchestration tool (`silva` command must be available in PATH)
-
-**Input Data:**
-The database file should be present in Node 01 directory:
-```
-01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.csv
+docker pull ghcr.io/chiral-data/proteomics:2025_12_31
 ```
 
-**Note:** Python packages are pre-installed in the Docker image (`ghcr.io/chiral-data/proteomics:2025_12_31`). No local Python environment setup is required.
+### Running on Silva
 
-### Execution Commands
+1. Select "MS_MG Amino Acid Analysis" from the workflow list
+2. Ensure the input CSV is present (or use the bundled dataset)
+3. Click Run — Node 01 preprocesses data, then Nodes 02–11 run in parallel
 
-**Run Complete Workflow:**
+### Running individual nodes
+
 ```bash
-silva .
-```
-This command executes all 11 nodes with proper dependency ordering. Outputs are collected to a timestamped folder.
-
-**Run Individual Nodes (for development/debugging):**
-```bash
-# Navigate to node directory and run the script directly
-cd 03_MS_Pathology_Overview
+cd 03-ms-pathology-overview
 docker run -v $(pwd):/workspace ghcr.io/chiral-data/proteomics:2025_12_31 bash run.sh
 ```
 
-### Output Summary
+Execution time: ~2–3 minutes for the complete workflow (with cached Docker image).
 
-Each node generates files in its `outputs/` directory:
+## Dataset documentation
 
-| Node | PNG Outputs | JSON/HTML Outputs |
-|------|-------------|-------------------|
-| 01 | data_standardized.pkl, aa_cols.txt | preprocessing_data.json, preprocessing_report.html |
-| 02 | Table1_Demographics.png, Table2_MS_MG_Demographics.png | demographics_data.json, demographics.html |
-| 03 | Fig1A_MS_vs_Control.png, Fig1B_MS_Subtypes.png | pathology_data.json, pathology.html |
-| 04 | Fig2A_Age_Grid.png, Fig2B_Duration_Grid.png, Fig2C_EDSS_Grid.png | confounders_data.json, confounders.html |
-| 05 | Fig3_MS_MG_vs_Control.png | autoimmune_data.json, autoimmune.html |
-| 06 | Fig4_Specific_Diffs.png, Fig5_Female_Specific.png | biomarkers_data.json, biomarkers.html |
-| 07 | Fig6_Corr_MS_MG.png, Fig7_Corr_Control.png | clustering_data.json, clustering.html |
-| 08 | Fig8_TotalAA_Type.png | metabolic_load_data.json, metabolic_load.html |
-| 09 | Fig9_Duration_Grid.png | trajectories_data.json, trajectories.html |
-| 10 | Fig10_TotalAA_RRMS_MG.png, Fig11_RRMS_vs_MG_Grid.png | mimicry_data.json, mimicry.html |
-| 11 | Fig12_Split_Corr.png | coherence_data.json, coherence.html |
+### Cohort composition
 
-**Total Outputs:** 38 files (18 PNG + 10 JSON + 10 HTML)
+- **Multiple Sclerosis (MS):** ~121 unique patients. Subtypes: RRMS (relapsing-remitting), SPMS (secondary progressive), PPMS (primary progressive). Median EDSS ~6.0.
+- **Myasthenia Gravis (MG):** ~27 unique patients. Subtypes: generalized and ocular.
+- **Healthy controls:** ~52 participants with no evidence of CNS or peripheral nervous system disorders.
 
-**Execution Time:** ~2-3 minutes for complete workflow (with Docker image cached)
+### Sample collection
 
-### Interactive Visualizations
+- Blood drawn 7–9 AM following overnight fast
+- Stored at -80C until batch analysis
+- Participants avoided supplementation and protein-rich meals for 7 days prior
+- Excluded: patients on steroids within 3 months, patients with recent relapse within 3 months
 
-**View HTML Outputs:**
-1. Navigate to node output folder: `cd XX_Node_Name/outputs/`
-2. Open HTML file in browser: `[node_name].html`
-3. Features: Zoom, pan, hover tooltips, data export
+### Analytical chemistry
 
-**Using Python HTTP Server:**
-```bash
-cd XX_Node_Name/outputs/
-python -m http.server 8000
-# Open browser to http://localhost:8000/[node_name].html
-```
+- **Kit:** EZ:faast LC-MS Free Amino Acid Analysis Kit (Phenomenex)
+- **Platform:** Shimadzu Nexera XR HPLC + LCMS-8045 Triple Quadrupole
+- **Ionization:** Positive ion mode ESI+
+- **Sample preparation:** Solid-phase extraction, chemical derivatization, liquid-liquid extraction
+- **Internal standards:** Homoarginine, methionine-d3, homophenylalanine
 
-### Troubleshooting
+### Data provenance
 
-**Docker not running:**
-```bash
-# Ensure Docker Desktop is running before executing silva
-docker info
-```
+The dataset is an educational subset curated by Prof. Emilia Daghir-Wojtkowiak from previously published clinical research. Formal permission has been granted for use in this workflow.
 
-**Database file not found:**
-```bash
-# Check if file exists
-ls 01_Data_Ingestion_and_Preprocessing/database-multiple-sclerosis-myasthenia.csv
-```
+## References
 
-**Silva command not found:**
-```bash
-# Ensure silva is installed and in PATH
-# Contact your administrator for installation instructions
-```
-
-**Node fails - Check container logs:**
-```bash
-# Silva outputs detailed logs during execution
-# Look for error messages in the terminal output
-# Common issues: missing input files, Python errors in scripts
-```
-
-**Clean outputs (start fresh):**
-```bash
-# Remove all outputs
-rm -rf */outputs/*
-
-# Remove specific node
-rm -rf 03_MS_Pathology_Overview/outputs/*
-```
-
-**Modify HTML visualizations:**
-```bash
-# Each node has its own html_generator.py - edit to customize
-cd 03_MS_Pathology_Overview
-nano html_generator.py  # or use your preferred editor
-
-# Modify CONFIG object (colors, layout) or rendering functions
-# Re-run the workflow to regenerate
-cd .. && silva .
-```
-
-**HTML Generator Structure:**
-* **Node 02**: Custom `renderTable()` for demographics
-* **Node 03**: Custom `renderGridPlot()` with 5-column layout for 29 amino acids
-* **Nodes 04-11**: Generic dual-mode generators with `renderGridPlot()` and `renderBoxPlot()`
-* Each includes its own CONFIG object with color schemes and styling
-
-### Workflow Structure
-
-```
-wf-abdo-proteomics/
-├── .chiral/
-│   └── workflow.toml              # Main workflow configuration (dependencies)
-├── README.md                      # This documentation file
-│
-├── 01_Data_Ingestion_and_Preprocessing/
-│   ├── .chiral/
-│   │   └── job.toml               # Node configuration for silva
-│   ├── database-multiple-sclerosis-myasthenia.csv  # Input dataset
-│   ├── load_data.py               # Data loading and standardization script
-│   └── run.sh                     # Execution script (called by silva)
-│
-├── 02_Cohort_Demographics/
-│   ├── .chiral/
-│   │   └── job.toml               # Node configuration (inputs, outputs, image)
-│   ├── generate_tables.py         # Demographics analysis script
-│   ├── html_generator.py          # Node-specific HTML generator
-│   └── run.sh                     # Execution script
-│
-└── [03-11]_*/                     # Additional analysis nodes
-    ├── .chiral/
-    │   └── job.toml               # Node configuration for silva
-    ├── generate_*.py              # Analysis script (generate_figure.py or generate_figures.py)
-    ├── html_generator.py          # Node-specific HTML generator (~12 KB each)
-    └── run.sh                     # Execution script
-```
-
-**Modular Architecture Notes:**
-* Each node (02-11) has its own `html_generator.py` module - no shared dependencies
-* Benefits: Easier debugging (~118 lines per file vs 572-line shared template)
-* Isolated development: Changes to one node don't affect others
-* Self-contained: Each generator includes its own CONFIG, rendering functions, and Plotly.js integration
-
-### Data Flow
-
-```
-Node 01 (Preprocessing)
-    ↓
-    ├─→ Node 02 (Demographics)
-    ├─→ Node 03 (MS Pathology)
-    ├─→ Node 04 (Confounders)
-    ├─→ Node 05 (MS vs MG)
-    ├─→ Node 06 (Biomarkers)
-    ├─→ Node 07 (Network)
-    ├─→ Node 08 (Metabolic Load)
-    ├─→ Node 09 (Trajectories)
-    ├─→ Node 10 (RRMS vs MG)
-    └─→ Node 11 (Coherence)
-```
-
-**Execution Model:** Silva orchestrates the workflow - Node 01 runs first, then Nodes 02-11 execute in parallel inside Docker containers. Run with `silva .` from the workflow directory.
-
----
-
-## Part 4: Data Sources and Acknowledgments
-
-### Origin
-The datasets utilized in this study are educational subsets curated from previously published clinical and omics research regarding Multiple Sclerosis (MS) and Myasthenia Gravis (MG). These subsets were specifically filtered and prepared by **Prof. Emilia Daghir-Wojtkowiak** to serve as educational material.
-
-> **Permission**: Formal permission has been granted by Prof. Daghir-Wojtkowiak to utilize this modified dataset for the scope of this volunteer work at Chiral.
-
-### Authorship
-*   **Data Curation**: Faculty (Prof. Emilia Daghir-Wojtkowiak)
-*   **Analytical Implementation**: Abdelrahman Mohamed Taha MAHMOUD (Code development, pipeline design, statistical analysis)
-
-### References
-The original data sources correspond to the following publications:
-
-1.  **For MS Outcomes**:
-**Serum amino acid profiling in differentiating clinical outcomes of multiple sclerosis.**
-*Neurologia i Neurochirurgia Polska*, 57(5), 414–422.
-[https://doi.org/10.5603/PJNNS.a2023.0054](https://doi.org/10.5603/PJNNS.a2023.0054)
-
-2.  **For MS vs. MG Comparison**: 
-**Comparative Analysis of Serum Amino Acid Profiles in Patients with Myasthenia Gravis and Multiple Sclerosis**
-*J. Clin. Med. 2024, 13(14), 4083;*
-[https://doi.org/10.3390/jcm13144083](https://doi.org/10.3390/jcm13144083)
+- Rzepinski, L., Koslinski, P., Kowalewski, M., Koba, M. & Maciejek, Z. "Serum amino acid profiling in differentiating clinical outcomes of multiple sclerosis." *Neurologia i Neurochirurgia Polska* 57(5):414–422, 2023. DOI: https://doi.org/10.5603/PJNNS.a2023.0054
+- Koslinski, P., Rzepinski, L., Koba, M., Maciejek, Z., Kowalewski, M. & Daghir-Wojtkowiak, E. "Comparative Analysis of Serum Amino Acid Profiles in Patients with Myasthenia Gravis and Multiple Sclerosis." *J. Clin. Med.* 13(14):4083, 2024. DOI: https://doi.org/10.3390/jcm13144083
