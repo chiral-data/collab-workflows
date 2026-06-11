@@ -1,6 +1,7 @@
 name = "Validate Inputs"
 description = "Validate ligand file format; fetch receptor and co-crystal ligand from RCSB PDB; confirm resolution < 3 A"
 
+inputs = ["*.{smiles,smi,sdf}"]
 outputs = ["receptor.pdb", "native_ligand.sdf", "validated_ligands.smiles", "validation_report.json"]
 
 [container]
