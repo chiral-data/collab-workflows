@@ -64,7 +64,7 @@ vina_screening_poses   gnina_screening_poses
 
 - **`input_files/ligands.smiles`**: SMILES file with one compound per line; identifier in the second column.
 - Receptor is fetched automatically from RCSB PDB using PDB ID `1OKL`; no manual download required.
-- Test inputs are provided at `01_validate_inputs/.chiral/test_inputs/sample_ligands.smiles`.
+- Test inputs are provided at `input_files/ligands.smiles`.
 
 ## Workflow nodes
 
@@ -103,6 +103,8 @@ vina_screening_poses   gnina_screening_poses
 
 **Outputs:**
 - `qc_validation_results.json` (CNN score + RMSD pass/fail)
+- `redocked_native.sdf`
+- `gnina_redock_log.txt`
 
 ### Node 04a: Run Vina
 
@@ -114,6 +116,8 @@ vina_screening_poses   gnina_screening_poses
 
 **Outputs:**
 - `vina_screening_poses.pdbqt`
+- `vina_screening_scores.csv`
+- `vina_docking_report.json`
 - `vina_runtime_log.txt`
 
 ### Node 04b: Run GNINA
@@ -125,7 +129,9 @@ vina_screening_poses   gnina_screening_poses
 **Scientific notes:** GNINA's CNN score captures geometric features of metal coordination pockets not encoded in additive contact terms. CNN scores > 0.5 are considered confident binders.
 
 **Outputs:**
-- `gnina_screening_poses.pdbqt`
+- `gnina_screening_poses.sdf`
+- `gnina_screening_scores.csv`
+- `gnina_docking_report.json`
 - `gnina_runtime_log.txt`
 
 ### Node 05: Generate Report
@@ -140,7 +146,7 @@ vina_screening_poses   gnina_screening_poses
 
 ## Parameters
 
-### `pdb_id`
+### `target_pdb_id`
 
 | Value / Range | Description |
 |---------------|-------------|
@@ -149,7 +155,7 @@ vina_screening_poses   gnina_screening_poses
 
 **Trade-off:** Using a non-default PDB ID requires verifying the pocket definition; automated pocket detection is only validated for `1OKL`.
 
-### `resolution_threshold`
+### `resolution_cutoff`
 
 | Value / Range | Description |
 |---------------|-------------|
@@ -183,8 +189,7 @@ Redocking QC result containing `rmsd`, `cnn_score`, and `pass` (boolean). If `pa
 
 ### Running with Docker
 
-- AutoDock Vina Dockerfile: `workflows/workflow-004/Dockerfile`
-- GNINA Dockerfile: `apps/g/gnina_2025_12_04/Dockerfile`
+- Dockerfile: `workflows/workflow-025/Dockerfile`
 
 ### Test vs production settings
 
