@@ -6,6 +6,7 @@ echo "Starting Node 04a: AutoDock Vina Screening"
 cp inputs/receptor.pdbqt . 2>/dev/null || true
 cp inputs/optimized_screening_library.pdbqt . 2>/dev/null || true
 cp inputs/pocket_config.txt . 2>/dev/null || true
+cp inputs/crystal_ligand.pdb . 2>/dev/null || true
 
 python3 run_vina.py \
     --receptor "${PARAM_RECEPTOR:-receptor.pdbqt}" \

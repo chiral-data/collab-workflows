@@ -2,7 +2,7 @@ name = "GNINA Screening"
 description = "Dock screening library with GNINA; collect CNN pose scores and CNN_VS affinity metrics"
 
 inputs = ["receptor.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.txt"]
-outputs = ["gnina_screening_poses.sdf", "gnina_screening_scores.csv", "gnina_runtime_log.txt", "gnina_docking_report.json"]
+outputs = ["gnina_screening_poses.sdf", "gnina_screening_scores.csv", "gnina_runtime_log.txt", "gnina_docking_report.json", "gnina_poses"]
 
 [container]
 image = "vina-gnina-pipeline:latest"

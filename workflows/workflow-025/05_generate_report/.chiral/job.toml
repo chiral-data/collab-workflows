@@ -1,7 +1,7 @@
 name = "Generate Report"
 description = "Merge Vina and GNINA results; compute ranking statistics; generate interactive HTML report"
 
-inputs = ["vina_screening_scores.csv", "gnina_screening_scores.csv", "vina_screening_poses.pdbqt", "gnina_screening_poses.sdf", "vina_docking_report.json", "gnina_docking_report.json"]
+inputs = ["vina_screening_scores.csv", "gnina_screening_scores.csv", "vina_screening_poses.pdbqt", "gnina_screening_poses.sdf", "vina_docking_report.json", "gnina_docking_report.json", "vina_poses", "gnina_poses", "receptor.pdbqt", "crystal_ligand.pdb"]
 outputs = ["comparative_screening_metrics.csv", "docking_performance_report.html"]
 
 [container]

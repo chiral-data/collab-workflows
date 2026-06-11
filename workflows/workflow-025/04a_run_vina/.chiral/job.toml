@@ -1,8 +1,8 @@
 name = "AutoDock Vina Screening"
 description = "Dock screening library with AutoDock Vina; collect poses and ΔG affinities"
 
-inputs = ["receptor.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.txt"]
-outputs = ["vina_screening_poses.pdbqt", "vina_screening_scores.csv", "vina_runtime_log.txt", "vina_docking_report.json"]
+inputs = ["receptor.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.txt", "crystal_ligand.pdb"]
+outputs = ["vina_screening_poses.pdbqt", "vina_screening_scores.csv", "vina_runtime_log.txt", "vina_docking_report.json", "vina_poses", "receptor.pdbqt", "crystal_ligand.pdb"]
 
 [container]
 image = "vina-gnina-pipeline:latest"
