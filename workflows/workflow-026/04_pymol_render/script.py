@@ -95,13 +95,7 @@ def main():
     plddt_per_residue = rank1["plddt_per_residue"]
     pae_matrix = rank1["pae"]
     max_pae = rank1["max_pae"]
-    chain_lengths = [len(plddt_per_residue)]  # monomer default
-
-    # For multimers, reconstruct chain lengths from per-chain pLDDT if available
-    if summary.get("mode") == "multimer":
-        # Best effort: distribute residues equally if chain info not stored
-        # (chain_lengths are already embedded in validated_sequences.fasta via node 03)
-        pass
+    chain_lengths = summary.get("chain_lengths", [len(plddt_per_residue)])
 
     # Structure render
     struct_out = "./outputs/structure_plddt.png"

@@ -112,6 +112,7 @@ def main():
         "colabfold_version": colabfold_version,
         "job_id": job_id,
         "mode": mode,
+        "chain_lengths": chain_lengths,
         "models": models,
     }
 
