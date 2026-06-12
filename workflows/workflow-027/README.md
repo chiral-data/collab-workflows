@@ -1,4 +1,4 @@
-# Workflow 024: qPCR Primer/Probe Design
+# Workflow 027: qPCR Primer/Probe Design
 
 End-to-end design and validation of qPCR primer/probe sets for any target organism.
 
@@ -119,7 +119,7 @@ Then relax the offending parameters in `global_params.json` and re-run:
 Build the Docker image:
 
 ```bash
-cd workflow-024
+cd workflow-027
 ./build.sh
 ```
 
@@ -130,19 +130,19 @@ cd workflow-024
 1. Place the reference FASTA in `input_files/` (e.g. `vly_reference.fasta`)
 2. Set `target_fasta` to the filename in `global_params.json`
 3. Optionally place `exclusion.fasta` in `input_files/`; if absent, close relatives are fetched from NCBI using `organism`
-4. Launch Silva and select `workflow-024`
+4. Launch Silva and select `workflow-027`
 
 ### With NCBI download (online mode)
 
 1. Set `organism` and `email` in `global_params.json`
 2. Optionally set `target_gene` for gene-targeted mode (e.g. `cpn60`, `rpoB`)
-3. Launch Silva and select `workflow-024`
+3. Launch Silva and select `workflow-027`
 
 ### Full offline mode
 
 1. Place `target.fasta` and `exclusion.fasta` in `input_files/` Note: the file names must be exactly target.fasta and exclusion.fasta - the pipeline looks for these specific names.
 2. Leave `organism` and `target_fasta` empty in `global_params.json`
 3. **Set `skip_blast: true` in `global_params.json`** — BLAST requires an organism name to scope its database; without one the pipeline auto-sets `skip_blast=true` and logs a warning anyway, but setting it explicitly avoids the warning and makes the intent clear.
-4. Launch Silva and select `workflow-024`
+4. Launch Silva and select `workflow-027`
 
 
