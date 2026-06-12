@@ -55,14 +55,7 @@ RUN git clone https://github.com/Exscientia/abodybuilder3.git abodybuilder3 \
     && pip install --no-cache-dir ./abodybuilder3
 
 # ---- Copy workflow node scripts ----------------------------------------
-COPY 01-input-preparation/node1.py       ./01-input-preparation/node1.py
-COPY 01-input-preparation/run.sh         ./01-input-preparation/run.sh
-COPY 02-plm-embedding/node2.py           ./02-plm-embedding/node2.py
-COPY 02-plm-embedding/run.sh             ./02-plm-embedding/run.sh
-COPY 03-structure-prediction/node3.py    ./03-structure-prediction/node3.py
-COPY 03-structure-prediction/run.sh      ./03-structure-prediction/run.sh
-COPY 04-visualization-report/node4.py    ./04-visualization-report/node4.py
-COPY 04-visualization-report/run.sh      ./04-visualization-report/run.sh
+COPY . .
 
 # Make shell scripts executable and normalize line endings
 RUN find . -name "run.sh" -exec dos2unix {} \; \
