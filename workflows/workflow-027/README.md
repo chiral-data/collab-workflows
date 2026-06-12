@@ -54,7 +54,7 @@ Place files in `input_files/` for offline or hybrid operation.
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `organism` | string | `""` | Target organism scientific name (for NCBI queries and BLAST database scoping) |
-| `email` | string | `"user@example.com"` | Email for NCBI Entrez API (required for NCBI modes) |
+| `email` | string | `""` | Email for NCBI Entrez API (required for NCBI modes) |
 | `ncbi_api_key` | string | `""` | NCBI API key (optional; raises rate limit to 10 req/sec) |
 | `target_fasta` | string | `""` | Filename of a FASTA in `input_files/` to use as the target (skips NCBI target fetch) |
 | `target_gene` | string | `""` | Gene name for gene-targeted NCBI mode (e.g. `cpn60`, `rpoB`). Ignored when `target_fasta` is set. |
@@ -74,6 +74,13 @@ Place files in `input_files/` for offline or hybrid operation.
 | `primer_max_gc` | float | `60.0` | Max primer GC% |
 | `amplicon_min` | integer | `70` | Min amplicon size (bp) |
 | `amplicon_max` | integer | `200` | Max amplicon size (bp) |
+| `probe_min_size` | integer | `22` | Min hydrolysis probe length (nt) |
+| `probe_opt_size` | integer | `25` | Optimal probe length (nt) |
+| `probe_max_size` | integer | `29` | Max probe length (nt) |
+| `probe_min_gc` | float | `40.0` | Min probe GC% |
+| `probe_max_gc` | float | `65.0` | Max probe GC% |
+| `probe_tm_delta_min` | float | `5.0` | Min probe Tm above mean primer Tm (°C) |
+| `probe_tm_delta_max` | float | `10.0` | Max probe Tm above mean primer Tm (°C) |
 | `blast_sets` | integer | `3` | Number of top primer sets to BLAST |
 | `skip_blast` | boolean | `false` | Skip BLAST validation (design-only mode) |
 
@@ -136,7 +143,7 @@ cd workflow-027
 
 ### With NCBI download (online mode)
 
-> **Note:** Replace the `email` placeholder (`user@example.com`) in `global_params.json` with your real email before running in NCBI mode. NCBI Entrez requires a valid email to identify requests.
+> **Note:** Set `email` to your real address in `global_params.json` before running in NCBI mode. NCBI Entrez requires a valid email to identify requests.
 
 1. Set `organism` and `email` in `global_params.json`
 2. Optionally set `target_gene` for gene-targeted mode (e.g. `cpn60`, `rpoB`)
@@ -146,7 +153,7 @@ cd workflow-027
 
 1. Place `target.fasta` and `exclusion.fasta` in `input_files/` Note: the file names must be exactly target.fasta and exclusion.fasta - the pipeline looks for these specific names.
 2. Leave `organism` and `target_fasta` empty in `global_params.json`
-3. **Set `skip_blast: true` in `global_params.json`** — BLAST requires an organism name to scope its database; without one the pipeline auto-sets `skip_blast=true` and logs a warning anyway, but setting it explicitly avoids the warning and makes the intent clear.
+3. **Set `skip_blast: true` in `global_params.json`** — BLAST specificity evaluation requires an organism name to identify on-target hits; without one the pipeline auto-sets `skip_blast=true` and logs a warning anyway, but setting it explicitly avoids the warning and makes the intent clear.
 4. Launch Silva and select `workflow-027`
 
 

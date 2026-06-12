@@ -20,6 +20,13 @@
     "primer_max_gc": 60.0,
     "amplicon_min": 70,
     "amplicon_max": 200,
+    "probe_min_size": 22,
+    "probe_opt_size": 25,
+    "probe_max_size": 29,
+    "probe_min_gc": 40.0,
+    "probe_max_gc": 65.0,
+    "probe_tm_delta_min": 5.0,
+    "probe_tm_delta_max": 10.0,
     "blast_sets": 3,
     "skip_blast": false
 }

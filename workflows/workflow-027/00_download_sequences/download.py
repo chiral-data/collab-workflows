@@ -32,7 +32,7 @@ def _load_params():
         "organism":          os.environ.get("PARAM_ORGANISM") or      gp.get("organism", ""),
         "email":             os.environ.get("PARAM_EMAIL",             gp.get("email", "user@example.com")),
         "ncbi_api_key":      os.environ.get("PARAM_NCBI_API_KEY",      gp.get("ncbi_api_key", "")),
-        "target_fasta":      os.environ.get("PARAM_TARGET_FASTA",      gp.get("target_fasta", "")),
+        "target_fasta":      os.environ.get("PARAM_TARGET_FASTA")   or gp.get("target_fasta", ""),
         "target_gene":       os.environ.get("PARAM_TARGET_GENE",       gp.get("target_gene", "")),
         "max_target_seqs":   int(os.environ.get("PARAM_MAX_TARGET_SEQS",  str(gp.get("max_target_seqs", 3)))),
         "max_relative_seqs": int(os.environ.get("PARAM_MAX_RELATIVE_SEQS", str(gp.get("max_relative_seqs", 5)))),

@@ -58,3 +58,38 @@ hint = "Minimum amplicon size (bp)"
 type = "integer"
 default = 200
 hint = "Maximum amplicon size (bp)"
+
+[params.probe_min_size]
+type = "integer"
+default = 22
+hint = "Minimum hydrolysis probe length (nt)"
+
+[params.probe_opt_size]
+type = "integer"
+default = 25
+hint = "Optimal hydrolysis probe length (nt)"
+
+[params.probe_max_size]
+type = "integer"
+default = 29
+hint = "Maximum hydrolysis probe length (nt)"
+
+[params.probe_min_gc]
+type = "float"
+default = 40.0
+hint = "Minimum probe GC content (%)"
+
+[params.probe_max_gc]
+type = "float"
+default = 65.0
+hint = "Maximum probe GC content (%)"
+
+[params.probe_tm_delta_min]
+type = "float"
+default = 5.0
+hint = "Minimum probe Tm above mean primer Tm (°C). TaqMan probes should be 5–10°C higher than primers."
+
+[params.probe_tm_delta_max]
+type = "float"
+default = 10.0
+hint = "Maximum probe Tm above mean primer Tm (°C)"

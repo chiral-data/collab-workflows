@@ -38,16 +38,12 @@ def _load_params():
 
 # ── BLAST db builder ──────────────────────────────────────────────────────────
 
-def _build_blast_db(target_fasta, exclusion_fasta, organism="unknown"):
-    organism_slug = "".join(c if c.isalnum() else "_" for c in organism).lower().strip("_")
-    db_dir = os.path.join("/tmp/blast_db", organism_slug)
-    os.makedirs(db_dir, exist_ok=True)
+def _build_blast_db(target_fasta, exclusion_fasta):
+    # Use a fresh temp directory each run — no cross-run caching that could
+    # silently reuse a stale DB when the organism or input files change.
+    db_dir = tempfile.mkdtemp(prefix="blast_db_")
     combined_fasta = os.path.join(db_dir, "combined.fasta")
     db_prefix      = os.path.join(db_dir, "qpcr_db")
-
-    if os.path.exists(db_prefix + ".nsi") or os.path.exists(db_prefix + ".nin"):
-        log.info("Local BLAST db already exists: %s", db_prefix)
-        return db_prefix
 
     with open(combined_fasta, "w") as out:
         for fa in [target_fasta, exclusion_fasta]:
@@ -534,13 +530,13 @@ def main():
     organism, blast_n, skip_blast = _load_params()
     os.makedirs("./outputs", exist_ok=True)
 
-    # Guard: BLAST requires an organism for database scoping; without one it
-    # would produce a meaningless organism-agnostic db.  Auto-skip instead of
-    # silently doing the wrong thing.
+    # Guard: specificity evaluation compares hit titles against the organism name;
+    # an empty organism would mark every hit as on-target, silently hiding off-target
+    # amplification.  Auto-skip instead of producing misleading results.
     if not skip_blast and (not organism.strip() or organism.strip() in ("unknown",)):
         log.warning(
-            "PARAM_ORGANISM is empty or 'unknown' — BLAST validation requires an organism "
-            "for database scoping.  Automatically setting skip_blast=true.  "
+            "PARAM_ORGANISM is empty or 'unknown' — BLAST specificity evaluation requires "
+            "an organism name to identify on-target hits.  Automatically setting skip_blast=true.  "
             "Set PARAM_ORGANISM or add 'organism' to global_params.json to enable BLAST, "
             "or set skip_blast: true explicitly to suppress this warning."
         )
@@ -561,7 +557,7 @@ def main():
     log.info("Loaded %d primer set(s) for organism: %s", len(primer_sets), organism)
 
     if not skip_blast:
-        db_path = _build_blast_db("./inputs/target.fasta", "./inputs/exclusion.fasta", organism)
+        db_path = _build_blast_db("./inputs/target.fasta", "./inputs/exclusion.fasta")
         if db_path:
             log.info("Running BLAST validation on top %d set(s)...", blast_n)
             primer_sets = _validate_primer_sets(primer_sets, organism, db_path, blast_n)

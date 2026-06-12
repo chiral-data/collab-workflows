@@ -8,15 +8,20 @@ image = "qpcr-pipeline:latest"
 [scripts]
 run = "run.sh"
 
+[params.target_fasta]
+type = "string"
+default = ""
+hint = "Filename of a FASTA in input_files/ to use as the target sequence (skips NCBI target fetch). E.g. 'vly_reference.fasta'."
+
 [params.organism]
 type = "string"
 default = ""
-hint = "Target organism scientific name (e.g. 'Cyclospora cayetanensis')"
+hint = "Target organism scientific name (e.g. 'Gardnerella vaginalis'). Required for NCBI download mode and BLAST specificity evaluation."
 
 [params.email]
 type = "string"
-default = "user@example.com"
-hint = "Email address for NCBI Entrez (required by NCBI policy)"
+default = ""
+hint = "Email address for NCBI Entrez (required by NCBI policy when fetching sequences online)"
 
 [params.ncbi_api_key]
 type = "string"
