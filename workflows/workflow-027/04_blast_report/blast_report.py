@@ -12,6 +12,7 @@ Set PARAM_SKIP_BLAST=true to skip BLAST and report Primer3-only results.
 import json
 import logging
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -38,12 +39,16 @@ def _load_params():
 
 # ── BLAST db builder ──────────────────────────────────────────────────────────
 
-def _build_blast_db(target_fasta, exclusion_fasta):
-    # Use a fresh temp directory each run — no cross-run caching that could
-    # silently reuse a stale DB when the organism or input files change.
-    db_dir = tempfile.mkdtemp(prefix="blast_db_")
+def _build_blast_db(target_fasta, exclusion_fasta, organism="unknown"):
+    slug = re.sub(r"[^\w]+", "_", organism.lower()).strip("_") or "unknown"
+    db_dir = os.path.join("/tmp", "blast_db", slug)
+    os.makedirs(db_dir, exist_ok=True)
     combined_fasta = os.path.join(db_dir, "combined.fasta")
     db_prefix      = os.path.join(db_dir, "qpcr_db")
+
+    if os.path.exists(db_prefix + ".nhr"):
+        log.info("Reusing cached BLAST db for organism '%s': %s", organism, db_prefix)
+        return db_prefix
 
     with open(combined_fasta, "w") as out:
         for fa in [target_fasta, exclusion_fasta]:
@@ -557,7 +562,7 @@ def main():
     log.info("Loaded %d primer set(s) for organism: %s", len(primer_sets), organism)
 
     if not skip_blast:
-        db_path = _build_blast_db("./inputs/target.fasta", "./inputs/exclusion.fasta")
+        db_path = _build_blast_db("./inputs/target.fasta", "./inputs/exclusion.fasta", organism)
         if db_path:
             log.info("Running BLAST validation on top %d set(s)...", blast_n)
             primer_sets = _validate_primer_sets(primer_sets, organism, db_path, blast_n)
