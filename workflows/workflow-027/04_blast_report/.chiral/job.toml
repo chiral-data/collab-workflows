@@ -1,7 +1,7 @@
 name = "BLAST Validation and Report"
 description = "Builds a local BLAST+ database from target and exclusion sequences, validates top primer sets for specificity, and generates JSON, TSV, and human-readable TXT reports."
 inputs = ["primer_sets.json", "target.fasta", "exclusion.fasta", "global_params.json"]
-outputs = ["results.json", "results.tsv", "report.txt"]
+outputs = ["results.json", "results.tsv", "report.txt", "report.html"]
 
 [container]
 image = "qpcr-pipeline:latest"

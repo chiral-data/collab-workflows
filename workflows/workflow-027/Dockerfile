@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11-slim-bookworm
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ncbi-blast+=2.12.0+ds-3+b1 \
