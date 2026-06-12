@@ -1,190 +1,149 @@
-# Workflow 2: 3D Structure Prediction and Analysis
+---
+doc_id: structure-prediction
+domain: structure-prediction
+doc_type: workflow
+version: "0.1.0"
+deprecated: true
+description: >
+  Legacy Boltz-2 structure prediction workflow with two case studies
+  (Spike RBD and FMC63 antibody). Superseded by workflow-012.
+tags: [structure-prediction, boltz-2, legacy, spike-rbd, antibody]
+---
+
+# Structure Prediction: Boltz-2 Case Studies (Legacy)
+
+Legacy standalone workflow demonstrating Boltz-2 protein structure prediction on two Nobel Prize-connected case studies: the SARS-CoV-2 Spike RBD and the FMC63 bispecific antibody construct. This workflow has been **superseded by workflow-012**, which provides proper Silva orchestration, input validation, and automated dashboard generation.
 
 ## Overview
-This workflow demonstrates state-of-the-art AI-based structure prediction using Boltz-2 for Nobel Prize-winning therapeutic breakthroughs that transformed modern medicine.
 
-## Examples
+This workflow runs Boltz-2 structure prediction via manual bash scripts and JSON configuration files, predating the Chiral workflow engine. It contains two independent prediction cases with pre-configured parameters and actual test results. While functional, it lacks the `.chiral/workflow.toml` orchestration, input validation, and automated reporting of workflow-012 (Wohlwend et al., 2024).
 
-### Example 1: COVID-19 mRNA Vaccine Components - Pseudouridine-Modified RNA
-**Nobel Prize Connection (2023):**
-- Katalin Karikó and Drew Weissman: nucleoside base modifications for mRNA vaccines
-- **Key Discovery**: Pseudouridine (Ψ) and N1-methylpseudouridine (m1Ψ) prevent immune activation
-- Foundation technology for COVID-19 vaccines that saved millions of lives
+## When to use this workflow
 
-**Scientific Context:**
-- Modified mRNA sequences with pseudouridine substitutions
-- Spike protein RBD sequences with enhanced stability
-- Demonstrates RNA structure prediction with chemical modifications
+**Use workflow-012 instead for all new structure predictions.** This legacy workflow is preserved for reference and reproducibility of the original case study results. Use it only if you need to reproduce the specific Spike RBD or FMC63 predictions with the original parameters and container image.
 
-**Available Sequences:**
-- Spike protein RBD sequences from published research
-- Well-documented pseudouridine modification patterns
-- Structure-function relationships of modified nucleotides
+Do not use this workflow for new predictions — use workflow-012 (Boltz-2 with Silva integration) or workflow-018 (Boltz-2 vs Chai-1 comparison).
 
-### Example 2: FMC63/OKT3 Bispecific T-Cell Engager - Anti-CD19/CD3 Construct
-**Nobel Prize Connection (2018):**
-- James Allison & Tasuku Honjo: cancer immunotherapy via checkpoint inhibition
-- **Key Discovery**: CTLA-4 and PD-1 pathways for unleashing immune system against cancer
-- Led to revolution in cancer treatment including T-cell engager therapies
+## Architecture and data flow
 
-**Scientific Context:**
-- Bispecific scFv construct targeting CD19 (B-cells) and CD3 (T-cells)
-- Based on FMC63 (anti-CD19) and OKT3-derived (anti-CD3) sequences
-- Foundation technology for CAR-T therapies and bispecific antibodies
-
-**Available Sequences:**
-- **FMC63 anti-CD19 scFv**: GenBank ID HM852952.1 (FDA-approved in 4 CAR-T therapies)
-- **OKT3-derived anti-CD3 scFv**: Published sequences available
-- **Linker design**: Flexible glycine-serine connectors
-
-## Pipeline Structure
-```
-Nobel Prize Sequences → Boltz-2 Prediction → Structure Analysis → Therapeutic Insights
+```text
+sequences/*.fasta ──> create_boltz_inputs.py ──> inputs/*.fasta ──> job_script.sh ──> results/
+                         (extract RBD /                                  |
+                          format headers)                          *.pdb, *.json, *.npz
 ```
 
-## Directory Structure
-```
-2_structure_prediction/
-├── 1_mRNA/
-│   ├── sequences/
-│   │   └── P0DTC2.fasta           # Downloaded spike protein  
-│   ├── inputs/
-│   │   ├── spike_rbd.fasta        # Boltz-2 input file
-│   │   ├── job_config.json        # Optimized parameters
-│   │   └── job_script.sh          # Executable job script
-│   └── results/                   # Prediction outputs
-├── 2_antibody/
-│   ├── sequences/
-│   │   └── FMC63-28Z.fasta        # Downloaded FMC63 protein
-│   ├── inputs/
-│   │   ├── fmc63.fasta            # Boltz-2 input file  
-│   │   ├── job_config.json        # Optimized parameters
-│   │   └── job_script.sh          # Executable job script
-│   └── results/                   # Prediction outputs
-├── create_boltz_inputs.py         # Conversion script
-└── README.md
-```
+Each case study (1_mRNA, 2_antibody) is an independent prediction run with its own configuration. There is no automated orchestration — scripts are run manually.
 
-## Implementation Status ✅
-- [x] Downloaded Nobel Prize-related sequences
-- [x] Created Boltz-2 format FASTA files  
-- [x] Generated optimized job configurations
-- [x] Set up executable job scripts
-- [x] Ready for container testing
+## Input requirements
 
-## Research Significance
-These examples showcase:
-1. **Two Nobel Prizes** (2018 & 2023) that revolutionized medicine
-2. **Accessible sequences** from GenBank and published research
-3. **Clinical impact** (COVID-19 vaccines, CAR-T therapies)
-4. **Structure-function insights** (RNA modifications, antibody engineering)
-5. **Therapeutic applications** actively saving lives worldwide
+- **Format:** FASTA files with Boltz-2 format headers (`>chain_id|protein|`).
+- **Preprocessing:** The `create_boltz_inputs.py` script converts raw UniProt FASTA to Boltz-2 format, including RBD region extraction (residues 330–524) for the Spike protein.
+- **Placement:** Input FASTA files go in `<case>/inputs/`.
 
-## Sequence Sources & Download Links
+## Case studies
 
-### Example 1: COVID-19 mRNA Components
+### Case 1: SARS-CoV-2 Spike RBD (1_mRNA)
 
-**Recommended Choice: UniProt P0DTC2**
-- **Primary**: [UniProt P0DTC2](https://www.uniprot.org/uniprot/P0DTC2) - SARS-CoV-2 Spike protein (Wuhan reference)
-  - Complete spike protein sequence in FASTA format
-  - RBD region: amino acids 331-524
-  - ✅ **Best option**: Clean sequence, well-annotated
+**Goal:** Predict the 3D structure of the Spike protein Receptor-Binding Domain.
 
-**Alternative Options:**
-- [NCBI GenBank NC_045512.2](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2) - Complete genome
-- [PDB 6M0J](https://www.rcsb.org/structure/6M0J) - RBD-ACE2 complex structure
-- [PDB 7C2L](https://www.rcsb.org/structure/7C2L) - RBD structure
+**Process:** Extracts the RBD region (194 residues, positions 331–524) from the full SARS-CoV-2 Spike protein (UniProt P0DTC2, 1273 residues), converts to Boltz-2 format, and runs prediction with 10 diffusion samples and 5 recycling steps.
 
-### Example 2: Bispecific T-Cell Engager
+**Scientific notes:** The Spike RBD is the key domain that binds human ACE2 receptor, making it a primary target for COVID-19 vaccines and therapeutics. The 2023 Nobel Prize in Physiology or Medicine was awarded to Karikó and Weissman for nucleoside base modifications that enabled effective mRNA vaccines — including COVID-19 vaccines targeting this domain.
 
-**Recommended Choice: FMC63 + UCHT1**
-- **FMC63 Anti-CD19**: [GenBank HM852952.1](https://www.ncbi.nlm.nih.gov/nuccore/HM852952.1)
-  - FDA-approved in 4 CAR-T therapies (Kymriah, Yescarta, etc.)
-  - Whitlow linker region: AA 130-148
-  - ✅ **Best option**: Clinically validated, complete sequence
+**Parameters:**
+- `recycling_steps`: 5
+- `diffusion_samples`: 10
+- `sampling_steps`: 200
+- `step_scale`: 1.638
+- `use_msa_server`: true
 
-- **UCHT1 Anti-CD3**: More reliable than OKT3 variants
-  - Better for T-cell engager applications
-  - Published sequences in CAR-T literature
-  - ✅ **Best option**: Superior binding characteristics
+**Test results:** 10 PDB models generated in ~4 minutes on GPU (50 output files total: 10 PDB + 10 confidence JSON + 30 NPZ matrices).
 
-**Alternative Options:**
-- OKT3-derived anti-CD3 sequences (older, more limitations)
-- Other anti-CD19 clones (less clinically validated)
+### Case 2: FMC63 Bispecific Antibody (2_antibody)
 
-### RNA Modifications
-- **Pseudouridine (Ψ)**: PubChem database
-- **N1-methylpseudouridine (m1Ψ)**: Chemical structure references
-- **Modification patterns**: Well-documented in Karikó/Weissman publications
+**Goal:** Predict the 3D structure of the FMC63 CAR-T antibody construct.
 
-## Parameter Optimization
+**Process:** Takes the FMC63-28Z sequence (GenBank ADM64594.1, 489 residues from the full 767 aa construct), converts to Boltz-2 format, and runs prediction with 15 diffusion samples and 7 recycling steps (more than the Spike RBD due to larger size and multi-domain architecture).
 
-### Spike RBD (194 amino acids)
-- `recycling_steps`: 5 (moderate complexity)
-- `diffusion_samples`: 10 (good sampling coverage)  
-- `use_msa_server`: true (leverage evolutionary information)
+**Scientific notes:** FMC63 is a single-chain variable fragment (scFv) that targets CD19, used in FDA-approved CAR-T cell therapies (Kymriah, Yescarta) for B-cell malignancies. The 2018 Nobel Prize in Physiology or Medicine recognized Allison and Honjo for immune checkpoint inhibition, a related breakthrough in cancer immunotherapy.
 
-### FMC63 Antibody (489 amino acids)
-- `recycling_steps`: 7 (higher for multi-domain structure)
-- `diffusion_samples`: 15 (comprehensive sampling for complex antibody)
-- `use_msa_server`: true (critical for antibody folding patterns)
+**Parameters:**
+- `recycling_steps`: 7
+- `diffusion_samples`: 15
+- `sampling_steps`: 200
+- `step_scale`: 1.638
+- `use_msa_server`: true
 
-**Rationale:** Larger, more complex proteins require more recycling steps and diffusion samples for accurate structure prediction.
+**Test results:** 15 PDB models generated (60 output files total: 15 PDB + 15 confidence JSON + 45 NPZ matrices).
 
-## Next Steps
-1. **Container Testing** → Test job scripts with `boltz_potter_nvidia_2` 
-2. **Structure Analysis** → Compare predictions with known experimental structures
-3. **Validation** → Assess prediction quality and biological relevance
-4. **Documentation** → Generate analysis reports for Nobel Prize connections
+## Parameters
 
-## Container Information
-**Container Image**: `ghcr.io/chiral-data/boltz_dok_nvidia_2`
-- Boltz-2 AI structure prediction model
-- NVIDIA GPU acceleration support
-- Includes MSA server connectivity
+### recycling_steps
 
-## Quick Start
+- **Type:** integer
+- **Default:** 5 (Spike RBD) / 7 (FMC63)
+- **Description:** Refinement iterations through the model trunk.
+- **Guidance:** Higher values for larger, multi-domain proteins. 5 is sufficient for single-domain proteins under 200 residues.
+
+### diffusion_samples
+
+- **Type:** integer
+- **Default:** 10 (Spike RBD) / 15 (FMC63)
+- **Description:** Number of independent structural models to generate.
+- **Guidance:** More samples for larger or flexible targets. 10 is a good starting point.
+
+### sampling_steps
+
+- **Type:** integer
+- **Default:** 200
+- **Description:** Number of diffusion denoising steps per sample.
+- **Guidance:** 200 is the standard setting. Reducing to 100 approximately halves runtime with some quality loss.
+
+### step_scale
+
+- **Type:** float
+- **Default:** 1.638
+- **Description:** Temperature-like parameter controlling sampling diversity.
+- **Guidance:** Default value from Boltz-1. Lower values produce more diverse conformations; higher values produce more conservative predictions. Recommended range: 1.0–2.0.
+
+## Outputs and interpretation
+
+### PDB models
+
+Predicted 3D structures in PDB format, named `<name>_model_N.pdb`. Multiple models from the same prediction explore different conformational samples. The model with the highest confidence score is typically the best prediction.
+
+### Confidence metrics
+
+Each model has a corresponding `confidence_<name>.json` with:
+- **confidence_score:** 0.8 × pLDDT + 0.2 × iPTM (range 0–1, higher is better)
+- **pTM:** Overall fold quality (> 0.8 = high confidence)
+- **iPTM:** Interface quality for complexes (> 0.7 = reliable interface)
+- **complex_plddt:** Average per-residue confidence (> 0.7 = confident)
+- **complex_pde:** Predicted distance error in Å (lower is better)
+
+### Quality matrices (NPZ)
+
+- **pae_*.npz:** Predicted Aligned Error matrix — low values indicate confident relative positioning between residue pairs
+- **pde_*.npz:** Predicted Distance Error matrix
+- **plddt_*.npz:** Per-residue pLDDT values
+
+## Quick start
+
+### Running with Docker
+
 ```bash
-cd /home/roki/container-images-for-potter/sept_workflows/2_structure_prediction
-
-# Test Spike RBD prediction
-cd 1_mRNA/inputs && ./job_script.sh
-
-# Test FMC63 prediction  
-cd ../../2_antibody/inputs && ./job_script.sh
+docker run --gpus all -v $(pwd)/1_mRNA:/workspace ghcr.io/chiral-data/boltz_dok_nvidia_2 bash inputs/job_script.sh
 ```
 
-## Container Usage
-```bash
-# Pull container (if needed)
-singularity pull ghcr.io/chiral-data/boltz_dok_nvidia_2
+**Note:** For new predictions, use workflow-012 with Silva instead.
 
-# Run prediction manually
-singularity exec --nv ghcr.io/chiral-data/boltz_dok_nvidia_2 \
-    python3 -m boltz.main predict spike_rbd.fasta \
-    --use_msa_server --output_format pdb
-```
+### Container
 
-## Test Results
+| Image | Description |
+|-------|-------------|
+| `ghcr.io/chiral-data/boltz_dok_nvidia_2` | Legacy container with Boltz-2 and GPU support |
 
-### Test 1: Spike RBD Structure Prediction (2025-09-03)
+## References
 
-**Command Used:**
-```bash
-cd /home/ubuntu/chiral/container-images-for-potter/sept_workflows/2_structure_prediction/1_mRNA/inputs
-docker run --rm --gpus all -v $(pwd):/workspace -w /workspace ghcr.io/chiral-data/boltz_dok_nvidia_2:latest ./job_script.sh
-```
-
-**Issues Found & Fixes:**
-1. **FASTA Header Format**: Initial header `>spike_rbd|protein` caused KeyError. Fixed by changing to `>A|protein|` (Boltz requires single letter chain ID)
-2. **CCD Data Re-download**: Container downloads CCD data on each run despite being included in build. This is because `/opt/boltz_cache` doesn't persist between container runs.
-
-**Results:**
-- ✅ Successfully generated 10 structure models (model_0 through model_9)
-- ✅ Generated confidence scores (JSON files)
-- ✅ Generated PAE (Predicted Aligned Error) matrices
-- ✅ Generated PDE (Predicted Distance Error) matrices
-- ✅ Generated pLDDT (predicted Local Distance Difference Test) scores
-- **Total Runtime**: ~4 minutes (including CCD download, MSA generation, and structure prediction)
-- **GPU Utilization**: Successfully used CUDA GPU
-- **Output Files**: 50 files total in `outputs/` directory
+- Wohlwend J, Corso G, Passaro S et al. "Boltz-1: Democratizing Biomolecular Interaction Modeling." *bioRxiv*, 2024. DOI: https://doi.org/10.1101/2024.11.19.624167
+- [Boltz source code](https://github.com/jwohlwend/boltz)
