@@ -21,11 +21,8 @@ results/node1/<pair_id>.pt
 from __future__ import annotations
 
 import argparse
-import json
-import re
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import List, Optional, Tuple
 
 import torch
 

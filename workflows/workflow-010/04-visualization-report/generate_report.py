@@ -43,7 +43,7 @@ def read_text(path: Path) -> str:
 def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
     """Return the HTML block for one structure card."""
     # Escape backticks so the PDB can be embedded as a JS template literal
-    pdb_js = pdb_text.replace("`", "\\`").replace("\\", "\\\\").replace("${", "\\${")
+    pdb_js = pdb_text.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
     preview = escape_html("\n".join(pdb_text.splitlines()[:40]))
 
     return f"""
