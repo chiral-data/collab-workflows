@@ -1,0 +1,259 @@
+======================================================================
+  qPCR Primer/Probe Pipeline Report
+  Target: Cyclospora cayetanensis
+  Generated: 2026-05-29 06:22 UTC
+======================================================================
+
+Total primer sets designed : 15
+Passed ALL constraints     : 3
+BLAST-validated            : 3
+
+──────────────────────────────────────────────────────────────────────
+  Rank #1  (P3 pair #0)  [PASS]  ROI NC_038230.1:600-1100
+  ROI uniqueness: 1.000
+
+  FWD  5'-CCCCGTCAATTCCTTTGAGTTT-3'
+       Tm=59.1°C  GC=45.5%  len=22nt
+  REV  5'-TTACTGGAGCAGCACTGACG-3'
+       Tm=60.0°C  GC=55.0%  len=20nt
+  PRB  5'-ACTCTTGCGAGCGTACTACTCAGGCGGG-3'
+       Tm=65.0°C  GC=60.7%  len=28nt
+       ΔTm vs primers = +5.5°C
+  Amplicon: 193 nt  |  P3 penalty: 2.9292
+  BLAST: SPECIFIC
+    FWD  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=3.6e-08
+    FWD  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=8.2e+00
+    FWD  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=8.2e+00
+    REV  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=4.8e-07
+    REV  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=4.4e-01
+    REV  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=4.4e-01
+    PRB  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=1.3e-11
+    PRB  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=1.1e+01
+    PRB  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=1.1e+01
+
+──────────────────────────────────────────────────────────────────────
+  Rank #2  (P3 pair #1)  [PASS]  ROI NC_038230.1:600-1100
+  ROI uniqueness: 1.000
+
+  FWD  5'-CCCCGTCAATTCCTTTGAGTTT-3'
+       Tm=59.1°C  GC=45.5%  len=22nt
+  REV  5'-GCACTGACGCTGAGATACGA-3'
+       Tm=59.9°C  GC=55.0%  len=20nt
+  PRB  5'-ACTCTTGCGAGCGTACTACTCAGGCGGG-3'
+       Tm=65.0°C  GC=60.7%  len=28nt
+       ΔTm vs primers = +5.5°C
+  Amplicon: 182 nt  |  P3 penalty: 2.9898
+  BLAST: SPECIFIC
+    FWD  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=3.6e-08
+    FWD  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=8.2e+00
+    FWD  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=8.2e+00
+    REV  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=4.8e-07
+    REV  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=6.9e+00
+    REV  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=6.9e+00
+    PRB  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=1.3e-11
+    PRB  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=1.1e+01
+    PRB  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=1.1e+01
+
+──────────────────────────────────────────────────────────────────────
+  Rank #3  (P3 pair #2)  [PASS]  ROI NC_038230.1:600-1100
+  ROI uniqueness: 1.000
+
+  FWD  5'-CCCCGTCAATTCCTTTGAGTTT-3'
+       Tm=59.1°C  GC=45.5%  len=22nt
+  REV  5'-AGCACTGACGCTGAGATACG-3'
+       Tm=59.9°C  GC=55.0%  len=20nt
+  PRB  5'-ACTCTTGCGAGCGTACTACTCAGGCGGG-3'
+       Tm=65.0°C  GC=60.7%  len=28nt
+       ΔTm vs primers = +5.5°C
+  Amplicon: 183 nt  |  P3 penalty: 2.9906
+  BLAST: SPECIFIC
+    FWD  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=3.6e-08
+    FWD  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=8.2e+00
+    FWD  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=8.2e+00
+    REV  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=4.8e-07
+    REV  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=6.9e+00
+    REV  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=6.9e+00
+    PRB  [+] NC_038230.1 Cyclospora cayetanensis mitochondrion, comp id=100.0% e=1.3e-11
+    PRB  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=1.1e+01
+    PRB  [+] PV389899.1 Cyclospora papionis isolate Corona N9 mitoch id=100.0% e=1.1e+01
+
+──────────────────────────────────────────────────────────────────────
+  Rank #4  (P3 pair #4)  [PASS]  ROI NC_038230.1:600-1100
+  ROI uniqueness: 1.000
+
+  FWD  5'-CCCCGTCAATTCCTTTGAGTTTC-3'
+       Tm=60.1°C  GC=47.8%  len=23nt
+  REV  5'-GCACTGACGCTGAGATACGA-3'
+       Tm=59.9°C  GC=55.0%  len=20nt
+  PRB  5'-ACTCTTGCGAGCGTACTACTCAGGCGGG-3'
+       Tm=65.0°C  GC=60.7%  len=28nt
+       ΔTm vs primers = +5.1°C
+  Amplicon: 182 nt  |  P3 penalty: 3.1564
+
+──────────────────────────────────────────────────────────────────────
+  Rank #5  (P3 pair #0)  [FAIL]  ROI NC_038230.1:0-500
+  ROI uniqueness: 1.000
+
+  FWD  5'-TTTATCCAGCCGCACCTTCC-3'
+       Tm=60.4°C  GC=55.0%  len=20nt
+  REV  5'-TAATCGCCGGTCAGCCTTAC-3'
+       Tm=59.9°C  GC=55.0%  len=20nt
+  PRB  5'-TCCCATGGTGTGACGGGCGGTGTGT-3'
+       Tm=66.0°C  GC=64.0%  len=25nt
+       ΔTm vs primers = +5.8°C
+  Amplicon: 174 nt  |  P3 penalty: 0.4974
+  Constraint issues:
+    • PRB self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #6  (P3 pair #1)  [FAIL]  ROI NC_038230.1:0-500
+  ROI uniqueness: 1.000
+
+  FWD  5'-TTTATCCAGCCGCACCTTCC-3'
+       Tm=60.4°C  GC=55.0%  len=20nt
+  REV  5'-GTAATCGCCGGTCAGCCTTA-3'
+       Tm=59.9°C  GC=55.0%  len=20nt
+  PRB  5'-TCCCATGGTGTGACGGGCGGTGTGT-3'
+       Tm=66.0°C  GC=64.0%  len=25nt
+       ΔTm vs primers = +5.8°C
+  Amplicon: 175 nt  |  P3 penalty: 0.4974
+  Constraint issues:
+    • PRB self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #7  (P3 pair #2)  [FAIL]  ROI NC_038230.1:0-500
+  ROI uniqueness: 1.000
+
+  FWD  5'-AATTCCCATGGTGTGACGGG-3'
+       Tm=60.3°C  GC=55.0%  len=20nt
+  REV  5'-ATCGCTAGTAATCGCCGGTC-3'
+       Tm=59.8°C  GC=55.0%  len=20nt
+  PRB  5'-ACAAGGCCCGATGACTTATTCACCGCCGT-3'
+       Tm=65.3°C  GC=55.2%  len=29nt
+       ΔTm vs primers = +5.2°C
+  Amplicon: 83 nt  |  P3 penalty: 0.5638
+  Constraint issues:
+    • FWD self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #8  (P3 pair #0)  [FAIL]  ROI NC_038230.1:300-800
+  ROI uniqueness: 1.000
+
+  FWD  5'-AATTCCCATGGTGTGACGGG-3'
+       Tm=60.3°C  GC=55.0%  len=20nt
+  REV  5'-ATCGCTAGTAATCGCCGGTC-3'
+       Tm=59.8°C  GC=55.0%  len=20nt
+  PRB  5'-ACAAGGCCCGATGACTTATTCACCGCCGT-3'
+       Tm=65.3°C  GC=55.2%  len=29nt
+       ΔTm vs primers = +5.2°C
+  Amplicon: 83 nt  |  P3 penalty: 0.5638
+  Constraint issues:
+    • FWD self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #9  (P3 pair #3)  [FAIL]  ROI NC_038230.1:0-500
+  ROI uniqueness: 1.000
+
+  FWD  5'-TTTATCCAGCCGCACCTTCC-3'
+       Tm=60.4°C  GC=55.0%  len=20nt
+  REV  5'-ATCGCTAGTAATCGCCGGTC-3'
+       Tm=59.8°C  GC=55.0%  len=20nt
+  PRB  5'-TCCCATGGTGTGACGGGCGGTGTGT-3'
+       Tm=66.0°C  GC=64.0%  len=25nt
+       ΔTm vs primers = +5.9°C
+  Amplicon: 182 nt  |  P3 penalty: 0.6342
+  Constraint issues:
+    • PRB self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #10  (P3 pair #4)  [FAIL]  ROI NC_038230.1:0-500
+  ROI uniqueness: 1.000
+
+  FWD  5'-CGCACCTTCCAGTACAGCTA-3'
+       Tm=59.5°C  GC=55.0%  len=20nt
+  REV  5'-TAATCGCCGGTCAGCCTTAC-3'
+       Tm=59.9°C  GC=55.0%  len=20nt
+  PRB  5'-TCCCATGGTGTGACGGGCGGTGTGT-3'
+       Tm=66.0°C  GC=64.0%  len=25nt
+       ΔTm vs primers = +6.3°C
+  Amplicon: 164 nt  |  P3 penalty: 0.6343
+  Constraint issues:
+    • PRB self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #11  (P3 pair #1)  [FAIL]  ROI NC_038230.1:300-800
+  ROI uniqueness: 1.000
+
+  FWD  5'-AATTCCCATGGTGTGACGGG-3'
+       Tm=60.3°C  GC=55.0%  len=20nt
+  REV  5'-CTAGTAATCGCCGGTCAGCC-3'
+       Tm=60.3°C  GC=60.0%  len=20nt
+  PRB  5'-ACAAGGCCCGATGACTTATTCACCGCCGT-3'
+       Tm=65.3°C  GC=55.2%  len=29nt
+       ΔTm vs primers = +5.0°C
+  Amplicon: 79 nt  |  P3 penalty: 0.6421
+  Constraint issues:
+    • Probe Tm delta 5.0°C outside [5.0,10.0]
+    • FWD self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #12  (P3 pair #2)  [FAIL]  ROI NC_038230.1:300-800
+  ROI uniqueness: 1.000
+
+  FWD  5'-AATTCCCATGGTGTGACGGG-3'
+       Tm=60.3°C  GC=55.0%  len=20nt
+  REV  5'-CGCTAGTAATCGCCGGTCAG-3'
+       Tm=60.7°C  GC=60.0%  len=20nt
+  PRB  5'-ACAAGGCCCGATGACTTATTCACCGCCGT-3'
+       Tm=65.3°C  GC=55.2%  len=29nt
+       ΔTm vs primers = +4.8°C
+  Amplicon: 81 nt  |  P3 penalty: 0.9840
+  Constraint issues:
+    • Probe Tm delta 4.8°C outside [5.0,10.0]
+    • FWD self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #13  (P3 pair #3)  [FAIL]  ROI NC_038230.1:300-800
+  ROI uniqueness: 1.000
+
+  FWD  5'-AATTCCCATGGTGTGACGGG-3'
+       Tm=60.3°C  GC=55.0%  len=20nt
+  REV  5'-AATCGCTAGTAATCGCCGGT-3'
+       Tm=59.3°C  GC=50.0%  len=20nt
+  PRB  5'-ACAAGGCCCGATGACTTATTCACCGCCGT-3'
+       Tm=65.3°C  GC=55.2%  len=29nt
+       ΔTm vs primers = +5.5°C
+  Amplicon: 84 nt  |  P3 penalty: 0.9957
+  Constraint issues:
+    • FWD self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #14  (P3 pair #4)  [FAIL]  ROI NC_038230.1:300-800
+  ROI uniqueness: 1.000
+
+  FWD  5'-AATTCCCATGGTGTGACGGG-3'
+       Tm=60.3°C  GC=55.0%  len=20nt
+  REV  5'-TAGTAATCGCCGGTCAGCCT-3'
+       Tm=60.8°C  GC=55.0%  len=20nt
+  PRB  5'-ACAAGGCCCGATGACTTATTCACCGCCGT-3'
+       Tm=65.3°C  GC=55.2%  len=29nt
+       ΔTm vs primers = +4.8°C
+  Amplicon: 78 nt  |  P3 penalty: 1.0776
+  Constraint issues:
+    • Probe Tm delta 4.8°C outside [5.0,10.0]
+    • FWD self-dimer ΔG=-6.1 kcal/mol
+
+──────────────────────────────────────────────────────────────────────
+  Rank #15  (P3 pair #3)  [FAIL]  ROI NC_038230.1:600-1100
+  ROI uniqueness: 1.000
+
+  FWD  5'-CCCCGTCAATTCCTTTGAGTTTC-3'
+       Tm=60.1°C  GC=47.8%  len=23nt
+  REV  5'-TTACTGGAGCAGCACTGACG-3'
+       Tm=60.0°C  GC=55.0%  len=20nt
+  PRB  5'-ACTCTTGCGAGCGTACTACTCAGGCGGG-3'
+       Tm=65.0°C  GC=60.7%  len=28nt
+       ΔTm vs primers = +5.0°C
+  Amplicon: 193 nt  |  P3 penalty: 3.0958
+  Constraint issues:
+    • Probe Tm delta 5.0°C outside [5.0,10.0]

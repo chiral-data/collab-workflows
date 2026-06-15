@@ -1,0 +1,44 @@
+name = "Download Sequences"
+description = "Fetches target and exclusion FASTA sequences from NCBI Entrez. If target.fasta and exclusion.fasta are present in input_files/, uses those instead (offline mode)."
+outputs = ["target.fasta", "exclusion.fasta", "global_params.json"]
+
+[container]
+image = "qpcr-pipeline:latest"
+
+[scripts]
+run = "run.sh"
+
+[params.target_fasta]
+type = "string"
+default = ""
+hint = "Filename of a FASTA in input_files/ to use as the target sequence (skips NCBI target fetch). E.g. 'vly_reference.fasta'."
+
+[params.organism]
+type = "string"
+default = ""
+hint = "Target organism scientific name (e.g. 'Gardnerella vaginalis'). Required for NCBI download mode and BLAST specificity evaluation."
+
+[params.email]
+type = "string"
+default = ""
+hint = "Email address for NCBI Entrez (required by NCBI policy when fetching sequences online)"
+
+[params.ncbi_api_key]
+type = "string"
+default = ""
+hint = "NCBI API key (optional; raises rate limit from 3 to 10 requests/sec)"
+
+[params.target_gene]
+type = "string"
+default = ""
+hint = "Target a specific gene instead of whole genome (e.g. cpn60, rpoB, rnaseh). Leave empty for whole-genome mode."
+
+[params.max_target_seqs]
+type = "integer"
+default = 3
+hint = "Max target sequences to fetch from NCBI"
+
+[params.max_relative_seqs]
+type = "integer"
+default = 5
+hint = "Max close-relative sequences to fetch for exclusion screening (whole-genome mode capped at 5 if >10MB total)"

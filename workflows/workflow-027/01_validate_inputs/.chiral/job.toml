@@ -1,0 +1,10 @@
+name = "Validate Inputs"
+description = "Validates target and exclusion FASTA files: checks format, sequence count, minimum length, and nucleotide content."
+inputs = ["target.fasta", "exclusion.fasta", "global_params.json"]
+outputs = ["target.fasta", "exclusion.fasta", "global_params.json", "validation_summary.json"]
+
+[container]
+image = "qpcr-pipeline:latest"
+
+[scripts]
+run = "run.sh"

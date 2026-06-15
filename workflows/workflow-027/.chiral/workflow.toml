@@ -1,0 +1,8 @@
+name = "qPCR Primer/Probe Design"
+description = "Designs and validates qPCR primer/probe sets for any target organism: fetches sequences from NCBI, scans for unique regions of interest (ROI) via k-mer subtraction, designs primers and a hydrolysis probe with Primer3, then validates specificity using local BLAST+."
+
+[dependencies]
+01_validate_inputs = ["00_download_sequences"]
+02_roi_selection = ["01_validate_inputs"]
+03_primer_design = ["02_roi_selection"]
+04_blast_report = ["03_primer_design"]
