@@ -39,7 +39,7 @@ RUN pip install --no-cache-dir \
 
 # ProtT5 dependencies (transformers + sentencepiece for Node 02 / ABB3-LM)
 RUN pip install --no-cache-dir \
-    transformers \
+    "transformers<=4.51.3" \
     sentencepiece
 
 # pdbfixer + openmm (required by abodybuilder3's openfold relax module)
@@ -56,6 +56,13 @@ RUN git clone https://github.com/Exscientia/abodybuilder3.git abodybuilder3 \
     && rm output.tar.gz \
     && cd .. \
     && pip install --no-cache-dir ./abodybuilder3
+
+# ---- Pre-download ProtT5 weights (used by Node 02 when USE_PLM=1) ------
+# Half-precision encoder-only variant: 2.4 GB instead of 11 GB
+RUN python3 -c "\
+from transformers import T5EncoderModel, T5Tokenizer; \
+T5EncoderModel.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc'); \
+T5Tokenizer.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc')"
 
 # ---- Copy workflow node scripts ----------------------------------------
 COPY . .

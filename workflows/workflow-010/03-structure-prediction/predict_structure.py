@@ -40,9 +40,10 @@ def run_inference(
     """Run ABB3 inference for a single antibody and write a PDB file."""
     from abodybuilder3.utils import add_atom37_to_output, output_to_pdb
 
-    # Build batched input (add batch dimension where needed)
+    # Build batched input; "pair" is consumed unbatched by the model internals
     ab_input_batch = {
-        k: (v.unsqueeze(0).to(device) if k not in {"single", "pair"} else v.to(device))
+        k: (v.unsqueeze(0).to(device) if k != "pair" else v.to(device))
+        if isinstance(v, torch.Tensor) else v
         for k, v in ab_input.items()
     }
 
@@ -73,7 +74,11 @@ def main() -> None:
     )
     parser.add_argument(
         "--checkpoint", required=True,
-        help="Path to ABB3 model checkpoint (.ckpt)"
+        help="Path to plain ABB3 checkpoint (.ckpt); auto-replaced by --checkpoint_lm when PLM embeddings are present"
+    )
+    parser.add_argument(
+        "--checkpoint_lm", default=None,
+        help="Path to ABB3-LM checkpoint (.ckpt); used when input .pt files contain 'plm_embedding'"
     )
     parser.add_argument(
         "--outputs", required=True,
@@ -87,7 +92,6 @@ def main() -> None:
 
     inputs_dir = Path(args.inputs)
     outputs_dir = Path(args.outputs)
-    checkpoint = Path(args.checkpoint)
     outputs_dir.mkdir(parents=True, exist_ok=True)
 
     if args.device == "auto":
@@ -95,17 +99,30 @@ def main() -> None:
     else:
         device = torch.device(args.device)
 
-    print(f"[Node 3] Device:     {device}")
-    print(f"[Node 3] Checkpoint: {checkpoint}")
-
-    if not checkpoint.exists():
-        raise FileNotFoundError(f"Checkpoint not found: {checkpoint}")
-
     pt_files = sorted(inputs_dir.glob("*.pt"))
     if not pt_files:
         raise RuntimeError(f"No .pt files found in {inputs_dir}")
 
     print(f"[Node 3] Found {len(pt_files)} input file(s).")
+
+    # Detect mode from first input file
+    first_obj: Dict[str, Any] = torch.load(pt_files[0], map_location="cpu")
+    use_lm = "plm_embedding" in first_obj
+
+    if use_lm:
+        if args.checkpoint_lm is None:
+            raise ValueError("Input contains PLM embeddings (ABB3-LM mode) but --checkpoint_lm was not provided.")
+        checkpoint = Path(args.checkpoint_lm)
+        print(f"[Node 3] Mode:       ABB3-LM (PLM embeddings detected)")
+    else:
+        checkpoint = Path(args.checkpoint)
+        print(f"[Node 3] Mode:       plain ABB3")
+
+    print(f"[Node 3] Device:     {device}")
+    print(f"[Node 3] Checkpoint: {checkpoint}")
+
+    if not checkpoint.exists():
+        raise FileNotFoundError(f"Checkpoint not found: {checkpoint}")
 
     # Allow ml_collections ConfigDict to be deserialized safely (PyTorch >= 2.4)
     try:
@@ -133,12 +150,11 @@ def main() -> None:
         pair_id: str = obj["id"]
         ab_input: Dict[str, Any] = obj["ab_input"]
 
-        # ABB3-LM: attach PLM embedding as the "single" residue feature
         if "plm_embedding" in obj:
             ab_input["single"] = obj["plm_embedding"]
-            print(f"[Node 3] {pair_id}: using PLM embedding (ABB3-LM mode)")
+            print(f"[Node 3] {pair_id}: ABB3-LM mode")
         else:
-            print(f"[Node 3] {pair_id}: no PLM embedding found (plain ABB3 mode)")
+            print(f"[Node 3] {pair_id}: plain ABB3 mode")
 
         out_pdb = outputs_dir / f"{pair_id}.pdb"
         print(f"[Node 3] Predicting structure → {out_pdb.name} …")

@@ -79,7 +79,7 @@ def load_or_compute_embedding(
     # Use the upstream API: separate heavy and light lists.
     # This matches ABodyBuilder3's get_embeddings([heavy_seqs], [light_seqs]) signature.
     with torch.no_grad():
-        embedding = model.get_embeddings([heavy], [light], device=device)[0]   # (L, D)
+        embedding = model.get_embeddings([heavy], [light])[0]   # (L, D)
 
     print(f"[Node 2]   Computed embedding shape={tuple(embedding.shape)}")
     return embedding.cpu()
@@ -156,7 +156,8 @@ def main() -> None:
         print("[Node 2] Loading ProtT5 model (this may take a while) …")
         try:
             from abodybuilder3.language.model import ProtT5
-            plm_model = ProtT5()
+            from pathlib import Path as _Path
+            plm_model = ProtT5(weights_dir=_Path("Rostlab/prot_t5_xl_half_uniref50-enc"))
             if hasattr(plm_model, "model"):
                 plm_model.model.to(device).eval()
             elif hasattr(plm_model, "encoder"):
