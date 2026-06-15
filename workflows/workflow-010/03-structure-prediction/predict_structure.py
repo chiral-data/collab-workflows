@@ -38,7 +38,9 @@ def run_inference(
     device: torch.device,
 ) -> None:
     """Run ABB3 inference for a single antibody and write a PDB file."""
-    from abodybuilder3.utils import add_atom37_to_output, output_to_pdb
+    import numpy as np
+    from abodybuilder3.utils import add_atom37_to_output
+    from abodybuilder3.openfold.np.protein import Protein, to_pdb
 
     # string_to_input already adds a batch dim to "single" (3D) and "pair" (4D);
     # only 1D scalars and the injected 2D PLM embedding need unsqueeze(0).
@@ -55,8 +57,31 @@ def run_inference(
     # Reconstruct full atom37 representation
     output = add_atom37_to_output(output, ab_input["aatype"].to(device))
 
-    # Convert to PDB string and write
-    pdb_string = output_to_pdb(output, ab_input)
+    aatype = ab_input["aatype"].squeeze().cpu().numpy().astype(int)
+    atom37 = output["atom37"]
+    atom_mask = output["atom37_atom_exists"].cpu().numpy().astype(int)
+    chain_index = 1 - ab_input["is_heavy"].cpu().numpy().astype(int)
+    residue_index = np.arange(len(atom37))
+
+    # Extract per-residue pLDDT (logits → scores) and broadcast to all 37 atom slots.
+    # fix_pdb (OpenMM) resets B-factors to 0, so we write via to_pdb() directly.
+    if "plddt" in output:
+        from abodybuilder3.openfold.utils.loss import compute_plddt
+        plddt_per_res = compute_plddt(output["plddt"]).squeeze().detach().cpu().numpy()
+        b_factors = np.expand_dims(plddt_per_res, 1).repeat(37, axis=1).astype(np.float32) * atom_mask
+    else:
+        b_factors = np.zeros_like(atom_mask, dtype=np.float32)
+
+    protein = Protein(
+        aatype=aatype,
+        atom_positions=atom37,
+        atom_mask=atom_mask,
+        residue_index=residue_index,
+        b_factors=b_factors,
+        chain_index=chain_index,
+    )
+    pdb_string = to_pdb(protein)
+
     out_pdb.parent.mkdir(parents=True, exist_ok=True)
     out_pdb.write_text(pdb_string)
 

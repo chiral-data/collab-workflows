@@ -198,13 +198,11 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
 
       <script>
         (function () {{
-          // ---- 3D viewer ----
           var pdb = `{pdb_js}`;
-          var el = document.getElementById("viewer_{index}");
-          var viewer = $3Dmol.createViewer(el, {{ backgroundColor: "#f8f9fa" }});
-          viewer.addModel(pdb, "pdb");
+          var chainData = {chart_data_json};
+          var idx = {index};
 
-          function applyPlddt() {{
+          function applyPlddt(viewer) {{
             viewer.setStyle({{}}, {{ cartoon: {{ colorfunc: function(atom) {{
               var b = atom.b;
               if (b >= 90) return '#003F8A';
@@ -216,123 +214,152 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             viewer.render();
           }}
 
-          function applySpectrum() {{
-            viewer.setStyle({{}}, {{ cartoon: {{ colorscheme: 'spectrum' }} }});
-            viewer.removeAllSurfaces();
-            viewer.render();
-          }}
+          function drawChart() {{
+            var canvas = document.getElementById("chart_" + idx);
+            var W = Math.round(canvas.getBoundingClientRect().width) || 800;
+            var H = 190;
+            canvas.width = W;
+            canvas.height = H;
+            var ctx = canvas.getContext("2d");
 
-          function applySurface() {{
-            viewer.setStyle({{}}, {{ cartoon: {{ colorscheme: 'spectrum' }} }});
-            viewer.removeAllSurfaces();
-            viewer.addSurface($3Dmol.SurfaceType.VDW, {{ opacity: 0.7, colorscheme: 'spectrum' }});
-            viewer.render();
-          }}
+            var allResnums = [];
+            Object.values(chainData).forEach(function(rs) {{
+              rs.forEach(function(r) {{ allResnums.push(r.resnum); }});
+            }});
+            if (!allResnums.length) return;
+            var minRes = Math.min.apply(null, allResnums);
+            var maxRes = Math.max.apply(null, allResnums);
 
-          applyPlddt();
-          viewer.zoomTo();
-          viewer.render();
+            var padL = 44, padR = 90, padT = 14, padB = 32;
+            var plotW = W - padL - padR;
+            var plotH = H - padT - padB;
 
-          document.querySelectorAll('.btn[data-viewer="{index}"]').forEach(function(btn) {{
-            btn.addEventListener('click', function() {{
-              document.querySelectorAll('.btn[data-viewer="{index}"]').forEach(function(b) {{
-                b.classList.remove('active');
+            function xPos(r) {{ return padL + (r - minRes) / Math.max(maxRes - minRes, 1) * plotW; }}
+            function yPos(v) {{ return padT + (1 - v / 100) * plotH; }}
+
+            // Confidence bands
+            var bands = [
+              {{ min: 90, max: 100, color: 'rgba(0,63,138,0.10)' }},
+              {{ min: 70, max: 90,  color: 'rgba(76,181,245,0.14)' }},
+              {{ min: 50, max: 70,  color: 'rgba(245,215,110,0.18)' }},
+              {{ min: 0,  max: 50,  color: 'rgba(255,125,69,0.12)' }},
+            ];
+            bands.forEach(function(b) {{
+              ctx.fillStyle = b.color;
+              ctx.fillRect(padL, yPos(b.max), plotW, yPos(b.min) - yPos(b.max));
+            }});
+
+            // Threshold lines + right-side labels
+            var thresholds = [
+              {{ v: 90, label: 'Very High', color: '#003F8A' }},
+              {{ v: 70, label: 'High',      color: '#0369a1' }},
+              {{ v: 50, label: 'Medium',    color: '#854d0e' }},
+            ];
+            thresholds.forEach(function(t) {{
+              ctx.setLineDash([3, 3]);
+              ctx.strokeStyle = 'rgba(0,0,0,0.12)';
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(padL, yPos(t.v));
+              ctx.lineTo(padL + plotW, yPos(t.v));
+              ctx.stroke();
+              ctx.setLineDash([]);
+              ctx.fillStyle = t.color;
+              ctx.font = '10px sans-serif';
+              ctx.textAlign = 'left';
+              ctx.fillText(t.label, padL + plotW + 6, yPos(t.v) + 4);
+            }});
+            ctx.setLineDash([]);
+
+            // Y-axis ticks
+            ctx.fillStyle = '#666';
+            ctx.font = '10px sans-serif';
+            ctx.textAlign = 'right';
+            [0, 50, 70, 90, 100].forEach(function(v) {{
+              ctx.fillText(v, padL - 5, yPos(v) + 3);
+            }});
+
+            // Y-axis title (rotated)
+            ctx.save();
+            ctx.translate(11, padT + plotH / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#555';
+            ctx.font = '11px sans-serif';
+            ctx.fillText('pLDDT', 0, 0);
+            ctx.restore();
+
+            // X-axis ticks
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#666';
+            ctx.font = '10px sans-serif';
+            var step = Math.ceil((maxRes - minRes) / 8 / 10) * 10 || 10;
+            for (var r = Math.ceil(minRes / step) * step; r <= maxRes; r += step) {{
+              ctx.fillText(r, xPos(r), padT + plotH + 14);
+            }}
+            ctx.fillText('Residue position', padL + plotW / 2, H - 2);
+
+            // Chain lines + legend
+            var chainIds = Object.keys(chainData).sort();
+            var palette = ['#0f3460', '#c2410c'];
+            chainIds.forEach(function(chainId, ci) {{
+              var residues = chainData[chainId];
+              if (!residues.length) return;
+              var col = palette[ci % palette.length];
+              ctx.strokeStyle = col;
+              ctx.lineWidth = 2;
+              ctx.beginPath();
+              residues.forEach(function(r, i) {{
+                var x = xPos(r.resnum), y = yPos(r.plddt);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
               }});
-              this.classList.add('active');
-              var mode = this.dataset.mode;
-              if (mode === 'plddt') applyPlddt();
-              else if (mode === 'spectrum') applySpectrum();
-              else if (mode === 'surface') applySurface();
+              ctx.stroke();
+
+              // Inline legend at top-right of plot
+              var lx = padL + plotW - 100 + ci * 52;
+              var ly = padT + 10;
+              ctx.strokeStyle = col; ctx.lineWidth = 2;
+              ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(lx + 16, ly); ctx.stroke();
+              ctx.fillStyle = col; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'left';
+              ctx.fillText('Chain ' + chainId, lx + 20, ly + 4);
             }});
-          }});
 
-          // ---- pLDDT chart ----
-          var chainData = {chart_data_json};
-          var canvas = document.getElementById("chart_{index}");
-          var ctx = canvas.getContext("2d");
-          var W = canvas.offsetWidth || 800;
-          var H = 180;
-          canvas.width = W;
-          canvas.height = H;
+            // Plot border
+            ctx.strokeStyle = '#ddd'; ctx.lineWidth = 1;
+            ctx.strokeRect(padL, padT, plotW, plotH);
+          }}
 
-          // Gather all residues across chains for x-range
-          var allResnums = [];
-          Object.values(chainData).forEach(function(residues) {{
-            residues.forEach(function(r) {{ allResnums.push(r.resnum); }});
-          }});
-          var minRes = Math.min.apply(null, allResnums);
-          var maxRes = Math.max.apply(null, allResnums);
+          // Defer until after layout so the viewer div has real dimensions
+          $3Dmolpromise.then(function() {{
+            var el = document.getElementById("viewer_" + idx);
+            var viewer = $3Dmol.createViewer(el, {{ backgroundColor: "#f8f9fa" }});
+            viewer.addModel(pdb, "pdb");
+            applyPlddt(viewer);
+            viewer.zoomTo();
+            viewer.render();
 
-          var padL = 40, padR = 10, padT = 10, padB = 28;
-          var plotW = W - padL - padR;
-          var plotH = H - padT - padB;
-
-          function xPos(resnum) {{ return padL + (resnum - minRes) / Math.max(maxRes - minRes, 1) * plotW; }}
-          function yPos(val) {{ return padT + (1 - (val - 0) / 100) * plotH; }}
-
-          // Background confidence bands
-          var bands = [
-            {{ min: 90, max: 100, color: 'rgba(0,63,138,0.10)' }},
-            {{ min: 70, max: 90,  color: 'rgba(76,181,245,0.12)' }},
-            {{ min: 50, max: 70,  color: 'rgba(245,215,110,0.15)' }},
-            {{ min: 0,  max: 50,  color: 'rgba(255,125,69,0.12)' }},
-          ];
-          bands.forEach(function(b) {{
-            ctx.fillStyle = b.color;
-            ctx.fillRect(padL, yPos(b.max), plotW, yPos(b.min) - yPos(b.max));
-          }});
-
-          // Dashed threshold lines
-          ctx.setLineDash([3, 3]);
-          ctx.strokeStyle = 'rgba(0,0,0,0.15)';
-          ctx.lineWidth = 1;
-          [90, 70, 50].forEach(function(v) {{
-            ctx.beginPath();
-            ctx.moveTo(padL, yPos(v));
-            ctx.lineTo(padL + plotW, yPos(v));
-            ctx.stroke();
-          }});
-          ctx.setLineDash([]);
-
-          // Y-axis labels
-          ctx.fillStyle = '#666';
-          ctx.font = '10px sans-serif';
-          ctx.textAlign = 'right';
-          [100, 90, 70, 50, 0].forEach(function(v) {{
-            ctx.fillText(v, padL - 4, yPos(v) + 3);
-          }});
-
-          // X-axis label
-          ctx.textAlign = 'center';
-          ctx.fillText('Residue', padL + plotW / 2, H - 2);
-
-          // Chain lines
-          var palette = ['#0f3460', '#e05c1a', '#2ca02c', '#9467bd'];
-          var chainIds = Object.keys(chainData).sort();
-          chainIds.forEach(function(chainId, ci) {{
-            var residues = chainData[chainId];
-            if (!residues.length) return;
-            ctx.strokeStyle = palette[ci % palette.length];
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            residues.forEach(function(r, i) {{
-              var x = xPos(r.resnum), y = yPos(r.plddt);
-              if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            document.querySelectorAll('.btn[data-viewer="' + idx + '"]').forEach(function(btn) {{
+              btn.addEventListener('click', function() {{
+                document.querySelectorAll('.btn[data-viewer="' + idx + '"]').forEach(function(b) {{
+                  b.classList.remove('active');
+                }});
+                this.classList.add('active');
+                var mode = this.dataset.mode;
+                if (mode === 'plddt') applyPlddt(viewer);
+                else if (mode === 'spectrum') {{
+                  viewer.setStyle({{}}, {{ cartoon: {{ colorscheme: 'spectrum' }} }});
+                  viewer.removeAllSurfaces(); viewer.render();
+                }} else if (mode === 'surface') {{
+                  viewer.setStyle({{}}, {{ cartoon: {{ colorscheme: 'spectrum' }} }});
+                  viewer.removeAllSurfaces();
+                  viewer.addSurface($3Dmol.SurfaceType.VDW, {{ opacity: 0.7, colorscheme: 'spectrum' }});
+                  viewer.render();
+                }}
+              }});
             }});
-            ctx.stroke();
 
-            // Legend label at end of line
-            var last = residues[residues.length - 1];
-            ctx.fillStyle = palette[ci % palette.length];
-            ctx.textAlign = 'left';
-            ctx.font = 'bold 10px sans-serif';
-            ctx.fillText('Chain ' + chainId, xPos(last.resnum) + 4, yPos(last.plddt) + 3);
+            drawChart();
           }});
-
-          // Axes borders
-          ctx.strokeStyle = '#ccc';
-          ctx.lineWidth = 1;
-          ctx.strokeRect(padL, padT, plotW, plotH);
         }})();
       </script>
     </section>
@@ -343,6 +370,7 @@ def generate_html_report(
     pdb_paths: List[Path],
     out_html: Path,
     title: str = "ABB3 Structure Predictions",
+    use_plm: bool = True,
 ) -> None:
     sections = "".join(
         build_viewer_section(i, p.stem, read_text(p))
@@ -383,8 +411,19 @@ def generate_html_report(
       color: #fff;
       padding: 28px 32px 22px;
     }}
-    header h1 {{ margin: 0 0 6px; font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; }}
+    header h1 {{ margin: 0 0 8px; font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; }}
     header p  {{ margin: 0; font-size: 0.93rem; opacity: 0.75; }}
+    .mode-badge {{
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }}
+    .mode-lm   {{ background: rgba(76,181,245,0.25); color: #7dd3fc; border: 1px solid rgba(76,181,245,0.4); }}
+    .mode-plain {{ background: rgba(255,255,255,0.12); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.25); }}
 
     main {{
       max-width: 1100px;
@@ -540,8 +579,11 @@ def generate_html_report(
 </head>
 <body>
   <header>
+    <div class="mode-badge {'mode-lm' if use_plm else 'mode-plain'}">
+      {'ABB3-LM &mdash; language model enhanced' if use_plm else 'ABB3 &mdash; standard mode'}
+    </div>
     <h1>{escape_html(title)}</h1>
-    <p>Interactive 3D viewer with pLDDT confidence analysis. Predicted antibody Fv structures via ABodyBuilder3.</p>
+    <p>{'Predicted with ABodyBuilder3-LM using ProtT5 embeddings. pLDDT confidence scores reflect the language-model-enhanced prediction.' if use_plm else 'Predicted with ABodyBuilder3 (plain mode, no language model). pLDDT confidence scores reflect standard structure prediction.'}</p>
   </header>
 
   <main>
@@ -564,6 +606,7 @@ def main() -> None:
     parser.add_argument("--inputs", required=True, help="Directory of Node 3 .pdb files")
     parser.add_argument("--outputs", required=True, help="Directory to write report.html and PDBs")
     parser.add_argument("--title", default="ABB3 Structure Predictions", help="Report title")
+    parser.add_argument("--use-plm", default="1", help="'1' for ABB3-LM mode, '0' for plain ABB3")
     args = parser.parse_args()
 
     inputs_dir = Path(args.inputs)
@@ -583,8 +626,9 @@ def main() -> None:
         copied.append(dst)
         print(f"[Node 4] Copied {src.name}")
 
+    use_plm = args.use_plm.strip() == "1"
     out_html = outputs_dir / "report.html"
-    generate_html_report(copied, out_html=out_html, title=args.title)
+    generate_html_report(copied, out_html=out_html, title=args.title, use_plm=use_plm)
 
     print(f"[Node 4] HTML report written → {out_html}")
     print(f"[Node 4] To view: open report.html in any modern browser.")
