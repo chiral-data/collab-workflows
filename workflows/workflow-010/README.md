@@ -135,10 +135,9 @@ checkpoint for ABB3-LM mode.
 **Goal:** Generate a self-contained interactive HTML report with 3D viewers.
 
 **Process:** Copies all PDB files to the output directory and generates a
-single HTML file embedding each structure as a py3Dmol viewer. PDB data is
-inlined as JavaScript template literals so the report works offline in any
-modern browser. Each structure card includes a 3D viewer (cartoon coloring
-by spectrum) and a download link.
+single HTML file embedding each structure as a 3Dmol.js viewer. PDB data is
+inlined as JavaScript template literals. Each structure card includes a 3D
+viewer (cartoon coloring by spectrum) and a download link.
 
 **Scientific notes:** Spectrum coloring maps the rainbow from N-terminus (blue)
 to C-terminus (red), making it easy to identify heavy vs. light chain regions
@@ -163,15 +162,14 @@ and locate CDR loops.
 
 | Value | Description |
 |-------|-------------|
-| `0` (default) | Plain ABB3 mode. Skip Node 02. |
-| `1` | ABB3-LM mode. Run Node 02 to generate ProtT5 embeddings. |
+| `0` | Plain ABB3 mode. Skip Node 02. |
+| `1` (default) | ABB3-LM mode. Run Node 02 to generate ProtT5 embeddings. |
 
 **Trade-off:** ABB3-LM may produce better predictions for unusual CDR sequences
 but requires additional GPU memory (~3 GB for ProtT5) and computation time.
 
-**Test vs production:** Default (`0`) is fine for both testing and production.
-Set to `1` when working with non-standard or engineered antibodies where
-extra accuracy matters.
+**Test vs production:** Default (`1`) enables ABB3-LM for best accuracy.
+Set to `0` to skip ProtT5 embeddings and run faster with plain ABB3.
 
 ### REPORT_TITLE
 
@@ -196,9 +194,9 @@ validate predictions against experimental data when available.
 ### HTML report
 
 The `report.html` file provides a quick visual overview of all predicted
-structures in a browser. Each card shows a 3D viewer and a PDB preview.
-No internet connection is required to view the report after generation
-(py3Dmol is loaded from CDN at generation time and embedded).
+structures in a browser. Each card shows a 3D viewer and a PDB download link.
+An internet connection is required to view the report because 3Dmol.js is
+loaded from CDN (https://3dmol.org) at view time.
 
 ## Quick start
 
@@ -207,7 +205,7 @@ No internet connection is required to view the report after generation
 Build the image from the workflow directory:
 
 ```bash
-docker build -t abodybuilder3:latest .
+docker build -t abodybuilder3:2026_06_15 .
 ```
 
 Run each node sequentially:
@@ -218,21 +216,21 @@ docker run --rm --gpus all \
   -v $(pwd)/input_files:/workflow/01-input-preparation/inputs \
   -v $(pwd)/results/01:/workflow/01-input-preparation/outputs \
   -w /workflow/01-input-preparation \
-  abodybuilder3:latest bash run.sh
+  abodybuilder3:2026_06_15 bash run.sh
 
 # Node 03 -- Structure Prediction (plain ABB3, skip Node 02)
 docker run --rm --gpus all \
   -v $(pwd)/results/01:/workflow/03-structure-prediction/inputs \
   -v $(pwd)/results/03:/workflow/03-structure-prediction/outputs \
   -w /workflow/03-structure-prediction \
-  abodybuilder3:latest bash run.sh
+  abodybuilder3:2026_06_15 bash run.sh
 
 # Node 04 -- Visualization Report
 docker run --rm --gpus all \
   -v $(pwd)/results/03:/workflow/04-visualization-report/inputs \
   -v $(pwd)/results/04:/workflow/04-visualization-report/outputs \
   -w /workflow/04-visualization-report \
-  abodybuilder3:latest bash run.sh
+  abodybuilder3:2026_06_15 bash run.sh
 ```
 
 ### Running on Silva
@@ -247,7 +245,7 @@ docker run --rm --gpus all \
 | Setting | Test (default) | Production |
 |---------|---------------|------------|
 | DEVICE | `cuda` | `cuda` |
-| USE_PLM | `0` | `0` or `1` depending on need |
+| USE_PLM | `1` | `1` (or `0` for faster plain ABB3) |
 | REPORT_TITLE | `ABB3 Structure Predictions` | Descriptive experiment name |
 
 Test data (6yio Fv) produces a single PDB in under 2 minutes on GPU.
