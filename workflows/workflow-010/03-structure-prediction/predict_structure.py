@@ -40,9 +40,10 @@ def run_inference(
     """Run ABB3 inference for a single antibody and write a PDB file."""
     from abodybuilder3.utils import add_atom37_to_output, output_to_pdb
 
-    # Build batched input; "pair" is consumed unbatched by the model internals
+    # string_to_input already adds a batch dim to "single" (3D) and "pair" (4D);
+    # only 1D scalars and the injected 2D PLM embedding need unsqueeze(0).
     ab_input_batch = {
-        k: (v.unsqueeze(0).to(device) if k != "pair" else v.to(device))
+        k: (v.unsqueeze(0).to(device) if v.dim() < 3 else v.to(device))
         if isinstance(v, torch.Tensor) else v
         for k, v in ab_input.items()
     }

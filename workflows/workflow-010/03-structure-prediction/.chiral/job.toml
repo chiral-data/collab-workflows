@@ -4,7 +4,7 @@ inputs = ["*.pt"]
 outputs = ["*.pdb"]
 
 [container]
-image = "chiral.sakuracr.jp/abodybuilder3:2026_02_26"
+image = "abodybuilder3:2026_06_15"
 use_gpu = true
 
 [scripts]

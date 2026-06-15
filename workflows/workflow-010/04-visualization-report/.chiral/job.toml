@@ -4,7 +4,7 @@ inputs = ["*.pdb"]
 outputs = ["report.html", "*.pdb"]
 
 [container]
-image = "chiral.sakuracr.jp/abodybuilder3:2026_02_26"
+image = "abodybuilder3:2026_06_15"
 
 [scripts]
 run = "run.sh"
