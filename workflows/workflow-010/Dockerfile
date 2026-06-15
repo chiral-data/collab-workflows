@@ -26,7 +26,7 @@ RUN pip install --no-cache-dir --upgrade pip
 
 # PyTorch with CUDA 12.1 support
 RUN pip install --no-cache-dir \
-    torch==2.1.2 \
+    torch==2.4.0 \
     --index-url https://download.pytorch.org/whl/cu121
 
 # Core ML / bio dependencies
@@ -50,7 +50,10 @@ RUN pip install --no-cache-dir \
 # ---- ABodyBuilder3 -------------------------------------------------------
 RUN git clone https://github.com/Exscientia/abodybuilder3.git abodybuilder3 \
     && cd abodybuilder3 \
-    && bash download.sh \
+    && mkdir -p output \
+    && wget -q https://zenodo.org/records/11354577/files/output.tar.gz \
+    && tar xzf output.tar.gz -C output \
+    && rm output.tar.gz \
     && cd .. \
     && pip install --no-cache-dir ./abodybuilder3
 
