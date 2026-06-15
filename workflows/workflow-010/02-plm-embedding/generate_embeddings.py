@@ -156,8 +156,10 @@ def main() -> None:
         print("[Node 2] Loading ProtT5 model (this may take a while) …")
         try:
             from abodybuilder3.language.model import ProtT5
-            from pathlib import Path as _Path
-            plm_model = ProtT5(weights_dir=_Path("Rostlab/prot_t5_xl_half_uniref50-enc"))
+            _hub = Path("/root/.cache/huggingface/hub/models--Rostlab--prot_t5_xl_half_uniref50-enc")
+            _rev = (_hub / "refs" / "main").read_text().strip()
+            weights_path = str(_hub / "snapshots" / _rev)
+            plm_model = ProtT5(weights_dir=weights_path)
             if hasattr(plm_model, "model"):
                 plm_model.model.to(device).eval()
             elif hasattr(plm_model, "encoder"):

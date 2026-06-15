@@ -5,8 +5,9 @@
 
 FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04
 
-# ---- System dependencies -----------------------------------------------
+# ---- Environment -----------------------------------------------------------
 ENV DEBIAN_FRONTEND=noninteractive
+ENV HF_HOME=/root/.cache/huggingface
 RUN apt-get update && apt-get install -y --no-install-recommends \
         python3.10 \
         python3-pip \
@@ -62,7 +63,13 @@ RUN git clone https://github.com/Exscientia/abodybuilder3.git abodybuilder3 \
 RUN python3 -c "\
 from transformers import T5EncoderModel, T5Tokenizer; \
 T5EncoderModel.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc'); \
-T5Tokenizer.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc')"
+T5Tokenizer.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc')" \
+    && chmod 755 /root \
+    && chmod -R a+rX /root/.cache/huggingface \
+    && rm -f /root/.cache/huggingface/token
+
+# Use cached weights only — no network calls at runtime
+ENV HF_HUB_OFFLINE=1
 
 # ---- Copy workflow node scripts ----------------------------------------
 COPY . .
