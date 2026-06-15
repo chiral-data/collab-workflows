@@ -3,7 +3,7 @@ description = "Predicts Fv antibody structure from paired heavy/light chain FAST
 
 [dependencies]
 02-plm-embedding = ["01-input-preparation"]
-03-structure-prediction = ["01-input-preparation"]
+03-structure-prediction = ["02-plm-embedding"]
 04-visualization-report = ["03-structure-prediction"]
 
 [params.DEVICE]

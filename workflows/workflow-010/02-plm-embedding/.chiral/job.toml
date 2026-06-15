@@ -1,5 +1,5 @@
 name = "PLM Embedding"
-description = "Generate ProtT5 protein language model embeddings for ABB3-LM (optional)"
+description = "Generate ProtT5 PLM embeddings (USE_PLM=1) or passthrough inputs unchanged (USE_PLM=0)"
 inputs = ["*.pt"]
 outputs = ["*.pt"]
 

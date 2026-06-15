@@ -109,11 +109,33 @@ def main() -> None:
         "--device", default="auto", choices=["auto", "cpu", "cuda"],
         help="Compute device for ProtT5 inference (default: auto)"
     )
+    parser.add_argument(
+        "--use-plm", default="0",
+        help="Set to '1' to compute PLM embeddings; '0' to passthrough inputs unchanged"
+    )
     args = parser.parse_args()
 
     inputs_dir = Path(args.inputs)
     outputs_dir = Path(args.outputs)
     outputs_dir.mkdir(parents=True, exist_ok=True)
+
+    pt_files = sorted(inputs_dir.glob("*.pt"))
+    if not pt_files:
+        raise RuntimeError(f"No .pt files found in {inputs_dir}")
+
+    use_plm = args.use_plm.strip() == "1"
+
+    if not use_plm:
+        print(f"[Node 2] USE_PLM=0 — passthrough mode (copying {len(pt_files)} file(s))")
+        for pt_file in pt_files:
+            out_path = outputs_dir / pt_file.name
+            import shutil
+            shutil.copy2(pt_file, out_path)
+            print(f"[Node 2]   Copied → {out_path}")
+        print(f"[Node 2] Done. {len(pt_files)} file(s) passed through to {outputs_dir}")
+        return
+
+    print(f"[Node 2] USE_PLM=1 — computing ProtT5 embeddings")
 
     precomputed_dir = Path(args.precomputed_dir) if args.precomputed_dir else None
 
@@ -123,14 +145,8 @@ def main() -> None:
         device = torch.device(args.device)
 
     print(f"[Node 2] Device: {device}")
-
-    pt_files = sorted(inputs_dir.glob("*.pt"))
-    if not pt_files:
-        raise RuntimeError(f"No .pt files found in {inputs_dir}")
-
     print(f"[Node 2] Found {len(pt_files)} input file(s).")
 
-    # Lazy-load ProtT5 only if we actually need it for at least one pair.
     plm_model = None
 
     def get_plm_model():
@@ -141,14 +157,11 @@ def main() -> None:
         try:
             from abodybuilder3.language.model import ProtT5
             plm_model = ProtT5()
-            # ProtT5 wraps a HuggingFace model; move the inner model to device.
-            # Calling .to() / .eval() on the wrapper itself may fail.
             if hasattr(plm_model, "model"):
                 plm_model.model.to(device).eval()
             elif hasattr(plm_model, "encoder"):
                 plm_model.encoder.to(device).eval()
             else:
-                # Fallback: try the wrapper directly and catch if it fails
                 try:
                     plm_model.to(device)
                     plm_model.eval()
