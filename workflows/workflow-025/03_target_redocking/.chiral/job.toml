@@ -1,0 +1,27 @@
+name = "Target Redocking QC"
+description = "Self-dock native ligand with GNINA; verify CNN score and RMSD against crystal pose; pass/fail before full screen"
+
+inputs = ["receptor.pdb", "receptor.pdbqt", "native_ligand.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.txt"]
+outputs = ["qc_validation_results.json", "redocked_native.sdf", "gnina_redock_log.txt", "receptor.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.txt", "crystal_ligand.pdb"]
+
+[container]
+image = "vina-gnina-pipeline:latest"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.cnn_score_threshold]
+type = "float"
+default = 0.70
+hint = "Minimum CNNscore for the top redocked pose to pass QC"
+
+[params.rmsd_threshold]
+type = "float"
+default = 3.0
+hint = "Maximum RMSD (Angstroms) vs crystal pose for the top redocked pose to pass QC"
+
+[params.cnn_scoring]
+type = "string"
+default = "rescore"
+hint = "GNINA CNN scoring mode: 'all' (CNN guides full search), 'rescore' (Vina search + CNN rescore), or 'none'"

@@ -1,0 +1,12 @@
+name = "Prepare Structures"
+description = "Fix receptor → PDBQT; compute pocket grid box from native ligand; generate xTB-optimized 3D screening library → PDBQT"
+
+inputs = ["receptor.pdb", "native_ligand.sdf", "validated_ligands.smiles", "validation_report.json"]
+outputs = ["receptor.pdb", "receptor.pdbqt", "native_ligand.pdbqt", "native_ligand.mol2", "optimized_screening_library.pdbqt", "pocket_config.txt", "prepare_report.json"]
+
+[container]
+image = "vina-gnina-pipeline:latest"
+use_gpu = false
+
+[scripts]
+run = "run.sh"

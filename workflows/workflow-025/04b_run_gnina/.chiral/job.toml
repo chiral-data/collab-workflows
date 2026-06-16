@@ -1,0 +1,22 @@
+name = "GNINA Screening"
+description = "Dock screening library with GNINA; collect CNN pose scores and CNN_VS affinity metrics"
+
+inputs = ["receptor.pdbqt", "optimized_screening_library.pdbqt", "pocket_config.txt"]
+outputs = ["gnina_screening_poses.sdf", "gnina_screening_scores.csv", "gnina_runtime_log.txt", "gnina_docking_report.json", "gnina_poses"]
+
+[container]
+image = "vina-gnina-pipeline:latest"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.exhaustiveness]
+type = "integer"
+default = 8
+hint = "GNINA exhaustiveness (higher = more thorough, slower)"
+
+[params.num_modes]
+type = "integer"
+default = 9
+hint = "Number of binding modes to generate per ligand"

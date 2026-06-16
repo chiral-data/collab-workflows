@@ -1,0 +1,24 @@
+name = "Vina vs GNINA: Docking Comparison"
+description = "Compare AutoDock Vina and GNINA scoring functions on Carbonic Anhydrase II (PDB: 1OKL)"
+
+[dependencies]
+02_prepare_structures = ["01_validate_inputs"]
+03_target_redocking = ["02_prepare_structures"]
+04a_run_vina = ["03_target_redocking"]
+04b_run_gnina = ["03_target_redocking"]
+05_generate_report = ["04a_run_vina", "04b_run_gnina"]
+
+[params.target_pdb_id]
+type = "string"
+default = "1OKL"
+hint = "PDB ID of the receptor (e.g. 1OKL for Carbonic Anhydrase II)"
+
+[params.ligand_input]
+type = "string"
+default = "inputs/ligands.smiles"
+hint = "Ligand screening library filename (.smiles, .smi, or .sdf)"
+
+[params.resolution_cutoff]
+type = "float"
+default = 3.0
+hint = "Maximum acceptable structural resolution in Angstroms"
