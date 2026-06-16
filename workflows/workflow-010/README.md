@@ -118,34 +118,40 @@ with sufficient VRAM.
 
 **Process:** Loads the ABB3 checkpoint, batches each input, runs the forward
 pass, reconstructs atom37 coordinates via `add_atom37_to_output()`, and
-writes one PDB file per antibody pair using `output_to_pdb()`. Automatically
-detects whether PLM embeddings are present (ABB3-LM) or absent (plain ABB3).
+writes one PDB file per antibody pair. Per-residue pLDDT confidence scores
+are extracted from the model output and written into the B-factor column.
+Automatically detects whether PLM embeddings are present (ABB3-LM) or absent
+(plain ABB3).
 
 **Scientific notes:** ABB3 uses a structure module similar to AlphaFold2's
 IPA (Invariant Point Attention) architecture, specialized for antibody Fv
 regions. The model predicts backbone and side-chain atom positions. The
 `plddt-loss` checkpoint is used for standard mode; the `language-loss`
-checkpoint for ABB3-LM mode.
+checkpoint for ABB3-LM mode. pLDDT (predicted local-distance difference test)
+is the model's per-residue confidence score (0–100).
 
 **Outputs:**
-- `<pair_id>.pdb` -- predicted Fv structure in PDB format
+- `<pair_id>.pdb` -- predicted Fv structure in PDB format (B-factor = pLDDT)
 
 ### Node 04: Visualization Report
 
-**Goal:** Generate a self-contained interactive HTML report with 3D viewers.
+**Goal:** Generate an interactive HTML report with 3D viewer and pLDDT analysis.
 
 **Process:** Copies all PDB files to the output directory and generates a
-single HTML file embedding each structure as a 3Dmol.js viewer. PDB data is
-inlined as JavaScript template literals. Each structure card includes a 3D
-viewer (cartoon coloring by spectrum) and a download link.
+single HTML file with a Mol\* (PDBe) 3D viewer, a per-chain summary table
+(residue count, average/minimum pLDDT, confidence badge), a per-residue pLDDT
+line chart with confidence bands, and a pLDDT color legend. The report header
+indicates whether ABB3-LM or plain ABB3 mode was used. An internet connection
+is required to load the Mol\* viewer from CDN at view time.
 
-**Scientific notes:** Spectrum coloring maps the rainbow from N-terminus (blue)
-to C-terminus (red), making it easy to identify heavy vs. light chain regions
-and locate CDR loops.
+**Scientific notes:** pLDDT ≥ 90 (dark blue) indicates very high confidence;
+70–90 (cyan) is generally accurate; 50–70 (yellow) should be treated with
+caution; < 50 (orange) indicates low confidence, often disordered loops. CDR
+loops, especially CDR H3, tend to have lower pLDDT than framework regions.
 
 **Outputs:**
-- `report.html` -- interactive HTML report
-- `<pair_id>.pdb` -- copied PDB files (for download links)
+- `report.html` -- interactive HTML report (requires internet for Mol\* viewer)
+- `<pair_id>.pdb` -- copied PDB files
 
 ## Parameters
 
@@ -183,8 +189,10 @@ Set to `0` to skip ProtT5 embeddings and run faster with plain ABB3.
 ### PDB structure files
 
 Each `<pair_id>.pdb` contains the predicted full-atom Fv structure. The
-heavy chain is listed first, followed by the light chain. These files can
-be opened in PyMOL, ChimeraX, or any PDB viewer for detailed analysis.
+heavy chain is listed first, followed by the light chain. The B-factor
+column contains per-residue pLDDT scores (0–100). These files can be
+opened in PyMOL, ChimeraX, or any PDB viewer for detailed analysis.
+To color by pLDDT in PyMOL: `spectrum b, blue_white_red, minimum=50, maximum=100`.
 
 **Caveats:** ABB3 predicts the Fv region only. Coordinates are not
 experimentally determined -- use predicted structures for hypothesis
@@ -193,10 +201,13 @@ validate predictions against experimental data when available.
 
 ### HTML report
 
-The `report.html` file provides a quick visual overview of all predicted
-structures in a browser. Each card shows a 3D viewer and a PDB download link.
-An internet connection is required to view the report because 3Dmol.js is
-loaded from CDN (https://3dmol.org) at view time.
+The `report.html` file provides a quick visual overview with:
+- **Mol\* 3D viewer** -- interactive structure visualization
+- **Summary table** -- per-chain residue count, avg/min pLDDT, confidence badge
+- **Per-residue pLDDT chart** -- line plot with confidence bands per chain
+- **Mode indicator** -- header badge showing ABB3-LM or plain ABB3
+
+An internet connection is required to load the Mol\* viewer library from CDN.
 
 ## Quick start
 
