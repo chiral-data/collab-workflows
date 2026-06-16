@@ -158,7 +158,7 @@ var root,factory;root=this,factory=()=>(()=>{var __webpack_modules__={3:(e,t,i)=
     }
     .plddt-chart {
       width: 100%;
-      height: 180px;
+      height: 200px;
       display: block;
       border-radius: 8px;
       border: 1px solid #e2e8f0;
@@ -2032,11 +2032,17 @@ END
 
           function drawChart() {
             var canvas = document.getElementById("chart_" + idx);
-            var W = Math.round(canvas.getBoundingClientRect().width) || 800;
-            var H = 190;
-            canvas.width = W;
-            canvas.height = H;
+            var dpr = window.devicePixelRatio || 1;
+            var cssW = Math.round(canvas.getBoundingClientRect().width) || 800;
+            var cssH = 200;
+            canvas.width = cssW * dpr;
+            canvas.height = cssH * dpr;
+            canvas.style.width = cssW + 'px';
+            canvas.style.height = cssH + 'px';
             var ctx = canvas.getContext("2d");
+            ctx.scale(dpr, dpr);
+
+            var W = cssW, H = cssH;
 
             var allResnums = [];
             Object.values(chainData).forEach(function(rs) {
@@ -2046,7 +2052,7 @@ END
             var minRes = Math.min.apply(null, allResnums);
             var maxRes = Math.max.apply(null, allResnums);
 
-            var padL = 44, padR = 90, padT = 14, padB = 32;
+            var padL = 50, padR = 16, padT = 28, padB = 38;
             var plotW = W - padL - padR;
             var plotH = H - padT - padB;
 
@@ -2055,67 +2061,58 @@ END
 
             // Confidence bands
             var bands = [
-              { min: 90, max: 100, color: 'rgba(0,63,138,0.10)' },
-              { min: 70, max: 90,  color: 'rgba(76,181,245,0.14)' },
-              { min: 50, max: 70,  color: 'rgba(245,215,110,0.18)' },
-              { min: 0,  max: 50,  color: 'rgba(255,125,69,0.12)' },
+              { min: 90, max: 100, color: 'rgba(0,63,138,0.08)' },
+              { min: 70, max: 90,  color: 'rgba(76,181,245,0.10)' },
+              { min: 50, max: 70,  color: 'rgba(245,215,110,0.12)' },
+              { min: 0,  max: 50,  color: 'rgba(255,125,69,0.08)' },
             ];
             bands.forEach(function(b) {
               ctx.fillStyle = b.color;
               ctx.fillRect(padL, yPos(b.max), plotW, yPos(b.min) - yPos(b.max));
             });
 
-            // Threshold lines + right-side labels
-            var thresholds = [
-              { v: 90, label: 'Very High', color: '#003F8A' },
-              { v: 70, label: 'High',      color: '#0369a1' },
-              { v: 50, label: 'Medium',    color: '#854d0e' },
-            ];
-            thresholds.forEach(function(t) {
-              ctx.setLineDash([3, 3]);
-              ctx.strokeStyle = 'rgba(0,0,0,0.12)';
-              ctx.lineWidth = 1;
+            // Threshold lines
+            ctx.setLineDash([4, 4]);
+            ctx.lineWidth = 1;
+            [90, 70, 50].forEach(function(v) {
+              ctx.strokeStyle = 'rgba(0,0,0,0.10)';
               ctx.beginPath();
-              ctx.moveTo(padL, yPos(t.v));
-              ctx.lineTo(padL + plotW, yPos(t.v));
+              ctx.moveTo(padL, yPos(v));
+              ctx.lineTo(padL + plotW, yPos(v));
               ctx.stroke();
-              ctx.setLineDash([]);
-              ctx.fillStyle = t.color;
-              ctx.font = '10px sans-serif';
-              ctx.textAlign = 'left';
-              ctx.fillText(t.label, padL + plotW + 6, yPos(t.v) + 4);
             });
             ctx.setLineDash([]);
 
-            // Y-axis ticks
-            ctx.fillStyle = '#666';
-            ctx.font = '10px sans-serif';
+            // Y-axis ticks and labels
+            ctx.fillStyle = '#888';
+            ctx.font = '11px sans-serif';
             ctx.textAlign = 'right';
             [0, 50, 70, 90, 100].forEach(function(v) {
-              ctx.fillText(v, padL - 5, yPos(v) + 3);
+              ctx.fillText(v, padL - 6, yPos(v) + 4);
             });
 
-            // Y-axis title (rotated)
+            // Y-axis title
             ctx.save();
-            ctx.translate(11, padT + plotH / 2);
+            ctx.translate(14, padT + plotH / 2);
             ctx.rotate(-Math.PI / 2);
             ctx.textAlign = 'center';
-            ctx.fillStyle = '#555';
+            ctx.fillStyle = '#666';
             ctx.font = '11px sans-serif';
             ctx.fillText('pLDDT', 0, 0);
             ctx.restore();
 
             // X-axis ticks
             ctx.textAlign = 'center';
-            ctx.fillStyle = '#666';
-            ctx.font = '10px sans-serif';
+            ctx.fillStyle = '#888';
+            ctx.font = '11px sans-serif';
             var step = Math.ceil((maxRes - minRes) / 8 / 10) * 10 || 10;
             for (var r = Math.ceil(minRes / step) * step; r <= maxRes; r += step) {
-              ctx.fillText(r, xPos(r), padT + plotH + 14);
+              ctx.fillText(r, xPos(r), padT + plotH + 16);
             }
-            ctx.fillText('Residue position', padL + plotW / 2, H - 2);
+            ctx.fillStyle = '#666';
+            ctx.fillText('Residue position', padL + plotW / 2, H - 4);
 
-            // Chain lines + legend
+            // Chain lines
             var chainIds = Object.keys(chainData).sort();
             var palette = ['#0f3460', '#c2410c'];
             chainIds.forEach(function(chainId, ci) {
@@ -2123,25 +2120,31 @@ END
               if (!residues.length) return;
               var col = palette[ci % palette.length];
               ctx.strokeStyle = col;
-              ctx.lineWidth = 2;
+              ctx.lineWidth = 1.5;
               ctx.beginPath();
               residues.forEach(function(r, i) {
                 var x = xPos(r.resnum), y = yPos(r.plddt);
                 if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
               });
               ctx.stroke();
+            });
 
-              // Inline legend at top-right of plot
-              var lx = padL + plotW - 100 + ci * 52;
-              var ly = padT + 10;
+            // Chain legend (top-left, outside plot data area)
+            chainIds.forEach(function(chainId, ci) {
+              var col = palette[ci % palette.length];
+              var lx = padL + 8;
+              var ly = padT - 16 + ci * 0;
+              if (chainIds.length > 1) {
+                lx = padL + 8 + ci * 80;
+              }
               ctx.strokeStyle = col; ctx.lineWidth = 2;
-              ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(lx + 16, ly); ctx.stroke();
-              ctx.fillStyle = col; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'left';
-              ctx.fillText('Chain ' + chainId, lx + 20, ly + 4);
+              ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(lx + 18, ly); ctx.stroke();
+              ctx.fillStyle = col; ctx.font = '11px sans-serif'; ctx.textAlign = 'left';
+              ctx.fillText('Chain ' + chainId, lx + 22, ly + 4);
             });
 
             // Plot border
-            ctx.strokeStyle = '#ddd'; ctx.lineWidth = 1;
+            ctx.strokeStyle = '#e2e8f0'; ctx.lineWidth = 1;
             ctx.strokeRect(padL, padT, plotW, plotH);
           }
 
@@ -2151,6 +2154,7 @@ END
           function initViewer() {
             var el = document.getElementById("viewer_" + idx);
             var viewer = $3Dmol.createViewer(el, { backgroundColor: "#f8f9fa" });
+            viewer.resize();
             viewer.addModel(pdb, "pdb");
             applyPlddt(viewer);
             viewer.zoomTo();
