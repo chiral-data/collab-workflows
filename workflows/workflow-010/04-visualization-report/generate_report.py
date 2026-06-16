@@ -366,12 +366,18 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             drawChart();
           }}
 
+          function deferInit() {{
+            // requestAnimationFrame ensures the browser has painted at least once,
+            // so the viewer div has its final CSS dimensions.
+            requestAnimationFrame(function() {{ requestAnimationFrame(initViewer); }});
+          }}
+
           if (typeof $3Dmolpromise !== 'undefined') {{
-            $3Dmolpromise.then(initViewer);
+            $3Dmolpromise.then(deferInit);
           }} else if (document.readyState === 'loading') {{
-            document.addEventListener('DOMContentLoaded', initViewer);
+            document.addEventListener('DOMContentLoaded', deferInit);
           }} else {{
-            initViewer();
+            deferInit();
           }}
         }})();
       </script>
@@ -522,12 +528,21 @@ def generate_html_report(
     .btn.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
 
     .viewer {{
+      position: relative;
       width: 100%;
       height: 420px;
       border-radius: 10px;
       border: 1px solid #e2e8f0;
       overflow: hidden;
       margin-bottom: 10px;
+    }}
+    .viewer > div {{
+      width: 100% !important;
+      height: 100% !important;
+    }}
+    .viewer canvas {{
+      width: 100% !important;
+      height: 100% !important;
     }}
 
     /* pLDDT legend */
