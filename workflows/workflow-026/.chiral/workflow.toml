@@ -1,6 +1,11 @@
 name = "ColabFold Structure Prediction"
 description = "AlphaFold2-based 3D structure prediction via ColabFold with MSA from MMseqs2"
 
+[params.input_file]
+type = "file"
+default = "input_files/sequences.fasta"
+hint = "Input FASTA file with one or more protein sequences"
+
 [dependencies]
 02_predict = ["01_validate_fasta"]
 03_analyze_confidence = ["02_predict"]
