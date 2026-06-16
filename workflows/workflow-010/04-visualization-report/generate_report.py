@@ -2,18 +2,14 @@
 Node 4 – PDB Export & Interactive HTML Visualization
 =====================================================
 Copies each PDB file from Node 3 into the output directory and
-generates a single self-contained HTML report with an interactive
-3Dmol viewer, pLDDT confidence coloring, per-residue pLDDT chart,
-and structure summary statistics for every predicted structure.
-
-The report works in any modern web browser with no Python runtime
-required – all PDB data and pLDDT values are embedded directly in
-the HTML.
+generates a single self-contained HTML report with a Mol* viewer,
+pLDDT confidence coloring, per-residue pLDDT chart, and structure
+summary statistics for every predicted structure.
 
 Outputs
 -------
 outputs/report.html          – interactive viewer with pLDDT analysis
-outputs/<pair_id>.pdb        – copied PDB files (for download links)
+outputs/<pair_id>.pdb        – copied PDB files
 """
 
 from __future__ import annotations
@@ -37,10 +33,6 @@ _AA3TO1: Dict[str, str] = {
 
 
 def parse_pdb_chains(pdb_text: str) -> Dict[str, List[dict]]:
-    """
-    Parse CA atoms from PDB ATOM records.
-    Returns dict: chain_id → list of {resnum, aa, plddt}.
-    """
     chains: Dict[str, List[dict]] = {}
     seen: set = set()
     for line in pdb_text.splitlines():
@@ -69,7 +61,6 @@ def parse_pdb_chains(pdb_text: str) -> Dict[str, List[dict]]:
 
 
 def chain_stats(residues: List[dict]) -> Tuple[int, float, float]:
-    """Return (length, avg_plddt, min_plddt)."""
     n = len(residues)
     if n == 0:
         return 0, 0.0, 0.0
@@ -80,18 +71,6 @@ def chain_stats(residues: List[dict]) -> Tuple[int, float, float]:
 # ---------------------------------------------------------------------------
 # HTML helpers
 # ---------------------------------------------------------------------------
-
-_3DMOL_BUNDLED_PATH = Path("/workflow/3Dmol-min.js")
-_3DMOL_CDN = "https://3dmol.org/build/3Dmol-min.js"
-
-
-def _get_3dmol_script_tag() -> str:
-    """Return an inline <script> tag if the bundled file exists, else a CDN tag."""
-    if _3DMOL_BUNDLED_PATH.exists():
-        js = _3DMOL_BUNDLED_PATH.read_text(encoding="utf-8")
-        return f"<script>{js}</script>"
-    return f'<script src="{_3DMOL_CDN}"></script>'
-
 
 def escape_html(s: str) -> str:
     return (
@@ -147,7 +126,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
     chains_data = parse_pdb_chains(pdb_text)
     summary_table = build_summary_table(chains_data)
 
-    # Embed chain pLDDT data for the JS chart
     chart_data = {
         chain_id: [{"resnum": r["resnum"], "plddt": r["plddt"]}
                    for r in residues]
@@ -155,9 +133,7 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
     }
     chart_data_json = json.dumps(chart_data)
 
-    # Escape PDB for JS template literal
     pdb_js = pdb_text.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
-    preview = escape_html("\n".join(pdb_text.splitlines()[:40]))
 
     return f"""
     <section class="card">
@@ -166,15 +142,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
       </div>
 
       {summary_table}
-
-      <div class="viewer-toolbar">
-        <span class="toolbar-label">Color:</span>
-        <div class="btn-group">
-          <button class="btn active" data-viewer="{index}" data-mode="plddt">pLDDT</button>
-          <button class="btn" data-viewer="{index}" data-mode="spectrum">Spectrum</button>
-          <button class="btn" data-viewer="{index}" data-mode="surface">Surface</button>
-        </div>
-      </div>
 
       <div id="viewer_{index}" class="viewer"></div>
 
@@ -190,28 +157,11 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
         <canvas id="chart_{index}" class="plddt-chart"></canvas>
       </div>
 
-      <details class="pdb-preview">
-        <summary>PDB preview (first 40 lines)</summary>
-        <pre>{preview}</pre>
-      </details>
-
       <script>
         (function () {{
           var pdb = `{pdb_js}`;
           var chainData = {chart_data_json};
           var idx = {index};
-
-          function applyPlddt(viewer) {{
-            viewer.setStyle({{}}, {{ cartoon: {{ colorfunc: function(atom) {{
-              var b = atom.b;
-              if (b >= 90) return '#003F8A';
-              if (b >= 70) return '#4CB5F5';
-              if (b >= 50) return '#F5D76E';
-              return '#FF7D45';
-            }} }} }});
-            viewer.removeAllSurfaces();
-            viewer.render();
-          }}
 
           function drawChart() {{
             var canvas = document.getElementById("chart_" + idx);
@@ -242,7 +192,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             function xPos(r) {{ return padL + (r - minRes) / Math.max(maxRes - minRes, 1) * plotW; }}
             function yPos(v) {{ return padT + (1 - v / 100) * plotH; }}
 
-            // Confidence bands
             var bands = [
               {{ min: 90, max: 100, color: 'rgba(0,63,138,0.08)' }},
               {{ min: 70, max: 90,  color: 'rgba(76,181,245,0.10)' }},
@@ -254,7 +203,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
               ctx.fillRect(padL, yPos(b.max), plotW, yPos(b.min) - yPos(b.max));
             }});
 
-            // Threshold lines
             ctx.setLineDash([4, 4]);
             ctx.lineWidth = 1;
             [90, 70, 50].forEach(function(v) {{
@@ -266,7 +214,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             }});
             ctx.setLineDash([]);
 
-            // Y-axis ticks and labels
             ctx.fillStyle = '#888';
             ctx.font = '11px sans-serif';
             ctx.textAlign = 'right';
@@ -274,7 +221,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
               ctx.fillText(v, padL - 6, yPos(v) + 4);
             }});
 
-            // Y-axis title
             ctx.save();
             ctx.translate(14, padT + plotH / 2);
             ctx.rotate(-Math.PI / 2);
@@ -284,7 +230,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             ctx.fillText('pLDDT', 0, 0);
             ctx.restore();
 
-            // X-axis ticks
             ctx.textAlign = 'center';
             ctx.fillStyle = '#888';
             ctx.font = '11px sans-serif';
@@ -295,7 +240,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             ctx.fillStyle = '#666';
             ctx.fillText('Residue position', padL + plotW / 2, H - 4);
 
-            // Chain lines
             var chainIds = Object.keys(chainData).sort();
             var palette = ['#0f3460', '#c2410c'];
             chainIds.forEach(function(chainId, ci) {{
@@ -312,72 +256,44 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
               ctx.stroke();
             }});
 
-            // Chain legend (top-left, outside plot data area)
             chainIds.forEach(function(chainId, ci) {{
               var col = palette[ci % palette.length];
-              var lx = padL + 8;
-              var ly = padT - 16 + ci * 0;
-              if (chainIds.length > 1) {{
-                lx = padL + 8 + ci * 80;
-              }}
+              var lx = padL + 8 + ci * 80;
+              var ly = padT - 16;
               ctx.strokeStyle = col; ctx.lineWidth = 2;
               ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(lx + 18, ly); ctx.stroke();
               ctx.fillStyle = col; ctx.font = '11px sans-serif'; ctx.textAlign = 'left';
               ctx.fillText('Chain ' + chainId, lx + 22, ly + 4);
             }});
 
-            // Plot border
             ctx.strokeStyle = '#e2e8f0'; ctx.lineWidth = 1;
             ctx.strokeRect(padL, padT, plotW, plotH);
           }}
 
-          // Defer until DOM is laid out so viewer div has real dimensions.
-          // $3Dmolpromise exists only when 3Dmol.js is loaded via CDN <script src>;
-          // when inlined, $3Dmol is available immediately — use DOMContentLoaded instead.
-          function initViewer() {{
-            var el = document.getElementById("viewer_" + idx);
-            var viewer = $3Dmol.createViewer(el, {{ backgroundColor: "#f8f9fa" }});
-            viewer.resize();
-            viewer.addModel(pdb, "pdb");
-            applyPlddt(viewer);
-            viewer.zoomTo();
-            viewer.render();
+          // Init Mol* viewer
+          molstar.Viewer.create('viewer_' + idx, {{
+            layoutIsExpanded: false,
+            layoutShowControls: false,
+            layoutShowLeftPanel: false,
+            layoutShowSequence: false,
+            layoutShowLog: false,
+            layoutShowRemoteState: false,
+            viewportShowAnimation: false,
+            viewportShowExpand: true,
+            viewportShowSelectionMode: false,
+          }}).then(function(viewer) {{
+            return viewer.loadStructureFromData(pdb, 'pdb');
+          }}).catch(function(err) {{
+            console.error('Mol* error:', err);
+            document.getElementById('viewer_' + idx).innerHTML =
+              '<p style="color:red;padding:16px">Viewer error: ' + err + '</p>';
+          }});
 
-            document.querySelectorAll('.btn[data-viewer="' + idx + '"]').forEach(function(btn) {{
-              btn.addEventListener('click', function() {{
-                document.querySelectorAll('.btn[data-viewer="' + idx + '"]').forEach(function(b) {{
-                  b.classList.remove('active');
-                }});
-                this.classList.add('active');
-                var mode = this.dataset.mode;
-                if (mode === 'plddt') applyPlddt(viewer);
-                else if (mode === 'spectrum') {{
-                  viewer.setStyle({{}}, {{ cartoon: {{ colorscheme: 'spectrum' }} }});
-                  viewer.removeAllSurfaces(); viewer.render();
-                }} else if (mode === 'surface') {{
-                  viewer.setStyle({{}}, {{ cartoon: {{ colorscheme: 'spectrum' }} }});
-                  viewer.removeAllSurfaces();
-                  viewer.addSurface($3Dmol.SurfaceType.VDW, {{ opacity: 0.7, colorscheme: 'spectrum' }});
-                  viewer.render();
-                }}
-              }});
-            }});
-
-            drawChart();
-          }}
-
-          function deferInit() {{
-            // requestAnimationFrame ensures the browser has painted at least once,
-            // so the viewer div has its final CSS dimensions.
-            requestAnimationFrame(function() {{ requestAnimationFrame(initViewer); }});
-          }}
-
-          if (typeof $3Dmolpromise !== 'undefined') {{
-            $3Dmolpromise.then(deferInit);
-          }} else if (document.readyState === 'loading') {{
-            document.addEventListener('DOMContentLoaded', deferInit);
+          // Draw chart after layout
+          if (document.readyState === 'loading') {{
+            document.addEventListener('DOMContentLoaded', drawChart);
           }} else {{
-            deferInit();
+            requestAnimationFrame(drawChart);
           }}
         }})();
       </script>
@@ -399,15 +315,14 @@ def generate_html_report(
     if not sections:
         sections = "<p class='empty'>No PDB files were found.</p>"
 
-    script_tag = _get_3dmol_script_tag()
-
     html = f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{escape_html(title)}</title>
-  {script_tag}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css">
+  <script src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
   <style>
     :root {{
       --primary: #1a1a2e;
@@ -505,44 +420,15 @@ def generate_html_report(
     .badge-medium   {{ background: #fef9c3; color: #854d0e; }}
     .badge-low      {{ background: #ffedd5; color: #9a3412; }}
 
-    /* Viewer toolbar */
-    .viewer-toolbar {{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }}
-    .toolbar-label {{ font-size: 0.85rem; color: #666; }}
-    .btn-group {{ display: flex; gap: 4px; }}
-    .btn {{
-      padding: 5px 12px;
-      font-size: 0.82rem;
-      border: 1.5px solid #c6d4e8;
-      background: #fff;
-      color: #444;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.15s, border-color 0.15s;
-    }}
-    .btn:hover {{ background: #eef3fb; }}
-    .btn.active {{ background: var(--accent); color: #fff; border-color: var(--accent); }}
-
+    /* Mol* viewer */
     .viewer {{
-      position: relative;
       width: 100%;
-      height: 420px;
+      height: 480px;
+      position: relative;
       border-radius: 10px;
       border: 1px solid #e2e8f0;
       overflow: hidden;
       margin-bottom: 10px;
-    }}
-    .viewer > div {{
-      width: 100% !important;
-      height: 100% !important;
-    }}
-    .viewer canvas {{
-      width: 100% !important;
-      height: 100% !important;
     }}
 
     /* pLDDT legend */
@@ -573,20 +459,6 @@ def generate_html_report(
       display: block;
       border-radius: 8px;
       border: 1px solid #e2e8f0;
-    }}
-
-    /* PDB preview */
-    .pdb-preview {{ margin-top: 8px; }}
-    .pdb-preview summary {{ cursor: pointer; font-size: 0.85rem; color: #666; user-select: none; }}
-    pre {{
-      background: #f7f9fc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 0.78rem;
-      overflow: auto;
-      max-height: 240px;
-      margin-top: 8px;
     }}
 
     .empty {{ text-align: center; color: #777; font-size: 1rem; padding: 48px 0; }}

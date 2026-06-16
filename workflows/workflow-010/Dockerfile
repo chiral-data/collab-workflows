@@ -71,9 +71,6 @@ T5Tokenizer.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc')" \
 # Use cached weights only — no network calls at runtime
 ENV HF_HUB_OFFLINE=1
 
-# ---- Pre-download 3Dmol.js for offline HTML reports -------------------
-RUN wget -q -O /workflow/3Dmol-min.js https://3dmol.org/build/3Dmol-min.js
-
 # ---- Copy workflow node scripts ----------------------------------------
 COPY . .
 
