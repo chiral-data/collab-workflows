@@ -163,7 +163,6 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
     <section class="card">
       <div class="card-header">
         <h2 class="card-title">{escape_html(pdb_id)}</h2>
-        <a class="btn-download" href="{escape_html(pdb_id)}.pdb" download>&#8595; Download PDB</a>
       </div>
 
       {summary_table}
@@ -329,8 +328,10 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             ctx.strokeRect(padL, padT, plotW, plotH);
           }}
 
-          // Defer until after layout so the viewer div has real dimensions
-          $3Dmolpromise.then(function() {{
+          // Defer until DOM is laid out so viewer div has real dimensions.
+          // $3Dmolpromise exists only when 3Dmol.js is loaded via CDN <script src>;
+          // when inlined, $3Dmol is available immediately — use DOMContentLoaded instead.
+          function initViewer() {{
             var el = document.getElementById("viewer_" + idx);
             var viewer = $3Dmol.createViewer(el, {{ backgroundColor: "#f8f9fa" }});
             viewer.addModel(pdb, "pdb");
@@ -359,7 +360,15 @@ def build_viewer_section(index: int, pdb_id: str, pdb_text: str) -> str:
             }});
 
             drawChart();
-          }});
+          }}
+
+          if (typeof $3Dmolpromise !== 'undefined') {{
+            $3Dmolpromise.then(initViewer);
+          }} else if (document.readyState === 'loading') {{
+            document.addEventListener('DOMContentLoaded', initViewer);
+          }} else {{
+            initViewer();
+          }}
         }})();
       </script>
     </section>
@@ -454,19 +463,6 @@ def generate_html_report(
       color: var(--accent);
       word-break: break-all;
     }}
-
-    .btn-download {{
-      flex-shrink: 0;
-      text-decoration: none;
-      color: var(--accent);
-      border: 1.5px solid #c6d4e8;
-      border-radius: 8px;
-      padding: 6px 14px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: background 0.15s, border-color 0.15s;
-    }}
-    .btn-download:hover {{ background: #eef3fb; border-color: var(--accent); }}
 
     /* Summary table */
     .summary-table {{
