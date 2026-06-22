@@ -17,11 +17,13 @@ if [ -z "$INPUT_FILE" ]; then
 fi
 
 echo "Input file: $INPUT_FILE"
+echo "Accelerator: ${PARAM_ACCELERATOR:-gpu}"
 
 python3 predict.py \
     --input "$INPUT_FILE" \
-    --diffusion-samples "${PARAM_DIFFUSION_SAMPLES:-10}" \
-    --recycling-steps "${PARAM_RECYCLING_STEPS:-5}" \
-    --use-msa-server "${PARAM_USE_MSA_SERVER:-true}"
+    --diffusion-samples "${PARAM_DIFFUSION_SAMPLES:-2}" \
+    --recycling-steps "${PARAM_RECYCLING_STEPS:-3}" \
+    --use-msa-server "${PARAM_USE_MSA_SERVER:-true}" \
+    --accelerator "${PARAM_ACCELERATOR:-gpu}"
 
 echo "Node 01 completed"

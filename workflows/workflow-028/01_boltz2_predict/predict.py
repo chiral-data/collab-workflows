@@ -130,7 +130,7 @@ def validate_holo_yaml(filepath):
 # Prediction
 # ---------------------------------------------------------------------------
 
-def run_boltz_predict(input_file, diffusion_samples, recycling_steps, use_msa_server):
+def run_boltz_predict(input_file, diffusion_samples, recycling_steps, use_msa_server, accelerator="gpu"):
     """Run 'boltz predict' and collect all outputs to ./outputs/."""
     os.makedirs("./outputs", exist_ok=True)
 
@@ -140,8 +140,11 @@ def run_boltz_predict(input_file, diffusion_samples, recycling_steps, use_msa_se
         "--diffusion_samples", str(diffusion_samples),
         "--recycling_steps", str(recycling_steps),
         "--devices", "1",
-        "--accelerator", "gpu",
-        "--no_kernels",
+        "--accelerator", accelerator,
+        "--no_kernels",               # cuequivariance_ops_torch missing from base image; use reference impl
+        "--num_workers", "0",         # Docker /dev/shm too small for multiprocessing workers
+        "--max_parallel_samples", "1",  # prevents GPU OOM on consumer GPUs (8GB VRAM)
+        "--override",                 # always reprocess; avoids stale cache between runs
     ]
     if str(use_msa_server).lower() == "true":
         cmd.append("--use_msa_server")
@@ -211,9 +214,10 @@ def run_boltz_predict(input_file, diffusion_samples, recycling_steps, use_msa_se
 def main():
     parser = argparse.ArgumentParser(description="Validate and run Boltz-2 holo prediction")
     parser.add_argument("--input", required=True)
-    parser.add_argument("--diffusion-samples", type=int, default=10)
-    parser.add_argument("--recycling-steps", type=int, default=5)
+    parser.add_argument("--diffusion-samples", type=int, default=2)
+    parser.add_argument("--recycling-steps", type=int, default=3)
     parser.add_argument("--use-msa-server", default="true")
+    parser.add_argument("--accelerator", default="gpu")
     args = parser.parse_args()
 
     print(f"Validating: {args.input}", flush=True)
@@ -238,6 +242,7 @@ def main():
         diffusion_samples=args.diffusion_samples,
         recycling_steps=args.recycling_steps,
         use_msa_server=args.use_msa_server,
+        accelerator=args.accelerator,
     )
 
 

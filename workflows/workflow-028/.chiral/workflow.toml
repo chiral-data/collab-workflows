@@ -9,12 +9,12 @@ description = "AI-driven pipeline: Boltz-2 structure prediction → P2Rank pocke
 
 [params.diffusion_samples]
 type    = "integer"
-default = 10
-hint    = "Number of Boltz-2 structural models to generate (use 2-3 for testing)"
+default = 2
+hint    = "Number of Boltz-2 structural models to generate (2-3 for testing, 10+ for production)"
 
 [params.recycling_steps]
 type    = "integer"
-default = 5
+default = 3
 hint    = "Number of Boltz-2 recycling steps (3 for testing, 5+ for production)"
 
 [params.use_msa_server]

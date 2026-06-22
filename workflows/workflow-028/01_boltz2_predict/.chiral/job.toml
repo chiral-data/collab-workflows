@@ -12,15 +12,20 @@ run = "run.sh"
 
 [params.diffusion_samples]
 type    = "integer"
-default = 10
-hint    = "Number of structure models to generate (use 2-3 for testing)"
+default = 2
+hint    = "Number of structure models to generate (2-3 for testing, 10+ for production)"
 
 [params.recycling_steps]
 type    = "integer"
-default = 5
-hint    = "Number of recycling steps through the model trunk"
+default = 3
+hint    = "Number of recycling steps through the model trunk (3 for testing, 5+ for production)"
 
 [params.use_msa_server]
 type    = "boolean"
 default = true
 hint    = "Use ColabFold MSA server for evolutionary information"
+
+[params.accelerator]
+type    = "string"
+default = "gpu"
+hint    = "Compute accelerator: 'gpu' (requires ≥16 GB VRAM for full EGFR sequence) or 'cpu' (slower, works on any hardware)"
