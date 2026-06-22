@@ -1,0 +1,27 @@
+name        = "Pocket QC + Grid Preparation"
+description = "Filter pockets by pLDDT confidence; convert mmCIF→PDB (gemmi) and SMILES→SDF (RDKit); write docking grid JSON"
+inputs      = ["selected_structure.cif", "selected_model_id.txt", "predictions.csv", "residues.csv",
+               "plddt_*.npz", "confidence_*.json", "affinity_*.json", "input_summary.json"]
+outputs     = ["receptor.pdb", "ligand.sdf", "grid.json", "pocket_qc.json"]
+
+[container]
+image   = "pocket-qc:latest"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.plddt_threshold]
+type    = "float"
+default = 70.0
+hint    = "Minimum mean pLDDT (0-100) for a pocket to pass QC. Pockets below this are flagged but not dropped."
+
+[params.box_size]
+type    = "float"
+default = 22.5
+hint    = "Docking grid box size in Å per dimension (15-30 Å typical for drug-like molecules)"
+
+[params.pocket_rank]
+type    = "integer"
+default = 1
+hint    = "Which P2Rank pocket to dock into (1 = highest score). Increase if top pocket fails pLDDT QC."
