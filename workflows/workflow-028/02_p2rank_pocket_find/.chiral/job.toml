@@ -1,0 +1,11 @@
+name        = "P2Rank Pocket Detection"
+description = "Predict ligand-binding pockets on the best Boltz-2 model using P2Rank with AlphaFold pLDDT profile"
+inputs      = ["*_model_*.cif", "confidence_*.json"]
+outputs     = ["predictions.csv", "residues.csv", "selected_structure.cif", "selected_model_id.txt"]
+
+[container]
+image   = "p2rank:2.4.2"
+use_gpu = false
+
+[scripts]
+run = "run.sh"

@@ -3,7 +3,7 @@ description = "AI-driven pipeline: Boltz-2 structure prediction → P2Rank pocke
 
 [dependencies]
 02_p2rank_pocket_find = ["01_boltz2_predict"]
-03_pocket_qc_grid     = ["02_p2rank_pocket_find"]
+03_pocket_qc_grid     = ["01_boltz2_predict", "02_p2rank_pocket_find"]
 04_unimol_docking     = ["03_pocket_qc_grid"]
 05_generate_report    = ["04_unimol_docking"]
 
