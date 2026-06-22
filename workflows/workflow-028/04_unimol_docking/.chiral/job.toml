@@ -1,0 +1,21 @@
+name        = "Uni-Mol Docking V2"
+description = "Deep-learning protein-ligand docking; outputs 3D poses (SDF) — no binding affinity from Uni-Mol"
+inputs      = ["receptor.pdb", "ligand.sdf", "grid.json", "pocket_qc.json"]
+outputs     = ["docked_poses.sdf", "docking_summary.json"]
+
+[container]
+image   = "unimol-docking:latest"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.num_poses]
+type    = "integer"
+default = 10
+hint    = "Number of docked conformations to generate per ligand"
+
+[params.weights_path]
+type    = "string"
+default = "/opt/unimol_weights"
+hint    = "Path to pre-downloaded Uni-Mol Docking V2 model weights (464 MB, see Dockerfile note)"
