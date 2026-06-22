@@ -9,9 +9,16 @@ Key Files and References:
     - '~/dev/collab-workflows/workflows/workflow-012/' (Boltz-2): reference for structure prediction workflow + existing workflow-012 image (ghcr.io/chiral-data/boltz:2025_09_05) can be reused for node 01
 - Silva migration guide | SILVA_MIGRATION_GUIDE.md in repo root
 
+Sample Target Input: EGFR Kinase Domain bound to Lapatinib
+- PDB ID: 1XKK 'https://www.rcsb.org/structure/1XKK'
+- Protein Target: Human Epidermal Growth Factor Receptor (EGFR) kinase domain
+- Experimental Resolution: 2.40 Å
+- Co-crystallized Ligand: Lapatinib (PDB Ligand ID: FMM) | 'https://www.rcsb.org/ligand/FMM'
+- Ligand SMILES: CS(=O)(=O)CCNCc1ccc(o1)c2ccc3c(c2)c(ncn3)Nc4ccc(c(c4)Cl)OCc5cccc(c5)F
+
 ## Tasks 
 - [x] Investigate the GitHub issue and fully the provided read references of files, tools, and papers; create a summary of key ideas and goals. 
-- [] Rewrite the Sample Directory Structure in the README to match the Proposed Node Structure described in the GitHub Issue, keeping a similar format. 
+- [x] Rewrite the Sample Directory Structure in the README to match the Proposed Node Structure described in the GitHub Issue and README, keeping a similar format. 
 - [] Using existing examples and references, and the sample directory structure, create a workflow by building one node at a time. Make it silva runnable.
 
 ## Summary of Key Ideas and Goals
@@ -122,23 +129,31 @@ For validation, the example input should be a target with an **existing holo cry
 ```
 workflows/workflow-028/
 ├── .chiral/workflow.toml
-├── input_files/sample_molecules.csv
-├── 01_validate_inputs/
+├── input_files/
+│   └── protein.yaml
+├── 01_boltz2_predict/
 │   ├── .chiral/job.toml
-│   ├── .chiral/test_inputs/sample_molecules.csv
+│   ├── .chiral/test_inputs/
+│   │   └── protein.yaml
 │   ├── run.sh
-│   └── validate.py
-├── 02_compute/
+│   └── predict.py
+├── 02_p2rank_pocket_find/
 │   ├── .chiral/job.toml
-│   ├── pre_run.sh          
+│   ├── Dockerfile
+│   └── run.sh
+├── 03_pocket_qc_grid/
+│   ├── .chiral/job.toml
+│   ├── Dockerfile
 │   ├── run.sh
-│   └── compute_admet.py
-├── 03_analyze/
+│   └── pocket_qc_grid.py
+├── 04_unimol_docking/
 │   ├── .chiral/job.toml
+│   ├── Dockerfile
 │   ├── run.sh
-│   └── analyze.py
-├── 04_visualize/
+│   └── dock.py
+├── 05_generate_report/
 │   ├── .chiral/job.toml
+│   ├── Dockerfile
 │   ├── run.sh
 │   └── generate_report.py
 └── README.md

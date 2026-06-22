@@ -1,0 +1,28 @@
+name = "Structure Prediction → Pocket Prediction → Docking"
+description = "AI-driven pipeline: Boltz-2 structure prediction → P2Rank pocket detection → Uni-Mol Docking V2"
+
+[dependencies]
+02_p2rank_pocket_find = ["01_boltz2_predict"]
+03_pocket_qc_grid     = ["02_p2rank_pocket_find"]
+04_unimol_docking     = ["03_pocket_qc_grid"]
+05_generate_report    = ["04_unimol_docking"]
+
+[params.diffusion_samples]
+type    = "integer"
+default = 10
+hint    = "Number of Boltz-2 structural models to generate (use 2-3 for testing)"
+
+[params.recycling_steps]
+type    = "integer"
+default = 5
+hint    = "Number of Boltz-2 recycling steps (3 for testing, 5+ for production)"
+
+[params.use_msa_server]
+type    = "boolean"
+default = true
+hint    = "Use ColabFold MSA server for evolutionary information (improves accuracy)"
+
+[params.plddt_threshold]
+type    = "float"
+default = 70.0
+hint    = "Minimum per-residue pLDDT score for pocket QC filtering (0-100 scale)"
