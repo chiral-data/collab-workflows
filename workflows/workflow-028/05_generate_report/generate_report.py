@@ -236,8 +236,7 @@ def _section_summary(input_summary, confidence_list, pocket_qc, docking_summary,
 
     seq_len = 0
     if protein_entities:
-        seq = protein_entities[0].get("sequence", "")
-        seq_len = len(seq)
+        seq_len = protein_entities[0].get("length", 0)
 
     n_pockets = len(pocket_qc.get("pockets", []))
     n_qc_pass = sum(1 for p in pocket_qc.get("pockets", []) if p.get("plddt_passes"))
@@ -312,7 +311,10 @@ def _section_confidence(plddt, pae, confidence_list):
     if len(plddt) == 0 and pae is None:
         return ""
 
-    plddt_js = json.dumps(plddt.tolist()) if len(plddt) > 0 else "[]"
+    plddt_vh_js = json.dumps(plddt[plddt >= 90].tolist())          if len(plddt) > 0 else "[]"
+    plddt_h_js  = json.dumps(plddt[(plddt >= 70) & (plddt < 90)].tolist()) if len(plddt) > 0 else "[]"
+    plddt_l_js  = json.dumps(plddt[(plddt >= 50) & (plddt < 70)].tolist()) if len(plddt) > 0 else "[]"
+    plddt_vl_js = json.dumps(plddt[plddt < 50].tolist())           if len(plddt) > 0 else "[]"
 
     pae_section = ""
     pae_chart_js = ""
@@ -342,20 +344,28 @@ def _section_confidence(plddt, pae, confidence_list):
 
     plddt_chart_js = ""
     if len(plddt) > 0:
-        plddt_chart_js = f"""Plotly.newPlot('plddt-hist', [{{
-  type: 'histogram',
-  x: {plddt_js},
-  xbins: {{ size: 2 }},
-  marker: {{ color: {plddt_js}.map(v =>
-    v >= 90 ? '#1d4ed8' : v >= 70 ? '#16a34a' : v >= 50 ? '#f59e0b' : '#dc2626'
-  )}},
-  hovertemplate: 'pLDDT %{{x:.0f}}: %{{y}} residues<extra></extra>'
-}}], {{
+        bins_js = "{ start: 0, end: 100, size: 2 }"
+        plddt_chart_js = f"""Plotly.newPlot('plddt-hist', [
+  {{ type:'histogram', x:{plddt_vl_js}, xbins:{bins_js},
+     marker:{{ color:'#dc2626' }}, name:'Very low <50',
+     hovertemplate:'pLDDT %{{x:.0f}}: %{{y}} residues<extra></extra>' }},
+  {{ type:'histogram', x:{plddt_l_js},  xbins:{bins_js},
+     marker:{{ color:'#f59e0b' }}, name:'Low 50–70',
+     hovertemplate:'pLDDT %{{x:.0f}}: %{{y}} residues<extra></extra>' }},
+  {{ type:'histogram', x:{plddt_h_js},  xbins:{bins_js},
+     marker:{{ color:'#16a34a' }}, name:'High 70–90',
+     hovertemplate:'pLDDT %{{x:.0f}}: %{{y}} residues<extra></extra>' }},
+  {{ type:'histogram', x:{plddt_vh_js}, xbins:{bins_js},
+     marker:{{ color:'#1d4ed8' }}, name:'Very high ≥90',
+     hovertemplate:'pLDDT %{{x:.0f}}: %{{y}} residues<extra></extra>' }}
+], {{
+  barmode: 'stack',
   xaxis: {{ title: 'pLDDT', range: [0, 100] }},
   yaxis: {{ title: 'Residue count' }},
   template: 'plotly_white', height: 340,
   margin: {{ t: 30, b: 50, l: 55, r: 20 }},
   title: {{ text: 'pLDDT Distribution (selected model)', font: {{ size: 13 }} }},
+  legend: {{ orientation: 'h', y: -0.25 }},
   shapes: [
     {{ type:'line', x0:70, x1:70, y0:0, y1:1, yref:'paper',
        line:{{ color:'#64748b', dash:'dash', width:1.5 }} }},

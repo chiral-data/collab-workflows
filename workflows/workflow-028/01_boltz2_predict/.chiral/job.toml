@@ -1,7 +1,7 @@
 name        = "Boltz-2 Structure Prediction"
 description = "Validate holo YAML input and run Boltz-2 structure prediction; outputs mmCIF + confidence metrics"
 inputs      = ["*.yaml"]
-outputs     = ["*_model_*.cif", "confidence_*.json", "affinity_*.json", "pae_*.npz", "pde_*.npz", "plddt_*.npz"]
+outputs     = ["*_model_*.cif", "confidence_*.json", "affinity_*.json", "pae_*.npz", "pde_*.npz", "plddt_*.npz", "input_summary.json"]
 
 [container]
 image   = "ghcr.io/chiral-data/boltz:2025_09_05"

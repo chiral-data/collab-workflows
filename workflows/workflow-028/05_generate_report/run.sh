@@ -11,6 +11,7 @@ cp inputs/input_summary.json     . 2>/dev/null || true
 cp inputs/predictions.csv        . 2>/dev/null || true
 cp inputs/selected_model_id.txt  . 2>/dev/null || true
 cp inputs/pocket_qc.json         . 2>/dev/null || true
+cp inputs/receptor.pdb           . 2>/dev/null || true
 cp inputs/docked_poses.sdf       . 2>/dev/null || true
 cp inputs/docking_summary.json   . 2>/dev/null || true
 

@@ -5,6 +5,7 @@ inputs      = [
     "affinity_*.json", "confidence_*.json", "input_summary.json",
     "predictions.csv", "selected_model_id.txt",
     "pocket_qc.json",
+    "receptor.pdb",
     "docked_poses.sdf", "docking_summary.json",
 ]
 outputs     = ["report.html"]
