@@ -8,11 +8,14 @@ export NUMBA_CACHE_DIR="/tmp/numba_cache"
 
 echo "Starting Node 01: Boltz-2 Structure Prediction"
 
-cp inputs/* . 2>/dev/null || true
-
-INPUT_FILE=$(ls *.yaml *.yml 2>/dev/null | head -1)
+# inputs/ is populated from input_files/ in headless mode;
+# in TUI mode, fall back to ../input_files/ (whole workflow is mounted at /workspace)
+INPUT_FILE=$(ls inputs/*.yaml inputs/*.yml 2>/dev/null | head -1)
 if [ -z "$INPUT_FILE" ]; then
-    echo "ERROR: No input YAML file found in inputs/"
+    INPUT_FILE=$(ls ../input_files/*.yaml ../input_files/*.yml 2>/dev/null | head -1)
+fi
+if [ -z "$INPUT_FILE" ]; then
+    echo "ERROR: No input YAML file found in inputs/ or ../input_files/"
     exit 1
 fi
 
