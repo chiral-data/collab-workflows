@@ -24,6 +24,7 @@ The page is fully self-contained except for three CDN resources:
 
 import glob
 import json
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -872,7 +873,6 @@ def main():
         timestamp=timestamp,
     )
 
-    import os
     os.makedirs("./outputs", exist_ok=True)
     Path("./outputs/report.html").write_text(html)
     print(f"Wrote outputs/report.html  ({len(html):,} chars)", flush=True)

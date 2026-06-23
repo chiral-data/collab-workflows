@@ -117,7 +117,7 @@ def cif_to_pdb(cif_path: str, pdb_path: str, protein_chain_ids: list[str]) -> No
         model.remove_chain(name)
 
     st.write_pdb(pdb_path)
-    print(f"  Wrote receptor PDB: {pdb_path} ({len(list(model[0]))} chains retained)", flush=True)
+    print(f"  Wrote receptor PDB: {pdb_path} ({len(list(model))} chains retained)", flush=True)
 
 
 # ---------------------------------------------------------------------------
@@ -270,7 +270,8 @@ def main():
     print("  Wrote pocket_qc.json", flush=True)
 
     # --- mmCIF → PDB --------------------------------------------------------
-    summary = json.load(open("input_summary.json"))
+    with open("input_summary.json") as f:
+        summary = json.load(f)
     protein_chains = [e["id"] for e in summary.get("entities", []) if e.get("type") == "protein"]
     if not protein_chains:
         protein_chains = ["A"]  # safe default

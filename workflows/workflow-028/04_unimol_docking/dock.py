@@ -208,8 +208,13 @@ def main():
     ligand_smiles = validate_ligand("ligand.sdf")
     validate_weights(args.weights_path)
 
-    grid = json.load(open("grid.json"))
-    pocket_qc = json.load(open("pocket_qc.json")) if Path("pocket_qc.json").exists() else {}
+    with open("grid.json") as f:
+        grid = json.load(f)
+    if Path("pocket_qc.json").exists():
+        with open("pocket_qc.json") as f:
+            pocket_qc = json.load(f)
+    else:
+        pocket_qc = {}
     print(
         f"Grid: center=({grid['center_x']}, {grid['center_y']}, {grid['center_z']})  "
         f"box={grid['size_x']}Å",
