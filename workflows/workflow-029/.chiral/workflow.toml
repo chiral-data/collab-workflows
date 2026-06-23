@@ -1,0 +1,74 @@
+name = "RFdiffusion → ProteinMPNN → PRODIGY Binder Design"
+description = "De novo protein binder design: RFdiffusion backbones, ProteinMPNN sequences, ColabFold fold-and-filter, PRODIGY affinity ranking"
+
+[dependencies]
+02_rfdiffusion       = ["01_validate_target"]
+03_proteinmpnn       = ["02_rfdiffusion"]
+04_fold_and_filter   = ["03_proteinmpnn", "01_validate_target"]
+05_prodigy_score     = ["04_fold_and_filter"]
+06_report            = ["05_prodigy_score", "04_fold_and_filter"]
+
+[params.receptor_chain]
+type    = "string"
+default = "A"
+hint    = "Chain ID of the receptor in the input PDB (used in node 01; nodes 02-06 use RFdiffusion chain convention)"
+
+[params.hotspot_residues]
+type    = "string"
+default = ""
+hint    = "Comma-separated residue IDs for binding site, e.g. A55,A58,A102. Empty = RFdiffusion selects automatically"
+
+[params.num_designs]
+type    = "integer"
+default = 100
+hint    = "Number of binder backbone structures to generate"
+
+[params.binder_length]
+type    = "integer"
+default = 80
+hint    = "Length in residues of the designed binder"
+
+[params.num_seq_per_target]
+type    = "integer"
+default = 8
+hint    = "Number of sequences designed per backbone by ProteinMPNN"
+
+[params.sampling_temp]
+type    = "float"
+default = 0.1
+hint    = "ProteinMPNN sampling temperature: lower = more conservative"
+
+[params.use_gpu]
+type    = "boolean"
+default = true
+hint    = "Requires a CUDA-capable GPU for nodes 02, 03, 04"
+
+[params.min_iptm]
+type    = "float"
+default = 0.6
+hint    = "Minimum ColabFold interface pTM score to pass filter"
+
+[params.min_plddt_binder]
+type    = "float"
+default = 80.0
+hint    = "Minimum mean pLDDT on binder chain to pass filter"
+
+[params.max_bb_rmsd]
+type    = "float"
+default = 1.5
+hint    = "Maximum Cα RMSD between folded binder and RFdiffusion backbone (Å)"
+
+[params.max_pae_interaction]
+type    = "float"
+default = 10.0
+hint    = "Maximum mean interface PAE to pass filter (Å)"
+
+[params.dg_cutoff]
+type    = "float"
+default = -8.0
+hint    = "PRODIGY ΔG threshold in kcal/mol; designs above this are flagged as weak binders"
+
+[params.top_n]
+type    = "integer"
+default = 10
+hint    = "Number of top-ranked designs to export"
