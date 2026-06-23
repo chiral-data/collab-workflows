@@ -1,0 +1,46 @@
+name        = "PRODIGY Affinity Scoring"
+description = "Score all filter-passing designs with PRODIGY (ΔG, Kd). Rank by ΔG ascending. Export top N candidates with optional PyMOL scripts. Chain A = binder, chain B = receptor."
+inputs      = ["folded/design_*_rank001.pdb", "folded/filter_report.json"]
+outputs     = ["results/prodigy_all_designs.json", "results/ranked_designs.csv", "results/top10/*.pdb"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+pre = "pre_run.sh"
+run = "run.sh"
+
+[params.binder_chain]
+type    = "string"
+default = "A"
+hint    = "Chain ID of the binder in folded complex PDBs (always A after RFdiffusion)"
+
+[params.receptor_chain]
+type    = "string"
+default = "B"
+hint    = "Chain ID of the receptor in folded complex PDBs (always B after RFdiffusion)"
+
+[params.temperature]
+type    = "float"
+default = 25.0
+hint    = "Temperature in Celsius for PRODIGY ΔG calculation"
+
+[params.distance_cutoff]
+type    = "float"
+default = 5.5
+hint    = "Distance cutoff in Å for interface contact counting"
+
+[params.top_n]
+type    = "integer"
+default = 10
+hint    = "Number of top-ranked designs to export"
+
+[params.dg_cutoff]
+type    = "float"
+default = -8.0
+hint    = "ΔG threshold in kcal/mol; designs above this are flagged as weak_binder"
+
+[params.pymol_selection]
+type    = "boolean"
+default = true
+hint    = "Write a PyMOL .pml script per top-N design showing interface contacts"
