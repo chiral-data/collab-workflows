@@ -1,0 +1,16 @@
+name        = "Campaign Report"
+description = "Generate a self-contained interactive HTML dashboard summarising the full binder design campaign: funnel chart, ranking table, iPTM vs ΔG scatter, top-N 3D viewer, and methodology notes."
+inputs      = ["folded/filter_report.json", "results/prodigy_all_designs.json", "results/top10/*.pdb"]
+outputs     = ["report/index.html"]
+
+[container]
+image = "python:3.11-slim"
+
+[scripts]
+pre = "pre_run.sh"
+run = "run.sh"
+
+[params.top_n]
+type    = "integer"
+default = 10
+hint    = "Number of top-ranked designs shown in the 3D viewer and summary cards"
