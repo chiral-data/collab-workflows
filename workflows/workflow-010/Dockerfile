@@ -60,7 +60,9 @@ RUN git clone https://github.com/Exscientia/abodybuilder3.git abodybuilder3 \
 
 # ---- Pre-download ProtT5 weights (used by Node 02 when USE_PLM=1) ------
 # Half-precision encoder-only variant: 2.4 GB instead of 11 GB
-RUN python3 -c "\
+# Pass --build-arg HF_TOKEN=<token> to avoid HuggingFace anonymous rate-limiting
+ARG HF_TOKEN=""
+RUN HF_TOKEN=${HF_TOKEN} python3 -c "\
 from transformers import T5EncoderModel, T5Tokenizer; \
 T5EncoderModel.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc'); \
 T5Tokenizer.from_pretrained('Rostlab/prot_t5_xl_half_uniref50-enc')" \
