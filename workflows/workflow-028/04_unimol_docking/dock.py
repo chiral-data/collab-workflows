@@ -15,9 +15,10 @@ Important constraints:
     (Uni-Mol #281). This script validates the ligand before docking.
 
 Invocation:
-  Docking is run via the predict.py script in the cloned Uni-Mol repository
-  (/opt/unimol/unimol_docking_v2/predict.py). If the argument names in your
-  installed version differ, adjust _build_docking_cmd() below.
+  Docking is run via interface/demo.py in the cloned Uni-Mol repository
+  (/opt/unimol/unimol_docking_v2/interface/demo.py). The docking grid is
+  passed as a JSON file via --input-docking-grid rather than as individual
+  coordinate/radius flags.
 """
 
 import argparse
@@ -29,7 +30,7 @@ import sys
 from pathlib import Path
 
 
-PREDICT_SCRIPT = "/opt/unimol/unimol_docking_v2/predict.py"
+PREDICT_SCRIPT = "/opt/unimol/unimol_docking_v2/interface/demo.py"
 
 
 # ---------------------------------------------------------------------------
@@ -102,54 +103,39 @@ def validate_weights(weights_path: str) -> None:
 def _build_docking_cmd(
     receptor_pdb: str,
     ligand_sdf: str,
-    cx: float, cy: float, cz: float,
-    pocket_radius: float,
+    grid_json: str,
     num_poses: int,
     weights_path: str,
     output_dir: str,
 ) -> list[str]:
-    """
-    Build the Uni-Mol Docking V2 predict command.
-
-    The predict.py in unimol_docking_v2/ uses the unicore framework.
-    Argument names below reflect the Uni-Mol Docking V2 interface as of
-    the 2024-2025 codebase. Run `python predict.py --help` to confirm
-    the exact flags for your installed version.
-    """
+    """Build the Uni-Mol Docking V2 interface/demo.py command."""
     return [
         sys.executable, PREDICT_SCRIPT,
-        "--mode",          "pocket",
-        "--protein",       receptor_pdb,
-        "--ligand",        ligand_sdf,
-        "--pocket-x",      str(round(cx, 3)),
-        "--pocket-y",      str(round(cy, 3)),
-        "--pocket-z",      str(round(cz, 3)),
-        "--pocket-radius", str(round(pocket_radius, 3)),
-        "--num-poses",     str(num_poses),
-        "--model-dir",     weights_path,
-        "--output-dir",    output_dir,
+        "--mode",               "single",
+        "--input-protein",      receptor_pdb,
+        "--input-ligand",       ligand_sdf,
+        "--input-docking-grid", grid_json,
+        "--conf-size",          str(num_poses),
+        "--model-dir",          weights_path,
+        "--output-ligand-dir",  output_dir,
+        "--steric-clash-fix",
+        "--cluster",
     ]
 
 
 def run_docking(
     receptor_pdb: str,
     ligand_sdf: str,
-    grid: dict,
+    grid_json: str,
     num_poses: int,
     weights_path: str,
     output_dir: str,
 ) -> None:
     os.makedirs(output_dir, exist_ok=True)
 
-    cx = grid["center_x"]
-    cy = grid["center_y"]
-    cz = grid["center_z"]
-    # Uni-Mol uses a sphere radius; convert box half-side to radius with padding
-    pocket_radius = max(grid["size_x"], grid["size_y"], grid["size_z"]) / 2.0
-
     cmd = _build_docking_cmd(
         receptor_pdb, ligand_sdf,
-        cx, cy, cz, pocket_radius,
+        grid_json,
         num_poses, weights_path, output_dir,
     )
 
@@ -225,7 +211,7 @@ def main():
     run_docking(
         receptor_pdb="receptor.pdb",
         ligand_sdf="ligand.sdf",
-        grid=grid,
+        grid_json="grid.json",
         num_poses=args.num_poses,
         weights_path=args.weights_path,
         output_dir="./unimol_output",
