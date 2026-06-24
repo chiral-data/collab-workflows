@@ -1,162 +1,255 @@
-# Create a silva-runnable workflow for an AI-driven Structure Prediction → Pocket Prediction → Docking pipeline
+---
+doc_id: workflow-028
+domain: molecular-docking
+doc_type: workflow
+version: "1.0.0"
+deprecated: false
+description: >
+  End-to-end AI-driven pipeline that takes a protein sequence and ligand SMILES
+  and produces docked 3D poses — without requiring a crystal structure.
+  Chains Boltz-2 structure prediction, P2Rank pocket detection, and
+  Uni-Mol Docking V2.
+tags: [molecular-docking, structure-prediction, boltz2, p2rank, unimol, virtual-screening, pocket-detection]
+---
 
-Key Files and References: 
-- Node structure | '~/dev/collab-workflows/workflows/workflow-028/'
-- GitHub Issue | 'https://github.com/chiral-data/collab-workflows/issues/172' 
-- Workflow references
-    - ‘~/dev/collab-workflows/workflows/workflow-025’ (Vina vs GNINA): best reference for a parallel comparison + report workflow
-    - '~/dev/collab-workflows/workflows/workflow-014/' (ADMET-AI): reference for SMILES-based property prediction pipeline + Plotly radar charts + Bootstrap 5 layout pattern
-    - '~/dev/collab-workflows/workflows/workflow-012/' (Boltz-2): reference for structure prediction workflow + existing workflow-012 image (ghcr.io/chiral-data/boltz:2025_09_05) can be reused for node 01
-- Silva migration guide | SILVA_MIGRATION_GUIDE.md in repo root
+# Workflow 028: AI-Driven Structure Prediction → Pocket Detection → Docking
 
-Sample Target Input: EGFR Kinase Domain bound to Lapatinib
-- PDB ID: 1XKK 'https://www.rcsb.org/structure/1XKK'
-- Protein Target: Human Epidermal Growth Factor Receptor (EGFR) kinase domain
-- Experimental Resolution: 2.40 Å
-- Co-crystallized Ligand: Lapatinib (PDB Ligand ID: FMM) | 'https://www.rcsb.org/ligand/FMM'
-- Ligand SMILES: CS(=O)(=O)CCNCc1ccc(o1)c2ccc3c(c2)c(ncn3)Nc4ccc(c(c4)Cl)OCc5cccc(c5)F
+An end-to-end pipeline that produces docked small-molecule poses directly from a protein sequence, with no experimental structure required. **Boltz-2** predicts the 3D protein fold in holo mode (with the ligand SMILES included), **P2Rank** identifies druggable binding pockets using an AlphaFold-aware pLDDT profile, and **Uni-Mol Docking V2** docks the ligand into the highest-confidence pocket. A final HTML report integrates structure confidence metrics, pocket rankings, and interactive 3D visualization.
 
-## Tasks 
-- [x] Investigate the GitHub issue and fully the provided read references of files, tools, and papers; create a summary of key ideas and goals. 
-- [x] Rewrite the Sample Directory Structure in the README to match the Proposed Node Structure described in the GitHub Issue and README, keeping a similar format. 
-- [] Using existing examples and references, and the sample directory structure, create a workflow by building one node at a time. Make it silva runnable.
+## Overview
 
-## Summary of Key Ideas and Goals
+Boltz-2 (Wohlwend et al. 2024; Passaro et al. 2025) is a diffusion-based co-folding model that predicts protein structure, ligand pose, binding affinity, and confidence metrics (pLDDT, PAE) in a single forward pass. Including the ligand SMILES in the input YAML enables *holo-mode* prediction, which constrains the pocket geometry toward a ligand-bound conformation and substantially improves downstream docking accuracy over an apo fold.
 
-This workflow implements **Direction B** from [GitHub Issue #172](https://github.com/chiral-data/collab-workflows/issues/172): an end-to-end AI-driven drug discovery pipeline that goes from a protein sequence directly to docked small molecule poses — no crystal structure required.
+P2Rank (Jakubec et al. 2025) predicts pocket centers from 3D structure using a random-forest model. The `-c alphafold` profile is required when the input comes from a predicted structure: it interprets the B-factor column as pLDDT rather than thermal displacement.
 
-### Pipeline Overview
+Uni-Mol Docking V2 (Zhou et al. 2022, ICLR 2023) achieves 77.6% RMSD < 2 Å on PoseBusters — significantly outperforming traditional physics-based methods on predicted structures. It outputs 3D poses only; no binding affinity score is written to the SDF file.
+
+## When to use this workflow
+
+Use this workflow when you have a protein sequence and a ligand SMILES and want to generate docked poses without an experimental structure. It is particularly well suited for novel targets where no PDB entry exists, or for comparing predicted-structure docking against a known crystal structure as a validation exercise.
+
+**When NOT to use:** If you already have a high-quality crystal structure (≤ 2.5 Å, co-crystallized ligand), use **workflow-025** (Vina vs GNINA comparison) instead — it skips the expensive structure-prediction step and uses a more mature docking pipeline. This workflow is also not appropriate for large-scale virtual screening (hundreds of ligands): Uni-Mol Docking V2 is slower than AutoDock Vina/GNINA and requires GPU. For high-throughput SMILES-based property prediction without docking, see **workflow-014** (ADMET-AI).
+
+## Architecture and data flow
 
 ```
-protein.yaml (sequence + ligand SMILES + affinity block)
+input_files/protein.yaml  (sequence + ligand SMILES + affinity block)
          │
          ▼
-01_boltz2_predict ──► structure.cif + plddt_*.npz + pae_*.npz + affinity_*.json
+01_boltz2_predict ──► *_model_*.cif + plddt_*.npz + pae_*.npz + affinity_*.json
          │
          ▼
-02_p2rank_pocket_find (-c alphafold) ──► *_predictions.csv (pocket centers + scores)
+02_p2rank_pocket_find  (-c alphafold) ──► predictions.csv + residues.csv
          │
          ▼
-03_pocket_qc_grid ──► pocket_qc.json (pLDDT distribution per pocket, pass/fail)
-                      grid.json (center + computed box size)
-                      receptor.pdb (gemmi mmCIF→PDB conversion)
-                      ligand.sdf (RDKit SMILES→SDF conversion)
+03_pocket_qc_grid ──► receptor.pdb + ligand.sdf + grid.json + pocket_qc.json
          │
          ▼
-04_unimol_docking ──► docked_poses.sdf (3D poses only; no affinity from Uni-Mol)
+04_unimol_docking ──► docked_poses.sdf + docking_summary.json
          │
          ▼
-05_generate_report ──► report.html (Molstar 3D viewer + Plotly charts + summary tables)
+05_generate_report ──► report.html
 ```
 
-### Tools
+Nodes run sequentially: 01 → 02 → 03 → 04 → 05. Node 05 reads outputs from all prior nodes.
 
-**Boltz-2** ([GitHub](https://github.com/jwohlwend/boltz), Wohlwend et al. 2024 / Passaro et al. 2025)
-- Diffusion-based 3D structure prediction for proteins, nucleic acids, small molecules, and complexes
-- **Input must be YAML** — FASTA mode does not support ligand specification or affinity prediction. Including the ligand SMILES in the YAML enables *holo* prediction, which significantly improves binding site geometry over apo prediction (AlphaFold3 VS paper, biorxiv 2025)
-- **Always use mmCIF output** — the `--output_format pdb` flag is broken for protein-ligand complexes ([boltz #298](https://github.com/jwohlwend/boltz/issues/298), IndexError). P2Rank natively accepts mmCIF, so no conversion is needed at this step
-- Outputs: `*.cif`, `plddt_*.npz` (per-residue 0–1), `pae_*.npz`, `confidence_*.json`, `affinity_*.json`
-- Existing Docker image `ghcr.io/chiral-data/boltz:2025_09_05` (from workflow-012) can be reused
+## Input requirements
 
-**P2Rank** ([GitHub](https://github.com/rdk/p2rank), Jakubec et al. 2025 *NAR*)
-- ML-based ligand binding pocket prediction directly from 3D protein structure
-- **Must use `-c alphafold` profile** when input comes from Boltz-2 — the B-factor column contains pLDDT, not thermal displacement, and this profile handles that correctly
-- Outputs `*_predictions.csv` with `center_x, center_y, center_z` (SAS point centroid in Å) and `score`, `probability` per pocket
-- Does **not** output box size — node 03 must compute `size_x/y/z` from pocket spatial extent (pocket SAS radius + 5–10 Å padding → 15–25 Å box)
-- Requires Java runtime in the container; CPU-only
+A single **YAML file** at `input_files/protein.yaml` with three sections:
 
-**Uni-Mol Docking V2** ([GitHub](https://github.com/deepmodeling/Uni-Mol), Zhou et al. 2022 / ICLR 2023)
-- Universal 3D molecular representation model applied to protein-ligand docking; achieves 77.6% RMSD < 2 Å
-- Inputs: receptor **PDB** (not mmCIF) + ligand **SDF** + docking grid JSON with `center_x/y/z` and `size_x/y/z`
-- **Outputs only 3D poses (SDF) — no binding affinity or confidence score.** The internal `prmsd_score` used for pose ranking is not written to the output file
-- Known issue: RDKit sanitization can silently drop invalid ligands ([Uni-Mol #281](https://github.com/deepmodeling/Uni-Mol/issues/281)) — add a validation check in node 03 before passing to Uni-Mol
-- Containerization: requires Uni-Core (custom CUDA C++ extensions); base image `dptechnology/unicore:0.0.1-pytorch1.11.0-cuda11.3`; model weights (464 MB) must be downloaded manually from Dropbox (no pip/HuggingFace distribution)
+- **`sequences`** — one protein entry with a `protein` key containing the amino acid sequence.
+- **`ligand`** — SMILES string for the molecule to dock.
+- **`properties`** — `affinity: true` to enable Boltz-2 affinity prediction.
 
-### Node 03 Conversions (QC + Grid)
+Input must be YAML — FASTA mode does not support ligand specification or affinity prediction. A test input for EGFR kinase domain (PDB: 1XKK) with Lapatinib is included at `input_files/protein.yaml`.
 
-Node 03 is the integration hub and handles several format conversions before docking:
+## Workflow nodes
 
-| Conversion | Tool | Notes |
-|------------|------|-------|
-| mmCIF → PDB | `gemmi convert` | Uni-Mol requires PDB; avoid BioPython's `MMCIFIO` (known incompatibility with Boltz-2 CIF's missing `entity.id`) |
-| SMILES → SDF | RDKit `AllChem.EmbedMolecule` | Extract SMILES from input YAML; validate before passing to Uni-Mol |
-| Pocket center → grid JSON | Python | P2Rank outputs only center; compute box size as pocket SAS radius + padding |
-| pLDDT QC | `plddt_*.npz` + P2Rank residue list | Read per-residue values from npz (0–1 scale); report mean, min, std per pocket |
+### Node 01: Boltz-2 Structure Prediction
 
-### pLDDT Threshold (≥ 70)
+**Goal:** Predict the 3D protein–ligand co-structure and confidence metrics from the input YAML.
 
-The ≥ 70 threshold is well-supported: AlphaFold's official scale defines ≥ 70 as "confident, backbone correct"; PrankWeb 4 uses it as the default filtering toggle; a Nature Communications 2024 druggable-pocket study required all pocket-centroid residues within 8 Å to have pLDDT > 70.
+**Process:** Validates the YAML (checks sequence length, ligand SMILES parsability, required keys) and runs Boltz-2 with the specified number of diffusion samples and recycling steps. Output is mmCIF format — the `--output_format pdb` flag is broken for protein-ligand complexes (boltz #298) and must not be used. Node selects the model with the highest mean pLDDT and writes `selected_model_id.txt`.
 
-**Caveat:** Eguida & Rognan 2023 (*JCIM*, PMC9852548) tested 22 drug targets and found 4 of the 5 worst-performing docking targets had binding-site pLDDT ≥ 70 — high pLDDT is necessary but not sufficient. Node 03 should report the **per-pocket pLDDT distribution** (mean, min, std across pocket residues) rather than a binary pass/fail, so the user can make an informed judgment.
+**Scientific notes:** Including the ligand SMILES in the YAML places Boltz-2 in holo mode, which conditions the predicted fold on the ligand geometry and produces a more accurate binding-site conformation than apo prediction alone. P2Rank can accept mmCIF directly, so no format conversion is needed at this stage.
 
-### Report Node (05)
+**Outputs:**
+- `*_model_*.cif` — predicted structure(s) in mmCIF format
+- `plddt_*.npz` — per-residue pLDDT confidence (0–1 scale)
+- `pae_*.npz` — predicted aligned error matrix
+- `confidence_*.json` — overall confidence metrics
+- `affinity_*.json` — predicted binding affinity and confidence
+- `input_summary.json` — parsed input metadata (sequence length, SMILES, etc.)
 
-The report is a full HTML dashboard — not just a 3D viewer — combining Molstar, Plotly, and Bootstrap 5 (following workflow-014's layout pattern). It includes:
+### Node 02: P2Rank Pocket Detection
 
-1. **Pipeline summary** — input sequence length, model count, pocket count, QC-passed pockets, docked compounds
-2. **Structure confidence panel** — Boltz-2 pLDDT distribution histogram + PAE heatmap (Plotly)
-3. **Pocket discovery table** — P2Rank rank, score, probability, mean/min pLDDT per pocket, center coordinates (sortable)
-4. **3D interactive viewer** — Molstar: protein colored by pLDDT, P2Rank pocket highlighted, top Uni-Mol docking pose overlaid
-5. **Methods & caveats** — auto-generated pipeline description with "pLDDT ≥ 70 is necessary but not sufficient" note
+**Goal:** Identify ligand-binding pocket candidates on the best predicted structure.
 
-Since Uni-Mol outputs no affinity score, the report uses **Boltz-2's own confidence metrics** (`plddt_*.npz`, `pae_*.npz`, `affinity_*.json`) combined with P2Rank's `score` and `probability` as the confidence signal.
+**Process:** Runs P2Rank with the `-c alphafold` configuration profile, which treats the B-factor column as pLDDT rather than thermal displacement. Outputs a ranked list of pocket centers with scores and the residue-level pocket membership used for pLDDT QC in node 03.
 
-Refs: dockviz (ljmartin, 2024) for PDBe-Molstar embedded HTML; PrankWeb 4 for pocket-colored-by-pLDDT pattern; workflow-014 for Plotly + Bootstrap 5 layout.
+**Scientific notes:** The `-c alphafold` profile is required for any structure from Boltz-2 or AlphaFold. Without it, P2Rank misinterprets pLDDT values as thermal B-factors, which degrades pocket scoring.
 
-### Scientific Motivation
+**Outputs:**
+- `predictions.csv` — ranked pocket centers (`center_x/y/z`), `score`, `probability`
+- `residues.csv` — per-residue pocket membership assignments
+- `selected_structure.cif` — the mmCIF file passed to P2Rank
+- `selected_model_id.txt` — identifier of the selected Boltz-2 model
 
-Traditional virtual screening requires a solved crystal structure. This pipeline removes that dependency: Boltz-2 predicts the 3D fold from sequence alone (with the ligand included for holo-mode accuracy), P2Rank finds the druggable pocket using an AlphaFold-aware profile, and Uni-Mol Docking V2 generates docked poses. pLDDT confidence propagates from structure prediction through pocket QC to the report, flagging results from uncertain structural regions.
+### Node 03: Pocket QC and Grid Preparation
 
-For validation, the example input should be a target with an **existing holo crystal structure** (≤ 2.5 Å, co-crystallized ligand with known SMILES). This lets us check whether Boltz-2's predicted structure matches the crystal, P2Rank identifies the correct pocket, and Uni-Mol's pose is close to the experimental binding mode.
+**Goal:** Filter pockets by structural confidence, convert file formats, and write the docking grid.
 
-### Patterns from Reference Workflows
+**Process:** Reads per-residue pLDDT from `plddt_*.npz` and computes the mean, min, and std pLDDT across the residues of each P2Rank pocket. The selected pocket (by `pocket_rank`) is flagged if its mean pLDDT falls below `plddt_threshold`, but docking proceeds regardless so the report can show the confidence context. Converts the Boltz-2 mmCIF to PDB using `gemmi` (BioPython's `MMCIFIO` is incompatible with Boltz-2's CIF format). Extracts the ligand SMILES from the input YAML, validates it with RDKit, and writes a 3D-embedded SDF. Writes `grid.json` with the pocket center and the fixed `box_size` applied uniformly to all three dimensions.
 
-| Reference | Pattern to reuse |
-|-----------|-----------------|
-| **workflow-012** (Boltz-2) | Reuse `ghcr.io/chiral-data/boltz:2025_09_05`; YAML input format; pLDDT/PAE npz parsing |
-| **workflow-025** (Vina vs GNINA) | HTML report structure; Bootstrap 5 + Plotly layout |
-| **workflow-014** (ADMET-AI) | Plotly chart patterns; Bootstrap 5 dashboard; SMILES validation via RDKit |
+**Scientific notes:** The ≥ 70 pLDDT threshold is well-supported: AlphaFold's official scale defines ≥ 70 as "confident, backbone correct," and PrankWeb 4 uses it as the default filtering cutoff. However, Eguida & Rognan (2023, *JCIM*) found that high pLDDT is necessary but not sufficient — four of five worst-performing docking targets still had binding-site pLDDT ≥ 70. The per-pocket distribution (mean, min, std) is reported rather than a binary pass/fail.
 
-### Key Implementation Challenges
+**Outputs:**
+- `receptor.pdb` — protein structure in PDB format (required by Uni-Mol)
+- `ligand.sdf` — 3D-embedded ligand conformer
+- `grid.json` — docking grid: `{center_x, center_y, center_z, size_x, size_y, size_z}`
+- `pocket_qc.json` — pLDDT statistics per pocket and QC pass/fail flag
 
-1. **Uni-Core containerization** — requires source compilation against CUDA 11.3; base image `dptechnology/unicore:0.0.1-pytorch1.11.0-cuda11.3`; 464 MB model weights need manual download from Dropbox
-2. **Box size computation** — P2Rank outputs only pocket center coordinates; node 03 must derive `size_x/y/z` from pocket spatial extent
-3. **Format conversions in node 03** — mmCIF → PDB (`gemmi`), SMILES → SDF (RDKit), with ligand validation before Uni-Mol to avoid silent drops
-4. **GPU requirements** — nodes 01 (Boltz-2) and 04 (Uni-Mol) require GPU; node 02 (P2Rank) is CPU-only; `job.toml` container specs must reflect this
-5. **No affinity from Uni-Mol** — the report must be built from Boltz-2 metrics and P2Rank scores, not Uni-Mol output
+### Node 04: Uni-Mol Docking V2
 
-**Sample Directory Structure**
-```
-workflows/workflow-028/
-├── .chiral/workflow.toml
-├── input_files/
-│   └── protein.yaml
-├── 01_boltz2_predict/
-│   ├── .chiral/job.toml
-│   ├── .chiral/test_inputs/
-│   │   └── protein.yaml
-│   ├── run.sh
-│   └── predict.py
-├── 02_p2rank_pocket_find/
-│   ├── .chiral/job.toml
-│   ├── Dockerfile
-│   └── run.sh
-├── 03_pocket_qc_grid/
-│   ├── .chiral/job.toml
-│   ├── Dockerfile
-│   ├── run.sh
-│   └── pocket_qc_grid.py
-├── 04_unimol_docking/
-│   ├── .chiral/job.toml
-│   ├── Dockerfile
-│   ├── run.sh
-│   └── dock.py
-├── 05_generate_report/
-│   ├── .chiral/job.toml
-│   ├── Dockerfile
-│   ├── run.sh
-│   └── generate_report.py
-└── README.md
-```
+**Goal:** Generate docked 3D poses of the ligand in the selected pocket.
 
-## Outputs
+**Process:** Validates the receptor PDB, ligand SDF (pre-validating with RDKit to catch silently-dropped molecules; Uni-Mol #281), and model weight files. Invokes `interface/demo.py` from the cloned Uni-Mol repository with `--mode single`, passing `grid.json` directly via `--input-docking-grid`. The `--steric-clash-fix` and `--cluster` flags are enabled for improved pose quality. Collected SDF poses are concatenated into `docked_poses.sdf`.
+
+**Scientific notes:** Uni-Mol Docking V2 outputs 3D poses only — the internal `prmsd_score` used for pose ranking is not written to the output file. Binding affinity estimation should use Boltz-2's `affinity_*.json` as a complementary signal.
+
+**Outputs:**
+- `docked_poses.sdf` — concatenated docked conformations
+- `docking_summary.json` — receptor path, ligand SMILES, grid, number of poses requested and generated
+
+### Node 05: Pipeline Report
+
+**Goal:** Produce a self-contained HTML dashboard summarizing the full pipeline run.
+
+**Process:** Reads outputs from all prior nodes and renders a Bootstrap 5 + Plotly dashboard with an embedded Mol* 3D viewer. Includes a pipeline summary, Boltz-2 confidence panels, P2Rank pocket table, and docking results section with a caveats note on the absence of Uni-Mol affinity scores.
+
+**Outputs:**
+- `report.html` — self-contained HTML; can be opened in any browser without re-running code
+
+## Parameters
+
+### `diffusion_samples`
+
+- **Type:** integer
+- **Default:** `2`
+- **Description:** Number of Boltz-2 structural models to generate.
+- **Guidance:** Use 2–3 for testing. For publication-quality results or when exploring conformational diversity, use 10 or more. Node 02 selects the model with the highest mean pLDDT.
+
+### `recycling_steps`
+
+- **Type:** integer
+- **Default:** `3`
+- **Description:** Number of Boltz-2 recycling iterations through the model trunk.
+- **Guidance:** Use 3 for testing. Increase to 5–10 for production runs; more recycling steps generally improve structure quality at the cost of runtime.
+
+### `use_msa_server`
+
+- **Type:** boolean
+- **Default:** `true`
+- **Description:** Whether to query the ColabFold MSA server for evolutionary co-variation information.
+- **Guidance:** Keep `true` for production. Set `false` only for rapid local testing on sequences with known structure — MSA significantly improves prediction accuracy.
+
+### `plddt_threshold`
+
+- **Type:** float
+- **Default:** `70.0`
+- **Description:** Minimum mean pLDDT (0–100 scale) for a pocket to pass QC. Pockets below this threshold are flagged in the report but docking still proceeds.
+- **Guidance:** 70 is the standard AlphaFold "confident backbone" cutoff. Lower to 60 for exploratory runs on difficult targets; raise to 80 when structural confidence must be high before acting on docking results.
+
+### `box_size`
+
+- **Type:** float
+- **Default:** `22.5`
+- **Description:** Docking grid box size in Å, applied uniformly to all three dimensions (`size_x = size_y = size_z = box_size`). This is a fixed user-configurable parameter — it is not computed from the pocket spatial extent.
+- **Guidance:** 20–25 Å covers most drug-like molecules in a typical pocket. Increase to 28–30 Å for larger ligands or if the pocket is shallow and wide. Reducing below 18 Å risks clipping part of the binding site.
+
+### `pocket_rank`
+
+- **Type:** integer
+- **Default:** `1`
+- **Description:** Which P2Rank pocket to dock into (1 = highest P2Rank score).
+- **Guidance:** Increase if the top-ranked pocket fails pLDDT QC or is in a structurally uncertain region. Check `predictions.csv` and `pocket_qc.json` to compare pocket scores and confidence.
+
+### `num_poses`
+
+- **Type:** integer
+- **Default:** `10`
+- **Description:** Number of docked conformations to generate per ligand (maps to `--conf-size` in `interface/demo.py`).
+- **Guidance:** 10 is sufficient for inspecting the top poses. Increase to 20–50 when clustering or ensemble docking is needed.
+
+## Outputs and interpretation
+
+### `report.html`
+
+Self-contained HTML dashboard with: (1) pipeline summary table, (2) Boltz-2 pLDDT histogram and PAE heatmap, (3) P2Rank pocket table with pLDDT statistics per pocket, (4) Mol* 3D viewer with protein colored by pLDDT and the top docking pose overlaid, (5) methods and caveats section. Open in any browser.
+
+### `docked_poses.sdf`
+
+Concatenated SDF of all generated docking poses. Poses are ordered by Uni-Mol's internal `prmsd_score` (lower = better predicted RMSD from true binding mode), but this score is **not written to the file**. Inspect pose geometry in the report's 3D viewer or with a molecular visualization tool; do not rank poses by SDF record order alone.
+
+### `docking_summary.json`
+
+Metadata record: receptor path, ligand SMILES, grid center and size, number of poses requested and generated. Useful for provenance tracking and debugging.
+
+### `pocket_qc.json`
+
+Per-pocket pLDDT statistics (mean, min, std across pocket residues) and a `selected_pocket_passes_qc` boolean. A `false` value means the selected pocket has lower structural confidence; interpret docking results cautiously and consider increasing `pocket_rank` to try a higher-confidence pocket.
+
+### `affinity_*.json` (from node 01)
+
+Boltz-2's predicted binding affinity and confidence score. This is the only affinity signal in the pipeline — Uni-Mol Docking V2 does not output binding energy. Use in combination with P2Rank `score` and `probability` to prioritize results.
+
+## Quick start
+
+### Running on Silva
+
+1. Select workflow **028** from the workflow list.
+2. Upload `input_files/protein.yaml` with your protein sequence and ligand SMILES.
+3. Adjust parameters (see Parameters section) — defaults are configured for a fast test run.
+4. Click **Run**.
+
+### Running with Docker
+
+Each node has its own Dockerfile. Node 01 reuses the pre-built image `ghcr.io/chiral-data/boltz:2025_09_05`. Node 04 builds from `dptechnology/unicore:latest-pytorch1.12.1-cuda11.6-rdma`.
+
+**Note:** Uni-Mol Docking V2 model weights (464 MB) are not distributed via Docker, pip, or HuggingFace. Download them from the Dropbox link in the [Uni-Mol Docking V2 README](https://github.com/deepmodeling/Uni-Mol/tree/main/unimol_docking_v2) and place them at the path set by `PARAM_WEIGHTS_PATH` (default: `/opt/unimol_weights`).
+
+### Test vs production settings
+
+| Setting | Test (default) | Production |
+|---------|---------------|------------|
+| `diffusion_samples` | `2` | `10`+ |
+| `recycling_steps` | `3` | `5`–`10` |
+| `use_msa_server` | `true` | `true` |
+| `num_poses` | `10` | `20`–`50` |
+
+The included test input (EGFR kinase domain + Lapatinib, PDB: 1XKK) has a known crystal structure at 2.40 Å, making it suitable for validating that Boltz-2 recovers the correct fold and Uni-Mol places poses in the correct pocket.
+
+## Troubleshooting
+
+**Uni-Mol model weights not found**
+Node 04 will exit with a clear error if the weights directory is missing or empty. Download the weights from the Dropbox link in the Uni-Mol Docking V2 README and set `PARAM_WEIGHTS_PATH` to the directory containing the `.pt`/`.pkl` files.
+
+**Node 04 produces an empty `docked_poses.sdf`**
+Usually caused by an invalid ligand SDF. RDKit sanitization inside Uni-Mol can silently drop molecules that fail valence checks (Uni-Mol #281). Node 04 pre-validates the ligand with RDKit before invoking Uni-Mol — check the error output for the SMILES that failed parsing.
+
+**Node 02 pocket scores are all low or pocket center is far from the expected site**
+Confirm that P2Rank is running with `-c alphafold`. Without this flag, pLDDT values in the B-factor column are misread as thermal displacement factors, degrading pocket scoring.
+
+**Node 01 runs out of VRAM**
+Full EGFR sequence (~1186 residues) requires ≥ 16 GB VRAM. Set `PARAM_ACCELERATOR=cpu` for a slower but memory-unconstrained run, or truncate the input to the kinase domain only.
+
+## References
+
+- Wohlwend et al. "Boltz-1: Democratizing Biomolecular Interaction Modeling." *bioRxiv*, 2024.
+- Passaro et al. "Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction." *bioRxiv*, 2025.
+- Jakubec et al. "PrankWeb 4: Neural Networks, Evolutionary Information, and AlphaFold Structures." *Nucleic Acids Research*, 2025.
+- Zhou et al. "Uni-Mol: A Universal 3D Molecular Representation Learning Framework." *ICLR*, 2023. https://openreview.net/forum?id=6K2RM6wVqKu
+- Eguida & Rognan. "Estimating the Ease of Protein–Ligand Docking with Predicted Structures." *JCIM*, 2023. PMC9852548.
+- [Boltz GitHub](https://github.com/jwohlwend/boltz)
+- [P2Rank GitHub](https://github.com/rdk/p2rank)
+- [Uni-Mol GitHub](https://github.com/deepmodeling/Uni-Mol)
