@@ -45,7 +45,7 @@ fi
 echo "Selected model: $BEST_MODEL_ID ($BEST_CIF)"
 
 # Run P2Rank with AlphaFold pLDDT profile.
-# -c alphafold: B-factor column contains pLDDT (0-100), not thermal displacement.
+# -c alphafold: alphafold config drops B-factor from the feature set
 mkdir -p ./p2rank_out
 prank predict -f "$BEST_CIF" -c alphafold -o ./p2rank_out
 

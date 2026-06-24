@@ -1,15 +1,11 @@
-FROM dptechnology/unicore:0.0.1-pytorch1.11.0-cuda11.3
-
-# Uni-Core custom CUDA C++ extensions are pre-compiled in this base image
-# for CUDA 11.3 / PyTorch 1.11.0. Rebuilding on a different CUDA version
-# requires recompiling Uni-Core from source.
+FROM dptechnology/unicore:latest-pytorch1.12.1-cuda11.6-rdma
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir unimol_tools rdkit
+RUN pip install --no-cache-dir unimol_tools rdkit biopandas
 
 # Clone Uni-Mol repository for the docking V2 predict script and data pipeline
 RUN git clone --depth 1 https://github.com/deepmodeling/Uni-Mol /opt/unimol \
