@@ -248,7 +248,9 @@ for fasta_path in fasta_files:
                 fail_reason = 'iptm'
             elif plddt_binder < min_plddt_binder:
                 fail_reason = 'plddt_binder'
-            elif bb_rmsd is not None and bb_rmsd > max_bb_rmsd:
+            elif bb_rmsd is None:
+                fail_reason = 'bb_rmsd_unavailable'
+            elif bb_rmsd > max_bb_rmsd:
                 fail_reason = 'bb_rmsd'
             elif pae_interaction > max_pae_interaction:
                 fail_reason = 'pae_interaction'
