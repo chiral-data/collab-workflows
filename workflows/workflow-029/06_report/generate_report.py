@@ -159,7 +159,7 @@ def make_ranking_chart():
     return pyo.plot(fig, output_type='div', include_plotlyjs=False)
 
 
-# ── 3D viewer section ─────────────────────────────────────────────────────────
+# ── 3D viewer section (Molstar) ──────────────────────────────────────────────
 
 def make_viewer_section():
     if not top10_pdbs:
@@ -182,9 +182,9 @@ def make_viewer_section():
         f'<option value="{i}"{" selected" if i == 0 else ""}>{s["id"]}</option>\n'
         for i, s in enumerate(structures)
     )
-    struct_js = ',\n'.join(
-        f'            {i}: {{data: `{s["data"]}`}}'
-        for i, s in enumerate(structures)
+    struct_entries = ',\n'.join(
+        f'    {{label: {json.dumps(s["id"])}, data: `{s["data"]}`}}'
+        for s in structures
     )
 
     return f"""
@@ -192,54 +192,41 @@ def make_viewer_section():
                 onchange="loadStructure(this.value)">
             {options_html}
         </select>
-        <div class="d-flex gap-2 mb-3" id="styleButtons">
-            <button class="btn btn-sm btn-outline-primary active" onclick="setStyle('cartoon',this)">Cartoon</button>
-            <button class="btn btn-sm btn-outline-primary" onclick="setStyle('stick',this)">Stick</button>
-            <button class="btn btn-sm btn-outline-primary" onclick="setStyle('sphere',this)">Sphere</button>
-            <button class="btn btn-sm btn-outline-primary" onclick="setStyle('surface',this)">Surface</button>
-        </div>
-        <div id="viewer3d" style="height:500px;width:100%;background:#1a1a2e;border-radius:10px;"></div>
+        <div id="viewer3d" style="height:500px;width:100%;position:relative;border-radius:10px;"></div>
         <script>
         (function(){{
-            var structs = {{
-{struct_js}
+            var structs = [
+{struct_entries}
+            ];
+            var molPlugin = null;
+
+            window.loadStructure = function(idx) {{
+                if (!molPlugin || !structs[idx]) return;
+                molPlugin.clear();
+                var s = structs[idx];
+                molPlugin.builders.data.rawData({{data: s.data, label: s.label}})
+                    .then(function(d) {{ return molPlugin.builders.structure.parseTrajectory(d, 'pdb'); }})
+                    .then(function(t) {{ return molPlugin.builders.structure.hierarchy.applyPreset(t, 'default'); }})
+                    .catch(function(e) {{ console.error('Mol* load error:', e); }});
             }};
-            var viewer = null;
-            var curStyle = 'cartoon';
-            function init(){{
-                var el = document.getElementById('viewer3d');
-                viewer = $3Dmol.createViewer(el, {{backgroundColor:'#1a1a2e'}});
+
+            molstar.Viewer.create('viewer3d', {{
+                layoutIsExpanded: false,
+                layoutShowControls: false,
+                layoutShowLeftPanel: false,
+                layoutShowSequence: false,
+                layoutShowLog: false,
+                layoutShowRemoteState: false,
+                viewportShowAnimation: false,
+                viewportShowExpand: true,
+                viewportShowSelectionMode: false
+            }}).then(function(viewer) {{
+                molPlugin = viewer.plugin;
                 loadStructure(0);
-            }}
-            window.loadStructure = function(idx){{
-                if(!viewer || !structs[idx]) return;
-                viewer.removeAllModels();
-                viewer.addModel(structs[idx].data, 'pdb');
-                applyStyle(curStyle);
-                viewer.zoomTo();
-                viewer.render();
-            }};
-            function applyStyle(s){{
-                if(!viewer) return;
-                viewer.removeAllSurfaces();
-                viewer.setStyle({{}},{{}});
-                if(s==='cartoon')  viewer.setStyle({{}},{{cartoon:{{colorscheme:'chainHetatm'}}}});
-                else if(s==='stick') viewer.setStyle({{}},{{stick:{{colorscheme:'chainHetatm',radius:0.12}}}});
-                else if(s==='sphere') viewer.setStyle({{}},{{sphere:{{colorscheme:'chainHetatm',scale:0.3}}}});
-                else if(s==='surface'){{
-                    viewer.setStyle({{}},{{cartoon:{{colorscheme:'chainHetatm'}}}});
-                    viewer.addSurface($3Dmol.SurfaceType.VDW,{{opacity:0.7,color:'white'}});
-                }}
-                viewer.render();
-            }}
-            window.setStyle = function(s,btn){{
-                curStyle=s;
-                document.querySelectorAll('#styleButtons .btn').forEach(function(b){{b.classList.remove('active');}});
-                if(btn) btn.classList.add('active');
-                applyStyle(s);
-            }};
-            if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
-            else init();
+            }}).catch(function(e) {{
+                document.getElementById('viewer3d').innerHTML =
+                    '<p style="color:red;padding:16px;">Mol* failed to initialize: ' + e + '</p>';
+            }});
         }})();
         </script>
 """
@@ -326,7 +313,8 @@ html = f"""<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binder Design Campaign Report</title>
     <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css">
+    <script src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
