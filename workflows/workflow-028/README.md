@@ -59,7 +59,7 @@ A single **YAML file** at `input_files/protein.yaml` with three sections:
 
 - **`sequences`** — one protein entry with a `protein` key containing the amino acid sequence.
 - **`ligand`** — SMILES string for the molecule to dock.
-- **`properties`** — `affinity: true` to enable Boltz-2 affinity prediction.
+- **`properties`** — `affinity: { binder: <ligand_chain_id> }` to enable Boltz-2 affinity prediction.
 
 Input must be YAML — FASTA mode does not support ligand specification or affinity prediction. A test input for EGFR kinase domain (PDB: 1XKK) with Lapatinib is included at `input_files/protein.yaml`.
 
@@ -69,7 +69,7 @@ Input must be YAML — FASTA mode does not support ligand specification or affin
 
 **Goal:** Predict the 3D protein–ligand co-structure and confidence metrics from the input YAML.
 
-**Process:** Validates the YAML (checks sequence length, ligand SMILES parsability, required keys) and runs Boltz-2 with the specified number of diffusion samples and recycling steps. Output is mmCIF format — the `--output_format pdb` flag is broken for protein-ligand complexes (boltz #298) and must not be used. Node selects the model with the highest mean pLDDT and writes `selected_model_id.txt`.
+**Process:** Validates the YAML (checks sequence length, ligand SMILES parsability, required keys) and runs Boltz-2 with the specified number of diffusion samples and recycling steps. Output is mmCIF format — mmCIF is preferred for reliability with protein-ligand complexes (boltz #298). Model selection (highest confidence score) and `selected_model_id.txt` are handled by Node 02.
 
 **Scientific notes:** Including the ligand SMILES in the YAML places Boltz-2 in holo mode, which conditions the predicted fold on the ligand geometry and produces a more accurate binding-site conformation than apo prediction alone. P2Rank can accept mmCIF directly, so no format conversion is needed at this stage.
 

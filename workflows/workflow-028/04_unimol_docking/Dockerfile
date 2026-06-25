@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir unimol_tools rdkit biopandas
+RUN pip install --no-cache-dir rdkit biopandas
 
 # Clone Uni-Mol repository for the docking V2 predict script and data pipeline
 RUN git clone --depth 1 https://github.com/deepmodeling/Uni-Mol /opt/unimol \

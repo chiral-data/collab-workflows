@@ -19,7 +19,8 @@ best_score = -1
 best_id = "model_0"
 for jf in jsons:
     try:
-        d = json.load(open(jf))
+        with open(jf) as fh:
+            d = json.load(fh)
         score = float(d.get("confidence_score", 0))
         if score > best_score:
             best_score = score

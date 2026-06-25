@@ -151,10 +151,9 @@ def collect_poses(output_dir: str, dest_sdf: str) -> int:
     Gather Uni-Mol output SDF files into a single docked_poses.sdf.
     Returns the number of poses collected.
     """
-    sdf_files = sorted(
+    sdf_files = sorted(set(
         glob.glob(os.path.join(output_dir, "**", "*.sdf"), recursive=True)
-        + glob.glob(os.path.join(output_dir, "*.sdf"))
-    )
+    ))
 
     if not sdf_files:
         print(

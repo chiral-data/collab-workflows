@@ -41,3 +41,8 @@ hint    = "Which P2Rank pocket to select for docking (1 = highest score)"
 type    = "integer"
 default = 10
 hint    = "Number of docked conformations to generate per ligand"
+
+[params.accelerator]
+type    = "string"
+default = "gpu"
+hint    = "Boltz-2 accelerator (gpu or cpu). Use cpu for low-VRAM systems (much slower)"

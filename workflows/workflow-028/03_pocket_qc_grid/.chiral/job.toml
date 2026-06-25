@@ -1,7 +1,7 @@
 name        = "Pocket QC + Grid Preparation"
 description = "Filter pockets by pLDDT confidence; convert mmCIF→PDB (gemmi) and SMILES→SDF (RDKit); write docking grid JSON"
-inputs      = ["selected_structure.cif", "selected_model_id.txt", "predictions.csv", "residues.csv",
-               "plddt_*.npz", "confidence_*.json", "affinity_*.json", "input_summary.json"]
+inputs      = ["selected_structure.cif", "selected_model_id.txt", "predictions.csv",
+               "plddt_*.npz", "input_summary.json"]
 outputs     = ["receptor.pdb", "ligand.sdf", "grid.json", "pocket_qc.json"]
 
 [container]

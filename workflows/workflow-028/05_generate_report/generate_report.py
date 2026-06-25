@@ -30,7 +30,6 @@ from datetime import datetime
 from pathlib import Path
 
 import numpy as np
-import pandas as pd
 
 
 # ---------------------------------------------------------------------------
@@ -118,15 +117,6 @@ def load_input_summary() -> dict:
         except Exception:
             pass
     return {}
-
-
-def load_predictions() -> pd.DataFrame:
-    p = Path("predictions.csv")
-    if not p.exists():
-        return pd.DataFrame()
-    df = pd.read_csv(p, skipinitialspace=True)
-    df.columns = [c.strip() for c in df.columns]
-    return df
 
 
 def load_pocket_qc() -> dict:
