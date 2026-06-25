@@ -136,8 +136,7 @@ def run_boltz_predict(input_file, diffusion_samples, recycling_steps, use_msa_se
 
     cmd = [
         "boltz", "predict", input_file,
-        "--output_format", "mmcif",   # mmCIF preferred for reliability
-         for protein-ligand (boltz#298)
+        "--output_format", "mmcif",   # mmCIF preferred for reliability (boltz#298)
         "--diffusion_samples", str(diffusion_samples),
         "--recycling_steps", str(recycling_steps),
         "--devices", "1",

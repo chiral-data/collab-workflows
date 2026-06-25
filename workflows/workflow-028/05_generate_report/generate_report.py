@@ -220,6 +220,18 @@ def _fmt(v, decimals=2):
         return str(v)
 
 
+def _affinity_html(affinity: dict) -> str:
+    if not affinity:
+        return ""
+    aff_val = affinity.get("affinity")
+    if aff_val is None:
+        return ""
+    return (f'<p class="mt-2 mb-1" style="font-size:0.84rem;color:#475569;">'
+            f'<strong>Boltz-2 predicted affinity:</strong> '
+            f'log<sub>10</sub>K<sub>D</sub> = {_fmt(aff_val, 2)}'
+            f' <em style="color:#94a3b8;">(orientation only — not validated for ranking)</em></p>')
+
+
 def _badge(text: str, color: str) -> str:
     return (f'<span style="background:{color};color:white;padding:2px 10px;'
             f'border-radius:12px;font-size:11px;font-weight:600;">{text}</span>')
@@ -229,7 +241,7 @@ def _badge(text: str, color: str) -> str:
 # Report sections
 # ---------------------------------------------------------------------------
 
-def _section_summary(input_summary, confidence_list, pocket_qc, docking_summary, plddt):
+def _section_summary(input_summary, confidence_list, pocket_qc, docking_summary, plddt, affinity):
     n_models = len(confidence_list)
     entities = input_summary.get("entities", [])
     protein_entities = [e for e in entities if e.get("type") == "protein"]
@@ -298,6 +310,7 @@ def _section_summary(input_summary, confidence_list, pocket_qc, docking_summary,
       </div>
 
       {"" if not ligand_smiles else f'<p class="mt-3 mb-1" style="font-size:0.84rem;color:#475569;"><strong>Ligand SMILES:</strong> <code style="word-break:break-all;">{ligand_smiles}</code></p>'}
+      {_affinity_html(affinity)}
       <p class="mt-2 mb-0" style="font-size:0.84rem;color:#475569;">
         Selected pocket: rank {selected_rank}&nbsp;&nbsp;{qc_badge}
         &nbsp;&mdash;&nbsp;
@@ -709,14 +722,14 @@ def _section_methods(input_summary, pocket_qc, docking_summary, model_id, timest
 
 def generate_html(
     model_id, input_summary, confidence_list, plddt, pae,
-    pocket_qc, docking_summary, top_pose_sdf, timestamp
+    pocket_qc, docking_summary, top_pose_sdf, timestamp, affinity
 ):
     entities      = input_summary.get("entities", [])
     protein_ent   = next((e for e in entities if e.get("type") == "protein"), {})
     target_name   = protein_ent.get("id", "A")
 
     # Build sections (some return (html, js) tuples for the viewer)
-    sec_summary = _section_summary(input_summary, confidence_list, pocket_qc, docking_summary, plddt)
+    sec_summary = _section_summary(input_summary, confidence_list, pocket_qc, docking_summary, plddt, affinity)
 
     # _section_confidence returns a single string with __PLDDT_JS__ / __PAE_JS__ markers
     conf_block  = _section_confidence(plddt, pae, confidence_list)
@@ -852,6 +865,9 @@ def main():
     confidence_list = load_confidence()
     print(f"  Confidence files: {len(confidence_list)}", flush=True)
 
+    affinity       = load_affinity()
+    print(f"  Affinity: {'found' if affinity else 'not found'}", flush=True)
+
     input_summary  = load_input_summary()
     pocket_qc      = load_pocket_qc()
     docking_summary = load_docking_summary()
@@ -871,6 +887,7 @@ def main():
         docking_summary=docking_summary,
         top_pose_sdf=top_pose_sdf,
         timestamp=timestamp,
+        affinity=affinity,
     )
 
     os.makedirs("./outputs", exist_ok=True)

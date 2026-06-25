@@ -26,3 +26,18 @@ hint    = "Use ColabFold MSA server for evolutionary information (improves accur
 type    = "float"
 default = 70.0
 hint    = "Minimum per-residue pLDDT score for pocket QC filtering (0-100 scale)"
+
+[params.box_size]
+type    = "float"
+default = 22.5
+hint    = "Docking grid box size in Å (uniform for all three dimensions)"
+
+[params.pocket_rank]
+type    = "integer"
+default = 1
+hint    = "Which P2Rank pocket to select for docking (1 = highest score)"
+
+[params.num_poses]
+type    = "integer"
+default = 10
+hint    = "Number of docked conformations to generate per ligand"
