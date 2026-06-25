@@ -150,6 +150,8 @@ for fasta_path in fasta_files:
     print(f'{backbone_id}: {len(records)} sequence record(s)', flush=True)
 
     for seq_idx, (header, full_seq) in enumerate(records):
+        if seq_idx == 0:
+            continue  # skip ProteinMPNN native/input sequence (poly-Gly for RFdiffusion backbones)
         design_seq_id = f'{backbone_id}_seq_{seq_idx}'
 
         # ProteinMPNN multi-chain sequences are /-separated; take the first part (chain A = binder)
