@@ -44,7 +44,7 @@ print(f'Number of designs: {num_designs}', flush=True)
 contig = f'[A1-{receptor_len}/0 {binder_length}-{binder_length}]'
 
 cmd = [
-    'python', './scripts/run_inference.py',
+    'python3.9', '/app/RFdiffusion/scripts/run_inference.py',
     f'inference.input_pdb=./inputs/validated_target.pdb',
     f'contigmap.contigs={contig}',
     f'inference.output_prefix=./outputs/backbones/design',
