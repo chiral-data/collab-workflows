@@ -4,7 +4,7 @@ description = "De novo protein binder design: RFdiffusion backbones, ProteinMPNN
 [dependencies]
 02_rfdiffusion       = ["01_validate_target"]
 03_proteinmpnn       = ["02_rfdiffusion"]
-04_fold_and_filter   = ["03_proteinmpnn", "01_validate_target"]
+04_fold_and_filter   = ["03_proteinmpnn", "02_rfdiffusion", "01_validate_target"]
 05_prodigy_score     = ["04_fold_and_filter"]
 06_report            = ["05_prodigy_score", "04_fold_and_filter"]
 
