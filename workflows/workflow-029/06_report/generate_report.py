@@ -23,6 +23,10 @@ from plotly.subplots import make_subplots
 os.makedirs('./outputs/report', exist_ok=True)
 
 top_n = int(os.environ.get('PARAM_TOP_N', '10'))
+min_iptm = float(os.environ.get('PARAM_MIN_IPTM', '0.6'))
+min_plddt_binder = float(os.environ.get('PARAM_MIN_PLDDT_BINDER', '80.0'))
+max_bb_rmsd = float(os.environ.get('PARAM_MAX_BB_RMSD', '1.5'))
+max_pae_interaction = float(os.environ.get('PARAM_MAX_PAE_INTERACTION', '10.0'))
 
 # ── Load inputs ───────────────────────────────────────────────────────────────
 
