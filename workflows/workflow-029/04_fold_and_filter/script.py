@@ -242,20 +242,20 @@ for fasta_path in fasta_files:
             elif not os.path.exists(backbone_pdb):
                 print(f'  WARNING: Backbone PDB not found: {backbone_pdb}', flush=True)
 
-            # Apply filters
-            fail_reason = None
+            # Apply filters — collect all failing reasons
+            fail_reasons = []
             if iptm < min_iptm:
-                fail_reason = 'iptm'
-            elif plddt_binder < min_plddt_binder:
-                fail_reason = 'plddt_binder'
-            elif bb_rmsd is None:
-                fail_reason = 'bb_rmsd_unavailable'
+                fail_reasons.append('iptm')
+            if plddt_binder < min_plddt_binder:
+                fail_reasons.append('plddt_binder')
+            if bb_rmsd is None:
+                fail_reasons.append('bb_rmsd_unavailable')
             elif bb_rmsd > max_bb_rmsd:
-                fail_reason = 'bb_rmsd'
-            elif pae_interaction > max_pae_interaction:
-                fail_reason = 'pae_interaction'
+                fail_reasons.append('bb_rmsd')
+            if pae_interaction > max_pae_interaction:
+                fail_reasons.append('pae_interaction')
 
-            passed = fail_reason is None
+            passed = len(fail_reasons) == 0
 
             record = {
                 'design_id': design_seq_id,
@@ -264,11 +264,11 @@ for fasta_path in fasta_files:
                 'bb_rmsd': round(bb_rmsd, 3) if bb_rmsd is not None else None,
                 'pae_interaction': round(pae_interaction, 3),
                 'pass': passed,
-                'fail_reason': fail_reason,
+                'fail_reasons': fail_reasons,
             }
             filter_report.append(record)
 
-            status = 'PASS' if passed else f'FAIL ({fail_reason})'
+            status = 'PASS' if passed else f'FAIL ({",".join(fail_reasons)})'
             print(f'  {design_seq_id}: iPTM={iptm:.3f} pLDDT={plddt_binder:.1f} '
                   f'RMSD={bb_rmsd:.2f if bb_rmsd is not None else "N/A"} '
                   f'PAE={pae_interaction:.1f} → {status}', flush=True)
