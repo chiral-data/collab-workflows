@@ -216,7 +216,11 @@ An internet connection is required to load the Mol\* viewer library from CDN.
 Build the image from the workflow directory:
 
 ```bash
-docker build -t abodybuilder3:2026_06_15 .
+# Pass your HuggingFace token to avoid rate-limiting during ProtT5 weight download (~2.4 GB)
+# Get a (free) token at https://huggingface.co/settings/tokens
+docker build \
+  --build-arg HF_TOKEN="$HF_TOKEN" \
+  -t abodybuilder3:2026_06_15 .
 ```
 
 Run each node sequentially:
