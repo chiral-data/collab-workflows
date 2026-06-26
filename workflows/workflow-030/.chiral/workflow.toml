@@ -1,0 +1,23 @@
+name = "Polymer MD — Lightweight Plastics for EV Applications"
+description = "Educational MD simulation comparing mechanical and thermal properties of engineering resins (PP, PA6, PC, PET, ABS) across temperatures and glass-fiber loadings. Closes #176."
+
+[dependencies]
+02-equilibrate          = ["01-build-cell"]
+03-measure-properties   = ["02-equilibrate"]
+04-apply-gf-correction  = ["03-measure-properties"]
+05-report               = ["04-apply-gf-correction"]
+
+[params.resin_type]
+type    = "string"
+default = "PP"
+hint    = "Resin type: PP, PA6, PC, PET, or ABS"
+
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Simulation temperature in °C: 23, 60, 100, or 150"
+
+[params.fiber_loading]
+type    = "float"
+default = 0.0
+hint    = "Glass-fiber loading in wt%: 0, 15, or 30"
