@@ -1,17 +1,22 @@
-FROM continuumio/miniconda3
-
-RUN conda install -y python=3.11 setuptools && conda clean -afy
+FROM condaforge/miniforge3:latest
 
 ENV USER=silva \
     HOME=/tmp \
     MPLCONFIGDIR=/tmp/matplotlib
 
-# RDKit (oligomer build) + AmberTools (GAFF2 charges) + packmol (cell packing) + acpype (GROMACS conversion)
-RUN conda install -y -c conda-forge \
-        rdkit \
+# AmberTools first — it pins icu and other system libs that rdkit must respect
+RUN mamba install -y -c conda-forge \
+        python=3.11 \
         ambertools \
+    && mamba clean -afy
+
+# RDKit + packmol into the same environment, solved after AmberTools pins
+RUN mamba install -y -c conda-forge \
+        rdkit \
         packmol \
-        acpype \
-    && conda clean -afy
+    && mamba clean -afy
+
+# acpype via pip (thin pure-Python wrapper around AmberTools)
+RUN pip install --no-cache-dir acpype
 
 WORKDIR /workspace
