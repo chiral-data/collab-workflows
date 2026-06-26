@@ -27,24 +27,27 @@ WORKDIR.mkdir(exist_ok=True)
 RESIN_TYPE    = os.environ.get("PARAM_RESIN_TYPE",    "PP").upper()
 FIBER_LOADING = float(os.environ.get("PARAM_FIBER_LOADING", "0"))
 N_CHAINS      = int(os.environ.get("PARAM_N_CHAINS",  "20"))
+# Pack at 60% of target density so molecules fit comfortably; NPT in node 02 compresses to full density.
+PACK_DENSITY_FRAC = 0.60
 
 # ── resin library ─────────────────────────────────────────────────────────────
-# Oligomer SMILES: end-capped linear chains, validated with RDKit.
-# PP  — isotactic 10-mer:  CH3-[CH(CH3)-CH2]10-CH3
-# PA6 — nylon-6 8-mer:     H2N-[(CH2)5-CO-NH]7-(CH2)5-COOH
-# PC  — BPA-PC 3-mer:      phenol-capped bisphenol-A polycarbonate
-# PET — 4-mer diol:        HO-CH2CH2-[O-CO-Ph-CO-O-CH2CH2]4-OH
-# ABS — SAN 5-mer approx:  alternating acrylonitrile / styrene units
+# Oligomer SMILES: 5-mer end-capped chains — compact enough for packmol to solve
+# quickly while preserving backbone connectivity for GAFF2 parameterisation.
+# PP  — 5-mer:  CH3-[CH(CH3)-CH2]5-CH3
+# PA6 — 5-mer:  H2N-[(CH2)5-CO-NH]4-(CH2)5-COOH
+# PC  — 3-mer:  phenol-capped BPA-PC
+# PET — 3-mer:  diol-capped
+# ABS — 4-mer SAN approximation (acrylonitrile/styrene, no butadiene)
 RESINS = {
     "PP": {
         "name":        "Polypropylene",
-        "smiles":      "CC(C)" + "CC(C)" * 9 + "C",
+        "smiles":      "CC(C)" + "CC(C)" * 4 + "C",   # 5-mer
         "density_gcc": 0.855,
         "melt_temp_c": 200,
     },
     "PA6": {
         "name":        "Nylon-6 (PA6)",
-        "smiles":      "NCCCCCC(=O)" * 8 + "O",
+        "smiles":      "NCCCCCC(=O)" * 5 + "O",        # 5-mer
         "density_gcc": 1.084,
         "melt_temp_c": 270,
     },
@@ -101,9 +104,11 @@ def gaff2_params(pdb: Path) -> tuple[Path, Path]:
     """antechamber + parmchk2 → GAFF2 mol2 and frcmod."""
     mol2   = WORKDIR / "mol.mol2"
     frcmod = WORKDIR / "mol.frcmod"
+    # Use residue name UNL to match RDKit's default PDB output so tleap can
+    # map atom types from the mol2 onto the packmol-packed cell.pdb.
     run(
         f"antechamber -i {pdb} -fi pdb -o {mol2} -fo mol2 "
-        f"-c bcc -s 2 -rn MOL -at gaff2",
+        f"-c bcc -s 2 -rn UNL -at gaff2",
         cwd=WORKDIR,
     )
     run(f"parmchk2 -i {mol2} -f mol2 -o {frcmod} -s gaff2", cwd=WORKDIR)
@@ -133,7 +138,7 @@ def amber_to_gromacs(mol2: Path, frcmod: Path, packed_pdb: Path) -> None:
     leap_in = WORKDIR / "tleap.in"
     leap_in.write_text(
         f"source leaprc.gaff2\n"
-        f"MOL = loadmol2 {mol2}\n"
+        f"UNL = loadmol2 {mol2}\n"
         f"loadamberparams {frcmod}\n"
         f"system = loadpdb {packed_pdb}\n"
         f"setbox system vdw 0\n"
@@ -146,16 +151,19 @@ def amber_to_gromacs(mol2: Path, frcmod: Path, packed_pdb: Path) -> None:
         f"-b system -o gmx",
         cwd=WORKDIR,
     )
-    shutil.copy(WORKDIR / "system_GMX.gro", OUTDIR / "system.gro")
-    shutil.copy(WORKDIR / "system_GMX.top", OUTDIR / "topol.top")
+    amb2gmx = WORKDIR / "system.amb2gmx"
+    shutil.copy(amb2gmx / "system_GMX.gro", OUTDIR / "system.gro")
+    shutil.copy(amb2gmx / "system_GMX.top", OUTDIR / "topol.top")
     shutil.copy(packed_pdb,                  OUTDIR / "cell.pdb")
 
 
-def box_side_angstrom(n_chains: int, mw_g_per_mol: float, density_gcc: float) -> float:
-    """Cubic box side in Å from target density."""
+def box_side_angstrom(n_chains: int, mw_g_per_mol: float, density_gcc: float,
+                      pack_frac: float = 1.0) -> float:
+    """Cubic box side in Å. pack_frac < 1 gives a looser initial cell so
+    molecules fit without clashes; NPT in node 02 compresses to full density."""
     AVOGADRO = 6.02214076e23
     mass_g   = (n_chains * mw_g_per_mol) / AVOGADRO
-    vol_cc   = mass_g / density_gcc
+    vol_cc   = mass_g / (density_gcc * pack_frac)
     return (vol_cc * 1e24) ** (1.0 / 3.0)   # cm³ → Å³ → Å side
 
 
@@ -178,8 +186,8 @@ def main():
     mw  = Descriptors.ExactMolWt(mol)
 
     # 3. Box size
-    box_a = box_side_angstrom(N_CHAINS, mw, cfg["density_gcc"])
-    print(f"  MW/chain={mw:.1f} g/mol  box={box_a:.1f} Å")
+    box_a = box_side_angstrom(N_CHAINS, mw, cfg["density_gcc"], pack_frac=PACK_DENSITY_FRAC)
+    print(f"  MW/chain={mw:.1f} g/mol  box={box_a:.1f} Å  (packed at {PACK_DENSITY_FRAC*100:.0f}% density)")
 
     # 4. GAFF2 parameters
     mol2, frcmod = gaff2_params(pdb_single)
@@ -198,6 +206,7 @@ def main():
         "mw_chain_g_per_mol":  round(mw, 2),
         "density_gcc":         cfg["density_gcc"],
         "box_angstrom":        round(box_a, 2),
+        "pack_density_frac":   PACK_DENSITY_FRAC,
         "melt_temp_c":         cfg["melt_temp_c"],
         "fiber_loading_wt_pct": FIBER_LOADING,
         "fiber_correction_applied": False,
