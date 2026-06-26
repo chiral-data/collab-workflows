@@ -1,0 +1,50 @@
+name = "Structure Prediction"
+description = "Build MSA via MMseqs2 and run AlphaFold2 inference via colabfold_batch"
+inputs = ["validated_sequences.fasta"]
+outputs = [
+  "*_unrelaxed_rank_*.pdb",
+  "*_scores_rank_*.json",
+  "validated_sequences.fasta",
+]
+
+[container]
+image = "colabfold:2026_06_09"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.num_models]
+type = "integer"
+default = 5
+hint = "Number of AlphaFold2 models to run (1–5)"
+
+[params.num_recycle]
+type = "integer"
+default = 3
+hint = "Number of recycling iterations"
+
+[params.msa_mode]
+type = "string"
+default = "mmseqs2_uniref_env"
+hint = "MSA mode: mmseqs2_uniref_env, mmseqs2_uniref, or single_sequence"
+
+[params.pair_mode]
+type = "string"
+default = "auto"
+hint = "Pair mode: auto (detect), unpaired, or unpaired_paired"
+
+[params.use_templates]
+type = "boolean"
+default = false
+hint = "Enable template search"
+
+[params.host_url]
+type = "string"
+default = "https://api.colabfold.com"
+hint = "MSA server URL (--host-url flag)"
+
+[params.server_timeout_seconds]
+type = "integer"
+default = 300
+hint = "Server timeout in seconds"

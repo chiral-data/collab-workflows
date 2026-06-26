@@ -1,0 +1,13 @@
+{
+  "min_length": 10,
+  "max_length": 2500,
+  "num_models": 5,
+  "num_recycle": 3,
+  "msa_mode": "mmseqs2_uniref_env",
+  "pair_mode": "auto",
+  "use_templates": false,
+  "host_url": "https://api.colabfold.com",
+  "server_timeout_seconds": 300,
+  "top_n_models": 5,
+  "color_by": "pLDDT"
+}
