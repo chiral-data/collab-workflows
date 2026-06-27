@@ -29,4 +29,5 @@ gen_vel       = no
 
 ; Uniaxial strain along x at DEFORM_RATE nm/ps
 ; Targets ~2% total strain over DEFORM_TIME_PS ps
-deform        = DEFORM_RATE 0 0 0 0 0 0 0 0
+; 6 values: xx yy zz xy xz yz (upper triangular of strain rate tensor)
+deform        = DEFORM_RATE 0 0 0 0 0
