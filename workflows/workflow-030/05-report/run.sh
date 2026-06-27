@@ -5,4 +5,4 @@ echo "=== Generate Property Report ==="
 mkdir -p outputs
 python3 generate_report.py
 echo ""
-echo "Done — outputs: report.md  summary.json"
+echo "Done — outputs: report.html  summary.json"
