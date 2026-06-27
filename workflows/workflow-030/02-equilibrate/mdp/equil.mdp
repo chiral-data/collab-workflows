@@ -1,4 +1,4 @@
-; NPT equilibration at target temperature — density convergence
+; NPT equilibration at target temperature — Berendsen for stability after melt quench
 integrator    = md
 nsteps        = EQUIL_NSTEPS
 dt            = 0.001       ; 1 fs
@@ -23,9 +23,9 @@ tc-grps       = System
 tau_t         = 0.1
 ref_t         = TARGET_TEMP
 
-pcoupl        = Parrinello-Rahman   ; accurate pressure for production-quality density
+pcoupl        = Berendsen
 pcoupltype    = isotropic
-tau_p         = 2.0
+tau_p         = 0.5
 ref_p         = 1.0
 compressibility = 4.5e-5
 
