@@ -4,7 +4,7 @@ description = "Educational MD simulation comparing mechanical and thermal proper
 [dependencies]
 02-equilibrate          = ["01-build-cell"]
 03-measure-properties   = ["01-build-cell", "02-equilibrate"]
-04-apply-gf-correction  = ["03-measure-properties"]
+04-apply-gf-correction  = ["01-build-cell", "03-measure-properties"]
 05-report               = ["04-apply-gf-correction"]
 
 [params.resin_type]
