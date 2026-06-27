@@ -1,0 +1,11 @@
+name        = "Generate Property Report"
+description = "Assembles corrected_properties.json into a human-readable Markdown report with a comparison table, density and modulus values, and a specific modulus ranking for EV lightweighting."
+
+inputs  = ["corrected_properties.json", "build_report.json", "density_prod.xvg"]
+outputs = ["report.md", "summary.json"]
+
+[container]
+image = "polymer_md:2026_06_26"
+
+[scripts]
+run = "run.sh"
