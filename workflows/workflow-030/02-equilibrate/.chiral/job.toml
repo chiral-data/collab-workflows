@@ -1,0 +1,12 @@
+name        = "Melt-Quench NPT Equilibration"
+description = "Equilibrates the amorphous polymer cell via GROMACS: energy minimization → NPT at melt temperature → NPT cool to target temperature. Produces a density-converged cell ready for property measurement in node 03."
+
+inputs  = ["system.gro", "topol.top", "build_report.json"]
+outputs = ["equilibrated.gro", "density.xvg", "equil_report.json"]
+
+[container]
+image     = "gromacs:2025_11_12"
+use_gpu   = true
+
+[scripts]
+run = "run.sh"

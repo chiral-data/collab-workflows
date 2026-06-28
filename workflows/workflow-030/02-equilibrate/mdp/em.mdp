@@ -1,0 +1,12 @@
+; Energy minimization — remove initial packing clashes
+integrator    = steep
+emtol         = 500.0       ; kJ/mol/nm
+emstep        = 0.001
+nsteps        = EM_STEPS
+
+nstlist       = 10
+cutoff-scheme = Verlet
+coulombtype   = PME
+rcoulomb      = 1.2
+rvdw          = 1.2
+pbc           = xyz

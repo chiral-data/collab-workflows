@@ -1,0 +1,33 @@
+; Uniaxial tensile deformation (NVT) — Young's modulus via stress-strain
+integrator    = md
+nsteps        = DEFORM_NSTEPS
+dt            = 0.001       ; 1 fs
+
+nstenergy     = 10          ; every 0.01 ps — frequent stress tensor sampling
+nstlog        = 1000
+nstxout-compressed = 0      ; no trajectory needed
+
+continuation  = yes
+constraints   = none
+cutoff-scheme = Verlet
+ns_type       = grid
+nstlist       = 10
+rcoulomb      = 1.2
+rvdw          = 1.2
+coulombtype   = PME
+pme_order     = 4
+fourierspacing = 0.16
+
+tcoupl        = V-rescale
+tc-grps       = System
+tau_t         = 0.1
+ref_t         = TARGET_TEMP
+
+pcoupl        = no          ; no barostat during deformation
+pbc           = xyz
+gen_vel       = no
+
+; Uniaxial strain along x at DEFORM_RATE nm/ps
+; Targets ~2% total strain over DEFORM_TIME_PS ps
+; 6 values: xx yy zz xy xz yz (upper triangular of strain rate tensor)
+deform        = DEFORM_RATE 0 0 0 0 0

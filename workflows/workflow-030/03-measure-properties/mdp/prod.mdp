@@ -1,0 +1,33 @@
+; Production NPT — converge density and collect energy statistics
+integrator    = md
+nsteps        = PROD_NSTEPS
+dt            = 0.001       ; 1 fs
+
+nstxout-compressed = 2000
+nstlog        = 1000
+nstenergy     = 100         ; every 0.1 ps — needed for Cv fluctuations
+
+continuation  = yes
+constraints   = none
+cutoff-scheme = Verlet
+ns_type       = grid
+nstlist       = 10
+rcoulomb      = 1.2
+rvdw          = 1.2
+coulombtype   = PME
+pme_order     = 4
+fourierspacing = 0.16
+
+tcoupl        = V-rescale
+tc-grps       = System
+tau_t         = 0.1
+ref_t         = TARGET_TEMP
+
+pcoupl        = Berendsen
+pcoupltype    = isotropic
+tau_p         = 0.5
+ref_p         = 1.0
+compressibility = 4.5e-5
+
+pbc           = xyz
+gen_vel       = no
