@@ -34,3 +34,6 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 28. Structure-to-Docking Prediction (Boltz-2 → P2Rank → Uni-Mol Docking V2) :construction:
 29. Binder Design Pipeline (RFdiffusion → ProteinMPNN → PRODIGY) :construction:
 30. [Polymer MD — Specific Modulus Prediction (PP/GAFF2/GROMACS)](workflows/workflow-030/README.md) — all-atom MD pipeline predicting Young's modulus and specific modulus of neat or GF-filled polypropylene for EV lightweighting by Chiral Dev Team
+31. :construction:
+32. :construction:
+33. [Protein Binder Design — De Novo NIM Pipeline](workflows/workflow-033/README.md) — RFdiffusion → ProteinMPNN → Boltz2 binder design campaign with interface confidence ranking by Chiral Dev Team :construction:
