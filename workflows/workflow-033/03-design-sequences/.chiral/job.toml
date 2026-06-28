@@ -1,0 +1,10 @@
+name        = "Design Sequences"
+description = "Call ProteinMPNN NIM per backbone to design binder sequences. Redesigns the binder chain only; target chain is fixed. Drops the native/WT row."
+
+outputs = ["sequence_manifest.json"]
+
+[container]
+image = "binder_design:2026_06_28"
+
+[scripts]
+run = "run.sh"

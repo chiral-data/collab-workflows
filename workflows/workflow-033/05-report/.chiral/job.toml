@@ -1,0 +1,10 @@
+name        = "Report"
+description = "Apply ipTM / pLDDT / RMSD filters, rank survivors, generate scrambled negative controls, compute success rate, write HTML report and summary JSON."
+
+outputs = ["report.html", "summary.json", "ranked_binders.csv"]
+
+[container]
+image = "binder_design:2026_06_28"
+
+[scripts]
+run = "run.sh"

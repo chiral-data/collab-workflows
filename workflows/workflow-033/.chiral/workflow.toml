@@ -1,0 +1,73 @@
+name        = "Protein Binder Design — De Novo NIM Pipeline"
+description = "RFdiffusion → ProteinMPNN → Boltz2 end-to-end binder design campaign. Generates de novo binder backbones, designs sequences, co-folds binder–target complexes, and ranks by interface confidence."
+
+[dependencies]
+02-generate-backbones = ["01-target-prep"]
+03-design-sequences   = ["02-generate-backbones"]
+04-cofold-score       = ["01-target-prep", "03-design-sequences"]
+05-report             = ["04-cofold-score"]
+
+[params.target_pdb_id]
+type    = "string"
+default = "5JDR"
+hint    = "RCSB PDB accession for the target protein (fetched automatically)"
+
+[params.target_chain]
+type    = "string"
+default = "C"
+hint    = "Chain ID in the PDB to use as the design target"
+
+[params.hotspot_residues]
+type    = "string"
+default = "C56,C58,C113,C115"
+hint    = "Comma-separated chain+author residue IDs for RFdiffusion hotspot_res (e.g. C56,C58)"
+
+[params.binder_length_min]
+type    = "integer"
+default = 60
+hint    = "Minimum binder length in residues"
+
+[params.binder_length_max]
+type    = "integer"
+default = 90
+hint    = "Maximum binder length in residues"
+
+[params.n_backbones]
+type    = "integer"
+default = 50
+hint    = "Number of RFdiffusion backbone samples"
+
+[params.seqs_per_backbone]
+type    = "integer"
+default = 8
+hint    = "ProteinMPNN sequences designed per backbone"
+
+[params.cofold_shortlist_n]
+type    = "integer"
+default = 50
+hint    = "Cap on Boltz2 co-folds — top N candidates by ProteinMPNN NLL"
+
+[params.diffusion_steps]
+type    = "integer"
+default = 50
+hint    = "RFdiffusion diffusion steps (higher = better quality, slower)"
+
+[params.nim_mode]
+type    = "string"
+default = "hosted"
+hint    = "hosted (NVIDIA API, requires NVIDIA_API_KEY) or local (self-hosted Docker NIMs)"
+
+[params.filter_iptm_min]
+type    = "float"
+default = 0.8
+hint    = "Minimum Boltz2 interface confidence (ipTM) to pass filter"
+
+[params.filter_binder_plddt_min]
+type    = "float"
+default = 80.0
+hint    = "Minimum mean pLDDT over the binder chain to pass filter"
+
+[params.filter_self_consistency_rmsd_max]
+type    = "float"
+default = 2.0
+hint    = "Maximum Cα RMSD between RFdiffusion backbone and Boltz2 prediction (Å)"

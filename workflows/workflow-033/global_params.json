@@ -1,0 +1,18 @@
+{
+    "target_pdb_id": "5JDR",
+    "target_chain": "C",
+    "hotspot_residues": "C56,C58,C113,C115",
+    "binder_length_min": 60,
+    "binder_length_max": 90,
+    "n_backbones": 50,
+    "seqs_per_backbone": 8,
+    "cofold_shortlist_n": 50,
+    "diffusion_steps": 50,
+    "proteinmpnn_sampling_temp": 0.1,
+    "boltz2_recycling_steps": 3,
+    "boltz2_sampling_steps": 50,
+    "nim_mode": "hosted",
+    "filter_iptm_min": 0.8,
+    "filter_binder_plddt_min": 80.0,
+    "filter_self_consistency_rmsd_max": 2.0
+}
