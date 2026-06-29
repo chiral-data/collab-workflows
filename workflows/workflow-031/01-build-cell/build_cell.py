@@ -108,7 +108,7 @@ run(f"parmchk2 -i {mol2} -f mol2 -o {frcmod} -s gaff2", cwd=WORKDIR)
 
 # 4. packmol
 box_a = box_side_angstrom(N_CHAINS, SMILES, DENSITY)
-box_a = max(box_a, 20.0)   # minimum sensible box
+box_a = max(box_a, 25.0)   # min 25Å → half-box 12.5Å > rlist≈9.5Å (rcoulomb=0.9nm)
 
 cell_pdb = WORKDIR / "cell.pdb"
 packmol_inp = WORKDIR / "packmol.inp"
@@ -135,7 +135,7 @@ source leaprc.gaff2
 UNL = loadmol2 {mol2}
 loadamberparams {frcmod}
 sys = loadpdb {cell_pdb}
-setbox sys vdw
+set sys box {{ {box_a:.1f} {box_a:.1f} {box_a:.1f} }}
 saveamberparm sys {prmtop} {inpcrd}
 quit
 """)

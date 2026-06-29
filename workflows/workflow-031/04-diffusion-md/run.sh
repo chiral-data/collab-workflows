@@ -80,8 +80,8 @@ emstep      = 0.001
 nsteps      = 2000
 cutoff-scheme = Verlet
 coulombtype = PME
-rcoulomb    = 1.2
-rvdw        = 1.2
+rcoulomb    = 0.9
+rvdw        = 0.9
 pbc         = xyz
 constraints = none
 EOF

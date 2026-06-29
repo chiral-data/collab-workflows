@@ -73,12 +73,11 @@ values = [float(l.split()[1]) for l in xvg.splitlines() if l and not l.startswit
 avg = sum(values[-len(values)//3:]) / max(len(values)//3, 1)
 build = json.loads(pathlib.Path('inputs/build_report.json').read_text())
 report = {
-    'target_temp_k':        ${TARGET_TEMP_K},
-    'melt_temp_k':          ${MELT_TEMP_K},
-    'equil_time_ps':        ${EQUIL_TIME_PS},
-    'avg_density_kg_m3':    round(avg, 1),
-    'resin_type':           build['resin_type'],
-    'fiber_loading_wt_pct': build['fiber_loading_wt_pct'],
+    'target_temp_k':     ${TARGET_TEMP_K},
+    'melt_temp_k':       ${MELT_TEMP_K},
+    'equil_time_ps':     ${EQUIL_TIME_PS},
+    'avg_density_kg_m3': round(avg, 1),
+    'resin_type':        build['resin_type'],
 }
 pathlib.Path('outputs/equil_report.json').write_text(json.dumps(report, indent=2))
 print(f'  Average density (last third): {avg:.1f} kg/m3')
