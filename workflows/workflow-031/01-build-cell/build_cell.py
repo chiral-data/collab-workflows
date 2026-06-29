@@ -4,7 +4,7 @@ Pipeline: RDKit 5-mer → antechamber GAFF2 + AM1-BCC → parmchk2 → packmol �
 """
 import json, math, os, pathlib, shutil, subprocess, sys, tempfile
 
-RESIN_TYPE    = os.environ.get("PARAM_RESIN_TYPE",    "PET")
+RESIN_TYPE    = os.environ.get("PARAM_RESIN_TYPE",    "LDPE")
 FIBER_LOADING = 0.0   # no GF in barrier films
 N_CHAINS      = int(os.environ.get("PARAM_N_CHAINS", 20))
 PACK_DENSITY_FRAC = 0.60
