@@ -9,7 +9,7 @@ description = "Educational MD workflow simulating small-molecule diffusion (O₂
 
 [params.resin_type]
 type    = "string"
-default = "PET"
+default = "LDPE"
 hint    = "Resin type: PET, LDPE, PP, EVOH, or PA6"
 
 [params.penetrant]
