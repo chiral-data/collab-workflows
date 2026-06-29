@@ -1,0 +1,23 @@
+name = "Barrier Films — Plastics that Protect Food"
+description = "Educational MD workflow simulating small-molecule diffusion (O₂, H₂O) through polymer barrier films (PET, LDPE, PP, EVOH, PA6). Computes diffusion coefficient D via the Einstein relation and ranks barrier performance. Closes #179."
+
+[dependencies]
+02-equilibrate      = ["01-build-cell"]
+03-insert-penetrant = ["01-build-cell", "02-equilibrate"]
+04-diffusion-md     = ["01-build-cell", "03-insert-penetrant"]
+05-report           = ["01-build-cell", "04-diffusion-md"]
+
+[params.resin_type]
+type    = "string"
+default = "PET"
+hint    = "Resin type: PET, LDPE, PP, EVOH, or PA6"
+
+[params.penetrant]
+type    = "string"
+default = "O2"
+hint    = "Penetrant molecule: O2 or H2O"
+
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Simulation temperature in °C: 5, 23, or 40"
