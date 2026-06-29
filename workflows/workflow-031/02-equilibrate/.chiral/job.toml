@@ -11,6 +11,11 @@ use_gpu = true
 [scripts]
 run = "run.sh"
 
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Simulation temperature in °C"
+
 [params.em_steps]
 type    = "integer"
 default = 5000

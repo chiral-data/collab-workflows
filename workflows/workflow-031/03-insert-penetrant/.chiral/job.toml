@@ -10,6 +10,12 @@ image   = "gromacs:2025_11_12"
 [scripts]
 run = "run.sh"
 
+[params.penetrant]
+type        = "enum"
+default     = "O2"
+hint        = "Small-molecule penetrant to insert and track"
+enum_values = ["O2", "H2O"]
+
 [params.n_penetrant]
 type    = "integer"
 default = 5

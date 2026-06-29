@@ -9,6 +9,12 @@ image = "barrier_films:2026_06_27"
 [scripts]
 run = "run.sh"
 
+[params.resin_type]
+type        = "enum"
+default     = "LDPE"
+hint        = "Polymer matrix resin (PET unsupported — see README)"
+enum_values = ["LDPE", "PP", "EVOH", "PA6", "PET"]
+
 [params.n_chains]
 type    = "integer"
 default = 20
