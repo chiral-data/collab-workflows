@@ -14,11 +14,14 @@ run = "run.sh"
 [params.em_steps]
 type    = "integer"
 default = 5000
+hint    = "Energy minimisation steps (increase to 10000 for dense/strained cells)"
 
 [params.melt_time_ps]
 type    = "float"
 default = 200.0
+hint    = "NPT melt duration in ps — long enough for density to plateau near melt value"
 
 [params.equil_time_ps]
 type    = "float"
 default = 500.0
+hint    = "NPT equilibration at target temperature in ps (increase to 2000+ for better density convergence)"
