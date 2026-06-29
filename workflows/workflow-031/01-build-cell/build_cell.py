@@ -110,18 +110,15 @@ run(f"parmchk2 -i {mol2} -f mol2 -o {frcmod} -s gaff2", cwd=WORKDIR)
 box_a = box_side_angstrom(N_CHAINS, SMILES, DENSITY)
 box_a = max(box_a, 25.0)   # min 25Å → half-box 12.5Å > rlist≈9.5Å (rcoulomb=0.9nm)
 
-# Use mol2 I/O in packmol to preserve bond types (important for aromatic rings like PET)
-cell_mol2 = WORKDIR / "cell.mol2"
-cell_pdb  = WORKDIR / "cell.pdb"   # generated later for visualization
+cell_pdb = WORKDIR / "cell.pdb"
 packmol_inp = WORKDIR / "packmol.inp"
 packmol_inp.write_text(f"""
 tolerance 2.0
-output {cell_mol2}
-filetype mol2
+output {cell_pdb}
+filetype pdb
 seed 1234567
 
-structure {mol2}
-  filetype mol2
+structure {oligomer_pdb}
   number {N_CHAINS}
   inside box 0. 0. 0. {box_a:.3f} {box_a:.3f} {box_a:.3f}
 end structure
@@ -129,7 +126,7 @@ end structure
 print(f"  $ packmol  (box={box_a:.1f} Å, {N_CHAINS} chains @ {PACK_DENSITY_FRAC*100:.0f}% density)")
 run(f"packmol < {packmol_inp}", cwd=WORKDIR)
 
-# 5. tleap → Amber topology (load mol2 to preserve connectivity)
+# 5. tleap → Amber topology
 prmtop   = WORKDIR / "system.prmtop"
 inpcrd   = WORKDIR / "system.inpcrd"
 tleap_in = WORKDIR / "tleap.in"
@@ -137,7 +134,7 @@ tleap_in.write_text(f"""
 source leaprc.gaff2
 UNL = loadmol2 {mol2}
 loadamberparams {frcmod}
-sys = loadmol2 {cell_mol2}
+sys = loadpdb {cell_pdb}
 set sys box {{ {box_a:.1f} {box_a:.1f} {box_a:.1f} }}
 saveamberparm sys {prmtop} {inpcrd}
 quit
@@ -159,7 +156,7 @@ out_dir.mkdir(exist_ok=True)
 amb2gmx  = WORKDIR / "system.amb2gmx"
 shutil.copy(amb2gmx / "system_GMX.gro", out_dir / "system.gro")
 shutil.copy(amb2gmx / "system_GMX.top", out_dir / "topol.top")
-shutil.copy(oligomer_pdb,              out_dir / "cell.pdb")   # single-chain for visualization
+shutil.copy(cell_pdb,                   out_dir / "cell.pdb")
 
 report = {
     "resin_type":       RESIN_TYPE,
