@@ -19,6 +19,10 @@ O2 penetrant — TraPPE 2-site
 
 O2_ITP = """\
 ; O2 TraPPE 2-site (Potoff & Siepmann 2001)
+[ atomtypes ]
+; name  at.num  mass      charge  ptype  sigma(nm)  epsilon(kJ/mol)
+OT      8       15.9994   0.000   A      0.30200    0.40740
+
 [ moleculetype ]
 O2  3
 
@@ -30,10 +34,6 @@ O2  3
 [ bonds ]
 ; i  j  funct  r0(nm)  kb(kJ/mol/nm²)
   1  2  1      0.1210  40000.0
-
-[ atomtypes ]
-; name  at.num  mass      charge  ptype  sigma(nm)  epsilon(kJ/mol)
-OT      8       15.9994   0.000   A      0.30200    0.40740
 """
 
 # ── H₂O — SPC/E model ────────────────────────────────────────────────────────
@@ -56,6 +56,11 @@ H2O penetrant — SPC/E
 
 H2O_ITP = """\
 ; H2O SPC/E model (Berendsen 1987)
+[ atomtypes ]
+; name  at.num  mass      charge   ptype  sigma(nm)  epsilon(kJ/mol)
+OW      8       15.9994  -0.8476   A      0.31660    0.65017
+HW      1        1.0080   0.4238   A      0.00000    0.00000
+
 [ moleculetype ]
 SOL  2
 
@@ -71,11 +76,6 @@ SOL  2
 
 [ angles ]
   2  1  3  1  109.47  383.0
-
-[ atomtypes ]
-; name  at.num  mass      charge   ptype  sigma(nm)  epsilon(kJ/mol)
-OW      8       15.9994  -0.8476   A      0.31660    0.65017
-HW      1        1.0080   0.4238   A      0.00000    0.00000
 """
 
 if PENETRANT == "O2":
