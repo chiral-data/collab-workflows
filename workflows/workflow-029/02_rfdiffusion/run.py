@@ -49,8 +49,10 @@ cmd = [
     f'contigmap.contigs={contig}',
     f'inference.output_prefix=./outputs/backbones/design',
     f'inference.num_designs={num_designs}',
+    f'inference.model_directory_path=/app/RFdiffusion/models',
+    f'inference.schedule_directory_path=/tmp/schedules',
     f'denoiser.noise_scale_ca={noise_scale}',
-    f'inference.num_steps={num_diffusion_steps}',
+    f'diffuser.T={num_diffusion_steps}',
 ]
 
 if hotspot_residues:

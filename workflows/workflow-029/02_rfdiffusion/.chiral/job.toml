@@ -4,7 +4,7 @@ inputs      = ["validated_target.pdb"]
 outputs     = ["backbones/design_*.pdb"]
 
 [container]
-image   = "ghcr.io/chiral-data/rfdiffusion:latest"
+image   = "rfdiffusion:2026_06_25"
 use_gpu = true
 
 [scripts]

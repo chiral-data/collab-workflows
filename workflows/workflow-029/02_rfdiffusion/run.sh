@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-python run.py
+python3.9 run.py
