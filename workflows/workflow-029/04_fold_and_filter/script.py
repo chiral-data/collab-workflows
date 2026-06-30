@@ -269,8 +269,9 @@ for fasta_path in fasta_files:
             filter_report.append(record)
 
             status = 'PASS' if passed else f'FAIL ({",".join(fail_reasons)})'
+            rmsd_str = f'{bb_rmsd:.2f}' if bb_rmsd is not None else 'N/A'
             print(f'  {design_seq_id}: iPTM={iptm:.3f} pLDDT={plddt_binder:.1f} '
-                  f'RMSD={bb_rmsd:.2f if bb_rmsd is not None else "N/A"} '
+                  f'RMSD={rmsd_str} '
                   f'PAE={pae_interaction:.1f} → {status}', flush=True)
 
             if passed and folded_pdb_path:

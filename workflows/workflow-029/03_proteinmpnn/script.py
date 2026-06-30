@@ -57,7 +57,7 @@ for padded_idx, backbone_path in enumerate(backbone_paths):
         os.makedirs(out_dir)
 
         cmd = [
-            'python', '/ProteinMPNN/protein_mpnn_run.py',
+            'python', '/opt/ProteinMPNN/protein_mpnn_run.py',
             '--pdb_path', backbone_path,
             '--pdb_path_chains', chain_to_design,
             '--out_folder', out_dir,
