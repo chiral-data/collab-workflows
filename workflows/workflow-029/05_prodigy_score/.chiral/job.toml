@@ -4,10 +4,9 @@ inputs      = ["folded/design_*_rank001.pdb", "folded/filter_report.json"]
 outputs     = ["results/prodigy_all_designs.json", "results/ranked_designs.csv", "results/top10/*.pdb"]
 
 [container]
-image = "python:3.11-slim"
+image = "prodigy:2026_06_30"
 
 [scripts]
-pre = "pre_run.sh"
 run = "run.sh"
 
 [params.binder_chain]

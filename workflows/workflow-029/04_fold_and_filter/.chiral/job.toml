@@ -8,7 +8,6 @@ image   = "ghcr.io/sokrypton/colabfold:1.6.1-cuda12"
 use_gpu = true
 
 [scripts]
-pre = "pre_run.sh"
 run = "run.sh"
 
 [params.num_recycle]
