@@ -28,6 +28,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+from typing import List
 
 
 PREDICT_SCRIPT = "/opt/unimol/unimol_docking_v2/interface/demo.py"
@@ -77,7 +78,8 @@ def validate_ligand(sdf_path: str) -> str:
     return smiles
 
 
-def validate_weights(weights_path: str) -> None:
+def validate_weights(weights_path: str) -> str:
+    """Validate weights directory exists and return the path to the weight file."""
     path = Path(weights_path)
     if not path.exists():
         print(
@@ -93,7 +95,9 @@ def validate_weights(weights_path: str) -> None:
     weight_files = list(path.glob("*.pt")) + list(path.glob("*.pkl"))
     if not weight_files:
         raise FileNotFoundError(f"No .pt or .pkl weight files found in {weights_path}")
-    print(f"  Weights: {weights_path}  ({len(weight_files)} file(s))", flush=True)
+    resolved = str(weight_files[0])
+    print(f"  Weights: {resolved}", flush=True)
+    return resolved
 
 
 # ---------------------------------------------------------------------------
@@ -107,7 +111,7 @@ def _build_docking_cmd(
     num_poses: int,
     weights_path: str,
     output_dir: str,
-) -> list[str]:
+) -> List[str]:
     """Build the Uni-Mol Docking V2 interface/demo.py command."""
     return [
         sys.executable, PREDICT_SCRIPT,
@@ -170,8 +174,11 @@ def collect_poses(output_dir: str, dest_sdf: str) -> int:
         for sdf in sdf_files:
             out.write(Path(sdf).read_text())
 
-    # Count poses (each ends with $$$$)
-    n_poses = Path(dest_sdf).read_text().count("$$$$")
+    # Count poses: prefer $$$$ delimiter, fall back to M  END blocks
+    content = Path(dest_sdf).read_text()
+    n_poses = content.count("$$$$")
+    if n_poses == 0:
+        n_poses = content.count("M  END")
     print(f"Collected {n_poses} pose(s) from {len(sdf_files)} SDF file(s) → {dest_sdf}", flush=True)
     return n_poses
 
@@ -191,7 +198,7 @@ def main():
     print("Validating inputs...", flush=True)
     validate_receptor("receptor.pdb")
     ligand_smiles = validate_ligand("ligand.sdf")
-    validate_weights(args.weights_path)
+    weight_file = validate_weights(args.weights_path)
 
     with open("grid.json") as f:
         grid = json.load(f)
@@ -212,7 +219,7 @@ def main():
         ligand_sdf="ligand.sdf",
         grid_json="grid.json",
         num_poses=args.num_poses,
-        weights_path=args.weights_path,
+        weights_path=weight_file,
         output_dir="./unimol_output",
     )
 

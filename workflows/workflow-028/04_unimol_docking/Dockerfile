@@ -11,16 +11,8 @@ RUN pip install --no-cache-dir rdkit biopandas
 RUN git clone --depth 1 https://github.com/deepmodeling/Uni-Mol /opt/unimol \
     && pip install --no-cache-dir -e /opt/unimol/unimol_tools
 
-# ── Model weights ──────────────────────────────────────────────────────────
-# Uni-Mol Docking V2 weights (464 MB) are NOT distributable via Docker.
-# No pip or HuggingFace distribution exists.
-#
-# Before running this container:
-#   1. Download the weights from the link in the Uni-Mol Docking V2 README:
-#      https://github.com/deepmodeling/Uni-Mol/tree/main/unimol_docking_v2
-#   2. Place the downloaded files at /opt/unimol_weights/ on the host.
-#   3. Set PARAM_WEIGHTS_PATH=/opt/unimol_weights in the job params, or
-#      mount the directory into the container at that path.
-# ──────────────────────────────────────────────────────────────────────────
+RUN mkdir -p /opt/unimol_weights \
+    && wget -q -O /opt/unimol_weights/unimol_docking_v2_240517.pt \
+       "https://www.dropbox.com/scl/fi/sfhrtx1tjprce18wbvmdr/unimol_docking_v2_240517.pt?rlkey=5zg7bh150kcinalrqdhzmyyoo&st=n6j0nt6c&dl=1"
 
 WORKDIR /workspace

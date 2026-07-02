@@ -18,4 +18,4 @@ hint    = "Number of docked conformations to generate per ligand"
 [params.weights_path]
 type    = "string"
 default = "/opt/unimol_weights"
-hint    = "Path to pre-downloaded Uni-Mol Docking V2 model weights (464 MB, see Dockerfile note)"
+hint    = "Path to Uni-Mol Docking V2 model weights (464 MB, bundled in Docker image)"
