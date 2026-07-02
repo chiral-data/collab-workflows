@@ -28,4 +28,4 @@ hint    = "Use ColabFold MSA server for evolutionary information"
 [params.accelerator]
 type    = "string"
 default = "gpu"
-hint    = "Compute accelerator: 'gpu' (requires ≥16 GB VRAM for full EGFR sequence) or 'cpu' (slower, works on any hardware)"
+hint    = "Compute accelerator: 'gpu' (8 GB VRAM sufficient for BRD4 test input) or 'cpu' (slower, works on any hardware)"

@@ -4,18 +4,14 @@ set -e
 # Workaround: container may run as host UID absent from /etc/passwd,
 # causing getpass.getuser() to fail inside PyTorch/Lightning cache init.
 export LOGNAME="${LOGNAME:-user}"
-export NUMBA_CACHE_DIR="/tmp/numba_cache"
+export NUMBA_CACHE_DIR="$(pwd)/.numba_cache"
+mkdir -p "$NUMBA_CACHE_DIR"
 
 echo "Starting Node 01: Boltz-2 Structure Prediction"
 
-# inputs/ is populated from input_files/ in headless mode;
-# in TUI mode, fall back to ../input_files/ (whole workflow is mounted at /workspace)
 INPUT_FILE=$(ls inputs/*.yaml inputs/*.yml 2>/dev/null | head -1)
 if [ -z "$INPUT_FILE" ]; then
-    INPUT_FILE=$(ls ../input_files/*.yaml ../input_files/*.yml 2>/dev/null | head -1)
-fi
-if [ -z "$INPUT_FILE" ]; then
-    echo "ERROR: No input YAML file found in inputs/ or ../input_files/"
+    echo "ERROR: No input YAML file found in inputs/"
     exit 1
 fi
 
