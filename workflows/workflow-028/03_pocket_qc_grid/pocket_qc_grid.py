@@ -230,10 +230,17 @@ def main():
 
     # --- Select target pocket -----------------------------------------------
     # Use requested pocket_rank; warn if it fails QC but don't abort.
+    if not qc_records:
+        print(
+            "ERROR: P2Rank found no pockets in the predicted structure. "
+            "The protein may be too short or disordered for pocket detection.",
+            flush=True,
+        )
+        sys.exit(1)
+
     target_rank = args.pocket_rank
     selected = next((r for r in qc_records if r["rank"] == target_rank), None)
     if selected is None:
-        # Fallback to rank 1
         selected = qc_records[0]
         print(f"WARNING: pocket_rank={target_rank} not found; falling back to rank 1", flush=True)
 
