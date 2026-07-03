@@ -76,6 +76,13 @@ def iptm_quality(v):
     return 'poor'
 
 
+def fmt_kd(kd):
+    if kd is None:
+        return '—'
+    coeff, power = f'{kd:.2e}'.split('e')
+    return f'{coeff} &times; 10<sup>{int(power)}</sup>'
+
+
 # ── Funnel chart ─────────────────────────────────────────────────────────────
 
 def make_funnel():
@@ -107,11 +114,9 @@ def make_scatter():
     fig = go.Figure(go.Scatter(
         x=df.get('iptm', []),
         y=df.get('dg', []),
-        mode='markers+text',
+        mode='markers',
         marker=dict(size=10, color=colors, line=dict(width=1, color='white')),
         text=df.get('design_id', []),
-        textposition='top center',
-        textfont=dict(size=9),
         hovertemplate=(
             '<b>%{text}</b><br>'
             'iPTM: %{x:.3f}<br>'
@@ -249,43 +254,23 @@ def make_table_rows():
                  if weak else
                  f'<span class="badge" style="background:{COLORS["good"]};color:white;'
                  f'border-radius:12px;padding:3px 8px;font-size:11px;">Strong</span>')
-        iptm_val = r.get('iptm') or 0.0
+        iptm_val = r.get('iptm')
+        plddt_val = r.get('plddt_binder')
+        rmsd_val = r.get('bb_rmsd')
+        pae_val = r.get('pae_interaction')
         rows.append(f"""
             <tr>
                 <td>{i}</td>
                 <td><strong>{r['design_id']}</strong></td>
                 <td>{r['dg']:.3f}</td>
-                <td>{r.get('kd') or '-'}</td>
-                <td>{iptm_val:.3f}</td>
-                <td>{r.get('plddt_binder') or '—'}</td>
-                <td>{r.get('bb_rmsd') or '—'}</td>
-                <td>{r.get('pae_interaction') or '—'}</td>
+                <td>{fmt_kd(r.get('kd'))}</td>
+                <td>{'—' if iptm_val is None else f'{iptm_val:.3f}'}</td>
+                <td>{'—' if plddt_val is None else f'{plddt_val:.1f}'}</td>
+                <td>{'—' if rmsd_val is None else f'{rmsd_val:.2f}'}</td>
+                <td>{'—' if pae_val is None else f'{pae_val:.1f}'}</td>
                 <td>{badge}</td>
             </tr>""")
     return '\n'.join(rows)
-
-
-# ── Top-N summary cards ───────────────────────────────────────────────────────
-
-def make_top_cards():
-    if not prodigy_results:
-        return '<p class="text-muted">No results available.</p>'
-    cards = []
-    for r in prodigy_results[:top_n]:
-        quality = iptm_quality(r.get('iptm'))
-        color = COLORS[quality]
-        cards.append(f"""
-            <div class="col-md-4 col-lg-3 mb-3">
-                <div class="card h-100" style="border-top:4px solid {color};">
-                    <div class="card-body">
-                        <h6 class="card-title" style="font-size:0.85rem;word-break:break-all;">{r['design_id']}</h6>
-                        <p class="mb-1" style="font-size:0.8rem;color:#64748b;">ΔG: <strong>{r['dg']:.2f} kcal/mol</strong></p>
-                        <p class="mb-1" style="font-size:0.8rem;color:#64748b;">Kd: <strong>{r.get('kd') or '-'} M</strong></p>
-                        <p class="mb-0" style="font-size:0.8rem;color:#64748b;">iPTM: <strong>{r.get('iptm') or '—'}</strong></p>
-                    </div>
-                </div>
-            </div>""")
-    return '\n'.join(cards)
 
 
 # ── Assemble HTML ─────────────────────────────────────────────────────────────
@@ -295,7 +280,6 @@ scatter_div = make_scatter()
 ranking_div = make_ranking_chart()
 viewer_html = make_viewer_section()
 table_rows = make_table_rows()
-top_cards = make_top_cards()
 
 zero_results_banner = ''
 if no_results:
@@ -317,8 +301,8 @@ html = f"""<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binder Design Campaign Report</title>
     <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css">
-    <script src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@5.9.0/build/viewer/molstar.css">
+    <script src="https://cdn.jsdelivr.net/npm/molstar@5.9.0/build/viewer/molstar.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -452,14 +436,6 @@ html = f"""<!DOCTYPE html>
         <div class="glass-header"><i class="fas fa-cube"></i> 3D Structure Viewer (Top {top_n})</div>
         <div class="glass-body">
             {viewer_html}
-        </div>
-    </div>
-
-    <!-- Top-N cards -->
-    <div class="glass">
-        <div class="glass-header"><i class="fas fa-medal"></i> Top {top_n} Candidates</div>
-        <div class="glass-body">
-            <div class="row">{top_cards}</div>
         </div>
     </div>
 
