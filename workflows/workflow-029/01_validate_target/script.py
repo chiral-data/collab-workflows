@@ -38,17 +38,11 @@ if strip_heteroatoms:
 atom_residues = [r for r in chain.get_residues() if r.id[0] == ' ']
 residue_count = len(atom_residues)
 
-if renumber_residues:
-    for i, res in enumerate(atom_residues, start=1):
-        res.id = (' ', i, ' ')
-    print(f'Renumbered {residue_count} residues starting from 1', flush=True)
-
-# Validate hotspot residues (warnings only — does not halt)
+# Validate hotspot residues BEFORE renumbering (user provides original PDB numbers)
 if hotspot_residues.strip():
     hotspot_list = [h.strip() for h in hotspot_residues.split(',') if h.strip()]
     residue_ids = {res.id[1] for res in atom_residues}
     for hotspot in hotspot_list:
-        # Strip chain prefix if provided (e.g. "A55" → 55)
         try:
             res_num = int(hotspot.lstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
         except ValueError:
@@ -58,6 +52,14 @@ if hotspot_residues.strip():
             print(f'WARNING: Hotspot residue {hotspot} (number {res_num}) not found in chain after processing', flush=True)
         else:
             print(f'Hotspot residue {hotspot} validated OK', flush=True)
+
+if renumber_residues:
+    for res in atom_residues:
+        chain.detach_child(res.id)
+    for i, res in enumerate(atom_residues, start=1):
+        res.id = (' ', i, ' ')
+        chain.add(res)
+    print(f'Renumbered {residue_count} residues starting from 1', flush=True)
 
 # Always write output as chain A regardless of input chain ID
 chain.id = 'A'
