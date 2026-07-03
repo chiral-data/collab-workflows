@@ -36,9 +36,8 @@ max_pae_interaction = float(os.environ.get('PARAM_MAX_PAE_INTERACTION', '10.0'))
 use_gpu = os.environ.get('PARAM_USE_GPU', 'true').lower() == 'true'
 
 if use_gpu:
-    result = subprocess.run(['nvidia-smi'], capture_output=True)
-    if result.returncode != 0:
-        print('ERROR: GPU requested but nvidia-smi failed.', flush=True)
+    if not os.path.exists('/dev/nvidia0'):
+        print('ERROR: GPU requested but /dev/nvidia0 not found.', flush=True)
         sys.exit(1)
     print('GPU check passed', flush=True)
 
