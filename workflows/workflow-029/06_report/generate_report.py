@@ -251,7 +251,7 @@ def make_table_rows():
                 <td>{i}</td>
                 <td><strong>{r['design_id']}</strong></td>
                 <td>{r['dg']:.3f}</td>
-                <td>{r.get('kd', 0.0):.2e}</td>
+                <td>{r.get('kd') or '-'}</td>
                 <td>{iptm_val:.3f}</td>
                 <td>{r.get('plddt_binder') or '—'}</td>
                 <td>{r.get('bb_rmsd') or '—'}</td>
@@ -276,7 +276,7 @@ def make_top_cards():
                     <div class="card-body">
                         <h6 class="card-title" style="font-size:0.85rem;word-break:break-all;">{r['design_id']}</h6>
                         <p class="mb-1" style="font-size:0.8rem;color:#64748b;">ΔG: <strong>{r['dg']:.2f} kcal/mol</strong></p>
-                        <p class="mb-1" style="font-size:0.8rem;color:#64748b;">Kd: <strong>{r.get('kd', 0.0):.2e} M</strong></p>
+                        <p class="mb-1" style="font-size:0.8rem;color:#64748b;">Kd: <strong>{r.get('kd') or '-'} M</strong></p>
                         <p class="mb-0" style="font-size:0.8rem;color:#64748b;">iPTM: <strong>{r.get('iptm') or '—'}</strong></p>
                     </div>
                 </div>
