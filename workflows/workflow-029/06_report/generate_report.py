@@ -5,10 +5,10 @@ Binder design campaign dashboard.
 Reads inputs from ./inputs/ with hardcoded paths (no argparse).
 Writes a single self-contained HTML report to ./outputs/report/index.html.
 All data embedded inline as JavaScript variables.
-Libraries loaded from CDN: Bootstrap 5.3.3, Plotly 2.35.2, Molstar latest.
+Libraries loaded from CDN: Bootstrap 5.3.3, Plotly 2.35.2, Molstar 5.9.0.
 
 Zero-results handling: renders a banner without crashing when
-prodigy_all_designs.json is empty or top10/ has no PDBs.
+prodigy_all_designs.json is empty or top-N directory has no PDBs.
 """
 import glob
 import json
@@ -36,12 +36,12 @@ with open('./inputs/folded/filter_report.json') as f:
 with open('./inputs/results/prodigy_all_designs.json') as f:
     prodigy_results = json.load(f)
 
-# Glob top10 PDB files — do not assume exactly top_n files exist
-top10_pdbs = sorted(glob.glob(f'./inputs/results/top{top_n}/*.pdb'))
+# Glob top-N PDB files — do not assume exactly top_n files exist
+top_pdbs = sorted(glob.glob(f'./inputs/results/top{top_n}/*.pdb'))
 
 print(f'Filter report: {len(filter_report)} entries', flush=True)
 print(f'PRODIGY results: {len(prodigy_results)} entries', flush=True)
-print(f'Top-N PDB files found: {len(top10_pdbs)}', flush=True)
+print(f'Top-N PDB files found: {len(top_pdbs)}', flush=True)
 
 no_results = len(prodigy_results) == 0
 
@@ -167,11 +167,11 @@ def make_ranking_chart():
 # ── 3D viewer section (Molstar) ──────────────────────────────────────────────
 
 def make_viewer_section():
-    if not top10_pdbs:
+    if not top_pdbs:
         return '<p class="text-muted text-center py-4">No structure files available for 3D viewing.</p>'
 
     structures = []
-    for pdb_path in top10_pdbs[:top_n]:
+    for pdb_path in top_pdbs[:top_n]:
         design_id = os.path.splitext(os.path.basename(pdb_path))[0].replace('_rank001', '')
         try:
             with open(pdb_path, encoding='utf-8') as fh:
