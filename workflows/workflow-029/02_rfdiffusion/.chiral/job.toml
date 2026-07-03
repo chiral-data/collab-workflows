@@ -1,0 +1,41 @@
+name        = "RFdiffusion Backbone Design"
+description = "Run RFdiffusion (Watson et al. 2023) to generate binder backbone structures. Output complex PDBs follow RFdiffusion convention: chain A = binder (poly-Gly), chain B = receptor."
+inputs      = ["validated_target.pdb"]
+outputs     = ["backbones/design_*.pdb"]
+
+[container]
+image   = "rfdiffusion:2026_06_25"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.num_designs]
+type    = "integer"
+default = 100
+hint    = "Number of binder backbone structures to generate"
+
+[params.binder_length]
+type    = "integer"
+default = 80
+hint    = "Length in residues of the designed binder"
+
+[params.hotspot_residues]
+type    = "string"
+default = ""
+hint    = "Comma-separated residue IDs on receptor to target, e.g. A55,A58,A102. Empty = automatic."
+
+[params.noise_scale]
+type    = "float"
+default = 1.0
+hint    = "RFdiffusion noise scale for Ca denoising; lower = more conservative"
+
+[params.num_diffusion_steps]
+type    = "integer"
+default = 50
+hint    = "Number of diffusion denoising steps"
+
+[params.use_gpu]
+type    = "boolean"
+default = true
+hint    = "Requires a CUDA-capable GPU"

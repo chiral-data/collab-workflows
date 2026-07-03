@@ -1,0 +1,46 @@
+name        = "ColabFold Fold and Filter"
+description = "Fold each ProteinMPNN sequence with ColabFold (AlphaFold2 multimer) and filter by four self-consistency metrics: iPTM, pLDDT (binder), Cα RMSD vs backbone, and interface PAE."
+inputs      = ["sequences/design_*.fasta", "validated_target.pdb", "backbones/design_*.pdb"]
+outputs     = ["folded/design_*_rank001.pdb", "folded/filter_report.json"]
+
+[container]
+image   = "colabfold:2026_06_09"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.num_recycle]
+type    = "integer"
+default = 6
+hint    = "Number of AlphaFold2 recycling iterations"
+
+[params.msa_mode]
+type    = "string"
+default = "single_sequence"
+hint    = "MSA mode: single_sequence (fast) or mmseqs2_uniref_env (more accurate)"
+
+[params.min_iptm]
+type    = "float"
+default = 0.6
+hint    = "Minimum interface pTM score to pass filter"
+
+[params.min_plddt_binder]
+type    = "float"
+default = 80.0
+hint    = "Minimum mean pLDDT on binder chain (chain A residues)"
+
+[params.max_bb_rmsd]
+type    = "float"
+default = 1.5
+hint    = "Maximum Cα RMSD between folded binder and RFdiffusion backbone (Å)"
+
+[params.max_pae_interaction]
+type    = "float"
+default = 10.0
+hint    = "Maximum mean interface PAE to pass filter (Å)"
+
+[params.use_gpu]
+type    = "boolean"
+default = true
+hint    = "Requires a CUDA-capable GPU"
