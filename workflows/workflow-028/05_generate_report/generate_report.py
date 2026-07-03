@@ -263,36 +263,42 @@ def _section_summary(input_summary, confidence_list, pocket_qc, docking_summary,
       <div class="row g-3">
         <div class="col-6 col-md-2">
           <div class="stat-card">
+            <div class="icon">&#x1F9EC;</div>
             <div class="value" style="color:#1d4ed8;">{seq_len if seq_len else "—"}</div>
             <div class="label">Residues</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
+            <div class="icon">&#x1F52C;</div>
             <div class="value" style="color:#7c3aed;">{n_models}</div>
             <div class="label">Boltz-2 Models</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
+            <div class="icon">&#x1F4CA;</div>
             <div class="value" style="color:#0891b2;">{mean_plddt}</div>
             <div class="label">Mean pLDDT</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
+            <div class="icon">&#x1F4CD;</div>
             <div class="value" style="color:#0f766e;">{n_pockets}</div>
             <div class="label">Pockets Found</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
+            <div class="icon">&#x2705;</div>
             <div class="value" style="color:#16a34a;">{n_qc_pass} / {n_pockets}</div>
             <div class="label">Pockets QC ≥70</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
+            <div class="icon">&#x1F48A;</div>
             <div class="value" style="color:#d97706;">{n_poses}</div>
             <div class="label">Docked Poses</div>
           </div>
@@ -579,11 +585,18 @@ def _section_viewer(plddt, pocket_qc, top_pose_sdf):
         .then(function(d) {{ return p.builders.structure.parseTrajectory(d, s.format); }})
         .then(function(t) {{ return p.builders.structure.hierarchy.applyPreset(t, 'default'); }});
     }});
-    chain.catch(function(e) {{
+    chain.then(function() {{
+      var el = document.getElementById('molstar-loading');
+      if (el) el.style.display = 'none';
+    }}).catch(function(e) {{
+      var el = document.getElementById('molstar-loading');
+      if (el) el.style.display = 'none';
       document.getElementById('molstar-viewer').innerHTML =
         '<p style="color:red;padding:16px;">Mol* error: ' + e + '</p>';
     }});
   }}).catch(function(e) {{
+    var el = document.getElementById('molstar-loading');
+    if (el) el.style.display = 'none';
     document.getElementById('molstar-viewer').innerHTML =
       '<p style="color:red;padding:16px;">Mol* failed to initialize: ' + e + '</p>';
   }});
@@ -595,9 +608,14 @@ def _section_viewer(plddt, pocket_qc, top_pose_sdf):
     <div class="section-body">
       <p style="font-size:0.82rem;color:#475569;margin-bottom:8px;">Toggle structures:</p>
       <div style="margin-bottom:14px;display:flex;flex-wrap:wrap;">{toggle_buttons}</div>
-      <div id="molstar-viewer"
-           style="width:100%;height:520px;position:relative;border-radius:8px;
-                  overflow:hidden;border:1px solid #e2e8f0;"></div>
+      <div style="position:relative;">
+        <div id="molstar-loading" class="viewer-loading">
+          <div class="spinner"></div> Loading 3D viewer&hellip;
+        </div>
+        <div id="molstar-viewer"
+             style="width:100%;height:520px;position:relative;border-radius:8px;
+                    overflow:hidden;border:1px solid #e2e8f0;"></div>
+      </div>
       <p class="note mt-2">
         Receptor cartoon coloured by pLDDT B-factors (blue = high confidence).
         {pocket_note}
@@ -749,9 +767,9 @@ def generate_html(
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Structure → Pocket → Docking Pipeline Report</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/molstar@5.9.0/build/viewer/molstar.css">
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/molstar@5.9.0/build/viewer/molstar.js"></script>
   <style>
     body {{ background: #f1f5f9; color: #1e293b; font-family: system-ui, sans-serif; }}
     .hero {{
@@ -763,7 +781,13 @@ def generate_html(
     .stat-card {{
       background: white; border-radius: 14px; padding: 20px 16px; text-align: center;
       box-shadow: 0 2px 12px rgba(0,0,0,0.07); height: 100%;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }}
+    .stat-card:hover {{
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }}
+    .stat-card .icon {{ font-size: 1.3rem; margin-bottom: 4px; }}
     .stat-card .value {{ font-size: 1.9rem; font-weight: 700; line-height: 1.1; }}
     .stat-card .label {{ font-size: 0.74rem; text-transform: uppercase;
                          letter-spacing: .7px; color: #64748b; margin-top: 4px; }}
@@ -779,6 +803,26 @@ def generate_html(
     .table th {{ font-size: 0.80rem; color: #475569; font-weight: 600; cursor: pointer; }}
     .table td {{ font-size: 0.84rem; vertical-align: middle; }}
     .note {{ font-size: 0.77rem; color: #94a3b8; }}
+    #pocket-table tbody tr:nth-child(even) {{ background: #f8fafc; }}
+    #pocket-table tbody tr:hover {{ background: #eff6ff; }}
+    .viewer-loading {{
+      position: absolute; inset: 0; display: flex; align-items: center;
+      justify-content: center; background: #f8fafc; z-index: 10;
+      font-size: 0.9rem; color: #64748b;
+    }}
+    .viewer-loading .spinner {{
+      width: 24px; height: 24px; border: 3px solid #e2e8f0;
+      border-top-color: #1d4ed8; border-radius: 50%;
+      animation: spin 0.8s linear infinite; margin-right: 10px;
+    }}
+    @keyframes spin {{ to {{ transform: rotate(360deg); }} }}
+    @media print {{
+      body {{ background: white; }}
+      .hero {{ background: #1d4ed8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
+      .section-card {{ box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; }}
+      #molstar-viewer, .viewer-loading {{ display: none !important; }}
+      [onclick*="toggleStruct"] {{ display: none !important; }}
+    }}
   </style>
 </head>
 <body>
