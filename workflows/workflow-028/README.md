@@ -61,7 +61,7 @@ A single **YAML file** at `input_files/protein.yaml` with three sections:
 - **`ligand`** — SMILES string for the molecule to dock.
 - **`properties`** — `affinity: { binder: <ligand_chain_id> }` to enable Boltz-2 affinity prediction.
 
-Input must be YAML — FASTA mode does not support ligand specification or affinity prediction. A test input for EGFR kinase domain (PDB: 1XKK) with Lapatinib is included at `input_files/protein.yaml`.
+Input must be YAML — FASTA mode does not support ligand specification or affinity prediction. A test input for BRD4 first bromodomain (BD1) bound to JQ1 (PDB: 3MXF, 1.60 Å, 127 residues) is included at `input_files/protein.yaml`.
 
 ## Workflow nodes
 
@@ -227,7 +227,7 @@ Each node has its own Dockerfile. Node 01 reuses the pre-built image `ghcr.io/ch
 | `use_msa_server` | `true` | `true` |
 | `num_poses` | `10` | `20`–`50` |
 
-The included test input (EGFR kinase domain + Lapatinib, PDB: 1XKK) has a known crystal structure at 2.40 Å, making it suitable for validating that Boltz-2 recovers the correct fold and Uni-Mol places poses in the correct pocket.
+The included test input (BRD4 BD1 + JQ1, PDB: 3MXF) has a known crystal structure at 1.60 Å, making it suitable for validating that Boltz-2 recovers the correct fold and Uni-Mol places poses in the correct pocket.
 
 ## Troubleshooting
 
