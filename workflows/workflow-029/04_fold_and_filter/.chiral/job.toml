@@ -1,6 +1,6 @@
 name        = "ColabFold Fold and Filter"
 description = "Fold each ProteinMPNN sequence with ColabFold (AlphaFold2 multimer) and filter by four self-consistency metrics: iPTM, pLDDT (binder), Cα RMSD vs backbone, and interface PAE."
-inputs      = ["sequences/design_*.fasta", "validated_target.pdb"]
+inputs      = ["sequences/design_*.fasta", "validated_target.pdb", "backbones/design_*.pdb"]
 outputs     = ["folded/design_*_rank001.pdb", "folded/filter_report.json"]
 
 [container]

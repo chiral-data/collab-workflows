@@ -196,7 +196,7 @@ for fasta_path in fasta_files:
                     'design_id': design_seq_id,
                     'iptm': None, 'plddt_binder': None,
                     'bb_rmsd': None, 'pae_interaction': None,
-                    'pass': False, 'fail_reason': 'no_score_file',
+                    'pass': False, 'fail_reasons': ['no_score_file'],
                 })
                 continue
 
@@ -223,7 +223,7 @@ for fasta_path in fasta_files:
                 else:
                     pae_interaction = float(np.mean(pae_np))
             else:
-                pae_interaction = 0.0
+                pae_interaction = float('inf')
 
             # Find rank 001 unrelaxed PDB
             pdb_files = glob.glob(os.path.join(cf_output, '*_unrelaxed_rank_001*.pdb'))
@@ -262,7 +262,7 @@ for fasta_path in fasta_files:
                 'iptm': round(iptm, 4),
                 'plddt_binder': round(plddt_binder, 3),
                 'bb_rmsd': round(bb_rmsd, 3) if bb_rmsd is not None else None,
-                'pae_interaction': round(pae_interaction, 3),
+                'pae_interaction': round(pae_interaction, 3) if pae_interaction != float('inf') else None,
                 'pass': passed,
                 'fail_reasons': fail_reasons,
             }
