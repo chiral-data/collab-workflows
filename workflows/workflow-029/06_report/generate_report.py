@@ -37,7 +37,7 @@ with open('./inputs/results/prodigy_all_designs.json') as f:
     prodigy_results = json.load(f)
 
 # Glob top10 PDB files — do not assume exactly top_n files exist
-top10_pdbs = sorted(glob.glob('./inputs/results/top10/*.pdb'))
+top10_pdbs = sorted(glob.glob(f'./inputs/results/top{top_n}/*.pdb'))
 
 print(f'Filter report: {len(filter_report)} entries', flush=True)
 print(f'PRODIGY results: {len(prodigy_results)} entries', flush=True)
@@ -169,8 +169,12 @@ def make_viewer_section():
     for pdb_path in top10_pdbs[:top_n]:
         design_id = os.path.splitext(os.path.basename(pdb_path))[0].replace('_rank001', '')
         try:
-            raw = open(pdb_path, encoding='utf-8').read()
-            escaped = raw.replace('\\', '\\\\').replace('`', '\\`').replace('${', '\\${')
+            with open(pdb_path, encoding='utf-8') as fh:
+                raw = fh.read()
+            escaped = (raw.replace('\\', '\\\\')
+                          .replace('`', '\\`')
+                          .replace('${', '\\${')
+                          .replace('</script>', '<\\/script>'))
             structures.append({'id': design_id, 'data': escaped})
         except Exception as e:
             print(f'WARNING: Could not read {pdb_path}: {e}', flush=True)

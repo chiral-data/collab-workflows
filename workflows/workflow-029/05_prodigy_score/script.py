@@ -15,12 +15,13 @@ output files and exit 0 — the workflow should not fail with an exception.
 import csv
 import glob
 import json
+import math
 import os
 import shutil
 import subprocess
 import sys
 
-os.makedirs('./outputs/results/top10', exist_ok=True)
+R_KCAL = 1.9872036e-3  # gas constant in kcal/(mol·K)
 
 binder_chain = os.environ.get('PARAM_BINDER_CHAIN', 'A')
 receptor_chain = os.environ.get('PARAM_RECEPTOR_CHAIN', 'B')
@@ -29,6 +30,9 @@ distance_cutoff = float(os.environ.get('PARAM_DISTANCE_CUTOFF', '5.5'))
 top_n = int(os.environ.get('PARAM_TOP_N', '10'))
 dg_cutoff = float(os.environ.get('PARAM_DG_CUTOFF', '-8.0'))
 pymol_selection = os.environ.get('PARAM_PYMOL_SELECTION', 'true').lower() == 'true'
+
+top_dir = f'./outputs/results/top{top_n}'
+os.makedirs(top_dir, exist_ok=True)
 
 # Load filter report and collect passing designs
 with open('./inputs/folded/filter_report.json') as f:
@@ -83,7 +87,7 @@ for design_id in passing_ids:
         print(f'WARNING: PRODIGY failed for {design_id}: {e.stderr.strip()}', flush=True)
         continue
 
-    # Parse tab-separated stdout: filename\tΔG\tKd
+    # Parse tab-separated stdout: filename\tΔG
     parts = stdout.split()
     if len(parts) < 2:
         print(f'WARNING: Unexpected PRODIGY output for {design_id}: "{stdout}"', flush=True)
@@ -91,7 +95,7 @@ for design_id in passing_ids:
 
     try:
         dg = float(parts[-1])
-        kd = None
+        kd = math.exp(dg / (R_KCAL * (temperature + 273.15)))
     except ValueError:
         print(f'WARNING: Could not parse PRODIGY values for {design_id}: "{stdout}"', flush=True)
         continue
@@ -100,7 +104,7 @@ for design_id in passing_ids:
     record = {
         'design_id': design_id,
         'dg': round(dg, 3),
-        'kd': kd,
+        'kd': float(f'{kd:.3e}'),
         'iptm': filter_rec.get('iptm'),
         'plddt_binder': filter_rec.get('plddt_binder'),
         'bb_rmsd': filter_rec.get('bb_rmsd'),
@@ -108,7 +112,7 @@ for design_id in passing_ids:
         'pdb_path': pdb_path,
     }
     prodigy_results.append(record)
-    print(f'  {design_id}: ΔG={dg:.2f} kcal/mol', flush=True)
+    print(f'  {design_id}: ΔG={dg:.2f} kcal/mol  Kd={kd:.2e} M', flush=True)
 
 if not prodigy_results:
     print('WARNING: PRODIGY produced no results. Writing empty output files.', flush=True)
@@ -149,11 +153,11 @@ with open('./outputs/results/ranked_designs.csv', 'w', newline='') as f:
 top_designs = prodigy_results[:top_n]
 for r in top_designs:
     src = r['pdb_path']
-    dest = f'./outputs/results/top10/{r["design_id"]}_rank001.pdb'
+    dest = os.path.join(top_dir, f'{r["design_id"]}_rank001.pdb')
     shutil.copy(src, dest)
 
     if pymol_selection:
-        pml_path = f'./outputs/results/top10/{r["design_id"]}.pml'
+        pml_path = os.path.join(top_dir, f'{r["design_id"]}.pml')
         pdb_basename = os.path.basename(dest)
         with open(pml_path, 'w') as pml:
             pml.write('# Run from the directory containing this file.\n')
@@ -167,6 +171,6 @@ for r in top_designs:
             pml.write('zoom interface\n')
 
 print(f'\nRanked {len(prodigy_results)} designs by ΔG', flush=True)
-print(f'Top {len(top_designs)} exported to ./outputs/results/top10/', flush=True)
+print(f'Top {len(top_designs)} exported to {top_dir}/', flush=True)
 strong = sum(1 for r in prodigy_results if not r['weak_binder'])
 print(f'Designs below ΔG cutoff ({dg_cutoff} kcal/mol): {strong}/{len(prodigy_results)}', flush=True)

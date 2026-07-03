@@ -1,6 +1,6 @@
 name        = "Campaign Report"
 description = "Generate a self-contained interactive HTML dashboard summarising the full binder design campaign: funnel chart, ranking table, iPTM vs ΔG scatter, top-N 3D viewer, and methodology notes."
-inputs      = ["folded/filter_report.json", "results/prodigy_all_designs.json", "results/top10/*.pdb"]
+inputs      = ["folded/filter_report.json", "results/prodigy_all_designs.json", "results/top*/*.pdb"]
 outputs     = ["report/index.html"]
 
 [container]
@@ -13,3 +13,23 @@ run = "run.sh"
 type    = "integer"
 default = 10
 hint    = "Number of top-ranked designs shown in the 3D viewer and summary cards"
+
+[params.min_iptm]
+type    = "float"
+default = 0.6
+hint    = "Minimum iPTM threshold used in fold-and-filter (displayed in report methodology)"
+
+[params.min_plddt_binder]
+type    = "float"
+default = 80.0
+hint    = "Minimum binder pLDDT threshold used in fold-and-filter (displayed in report methodology)"
+
+[params.max_bb_rmsd]
+type    = "float"
+default = 1.5
+hint    = "Maximum backbone RMSD threshold used in fold-and-filter (displayed in report methodology)"
+
+[params.max_pae_interaction]
+type    = "float"
+default = 10.0
+hint    = "Maximum interface PAE threshold used in fold-and-filter (displayed in report methodology)"
