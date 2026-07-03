@@ -84,14 +84,14 @@ for design_id in passing_ids:
         continue
 
     # Parse tab-separated stdout: filename\tΔG\tKd
-    parts = stdout.split('\t')
-    if len(parts) < 3:
+    parts = stdout.split()
+    if len(parts) < 2:
         print(f'WARNING: Unexpected PRODIGY output for {design_id}: "{stdout}"', flush=True)
         continue
 
     try:
-        dg = float(parts[1])
-        kd = float(parts[2])
+        dg = float(parts[-1])
+        kd = None
     except ValueError:
         print(f'WARNING: Could not parse PRODIGY values for {design_id}: "{stdout}"', flush=True)
         continue
@@ -108,7 +108,7 @@ for design_id in passing_ids:
         'pdb_path': pdb_path,
     }
     prodigy_results.append(record)
-    print(f'  {design_id}: ΔG={dg:.2f} kcal/mol, Kd={kd:.2e} M', flush=True)
+    print(f'  {design_id}: ΔG={dg:.2f} kcal/mol', flush=True)
 
 if not prodigy_results:
     print('WARNING: PRODIGY produced no results. Writing empty output files.', flush=True)
