@@ -74,7 +74,7 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Goal:** Clean the input receptor PDB and normalize it to a canonical format for downstream tools.
 
-**Process:** Reads `target.pdb` with BioPython, selects the chain specified by `receptor_chain`, optionally strips heteroatoms and renumbers residues starting from 1, then writes the output always as chain A regardless of the input chain identity. Validates any hotspot residues provided and emits warnings (not errors) for missing ones.
+**Process:** Reads `target.pdb` with BioPython, selects the chain specified by `receptor_chain`, and optionally strips heteroatoms. Validates any hotspot residues against the original PDB numbering before renumbering (since users provide hotspots based on the source structure), then renumbers residues starting from 1 using a detach-renumber-add pattern to avoid ID collisions. Writes the output always as chain A regardless of the input chain identity.
 
 **Scientific notes:** Chain normalization to A is required because RFdiffusion hardcodes the receptor as chain A in its contig specification. Stripping heteroatoms removes ligands and waters that can interfere with RFdiffusion's backbone sampling. Residue renumbering prevents gaps in residue numbering that can confuse downstream tools.
 
@@ -143,10 +143,10 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Goal:** Generate a self-contained interactive HTML dashboard summarising the campaign.
 
-**Process:** Reads `filter_report.json`, `prodigy_all_designs.json`, and any PDB files in `results/top10/` (glob — no assumed count). Renders a Plotly funnel chart, ΔG ranking bar chart, iPTM vs ΔG scatter plot, Molstar 3D viewer for top structures, top-N summary cards, a full sortable ranking table, and a methodology note with filter thresholds and PRODIGY caveats. If `prodigy_all_designs.json` is empty, renders a prominent banner without crashing.
+**Process:** Reads `filter_report.json`, `prodigy_all_designs.json`, and any PDB files in `results/top10/` (glob — no assumed count). Renders a Plotly funnel chart, ΔG ranking bar chart, iPTM vs ΔG scatter plot, Molstar 3D viewer (pinned to v5.9.0) for top structures, a full ranking table, and a methodology note with filter thresholds and PRODIGY caveats. If `prodigy_all_designs.json` is empty, renders a prominent banner without crashing.
 
 **Outputs:**
-- `report/index.html` — Fully self-contained HTML report (Bootstrap 5.3.3, Plotly 2.35.2, Molstar; all data embedded inline).
+- `report/index.html` — Fully self-contained HTML report (Bootstrap 5.3.3, Plotly 2.35.2, Molstar 5.9.0; all data embedded inline).
 
 ## Parameters
 
@@ -198,18 +198,22 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Test vs production:**
 
-| Setting | Test (default) | Production |
-|---|---|---|
-| `num_designs` | 10 | 100–200 |
-| `num_seq_per_target` | 2 | 8–16 |
-| `num_recycle` | 6 | 6–12 |
-| `msa_mode` | `single_sequence` | `mmseqs2_uniref_env` |
+| Setting | Default | Test Override | Production |
+|---|---|---|---|
+| `num_designs` | 100 | 3–10 | 100–200 |
+| `num_seq_per_target` | 8 | 8 | 8–16 |
+| `num_recycle` | 6 | 6 | 6–12 |
+| `msa_mode` | `single_sequence` | `single_sequence` | `mmseqs2_uniref_env` |
+| `min_iptm` | 0.6 | 0.05 (relaxed) | 0.6 |
+| `min_plddt_binder` | 80.0 | 30.0 (relaxed) | 80.0 |
+| `max_bb_rmsd` | 1.5 | 25.0 (relaxed) | 1.5 |
+| `max_pae_interaction` | 10.0 | 35.0 (relaxed) | 10.0 |
 
 ## Outputs and interpretation
 
 ### filter_report.json
 
-Per-design JSON array with fields: `design_id`, `iptm`, `plddt_binder`, `bb_rmsd`, `pae_interaction`, `pass`, `fail_reason`. Designs with `pass: true` proceed to PRODIGY scoring. The `fail_reason` field identifies which metric failed first; use it to tune filter thresholds.
+Per-design JSON array with fields: `design_id`, `iptm`, `plddt_binder`, `bb_rmsd`, `pae_interaction`, `pass`, `fail_reasons`. Designs with `pass: true` proceed to PRODIGY scoring. The `fail_reasons` field is a list of all metrics that failed (e.g. `["iptm", "plddt_binder"]`); use it to tune filter thresholds.
 
 ### prodigy_all_designs.json / ranked_designs.csv
 
@@ -224,13 +228,14 @@ Interactive single-file HTML dashboard. Open in any modern browser. Contains: de
 ### Running with Docker
 
 ```bash
-# Node 01: validate receptor (uses python:3.11-slim)
+# Node 01: validate receptor
 docker run --rm \
   -v $(pwd)/workflows/workflow-029/input_files:/workspace/inputs \
   -v /tmp/node01_out:/workspace/outputs \
+  -v $(pwd)/workflows/workflow-029/01_validate_target:/workspace \
   -w /workspace \
-  -e PARAM_RECEPTOR_CHAIN=A \
-  python:3.11-slim bash -c "pip install biopython==1.84 && python script.py"
+  -e PARAM_TARGET_CHAIN=A \
+  biopython:2026_06_30 bash run.sh
 ```
 
 ### Running on Silva
@@ -243,15 +248,18 @@ docker run --rm \
 
 ### Test vs production settings
 
-| Setting | Test (default) | Production |
-|---|---|---|
-| `num_designs` | `10` | `100` |
-| `num_seq_per_target` | `2` | `8` |
-| `num_recycle` | `6` | `6–12` |
-| `msa_mode` | `single_sequence` | `mmseqs2_uniref_env` |
-| `hotspot_residues` | `""` | `"A55,A58,A102,A105,A106"` (for 2B5I) |
+| Setting | Default | Quick Test | Production |
+|---|---|---|---|
+| `num_designs` | `100` | `3–10` | `100–200` |
+| `num_seq_per_target` | `8` | `8` | `8–16` |
+| `min_iptm` | `0.6` | `0.05` (relaxed) | `0.6` |
+| `min_plddt_binder` | `80.0` | `30.0` (relaxed) | `80.0` |
+| `max_bb_rmsd` | `1.5` | `25.0` (relaxed) | `1.5` |
+| `max_pae_interaction` | `10.0` | `35.0` (relaxed) | `10.0` |
+| `msa_mode` | `single_sequence` | `single_sequence` | `mmseqs2_uniref_env` |
+| `hotspot_residues` | `""` | `""` | `"A55,A58,A102,A105,A106"` (for 2B5I) |
 
-The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=10` and `num_seq_per_target=2` completes in approximately 30–90 minutes on a single V100/A100 GPU and should produce at least 1–3 passing designs for pipeline validation.
+The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` and relaxed filter thresholds completes in approximately 20–30 minutes on a single GPU. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
 
 ## Troubleshooting
 
