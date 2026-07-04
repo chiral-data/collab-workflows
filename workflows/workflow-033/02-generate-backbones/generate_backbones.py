@@ -73,15 +73,32 @@ def _api_key() -> str | None:
 
 # ── contig + hotspot helpers ───────────────────────────────────────────────────
 
-def build_contig(target_chain: str, target_len: int,
+def chain_residue_range(pdb_text: str, chain: str) -> tuple[int, int]:
+    """First and last author (PDB) residue numbers for a chain's CA atoms.
+
+    RFdiffusion contigs reference actual PDB residue numbering, which rarely
+    starts at 1 in real structures.
+    """
+    resnums = [
+        int(line[22:26])
+        for line in pdb_text.splitlines()
+        if line.startswith("ATOM") and len(line) > 21
+        and line[21] == chain and line[12:16].strip() == "CA"
+    ]
+    if not resnums:
+        raise ValueError(f"no CA atoms found for chain {chain!r}")
+    return resnums[0], resnums[-1]
+
+
+def build_contig(target_chain: str, first_res: int, last_res: int,
                  binder_min: int, binder_max: int) -> str:
     """Build RFdiffusion contig string for binder design.
 
-    Format: '{chain}1-{len}/0 {min}-{max}'
+    Format: '{chain}{first}-{last}/0 {min}-{max}'
     Keeps the full target chain and appends a chain break followed by the
     generated binder segment.
     """
-    return f"{target_chain}1-{target_len}/0 {binder_min}-{binder_max}"
+    return f"{target_chain}{first_res}-{last_res}/0 {binder_min}-{binder_max}"
 
 
 def hotspot_res_list(hotspot_author: list[str]) -> list[str]:
@@ -197,7 +214,8 @@ def main() -> None:
     BB_DIR.mkdir(parents=True, exist_ok=True)
 
     target_len  = len(TARGET_SEQ)
-    contig      = build_contig(CHAIN, target_len, BINDER_LEN_MIN, BINDER_LEN_MAX)
+    first_res, last_res = chain_residue_range(TARGET, CHAIN)
+    contig      = build_contig(CHAIN, first_res, last_res, BINDER_LEN_MIN, BINDER_LEN_MAX)
     hotspot_res = hotspot_res_list(HOTSPOTS["author"])
 
     print(f"[02] target chain={CHAIN} len={target_len}", flush=True)

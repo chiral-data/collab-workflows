@@ -1,6 +1,8 @@
 name        = "Protein Binder Design — De Novo NIM Pipeline"
 description = "RFdiffusion → ProteinMPNN → Boltz2 end-to-end binder design campaign. Generates de novo binder backbones, designs sequences, co-folds binder–target complexes, and ranks by interface confidence."
 
+env_passthrough = ["NGC_API_KEY", "NVIDIA_API_KEY"]
+
 [dependencies]
 02-generate-backbones = ["01-target-prep"]
 03-design-sequences   = ["02-generate-backbones"]
