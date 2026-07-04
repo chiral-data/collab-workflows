@@ -199,7 +199,9 @@ def main() -> None:
 
     for bb in BB_LIST:
         bb_id        = bb["id"]
-        bb_path      = pathlib.Path(bb["path"])
+        # bb["path"] is root-relative (e.g. "backbones/bb_0000.pdb"); silva
+        # copies node 02's outputs/ tree into this node's inputs/.
+        bb_path      = pathlib.Path("inputs") / bb["path"]
         binder_chain = bb["binder_chain"]
         binder_len   = bb["binder_length"]
 
@@ -249,7 +251,9 @@ def main() -> None:
             sequence_manifest.append({
                 "candidate_id": candidate_id,
                 "backbone_id": bb_id,
-                "backbone_path": str(bb_path),
+                # Root-relative (e.g. "backbones/bb_0000.pdb"), matching bb["path"]
+                # above — node 04 resolves it under its own inputs/.
+                "backbone_path": bb["path"],
                 "binder_chain": binder_chain,
                 "binder_length": binder_len,
                 "sequence": entry["sequence"],

@@ -6,7 +6,7 @@ env_passthrough = ["NGC_API_KEY", "NVIDIA_API_KEY"]
 [dependencies]
 02-generate-backbones = ["01-target-prep"]
 03-design-sequences   = ["02-generate-backbones"]
-04-cofold-score       = ["01-target-prep", "03-design-sequences"]
+04-cofold-score       = ["01-target-prep", "02-generate-backbones", "03-design-sequences"]
 05-report             = ["04-cofold-score"]
 
 [params.target_pdb_id]

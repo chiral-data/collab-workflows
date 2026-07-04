@@ -244,7 +244,9 @@ def main() -> None:
         bb_id        = cand["backbone_id"]
         binder_chain = cand["binder_chain"]
         binder_seq   = cand["sequence"]
-        backbone_path = pathlib.Path(cand["backbone_path"])
+        # cand["backbone_path"] is root-relative (e.g. "backbones/bb_0000.pdb"),
+        # forwarded unchanged from node 02 via node 03.
+        backbone_path = pathlib.Path("inputs") / cand["backbone_path"]
         cif_path     = COMPLEX_DIR / f"{cid}.cif"
 
         # Seed manifest entry for resumability

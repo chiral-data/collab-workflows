@@ -239,7 +239,9 @@ def main() -> None:
                 binder_chain, binder_len = identify_binder_chain(pdb_text, CHAIN)
                 backbone_list.append({
                     "id": bb_id,
-                    "path": str(bb_path),
+                    # Relative to the outputs root, not this job's own "outputs/"
+                    # prefix — downstream jobs resolve it under their inputs/.
+                    "path": str(bb_path.relative_to(OUT)),
                     "binder_chain": binder_chain,
                     "binder_length": binder_len,
                     "seed": seed,
@@ -260,7 +262,9 @@ def main() -> None:
             binder_chain, binder_len = identify_binder_chain(pdb_text, CHAIN)
             backbone_list.append({
                 "id": bb_id,
-                "path": str(bb_path),
+                # Relative to the outputs root, not this job's own "outputs/"
+                # prefix — downstream jobs resolve it under their inputs/.
+                "path": str(bb_path.relative_to(OUT)),
                 "binder_chain": binder_chain,
                 "binder_length": binder_len,
                 "seed": seed,
