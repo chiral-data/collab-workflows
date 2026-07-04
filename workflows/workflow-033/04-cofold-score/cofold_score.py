@@ -330,10 +330,12 @@ def main() -> None:
 
         sc = {"iptm": iptm, "binder_plddt": binder_plddt, "self_consistency_rmsd": sc_rmsd}
 
+        iptm_str  = f"{sc['iptm']:.3f}" if sc["iptm"] is not None else "n/a"
+        plddt_str = f"{sc['binder_plddt']:.1f}" if sc["binder_plddt"] is not None else "n/a"
+        rmsd_str  = f"{sc['self_consistency_rmsd']:.2f}" if sc["self_consistency_rmsd"] is not None else "n/a"
+
         print(
-            f"[04] {cid} OK  iptm={sc['iptm']:.3f if sc['iptm'] else 'n/a'}  "
-            f"plddt={sc['binder_plddt']:.1f if sc['binder_plddt'] else 'n/a'}  "
-            f"sc_rmsd={sc['self_consistency_rmsd']:.2f if sc['self_consistency_rmsd'] else 'n/a'}",
+            f"[04] {cid} OK  iptm={iptm_str}  plddt={plddt_str}  sc_rmsd={rmsd_str}",
             flush=True,
         )
 
