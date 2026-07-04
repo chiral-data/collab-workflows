@@ -35,10 +35,36 @@ import metrics  # local: metrics.py alongside this script
 
 # ── inputs ────────────────────────────────────────────────────────────────────
 
-PARAMS      = json.loads(pathlib.Path("inputs/global_params.json").read_text())
+def _load_params() -> dict:
+    """Load global params from PARAM_* env vars (silva) or inputs/global_params.json (local)."""
+    try:
+        base = json.loads(pathlib.Path("inputs/global_params.json").read_text())
+    except FileNotFoundError:
+        base = {}
+    for key, val in os.environ.items():
+        if not key.startswith("PARAM_"):
+            continue
+        param = key[6:].lower()
+        if param in base:
+            t = type(base[param])
+            try:
+                base[param] = t(val)
+            except (ValueError, TypeError):
+                base[param] = val
+        else:
+            try:
+                base[param] = int(val)
+            except ValueError:
+                try:
+                    base[param] = float(val)
+                except ValueError:
+                    base[param] = val
+    return base
+
+PARAMS       = _load_params()
 SEQ_MANIFEST = json.loads(pathlib.Path("inputs/sequence_manifest.json").read_text())
-TARGET_SEQ  = pathlib.Path("inputs/chain_seq.txt").read_text().strip()
-TARGET_A3M  = pathlib.Path("inputs/target_a3m.txt").read_text()
+TARGET_SEQ   = pathlib.Path("inputs/chain_seq.txt").read_text().strip()
+TARGET_A3M   = pathlib.Path("inputs/target_a3m.txt").read_text()
 
 SHORTLIST_N      = PARAMS["cofold_shortlist_n"]
 RECYCLING_STEPS  = PARAMS.get("boltz2_recycling_steps", 3)

@@ -25,7 +25,33 @@ import urllib.request
 
 # ── inputs ────────────────────────────────────────────────────────────────────
 
-PARAMS   = json.loads(pathlib.Path("inputs/global_params.json").read_text())
+def _load_params() -> dict:
+    """Load global params from PARAM_* env vars (silva) or inputs/global_params.json (local)."""
+    try:
+        base = json.loads(pathlib.Path("inputs/global_params.json").read_text())
+    except FileNotFoundError:
+        base = {}
+    for key, val in os.environ.items():
+        if not key.startswith("PARAM_"):
+            continue
+        param = key[6:].lower()
+        if param in base:
+            t = type(base[param])
+            try:
+                base[param] = t(val)
+            except (ValueError, TypeError):
+                base[param] = val
+        else:
+            try:
+                base[param] = int(val)
+            except ValueError:
+                try:
+                    base[param] = float(val)
+                except ValueError:
+                    base[param] = val
+    return base
+
+PARAMS   = _load_params()
 HOTSPOTS = json.loads(pathlib.Path("inputs/hotspots.json").read_text())
 TARGET   = pathlib.Path("inputs/target.pdb").read_text()
 TARGET_SEQ = pathlib.Path("inputs/chain_seq.txt").read_text().strip()

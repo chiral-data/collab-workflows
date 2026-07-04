@@ -28,7 +28,33 @@ import pdb_utils
 
 # ── inputs ────────────────────────────────────────────────────────────────────
 
-PARAMS   = json.loads(pathlib.Path("inputs/global_params.json").read_text())
+def _load_params() -> dict:
+    """Load global params from PARAM_* env vars (silva) or inputs/global_params.json (local)."""
+    try:
+        base = json.loads(pathlib.Path("inputs/global_params.json").read_text())
+    except FileNotFoundError:
+        base = {}
+    for key, val in os.environ.items():
+        if not key.startswith("PARAM_"):
+            continue
+        param = key[6:].lower()
+        if param in base:
+            t = type(base[param])
+            try:
+                base[param] = t(val)
+            except (ValueError, TypeError):
+                base[param] = val
+        else:
+            try:
+                base[param] = int(val)
+            except ValueError:
+                try:
+                    base[param] = float(val)
+                except ValueError:
+                    base[param] = val
+    return base
+
+PARAMS   = _load_params()
 PDB_ID   = PARAMS["target_pdb_id"].upper()
 CHAIN    = PARAMS["target_chain"]
 HOTSPOTS = [h.strip() for h in PARAMS["hotspot_residues"].split(",")]

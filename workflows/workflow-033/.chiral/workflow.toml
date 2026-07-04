@@ -14,12 +14,12 @@ hint    = "RCSB PDB accession for the target protein (fetched automatically)"
 
 [params.target_chain]
 type    = "string"
-default = "C"
+default = "A"
 hint    = "Chain ID in the PDB to use as the design target"
 
 [params.hotspot_residues]
 type    = "string"
-default = "C56,C58,C113,C115"
+default = "A56,A58,A113,A115"
 hint    = "Comma-separated chain+author residue IDs for RFdiffusion hotspot_res (e.g. C56,C58)"
 
 [params.binder_length_min]
