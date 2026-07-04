@@ -83,7 +83,7 @@ Nodes 01–03–04 run sequentially with node 01 feeding both 02 and 04.
 
 **Process:** Calls the RFdiffusion NIM N times (one call per backbone, distinct seeds) with the target PDB, a contig string combining the fixed target segment and a generated binder segment of the specified length range, and the hotspot residue list. Each call returns one backbone PDB.
 
-**Scientific notes:** RFdiffusion diffuses protein backbones by reversing a noising process conditioned on the target structure and hotspot geometry. The contig format `E1-200/0 60-90` keeps target chain residues 1–200 fixed and generates a 60–90 residue binder chain de novo.
+**Scientific notes:** RFdiffusion diffuses protein backbones by reversing a noising process conditioned on the target structure and hotspot geometry. The contig format `E22-230/0 60-90` keeps target chain E's actual PDB residues 22–230 fixed and generates a 60–90 residue binder chain de novo. The first/last numbers must match the *real* author residue numbering in the input PDB (which rarely starts at 1) — RFdiffusion validates the contig against the structure and rejects it with HTTP 422 otherwise.
 
 **Outputs:**
 - `backbones/bb000.pdb … bb049.pdb` — one RFdiffusion output PDB per backbone
@@ -186,19 +186,21 @@ Self-contained HTML with ranked design table, score distribution histograms, and
 
 1. Select workflow-033 from the workflow list
 2. Set `target_pdb_id`, `target_chain`, and `hotspot_residues` for your target
-3. Set `NVIDIA_API_KEY` in platform secrets
-4. Click Run
+3. Set `env_passthrough = ["NGC_API_KEY", "NVIDIA_API_KEY"]` in `.chiral/workflow.toml` (requires silva ≥ 0.5.4) and export `NVIDIA_API_KEY` in the shell running `silva`, or set it in platform secrets
+4. Click Run / invoke `silva workflows/workflow-033`
 
-### Test vs production settings
+### Demo vs original/production settings
 
-| Setting | Test | Production |
-|---------|------|------------|
-| `n_backbones` | 10 | 100–200 |
-| `seqs_per_backbone` | 4 | 8 |
-| `cofold_shortlist_n` | 10 | 50–100 |
-| `diffusion_steps` | 20 | 50 |
+`global_params.json` currently ships with **demo-scale settings** — small enough to validate the full 5-node pipeline against the real hosted NIMs end-to-end in a few minutes with minimal API usage. This is what was used to confirm silva's `env_passthrough` feature and the node 02–04 fixes below work correctly in practice.
 
-Default parameters run in ~30–60 min on hosted NIMs. Test settings run in ~5 min.
+| Setting | Demo (shipped default) | Original / production |
+|---------|------------------------|------------------------|
+| `n_backbones` | 2 | 50 |
+| `seqs_per_backbone` | 2 | 8 |
+| `cofold_shortlist_n` | 4 | 50 |
+| `diffusion_steps` | 50 | 50 |
+
+Restore the original/production column's values in `global_params.json` before running a real design campaign — the demo settings exist purely to smoke-test the pipeline cheaply and will not produce a meaningful screen (only 2 backbones × 2 sequences = 4 total candidates). Original defaults run in ~30–60 min on hosted NIMs and generate up to 400 candidates; the demo config completes in ~2–3 min.
 
 ---
 
