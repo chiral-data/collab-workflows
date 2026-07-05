@@ -1,6 +1,6 @@
 #!/bin/bash
 set -euo pipefail
-BASE="https://raw.githubusercontent.com/chiral-data/collab-workflows/main/workflows/workflow-033/output_files/02-generate-backbones"
+BASE="https://raw.githubusercontent.com/chiral-data/collab-workflows/feat/workflow-033/workflows/workflow-033/output_files/02-generate-backbones"
 mkdir -p outputs/backbones
 for f in backbone_list.json gen_report.json; do
     echo "[02-mock] downloading $f"
