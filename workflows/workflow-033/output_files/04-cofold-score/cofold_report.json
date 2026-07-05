@@ -1,0 +1,13 @@
+{
+  "n_shortlisted": 4,
+  "n_cofolded": 4,
+  "n_failed": 0,
+  "n_passed_filter": 2,
+  "failed_ids": [],
+  "filters": {
+    "iptm_min": 0.8,
+    "binder_plddt_min": 80.0,
+    "self_consistency_rmsd_max": 2.0
+  },
+  "nim_mode": "hosted"
+}

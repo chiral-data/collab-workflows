@@ -1,0 +1,65 @@
+{
+  "target": {
+    "pdb_id": "5JDR",
+    "chain": "A",
+    "hotspots": "A56,A58,A113,A115"
+  },
+  "params": {
+    "n_backbones": 2,
+    "seqs_per_backbone": 2,
+    "binder_len": "60-90",
+    "cofold_shortlist_n": 4,
+    "boltz2_recycling_steps": 3,
+    "boltz2_sampling_steps": 50
+  },
+  "filters": {
+    "iptm_min": 0.8,
+    "binder_plddt_min": 80.0,
+    "self_consistency_rmsd_max": 2.0
+  },
+  "results": {
+    "n_shortlisted": 4,
+    "n_scored": 4,
+    "n_passed_filter": 2,
+    "success_rate": 0.5,
+    "n_controls_generated": 5
+  },
+  "top_designs": [
+    {
+      "id": "bb_0001_seq001",
+      "backbone_id": "bb_0001",
+      "iptm": 0.8587016463279724,
+      "binder_plddt": 90.0861004784689,
+      "self_consistency_rmsd": 1.767099194651445,
+      "proteinmpnn_score": 1.0040169954299927,
+      "sequence": "SVAKTHYKVKYGSTMRISCDFPLDGPLDAAALLALWSRDSKTIVYYAGDAEVTSLRDERYKDRARLLKEELARGRAVLTITGVTLEDEGTYTCQVARGGVGGADIDVEVEAPYDKIKTSVELVDSETSLHKLTCEADGSKKAKIIWKDENGNELSGTQTITPSKENKELWHVKGTLLVEAKAGEIYYCTFKTEDKPRENTAKITIPEIP"
+    },
+    {
+      "id": "bb_0001_seq000",
+      "backbone_id": "bb_0001",
+      "iptm": 0.8090724945068359,
+      "binder_plddt": 91.5042918660287,
+      "self_consistency_rmsd": 1.8025536691382178,
+      "proteinmpnn_score": 1.0153627395629883,
+      "sequence": "TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP"
+    },
+    {
+      "id": "bb_0000_seq000",
+      "backbone_id": "bb_0000",
+      "iptm": 0.7922622561454773,
+      "binder_plddt": 90.90834449760764,
+      "self_consistency_rmsd": 1.7704759221516437,
+      "proteinmpnn_score": 1.016093373298645,
+      "sequence": "TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP"
+    },
+    {
+      "id": "bb_0000_seq001",
+      "backbone_id": "bb_0000",
+      "iptm": 0.777349591255188,
+      "binder_plddt": 87.48971770334926,
+      "self_consistency_rmsd": 1.970280813844993,
+      "proteinmpnn_score": 1.0298035144805908,
+      "sequence": "AVEKKKYNVKYGSTMEIACNFPLTGPLDRAALTVLWSRDAETIVYYAGGAPQTFVRSAKYKDRATIIEEELEKGRAVLRITGIKLEDEGTYTCSVALGGGGSATIDVNVDAPYDNIKTSVTLVDSETNLHLLTCEATGYPKATITWRDADGTVLEGKQTVTPSKEDERLWLVRGELLVEASAGEVYYCTFERSDEPSSNTATITIPELP"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "campaign": "protein-binder-design",
+  "created": "2026-07-05T06:58:19.358827+00:00",
+  "target": {
+    "pdb_id": "5JDR",
+    "chain": "A",
+    "hotspots": "A56,A58,A113,A115"
+  },
+  "mode": "hosted",
+  "params": {
+    "n_backbones": 2,
+    "seqs_per_backbone": 2,
+    "binder_len": "60-90",
+    "cofold_shortlist_n": 4,
+    "boltz2_recycling_steps": 3,
+    "boltz2_sampling_steps": 50
+  },
+  "filters": {
+    "iptm_min": 0.8,
+    "binder_plddt_min": 80.0,
+    "self_consistency_rmsd_max": 2.0
+  },
+  "candidates": [
+    {
+      "id": "bb_0001_seq001",
+      "backbone_id": "bb_0001",
+      "sequence": "SVAKTHYKVKYGSTMRISCDFPLDGPLDAAALLALWSRDSKTIVYYAGDAEVTSLRDERYKDRARLLKEELARGRAVLTITGVTLEDEGTYTCQVARGGVGGADIDVEVEAPYDKIKTSVELVDSETSLHKLTCEADGSKKAKIIWKDENGNELSGTQTITPSKENKELWHVKGTLLVEAKAGEIYYCTFKTEDKPRENTAKITIPEIP",
+      "scores": {
+        "proteinmpnn_score": 1.0040169954299927,
+        "iptm": 0.8587016463279724,
+        "binder_plddt": 90.0861004784689,
+        "self_consistency_rmsd": 1.767099194651445
+      },
+      "artifacts": {
+        "backbone_pdb": "inputs/backbones/bb_0001.pdb",
+        "complex_cif": "outputs/complexes/bb_0001_seq001.cif"
+      },
+      "passed_filter": true,
+      "is_control": false,
+      "control_type": null,
+      "created": "2026-07-05T06:58:19.358847+00:00"
+    },
+    {
+      "id": "bb_0001_seq000",
+      "backbone_id": "bb_0001",
+      "sequence": "TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP",
+      "scores": {
+        "proteinmpnn_score": 1.0153627395629883,
+        "iptm": 0.8090724945068359,
+        "binder_plddt": 91.5042918660287,
+        "self_consistency_rmsd": 1.8025536691382178
+      },
+      "artifacts": {
+        "backbone_pdb": "inputs/backbones/bb_0001.pdb",
+        "complex_cif": "outputs/complexes/bb_0001_seq000.cif"
+      },
+      "passed_filter": true,
+      "is_control": false,
+      "control_type": null,
+      "created": "2026-07-05T06:58:28.109485+00:00"
+    },
+    {
+      "id": "bb_0000_seq000",
+      "backbone_id": "bb_0000",
+      "sequence": "TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP",
+      "scores": {
+        "proteinmpnn_score": 1.016093373298645,
+        "iptm": 0.7922622561454773,
+        "binder_plddt": 90.90834449760764,
+        "self_consistency_rmsd": 1.7704759221516437
+      },
+      "artifacts": {
+        "backbone_pdb": "inputs/backbones/bb_0000.pdb",
+        "complex_cif": "outputs/complexes/bb_0000_seq000.cif"
+      },
+      "passed_filter": false,
+      "is_control": false,
+      "control_type": null,
+      "created": "2026-07-05T06:58:36.673267+00:00"
+    },
+    {
+      "id": "bb_0000_seq001",
+      "backbone_id": "bb_0000",
+      "sequence": "AVEKKKYNVKYGSTMEIACNFPLTGPLDRAALTVLWSRDAETIVYYAGGAPQTFVRSAKYKDRATIIEEELEKGRAVLRITGIKLEDEGTYTCSVALGGGGSATIDVNVDAPYDNIKTSVTLVDSETNLHLLTCEATGYPKATITWRDADGTVLEGKQTVTPSKEDERLWLVRGELLVEASAGEVYYCTFERSDEPSSNTATITIPELP",
+      "scores": {
+        "proteinmpnn_score": 1.0298035144805908,
+        "iptm": 0.777349591255188,
+        "binder_plddt": 87.48971770334926,
+        "self_consistency_rmsd": 1.970280813844993
+      },
+      "artifacts": {
+        "backbone_pdb": "inputs/backbones/bb_0000.pdb",
+        "complex_cif": "outputs/complexes/bb_0000_seq001.cif"
+      },
+      "passed_filter": false,
+      "is_control": false,
+      "control_type": null,
+      "created": "2026-07-05T06:58:46.440388+00:00"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Binder Design Report — 5JDR chain A</title>
+<meta name="description" content="RFdiffusion → ProteinMPNN → Boltz2 binder design campaign results">
+<style>
+:root {
+  --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3a;
+  --text: #e2e5ef; --muted: #7b8099; --accent: #4f8ef7;
+  --pass: #34c97a; --fail: #e05d5d; --warn: #f0a03c;
+  --font: "Consolas","Menlo","Liberation Mono",monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: 13px; line-height: 1.6;
+  padding: 24px 32px;
+}
+h1 { font-size: 20px; color: var(--accent); margin-bottom: 4px; }
+h2 { font-size: 14px; color: var(--accent); margin: 28px 0 10px;
+     border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+.meta { color: var(--muted); font-size: 12px; margin-bottom: 24px; }
+.kv-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px; margin-bottom: 20px;
+}
+.kv { background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 12px 16px; }
+.kv .label { color: var(--muted); font-size: 11px; text-transform: uppercase;
+             letter-spacing: .06em; margin-bottom: 2px; }
+.kv .value { font-size: 22px; font-weight: 700; }
+.kv .value.pass { color: var(--pass); }
+.kv .value.fail { color: var(--fail); }
+.kv .value.neutral { color: var(--accent); }
+.table-wrap { overflow-x: auto; margin-bottom: 24px; }
+table { border-collapse: collapse; width: 100%; min-width: 700px; }
+th { background: var(--surface); color: var(--muted); font-size: 11px;
+     text-transform: uppercase; letter-spacing: .05em;
+     padding: 8px 12px; border-bottom: 1px solid var(--border);
+     white-space: nowrap; text-align: left; }
+td { padding: 7px 12px; border-bottom: 1px solid var(--border);
+     white-space: nowrap; vertical-align: middle; }
+tr:hover td { background: var(--surface); }
+.pass-tag { color: var(--pass); font-weight: 700; }
+.fail-tag { color: var(--fail); }
+.bar-cell { min-width: 100px; }
+.bar-wrap { background: var(--border); border-radius: 3px; height: 6px;
+            overflow: hidden; width: 80px; display: inline-block;
+            vertical-align: middle; margin-right: 6px; }
+.bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+.bar-fill.pass { background: var(--pass); }
+.seq { font-size: 11px; color: var(--muted); max-width: 220px;
+       overflow: hidden; text-overflow: ellipsis; }
+.note { background: var(--surface); border: 1px solid var(--border);
+        border-left: 3px solid var(--warn); border-radius: 4px;
+        padding: 10px 14px; color: var(--muted); font-size: 12px;
+        margin-bottom: 16px; }
+.ctrl-tag { color: var(--warn); font-size: 11px; }
+</style>
+</head>
+<body>
+<h1>Binder Design Report</h1>
+<p class="meta">Target: 5JDR chain A &nbsp;·&nbsp;
+Hotspots: A56,A58,A113,A115 &nbsp;·&nbsp;
+Pipeline: RFdiffusion → ProteinMPNN → Boltz2</p>
+
+<h2>Results</h2>
+<div class="kv-grid">
+  <div class="kv"><div class="label">Shortlisted</div>
+    <div class="value neutral">4</div></div>
+  <div class="kv"><div class="label">Scored</div>
+    <div class="value neutral">4</div></div>
+  <div class="kv"><div class="label">Passed filter</div>
+    <div class="value pass">2</div></div>
+  <div class="kv"><div class="label">Success rate</div>
+    <div class="value pass">50.0%</div></div>
+</div>
+
+<h2>Filter thresholds</h2>
+<div class="kv-grid"><div class="kv"><div class="label">ipTM ≥</div><div class="value neutral">0.8</div></div><div class="kv"><div class="label">pLDDT ≥</div><div class="value neutral">80.0</div></div><div class="kv"><div class="label">sc-RMSD ≤</div><div class="value neutral">2.0 Å</div></div></div>
+
+<h2>Campaign params</h2>
+<div class="kv-grid"><div class="kv"><div class="label">n_backbones</div><div class="value neutral">2</div></div><div class="kv"><div class="label">seqs_per_backbone</div><div class="value neutral">2</div></div><div class="kv"><div class="label">binder_len</div><div class="value neutral">60-90</div></div><div class="kv"><div class="label">cofold_shortlist_n</div><div class="value neutral">4</div></div><div class="kv"><div class="label">boltz2_recycling_steps</div><div class="value neutral">3</div></div><div class="kv"><div class="label">boltz2_sampling_steps</div><div class="value neutral">50</div></div></div>
+
+<h2>Top designs (ranked by ipTM, passed only)</h2>
+<div class="note"><strong>5 scrambled control sequences</strong> were generated (composition-preserving shuffles of top passed designs). They are listed in candidates.csv but have not been co-folded — run them through node 04 to benchmark the ipTM/sc-RMSD distribution.</div>
+<div class="table-wrap">
+<table>
+<thead><tr>
+  <th>#</th><th>Candidate</th><th>Backbone</th><th>Filter</th>
+  <th>ipTM ↑</th><th>pLDDT ↑</th><th>sc-RMSD ↓</th>
+  <th>NLL ↓</th><th>Sequence (30 aa)</th>
+</tr></thead>
+<tbody><tr><td>1</td><td>bb_0001_seq001</td><td>bb_0001</td><td><span class="pass-tag">PASS</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:86%"></span></span><span>0.859</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:90%"></span></span><span>90.086</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:56%"></span></span><span>1.77 Å</span></td><td><span style='color:var(--pass)'>1.0040</span></td><td><span class="seq" title="SVAKTHYKVKYGSTMRISCDFPLDGPLDAAALLALWSRDSKTIVYYAGDAEVTSLRDERYKDRARLLKEELARGRAVLTITGVTLEDEGTYTCQVARGGVGGADIDVEVEAPYDKIKTSVELVDSETSLHKLTCEADGSKKAKIIWKDENGNELSGTQTITPSKENKELWHVKGTLLVEAKAGEIYYCTFKTEDKPRENTAKITIPEIP">SVAKTHYKVKYGSTMRISCDFPLDGPLDAA…</span></td></tr>
+<tr><td>2</td><td>bb_0001_seq000</td><td>bb_0001</td><td><span class="pass-tag">PASS</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:81%"></span></span><span>0.809</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:92%"></span></span><span>91.504</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:55%"></span></span><span>1.80 Å</span></td><td><span style='color:var(--pass)'>1.0154</span></td><td><span class="seq" title="TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP">TVPKDLYVVEYGSNMTIECKFPVEKQLDLA…</span></td></tr>
+<tr><td>3</td><td>bb_0000_seq000</td><td>bb_0000</td><td><span class="fail-tag">FAIL</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:79%"></span></span><span>0.792</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:91%"></span></span><span>90.908</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:56%"></span></span><span>1.77 Å</span></td><td><span style='color:var(--pass)'>1.0161</span></td><td><span class="seq" title="TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP">TVPKDLYVVEYGSNMTIECKFPVEKQLDLA…</span></td></tr>
+<tr><td>4</td><td>bb_0000_seq001</td><td>bb_0000</td><td><span class="fail-tag">FAIL</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:78%"></span></span><span>0.777</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:87%"></span></span><span>87.490</span></td><td class="bar-cell"><span class="bar-wrap"><span class="bar-fill pass" style="width:51%"></span></span><span>1.97 Å</span></td><td><span style='color:var(--pass)'>1.0298</span></td><td><span class="seq" title="AVEKKKYNVKYGSTMEIACNFPLTGPLDRAALTVLWSRDAETIVYYAGGAPQTFVRSAKYKDRATIIEEELEKGRAVLRITGIKLEDEGTYTCSVALGGGGSATIDVNVDAPYDNIKTSVTLVDSETNLHLLTCEATGYPKATITWRDADGTVLEGKQTVTPSKEDERLWLVRGELLVEASAGEVYYCTFERSDEPSSNTATITIPELP">AVEKKKYNVKYGSTMEIACNFPLTGPLDRA…</span></td></tr></tbody>
+</table>
+</div>
+
+<h2>All shortlisted candidates</h2>
+<div class="table-wrap">
+<table>
+<thead><tr>
+  <th>Candidate</th><th>Filter</th>
+  <th>ipTM</th><th>pLDDT</th><th>sc-RMSD (Å)</th><th>NLL</th>
+</tr></thead>
+<tbody><tr><td>bb_0001_seq001</td><td><span class="pass-tag">PASS</span></td><td>0.8587</td><td>90.0861</td><td>1.7671</td><td>1.0040</td></tr>
+<tr><td>bb_0001_seq000</td><td><span class="pass-tag">PASS</span></td><td>0.8091</td><td>91.5043</td><td>1.8026</td><td>1.0154</td></tr>
+<tr><td>bb_0000_seq000</td><td><span class="fail-tag">FAIL</span></td><td>0.7923</td><td>90.9083</td><td>1.7705</td><td>1.0161</td></tr>
+<tr><td>bb_0000_seq001</td><td><span class="fail-tag">FAIL</span></td><td>0.7773</td><td>87.4897</td><td>1.9703</td><td>1.0298</td></tr>
+<tr><td>ctrl_scrambled_00 <span class="ctrl-tag">[scrambled]</span></td><td><span style="color:var(--muted)">—</span></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ctrl_scrambled_01 <span class="ctrl-tag">[scrambled]</span></td><td><span style="color:var(--muted)">—</span></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ctrl_scrambled_02 <span class="ctrl-tag">[scrambled]</span></td><td><span style="color:var(--muted)">—</span></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ctrl_scrambled_03 <span class="ctrl-tag">[scrambled]</span></td><td><span style="color:var(--muted)">—</span></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ctrl_scrambled_04 <span class="ctrl-tag">[scrambled]</span></td><td><span style="color:var(--muted)">—</span></td><td></td><td></td><td></td><td></td></tr></tbody>
+</table>
+</div>
+
+<p class="meta" style="margin-top:32px">
+All scores are in-silico. Report a <strong>success rate</strong>, not just top
+scores; always corroborate with self-consistency RMSD and NLL before
+prioritising designs for experimental follow-up.
+</p>
+</body>
+</html>
