@@ -1,0 +1,10 @@
+name        = "Generate Backbones"
+description = "Call RFdiffusion NIM N times with distinct seeds to generate de novo binder backbone PDBs against the target hotspots."
+
+outputs = ["backbone_list.json"]
+
+[container]
+image = "binder_design:2026_06_28"
+
+[scripts]
+run = "run.sh"

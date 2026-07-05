@@ -1,0 +1,10 @@
+name        = "Co-fold and Score"
+description = "Shortlist top candidates by ProteinMPNN NLL, co-fold each binder–target complex with Boltz2 NIM, extract ipTM and binder pLDDT from mmCIF, compute self-consistency RMSD, write run manifest."
+
+outputs = ["scores.json", "manifest.json"]
+
+[container]
+image = "binder_design:2026_06_28"
+
+[scripts]
+run = "run.sh"

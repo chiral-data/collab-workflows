@@ -1,0 +1,10 @@
+name        = "Target Prep"
+description = "Fetch target PDB from RCSB, extract chain sequence, remap hotspot residue IDs, call MSA-search NIM for target A3M."
+
+outputs = ["target.pdb", "chain_seq.txt", "hotspots.json", "target_a3m.txt", "prep_report.json"]
+
+[container]
+image = "binder_design:2026_06_28"
+
+[scripts]
+run = "run.sh"

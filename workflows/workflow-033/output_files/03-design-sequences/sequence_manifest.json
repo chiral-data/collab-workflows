@@ -1,0 +1,46 @@
+[
+  {
+    "candidate_id": "bb_0000_seq000",
+    "backbone_id": "bb_0000",
+    "backbone_path": "backbones/bb_0000.pdb",
+    "binder_chain": "B",
+    "binder_length": 209,
+    "sequence": "TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP",
+    "proteinmpnn_score": 1.016093373298645,
+    "mfasta_header": "input, score=1.7315, global_score=2.0150, fixed_chains=['A'], designed_chains=['B'], model_name=v_48_002, git_hash=unknown, seed=872",
+    "sampling_temp": 0.1
+  },
+  {
+    "candidate_id": "bb_0000_seq001",
+    "backbone_id": "bb_0000",
+    "backbone_path": "backbones/bb_0000.pdb",
+    "binder_chain": "B",
+    "binder_length": 209,
+    "sequence": "AVEKKKYNVKYGSTMEIACNFPLTGPLDRAALTVLWSRDAETIVYYAGGAPQTFVRSAKYKDRATIIEEELEKGRAVLRITGIKLEDEGTYTCSVALGGGGSATIDVNVDAPYDNIKTSVTLVDSETNLHLLTCEATGYPKATITWRDADGTVLEGKQTVTPSKEDERLWLVRGELLVEASAGEVYYCTFERSDEPSSNTATITIPELP",
+    "proteinmpnn_score": 1.0298035144805908,
+    "mfasta_header": "T=0.1, sample=1, score=1.0161, global_score=1.5142, seq_recovery=0.4163",
+    "sampling_temp": 0.1
+  },
+  {
+    "candidate_id": "bb_0001_seq000",
+    "backbone_id": "bb_0001",
+    "backbone_path": "backbones/bb_0001.pdb",
+    "binder_chain": "B",
+    "binder_length": 209,
+    "sequence": "TVPKDLYVVEYGSNMTIECKFPVEKQLDLAALIVYWEMEDKNIIQFVHGEEDLKVQHSSYRQRARLLKDQLSLGNAALQITDVKLQDAGVYRCMISYGGADYKRITVKVNAPYNKINQRILVVDPVTSEHELTCQAEGYPKAEVIWTSSDHQVLSGKTTTTNSKREEKLFNVTSTLRINTTTNEIFYCTFRRLDPEENHTAELVIPELP",
+    "proteinmpnn_score": 1.0153627395629883,
+    "mfasta_header": "input, score=1.7441, global_score=2.0345, fixed_chains=['A'], designed_chains=['B'], model_name=v_48_002, git_hash=unknown, seed=160",
+    "sampling_temp": 0.1
+  },
+  {
+    "candidate_id": "bb_0001_seq001",
+    "backbone_id": "bb_0001",
+    "backbone_path": "backbones/bb_0001.pdb",
+    "binder_chain": "B",
+    "binder_length": 209,
+    "sequence": "SVAKTHYKVKYGSTMRISCDFPLDGPLDAAALLALWSRDSKTIVYYAGDAEVTSLRDERYKDRARLLKEELARGRAVLTITGVTLEDEGTYTCQVARGGVGGADIDVEVEAPYDKIKTSVELVDSETSLHKLTCEADGSKKAKIIWKDENGNELSGTQTITPSKENKELWHVKGTLLVEAKAGEIYYCTFKTEDKPRENTAKITIPEIP",
+    "proteinmpnn_score": 1.0040169954299927,
+    "mfasta_header": "T=0.1, sample=1, score=1.0154, global_score=1.4936, seq_recovery=0.4211",
+    "sampling_temp": 0.1
+  }
+]
