@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
-echo "=== 05 Report ==="
+BASE="https://raw.githubusercontent.com/chiral-data/collab-workflows/main/workflows/workflow-033/output_files/05-report"
 mkdir -p outputs
-python3 generate_report.py
-echo "Done — outputs: report.html  summary.json  ranked_binders.csv"
+for f in candidates.csv summary.json report.html; do
+    echo "[05-mock] downloading $f"
+    curl -fsSL "$BASE/$f" -o "outputs/$f"
+done
+echo "[05-mock] done"
