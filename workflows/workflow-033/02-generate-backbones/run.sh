@@ -4,10 +4,10 @@ BASE="https://raw.githubusercontent.com/chiral-data/collab-workflows/main/workfl
 mkdir -p outputs/backbones
 for f in backbone_list.json gen_report.json; do
     echo "[02-mock] downloading $f"
-    curl -fsSL "$BASE/$f" -o "outputs/$f"
+    python3 -c "import urllib.request; urllib.request.urlretrieve('$BASE/$f', 'outputs/$f')"
 done
 for f in bb_0000.pdb bb_0001.pdb; do
     echo "[02-mock] downloading backbones/$f"
-    curl -fsSL "$BASE/backbones/$f" -o "outputs/backbones/$f"
+    python3 -c "import urllib.request; urllib.request.urlretrieve('$BASE/backbones/$f', 'outputs/backbones/$f')"
 done
 echo "[02-mock] done"

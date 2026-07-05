@@ -4,6 +4,6 @@ BASE="https://raw.githubusercontent.com/chiral-data/collab-workflows/main/workfl
 mkdir -p outputs
 for f in target.pdb chain_seq.txt hotspots.json target_a3m.txt prep_report.json; do
     echo "[01-mock] downloading $f"
-    curl -fsSL "$BASE/$f" -o "outputs/$f"
+    python3 -c "import urllib.request; urllib.request.urlretrieve('$BASE/$f', 'outputs/$f')"
 done
 echo "[01-mock] done"

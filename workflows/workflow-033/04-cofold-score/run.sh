@@ -4,10 +4,10 @@ BASE="https://raw.githubusercontent.com/chiral-data/collab-workflows/main/workfl
 mkdir -p outputs/complexes
 for f in scores.json manifest.json cofold_report.json; do
     echo "[04-mock] downloading $f"
-    curl -fsSL "$BASE/$f" -o "outputs/$f"
+    python3 -c "import urllib.request; urllib.request.urlretrieve('$BASE/$f', 'outputs/$f')"
 done
 for f in bb_0000_seq000.cif bb_0000_seq001.cif bb_0001_seq000.cif bb_0001_seq001.cif; do
     echo "[04-mock] downloading complexes/$f"
-    curl -fsSL "$BASE/complexes/$f" -o "outputs/complexes/$f"
+    python3 -c "import urllib.request; urllib.request.urlretrieve('$BASE/complexes/$f', 'outputs/complexes/$f')"
 done
 echo "[04-mock] done"
