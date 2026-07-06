@@ -338,11 +338,12 @@ def _section_confidence(plddt, pae, confidence_list):
   colorbar: {{ title: 'PAE (Å)', len: 0.8 }},
   hovertemplate: 'Res %{{x}},%{{y}}: %{{z:.1f}} Å<extra></extra>'
 }}], {{
-  xaxis: {{ title: 'Residue (aligned)' }},
-  yaxis: {{ title: 'Residue (scored)', autorange: 'reversed' }},
+  font: {{ family: 'system-ui, sans-serif', size: 11, color: '#64748b' }},
+  xaxis: {{ title: {{ text: 'Residue (aligned)', font: {{ size: 11 }} }} }},
+  yaxis: {{ title: {{ text: 'Residue (scored)', font: {{ size: 11 }} }}, autorange: 'reversed' }},
   template: 'plotly_white', height: 340,
   margin: {{ t: 30, b: 50, l: 60, r: 20 }},
-  title: {{ text: 'Predicted Aligned Error (PAE)', font: {{ size: 13 }} }}
+  title: {{ text: 'Predicted Aligned Error (PAE)', font: {{ size: 13, color: '#1e293b' }} }}
 }}, {{responsive: true}});"""
 
     plddt_chart_js = ""
@@ -363,12 +364,13 @@ def _section_confidence(plddt, pae, confidence_list):
      hovertemplate:'pLDDT %{{x:.0f}}: %{{y}} residues<extra></extra>' }}
 ], {{
   barmode: 'stack',
-  xaxis: {{ title: 'pLDDT', range: [0, 100] }},
-  yaxis: {{ title: 'Residue count' }},
+  font: {{ family: 'system-ui, sans-serif', size: 11, color: '#64748b' }},
+  xaxis: {{ title: {{ text: 'pLDDT', font: {{ size: 11 }} }}, range: [0, 100] }},
+  yaxis: {{ title: {{ text: 'Residue count', font: {{ size: 11 }} }} }},
   template: 'plotly_white', height: 340,
   margin: {{ t: 30, b: 50, l: 55, r: 20 }},
-  title: {{ text: 'pLDDT Distribution (selected model)', font: {{ size: 13 }} }},
-  legend: {{ orientation: 'h', y: -0.25 }},
+  title: {{ text: 'pLDDT Distribution (selected model)', font: {{ size: 13, color: '#1e293b' }} }},
+  legend: {{ orientation: 'h', y: -0.25, font: {{ size: 11 }} }},
   shapes: [
     {{ type:'line', x0:70, x1:70, y0:0, y1:1, yref:'paper',
        line:{{ color:'#94a3b8', dash:'dash', width:1.5 }} }},
@@ -455,7 +457,7 @@ def _section_pocket_table(pocket_qc):
     return f"""
   <div class="section-card mb-4">
     <div class="section-header">Pocket Discovery (P2Rank) — sorted by score</div>
-    <div class="section-body p-0">
+    <div class="section-body py-0 px-3">
       <div class="table-responsive">
         <table class="table table-sm table-hover mb-0" id="pocket-table">
           <thead>
@@ -701,14 +703,15 @@ def _section_methods(input_summary, pocket_qc, docking_summary, model_id, timest
         </div>
 
         <div class="col-12">
-          <div class="alert alert-warning py-2 px-3 mb-2" style="font-size:var(--font-sm);">
-            <strong>pLDDT caveat:</strong>
+          <blockquote style="border-left:3px solid var(--border);padding:8px 0 8px 16px;
+                             margin:0 0 8px;font-size:var(--font-sm);color:var(--text-secondary);">
+            <strong>pLDDT caveat</strong> &mdash;
             pLDDT ≥ {threshold} is a <em>necessary but not sufficient</em> condition for reliable
             docking. High pLDDT filters disordered regions but does not guarantee correct
             side-chain geometry at the pocket.  Eguida &amp; Rognan (2023) found that 4 of the 5
             worst-performing docking targets had mean pLDDT ≥ 70 (JCIM, PMC9852548).
             Always inspect the selected pocket and consider experimental validation.
-          </div>
+          </blockquote>
           <p class="note mb-0">Report generated: {timestamp}</p>
         </div>
       </div>
