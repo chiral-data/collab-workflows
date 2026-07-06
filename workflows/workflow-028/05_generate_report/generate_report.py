@@ -216,15 +216,14 @@ def _affinity_html(affinity: dict) -> str:
     aff_val = affinity.get("affinity")
     if aff_val is None:
         return ""
-    return (f'<p class="mt-2 mb-1" style="font-size:0.84rem;color:#475569;">'
+    return (f'<p class="mt-2 mb-1" style="font-size:var(--font-sm);color:var(--text-secondary);">'
             f'<strong>Boltz-2 predicted affinity:</strong> '
             f'log<sub>10</sub>K<sub>D</sub> = {_fmt(aff_val, 2)}'
-            f' <em style="color:#94a3b8;">(orientation only — not validated for ranking)</em></p>')
+            f' <em style="color:var(--text-faint);">(orientation only — not validated for ranking)</em></p>')
 
 
 def _badge(text: str, color: str) -> str:
-    return (f'<span style="background:{color};color:white;padding:2px 10px;'
-            f'border-radius:12px;font-size:11px;font-weight:600;">{text}</span>')
+    return f'<span class="pill" style="background:{color};">{text}</span>'
 
 
 # ---------------------------------------------------------------------------
@@ -263,51 +262,45 @@ def _section_summary(input_summary, confidence_list, pocket_qc, docking_summary,
       <div class="row g-3">
         <div class="col-6 col-md-2">
           <div class="stat-card">
-            <div class="icon">&#x1F9EC;</div>
-            <div class="value" style="color:#1d4ed8;">{seq_len if seq_len else "—"}</div>
+            <div class="value">{seq_len if seq_len else "—"}</div>
             <div class="label">Residues</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
-            <div class="icon">&#x1F52C;</div>
-            <div class="value" style="color:#7c3aed;">{n_models}</div>
+            <div class="value">{n_models}</div>
             <div class="label">Boltz-2 Models</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
-            <div class="icon">&#x1F4CA;</div>
-            <div class="value" style="color:#0891b2;">{mean_plddt}</div>
+            <div class="value">{mean_plddt}</div>
             <div class="label">Mean pLDDT</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
-            <div class="icon">&#x1F4CD;</div>
-            <div class="value" style="color:#0f766e;">{n_pockets}</div>
+            <div class="value">{n_pockets}</div>
             <div class="label">Pockets Found</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
-            <div class="icon">&#x2705;</div>
-            <div class="value" style="color:#16a34a;">{n_qc_pass} / {n_pockets}</div>
+            <div class="value">{n_qc_pass} / {n_pockets}</div>
             <div class="label">Pockets QC ≥70</div>
           </div>
         </div>
         <div class="col-6 col-md-2">
           <div class="stat-card">
-            <div class="icon">&#x1F48A;</div>
-            <div class="value" style="color:#d97706;">{n_poses}</div>
+            <div class="value">{n_poses}</div>
             <div class="label">Docked Poses</div>
           </div>
         </div>
       </div>
 
-      {"" if not ligand_smiles else f'<p class="mt-3 mb-1" style="font-size:0.84rem;color:#475569;"><strong>Ligand SMILES:</strong> <code style="word-break:break-all;">{ligand_smiles}</code></p>'}
+      {"" if not ligand_smiles else f'<p class="mt-3 mb-1" style="font-size:var(--font-sm);color:var(--text-secondary);"><strong>Ligand SMILES:</strong> <code style="word-break:break-all;">{ligand_smiles}</code></p>'}
       {_affinity_html(affinity)}
-      <p class="mt-2 mb-0" style="font-size:0.84rem;color:#475569;">
+      <p class="mt-2 mb-0" style="font-size:var(--font-sm);color:var(--text-secondary);">
         Selected pocket: rank {selected_rank}&nbsp;&nbsp;{qc_badge}
         &nbsp;&mdash;&nbsp;
         <em>QC badge reflects mean pocket pLDDT vs threshold {pocket_qc.get("threshold", 70.0)}</em>
@@ -340,7 +333,7 @@ def _section_confidence(plddt, pae, confidence_list):
         pae_chart_js = f"""Plotly.newPlot('pae-chart', [{{
   type: 'heatmap',
   z: {pae_z_js},
-  colorscale: 'RdYlGn_r',
+  colorscale: [[0,'#f0f7ff'],[0.25,'#a8cef0'],[0.5,'#4a9ade'],[0.75,'#1a6fba'],[1,'#075985']],
   zmin: 0, zmax: {pae_max},
   colorbar: {{ title: 'PAE (Å)', len: 0.8 }},
   hovertemplate: 'Res %{{x}},%{{y}}: %{{z:.1f}} Å<extra></extra>'
@@ -378,13 +371,13 @@ def _section_confidence(plddt, pae, confidence_list):
   legend: {{ orientation: 'h', y: -0.25 }},
   shapes: [
     {{ type:'line', x0:70, x1:70, y0:0, y1:1, yref:'paper',
-       line:{{ color:'#64748b', dash:'dash', width:1.5 }} }},
+       line:{{ color:'#94a3b8', dash:'dash', width:1.5 }} }},
     {{ type:'line', x0:90, x1:90, y0:0, y1:1, yref:'paper',
        line:{{ color:'#94a3b8', dash:'dot', width:1 }} }}
   ],
   annotations: [
     {{ x:70, y:1, yref:'paper', text:'70', showarrow:false,
-       font:{{ size:10, color:'#64748b' }}, xanchor:'right', yanchor:'bottom' }},
+       font:{{ size:10, color:'#94a3b8' }}, xanchor:'right', yanchor:'bottom' }},
     {{ x:90, y:1, yref:'paper', text:'90', showarrow:false,
        font:{{ size:10, color:'#94a3b8' }}, xanchor:'right', yanchor:'bottom' }}
   ]
@@ -441,7 +434,7 @@ def _section_pocket_table(pocket_qc):
                      else _badge("WARN", "#f59e0b") if passes is not None
                      else "—")
         selected  = rank == selected_rank
-        row_style = ' style="background:#f0fdf4;"' if selected else ""
+        row_style = ' style="background:#f0f7ff;"' if selected else ""
         sel_mark  = " ★" if selected else ""
         rows += (
             f"<tr{row_style}>"
@@ -501,18 +494,18 @@ def _section_viewer(plddt, pocket_qc, top_pose_sdf):
     structures = []  # [(label, content, format, color)]
 
     if receptor_pdb_str is not None:
-        structures.append(("Receptor (pLDDT B-factors)", _escape_js(receptor_pdb_str), "pdb", "#94a3b8"))
+        structures.append(("Receptor (pLDDT B-factors)", _escape_js(receptor_pdb_str), "pdb", "#075985"))
 
     if top_pose_sdf is not None:
-        structures.append(("Top docking pose (Uni-Mol)", _escape_js(top_pose_sdf), "sdf", "#f97316"))
+        structures.append(("Top docking pose (Uni-Mol)", _escape_js(top_pose_sdf), "sdf", "#0284c7"))
 
     if not structures:
         return "", ""
 
     toggle_buttons = "".join(
         f'<button id="toggle-struct-{i}" onclick="toggleStruct({i})" '
-        f'style="background:{color};color:white;border:none;padding:5px 16px;'
-        f'border-radius:20px;font-size:0.83rem;cursor:pointer;margin-right:6px;margin-bottom:6px;">'
+        f'class="pill" style="background:{color};border:none;padding:4px 14px;'
+        f'cursor:pointer;margin-right:6px;margin-bottom:6px;">'
         f'{label}</button>'
         for i, (label, _, _, color) in enumerate(structures)
     )
@@ -592,13 +585,13 @@ def _section_viewer(plddt, pocket_qc, top_pose_sdf):
       var el = document.getElementById('molstar-loading');
       if (el) el.style.display = 'none';
       document.getElementById('molstar-viewer').innerHTML =
-        '<p style="color:red;padding:16px;">Mol* error: ' + e + '</p>';
+        '<p style="color:#dc2626;padding:16px;">Mol* error: ' + e + '</p>';
     }});
   }}).catch(function(e) {{
     var el = document.getElementById('molstar-loading');
     if (el) el.style.display = 'none';
     document.getElementById('molstar-viewer').innerHTML =
-      '<p style="color:red;padding:16px;">Mol* failed to initialize: ' + e + '</p>';
+      '<p style="color:#dc2626;padding:16px;">Mol* failed to initialize: ' + e + '</p>';
   }});
 }})();"""
 
@@ -606,15 +599,15 @@ def _section_viewer(plddt, pocket_qc, top_pose_sdf):
   <div class="section-card mb-4">
     <div class="section-header">3D Structure Viewer (Mol*)</div>
     <div class="section-body">
-      <p style="font-size:0.82rem;color:#475569;margin-bottom:8px;">Toggle structures:</p>
+      <p style="font-size:var(--font-sm);color:var(--text-secondary);margin-bottom:8px;">Toggle structures:</p>
       <div style="margin-bottom:14px;display:flex;flex-wrap:wrap;">{toggle_buttons}</div>
       <div style="position:relative;">
         <div id="molstar-loading" class="viewer-loading">
           <div class="spinner"></div> Loading 3D viewer&hellip;
         </div>
         <div id="molstar-viewer"
-             style="width:100%;height:520px;position:relative;border-radius:8px;
-                    overflow:hidden;border:1px solid #e2e8f0;"></div>
+             style="width:100%;height:520px;position:relative;border-radius:var(--radius);
+                    overflow:hidden;border:1px solid var(--border);"></div>
       </div>
       <p class="note mt-2">
         Receptor cartoon coloured by pLDDT B-factors (blue = high confidence).
@@ -649,8 +642,8 @@ def _section_methods(input_summary, pocket_qc, docking_summary, model_id, timest
 
       <div class="row g-4">
         <div class="col-12 col-md-6">
-          <h6 class="fw-semibold mb-2" style="color:#1d4ed8;">Node 01 — Boltz-2 Structure Prediction</h6>
-          <table class="table table-sm table-borderless mb-0" style="font-size:0.84rem;">
+          <h6 class="fw-semibold mb-2" style="color:var(--primary);">Node 01 — Boltz-2 Structure Prediction</h6>
+          <table class="table table-sm table-borderless mb-0" style="font-size:var(--font-sm);">
             <tbody>
               <tr><td class="text-secondary pe-3">Mode</td>
                   <td>Holo (protein + ligand in YAML; <code>--output_format mmcif</code>)</td></tr>
@@ -664,8 +657,8 @@ def _section_methods(input_summary, pocket_qc, docking_summary, model_id, timest
         </div>
 
         <div class="col-12 col-md-6">
-          <h6 class="fw-semibold mb-2" style="color:#0891b2;">Node 02 — P2Rank 2.4.2 Pocket Detection</h6>
-          <table class="table table-sm table-borderless mb-0" style="font-size:0.84rem;">
+          <h6 class="fw-semibold mb-2" style="color:var(--primary);">Node 02 — P2Rank 2.4.2 Pocket Detection</h6>
+          <table class="table table-sm table-borderless mb-0" style="font-size:var(--font-sm);">
             <tbody>
               <tr><td class="text-secondary pe-3">Profile</td>
                   <td><code>-c alphafold</code> (B-factor column = pLDDT; PrankWeb 4 protocol)</td></tr>
@@ -676,8 +669,8 @@ def _section_methods(input_summary, pocket_qc, docking_summary, model_id, timest
         </div>
 
         <div class="col-12 col-md-6">
-          <h6 class="fw-semibold mb-2" style="color:#0f766e;">Node 03 — Pocket QC + Grid</h6>
-          <table class="table table-sm table-borderless mb-0" style="font-size:0.84rem;">
+          <h6 class="fw-semibold mb-2" style="color:var(--primary);">Node 03 — Pocket QC + Grid</h6>
+          <table class="table table-sm table-borderless mb-0" style="font-size:var(--font-sm);">
             <tbody>
               <tr><td class="text-secondary pe-3">pLDDT threshold</td>
                   <td>{threshold} (mean per-residue pLDDT of pocket residues)</td></tr>
@@ -694,8 +687,8 @@ def _section_methods(input_summary, pocket_qc, docking_summary, model_id, timest
         </div>
 
         <div class="col-12 col-md-6">
-          <h6 class="fw-semibold mb-2" style="color:#d97706;">Node 04 — Uni-Mol Docking V2</h6>
-          <table class="table table-sm table-borderless mb-0" style="font-size:0.84rem;">
+          <h6 class="fw-semibold mb-2" style="color:var(--primary);">Node 04 — Uni-Mol Docking V2</h6>
+          <table class="table table-sm table-borderless mb-0" style="font-size:var(--font-sm);">
             <tbody>
               <tr><td class="text-secondary pe-3">Engine</td>
                   <td>Uni-Mol Docking V2 (77.6% RMSD &lt; 2 Å on PoseBusters)</td></tr>
@@ -708,7 +701,7 @@ def _section_methods(input_summary, pocket_qc, docking_summary, model_id, timest
         </div>
 
         <div class="col-12">
-          <div class="alert alert-warning py-2 px-3 mb-2" style="font-size:0.84rem;">
+          <div class="alert alert-warning py-2 px-3 mb-2" style="font-size:var(--font-sm);">
             <strong>pLDDT caveat:</strong>
             pLDDT ≥ {threshold} is a <em>necessary but not sufficient</em> condition for reliable
             docking. High pLDDT filters disordered regions but does not guarantee correct
@@ -771,55 +764,74 @@ def generate_html(
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/molstar@5.9.0/build/viewer/molstar.js"></script>
   <style>
-    body {{ background: #f1f5f9; color: #1e293b; font-family: system-ui, sans-serif; }}
+    :root {{
+      --primary: #075985;
+      --secondary: #0284c7;
+      --text: #1e293b;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --text-faint: #94a3b8;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-section-header: #f8fafc;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --radius: 12px;
+      --radius-pill: 20px;
+      --shadow: 0 1px 6px rgba(0,0,0,0.06);
+      --font-xs: 0.75rem;
+      --font-sm: 0.84rem;
+    }}
+    body {{ background: var(--bg-body); color: var(--text); font-family: system-ui, sans-serif; }}
     .hero {{
-      background: linear-gradient(135deg, #1d4ed8 0%, #0891b2 50%, #0f766e 100%);
-      color: white; border-radius: 16px; padding: 32px 36px; margin-bottom: 28px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white; border-radius: var(--radius); padding: 32px 36px; margin-bottom: 28px;
     }}
     .hero h1 {{ font-size: 1.8rem; font-weight: 700; margin: 0 0 6px; }}
     .hero .sub {{ font-size: 0.9rem; opacity: 0.85; margin: 0; }}
     .stat-card {{
-      background: white; border-radius: 14px; padding: 20px 16px; text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07); height: 100%;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      background: var(--bg-card); border-radius: var(--radius); padding: 20px 16px;
+      text-align: center; box-shadow: var(--shadow); height: 100%;
     }}
-    .stat-card:hover {{
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    }}
-    .stat-card .icon {{ font-size: 1.3rem; margin-bottom: 4px; }}
-    .stat-card .value {{ font-size: 1.9rem; font-weight: 700; line-height: 1.1; }}
-    .stat-card .label {{ font-size: 0.74rem; text-transform: uppercase;
-                         letter-spacing: .7px; color: #64748b; margin-top: 4px; }}
+    .stat-card .value {{ font-size: 1.9rem; font-weight: 700; line-height: 1.1;
+                         color: var(--primary); }}
+    .stat-card .label {{ font-size: var(--font-xs); text-transform: uppercase;
+                         letter-spacing: .7px; color: var(--text-muted); margin-top: 4px; }}
     .section-card {{
-      background: white; border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden;
+      background: var(--bg-card); border-radius: var(--radius);
+      box-shadow: var(--shadow); overflow: hidden;
     }}
     .section-header {{
-      padding: 14px 24px; font-weight: 600; font-size: 0.97rem; color: #1e293b;
-      border-bottom: 1px solid #f1f5f9; background: #fafafa;
+      padding: 14px 24px; font-weight: 600; font-size: 0.97rem; color: var(--text);
+      border-bottom: 1px solid var(--border); background: var(--bg-section-header);
     }}
     .section-body {{ padding: 20px 24px; }}
-    .table th {{ font-size: 0.80rem; color: #475569; font-weight: 600; cursor: pointer; }}
-    .table td {{ font-size: 0.84rem; vertical-align: middle; }}
-    .note {{ font-size: 0.77rem; color: #94a3b8; }}
-    #pocket-table tbody tr:nth-child(even) {{ background: #f8fafc; }}
-    #pocket-table tbody tr:hover {{ background: #eff6ff; }}
+    .table th {{ font-size: var(--font-sm); color: var(--text-secondary); font-weight: 600; cursor: pointer; }}
+    .table td {{ font-size: var(--font-sm); vertical-align: middle; }}
+    .note {{ font-size: var(--font-xs); color: var(--text-faint); }}
+    .pill {{
+      display: inline-block; padding: 2px 10px; border-radius: var(--radius-pill);
+      font-size: var(--font-xs); font-weight: 600; color: white;
+    }}
+    #pocket-table tbody tr:nth-child(even) {{ background: var(--bg-body); }}
+    #pocket-table tbody tr:hover {{ background: #f0f7ff; }}
     .viewer-loading {{
       position: absolute; inset: 0; display: flex; align-items: center;
-      justify-content: center; background: #f8fafc; z-index: 10;
-      font-size: 0.9rem; color: #64748b;
+      justify-content: center; background: var(--bg-body); z-index: 10;
+      font-size: var(--font-sm); color: var(--text-muted);
     }}
     .viewer-loading .spinner {{
-      width: 24px; height: 24px; border: 3px solid #e2e8f0;
-      border-top-color: #1d4ed8; border-radius: 50%;
+      width: 24px; height: 24px; border: 3px solid var(--border);
+      border-top-color: var(--primary); border-radius: 50%;
       animation: spin 0.8s linear infinite; margin-right: 10px;
     }}
     @keyframes spin {{ to {{ transform: rotate(360deg); }} }}
     @media print {{
       body {{ background: white; }}
-      .hero {{ background: #1d4ed8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
-      .section-card {{ box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; }}
+      .hero {{ background: var(--primary) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
+      .section-card {{ box-shadow: none; border: 1px solid var(--border); break-inside: avoid; }}
       #molstar-viewer, .viewer-loading {{ display: none !important; }}
       [onclick*="toggleStruct"] {{ display: none !important; }}
     }}
