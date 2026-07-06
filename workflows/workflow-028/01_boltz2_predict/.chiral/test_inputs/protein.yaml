@@ -1,0 +1,17 @@
+# Boltz-2 holo prediction input — test file (shortened for 8 GB GPU compatibility)
+# Target:   EGFR kinase domain N-lobe (residues 696–845, ~150 AA)
+#           truncated from PDB 1XKK for fast pipeline testing
+# Ligand:   Lapatinib (PDB ID: FMM) — same as production input
+# Note:     Full EGFR kinase domain (352 AA) requires ≥16 GB VRAM.
+#           Use input_files/protein.yaml for production runs.
+version: 1
+sequences:
+  - protein:
+      id: A
+      sequence: GEAPNQALLRILKETEFKKIKVLGSGAFGTVYKGLWIPEGEKVKIPVAIKELREATSPKANKEILDEAYVMASVDNPHVCRLLGICLTSTVQLITQLMPFGCLLDYVREHKDNIGSQYLLNWCVQIAKGMNYLEDRRLVHRDLAARNVLV
+  - ligand:
+      id: B
+      smiles: "CS(=O)(=O)CCNCc1ccc(o1)c2ccc3c(c2)c(ncn3)Nc4ccc(c(c4)Cl)OCc5cccc(c5)F"
+properties:
+  - affinity:
+      binder: B

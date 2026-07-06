@@ -1,0 +1,31 @@
+name        = "Boltz-2 Structure Prediction"
+description = "Validate holo YAML input and run Boltz-2 structure prediction; outputs mmCIF + confidence metrics"
+inputs      = ["*.yaml"]
+outputs     = ["*_model_*.cif", "confidence_*.json", "affinity_*.json", "pae_*.npz", "pde_*.npz", "plddt_*.npz", "input_summary.json"]
+
+[container]
+image   = "ghcr.io/chiral-data/boltz:2025_09_05"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.diffusion_samples]
+type    = "integer"
+default = 2
+hint    = "Number of structure models to generate (2-3 for testing, 10+ for production)"
+
+[params.recycling_steps]
+type    = "integer"
+default = 3
+hint    = "Number of recycling steps through the model trunk (3 for testing, 5+ for production)"
+
+[params.use_msa_server]
+type    = "boolean"
+default = true
+hint    = "Use ColabFold MSA server for evolutionary information"
+
+[params.accelerator]
+type    = "string"
+default = "gpu"
+hint    = "Compute accelerator: 'gpu' (8 GB VRAM sufficient for BRD4 test input) or 'cpu' (slower, works on any hardware)"

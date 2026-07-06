@@ -1,0 +1,16 @@
+# Boltz-2 holo prediction input
+# Target:   BRD4 first bromodomain (BD1) bound to JQ1
+# PDB:      3MXF (resolution 1.60 Å)
+# Ligand:   JQ1 (BET bromodomain inhibitor, MW 457 Da)
+# Residues: 127 — fits 8 GB GPU in holo mode
+version: 1
+sequences:
+  - protein:
+      id: A
+      sequence: SMNPPPPETSNPNKPKRQTNQLQYLLRVVLKTLWKHQFAWPFQQPVDAVKLNLPDYYKIIKTPMDMGTIKKRLENNYYWNAQECIQDFNTMFTNCYIYNKPGDDIVLMAEALEKLFLQKINELPTEE
+  - ligand:
+      id: B
+      smiles: "Cc1c(sc-2c1C(=N[C@@H](c3[n+]2c(n[nH]3)C)CC(=O)OC(C)(C)C)c4ccc(cc4)Cl)C"
+properties:
+  - affinity:
+      binder: B

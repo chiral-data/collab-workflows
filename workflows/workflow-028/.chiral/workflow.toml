@@ -1,0 +1,48 @@
+name = "Structure Prediction → Pocket Prediction → Docking"
+description = "AI-driven pipeline: Boltz-2 structure prediction → P2Rank pocket detection → Uni-Mol Docking V2"
+
+[dependencies]
+02_p2rank_pocket_find = ["01_boltz2_predict"]
+03_pocket_qc_grid     = ["01_boltz2_predict", "02_p2rank_pocket_find"]
+04_unimol_docking     = ["03_pocket_qc_grid"]
+05_generate_report    = ["01_boltz2_predict", "02_p2rank_pocket_find", "03_pocket_qc_grid", "04_unimol_docking"]
+
+[params.diffusion_samples]
+type    = "integer"
+default = 2
+hint    = "Number of Boltz-2 structural models to generate (2-3 for testing, 10+ for production)"
+
+[params.recycling_steps]
+type    = "integer"
+default = 3
+hint    = "Number of Boltz-2 recycling steps (3 for testing, 5+ for production)"
+
+[params.use_msa_server]
+type    = "boolean"
+default = true
+hint    = "Use ColabFold MSA server for evolutionary information (improves accuracy)"
+
+[params.plddt_threshold]
+type    = "float"
+default = 70.0
+hint    = "Minimum per-residue pLDDT score for pocket QC filtering (0-100 scale)"
+
+[params.box_size]
+type    = "float"
+default = 22.5
+hint    = "Docking grid box size in Å (uniform for all three dimensions)"
+
+[params.pocket_rank]
+type    = "integer"
+default = 1
+hint    = "Which P2Rank pocket to select for docking (1 = highest score)"
+
+[params.num_poses]
+type    = "integer"
+default = 10
+hint    = "Number of docked conformations to generate per ligand"
+
+[params.accelerator]
+type    = "string"
+default = "gpu"
+hint    = "Boltz-2 accelerator (gpu or cpu). Use cpu for low-VRAM systems (much slower)"

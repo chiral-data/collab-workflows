@@ -1,0 +1,18 @@
+name        = "Pipeline Report"
+description = "Generate self-contained HTML dashboard: pLDDT histogram + PAE heatmap, pocket QC table, Mol* 3D viewer, methods/caveats"
+inputs      = [
+    "plddt_*.npz", "pae_*.npz",
+    "affinity_*.json", "confidence_*.json", "input_summary.json",
+    "predictions.csv", "selected_model_id.txt",
+    "pocket_qc.json",
+    "receptor.pdb",
+    "docked_poses.sdf", "docking_summary.json",
+]
+outputs     = ["report.html"]
+
+[container]
+image   = "pipeline-report:latest"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
