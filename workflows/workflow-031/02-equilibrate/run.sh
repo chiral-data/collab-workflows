@@ -84,6 +84,7 @@ print(f'  Average density (last third): {avg:.1f} kg/m3')
 "
 
 cp equil.gro outputs/equilibrated.gro
+cp equil.xtc outputs/equil.xtc
 
 echo ""
-echo "Done — outputs: equilibrated.gro  density.xvg  equil_report.json"
+echo "Done — outputs: equilibrated.gro  equil.xtc  density.xvg  equil_report.json"
