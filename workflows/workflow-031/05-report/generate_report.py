@@ -2,6 +2,7 @@
 import json, math, pathlib, datetime
 
 diff   = json.loads(pathlib.Path("inputs/diffusion_report.json").read_text())
+sol    = json.loads(pathlib.Path("inputs/solubility_report.json").read_text())
 build  = json.loads(pathlib.Path("inputs/build_report.json").read_text())
 
 resin     = diff["resin_type"]
@@ -14,6 +15,19 @@ D_lit_sci = diff.get("D_lit_sci", "N/A")
 slope     = diff.get("log_log_slope")
 regime    = diff.get("diffusive_regime", "")
 sim_time  = diff.get("sim_time_ps", 0)
+
+# ── Solubility S and permeability P = D × S ───────────────────────────────────
+mu_ex       = sol.get("mu_ex_kj_mol")
+S_val       = sol.get("S_cm3stp_cm3_cmhg")
+qualitative = sol.get("qualitative", False)
+sol_note    = sol.get("note")
+
+# P [cm3(STP)·cm/(cm2·s·cmHg)] = D[cm2/s] × S[cm3(STP)/(cm3·cmHg)] — standard
+# solution-diffusion permeability; divide by 1e-10 for the conventional Barrer unit.
+P_val     = D_val * S_val if (D_val is not None and S_val is not None) else None
+P_barrer  = P_val / 1e-10 if P_val is not None else None
+S_sci     = f"{S_val:.2e}" if S_val is not None else "N/A"
+P_sci     = f"{P_barrer:.2e}" if P_barrer is not None else "N/A"
 
 # ── MSD curve ─────────────────────────────────────────────────────────────────
 xvg_lines = [l for l in pathlib.Path("inputs/msd.xvg").read_text().splitlines()
@@ -147,7 +161,7 @@ html = f"""<!doctype html>
   .badge.warn {{ background: rgba(217,119,6,.15); color: var(--warn); border-color: rgba(217,119,6,.4); }}
   .badge.mid  {{ background: rgba(107,127,163,.15); color: var(--mid); border-color: rgba(107,127,163,.4); }}
   .header-date {{ font-family: var(--ff-m); font-size: 11px; color: var(--mid); margin-top: 14px; }}
-  .kpi-strip {{ display: grid; grid-template-columns: repeat(3, 1fr);
+  .kpi-strip {{ display: grid; grid-template-columns: repeat(4, 1fr);
     background: var(--surface); border: 1px solid var(--border); border-top: none; }}
   .kpi {{ padding: 24px 28px; border-right: 1px solid var(--border); }}
   .kpi:last-child {{ border-right: none; }}
@@ -220,13 +234,18 @@ html = f"""<!doctype html>
   <div class="kpi-strip">
     <div class="kpi">
       <div class="kpi-label">Diffusion Coeff. D</div>
-      <div class="kpi-value" style="font-size:1.5rem">{D_sci}</div>
+      <div class="kpi-value" style="font-size:1.4rem">{D_sci}</div>
       <div class="kpi-unit">cm&sup2; / s (MD)</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">Literature Ref.</div>
-      <div class="kpi-value" style="font-size:1.5rem">{D_lit_sci}</div>
-      <div class="kpi-unit">cm&sup2; / s (lit.)</div>
+      <div class="kpi-label">Solubility S{' (qual.)' if qualitative else ''}</div>
+      <div class="kpi-value" style="font-size:1.4rem">{S_sci}</div>
+      <div class="kpi-unit">cm&sup3;(STP) / (cm&sup3;&middot;cmHg)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Permeability P = D&times;S{' (qual.)' if qualitative else ''}</div>
+      <div class="kpi-value" style="font-size:1.4rem;color:var(--accent)">{P_sci}</div>
+      <div class="kpi-unit">Barrer</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">MSD slope (log-log)</div>
@@ -245,6 +264,17 @@ html = f"""<!doctype html>
       <tr><td>Simulation length</td><td class="val">{sim_time:.0f} ps</td></tr>
       <tr><td>MSD regime</td><td class="val">{regime}</td></tr>
     </table>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Solubility &amp; Permeability &mdash; P = D &times; S</div>
+    <table class="data-table">
+      <tr><th>Quantity</th><th>Value</th></tr>
+      <tr><td>Excess chemical potential &mu;<sub>ex</sub> (TPI)</td><td class="val">{f"{mu_ex:.4f} kJ/mol" if mu_ex is not None else "N/A"}</td></tr>
+      <tr><td>Solubility S</td><td class="val">{S_sci} cm&sup3;(STP)/(cm&sup3;&middot;cmHg)</td></tr>
+      <tr><td>Permeability P = D &times; S</td><td class="val">{P_sci} Barrer</td></tr>
+    </table>
+    {'<div class="callout-note">&#9888; ' + sol_note + '</div>' if qualitative and sol_note else ''}
   </div>
 
   <div class="section">
@@ -282,18 +312,22 @@ html = f"""<!doctype html>
 pathlib.Path("outputs/report.html").write_text(html)
 
 summary = {
-    "resin_type":       resin,
-    "penetrant":        penetrant,
-    "temperature_c":    temp_c,
-    "D_cm2_s":          D_val,
-    "D_cm2_s_sci":      D_sci,
-    "D_literature":     D_lit,
-    "log_log_slope":    slope,
-    "diffusive_regime": regime,
-    "sim_time_ps":      sim_time,
+    "resin_type":            resin,
+    "penetrant":             penetrant,
+    "temperature_c":         temp_c,
+    "D_cm2_s":               D_val,
+    "D_cm2_s_sci":           D_sci,
+    "D_literature":          D_lit,
+    "mu_ex_kj_mol":          mu_ex,
+    "S_cm3stp_cm3_cmhg":     S_val,
+    "P_barrer":              P_barrer,
+    "qualitative":           qualitative,
+    "log_log_slope":         slope,
+    "diffusive_regime":      regime,
+    "sim_time_ps":           sim_time,
 }
 pathlib.Path("outputs/summary.json").write_text(json.dumps(summary, indent=2))
 
 print(f"  Report  -> outputs/report.html")
 print(f"  Summary -> outputs/summary.json")
-print(f"  D = {D_sci} cm²/s  (lit: {D_lit_sci})")
+print(f"  D = {D_sci} cm²/s  S = {S_sci} cm³(STP)/(cm³·cmHg)  P = {P_sci} Barrer{' (qualitative)' if qualitative else ''}")
