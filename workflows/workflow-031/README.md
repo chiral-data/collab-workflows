@@ -56,21 +56,23 @@ simulations to reach the true Einstein (log-log slope ≈ 1) regime.
 | `PP` | propylene 5-mer | ✅ Supported |
 | `EVOH` | E/VOH 5-mer | ✅ Supported |
 | `PA6` | caprolactam 5-mer | ✅ Supported |
-| `PET` | terephthalate 5-mer | ⚠️ **Known issue — see below** |
+| `PET` | terephthalate 5-mer | ✅ Supported |
 
-### PET: tleap connectivity failure
+### PET: fixed tleap connectivity failure
 
-PET contains aromatic rings. When packmol assembles the multi-chain cell as a PDB file,
-bond-order information is lost. tleap then misidentifies the hybridisation of some ring
-carbons and exits with:
+`antechamber` previously read the RDKit-generated oligomer from a plain PDB, which has
+no bond-order field. For PET's ester carbonyl carbon this made `antechamber` guess the
+wrong hybridisation (sp3 instead of sp2) and emit a duplicate bond, which `tleap` then
+rejected:
 
 ```
 Atom .R<UNL 1>.A<C36 47> has force field coordination 4 but only 3 bonded neighbors.
 ```
 
-**Workaround (not yet automated):** switch packmol to mol2 I/O so bond types are
-preserved through the full pipeline. Until that is fixed, use `LDPE`, `PP`, `EVOH`, or
-`PA6` for automated runs. PET manual workaround tracked in the PR.
+**Fix:** `build_cell.py` now also writes the oligomer as an SDF
+(`RDKit.Chem.MolToMolFile`), which preserves RDKit's exact Kekulized bond orders, and
+feeds that to `antechamber` (`-fi mdl`) instead of the bond-order-less PDB. Packmol and
+tleap are unaffected — they still use the PDB for coordinates only.
 
 ---
 

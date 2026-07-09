@@ -76,14 +76,17 @@ def box_side_angstrom(n_chains, smiles, density_gcc, pack_frac=PACK_DENSITY_FRAC
     return side_cm * 1e8   # cm → Å
 
 
-def build_oligomer_pdb(smiles, out_pdb):
+def build_oligomer(smiles, out_pdb, out_sdf):
     from rdkit.Chem import MolFromSmiles, AddHs
     from rdkit.Chem.AllChem import EmbedMolecule, MMFFOptimizeMolecule, ETKDGv3
-    from rdkit.Chem import MolToPDBFile
+    from rdkit.Chem import MolToPDBFile, MolToMolFile
     mol = AddHs(MolFromSmiles(smiles))
     ps  = ETKDGv3(); ps.randomSeed = 42
     EmbedMolecule(mol, ps)
     MMFFOptimizeMolecule(mol)
+    # SDF keeps RDKit's exact (Kekulized) bond orders for antechamber; PDB (no
+    # bond-order field) is only used for packmol, which just needs coordinates.
+    MolToMolFile(mol, str(out_sdf))
     MolToPDBFile(mol, str(out_pdb))
     n_atoms = mol.GetNumAtoms()
     print(f"  Oligomer: {n_atoms} atoms → {out_pdb}")
@@ -92,14 +95,15 @@ def build_oligomer_pdb(smiles, out_pdb):
 
 WORKDIR = pathlib.Path(tempfile.mkdtemp(prefix="build_barrier_"))
 
-# 1. RDKit → PDB
+# 1. RDKit → PDB (for packmol) + SDF (for antechamber, preserves bond orders)
 oligomer_pdb = WORKDIR / "oligomer.pdb"
-build_oligomer_pdb(SMILES, oligomer_pdb)
+oligomer_sdf = WORKDIR / "oligomer.sdf"
+build_oligomer(SMILES, oligomer_pdb, oligomer_sdf)
 
 # 2. antechamber GAFF2 + AM1-BCC charges
 mol2 = WORKDIR / "mol.mol2"
 print(f"  $ antechamber ...")
-run(f"antechamber -i {oligomer_pdb} -fi pdb -o {mol2} -fo mol2 "
+run(f"antechamber -i {oligomer_sdf} -fi mdl -o {mol2} -fo mol2 "
     f"-c bcc -s 2 -rn UNL -at gaff2", cwd=WORKDIR)
 
 # 3. parmchk2
