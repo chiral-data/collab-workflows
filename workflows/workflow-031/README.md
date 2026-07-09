@@ -144,6 +144,35 @@ solution-diffusion permeability directly). HTML report with:
 
 ---
 
+## Verification
+
+Last verified with a full `silva workflows/workflow-031` end-to-end run (default
+params: LDPE, O₂, 23 °C, 20 chains) — all 6 jobs completed, including
+`03b-solubility-tpi`:
+
+```
+01-build-cell → 02-equilibrate → 03-insert-penetrant → 03b-solubility-tpi → 04-diffusion-md → 05-report
+```
+
+Results from that run:
+
+| Quantity | Value |
+|---|---|
+| MSD log-log slope | 0.93 (diffusive regime) |
+| D (MD) | 2.22 × 10⁻⁴ cm²/s |
+| μ_ex (TPI, 38 frames × 5000 insertions) | −1.28 kJ/mol |
+| S | 2.04 × 10⁻² cm³(STP)/(cm³·cmHg) |
+| P = D × S | 4.52 × 10⁴ Barrer |
+
+D and P are ~500× above the literature values in the table below — this is expected
+with the *default* `melt_time_ps`/`equil_time_ps`, which only reached 441 kg/m³ of
+the 920 kg/m³ target density (defaults are tuned for fast screening, not accuracy;
+see "When to use this workflow" above). The mechanism itself (TPI convergence,
+`<mu>` parsing, S and P formulas, report rendering) is verified correct — increase
+`equil_time_ps` for production-accurate D/S/P.
+
+---
+
 ## Literature D reference values (cm²/s, ~23 °C)
 
 | Resin | O₂ | H₂O |
