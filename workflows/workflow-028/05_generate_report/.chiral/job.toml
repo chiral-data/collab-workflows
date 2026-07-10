@@ -11,7 +11,7 @@ inputs      = [
 outputs     = ["report.html"]
 
 [container]
-image   = "pipeline-report:latest"
+image   = "pipeline-report:2026_07_10"
 use_gpu = false
 
 [scripts]
