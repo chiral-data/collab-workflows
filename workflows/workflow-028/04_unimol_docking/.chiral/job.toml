@@ -4,7 +4,7 @@ inputs      = ["receptor.pdb", "ligand.sdf", "grid.json", "pocket_qc.json"]
 outputs     = ["docked_poses.sdf", "docking_summary.json"]
 
 [container]
-image   = "unimol-docking:latest"
+image   = "unimol-docking:2026_07_10"
 use_gpu = true
 
 [scripts]

@@ -214,7 +214,7 @@ Boltz-2's predicted binding affinity and confidence score. This is the only affi
 
 ### Running with Docker
 
-Each node has its own Dockerfile. Node 01 reuses the pre-built image `ghcr.io/chiral-data/boltz:2025_09_05`. Node 04 builds from `dptechnology/unicore:latest-pytorch1.12.1-cuda11.6-rdma`.
+Nodes 02-05 build local images from Dockerfiles under `apps/` (Silva auto-detects and builds any missing image found there): `apps/p2rank_2026_07_10`, `apps/pocket-qc_2026_07_10`, `apps/unimol-docking_2026_07_10`, `apps/pipeline-report_2026_07_10`. Node 01 reuses the pre-built image `ghcr.io/chiral-data/boltz:2025_09_05`. Node 04 builds from `dptechnology/unicore:latest-pytorch1.12.1-cuda11.6-rdma`.
 
 **Note:** Uni-Mol Docking V2 model weights (464 MB) are not distributed via Docker, pip, or HuggingFace. Download them from the Dropbox link in the [Uni-Mol Docking V2 README](https://github.com/deepmodeling/Uni-Mol/tree/main/unimol_docking_v2) and place them at the path set by `PARAM_WEIGHTS_PATH` (default: `/opt/unimol_weights`).
 
