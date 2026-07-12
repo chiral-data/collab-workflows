@@ -1,0 +1,15 @@
+name        = "Build Amorphous Cell"
+description = "Builds an amorphous polymer cell for one of five heat-resistant resins (PPS, PA66, PBT, PEEK, PP): generates oligomer 3D structure with RDKit, assigns GAFF2 charges with antechamber, packs the cell with packmol at a crystallinity-scaled density, and converts to GROMACS format with acpype."
+
+outputs = ["system.gro", "topol.top", "cell.pdb", "build_report.json"]
+
+[container]
+image = "polymer_md:2026_06_26"
+
+[scripts]
+run = "run.sh"
+
+[params.n_chains]
+type    = "integer"
+default = 20
+hint    = "Number of polymer chains in the amorphous cell"
