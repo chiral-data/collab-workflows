@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-07-12]
+
+### Added
+
+- workflow-032: Heat-Resistant Plastics — Tg / Thermal Stability MD (4 nodes: build-cell, cooling-series, measure-tg, report)
+  - AMECC Theme 3: estimates glass-transition temperature, thermal expansion, and high-temperature dimensional stability for battery-case/separator resins (PPS, PA66, PBT, PEEK, PP) via a melt-quench cooling series.
+  - Reuses the GAFF2/antechamber/acpype pipeline and `polymer_md`/`gromacs` images from workflow-030/031 — no new Dockerfile needed.
+  - Node 01 writes both PDB and SDF from RDKit and feeds the SDF (exact bond orders) to antechamber, avoiding the aromatic-backbone tleap valence failure workflow-031 hit for PET.
+  - Node 03's bilinear Tg kink fit flags itself unreliable (`tg_reliable: false`) when the glassy/rubbery segment slopes are nearly parallel and the fitted intersection falls far outside the sampled temperature range, instead of silently reporting a nonsensical extrapolated Tg.
+  - Crystallinity (low/medium/high) approximated via initial packing density fraction — documented as trend-only, not a true semi-crystalline lattice.
+  - Closes #196.
+
 ## [2026-04-08]
 
 ### Added

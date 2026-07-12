@@ -35,5 +35,5 @@ A collection of scientific computing workflows for drug discovery, molecular ana
 29. Binder Design Pipeline (RFdiffusion → ProteinMPNN → PRODIGY) :construction:
 30. [Polymer MD — Specific Modulus Prediction (PP/GAFF2/GROMACS)](workflows/workflow-030/README.md) — all-atom MD pipeline predicting Young's modulus and specific modulus of neat or GF-filled polypropylene for EV lightweighting by Chiral Dev Team
 31. [Barrier Films — Plastics That Protect Food (PET/LDPE/PP/EVOH/PA6, GAFF2/GROMACS)](workflows/workflow-031/README.md) — all-atom MD pipeline computing O₂/H₂O diffusivity D (Einstein relation) and solubility S (test particle insertion), reporting permeability P = D × S for food-packaging barrier ranking by Chiral Dev Team
-32. :construction:
+32. [Heat-Resistant Plastics — Tg / Thermal Stability MD (PPS/PA66/PBT/PEEK/PP, GAFF2/GROMACS)](workflows/workflow-032/README.md) — all-atom MD pipeline estimating glass-transition temperature via a melt-quench cooling series, thermal expansion, and high-temperature dimensional stability for EV battery-case/separator resins, with a Mol* structure view, by Chiral Dev Team
 33. [Protein Binder Design — De Novo NIM Pipeline](workflows/workflow-033/README.md) — RFdiffusion → ProteinMPNN → Boltz2 end-to-end binder design campaign with ipTM / pLDDT / sc-RMSD scoring and HTML report by Chiral Dev Team
