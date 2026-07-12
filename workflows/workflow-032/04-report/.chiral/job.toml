@@ -1,0 +1,11 @@
+name        = "Generate Tg & Thermal Stability Report"
+description = "Assembles tg_report.json, build_report.json, and cell.pdb into a self-contained HTML report: KPI strip, density/specific-volume vs. temperature curve with the fitted Tg kink, a cross-resin Tg comparison bar chart vs. literature, a dimensional-stability table, and a Mol* 3D viewer of the representative cell structure."
+
+inputs  = ["tg_report.json", "build_report.json", "cell.pdb"]
+outputs = ["report.html", "summary.json"]
+
+[container]
+image = "polymer_md:2026_06_26"
+
+[scripts]
+run = "run.sh"
