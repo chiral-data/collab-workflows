@@ -1,0 +1,11 @@
+name        = "Measure Tg, Thermal Expansion & Dimensional Stability"
+description = "Fits a two-segment (bilinear) line to the density/specific-volume vs. temperature series to estimate the glass-transition temperature (Tg), derives glassy/rubbery coefficients of thermal expansion, and computes the % volume change at the student's selected temperature relative to 25 degC."
+
+inputs  = ["cooling_series.json", "build_report.json"]
+outputs = ["tg_report.json"]
+
+[container]
+image = "polymer_md:2026_06_26"
+
+[scripts]
+run = "run.sh"
