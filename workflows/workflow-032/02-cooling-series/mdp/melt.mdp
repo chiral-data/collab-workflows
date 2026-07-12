@@ -1,0 +1,34 @@
+; NPT at melt temperature — randomise chain conformations before the cooling ladder
+integrator    = md
+nsteps        = MELT_NSTEPS
+dt            = 0.001       ; 1 fs
+
+nstxout-compressed = 500
+nstlog        = 500
+nstenergy     = 500
+
+constraints   = none
+cutoff-scheme = Verlet
+ns_type       = grid
+nstlist       = 10
+rcoulomb      = 1.2
+rvdw          = 1.2
+coulombtype   = PME
+pme_order     = 4
+fourierspacing = 0.16
+
+tcoupl        = V-rescale
+tc-grps       = System
+tau_t         = 0.1
+ref_t         = MELT_TEMP
+
+pcoupl        = Berendsen        ; fast pressure coupling for initial compression
+pcoupltype    = isotropic
+tau_p         = 0.5
+ref_p         = 1.0
+compressibility = 4.5e-5
+
+pbc           = xyz
+gen_vel       = yes
+gen_temp      = MELT_TEMP
+gen_seed      = -1
