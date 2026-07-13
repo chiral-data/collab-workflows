@@ -201,6 +201,26 @@ reasonable for the "rapid screening" default.
 
 ---
 
+## Mock mode
+
+Same pattern as workflow-033: each node's `run.sh` (what `job.toml` actually
+executes) downloads that node's pre-computed outputs from
+`output_files/<node>/` on `main` instead of running the real
+RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait required to see the
+DAG, the report, or the Mol* viewer. The real computation lives in
+`run_real.sh` per node (swap it in for `run.sh` to actually run the
+pipeline); `run_mock.sh` is the same download as `run.sh` via `curl` instead
+of `python3 -c urllib.request`.
+
+`output_files/` holds the actual per-node outputs from a verified real run
+(PPS, default params, `medium` crystallinity, with the fixed `2.0e-6 bar⁻¹`
+barostat compressibility — `tg_reliable: true`, density trending
+638→1164 kg/m³ as temperature drops 285→25 °C). `sample_outputs/` is the
+same run's final `report.html`/`summary.json`/`tg_report.json`, for a quick
+look without running anything at all.
+
+---
+
 ## Docker images
 
 | Image | Used by | Contents |

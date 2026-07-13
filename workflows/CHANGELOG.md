@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Node 01 writes both PDB and SDF from RDKit and feeds the SDF (exact bond orders) to antechamber, avoiding the aromatic-backbone tleap valence failure workflow-031 hit for PET.
   - Node 03's bilinear Tg kink fit flags itself unreliable (`tg_reliable: false`) when the glassy/rubbery segment slopes are nearly parallel and the fitted intersection falls far outside the sampled temperature range, instead of silently reporting a nonsensical extrapolated Tg.
   - Crystallinity (low/medium/high) approximated via initial packing density fraction — documented as trend-only, not a true semi-crystalline lattice.
+  - Fixed a degenerate Tg fit (barostat compressibility was water's 4.5e-5 bar⁻¹ instead of a polymer-appropriate 2.0e-6 bar⁻¹, letting the cell drift instead of condense) — tracked for workflow-030/031 in #198.
+  - Added mock mode (same pattern as workflow-033): `run.sh` downloads pre-computed `output_files/<node>/` outputs by default; real computation moved to `run_real.sh`. `sample_outputs/` holds a verified reference run's final report.
   - Closes #196.
 
 ## [2026-04-08]
