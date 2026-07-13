@@ -26,7 +26,11 @@ pcoupl        = Berendsen        ; fast pressure coupling for initial compressio
 pcoupltype    = isotropic
 tau_p         = 0.5
 ref_p         = 1.0
-compressibility = 4.5e-5
+; 4.5e-5 bar^-1 (water's compressibility, inherited from workflow-030/031) let
+; the box drift/expand instead of condensing toward target density for these
+; stiffer aromatic melts. 2.0e-6 bar^-1 (polymer-melt order of magnitude) was
+; verified to restore a monotonic density-vs-temperature trend on this cell.
+compressibility = 2.0e-6
 
 pbc           = xyz
 gen_vel       = yes

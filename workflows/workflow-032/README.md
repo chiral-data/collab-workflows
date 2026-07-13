@@ -108,6 +108,21 @@ selectable `temperature` levels, so one MD run answers both "what is Tg?" and
 averaged over the last third of each stage's trajectory into
 `cooling_series.json`.
 
+**Barostat compressibility**: `melt.mdp`/`quench.mdp` use `compressibility =
+2.0e-6 bar⁻¹` (polymer-melt order of magnitude), not the `4.5e-5 bar⁻¹`
+(water's compressibility) inherited from workflow-030/031's mdp files. With
+the water-like value, PPS's cell drifted/expanded instead of condensing —
+density bounced noisily around 520–610 kg/m³ (well under half of the 1350
+kg/m³ target) across every stage, even at 10x longer stage times, and the
+resulting Tg fit was degenerate. Lowering compressibility to a value
+appropriate for a stiff polymer restored a monotonic density-vs-temperature
+trend and a numerically sane (`tg_reliable: true`) fit on the very same
+short default run length — see
+[issue #196](https://github.com/chiral-data/collab-workflows/issues/196) for
+the diagnosis. workflow-030/031 likely have the same latent issue since they
+share this mdp template; not fixed here to keep this PR scoped to
+workflow-032.
+
 ### Node 03 — Measure Tg
 
 Pure-Python analysis (no numpy):
