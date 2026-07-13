@@ -121,7 +121,8 @@ short default run length — see
 [issue #196](https://github.com/chiral-data/collab-workflows/issues/196) for
 the diagnosis. workflow-030/031 likely have the same latent issue since they
 share this mdp template; not fixed here to keep this PR scoped to
-workflow-032.
+workflow-032 — tracked separately in
+[issue #198](https://github.com/chiral-data/collab-workflows/issues/198).
 
 ### Node 03 — Measure Tg
 
