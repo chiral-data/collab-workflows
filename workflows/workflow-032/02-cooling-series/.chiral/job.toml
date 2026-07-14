@@ -1,0 +1,27 @@
+name        = "Melt-Quench Cooling Series"
+description = "Runs energy minimization, an NPT melt at the resin's melt temperature, then four chained NPT quench stages (200/150/80/25 degC) to build the density-vs-temperature curve used for Tg estimation in node 03."
+
+inputs  = ["system.gro", "topol.top", "build_report.json"]
+outputs = ["cooling_series.json", "equilibrated.gro"]
+
+[container]
+image     = "gromacs:2025_11_12"
+use_gpu   = true
+
+[scripts]
+run = "run.sh"
+
+[params.em_steps]
+type    = "integer"
+default = 5000
+hint    = "Steepest-descent energy minimisation steps"
+
+[params.melt_time_ps]
+type    = "float"
+default = 150.0
+hint    = "NPT melt-stage duration in ps"
+
+[params.stage_time_ps]
+type    = "float"
+default = 100.0
+hint    = "Duration in ps of each of the four NPT quench stages (200/150/80/25 degC)"

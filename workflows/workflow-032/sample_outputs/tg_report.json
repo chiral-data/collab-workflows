@@ -1,0 +1,49 @@
+{
+  "resin_type": "PPS",
+  "crystallinity": "medium",
+  "selected_temperature_c": 150.0,
+  "matched_series_temp_c": 150.0,
+  "literature_tg_c": 88,
+  "tg_c": 185.6,
+  "tg_reliable": true,
+  "cte_glassy_per_c": 0.003136,
+  "cte_rubbery_per_c": 0.001211,
+  "fit_split_n_glassy": 3,
+  "fit_split_n_rubbery": 2,
+  "fit_total_sse": 4.111e-05,
+  "volume_change_pct": 48.049,
+  "reference_temp_c": 25.0,
+  "density_temp_series": [
+    {
+      "stage": "q25",
+      "temp_c": 25.0,
+      "avg_density_kg_m3": 1164.38,
+      "avg_specific_volume_cm3_g": 0.858829
+    },
+    {
+      "stage": "q80",
+      "temp_c": 80.0,
+      "avg_density_kg_m3": 968.5,
+      "avg_specific_volume_cm3_g": 1.032527
+    },
+    {
+      "stage": "q150",
+      "temp_c": 150.0,
+      "avg_density_kg_m3": 786.48,
+      "avg_specific_volume_cm3_g": 1.271488
+    },
+    {
+      "stage": "q200",
+      "temp_c": 200.0,
+      "avg_density_kg_m3": 707.8,
+      "avg_specific_volume_cm3_g": 1.41282
+    },
+    {
+      "stage": "melt",
+      "temp_c": 285.0,
+      "avg_density_kg_m3": 638.49,
+      "avg_specific_volume_cm3_g": 1.566201
+    }
+  ],
+  "fit_note": "Bilinear kink fit over the 5-point melt-quench ladder \u2014 the minimum viable case for a two-segment fit. Increase stage_time_ps for a better-converged curve."
+}
