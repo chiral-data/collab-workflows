@@ -119,9 +119,8 @@ appropriate for a stiff polymer restored a monotonic density-vs-temperature
 trend and a numerically sane (`tg_reliable: true`) fit on the very same
 short default run length — see
 [issue #196](https://github.com/chiral-data/collab-workflows/issues/196) for
-the diagnosis. workflow-030/031 likely have the same latent issue since they
-share this mdp template; not fixed here to keep this PR scoped to
-workflow-032 — tracked separately in
+the diagnosis. workflow-030/031 shared this mdp template and had the same
+latent issue — confirmed and fixed there too, see
 [issue #198](https://github.com/chiral-data/collab-workflows/issues/198).
 
 ### Node 03 — Measure Tg

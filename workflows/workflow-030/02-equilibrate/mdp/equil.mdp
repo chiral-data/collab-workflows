@@ -27,7 +27,9 @@ pcoupl        = Berendsen
 pcoupltype    = isotropic
 tau_p         = 0.5
 ref_p         = 1.0
-compressibility = 4.5e-5
+; see mdp/melt.mdp — 2.0e-6 bar^-1 (polymer-melt order of magnitude) instead
+; of water's 4.5e-5 (workflow-032 #196/#198 diagnosis).
+compressibility = 2.0e-6
 
 pbc           = xyz
 gen_vel       = no

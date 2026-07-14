@@ -171,6 +171,21 @@ see "When to use this workflow" above). The mechanism itself (TPI convergence,
 `<mu>` parsing, S and P formulas, report rendering) is verified correct — increase
 `equil_time_ps` for production-accurate D/S/P.
 
+> **Root cause found (2026-07-14):** the 441/920 kg/m³ shortfall above wasn't
+> purely a "needs more time" issue — `mdp/melt.mdp`/`mdp/equil.mdp` used
+> `compressibility = 4.5e-5 bar⁻¹` (water), which let the cell drift instead
+> of condense: density stayed flat and noisy around 431 kg/m³ across the
+> whole 500 ps default equilibration, with no real upward trend. Diagnosed
+> in workflow-032
+> ([issue #196](https://github.com/chiral-data/collab-workflows/issues/196),
+> [issue #198](https://github.com/chiral-data/collab-workflows/issues/198))
+> and fixed here to `compressibility = 2.0e-6 bar⁻¹` (polymer-melt order of
+> magnitude): the same default-length run now shows a genuine, still-rising
+> monotonic trend (310→371 kg/m³ across deciles) — real convergence, just
+> not complete yet at these short default times. `equil_time_ps` is still
+> the right lever to increase for production accuracy; it will now actually
+> work.
+
 ---
 
 ## Literature D reference values (cm²/s, ~23 °C)

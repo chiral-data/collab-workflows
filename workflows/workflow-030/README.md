@@ -139,7 +139,21 @@ Generates `report.html` (self-contained HTML table + EV lightweighting context) 
 > **Note on negative modulus:** The default run times are intentionally short for speed.
 > A negative Young's modulus indicates the cell has not fully converged — increase
 > `equil_time_ps` to ≥ 5 000 ps and `prod_time_ps` to ≥ 5 000 ps for physically
-> meaningful results.  The `sample_outputs/` folder contains a converged reference run.
+> meaningful results. (Correction: the `sample_outputs/` folder here is itself a
+> default-param run, not a converged reference — see the compressibility note below.)
+>
+> **Root cause found (2026-07-14):** `mdp/melt.mdp`, `mdp/equil.mdp`, and
+> `03-measure-properties/mdp/prod.mdp` used `compressibility = 4.5e-5 bar⁻¹`
+> (water), inherited into workflow-032 and diagnosed there
+> ([issue #196](https://github.com/chiral-data/collab-workflows/issues/196),
+> [issue #198](https://github.com/chiral-data/collab-workflows/issues/198)).
+> This let the cell drift/expand instead of condense — density stayed flat and
+> noisy around 365 kg/m³ (43% of the 855 kg/m³ target) across the whole 500 ps
+> default equilibration, with no upward trend at all. Fixed to
+> `compressibility = 2.0e-6 bar⁻¹` (polymer-melt order of magnitude): the same
+> default-length run now shows a clean upward trend, 422→504→663 kg/m³ across
+> equal thirds (78% of target) — density convergence is real now, just still
+> incomplete at these short default times, exactly as this note already says.
 
 ---
 
