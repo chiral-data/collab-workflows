@@ -121,39 +121,59 @@ Generates `report.html` (self-contained HTML table + EV lightweighting context) 
 
 ---
 
-## Sample output (2026-06-28, default params)
+## Sample output (2026-07-14, default params, post-fix)
 
 ```json
 {
   "resin_type": "PP",
   "temperature_c": 23.0,
   "fiber_loading_wt_pct": 0.0,
-  "youngs_modulus_gpa": -0.026,
-  "density_kg_m3": 383.2,
-  "specific_modulus_kNm_kg": -67.8,
+  "youngs_modulus_gpa": 1.446,
+  "density_kg_m3": 776.7,
+  "specific_modulus_kNm_kg": 1861.7,
   "gf_correction_applied": false,
   "simulation_note": "fiber_loading=0 — neat resin properties"
 }
 ```
 
-> **Note on negative modulus:** The default run times are intentionally short for speed.
-> A negative Young's modulus indicates the cell has not fully converged — increase
-> `equil_time_ps` to ≥ 5 000 ps and `prod_time_ps` to ≥ 5 000 ps for physically
-> meaningful results. (Correction: the `sample_outputs/` folder here is itself a
-> default-param run, not a converged reference — see the compressibility note below.)
->
-> **Root cause found (2026-07-14):** `mdp/melt.mdp`, `mdp/equil.mdp`, and
-> `03-measure-properties/mdp/prod.mdp` used `compressibility = 4.5e-5 bar⁻¹`
+> **Root cause found and fixed (2026-07-14):** `mdp/melt.mdp`, `mdp/equil.mdp`,
+> and `03-measure-properties/mdp/prod.mdp` used `compressibility = 4.5e-5 bar⁻¹`
 > (water), inherited into workflow-032 and diagnosed there
 > ([issue #196](https://github.com/chiral-data/collab-workflows/issues/196),
 > [issue #198](https://github.com/chiral-data/collab-workflows/issues/198)).
-> This let the cell drift/expand instead of condense — density stayed flat and
-> noisy around 365 kg/m³ (43% of the 855 kg/m³ target) across the whole 500 ps
-> default equilibration, with no upward trend at all. Fixed to
-> `compressibility = 2.0e-6 bar⁻¹` (polymer-melt order of magnitude): the same
-> default-length run now shows a clean upward trend, 422→504→663 kg/m³ across
-> equal thirds (78% of target) — density convergence is real now, just still
-> incomplete at these short default times, exactly as this note already says.
+> This let the cell drift/expand instead of condense — the old default run
+> produced the negative-modulus result above (density stuck at 383.2 kg/m³,
+> 45% of the 855 kg/m³ target, with no upward trend at all). Fixed to
+> `compressibility = 2.0e-6 bar⁻¹` (polymer-melt order of magnitude): the
+> *same default run length* now reaches 776.7 kg/m³ (91% of target) with a
+> physically reasonable, literature-consistent Young's modulus (see the
+> specific-modulus bar chart below — 1.4 GPa is the typical value for neat
+> PP). Density convergence is still incomplete at these short default times
+> (see `equil_time_ps`/`prod_time_ps` above to push further), but it's now a
+> genuine trend rather than noise.
+>
+> Fixing the compressibility also shrank the box enough to break the
+> `rcoulomb`/`rvdw = 1.2 nm` cutoffs (needs box > 2.4 nm; the converged
+> default-length box is ~2.15 nm) — `gmx grompp` failed at node 03 with
+> `The cut-off length is longer than half the shortest box vector`. Lowered
+> to `0.9 nm` (workflow-031's already-safe convention) across all of node
+> 02/03's mdp files to fix it.
+
+---
+
+## Mock mode
+
+Same pattern as workflow-032/033: each node's `run.sh` (what `job.toml`
+executes) downloads that node's pre-computed outputs from
+`output_files/<node>/` on `main` instead of running the real
+RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait required to inspect
+the DAG or the report. Real computation lives in `run_real.sh` per node;
+`run_mock.sh` is the same download via `curl` instead of
+`python3 -c urllib.request`.
+
+`output_files/` holds the actual per-node outputs from the verified real run
+above (PP, defaults, post-fix). `sample_outputs/` is that same run's final
+`report.html`/`summary.json`.
 
 ---
 

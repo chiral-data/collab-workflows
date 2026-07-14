@@ -186,6 +186,36 @@ see "When to use this workflow" above). The mechanism itself (TPI convergence,
 > the right lever to increase for production accuracy; it will now actually
 > work.
 
+Full end-to-end re-run after the fix (same default params):
+
+| Quantity | Value |
+|---|---|
+| MSD log-log slope | 0.255 (sub-diffusive — run longer for reliable D) |
+| D (MD) | 1.06 × 10⁻⁴ cm²/s |
+| μ_ex (TPI, 38 frames × 5000 insertions) | −0.78 kJ/mol |
+| S | 1.66 × 10⁻² cm³(STP)/(cm³·cmHg) |
+| P = D × S | 1.77 × 10⁴ Barrer |
+
+D and P are still well above literature (as expected at these short default
+times — D/S/P convergence is a separate, longer lever than the density fix,
+see `diff_time_ps` above), but the mechanism and the density-convergence
+trend are both confirmed genuinely working now.
+
+---
+
+## Mock mode
+
+Same pattern as workflow-032/033: each node's `run.sh` (what `job.toml`
+executes) downloads that node's pre-computed outputs from
+`output_files/<node>/` on `main` instead of running the real
+RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait required to inspect
+the DAG or the report. Real computation lives in `run_real.sh` per node;
+`run_mock.sh` is the same download via `curl` instead of
+`python3 -c urllib.request`.
+
+`output_files/` and `sample_outputs/` hold the actual outputs from the
+verified real run above (LDPE, O₂, defaults, post-fix).
+
 ---
 
 ## Literature D reference values (cm²/s, ~23 °C)

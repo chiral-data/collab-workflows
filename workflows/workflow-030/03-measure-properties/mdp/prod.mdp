@@ -12,8 +12,10 @@ constraints   = none
 cutoff-scheme = Verlet
 ns_type       = grid
 nstlist       = 10
-rcoulomb      = 1.2
-rvdw          = 1.2
+; see 02-equilibrate/mdp/melt.mdp — 0.9 nm (was 1.2 nm), the box the
+; compressibility fix produces is otherwise too small for a 1.2 nm cutoff.
+rcoulomb      = 0.9
+rvdw          = 0.9
 coulombtype   = PME
 pme_order     = 4
 fourierspacing = 0.16
