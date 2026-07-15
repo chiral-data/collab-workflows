@@ -171,6 +171,51 @@ see "When to use this workflow" above). The mechanism itself (TPI convergence,
 `<mu>` parsing, S and P formulas, report rendering) is verified correct — increase
 `equil_time_ps` for production-accurate D/S/P.
 
+> **Root cause found (2026-07-14):** the 441/920 kg/m³ shortfall above wasn't
+> purely a "needs more time" issue — `mdp/melt.mdp`/`mdp/equil.mdp` used
+> `compressibility = 4.5e-5 bar⁻¹` (water), which let the cell drift instead
+> of condense: density stayed flat and noisy around 431 kg/m³ across the
+> whole 500 ps default equilibration, with no real upward trend. Diagnosed
+> in workflow-032
+> ([issue #196](https://github.com/chiral-data/collab-workflows/issues/196),
+> [issue #198](https://github.com/chiral-data/collab-workflows/issues/198))
+> and fixed here to `compressibility = 2.0e-6 bar⁻¹` (polymer-melt order of
+> magnitude): the same default-length run now shows a genuine, still-rising
+> monotonic trend (310→371 kg/m³ across deciles) — real convergence, just
+> not complete yet at these short default times. `equil_time_ps` is still
+> the right lever to increase for production accuracy; it will now actually
+> work.
+
+Full end-to-end re-run after the fix (same default params):
+
+| Quantity | Value |
+|---|---|
+| MSD log-log slope | 0.255 (sub-diffusive — run longer for reliable D) |
+| D (MD) | 1.06 × 10⁻⁴ cm²/s |
+| μ_ex (TPI, 38 frames × 5000 insertions) | −0.78 kJ/mol |
+| S | 1.66 × 10⁻² cm³(STP)/(cm³·cmHg) |
+| P = D × S | 1.77 × 10⁴ Barrer |
+
+D and P are still well above literature (as expected at these short default
+times — D/S/P convergence is a separate, longer lever than the density fix,
+see `diff_time_ps` above), but the mechanism and the density-convergence
+trend are both confirmed genuinely working now.
+
+---
+
+## Mock mode
+
+Same pattern as workflow-032/033: each node's `run.sh` (what `job.toml`
+executes) downloads that node's pre-computed outputs from
+`output_files/<node>/` on `main` instead of running the real
+RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait required to inspect
+the DAG or the report. Real computation lives in `run_real.sh` per node;
+`run_mock.sh` is the same download via `curl` instead of
+`python3 -c urllib.request`.
+
+`output_files/` and `sample_outputs/` hold the actual outputs from the
+verified real run above (LDPE, O₂, defaults, post-fix).
+
 ---
 
 ## Literature D reference values (cm²/s, ~23 °C)

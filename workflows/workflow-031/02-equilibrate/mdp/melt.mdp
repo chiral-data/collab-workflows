@@ -26,7 +26,10 @@ pcoupl        = Berendsen        ; fast pressure coupling for initial compressio
 pcoupltype    = isotropic
 tau_p         = 0.5
 ref_p         = 1.0
-compressibility = 4.5e-5
+; 4.5e-5 bar^-1 (water's compressibility) let the box drift/expand instead of
+; condensing toward target density (see workflow-032 #196/#198 diagnosis).
+; 2.0e-6 bar^-1 (polymer-melt order of magnitude) fixes it.
+compressibility = 2.0e-6
 
 pbc           = xyz
 gen_vel       = yes

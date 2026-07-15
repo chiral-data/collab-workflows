@@ -11,8 +11,12 @@ constraints   = none
 cutoff-scheme = Verlet
 ns_type       = grid
 nstlist       = 10
-rcoulomb      = 1.2
-rvdw          = 1.2
+; Was 1.2 nm — with the compressibility fix above actually condensing the box
+; (unlike before), the default-length equilibrated box shrinks to ~2.1 nm,
+; below the 2.4 nm minimum a 1.2 nm cutoff requires. 0.9 nm (workflow-031's
+; convention, proven safe there) keeps headroom for the default box size.
+rcoulomb      = 0.9
+rvdw          = 0.9
 coulombtype   = PME
 pme_order     = 4
 fourierspacing = 0.16
@@ -26,7 +30,10 @@ pcoupl        = Berendsen        ; fast pressure coupling for initial compressio
 pcoupltype    = isotropic
 tau_p         = 0.5
 ref_p         = 1.0
-compressibility = 4.5e-5
+; 4.5e-5 bar^-1 (water's compressibility) let the box drift/expand instead of
+; condensing toward target density (see workflow-032 #196/#198 diagnosis).
+; 2.0e-6 bar^-1 (polymer-melt order of magnitude) fixes it.
+compressibility = 2.0e-6
 
 pbc           = xyz
 gen_vel       = yes
