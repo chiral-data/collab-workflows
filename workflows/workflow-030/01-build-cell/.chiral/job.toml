@@ -9,6 +9,17 @@ image = "polymer_md:2026_06_26"
 [scripts]
 run = "run.sh"
 
+[params.resin_type]
+type        = "enum"
+default     = "PP"
+hint        = "Resin matrix identifier"
+enum_values = ["PP", "PA6", "PC", "PET", "ABS"]
+
+[params.fiber_loading]
+type    = "float"
+default = 0.0
+hint    = "Glass-fibre loading in wt% (0-30); Halpin-Tsai correction applied in node 04 when > 0"
+
 [params.n_chains]
 type    = "integer"
 default = 20

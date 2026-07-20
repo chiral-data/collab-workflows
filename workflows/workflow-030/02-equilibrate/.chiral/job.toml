@@ -10,3 +10,8 @@ use_gpu   = true
 
 [scripts]
 run = "run.sh"
+
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Target equilibration temperature in °C (23-150)"

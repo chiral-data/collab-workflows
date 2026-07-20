@@ -9,6 +9,18 @@ image = "polymer_md:2026_06_26"
 [scripts]
 run = "run.sh"
 
+[params.resin_type]
+type        = "enum"
+default     = "PPS"
+hint        = "Resin identifier"
+enum_values = ["PPS", "PA66", "PBT", "PEEK", "PP"]
+
+[params.crystallinity]
+type        = "enum"
+default     = "medium"
+hint        = "Approximated via initial packing density fraction (see Node 01 in README)"
+enum_values = ["low", "medium", "high"]
+
 [params.n_chains]
 type    = "integer"
 default = 20
