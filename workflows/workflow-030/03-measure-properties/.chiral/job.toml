@@ -11,6 +11,11 @@ use_gpu   = true
 [scripts]
 run = "run.sh"
 
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Target measurement temperature in °C (23-150); must match node 02"
+
 [params.prod_time_ps]
 type    = "float"
 default = 1000.0

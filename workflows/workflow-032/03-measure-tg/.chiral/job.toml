@@ -9,3 +9,9 @@ image = "polymer_md:2026_06_26"
 
 [scripts]
 run = "run.sh"
+
+[params.temperature]
+type        = "enum"
+default     = "150"
+hint        = "Selects which cooling-ladder point (°C) is reported for dimensional stability"
+enum_values = ["25", "80", "150", "200"]
