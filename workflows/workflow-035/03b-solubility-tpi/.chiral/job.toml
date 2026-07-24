@@ -1,0 +1,27 @@
+name        = "Solubility via Test Particle Insertion"
+description = "Computes the Henry-regime solubility coefficient S of O₂ or H₂O in the equilibrated polymer via GROMACS test particle insertion (gmx tpi / Widom insertion), rerun over the equilibration trajectory for better sampling. Combined with D (node 04) in node 05 to give permeability P = D × S."
+
+inputs  = ["equilibrated.gro", "equil.xtc", "topol.top", "build_report.json"]
+outputs = ["solubility_report.json", "tpi.xvg"]
+
+[container]
+image = "gromacs:2025_11_12"
+
+[scripts]
+run = "run.sh"
+
+[params.penetrant]
+type        = "enum"
+default     = "O2"
+hint        = "Penetrant to test-insert (should match node 03's choice)"
+enum_values = ["O2", "H2O"]
+
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Simulation temperature in °C (must match node 02)"
+
+[params.n_insertions]
+type    = "integer"
+default = 5000
+hint    = "Test-particle insertion attempts per trajectory frame (increase for dense films like EVOH/PA6 where insertion acceptance is low)"

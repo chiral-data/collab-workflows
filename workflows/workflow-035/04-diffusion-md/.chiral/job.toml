@@ -1,0 +1,28 @@
+name        = "Diffusion MD"
+description = "NVT production run to compute penetrant diffusion. MSD is computed on-the-fly via gmx msd. D is extracted via the Einstein relation D = MSD/(6t) in the diffusive regime (log-log slope ≈ 1)."
+
+inputs  = ["system_with_penetrant.gro", "topol_penetrant.top", "build_report.json", "penetrant_report.json"]
+outputs = ["msd.xvg", "diffusion_report.json"]
+
+[container]
+image   = "gromacs:2025_11_12"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.penetrant]
+type        = "enum"
+default     = "O2"
+hint        = "Penetrant molecule (must match the choice made in node 03)"
+enum_values = ["O2", "H2O"]
+
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Simulation temperature in °C (must match node 02)"
+
+[params.diff_time_ps]
+type    = "float"
+default = 5000.0
+hint    = "Diffusion NVT run length in ps (increase to 20000+ for high-barrier resins like EVOH)"

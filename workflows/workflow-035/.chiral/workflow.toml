@@ -1,0 +1,9 @@
+name = "Barrier Films — Plastics that Protect Food"
+description = "Educational MD workflow simulating small-molecule diffusion (O₂, H₂O) through polymer barrier films (PET, LDPE, PP, EVOH, PA6). Computes diffusion coefficient D via the Einstein relation and solubility S via test particle insertion, then reports barrier permeability P = D × S. Closes #179, #191."
+
+[dependencies]
+02-equilibrate      = ["01-build-cell"]
+03-insert-penetrant = ["01-build-cell", "02-equilibrate"]
+03b-solubility-tpi  = ["01-build-cell", "02-equilibrate"]
+04-diffusion-md     = ["01-build-cell", "03-insert-penetrant"]
+05-report           = ["01-build-cell", "04-diffusion-md", "03b-solubility-tpi"]

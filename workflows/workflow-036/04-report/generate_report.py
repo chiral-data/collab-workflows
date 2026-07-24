@@ -265,7 +265,7 @@ html = f"""<!doctype html>
 <div class="page">
 
   <div class="header">
-    <div class="header-eyebrow">workflow-032 &middot; AMECC Theme 3 &middot; Heat-Resistant Plastics</div>
+    <div class="header-eyebrow">workflow-036 &middot; AMECC Theme 3 &middot; Heat-Resistant Plastics</div>
     <h1>{resin_name} &mdash; {crystallinity} crystallinity<br>Protecting EV Battery Cases &amp; Separators from Heat</h1>
     <div class="badges">
       <span class="badge primary">{resin}</span>
@@ -371,7 +371,7 @@ html = f"""<!doctype html>
   </div>
 
   <div class="footer">
-    workflow-032 &middot; AMECC Theme 3 &middot; {datetime.date.today()}
+    workflow-036 &middot; AMECC Theme 3 &middot; {datetime.date.today()}
   </div>
 
 </div>

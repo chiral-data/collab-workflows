@@ -1,0 +1,11 @@
+name        = "Generate Barrier Performance Report"
+description = "Assembles diffusion_report.json, solubility_report.json, and msd.xvg into an HTML report with MSD curve, D, S, permeability P = D × S, and barrier ranking vs literature reference values."
+
+inputs  = ["diffusion_report.json", "solubility_report.json", "msd.xvg", "build_report.json"]
+outputs = ["report.html", "summary.json"]
+
+[container]
+image = "barrier_films:2026_06_27"
+
+[scripts]
+run = "run.sh"

@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-07-24]
+
+### Added
+
+- workflow-034/035/036: real-pipeline counterparts of workflow-030/031/032, split into their own
+  workflow numbers so mock and real runs are separate catalog entries instead of one workflow
+  number serving both behaviors via `run.sh`.
+  - Each node's `run.sh` delegates to `run_real.sh` by default; carries the real computation
+    scripts (`build_cell.py`, `analyze.py`, etc.), `.mdp` files, and `apps/*/Dockerfile` from
+    its workflow-030/031/032 counterpart. No `run_mock.sh` or `output_files/`/`sample_outputs/`
+    — those stay solely on the mock side to avoid duplicating pre-computed data.
+  - `.chiral/workflow.toml` titles drop the `(Mock Run)` prefix.
+  - Closes #208.
+
+### Changed
+
+- workflow-030/031/032: reverted `run.sh` back to delegating to `run_mock.sh` by default
+  (undoing #206/#207's switch to `run_real.sh`), now that the real pipeline lives in
+  workflow-034/035/036. `.chiral/workflow.toml` titles keep the `(Mock Run)` prefix, which is
+  accurate again.
+  - Removed `run_real.sh`, the real computation scripts, `.mdp` files, and `apps/*/Dockerfile`
+    from each node — that code now lives solely in workflow-034/035/036 to avoid duplication.
+    README.md points to the real-pipeline counterpart for anyone who needs it.
+  - Part of #208.
+
 ## [2026-07-12]
 
 ### Added

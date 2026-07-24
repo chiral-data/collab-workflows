@@ -249,7 +249,7 @@ html = f"""<!doctype html>
 <div class="page">
 
   <div class="header">
-    <div class="header-eyebrow">workflow-030 &middot; AMECC Theme 1 &middot; Polymer MD</div>
+    <div class="header-eyebrow">workflow-034 &middot; AMECC Theme 1 &middot; Polymer MD</div>
     <h1>{build.get('resin_name', resin)} &mdash; {temp_c:.0f}&thinsp;&deg;C / {fiber_wt:.0f}&thinsp;wt% GF<br>Lightweight Plastics for EV Applications</h1>
     <div class="badges">
       <span class="badge primary">{resin}</span>
@@ -339,7 +339,7 @@ html = f"""<!doctype html>
   </div>
 
   <div class="footer">
-    workflow-030 &middot; AMECC Theme 1 &middot; {datetime.date.today()}
+    workflow-034 &middot; AMECC Theme 1 &middot; {datetime.date.today()}
   </div>
 
 </div>

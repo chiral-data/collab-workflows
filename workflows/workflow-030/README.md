@@ -163,13 +163,13 @@ Generates `report.html` (self-contained HTML table + EV lightweighting context) 
 
 ## Mock mode
 
-Same pattern as workflow-032/033: each node's `run.sh` (what `job.toml`
-executes) downloads that node's pre-computed outputs from
-`output_files/<node>/` on `main` instead of running the real
-RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait required to inspect
-the DAG or the report. Real computation lives in `run_real.sh` per node;
-`run_mock.sh` is the same download via `curl` instead of
-`python3 -c urllib.request`.
+Each node's `run.sh` (what `job.toml` executes) downloads that node's
+pre-computed outputs from `output_files/<node>/` on `main` instead of running
+the real RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait required to
+inspect the DAG or the report. The real pipeline (`run_real.sh` and the
+computation scripts it calls) lives in
+[workflow-034](../workflow-034/README.md), the real-pipeline counterpart of
+this workflow.
 
 `output_files/` holds the actual per-node outputs from the verified real run
 above (PP, defaults, post-fix). `sample_outputs/` is that same run's final

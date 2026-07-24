@@ -216,7 +216,7 @@ html = f"""<!doctype html>
 <div class="page">
 
   <div class="header">
-    <div class="header-eyebrow">workflow-031 &middot; AMECC Theme 2 &middot; Barrier Films</div>
+    <div class="header-eyebrow">workflow-035 &middot; AMECC Theme 2 &middot; Barrier Films</div>
     <h1>{build.get('resin_name', resin)} &mdash; {pen_label} @ {temp_c:.0f}&thinsp;&deg;C<br>Plastics that Protect Food</h1>
     <div class="badges">
       <span class="badge primary">{resin}</span>
@@ -301,7 +301,7 @@ html = f"""<!doctype html>
   </div>
 
   <div class="footer">
-    workflow-031 &middot; AMECC Theme 2 &middot; {datetime.date.today()}
+    workflow-035 &middot; AMECC Theme 2 &middot; {datetime.date.today()}
   </div>
 
 </div>

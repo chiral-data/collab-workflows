@@ -1,0 +1,11 @@
+name        = "Apply Glass-Fiber Correction"
+description = "Applies Halpin-Tsai composite mechanics to scale MD-derived neat-resin properties to glass-fiber loaded values (15 or 30 wt%). For fiber_loading=0, properties are passed through unchanged."
+
+inputs  = ["properties.json", "build_report.json"]
+outputs = ["corrected_properties.json"]
+
+[container]
+image = "polymer_md:2026_06_26"
+
+[scripts]
+run = "run.sh"
