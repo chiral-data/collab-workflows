@@ -1,0 +1,11 @@
+{
+    "resin_type": "LDPE",
+    "penetrant": "O2",
+    "temperature": 23.0,
+    "n_chains": 20,
+    "em_steps": 5000,
+    "melt_time_ps": 200.0,
+    "equil_time_ps": 500.0,
+    "n_penetrant": 5,
+    "diff_time_ps": 5000.0
+}

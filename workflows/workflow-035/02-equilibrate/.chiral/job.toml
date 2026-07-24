@@ -1,0 +1,32 @@
+name        = "NPT Equilibration"
+description = "Energy minimisation → NPT melt (Berendsen, fast compression from 60% density) → NPT cool to target temperature. Produces a density-converged amorphous cell ready for penetrant insertion."
+
+inputs  = ["system.gro", "topol.top", "build_report.json"]
+outputs = ["equilibrated.gro", "equil.xtc", "density.xvg", "equil_report.json"]
+
+[container]
+image   = "gromacs:2025_11_12"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Simulation temperature in °C"
+
+[params.em_steps]
+type    = "integer"
+default = 5000
+hint    = "Energy minimisation steps (increase to 10000 for dense/strained cells)"
+
+[params.melt_time_ps]
+type    = "float"
+default = 200.0
+hint    = "NPT melt duration in ps — long enough for density to plateau near melt value"
+
+[params.equil_time_ps]
+type    = "float"
+default = 500.0
+hint    = "NPT equilibration at target temperature in ps (increase to 2000+ for better density convergence)"

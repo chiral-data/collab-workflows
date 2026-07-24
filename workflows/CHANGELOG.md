@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-07-24]
+
+### Added
+
+- workflow-034/035/036: real-pipeline counterparts of workflow-030/031/032, split into their own
+  workflow numbers so mock and real runs are separate catalog entries instead of one workflow
+  number serving both behaviors via `run.sh`.
+  - Full copies of workflow-030/031/032 respectively (same nodes, params, Docker images,
+    `output_files/`/`sample_outputs/`), with each node's `run.sh` delegating to `run_real.sh`
+    by default. `run_mock.sh` stays available per node for manual mock runs.
+  - `.chiral/workflow.toml` titles drop the `(Mock Run)` prefix.
+  - Closes #208.
+
+### Changed
+
+- workflow-030/031/032: reverted `run.sh` back to delegating to `run_mock.sh` by default
+  (undoing #206/#207's switch to `run_real.sh`), now that the real pipeline lives in
+  workflow-034/035/036. `.chiral/workflow.toml` titles keep the `(Mock Run)` prefix, which is
+  accurate again. `run_real.sh` stays in place per node for manual real runs.
+  - Part of #208.
+
 ## [2026-07-12]
 
 ### Added

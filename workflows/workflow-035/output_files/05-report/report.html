@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Barrier Film Report — LDPE / O₂ @ 23 °C</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0c1829; --ground: #f5f7fb; --surface: #ffffff;
+    --accent: #1a5cff; --accent-dim: #eef2ff; --mid: #6b7fa3;
+    --border: #d8e0ef; --warn: #d97706; --good: #16a34a;
+    --ff-d: Georgia, 'Times New Roman', serif;
+    --ff-b: system-ui, -apple-system, sans-serif;
+    --ff-m: ui-monospace, 'Cascadia Code', 'Courier New', monospace;
+  }
+  body { font-family: var(--ff-b); font-size: 15px; line-height: 1.65;
+          color: var(--ink); background: var(--ground); padding: 40px 20px 80px; }
+  .page { max-width: 800px; margin: 0 auto; }
+  .header { background: var(--ink); border-radius: 10px 10px 0 0;
+             padding: 32px 36px 28px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(26,92,255,.18) 1px, transparent 1px);
+    background-size: 28px 28px; pointer-events: none; }
+  .header-eyebrow { font-family: var(--ff-m); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .header h1 { font-family: var(--ff-d); font-size: 1.75rem; font-weight: normal;
+    color: #fff; line-height: 1.25; text-wrap: balance; margin-bottom: 16px; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { font-family: var(--ff-m); font-size: 11px; letter-spacing: .06em;
+    padding: 3px 10px; border-radius: 3px;
+    background: rgba(26,92,255,.25); color: #a8c0ff;
+    border: 1px solid rgba(26,92,255,.4); }
+  .badge.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .badge.good { background: rgba(22,163,74,.2); color: #16a34a; border-color: rgba(22,163,74,.4); }
+  .badge.warn { background: rgba(217,119,6,.15); color: var(--warn); border-color: rgba(217,119,6,.4); }
+  .badge.mid  { background: rgba(107,127,163,.15); color: var(--mid); border-color: rgba(107,127,163,.4); }
+  .header-date { font-family: var(--ff-m); font-size: 11px; color: var(--mid); margin-top: 14px; }
+  .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--surface); border: 1px solid var(--border); border-top: none; }
+  .kpi { padding: 24px 28px; border-right: 1px solid var(--border); }
+  .kpi:last-child { border-right: none; }
+  .kpi-label { font-family: var(--ff-m); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--mid); margin-bottom: 6px; }
+  .kpi-value { font-family: var(--ff-d); font-size: 1.9rem; font-weight: bold;
+    color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1; }
+  .kpi-unit { font-family: var(--ff-m); font-size: 11px; color: var(--mid); margin-top: 4px; }
+  .section { background: var(--surface); border: 1px solid var(--border);
+    border-top: none; padding: 28px 36px; }
+  .section:last-of-type { border-radius: 0 0 10px 10px; }
+  .section-label { font-family: var(--ff-m); font-size: 10.5px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent);
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--accent-dim); }
+  .data-table { width: 100%; border-collapse: collapse; }
+  .data-table th, .data-table td { text-align: left; padding: 8px 12px;
+    border-bottom: 1px solid var(--border); font-size: 13.5px; }
+  .data-table th { font-family: var(--ff-m); font-size: 11px; letter-spacing: .05em;
+    color: var(--mid); background: var(--ground); font-weight: 500; }
+  .data-table .val { font-family: var(--ff-m); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .spark-wrap { background: var(--ground); border: 1px solid var(--border);
+    border-radius: 6px; padding: 16px; overflow-x: auto; }
+  .spark-meta { display: flex; justify-content: space-between;
+    font-family: var(--ff-m); font-size: 11px; color: var(--mid); margin-bottom: 8px; }
+  .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+  .bar-row { display: grid; grid-template-columns: 130px 1fr 90px; align-items: center; gap: 10px; }
+  .bar-name { font-size: 13px; white-space: nowrap; }
+  .bar-name.highlight { font-weight: 600; color: var(--accent); }
+  .bar-track { background: var(--ground); border-radius: 3px; height: 18px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; min-width: 2px; }
+  .bar-val { font-family: var(--ff-m); font-size: 12px; color: var(--mid);
+    text-align: right; font-variant-numeric: tabular-nums; }
+  .bar-val.highlight { color: var(--accent); font-weight: 600; }
+  .callout-note { background: #fffbeb; border-left: 3px solid var(--warn);
+    padding: 12px 16px; border-radius: 0 4px 4px 0;
+    font-size: 13px; color: #78350f; margin-top: 20px; }
+  .callout-note code { font-family: var(--ff-m); font-size: 12px;
+    background: rgba(0,0,0,.06); padding: 1px 5px; border-radius: 3px; }
+  .footer { margin-top: 28px; font-family: var(--ff-m); font-size: 11px;
+    color: var(--mid); text-align: center; letter-spacing: .06em; }
+  @media (max-width: 600px) {
+    .kpi-strip { grid-template-columns: 1fr; }
+    .kpi { border-right: none; border-bottom: 1px solid var(--border); }
+    .bar-row { grid-template-columns: 80px 1fr 70px; }
+    .header, .section { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-eyebrow">workflow-035 &middot; AMECC Theme 2 &middot; Barrier Films</div>
+    <h1>Low-density polyethylene &mdash; O₂ @ 23&thinsp;&deg;C<br>Plastics that Protect Food</h1>
+    <div class="badges">
+      <span class="badge primary">LDPE</span>
+      <span class="badge">O₂ penetrant</span>
+      <span class="badge">23 &deg;C</span>
+      <span class="badge">GAFF2</span>
+      <span class="badge">GROMACS 2023.2</span>
+      <span class="badge warn">&#9888; sub-diffusive — run longer for reliable D</span>
+    </div>
+    <div class="header-date">
+      Generated 2026-07-14 &middot; 5000 ps simulation
+    </div>
+  </div>
+
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-label">Diffusion Coeff. D</div>
+      <div class="kpi-value" style="font-size:1.4rem">1.06e-04</div>
+      <div class="kpi-unit">cm&sup2; / s (MD)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Solubility S</div>
+      <div class="kpi-value" style="font-size:1.4rem">1.66e-02</div>
+      <div class="kpi-unit">cm&sup3;(STP) / (cm&sup3;&middot;cmHg)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Permeability P = D&times;S</div>
+      <div class="kpi-value" style="font-size:1.4rem;color:var(--accent)">1.77e+04</div>
+      <div class="kpi-unit">Barrer</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">MSD slope (log-log)</div>
+      <div class="kpi-value">0.26</div>
+      <div class="kpi-unit">1.0 = diffusive regime</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Simulation Setup</div>
+    <table class="data-table">
+      <tr><th>Parameter</th><th>Value</th></tr>
+      <tr><td>Resin</td><td class="val">Low-density polyethylene (LDPE)</td></tr>
+      <tr><td>Penetrant</td><td class="val">O₂ &mdash; TraPPE 2-site</td></tr>
+      <tr><td>Temperature</td><td class="val">23 &deg;C (296.15 K)</td></tr>
+      <tr><td>Simulation length</td><td class="val">5000 ps</td></tr>
+      <tr><td>MSD regime</td><td class="val">sub-diffusive — run longer for reliable D</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Solubility &amp; Permeability &mdash; P = D &times; S</div>
+    <table class="data-table">
+      <tr><th>Quantity</th><th>Value</th></tr>
+      <tr><td>Excess chemical potential &mu;<sub>ex</sub> (TPI)</td><td class="val">-0.7781 kJ/mol</td></tr>
+      <tr><td>Solubility S</td><td class="val">1.66e-02 cm&sup3;(STP)/(cm&sup3;&middot;cmHg)</td></tr>
+      <tr><td>Permeability P = D &times; S</td><td class="val">1.77e+04 Barrer</td></tr>
+    </table>
+    
+  </div>
+
+  <div class="section">
+    <div class="section-label">MSD vs Time (log-log) &mdash; Diffusive regime: slope = 1</div>
+    <div class="spark-meta">
+      <span>Time: 0.0 &rarr; 5000.0 ps</span>
+      <span style="color:var(--warn)">&#9472; &#9472; slope = 1 reference</span>
+    </div>
+    <div class="spark-wrap">
+<svg width="100%" height="120" viewBox="0 0 680 120"
+     preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <line x1="8" y1="39" x2="672" y2="39"
+        stroke="#d8e0ef" stroke-width="1"/>
+  <line x1="8" y1="79" x2="672" y2="79"
+        stroke="#d8e0ef" stroke-width="1"/>
+  <line x1="8" y1="116" x2="672" y2="3" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="0,120 8,112 103,95 160,85 199,78 230,72 256,68 277,64 295,62 312,59 326,56 339,54 352,52 363,50 373,48 382,46 391,45 400,43 408,42 415,41 422,39 429,38 435,37 442,36 448,35 453,35 459,34 464,33 469,32 474,32 478,31 483,30 487,29 492,29 496,28 500,27 504,27 507,26 511,26 515,25 518,24 522,24 525,24 528,23 531,23 535,22 538,22 541,21 543,21 546,20 549,20 552,19 555,19 557,18 560,18 562,18 565,17 567,17 570,16 572,16 574,16 577,15 579,15 581,15 583,14 585,14 588,14 590,13 592,13 594,13 596,13 598,12 600,12 602,12 603,11 605,11 607,11 609,11 611,10 612,10 614,10 616,9 618,9 619,9 621,9 623,9 624,9 626,9 627,9 629,9 631,9 632,9 634,9 635,8 637,8 638,8 639,8 641,8 642,8 644,8 645,8 646,8 648,8 649,8 651,8 652,9 653,9 654,10 656,10 657,11 658,11 660,11 661,11 662,11 663,11 664,11 666,11 667,11 668,11 669,11 670,10 672,9 680,120" fill="rgba(26,92,255,0.07)"/>
+  <polyline points="8,112 103,95 160,85 199,78 230,72 256,68 277,64 295,62 312,59 326,56 339,54 352,52 363,50 373,48 382,46 391,45 400,43 408,42 415,41 422,39 429,38 435,37 442,36 448,35 453,35 459,34 464,33 469,32 474,32 478,31 483,30 487,29 492,29 496,28 500,27 504,27 507,26 511,26 515,25 518,24 522,24 525,24 528,23 531,23 535,22 538,22 541,21 543,21 546,20 549,20 552,19 555,19 557,18 560,18 562,18 565,17 567,17 570,16 572,16 574,16 577,15 579,15 581,15 583,14 585,14 588,14 590,13 592,13 594,13 596,13 598,12 600,12 602,12 603,11 605,11 607,11 609,11 611,10 612,10 614,10 616,9 618,9 619,9 621,9 623,9 624,9 626,9 627,9 629,9 631,9 632,9 634,9 635,8 637,8 638,8 639,8 641,8 642,8 644,8 645,8 646,8 648,8 649,8 651,8 652,9 653,9 654,10 656,10 657,11 658,11 660,11 661,11 662,11 663,11 664,11 666,11 667,11 668,11 669,11 670,10 672,9" fill="none" stroke="#1a5cff"
+            stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="8" cy="112" r="3.5" fill="#1a5cff"/>
+  <circle cx="672" cy="9" r="3.5" fill="#1a5cff"/>
+</svg></div>
+    <div class="callout-note">&#9888; MSD slope = 0.26 — not yet in the diffusive regime. Increase <code>PARAM_DIFF_TIME_PS</code> (try 20 000 ps for EVOH). D value is an underestimate.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Barrier Ranking &mdash; O₂ Diffusion Coefficient (literature, cm&sup2;/s)</div>
+    <p style="font-size:13px;color:var(--mid);margin-bottom:18px;">
+      Lower D = better barrier. Bars show relative barrier performance on a log scale (longer bar = lower D = better barrier).
+    </p>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-name">EVOH ← best barrier</div>
+        <div class="bar-track"><div class="bar-fill" style="width:81.7%;background:#b0bdd8"></div></div>
+        <div class="bar-val">2.0e-13</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name">PET</div>
+        <div class="bar-track"><div class="bar-fill" style="width:41.2%;background:#b0bdd8"></div></div>
+        <div class="bar-val">3.4e-10</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name">PA6</div>
+        <div class="bar-track"><div class="bar-fill" style="width:33.1%;background:#b0bdd8"></div></div>
+        <div class="bar-val">1.5e-09</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name">PP</div>
+        <div class="bar-track"><div class="bar-fill" style="width:19.0%;background:#b0bdd8"></div></div>
+        <div class="bar-val">2.0e-08</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name highlight">LDPE</div>
+        <div class="bar-track"><div class="bar-fill" style="width:2.0%;background:#1a5cff"></div></div>
+        <div class="bar-val highlight">4.5e-07</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--mid);margin-top:14px;font-family:var(--ff-m);">
+      Literature values at ~25 °C. Your simulation result: 1.06e-04 cm&sup2;/s.
+    </p>
+  </div>
+
+  <div class="footer">
+    workflow-035 &middot; AMECC Theme 2 &middot; 2026-07-14
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,3 +1,3 @@
 #!/bin/bash
 set -euo pipefail
-bash run_real.sh
+bash run_mock.sh

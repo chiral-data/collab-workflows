@@ -1,0 +1,27 @@
+name        = "Measure Mechanical & Thermal Properties"
+description = "Runs a production NPT to converge density and energy, then a uniaxial NVT deformation to measure Young's modulus. Outputs a properties.json with density, E, and specific modulus for the EV lightweighting comparison."
+
+inputs  = ["equilibrated.gro", "topol.top", "build_report.json", "equil_report.json"]
+outputs = ["properties.json", "stress_strain.xvg", "density_prod.xvg"]
+
+[container]
+image     = "gromacs:2025_11_12"
+use_gpu   = true
+
+[scripts]
+run = "run.sh"
+
+[params.temperature]
+type    = "float"
+default = 23.0
+hint    = "Target measurement temperature in °C (23-150); must match node 02"
+
+[params.prod_time_ps]
+type    = "float"
+default = 1000.0
+hint    = "Production NPT length in ps"
+
+[params.deform_time_ps]
+type    = "float"
+default = 50.0
+hint    = "Deformation NVT length in ps (targets ~2% strain)"

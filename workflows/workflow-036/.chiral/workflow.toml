@@ -1,0 +1,22 @@
+name = "Polymer MD — Heat-Resistant Plastics for EV Battery Protection"
+description = "Educational MD simulation estimating glass-transition temperature (Tg), thermal expansion, and high-temperature dimensional stability of battery-case/separator resins (PPS, PA66, PBT, PEEK, PP) via stepwise melt-quench MD. Closes #196."
+
+[dependencies]
+02-cooling-series = ["01-build-cell"]
+03-measure-tg     = ["01-build-cell", "02-cooling-series"]
+04-report         = ["01-build-cell", "03-measure-tg"]
+
+[params.resin_type]
+type    = "string"
+default = "PPS"
+hint    = "Resin type: PPS, PA66, PBT, PEEK, or PP (ref.)"
+
+[params.temperature]
+type    = "float"
+default = 150.0
+hint    = "Measurement temperature in °C: 25, 80, 150, or 200 — selects which point on the cooling-series ladder to report for dimensional stability"
+
+[params.crystallinity]
+type    = "string"
+default = "medium"
+hint    = "Crystallinity level: low, medium, or high — approximated via initial packing density (trend only, not a true semi-crystalline lattice)"

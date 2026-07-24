@@ -1,0 +1,34 @@
+; NVT diffusion run — constant volume to avoid box fluctuations skewing MSD
+integrator    = md
+nsteps        = DIFF_NSTEPS
+dt            = 0.002       ; 2 fs — larger timestep OK for diffusion (no fast H-H bonds in polymer backbone)
+
+nstxout-compressed = 500    ; trajectory every 1 ps for MSD analysis
+nstlog        = 1000
+nstenergy     = 1000
+
+continuation  = yes
+constraints   = h-bonds     ; constrain H-bonds for 2 fs timestep
+constraint-algorithm = lincs
+lincs-iter    = 1
+lincs-order   = 4
+
+cutoff-scheme = Verlet
+ns_type       = grid
+nstlist       = 20
+rcoulomb      = 0.9
+rvdw          = 0.9
+coulombtype   = PME
+pme_order     = 4
+fourierspacing = 0.16
+DispCorr      = EnerPres
+
+tcoupl        = V-rescale
+tc-grps       = System
+tau_t         = 0.1
+ref_t         = TARGET_TEMP
+
+; NVT — no barostat
+pcoupl        = no
+pbc           = xyz
+gen_vel       = no

@@ -1,0 +1,22 @@
+name        = "Insert Penetrant Molecules"
+description = "Inserts O₂ (TraPPE 2-site) or H₂O (SPC/E) molecules into the equilibrated polymer cell using gmx insert-molecules. Writes updated topology and starting structure for diffusion MD."
+
+inputs  = ["equilibrated.gro", "topol.top", "build_report.json"]
+outputs = ["system_with_penetrant.gro", "topol_penetrant.top", "penetrant_report.json"]
+
+[container]
+image   = "gromacs:2025_11_12"
+
+[scripts]
+run = "run.sh"
+
+[params.penetrant]
+type        = "enum"
+default     = "O2"
+hint        = "Small-molecule penetrant to insert and track"
+enum_values = ["O2", "H2O"]
+
+[params.n_penetrant]
+type    = "integer"
+default = 5
+hint    = "Number of penetrant molecules to insert (keep low to avoid penetrant-penetrant interactions)"

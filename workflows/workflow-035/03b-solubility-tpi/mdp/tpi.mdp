@@ -1,0 +1,19 @@
+; Test particle insertion (Widom insertion) — solubility S
+; gmx mdrun -rerun's this over the equilibration trajectory; TPI_NSTEPS is the
+; number of random insertion attempts tried per trajectory frame.
+integrator    = tpi
+nsteps        = TPI_NSTEPS
+nstlist       = 1
+rtpi          = 0.05        ; nm, insertion-energy histogram bin (GROMACS default)
+
+cutoff-scheme = Verlet
+coulombtype   = PME
+rcoulomb      = 0.9
+rvdw          = 0.9
+pbc           = xyz
+
+tcoupl        = no
+tc-grps       = System
+tau_t         = 0.1
+ref_t         = TARGET_TEMP
+pcoupl        = no
