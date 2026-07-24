@@ -202,14 +202,13 @@ reasonable for the "rapid screening" default.
 
 ## Mock mode
 
-Same pattern as workflow-033: each node's `run.sh` (what `job.toml` actually
-executes) downloads that node's pre-computed outputs from
-`output_files/<node>/` on `main` instead of running the real
-RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait required to see the
-DAG, the report, or the Mol* viewer. The real computation lives in
-`run_real.sh` per node (swap it in for `run.sh` to actually run the
-pipeline); `run_mock.sh` is the same download as `run.sh` via `curl` instead
-of `python3 -c urllib.request`.
+Each node's `run.sh` (what `job.toml` actually executes) downloads that
+node's pre-computed outputs from `output_files/<node>/` on `main` instead of
+running the real RDKit/AmberTools/GROMACS pipeline — no Docker/GPU/wait
+required to see the DAG, the report, or the Mol* viewer. The real pipeline
+(`run_real.sh` and the computation scripts it calls) lives in
+[workflow-036](../workflow-036/README.md), the real-pipeline counterpart of
+this workflow.
 
 `output_files/` holds the actual per-node outputs from a verified real run
 (PPS, default params, `medium` crystallinity, with the fixed `2.0e-6 bar⁻¹`

@@ -1,0 +1,13 @@
+{
+  "resin_type": "LDPE",
+  "penetrant": "O2",
+  "temperature_c": 23.0,
+  "D_cm2_s": 0.00013353216666666678,
+  "D_cm2_s_sci": "1.34e-04",
+  "log_log_slope": 1.528,
+  "diffusive_regime": "super-diffusive / ballistic \u2014 check simulation",
+  "n_msd_points": 11,
+  "sim_time_ps": 10.0,
+  "D_literature_cm2_s": 4.5e-07,
+  "D_lit_sci": "4.50e-07"
+}
