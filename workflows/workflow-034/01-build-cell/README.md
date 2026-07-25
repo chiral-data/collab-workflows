@@ -52,7 +52,7 @@ The cell is packed at **60% of target density** so molecules fit without clashes
 ## Docker image
 
 ```bash
-docker build -t polymer_md:2026_06_26 apps/polymer_md_2026_06_26/
+docker build -t polymer_md:2026_07_25 apps/polymer_md_2026_07_25/
 ```
 
 Tools: `rdkit`, `ambertools` (antechamber, parmchk2, tleap), `packmol`, `acpype`.
@@ -70,7 +70,7 @@ docker run --rm \
   -e PARAM_RESIN_TYPE=PP \
   -e PARAM_FIBER_LOADING=0 \
   -e PARAM_N_CHAINS=20 \
-  polymer_md:2026_06_26 bash run.sh
+  polymer_md:2026_07_25 bash run.sh
 ```
 
 Expected output: `system.gro` (1000 atoms for PP 20-chain), `topol.top`, `cell.pdb`, `build_report.json`.

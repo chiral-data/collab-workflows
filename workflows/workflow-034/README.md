@@ -42,11 +42,11 @@ pipeline builds an amorphous cell from scratch).
 
 | Node | Image | Input | Output | Wall time (2026-06-28, GPU) |
 |------|-------|-------|--------|-----------------------------|
-| `01-build-cell` | `polymer_md:2026_06_26` | `global_params.json` | `system.gro`, `topol.top`, `build_report.json` | ~30 s |
+| `01-build-cell` | `polymer_md:2026_07_25` | `global_params.json` | `system.gro`, `topol.top`, `build_report.json` | ~30 s |
 | `02-equilibrate` | `gromacs:2025_11_12` | `system.gro`, `topol.top` | `equilibrated.gro`, `density.xvg`, `equil_report.json` | 75.6 s |
 | `03-measure-properties` | `gromacs:2025_11_12` | `equilibrated.gro`, `topol.top` | `properties.json`, `density_prod.xvg`, `stress_strain.xvg` | 46.2 s |
-| `04-apply-gf-correction` | `polymer_md:2026_06_26` | `properties.json`, `build_report.json` | `corrected_properties.json` | ~2 s |
-| `05-report` | `polymer_md:2026_06_26` | `corrected_properties.json`, `build_report.json` | `report.html`, `summary.json` | ~2 s |
+| `04-apply-gf-correction` | `polymer_md:2026_07_25` | `properties.json`, `build_report.json` | `corrected_properties.json` | ~2 s |
+| `05-report` | `polymer_md:2026_07_25` | `corrected_properties.json`, `build_report.json` | `report.html`, `summary.json` | ~2 s |
 
 **Total wall time (default params, GPU):** ~2.5–3 min
 
@@ -175,5 +175,5 @@ instead of computing them, no Docker/GPU/wait required), see
 
 | Image | Used by | Contents |
 |-------|---------|----------|
-| `polymer_md:2026_06_26` | 01, 04, 05 | AmberTools 22 (antechamber, parmchk2, tleap), acpype, Python 3 |
+| `polymer_md:2026_07_25` | 01, 04, 05 | AmberTools 22 (antechamber, parmchk2, tleap), acpype, Python 3 |
 | `gromacs:2025_11_12` | 02, 03 | GROMACS 2023.2 (AVX2_256, GPU-offload), 8 OpenMP threads |
