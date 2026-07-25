@@ -5,7 +5,7 @@ inputs  = ["tg_report.json", "build_report.json", "cell.pdb"]
 outputs = ["report.html", "summary.json"]
 
 [container]
-image = "polymer_md:2026_06_26"
+image = "polymer_md:2026_07_25"
 
 [scripts]
 run = "run.sh"

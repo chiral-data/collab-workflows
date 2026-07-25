@@ -5,7 +5,7 @@ inputs  = ["corrected_properties.json", "build_report.json", "density_prod.xvg"]
 outputs = ["report.html", "summary.json"]
 
 [container]
-image = "polymer_md:2026_06_26"
+image = "polymer_md:2026_07_25"
 
 [scripts]
 run = "run.sh"
