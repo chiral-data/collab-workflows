@@ -4,14 +4,12 @@ ENV USER=silva \
     HOME=/tmp \
     MPLCONFIGDIR=/tmp/matplotlib
 
-# AmberTools first — it pins icu and other system libs that rdkit must respect
+# AmberTools, RDKit, packmol in one solve to let libmamba resolve conflicts —
+# separate RUN layers re-solve the whole env each time and can silently
+# unlink an earlier package with no error (see #212)
 RUN mamba install -y -c conda-forge \
         python=3.11 \
         ambertools \
-    && mamba clean -afy
-
-# RDKit + packmol into the same environment, solved after AmberTools pins
-RUN mamba install -y -c conda-forge \
         rdkit \
         packmol \
     && mamba clean -afy
