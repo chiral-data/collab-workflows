@@ -4,7 +4,7 @@ description = "Builds an amorphous polymer cell: generates oligomer 3D structure
 outputs = ["system.gro", "topol.top", "cell.pdb", "build_report.json"]
 
 [container]
-image = "polymer_md:2026_07_25"
+image = "polymer_md:2026_07_28"
 
 [scripts]
 run = "run.sh"

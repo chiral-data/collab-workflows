@@ -5,7 +5,7 @@ inputs  = ["diffusion_report.json", "solubility_report.json", "msd.xvg", "build_
 outputs = ["report.html", "summary.json"]
 
 [container]
-image = "barrier_films:2026_06_27"
+image = "barrier_films:2026_07_28"
 
 [scripts]
 run = "run.sh"
