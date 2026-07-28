@@ -4,7 +4,7 @@ description = "Generates a 5-mer oligomer with RDKit, assigns GAFF2 charges with
 outputs = ["system.gro", "topol.top", "cell.pdb", "build_report.json"]
 
 [container]
-image = "barrier_films:2026_06_27"
+image = "barrier_films:2026_07_28"
 
 [scripts]
 run = "run.sh"

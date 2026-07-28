@@ -4,6 +4,10 @@ ENV USER=silva \
     HOME=/tmp \
     MPLCONFIGDIR=/tmp/matplotlib
 
+RUN apt-get update && apt-get install -y --no-install-recommends wget \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # AmberTools, RDKit, packmol in one solve to let libmamba resolve conflicts —
 # separate RUN layers re-solve the whole env each time and can silently
 # unlink an earlier package with no error (see #212)

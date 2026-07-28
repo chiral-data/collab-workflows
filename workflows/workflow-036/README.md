@@ -49,13 +49,13 @@ real crystal lattice.
 
 | Node | Image | Input | Output |
 |------|-------|-------|--------|
-| `01-build-cell` | `polymer_md:2026_07_25` | `global_params.json` | `system.gro`, `topol.top`, `cell.pdb`, `build_report.json` |
+| `01-build-cell` | `polymer_md:2026_07_28` | `global_params.json` | `system.gro`, `topol.top`, `cell.pdb`, `build_report.json` |
 | `02-cooling-series` | `gromacs:2025_11_12` | `system.gro`, `topol.top`, `build_report.json` | `cooling_series.json`, `equilibrated.gro` |
-| `03-measure-tg` | `polymer_md:2026_07_25` | `cooling_series.json`, `build_report.json` | `tg_report.json` |
-| `04-report` | `polymer_md:2026_07_25` | `tg_report.json`, `build_report.json`, `cell.pdb` | `report.html`, `summary.json` |
+| `03-measure-tg` | `polymer_md:2026_07_28` | `cooling_series.json`, `build_report.json` | `tg_report.json` |
+| `04-report` | `polymer_md:2026_07_28` | `tg_report.json`, `build_report.json`, `cell.pdb` | `report.html`, `summary.json` |
 
 No new Docker images were built for this workflow — it reuses
-`polymer_md:2026_07_25` and `gromacs:2025_11_12`, already published from
+`polymer_md:2026_07_28` and `gromacs:2025_11_12`, already published from
 workflow-030/031, since the toolchain (RDKit, AmberTools, packmol, acpype,
 GROMACS) is identical.
 
@@ -214,5 +214,5 @@ instead of computing them, no Docker/GPU/wait required), see
 
 | Image | Used by | Contents |
 |-------|---------|----------|
-| `polymer_md:2026_07_25` | 01, 03, 04 | AmberTools 22 (antechamber, parmchk2, tleap), acpype, RDKit, Python 3 |
+| `polymer_md:2026_07_28` | 01, 03, 04 | AmberTools 22 (antechamber, parmchk2, tleap), acpype, RDKit, Python 3 |
 | `gromacs:2025_11_12` | 02 | GROMACS 2023.2 (AVX2_256, GPU-offload), 8 OpenMP threads |
