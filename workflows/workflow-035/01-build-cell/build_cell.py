@@ -128,7 +128,20 @@ structure {oligomer_pdb}
 end structure
 """)
 print(f"  $ packmol  (box={box_a:.1f} Å, {N_CHAINS} chains @ {PACK_DENSITY_FRAC*100:.0f}% density)")
-run(f"packmol < {packmol_inp}", cwd=WORKDIR)
+packmol_cmd = f"packmol < {packmol_inp}"
+r = subprocess.run(packmol_cmd, shell=True, capture_output=True, text=True, cwd=WORKDIR)
+if r.returncode != 0:
+    forced_pdb = WORKDIR / "cell.pdb_FORCED"
+    if "ENDED WITHOUT PERFECT PACKING" in r.stdout and forced_pdb.exists():
+        # packmol couldn't hit `tolerance` within its iteration budget but still
+        # wrote a forced best-effort solution; packmol itself recommends using
+        # it as an MD starting configuration, so fall back to it here.
+        print("  packmol: no perfect packing within tolerance — using forced solution", file=sys.stderr)
+        shutil.copy(forced_pdb, cell_pdb)
+    else:
+        print(r.stdout[-2000:], file=sys.stderr)
+        print(r.stderr[-2000:], file=sys.stderr)
+        sys.exit(f"FAILED: {packmol_cmd}")
 
 # 5. tleap → Amber topology
 prmtop   = WORKDIR / "system.prmtop"
