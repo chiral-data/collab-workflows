@@ -29,6 +29,11 @@ FIBER_LOADING = float(os.environ.get("PARAM_FIBER_LOADING", "0"))
 N_CHAINS      = int(os.environ.get("PARAM_N_CHAINS",  "20"))
 # Pack at 60% of target density so molecules fit comfortably; NPT in node 02 compresses to full density.
 PACK_DENSITY_FRAC = 0.60
+# Mass/density sizing alone can size a box smaller than a single extended chain
+# (e.g. PA6 at low n_chains) — geometrically impossible for packmol to solve.
+# Floor the box side at this multiple of the oligomer's own max pairwise atomic
+# distance so the box can always fit at least one chain with clearance.
+EXTENT_FLOOR_MULT = 1.5
 
 # ── resin library ─────────────────────────────────────────────────────────────
 # Oligomer SMILES: 5-mer end-capped chains — compact enough for packmol to solve
@@ -85,8 +90,20 @@ def run(cmd, **kw):
     subprocess.run(cmd, shell=True, check=True, **kw)
 
 
-def build_oligomer_pdb(smiles: str, out_pdb: Path) -> int:
-    """Generate 3D coordinates with ETKDG + MMFF, write PDB. Returns atom count."""
+def oligomer_extent_angstrom(mol) -> float:
+    """Max pairwise atomic distance in the embedded 3D conformer (Å)."""
+    conf = mol.GetConformer()
+    positions = [conf.GetAtomPosition(i) for i in range(mol.GetNumAtoms())]
+    return max(
+        positions[i].Distance(positions[j])
+        for i in range(len(positions))
+        for j in range(i + 1, len(positions))
+    )
+
+
+def build_oligomer(smiles: str, out_pdb: Path, out_sdf: Path) -> tuple[int, float]:
+    """Generate 3D coordinates with ETKDG + MMFF, write PDB + SDF.
+    Returns (atom count, max pairwise atomic distance in Å)."""
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
         sys.exit(f"ERROR: invalid SMILES for {RESIN_TYPE}")
@@ -94,20 +111,26 @@ def build_oligomer_pdb(smiles: str, out_pdb: Path) -> int:
     if AllChem.EmbedMolecule(mol, AllChem.ETKDGv3()) != 0:
         sys.exit("ERROR: 3D embedding failed — reduce n_repeat or check SMILES")
     AllChem.MMFFOptimizeMolecule(mol, maxIters=2000)
+    # SDF keeps RDKit's exact (Kekulized) bond orders for antechamber; PDB (no
+    # bond-order field) is only used for packmol, which just needs coordinates.
+    Chem.MolToMolFile(mol, str(out_sdf))
     Chem.MolToPDBFile(mol, str(out_pdb))
-    n_atoms = mol.GetNumAtoms()
-    print(f"  Oligomer: {n_atoms} atoms → {out_pdb}")
-    return n_atoms
+    n_atoms  = mol.GetNumAtoms()
+    extent_a = oligomer_extent_angstrom(mol)
+    print(f"  Oligomer: {n_atoms} atoms, {extent_a:.1f} Å extent → {out_pdb}")
+    return n_atoms, extent_a
 
 
-def gaff2_params(pdb: Path) -> tuple[Path, Path]:
+def gaff2_params(sdf: Path) -> tuple[Path, Path]:
     """antechamber + parmchk2 → GAFF2 mol2 and frcmod."""
     mol2   = WORKDIR / "mol.mol2"
     frcmod = WORKDIR / "mol.frcmod"
     # Use residue name UNL to match RDKit's default PDB output so tleap can
-    # map atom types from the mol2 onto the packmol-packed cell.pdb.
+    # map atom types from the mol2 onto the packmol-packed cell.pdb. Feed the
+    # SDF (not the PDB) so antechamber sees exact bond orders instead of
+    # guessing them from geometry alone.
     run(
-        f"antechamber -i {pdb} -fi pdb -o {mol2} -fo mol2 "
+        f"antechamber -i {sdf} -fi mdl -o {mol2} -fo mol2 "
         f"-c bcc -s 2 -rn UNL -at gaff2",
         cwd=WORKDIR,
     )
@@ -129,7 +152,22 @@ def build_packed_cell(single_pdb: Path, n_chains: int, box_a: float) -> Path:
     )
     inp_file = WORKDIR / "packmol.inp"
     inp_file.write_text(inp)
-    run(f"packmol < {inp_file}")
+    cmd = f"packmol < {inp_file}"
+    print(f"  $ {cmd}", flush=True)
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if result.returncode != 0:
+        forced_pdb = WORKDIR / "cell.pdb_FORCED"
+        if "ENDED WITHOUT PERFECT PACKING" in result.stdout and forced_pdb.exists():
+            # packmol hit its iteration budget without perfect packing but still
+            # wrote a best-effort solution; packmol itself recommends using it
+            # as an MD starting configuration, so fall back to it here rather
+            # than treating the nonzero exit as fatal.
+            print("  packmol: no perfect packing within tolerance — using forced solution", flush=True)
+            shutil.copy(forced_pdb, packed_pdb)
+        else:
+            print(result.stdout[-2000:], file=sys.stderr)
+            print(result.stderr[-2000:], file=sys.stderr)
+            sys.exit(f"ERROR: packmol failed: {cmd}")
     return packed_pdb
 
 
@@ -177,20 +215,27 @@ def main():
     if FIBER_LOADING > 0:
         print(f"  Note: glass-fiber correction ({FIBER_LOADING:.0f} wt%) applied in node 04")
 
-    # 1. Oligomer 3D structure
+    # 1. Oligomer 3D structure (PDB for packmol, SDF for antechamber)
     pdb_single = WORKDIR / "oligomer.pdb"
-    build_oligomer_pdb(cfg["smiles"], pdb_single)
+    sdf_single = WORKDIR / "oligomer.sdf"
+    _, extent_a = build_oligomer(cfg["smiles"], pdb_single, sdf_single)
 
     # 2. Molecular weight
     mol = Chem.AddHs(Chem.MolFromSmiles(cfg["smiles"]))
     mw  = Descriptors.ExactMolWt(mol)
 
-    # 3. Box size
-    box_a = box_side_angstrom(N_CHAINS, mw, cfg["density_gcc"], pack_frac=PACK_DENSITY_FRAC)
-    print(f"  MW/chain={mw:.1f} g/mol  box={box_a:.1f} Å  (packed at {PACK_DENSITY_FRAC*100:.0f}% density)")
+    # 3. Box size — mass/density sizing, floored against the oligomer's own
+    # extent so the box can never end up geometrically smaller than a single
+    # chain (silently unsolvable for packmol at low n_chains).
+    box_a_density = box_side_angstrom(N_CHAINS, mw, cfg["density_gcc"], pack_frac=PACK_DENSITY_FRAC)
+    box_a_floor   = EXTENT_FLOOR_MULT * extent_a
+    box_a = max(box_a_density, box_a_floor)
+    print(f"  MW/chain={mw:.1f} g/mol  box={box_a:.1f} Å  "
+          f"(density-based={box_a_density:.1f} Å, extent-floor={box_a_floor:.1f} Å, "
+          f"packed at {PACK_DENSITY_FRAC*100:.0f}% density)")
 
     # 4. GAFF2 parameters
-    mol2, frcmod = gaff2_params(pdb_single)
+    mol2, frcmod = gaff2_params(sdf_single)
 
     # 5. Pack amorphous cell
     packed_pdb = build_packed_cell(pdb_single, N_CHAINS, box_a)
