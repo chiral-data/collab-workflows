@@ -129,7 +129,22 @@ def build_packed_cell(single_pdb: Path, n_chains: int, box_a: float) -> Path:
     )
     inp_file = WORKDIR / "packmol.inp"
     inp_file.write_text(inp)
-    run(f"packmol < {inp_file}")
+    cmd = f"packmol < {inp_file}"
+    print(f"  $ {cmd}", flush=True)
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if result.returncode != 0:
+        forced_pdb = WORKDIR / "cell.pdb_FORCED"
+        if "ENDED WITHOUT PERFECT PACKING" in result.stdout and forced_pdb.exists():
+            # packmol hit its iteration budget without perfect packing but still
+            # wrote a best-effort solution; packmol itself recommends using it
+            # as an MD starting configuration, so fall back to it here rather
+            # than treating the nonzero exit as fatal.
+            print("  packmol: no perfect packing within tolerance — using forced solution", flush=True)
+            shutil.copy(forced_pdb, packed_pdb)
+        else:
+            print(result.stdout[-2000:], file=sys.stderr)
+            print(result.stderr[-2000:], file=sys.stderr)
+            sys.exit(f"ERROR: packmol failed: {cmd}")
     return packed_pdb
 
 
