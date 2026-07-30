@@ -85,8 +85,8 @@ def run(cmd, **kw):
     subprocess.run(cmd, shell=True, check=True, **kw)
 
 
-def build_oligomer_pdb(smiles: str, out_pdb: Path) -> int:
-    """Generate 3D coordinates with ETKDG + MMFF, write PDB. Returns atom count."""
+def build_oligomer(smiles: str, out_pdb: Path, out_sdf: Path) -> int:
+    """Generate 3D coordinates with ETKDG + MMFF, write PDB + SDF. Returns atom count."""
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
         sys.exit(f"ERROR: invalid SMILES for {RESIN_TYPE}")
@@ -94,20 +94,25 @@ def build_oligomer_pdb(smiles: str, out_pdb: Path) -> int:
     if AllChem.EmbedMolecule(mol, AllChem.ETKDGv3()) != 0:
         sys.exit("ERROR: 3D embedding failed — reduce n_repeat or check SMILES")
     AllChem.MMFFOptimizeMolecule(mol, maxIters=2000)
+    # SDF keeps RDKit's exact (Kekulized) bond orders for antechamber; PDB (no
+    # bond-order field) is only used for packmol, which just needs coordinates.
+    Chem.MolToMolFile(mol, str(out_sdf))
     Chem.MolToPDBFile(mol, str(out_pdb))
     n_atoms = mol.GetNumAtoms()
     print(f"  Oligomer: {n_atoms} atoms → {out_pdb}")
     return n_atoms
 
 
-def gaff2_params(pdb: Path) -> tuple[Path, Path]:
+def gaff2_params(sdf: Path) -> tuple[Path, Path]:
     """antechamber + parmchk2 → GAFF2 mol2 and frcmod."""
     mol2   = WORKDIR / "mol.mol2"
     frcmod = WORKDIR / "mol.frcmod"
     # Use residue name UNL to match RDKit's default PDB output so tleap can
-    # map atom types from the mol2 onto the packmol-packed cell.pdb.
+    # map atom types from the mol2 onto the packmol-packed cell.pdb. Feed the
+    # SDF (not the PDB) so antechamber sees exact bond orders instead of
+    # guessing them from geometry alone.
     run(
-        f"antechamber -i {pdb} -fi pdb -o {mol2} -fo mol2 "
+        f"antechamber -i {sdf} -fi mdl -o {mol2} -fo mol2 "
         f"-c bcc -s 2 -rn UNL -at gaff2",
         cwd=WORKDIR,
     )
@@ -192,9 +197,10 @@ def main():
     if FIBER_LOADING > 0:
         print(f"  Note: glass-fiber correction ({FIBER_LOADING:.0f} wt%) applied in node 04")
 
-    # 1. Oligomer 3D structure
+    # 1. Oligomer 3D structure (PDB for packmol, SDF for antechamber)
     pdb_single = WORKDIR / "oligomer.pdb"
-    build_oligomer_pdb(cfg["smiles"], pdb_single)
+    sdf_single = WORKDIR / "oligomer.sdf"
+    build_oligomer(cfg["smiles"], pdb_single, sdf_single)
 
     # 2. Molecular weight
     mol = Chem.AddHs(Chem.MolFromSmiles(cfg["smiles"]))
@@ -205,7 +211,7 @@ def main():
     print(f"  MW/chain={mw:.1f} g/mol  box={box_a:.1f} Å  (packed at {PACK_DENSITY_FRAC*100:.0f}% density)")
 
     # 4. GAFF2 parameters
-    mol2, frcmod = gaff2_params(pdb_single)
+    mol2, frcmod = gaff2_params(sdf_single)
 
     # 5. Pack amorphous cell
     packed_pdb = build_packed_cell(pdb_single, N_CHAINS, box_a)
