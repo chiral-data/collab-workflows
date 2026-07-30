@@ -29,6 +29,11 @@ FIBER_LOADING = float(os.environ.get("PARAM_FIBER_LOADING", "0"))
 N_CHAINS      = int(os.environ.get("PARAM_N_CHAINS",  "20"))
 # Pack at 60% of target density so molecules fit comfortably; NPT in node 02 compresses to full density.
 PACK_DENSITY_FRAC = 0.60
+# Mass/density sizing alone can size a box smaller than a single extended chain
+# (e.g. PA6 at low n_chains) — geometrically impossible for packmol to solve.
+# Floor the box side at this multiple of the oligomer's own max pairwise atomic
+# distance so the box can always fit at least one chain with clearance.
+EXTENT_FLOOR_MULT = 1.5
 
 # ── resin library ─────────────────────────────────────────────────────────────
 # Oligomer SMILES: 5-mer end-capped chains — compact enough for packmol to solve
@@ -85,8 +90,20 @@ def run(cmd, **kw):
     subprocess.run(cmd, shell=True, check=True, **kw)
 
 
-def build_oligomer(smiles: str, out_pdb: Path, out_sdf: Path) -> int:
-    """Generate 3D coordinates with ETKDG + MMFF, write PDB + SDF. Returns atom count."""
+def oligomer_extent_angstrom(mol) -> float:
+    """Max pairwise atomic distance in the embedded 3D conformer (Å)."""
+    conf = mol.GetConformer()
+    positions = [conf.GetAtomPosition(i) for i in range(mol.GetNumAtoms())]
+    return max(
+        positions[i].Distance(positions[j])
+        for i in range(len(positions))
+        for j in range(i + 1, len(positions))
+    )
+
+
+def build_oligomer(smiles: str, out_pdb: Path, out_sdf: Path) -> tuple[int, float]:
+    """Generate 3D coordinates with ETKDG + MMFF, write PDB + SDF.
+    Returns (atom count, max pairwise atomic distance in Å)."""
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
         sys.exit(f"ERROR: invalid SMILES for {RESIN_TYPE}")
@@ -98,9 +115,10 @@ def build_oligomer(smiles: str, out_pdb: Path, out_sdf: Path) -> int:
     # bond-order field) is only used for packmol, which just needs coordinates.
     Chem.MolToMolFile(mol, str(out_sdf))
     Chem.MolToPDBFile(mol, str(out_pdb))
-    n_atoms = mol.GetNumAtoms()
-    print(f"  Oligomer: {n_atoms} atoms → {out_pdb}")
-    return n_atoms
+    n_atoms  = mol.GetNumAtoms()
+    extent_a = oligomer_extent_angstrom(mol)
+    print(f"  Oligomer: {n_atoms} atoms, {extent_a:.1f} Å extent → {out_pdb}")
+    return n_atoms, extent_a
 
 
 def gaff2_params(sdf: Path) -> tuple[Path, Path]:
@@ -200,15 +218,21 @@ def main():
     # 1. Oligomer 3D structure (PDB for packmol, SDF for antechamber)
     pdb_single = WORKDIR / "oligomer.pdb"
     sdf_single = WORKDIR / "oligomer.sdf"
-    build_oligomer(cfg["smiles"], pdb_single, sdf_single)
+    _, extent_a = build_oligomer(cfg["smiles"], pdb_single, sdf_single)
 
     # 2. Molecular weight
     mol = Chem.AddHs(Chem.MolFromSmiles(cfg["smiles"]))
     mw  = Descriptors.ExactMolWt(mol)
 
-    # 3. Box size
-    box_a = box_side_angstrom(N_CHAINS, mw, cfg["density_gcc"], pack_frac=PACK_DENSITY_FRAC)
-    print(f"  MW/chain={mw:.1f} g/mol  box={box_a:.1f} Å  (packed at {PACK_DENSITY_FRAC*100:.0f}% density)")
+    # 3. Box size — mass/density sizing, floored against the oligomer's own
+    # extent so the box can never end up geometrically smaller than a single
+    # chain (silently unsolvable for packmol at low n_chains).
+    box_a_density = box_side_angstrom(N_CHAINS, mw, cfg["density_gcc"], pack_frac=PACK_DENSITY_FRAC)
+    box_a_floor   = EXTENT_FLOOR_MULT * extent_a
+    box_a = max(box_a_density, box_a_floor)
+    print(f"  MW/chain={mw:.1f} g/mol  box={box_a:.1f} Å  "
+          f"(density-based={box_a_density:.1f} Å, extent-floor={box_a_floor:.1f} Å, "
+          f"packed at {PACK_DENSITY_FRAC*100:.0f}% density)")
 
     # 4. GAFF2 parameters
     mol2, frcmod = gaff2_params(sdf_single)
