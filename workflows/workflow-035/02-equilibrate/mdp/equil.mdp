@@ -3,7 +3,7 @@ integrator    = md
 nsteps        = EQUIL_NSTEPS
 dt            = 0.001       ; 1 fs
 
-nstxout-compressed = 500
+nstxout-compressed = EQUIL_NSTXOUT
 nstlog        = 500
 nstenergy     = 500
 
