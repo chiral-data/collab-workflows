@@ -23,12 +23,16 @@ print(r['melt_temp_c'] + 273.15)
 MELT_NSTEPS=$(python3  -c "print(int(${MELT_TIME_PS}  / 0.001))")
 EQUIL_NSTEPS=$(python3 -c "print(int(${EQUIL_TIME_PS} / 0.001))")
 
+# Scale the compressed-trajectory write interval so equil.xtc stays ~1,000
+# frames regardless of run length, instead of growing unbounded (issue #220).
+EQUIL_NSTXOUT=$(python3 -c "print(max(500, ${EQUIL_NSTEPS} // 1000))")
+
 echo "=== Polymer Melt-Quench Equilibration ==="
 echo "  Melt temp  : ${MELT_TEMP_K} K"
 echo "  Target temp: ${TARGET_TEMP_K} K"
 echo "  EM steps   : ${EM_STEPS}"
 echo "  Melt NPT   : ${MELT_TIME_PS} ps (${MELT_NSTEPS} steps)"
-echo "  Equil NPT  : ${EQUIL_TIME_PS} ps (${EQUIL_NSTEPS} steps)"
+echo "  Equil NPT  : ${EQUIL_TIME_PS} ps (${EQUIL_NSTEPS} steps, nstxout-compressed=${EQUIL_NSTXOUT})"
 echo ""
 
 mkdir -p outputs
@@ -55,6 +59,7 @@ $GMX mdrun -v -deffnm melt -ntmpi 1
 echo ""
 echo "=== Step 3: NPT equilibration at target temperature (${TARGET_TEMP_K} K) ==="
 sed -e "s/EQUIL_NSTEPS/${EQUIL_NSTEPS}/g" \
+    -e "s/EQUIL_NSTXOUT/${EQUIL_NSTXOUT}/g" \
     -e "s/TARGET_TEMP/${TARGET_TEMP_K}/g" \
     mdp/equil.mdp > equil.mdp
 $GMX grompp -f equil.mdp -c melt.gro -t melt.cpt -p topol.top -o equil.tpr -maxwarn 5
