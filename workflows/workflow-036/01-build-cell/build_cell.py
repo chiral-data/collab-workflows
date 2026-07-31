@@ -151,11 +151,23 @@ def gaff2_params(sdf: Path) -> tuple[Path, Path]:
 
 
 def build_packed_cell(single_pdb: Path, n_chains: int, box_a: float) -> Path:
-    """packmol -> amorphous cell PDB."""
+    """packmol -> amorphous cell PDB.
+
+    packmol exits nonzero (173) when it can't find a *perfect* packing within
+    its loop budget, but still writes the best solution it found to
+    `output` — packmol's own message calls this "very likely...a reasonable
+    starting configuration" and recommends just proceeding (node 02's NPT
+    equilibration relaxes/compresses it further anyway). So this doesn't use
+    check=True: a nonzero exit only fails the job if packmol didn't actually
+    produce cell.pdb. `nloop 200` (vs. packmol's default 50) also cuts down
+    how often the imperfect-packing case is hit in the first place, which
+    matters most for tight packing (e.g. crystallinity="high" -> 75% density).
+    """
     packed_pdb = WORKDIR / "cell.pdb"
     inp = (
         f"tolerance 2.0\n"
         f"filetype pdb\n"
+        f"nloop 200\n"
         f"output {packed_pdb}\n\n"
         f"structure {single_pdb}\n"
         f"  number {n_chains}\n"
@@ -164,7 +176,14 @@ def build_packed_cell(single_pdb: Path, n_chains: int, box_a: float) -> Path:
     )
     inp_file = WORKDIR / "packmol.inp"
     inp_file.write_text(inp)
-    run(f"packmol < {inp_file}")
+    cmd = f"packmol < {inp_file}"
+    print(f"  $ {cmd}", flush=True)
+    result = subprocess.run(cmd, shell=True)
+    if not packed_pdb.exists():
+        raise subprocess.CalledProcessError(result.returncode, cmd)
+    if result.returncode != 0:
+        print(f"  Note: packmol exited {result.returncode} (imperfect packing) "
+              f"but wrote {packed_pdb} — proceeding with the best solution found.")
     return packed_pdb
 
 
