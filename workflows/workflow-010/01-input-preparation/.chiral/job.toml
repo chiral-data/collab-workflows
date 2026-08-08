@@ -1,0 +1,11 @@
+name = "Input Preparation"
+description = "Read, validate, and pair heavy/light chain FASTA sequences into .pt files for ABB3"
+inputs = ["*.fasta"]
+outputs = ["*.pt"]
+
+[container]
+image = "abodybuilder3:2026_06_15"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
