@@ -1,0 +1,10 @@
+name = "Sleep"
+description = "Sleep for 10 minutes so an E2E test can cancel the job while it is Processing"
+outputs = ["sleep.log"]
+
+[container]
+image = "debian:bookworm-slim"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
