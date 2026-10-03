@@ -133,10 +133,11 @@ threshold = float(os.environ.get("PARAM_THRESHOLD", "0.5"))
 | Field | Required | Description |
 |-------|----------|-------------|
 | `name` | Yes | Human-readable name for this job |
-| `inputs` | No | List of filenames this job needs. Silva copies them from dependency outputs into `./inputs/` |
-| `outputs` | Yes | List of filenames this job produces. Must be written to `./outputs/` |
+| `description` | Yes | One line on what this job does |
+| `inputs` | No | Patterns for the files this job needs. Silva copies matches from each dependency's `outputs/` into `./inputs/`. Empty or omitted copies **every** file |
+| `outputs` | No | Patterns for the files this job produces. After the job succeeds, Silva collects matches into `./outputs/`; a script may also write there directly |
 | `[container].image` | Yes | Docker image name and tag |
-| `[scripts].run` | Yes | Main execution script |
+| `[scripts].run` | No | Main execution script. Defaults to `run.sh` |
 
 > **Note:** Job dependencies are declared centrally in `workflow.toml` under `[dependencies]`, not in individual `job.toml` files.
 
@@ -146,13 +147,13 @@ Silva automatically handles data flow between jobs — you don't copy files manu
 
 - Each job writes its output files to `./outputs/`
 - Downstream jobs declare `inputs` in their `.chiral/job.toml` (dependencies are set in `workflow.toml`)
-- When a job finishes, Silva copies its output files into `./inputs/` of every dependent job that lists them
+- Before a job runs, Silva copies the files in each dependency's `./outputs/` into its `./inputs/` — all of them if `inputs` is empty or omitted, otherwise only the ones matching an `inputs` pattern
 
 ```
 01_prepare/outputs/data.csv  →  (Silva copies automatically)  →  02_process/inputs/data.csv
 ```
 
-You only need to make sure the filenames match: what one job writes to `./outputs/` must match what the next job declares in `inputs`.
+If you list `inputs`, make sure the names match: what one job writes to `./outputs/` must match a pattern the next job declares. A pattern that matches nothing is skipped silently, and the job runs without that file.
 
 ### Parameters
 
