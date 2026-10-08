@@ -8,7 +8,7 @@ outputs = [
 ]
 
 [container]
-image = "colabfold:2026_06_09"
+image = "colabfold:2026_10_08"
 use_gpu = true
 
 [scripts]
