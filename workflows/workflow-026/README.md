@@ -18,7 +18,7 @@ AlphaFold2-based 3D protein structure prediction using [ColabFold](https://githu
 
 This workflow takes a protein sequence (or complex of sequences) in FASTA format, validates it, builds a multiple sequence alignment via the public MMseqs2 server, and runs AlphaFold2 inference with GPU acceleration. Up to 5 ranked models are produced per run, each accompanied by a score JSON containing per-residue pLDDT and an N×N PAE matrix. A confidence analysis node aggregates those scores into a structured summary, and a visualization node renders a pLDDT-colored structure PNG and a PAE heatmap with chain boundaries for multimers.
 
-ColabFold (Mirdita et al., 2022) combines the speed of MMseqs2-based MSA search with the accuracy of AlphaFold2 (Jumper et al., 2021), enabling structure prediction in minutes rather than hours. All four nodes run in a single unified Docker image (`colabfold:2026_06_09`) that includes ColabFold, AlphaFold2 weights, PyMOL, and all Python dependencies.
+ColabFold (Mirdita et al., 2022) combines the speed of MMseqs2-based MSA search with the accuracy of AlphaFold2 (Jumper et al., 2021), enabling structure prediction in minutes rather than hours. All four nodes run in a single unified Docker image (`colabfold:2026_10_08`) that includes ColabFold, AlphaFold2 weights, PyMOL, and all Python dependencies.
 
 ## When to use this workflow
 
@@ -273,13 +273,13 @@ PAE heatmap using the `RdYlGn_r` colormap (red = high error, green = low error).
 
 ### Requirements
 
-- [Docker](https://docs.docker.com/get-docker/) with the `colabfold:2026_06_09` image available
+- [Docker](https://docs.docker.com/get-docker/) with the `colabfold:2026_10_08` image available
 - NVIDIA GPU with [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) installed
 - [Silva](https://chiral.bio/silva) for orchestrated pipeline execution
 
 ### Running with Docker
 
-The workflow uses the unified image `colabfold:2026_06_09`. To test an individual node, mount its directory as the workspace and run `run.sh` directly. Example for node 02:
+The workflow uses the unified image `colabfold:2026_10_08`. To test an individual node, mount its directory as the workspace and run `run.sh` directly. Example for node 02:
 
 ```bash
 mkdir -p /tmp/test-02/inputs /tmp/test-02/outputs
@@ -292,7 +292,7 @@ docker run --rm --gpus all \
   -w /workspace \
   -e PARAM_NUM_MODELS=2 \
   -e PARAM_NUM_RECYCLE=3 \
-  colabfold:2026_06_09 bash run.sh
+  colabfold:2026_10_08 bash run.sh
 ```
 
 ### Running on Silva
