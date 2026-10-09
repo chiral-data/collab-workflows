@@ -1,2 +1,2 @@
-name = "E2E Test - Sleep (Job Cancellation)"
-description = "Test-only workflow for E2E job-cancellation checks. One CPU step that sleeps for a configurable duration (`sleep_seconds`, default 120s). Lives on the e2e-epic05 branch only; do not merge to main."
+name = "Sleep"
+description = "One CPU step that sleeps for a configurable duration (`sleep_seconds`, default 120s). Not for main."

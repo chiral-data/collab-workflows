@@ -1,5 +1,5 @@
 name = "Sleep"
-description = "Sleep for a configurable number of seconds (default 120) so an E2E test can cancel the job while it is Processing"
+description = "Sleep for a configurable number of seconds (default 120)"
 outputs = ["sleep.log"]
 
 [container]

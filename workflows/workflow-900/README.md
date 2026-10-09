@@ -1,10 +1,9 @@
-# workflow-900: E2E Test - Sleep (Job Cancellation)
+# workflow-900: Sleep
 
-Test-only workflow used by `chiral-test-e2e` (issue #74) to cancel a running
-job through the UI and verify `Canceled` in the backend and Job History.
+A minimal workflow with one CPU step (`01-sleep`) that counts up one line per
+second for a configurable duration, so a job stays in Processing long enough
+to exercise long-running job behaviour such as cancellation.
 
-- One CPU step (`01-sleep`) that sleeps in `debian:bookworm-slim`; duration is
-  configurable via `sleep_seconds` (default 120s).
-- No inputs, no GPU, tiny image.
-- Lives on the `e2e-epic05` branch only. Do not merge to `main`: `main` feeds
-  the Blueprints list in production.
+- Parameter `sleep_seconds` (default 120) sets the duration.
+- Runs in `debian:bookworm-slim`; no inputs, no GPU.
+- Not for `main`: `main` feeds the production Blueprints list.
