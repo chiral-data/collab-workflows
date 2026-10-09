@@ -1,5 +1,5 @@
 name = "Sleep"
-description = "Sleep for 10 minutes so an E2E test can cancel the job while it is Processing"
+description = "Sleep for a configurable number of seconds (default 120) so an E2E test can cancel the job while it is Processing"
 outputs = ["sleep.log"]
 
 [container]
@@ -8,3 +8,8 @@ use_gpu = false
 
 [scripts]
 run = "run.sh"
+
+[params.sleep_seconds]
+type = "integer"
+default = 120
+hint = "How many seconds the step sleeps before finishing"
