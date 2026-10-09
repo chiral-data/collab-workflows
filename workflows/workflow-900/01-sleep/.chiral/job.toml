@@ -1,0 +1,15 @@
+name = "Sleep"
+description = "Sleep for a configurable number of seconds (default 120)"
+outputs = ["sleep.log"]
+
+[container]
+image = "debian:bookworm-slim"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.sleep_seconds]
+type = "integer"
+default = 120
+hint = "How many seconds the step sleeps before finishing"
