@@ -1,0 +1,25 @@
+name = "Count"
+description = "Print 1..N quickly, with optional stderr lines and per-second timestamps"
+outputs = ["count.log"]
+
+[container]
+image = "debian:bookworm-slim"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.lines]
+type = "integer"
+default = 1000
+hint = "How many numbered lines to print on stdout"
+
+[params.lines_per_second]
+type = "integer"
+default = 10
+hint = "Lines printed per burst; each burst is followed by a one-second sleep"
+
+[params.stderr_every]
+type = "integer"
+default = 0
+hint = "Print 'stderr <k>' on stderr for every multiple k of this value (0 = never)"
