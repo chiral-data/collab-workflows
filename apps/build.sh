@@ -4,6 +4,7 @@ set -e
 
 REGISTRY_URL="ghcr.io/chiral-data"
 FORCE_REBUILD=false
+HF_TOKEN="${HF_TOKEN:-}"
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -11,6 +12,10 @@ while [[ $# -gt 0 ]]; do
     --force | -f)
         FORCE_REBUILD=true
         shift
+        ;;
+    --hf-token)
+        HF_TOKEN="$2"
+        shift 2
         ;;
     *)
         DIRECTORY_ARG="$1"
@@ -51,7 +56,8 @@ function build_and_push_docker_image() {
     fi
 
     echo ""
-    docker build -t ${image_name} --platform linux/amd64 .
+    docker build -t ${image_name} --platform linux/amd64 \
+        ${HF_TOKEN:+--build-arg HF_TOKEN="${HF_TOKEN}"} .
     docker run --gpus all ${image_name}
 
     echo "Tag container image $image_name"
