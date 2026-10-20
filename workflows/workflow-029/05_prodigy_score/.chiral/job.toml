@@ -1,6 +1,6 @@
 name        = "PRODIGY Affinity Scoring"
 description = "Score all filter-passing designs with PRODIGY (ΔG, Kd). Rank by ΔG ascending. Export top N candidates with optional PyMOL scripts. Chain A = binder, chain B = receptor."
-inputs      = ["folded/design_*_rank001.pdb", "folded/filter_report.json"]
+inputs      = ["folded"]
 outputs     = ["results/prodigy_all_designs.json", "results/ranked_designs.csv", "results/top10/*.pdb"]
 
 [container]
