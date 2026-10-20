@@ -279,9 +279,9 @@ Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run take
 | 05 PRODIGY | `ranked_designs.csv`, `prodigy_all_designs.json`, `top10/` | ~A minute |
 | 06 Report | `report/index.html` | Seconds |
 
-If a node finishes far faster than the table suggests and its outputs are empty, it almost certainly received no input files — see below.
+If a node fails almost immediately with a message about missing input files, see the known issue below rather than assuming your target is at fault.
 
-> **Known issue — a node can start with no inputs, silently.** Nodes 03–06 declare input patterns containing a path (`backbones/design_*.pdb`). Input patterns are matched against file *names* only, so these never match and the node runs against an empty working directory instead of failing. The symptom is a node that succeeds in seconds with no outputs, and a final report with an empty funnel. Tracked in #230.
+> **Known issue — a node can start with no inputs.** Nodes 03–06 declare input patterns containing a path (`backbones/design_*.pdb`). Input patterns are matched against file *names* only, so these never match and the node starts against an empty input folder. The node then fails on its own: 03 and 04 exit with `ERROR: No backbone PDB files found in ./inputs/backbones/` or the equivalent for sequences, while 05 and 06 raise a `FileNotFoundError` traceback. The run stops early with a readable reason, so nothing downstream is silently wrong. Tracked in #230.
 
 #### Collecting results
 
