@@ -22,14 +22,12 @@ num_seq_per_target = int(os.environ.get('PARAM_NUM_SEQ_PER_TARGET', '8'))
 sampling_temp = float(os.environ.get('PARAM_SAMPLING_TEMP', '0.1'))
 chain_to_design = os.environ.get('PARAM_CHAIN_TO_DESIGN', 'A')
 use_soluble_model = os.environ.get('PARAM_USE_SOLUBLE_MODEL', 'true').lower() == 'true'
-use_gpu = os.environ.get('PARAM_USE_GPU', 'true').lower() == 'true'
 
-if use_gpu:
-    result = subprocess.run(['nvidia-smi'], capture_output=True)
-    if result.returncode != 0:
-        print('ERROR: GPU requested but nvidia-smi failed.', flush=True)
-        sys.exit(1)
-    print('GPU check passed', flush=True)
+result = subprocess.run(['nvidia-smi'], capture_output=True)
+if result.returncode != 0:
+    print('ERROR: GPU requested but nvidia-smi failed.', flush=True)
+    sys.exit(1)
+print('GPU check passed', flush=True)
 
 # Glob and sort backbone PDBs by integer index for stable ordering
 backbone_paths = sorted(

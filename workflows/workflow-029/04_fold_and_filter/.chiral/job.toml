@@ -39,8 +39,3 @@ hint    = "Maximum Cα RMSD between folded binder and RFdiffusion backbone (Å)"
 type    = "float"
 default = 10.0
 hint    = "Maximum mean interface PAE to pass filter (Å)"
-
-[params.use_gpu]
-type    = "boolean"
-default = true
-hint    = "Requires a CUDA-capable GPU"

@@ -264,9 +264,7 @@ Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run take
 
 **4. Choose quick test or production.** Use the Quick Test column of the table below for your first run: `num_designs=3` with relaxed filters lets everything through, so you can see each node produce output. Budget 15 minutes at `num_seq_per_target=2` and around 45 at the column's default of 8 — node 04 dominates either way. Production (`num_designs=100`, default filters) takes about 12–18 hours, nearly all of it in node 04.
 
-**5. Confirm GPU is enabled** (`use_gpu = true`) before starting. Nodes 02, 03 and 04 have no CPU fallback.
-
-**6. Start the run** and follow it node by node in the log view.
+**5. Start the run** and follow it node by node in the log view. Nodes 02, 03 and 04 request a GPU automatically and have no CPU fallback, so the run needs a GPU-capable worker.
 
 #### What a healthy run looks like
 

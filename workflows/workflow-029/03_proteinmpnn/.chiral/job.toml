@@ -29,8 +29,3 @@ hint    = "Chain to design sequences for (binder chain; always A after RFdiffusi
 type    = "boolean"
 default = true
 hint    = "Use SolubleMPNN model — dramatically improves wet-lab expression rates"
-
-[params.use_gpu]
-type    = "boolean"
-default = true
-hint    = "Requires a CUDA-capable GPU"
