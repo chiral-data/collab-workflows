@@ -238,13 +238,60 @@ docker run --rm \
   biopython:2026_06_30 bash run.sh
 ```
 
-### Running on Silva
+### Running locally with Silva
 
 1. Place `target.pdb` in `input_files/`
 2. Set `SILVA_WORKFLOW_HOME` to the parent directory of `workflows/workflow-029/`
 3. Launch Silva and select "RFdiffusion → ProteinMPNN → PRODIGY Binder Design"
 4. Adjust parameters if needed (see Parameters section)
 5. Click Run — GPU is required for nodes 02, 03, and 04
+
+### Running from the browser
+
+Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run takes most of a day. Start with a quick test run to confirm the pipeline works end to end against your target, then re-run with production settings.
+
+**1. Pick the workflow.** Select **RFdiffusion → ProteinMPNN → PRODIGY Binder Design** from the workflow list.
+
+**2. Upload your target.** Upload your receptor structure to `input_files/` as `target.pdb`. If you upload nothing, the run uses the bundled IL-7Rα benchmark target (PDB 2B5I) — useful for a first end-to-end test, but not for your own campaign. One PDB only; the workflow reads a single receptor.
+
+**3. Set the parameters that depend on your target.**
+
+| Parameter | Set it to |
+|---|---|
+| `receptor_chain` | The chain ID of the receptor in *your* uploaded PDB (node 01 rewrites it to chain A afterwards) |
+| `hotspot_residues` | The surface patch you want the binder to hit, e.g. `A55,A58,A102`. Leave empty and RFdiffusion picks for you — usable, but noticeably less targeted |
+| `binder_length` | `80` suits most PPI targets; shorten only if you have a reason |
+
+**4. Choose quick test or production.** Use the Quick Test column of the table below for your first run: `num_designs=3` with relaxed filters finishes in roughly 20–30 minutes on one GPU, and lets everything through so you can see each node produce output. Production (`num_designs=100`, default filters) takes about 12–18 hours, nearly all of it in node 04.
+
+**5. Confirm GPU is enabled** (`use_gpu = true`) before starting. Nodes 02, 03 and 04 have no CPU fallback.
+
+**6. Start the run** and follow it node by node in the log view.
+
+#### What a healthy run looks like
+
+| Node | What you should see | Share of runtime |
+|---|---|---|
+| 01 Validate Target | `validated_target.pdb`; warnings if a hotspot residue isn't found are informational, not fatal | Seconds |
+| 02 RFdiffusion | One `design_*.pdb` per `num_designs` | Minutes |
+| 03 ProteinMPNN | One `design_*.fasta` per backbone, each holding `num_seq_per_target` sequences | Under a minute |
+| 04 ColabFold Fold & Filter | A folded PDB per sequence plus `filter_report.json` | The bulk of the run |
+| 05 PRODIGY | `ranked_designs.csv`, `prodigy_all_designs.json`, `top10/` | ~A minute |
+| 06 Report | `report/index.html` | Seconds |
+
+If a node finishes far faster than the table suggests and its outputs are empty, it almost certainly received no input files — see below.
+
+> **Known issue — a node can start with no inputs, silently.** Nodes 03–06 declare input patterns containing a path (`backbones/design_*.pdb`). Input patterns are matched against file *names* only, so these never match and the node runs against an empty working directory instead of failing. The symptom is a node that succeeds in seconds with no outputs, and a final report with an empty funnel. Tracked in #230.
+
+#### Collecting results
+
+Download `report/index.html` first — it is self-contained and opens in any browser, with the design funnel, the ranking table, an iPTM vs ΔG scatter and a 3D viewer for the top N. Then take `results/ranked_designs.csv` for the full ranking and `results/top10/*.pdb` for the structures you'd hand to a wet lab.
+
+Read ΔG as a *relative* ranking within one campaign. PRODIGY was validated on crystal structures (r = 0.73, RMSE = 1.89 kcal/mol); its accuracy on predicted structures is unbenchmarked, so the ordering is meaningful but the absolute kcal/mol values are not.
+
+#### If nothing passes the filter
+
+With a small `num_designs` this is expected — that's why the quick-test column relaxes all four thresholds. On a production run, raise `num_designs` before loosening thresholds: a larger backbone pool is the reliable way to find self-consistent designs. See Troubleshooting below.
 
 ### Test vs production settings
 
