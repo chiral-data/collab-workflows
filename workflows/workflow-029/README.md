@@ -262,7 +262,7 @@ Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run take
 | `hotspot_residues` | The surface patch you want the binder to hit, e.g. `A55,A58,A102`. Leave empty and RFdiffusion picks for you — usable, but noticeably less targeted |
 | `binder_length` | `80` suits most PPI targets; shorten only if you have a reason |
 
-**4. Choose quick test or production.** Use the Quick Test column of the table below for your first run: `num_designs=3` with relaxed filters finishes in roughly 20–30 minutes on one GPU, and lets everything through so you can see each node produce output. Production (`num_designs=100`, default filters) takes about 12–18 hours, nearly all of it in node 04.
+**4. Choose quick test or production.** Use the Quick Test column of the table below for your first run: `num_designs=3` with relaxed filters lets everything through, so you can see each node produce output. Budget 15 minutes at `num_seq_per_target=2` and around 45 at the column's default of 8 — node 04 dominates either way. Production (`num_designs=100`, default filters) takes about 12–18 hours, nearly all of it in node 04.
 
 **5. Confirm GPU is enabled** (`use_gpu = true`) before starting. Nodes 02, 03 and 04 have no CPU fallback.
 
@@ -273,15 +273,15 @@ Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run take
 | Node | What you should see | Share of runtime |
 |---|---|---|
 | 01 Validate Target | `validated_target.pdb`; warnings if a hotspot residue isn't found are informational, not fatal | Seconds |
-| 02 RFdiffusion | One `design_*.pdb` per `num_designs` | Minutes |
-| 03 ProteinMPNN | One `design_*.fasta` per backbone, each holding `num_seq_per_target` sequences | Under a minute |
-| 04 ColabFold Fold & Filter | A folded PDB per sequence plus `filter_report.json` | The bulk of the run |
-| 05 PRODIGY | `ranked_designs.csv`, `prodigy_all_designs.json`, `top10/` | ~A minute |
-| 06 Report | `report/index.html` | Seconds |
+| 02 RFdiffusion | `backbones/` holding a `design_N.pdb` and a `design_N.trb` per `num_designs`, plus a `traj/` folder of diffusion trajectories | ~4 min for 3 designs |
+| 03 ProteinMPNN | `sequences/design_NNN.fasta`, one per backbone. Each holds `num_seq_per_target` designed sequences *plus the native input sequence* as its first record | Seconds |
+| 04 ColabFold Fold & Filter | `folded/design_NNN_seq_N_rank001.pdb`, one per designed sequence, and `filter_report.json` scoring every design whether it passed or not | The bulk of the run |
+| 05 PRODIGY | `results/ranked_designs.csv`, `results/prodigy_all_designs.json`, and `results/top{top_n}/` with a `.pdb` and a PyMOL `.pml` per exported design | Seconds |
+| 06 Report | `report/index.html`, self-contained, around 1 MB | Seconds |
 
-If a node fails almost immediately with a message about missing input files, see the known issue below rather than assuming your target is at fault.
+`top{top_n}/` is named from `top_n` at runtime, and holds every design that passed when fewer pass than `top_n` — so a quick test that passes 6 designs gives a `top10/` with 6 in it, not 10.
 
-> **Known issue — a node can start with no inputs.** Nodes 03–06 declare input patterns containing a path (`backbones/design_*.pdb`). Input patterns are matched against file *names* only, so these never match and the node starts against an empty input folder. The node then fails on its own: 03 and 04 exit with `ERROR: No backbone PDB files found in ./inputs/backbones/` or the equivalent for sequences, while 05 and 06 raise a `FileNotFoundError` traceback. The run stops early with a readable reason, so nothing downstream is silently wrong. Tracked in #230.
+The figures above come from a measured run: the bundled 2B5I target, `num_designs=3`, `num_seq_per_target=2`, relaxed quick-test filters, single GPU (RTX 3060 12 GB). End to end in 15 minutes, of which node 04 took about 11 — six ColabFold predictions. Node 04 scales with `num_designs × num_seq_per_target`, so the Quick Test column's `num_seq_per_target=8` is roughly four times that node again.
 
 #### Collecting results
 
@@ -306,7 +306,7 @@ With a small `num_designs` this is expected — that's why the quick-test column
 | `msa_mode` | `single_sequence` | `single_sequence` | `mmseqs2_uniref_env` |
 | `hotspot_residues` | `""` | `""` | `"A55,A58,A102,A105,A106"` (for 2B5I) |
 
-The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` and relaxed filter thresholds completes in approximately 20–30 minutes on a single GPU. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
+The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` and relaxed filter thresholds completes in 15 minutes on a single GPU at `num_seq_per_target=2`, or roughly 45 at the default of 8. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
 
 ## Troubleshooting
 
