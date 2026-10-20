@@ -33,13 +33,11 @@ min_iptm = float(os.environ.get('PARAM_MIN_IPTM', '0.6'))
 min_plddt_binder = float(os.environ.get('PARAM_MIN_PLDDT_BINDER', '80.0'))
 max_bb_rmsd = float(os.environ.get('PARAM_MAX_BB_RMSD', '1.5'))
 max_pae_interaction = float(os.environ.get('PARAM_MAX_PAE_INTERACTION', '10.0'))
-use_gpu = os.environ.get('PARAM_USE_GPU', 'true').lower() == 'true'
 
-if use_gpu:
-    if not os.path.exists('/dev/nvidia0'):
-        print('ERROR: GPU requested but /dev/nvidia0 not found.', flush=True)
-        sys.exit(1)
-    print('GPU check passed', flush=True)
+if not os.path.exists('/dev/nvidia0'):
+    print('ERROR: GPU requested but /dev/nvidia0 not found.', flush=True)
+    sys.exit(1)
+print('GPU check passed', flush=True)
 
 print(f'Filters: iPTM>={min_iptm}, pLDDT_binder>={min_plddt_binder}, '
       f'RMSD<={max_bb_rmsd}, PAE_interaction<={max_pae_interaction}', flush=True)

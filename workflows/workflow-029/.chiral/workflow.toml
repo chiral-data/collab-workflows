@@ -38,11 +38,6 @@ type    = "float"
 default = 0.1
 hint    = "ProteinMPNN sampling temperature: lower = more conservative"
 
-[params.use_gpu]
-type    = "boolean"
-default = true
-hint    = "Requires a CUDA-capable GPU for nodes 02, 03, 04"
-
 [params.min_iptm]
 type    = "float"
 default = 0.6

@@ -238,13 +238,58 @@ docker run --rm \
   biopython:2026_06_30 bash run.sh
 ```
 
-### Running on Silva
+### Running locally with Silva
 
 1. Place `target.pdb` in `input_files/`
 2. Set `SILVA_WORKFLOW_HOME` to the parent directory of `workflows/workflow-029/`
 3. Launch Silva and select "RFdiffusion → ProteinMPNN → PRODIGY Binder Design"
 4. Adjust parameters if needed (see Parameters section)
 5. Click Run — GPU is required for nodes 02, 03, and 04
+
+### Running from the browser
+
+Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run takes most of a day. Start with a quick test run to confirm the pipeline works end to end against your target, then re-run with production settings.
+
+**1. Pick the workflow.** Select **RFdiffusion → ProteinMPNN → PRODIGY Binder Design** from the workflow list.
+
+**2. Upload your target.** Upload your receptor structure to `input_files/` as `target.pdb`. If you upload nothing, the run uses the bundled IL-7Rα benchmark target (PDB 2B5I) — useful for a first end-to-end test, but not for your own campaign. One PDB only; the workflow reads a single receptor.
+
+**3. Set the parameters that depend on your target.**
+
+| Parameter | Set it to |
+|---|---|
+| `receptor_chain` | The chain ID of the receptor in *your* uploaded PDB (node 01 rewrites it to chain A afterwards) |
+| `hotspot_residues` | The surface patch you want the binder to hit, e.g. `A55,A58,A102`. Leave empty and RFdiffusion picks for you — usable, but noticeably less targeted |
+| `binder_length` | `80` suits most PPI targets; shorten only if you have a reason |
+
+**4. Choose quick test or production.** Use the Quick Test column of the table below for your first run: `num_designs=3` with relaxed filters lets everything through, so you can see each node produce output. Budget 15 minutes at `num_seq_per_target=2` and around 45 at the column's default of 8 — node 04 dominates either way. Production (`num_designs=100`, default filters) takes about 12–18 hours, nearly all of it in node 04.
+
+**5. Start the run** and follow it node by node in the log view. Nodes 02, 03 and 04 request a GPU automatically and have no CPU fallback, so the run needs a GPU-capable worker.
+
+#### What a healthy run looks like
+
+| Node | What you should see | Share of runtime |
+|---|---|---|
+| 01 Validate Target | `validated_target.pdb`; warnings if a hotspot residue isn't found are informational, not fatal | Seconds |
+| 02 RFdiffusion | `backbones/` holding a `design_N.pdb` and a `design_N.trb` per `num_designs`, plus a `traj/` folder of diffusion trajectories | ~4 min for 3 designs |
+| 03 ProteinMPNN | `sequences/design_NNN.fasta`, one per backbone. Each holds `num_seq_per_target` designed sequences *plus the native input sequence* as its first record | Seconds |
+| 04 ColabFold Fold & Filter | `folded/design_NNN_seq_N_rank001.pdb`, one per designed sequence, and `filter_report.json` scoring every design whether it passed or not | The bulk of the run |
+| 05 PRODIGY | `results/ranked_designs.csv`, `results/prodigy_all_designs.json`, and `results/top{top_n}/` with a `.pdb` and a PyMOL `.pml` per exported design | Seconds |
+| 06 Report | `report/index.html`, self-contained, around 1 MB | Seconds |
+
+`top{top_n}/` is named from `top_n` at runtime, and holds every design that passed when fewer pass than `top_n` — so a quick test that passes 6 designs gives a `top10/` with 6 in it, not 10.
+
+The figures above come from a measured run: the bundled 2B5I target, `num_designs=3`, `num_seq_per_target=2`, relaxed quick-test filters, single GPU (RTX 3060 12 GB). End to end in 15 minutes, of which node 04 took about 11 — six ColabFold predictions. Node 04 scales with `num_designs × num_seq_per_target`, so the Quick Test column's `num_seq_per_target=8` is roughly four times that node again.
+
+#### Collecting results
+
+Download `report/index.html` first — it is self-contained and opens in any browser, with the design funnel, the ranking table, an iPTM vs ΔG scatter and a 3D viewer for the top N. Then take `results/ranked_designs.csv` for the full ranking and `results/top10/*.pdb` for the structures you'd hand to a wet lab.
+
+Read ΔG as a *relative* ranking within one campaign. PRODIGY was validated on crystal structures (r = 0.73, RMSE = 1.89 kcal/mol); its accuracy on predicted structures is unbenchmarked, so the ordering is meaningful but the absolute kcal/mol values are not.
+
+#### If nothing passes the filter
+
+With a small `num_designs` this is expected — that's why the quick-test column relaxes all four thresholds. On a production run, raise `num_designs` before loosening thresholds: a larger backbone pool is the reliable way to find self-consistent designs. See Troubleshooting below.
 
 ### Test vs production settings
 
@@ -259,7 +304,7 @@ docker run --rm \
 | `msa_mode` | `single_sequence` | `single_sequence` | `mmseqs2_uniref_env` |
 | `hotspot_residues` | `""` | `""` | `"A55,A58,A102,A105,A106"` (for 2B5I) |
 
-The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` and relaxed filter thresholds completes in approximately 20–30 minutes on a single GPU. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
+The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` and relaxed filter thresholds completes in 15 minutes on a single GPU at `num_seq_per_target=2`, or roughly 45 at the default of 8. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
 
 ## Troubleshooting
 

@@ -1,6 +1,6 @@
 name        = "ProteinMPNN Sequence Design"
 description = "Design amino acid sequences for each RFdiffusion backbone. Designs chain A (binder) while holding chain B (receptor) fixed. Outputs one FASTA per backbone containing num_seq_per_target sequences."
-inputs      = ["backbones/design_*.pdb"]
+inputs      = ["backbones"]
 outputs     = ["sequences/design_*.fasta"]
 
 [container]
@@ -29,8 +29,3 @@ hint    = "Chain to design sequences for (binder chain; always A after RFdiffusi
 type    = "boolean"
 default = true
 hint    = "Use SolubleMPNN model — dramatically improves wet-lab expression rates"
-
-[params.use_gpu]
-type    = "boolean"
-default = true
-hint    = "Requires a CUDA-capable GPU"

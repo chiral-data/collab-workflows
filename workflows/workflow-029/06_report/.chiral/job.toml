@@ -1,6 +1,6 @@
 name        = "Campaign Report"
 description = "Generate a self-contained interactive HTML dashboard summarising the full binder design campaign: funnel chart, ranking table, iPTM vs ΔG scatter, top-N 3D viewer, and methodology notes."
-inputs      = ["folded/filter_report.json", "results/prodigy_all_designs.json", "results/top*/*.pdb"]
+inputs      = ["folded", "results"]
 outputs     = ["report/index.html"]
 
 [container]

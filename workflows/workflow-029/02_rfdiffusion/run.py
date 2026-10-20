@@ -11,15 +11,13 @@ binder_length = int(os.environ.get('PARAM_BINDER_LENGTH', '80'))
 hotspot_residues = os.environ.get('PARAM_HOTSPOT_RESIDUES', '').strip()
 noise_scale = float(os.environ.get('PARAM_NOISE_SCALE', '1.0'))
 num_diffusion_steps = int(os.environ.get('PARAM_NUM_DIFFUSION_STEPS', '50'))
-use_gpu = os.environ.get('PARAM_USE_GPU', 'true').lower() == 'true'
 
-if use_gpu:
-    result = subprocess.run(['nvidia-smi'], capture_output=True)
-    if result.returncode != 0:
-        print('ERROR: GPU requested but nvidia-smi failed. Ensure a CUDA-capable GPU is available '
-              'and the NVIDIA Container Toolkit is installed.', flush=True)
-        sys.exit(1)
-    print('GPU check passed', flush=True)
+result = subprocess.run(['nvidia-smi'], capture_output=True)
+if result.returncode != 0:
+    print('ERROR: GPU requested but nvidia-smi failed. Ensure a CUDA-capable GPU is available '
+          'and the NVIDIA Container Toolkit is installed.', flush=True)
+    sys.exit(1)
+print('GPU check passed', flush=True)
 
 # Count receptor residues from chain A of validated_target.pdb (ATOM lines only)
 receptor_len = 0

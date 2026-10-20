@@ -34,8 +34,3 @@ hint    = "RFdiffusion noise scale for Ca denoising; lower = more conservative"
 type    = "integer"
 default = 50
 hint    = "Number of diffusion denoising steps"
-
-[params.use_gpu]
-type    = "boolean"
-default = true
-hint    = "Requires a CUDA-capable GPU"
