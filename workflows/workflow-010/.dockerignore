@@ -1,0 +1,20 @@
+# Don't copy results or large data files into the image —
+# these are mounted at runtime instead.
+results/
+data/
+*.pdb
+*.pt
+*.ckpt
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Editor / OS noise
+.DS_Store
+.vscode/
+*.swp
