@@ -3,7 +3,7 @@
 ColabFold fold-and-filter for binder designs.
 
 Key conventions:
-- Chain A = binder, chain B = receptor (RFdiffusion convention)
+- Chain A = binder, chain B = receptor (relabelled by node 02)
 - ProteinMPNN FASTA files contain num_seq_per_target records each.
   We iterate every record, creating one ColabFold job per sequence.
   Design IDs: design_001_seq_0, design_001_seq_1, ...

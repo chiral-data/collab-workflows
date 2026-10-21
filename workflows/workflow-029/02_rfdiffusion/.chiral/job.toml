@@ -1,5 +1,5 @@
 name        = "RFdiffusion Backbone Design"
-description = "Run RFdiffusion (Watson et al. 2023) to generate binder backbone structures. Output complex PDBs follow RFdiffusion convention: chain A = binder (poly-Gly), chain B = receptor."
+description = "Run RFdiffusion (Watson et al. 2023) to generate binder backbone structures. RFdiffusion emits the receptor as chain A and the binder as chain B, following the contig order; this node relabels them so the output is chain A = binder (poly-Gly), chain B = receptor, which is what the downstream nodes expect."
 inputs      = ["validated_target.pdb"]
 outputs     = ["backbones/design_*.pdb"]
 

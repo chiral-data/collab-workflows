@@ -53,7 +53,7 @@ input_files/target.pdb
 
 Nodes 04 and 06 each depend on two upstream nodes. Node 04 takes sequences from 03 and the validated receptor from 01. Node 06 takes PRODIGY results from 05 and filter metrics from 04.
 
-**Chain convention (critical):** Node 01 always writes the receptor as chain A regardless of the input chain ID. RFdiffusion then outputs complexes where **chain A = binder (poly-Gly backbone), chain B = receptor**. This convention is preserved in all downstream nodes: ProteinMPNN designs chain A, ColabFold folds the binder:receptor pair, and PRODIGY `--selection A B` means binder=A, receptor=B.
+**Chain convention (critical):** Node 01 always writes the receptor as chain A regardless of the input chain ID. RFdiffusion, whose contig lists the receptor first, emits that receptor as chain A and the generated binder as chain B; node 02 relabels them before publishing, so every backbone it writes is **chain A = binder (poly-Gly backbone), chain B = receptor**. This convention holds in all downstream nodes: ProteinMPNN designs chain A, ColabFold folds the binder:receptor pair, and PRODIGY `--selection A B` means binder=A, receptor=B.
 
 ## Input requirements
 
@@ -89,7 +89,7 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Process:** Counts receptor residues in chain A of the validated PDB, constructs a Hydra-format contig string `[A1-{receptor_len}/0 {binder_length}-{binder_length}]`, and runs `scripts/run_inference.py` in the RFdiffusion container. Optionally appends `ppi.hotspot_res` to guide backbone sampling toward specified interface residues. Outputs one PDB per design.
 
-**Scientific notes:** The contig format specifies receptor chain A residues 1 through N (held fixed) plus a newly generated binder of exactly `binder_length` residues (chain A in the output, receptor becomes chain B). Hotspot residues from the Watson et al. 2023 IL-7Rα paper (A55, A58, A102, A105, A106) are known to improve binder success rates on this target. Without hotspots, RFdiffusion samples the full receptor surface.
+**Scientific notes:** The contig format specifies receptor chain A residues 1 through N (held fixed) plus a newly generated binder of exactly `binder_length` residues. RFdiffusion assigns output chains in contig order, so it writes the receptor as A and the binder as B; the node relabels them afterwards so the binder is chain A. Hotspot residues from the Watson et al. 2023 IL-7Rα paper (A55, A58, A102, A105, A106) are known to improve binder success rates on this target. Without hotspots, RFdiffusion samples the full receptor surface.
 
 **Outputs:**
 - `backbones/design_*.pdb` — Complex PDBs: chain A = binder (poly-Gly), chain B = receptor.
