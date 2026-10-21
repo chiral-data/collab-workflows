@@ -85,5 +85,26 @@ else:
 print(f'Running: {" ".join(cmd)}', flush=True)
 subprocess.run(cmd, check=True)
 
+def swap_binder_to_chain_a(path):
+    """Make the generated binder chain A and the receptor chain B.
+
+    The contig puts the receptor first, so RFdiffusion emits it as chain A and
+    the binder as chain B — the reverse of what nodes 03-05 assume. Each line is
+    rewritten from the original, so the two letters cannot collide mid-swap.
+    """
+    with open(path) as f:
+        lines = f.readlines()
+    with open(path, 'w') as f:
+        for line in lines:
+            if line.startswith(('ATOM', 'HETATM', 'TER')) and len(line) > 21 and line[21] in 'AB':
+                line = line[:21] + ('B' if line[21] == 'A' else 'A') + line[22:]
+            f.write(line)
+
+
 pdb_files = glob.glob('./outputs/backbones/design_*.pdb')
-print(f'Generated {len(pdb_files)} backbone PDB(s) in ./outputs/backbones/', flush=True)
+
+for pdb_file in pdb_files:
+    swap_binder_to_chain_a(pdb_file)
+
+print(f'Generated {len(pdb_files)} backbone PDB(s) in ./outputs/backbones/ '
+      f'(binder relabelled to chain A, receptor to chain B)', flush=True)
