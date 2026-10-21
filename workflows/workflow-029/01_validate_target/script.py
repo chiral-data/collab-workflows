@@ -49,10 +49,17 @@ if hotspots_requested:
     # Position in this list is the renumbered ID (1-based), since renumbering is sequential
     original_ids = [res.id[1] for res in atom_residues]
     for hotspot in hotspot_list:
+        chain_prefix = hotspot[:len(hotspot) - len(hotspot.lstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))]
         try:
-            res_num = int(hotspot.lstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
+            res_num = int(hotspot[len(chain_prefix):])
         except ValueError:
             print(f'WARNING: Could not parse hotspot residue ID "{hotspot}" — skipping', flush=True)
+            continue
+        # A bare number means the receptor chain; a letter naming another chain is
+        # a request this node cannot honour, since only receptor_chain is kept
+        if chain_prefix and chain_prefix != receptor_chain:
+            print(f'WARNING: Hotspot residue {hotspot} names chain {chain_prefix}, but the '
+                  f'receptor chain is {receptor_chain} — dropping it from the hotspot set', flush=True)
             continue
         if res_num not in original_ids:
             print(f'WARNING: Hotspot residue {hotspot} (number {res_num}) is not present in the '
