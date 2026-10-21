@@ -38,20 +38,33 @@ if strip_heteroatoms:
 atom_residues = [r for r in chain.get_residues() if r.id[0] == ' ']
 residue_count = len(atom_residues)
 
-# Validate hotspot residues BEFORE renumbering (user provides original PDB numbers)
-if hotspot_residues.strip():
+# Resolve hotspots against the original numbering the user supplied, then carry
+# the result through this node's renumbering: node 02 reads the mapped IDs from
+# the REMARK records below, because by then the original numbers are gone.
+hotspots_requested = bool(hotspot_residues.strip())
+hotspot_mapping = []
+
+if hotspots_requested:
     hotspot_list = [h.strip() for h in hotspot_residues.split(',') if h.strip()]
-    residue_ids = {res.id[1] for res in atom_residues}
+    # Position in this list is the renumbered ID (1-based), since renumbering is sequential
+    original_ids = [res.id[1] for res in atom_residues]
     for hotspot in hotspot_list:
         try:
             res_num = int(hotspot.lstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
         except ValueError:
             print(f'WARNING: Could not parse hotspot residue ID "{hotspot}" — skipping', flush=True)
             continue
-        if res_num not in residue_ids:
-            print(f'WARNING: Hotspot residue {hotspot} (number {res_num}) not found in chain after processing', flush=True)
-        else:
-            print(f'Hotspot residue {hotspot} validated OK', flush=True)
+        if res_num not in original_ids:
+            print(f'WARNING: Hotspot residue {hotspot} (number {res_num}) is not present in the '
+                  f'chain after processing — dropping it from the hotspot set', flush=True)
+            continue
+        mapped_num = original_ids.index(res_num) + 1 if renumber_residues else res_num
+        hotspot_mapping.append((hotspot, f'A{mapped_num}'))
+        print(f'Hotspot residue {hotspot} → A{mapped_num}', flush=True)
+
+    if not hotspot_mapping:
+        print('WARNING: None of the requested hotspot residues could be mapped — downstream '
+              'design will run without hotspots', flush=True)
 
 if renumber_residues:
     for res in atom_residues:
@@ -73,6 +86,18 @@ new_structure.add(new_model)
 io = PDBIO()
 io.set_structure(new_structure)
 io.save('./outputs/validated_target.pdb')
+
+# PDBIO writes no remarks, so the mapping is prepended to the saved file. The
+# summary line is written whenever hotspots were requested, even when nothing
+# mapped, so node 02 can tell "node 01 handled this" from "older input".
+if hotspots_requested:
+    remarks = [f'REMARK 999 HOTSPOT {original} {mapped}\n'
+               for original, mapped in hotspot_mapping]
+    remarks.append('REMARK 999 HOTSPOTS %s\n' % ','.join(m for _, m in hotspot_mapping))
+    with open('./outputs/validated_target.pdb') as f:
+        body = f.read()
+    with open('./outputs/validated_target.pdb', 'w') as f:
+        f.write(''.join(remarks) + body)
 
 print(f'Chain normalization: {receptor_chain} → A', flush=True)
 print(f'Residue count: {residue_count}', flush=True)

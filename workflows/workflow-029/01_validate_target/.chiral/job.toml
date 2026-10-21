@@ -17,7 +17,7 @@ hint    = "Chain ID of the receptor in the input PDB to extract"
 [params.hotspot_residues]
 type    = "string"
 default = ""
-hint    = "Comma-separated residue IDs to validate exist, e.g. A55,A58,A102. Warnings only — does not halt."
+hint    = "Comma-separated residue IDs in your input PDB's numbering, e.g. A55,A58,A102. Translated onto the renumbered output; a missing one is warned about and dropped."
 
 [params.strip_heteroatoms]
 type    = "boolean"

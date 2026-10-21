@@ -23,7 +23,7 @@ hint    = "Length in residues of the designed binder"
 [params.hotspot_residues]
 type    = "string"
 default = ""
-hint    = "Comma-separated residue IDs on receptor to target, e.g. A55,A58,A102. Empty = automatic."
+hint    = "Set this to the same value as node 01, which translates it onto the renumbered target. Empty = automatic."
 
 [params.noise_scale]
 type    = "float"

@@ -12,6 +12,18 @@ hotspot_residues = os.environ.get('PARAM_HOTSPOT_RESIDUES', '').strip()
 noise_scale = float(os.environ.get('PARAM_NOISE_SCALE', '1.0'))
 num_diffusion_steps = int(os.environ.get('PARAM_NUM_DIFFUSION_STEPS', '50'))
 
+
+def read_hotspot_mapping(path):
+    """Hotspot IDs as node 01 renumbered them, or None if it wrote no mapping."""
+    with open(path) as f:
+        for line in f:
+            if line.startswith('REMARK 999 HOTSPOTS'):
+                return line[len('REMARK 999 HOTSPOTS'):].strip()
+            if not line.startswith('REMARK'):
+                break
+    return None
+
+
 result = subprocess.run(['nvidia-smi'], capture_output=True)
 if result.returncode != 0:
     print('ERROR: GPU requested but nvidia-smi failed. Ensure a CUDA-capable GPU is available '
@@ -34,6 +46,8 @@ if receptor_len == 0:
     print('ERROR: No ATOM records found for chain A in validated_target.pdb', flush=True)
     sys.exit(1)
 
+mapped_hotspots = read_hotspot_mapping('./inputs/validated_target.pdb')
+
 print(f'Receptor length (chain A residues): {receptor_len}', flush=True)
 print(f'Binder length: {binder_length}', flush=True)
 print(f'Number of designs: {num_designs}', flush=True)
@@ -53,11 +67,18 @@ cmd = [
     f'diffuser.T={num_diffusion_steps}',
 ]
 
-if hotspot_residues:
-    # Format: "A55,A58,A102" → "[A55,A58,A102]"
-    hotspot_arg = '[' + hotspot_residues.replace(' ', '') + ']'
+if mapped_hotspots is not None:
+    # Node 01 renumbered the target, so only its mapping matches these coordinates
+    source = 'mapped by node 01'
+    hotspots = mapped_hotspots
+else:
+    source = 'raw parameter — target carries no hotspot mapping'
+    hotspots = hotspot_residues.replace(' ', '')
+
+if hotspots:
+    hotspot_arg = '[' + hotspots + ']'
     cmd.append(f'ppi.hotspot_res={hotspot_arg}')
-    print(f'Hotspot residues: {hotspot_arg}', flush=True)
+    print(f'Hotspot residues ({source}): {hotspot_arg}', flush=True)
 else:
     print('No hotspot residues specified — RFdiffusion will select automatically', flush=True)
 

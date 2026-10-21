@@ -74,7 +74,7 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Goal:** Clean the input receptor PDB and normalize it to a canonical format for downstream tools.
 
-**Process:** Reads `target.pdb` with BioPython, selects the chain specified by `receptor_chain`, and optionally strips heteroatoms. Validates any hotspot residues against the original PDB numbering before renumbering (since users provide hotspots based on the source structure), then renumbers residues starting from 1 using a detach-renumber-add pattern to avoid ID collisions. Writes the output always as chain A regardless of the input chain identity.
+**Process:** Reads `target.pdb` with BioPython, selects the chain specified by `receptor_chain`, and optionally strips heteroatoms. Resolves any hotspot residues against the original PDB numbering (since users provide hotspots based on the source structure), then renumbers residues starting from 1 using a detach-renumber-add pattern to avoid ID collisions. The resolved hotspot IDs are written onto the output as `REMARK 999 HOTSPOT <original> <renumbered>` records, plus a `REMARK 999 HOTSPOTS` summary line, because the original numbering is gone by the time node 02 runs. A hotspot absent from the structure is named in a warning and dropped from the set. Writes the output always as chain A regardless of the input chain identity.
 
 **Scientific notes:** Chain normalization to A is required because RFdiffusion hardcodes the receptor as chain A in its contig specification. Stripping heteroatoms removes ligands and waters that can interfere with RFdiffusion's backbone sampling. Residue renumbering prevents gaps in residue numbering that can confuse downstream tools.
 
@@ -87,9 +87,9 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Goal:** Generate binder backbone structures conditioned on the receptor surface.
 
-**Process:** Counts receptor residues in chain A of the validated PDB, constructs a Hydra-format contig string `[A1-{receptor_len}/0 {binder_length}-{binder_length}]`, and runs `scripts/run_inference.py` in the RFdiffusion container. Optionally appends `ppi.hotspot_res` to guide backbone sampling toward specified interface residues. Outputs one PDB per design.
+**Process:** Counts receptor residues in chain A of the validated PDB, constructs a Hydra-format contig string `[A1-{receptor_len}/0 {binder_length}-{binder_length}]`, and runs `scripts/run_inference.py` in the RFdiffusion container. Optionally appends `ppi.hotspot_res` to guide backbone sampling toward specified interface residues, taking the IDs from node 01's `REMARK 999 HOTSPOTS` line so they match the renumbered coordinates; a target carrying no such line falls back to the raw parameter. Outputs one PDB per design.
 
-**Scientific notes:** The contig format specifies receptor chain A residues 1 through N (held fixed) plus a newly generated binder of exactly `binder_length` residues (chain A in the output, receptor becomes chain B). Hotspot residues from the Watson et al. 2023 IL-7Rα paper (A55, A58, A102, A105, A106) are known to improve binder success rates on this target. Without hotspots, RFdiffusion samples the full receptor surface.
+**Scientific notes:** The contig format specifies receptor chain A residues 1 through N (held fixed) plus a newly generated binder of exactly `binder_length` residues (chain A in the output, receptor becomes chain B). Hotspot residues from the Watson et al. 2023 IL-7Rα paper (A55, A58, A102, A105, A106) are known to improve binder success rates on this target. Given in that source numbering, they resolve to A50, A53, A92 and A93 after renumbering; A102 falls in a disordered gap and is not present in the bundled `target.pdb` at all. Without hotspots, RFdiffusion samples the full receptor surface.
 
 **Outputs:**
 - `backbones/design_*.pdb` — Complex PDBs: chain A = binder (poly-Gly), chain B = receptor.
@@ -163,7 +163,7 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 - **Type:** string
 - **Default:** `""`
-- **Description:** Comma-separated residue IDs on the receptor (after renumbering) to bias backbone sampling, e.g. `"A55,A58,A102"`.
+- **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A55,A58,A102"`. Given in the numbering of **your input PDB** — node 01 translates them onto the renumbered structure it hands to node 02.
 - **Guidance:** Empty means RFdiffusion samples the full receptor surface. Specifying hotspots from a known binding partner dramatically improves success rate when the epitope is defined (Watson et al. 2023 report ~5× improvement on IL-7Rα with the IL-7 contact patch hotspots).
 
 ### num_designs
@@ -270,7 +270,7 @@ Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run take
 
 | Node | What you should see | Share of runtime |
 |---|---|---|
-| 01 Validate Target | `validated_target.pdb`; warnings if a hotspot residue isn't found are informational, not fatal | Seconds |
+| 01 Validate Target | `validated_target.pdb`, carrying the hotspot mapping as `REMARK 999` records; a hotspot that isn't found is warned about and dropped, not fatal | Seconds |
 | 02 RFdiffusion | `backbones/` holding a `design_N.pdb` and a `design_N.trb` per `num_designs`, plus a `traj/` folder of diffusion trajectories | ~4 min for 3 designs |
 | 03 ProteinMPNN | `sequences/design_NNN.fasta`, one per backbone. Each holds `num_seq_per_target` designed sequences *plus the native input sequence* as its first record | Seconds |
 | 04 ColabFold Fold & Filter | `folded/design_NNN_seq_N_rank001.pdb`, one per designed sequence, and `filter_report.json` scoring every design whether it passed or not | The bulk of the run |
