@@ -43,14 +43,62 @@ print(f'Filters: iPTM>={min_iptm}, pLDDT_binder>={min_plddt_binder}, '
       f'RMSD<={max_bb_rmsd}, PAE_interaction<={max_pae_interaction}', flush=True)
 
 
-def get_receptor_sequence(pdb_path):
-    """Extract receptor sequence from validated_target.pdb chain A using PPBuilder."""
+def read_segment_records(pdb_path):
+    """(first, last, count) per receptor segment, as node 01 recorded them."""
+    segments = []
+    with open(pdb_path) as f:
+        for line in f:
+            if line.startswith('REMARK 999 SEGMENT '):
+                fields = line.split()
+                segments.append((int(fields[5]), int(fields[6]), int(fields[7])))
+            elif not line.startswith('REMARK'):
+                break
+    return segments
+
+
+def read_hotspot_numbers(pdb_path):
+    """Residue numbers of the hotspots node 01 resolved, in its output numbering."""
+    numbers = []
+    with open(pdb_path) as f:
+        for line in f:
+            if line.startswith('REMARK 999 HOTSPOTS'):
+                for hotspot in line[len('REMARK 999 HOTSPOTS'):].strip().split(','):
+                    hotspot = hotspot.strip().lstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+                    if hotspot:
+                        numbers.append(int(hotspot))
+            elif not line.startswith('REMARK'):
+                break
+    return numbers
+
+
+def choose_receptor_segment(segments, hotspots):
+    """The segment carrying the epitope, or the largest when none is named."""
+    def rank(segment):
+        first, last, count = segment
+        return (sum(1 for h in hotspots if first <= h <= last), count)
+
+    return max(segments, key=rank)
+
+
+def get_receptor_sequence(pdb_path, bounds=None):
+    """Receptor sequence from validated_target.pdb chain A using PPBuilder.
+
+    PPBuilder splits on the C-N distance and the fragments are concatenated, so a
+    receptor spanning a chain break would be folded as though the gap were a
+    peptide bond. bounds restricts the sequence to one contiguous segment.
+    """
     parser = PDBParser(QUIET=True)
     structure = parser.get_structure('receptor', pdb_path)
     ppb = PPBuilder()
     seqs = []
     for pp in ppb.build_peptides(structure[0]['A']):
-        seqs.append(str(pp.get_sequence()))
+        sequence = str(pp.get_sequence())
+        if bounds is None:
+            seqs.append(sequence)
+            continue
+        first, last = bounds
+        seqs.append(''.join(letter for res, letter in zip(pp, sequence)
+                            if first <= res.id[1] <= last))
     return ''.join(seqs)
 
 
@@ -102,8 +150,19 @@ def compute_rmsd(folded_pdb_path, backbone_pdb_path):
     return float(sup.rms), None
 
 
-# Extract receptor sequence once
-receptor_seq = get_receptor_sequence('./inputs/validated_target.pdb')
+# Extract receptor sequence once. A receptor in several segments is trimmed to
+# the one carrying the epitope: ColabFold has no way to express a gap inside a
+# chain, so the alternative is folding two lobes as though they were bonded.
+receptor_bounds = None
+segment_records = read_segment_records('./inputs/validated_target.pdb')
+if len(segment_records) > 1:
+    first, last, count = choose_receptor_segment(
+        segment_records, read_hotspot_numbers('./inputs/validated_target.pdb'))
+    receptor_bounds = (first, last)
+    print(f'Receptor spans {len(segment_records)} segments; folding A{first}-{last} '
+          f'({count} residues) — the segment carrying the epitope', flush=True)
+
+receptor_seq = get_receptor_sequence('./inputs/validated_target.pdb', receptor_bounds)
 if not receptor_seq:
     print('ERROR: Could not extract receptor sequence from validated_target.pdb', flush=True)
     sys.exit(1)

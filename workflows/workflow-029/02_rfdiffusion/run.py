@@ -13,8 +13,46 @@ noise_scale = float(os.environ.get('PARAM_NOISE_SCALE', '1.0'))
 num_diffusion_steps = int(os.environ.get('PARAM_NUM_DIFFUSION_STEPS', '50'))
 
 
+def read_receptor_segments(path):
+    """The receptor's contiguous segments as node 01 found them, or None."""
+    with open(path) as f:
+        for line in f:
+            if line.startswith('REMARK 999 SEGMENTS'):
+                return line[len('REMARK 999 SEGMENTS'):].strip()
+            if not line.startswith('REMARK'):
+                break
+    return None
+
+
+def derive_receptor_segments(path):
+    """Fallback for a target carrying no segment record: split chain A on every
+    gap in its numbering. RFdiffusion indexes CA records only, so they define the
+    ranges a contig may name."""
+    numbers = []
+    seen = set()
+    with open(path) as f:
+        for line in f:
+            if line.startswith('ATOM') and line[21] == 'A' and line[12:16].strip() == 'CA':
+                if line[26] != ' ':
+                    continue
+                number = int(line[22:26])
+                if number not in seen:
+                    seen.add(number)
+                    numbers.append(number)
+    if not numbers:
+        return None
+    numbers.sort()
+    segments = [[numbers[0], numbers[0]]]
+    for number in numbers[1:]:
+        if number == segments[-1][1] + 1:
+            segments[-1][1] = number
+        else:
+            segments.append([number, number])
+    return '/'.join(f'A{first}-{last}' for first, last in segments)
+
+
 def read_hotspot_mapping(path):
-    """Hotspot IDs as node 01 renumbered them, or None if it wrote no mapping."""
+    """Hotspot IDs as node 01 resolved them, or None if it wrote no mapping."""
     with open(path) as f:
         for line in f:
             if line.startswith('REMARK 999 HOTSPOTS'):
@@ -48,12 +86,26 @@ if receptor_len == 0:
 
 mapped_hotspots = read_hotspot_mapping('./inputs/validated_target.pdb')
 
+segments = read_receptor_segments('./inputs/validated_target.pdb')
+if segments is not None:
+    segment_source = 'recorded by node 01'
+else:
+    segments = derive_receptor_segments('./inputs/validated_target.pdb')
+    segment_source = 'derived from the target'
+
+if not segments:
+    print('ERROR: Could not determine the receptor segments of validated_target.pdb', flush=True)
+    sys.exit(1)
+
 print(f'Receptor length (chain A residues): {receptor_len}', flush=True)
+print(f'Receptor segments ({segment_source}): {segments}', flush=True)
 print(f'Binder length: {binder_length}', flush=True)
 print(f'Number of designs: {num_designs}', flush=True)
 
-# Contig: chain A is always hardcoded — node 01 guarantees chain A output
-contig = f'[A1-{receptor_len}/0 {binder_length}-{binder_length}]'
+# Chain A is hardcoded — node 01 guarantees chain A output. Segments are joined
+# with '/', which advances RFdiffusion's positional index by the real size of
+# each gap; '/0' would instead declare a 200-index break, i.e. a separate chain.
+contig = f'[{segments}/0 {binder_length}-{binder_length}]'
 
 cmd = [
     'python3.9', '/app/RFdiffusion/scripts/run_inference.py',
@@ -68,7 +120,8 @@ cmd = [
 ]
 
 if mapped_hotspots is not None:
-    # Node 01 renumbered the target, so only its mapping matches these coordinates
+    # Node 01 resolved these against the coordinates it wrote; RFdiffusion matches
+    # hotspots against that same numbering
     source = 'mapped by node 01'
     hotspots = mapped_hotspots
 else:

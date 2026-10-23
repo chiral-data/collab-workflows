@@ -59,14 +59,14 @@ Nodes 04 and 06 each depend on two upstream nodes. Node 04 takes sequences from 
 
 Place one PDB file in `input_files/`:
 
-- **`target.pdb`** — Receptor structure in PDB format. Must contain at least one protein chain. The chain specified by `receptor_chain` (default `A`) is extracted and cleaned. All other chains are discarded. Node 01 renumbers residues and strips heteroatoms by default.
+- **`target.pdb`** — Receptor structure in PDB format. Must contain at least one protein chain. The chain specified by `receptor_chain` (default `A`) is extracted and cleaned. All other chains are discarded. Node 01 strips heteroatoms by default and preserves the deposited residue numbering, which is what lets node 02 describe the receptor's real chain breaks.
 
 The IL-2 test target (PDB 2B5I, chain A) is included. To download a different target:
 ```bash
 wget https://files.rcsb.org/download/XXXX.pdb -O input_files/target.pdb
 ```
 
-Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the binding interface, no non-standard residues unless `strip_heteroatoms` is set to `true` (default).
+Recommended structure quality: resolution ≤ 3.0 Å, no non-standard residues unless `strip_heteroatoms` is set to `true` (default). Gaps in the deposited coordinates are detected and expressed to RFdiffusion as real index jumps, so a target with disordered loops is usable — but a gap *inside* the surface you mean to target still removes the epitope you wanted.
 
 ## Workflow nodes
 
@@ -74,12 +74,32 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Goal:** Clean the input receptor PDB and normalize it to a canonical format for downstream tools.
 
-**Process:** Reads `target.pdb` with BioPython, selects the chain specified by `receptor_chain`, and optionally strips heteroatoms. Resolves any hotspot residues against the original PDB numbering (since users provide hotspots based on the source structure), then renumbers residues starting from 1 using a detach-renumber-add pattern to avoid ID collisions. The resolved hotspot IDs are written onto the output as `REMARK 999 HOTSPOT <original> <renumbered>` records, plus a `REMARK 999 HOTSPOTS` summary line, because the original numbering is gone by the time node 02 runs. A hotspot absent from the structure is named in a warning and dropped from the set. Writes the output always as chain A regardless of the input chain identity.
+**Process:** Reads `target.pdb` with BioPython, selects the chain specified by `receptor_chain`, and optionally strips heteroatoms. Resolves any hotspot residues against the input PDB numbering, which with the default `renumber_residues = false` is an identity mapping. Then walks the chain and records its contiguous segments and the breaks between them, measuring the Cα–Cα distance across each one. Writes the output always as chain A regardless of the input chain identity.
 
-**Scientific notes:** Chain normalization to A is required because RFdiffusion hardcodes the receptor as chain A in its contig specification. Stripping heteroatoms removes ligands and waters that can interfere with RFdiffusion's backbone sampling. Residue renumbering prevents gaps in residue numbering that can confuse downstream tools.
+A residue is split off into a new segment at every discontinuity in the numbering, because a contig range may only name residues RFdiffusion has indexed. A Cα–Cα distance above **4.5 Å** is additionally recorded as a break: an ideal trans peptide bond spans 3.80 Å, so the threshold leaves headroom for strained geometry without admitting a real break. A break with no accompanying gap in the numbering is reported but cannot be acted on — the index jump a contig encodes is `next - prev - 1`, which is zero in that case. Residues with no Cα atom, and residues carrying an insertion code, are left out of the segments with a warning, matching the residues RFdiffusion is able to address.
+
+All of this travels to node 02 as `REMARK 999` records prepended to the output, alongside the hotspot records:
+
+```
+REMARK 999 HOTSPOT A38 A38                  original → resolved, one per hotspot
+REMARK 999 HOTSPOTS A38,A42,A45,A68         the summary line node 02 reads
+REMARK 999 NUMBERING ORIGINAL               or RENUMBERED
+REMARK 999 SEGMENT 1 A 6 75 70              index, chain, first, last, residue count
+REMARK 999 SEGMENT 2 A 80 98 19
+REMARK 999 SEGMENT 3 A 103 133 31
+REMARK 999 SEGMENTS A6-75/A80-98/A103-133   the summary line node 02 reads
+REMARK 999 BREAK 75 80 4 7.24 BOTH          prev, next, missing, Cα–Cα, kind
+REMARK 999 BREAK 98 103 4 9.28 BOTH
+```
+
+`kind` is `NUMBERING`, `DISTANCE` or `BOTH`, naming which criterion fired. The `SEGMENTS` line is written even for a gapless target, so node 02 can tell "node 01 handled this" from "older input". A hotspot absent from the structure is named in a warning and dropped from the set.
+
+**Scientific notes:** Chain normalization to A is required because RFdiffusion hardcodes the receptor as chain A in its contig specification. Stripping heteroatoms removes ligands and waters that can interfere with RFdiffusion's backbone sampling.
+
+The deposited numbering is preserved because the gaps in it are load-bearing. RFdiffusion is given real coordinates either way — the atoms never move — but what tells the model two residues are bonded is the difference between their positional indices. Renumbering sequentially from 1 closes every gap, so the residues flanking a disordered loop arrive as consecutive, which is to say as bonded; on the bundled target that presented pairs 7.2 Å and 9.3 Å apart as peptide bonds, and on chain D a pair 33.9 Å apart. Preserving the numbering lets node 02 name each real segment, and RFdiffusion then advances its index by `next_start - prev_end - 1` between `/`-separated segments of one chain. `renumber_residues = true` restores the old behaviour and warns, naming each break it fuses; it is there for a target whose numbering a contig cannot express at all — non-positive or duplicated residue numbers.
 
 **Outputs:**
-- `validated_target.pdb` — Cleaned receptor PDB, chain A, residues numbered from 1.
+- `validated_target.pdb` — Cleaned receptor PDB, chain A, residues numbered as in the input, carrying the `REMARK 999` hotspot, segment and break records above.
 
 ---
 
@@ -87,9 +107,13 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Goal:** Generate binder backbone structures conditioned on the receptor surface.
 
-**Process:** Counts receptor residues in chain A of the validated PDB, constructs a Hydra-format contig string `[A1-{receptor_len}/0 {binder_length}-{binder_length}]`, and runs `scripts/run_inference.py` in the RFdiffusion container. Optionally appends `ppi.hotspot_res` to guide backbone sampling toward specified interface residues, taking the IDs from node 01's `REMARK 999 HOTSPOTS` line so they match the renumbered coordinates; a target carrying no such line falls back to the raw parameter. Outputs one PDB per design.
+**Process:** Reads the receptor's segments from node 01's `REMARK 999 SEGMENTS` line, constructs a Hydra-format contig string `[{segments}/0 {binder_length}-{binder_length}]` — for the bundled target, `[A6-75/A80-98/A103-133/0 80-80]` — and runs `scripts/run_inference.py` in the RFdiffusion container. A target carrying no such line, such as one written by an older node 01, has its segments derived from its own Cα records on gaps in the numbering alone; for a renumbered target that yields the single span `[A1-{receptor_len}/0 ...]` this node used to build unconditionally. Optionally appends `ppi.hotspot_res` to guide backbone sampling toward specified interface residues, taking the IDs from node 01's `REMARK 999 HOTSPOTS` line so they match the coordinates it wrote; a target carrying no such line falls back to the raw parameter. Outputs one PDB per design.
 
-**Scientific notes:** The contig format specifies receptor chain A residues 1 through N (held fixed) plus a newly generated binder of exactly `binder_length` residues. RFdiffusion assigns output chains in contig order, so it writes the receptor as A and the binder as B; the node relabels them afterwards so the binder is chain A. For the bundled target, `A38,A42,A45,A68` are the IL-2 residues that contact IL-2Rα in this very structure — Arg38, Phe42, Tyr45 and Glu68, the CD25-binding face. Given in that source numbering, they resolve to A33, A37, A40 and A63 after renumbering. Without hotspots, RFdiffusion samples the full receptor surface.
+**Scientific notes:** The contig lists each contiguous run of the receptor (held fixed) plus a newly generated binder of exactly `binder_length` residues. The separator between two runs carries the meaning: `/` keeps them in one chain and advances RFdiffusion's positional index by the real size of the gap, whereas `/0` declares a 200-index break — a separate chain, free to drift away. The receptor's segments are therefore joined with `/`, and only the binder is preceded by `/0`.
+
+RFdiffusion assigns output chains in contig order, so it writes the receptor as A and the binder as B; the node relabels them afterwards so the binder is chain A. The receptor keeps its input numbering in the output, gaps included, while the designed chain is numbered from 1.
+
+For the bundled target, `A38,A42,A45,A68` are the IL-2 residues that contact IL-2Rα in this very structure — Arg38, Phe42, Tyr45 and Glu68, the CD25-binding face. They are passed through as given, since node 01 no longer renumbers. Without hotspots, RFdiffusion samples the full receptor surface.
 
 **Outputs:**
 - `backbones/design_*.pdb` — Complex PDBs: chain A = binder (poly-Gly), chain B = receptor.
@@ -113,9 +137,11 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Goal:** Fold each designed sequence as a binder:receptor complex and apply four structural self-consistency filters.
 
-**Process:** Iterates over every sequence record in every FASTA file (creating one ColabFold job per sequence, not per file). For each sequence, concatenates the binder sequence and the receptor sequence extracted from `validated_target.pdb` with a `:` separator to form the ColabFold multimer input. Runs `colabfold_batch` with AlphaFold2 multimer v3. Extracts metrics from `*_scores_rank_001_*.json`: iPTM directly; pLDDT for the binder as `mean(plddt[:binder_length])`; interface PAE as the mean of the off-diagonal cross-chain block of the PAE matrix. Computes Cα RMSD by aligning folded chain A against the backbone PDB by sequence position (not residue number), warning and skipping if the length difference exceeds 5 residues.
+**Process:** Iterates over every sequence record in every FASTA file (creating one ColabFold job per sequence, not per file). For each sequence, concatenates the binder sequence and the receptor sequence extracted from `validated_target.pdb` with a `:` separator to form the ColabFold multimer input. When node 01 reports the receptor in more than one segment, the sequence is trimmed to the single segment carrying the hotspots — the largest one if no hotspots were given. Runs `colabfold_batch` with AlphaFold2 multimer v3. Extracts metrics from `*_scores_rank_001_*.json`: iPTM directly; pLDDT for the binder as `mean(plddt[:binder_length])`; interface PAE as the mean of the off-diagonal cross-chain block of the PAE matrix. Computes Cα RMSD by aligning folded chain A against the backbone PDB by sequence position (not residue number), warning and skipping if the length difference exceeds 5 residues.
 
-**Scientific notes:** The four filter thresholds follow published standards: iPTM ≥ 0.6 and PAE < 10 Å (Zhang et al. 2025; BinderFlow 2025), pLDDT > 80 (Bennett et al. 2023), Cα RMSD ≤ 1.5 Å (Bennett et al. 2023 scRMSD filter). Designs that fold to a structure matching the RFdiffusion backbone (low RMSD) and show confident interface prediction (high iPTM, low PAE) are the most promising experimental candidates.
+**Scientific notes:** The receptor is trimmed rather than folded whole because ColabFold has no way to express a gap inside a chain: concatenating the fragments would fold two lobes as though a peptide bond joined them, which is the same fault node 02 avoids with its contig. The cost is real — surface outside the chosen segment is absent, so a binder that contacts two lobes is scored against one. Splitting the receptor across `:` instead would make iPTM a global measure over binder plus *n* receptor chains, which silently changes what the two interface filters mean.
+
+The four filter thresholds follow published standards: iPTM ≥ 0.6 and PAE < 10 Å (Zhang et al. 2025; BinderFlow 2025), pLDDT > 80 (Bennett et al. 2023), Cα RMSD ≤ 1.5 Å (Bennett et al. 2023 scRMSD filter). Designs that fold to a structure matching the RFdiffusion backbone (low RMSD) and show confident interface prediction (high iPTM, low PAE) are the most promising experimental candidates.
 
 **Outputs:**
 - `folded/design_*_rank001.pdb` — Folded complex PDBs for passing designs only.
@@ -159,13 +185,22 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Trade-off:** Only one chain is used as the receptor. If the functional binding surface spans multiple chains, you must provide a pre-assembled structure.
 
-**What is in the bundled 2B5I.** The deposit is the quaternary IL-2 receptor complex: chain A is interleukin-2, B is IL-2Rβ, C is the common γ chain, and D is IL-2Rα (CD25). The example targets chain A, so the designed binder competes with the receptors for IL-2. Any of the other chains is a legitimate target instead, with one caveat worth knowing before you pick: node 01 renumbers residues sequentially, which closes over any gap in the deposited coordinates and presents the two flanking residues to RFdiffusion as though they were bonded. Chain D carries a 38-residue gap whose ends are 33.9 Å apart, so it is a poor choice until that is handled; chain C has no gaps at all, and chain B one of 6 residues.
+**What is in the bundled 2B5I.** The deposit is the quaternary IL-2 receptor complex: chain A is interleukin-2, B is IL-2Rβ, C is the common γ chain, and D is IL-2Rα (CD25). The example targets chain A, so the designed binder competes with the receptors for IL-2. Any of the other chains is a legitimate target instead. Each carries disordered loops, which node 01 measures and node 02 expresses to RFdiffusion as real gaps:
+
+| Chain | Residues | Segments | Breaks |
+|---|---|---|---|
+| A (IL-2) | 120 | `A6-75/A80-98/A103-133` | 4 missing at 7.2 Å, 4 at 9.3 Å |
+| B (IL-2Rβ) | 196 | `A6-24/A31-207` | 6 missing at 12.5 Å |
+| C (γc) | 191 | `A34-224` | none |
+| D (IL-2Rα) | 122 | `A1-47/A53-64/A103-165` | 5 missing at 4.9 Å, 38 at 33.9 Å |
+
+Chain D is usable, but its 38-residue gap leaves the target presenting as two lobes that are 33.9 Å apart; hotspots should sit within one of them, since node 04 folds the receptor one segment at a time.
 
 ### hotspot_residues
 
 - **Type:** string
 - **Default:** `""`
-- **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A38,A42,A45"`. Given in the numbering of **your input PDB** — node 01 translates them onto the renumbered structure it hands to node 02.
+- **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A38,A42,A45"`. Given in the numbering of **your input PDB**, and used as given — node 01 preserves that numbering, so no translation happens unless `renumber_residues` is on. They also decide which segment node 04 folds when the receptor has chain breaks.
 - **Guidance:** Empty means RFdiffusion samples the full receptor surface. Specifying hotspots from a known binding partner improves success rate when the epitope is defined; Watson et al. 2023 report roughly a 5× improvement from targeting a known contact patch. Where the deposit contains the natural partner, as this one does, the epitope can be read straight off the structure.
 
 ### num_designs
@@ -232,12 +267,13 @@ Interactive single-file HTML dashboard. Open in any modern browser. Contains: de
 ```bash
 # Node 01: validate receptor
 docker run --rm \
-  -v $(pwd)/workflows/workflow-029/input_files:/workspace/inputs \
-  -v /tmp/node01_out:/workspace/outputs \
-  -v $(pwd)/workflows/workflow-029/01_validate_target:/workspace \
-  -w /workspace \
-  -e PARAM_TARGET_CHAIN=A \
-  biopython:2026_06_30 bash run.sh
+  -v $(pwd)/workflows/workflow-029/input_files:/work/inputs:ro \
+  -v /tmp/node01_out:/work/outputs \
+  -v $(pwd)/workflows/workflow-029/01_validate_target:/src:ro \
+  -w /work \
+  -e PARAM_RECEPTOR_CHAIN=A \
+  -e PARAM_HOTSPOT_RESIDUES=A38,A42,A45,A68 \
+  biopython:2026_06_30 python3 /src/script.py
 ```
 
 ### Running locally with Silva
@@ -272,7 +308,7 @@ Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run take
 
 | Node | What you should see | Share of runtime |
 |---|---|---|
-| 01 Validate Target | `validated_target.pdb`, carrying the hotspot mapping as `REMARK 999` records; a hotspot that isn't found is warned about and dropped, not fatal | Seconds |
+| 01 Validate Target | `validated_target.pdb`, carrying the hotspot mapping, the receptor's segments and any chain breaks as `REMARK 999` records; a hotspot that isn't found is warned about and dropped, not fatal | Seconds |
 | 02 RFdiffusion | `backbones/` holding a `design_N.pdb` and a `design_N.trb` per `num_designs`, plus a `traj/` folder of diffusion trajectories | ~4 min for 3 designs |
 | 03 ProteinMPNN | `sequences/design_NNN.fasta`, one per backbone. Each holds `num_seq_per_target` designed sequences *plus the native input sequence* as its first record | Seconds |
 | 04 ColabFold Fold & Filter | `folded/design_NNN_seq_N_rank001.pdb`, one per designed sequence, and `filter_report.json` scoring every design whether it passed or not | The bulk of the run |
