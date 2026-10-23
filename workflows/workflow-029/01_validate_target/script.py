@@ -5,13 +5,6 @@ import sys
 from Bio import PDB
 from Bio.PDB import PDBParser, PDBIO, Select
 
-os.makedirs('./outputs', exist_ok=True)
-
-receptor_chain = os.environ.get('PARAM_RECEPTOR_CHAIN', 'A')
-hotspot_residues = os.environ.get('PARAM_HOTSPOT_RESIDUES', '')
-strip_heteroatoms = os.environ.get('PARAM_STRIP_HETEROATOMS', 'true').lower() == 'true'
-renumber_residues = os.environ.get('PARAM_RENUMBER_RESIDUES', 'false').lower() == 'true'
-
 # An ideal trans peptide bond spans 3.80 Å Cα–Cα; 4.5 Å leaves headroom for
 # strained geometry without admitting a real break.
 CA_BOND_MAX = 4.5
@@ -85,125 +78,138 @@ def detect_segments(residues, verbose=True, validate=True):
 
     return [(s[0].id[1], s[-1].id[1], len(s)) for s in segments], breaks
 
-print(f'Input receptor chain: {receptor_chain}', flush=True)
-print(f'Strip heteroatoms: {strip_heteroatoms}', flush=True)
-print(f'Renumber residues: {renumber_residues}', flush=True)
 
-parser = PDBParser(QUIET=True)
-structure = parser.get_structure('target', './inputs/target.pdb')
+def main():
+    os.makedirs('./outputs', exist_ok=True)
 
-model = structure[0]
-chain_ids = [c.id for c in model.get_chains()]
-print(f'Chains found in input: {chain_ids}', flush=True)
+    receptor_chain = os.environ.get('PARAM_RECEPTOR_CHAIN', 'A')
+    hotspot_residues = os.environ.get('PARAM_HOTSPOT_RESIDUES', '')
+    strip_heteroatoms = os.environ.get('PARAM_STRIP_HETEROATOMS', 'true').lower() == 'true'
+    renumber_residues = os.environ.get('PARAM_RENUMBER_RESIDUES', 'false').lower() == 'true'
 
-if receptor_chain not in chain_ids:
-    print(f'ERROR: Chain {receptor_chain} not found in input PDB. Available chains: {chain_ids}', flush=True)
-    sys.exit(1)
+    print(f'Input receptor chain: {receptor_chain}', flush=True)
+    print(f'Strip heteroatoms: {strip_heteroatoms}', flush=True)
+    print(f'Renumber residues: {renumber_residues}', flush=True)
 
-chain = model[receptor_chain]
+    parser = PDBParser(QUIET=True)
+    structure = parser.get_structure('target', './inputs/target.pdb')
 
-if strip_heteroatoms:
-    hetero_residues = [r for r in chain.get_residues() if r.id[0] != ' ']
-    for res in hetero_residues:
-        chain.detach_child(res.id)
-    print(f'Stripped {len(hetero_residues)} heteroatom residue(s)', flush=True)
+    model = structure[0]
+    chain_ids = [c.id for c in model.get_chains()]
+    print(f'Chains found in input: {chain_ids}', flush=True)
 
-atom_residues = [r for r in chain.get_residues() if r.id[0] == ' ']
-residue_count = len(atom_residues)
+    if receptor_chain not in chain_ids:
+        print(f'ERROR: Chain {receptor_chain} not found in input PDB. Available chains: {chain_ids}', flush=True)
+        sys.exit(1)
 
-# Resolve hotspots against the original numbering the user supplied. With
-# renumbering off this is an identity mapping, which is what RFdiffusion wants —
-# it matches hotspots against the input numbering. Node 02 reads the result from
-# the REMARK records below either way.
-hotspots_requested = bool(hotspot_residues.strip())
-hotspot_mapping = []
+    chain = model[receptor_chain]
 
-if hotspots_requested:
-    hotspot_list = [h.strip() for h in hotspot_residues.split(',') if h.strip()]
-    # Position in this list is the renumbered ID (1-based), since renumbering is sequential
-    original_ids = [res.id[1] for res in atom_residues]
-    for hotspot in hotspot_list:
-        chain_prefix = hotspot[:len(hotspot) - len(hotspot.lstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))]
-        try:
-            res_num = int(hotspot[len(chain_prefix):])
-        except ValueError:
-            print(f'WARNING: Could not parse hotspot residue ID "{hotspot}" — skipping', flush=True)
-            continue
-        # A bare number means the receptor chain; a letter naming another chain is
-        # a request this node cannot honour, since only receptor_chain is kept
-        if chain_prefix and chain_prefix != receptor_chain:
-            print(f'WARNING: Hotspot residue {hotspot} names chain {chain_prefix}, but the '
-                  f'receptor chain is {receptor_chain} — dropping it from the hotspot set', flush=True)
-            continue
-        if res_num not in original_ids:
-            print(f'WARNING: Hotspot residue {hotspot} (number {res_num}) is not present in the '
-                  f'chain after processing — dropping it from the hotspot set', flush=True)
-            continue
-        mapped_num = original_ids.index(res_num) + 1 if renumber_residues else res_num
-        hotspot_mapping.append((hotspot, f'A{mapped_num}'))
-        print(f'Hotspot residue {hotspot} → A{mapped_num}', flush=True)
+    if strip_heteroatoms:
+        hetero_residues = [r for r in chain.get_residues() if r.id[0] != ' ']
+        for res in hetero_residues:
+            chain.detach_child(res.id)
+        print(f'Stripped {len(hetero_residues)} heteroatom residue(s)', flush=True)
 
-    if not hotspot_mapping:
-        print('WARNING: None of the requested hotspot residues could be mapped — downstream '
-              'design will run without hotspots', flush=True)
+    atom_residues = [r for r in chain.get_residues() if r.id[0] == ' ']
+    residue_count = len(atom_residues)
 
-if renumber_residues:
-    _, fused_breaks = detect_segments(atom_residues, verbose=False, validate=False)
-    if fused_breaks:
-        fused = ', '.join(f'{p}|{n} ({m} missing, {d:.1f} Å)'
-                          for p, n, m, d, _ in fused_breaks)
-        print(f'WARNING: renumbering fuses {len(fused_breaks)} chain break(s) — RFdiffusion will '
-              f'be given these as bonded residues: {fused}', flush=True)
-    for res in atom_residues:
-        chain.detach_child(res.id)
-    for i, res in enumerate(atom_residues, start=1):
-        res.id = (' ', i, ' ')
-        chain.add(res)
-    print(f'Renumbered {residue_count} residues starting from 1', flush=True)
+    # Resolve hotspots against the original numbering the user supplied. With
+    # renumbering off this is an identity mapping, which is what RFdiffusion wants —
+    # it matches hotspots against the input numbering. Node 02 reads the result from
+    # the REMARK records below either way.
+    hotspots_requested = bool(hotspot_residues.strip())
+    hotspot_mapping = []
 
-# The remarks describe the file as written, so this runs after any renumbering
-segments, breaks = detect_segments(atom_residues)
+    if hotspots_requested:
+        hotspot_list = [h.strip() for h in hotspot_residues.split(',') if h.strip()]
+        # Position in this list is the renumbered ID (1-based), since renumbering is sequential
+        original_ids = [res.id[1] for res in atom_residues]
+        for hotspot in hotspot_list:
+            chain_prefix = hotspot[:len(hotspot) - len(hotspot.lstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))]
+            try:
+                res_num = int(hotspot[len(chain_prefix):])
+            except ValueError:
+                print(f'WARNING: Could not parse hotspot residue ID "{hotspot}" — skipping', flush=True)
+                continue
+            # A bare number means the receptor chain; a letter naming another chain is
+            # a request this node cannot honour, since only receptor_chain is kept
+            if chain_prefix and chain_prefix != receptor_chain:
+                print(f'WARNING: Hotspot residue {hotspot} names chain {chain_prefix}, but the '
+                      f'receptor chain is {receptor_chain} — dropping it from the hotspot set', flush=True)
+                continue
+            if res_num not in original_ids:
+                print(f'WARNING: Hotspot residue {hotspot} (number {res_num}) is not present in the '
+                      f'chain after processing — dropping it from the hotspot set', flush=True)
+                continue
+            mapped_num = original_ids.index(res_num) + 1 if renumber_residues else res_num
+            hotspot_mapping.append((hotspot, f'A{mapped_num}'))
+            print(f'Hotspot residue {hotspot} → A{mapped_num}', flush=True)
 
-# Always write output as chain A regardless of input chain ID
-chain.id = 'A'
+        if not hotspot_mapping:
+            print('WARNING: None of the requested hotspot residues could be mapped — downstream '
+                  'design will run without hotspots', flush=True)
 
-# Build a minimal structure containing only the cleaned chain
-new_structure = PDB.Structure.Structure('validated')
-new_model = PDB.Model.Model(0)
-new_model.add(chain)
-new_structure.add(new_model)
+    if renumber_residues:
+        _, fused_breaks = detect_segments(atom_residues, verbose=False, validate=False)
+        if fused_breaks:
+            fused = ', '.join(f'{p}|{n} ({m} missing, {d:.1f} Å)'
+                              for p, n, m, d, _ in fused_breaks)
+            print(f'WARNING: renumbering fuses {len(fused_breaks)} chain break(s) — RFdiffusion will '
+                  f'be given these as bonded residues: {fused}', flush=True)
+        for res in atom_residues:
+            chain.detach_child(res.id)
+        for i, res in enumerate(atom_residues, start=1):
+            res.id = (' ', i, ' ')
+            chain.add(res)
+        print(f'Renumbered {residue_count} residues starting from 1', flush=True)
 
-io = PDBIO()
-io.set_structure(new_structure)
-io.save('./outputs/validated_target.pdb')
+    # The remarks describe the file as written, so this runs after any renumbering
+    segments, breaks = detect_segments(atom_residues)
 
-# PDBIO writes no remarks, so they are prepended to the saved file. Each summary
-# line is written even when it carries nothing new, so node 02 can tell "node 01
-# handled this" from "older input".
-remarks = []
-if hotspots_requested:
-    remarks += [f'REMARK 999 HOTSPOT {original} {mapped}\n'
-                for original, mapped in hotspot_mapping]
-    remarks.append('REMARK 999 HOTSPOTS %s\n' % ','.join(m for _, m in hotspot_mapping))
+    # Always write output as chain A regardless of input chain ID
+    chain.id = 'A'
 
-remarks.append('REMARK 999 NUMBERING %s\n' % ('RENUMBERED' if renumber_residues else 'ORIGINAL'))
-for index, (first, last, count) in enumerate(segments, start=1):
-    remarks.append(f'REMARK 999 SEGMENT {index} A {first} {last} {count}\n')
-remarks.append('REMARK 999 SEGMENTS %s\n' % '/'.join(f'A{f}-{l}' for f, l, _ in segments))
-for prev, nxt, missing, distance, kind in breaks:
-    remarks.append(f'REMARK 999 BREAK {prev} {nxt} {missing} {distance:.2f} {kind}\n')
+    # Build a minimal structure containing only the cleaned chain
+    new_structure = PDB.Structure.Structure('validated')
+    new_model = PDB.Model.Model(0)
+    new_model.add(chain)
+    new_structure.add(new_model)
 
-with open('./outputs/validated_target.pdb') as f:
-    body = f.read()
-with open('./outputs/validated_target.pdb', 'w') as f:
-    f.write(''.join(remarks) + body)
+    io = PDBIO()
+    io.set_structure(new_structure)
+    io.save('./outputs/validated_target.pdb')
 
-segment_residues = sum(count for _, _, count in segments)
-summary = f'Receptor segments: {len(segments)} ({segment_residues} residues'
-if breaks:
-    summary += ', %d chain break(s): %s' % (
-        len(breaks), ', '.join(f'{p}|{n} {d:.1f} Å' for p, n, _, d, _ in breaks))
-print(summary + ')', flush=True)
-print(f'Chain normalization: {receptor_chain} → A', flush=True)
-print(f'Residue count: {residue_count}', flush=True)
-print(f'Output written to ./outputs/validated_target.pdb', flush=True)
+    # PDBIO writes no remarks, so they are prepended to the saved file. Each summary
+    # line is written even when it carries nothing new, so node 02 can tell "node 01
+    # handled this" from "older input".
+    remarks = []
+    if hotspots_requested:
+        remarks += [f'REMARK 999 HOTSPOT {original} {mapped}\n'
+                    for original, mapped in hotspot_mapping]
+        remarks.append('REMARK 999 HOTSPOTS %s\n' % ','.join(m for _, m in hotspot_mapping))
+
+    remarks.append('REMARK 999 NUMBERING %s\n' % ('RENUMBERED' if renumber_residues else 'ORIGINAL'))
+    for index, (first, last, count) in enumerate(segments, start=1):
+        remarks.append(f'REMARK 999 SEGMENT {index} A {first} {last} {count}\n')
+    remarks.append('REMARK 999 SEGMENTS %s\n' % '/'.join(f'A{f}-{l}' for f, l, _ in segments))
+    for prev, nxt, missing, distance, kind in breaks:
+        remarks.append(f'REMARK 999 BREAK {prev} {nxt} {missing} {distance:.2f} {kind}\n')
+
+    with open('./outputs/validated_target.pdb') as f:
+        body = f.read()
+    with open('./outputs/validated_target.pdb', 'w') as f:
+        f.write(''.join(remarks) + body)
+
+    segment_residues = sum(count for _, _, count in segments)
+    summary = f'Receptor segments: {len(segments)} ({segment_residues} residues'
+    if breaks:
+        summary += ', %d chain break(s): %s' % (
+            len(breaks), ', '.join(f'{p}|{n} {d:.1f} Å' for p, n, _, d, _ in breaks))
+    print(summary + ')', flush=True)
+    print(f'Chain normalization: {receptor_chain} → A', flush=True)
+    print(f'Residue count: {residue_count}', flush=True)
+    print(f'Output written to ./outputs/validated_target.pdb', flush=True)
+
+
+if __name__ == '__main__':
+    main()
