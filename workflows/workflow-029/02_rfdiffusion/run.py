@@ -4,14 +4,6 @@ import os
 import subprocess
 import sys
 
-os.makedirs('./outputs/backbones', exist_ok=True)
-
-num_designs = int(os.environ.get('PARAM_NUM_DESIGNS', '100'))
-binder_length = int(os.environ.get('PARAM_BINDER_LENGTH', '80'))
-hotspot_residues = os.environ.get('PARAM_HOTSPOT_RESIDUES', '').strip()
-noise_scale = float(os.environ.get('PARAM_NOISE_SCALE', '1.0'))
-num_diffusion_steps = int(os.environ.get('PARAM_NUM_DIFFUSION_STEPS', '50'))
-
 
 def read_receptor_segments(path):
     """The receptor's contiguous segments as node 01 found them, or None."""
@@ -62,6 +54,30 @@ def read_hotspot_mapping(path):
     return None
 
 
+def swap_binder_to_chain_a(path):
+    """Make the generated binder chain A and the receptor chain B.
+
+    The contig puts the receptor first, so RFdiffusion emits it as chain A and
+    the binder as chain B — the reverse of what nodes 03-05 assume. Each line is
+    rewritten from the original, so the two letters cannot collide mid-swap.
+    """
+    with open(path) as f:
+        lines = f.readlines()
+    with open(path, 'w') as f:
+        for line in lines:
+            if line.startswith(('ATOM', 'HETATM', 'TER')) and len(line) > 21 and line[21] in 'AB':
+                line = line[:21] + ('B' if line[21] == 'A' else 'A') + line[22:]
+            f.write(line)
+
+
+os.makedirs('./outputs/backbones', exist_ok=True)
+
+num_designs = int(os.environ.get('PARAM_NUM_DESIGNS', '100'))
+binder_length = int(os.environ.get('PARAM_BINDER_LENGTH', '80'))
+hotspot_residues = os.environ.get('PARAM_HOTSPOT_RESIDUES', '').strip()
+noise_scale = float(os.environ.get('PARAM_NOISE_SCALE', '1.0'))
+num_diffusion_steps = int(os.environ.get('PARAM_NUM_DIFFUSION_STEPS', '50'))
+
 result = subprocess.run(['nvidia-smi'], capture_output=True)
 if result.returncode != 0:
     print('ERROR: GPU requested but nvidia-smi failed. Ensure a CUDA-capable GPU is available '
@@ -105,6 +121,8 @@ print(f'Number of designs: {num_designs}', flush=True)
 # Chain A is hardcoded — node 01 guarantees chain A output. Segments are joined
 # with '/', which advances RFdiffusion's positional index by the real size of
 # each gap; '/0' would instead declare a 200-index break, i.e. a separate chain.
+# check_contig_semantics.py asserts that arithmetic against the pinned image;
+# re-run it if the image tag changes, since nothing here would notice a drift.
 contig = f'[{segments}/0 {binder_length}-{binder_length}]'
 
 cmd = [
@@ -137,22 +155,6 @@ else:
 
 print(f'Running: {" ".join(cmd)}', flush=True)
 subprocess.run(cmd, check=True)
-
-def swap_binder_to_chain_a(path):
-    """Make the generated binder chain A and the receptor chain B.
-
-    The contig puts the receptor first, so RFdiffusion emits it as chain A and
-    the binder as chain B — the reverse of what nodes 03-05 assume. Each line is
-    rewritten from the original, so the two letters cannot collide mid-swap.
-    """
-    with open(path) as f:
-        lines = f.readlines()
-    with open(path, 'w') as f:
-        for line in lines:
-            if line.startswith(('ATOM', 'HETATM', 'TER')) and len(line) > 21 and line[21] in 'AB':
-                line = line[:21] + ('B' if line[21] == 'A' else 'A') + line[22:]
-            f.write(line)
-
 
 pdb_files = glob.glob('./outputs/backbones/design_*.pdb')
 
