@@ -250,7 +250,7 @@ for fasta_path in fasta_files:
                 print(f'  WARNING: No rank-001 score JSON found for {design_seq_id}', flush=True)
                 filter_report.append({
                     'design_id': design_seq_id,
-                    'iptm': None, 'plddt_binder': None,
+                    'iptm': None, 'plddt_binder': None, 'plddt_receptor': None,
                     'bb_rmsd': None, 'pae_interaction': None,
                     'pass': False, 'fail_reasons': ['no_score_file'],
                 })
@@ -264,6 +264,11 @@ for fasta_path in fasta_files:
             # pLDDT binder: first binder_length elements of flat plddt array
             plddt_all = scores.get('plddt', [])
             plddt_binder = float(np.mean(plddt_all[:binder_length])) if plddt_all else 0.0
+            # The receptor is the remainder of the same array. Diagnostic only, never
+            # filtered on: without it a failing funnel cannot distinguish a bad design
+            # from a receptor that was never modelled.
+            plddt_receptor = (float(np.mean(plddt_all[binder_length:]))
+                              if len(plddt_all) > binder_length else None)
 
             # PAE interaction: mean of the off-diagonal cross-chain block
             # Block rows 0..binder_length-1, cols binder_length..end (and its transpose)
@@ -317,6 +322,7 @@ for fasta_path in fasta_files:
                 'design_id': design_seq_id,
                 'iptm': round(iptm, 4),
                 'plddt_binder': round(plddt_binder, 3),
+                'plddt_receptor': round(plddt_receptor, 3) if plddt_receptor is not None else None,
                 'bb_rmsd': round(bb_rmsd, 3) if bb_rmsd is not None else None,
                 'pae_interaction': round(pae_interaction, 3) if pae_interaction != float('inf') else None,
                 'pass': passed,
@@ -326,8 +332,9 @@ for fasta_path in fasta_files:
 
             status = 'PASS' if passed else f'FAIL ({",".join(fail_reasons)})'
             rmsd_str = f'{bb_rmsd:.2f}' if bb_rmsd is not None else 'N/A'
+            receptor_str = f'{plddt_receptor:.1f}' if plddt_receptor is not None else 'N/A'
             print(f'  {design_seq_id}: iPTM={iptm:.3f} pLDDT={plddt_binder:.1f} '
-                  f'RMSD={rmsd_str} '
+                  f'pLDDT_receptor={receptor_str} RMSD={rmsd_str} '
                   f'PAE={pae_interaction:.1f} → {status}', flush=True)
 
             if passed and folded_pdb_path:
