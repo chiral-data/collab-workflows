@@ -68,6 +68,20 @@ wget https://files.rcsb.org/download/XXXX.pdb -O input_files/target.pdb
 
 Recommended structure quality: resolution ≤ 3.0 Å, no non-standard residues unless `strip_heteroatoms` is set to `true` (default). Gaps in the deposited coordinates are detected and expressed to RFdiffusion as real index jumps, so a target with disordered loops is usable — but a gap *inside* the surface you mean to target still removes the epitope you wanted.
 
+## What this workflow sends outside your machine
+
+**By default, node 04 sends your binder and receptor sequences to a third-party server.**
+
+`msa_mode` defaults to `mmseqs2_uniref_env`, which builds each multiple sequence alignment by querying the public ColabFold MSA server at `api.colabfold.com`. One query goes out per predicted complex, carrying the designed binder sequence and the receptor sequence extracted from your target. Nothing else leaves the machine: coordinates, scores and reports stay local.
+
+For the bundled IL-2 demo this is harmless. **For a proprietary target it may not be** — a run at the production profile (`num_designs=100`, `num_seq_per_target=8`) is roughly 800 predictions and about 1,600 sequence queries to a service run by someone else.
+
+**To avoid it,** set `msa_mode = "single_sequence"`. Nothing then leaves the machine. The cost is real and is why that is not the default: without co-evolutionary signal AlphaFold2-multimer cannot place two chains relative to each other, so iPTM and interface PAE stop being meaningful and the two interface filters become unreachable. You get a pipeline that runs offline and a funnel that cannot report an interface.
+
+**Why the default is what it is.** `mmseqs2_uniref_env` is what makes the interface metrics interpretable at all, and it is also what gives AlphaFold2 a usable model of the receptor. In `single_sequence` mode the receptor scores around 40 pLDDT, and supplying its own coordinates as a template does not rescue it — measured at 45 for the single segment node 04 folds, because a fragment carved out of a larger fold is not a folding unit on its own. So the MSA is doing work no local substitute was found to replace, and the default stays, disclosed here rather than left as a quiet dependency.
+
+**Throughput, which is a second consequence of the same dependency.** The queries are fast once they start — 16 to 60 seconds each — but submissions queue behind other users of a shared service. In one measured 16-prediction run, 45 of 89 minutes were queue wait, and a single submission stalled for 27 minutes before starting. The delay is intermittent rather than progressive, so it is contention, not a throttle tightening against you. There is no resume: a long run interrupted partway through is lost. Both are reasons to precompute alignments with `colabfold_search` against local databases, or to self-host the API and point at it, before any large campaign.
+
 ## Workflow nodes
 
 ### Node 01: Validate Target
@@ -137,7 +151,7 @@ For the bundled target, `A38,A42,A45,A68` are the IL-2 residues that contact IL-
 
 **Goal:** Fold each designed sequence as a binder:receptor complex and apply four structural self-consistency filters.
 
-**Process:** Iterates over every sequence record in every FASTA file (creating one ColabFold job per sequence, not per file). For each sequence, concatenates the binder sequence and the receptor sequence extracted from `validated_target.pdb` with a `:` separator to form the ColabFold multimer input. When node 01 reports the receptor in more than one segment, the sequence is trimmed to the single segment carrying the hotspots — the largest one if no hotspots were given. Runs `colabfold_batch` with AlphaFold2 multimer v3. Extracts metrics from `*_scores_rank_001_*.json`: iPTM directly; pLDDT for the binder as `mean(plddt[:binder_length])`; interface PAE as the mean of the off-diagonal cross-chain block of the PAE matrix. Computes Cα RMSD by aligning folded chain A against the backbone PDB by sequence position (not residue number), warning and skipping if the length difference exceeds 5 residues.
+**Process:** Iterates over every sequence record in every FASTA file (creating one ColabFold job per sequence, not per file). **This is the node that makes outbound network calls** — one MSA query per prediction under the default `msa_mode`; see the disclosure section above. For each sequence, concatenates the binder sequence and the receptor sequence extracted from `validated_target.pdb` with a `:` separator to form the ColabFold multimer input. When node 01 reports the receptor in more than one segment, the sequence is trimmed to the single segment carrying the hotspots — the largest one if no hotspots were given. Runs `colabfold_batch` with AlphaFold2 multimer v3. Extracts metrics from `*_scores_rank_001_*.json`: iPTM directly; pLDDT for the binder as `mean(plddt[:binder_length])`; interface PAE as the mean of the off-diagonal cross-chain block of the PAE matrix. Computes Cα RMSD by aligning folded chain A against the backbone PDB by sequence position (not residue number), warning and skipping if the length difference exceeds 5 residues.
 
 **Scientific notes:** The receptor is trimmed rather than folded whole because ColabFold has no way to express a gap inside a chain: concatenating the fragments would fold two lobes as though a peptide bond joined them, which is the same fault node 02 avoids with its contig. The cost is real — surface outside the chosen segment is absent, so a binder that contacts two lobes is scored against one. Splitting the receptor across `:` instead would make iPTM a global measure over binder plus *n* receptor chains, which silently changes what the two interface filters mean.
 
@@ -202,6 +216,15 @@ Chain D is usable, but its 38-residue gap leaves the target presenting as two lo
 - **Default:** `""`
 - **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A38,A42,A45"`. Given in the numbering of **your input PDB**, and used as given — node 01 preserves that numbering, so no translation happens unless `renumber_residues` is on. They also decide which segment node 04 folds when the receptor has chain breaks.
 - **Guidance:** Empty means RFdiffusion samples the full receptor surface. Specifying hotspots from a known binding partner improves success rate when the epitope is defined; Watson et al. 2023 report roughly a 5× improvement from targeting a known contact patch. Where the deposit contains the natural partner, as this one does, the epitope can be read straight off the structure.
+
+### msa_mode
+
+| Value | Description |
+|---|---|
+| `mmseqs2_uniref_env` (default) | Build each MSA by querying the public ColabFold server. Required for the interface metrics to mean anything. **Sends your sequences to a third party** — see the disclosure section above. |
+| `single_sequence` | No network, no MSA. iPTM and interface PAE are not meaningful and `min_iptm` / `max_pae_interaction` become unreachable. |
+
+**Trade-off:** this is the one parameter that decides whether the workflow is self-contained. The default is not self-contained, deliberately, because the interface half of the funnel is worthless without an MSA. Choose `single_sequence` when the target is confidential and you intend to judge designs on the binder metrics alone — binder pLDDT and Cα RMSD remain valid in that mode.
 
 ### num_designs
 
