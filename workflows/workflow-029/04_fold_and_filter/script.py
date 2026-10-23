@@ -28,7 +28,7 @@ from Bio.PDB import PDBParser, PPBuilder, Superimposer
 os.makedirs('./outputs/folded', exist_ok=True)
 
 num_recycle = int(os.environ.get('PARAM_NUM_RECYCLE', '6'))
-msa_mode = os.environ.get('PARAM_MSA_MODE', 'single_sequence')
+msa_mode = os.environ.get('PARAM_MSA_MODE', 'mmseqs2_uniref_env')
 min_iptm = float(os.environ.get('PARAM_MIN_IPTM', '0.6'))
 min_plddt_binder = float(os.environ.get('PARAM_MIN_PLDDT_BINDER', '80.0'))
 max_bb_rmsd = float(os.environ.get('PARAM_MAX_BB_RMSD', '1.5'))

@@ -203,7 +203,7 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 | `num_designs` | 100 | 3–10 | 100–200 |
 | `num_seq_per_target` | 8 | 8 | 8–16 |
 | `num_recycle` | 6 | 6 | 6–12 |
-| `msa_mode` | `single_sequence` | `single_sequence` | `mmseqs2_uniref_env` |
+| `msa_mode` | `mmseqs2_uniref_env` | `mmseqs2_uniref_env` | `mmseqs2_uniref_env` |
 | `min_iptm` | 0.6 | 0.05 (relaxed) | 0.6 |
 | `min_plddt_binder` | 80.0 | 30.0 (relaxed) | 80.0 |
 | `max_bb_rmsd` | 1.5 | 25.0 (relaxed) | 1.5 |
@@ -301,7 +301,7 @@ With a small `num_designs` this is expected — that's why the quick-test column
 | `min_plddt_binder` | `80.0` | `30.0` (relaxed) | `80.0` |
 | `max_bb_rmsd` | `1.5` | `25.0` (relaxed) | `1.5` |
 | `max_pae_interaction` | `10.0` | `35.0` (relaxed) | `10.0` |
-| `msa_mode` | `single_sequence` | `single_sequence` | `mmseqs2_uniref_env` |
+| `msa_mode` | `mmseqs2_uniref_env` | `mmseqs2_uniref_env` | `mmseqs2_uniref_env` |
 | `hotspot_residues` | `""` | `""` | `"A55,A58,A102,A105,A106"` (for 2B5I) |
 
 The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` and relaxed filter thresholds completes in 15 minutes on a single GPU at `num_seq_per_target=2`, or roughly 45 at the default of 8. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
@@ -309,7 +309,7 @@ The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` an
 ## Troubleshooting
 
 **No designs pass the fold filter**
-Relax thresholds: increase `max_bb_rmsd` to 2.0, decrease `min_iptm` to 0.5. Also increase `num_designs` — a larger backbone pool improves the odds of finding self-consistent designs.
+First check `msa_mode`. With `single_sequence`, AlphaFold2-multimer has no co-evolutionary signal and cannot place two chains relative to each other: iPTM collapses to ~0.1 and interface PAE sits near the matrix ceiling for every design, including known native complexes. The interface filters are unreachable in that mode. Otherwise, relax thresholds: increase `max_bb_rmsd` to 2.0, decrease `min_iptm` to 0.5. Also increase `num_designs` — a larger backbone pool improves the odds of finding self-consistent designs.
 
 **PRODIGY exits with non-zero code**
 Ensure the input PDB contains both chain A and chain B. ColabFold multimer may occasionally output single-chain models for very short binders — check the folded PDB before running PRODIGY.

@@ -17,5 +17,5 @@ hint    = "Number of AlphaFold2 recycling iterations"
 
 [params.msa_mode]
 type    = "string"
-default = "single_sequence"
-hint    = "MSA mode: single_sequence (fast) or mmseqs2_uniref_env (more accurate)"
+default = "mmseqs2_uniref_env"
+hint    = "MSA mode: mmseqs2_uniref_env (required for interface metrics; queries the public ColabFold MSA server) or single_sequence (faster, but iPTM and interface PAE are not meaningful)"
