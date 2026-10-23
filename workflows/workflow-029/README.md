@@ -14,7 +14,7 @@ tags: [binder-design, rfdiffusion, proteinmpnn, colabfold, prodigy, protein-prot
 
 # Workflow 029: RFdiffusion → ProteinMPNN → PRODIGY Binder Design
 
-De novo protein binder design pipeline. Starting from a receptor PDB, it generates binder backbone structures with RFdiffusion, designs amino acid sequences with ProteinMPNN (SolubleMPNN mode), folds each complex with ColabFold, filters by four structural self-consistency metrics, and ranks passing designs by predicted binding free energy with PRODIGY. The benchmark target is IL-7Rα (PDB 2B5I) from Watson et al. 2023, which yielded 32 confirmed binders in 95 tested, with the best Kd of 40 nM.
+De novo protein binder design pipeline. Starting from a receptor PDB, it generates binder backbone structures with RFdiffusion, designs amino acid sequences with ProteinMPNN (SolubleMPNN mode), folds each complex with ColabFold, filters by four structural self-consistency metrics, and ranks passing designs by predicted binding free energy with PRODIGY. The bundled example target is interleukin-2 (PDB 2B5I, chain A), with hotspots on its IL-2Rα-binding face.
 
 ## Overview
 
@@ -61,7 +61,7 @@ Place one PDB file in `input_files/`:
 
 - **`target.pdb`** — Receptor structure in PDB format. Must contain at least one protein chain. The chain specified by `receptor_chain` (default `A`) is extracted and cleaned. All other chains are discarded. Node 01 renumbers residues and strips heteroatoms by default.
 
-The IL-7Rα test target (PDB 2B5I) is included. To download a different target:
+The IL-2 test target (PDB 2B5I, chain A) is included. To download a different target:
 ```bash
 wget https://files.rcsb.org/download/XXXX.pdb -O input_files/target.pdb
 ```
@@ -89,7 +89,7 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Process:** Counts receptor residues in chain A of the validated PDB, constructs a Hydra-format contig string `[A1-{receptor_len}/0 {binder_length}-{binder_length}]`, and runs `scripts/run_inference.py` in the RFdiffusion container. Optionally appends `ppi.hotspot_res` to guide backbone sampling toward specified interface residues, taking the IDs from node 01's `REMARK 999 HOTSPOTS` line so they match the renumbered coordinates; a target carrying no such line falls back to the raw parameter. Outputs one PDB per design.
 
-**Scientific notes:** The contig format specifies receptor chain A residues 1 through N (held fixed) plus a newly generated binder of exactly `binder_length` residues. RFdiffusion assigns output chains in contig order, so it writes the receptor as A and the binder as B; the node relabels them afterwards so the binder is chain A. Hotspot residues from the Watson et al. 2023 IL-7Rα paper (A55, A58, A102, A105, A106) are known to improve binder success rates on this target. Given in that source numbering, they resolve to A50, A53, A92 and A93 after renumbering; A102 falls in a disordered gap and is not present in the bundled `target.pdb` at all. Without hotspots, RFdiffusion samples the full receptor surface.
+**Scientific notes:** The contig format specifies receptor chain A residues 1 through N (held fixed) plus a newly generated binder of exactly `binder_length` residues. RFdiffusion assigns output chains in contig order, so it writes the receptor as A and the binder as B; the node relabels them afterwards so the binder is chain A. For the bundled target, `A38,A42,A45,A68` are the IL-2 residues that contact IL-2Rα in this very structure — Arg38, Phe42, Tyr45 and Glu68, the CD25-binding face. Given in that source numbering, they resolve to A33, A37, A40 and A63 after renumbering. Without hotspots, RFdiffusion samples the full receptor surface.
 
 **Outputs:**
 - `backbones/design_*.pdb` — Complex PDBs: chain A = binder (poly-Gly), chain B = receptor.
@@ -159,12 +159,14 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 
 **Trade-off:** Only one chain is used as the receptor. If the functional binding surface spans multiple chains, you must provide a pre-assembled structure.
 
+**What is in the bundled 2B5I.** The deposit is the quaternary IL-2 receptor complex: chain A is interleukin-2, B is IL-2Rβ, C is the common γ chain, and D is IL-2Rα (CD25). The example targets chain A, so the designed binder competes with the receptors for IL-2. Any of the other chains is a legitimate target instead, with one caveat worth knowing before you pick: node 01 renumbers residues sequentially, which closes over any gap in the deposited coordinates and presents the two flanking residues to RFdiffusion as though they were bonded. Chain D carries a 38-residue gap whose ends are 33.9 Å apart, so it is a poor choice until that is handled; chain C has no gaps at all, and chain B one of 6 residues.
+
 ### hotspot_residues
 
 - **Type:** string
 - **Default:** `""`
-- **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A55,A58,A102"`. Given in the numbering of **your input PDB** — node 01 translates them onto the renumbered structure it hands to node 02.
-- **Guidance:** Empty means RFdiffusion samples the full receptor surface. Specifying hotspots from a known binding partner dramatically improves success rate when the epitope is defined (Watson et al. 2023 report ~5× improvement on IL-7Rα with the IL-7 contact patch hotspots).
+- **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A38,A42,A45"`. Given in the numbering of **your input PDB** — node 01 translates them onto the renumbered structure it hands to node 02.
+- **Guidance:** Empty means RFdiffusion samples the full receptor surface. Specifying hotspots from a known binding partner improves success rate when the epitope is defined; Watson et al. 2023 report roughly a 5× improvement from targeting a known contact patch. Where the deposit contains the natural partner, as this one does, the epitope can be read straight off the structure.
 
 ### num_designs
 
@@ -178,7 +180,7 @@ Recommended structure quality: resolution ≤ 3.0 Å, no large gaps in the bindi
 - **Type:** integer
 - **Default:** `80`
 - **Description:** Length in residues of the designed binder.
-- **Guidance:** 60–100 is the validated range for single-domain binders. Shorter designs have higher expression rates but smaller interface area. Watson et al. 2023 used 65–100 for IL-7Rα.
+- **Guidance:** 60–100 is the validated range for single-domain binders. Shorter designs have higher expression rates but smaller interface area. Watson et al. 2023 used 65–100.
 
 ### num_seq_per_target
 
@@ -252,14 +254,14 @@ Workflow 029 needs a GPU for nodes 02, 03 and 04, and a full production run take
 
 **1. Pick the workflow.** Select **RFdiffusion → ProteinMPNN → PRODIGY Binder Design** from the workflow list.
 
-**2. Upload your target.** Upload your receptor structure to `input_files/` as `target.pdb`. If you upload nothing, the run uses the bundled IL-7Rα benchmark target (PDB 2B5I) — useful for a first end-to-end test, but not for your own campaign. One PDB only; the workflow reads a single receptor.
+**2. Upload your target.** Upload your receptor structure to `input_files/` as `target.pdb`. If you upload nothing, the run uses the bundled IL-2 example target (PDB 2B5I, chain A) — useful for a first end-to-end test, but not for your own campaign. One PDB only; the workflow reads a single receptor.
 
 **3. Set the parameters that depend on your target.**
 
 | Parameter | Set it to |
 |---|---|
 | `receptor_chain` | The chain ID of the receptor in *your* uploaded PDB (node 01 rewrites it to chain A afterwards) |
-| `hotspot_residues` | The surface patch you want the binder to hit, e.g. `A55,A58,A102`. Leave empty and RFdiffusion picks for you — usable, but noticeably less targeted |
+| `hotspot_residues` | The surface patch you want the binder to hit, e.g. `A38,A42,A45`. Leave empty and RFdiffusion picks for you — usable, but noticeably less targeted |
 | `binder_length` | `80` suits most PPI targets; shorten only if you have a reason |
 
 **4. Choose quick test or production.** Use the Quick Test column of the table below for your first run: `num_designs=3` with relaxed filters lets everything through, so you can see each node produce output. Budget 15 minutes at `num_seq_per_target=2` and around 45 at the column's default of 8 — node 04 dominates either way. Production (`num_designs=100`, default filters) takes about 12–18 hours, nearly all of it in node 04.
@@ -302,9 +304,9 @@ With a small `num_designs` this is expected — that's why the quick-test column
 | `max_bb_rmsd` | `1.5` | `25.0` (relaxed) | `1.5` |
 | `max_pae_interaction` | `10.0` | `35.0` (relaxed) | `10.0` |
 | `msa_mode` | `mmseqs2_uniref_env` | `mmseqs2_uniref_env` | `mmseqs2_uniref_env` |
-| `hotspot_residues` | `""` | `""` | `"A55,A58,A102,A105,A106"` (for 2B5I) |
+| `hotspot_residues` | `""` | `""` | `"A38,A42,A45,A68"` (for the bundled 2B5I chain A) |
 
-The included test input (2B5I, IL-7Rα receptor chain A) with `num_designs=3` and relaxed filter thresholds completes in 15 minutes on a single GPU at `num_seq_per_target=2`, or roughly 45 at the default of 8. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
+The included test input (2B5I chain A, interleukin-2) with `num_designs=3` and relaxed filter thresholds completes in 15 minutes on a single GPU at `num_seq_per_target=2`, or roughly 45 at the default of 8. With few backbones, designs are unlikely to pass production thresholds — relaxed thresholds allow all designs through for end-to-end pipeline validation. A production run with `num_designs=100` takes approximately 12–18 hours (bottleneck: ColabFold, ~700 predictions).
 
 ## Troubleshooting
 
