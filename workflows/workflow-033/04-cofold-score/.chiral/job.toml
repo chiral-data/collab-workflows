@@ -1,6 +1,8 @@
 name        = "Co-fold and Score"
 description = "Shortlist top candidates by ProteinMPNN NLL, co-fold each binder–target complex with Boltz2 NIM, extract ipTM and binder pLDDT from mmCIF, compute self-consistency RMSD, write run manifest."
 
+retry       = 3
+
 outputs = ["scores.json", "manifest.json"]
 
 [container]

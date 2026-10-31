@@ -1,3 +1,4 @@
+schema_version = "1.1"
 name        = "Protein Binder Design — De Novo NIM Pipeline"
 description = "RFdiffusion → ProteinMPNN → Boltz2 end-to-end binder design campaign. Generates de novo binder backbones, designs sequences, co-folds binder–target complexes, and ranks by interface confidence."
 
