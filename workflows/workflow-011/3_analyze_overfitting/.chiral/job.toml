@@ -6,7 +6,6 @@ outputs = ["outputs/data.json", "outputs/report.html"]
 
 [container]
 image = "ghcr.io/chiral-data/qsar-hybrid-model:v3"
-use_gpu = true
 
 [scripts]
 run = "run.sh"

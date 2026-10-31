@@ -6,7 +6,6 @@ outputs = ["equilibrated.gro", "density.xvg", "equil_report.json"]
 
 [container]
 image     = "gromacs:2025_11_12"
-use_gpu   = true
 
 [scripts]
 run = "run.sh"

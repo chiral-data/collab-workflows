@@ -4,7 +4,6 @@ outputs = ["*.yaml", "*.cif", "*.pdb", "target_summary.json"]
 
 [container]
 image = "ghcr.io/chiral-data/boltzgen:2026_02_13"
-use_gpu = true
 
 [scripts]
 run = "run.sh"

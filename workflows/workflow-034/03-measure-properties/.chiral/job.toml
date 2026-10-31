@@ -6,7 +6,6 @@ outputs = ["properties.json", "stress_strain.xvg", "density_prod.xvg"]
 
 [container]
 image     = "gromacs:2025_11_12"
-use_gpu   = true
 
 [scripts]
 run = "run.sh"

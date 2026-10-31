@@ -6,7 +6,6 @@ outputs = ["gnina_screening_poses.sdf", "gnina_screening_scores.csv", "gnina_run
 
 [container]
 image = "vina-gnina-pipeline:latest"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

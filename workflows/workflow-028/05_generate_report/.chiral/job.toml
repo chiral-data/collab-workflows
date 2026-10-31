@@ -12,7 +12,6 @@ outputs     = ["report.html"]
 
 [container]
 image   = "pipeline-report:2026_07_10"
-use_gpu = false
 
 [scripts]
 run = "run.sh"
