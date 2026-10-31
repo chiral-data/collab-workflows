@@ -1,4 +1,4 @@
-FROM condaforge/miniforge3:latest
+FROM condaforge/miniforge3:26.9.4-0
 
 # CLI tools and Boost runtime libs for GNINA binary
 RUN apt-get update && apt-get install -y \
@@ -14,18 +14,22 @@ RUN apt-get update && apt-get install -y \
     libnvtoolsext1 \
     && rm -rf /var/lib/apt/lists/*
 
-# xtb and openbabel are CLI tools installed outside conda to avoid solver conflicts
-RUN mamba install -y -c conda-forge \
+# Install into a named env, not base: python=3.11 downgrades base's Python and mamba replaces its own libs mid-install, which fails with a package cache error (#272)
+RUN mamba create -y -n wf -c conda-forge \
     python=3.11 \
-    numpy \
-    pandas \
-    scipy \
-    pdbfixer \
-    openmm \
-    rdkit \
+    numpy=2.4.6 \
+    pandas=3.1.0 \
+    scipy=1.17.1 \
+    pdbfixer=1.12 \
+    openmm=8.6.1 \
+    rdkit=2026.09.1 \
     && mamba clean -afy
 
-RUN pip install --no-cache-dir biopython meeko \
+ENV CONDA_DEFAULT_ENV=wf \
+    PATH=/opt/conda/envs/wf/bin:$PATH
+
+# meeko 0.8.0 imports gemmi without declaring it
+RUN pip install --no-cache-dir biopython meeko==0.8.0 gemmi \
     nvidia-cuda-runtime-cu12 \
     nvidia-cublas-cu12 \
     nvidia-cusparse-cu12 \
@@ -34,8 +38,9 @@ RUN pip install --no-cache-dir biopython meeko \
     nvidia-nvtx-cu12
 
 # GNINA dynamically links CUDA libraries even in CPU mode; expose them all
-ENV LD_LIBRARY_PATH=/opt/conda/lib/python3.11/site-packages/nvidia/cuda_runtime/lib:/opt/conda/lib/python3.11/site-packages/nvidia/cublas/lib:/opt/conda/lib/python3.11/site-packages/nvidia/cusparse/lib:/opt/conda/lib/python3.11/site-packages/nvidia/cufft/lib:/opt/conda/lib/python3.11/site-packages/nvidia/cusolver/lib:/opt/conda/lib/python3.11/site-packages/nvidia/nvtx/lib
+ENV LD_LIBRARY_PATH=/opt/conda/envs/wf/lib/python3.11/site-packages/nvidia/cuda_runtime/lib:/opt/conda/envs/wf/lib/python3.11/site-packages/nvidia/cublas/lib:/opt/conda/envs/wf/lib/python3.11/site-packages/nvidia/cusparse/lib:/opt/conda/envs/wf/lib/python3.11/site-packages/nvidia/cufft/lib:/opt/conda/envs/wf/lib/python3.11/site-packages/nvidia/cusolver/lib:/opt/conda/envs/wf/lib/python3.11/site-packages/nvidia/nvtx/lib
 
+# xtb and openbabel are CLI tools installed outside conda to avoid solver conflicts
 # xtb v6.7.1 prebuilt binary
 RUN wget -q https://github.com/grimme-lab/xtb/releases/download/v6.7.1/xtb-6.7.1-linux-x86_64.tar.xz \
     -O /tmp/xtb.tar.xz \
