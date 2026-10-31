@@ -6,7 +6,6 @@ outputs = ["qc_validation_results.json", "redocked_native.sdf", "gnina_redock_lo
 
 [container]
 image = "vina-gnina-pipeline:latest"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

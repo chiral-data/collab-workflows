@@ -6,7 +6,6 @@ outputs = ["receptor.pdb", "receptor.pdbqt", "native_ligand.pdbqt", "native_liga
 
 [container]
 image = "vina-gnina-pipeline:latest"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

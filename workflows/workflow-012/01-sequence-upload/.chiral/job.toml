@@ -5,7 +5,6 @@ outputs = ["*.yaml", "input_summary.json"]
 
 [container]
 image = "ghcr.io/chiral-data/boltz:2025_09_05"
-use_gpu = true
 
 [scripts]
 run = "run.sh"

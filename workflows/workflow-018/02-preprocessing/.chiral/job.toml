@@ -5,7 +5,6 @@ outputs = ["boltz_input.yaml", "chai_input.fasta"]
 
 [container]
 image = "ghcr.io/chiral-data/boltz:2025_09_05"
-use_gpu = false
 
 [scripts]
 run = "run.sh"
