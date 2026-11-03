@@ -19,3 +19,11 @@ hint    = "Number of AlphaFold2 recycling iterations"
 type    = "string"
 default = "mmseqs2_uniref_env"
 hint    = "MSA mode: mmseqs2_uniref_env (required for interface metrics; queries the public ColabFold MSA server) or single_sequence (faster, but iPTM and interface PAE are not meaningful)"
+
+# Declares, rather than blocks, what leaves the machine. See the workflow README
+# section "What this workflow sends outside your machine" for why the default stays.
+[[external_services]]
+name  = "ColabFold MSA server"
+host  = "api.colabfold.com"
+sends = ["binder sequence", "receptor sequence"]
+when  = { param = "msa_mode", equals = "mmseqs2_uniref_env" }

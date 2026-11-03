@@ -74,6 +74,8 @@ Recommended structure quality: resolution ≤ 3.0 Å, no non-standard residues u
 
 `msa_mode` defaults to `mmseqs2_uniref_env`, which builds each multiple sequence alignment by querying the public ColabFold MSA server at `api.colabfold.com`. One query goes out per predicted complex, carrying the designed binder sequence and the receptor sequence extracted from your target. Nothing else leaves the machine: coordinates, scores and reports stay local.
 
+The same fact is declared in machine-readable form as an `[[external_services]]` section in `04_fold_and_filter/.chiral/job.toml`, naming the host, what is sent, and the parameter value that triggers it. Nothing reads that section yet; it is there so the egress travels with the node rather than only with this document.
+
 For the bundled IL-2 demo this is harmless. **For a proprietary target it may not be** — a run at the production profile (`num_designs=100`, `num_seq_per_target=8`) is roughly 800 predictions and about 1,600 sequence queries to a service run by someone else.
 
 **To avoid it,** set `msa_mode = "single_sequence"`. Nothing then leaves the machine. The cost is real and is why that is not the default: without co-evolutionary signal AlphaFold2-multimer cannot place two chains relative to each other, so iPTM and interface PAE stop being meaningful and the two interface filters become unreachable. You get a pipeline that runs offline and a funnel that cannot report an interface.
