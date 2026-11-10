@@ -5,7 +5,6 @@ outputs     = ["sequences/design_*.fasta"]
 
 [container]
 image   = "ghcr.io/chiral-data/proteinmpnn:2025_09_10"
-use_gpu = true
 
 [scripts]
 run = "run.sh"

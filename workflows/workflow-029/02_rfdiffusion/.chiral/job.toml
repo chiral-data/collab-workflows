@@ -5,7 +5,6 @@ outputs     = ["backbones/design_*.pdb"]
 
 [container]
 image   = "rfdiffusion:2026_06_25"
-use_gpu = true
 
 [scripts]
 run = "run.sh"
