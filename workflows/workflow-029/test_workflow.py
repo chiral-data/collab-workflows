@@ -101,6 +101,28 @@ class Node01TestCase(NodeTestCase):
                     f.write(f'{line[:22]}{number:>4}{line[26:]}')
             f.write('END\n')
 
+    def write_out_of_order_target(self):
+        """The bundled target's chain A with its residues in descending order.
+
+        RFdiffusion indexes residues in the order it reads them, so this is an
+        order no contig can describe — the same inexpressibility as a duplicate
+        number, and it gets the same hard error.
+        """
+        residues, current = [], None
+        with open(TARGET) as source:
+            for line in source:
+                if not (line.startswith(('ATOM', 'HETATM')) and line[21] == 'A'):
+                    continue
+                key = line[22:27]
+                if current is None or key != current[0]:
+                    current = (key, [])
+                    residues.append(current)
+                current[1].append(line)
+        with open(os.path.join('inputs', 'target.pdb'), 'w') as f:
+            for _, lines in reversed(residues):
+                f.writelines(lines)
+            f.write('END\n')
+
     def run_node_01(self, expect_exit=False, **params):
         """Run node 01 against ./inputs/target.pdb; returns its stdout."""
         settings = {
@@ -219,6 +241,33 @@ class TestNode01Numbering(Node01TestCase):
         output = self.run_node_01(expect_exit=True)
         self.assertEqual(self.exit_code, 1)
         self.assertIn('renumber_residues', output)
+
+    def test_out_of_order_records_are_reordered(self):
+        # Same target, same segments as test_chain_a: the reordering has to make
+        # a descending file indistinguishable from the ascending one.
+        self.write_out_of_order_target()
+        output = self.run_node_01()
+        self.assertIn('not in ascending order', output)
+        self.assertEqual(self.segments(), 'A6-75/A80-98/A103-133')
+        self.assertEqual(self.breaks(), [(75, 80, 4, '7.24'), (98, 103, 4, '9.28')])
+
+    def test_the_reordered_file_is_written_in_ascending_order(self):
+        # The point of reordering: RFdiffusion reads the file, not our records.
+        self.write_out_of_order_target()
+        self.run_node_01()
+        with open(OUTPUT) as f:
+            written = [int(line[22:26]) for line in f
+                       if line.startswith('ATOM') and line[12:16].strip() == 'CA']
+        self.assertEqual(written, sorted(written))
+        self.assertEqual(written[0], 6)
+        self.assertEqual(written[-1], 133)
+
+    def test_hotspots_follow_the_reordering_when_renumbering(self):
+        # Renumbering is positional, so it has to run on the reordered chain or
+        # the hotspots would land on whichever residues the file happened to list.
+        self.write_out_of_order_target()
+        self.run_node_01(hotspot_residues='A38,A42,A45,A68', renumber_residues='true')
+        self.assertEqual(self.remarks('HOTSPOTS'), ['A33,A37,A40,A63'])
 
     def test_renumbering_accepts_non_positive_numbering(self):
         self.shift_target_numbering(-10)

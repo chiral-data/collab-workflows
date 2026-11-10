@@ -40,21 +40,26 @@ def detect_segments(residues, verbose=True, validate=True):
         print('ERROR: No CA-bearing residues remain in the receptor chain', flush=True)
         sys.exit(1)
 
+    # main() puts the chain in ascending order before calling this, so the records
+    # and the file agree; the check stays as an assertion rather than a sort,
+    # because sorting here would only fix the numbers reported, not the file.
     numbers = [r.id[1] for r in usable]
+    if any(b < a for a, b in zip(numbers, numbers[1:])):
+        print('ERROR: Residue records are not in ascending order at the point the segments '
+              'are measured. This is a bug in node 01, not a problem with the input.',
+              flush=True)
+        sys.exit(1)
+    if validate and any(b == a for a, b in zip(numbers, numbers[1:])):
+        print('ERROR: Duplicate residue numbers in the receptor chain. A contig cannot name '
+              'them unambiguously — set renumber_residues=true for this target.', flush=True)
+        sys.exit(1)
+    # After the ordering checks, so a scrambled file cannot smuggle a non-positive
+    # number past a guard that only ever looked at the first record.
     if validate and numbers[0] < 1:
         print(f'ERROR: Residue numbering starts at {numbers[0]}. A contig cannot express a '
               'non-positive residue number — set renumber_residues=true for this target.',
               flush=True)
         sys.exit(1)
-    if any(b <= a for a, b in zip(numbers, numbers[1:])):
-        if verbose:
-            print('WARNING: Residue numbering is not ascending in file order — sorting', flush=True)
-        usable.sort(key=lambda r: r.id[1])
-        numbers = [r.id[1] for r in usable]
-        if validate and any(b == a for a, b in zip(numbers, numbers[1:])):
-            print('ERROR: Duplicate residue numbers in the receptor chain. A contig cannot name '
-                  'them unambiguously — set renumber_residues=true for this target.', flush=True)
-            sys.exit(1)
 
     segments = [[usable[0]]]
     breaks = []
@@ -113,6 +118,21 @@ def main():
     atom_residues = [r for r in chain.get_residues() if r.id[0] == ' ']
     residue_count = len(atom_residues)
 
+    # RFdiffusion indexes residues in the order it reads them, and PDBIO writes
+    # them in the chain's own order, so a descending or interleaved file would make
+    # the contig's "advance by next - prev - 1" describe an order RFdiffusion never
+    # sees. Reordering the chain's children fixes the file itself, which is the
+    # only thing that fixes it; sorting a list of our own would not.
+    ordered = sorted(atom_residues, key=lambda r: (r.id[1], r.id[2]))
+    if ordered != atom_residues:
+        print(f'WARNING: residue records are not in ascending order — reordering {residue_count} '
+              'residues so the written file matches the segments recorded for it', flush=True)
+        for res in atom_residues:
+            chain.detach_child(res.id)
+        for res in ordered:
+            chain.add(res)
+        atom_residues = ordered
+
     # Resolve hotspots against the original numbering the user supplied. With
     # renumbering off this is an identity mapping, which is what RFdiffusion wants —
     # it matches hotspots against the input numbering. Node 02 reads the result from
@@ -166,7 +186,11 @@ def main():
     # The remarks describe the file as written, so this runs after any renumbering
     segments, breaks = detect_segments(atom_residues)
 
-    # Always write output as chain A regardless of input chain ID
+    # Always write output as chain A regardless of input chain ID. Detached first:
+    # renaming in place while the parent model still holds its own chain A makes
+    # two siblings share a key, which BioPython warns about and which leaves the
+    # original chain A unreachable in the model we are about to abandon.
+    model.detach_child(chain.id)
     chain.id = 'A'
 
     # Build a minimal structure containing only the cleaned chain
