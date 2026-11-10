@@ -54,15 +54,58 @@ def read_hotspot_mapping(path):
     return None
 
 
-def swap_binder_to_chain_a(path):
+def chain_residue_counts(lines):
+    """Residues per chain letter, counting CA records, in first-seen order."""
+    counts = {}
+    for line in lines:
+        if line.startswith('ATOM') and len(line) > 26 and line[12:16].strip() == 'CA':
+            counts.setdefault(line[21], set()).add(line[22:27])
+    return {chain: len(residues) for chain, residues in counts.items()}
+
+
+def swap_binder_to_chain_a(path, binder_length):
     """Make the generated binder chain A and the receptor chain B.
 
     The contig puts the receptor first, so RFdiffusion emits it as chain A and
     the binder as chain B — the reverse of what nodes 03-05 assume. Each line is
     rewritten from the original, so the two letters cannot collide mid-swap.
+
+    The swap is blind, so it is guarded first. Two ways it can be handed
+    something it would corrupt:
+
+    Re-running this node over a non-empty backbones/ directory. The swap is not
+    idempotent, so a second pass over an already-swapped file puts the receptor
+    back on chain A. This happens in practice — it is what the guard caught first.
+
+    RFdiffusion emitting the receptor as more than one chain, which a junction
+    wide enough to read as a chain break would do, since '/' advances its index
+    by the size of the gap. Whether any real numbering gap reaches that width is
+    untested; check_contig_semantics.py has a fixture for it.
+
+    Either way chain B is not the binder, and flipping the letters hands node 03
+    a piece of the receptor to redesign. Nothing downstream would notice: node 03
+    never checks the binder's length, and node 04 compares the folded chain A
+    against backbone chain A, which are equal by construction in that case. So
+    the mislabel has to be caught here or not at all.
     """
     with open(path) as f:
         lines = f.readlines()
+
+    counts = chain_residue_counts(lines)
+    if sorted(counts) != ['A', 'B']:
+        print(f'ERROR: {os.path.basename(path)} has chains {sorted(counts)}, expected exactly '
+              "['A', 'B'] (receptor then binder). The receptor was probably emitted as more "
+              'than one chain, which would make the binder relabelling assign the wrong '
+              'chain. Residue counts per chain: '
+              + ', '.join(f'{c}={n}' for c, n in sorted(counts.items())), flush=True)
+        sys.exit(1)
+    if counts['B'] != binder_length:
+        print(f'ERROR: {os.path.basename(path)} chain B has {counts["B"]} residues, expected '
+              f'{binder_length}. Chain B should be the generated binder; a mismatch means the '
+              'contig order and the emitted chain order disagree, so relabelling would mark '
+              'the receptor as the binder.', flush=True)
+        sys.exit(1)
+
     with open(path, 'w') as f:
         for line in lines:
             if line.startswith(('ATOM', 'HETATM', 'TER')) and len(line) > 21 and line[21] in 'AB':
@@ -158,8 +201,8 @@ subprocess.run(cmd, check=True)
 
 pdb_files = glob.glob('./outputs/backbones/design_*.pdb')
 
-for pdb_file in pdb_files:
-    swap_binder_to_chain_a(pdb_file)
+for pdb_file in sorted(pdb_files):
+    swap_binder_to_chain_a(pdb_file, binder_length)
 
 print(f'Generated {len(pdb_files)} backbone PDB(s) in ./outputs/backbones/ '
       f'(binder relabelled to chain A, receptor to chain B)', flush=True)

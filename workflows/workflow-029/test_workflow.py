@@ -304,18 +304,40 @@ class TestNode02ChainSwap(NodeTestCase):
         super().setUp()
         self.node_02 = load_module('workflow_029_node_02', NODE_02, tolerate_exit=True)
 
+    def write_complex(self, name, receptor, binder, extra=''):
+        """An RFdiffusion-shaped output: receptor as chain A, binder as chain B."""
+        path = os.path.join('outputs', name)
+        with open(path, 'w') as f:
+            f.write(extra)
+            f.write(ca_pdb(receptor, chain='A'))
+            f.write(f'TER    1000      ALA A{receptor[-1]:>4}\n')
+            f.write(ca_pdb(binder, chain='B'))
+            f.write(f'TER    1001      ALA B{binder[-1]:>4}\n')
+            f.write('END\n')
+        return path
+
+    def swap(self, path, binder_length, expect_exit=False):
+        """Run the swap; returns its stdout. Mirrors Node01TestCase.run_node_01."""
+        stdout = io.StringIO()
+        code = None
+        try:
+            with contextlib.redirect_stdout(stdout):
+                self.node_02.swap_binder_to_chain_a(path, binder_length)
+        except SystemExit as exit_signal:
+            code = exit_signal.code
+        if code is not None and not expect_exit:
+            self.fail(f'swap exited {code}:\n{stdout.getvalue()}')
+        if code is None and expect_exit:
+            self.fail(f'swap was expected to exit non-zero:\n{stdout.getvalue()}')
+        self.exit_code = code
+        return stdout.getvalue()
+
     def test_binder_becomes_chain_a(self):
         # RFdiffusion emits the receptor as A and the binder as B, following the
         # contig order; nodes 03-05 assume the reverse.
-        path = os.path.join('outputs', 'design_0.pdb')
-        with open(path, 'w') as f:
-            f.write(ca_pdb([1, 2], chain='A'))
-            f.write('TER    1000      ALA A   2\n')
-            f.write(ca_pdb([1, 2], chain='B'))
-            f.write('TER    1001      ALA B   2\n')
-            f.write('END\n')
+        path = self.write_complex('design_0.pdb', [1, 2], [1, 2])
 
-        self.node_02.swap_binder_to_chain_a(path)
+        self.swap(path, binder_length=2)
 
         with open(path) as f:
             chains = [line[21] for line in f
@@ -323,19 +345,46 @@ class TestNode02ChainSwap(NodeTestCase):
         self.assertEqual(chains, ['B', 'B', 'B', 'A', 'A', 'A'])
 
     def test_other_records_are_left_alone(self):
-        path = os.path.join('outputs', 'design_1.pdb')
-        with open(path, 'w') as f:
-            f.write('REMARK   1 UNTOUCHED A\n')
-            f.write(ca_pdb([1], chain='A'))
-            f.write('END\n')
+        path = self.write_complex('design_1.pdb', [1], [1],
+                                  extra='REMARK   1 UNTOUCHED A\n')
 
-        self.node_02.swap_binder_to_chain_a(path)
+        self.swap(path, binder_length=1)
 
         with open(path) as f:
             lines = f.readlines()
         self.assertEqual(lines[0], 'REMARK   1 UNTOUCHED A\n')
         self.assertEqual(lines[1][21], 'B')
         self.assertEqual(lines[-1], 'END\n')
+
+    def test_a_third_chain_is_refused(self):
+        # A receptor emitted as two chains would make B a receptor segment, so
+        # relabelling would hand node 03 the receptor to redesign.
+        path = self.write_complex('design_2.pdb', [1, 2], [1, 2])
+        with open(path, 'a') as f:
+            f.write(ca_pdb([1, 2], chain='C'))
+
+        output = self.swap(path, binder_length=2, expect_exit=True)
+        self.assertEqual(self.exit_code, 1)
+        self.assertIn("expected exactly ['A', 'B']", output)
+
+    def test_wrong_binder_length_is_refused(self):
+        # Chain B must be the generated binder; any other size means the contig
+        # order and the emitted chain order disagree.
+        path = self.write_complex('design_3.pdb', [1, 2], [1, 2, 3])
+
+        output = self.swap(path, binder_length=80, expect_exit=True)
+        self.assertEqual(self.exit_code, 1)
+        self.assertIn('chain B has 3 residues, expected 80', output)
+
+    def test_the_file_is_left_untouched_when_the_guard_fires(self):
+        path = self.write_complex('design_4.pdb', [1, 2], [1, 2])
+        with open(path) as f:
+            before = f.read()
+
+        self.swap(path, binder_length=99, expect_exit=True)
+
+        with open(path) as f:
+            self.assertEqual(f.read(), before)
 
 
 if __name__ == '__main__':
