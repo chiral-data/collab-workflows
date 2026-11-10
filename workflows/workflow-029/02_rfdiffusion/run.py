@@ -63,6 +63,18 @@ def chain_residue_counts(lines):
     return {chain: len(residues) for chain, residues in counts.items()}
 
 
+def build_contig(segments, binder_length):
+    """The Hydra contig string RFdiffusion is handed.
+
+    Chain A is hardcoded — node 01 guarantees chain A output. Segments are joined
+    with '/', which advances RFdiffusion's positional index by the real size of
+    each gap; '/0' would instead declare a 200-index break, i.e. a separate chain.
+    check_contig_semantics.py asserts that arithmetic against the pinned image;
+    re-run it if the image tag changes, since nothing here would notice a drift.
+    """
+    return f'[{segments}/0 {binder_length}-{binder_length}]'
+
+
 def swap_binder_to_chain_a(path, binder_length):
     """Make the generated binder chain A and the receptor chain B.
 
@@ -161,12 +173,7 @@ print(f'Receptor segments ({segment_source}): {segments}', flush=True)
 print(f'Binder length: {binder_length}', flush=True)
 print(f'Number of designs: {num_designs}', flush=True)
 
-# Chain A is hardcoded — node 01 guarantees chain A output. Segments are joined
-# with '/', which advances RFdiffusion's positional index by the real size of
-# each gap; '/0' would instead declare a 200-index break, i.e. a separate chain.
-# check_contig_semantics.py asserts that arithmetic against the pinned image;
-# re-run it if the image tag changes, since nothing here would notice a drift.
-contig = f'[{segments}/0 {binder_length}-{binder_length}]'
+contig = build_contig(segments, binder_length)
 
 cmd = [
     'python3.9', '/app/RFdiffusion/scripts/run_inference.py',

@@ -306,9 +306,9 @@ class TestNode02Readers(NodeTestCase):
         self.node_02 = load_module('workflow_029_node_02', NODE_02, tolerate_exit=True)
 
     def contig(self, segments):
-        # The string node 02 builds; the assertion of record, since this is what
-        # RFdiffusion is actually handed.
-        return f'[{segments}/0 {self.BINDER_LENGTH}-{self.BINDER_LENGTH}]'
+        # Node 02's own builder, not a copy of it: a test that re-implemented the
+        # f-string would keep passing after the real one changed.
+        return self.node_02.build_contig(segments, self.BINDER_LENGTH)
 
     def test_recorded_segments_are_read_back(self):
         path = self.write_input('validated_target.pdb',
