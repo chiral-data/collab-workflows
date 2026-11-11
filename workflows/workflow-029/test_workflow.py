@@ -295,6 +295,51 @@ class TestNode01Hotspots(Node01TestCase):
         self.assertEqual(self.remarks('HOTSPOTS'), [''])
 
 
+class TestNode01ToNode02RoundTrip(Node01TestCase):
+    """Node 01's real output, parsed by node 02's real readers.
+
+    Every other node 02 test writes its own REMARK block by hand, so nothing
+    exercised the format the two nodes actually agree on — a change to either
+    side would have left all of them green.
+    """
+
+    BINDER_LENGTH = 80
+
+    def setUp(self):
+        super().setUp()
+        self.node_02 = load_module('workflow_029_node_02_rt', NODE_02, tolerate_exit=True)
+
+    def test_the_contig_node_02_would_build(self):
+        self.run_node_01(hotspot_residues='A38,A42,A45,A68')
+        segments = self.node_02.read_receptor_segments(OUTPUT)
+        self.assertEqual(segments, 'A6-75/A80-98/A103-133')
+        self.assertEqual(self.node_02.build_contig(segments, self.BINDER_LENGTH),
+                         '[A6-75/A80-98/A103-133/0 80-80]')
+        self.assertEqual(self.node_02.read_hotspot_mapping(OUTPUT), 'A38,A42,A45,A68')
+
+    def test_the_fallback_agrees_with_the_record(self):
+        # Node 02 derives segments when the record is missing. If the two paths
+        # disagreed, an older target would silently get a different contig.
+        self.run_node_01()
+        self.assertEqual(self.node_02.derive_receptor_segments(OUTPUT),
+                         self.node_02.read_receptor_segments(OUTPUT))
+
+    def test_the_renumbered_round_trip(self):
+        self.run_node_01(hotspot_residues='A38,A42,A45,A68', renumber_residues='true')
+        self.assertEqual(self.node_02.read_receptor_segments(OUTPUT), 'A1-120')
+        self.assertEqual(self.node_02.read_hotspot_mapping(OUTPUT), 'A33,A37,A40,A63')
+
+    def test_no_hotspots_reads_back_as_no_mapping(self):
+        # Distinct from an all-dropped set, which writes an empty summary line so
+        # node 02 can tell "node 01 resolved nothing" from "node 01 never ran".
+        self.run_node_01()
+        self.assertIsNone(self.node_02.read_hotspot_mapping(OUTPUT))
+
+    def test_an_all_dropped_set_reads_back_as_empty_not_absent(self):
+        self.run_node_01(receptor_chain='B', hotspot_residues='A38,A42')
+        self.assertEqual(self.node_02.read_hotspot_mapping(OUTPUT), '')
+
+
 class TestNode02Readers(NodeTestCase):
     """Node 02's readers, which are stdlib-only and need no image."""
 
