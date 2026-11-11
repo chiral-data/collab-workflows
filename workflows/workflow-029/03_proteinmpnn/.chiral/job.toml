@@ -10,16 +10,6 @@ use_gpu = true
 [scripts]
 run = "run.sh"
 
-[params.num_seq_per_target]
-type    = "integer"
-default = 8
-hint    = "Number of sequences to design per backbone"
-
-[params.sampling_temp]
-type    = "float"
-default = 0.1
-hint    = "Sampling temperature: lower = more conservative, higher = more diverse"
-
 [params.chain_to_design]
 type    = "string"
 default = "A"

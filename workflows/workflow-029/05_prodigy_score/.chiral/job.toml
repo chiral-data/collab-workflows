@@ -19,16 +19,6 @@ type    = "float"
 default = 5.5
 hint    = "Distance cutoff in Å for interface contact counting"
 
-[params.top_n]
-type    = "integer"
-default = 10
-hint    = "Number of top-ranked designs to export"
-
-[params.dg_cutoff]
-type    = "float"
-default = -8.0
-hint    = "ΔG threshold in kcal/mol; designs above this are flagged as weak_binder"
-
 [params.pymol_selection]
 type    = "boolean"
 default = true

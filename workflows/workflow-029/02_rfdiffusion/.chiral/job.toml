@@ -10,16 +10,6 @@ use_gpu = true
 [scripts]
 run = "run.sh"
 
-[params.binder_length]
-type    = "integer"
-default = 80
-hint    = "Length in residues of the designed binder"
-
-[params.hotspot_residues]
-type    = "string"
-default = ""
-hint    = "Set this to the same value as node 01, which translates it onto the renumbered target. Empty = automatic."
-
 [params.noise_scale]
 type    = "float"
 default = 1.0
