@@ -2,8 +2,8 @@
 """
 Run ProteinMPNN on each RFdiffusion backbone.
 
-RFdiffusion convention: chain A = binder, chain B = receptor.
-ProteinMPNN designs chain A while holding chain B fixed.
+Chain A = binder, chain B = receptor — relabelled by node 02, which reverses what
+RFdiffusion emits. ProteinMPNN designs chain A while holding chain B fixed.
 
 Design ID naming: RFdiffusion outputs design_0.pdb, design_1.pdb, etc.
 This script renames outputs to zero-padded IDs: design_000.fasta, design_001.fasta, etc.

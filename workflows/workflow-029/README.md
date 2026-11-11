@@ -53,7 +53,7 @@ input_files/target.pdb
 
 Nodes 04 and 06 each depend on two upstream nodes. Node 04 takes sequences from 03 and the validated receptor from 01. Node 06 takes PRODIGY results from 05 and filter metrics from 04.
 
-**Chain convention (critical):** Node 01 always writes the receptor as chain A regardless of the input chain ID. RFdiffusion, whose contig lists the receptor first, emits that receptor as chain A and the generated binder as chain B; node 02 relabels them before publishing, so every backbone it writes is **chain A = binder (poly-Gly backbone), chain B = receptor**. This convention holds in all downstream nodes: ProteinMPNN designs chain A, ColabFold folds the binder:receptor pair, and PRODIGY `--selection A B` means binder=A, receptor=B.
+**Chain convention (critical):** Node 01 always writes the receptor as chain A regardless of the input chain ID. RFdiffusion, whose contig lists the receptor first, emits that receptor as chain A and the generated binder as chain B; node 02 relabels them before publishing, so every backbone it writes is **chain A = binder (poly-Gly backbone), chain B = receptor**. This convention holds in all downstream nodes: ProteinMPNN designs chain A, ColabFold folds the binder:receptor pair, and PRODIGY `--selection A B` means binder=A, receptor=B. Node 05 holds those two letters as constants rather than parameters, since node 02's relabelling fixes them.
 
 ## Input requirements
 
@@ -153,7 +153,7 @@ For the bundled target, `A38,A42,A45,A68` are the IL-2 residues that contact IL-
 
 **Goal:** Fold each designed sequence as a binder:receptor complex and apply four structural self-consistency filters.
 
-**Process:** Iterates over every sequence record in every FASTA file (creating one ColabFold job per sequence, not per file). **This is the node that makes outbound network calls** — one MSA query per prediction under the default `msa_mode`; see the disclosure section above. For each sequence, concatenates the binder sequence and the receptor sequence extracted from `validated_target.pdb` with a `:` separator to form the ColabFold multimer input. Runs `colabfold_batch` with AlphaFold2 multimer v3. Extracts metrics from `*_scores_rank_001_*.json`: iPTM directly; pLDDT for the binder as `mean(plddt[:binder_length])`; interface PAE as the mean of the off-diagonal cross-chain block of the PAE matrix. Computes Cα RMSD by aligning folded chain A against the backbone PDB by sequence position (not residue number), warning and skipping if the length difference exceeds 5 residues.
+**Process:** Iterates over every sequence record in every FASTA file (creating one ColabFold job per sequence, not per file). **This is the node that makes outbound network calls** — one MSA query per prediction under the default `msa_mode`; see the disclosure section above. For each sequence, concatenates the binder sequence and the receptor sequence extracted from `validated_target.pdb` with a `:` separator to form the ColabFold multimer input. Runs `colabfold_batch` with AlphaFold2 multimer v3. Extracts metrics from `*_scores_rank_001_*.json`: iPTM directly; pLDDT for the binder as `mean(plddt[:binder_length])`; interface PAE as the mean of the off-diagonal cross-chain block of the PAE matrix. Computes Cα RMSD by aligning folded chain A against the backbone PDB by sequence position (not residue number), recording a `bb_rmsd_unavailable` fail reason if the length difference exceeds 5 residues.
 
 **Scientific notes:** The receptor is folded whole, and a gap in the deposited coordinates is therefore presented to AlphaFold2 as though a peptide bond spanned it. ColabFold cannot express a gap inside a chain, so the alternatives were measured rather than argued:
 
@@ -168,7 +168,7 @@ The four filter thresholds follow published standards: iPTM ≥ 0.6 and PAE < 10
 
 **Outputs:**
 - `folded/design_*_rank001.pdb` — Folded complex PDBs for passing designs only.
-- `folded/filter_report.json` — Per-design records with all four metrics, pass/fail status, and fail reason.
+- `folded/filter_report.json` — Per-design records with the four filter metrics plus the diagnostic receptor pLDDT, pass/fail status, and fail reasons.
 
 ---
 
@@ -199,6 +199,16 @@ The four filter thresholds follow published standards: iPTM ≥ 0.6 and PAE < 10
 
 ## Parameters
 
+Every parameter below is declared once, in `.chiral/workflow.toml`, and set at
+workflow level. Silva merges a node's own params over the workflow's, so a
+parameter declared in both places is always taken from the node — which is why
+the shared ones live in exactly one file. The node-level params that remain are
+the ones only that node has an opinion about: `strip_heteroatoms` and
+`renumber_residues` (01), `noise_scale` and `num_diffusion_steps` (02),
+`chain_to_design` and `use_soluble_model` (03), `num_recycle` and `msa_mode`
+(04), and `temperature`, `distance_cutoff` and `pymol_selection` (05).
+
+
 ### receptor_chain
 
 | Value / Range | Description |
@@ -223,7 +233,7 @@ Chain D is usable, but its 38-residue gap leaves the target presenting as two lo
 
 - **Type:** string
 - **Default:** `""`
-- **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A38,A42,A45"`. Given in the numbering of **your input PDB**, and used as given — node 01 preserves that numbering, so no translation happens unless `renumber_residues` is on. They also decide which segment node 04 folds when the receptor has chain breaks.
+- **Description:** Comma-separated residue IDs on the receptor to bias backbone sampling, e.g. `"A38,A42,A45"`. Given in the numbering of **your input PDB**, and used as given — node 01 preserves that numbering, so no translation happens unless `renumber_residues` is on.
 - **Guidance:** Empty means RFdiffusion samples the full receptor surface. Specifying hotspots from a known binding partner improves success rate when the epitope is defined; Watson et al. 2023 report roughly a 5× improvement from targeting a known contact patch. Where the deposit contains the natural partner, as this one does, the epitope can be read straight off the structure.
 
 ### msa_mode
@@ -282,7 +292,7 @@ Chain D is usable, but its 38-residue gap leaves the target presenting as two lo
 
 ### filter_report.json
 
-Per-design JSON array with fields: `design_id`, `iptm`, `plddt_binder`, `bb_rmsd`, `pae_interaction`, `pass`, `fail_reasons`. Designs with `pass: true` proceed to PRODIGY scoring. The `fail_reasons` field is a list of all metrics that failed (e.g. `["iptm", "plddt_binder"]`); use it to tune filter thresholds.
+Per-design JSON array with fields: `design_id`, `iptm`, `plddt_binder`, `plddt_receptor`, `bb_rmsd`, `pae_interaction`, `pass`, `fail_reasons`. `plddt_receptor` is diagnostic only and is never filtered on — it separates a bad design from a receptor that was never modelled, which a funnel of binder metrics alone cannot do. Designs with `pass: true` proceed to PRODIGY scoring. The `fail_reasons` field is a list of all metrics that failed (e.g. `["iptm", "plddt_binder"]`); use it to tune filter thresholds.
 
 ### prodigy_all_designs.json / ranked_designs.csv
 
