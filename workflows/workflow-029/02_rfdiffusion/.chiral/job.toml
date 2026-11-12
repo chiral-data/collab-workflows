@@ -1,5 +1,5 @@
 name        = "RFdiffusion Backbone Design"
-description = "Run RFdiffusion (Watson et al. 2023) to generate binder backbone structures. Output complex PDBs follow RFdiffusion convention: chain A = binder (poly-Gly), chain B = receptor."
+description = "Run RFdiffusion (Watson et al. 2023) to generate binder backbone structures. RFdiffusion emits the receptor as chain A and the binder as chain B, following the contig order; this node relabels them so the output is chain A = binder (poly-Gly), chain B = receptor, which is what the downstream nodes expect."
 inputs      = ["validated_target.pdb"]
 outputs     = ["backbones/design_*.pdb"]
 
@@ -8,16 +8,6 @@ image   = "rfdiffusion:2026_06_25"
 
 [scripts]
 run = "run.sh"
-
-[params.binder_length]
-type    = "integer"
-default = 80
-hint    = "Length in residues of the designed binder"
-
-[params.hotspot_residues]
-type    = "string"
-default = ""
-hint    = "Comma-separated residue IDs on receptor to target, e.g. A55,A58,A102. Empty = automatic."
 
 [params.noise_scale]
 type    = "float"

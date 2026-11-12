@@ -1,5 +1,5 @@
 name        = "Validate Target"
-description = "Clean and validate the input receptor PDB. Selects the specified chain, optionally strips heteroatoms and renumbers residues, then writes the output always as chain A for downstream compatibility."
+description = "Clean and validate the input receptor PDB. Selects the specified chain, optionally strips heteroatoms, detects chain breaks and records the receptor's contiguous segments, then writes the output always as chain A for downstream compatibility."
 inputs      = ["target.pdb"]
 outputs     = ["validated_target.pdb"]
 
@@ -9,16 +9,6 @@ image = "biopython:2026_06_30"
 [scripts]
 run = "run.sh"
 
-[params.receptor_chain]
-type    = "string"
-default = "A"
-hint    = "Chain ID of the receptor in the input PDB to extract"
-
-[params.hotspot_residues]
-type    = "string"
-default = ""
-hint    = "Comma-separated residue IDs to validate exist, e.g. A55,A58,A102. Warnings only — does not halt."
-
 [params.strip_heteroatoms]
 type    = "boolean"
 default = true
@@ -26,5 +16,5 @@ hint    = "Remove HETATM records before processing"
 
 [params.renumber_residues]
 type    = "boolean"
-default = true
-hint    = "Renumber residues starting from 1"
+default = false
+hint    = "Renumber residues starting from 1. Off by default: renumbering closes over missing loops, so RFdiffusion is handed the residues flanking a gap as though they were bonded. Turn it on only for a target whose numbering a contig cannot express — non-positive or duplicated residue numbers."
