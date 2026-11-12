@@ -3,7 +3,6 @@ description = "Build a self-contained HTML report with the design metrics table 
 inputs = [
   "*_generated.cif",
   "design_metrics.json",
-  "generation_manifest.json",
 ]
 outputs = [
   "report.html",

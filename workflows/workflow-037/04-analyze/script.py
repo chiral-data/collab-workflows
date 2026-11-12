@@ -149,6 +149,7 @@ def analyze(path):
     ]
 
     contacts, contacted, min_distance = interface(designed_coords, target_coords)
+    gyration = radius_of_gyration(designed_coords)
     # X is an unrecognised residue; excluded from composition so it cannot dilute the ratio.
     known = [c for c in sequence if c != "X"]
     hydrophobic = sum(1 for c in known if c in HYDROPHOBIC)
@@ -163,11 +164,7 @@ def analyze(path):
         "hydrophobic_fraction": round(hydrophobic / len(known), 3) if known else None,
         "net_charge": sum(1 for c in sequence if c in POSITIVE)
         - sum(1 for c in sequence if c in NEGATIVE),
-        "radius_of_gyration_A": (
-            round(radius_of_gyration(designed_coords), 2)
-            if radius_of_gyration(designed_coords) is not None
-            else None
-        ),
+        "radius_of_gyration_A": round(gyration, 2) if gyration is not None else None,
         "n_interface_contacts": contacts,
         "n_target_residues_contacted": contacted,
         "min_interchain_distance_A": min_distance,

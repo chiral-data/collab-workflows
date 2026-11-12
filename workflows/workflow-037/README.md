@@ -101,7 +101,10 @@ numberings.
 **Process:** Picks the first `.cif.zst`/`.cif`/`.pdb` in the input directory, else fetches
 `https://files.rcsb.org/download/<pdb_id>.cif`. A `.cif.zst` is decompressed and a `.pdb` is
 converted with Biopython; an mmCIF is copied byte-for-byte, because re-serialising it would renumber
-`label_seq_id` and silently invalidate every contig downstream. The inventory is then read straight
+`label_seq_id` and silently invalidate every contig downstream. A converted PDB then has its label
+numbering canonicalised — one `label_asym_id` per author chain, `label_seq_id` sequential over
+standard residues — because Biopython's writer starts a new `label_asym_id` at every modified
+residue, which would otherwise shred a peptide chain into one- and two-residue fragments. The inventory is then read straight
 out of `_atom_site`: per polymer chain, the `label_asym_id`/`auth_asym_id` pair, both sequence
 ranges, the one-letter sequence, and explicit `auth_to_label` / `label_to_auth` maps. The node fails
 if `target_chain` matches no chain under either numbering, listing what is present.
@@ -111,6 +114,10 @@ what the mmCIF polymer sequence uses and what RFD4 reads. They diverge whenever 
 numbered to match a parent protein or a crystallised fragment starts partway in. Emitting both,
 once, up front is what lets every later node be unambiguous. Non-polymer atoms (ligands, waters)
 have no `label_seq_id` and are excluded from the inventory, since they cannot appear in a contig.
+PDB input is the weaker path: it carries no polymer definition, so modified residues are left out of
+the numbering and a chain containing them will number differently than the same entry's RCSB mmCIF.
+Prefer mmCIF when the target has modified residues. Repeated author numbers (insertion codes) make
+author->label translation ambiguous; the node warns and maps the first occurrence.
 
 **Outputs:**
 - `target.cif` — the target, normalised to mmCIF
@@ -124,7 +131,8 @@ have no `label_seq_id` and are excluded from the inventory, since they cannot ap
 them to `label_seq_id` via node 01's maps unless `residue_numbering=label`, and builds the contig and
 conditions for the chosen `task` from a Jinja template in [02-build-spec/templates](02-build-spec/templates).
 A `contig` parameter, if set, replaces the templated one verbatim. Every referenced residue and chain
-is checked against the inventory first, so a typo fails here with a message naming the valid range.
+is checked against the inventory first, so a typo fails here with a message naming the valid range,
+and a chain whose contig span covers unresolved residues produces a warning naming the holes.
 The node then writes `spec_preview.cif`: the target plus an appended `_rfd4_spec_preview` loop
 listing each conditioned residue, and, when upstream's `write_condition_spec_cifs.py` can be located
 in the image, that renderer's richer output replaces it and a non-zero exit from it fails the node.
@@ -395,6 +403,11 @@ and confirm the conditioned residues are the epitope you meant.
 **Node 03: "No GPU available"**
 The node requires a GPU and refuses to run on CPU. Confirm the job is scheduled on a GPU node and
 that the container sees it (`nvidia-smi` inside the image).
+
+**Node 02 warns that the target chain is missing residues inside its span**
+The chain has unresolved loops (or modified residues, on the PDB path), so the contig segment covers
+positions with no coordinates. Usually harmless for a binder run against a well-ordered epitope;
+worth a look if the holes sit at the interface you are targeting.
 
 **Node 02 warns that `write_condition_spec_cifs.py` was not found**
 Only this node's own annotation is written; the upstream validation pass is skipped. Set

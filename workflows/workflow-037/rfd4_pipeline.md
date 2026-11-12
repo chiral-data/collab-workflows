@@ -88,7 +88,7 @@ lines of `[container]`** in every `job.toml`.
 
 Verified on the development host with local Python 3.12 (Biopython, jinja2, numpy, requests):
 
-- Node 01 on both paths — uploaded mmCIF and RCSB fetch of 5O45. Confirms the footgun this design
+- Node 01 on all three paths — uploaded mmCIF, uploaded PDB, and RCSB fetch of 5O45. Confirms the footgun this design
   is built around: on 5O45, chain A is author 17–145 and label 1–129, so author 45 is label 29.
 - Node 02 for all four tasks, the `contig` override, both numbering modes, and every validation
   failure (unknown task, bad length, out-of-range residue, missing motif, redesign == target).
@@ -114,6 +114,23 @@ Not verified, and needing the image:
   reports all chains so a mismatch is visible).
 - The upstream `write_condition_spec_cifs.py` path — node 02 probes three locations and
   `RFD4_SPEC_CIF_SCRIPT`, and warns rather than failing when it finds none.
+
+### Fixed during review
+
+- **Node 01, PDB path (silent wrongness).** Biopython's mmCIF writer opens a new `label_asym_id` at
+  each non-standard residue, so 5O45's chain B came out as 14 separate one- and two-residue chains.
+  `target_chain=B` would then resolve to a one-residue fragment and the contig would design against
+  it without complaint. Node 01 now canonicalises label numbering after conversion: one
+  `label_asym_id` per author chain, `label_seq_id` sequential over standard residues.
+- **Node 02, empty `loop_`.** A spec with no residue-level conditions (binder without hotspots) made
+  `spec_preview.cif` carry a `loop_` with zero rows, which is invalid mmCIF — Biopython tolerates it,
+  stricter parsers do not. It now writes a comment instead, and whole-chain conditions such as
+  `C_CRD sel('A///')` are recorded with `label_seq_id .` rather than being dropped.
+- **Node 02, unresolved gaps.** A contig span like `B1-14` over a chain with only 8 resolved residues
+  now warns and names the holes, at CPU time.
+- Node 01 also warns on repeated author numbers (insertion codes) instead of silently overwriting
+  the translation map; node 03 keeps its scratch directory on failure and names it; node 04 computes
+  Rg once; node 05's job.toml no longer declares an input it never reads.
 
 ## Open items
 

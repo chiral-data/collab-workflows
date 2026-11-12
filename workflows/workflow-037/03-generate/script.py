@@ -172,11 +172,19 @@ def main():
     elapsed = round(time.time() - started, 1)
 
     if result.returncode != 0:
-        fail(f"rfd4-generate exited {result.returncode} after {elapsed}s (output above)")
+        # The scratch directory is left in place deliberately: it holds the spec and the
+        # partial output tree, which is what a post-mortem needs.
+        fail(
+            f"rfd4-generate exited {result.returncode} after {elapsed}s (output above). "
+            f"Run directory kept for inspection: {run_dir}"
+        )
 
     designs = collect_designs(run_dir, "./outputs")
     if not designs:
-        fail(f"rfd4-generate exited 0 but produced no structures in {run_dir}")
+        fail(
+            f"rfd4-generate exited 0 but produced no structures. Run directory kept for "
+            f"inspection: {run_dir}"
+        )
     if len(designs) != num_replicates:
         print(
             f"WARNING: expected {num_replicates} design(s), collected {len(designs)}.",

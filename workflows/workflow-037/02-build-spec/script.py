@@ -126,7 +126,30 @@ def sel(chain="", comp="", res="", atom=""):
 
 
 def chain_segment(chain):
+    """Contig segment spanning a chain, warning if it spans residues absent from the file.
+
+    An unresolved loop leaves a hole in label_seq_id, so a span like A1-129 can cover
+    residues that have no coordinates. RFD4 is conditioned on the structure, so what it
+    does with a hole is its business — but this is worth seeing before the GPU runs, not
+    after a design comes out with a gap in the middle of the target.
+    """
     lo, hi = chain["label_seq_range"]
+    present = {residue["label_seq_id"] for residue in chain["residues"]}
+    missing = [seq for seq in range(lo, hi + 1) if seq not in present]
+    if missing:
+        runs = []
+        for seq in missing:
+            if runs and seq == runs[-1][1] + 1:
+                runs[-1] = (runs[-1][0], seq)
+            else:
+                runs.append((seq, seq))
+        gaps = ", ".join(f"{a}" if a == b else f"{a}-{b}" for a, b in runs)
+        print(
+            f"WARNING: chain {chain['label_asym_id']} is missing {len(missing)} residue(s) "
+            f"inside its span (label {gaps}) — unresolved loops or non-standard residues. "
+            f"The contig segment {chain['label_asym_id']}{lo}-{hi} covers them.",
+            flush=True,
+        )
     return f"{chain['label_asym_id']}{lo}-{hi}"
 
 
@@ -244,14 +267,27 @@ def render_spec(task, context):
 
 
 def write_annotation(target_cif, conditioned, dest):
-    """Copy the target and append our own annotation of the conditioned residues."""
+    """Copy the target and append our own annotation of the conditioned residues.
+
+    A whole-chain condition such as C_CRD sel('A///') is recorded with label_seq_id '.',
+    so chain-level conditioning is visible rather than missing. An empty loop_ is invalid
+    mmCIF, so with nothing to annotate we write a comment instead of an empty table.
+    """
     shutil.copyfile(target_cif, dest)
+    with open(dest, "rb") as handle:
+        handle.seek(-1, os.SEEK_END)
+        needs_newline = handle.read(1) != b"\n"
     with open(dest, "a") as handle:
+        if needs_newline:
+            handle.write("\n")
         handle.write("#\n# Conditioned residues (annotation written by workflow-037 node 02)\n")
+        if not conditioned:
+            handle.write("# none: this spec sets no conditions\n#\n")
+            return
         handle.write("loop_\n_rfd4_spec_preview.condition\n")
         handle.write("_rfd4_spec_preview.label_asym_id\n_rfd4_spec_preview.label_seq_id\n")
         for condition, chain, seq in conditioned:
-            handle.write(f"{condition} {chain} {seq}\n")
+            handle.write(f"{condition} {chain or '.'} {seq or '.'}\n")
         handle.write("#\n")
 
 
@@ -357,7 +393,11 @@ def main():
             if not match:
                 continue
             chain = match.group(1)
-            for seq in [s for s in match.group(2).split(",") if s]:
+            residues = [s for s in match.group(2).split(",") if s]
+            if not residues:
+                conditioned.append((name, chain, "."))  # whole-chain condition
+                continue
+            for seq in residues:
                 conditioned.append((name, chain, seq))
     preview_path = "./outputs/spec_preview.cif"
     if needs_input:

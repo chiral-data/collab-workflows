@@ -31,6 +31,11 @@ THREE_TO_ONE = {
 }
 
 
+def fail(message):
+    print(f"ERROR: {message}", flush=True)
+    sys.exit(1)
+
+
 def resolve_upload():
     uploads = sorted(
         glob.glob("./inputs/*.cif.zst")
@@ -76,7 +81,7 @@ def decompress_zst(src, dest):
 
 
 def pdb_to_mmcif(src, dest):
-    """Convert PDB to mmCIF. label_seq_id is assigned sequentially per chain."""
+    """Convert PDB to mmCIF, then canonicalise the label numbering it invents."""
     from Bio.PDB import MMCIFIO, PDBParser
 
     parser = PDBParser(QUIET=True)
@@ -84,6 +89,71 @@ def pdb_to_mmcif(src, dest):
     io = MMCIFIO()
     io.set_structure(structure)
     io.save(dest)
+    canonicalise_label_numbering(dest)
+
+
+def canonicalise_label_numbering(path):
+    """Give every author chain exactly one label_asym_id and a sequential label_seq_id.
+
+    Biopython's mmCIF writer starts a new label_asym_id at each non-standard residue, so a
+    peptide containing one modified residue comes out as several one- and two-residue
+    "chains" (5O45 chain B becomes 14 of them). Node 02 would then resolve chain B to a
+    one-residue fragment and design against it without complaint. PDB input carries no
+    label numbering of its own, so we are free to define it — and define it per author
+    chain, which is what the contigs built downstream assume.
+
+    Only files written by pdb_to_mmcif reach here: a single data block holding one
+    _atom_site loop, which is why it is safe to re-emit the file wholesale.
+    """
+    from Bio.PDB.MMCIF2Dict import MMCIF2Dict
+
+    cif = MMCIF2Dict(path)
+    columns = [key for key in cif if key.startswith("_atom_site.")]
+    if not columns:
+        fail(f"Converted mmCIF '{path}' has no _atom_site loop.")
+
+    n_atoms = len(cif[columns[0]])
+    auth_asym = cif.get("_atom_site.auth_asym_id", ["A"] * n_atoms)
+    auth_seq = cif.get("_atom_site.auth_seq_id", ["."] * n_atoms)
+    ins_code = cif.get("_atom_site.pdbx_PDB_ins_code", ["?"] * n_atoms)
+    comp = cif.get("_atom_site.label_comp_id", ["UNK"] * n_atoms)
+    group = cif.get("_atom_site.group_PDB", ["ATOM"] * n_atoms)
+
+    counters = {}
+    assigned = {}
+    new_asym = []
+    new_seq = []
+    for i in range(n_atoms):
+        chain = auth_asym[i]
+        new_asym.append(chain)
+        is_polymer = group[i] == "ATOM" or comp[i] in THREE_TO_ONE
+        if not is_polymer:
+            new_seq.append(".")  # ligands and waters carry no label_seq_id
+            continue
+        key = (chain, auth_seq[i], ins_code[i])
+        if key not in assigned:
+            counters[chain] = counters.get(chain, 0) + 1
+            assigned[key] = counters[chain]
+        new_seq.append(str(assigned[key]))
+
+    cif["_atom_site.label_asym_id"] = new_asym
+    cif["_atom_site.label_seq_id"] = new_seq
+
+    def quote(value):
+        text = "" if value is None else str(value)
+        if text == "":
+            return "."
+        if any(ch.isspace() for ch in text) or text.startswith("_"):
+            return f"'{text}'"
+        return text
+
+    with open(path, "w") as handle:
+        handle.write("data_target\n#\nloop_\n")
+        for key in columns:
+            handle.write(f"{key}\n")
+        for i in range(n_atoms):
+            handle.write(" ".join(quote(cif[key][i]) for key in columns) + "\n")
+        handle.write("#\n")
 
 
 def normalise(src, dest):
@@ -95,7 +165,9 @@ def normalise(src, dest):
         print(f"Converting PDB to mmCIF: {src}", flush=True)
         print(
             "NOTE: PDB input has no label_seq_id; conversion assigns it sequentially "
-            "per chain. Contigs and selectors must use that numbering.",
+            "per chain over standard residues only, so modified residues are skipped and "
+            "the numbering can differ from the same entry's RCSB mmCIF. Prefer mmCIF "
+            "input when the target contains modified residues.",
             flush=True,
         )
         pdb_to_mmcif(src, dest)
@@ -173,9 +245,23 @@ def build_inventory(cif_path):
         residues = sorted(chain["residues"], key=lambda r: r["label_seq_id"])
         auth_to_label = {}
         label_to_auth = {}
+        ambiguous = []
         for residue in residues:
-            auth_to_label[str(residue["auth_seq_id"])] = residue["label_seq_id"]
-            label_to_auth[str(residue["label_seq_id"])] = str(residue["auth_seq_id"])
+            auth_key = str(residue["auth_seq_id"])
+            if auth_key in auth_to_label:
+                # Insertion codes make one author number cover several residues.
+                ambiguous.append(auth_key)
+                continue
+            auth_to_label[auth_key] = residue["label_seq_id"]
+            label_to_auth[str(residue["label_seq_id"])] = auth_key
+        if ambiguous:
+            print(
+                f"WARNING: chain {chain['label_asym_id']} has repeated author numbers "
+                f"({', '.join(sorted(set(ambiguous)))}), probably insertion codes. "
+                "Author->label translation uses the first occurrence; give those "
+                "residues in label numbering (residue_numbering=label) to be exact.",
+                flush=True,
+            )
         inventory["chains"].append(
             {
                 "label_asym_id": chain["label_asym_id"],
