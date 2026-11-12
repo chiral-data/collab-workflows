@@ -4,7 +4,6 @@ inputs = [
   "annotations.json",
   "liabilities.csv",
   "models/*.pdb",
-  "model_summary.csv",
 ]
 outputs = [
   "developability.csv",

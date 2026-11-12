@@ -6,8 +6,8 @@ description = "Score a panel of antibody or nanobody sequences for developabilit
 03-developability = ["01-annotate", "02-model-fv"]
 04-humanness = ["01-annotate"]
 05-mutate-scan = ["01-annotate", "03-developability"]
-06-rank = ["01-annotate", "03-developability", "04-humanness", "05-mutate-scan"]
-07-report = ["06-rank", "02-model-fv"]
+06-rank = ["01-annotate", "02-model-fv", "03-developability", "04-humanness", "05-mutate-scan"]
+07-report = ["02-model-fv", "03-developability", "04-humanness", "05-mutate-scan", "06-rank"]
 
 [params.input_file]
 type = "file"

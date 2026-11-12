@@ -3,7 +3,6 @@ description = "Propose point mutants over the chosen region by AbLang2 likelihoo
 inputs = [
   "annotations.json",
   "developability.json",
-  "flags.csv",
 ]
 outputs = [
   "proposals.csv",
