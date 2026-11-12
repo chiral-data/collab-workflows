@@ -1,0 +1,15 @@
+name = "Visualization Report"
+description = "Generate self-contained interactive HTML report with 3D structure viewers"
+inputs = ["*.pdb"]
+outputs = ["report.html", "*.pdb"]
+
+[container]
+image = "abodybuilder3:2026_06_15"
+
+[scripts]
+run = "run.sh"
+
+[params.REPORT_TITLE]
+type = "string"
+default = "ABB3 Structure Predictions"
+hint = "Title for the HTML visualization report"

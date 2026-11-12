@@ -1,0 +1,16 @@
+name = "PLM Embedding"
+description = "Generate ProtT5 PLM embeddings (USE_PLM=1) or passthrough inputs unchanged (USE_PLM=0)"
+inputs = ["*.pt"]
+outputs = ["*.pt"]
+
+[container]
+image = "abodybuilder3:2026_06_15"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.DEVICE]
+type = "string"
+default = "cuda"
+hint = "Compute device: cpu or cuda"

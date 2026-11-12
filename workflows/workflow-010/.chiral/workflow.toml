@@ -1,0 +1,22 @@
+name = "Antibody Structure Prediction (ABB3)"
+description = "Predicts Fv antibody structure from paired heavy/light chain FASTA sequences using ABodyBuilder3"
+
+[dependencies]
+02-plm-embedding = ["01-input-preparation"]
+03-structure-prediction = ["02-plm-embedding"]
+04-visualization-report = ["03-structure-prediction"]
+
+[params.DEVICE]
+type = "string"
+default = "cuda"
+hint = "Compute device: cpu or cuda"
+
+[params.USE_PLM]
+type = "string"
+default = "0"
+hint = "Set to 1 to run Node 02 (ABB3-LM with ProtT5 embeddings)"
+
+[params.REPORT_TITLE]
+type = "string"
+default = "ABB3 Structure Predictions"
+hint = "Title for the HTML visualization report"
