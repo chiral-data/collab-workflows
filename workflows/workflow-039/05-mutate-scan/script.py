@@ -127,8 +127,14 @@ def introduced_motifs(original, mutated, motifs):
     return sorted({name for name, _ in after if name not in before})
 
 
-def cysteine_parity_broken(original, mutated):
-    return (original.count("C") % 2) != (mutated.count("C") % 2)
+def creates_unpaired_cysteine(original, mutated):
+    """True when the substitution leaves an odd cysteine count where there was an even one.
+
+    Deliberately asymmetric. Any *change* of parity would also block a substitution that
+    removes an already-unpaired cysteine, which is a repair rather than a risk — and repairing
+    an unpaired thiol is one of the more useful things this scan could suggest.
+    """
+    return mutated.count("C") % 2 == 1 and original.count("C") % 2 == 0
 
 
 def developability_direction(wild_type, mutant, flags, hydrophobicity):
@@ -199,7 +205,7 @@ def main():
     if not motifs:
         warn(
             "annotations.json carries no motif definitions, so proposals cannot be re-screened "
-            "for liabilities. Only the cysteine-parity and developability-direction rules will "
+            "for liabilities. Only the unpaired-cysteine and developability-direction rules will "
             "apply."
         )
 
@@ -338,9 +344,9 @@ def main():
                 if new_motifs:
                     verdict = "dropped"
                     reason = f"introduces liability motif(s): {', '.join(new_motifs)}"
-                elif cysteine_parity_broken(sequence, mutated):
+                elif creates_unpaired_cysteine(sequence, mutated):
                     verdict = "dropped"
-                    reason = "changes cysteine parity, risking an unpaired thiol"
+                    reason = "leaves an odd cysteine count, risking an unpaired thiol"
                 else:
                     direction = developability_direction(
                         wild_type, mutant, clone_flags, kd
@@ -420,7 +426,7 @@ def main():
         "screen_rules": [
             "mutant probability must exceed the wild-type probability at that position",
             "no new liability motif may be introduced (motif set from node 01)",
-            "cysteine parity must not change",
+            "the substitution must not leave an odd cysteine count where there was an even one",
             "the substitution must not push a flagged clone further in its flagged direction",
         ],
         "caveat": (
