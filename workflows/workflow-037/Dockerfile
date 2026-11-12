@@ -7,8 +7,12 @@ ENV HF_HOME=/models \
     NVIDIA_VISIBLE_DEVICES=all \
     NVIDIA_DRIVER_CAPABILITIES=compute,utility
 
+# libxrender1/libxext6/libsm6 are not optional. Without them Open Babel's plugin load
+# fails, GetSupportedInputFormat() returns malformed data, and atomworks.ml's import of it
+# dies with "not enough values to unpack" — which takes rfproteina's condition_spec, and
+# therefore node 02's validation and generation itself, down with it.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      git curl ca-certificates && \
+      git curl ca-certificates libxrender1 libxext6 libsm6 && \
     rm -rf /var/lib/apt/lists/*
 
 # Upstream warns that a fresh venv's bundled pip trusts a compromised CA — pin pip first.

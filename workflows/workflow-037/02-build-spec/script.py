@@ -316,12 +316,20 @@ def validate_with_upstream(spec_path, dest):
     try:
         from rfproteina.inference_utils.condition_spec import resolve_condition_spec_inputs
     except ImportError:
+        # Package absent: the CPU-only development path. Degrade to our own annotation.
         print(
             "WARNING: rfproteina is not importable here, so the spec was not validated "
             "against upstream. spec_preview.cif carries this node's own annotation only.",
             flush=True,
         )
         return False
+    except Exception as exc:
+        # Package present but broken — e.g. Open Babel failing to load its plugins takes
+        # the whole import chain down. Generation would fail the same way, so stop here.
+        fail(
+            f"rfproteina is installed but failed to import: {type(exc).__name__}: {exc}\n"
+            "The image is broken, not the spec. Generation would fail the same way."
+        )
 
     out_dir = "./outputs/_spec_cifs"
     os.makedirs(out_dir, exist_ok=True)
