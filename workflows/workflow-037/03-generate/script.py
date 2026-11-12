@@ -14,10 +14,10 @@ Three deliberate choices:
 
 Supports --dry-run: print the resolved argv and exit 0 without touching the GPU.
 
-TODO(build): the override names below are the one unverified surface in this node. Confirm
-`--config`, `inference.num_replicates`, `inference.seed`, `compile_lengths` and `out_dir`
-against `rfd4-generate --help` on the first in-image run; they are built in one place
-(build_argv) so a correction is a single edit.
+The override names are Hydra keys confirmed against RFD4-Proteina 0.0.3's
+configs/inference.yaml and the upstream README: `inputs` (the spec path, not --config),
+top-level `num_replicates`, `seed`, `out_dir`, `compile_lengths` and `hf_ckpt_revision`,
+with the `metrics` config group removed by `~metrics`.
 """
 import glob
 import json
@@ -81,13 +81,18 @@ def package_version():
         return "unknown"
 
 
-def build_argv(spec_name, out_dir, num_replicates, seed, disable_compile):
+def build_argv(spec_name, out_dir, num_replicates, seed, disable_compile, revision):
+    # Upstream's documented generation call:
+    #   rfd4-generate inputs=binder.yaml num_replicates=2 out_dir=./runs/first '~metrics'
+    # The shell quoting upstream notes around ~metrics is moot here: argv goes to
+    # subprocess.run as a list, so nothing expands ~ to $HOME.
     argv = [
         "rfd4-generate",
-        f"--config={spec_name}",
+        f"inputs={spec_name}",
         f"out_dir={out_dir}",
-        f"inference.num_replicates={num_replicates}",
-        f"inference.seed={seed}",
+        f"num_replicates={num_replicates}",
+        f"seed={seed}",
+        f"hf_ckpt_revision={revision}",
         "~metrics",
     ]
     if disable_compile:
@@ -144,10 +149,10 @@ def main():
         fail(f"Condition spec not found: {spec_path}")
     target_path = f"./inputs/{TARGET_NAME}"
 
-    argv = build_argv(SPEC_NAME, "out", num_replicates, seed, disable_compile)
+    argv = build_argv(SPEC_NAME, "out", num_replicates, seed, disable_compile, hf_ckpt_revision)
 
     print(f"rfd4-proteina version: {package_version()}", flush=True)
-    print(f"Checkpoint revision (pinned at image build): {hf_ckpt_revision}", flush=True)
+    print(f"Checkpoint revision: {hf_ckpt_revision}", flush=True)
     print(f"Resolved argv: {argv}", flush=True)
 
     if dry_run:

@@ -16,16 +16,16 @@ RUN pip install --no-cache-dir "pip==26.2.2" && pip install --no-cache-dir "uv>=
 
 # CUDA 12 profile, matching this repo's GPU estate (no CUDA 13 host driver available).
 # The BioIR backend is cu13-only and is deliberately forgone.
-# TODO(build): pin the rfd4-proteina version once `uv pip index versions` is run at build time.
+# Pinned: 0.0.3 is the newest release (checked 2026-11-12); requires-python is >=3.12,<3.13.
 RUN uv pip install --system --no-cache --no-sources \
-      --torch-backend cu126 "rfd4-proteina[all-cuda12]"
+      --torch-backend cu126 "rfd4-proteina[all-cuda12]==0.0.3"
 
-# Node dependencies: structure parsing (01, 04, 05), spec templating (02),
+# Node dependencies: structure parsing (01, 04, 05), spec emission (02),
 # .cif.zst inputs (01), RCSB fetch (01). Pinned so the CPU nodes are reproducible
 # independently of whatever rfd4-proteina happens to pull in.
 RUN uv pip install --system --no-cache \
       "biopython==1.85" \
-      "jinja2==3.1.6" \
+      "pyyaml==6.0.2" \
       "zstandard==0.23.0" \
       "requests==2.32.4"
 

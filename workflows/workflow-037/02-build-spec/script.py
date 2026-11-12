@@ -1,36 +1,43 @@
 #!/usr/bin/env python3
 """Node 02 — Build Condition Spec.
 
-Render the task-specific RFD4 condition spec (input / contig / conditions, with
-C_CRDGRP, C_SEQ, C_HOT, C_CRD and sel() selectors) from the workflow parameters, then
-validate it on CPU before any GPU time is spent.
+Render the task-specific RFD4 condition spec from the workflow parameters, then validate it
+on CPU before any GPU time is spent.
 
-This node exists because sel() and contig errors are the most common RFD4 failure mode.
-Upstream's scripts/write_condition_spec_cifs.py renders a spec to an annotated CIF without
-running the model, which turns a 20-minute GPU failure into a 10-second CPU failure — and
-spec_preview.cif is itself useful, since the user can open it and see exactly which atoms
-are conditioned. This node always writes its own annotation of the conditioned residues,
-and additionally runs the upstream renderer over the spec when it can be located in the
-image, letting its richer output replace ours.
+The spec format is upstream's, confirmed against the RFD4-Proteina 0.0.3 README, the
+condition-spec guide and the cookbook:
 
-All residue ids written into the spec are mmCIF label_seq_id, per the RFD4 docs. Parameters
-given in author numbering (the default) are translated here using node 01's inventory.
+    design:                                     # an example id, not a bare mapping
+      input: target.cif
+      contig: "50-120, /0, A17-131"
+      conditions:
+        C_CRDGRP: {1: [{select: "sel('A/*/*/[N,CA,C,O]')"}]}
+        C_SEQ:    {true: [{select: "sel('A')"}]}
+        C_HOT:    {true: [{select: "sel('A/*/56')"}]}
+
+Conditions are keyed by the condition *value* (a group id for C_CRDGRP, true for the
+boolean conditions), each holding a list of {select: <query>} entries. Selections are
+atomworks query strings, where sel() takes chain/res_name/res_id/atom_name with `*` as the
+wildcard and [A,B] for lists.
+
+Per the upstream guide, res_id in both contig and selections resolves against the input's
+mmCIF label_seq_id, which is why node 01 emits both numberings and this node translates.
+
+This node exists because selection and contig errors are the most common RFD4 failure mode.
+It validates by calling resolve_condition_spec_inputs(), the same code path generation uses
+to turn a spec into an annotated CIF, so a bad spec fails here in seconds instead of 20
+minutes into a GPU job.
 """
 import json
 import os
 import re
 import shutil
-import subprocess
 import sys
 
 TASKS = ("binder", "motif_scaffold", "monomer", "binder_redesign")
 LENGTH_RE = re.compile(r"^\d+(-\d+)?$")
-# Candidate locations for the upstream spec renderer inside the image.
-UPSTREAM_RENDERER_CANDIDATES = (
-    "/opt/rfd4/scripts/write_condition_spec_cifs.py",
-    "/opt/rfd4-proteina/scripts/write_condition_spec_cifs.py",
-    "/usr/local/scripts/write_condition_spec_cifs.py",
-)
+EXAMPLE_ID = "design"
+BACKBONE_ATOMS = "[N,CA,C,O]"
 
 
 def fail(message):
@@ -66,9 +73,7 @@ def parse_residue_tokens(spec, default_chain):
             continue
         match = re.match(r"^([A-Za-z]*)(\d+)(?:-(\d+))?$", token)
         if not match:
-            fail(
-                f"Could not parse residue token '{token}'. Expected forms: A45, A45-50, 45."
-            )
+            fail(f"Could not parse residue token '{token}'. Expected forms: A45, A45-50, 45.")
         chain = match.group(1) or default_chain
         start = int(match.group(2))
         end = int(match.group(3)) if match.group(3) else start
@@ -101,6 +106,7 @@ def to_label_ids(residues, inventory, numbering):
                     f"{chain['auth_seq_range'][0]}-{chain['auth_seq_range'][1]}. "
                     "If you meant mmCIF numbering, set residue_numbering=label."
                 )
+            label_seq = int(label_seq)
         translated.append((chain["label_asym_id"], label_seq))
     return translated
 
@@ -116,23 +122,47 @@ def contiguous_runs(pairs):
     return runs
 
 
-def sel(chain="", comp="", res="", atom=""):
-    """Build an RFD4 selector. Documented field order: chain/res_name/res_id/atom_name.
+def sel(chain, res_name=None, res_id=None, atoms=None):
+    """Build an atomworks selection string in sel() form.
 
-    Empty fields are wildcards. The exact wildcard spelling is the one upstream-documented
-    unknown in this node — confirm against the RFD4 docs on the first in-image run.
+    Fields are chain/res_name/res_id/atom_name with `*` as the wildcard, as in upstream's
+    sel('A/*/*/[N,CA,C,O]'). Trailing fields are omitted rather than left empty, matching
+    upstream's sel('A').
     """
-    return f"sel('{chain}/{comp}/{res}/{atom}')"
+    parts = [chain]
+    for value in (res_name, res_id, atoms):
+        if value is None:
+            break
+        parts.append(str(value))
+    return f"sel('{'/'.join(parts)}')"
+
+
+def select_entries(queries):
+    return [{"select": query} for query in queries]
+
+
+def hold_target(chain_id):
+    """Hold a chain's backbone coordinates as one rigid group and freeze its sequence.
+
+    This is upstream's binder recipe: without it the "target" is not actually held.
+    """
+    return {
+        "C_CRDGRP": {1: select_entries([sel(chain_id, "*", "*", BACKBONE_ATOMS)])},
+        "C_SEQ": {True: select_entries([sel(chain_id)])},
+    }
+
+
+def hotspot_conditions(hotspots):
+    """One {select: ...} entry per hotspot residue, as in upstream's cookbook."""
+    return {
+        "C_HOT": {
+            True: select_entries([sel(chain, "*", seq) for chain, seq in hotspots])
+        }
+    }
 
 
 def chain_segment(chain):
-    """Contig segment spanning a chain, warning if it spans residues absent from the file.
-
-    An unresolved loop leaves a hole in label_seq_id, so a span like A1-129 can cover
-    residues that have no coordinates. RFD4 is conditioned on the structure, so what it
-    does with a hole is its business — but this is worth seeing before the GPU runs, not
-    after a design comes out with a gap in the middle of the target.
-    """
+    """Contig segment spanning a chain, warning if it spans residues absent from the file."""
     lo, hi = chain["label_seq_range"]
     present = {residue["label_seq_id"] for residue in chain["residues"]}
     missing = [seq for seq in range(lo, hi + 1) if seq not in present]
@@ -153,25 +183,41 @@ def chain_segment(chain):
     return f"{chain['label_asym_id']}{lo}-{hi}"
 
 
+def resolve_hotspots(params, inventory, target):
+    if not params["hotspot_residues"]:
+        return {}
+    hotspots = to_label_ids(
+        parse_residue_tokens(params["hotspot_residues"], target["label_asym_id"]),
+        inventory,
+        params["residue_numbering"],
+    )
+    return hotspot_conditions(hotspots)
+
+
 def build_binder(params, inventory):
     target = chain_by_id(inventory, params["target_chain"])
     contig = f"{params['binder_length']}, /0, {chain_segment(target)}"
-    conditions = {}
-    if params["hotspot_residues"]:
-        hotspots = to_label_ids(
-            parse_residue_tokens(params["hotspot_residues"], target["label_asym_id"]),
-            inventory,
-            params["residue_numbering"],
-        )
-        conditions["C_HOT"] = [
-            sel(chain=chain, res=",".join(str(s) for _, s in group))
-            for chain, group in group_by_chain(hotspots)
-        ]
-    return contig, conditions, [target["label_asym_id"]]
+    conditions = hold_target(target["label_asym_id"])
+    conditions.update(resolve_hotspots(params, inventory, target))
+    return contig, conditions, False
 
 
-def build_monomer(params, inventory):
-    return params["binder_length"], {}, []
+def build_binder_redesign(params, inventory):
+    target = chain_by_id(inventory, params["target_chain"])
+    redesign = chain_by_id(inventory, params["redesign_chain"])
+    if redesign["label_asym_id"] == target["label_asym_id"]:
+        fail("redesign_chain and target_chain must differ for task=binder_redesign.")
+    print(
+        f"NOTE: regenerating chain {redesign['label_asym_id']} "
+        f"({redesign['n_residues']} residues in the input) at length "
+        f"'{params['binder_length']}' — set binder_length to match the existing binder "
+        "unless you intend to change its length.",
+        flush=True,
+    )
+    contig = f"{params['binder_length']}, /0, {chain_segment(target)}"
+    conditions = hold_target(target["label_asym_id"])
+    conditions.update(resolve_hotspots(params, inventory, target))
+    return contig, conditions, False
 
 
 def build_motif_scaffold(params, inventory):
@@ -195,130 +241,133 @@ def build_motif_scaffold(params, inventory):
         segments.append(f"{chain}{start}-{end}")
         segments.append(flank)
     contig = ", ".join(segments)
-    res_by_chain = group_by_chain(motif)
+    residues = [f"{seq}" for _, seq in sorted(set(motif))]
+    by_chain = {}
+    for chain, seq in sorted(set(motif)):
+        by_chain.setdefault(chain, []).append(seq)
     conditions = {
-        # Hold the motif's geometry as one rigid group, and its identity as sequence.
-        "C_CRDGRP": [
-            sel(chain=chain, res=",".join(str(s) for _, s in group))
-            for chain, group in res_by_chain
-        ],
-        "C_SEQ": [
-            sel(chain=chain, res=",".join(str(s) for _, s in group))
-            for chain, group in res_by_chain
-        ],
+        # Hold the motif's backbone as one rigid group and freeze its identity.
+        "C_CRDGRP": {
+            1: select_entries(
+                [
+                    sel(chain, "*", f"[{','.join(str(s) for s in seqs)}]", BACKBONE_ATOMS)
+                    for chain, seqs in by_chain.items()
+                ]
+            )
+        },
+        "C_SEQ": {
+            True: select_entries(
+                [
+                    sel(chain, "*", f"[{','.join(str(s) for s in seqs)}]")
+                    for chain, seqs in by_chain.items()
+                ]
+            )
+        },
     }
-    return contig, conditions, [chain for chain, _ in res_by_chain]
+    return contig, conditions, False
 
 
-def build_binder_redesign(params, inventory):
-    target = chain_by_id(inventory, params["target_chain"])
-    redesign = chain_by_id(inventory, params["redesign_chain"])
-    if redesign["label_asym_id"] == target["label_asym_id"]:
-        fail("redesign_chain and target_chain must differ for task=binder_redesign.")
+def build_monomer(params, inventory):
+    """Unconditioned chain, which upstream only supports from an annotated CIF.
+
+    A contig of nothing but expandable segments is rejected upstream: "input exists to be
+    referenced by a preserved segment". So this task emits the annotated-CIF form instead
+    of a contig, and the input has to carry its own expandable chain — upstream's
+    data/benchmarks/monomer/ CIFs, or your own annotated file.
+    """
     print(
-        f"NOTE: regenerating chain {redesign['label_asym_id']} "
-        f"({redesign['n_residues']} residues in the input) at length "
-        f"'{params['binder_length']}' — set binder_length to match the existing binder "
-        "unless you intend to change its length.",
+        "NOTE: task=monomer passes the input through as an annotated CIF "
+        "(input_as_annotated_cif: true) and sets no contig, because a contig made only of "
+        "expandable segments is rejected. The input must already be an annotated CIF "
+        "carrying an expandable chain, such as upstream's data/benchmarks/monomer/ files. "
+        "An ordinary target structure will not work here.",
         flush=True,
     )
-    contig = f"{params['binder_length']}, /0, {chain_segment(target)}"
-    conditions = {"C_CRD": [sel(chain=target["label_asym_id"])]}
-    if params["hotspot_residues"]:
-        hotspots = to_label_ids(
-            parse_residue_tokens(params["hotspot_residues"], target["label_asym_id"]),
-            inventory,
-            params["residue_numbering"],
-        )
-        conditions["C_HOT"] = [
-            sel(chain=chain, res=",".join(str(s) for _, s in group))
-            for chain, group in group_by_chain(hotspots)
-        ]
-    return contig, conditions, [target["label_asym_id"]]
-
-
-def group_by_chain(pairs):
-    grouped = {}
-    for chain, seq in sorted(set(pairs)):
-        grouped.setdefault(chain, []).append((chain, seq))
-    return list(grouped.items())
+    return None, {}, True
 
 
 BUILDERS = {
     "binder": build_binder,
-    "monomer": build_monomer,
     "motif_scaffold": build_motif_scaffold,
+    "monomer": build_monomer,
     "binder_redesign": build_binder_redesign,
 }
 
 
-def render_spec(task, context):
-    from jinja2 import Environment, FileSystemLoader, StrictUndefined
+def check_contig(contig):
+    """Upstream rejects a contig whose segments are all expandable."""
+    segments = [s.strip() for s in contig.split(",") if s.strip() and s.strip() != "/0"]
+    preserved = [s for s in segments if not LENGTH_RE.match(s)]
+    if not preserved:
+        fail(
+            f"Contig '{contig}' has no preserved segment. Upstream rejects a contig built "
+            "only from expandable lengths, since the input exists to be referenced."
+        )
 
-    env = Environment(
-        loader=FileSystemLoader("templates"),
-        undefined=StrictUndefined,
-        keep_trailing_newline=True,
-        trim_blocks=False,
-        lstrip_blocks=False,
+
+def dump_spec(spec):
+    import yaml
+
+    return yaml.safe_dump(spec, sort_keys=False, default_flow_style=False, width=100)
+
+
+def validate_with_upstream(spec_path, dest):
+    """Render the spec to an annotated CIF through the code generation itself uses."""
+    try:
+        from rfproteina.inference_utils.condition_spec import resolve_condition_spec_inputs
+    except ImportError:
+        print(
+            "WARNING: rfproteina is not importable here, so the spec was not validated "
+            "against upstream. spec_preview.cif carries this node's own annotation only.",
+            flush=True,
+        )
+        return False
+
+    out_dir = "./outputs/_spec_cifs"
+    os.makedirs(out_dir, exist_ok=True)
+    try:
+        resolve_condition_spec_inputs(spec_path, out_dir, validate=True)
+    except Exception as exc:
+        fail(
+            f"Condition spec rejected by RFD4: {type(exc).__name__}: {exc}\n"
+            "Fix the contig or the selections; no GPU time has been spent."
+        )
+    rendered = sorted(
+        os.path.join(out_dir, name) for name in os.listdir(out_dir) if name.endswith(".cif")
     )
-    template = env.get_template(f"{task}.yaml.j2")
-    return template.render(**context)
+    if not rendered:
+        print("WARNING: upstream validation wrote no CIF; keeping this node's annotation.", flush=True)
+        return False
+    shutil.copyfile(rendered[0], dest)
+    for path in rendered:
+        os.remove(path)
+    os.rmdir(out_dir)
+    print(f"Spec validated by RFD4 and rendered to {dest}", flush=True)
+    return True
 
 
-def write_annotation(target_cif, conditioned, dest):
-    """Copy the target and append our own annotation of the conditioned residues.
-
-    A whole-chain condition such as C_CRD sel('A///') is recorded with label_seq_id '.',
-    so chain-level conditioning is visible rather than missing. An empty loop_ is invalid
-    mmCIF, so with nothing to annotate we write a comment instead of an empty table.
-    """
+def write_annotation(target_cif, conditions, dest):
+    """Fallback annotation: the target plus a record of what each condition selects."""
     shutil.copyfile(target_cif, dest)
     with open(dest, "rb") as handle:
         handle.seek(-1, os.SEEK_END)
         needs_newline = handle.read(1) != b"\n"
+    rows = [
+        (name, value, entry["select"])
+        for name, by_value in conditions.items()
+        for value, entries in by_value.items()
+        for entry in entries
+    ]
     with open(dest, "a") as handle:
         if needs_newline:
             handle.write("\n")
-        handle.write("#\n# Conditioned residues (annotation written by workflow-037 node 02)\n")
-        if not conditioned:
+        handle.write("#\n# Conditions (annotation written by workflow-037 node 02)\n")
+        if not rows:
             handle.write("# none: this spec sets no conditions\n#\n")
             return
-        handle.write("loop_\n_rfd4_spec_preview.condition\n")
-        handle.write("_rfd4_spec_preview.label_asym_id\n_rfd4_spec_preview.label_seq_id\n")
-        for condition, chain, seq in conditioned:
-            handle.write(f"{condition} {chain or '.'} {seq or '.'}\n")
+        for name, value, query in rows:
+            handle.write(f"# {name} [{value}]: {query}\n")
         handle.write("#\n")
-
-
-def run_upstream_renderer(spec_path, dest):
-    """If the upstream renderer is in the image, let its output replace ours."""
-    script = os.environ.get("RFD4_SPEC_CIF_SCRIPT", "")
-    candidates = [script] if script else list(UPSTREAM_RENDERER_CANDIDATES)
-    found = next((c for c in candidates if c and os.path.exists(c)), None)
-    if not found:
-        print(
-            "WARNING: upstream write_condition_spec_cifs.py not found in this image; "
-            "spec_preview.cif carries this node's own annotation only. Set "
-            "RFD4_SPEC_CIF_SCRIPT to its path to enable the upstream validation pass.",
-            flush=True,
-        )
-        return False
-    print(f"Validating spec with {found}", flush=True)
-    result = subprocess.run(
-        [sys.executable, found, spec_path, "--out", dest],
-        capture_output=True,
-        text=True,
-    )
-    if result.stdout:
-        print(result.stdout.strip(), flush=True)
-    if result.returncode != 0:
-        print(result.stderr.strip(), flush=True)
-        fail(
-            "Condition spec failed upstream validation (see above). Fix the contig or "
-            "the hotspot/motif residues; no GPU time has been spent."
-        )
-    return True
 
 
 def main():
@@ -355,7 +404,7 @@ def main():
             fail(f"Required input not found: {path}")
     inventory = load_inventory(inventory_path)
 
-    contig, conditions, conditioned_chains = BUILDERS[params["task"]](params, inventory)
+    contig, conditions, as_annotated_cif = BUILDERS[params["task"]](params, inventory)
 
     if params["contig"]:
         print(
@@ -363,50 +412,39 @@ def main():
             flush=True,
         )
         contig = params["contig"]
+        as_annotated_cif = False
+    if contig:
+        check_contig(contig)
 
-    needs_input = params["task"] != "monomer"
-    spec_text = render_spec(
-        params["task"],
-        {
-            "input_cif": "target.cif" if needs_input else "",
-            "contig": contig,
-            "conditions": conditions,
-            "task": params["task"],
-            "residue_numbering": params["residue_numbering"],
-        },
-    )
+    example = {"input": "target.cif"}
+    if as_annotated_cif:
+        example["input_as_annotated_cif"] = True
+    if contig:
+        example["contig"] = contig
+    if conditions:
+        example["conditions"] = conditions
+
     spec_path = "./outputs/design_spec.yaml"
     with open(spec_path, "w") as handle:
-        handle.write(spec_text)
+        handle.write(f"# RFD4 condition spec — task: {params['task']}\n")
+        handle.write(
+            f"# res_id values are mmCIF label_seq_id "
+            f"(parameters were given in: {params['residue_numbering']})\n"
+        )
+        handle.write(dump_spec({EXAMPLE_ID: example}))
 
     print(f"Task: {params['task']} (numbering: {params['residue_numbering']})", flush=True)
-    print(f"Contig: {contig}", flush=True)
-    for name, selectors in conditions.items():
-        print(f"Condition {name}: {' '.join(selectors)}", flush=True)
+    print(f"Contig: {contig or 'none (annotated CIF passthrough)'}", flush=True)
+    for name, by_value in conditions.items():
+        for value, entries in by_value.items():
+            queries = " ".join(entry["select"] for entry in entries)
+            print(f"Condition {name}[{value}]: {queries}", flush=True)
     if not conditions:
         print("Conditions: none", flush=True)
 
-    conditioned = []
-    for name, selectors in conditions.items():
-        for selector in selectors:
-            match = re.match(r"^sel\('([^/]*)/[^/]*/([^/]*)/", selector)
-            if not match:
-                continue
-            chain = match.group(1)
-            residues = [s for s in match.group(2).split(",") if s]
-            if not residues:
-                conditioned.append((name, chain, "."))  # whole-chain condition
-                continue
-            for seq in residues:
-                conditioned.append((name, chain, seq))
     preview_path = "./outputs/spec_preview.cif"
-    if needs_input:
-        write_annotation(target_cif, conditioned, preview_path)
-        run_upstream_renderer(spec_path, preview_path)
-    else:
-        with open(preview_path, "w") as handle:
-            handle.write("# task=monomer: no input structure, nothing to annotate\n")
-    # Always passed through, so node 03's declared inputs hold for every task.
+    write_annotation(target_cif, conditions, preview_path)
+    validate_with_upstream(spec_path, preview_path)
     shutil.copyfile(target_cif, "./outputs/target.cif")
 
     print(f"Wrote {spec_path} and {preview_path}", flush=True)
