@@ -1,5 +1,8 @@
 # RFD4 condition spec — task: monomer
-# Unconditional (or length-only conditioned) single-chain generation; no target.
-# TODO(scaffold): length-only contig, empty conditions.
+# Length-conditioned single-chain generation; no input structure, no conditions.
 contig: "{{ contig }}"
-conditions: {}
+{% if conditions %}conditions:
+{% for name, selectors in conditions.items() %}  {{ name }}:
+{% for selector in selectors %}    - "{{ selector }}"
+{% endfor %}{% endfor %}{% else %}conditions: {}
+{% endif %}

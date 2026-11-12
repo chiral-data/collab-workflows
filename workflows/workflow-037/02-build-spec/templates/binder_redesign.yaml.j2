@@ -1,6 +1,10 @@
 # RFD4 condition spec — task: binder_redesign
-# Keep the target fixed, regenerate an existing binder chain.
-# TODO(scaffold): C_CRD over the target chain, redesign segment over {{ redesign_chain }}.
-input: {{ target_cif }}
+# Hold the target's coordinates fixed (C_CRD), regenerate the binder chain.
+# All res_id values are mmCIF label_seq_id (params were given in: {{ residue_numbering }}).
+input: {{ input_cif }}
 contig: "{{ contig }}"
-conditions: {}
+{% if conditions %}conditions:
+{% for name, selectors in conditions.items() %}  {{ name }}:
+{% for selector in selectors %}    - "{{ selector }}"
+{% endfor %}{% endfor %}{% else %}conditions: {}
+{% endif %}

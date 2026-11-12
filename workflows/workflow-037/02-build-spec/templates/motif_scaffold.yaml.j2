@@ -1,6 +1,11 @@
 # RFD4 condition spec — task: motif_scaffold
-# Hold a motif's coordinates and sequence fixed, generate scaffold around it.
-# TODO(scaffold): C_CRDGRP + C_SEQ over the motif selection.
-input: {{ target_cif }}
+# Hold the motif's coordinates (C_CRDGRP) and identity (C_SEQ) fixed, generate scaffold
+# around it. Expandable flank segments sit either side of each motif segment.
+# All res_id values are mmCIF label_seq_id (params were given in: {{ residue_numbering }}).
+input: {{ input_cif }}
 contig: "{{ contig }}"
-conditions: {}
+{% if conditions %}conditions:
+{% for name, selectors in conditions.items() %}  {{ name }}:
+{% for selector in selectors %}    - "{{ selector }}"
+{% endfor %}{% endfor %}{% else %}conditions: {}
+{% endif %}
