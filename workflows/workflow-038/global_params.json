@@ -1,0 +1,20 @@
+{
+  "pdb_id": "",
+  "sequence": "",
+  "mode": "equilibrium",
+  "num_samples": 8,
+  "batch_size": 0,
+  "seed": 42,
+  "sampler": "edm",
+  "physicality_filter": "high_quality",
+  "precision": "bf16-mixed",
+  "matmul_precision": "high",
+  "compile_denoiser": false,
+  "msa_depth": 0,
+  "use_env": true,
+  "propagate": false,
+  "lag_time_ns": 1.0,
+  "hf_ckpt_revision": "dd4b0c1b69984b68edcb6200a544213be4d75242",
+  "rmsd_cluster_threshold_nm": 0.2,
+  "top_n": 10
+}

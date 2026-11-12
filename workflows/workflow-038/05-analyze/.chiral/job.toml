@@ -1,0 +1,32 @@
+name = "Analyze Ensemble"
+description = "Turn the sampled ensemble into per-frame and ensemble-level geometric metrics, and write a multi-model PDB of representative frames for the report viewer"
+inputs = [
+  "samples.xtc",
+  "topology.cif",
+  "physicality.json",
+  "system.yaml",
+  "sampling_manifest.json",
+  "propagated_samples.xtc",
+  "propagation_manifest.json",
+]
+outputs = [
+  "ensemble_metrics.csv",
+  "ensemble_summary.json",
+  "ensemble_top.pdb",
+]
+
+[container]
+image = "bioemu2:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.rmsd_cluster_threshold_nm]
+type = "float"
+default = 0.2
+hint = "C-alpha RMSD threshold in nm for counting distinct conformational clusters in the ensemble"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of frames written to the multi-model PDB and shown in the report's 3D viewer"

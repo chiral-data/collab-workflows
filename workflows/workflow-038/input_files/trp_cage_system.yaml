@@ -1,0 +1,20 @@
+# Trp-cage (PDB 1L2Y) — a 20-residue miniprotein, the smallest useful BioEmu2 smoke test.
+#
+# This is a BioEmu2 system YAML: `entities` is the argument list of the `System` constructor,
+# and `bonds` holds non-standard covalent bonds (none here — peptide bonds are inferred from
+# the sequence).
+#
+# Trp-cage folds on a microsecond timescale and is the standard benchmark miniprotein, so an
+# equilibrium ensemble of it should show a compact folded population plus visibly unfolded
+# frames. Being 20 residues, it samples in well under a minute.
+#
+# Caveat: a 20-residue query returns a shallow MSA, and BioEmu2's quality tracks alignment
+# depth. Treat this as a plumbing test, not a scientific result. For a real two-state test,
+# set `pdb_id = "1AKE"` (adenylate kinase, upstream's own example) and expect both the open
+# and closed lobe conformations in the ensemble.
+entities:
+  - entity_type: protein
+    asym_ids: [A]
+    sequence: NLYIQWLKDGGPSSGRPPPS
+    mods: []
+bonds: []
