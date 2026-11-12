@@ -1,8 +1,11 @@
 # workflow-037 — RFD4-Proteina De Novo Design (design doc)
 
-Status: **scaffold committed, nodes not implemented.** This document is the design rationale and
-the record of decisions; it also holds the draft `[Workflow]` issue body and PR description for
-whenever the work is filed.
+Status: **all five nodes implemented and chain-tested on CPU; the image has never been built.**
+Docker is unavailable on the development host (Docker Desktop WSL integration off) and the host has
+no GPU, so nodes 01, 02, 04 and 05 were developed and tested against local Python 3.12, and node 03
+was verified only through its `--dry-run` path. This document is the design rationale and the record
+of decisions; it also holds the draft `[Workflow]` issue body and PR description for whenever the
+work is filed.
 
 ## Context
 
@@ -81,6 +84,37 @@ Image name `rfd4-proteina:2026_11_04`. The repo's shared-image CI
 `grep -A20 '\[container\]' | grep '^image'`, so **`image = "..."` must sit at column 0 within 20
 lines of `[container]`** in every `job.toml`.
 
+## What has and has not been verified
+
+Verified on the development host with local Python 3.12 (Biopython, jinja2, numpy, requests):
+
+- Node 01 on both paths — uploaded mmCIF and RCSB fetch of 5O45. Confirms the footgun this design
+  is built around: on 5O45, chain A is author 17–145 and label 1–129, so author 45 is label 29.
+- Node 02 for all four tasks, the `contig` override, both numbering modes, and every validation
+  failure (unknown task, bad length, out-of-range residue, missing motif, redesign == target).
+  Rendered specs parse as YAML.
+- Node 03 `--dry-run` (argv resolution), missing-spec and bad-replicate failures, and that the real
+  path fails cleanly with "No GPU available" on a CPU host.
+- Node 04 against stand-in designs built by reordering 5O45's chain B ahead of chain A, and node 05
+  over its metrics; the report's inline JS parses under node, and the chain test 01 → 02 → 03(dry) →
+  04 → 05 completes end to end.
+
+Not verified, and needing the image:
+
+- Everything in the Dockerfile: the `[all-cuda12]` extra resolving, the version pin (still absent),
+  the weight download, cu126 against the host driver.
+- `rfd4-generate`'s real CLI surface. Node 03's overrides (`--config`, `out_dir`,
+  `inference.num_replicates`, `inference.seed`, `~metrics`, `compile_lengths`) are a documented
+  guess, built in one function (`build_argv`) so a correction is one edit.
+- The `sel()` wildcard spelling. Node 02 emits `sel('A//38,40/')` for a chain-and-residues
+  selection, with empty fields as wildcards per the documented `chain/res_name/res_id/atom_name`
+  order. If upstream wants `*` or omitted fields instead, the fix is in `sel()`.
+- Whether `inference_samples/*.cif` is really the output layout (node 03 warns and falls back).
+- Whether the designed chain is really first in the output (node 04's documented assumption; it
+  reports all chains so a mismatch is visible).
+- The upstream `write_condition_spec_cifs.py` path — node 02 probes three locations and
+  `RFD4_SPEC_CIF_SCRIPT`, and warns rather than failing when it finds none.
+
 ## Open items
 
 1. **Import name is unresolved upstream.** The GitHub README shows `import rfd4_proteina as rfd4`;
@@ -91,7 +125,8 @@ lines of `[container]`** in every `job.toml`.
 3. **Driver must support cu126.** workflow-026 already runs `colabfold:1.6.1-cuda12` on this estate,
    so CUDA 12 is proven; cu126 specifically needs driver ≥ 525.
 4. **Version pin is still a placeholder** in the Dockerfile — pin `rfd4-proteina==<version>` at
-   first build.
+   first build. The node dependencies added alongside it (biopython, jinja2, zstandard, requests)
+   are pinned.
 5. **Sample target not vendored** — `input_files/5o45_cropped.cif.zst` still needs fetching.
 
 ## Verification plan
