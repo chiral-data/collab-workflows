@@ -20,6 +20,15 @@ RUN pip install --no-cache-dir "pip==26.2.2" && pip install --no-cache-dir "uv>=
 RUN uv pip install --system --no-cache --no-sources \
       --torch-backend cu126 "rfd4-proteina[all-cuda12]"
 
+# Node dependencies: structure parsing (01, 04, 05), spec templating (02),
+# .cif.zst inputs (01), RCSB fetch (01). Pinned so the CPU nodes are reproducible
+# independently of whatever rfd4-proteina happens to pull in.
+RUN uv pip install --system --no-cache \
+      "biopython==1.85" \
+      "jinja2==3.1.6" \
+      "zstandard==0.23.0" \
+      "requests==2.32.4"
+
 # Bake the ~1.74 GB matched flow + autoencoder pair into the image at a pinned revision.
 RUN python -c "from huggingface_hub import snapshot_download; \
     snapshot_download('nvidia/RFD4-Proteina', revision='a06e2509c7033b010fc43614e9fd840303588502')"
