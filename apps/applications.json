@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-14",
+  "last_updated": "2026-11-12",
   "applications": [
     {
       "id": "boltz",
@@ -327,6 +327,30 @@
         "cuda_version": "11.8"
       },
       "documentation_url": "https://github.com/lbcb-sci/RiNALMo"
+    },
+    {
+      "id": "antibody-triage",
+      "name": "Antibody Triage",
+      "version": "2026_11_11",
+      "category": "Antibody Engineering",
+      "description": "Antibody developability triage: numbering, Fv modelling, TAP-style metrics, liabilities, humanness and mutation proposals",
+      "long_description": "A CPU-only antibody engineering image combining ANARCI numbering and CDR annotation, ImmuneBuilder (ABodyBuilder2 for paired VH/VL, NanoBodyBuilder2 for VHH) Fv structure prediction, biotite SASA for TAP-style developability metrics, promb human 9-mer peptide prevalence for an OASis-like humanness score, and AbLang2 for likelihood-based CDR mutation proposals. All model weights and the humanness database are baked in, so every node runs offline. Every component is BSD-3, MIT or Apache-2.0: no academic-use-only tool and no large database download. Note: developability flags are risk indicators rather than predictions of clinical success, the TAP-style metrics are reimplemented from the published guidelines and will not match the OPIG web server exactly, and humanness is a proxy for immunogenicity risk, not a T-cell epitope prediction.",
+      "base_image": "continuumio/miniconda3",
+      "registry": "ghcr.io/chiral-data",
+      "image_path": "/antibody-triage:2026_11_11",
+      "tags": [
+        "antibody",
+        "nanobody",
+        "developability",
+        "structure-prediction",
+        "ml",
+        "cpu"
+      ],
+      "requirements": {
+        "gpu": false,
+        "memory_gb": 8
+      },
+      "documentation_url": "https://github.com/brennanaba/ImmuneBuilder"
     }
   ]
 }
