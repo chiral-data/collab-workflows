@@ -1,0 +1,41 @@
+name = "Mutation Scan"
+description = "Propose point mutants over the chosen region by AbLang2 likelihood, then re-screen every proposal through the liability motifs and the sequence-derived developability rules so no proposal trades one risk for another"
+inputs = [
+  "annotations.json",
+  "developability.json",
+]
+outputs = [
+  "proposals.csv",
+  "scan_manifest.json",
+]
+
+[container]
+image = "antibody-triage:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.mutate_scan]
+type = "boolean"
+default = true
+hint = "Run the scan. When false the node writes an empty proposal table and records enabled: false"
+
+[params.scan_region]
+type = "string"
+default = "cdr"
+hint = "Positions the scan may vary: cdr (all six CDRs), cdrh3 only, or all (whole variable domain)"
+
+[params.scan_stepwise_masking]
+type = "boolean"
+default = false
+hint = "Score each scanned position with that position masked (one AbLang2 forward pass per position instead of one per clone). More standard for proposing substitutions, and much slower"
+
+[params.max_mutants_per_clone]
+type = "integer"
+default = 20
+hint = "Maximum point mutants proposed per clone after re-screening"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed for tie-breaking among equally scored proposals"
