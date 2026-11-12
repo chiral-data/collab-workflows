@@ -6,7 +6,6 @@ outputs = ["vina_screening_poses.pdbqt", "vina_screening_scores.csv", "vina_runt
 
 [container]
 image = "vina-gnina-pipeline:latest"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

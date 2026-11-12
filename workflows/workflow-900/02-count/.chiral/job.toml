@@ -4,7 +4,6 @@ outputs = ["count.log"]
 
 [container]
 image = "debian:bookworm-slim"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

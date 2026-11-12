@@ -5,7 +5,6 @@ outputs     = ["docked_poses.sdf", "docking_summary.json"]
 
 [container]
 image   = "unimol-docking:2026_07_10"
-use_gpu = true
 
 [scripts]
 run = "run.sh"

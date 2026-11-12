@@ -5,7 +5,6 @@ outputs     = ["predictions.csv", "residues.csv", "selected_structure.cif", "sel
 
 [container]
 image   = "p2rank:2026_07_10"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

@@ -6,7 +6,6 @@ outputs = ["receptor.pdb", "native_ligand.sdf", "validated_ligands.smiles", "val
 
 [container]
 image = "vina-gnina-pipeline:latest"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

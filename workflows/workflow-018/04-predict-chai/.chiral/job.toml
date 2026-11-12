@@ -5,7 +5,6 @@ outputs = ["*.cif", "chai_summary.json"]
 
 [container]
 image = "chai:2026_05_20"
-use_gpu = true
 
 [scripts]
 run = "run.sh"

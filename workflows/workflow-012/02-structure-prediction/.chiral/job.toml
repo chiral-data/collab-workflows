@@ -5,7 +5,6 @@ outputs = ["*_model_*.pdb", "confidence_*.json", "pae_*.npz", "pde_*.npz", "pldd
 
 [container]
 image = "ghcr.io/chiral-data/boltz:2025_09_05"
-use_gpu = true
 
 [scripts]
 run = "run.sh"

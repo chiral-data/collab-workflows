@@ -6,7 +6,6 @@ outputs = ["comparative_screening_metrics.csv", "docking_performance_report.html
 
 [container]
 image = "vina-gnina-pipeline:latest"
-use_gpu = false
 
 [scripts]
 run = "run.sh"

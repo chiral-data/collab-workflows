@@ -6,7 +6,6 @@ outputs     = ["receptor.pdb", "ligand.sdf", "grid.json", "pocket_qc.json"]
 
 [container]
 image   = "pocket-qc:2026_07_10"
-use_gpu = false
 
 [scripts]
 run = "run.sh"
