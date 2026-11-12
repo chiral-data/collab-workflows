@@ -1,0 +1,22 @@
+name = "Report"
+description = "Build a self-contained HTML report with the design metrics table and an interactive structure viewer"
+inputs = [
+  "*_generated.cif",
+  "design_metrics.json",
+  "generation_manifest.json",
+]
+outputs = [
+  "report.html",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of designs shown in the report structure viewer"

@@ -1,0 +1,37 @@
+name = "Generate Designs"
+description = "Run rfd4-generate against the condition spec with pinned, offline weights and metrics disabled"
+inputs = [
+  "design_spec.yaml",
+  "target.cif",
+]
+outputs = [
+  "*_generated.cif",
+  "generation_manifest.json",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.num_replicates]
+type = "integer"
+default = 4
+hint = "Number of designs to generate"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed for reproducible generation"
+
+[params.disable_compile]
+type = "boolean"
+default = true
+hint = "Skip the slow torch.compile warm-up by setting compile_lengths=null"
+
+[params.hf_ckpt_revision]
+type = "string"
+default = "a06e2509c7033b010fc43614e9fd840303588502"
+hint = "Pinned HuggingFace revision of nvidia/RFD4-Proteina (flow + autoencoder are a matched pair)"
