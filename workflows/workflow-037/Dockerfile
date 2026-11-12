@@ -29,8 +29,18 @@ RUN uv pip install --system --no-cache \
       "zstandard==0.23.0" \
       "requests==2.32.4"
 
-# Bake the ~1.74 GB matched flow + autoencoder pair into the image at a pinned revision.
+# Bake the 1.74 GB model bundle in at a pinned revision.
+#
+# The patterns are not an optimisation, they are what the loader asks for:
+# rfproteina/utils/hub.py:load_pretrained_bundle() calls snapshot_download with
+# allow_patterns=["config.json", "model.safetensors"], and the autoencoder config travels
+# inside that bundle. The repository as a whole is 82.57 GB, because it also ships the
+# AlphaFold2 (51.6 GB) and OpenFold3 (21.2 GB) refolding runtime images used for scoring,
+# plus native .ckpt copies of the weights. This workflow runs ~metrics and never scores,
+# so none of that is fetched. An unfiltered snapshot_download fills the disk and fails.
 RUN python -c "from huggingface_hub import snapshot_download; \
-    snapshot_download('nvidia/RFD4-Proteina', revision='a06e2509c7033b010fc43614e9fd840303588502')"
+    snapshot_download('nvidia/RFD4-Proteina', \
+    revision='a06e2509c7033b010fc43614e9fd840303588502', \
+    allow_patterns=['config.json', 'model.safetensors'])"
 
 WORKDIR /workspace
