@@ -1,0 +1,25 @@
+name = "Report"
+description = "Build a self-contained HTML report: the ranked panel table with per-metric flags, the liability map drawn on each sequence, developability distributions across the panel, the proposed mutants, and a 3D Fv viewer with CDRs and flagged residues highlighted"
+inputs = [
+  "ranked_panel.csv",
+  "panel_summary.json",
+  "developability.json",
+  "humanness.json",
+  "proposals.csv",
+  "scan_manifest.json",
+  "models/*.pdb",
+]
+outputs = [
+  "report.html",
+]
+
+[container]
+image = "antibody-triage:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of clones shown in the report's detail section and 3D viewer"

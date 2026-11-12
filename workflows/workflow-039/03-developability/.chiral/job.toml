@@ -1,0 +1,29 @@
+name = "Developability Metrics"
+description = "Compute the five TAP-style developability metrics from each Fv model — total CDR length, patches of surface hydrophobicity, patches of positive and negative CDR charge, and structural Fv charge symmetry — plus solvent-exposed liabilities and an isoelectric point estimate"
+inputs = [
+  "annotations.json",
+  "liabilities.csv",
+  "models/*.pdb",
+  "model_summary.csv",
+]
+outputs = [
+  "developability.csv",
+  "developability.json",
+  "flags.csv",
+]
+
+[container]
+image = "antibody-triage:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.cdr_definition]
+type = "string"
+default = "imgt"
+hint = "CDR boundary definition used for the metrics: imgt (what TAP itself uses), chothia, kabat or north"
+
+[params.tap_threshold_set]
+type = "string"
+default = "clinical"
+hint = "Threshold set for the five metrics: clinical (the amber/red bounds of Table 2 of Raybould et al. 2019, derived from 242 clinical-stage therapeutics) or none to report raw values with no flags. The bounds were calibrated on TAP's own pipeline, so they carry a documented offset: see 'the calibration problem' in the pipeline doc"

@@ -1,0 +1,90 @@
+name = "Antibody Developability Triage"
+description = "Score a panel of antibody or nanobody sequences for developability: ANARCI numbering and CDR annotation, ABodyBuilder2 Fv models, TAP-style developability metrics, sequence liabilities, humanness, and an AbLang2 CDR mutation scan, ranked into one HTML report"
+
+[dependencies]
+02-model-fv = ["01-annotate"]
+03-developability = ["01-annotate", "02-model-fv"]
+04-humanness = ["01-annotate"]
+05-mutate-scan = ["01-annotate", "03-developability"]
+06-rank = ["01-annotate", "03-developability", "04-humanness", "05-mutate-scan"]
+07-report = ["06-rank", "02-model-fv"]
+
+[params.input_file]
+type = "file"
+default = "input_files/example_panel.csv"
+hint = "Panel of clones: a CSV with clone_id,vh,vl columns, or a FASTA whose record ids end in _VH/_VL (nanobodies take a single chain)"
+
+[params.receptor_type]
+type = "string"
+default = "auto"
+hint = "Receptor class: antibody (paired VH/VL, ABodyBuilder2), nanobody (VHH only, NanoBodyBuilder2), or auto to decide per clone from the chains present"
+
+[params.numbering_scheme]
+type = "string"
+default = "imgt"
+hint = "Numbering scheme for annotation and CDR boundaries: imgt, chothia, kabat, martin or aho"
+
+[params.cdr_definition]
+type = "string"
+default = "imgt"
+hint = "CDR boundary definition used for the developability metrics: imgt (what TAP itself uses), chothia, kabat or north. Each definition is evaluated in the numbering scheme it is defined on, so node 01 numbers a second time when this differs from numbering_scheme"
+
+[params.allowed_species]
+type = "string"
+default = "human,mouse"
+hint = "Comma-separated germline species ANARCI may assign; narrows chain-type calls and the germline identity baseline"
+
+[params.refine_structures]
+type = "boolean"
+default = true
+hint = "Run ImmuneBuilder's OpenMM refinement on each model. Off is several times faster and leaves minor geometry violations in place"
+
+[params.tap_threshold_set]
+type = "string"
+default = "clinical"
+hint = "Threshold set for the five metrics: clinical (the amber/red bounds of Table 2 of Raybould et al. 2019, derived from 242 clinical-stage therapeutics) or none to report raw values with no flags. The bounds were calibrated on TAP's own pipeline, so they carry a documented offset: see 'the calibration problem' in the pipeline doc"
+
+[params.liability_motifs]
+type = "string"
+default = "default"
+hint = "Sequence liability motif set to scan CDRs for: default (unpaired Cys, N-glycosylation sequons, NG/NS deamidation, DG/DS isomerization, Met/Trp oxidation, DP/NP acid cleavage) or a path to a custom JSON motif file"
+
+[params.humanness_db]
+type = "string"
+default = "human-oas"
+hint = "promb reference database for the humanness score: human-oas (antibody 9-mers seen in >=10% of human subjects, the OASis-like score), human-reference (UP000005640 proteome) or human-swissprot"
+
+[params.peptide_length]
+type = "integer"
+default = 9
+hint = "Peptide length for the humanness score; ignored for human-oas, whose peptide length is fixed at 9 by the database itself"
+
+[params.mutate_scan]
+type = "boolean"
+default = true
+hint = "Run the AbLang2 mutation scan in node 05. When false the node writes an empty proposal table and nodes 06/07 omit the section"
+
+[params.scan_region]
+type = "string"
+default = "cdr"
+hint = "Positions the mutation scan may vary: cdr (all six CDRs), cdrh3 only, or all (whole variable domain)"
+
+[params.scan_stepwise_masking]
+type = "boolean"
+default = false
+hint = "Score each scanned position with that position masked (one AbLang2 forward pass per position instead of one per clone). More standard for proposing substitutions, and much slower"
+
+[params.max_mutants_per_clone]
+type = "integer"
+default = 20
+hint = "Maximum point mutants proposed per clone after liability and developability re-screening"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of clones carried into the report's detail section and 3D viewer"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed, recorded for provenance; only the mutation scan's tie-breaking is stochastic"
