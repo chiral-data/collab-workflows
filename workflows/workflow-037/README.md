@@ -27,8 +27,9 @@ a small YAML file naming an input structure, a `contig` describing the chain lay
 set of `conditions` that pin parts of the input. The conditioning vocabulary is what makes one model
 cover many tasks — `C_CRD` holds coordinates, `C_CRDGRP` holds a set of residues as one rigid group,
 `C_SEQ` holds residue identity, and `C_HOT` marks hotspots the design should engage. Each condition
-takes `sel('chain/res_name/res_id/atom_name')` selectors, so conditioning can be as coarse as a
-whole chain or as fine as named atoms.
+takes selections written as `sel('chain/res_name/res_id/atom_name')`, with `*` as the wildcard and
+`[A,B]` for lists, so conditioning can be as coarse as a whole chain (`sel('A')`) or as fine as
+named atoms (`sel('A/*/*/[N,CA,C,O]')`).
 
 This workflow wraps that interface rather than exposing it raw: parameters describe the design task
 in ordinary terms (target chain, binder length, hotspots) and node 02 compiles them into a spec. The
@@ -129,13 +130,17 @@ author->label translation ambiguous; the node warns and maps the first occurrenc
 
 **Process:** Parses `hotspot_residues` / `motif_residues` (forms `A45`, `A45-50`, `45`), translates
 them to `label_seq_id` via node 01's maps unless `residue_numbering=label`, and builds the contig and
-conditions for the chosen `task` from a Jinja template in [02-build-spec/templates](02-build-spec/templates).
-A `contig` parameter, if set, replaces the templated one verbatim. Every referenced residue and chain
+conditions for the chosen `task`, then dumps the spec as YAML. The spec is keyed by an example id
+and each condition is keyed by its value, matching upstream: `C_CRDGRP: {1: [{select: ...}]}`,
+`C_SEQ: {true: [{select: ...}]}`. Every task holds the target (or motif) with `C_CRDGRP` over
+backbone atoms plus `C_SEQ`, which is upstream's own binder recipe — without it the target is not
+actually held. A `contig` parameter, if set, replaces the derived one verbatim. Every referenced residue and chain
 is checked against the inventory first, so a typo fails here with a message naming the valid range,
 and a chain whose contig span covers unresolved residues produces a warning naming the holes.
-The node then writes `spec_preview.cif`: the target plus an appended `_rfd4_spec_preview` loop
-listing each conditioned residue, and, when upstream's `write_condition_spec_cifs.py` can be located
-in the image, that renderer's richer output replaces it and a non-zero exit from it fails the node.
+The node then writes `spec_preview.cif`: the target plus a comment block recording each condition's
+selection, which is replaced by the richer output of `resolve_condition_spec_inputs()` — the same
+code path generation uses to turn a spec into an annotated CIF. A spec that parser rejects fails the
+node here, on CPU, in seconds.
 
 **Scientific notes:** What each condition constrains is the whole design: `C_HOT` nominates target
 residues the binder should engage without dictating how; `C_CRD` freezes coordinates; `C_CRDGRP`
@@ -218,7 +223,7 @@ past 50 MB.
 |---------------|-------------|
 | `binder` (default) | Design a new chain against the fixed target chain. Contig: `<binder_length>, /0, <target range>`. Optional `hotspot_residues` become `C_HOT`. The common case. |
 | `motif_scaffold` | Hold `motif_residues` as a rigid group (`C_CRDGRP`) with fixed identity (`C_SEQ`) and build scaffold around it. `binder_length` becomes the length range of each flank. Requires `motif_residues`. |
-| `monomer` | Length-conditioned single-chain generation. No input structure is used and no conditions are set; only `binder_length` matters. |
+| `monomer` | Emits the annotated-CIF passthrough form (`input_as_annotated_cif: true`, no contig). **Needs an input that already carries an expandable chain**, such as upstream's `data/benchmarks/monomer/` files; an ordinary target structure will not work, because a contig made only of expandable segments is rejected. |
 | `binder_redesign` | Freeze the target with `C_CRD` and regenerate `redesign_chain`. Set `binder_length` to the existing binder's length unless you intend to change it. |
 
 **Trade-off:** More conditioning means more control and less diversity. `binder` with no hotspots
@@ -270,7 +275,7 @@ silently conditions the wrong residues.
 
 - **Type:** string
 - **Default:** `""`
-- **Description:** Advanced escape hatch. When set it replaces the templated contig verbatim.
+- **Description:** Advanced escape hatch. When set it replaces the derived contig verbatim.
 - **Guidance:** Use it for layouts the four tasks do not express (multiple chain breaks, several
   designed segments). Residue ids are `label_seq_id`, and no translation is applied to this string.
 
@@ -391,10 +396,14 @@ viewer shows the designed chain against the target.
 
 ## Troubleshooting
 
-**`sel()` selector or contig error from node 02**
-The spec references residues or chains that do not exist under the numbering in use. Check
+**Node 02: "Condition spec rejected by RFD4"**
+Upstream's own parser refused the spec, so the contig or a selection is wrong. Check
 `target_inventory.json` for the chains and both numberings actually present, and confirm
-`residue_numbering` matches what you typed.
+`residue_numbering` matches what you typed. No GPU time has been spent at this point.
+
+**Node 02: "Contig has no preserved segment"**
+Every contig must reference the input at least once; one built only from expandable lengths is
+rejected upstream. This is also why `task=monomer` needs an annotated CIF rather than a length.
 
 **Designs come out contacting the wrong part of the target**
 Almost always a numbering mix-up. Open `spec_preview.cif`, look at the `_rfd4_spec_preview` loop,
