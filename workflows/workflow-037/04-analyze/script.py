@@ -121,11 +121,16 @@ def radius_of_gyration(coords):
 
 
 def interface(designed_coords, target_coords):
-    """Contact count, distinct target residues contacted, and minimum distance."""
+    """Contact count, distinct target residues contacted, and minimum distance.
+
+    With no second chain there is no interface at all, so the three columns are None
+    rather than 0: a monomer run reporting "0 contacts" reads as "this design failed to
+    engage the target", which is a judgement about a target that does not exist.
+    """
     import numpy as np
 
     if not designed_coords or not target_coords:
-        return 0, 0, None
+        return None, None, None
     a = np.array(designed_coords, dtype=float)
     b = np.array(target_coords, dtype=float)
     distances = np.linalg.norm(a[:, None, :] - b[None, :, :], axis=2)
@@ -150,6 +155,14 @@ def analyze(path):
 
     contacts, contacted, min_distance = interface(designed_coords, target_coords)
     gyration = radius_of_gyration(designed_coords)
+    if len(chains) > 2:
+        print(
+            f"WARNING: '{os.path.basename(path)}' has {len(chains)} chains. This node "
+            f"treats the first ({designed_id}) as the design and the rest as target, so "
+            "with several designed segments the extra ones are counted as target and the "
+            "interface numbers mix designed-to-designed contacts in. Check chain_lengths.",
+            flush=True,
+        )
     # X is an unrecognised residue; excluded from composition so it cannot dilute the ratio.
     known = [c for c in sequence if c != "X"]
     hydrophobic = sum(1 for c in known if c in HYDROPHOBIC)

@@ -132,9 +132,9 @@ author->label translation ambiguous; the node warns and maps the first occurrenc
 them to `label_seq_id` via node 01's maps unless `residue_numbering=label`, and builds the contig and
 conditions for the chosen `task`, then dumps the spec as YAML. The spec is keyed by an example id
 and each condition is keyed by its value, matching upstream: `C_CRDGRP: {1: [{select: ...}]}`,
-`C_SEQ: {true: [{select: ...}]}`. Every task holds the target (or motif) with `C_CRDGRP` over
-backbone atoms plus `C_SEQ`, which is upstream's own binder recipe — without it the target is not
-actually held. A `contig` parameter, if set, replaces the derived one verbatim. Every referenced residue and chain
+`C_SEQ: {true: [{select: ...}]}`. Every task with a target holds it using `C_CRDGRP` over backbone
+atoms plus `C_SEQ`, which is upstream's own binder recipe — without it the target is not actually
+held. (`monomer` has no target and sets no conditions.) A `contig` parameter, if set, replaces the derived one verbatim. Every referenced residue and chain
 is checked against the inventory first, so a typo fails here with a message naming the valid range,
 and a chain whose contig span covers unresolved residues produces a warning naming the holes.
 The node then writes `spec_preview.cif`: the target plus a comment block recording each condition's
@@ -202,7 +202,7 @@ so they cannot dilute the ratios.
 **Goal:** One self-contained HTML report.
 
 **Process:** Inlines the metrics table and the top `top_n` structures into a single `report.html`
-(Bootstrap 5, Plotly and Mol* from CDN, all data as inline JS), with a sortable-by-click table, a
+(Bootstrap 5, Plotly and Mol* from CDN, all data as inline JS), with a click-a-row-to-view table, a
 length-vs-contacts scatter, a Mol* viewer switchable across designs, and a run-provenance list.
 Designs are ordered by interface contacts descending — a convenience, not a ranking. The biosafety
 notice is rendered as a top-level alert, not a footnote.
@@ -224,7 +224,7 @@ past 50 MB.
 | `binder` (default) | Design a new chain against the fixed target chain. Contig: `<binder_length>, /0, <target range>`. Optional `hotspot_residues` become `C_HOT`. The common case. |
 | `motif_scaffold` | Hold `motif_residues` as a rigid group (`C_CRDGRP`) with fixed identity (`C_SEQ`) and build scaffold around it. `binder_length` becomes the length range of each flank. Requires `motif_residues`. |
 | `monomer` | Designs a standalone chain of `binder_length` residues. The target structure is ignored: node 02 writes an annotated scaffold in place of `target.cif`, because a contig made only of expandable segments is rejected upstream. Mechanically verified, but see the quality note below. |
-| `binder_redesign` | Freeze the target with `C_CRD` and regenerate `redesign_chain`. Set `binder_length` to the existing binder's length unless you intend to change it. |
+| `binder_redesign` | Discard `redesign_chain` and generate a replacement against the same epitope: the residues the existing binder contacts (CA-CA within 8 Å) become `C_HOT`, so the new chain is aimed where the old one bound. Set `binder_length` to the existing binder's length unless you mean to change it, and set `hotspot_residues` to override the derived epitope. |
 
 **Trade-off:** More conditioning means more control and less diversity. `binder` with no hotspots
 explores the whole target surface; adding hotspots focuses it at the cost of discarding
@@ -283,9 +283,13 @@ silently conditions the wrong residues.
 
 - **Type:** string
 - **Default:** `""`
-- **Description:** Advanced escape hatch. When set it replaces the derived contig verbatim.
+- **Description:** Advanced escape hatch. When set it replaces the derived contig verbatim. Not
+  accepted with `task=monomer`, which uses a scaffold rather than a contig.
 - **Guidance:** Use it for layouts the four tasks do not express (multiple chain breaks, several
   designed segments). Residue ids are `label_seq_id`, and no translation is applied to this string.
+  Note that node 04 attributes the **first** chain to the design and the rest to the target, so a
+  contig with several designed segments makes its per-design metrics and interface counts wrong;
+  node 04 warns when it sees more than two chains.
 
 ### target_chain / redesign_chain
 
@@ -335,8 +339,9 @@ One row per design. `designed_length` and `designed_sequence` describe the gener
 (K+R minus D+E) summarise its composition; `radius_of_gyration_A` is computed over CA atoms.
 `n_interface_contacts`, `n_target_residues_contacted` and `min_interchain_distance_A` describe the
 interface at an 8 Å CA–CA cutoff — a coarse definition that counts proximity, not interaction
-energy. A design with zero contacts did not engage the target and can be dropped immediately; beyond
-that, these numbers rank nothing. `chain_lengths` records every chain, so an unexpected layout shows
+energy. They are **blank for a single-chain design** (`monomer`), where there is no interface to
+measure, rather than reported as zero. For a two-chain design, zero contacts means it did not engage
+the target and can be dropped immediately; beyond that, these numbers rank nothing. `chain_lengths` records every chain, so an unexpected layout shows
 up as a changed first chain rather than as quietly wrong metrics.
 
 ### report.html
@@ -414,8 +419,9 @@ Every contig must reference the input at least once; one built only from expanda
 rejected upstream. This is also why `task=monomer` needs an annotated CIF rather than a length.
 
 **Designs come out contacting the wrong part of the target**
-Almost always a numbering mix-up. Open `spec_preview.cif`, look at the `_rfd4_spec_preview` loop,
-and confirm the conditioned residues are the epitope you meant.
+Almost always a numbering mix-up. Node 02 prints every condition it emitted, and `spec_preview.cif`
+is RFD4's own annotated rendering of the spec — open it and confirm the conditioned residues are
+the epitope you meant.
 
 **Node 03: "No GPU available"**
 The node requires a GPU and refuses to run on CPU. Confirm the job is scheduled on a GPU node and
@@ -426,9 +432,10 @@ The chain has unresolved loops (or modified residues, on the PDB path), so the c
 positions with no coordinates. Usually harmless for a binder run against a well-ordered epitope;
 worth a look if the holes sit at the interface you are targeting.
 
-**Node 02 warns that `write_condition_spec_cifs.py` was not found**
-Only this node's own annotation is written; the upstream validation pass is skipped. Set
-`RFD4_SPEC_CIF_SCRIPT` to the script's path in the image to enable it.
+**Node 02 warns that rfproteina is not importable**
+Only this node's own comment annotation is written and the spec is not validated. That is the
+development path outside the image; inside the image it means the image is broken, and node 02
+stops rather than continuing.
 
 ## References
 

@@ -135,16 +135,39 @@ def collect_designs(run_dir, dest_dir):
     for index, path in enumerate(found):
         base = os.path.basename(path)
         if not base.endswith("_generated.cif"):
-            base = f"design_{index:03d}_generated.cif"
+            # Only upstream's *_generated.cif files are designs. Anything else in that
+            # tree (a copy of the resolved input, an intermediate) is skipped rather than
+            # renamed into a design, which would put it in the metrics table as one.
+            print(
+                f"WARNING: ignoring '{base}' under inference_samples/: not a "
+                "*_generated.cif file, so not treated as a design.",
+                flush=True,
+            )
+            continue
         dest = os.path.join(dest_dir, base)
         if os.path.exists(dest):
             # Flattening a tree can collide; keep both rather than overwrite one silently.
-            parent = os.path.basename(os.path.dirname(path)) or f"dup{index}"
-            base = f"{parent}_{base}"
-            dest = os.path.join(dest_dir, base)
+            parent = os.path.basename(os.path.dirname(path)) or "dup"
+            dest = os.path.join(dest_dir, f"{parent}_{base}")
+            suffix = 2
+            while os.path.exists(dest):
+                dest = os.path.join(dest_dir, f"{parent}_{suffix}_{base}")
+                suffix += 1
         shutil.copyfile(path, dest)
         collected.append(os.path.basename(dest))
     return collected
+
+
+def baked_revisions():
+    """Revisions of nvidia/RFD4-Proteina present in the image's HF cache."""
+    pattern = os.path.join(
+        os.environ.get("HF_HOME", "/models"),
+        "hub",
+        "models--nvidia--RFD4-Proteina",
+        "snapshots",
+        "*",
+    )
+    return sorted(os.path.basename(p) for p in glob.glob(pattern) if os.path.isdir(p))
 
 
 def main():
@@ -161,6 +184,17 @@ def main():
 
     if num_replicates < 1:
         fail(f"num_replicates must be at least 1, got {num_replicates}")
+
+    # The weights are baked in at one revision and HF_HUB_OFFLINE=1 keeps this node off the
+    # network, so any other revision can only fail deep inside rfd4-generate as a cache
+    # miss. Say so here instead.
+    available = baked_revisions()
+    if available and hf_ckpt_revision not in available:
+        fail(
+            f"hf_ckpt_revision '{hf_ckpt_revision}' is not baked into this image "
+            f"(it has: {', '.join(available)}). This node runs offline, so another "
+            "revision cannot be fetched — rebuild the image to change it."
+        )
 
     spec_path = f"./inputs/{SPEC_NAME}"
     if not os.path.exists(spec_path):

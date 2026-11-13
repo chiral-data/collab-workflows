@@ -1,10 +1,10 @@
 # workflow-037 — RFD4-Proteina De Novo Design (design doc)
 
-Status: **image builds and node 01 runs in it; generation not yet exercised.** Built on the GPU
-node amd-c12-1 (RTX 3060 Ti, 8 GB) as `rfd4-proteina:2026_11_04`, 10.1 GB. The CPU nodes were
-developed against local Python 3.12; node 01 is confirmed in-image, node 02's validation path was
-blocked by a missing system library (now fixed, rerun pending), and node 03 has only run
-`--dry-run`. This document is the design rationale and the record
+Status: **built and run end to end on a GPU node.** `rfd4-proteina:2026_11_04` (10.3 GB) on
+amd-c12-1, an RTX 3060 Ti with 8 GB. All five nodes have run in the image against PDB 5O45:
+node 02's spec is accepted by RFD4's own parser, generation produced 61- and 101-residue binders
+contacting the target, `task=monomer` produced a 70-residue single chain, and nodes 04 and 05 ran
+over both multi-chain and single-chain output. This document is the design rationale and the record
 of decisions; it also holds the draft `[Workflow]` issue body and PR description for whenever the
 work is filed.
 
@@ -85,53 +85,26 @@ Image name `rfd4-proteina:2026_11_04`. The repo's shared-image CI
 `grep -A20 '\[container\]' | grep '^image'`, so **`image = "..."` must sit at column 0 within 20
 lines of `[container]`** in every `job.toml`.
 
-## What has and has not been verified
+## What has been verified
 
-Verified on the development host with local Python 3.12 (Biopython, jinja2, numpy, requests):
+In the image, on the GPU node (2026-11-13), against PDB 5O45 fetched from RCSB:
 
-- Node 01 on all three paths — uploaded mmCIF, uploaded PDB, and RCSB fetch of 5O45. Confirms the footgun this design
-  is built around: on 5O45, chain A is author 17–145 and label 1–129, so author 45 is label 29.
-- Node 02 for all four tasks, the `contig` override, both numbering modes, and every validation
-  failure (unknown task, bad length, out-of-range residue, missing motif, redesign == target).
-  Rendered specs parse as YAML.
-- Node 03 `--dry-run` (argv resolution), missing-spec and bad-replicate failures, and that the real
-  path fails cleanly with "No GPU available" on a CPU host.
-- Node 04 against stand-in designs built by reordering 5O45's chain B ahead of chain A, and node 05
-  over its metrics; the report's inline JS parses under node, and the chain test 01 → 02 → 03(dry) →
-  04 → 05 completes end to end.
+- **Node 01** on all three input paths — uploaded mmCIF, uploaded PDB, and RCSB fetch. Confirms the
+  footgun this design is built around: chain A is author 17–145 and label 1–129, so author 45 is
+  label 29, and author hotspots `A54,A56,A115` became label `38,40,99` in the spec.
+- **Node 02** for all four tasks, with every spec accepted by `resolve_condition_spec_inputs()`,
+  RFD4's own parser — including the synthesised monomer scaffold and the epitope derived for
+  `binder_redesign`. Every validation failure also exercised: unknown task, bad or reversed length,
+  out-of-range residue, missing motif, redesign == target, contig with `task=monomer`, residue
+  parameter ignored by the chosen task.
+- **Node 03** end to end: 61- and 101-residue binders against the target (`num_replicates=2`,
+  99.3s), and a 70-residue monomer (36.9s). The output layout was read off a real run rather than
+  assumed.
+- **Node 04 and 05** over that real output, both the two-chain binder case and the single-chain
+  monomer case.
 
-Not verified, and needing the image:
-
-- Everything in the Dockerfile: the `[all-cuda12]` extra resolving, the version pin (still absent),
-  the weight download, cu126 against the host driver.
-- `rfd4-generate`'s real CLI surface. Node 03's overrides (`--config`, `out_dir`,
-  `inference.num_replicates`, `inference.seed`, `~metrics`, `compile_lengths`) are a documented
-  guess, built in one function (`build_argv`) so a correction is one edit.
-- The `sel()` wildcard spelling. Node 02 emits `sel('A//38,40/')` for a chain-and-residues
-  selection, with empty fields as wildcards per the documented `chain/res_name/res_id/atom_name`
-  order. If upstream wants `*` or omitted fields instead, the fix is in `sel()`.
-- Whether `inference_samples/*.cif` is really the output layout (node 03 warns and falls back).
-- Whether the designed chain is really first in the output (node 04's documented assumption; it
-  reports all chains so a mismatch is visible).
-- The upstream `write_condition_spec_cifs.py` path — node 02 probes three locations and
-  `RFD4_SPEC_CIF_SCRIPT`, and warns rather than failing when it finds none.
-
-### Fixed during review
-
-- **Node 01, PDB path (silent wrongness).** Biopython's mmCIF writer opens a new `label_asym_id` at
-  each non-standard residue, so 5O45's chain B came out as 14 separate one- and two-residue chains.
-  `target_chain=B` would then resolve to a one-residue fragment and the contig would design against
-  it without complaint. Node 01 now canonicalises label numbering after conversion: one
-  `label_asym_id` per author chain, `label_seq_id` sequential over standard residues.
-- **Node 02, empty `loop_`.** A spec with no residue-level conditions (binder without hotspots) made
-  `spec_preview.cif` carry a `loop_` with zero rows, which is invalid mmCIF — Biopython tolerates it,
-  stricter parsers do not. It now writes a comment instead, and whole-chain conditions such as
-  `C_CRD sel('A///')` are recorded with `label_seq_id .` rather than being dropped.
-- **Node 02, unresolved gaps.** A contig span like `B1-14` over a chain with only 8 resolved residues
-  now warns and names the holes, at CPU time.
-- Node 01 also warns on repeated author numbers (insertion codes) instead of silently overwriting
-  the translation map; node 03 keeps its scratch directory on failure and names it; node 04 computes
-  Rg once; node 05's job.toml no longer declares an input it never reads.
+Still only exercised with stand-in data: nothing. The earlier stand-in structures (5O45 with its
+chains reordered) have been superseded by real generated designs.
 
 ## Open items
 
@@ -139,18 +112,25 @@ Most of the original list was settled by reading the real package and building t
 GPU node (2026-11-12/13). What the pre-build guesses got wrong is recorded in
 [Corrected after reading the package](#corrected-after-reading-the-package).
 
-1. **VRAM is the live question.** The available card is an RTX 3060 Ti, 8 GB, compute 8.6 — Ampere,
-   so the kernels load, but far below upstream's smallest tested device (a 40 GB A100) and not on
-   their supported list. Whether a 50-120 residue binder against a 129-residue target fits at
-   `num_replicates=1` is unknown until it runs.
+1. **VRAM headroom is unmeasured.** A 190-residue system (a 50-120 residue binder against
+   129-residue PD-L1) fits comfortably on an RTX 3060 Ti with 8 GB — compute 8.6, far below
+   upstream's smallest tested device, and it works. Where the ceiling actually is, and what
+   `batch_size` to drop to when a larger target hits it, is not established.
 2. **`monomer` works, but its output quality is the open question.** The scaffold is now generated
    (see below), so the task runs; the one test design was the requested length but extended and
    poly-glutamate-tailed. Whether that is the sampler at defaults, the absence of any scoring, or
    simply one sample of one, is unknown. Upstream's own recipe uses `num_replicates=16` with
    refolding metrics, which this workflow deliberately does not have.
-3. **Nodes 04 and 05 have only seen stand-in structures**, built by reordering 5O45's chains. Their
-   designed-chain-is-first assumption is unverified against real RFD4 output.
-4. **Open Babel still prints its plugin noise** even with libxrender1 present, and `CCD_MIRROR_PATH`
+3. **Node 04's designed-chain-is-first assumption holds for the shapes the tasks emit** (verified:
+   the designed chain comes first in real output), but a user-supplied `contig` with several
+   designed segments breaks it — the extra segments are counted as target and the interface numbers
+   mix designed-to-designed contacts in. Node 04 warns above two chains; it cannot see the contig,
+   so it cannot do better without being given it.
+4. **`task=binder_redesign` derives its epitope geometrically** (target residues within 8 Å CA-CA
+   of the existing binder). That is a reasonable definition and it is what makes the task differ
+   from `binder` at all, but it is this workflow's choice, not upstream's — upstream has no
+   redesign recipe. Worth revisiting if partial diffusion is ever exposed.
+5. **Open Babel still prints its plugin noise** even with libxrender1 present, and `CCD_MIRROR_PATH`
    / `PDB_MIRROR_PATH` warnings appear on every invocation. Harmless, but they bury real output;
    setting those two variables in the image would quieten it.
 

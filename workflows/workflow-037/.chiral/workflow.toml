@@ -1,9 +1,14 @@
 name = "RFD4-Proteina De Novo Design"
 description = "Generative protein design with RFD4-Proteina: binders, motif scaffolds, monomers and binder redesign from a target structure"
 
+# Node 03 depends on 02 alone, not on 01 as well: both 01 and 02 write target.cif, and
+# Silva copies every dependency's outputs into the dependent's inputs, so listing both
+# leaves which target.cif survives up to iteration order. That is harmless for the
+# conditioned tasks and fatal for task=monomer, where 02's target.cif is the generated
+# scaffold. 02 passes the target through precisely so 03 needs only one parent.
 [dependencies]
 02-build-spec = ["01-acquire-target"]
-03-generate = ["01-acquire-target", "02-build-spec"]
+03-generate = ["02-build-spec"]
 04-analyze = ["03-generate"]
 05-report = ["03-generate", "04-analyze"]
 

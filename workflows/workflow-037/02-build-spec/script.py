@@ -203,6 +203,52 @@ def build_binder(params, inventory):
     return contig, conditions, False
 
 
+CONTACT_CUTOFF_A = 8.0  # CA-CA, matching node 04's interface definition
+
+
+def contacting_residues(cif_path, target_chain, other_chain):
+    """Target residues whose CA lies within the cutoff of the other chain's CA atoms.
+
+    Used to recover the epitope an existing binder already engages, so a redesign is
+    pointed at the same patch instead of being re-randomised over the whole surface.
+    """
+    from Bio.PDB.MMCIF2Dict import MMCIF2Dict
+
+    cif = MMCIF2Dict(cif_path)
+    n = len(cif["_atom_site.label_asym_id"])
+    asym = cif["_atom_site.label_asym_id"]
+    seq = cif["_atom_site.label_seq_id"]
+    atom = cif["_atom_site.label_atom_id"]
+    xs, ys, zs = (
+        cif["_atom_site.Cartn_x"],
+        cif["_atom_site.Cartn_y"],
+        cif["_atom_site.Cartn_z"],
+    )
+    target_ca, other_ca = [], []
+    for i in range(n):
+        if atom[i] != "CA" or seq[i] in (".", "?", ""):
+            continue
+        try:
+            point = (float(xs[i]), float(ys[i]), float(zs[i]))
+        except ValueError:
+            continue
+        if asym[i] == target_chain:
+            target_ca.append((int(seq[i]), point))
+        elif asym[i] == other_chain:
+            other_ca.append(point)
+    if not target_ca or not other_ca:
+        return []
+    hits = set()  # altloc gives one residue several CA atoms; count it once
+    for label_seq, (x, y, z) in target_ca:
+        if label_seq in hits:
+            continue
+        for ox, oy, oz in other_ca:
+            if (x - ox) ** 2 + (y - oy) ** 2 + (z - oz) ** 2 <= CONTACT_CUTOFF_A ** 2:
+                hits.add(label_seq)
+                break
+    return sorted(hits)
+
+
 def build_binder_redesign(params, inventory):
     target = chain_by_id(inventory, params["target_chain"])
     redesign = chain_by_id(inventory, params["redesign_chain"])
@@ -217,7 +263,34 @@ def build_binder_redesign(params, inventory):
     )
     contig = f"{params['binder_length']}, /0, {chain_segment(target)}"
     conditions = hold_target(target["label_asym_id"])
-    conditions.update(resolve_hotspots(params, inventory, target))
+    if params["hotspot_residues"]:
+        conditions.update(resolve_hotspots(params, inventory, target))
+    else:
+        # What distinguishes a redesign from a fresh binder: the existing binder's own
+        # epitope becomes the hotspot set, so the new chain is aimed at the same patch.
+        # Without this the task would be byte-identical to task=binder.
+        epitope = contacting_residues(
+            "./inputs/target.cif", target["label_asym_id"], redesign["label_asym_id"]
+        )
+        if epitope:
+            print(
+                f"Derived {len(epitope)} hotspot(s) from chain "
+                f"{redesign['label_asym_id']}'s existing contacts with "
+                f"{target['label_asym_id']} (label {', '.join(str(e) for e in epitope)}), "
+                f"within {CONTACT_CUTOFF_A} A CA-CA. Set hotspot_residues to override.",
+                flush=True,
+            )
+            conditions.update(
+                hotspot_conditions([(target["label_asym_id"], e) for e in epitope])
+            )
+        else:
+            print(
+                f"WARNING: chain {redesign['label_asym_id']} makes no CA-CA contact with "
+                f"{target['label_asym_id']} within {CONTACT_CUTOFF_A} A, so no epitope "
+                "could be derived. This run is equivalent to task=binder. Give "
+                "hotspot_residues to aim it.",
+                flush=True,
+            )
     return contig, conditions, False
 
 
@@ -242,7 +315,16 @@ def build_motif_scaffold(params, inventory):
         segments.append(f"{chain}{start}-{end}")
         segments.append(flank)
     contig = ", ".join(segments)
-    residues = [f"{seq}" for _, seq in sorted(set(motif))]
+    chains_used = {chain for chain, _, _ in runs}
+    if len(chains_used) > 1:
+        print(
+            f"WARNING: motif_residues spans {len(chains_used)} chains "
+            f"({', '.join(sorted(chains_used))}). They are grafted into a SINGLE designed "
+            "chain with no chain break between them, which is unlikely to be what you "
+            "want. Scaffold one chain's motif at a time, or supply your own contig with "
+            "explicit /0 breaks.",
+            flush=True,
+        )
     by_chain = {}
     for chain, seq in sorted(set(motif)):
         by_chain.setdefault(chain, []).append(seq)
@@ -460,6 +542,8 @@ def validate_with_upstream(spec_path, dest):
 def write_annotation(target_cif, conditions, dest):
     """Fallback annotation: the target plus a record of what each condition selects."""
     shutil.copyfile(target_cif, dest)
+    if os.path.getsize(dest) == 0:
+        fail(f"'{target_cif}' is empty; node 01 produced no usable structure.")
     with open(dest, "rb") as handle:
         handle.seek(-1, os.SEEK_END)
         needs_newline = handle.read(1) != b"\n"
@@ -507,6 +591,21 @@ def main():
             f"binder_length '{params['binder_length']}' is not a length or range, "
             "e.g. 80 or 50-120."
         )
+    if params["contig"] and params["task"] == "monomer":
+        fail(
+            "contig cannot be combined with task=monomer: a monomer is designed from a "
+            "generated scaffold with no contig at all. Use task=binder (or another "
+            "conditioned task) if you want to supply a contig."
+        )
+    low_s, _, high_s = params["binder_length"].partition("-")
+    low_n, high_n = int(low_s), int(high_s or low_s)
+    if low_n < 1:
+        fail(f"binder_length '{params['binder_length']}' must be at least 1 residue.")
+    if low_n > high_n:
+        fail(
+            f"binder_length '{params['binder_length']}' runs backwards; write it as "
+            f"{high_n}-{low_n}."
+        )
 
     target_cif = "./inputs/target.cif"
     inventory_path = "./inputs/target_inventory.json"
@@ -515,15 +614,35 @@ def main():
             fail(f"Required input not found: {path}")
     inventory = load_inventory(inventory_path)
 
+    consumes = {
+        "binder": {"hotspot_residues"},
+        "binder_redesign": {"hotspot_residues"},
+        "motif_scaffold": {"motif_residues"},
+        "monomer": set(),
+    }[params["task"]]
+    for name in ("hotspot_residues", "motif_residues"):
+        if params[name] and name not in consumes:
+            print(
+                f"WARNING: {name}='{params[name]}' is ignored by task={params['task']} "
+                "and conditions nothing. Check you meant the other parameter.",
+                flush=True,
+            )
+
     contig, conditions, as_annotated_cif = BUILDERS[params["task"]](params, inventory)
 
     if params["contig"]:
         print(
-            f"NOTE: contig override in use; templated contig '{contig}' discarded.",
+            f"NOTE: contig override in use; derived contig '{contig}' discarded.",
             flush=True,
         )
         contig = params["contig"]
-        as_annotated_cif = False
+        if not conditions:
+            # Every templated task holds its target; an override must not silently drop
+            # that, or the model is handed a "target" it is free to move and rewrite.
+            fail(
+                "contig override produced a spec with no conditions, so the target would "
+                "not be held. This is a bug in the task builder, not in your input."
+            )
     if contig:
         check_contig(contig)
 

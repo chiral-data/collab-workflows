@@ -37,12 +37,27 @@ def fail(message):
 
 
 def resolve_upload():
-    uploads = sorted(
-        glob.glob("./inputs/*.cif.zst")
-        + glob.glob("./inputs/*.cif")
-        + glob.glob("./inputs/*.pdb")
-    )
-    return uploads[0] if uploads else None
+    """Pick one uploaded structure, preferring formats that carry label_seq_id.
+
+    The order is a real preference, not alphabetical: mmCIF (compressed or not) before
+    PDB, because PDB has no label numbering and conversion has to invent it. Extra
+    uploads are named rather than dropped in silence.
+    """
+    groups = [
+        sorted(glob.glob("./inputs/*.cif.zst")),
+        sorted(p for p in glob.glob("./inputs/*.cif") if not p.endswith(".cif.zst")),
+        sorted(glob.glob("./inputs/*.pdb")),
+    ]
+    everything = [path for group in groups for path in group]
+    chosen = next((group[0] for group in groups if group), None)
+    if chosen and len(everything) > 1:
+        ignored = ", ".join(os.path.basename(p) for p in everything if p != chosen)
+        print(
+            f"NOTE: using '{os.path.basename(chosen)}'; ignoring {ignored}. "
+            "mmCIF is preferred over PDB because PDB carries no label_seq_id.",
+            flush=True,
+        )
+    return chosen
 
 
 def fetch_from_rcsb(pdb_id, dest):
@@ -319,6 +334,16 @@ def main():
         for c in inventory["chains"]
         if target_chain in (c["label_asym_id"], c["auth_asym_id"])
     ]
+    by_label = [c for c in matched if c["label_asym_id"] == target_chain]
+    by_auth = [c for c in matched if c["auth_asym_id"] == target_chain]
+    if by_label and by_auth and by_label[0] is not by_auth[0]:
+        print(
+            f"WARNING: chain id '{target_chain}' is ambiguous — it is label_asym_id of one "
+            f"chain and auth_asym_id of a different one (auth "
+            f"{by_label[0]['auth_asym_id']} vs label {by_auth[0]['label_asym_id']}). "
+            "Using the label_asym_id match.",
+            flush=True,
+        )
     if not matched:
         print(
             f"ERROR: target_chain '{target_chain}' is not in the structure. "

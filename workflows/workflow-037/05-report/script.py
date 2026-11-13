@@ -124,15 +124,24 @@ function renderTable() {{
     head.appendChild(th);
   }});
   const body = document.getElementById("metrics-body");
+  const embedded = new Set(DATA.structures.map((s) => s.name));
   DATA.metrics.designs.forEach((row) => {{
     const tr = document.createElement("tr");
-    tr.style.cursor = "pointer";
+    const shown = embedded.has(row.design);
     DATA.columns.forEach(([key]) => {{
       const td = document.createElement("td");
       td.textContent = fmt(row[key]);
       tr.appendChild(td);
     }});
-    tr.addEventListener("click", () => select(row.design));
+    if (shown) {{
+      tr.style.cursor = "pointer";
+      tr.addEventListener("click", () => select(row.design));
+    }} else {{
+      // Only the first top_n structures are embedded. Clicking a row whose structure is
+      // absent used to fall back to the first design, silently showing the wrong one.
+      tr.classList.add("text-secondary");
+      tr.title = "Structure not embedded in this report — raise top_n to view it";
+    }}
     body.appendChild(tr);
   }});
 }}
@@ -156,8 +165,8 @@ function renderPlot() {{
 let viewer = null;
 
 async function select(name) {{
-  const entry = DATA.structures.find((s) => s.name === name) || DATA.structures[0];
-  if (!entry) return;
+  const entry = DATA.structures.find((s) => s.name === name);
+  if (!entry) return;  // not embedded: leave the viewer where it is
   document.getElementById("structure-select").value = entry.name;
   const row = DATA.metrics.designs.find((r) => r.design === entry.name);
   document.getElementById("sequence").textContent = row ? row.designed_sequence : "";

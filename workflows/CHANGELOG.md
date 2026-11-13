@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- workflow-037: RFD4-Proteina De Novo Design — **scaffold only, nodes not yet implemented**
-  (5 nodes: 01-acquire-target, 02-build-spec, 03-generate, 04-analyze, 05-report).
+- workflow-037: RFD4-Proteina De Novo Design (5 nodes: 01-acquire-target, 02-build-spec,
+  03-generate, 04-analyze, 05-report). Built and run end to end on a GPU node against PDB 5O45.
   - Generative protein design on RFD4-Proteina (RosettaCommons + NVIDIA GenAIR, BSD-3), which
     supersedes RFdiffusion 1/2/3. Multi-task via a `task` param: binder, motif_scaffold,
     monomer, binder_redesign.
