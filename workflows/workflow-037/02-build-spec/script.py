@@ -33,6 +33,7 @@ import os
 import re
 import shutil
 import sys
+import tempfile
 
 TASKS = ("binder", "motif_scaffold", "monomer", "binder_redesign")
 LENGTH_RE = re.compile(r"^\d+(-\d+)?$")
@@ -331,8 +332,9 @@ def validate_with_upstream(spec_path, dest):
             "The image is broken, not the spec. Generation would fail the same way."
         )
 
-    out_dir = "./outputs/_spec_cifs"
-    os.makedirs(out_dir, exist_ok=True)
+    # Rendered CIFs go to a scratch directory, not ./outputs, so a validation failure
+    # leaves no half-written directory among the declared outputs.
+    out_dir = tempfile.mkdtemp(prefix="spec_cifs_")
     try:
         resolve_condition_spec_inputs(spec_path, out_dir, validate=True)
     except Exception as exc:
@@ -345,11 +347,10 @@ def validate_with_upstream(spec_path, dest):
     )
     if not rendered:
         print("WARNING: upstream validation wrote no CIF; keeping this node's annotation.", flush=True)
+        shutil.rmtree(out_dir, ignore_errors=True)
         return False
     shutil.copyfile(rendered[0], dest)
-    for path in rendered:
-        os.remove(path)
-    os.rmdir(out_dir)
+    shutil.rmtree(out_dir, ignore_errors=True)
     print(f"Spec validated by RFD4 and rendered to {dest}", flush=True)
     return True
 
@@ -450,10 +451,14 @@ def main():
     if not conditions:
         print("Conditions: none", flush=True)
 
+    # The spec names its input as a bare relative filename, which upstream resolves against
+    # the spec's own directory — so the target has to sit beside the spec before validation,
+    # not after. Node 03 relies on the same side-by-side layout.
+    shutil.copyfile(target_cif, "./outputs/target.cif")
+
     preview_path = "./outputs/spec_preview.cif"
     write_annotation(target_cif, conditions, preview_path)
     validate_with_upstream(spec_path, preview_path)
-    shutil.copyfile(target_cif, "./outputs/target.cif")
 
     print(f"Wrote {spec_path} and {preview_path}", flush=True)
 
