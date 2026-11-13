@@ -143,15 +143,34 @@ GPU node (2026-11-12/13). What the pre-build guesses got wrong is recorded in
    so the kernels load, but far below upstream's smallest tested device (a 40 GB A100) and not on
    their supported list. Whether a 50-120 residue binder against a 129-residue target fits at
    `num_replicates=1` is unknown until it runs.
-2. **`monomer` needs a decision.** Upstream rejects a contig of only expandable segments, so the
-   task now emits the annotated-CIF passthrough form and needs an input that already carries an
-   expandable chain (upstream's `data/benchmarks/monomer/` files). Either vendor those, or drop the
-   task to three. Not something to decide silently.
+2. **`monomer` works, but its output quality is the open question.** The scaffold is now generated
+   (see below), so the task runs; the one test design was the requested length but extended and
+   poly-glutamate-tailed. Whether that is the sampler at defaults, the absence of any scoring, or
+   simply one sample of one, is unknown. Upstream's own recipe uses `num_replicates=16` with
+   refolding metrics, which this workflow deliberately does not have.
 3. **Nodes 04 and 05 have only seen stand-in structures**, built by reordering 5O45's chains. Their
    designed-chain-is-first assumption is unverified against real RFD4 output.
 4. **Open Babel still prints its plugin noise** even with libxrender1 present, and `CCD_MIRROR_PATH`
    / `PDB_MIRROR_PATH` warnings appear on every invocation. Harmless, but they bury real output;
    setting those two variables in the image would quieten it.
+
+## The monomer scaffold is synthesised, not vendored
+
+`examples/monomer.cif` in the model repository is 3 KB of annotation with no real atoms: a single
+sentinel `HETATM` at NaN coordinates, and the segment length written three ways — a component named
+`100-100`, and `annotation_expsegmin_1_residue` / `annotation_expsegmax_1_residue`. Node 02 writes
+the same file at the requested `binder_length`, so monomer works at any length instead of only the
+100 upstream ships.
+
+The format is undocumented, so the implementation is inferred and was therefore proven by running
+it: the spec validates through RFD4's own parser with `mon_id 60-90`, and generation returns a
+70-residue single chain in 36.9s. If an upstream version changes those field names this breaks, and
+it breaks loudly at node 02's validation rather than silently.
+
+The scaffold replaces `target.cif` rather than travelling as a file of its own. A file present for
+one task in four would need conditional entries in two `job.toml` contracts, and Silva's behaviour
+on a declared-but-absent file is unverified; writing it as the target keeps one contract across all
+four tasks and the spec's `input:` constant.
 
 ## Corrected after reading the package
 

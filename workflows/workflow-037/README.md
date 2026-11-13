@@ -223,12 +223,20 @@ past 50 MB.
 |---------------|-------------|
 | `binder` (default) | Design a new chain against the fixed target chain. Contig: `<binder_length>, /0, <target range>`. Optional `hotspot_residues` become `C_HOT`. The common case. |
 | `motif_scaffold` | Hold `motif_residues` as a rigid group (`C_CRDGRP`) with fixed identity (`C_SEQ`) and build scaffold around it. `binder_length` becomes the length range of each flank. Requires `motif_residues`. |
-| `monomer` | Emits the annotated-CIF passthrough form (`input_as_annotated_cif: true`, no contig). **Needs an input that already carries an expandable chain**, such as upstream's `data/benchmarks/monomer/` files; an ordinary target structure will not work, because a contig made only of expandable segments is rejected. |
+| `monomer` | Designs a standalone chain of `binder_length` residues. The target structure is ignored: node 02 writes an annotated scaffold in place of `target.cif`, because a contig made only of expandable segments is rejected upstream. Mechanically verified, but see the quality note below. |
 | `binder_redesign` | Freeze the target with `C_CRD` and regenerate `redesign_chain`. Set `binder_length` to the existing binder's length unless you intend to change it. |
 
 **Trade-off:** More conditioning means more control and less diversity. `binder` with no hotspots
 explores the whole target surface; adding hotspots focuses it at the cost of discarding
 alternative epitopes.
+
+**Quality note on `monomer`.** It is the least constrained task and, at the defaults, the one whose
+output most needs filtering. A single 60-90 residue test design came out 70 residues as asked but
+extended (Rg 21.7 Å, where a compact 70-mer is nearer 12 Å) and highly charged (net -23, with a
+poly-glutamate tail). Nothing in this workflow scores or filters designs, so treat monomer runs as
+raw samples: generate many (`num_replicates` in the hundreds), then refold and filter downstream
+(workflow-026) rather than reading any single design as a result. The conditioned tasks
+(`binder`, `motif_scaffold`, `binder_redesign`) are anchored to a real structure and behave better.
 
 **Test vs production:** The task does not change with scale — `num_replicates` does.
 
