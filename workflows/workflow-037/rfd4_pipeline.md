@@ -1,9 +1,10 @@
 # workflow-037 — RFD4-Proteina De Novo Design (design doc)
 
-Status: **all five nodes implemented and chain-tested on CPU; the image has never been built.**
-Docker is unavailable on the development host (Docker Desktop WSL integration off) and the host has
-no GPU, so nodes 01, 02, 04 and 05 were developed and tested against local Python 3.12, and node 03
-was verified only through its `--dry-run` path. This document is the design rationale and the record
+Status: **image builds and node 01 runs in it; generation not yet exercised.** Built on the GPU
+node amd-c12-1 (RTX 3060 Ti, 8 GB) as `rfd4-proteina:2026_11_04`, 10.1 GB. The CPU nodes were
+developed against local Python 3.12; node 01 is confirmed in-image, node 02's validation path was
+blocked by a missing system library (now fixed, rerun pending), and node 03 has only run
+`--dry-run`. This document is the design rationale and the record
 of decisions; it also holds the draft `[Workflow]` issue body and PR description for whenever the
 work is filed.
 
@@ -134,17 +135,54 @@ Not verified, and needing the image:
 
 ## Open items
 
-1. **Import name is unresolved upstream.** The GitHub README shows `import rfd4_proteina as rfd4`;
-   the HF model card shows `from rfproteina.proteina import Proteina`. The docs decline to say.
-   Resolve empirically in the built image before any Python here imports the package.
-2. **`[all-cuda12]` extra must actually resolve** against `tmol-ops-cu12`. If it does not, fall back
-   to the no-extra install (generation still works, minus the fused cuEquivariance kernels).
-3. **Driver must support cu126.** workflow-026 already runs `colabfold:1.6.1-cuda12` on this estate,
-   so CUDA 12 is proven; cu126 specifically needs driver ≥ 525.
-4. **Version pin is still a placeholder** in the Dockerfile — pin `rfd4-proteina==<version>` at
-   first build. The node dependencies added alongside it (biopython, jinja2, zstandard, requests)
-   are pinned.
-5. **Sample target not vendored** — `input_files/5o45_cropped.cif.zst` still needs fetching.
+Most of the original list was settled by reading the real package and building the image on the
+GPU node (2026-11-12/13). What the pre-build guesses got wrong is recorded in
+[Corrected after reading the package](#corrected-after-reading-the-package).
+
+1. **VRAM is the live question.** The available card is an RTX 3060 Ti, 8 GB, compute 8.6 — Ampere,
+   so the kernels load, but far below upstream's smallest tested device (a 40 GB A100) and not on
+   their supported list. Whether a 50-120 residue binder against a 129-residue target fits at
+   `num_replicates=1` is unknown until it runs.
+2. **`monomer` needs a decision.** Upstream rejects a contig of only expandable segments, so the
+   task now emits the annotated-CIF passthrough form and needs an input that already carries an
+   expandable chain (upstream's `data/benchmarks/monomer/` files). Either vendor those, or drop the
+   task to three. Not something to decide silently.
+3. **Nodes 04 and 05 have only seen stand-in structures**, built by reordering 5O45's chains. Their
+   designed-chain-is-first assumption is unverified against real RFD4 output.
+4. **Open Babel still prints its plugin noise** even with libxrender1 present, and `CCD_MIRROR_PATH`
+   / `PDB_MIRROR_PATH` warnings appear on every invocation. Harmless, but they bury real output;
+   setting those two variables in the image would quieten it.
+
+## Corrected after reading the package
+
+Before building, the package itself was read: PyPI metadata, the wheel's `entry_points.txt` and
+`METADATA`, the Hydra configs, `rfproteina/utils/hub.py`, `rfproteina/utils/mask_spec.py`, and
+upstream's README plus the condition-spec guide and cookbook. Six things the plan asserted from
+documentation were wrong.
+
+| Assumed | Actual |
+|---|---|
+| `--config=spec.yaml` | `inputs=spec.yaml` (Hydra, `main_hydra` on `configs/inference.yaml`) |
+| `inference.num_replicates`, `inference.seed` | top-level `num_replicates`, `seed` |
+| import name is `rfd4_proteina` *or* `rfproteina` | both exist, plus `script_utils`; a false dilemma |
+| `write_condition_spec_cifs.py` script | no such script; `resolve_condition_spec_inputs()`, a function |
+| spec is a bare `{input, contig, conditions}` mapping | keyed by an example id, conditions keyed by condition *value* with `{select: ...}` entries |
+| HF repo is ~1.74 GB | 82.57 GB: AlphaFold2 (51.6) and OpenFold3 (21.2) refolding runtimes, native `.ckpt` copies, and the 1.74 GB bundle. The loader itself asks only for `config.json` + `model.safetensors` |
+
+Two assumptions held: `res_id` does resolve against mmCIF `label_seq_id` ("before contig renumbers
+the output"), so the whole node 01 numbering design stands; and designs do land in
+`<out_dir>/inference_samples/`.
+
+Worse than any of the above, a `binder` run set **no conditions at all** unless hotspots were
+given, so the target was never held in place. Every task now applies `C_CRDGRP` over backbone atoms
+plus `C_SEQ`, which is upstream's own binder recipe.
+
+Build-time facts now established: `rfd4-proteina==0.0.3` is the newest release (requires-python
+`>=3.12,<3.13`); the `[all-cuda12]` extra resolves, pulling `tmol[cu12]` and the cuEquivariance
+kernels; torch lands as 2.14.1+cu126 and reports `cuda.is_available() True` on driver 580.178.04;
+the image is 10.1 GB with 1.7 GB of weights at `/models`. And `libxrender1`/`libxext6`/`libsm6` are
+mandatory, not cosmetic: without them Open Babel's plugin load fails, `GetSupportedInputFormat()`
+returns malformed data, and `rfproteina.inference_utils.condition_spec` cannot be imported at all.
 
 ## Verification plan
 
