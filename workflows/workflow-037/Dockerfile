@@ -11,8 +11,13 @@ ENV HF_HOME=/models \
 # fails, GetSupportedInputFormat() returns malformed data, and atomworks.ml's import of it
 # dies with "not enough values to unpack" — which takes rfproteina's condition_spec, and
 # therefore node 02's validation and generation itself, down with it.
+# gcc/libc6-dev are needed at *run* time, not build time: Triton compiles its kernels on
+# the fly and aborts with "Failed to find C compiler" without one. This happens even with
+# compile_lengths=null, which only skips the torch.compile warm-up, so a compiler is not
+# optional for generation. Upstream's own Dockerfile does not mention it because its base
+# image already carries one.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      git curl ca-certificates libxrender1 libxext6 libsm6 && \
+      git curl ca-certificates gcc libc6-dev libxrender1 libxext6 libsm6 && \
     rm -rf /var/lib/apt/lists/*
 
 # Upstream warns that a fresh venv's bundled pip trusts a compromised CA — pin pip first.
