@@ -101,9 +101,22 @@ def build_argv(spec_name, out_dir, num_replicates, seed, disable_compile, revisi
 
 
 def collect_designs(run_dir, dest_dir):
-    """Flatten <run_dir>/**/inference_samples/*.cif into ./outputs/."""
-    found = sorted(glob.glob(os.path.join(run_dir, "**", "inference_samples", "*.cif"),
-                             recursive=True))
+    """Flatten the generated CIFs out of inference_samples/ into ./outputs/.
+
+    The real layout, confirmed by running generation and listing the tree, is
+
+        <out_dir>/inference_samples/design_0/design_0_generated.cif
+        <out_dir>/inference_metrics/per_example_metrics.csv
+
+    so each design sits in its own subdirectory rather than directly under
+    inference_samples/, and the glob has to descend. (inference_metrics/ is written even
+    with ~metrics, holding no scores; it contains no CIF, so it is simply not collected.)
+    """
+    found = sorted(
+        glob.glob(
+            os.path.join(run_dir, "**", "inference_samples", "**", "*.cif"), recursive=True
+        )
+    )
     if not found:
         # Fall back to any CIF produced, so a layout change surfaces as a clear error
         # rather than an empty success.
@@ -124,6 +137,11 @@ def collect_designs(run_dir, dest_dir):
         if not base.endswith("_generated.cif"):
             base = f"design_{index:03d}_generated.cif"
         dest = os.path.join(dest_dir, base)
+        if os.path.exists(dest):
+            # Flattening a tree can collide; keep both rather than overwrite one silently.
+            parent = os.path.basename(os.path.dirname(path)) or f"dup{index}"
+            base = f"{parent}_{base}"
+            dest = os.path.join(dest_dir, base)
         shutil.copyfile(path, dest)
         collected.append(os.path.basename(dest))
     return collected
