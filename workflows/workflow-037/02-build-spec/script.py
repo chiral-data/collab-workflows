@@ -268,20 +268,122 @@ def build_motif_scaffold(params, inventory):
     return contig, conditions, False
 
 
-def build_monomer(params, inventory):
-    """Unconditioned chain, which upstream only supports from an annotated CIF.
+MONOMER_SCAFFOLD_NAME = "target.cif"  # the scaffold replaces the target for task=monomer
 
-    A contig of nothing but expandable segments is rejected upstream: "input exists to be
-    referenced by a preserved segment". So this task emits the annotated-CIF form instead
-    of a contig, and the input has to carry its own expandable chain — upstream's
-    data/benchmarks/monomer/ CIFs, or your own annotated file.
+MONOMER_SCAFFOLD_TEMPLATE = """data_{name}
+#
+_entry.id       {name}
+_entry.author   workflow-037
+#
+_entity.id                 0
+_entity.type               polymer
+_entity.pdbx_description   .
+#
+_entity_poly.entity_id                      0
+_entity_poly.type                           polypeptide(L)
+_entity_poly.nstd_linkage                   no
+_entity_poly.nstd_monomer                   yes
+_entity_poly.pdbx_seq_one_letter_code       X
+_entity_poly.pdbx_seq_one_letter_code_can   X
+_entity_poly.pdbx_strand_id                 A
+_entity_poly.pdbx_target_identifier         ?
+#
+_entity_poly_seq.entity_id   0
+_entity_poly_seq.hetero      n
+_entity_poly_seq.mon_id      {comp}
+_entity_poly_seq.num         1
+#
+_chem_comp.id                        {comp}
+_chem_comp.name                      {comp}
+_chem_comp.type                      NON-POLYMER
+_chem_comp.formula                   ?
+_chem_comp.mon_nstd_parent_comp_id   ?
+_chem_comp.pdbx_synonyms             ?
+_chem_comp.formula_weight            ?
+#
+_atom_site.group_PDB                         HETATM
+_atom_site.type_symbol                       X
+_atom_site.label_atom_id                     UNK
+_atom_site.label_alt_id                      .
+_atom_site.label_comp_id                     {comp}
+_atom_site.label_asym_id                     A
+_atom_site.label_entity_id                   0
+_atom_site.label_seq_id                      1
+_atom_site.pdbx_PDB_ins_code                 .
+_atom_site.auth_seq_id                       1
+_atom_site.auth_comp_id                      {comp}
+_atom_site.auth_asym_id                      A
+_atom_site.auth_atom_id                      UNK
+_atom_site.B_iso_or_equiv                    nan
+_atom_site.occupancy                         0.0
+_atom_site.pdbx_formal_charge                ?
+_atom_site.annotation_expsegmax_1_residue    {high}
+_atom_site.mask_expsegmin_1_residue          True
+_atom_site.mask_expsegmax_1_residue          True
+_atom_site.annotation_expsegmin_1_residue    {low}
+_atom_site.condition_hbond_1_atom            0
+_atom_site.condition_index-group_1_token     0
+_atom_site.mask_index_1_residue              True
+_atom_site.mask_coordinate_1_atom            False
+_atom_site.mask_sequence_1_residue           False
+_atom_site.annotation_src-component_1_atom   .
+_atom_site.atom_array_index                  0
+_atom_site.Cartn_x                           nan
+_atom_site.Cartn_y                           nan
+_atom_site.Cartn_z                           nan
+_atom_site.pdbx_PDB_model_num                1
+_atom_site.id                                1
+#
+_rfd_design.sampled_contig   {comp}
+#
+_chem_comp_atom.comp_id                    {comp}
+_chem_comp_atom.atom_id                    UNK
+_chem_comp_atom.type_symbol                X
+_chem_comp_atom.charge                     0
+_chem_comp_atom.pdbx_aromatic_flag         N
+_chem_comp_atom.pdbx_leaving_atom_flag     N
+_chem_comp_atom.pdbx_model_Cartn_x_ideal   nan
+_chem_comp_atom.pdbx_model_Cartn_y_ideal   nan
+_chem_comp_atom.pdbx_model_Cartn_z_ideal   nan
+#
+"""
+
+
+def write_monomer_scaffold(low, high, dest):
+    """Write an annotated CIF holding one expandable chain and no real atoms.
+
+    A contig of nothing but expandable segments is rejected upstream ("input exists to be
+    referenced by a preserved segment"), so a monomer cannot be asked for with a contig.
+    Upstream's answer is an annotated CIF carrying a single expandable segment and no
+    coordinates: examples/monomer.cif in the model repository is 3 KB of annotations, one
+    sentinel HETATM with NaN coordinates, and a component named for its length.
+
+    This writes the same structure at the requested length. The format is copied from that
+    file: the component id is "<low>-<high>", and the bounds appear again as
+    annotation_expsegmin/max_1_residue. Upstream documents none of this, so node 02
+    validates the result through RFD4's own parser before any GPU time is spent.
     """
+    with open(dest, "w") as handle:
+        handle.write(
+            MONOMER_SCAFFOLD_TEMPLATE.format(
+                name=MONOMER_SCAFFOLD_NAME, comp=f"{low}-{high}", low=low, high=high
+            )
+        )
+
+
+def build_monomer(params, inventory):
+    """Unconditioned single chain, designed from a scaffold written in place of the target.
+
+    The scaffold replaces target.cif rather than travelling as a file of its own, so every
+    task hands node 03 the same two files and the spec's `input:` never varies. main()
+    writes it, because it owns the output copy step.
+    """
+    low, _, high = params["binder_length"].partition("-")
+    high = high or low
     print(
-        "NOTE: task=monomer passes the input through as an annotated CIF "
-        "(input_as_annotated_cif: true) and sets no contig, because a contig made only of "
-        "expandable segments is rejected. The input must already be an annotated CIF "
-        "carrying an expandable chain, such as upstream's data/benchmarks/monomer/ files. "
-        "An ordinary target structure will not work here.",
+        f"NOTE: task=monomer ignores the target structure. It designs a standalone chain "
+        f"of {low}-{high} residues from a generated scaffold, written as target.cif, "
+        "because a contig built only from expandable segments is rejected upstream.",
         flush=True,
     )
     return None, {}, True
@@ -452,12 +554,16 @@ def main():
         print("Conditions: none", flush=True)
 
     # The spec names its input as a bare relative filename, which upstream resolves against
-    # the spec's own directory — so the target has to sit beside the spec before validation,
+    # the spec's own directory — so the input has to sit beside the spec before validation,
     # not after. Node 03 relies on the same side-by-side layout.
-    shutil.copyfile(target_cif, "./outputs/target.cif")
+    if as_annotated_cif:
+        low, _, high = params["binder_length"].partition("-")
+        write_monomer_scaffold(int(low), int(high or low), "./outputs/target.cif")
+    else:
+        shutil.copyfile(target_cif, "./outputs/target.cif")
 
     preview_path = "./outputs/spec_preview.cif"
-    write_annotation(target_cif, conditions, preview_path)
+    write_annotation("./outputs/target.cif", conditions, preview_path)
     validate_with_upstream(spec_path, preview_path)
 
     print(f"Wrote {spec_path} and {preview_path}", flush=True)
