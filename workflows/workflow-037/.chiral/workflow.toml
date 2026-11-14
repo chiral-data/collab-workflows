@@ -88,11 +88,6 @@ type = "string"
 default = "a06e2509c7033b010fc43614e9fd840303588502"
 hint = "Pinned HuggingFace revision of nvidia/RFD4-Proteina (flow + autoencoder are a matched pair)"
 
-[params.fasta_mode]
-type = "string"
-default = "designed"
-hint = "What node 06 writes per design: designed (the generated chain alone) or complex (every chain, colon-joined)"
-
 [params.top_n]
 type = "integer"
 default = 10

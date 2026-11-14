@@ -14,8 +14,3 @@ use_gpu = false
 
 [scripts]
 run = "run.sh"
-
-[params.fasta_mode]
-type = "string"
-default = "designed"
-hint = "What to write per design: designed (the generated chain alone) or complex (every chain, colon-joined)"

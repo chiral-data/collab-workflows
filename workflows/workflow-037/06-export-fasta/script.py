@@ -10,19 +10,22 @@ only real test is independent refolding — fold the sequence, check the fold ma
 backbone RFD4 drew (self-consistency), and keep the designs that survive. That filter lives
 in workflow-026; this node is the handoff.
 
-`fasta_mode` chooses what each record holds:
+Each record holds one design's generated chain alone. Refolding that answers "does this
+sequence fold to the shape it was designed as?", which is the standard self-consistency
+check and the only one this handoff can support.
 
-  designed  one record per design, the generated chain alone. Refolding this answers "does
-            this sequence fold to the shape it was designed as?", which is the standard
-            self-consistency check and the right default.
-  complex   one record per design, every chain colon-joined (designed first, then target).
-            ColabFold reads the colon as a chain break and folds the complex, which also
-            gives interface confidence — slower, and only meaningful when there is a target.
+There is deliberately no complex-export mode. Writing every chain colon-joined is the
+only encoding that would make ColabFold predict the complex, because workflow-026 hands
+the FASTA directory straight to colabfold_batch and each record becomes an independent
+job — a chain break signalled in the header would be ignored. But workflow-026 validates
+the sequence against ACDEFGHIKLMNPQRSTVWYX and rejects anything else, so a colon-joined
+record fails its first node outright:
 
-Note on how workflow-026 reads the result: it labels any multi-record file a "multimer" and
-therefore resolves `pair_mode=auto` to `unpaired_paired`. That is harmless for single-chain
-records (there is nothing to pair) and correct for colon-joined ones, so both modes are safe
-to hand over as-is.
+    ERROR: Sequence 'design_0_generated': invalid characters [':']
+
+The two requirements are strictly incompatible from this side, and this workflow must not
+change workflow-026 to suit itself. Re-enabling complex export means adding ":" to that
+validator's VALID_AA first.
 """
 import glob
 import json
@@ -30,7 +33,6 @@ import os
 import re
 import sys
 
-MODES = ("designed", "complex")
 LINE_WIDTH = 60
 OUTPUT_NAME = "sequences.fasta"
 
@@ -95,9 +97,16 @@ def wrap(sequence):
 def main():
     os.makedirs("./outputs", exist_ok=True)
 
+    # The parameter is gone, but fail loudly rather than silently ignoring a value that
+    # someone set by hand expecting the old behaviour.
     mode = os.environ.get("PARAM_FASTA_MODE", "designed")
-    if mode not in MODES:
-        fail(f"Unknown fasta_mode '{mode}'. Expected one of: {', '.join(MODES)}")
+    if mode != "designed":
+        fail(
+            f"fasta_mode='{mode}' is no longer available; this node writes the designed "
+            "chain alone. Colon-joined complex records are rejected by workflow-026's "
+            "validator, which accepts only ACDEFGHIKLMNPQRSTVWYX, so the mode could not "
+            "do what it promised."
+        )
 
     designs = sorted(glob.glob("./inputs/*_generated.cif"))
     if not designs:
@@ -124,16 +133,9 @@ def main():
         if not chains:
             skipped.append((base, "no polymer chains"))
             continue
-        if mode == "designed":
-            sequence = chains[0][1]
-            label = f"chain={chains[0][0]} len={len(sequence)}"
-        else:
-            sequence = ":".join(seq for _, seq in chains)
-            label = (
-                f"chains={','.join(c for c, _ in chains)} "
-                f"len={','.join(str(len(s)) for _, s in chains)}"
-            )
-        residues = sequence.replace(":", "")
+        sequence = chains[0][1]
+        label = f"chain={chains[0][0]} len={len(sequence)}"
+        residues = sequence
         if not residues:
             skipped.append((base, "empty sequence"))
             continue
@@ -164,8 +166,7 @@ def main():
             flush=True,
         )
 
-    lengths = [len(seq.replace(":", "")) for _, _, seq in records]
-    print(f"Mode: {mode}", flush=True)
+    lengths = [len(seq) for _, _, seq in records]
     print(
         f"Wrote {len(records)} record(s) to {out_path}; "
         f"residues per record {min(lengths)}-{max(lengths)}",
