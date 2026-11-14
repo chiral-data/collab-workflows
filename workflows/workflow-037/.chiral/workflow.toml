@@ -11,6 +11,7 @@ description = "Generative protein design with RFD4-Proteina: binders, motif scaf
 03-generate = ["02-build-spec"]
 04-analyze = ["03-generate"]
 05-report = ["03-generate", "04-analyze"]
+06-export-fasta = ["03-generate", "04-analyze"]
 
 [params.task]
 type = "string"
@@ -81,6 +82,11 @@ hint = "Skip the slow torch.compile warm-up by setting compile_lengths=null"
 type = "string"
 default = "a06e2509c7033b010fc43614e9fd840303588502"
 hint = "Pinned HuggingFace revision of nvidia/RFD4-Proteina (flow + autoencoder are a matched pair)"
+
+[params.fasta_mode]
+type = "string"
+default = "designed"
+hint = "What node 06 writes per design: designed (the generated chain alone) or complex (every chain, colon-joined)"
 
 [params.top_n]
 type = "integer"

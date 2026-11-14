@@ -1,0 +1,21 @@
+name = "Export FASTA"
+description = "Write the designed sequences as sequences.fasta, ready to hand to workflow-026 for refolding"
+inputs = [
+  "*_generated.cif",
+  "design_metrics.json",
+]
+outputs = [
+  "sequences.fasta",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.fasta_mode]
+type = "string"
+default = "designed"
+hint = "What to write per design: designed (the generated chain alone) or complex (every chain, colon-joined)"

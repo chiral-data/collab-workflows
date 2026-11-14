@@ -51,7 +51,8 @@ no pLDDT, no self-consistency RMSD, and the metrics it does report are geometry 
 confidence. For an end-to-end scored campaign use **workflow-033** (RFdiffusion → ProteinMPNN →
 Boltz2) or **workflow-013** (BoltzGen); to fold a sequence you already have, use **workflow-026**
 (ColabFold). The intended follow-up is to feed designs from here into workflow-026 and check
-self-consistency, which is a separate workflow rather than a node here. The most common mistake is
+self-consistency: node 06 writes `sequences.fasta` for exactly that, but the refolding and the
+filtering happen there, not here. The most common mistake is
 residue numbering — see [Input requirements](#input-requirements).
 
 ## Architecture and data flow
@@ -70,11 +71,14 @@ target (upload or PDB ID)
    │
    ├──────────────────► [04-analyze] ──► design_metrics.csv/.json
    │                         │
-   └─────────────────────────┴────────► [05-report] ──► report.html
+   ├─────────────────────────┼────────► [05-report] ──────► report.html
+   │                         │
+   └─────────────────────────┴────────► [06-export-fasta] ─► sequences.fasta
 ```
 
-Nodes run sequentially 01 → 02 → 03 → 04 → 05; node 05 consumes the generated structures from
-node 03 directly as well as the metrics from node 04. Only node 03 requires a GPU.
+Nodes run 01 → 02 → 03 → 04, then 05 and 06 both read node 03's structures and node 04's metrics.
+Only node 03 requires a GPU. Node 06's `sequences.fasta` is named for where it goes next: drop it
+into workflow-026 as its input to refold the designs.
 
 ## Input requirements
 
@@ -196,6 +200,28 @@ so they cannot dilute the ratios.
 **Outputs:**
 - `design_metrics.csv` — one row per design
 - `design_metrics.json` — the same table plus run provenance, for the report
+
+### Node 06: Export FASTA
+
+**Goal:** The designed sequences in the form workflow-026 reads, so refolding is a file copy.
+
+**Process:** Reads the sequence of each design out of its mmCIF (not out of the metrics table, so
+the structures stay authoritative) and writes one FASTA record per design to `sequences.fasta`,
+wrapped at 60 columns, ordered as node 04 ordered them. `fasta_mode=designed` writes the generated
+chain alone; `fasta_mode=complex` writes every chain colon-joined, which ColabFold reads as a chain
+break. Record ids are made filesystem-safe because ColabFold names its outputs after them. Designs
+with an empty or all-unknown sequence are skipped with a warning rather than written as junk.
+
+**Scientific notes:** This node is the bridge to the scoring this workflow deliberately omits. A
+generated backbone plus sequence is a hypothesis; the standard test is self-consistency — fold the
+sequence independently and ask whether the prediction matches the designed backbone. Refolding the
+designed chain alone (`designed`) answers that. Refolding the complex (`complex`) additionally gives
+interface confidence, at more compute and only when there is a target. Unknown residues (`X`) are
+counted and warned about, since ColabFold treats them as sequence gaps and they depress confidence
+for reasons that have nothing to do with the design.
+
+**Outputs:**
+- `sequences.fasta` — one record per design, ready for workflow-026
 
 ### Node 05: Report
 
@@ -328,6 +354,19 @@ silently conditions the wrong residues.
 - **Guidance:** Leave `true` for small runs; set `false` for large batches where the one-off warm-up
   pays for itself.
 
+### fasta_mode
+
+| Value / Range | Description |
+|---------------|-------------|
+| `designed` (default) | One record per design holding the generated chain only. Refolding it tests self-consistency: does this sequence fold to the shape it was designed as? |
+| `complex` | One record per design holding every chain, colon-joined, designed chain first. ColabFold folds the complex, which also reports interface confidence. Slower, and identical to `designed` for a single-chain `monomer` design. |
+
+**Trade-off:** `designed` is the cheaper and more direct test of the design itself; `complex` tells
+you about the interaction but costs a multimer prediction per design.
+
+**Test vs production:** Either is fine for a smoke test. For a real campaign, `designed` first to
+discard designs that do not fold, then `complex` on the survivors.
+
 ### top_n
 
 - **Type:** integer
@@ -356,6 +395,14 @@ energy. They are **blank for a single-chain design** (`monomer`), where there is
 measure, rather than reported as zero. For a two-chain design, zero contacts means it did not engage
 the target and can be dropped immediately; beyond that, these numbers rank nothing. `chain_lengths` records every chain, so an unexpected layout shows
 up as a changed first chain rather than as quietly wrong metrics.
+
+### sequences.fasta
+
+One FASTA record per design, named after the design file so results can be traced back. Hand it to
+workflow-026 unchanged — the filename is the one that workflow expects. Note that workflow-026
+labels any multi-record file a "multimer" and so resolves its `pair_mode=auto` to
+`unpaired_paired`; that is harmless for single-chain records and correct for colon-joined ones, so
+no adjustment is needed on the way over.
 
 ### report.html
 
