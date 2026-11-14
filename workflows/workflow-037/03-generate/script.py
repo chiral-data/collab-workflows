@@ -23,13 +23,26 @@ import glob
 import json
 import os
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
+import threading
 import time
+from collections import deque
 
 SPEC_NAME = "design_spec.yaml"
 TARGET_NAME = "target.cif"
+
+# The allocator logs these and carries on. None of them stops the process or changes its
+# exit status, so they are only ever visible by reading the output.
+OOM_MARKERS = (
+    "CUDACachingAllocator",
+    "out of memory",
+    "OutOfMemoryError",
+    "CUDA out of memory",
+)
+TAIL_LINES = 40
 
 
 def fail(message):
@@ -98,6 +111,83 @@ def build_argv(spec_name, out_dir, num_replicates, seed, disable_compile, revisi
     if disable_compile:
         argv.append("compile_lengths=null")
     return argv
+
+
+def kill_tree(proc):
+    """End the whole generation process group, not just the process we started."""
+    for sig in (signal.SIGTERM, signal.SIGKILL):
+        try:
+            os.killpg(os.getpgid(proc.pid), sig)
+        except (ProcessLookupError, PermissionError, OSError):
+            proc.kill() if sig == signal.SIGKILL else proc.terminate()
+        try:
+            proc.wait(timeout=20)
+            return
+        except subprocess.TimeoutExpired:
+            continue
+
+
+def run_generation(argv, cwd, env, timeout_s):
+    """Run rfd4-generate under a wall-clock budget, streaming and retaining its output.
+
+    Two reasons this is not subprocess.run(argv, timeout=...):
+
+    The budget has to be enforceable. subprocess.run's timeout signals the direct child
+    only, while generation spawns workers that go on holding the GPU. The child is given
+    its own process group here so the whole tree can be ended.
+
+    The output has to be read. When the GPU runs out of memory the CUDA caching allocator
+    prints a warning and continues: the process does not raise, does not exit, and does
+    not change its status. It simply stops making progress while holding the device.
+    Without keeping the output there is no way to tell that apart from a slow job, and
+    the failure that reaches the user is a timeout with no cause attached.
+
+    Returns (returncode, timed_out, saw_oom, tail).
+    """
+    proc = subprocess.Popen(
+        argv,
+        cwd=cwd,
+        env=env,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+        start_new_session=True,
+    )
+    tail = deque(maxlen=TAIL_LINES)
+    state = {"oom": False}
+
+    def pump():
+        for line in proc.stdout:
+            sys.stdout.write(line)
+            sys.stdout.flush()
+            tail.append(line.rstrip("\n"))
+            if any(marker in line for marker in OOM_MARKERS):
+                state["oom"] = True
+
+    reader = threading.Thread(target=pump, daemon=True)
+    reader.start()
+
+    timed_out = False
+    try:
+        returncode = proc.wait(timeout=timeout_s)
+    except subprocess.TimeoutExpired:
+        timed_out = True
+        returncode = None
+        kill_tree(proc)
+    reader.join(timeout=10)
+    return returncode, timed_out, state["oom"], list(tail)
+
+
+def oom_advice(saw_oom):
+    if not saw_oom:
+        return ""
+    return (
+        "\nThe CUDA allocator reported an out-of-memory condition. It logs that as a "
+        "warning and carries on, so the job keeps the GPU without making progress and "
+        "never fails on its own. Reduce binder_length or num_replicates, or run on a "
+        "GPU with more memory."
+    )
 
 
 def collect_designs(run_dir, dest_dir):
@@ -182,8 +272,18 @@ def main():
         "PARAM_HF_CKPT_REVISION", "a06e2509c7033b010fc43614e9fd840303588502"
     )
 
+    try:
+        timeout_s = int(os.environ.get("PARAM_GENERATE_TIMEOUT_S", "3600"))
+    except ValueError:
+        fail(
+            "generate_timeout_s must be a whole number of seconds, got "
+            f"'{os.environ.get('PARAM_GENERATE_TIMEOUT_S')}'"
+        )
+
     if num_replicates < 1:
         fail(f"num_replicates must be at least 1, got {num_replicates}")
+    if timeout_s < 1:
+        fail(f"generate_timeout_s must be at least 1 second, got {timeout_s}")
 
     # The weights are baked in at one revision and HF_HUB_OFFLINE=1 keeps this node off the
     # network, so any other revision can only fail deep inside rfd4-generate as a cache
@@ -223,17 +323,36 @@ def main():
     env = dict(os.environ)
     env["HF_HUB_OFFLINE"] = "1"  # weights are baked in; never reach for the network
 
-    print(f"Generating {num_replicates} design(s) in {run_dir}", flush=True)
+    print(
+        f"Generating {num_replicates} design(s) in {run_dir} "
+        f"(budget {timeout_s}s)",
+        flush=True,
+    )
     started = time.time()
-    result = subprocess.run(argv, cwd=run_dir, env=env)
+    returncode, timed_out, saw_oom, tail = run_generation(argv, run_dir, env, timeout_s)
     elapsed = round(time.time() - started, 1)
 
-    if result.returncode != 0:
-        # The scratch directory is left in place deliberately: it holds the spec and the
-        # partial output tree, which is what a post-mortem needs.
+    # The scratch directory is left in place on every failure path below: it holds the
+    # spec and the partial output tree, which is what a post-mortem needs.
+    if timed_out:
         fail(
-            f"rfd4-generate exited {result.returncode} after {elapsed}s (output above). "
-            f"Run directory kept for inspection: {run_dir}"
+            f"rfd4-generate exceeded its {timeout_s}s budget and was killed after "
+            f"{elapsed}s. Raise generate_timeout_s if the job was merely slow."
+            + oom_advice(saw_oom)
+            + f"\nLast output:\n  " + "\n  ".join(tail[-12:])
+            + f"\nRun directory kept for inspection: {run_dir}"
+        )
+    if returncode != 0:
+        fail(
+            f"rfd4-generate exited {returncode} after {elapsed}s (output above)."
+            + oom_advice(saw_oom)
+            + f"\nRun directory kept for inspection: {run_dir}"
+        )
+    if saw_oom:
+        print(
+            "WARNING: the CUDA allocator reported an out-of-memory condition during this "
+            "run. It completed anyway, but it was close to the limit of this GPU.",
+            flush=True,
         )
 
     designs = collect_designs(run_dir, "./outputs")
@@ -259,6 +378,8 @@ def main():
         "rfd4_proteina_version": package_version(),
         "gpu": gpu_info(),
         "elapsed_seconds": elapsed,
+        "timeout_seconds": timeout_s,
+        "cuda_oom_reported": saw_oom,
         "metrics_disabled": True,
         "securedna_screened": False,
         "biosafety_note": (

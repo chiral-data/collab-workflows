@@ -35,3 +35,8 @@ hint = "Skip the slow torch.compile warm-up by setting compile_lengths=null"
 type = "string"
 default = "a06e2509c7033b010fc43614e9fd840303588502"
 hint = "Pinned HuggingFace revision of nvidia/RFD4-Proteina (flow + autoencoder are a matched pair)"
+
+[params.generate_timeout_s]
+type = "integer"
+default = 3600
+hint = "Wall-clock budget in seconds for one rfd4-generate call; the job is killed past it"

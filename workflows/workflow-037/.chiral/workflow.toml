@@ -73,6 +73,11 @@ type = "integer"
 default = 42
 hint = "Random seed for reproducible generation"
 
+[params.generate_timeout_s]
+type = "integer"
+default = 3600
+hint = "Wall-clock budget in seconds for one rfd4-generate call; the job is killed past it"
+
 [params.disable_compile]
 type = "boolean"
 default = true
