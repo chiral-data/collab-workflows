@@ -360,9 +360,14 @@ def main():
             flush=True,
         )
         sys.exit(1)
+    # Take the label match when the id is ambiguous, which is what the warning above says
+    # happens. matched[0] is first in label-sort order and can be the auth match instead:
+    # with chain1 (label A, auth B) and chain2 (label B, auth X), target_chain=B warned
+    # that the label match was used and then resolved to chain1, the auth one.
+    chosen = by_label[0] if by_label else matched[0]
     inventory["target_chain_resolved"] = {
-        "label_asym_id": matched[0]["label_asym_id"],
-        "auth_asym_id": matched[0]["auth_asym_id"],
+        "label_asym_id": chosen["label_asym_id"],
+        "auth_asym_id": chosen["auth_asym_id"],
     }
 
     with open("./outputs/target_inventory.json", "w") as handle:
