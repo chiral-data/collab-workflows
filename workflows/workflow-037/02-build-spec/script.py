@@ -184,6 +184,35 @@ def chain_segment(chain):
     return f"{chain['label_asym_id']}{lo}-{hi}"
 
 
+def reject_offtarget(residues, target, param_name):
+    """Refuse residues that name a chain the contig does not preserve.
+
+    The conditioned contigs are "<length>, /0, <target segment>": the target chain is the
+    only input chain carried into the designed system. A selection naming any other chain
+    is resolved against a system that does not contain it, so upstream's parser accepts the
+    query, matches nothing, and conditions nothing — with no error anywhere. The run then
+    spends full GPU time on an unaimed design while every log line says it was aimed.
+
+    Naming the input's second chain is the likely mistake, not an exotic one: on a complex
+    the binder usually is chain B, redesign_chain defaults to "B", and "aim at the binder's
+    residues" is a reasonable thing to try. It is also the most confusing failure, because
+    the designed segment is itself labelled with a free chain id, so sel('B/...') can look
+    like it addresses the new binder when it addresses nothing at all.
+    """
+    target_id = target["label_asym_id"]
+    stray = sorted({chain for chain, _ in residues if chain != target_id})
+    if stray:
+        fail(
+            f"{param_name} names chain(s) {', '.join(stray)}, but only the target chain "
+            f"({target_id}) is preserved by the contig. Residues on any other chain are "
+            "absent from the designed system, so they would condition nothing and the run "
+            "would produce an unaimed design.\n"
+            f"Hotspots name residues on the TARGET that the new chain should engage, so "
+            f"give them on chain {target_id}. They cannot name the binder: the binder is "
+            "what is being designed and does not exist yet."
+        )
+
+
 def resolve_hotspots(params, inventory, target):
     if not params["hotspot_residues"]:
         return {}
@@ -192,6 +221,7 @@ def resolve_hotspots(params, inventory, target):
         inventory,
         params["residue_numbering"],
     )
+    reject_offtarget(hotspots, target, "hotspot_residues")
     return hotspot_conditions(hotspots)
 
 
@@ -544,6 +574,64 @@ def validate_with_upstream(spec_path, dest):
     return True
 
 
+HOTSPOT_COLUMN = "_atom_site.condition_hotspot_1_atom"
+
+
+def count_flagged(cif_path, column):
+    """Atoms the rendered spec actually marks in a boolean condition column.
+
+    Returns None when the column is absent or the file cannot be read, so a parsing
+    problem here never turns into a spurious failure of an otherwise valid spec.
+    """
+    from Bio.PDB.MMCIF2Dict import MMCIF2Dict
+
+    try:
+        cif = MMCIF2Dict(cif_path)
+    except Exception:
+        return None
+    values = cif.get(column)
+    if values is None:
+        return None
+    if isinstance(values, str):  # a single-row loop collapses to a scalar
+        values = [values]
+    return sum(1 for value in values if str(value).strip() == "True")
+
+
+def verify_hotspots_landed(preview_path, conditions):
+    """Check the rendered system really carries the hotspots the spec asked for.
+
+    reject_offtarget() catches the known way to select nothing. This catches the rest:
+    it reads what upstream actually produced rather than trusting that a query which
+    parsed must also have matched. A selection that matches no atom is not an error to
+    upstream — an empty match is simply an empty set — so this node has to be the one
+    that objects, which is the whole reason it renders the spec on CPU first.
+    """
+    if "C_HOT" not in conditions:
+        return
+    flagged = count_flagged(preview_path, HOTSPOT_COLUMN)
+    if flagged is None:
+        print(
+            "WARNING: could not read the hotspot annotation back from the rendered spec, "
+            "so it was not confirmed that the hotspots match any atom.",
+            flush=True,
+        )
+        return
+    if flagged == 0:
+        queries = " ".join(
+            entry["select"]
+            for by_value in [conditions["C_HOT"]]
+            for entries in by_value.values()
+            for entry in entries
+        )
+        fail(
+            f"The spec asks for hotspots ({queries}) but the rendered system flags no "
+            "atoms at all, so C_HOT conditions nothing and generation would produce an "
+            "unaimed design. The selection parsed but matched nothing — check the chain "
+            "and residue ids against the inventory printed by node 01."
+        )
+    print(f"C_HOT marks {flagged} atom(s) in the rendered system.", flush=True)
+
+
 def write_annotation(target_cif, conditions, dest):
     """Fallback annotation: the target plus a record of what each condition selects."""
     shutil.copyfile(target_cif, dest)
@@ -699,7 +787,8 @@ def main():
 
     preview_path = "./outputs/spec_preview.cif"
     write_annotation("./outputs/target.cif", conditions, preview_path)
-    validate_with_upstream(spec_path, preview_path)
+    if validate_with_upstream(spec_path, preview_path):
+        verify_hotspots_landed(preview_path, conditions)
 
     print(f"Wrote {spec_path} and {preview_path}", flush=True)
 
