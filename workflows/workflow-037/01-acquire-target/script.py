@@ -220,15 +220,20 @@ def build_inventory(cif_path):
     label_seq = column("_atom_site.label_seq_id")
     auth_seq = column("_atom_site.auth_seq_id")
     comp_id = column("_atom_site.label_comp_id")
-    group = column("_atom_site.group_PDB", "ATOM")
 
     chains = {}
     seen = set()
     for i in range(n_atoms):
-        if group[i] == "HETATM" and comp_id[i] not in THREE_TO_ONE:
-            continue
+        # label_seq_id is the only polymer test that matters. Non-polymer entities — ligands,
+        # ions, waters, branched sugars — carry "." here and drop out below. Group_PDB does
+        # NOT make that distinction: a modified residue inside a polymer (MSE, SAR, CCS, a
+        # macrocycle's building blocks) is written as HETATM but still numbered in the chain,
+        # so filtering on HETATM silently shortens the chain. 5O45 chain B is the worked
+        # example: a 15-residue macrocycle, 7 of those non-standard, which this node used to
+        # report as 8 residues. The count feeds node 02's binder_length advice, so a short
+        # count misleads directly.
         if label_seq[i] in (".", "?", ""):
-            continue  # non-polymer: no label_seq_id, cannot appear in a contig
+            continue
         key = (label_asym[i], label_seq[i])
         if key in seen:
             continue
@@ -282,6 +287,9 @@ def build_inventory(cif_path):
                 "label_asym_id": chain["label_asym_id"],
                 "auth_asym_id": chain["auth_asym_id"],
                 "n_residues": len(residues),
+                "n_nonstandard": sum(
+                    1 for r in residues if r["comp_id"] not in THREE_TO_ONE
+                ),
                 "label_seq_range": [residues[0]["label_seq_id"], residues[-1]["label_seq_id"]],
                 "auth_seq_range": [residues[0]["auth_seq_id"], residues[-1]["auth_seq_id"]],
                 "sequence": "".join(r["one_letter"] for r in residues),
@@ -363,11 +371,27 @@ def main():
     print(f"Target source: {source}", flush=True)
     print(f"Wrote {target_cif}", flush=True)
     for chain in inventory["chains"]:
+        nonstd = (
+            f", {chain['n_nonstandard']} non-standard" if chain["n_nonstandard"] else ""
+        )
         print(
             f"  chain label={chain['label_asym_id']} auth={chain['auth_asym_id']}: "
-            f"{chain['n_residues']} residues, "
+            f"{chain['n_residues']} residues{nonstd}, "
             f"label {chain['label_seq_range'][0]}-{chain['label_seq_range'][1]}, "
             f"auth {chain['auth_seq_range'][0]}-{chain['auth_seq_range'][1]}",
+            flush=True,
+        )
+    heavily_modified = [
+        c
+        for c in inventory["chains"]
+        if c["n_nonstandard"] and c["n_nonstandard"] * 3 >= c["n_residues"]
+    ]
+    for chain in heavily_modified:
+        print(
+            f"NOTE: chain {chain['label_asym_id']} is {chain['n_nonstandard']} of "
+            f"{chain['n_residues']} non-standard residues. RFD4 designs standard "
+            "polypeptide; this chain is a poor fit for a task that regenerates it "
+            "(binder_redesign) and its sequence is reported with X for each one.",
             flush=True,
         )
     print(
