@@ -8,7 +8,9 @@ outputs = [
 
 [container]
 image = "rfd4-proteina:2026_11_04"
-use_gpu = false
+
+[resources]
+gpu = "none"
 
 [scripts]
 run = "run.sh"
