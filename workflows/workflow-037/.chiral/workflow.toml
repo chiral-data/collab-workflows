@@ -1,0 +1,94 @@
+name = "RFD4-Proteina De Novo Design"
+description = "Generative protein design with RFD4-Proteina: binders, motif scaffolds, monomers and binder redesign from a target structure"
+
+# Node 03 depends on 02 alone, not on 01 as well: both 01 and 02 write target.cif, and
+# Silva copies every dependency's outputs into the dependent's inputs, so listing both
+# leaves which target.cif survives up to iteration order. That is harmless for the
+# conditioned tasks and fatal for task=monomer, where 02's target.cif is the generated
+# scaffold. 02 passes the target through precisely so 03 needs only one parent.
+[dependencies]
+02-build-spec = ["01-acquire-target"]
+03-generate = ["02-build-spec"]
+04-analyze = ["03-generate"]
+05-report = ["03-generate", "04-analyze"]
+06-export-fasta = ["03-generate", "04-analyze"]
+
+[params.task]
+type = "string"
+default = "binder"
+hint = "Design task: binder, motif_scaffold, monomer, or binder_redesign"
+
+[params.pdb_id]
+type = "string"
+default = ""
+hint = "RCSB PDB accession to fetch as the target; ignored if a structure is uploaded"
+
+[params.target_chain]
+type = "string"
+default = "A"
+hint = "Chain of the target structure to design against or preserve"
+
+[params.binder_length]
+type = "string"
+default = "50-120"
+hint = "Length range in residues for the designed binder (expandable contig segment)"
+
+[params.contig]
+type = "string"
+default = ""
+hint = "Advanced: full contig string, used verbatim and overriding task templating if set"
+
+[params.hotspot_residues]
+type = "string"
+default = ""
+hint = "Comma-separated target residues to engage, e.g. A45,A46,A82 (becomes C_HOT)"
+
+[params.motif_residues]
+type = "string"
+default = ""
+hint = "Comma-separated motif residues to scaffold; motif_scaffold task only"
+
+[params.redesign_chain]
+type = "string"
+default = "B"
+hint = "Chain to redesign while holding the target fixed; binder_redesign task only"
+
+[params.epitope_cutoff_a]
+type = "float"
+default = 8.0
+hint = "CA-CA distance in angstroms used to read the epitope off an existing binder (binder_redesign only)"
+
+[params.residue_numbering]
+type = "string"
+default = "auth"
+hint = "Numbering used in hotspot/motif params: auth (PDB author numbering) or label (mmCIF label_seq_id)"
+
+[params.num_replicates]
+type = "integer"
+default = 4
+hint = "Number of designs to generate"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed for reproducible generation"
+
+[params.disable_compile]
+type = "boolean"
+default = true
+hint = "Skip the slow torch.compile warm-up by setting compile_lengths=null"
+
+[params.hf_ckpt_revision]
+type = "string"
+default = "a06e2509c7033b010fc43614e9fd840303588502"
+hint = "Pinned HuggingFace revision of nvidia/RFD4-Proteina (flow + autoencoder are a matched pair)"
+
+[params.fasta_mode]
+type = "string"
+default = "designed"
+hint = "What node 06 writes per design: designed (the generated chain alone) or complex (every chain, colon-joined)"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of designs shown in the report structure viewer"

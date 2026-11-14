@@ -1,0 +1,24 @@
+name = "Acquire Target"
+description = "Resolve the target structure from an upload or an RCSB accession, normalise to mmCIF, and inventory its chains and residue numbering"
+inputs = []
+outputs = [
+  "target.cif",
+  "target_inventory.json",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
+
+[params.pdb_id]
+type = "string"
+default = ""
+hint = "RCSB PDB accession to fetch as the target; ignored if a structure is uploaded"
+
+[params.target_chain]
+type = "string"
+default = "A"
+hint = "Chain of the target structure to design against or preserve"

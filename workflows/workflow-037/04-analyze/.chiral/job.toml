@@ -1,0 +1,17 @@
+name = "Analyze Designs"
+description = "Parse the generated structures into a per-design metrics table"
+inputs = [
+  "*_generated.cif",
+  "generation_manifest.json",
+]
+outputs = [
+  "design_metrics.csv",
+  "design_metrics.json",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+use_gpu = false
+
+[scripts]
+run = "run.sh"
