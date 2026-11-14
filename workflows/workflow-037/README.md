@@ -257,7 +257,7 @@ that fails to load can no longer take the screening disclaimer down with it.
 | `binder` (default) | Design a new chain against the fixed target chain. Contig: `<binder_length>, /0, <target range>`. Optional `hotspot_residues` become `C_HOT`. The common case. |
 | `motif_scaffold` | Hold `motif_residues` as a rigid group (`C_CRDGRP`) with fixed identity (`C_SEQ`) and build scaffold around it. `binder_length` becomes the length range of each flank. Requires `motif_residues`. |
 | `monomer` | Designs a standalone chain of `binder_length` residues. The target structure is ignored: node 02 writes an annotated scaffold in place of `target.cif`, because a contig made only of expandable segments is rejected upstream. Mechanically verified, but see the quality note below. |
-| `binder_redesign` | Discard `redesign_chain` and generate a replacement against the same epitope: the atoms the existing binder contacts (any heavy atom within `epitope_contact_cutoff_a`) become `C_HOT`, thinned to the number upstream would have marked, so the new chain is aimed where the old one bound. Set `binder_length` to the existing binder's length unless you mean to change it, and set `hotspot_residues` to override the derived epitope. |
+| `binder_redesign` | Discard `redesign_chain` and generate a replacement against the same epitope: the atoms the existing binder contacts (any heavy atom within `epitope_contact_cutoff_a`) become `C_HOT`, thinned to the number upstream would have marked, so the new chain is aimed where the old one bound. Set `binder_length` to the existing binder's length unless you mean to change it, and set `hotspot_residues` to override the derived epitope. **Needs a complex whose binder is an ordinary polypeptide** — see the worked example below. |
 
 **Trade-off:** More conditioning means more control and less diversity. `binder` with no hotspots
 explores the whole target surface; adding hotspots focuses it at the cost of discarding
@@ -524,6 +524,27 @@ Chain the nodes by copying each node's `outputs/` into the next node's `inputs/`
 A successful test run against `pdb_id=5o45` with `task=binder` produces four structures whose first
 chain is 50–120 residues and has a non-zero contact count against chain A, plus a report whose
 viewer shows the designed chain against the target.
+
+### Worked example: binder_redesign on 4ZQK
+
+Use **4ZQK** — the human PD-1 / PD-L1 complex — rather than 5O45 for this task:
+
+```
+pdb_id=4ZQK  task=binder_redesign  target_chain=A  redesign_chain=B  binder_length=106
+```
+
+Chain A is PD-L1 (115 residues, label 1–115 / author 18–132) and chain B is PD-1 (106 residues
+resolved over label 1–114, author 33–146). It keeps the same target protein as the `binder`
+example, so the two tasks are directly comparable, and the interface is a real protein–protein
+one: 77 heavy-atom contacts within 4.5 Å, giving a cap of 7 hotspot atoms.
+
+**Why not 5O45 here.** Its chain B is not a protein binder at all — it is a 15-residue macrocyclic
+peptide, 7 of whose residues are non-standard (`MEA`, `9KK`, `SAR`, `CCS`, `NH2`). Asking RFD4 to
+replace it with an ordinary polypeptide is not a redesign of that binder so much as a different
+molecule in the same place, and node 01 now warns when a chain is largely non-standard for exactly
+this reason. It also makes the CA-CA geometry misleading: the macrocycle's alpha carbons sit on a
+ring away from the contact surface, which is why a CA-CA epitope rule misses so much of its
+interface. 5O45 remains the right demo for `task=binder`, where chain B is ignored.
 
 ## Troubleshooting
 
