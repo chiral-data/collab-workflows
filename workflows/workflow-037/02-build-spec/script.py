@@ -4,7 +4,7 @@
 Render the task-specific RFD4 condition spec from the workflow parameters, then validate it
 on CPU before any GPU time is spent.
 
-The spec format is upstream's, confirmed against the RFD4-Proteina 0.0.3 README, the
+The spec format is upstream's, as given in the RFD4-Proteina 0.0.3 README, the
 condition-spec guide and the cookbook:
 
     design:                                     # an example id, not a bare mapping
@@ -13,7 +13,12 @@ condition-spec guide and the cookbook:
       conditions:
         C_CRDGRP: {1: [{select: "sel('A/*/*/[N,CA,C,O]')"}]}
         C_SEQ:    {true: [{select: "sel('A')"}]}
-        C_HOT:    {true: [{select: "sel('A/*/56')"}]}
+        C_HOT:    {true: [{select: "sel('A/*/56/[CG,OH]')"}]}
+
+C_HOT is atom-level in all three of those sources — the cookbook's own example is
+sel('A/*/56/[CG,OH]'), annotated "the PD-L1 side chain atoms to engage". An earlier
+version of this node emitted sel('A/*/56') and claimed upstream confirmed it; that was
+wrong, and the residue form marks every atom of the residue instead of a couple.
 
 Conditions are keyed by the condition *value* (a group id for C_CRDGRP, true for the
 boolean conditions), each holding a list of {select: <query>} entries. Selections are
@@ -44,6 +49,22 @@ BACKBONE_ATOMS = "[N,CA,C,O]"
 def fail(message):
     print(f"ERROR: {message}", flush=True)
     sys.exit(1)
+
+
+def numeric_param(env_name, display_name, default, cast):
+    """Read a numeric parameter, failing the same way every other bad parameter does.
+
+    Casting inline at the point of use turns a typo into a raw ValueError traceback, which
+    is the one error in this node that does not look like the others.
+    """
+    raw = os.environ.get(env_name)
+    if raw is None or raw.strip() == "":
+        return default
+    try:
+        return cast(raw)
+    except ValueError:
+        kind = "a whole number" if cast is int else "a number"
+        fail(f"{display_name} must be {kind}, got '{raw}'.")
 
 
 def load_inventory(path):
@@ -154,10 +175,23 @@ def hold_target(chain_id):
 
 
 def hotspot_conditions(hotspots):
-    """One {select: ...} entry per hotspot residue, as in upstream's cookbook."""
+    """One {select: ...} per hotspot residue, naming atoms rather than the whole residue.
+
+    C_HOT is condition_hotspot_1_atom — an atom-level annotation, and upstream's examples
+    are all atom-level: sel('A/*/56/[CG,OH]') with the comment "the PD-L1 side chain atoms
+    to engage". Leaving the atom field off selects every atom of the residue, backbone
+    included, which marks 19 atoms on a tyrosine where upstream would mark one or two.
+
+    Takes [(chain, label_seq, [atom_name, ...]), ...].
+    """
     return {
         "C_HOT": {
-            True: select_entries([sel(chain, "*", seq) for chain, seq in hotspots])
+            True: select_entries(
+                [
+                    sel(chain, "*", label_seq, f"[{','.join(atom_names)}]")
+                    for chain, label_seq, atom_names in hotspots
+                ]
+            )
         }
     }
 
@@ -213,73 +247,195 @@ def reject_offtarget(residues, target, param_name):
         )
 
 
-def resolve_hotspots(params, inventory, target):
+def resolve_hotspots(params, inventory, target, atoms):
+    """Turn user-named hotspot residues into atom-level selections."""
     if not params["hotspot_residues"]:
         return {}
-    hotspots = to_label_ids(
+    residues = to_label_ids(
         parse_residue_tokens(params["hotspot_residues"], target["label_asym_id"]),
         inventory,
         params["residue_numbering"],
     )
-    reject_offtarget(hotspots, target, "hotspot_residues")
+    reject_offtarget(residues, target, "hotspot_residues")
+
+    structure = atoms()
+    hotspots = []
+    for chain, label_seq in sorted(set(residues)):
+        bucket = structure.get((chain, label_seq))
+        if not bucket:
+            fail(
+                f"Residue {chain}{label_seq} (label numbering) is in the inventory but has "
+                "no heavy atoms in the structure, so there is nothing to mark as a hotspot."
+            )
+        hotspots.append((chain, label_seq, outermost_sidechain_atoms(bucket)))
+
+    marked = sum(len(names) for _, _, names in hotspots)
+    print(
+        f"Marking {marked} atom(s) across {len(hotspots)} hotspot residue(s), using the "
+        "side-chain atoms reaching furthest from CA.",
+        flush=True,
+    )
+    if marked > params["max_hotspot_atoms"]:
+        print(
+            f"WARNING: {marked} hotspot atoms is above max_hotspot_atoms="
+            f"{params['max_hotspot_atoms']}. Upstream trained with about 5 and never more "
+            "than 10% of the interface, so conditioning this hard is outside the regime "
+            "the model saw. Naming fewer residues aims it more like upstream does.",
+            flush=True,
+        )
     return hotspot_conditions(hotspots)
 
 
-def build_binder(params, inventory):
+def build_binder(params, inventory, atoms):
     target = chain_by_id(inventory, params["target_chain"])
     contig = f"{params['binder_length']}, /0, {chain_segment(target)}"
     conditions = hold_target(target["label_asym_id"])
-    conditions.update(resolve_hotspots(params, inventory, target))
+    conditions.update(resolve_hotspots(params, inventory, target, atoms))
     return contig, conditions, False
 
 
-DEFAULT_EPITOPE_CUTOFF_A = 8.0  # CA-CA, matching node 04's interface definition
+# Upstream's trained definition of a hotspot, from docs/reference/annotations.md: "a
+# target-chain atom within 4.5 A of any binder-chain atom", count sampled geometric(p=0.2)
+# and capped at 10% of eligible atoms. Three numbers matter and all three are atom-level:
+# the distance, the atom (not the residue), and the count.
+#
+# This is NOT node 04's 8.0 A CA-CA contact count, and the two are deliberately different.
+# See the note on CONTACT_CUTOFF_A in node 04: that one describes a generated complex
+# coarsely and cheaply; this one reproduces the conditioning convention the model was
+# trained with. Using 8 A here would be wrong twice over -- 8 A is the Cb-Cb convention,
+# not the CA-CA one -- and on 5O45 it misses 8 of the 17 real heavy-atom contacts.
+DEFAULT_EPITOPE_CONTACT_CUTOFF_A = 4.5
+HOTSPOT_FRACTION_OF_POOL = 0.1
+DEFAULT_MAX_HOTSPOT_ATOMS = 6
+MIN_HOTSPOT_SEPARATION_A = 5.0
+BACKBONE = {"N", "CA", "C", "O", "OXT"}
 
 
-def contacting_residues(cif_path, target_chain, other_chain, cutoff):
-    """Target residues whose CA lies within the cutoff of the other chain's CA atoms.
+def load_heavy_atoms(cif_path):
+    """Heavy atoms grouped by (label_asym_id, label_seq_id).
 
-    Used to recover the epitope an existing binder already engages, so a redesign is
-    pointed at the same patch instead of being re-randomised over the whole surface.
+    Hydrogens are excluded because upstream excludes them when it marks hotspots, and
+    alternate locations are collapsed to the first so one atom is not counted twice.
     """
     from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 
     cif = MMCIF2Dict(cif_path)
-    n = len(cif["_atom_site.label_asym_id"])
     asym = cif["_atom_site.label_asym_id"]
     seq = cif["_atom_site.label_seq_id"]
-    atom = cif["_atom_site.label_atom_id"]
+    name = cif["_atom_site.label_atom_id"]
+    element = cif.get("_atom_site.type_symbol", ["C"] * len(asym))
+    altloc = cif.get("_atom_site.label_alt_id", ["."] * len(asym))
     xs, ys, zs = (
         cif["_atom_site.Cartn_x"],
         cif["_atom_site.Cartn_y"],
         cif["_atom_site.Cartn_z"],
     )
-    target_ca, other_ca = [], []
-    for i in range(n):
-        if atom[i] != "CA" or seq[i] in (".", "?", ""):
+
+    atoms = {}
+    for i in range(len(asym)):
+        if seq[i] in (".", "?", ""):
+            continue
+        if element[i].strip().upper() in ("H", "D"):
+            continue
+        if altloc[i] not in (".", "?", "", "A"):
             continue
         try:
             point = (float(xs[i]), float(ys[i]), float(zs[i]))
         except ValueError:
             continue
-        if asym[i] == target_chain:
-            target_ca.append((int(seq[i]), point))
-        elif asym[i] == other_chain:
-            other_ca.append(point)
-    if not target_ca or not other_ca:
+        key = (asym[i], int(seq[i]))
+        bucket = atoms.setdefault(key, {})
+        bucket.setdefault(name[i], point)
+    return {key: sorted(bucket.items()) for key, bucket in atoms.items()}
+
+
+def _sq_distance(a, b):
+    return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2
+
+
+def interface_atom_pool(atoms, target_chain, binder_chain, cutoff):
+    """Target heavy atoms within the cutoff of any binder heavy atom.
+
+    Returns [(distance, label_seq, atom_name, point), ...] sorted nearest first, which is
+    upstream's eligible set: the atoms a hotspot may be drawn from.
+    """
+    binder = [
+        point
+        for (chain, _), bucket in atoms.items()
+        if chain == binder_chain
+        for _, point in bucket
+    ]
+    if not binder:
         return []
-    hits = set()  # altloc gives one residue several CA atoms; count it once
-    for label_seq, (x, y, z) in target_ca:
-        if label_seq in hits:
+    cutoff_sq = cutoff ** 2
+    pool = []
+    for (chain, label_seq), bucket in atoms.items():
+        if chain != target_chain:
             continue
-        for ox, oy, oz in other_ca:
-            if (x - ox) ** 2 + (y - oy) ** 2 + (z - oz) ** 2 <= cutoff ** 2:
-                hits.add(label_seq)
-                break
-    return sorted(hits)
+        for atom_name, point in bucket:
+            nearest_sq = min(_sq_distance(point, other) for other in binder)
+            if nearest_sq <= cutoff_sq:
+                pool.append((nearest_sq ** 0.5, label_seq, atom_name, point))
+    pool.sort(key=lambda row: (row[0], row[1], row[2]))
+    return pool
 
 
-def build_binder_redesign(params, inventory):
+def choose_hotspot_atoms(pool, budget):
+    """Thin the eligible pool down to the number upstream would have marked.
+
+    Upstream samples the count from a geometric distribution (mean about 5) and caps it at
+    10% of the eligible atoms. Marking the whole pool instead puts the conditioning an
+    order of magnitude outside the regime the model was trained in: on 5O45 the pool is 69
+    atoms and upstream's cap is 6.
+
+    Two knowing departures from upstream, both in how the atoms are picked rather than how
+    many. The pick is deterministic where upstream samples at random, because a workflow
+    with a seed parameter should give the same spec for the same inputs. And it is spread
+    out -- nearest contact first, one atom per residue, no two picks within
+    MIN_HOTSPOT_SEPARATION_A -- so the marks cover the patch rather than piling into
+    whichever side chain happens to be closest. Upstream has no such rule: it samples
+    uniformly over the eligible atoms with no spacing or per-residue constraint, so the
+    spread is this node's own and not a reproduction of upstream's.
+    """
+    if not pool:
+        return []
+    allowed = max(1, int(len(pool) * HOTSPOT_FRACTION_OF_POOL))
+    allowed = min(allowed, budget)
+    chosen = []
+    for distance, label_seq, atom_name, point in pool:
+        if len(chosen) >= allowed:
+            break
+        if any(seen_seq == label_seq for _, seen_seq, _, _ in chosen):
+            continue
+        if any(
+            _sq_distance(point, seen_point) < MIN_HOTSPOT_SEPARATION_A ** 2
+            for _, _, _, seen_point in chosen
+        ):
+            continue
+        chosen.append((distance, label_seq, atom_name, point))
+    return chosen
+
+
+def outermost_sidechain_atoms(bucket, count=2):
+    """The side-chain heavy atoms reaching furthest from CA, or CA itself if there are none.
+
+    Used when the user names hotspot residues directly: there is no binder yet to measure
+    against, so "which atoms of this residue would a binder engage" has to be answered from
+    the residue alone. The atoms at the end of the side chain are the ones that reach out
+    of the surface, which is why upstream's own examples pick things like [CG,OH] on a
+    tyrosine rather than the whole residue. Glycine, and anything with no side chain
+    resolved, falls back to CA.
+    """
+    by_name = dict(bucket)
+    ca = by_name.get("CA")
+    sidechain = [(name, point) for name, point in bucket if name not in BACKBONE]
+    if not sidechain or ca is None:
+        return ["CA"] if ca is not None else [name for name, _ in bucket[:1]]
+    sidechain.sort(key=lambda item: _sq_distance(item[1], ca), reverse=True)
+    return [name for name, _ in sidechain[:count]]
+
+
+def build_binder_redesign(params, inventory, atoms):
     target = chain_by_id(inventory, params["target_chain"])
     redesign = chain_by_id(inventory, params["redesign_chain"])
     if redesign["label_asym_id"] == target["label_asym_id"]:
@@ -294,42 +450,60 @@ def build_binder_redesign(params, inventory):
     contig = f"{params['binder_length']}, /0, {chain_segment(target)}"
     conditions = hold_target(target["label_asym_id"])
     if params["hotspot_residues"]:
-        conditions.update(resolve_hotspots(params, inventory, target))
+        conditions.update(resolve_hotspots(params, inventory, target, atoms))
     else:
         # What distinguishes a redesign from a fresh binder: the existing binder's own
         # epitope becomes the hotspot set, so the new chain is aimed at the same patch.
         # Without this the task would be byte-identical to task=binder.
-        cutoff = params["epitope_cutoff_a"]
-        epitope = contacting_residues(
-            "./inputs/target.cif",
+        cutoff = params["epitope_contact_cutoff_a"]
+        pool = interface_atom_pool(
+            atoms(),
             target["label_asym_id"],
             redesign["label_asym_id"],
             cutoff,
         )
-        if epitope:
+        picks = choose_hotspot_atoms(pool, params["max_hotspot_atoms"])
+        if picks:
+            cap = max(1, int(len(pool) * HOTSPOT_FRACTION_OF_POOL))
+            detail = ", ".join(
+                f"{label_seq}/{atom_name}" for _, label_seq, atom_name, _ in picks
+            )
             print(
-                f"Derived {len(epitope)} hotspot(s) from chain "
-                f"{redesign['label_asym_id']}'s existing contacts with "
-                f"{target['label_asym_id']} (label {', '.join(str(e) for e in epitope)}), "
-                f"within {cutoff} A CA-CA (epitope_cutoff_a). Set hotspot_residues to "
-                "name them yourself.",
+                f"Derived {len(picks)} hotspot atom(s) from chain "
+                f"{redesign['label_asym_id']}'s contacts with "
+                f"{target['label_asym_id']} (label {detail}), drawn from "
+                f"{len(pool)} interface atom(s) within {cutoff} A heavy-atom "
+                "(epitope_contact_cutoff_a).",
+                flush=True,
+            )
+            print(
+                f"Upstream marks about 5 and never more than "
+                f"{int(HOTSPOT_FRACTION_OF_POOL * 100)}% of the interface, which is "
+                f"{cap} atom(s) here; max_hotspot_atoms={params['max_hotspot_atoms']}. "
+                "Set hotspot_residues to name them yourself.",
                 flush=True,
             )
             conditions.update(
-                hotspot_conditions([(target["label_asym_id"], e) for e in epitope])
+                hotspot_conditions(
+                    [
+                        (target["label_asym_id"], label_seq, [atom_name])
+                        for _, label_seq, atom_name, _ in picks
+                    ]
+                )
             )
         else:
             print(
-                f"WARNING: chain {redesign['label_asym_id']} makes no CA-CA contact with "
-                f"{target['label_asym_id']} within {cutoff} A, so no epitope "
-                "could be derived. This run is equivalent to task=binder. Give "
-                "hotspot_residues to aim it.",
+                f"WARNING: no heavy atom of chain {target['label_asym_id']} lies within "
+                f"{cutoff} A of chain {redesign['label_asym_id']}, so no epitope could be "
+                "derived. This run is equivalent to task=binder. Give hotspot_residues to "
+                "aim it, or raise epitope_contact_cutoff_a if the chains really are in "
+                "contact.",
                 flush=True,
             )
     return contig, conditions, False
 
 
-def build_motif_scaffold(params, inventory):
+def build_motif_scaffold(params, inventory, atoms):
     if not params["motif_residues"]:
         fail("task=motif_scaffold requires motif_residues.")
     target = chain_by_id(inventory, params["target_chain"])
@@ -488,7 +662,7 @@ def write_monomer_scaffold(low, high, dest):
         )
 
 
-def build_monomer(params, inventory):
+def build_monomer(params, inventory, atoms):
     """Unconditioned single chain, designed from a scaffold written in place of the target.
 
     The scaffold replaces target.cif rather than travelling as a file of its own, so every
@@ -670,8 +844,30 @@ def main():
         "motif_residues": os.environ.get("PARAM_MOTIF_RESIDUES", ""),
         "redesign_chain": os.environ.get("PARAM_REDESIGN_CHAIN", "B"),
         "residue_numbering": os.environ.get("PARAM_RESIDUE_NUMBERING", "auth"),
-        "epitope_cutoff_a": float(os.environ.get("PARAM_EPITOPE_CUTOFF_A", "8.0")),
     }
+
+    # epitope_cutoff_a was a CA-CA distance defaulting to 8.0. Its replacement is a
+    # heavy-atom distance defaulting to 4.5, so the same number means something different
+    # and a value carried over would silently widen the epitope. Refuse it rather than
+    # reinterpret it.
+    if os.environ.get("PARAM_EPITOPE_CUTOFF_A"):
+        fail(
+            "epitope_cutoff_a has been replaced by epitope_contact_cutoff_a, which is a "
+            "heavy-atom distance rather than a CA-CA one and defaults to 4.5 A, matching "
+            "the criterion RFD4 was trained with. The same number does not mean the same "
+            "thing in both, so the old parameter is not reused. Remove it, and set "
+            "epitope_contact_cutoff_a only if you need something other than 4.5."
+        )
+
+    params["epitope_contact_cutoff_a"] = numeric_param(
+        "PARAM_EPITOPE_CONTACT_CUTOFF_A",
+        "epitope_contact_cutoff_a",
+        DEFAULT_EPITOPE_CONTACT_CUTOFF_A,
+        float,
+    )
+    params["max_hotspot_atoms"] = numeric_param(
+        "PARAM_MAX_HOTSPOT_ATOMS", "max_hotspot_atoms", DEFAULT_MAX_HOTSPOT_ATOMS, int
+    )
 
     if params["task"] not in TASKS:
         fail(f"Unknown task '{params['task']}'. Expected one of: {', '.join(TASKS)}")
@@ -685,15 +881,20 @@ def main():
             f"binder_length '{params['binder_length']}' is not a length or range, "
             "e.g. 80 or 50-120."
         )
-    cutoff = params["epitope_cutoff_a"]
+    cutoff = params["epitope_contact_cutoff_a"]
     if cutoff <= 0:
-        fail(f"epitope_cutoff_a must be positive, got {cutoff}.")
-    if not 4.0 <= cutoff <= 15.0:
+        fail(f"epitope_contact_cutoff_a must be positive, got {cutoff}.")
+    if not 3.0 <= cutoff <= 8.0:
         print(
-            f"WARNING: epitope_cutoff_a={cutoff} A is outside the range that reads as an "
-            "interface. Below about 4 A almost nothing qualifies; above about 15 A it "
-            "stops being contact and becomes the whole face of the target.",
+            f"WARNING: epitope_contact_cutoff_a={cutoff} A is outside the range that reads "
+            "as heavy-atom contact. Below about 3 A almost nothing qualifies, since that is "
+            "shorter than a hydrogen bond; much above 5 A it stops being contact, and by "
+            "8 A it is the whole face of the target. Upstream trains at 4.5 A.",
             flush=True,
+        )
+    if params["max_hotspot_atoms"] < 1:
+        fail(
+            f"max_hotspot_atoms must be at least 1, got {params['max_hotspot_atoms']}."
         )
     if params["contig"] and params["task"] == "monomer":
         fail(
@@ -732,7 +933,18 @@ def main():
                 flush=True,
             )
 
-    contig, conditions, as_annotated_cif = BUILDERS[params["task"]](params, inventory)
+    # Loaded at most once, and only by the tasks that need coordinates: monomer ignores
+    # the target entirely and motif_scaffold works from the inventory.
+    cache = {}
+
+    def atoms():
+        if "value" not in cache:
+            cache["value"] = load_heavy_atoms(target_cif)
+        return cache["value"]
+
+    contig, conditions, as_annotated_cif = BUILDERS[params["task"]](
+        params, inventory, atoms
+    )
 
     if params["contig"]:
         print(

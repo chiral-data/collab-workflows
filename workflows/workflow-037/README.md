@@ -147,7 +147,8 @@ code path generation uses to turn a spec into an annotated CIF. A spec that pars
 node here, on CPU, in seconds.
 
 **Scientific notes:** What each condition constrains is the whole design: `C_HOT` nominates target
-residues the binder should engage without dictating how; `C_CRD` freezes coordinates; `C_CRDGRP`
+*atoms* the binder should engage without dictating how — it is `condition_hotspot_1_atom`, and
+naming a residue without naming atoms marks every atom in it, backbone included; `C_CRD` freezes coordinates; `C_CRDGRP`
 freezes a set of residues relative to each other while letting the group move; `C_SEQ` freezes
 identity. A motif graft therefore needs `C_CRDGRP` *and* `C_SEQ` — geometry without identity
 scaffolds the right shape with the wrong chemistry. When a design comes out wrong, `spec_preview.cif`
@@ -248,7 +249,7 @@ past 50 MB.
 | `binder` (default) | Design a new chain against the fixed target chain. Contig: `<binder_length>, /0, <target range>`. Optional `hotspot_residues` become `C_HOT`. The common case. |
 | `motif_scaffold` | Hold `motif_residues` as a rigid group (`C_CRDGRP`) with fixed identity (`C_SEQ`) and build scaffold around it. `binder_length` becomes the length range of each flank. Requires `motif_residues`. |
 | `monomer` | Designs a standalone chain of `binder_length` residues. The target structure is ignored: node 02 writes an annotated scaffold in place of `target.cif`, because a contig made only of expandable segments is rejected upstream. Mechanically verified, but see the quality note below. |
-| `binder_redesign` | Discard `redesign_chain` and generate a replacement against the same epitope: the residues the existing binder contacts (CA-CA within `epitope_cutoff_a`) become `C_HOT`, so the new chain is aimed where the old one bound. Set `binder_length` to the existing binder's length unless you mean to change it, and set `hotspot_residues` to override the derived epitope. |
+| `binder_redesign` | Discard `redesign_chain` and generate a replacement against the same epitope: the atoms the existing binder contacts (any heavy atom within `epitope_contact_cutoff_a`) become `C_HOT`, thinned to the number upstream would have marked, so the new chain is aimed where the old one bound. Set `binder_length` to the existing binder's length unless you mean to change it, and set `hotspot_residues` to override the derived epitope. |
 
 **Trade-off:** More conditioning means more control and less diversity. `binder` with no hotspots
 explores the whole target surface; adding hotspots focuses it at the cost of discarding
@@ -274,18 +275,36 @@ raw samples: generate many (`num_replicates` in the hundreds), then refold and f
 **Trade-off:** None — this is a statement about your input, not a quality knob. Getting it wrong
 silently conditions the wrong residues.
 
-### epitope_cutoff_a
+### epitope_contact_cutoff_a
 
 - **Type:** float (ångström)
-- **Default:** 8.0
-- **Description:** CA-CA distance at which a target residue counts as contacted by the existing
+- **Default:** 4.5
+- **Description:** Heavy-atom distance at which a target atom counts as contacted by the existing
   binder, used only by `binder_redesign` to read off the epitope to aim at.
-- **Guidance:** 8 Å over alpha-carbons is a coarse, conventional interface definition, and it is
-  this workflow's choice rather than an upstream recommendation (upstream publishes no redesign
-  recipe). Lower it towards 6 Å for a tighter, smaller patch — fewer hotspots, more freedom for the
-  design; raise it towards 10-12 Å to include the rim of the interface. Below about 4 Å almost
-  nothing qualifies and above about 15 Å it stops meaning contact; node 02 warns outside that band.
-  Set `hotspot_residues` instead if you know the epitope and would rather name it than derive it.
+- **Guidance:** 4.5 Å between any two heavy atoms is upstream's own definition of a hotspot — the
+  criterion RFD4 was trained with — so there is a reason to prefer it over a general convention.
+  Lower it towards 4 Å for only the tightest contacts; raise it towards 5–6 Å to admit the rim of
+  the interface. Node 02 warns outside 3–8 Å: below 3 Å is shorter than a hydrogen bond, and by
+  8 Å it is the whole face of the target. Set `hotspot_residues` instead if you know the epitope
+  and would rather name it than derive it.
+
+  This replaced an earlier `epitope_cutoff_a`, which measured **CA-CA** at 8.0 Å. The two are not
+  interchangeable: 8 Å is the conventional **Cβ-Cβ** threshold rather than the CA-CA one (~10 Å),
+  and on the 5O45 test target the CA-CA rule found 10 contact residues where the heavy-atom rule
+  finds 17, missing 8 real contacts. Because the same number means different things in the two,
+  node 02 refuses the old parameter rather than reinterpreting a value carried over.
+
+### max_hotspot_atoms
+
+- **Type:** integer
+- **Default:** 6
+- **Description:** Ceiling on how many atoms are marked as `C_HOT`.
+- **Guidance:** `C_HOT` is an atom-level annotation. Upstream samples the number of hotspot atoms
+  from a geometric distribution averaging about 5, caps it at 10% of the interface atoms, and
+  gives none at all 5% of the time. A derived epitope is capped by both this ceiling and that 10%
+  rule, whichever is smaller — on 5O45 the interface is 69 atoms, so the cap is 6. Raising this
+  conditions the model harder than anything it saw in training; lowering it leaves the design more
+  freedom. Node 02 prints how many atoms it marked and what the 10% cap was.
 
 ### num_replicates
 
@@ -313,8 +332,17 @@ silently conditions the wrong residues.
 - **Description:** Target residues to engage (`C_HOT`) or motif residues to scaffold
   (`C_CRDGRP` + `C_SEQ`). A bare number uses `target_chain`.
 - **Guidance:** Give hotspots in the numbering your source uses and set `residue_numbering` to
-  match. Three to five surface residues on the epitope of interest is typical; conditioning a large
+  match. Two or three surface residues on the epitope of interest is typical; conditioning a large
   patch over-constrains the design.
+
+  Hotspots must name residues on `target_chain`. They cannot name the binder — the binder is what
+  is being designed and is not in the input. Naming any other chain is refused, because such a
+  selection parses, matches nothing, and would otherwise produce an unaimed design in silence.
+
+  You name residues; node 02 marks **atoms**, picking the side-chain atoms that reach furthest
+  from CA (two per residue, or CA itself for glycine). That matches upstream, whose own example is
+  `sel('A/*/56/[CG,OH]')` — "the PD-L1 side chain atoms to engage". It prints how many atoms it
+  marked, and warns past `max_hotspot_atoms`.
 
 ### contig
 

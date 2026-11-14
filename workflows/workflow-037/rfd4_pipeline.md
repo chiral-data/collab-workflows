@@ -126,11 +126,15 @@ GPU node (2026-11-12/13). What the pre-build guesses got wrong is recorded in
    designed segments breaks it — the extra segments are counted as target and the interface numbers
    mix designed-to-designed contacts in. Node 04 warns above two chains; it cannot see the contig,
    so it cannot do better without being given it.
-4. **`task=binder_redesign` derives its epitope geometrically**, and the cutoff is now the
-   `epitope_cutoff_a` parameter (default 8.0 Å, CA-CA) rather than a constant, since the number is
-   this workflow's choice and not upstream's — upstream publishes no redesign recipe. What remains
-   open is that no value has been *calibrated*: 8 Å is conventional, not measured against redesign
-   outcomes. Worth revisiting if partial diffusion is ever exposed.
+4. **`task=binder_redesign` derives its epitope geometrically**, through the
+   `epitope_contact_cutoff_a` parameter (default 4.5 Å, any heavy atom). Upstream publishes no
+   redesign recipe, but it does define a hotspot — a target atom within 4.5 Å of a binder atom,
+   count averaging about 5 and capped at 10% of eligible atoms — so the criterion and the budget
+   are upstream's even though the task is not. What remains open is that the *selection* is this
+   workflow's: upstream samples its hotspots randomly, and node 02 picks deterministically
+   (nearest contact first, one atom per residue, no two within 5 Å) so that a seeded workflow
+   gives the same spec twice. Whether a deterministic spread is as good as a random draw is
+   untested. Worth revisiting if partial diffusion is ever exposed.
 5. **Open Babel still prints its plugin noise** even with libxrender1 present, and `CCD_MIRROR_PATH`
    / `PDB_MIRROR_PATH` warnings appear on every invocation. Harmless, but they bury real output;
    setting those two variables in the image would quieten it.

@@ -53,10 +53,15 @@ type = "string"
 default = "B"
 hint = "Chain to redesign while holding the target fixed; binder_redesign task only"
 
-[params.epitope_cutoff_a]
+[params.epitope_contact_cutoff_a]
 type = "float"
-default = 8.0
-hint = "CA-CA distance in angstroms used to read the epitope off an existing binder (binder_redesign only)"
+default = 4.5
+hint = "Heavy-atom contact distance in angstroms used to read the epitope off an existing binder (binder_redesign only); 4.5 is the criterion RFD4 was trained with"
+
+[params.max_hotspot_atoms]
+type = "integer"
+default = 6
+hint = "Ceiling on hotspot atoms marked; the derived epitope is also capped at 10% of the interface, as upstream does"
 
 [params.residue_numbering]
 type = "string"
