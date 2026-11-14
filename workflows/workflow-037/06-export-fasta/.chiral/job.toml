@@ -3,6 +3,7 @@ description = "Write the designed sequences as sequences.fasta, ready to hand to
 inputs = [
   "*_generated.cif",
   "design_metrics.json",
+  "generation_manifest.json",
 ]
 outputs = [
   "sequences.fasta",

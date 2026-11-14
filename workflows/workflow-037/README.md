@@ -387,6 +387,17 @@ One FASTA record per design, holding that design's generated chain and named aft
 so results can be traced back. Hand it to workflow-026 unchanged — the filename is the one that
 workflow expects.
 
+Every record's description carries `UNSCREENED - computational design, requires biosecurity
+review`. This file is the only artifact built to leave the workflow, so it is the one that has to
+carry the warning: the report and the manifest both record it, and neither travels with the FASTA.
+The tag survives workflow-026's validator into its `validated_sequences.fasta`.
+
+It is a description rather than a leading `;` comment line on purpose. Biopython still accepts
+comment lines but warns that it will raise `ValueError` in a future release, and workflow-026
+calls `SeqIO.parse` without a `try`/`except` — a banner would break workflow-026 the next time
+its image was rebuilt, and would look like a bug in workflow-026. The tag also contains no colon,
+because workflow-026 reads a colon in a description as a chain-break marker.
+
 There is no complex-export mode. Colon-joining the chains is the only encoding that would make
 ColabFold predict the complex, because workflow-026 passes the FASTA directory straight to
 `colabfold_batch` and treats each record as an independent job, so a chain break signalled in the
@@ -406,8 +417,10 @@ anywhere, with only the CDN assets fetched at view time.
 RFD4's HuggingFace Spaces apps screen every input and design with SecureDNA. **The CLI and Python
 API — the path this workflow uses — do not.** Designs produced here are therefore unscreened. They
 require biosecurity review before any sequence is ordered or synthesised. This workflow deliberately
-contains no screening node; screening is the user's responsibility, and `report.html` and
-`generation_manifest.json` both record that no screening was performed.
+contains no screening node; screening is the user's responsibility. `report.html` and
+`generation_manifest.json` both record that no screening was performed, and every record in
+`sequences.fasta` is tagged `UNSCREENED` so the warning travels with the designs when they are
+handed to another workflow.
 
 ## Quick start
 

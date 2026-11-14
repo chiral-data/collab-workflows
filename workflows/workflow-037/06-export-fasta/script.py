@@ -35,6 +35,21 @@ import sys
 
 LINE_WIDTH = 60
 OUTPUT_NAME = "sequences.fasta"
+MANIFEST_NAME = "generation_manifest.json"
+
+# Carried on every record's description line. sequences.fasta is the only artifact built
+# to leave this workflow, so it is the one that has to say the designs were not screened:
+# the manifest and the report both record it, and neither travels with the file.
+#
+# This is a description and not a leading ";" comment banner, deliberately. Biopython
+# accepts comment lines today with a DeprecationWarning that says it will become a
+# ValueError, and workflow-026 calls SeqIO.parse without a try/except — so a banner would
+# break workflow-026 the next time its image is rebuilt, and look like a bug in 026.
+#
+# It must also contain no colon. workflow-026 reads a colon in a record's id or
+# description as a chain-break marker and flips the run to multimer pairing.
+UNSCREENED_TAG = "UNSCREENED - computational design, requires biosecurity review"
+SCREENED_TAG = "screening recorded upstream - see generation_manifest.json"
 
 THREE_TO_ONE = {
     "ALA": "A", "ARG": "R", "ASN": "N", "ASP": "D", "CYS": "C",
@@ -81,6 +96,30 @@ def chain_sequences(path):
         (chain, "".join(residues[chain][k] for k in sorted(residues[chain])))
         for chain in order
     ]
+
+
+def screening_tag():
+    """The biosafety tag every record carries.
+
+    Taken from node 03's manifest when there is one, so that if screening is ever added
+    the tag follows it instead of contradicting it. Absent or unreadable manifest means
+    unscreened: that is both the truth for the RFD4 CLI path and the safe default.
+    """
+    screened = None
+    path = f"./inputs/{MANIFEST_NAME}"
+    if os.path.exists(path):
+        try:
+            with open(path) as handle:
+                screened = json.load(handle).get("securedna_screened")
+        except Exception as exc:
+            print(f"WARNING: could not read {MANIFEST_NAME}: {exc}", flush=True)
+    tag = SCREENED_TAG if screened is True else UNSCREENED_TAG
+    if ":" in tag:
+        fail(
+            "The biosafety tag contains a colon, which workflow-026 reads as a chain "
+            "break. Rewrite it without one."
+        )
+    return tag
 
 
 def safe_id(name):
@@ -151,10 +190,11 @@ def main():
             + "; ".join(f"{name} ({why})" for name, why in skipped)
         )
 
+    tag = screening_tag()
     out_path = f"./outputs/{OUTPUT_NAME}"
     with open(out_path, "w") as handle:
         for record_id, label, sequence in records:
-            handle.write(f">{record_id} {label}\n{wrap(sequence)}\n")
+            handle.write(f">{record_id} {label} {tag}\n{wrap(sequence)}\n")
 
     for name, why in skipped:
         print(f"WARNING: skipped {name}: {why}", flush=True)
@@ -172,6 +212,7 @@ def main():
         f"residues per record {min(lengths)}-{max(lengths)}",
         flush=True,
     )
+    print(f"Every record is tagged: {tag}", flush=True)
     print(
         "Hand this file to workflow-026 as its sequences.fasta to refold the designs and "
         "filter on self-consistency; nothing in this workflow scores them.",
