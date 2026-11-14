@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """Node 05 — Report.
 
-Build a single self-contained report.html: Bootstrap 5 + Plotly + Mol* from CDN, with the
-metrics table and the top_n structures inlined as JavaScript so the file works standalone.
+Build a single report.html with the metrics table and the top_n structures inlined as
+JavaScript, so the run's own data travels with the file.
+
+Bootstrap, Plotly and Mol* come from a CDN, so the page is not self-contained in the stricter
+sense and needs a network for styling, the scatter and the viewer. The blocks that matter
+without one -- the metrics table, the run provenance and the biosafety alert -- are rendered
+independently of those libraries and do not depend on them loading.
 
 The report carries the biosafety notice prominently: the RFD4 CLI and Python API do not run
 SecureDNA screening (only the HF Spaces apps do), so designs leaving this workflow are
@@ -31,7 +36,7 @@ TABLE_COLUMNS = [
     ("radius_of_gyration_A", "Rg (Å)"),
     ("n_interface_contacts", "Contacts"),
     ("n_target_residues_contacted", "Target res."),
-    ("min_interchain_distance_A", "Min dist (Å)"),
+    ("min_interchain_ca_distance_A", "Min CA-CA (Å)"),
 ]
 
 
@@ -87,6 +92,11 @@ def build_html(metrics, structures, top_n):
   <div class="row g-4">
     <div class="col-lg-7">
       <h2 class="h5">Designs</h2>
+      <p class="text-muted small mb-2">
+        Ordered by interface contacts, descending &mdash; a convenience, not a ranking.
+        Generation ran with <code>~metrics</code>, so there is no confidence, affinity or
+        self-consistency estimate to rank by, and contact counts rise with designed length.
+      </p>
       <div class="table-responsive">
         <table class="table table-sm table-hover align-middle" id="metrics-table">
           <thead><tr id="metrics-head"></tr></thead>
@@ -211,9 +221,24 @@ DATA.structures.forEach((s) => {{
 }});
 select_el.addEventListener("change", (event) => select(event.target.value));
 
-renderTable();
-renderPlot();
-renderRunInfo();
+var RENDERERS = [
+  ['table', renderTable],
+  ['run info', renderRunInfo],
+  ['plot', renderPlot]
+];
+// Rendered independently and run-info first. These draw with libraries loaded from a CDN,
+// so with no network Plotly is undefined and renderPlot throws. Called in a bare sequence
+// that exception aborted the rest of the script, and the block it took with it was Run --
+// the seed, the checkpoint revision, and the line recording that nothing was screened.
+// Losing the screening disclaimer because a chart library did not load is not acceptable,
+// so each renderer is isolated and the provenance is drawn before the decoration.
+for (var i = 0; i < RENDERERS.length; i++) {{
+  try {{
+    RENDERERS[i][1]();
+  }} catch (err) {{
+    console.error('workflow-037 report: ' + RENDERERS[i][0] + ' failed to render', err);
+  }}
+}}
 if (DATA.structures.length) select(DATA.structures[0].name);
 </script>
 </body>

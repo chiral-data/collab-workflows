@@ -10,6 +10,18 @@ confidence estimate: there is no refolding oracle in this workflow, so nothing h
 design folds or binds. Self-consistency scoring is a follow-up that chains into
 workflow-026.
 
+Interface convention: contacts here are CA-CA pairs within 8.0 A. That is deliberately NOT
+node 02's epitope definition, which is any heavy atom within 4.5 A -- upstream's trained
+hotspot criterion. The two measure different things and should not be aligned. Node 02 has
+to reproduce the convention the model was conditioned with, on a known complex, because a
+wrong epitope aims the design at the wrong patch. Node 04 is describing a structure the
+model has just produced, where a coarse count of how much of the target the design sits
+against is the useful summary, and alpha carbons give that cheaply without pretending to
+resolve individual atom contacts in a backbone that was generated, not measured.
+
+So the number in the report's "Contacts" column is not the number of hotspot atoms the
+design was aimed with, and it is not meant to be.
+
 Chain convention: the designed chain is taken to be the FIRST chain in the file, because
 the contig built by node 02 puts the designed segment ahead of the chain break
 ("50-120, /0, A1-129"). Remaining chains are treated as target. All chains are reported
@@ -21,7 +33,7 @@ import json
 import os
 import sys
 
-CONTACT_CUTOFF_A = 8.0  # CA-CA, the usual coarse interface definition
+CONTACT_CUTOFF_A = 8.0  # CA-CA. See the note below on why this is not node 02's 4.5.
 
 HYDROPHOBIC = set("AVILMFWYC")
 POSITIVE = set("KR")
@@ -47,7 +59,7 @@ COLUMNS = [
     "radius_of_gyration_A",
     "n_interface_contacts",
     "n_target_residues_contacted",
-    "min_interchain_distance_A",
+    "min_interchain_ca_distance_A",
     "chain_lengths",
 ]
 
@@ -121,7 +133,7 @@ def radius_of_gyration(coords):
 
 
 def interface(designed_coords, target_coords):
-    """Contact count, distinct target residues contacted, and minimum distance.
+    """Contact count, distinct target residues contacted, and minimum CA-CA distance.
 
     With no second chain there is no interface at all, so the three columns are None
     rather than 0: a monomer run reporting "0 contacts" reads as "this design failed to
@@ -180,7 +192,7 @@ def analyze(path):
         "radius_of_gyration_A": round(gyration, 2) if gyration is not None else None,
         "n_interface_contacts": contacts,
         "n_target_residues_contacted": contacted,
-        "min_interchain_distance_A": min_distance,
+        "min_interchain_ca_distance_A": min_distance,
         "chain_lengths": ";".join(f"{cid}:{len(res)}" for cid, res in chains),
     }
 

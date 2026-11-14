@@ -266,7 +266,7 @@ file whenever desired.
 > - `02-build-spec` — render the task condition spec and validate it to an annotated CIF on CPU
 > - `03-generate` — `rfd4-generate` with `~metrics`, offline pinned weights, `--dry-run` support
 > - `04-analyze` — geometric per-design metrics table
-> - `05-report` — self-contained `report.html` with Mol* viewer
+> - `05-report` — `report.html` with embedded data and a Mol* viewer (libraries from CDN)
 >
 > Registry: root `README.md` entry #37, `workflows/CHANGELOG.md`, `apps/applications.json`.
 >

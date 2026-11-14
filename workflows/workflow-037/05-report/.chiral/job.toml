@@ -1,5 +1,5 @@
 name = "Report"
-description = "Build a self-contained HTML report with the design metrics table and an interactive structure viewer"
+description = "Build an HTML report embedding the design metrics table, run provenance and an interactive structure viewer"
 inputs = [
   "*_generated.cif",
   "design_metrics.json",

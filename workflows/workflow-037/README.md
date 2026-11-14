@@ -224,7 +224,7 @@ for reasons that have nothing to do with the design.
 
 ### Node 05: Report
 
-**Goal:** One self-contained HTML report.
+**Goal:** One HTML report carrying its own data.
 
 **Process:** Inlines the metrics table and the top `top_n` structures into a single `report.html`
 (Bootstrap 5, Plotly and Mol* from CDN, all data as inline JS), with a click-a-row-to-view table, a
@@ -232,10 +232,16 @@ length-vs-contacts scatter, a Mol* viewer switchable across designs, and a run-p
 Designs are ordered by interface contacts descending — a convenience, not a ranking. The biosafety
 notice is rendered as a top-level alert, not a footnote.
 
-**Scientific notes:** The report is deliberately standalone: structures are embedded rather than
-referenced, so it survives being emailed or archived away from the run directory. That makes file
-size scale with `top_n` — roughly half a megabyte per structure of this size — and the node warns
-past 50 MB.
+**Scientific notes:** The report carries its own *data*: structures and metrics are embedded
+rather than referenced, so it survives being emailed or archived away from the run directory.
+That makes file size scale with `top_n` — roughly half a megabyte per structure of this size —
+and the node warns past 50 MB.
+
+It is not, however, self-contained in the stricter sense: Bootstrap, Plotly and Mol* are fetched
+from a CDN at view time, so without a network the page renders unstyled, the scatter is missing
+and the viewer is empty. The table, the run provenance and the biosafety alert all still render —
+each block is drawn independently and provenance is drawn before the chart, so a chart library
+that fails to load can no longer take the screening disclaimer down with it.
 
 **Outputs:**
 - `report.html` — metrics table, plots and a Mol* viewer, no external data files
@@ -402,7 +408,7 @@ most campaigns re-design the sequence onto the backbone and refold before orderi
 One row per design. `designed_length` and `designed_sequence` describe the generated chain;
 `hydrophobic_fraction` (fraction of recognised residues in AVILMFWYC) and `net_charge`
 (K+R minus D+E) summarise its composition; `radius_of_gyration_A` is computed over CA atoms.
-`n_interface_contacts`, `n_target_residues_contacted` and `min_interchain_distance_A` describe the
+`n_interface_contacts`, `n_target_residues_contacted` and `min_interchain_ca_distance_A` describe the
 interface at an 8 Å CA–CA cutoff — a coarse definition that counts proximity, not interaction
 energy. They are **blank for a single-chain design** (`monomer`), where there is no interface to
 measure, rather than reported as zero. For a two-chain design, zero contacts means it did not engage
@@ -436,9 +442,11 @@ validator's `VALID_AA` first.
 
 ### report.html
 
-Self-contained: the metrics table, a length-vs-contacts scatter, a Mol* viewer over the top `top_n`
-designs, and the run's provenance (seed, checkpoint revision, package version, GPU). Opens from
-anywhere, with only the CDN assets fetched at view time.
+The metrics table, a length-vs-contacts scatter, a Mol* viewer over the top `top_n` designs, and
+the run's provenance (seed, checkpoint revision, package version, GPU). All the run's own data is
+embedded, so it opens from anywhere; Bootstrap, Plotly and Mol* are fetched from a CDN at view
+time, so styling, the scatter and the viewer need a network. The table, the provenance and the
+biosafety alert do not.
 
 ## Biosafety
 
