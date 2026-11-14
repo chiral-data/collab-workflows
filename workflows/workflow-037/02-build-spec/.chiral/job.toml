@@ -52,6 +52,11 @@ type = "string"
 default = "B"
 hint = "Chain to redesign while holding the target fixed; binder_redesign task only"
 
+[params.epitope_cutoff_a]
+type = "float"
+default = 8.0
+hint = "CA-CA distance in angstroms used to read the epitope off an existing binder (binder_redesign only)"
+
 [params.residue_numbering]
 type = "string"
 default = "auth"

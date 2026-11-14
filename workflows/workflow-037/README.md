@@ -224,7 +224,7 @@ past 50 MB.
 | `binder` (default) | Design a new chain against the fixed target chain. Contig: `<binder_length>, /0, <target range>`. Optional `hotspot_residues` become `C_HOT`. The common case. |
 | `motif_scaffold` | Hold `motif_residues` as a rigid group (`C_CRDGRP`) with fixed identity (`C_SEQ`) and build scaffold around it. `binder_length` becomes the length range of each flank. Requires `motif_residues`. |
 | `monomer` | Designs a standalone chain of `binder_length` residues. The target structure is ignored: node 02 writes an annotated scaffold in place of `target.cif`, because a contig made only of expandable segments is rejected upstream. Mechanically verified, but see the quality note below. |
-| `binder_redesign` | Discard `redesign_chain` and generate a replacement against the same epitope: the residues the existing binder contacts (CA-CA within 8 Å) become `C_HOT`, so the new chain is aimed where the old one bound. Set `binder_length` to the existing binder's length unless you mean to change it, and set `hotspot_residues` to override the derived epitope. |
+| `binder_redesign` | Discard `redesign_chain` and generate a replacement against the same epitope: the residues the existing binder contacts (CA-CA within `epitope_cutoff_a`) become `C_HOT`, so the new chain is aimed where the old one bound. Set `binder_length` to the existing binder's length unless you mean to change it, and set `hotspot_residues` to override the derived epitope. |
 
 **Trade-off:** More conditioning means more control and less diversity. `binder` with no hotspots
 explores the whole target surface; adding hotspots focuses it at the cost of discarding
@@ -249,6 +249,19 @@ raw samples: generate many (`num_replicates` in the hundreds), then refold and f
 
 **Trade-off:** None — this is a statement about your input, not a quality knob. Getting it wrong
 silently conditions the wrong residues.
+
+### epitope_cutoff_a
+
+- **Type:** float (ångström)
+- **Default:** 8.0
+- **Description:** CA-CA distance at which a target residue counts as contacted by the existing
+  binder, used only by `binder_redesign` to read off the epitope to aim at.
+- **Guidance:** 8 Å over alpha-carbons is a coarse, conventional interface definition, and it is
+  this workflow's choice rather than an upstream recommendation (upstream publishes no redesign
+  recipe). Lower it towards 6 Å for a tighter, smaller patch — fewer hotspots, more freedom for the
+  design; raise it towards 10-12 Å to include the rim of the interface. Below about 4 Å almost
+  nothing qualifies and above about 15 Å it stops meaning contact; node 02 warns outside that band.
+  Set `hotspot_residues` instead if you know the epitope and would rather name it than derive it.
 
 ### num_replicates
 

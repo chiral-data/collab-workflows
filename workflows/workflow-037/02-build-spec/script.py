@@ -203,10 +203,10 @@ def build_binder(params, inventory):
     return contig, conditions, False
 
 
-CONTACT_CUTOFF_A = 8.0  # CA-CA, matching node 04's interface definition
+DEFAULT_EPITOPE_CUTOFF_A = 8.0  # CA-CA, matching node 04's interface definition
 
 
-def contacting_residues(cif_path, target_chain, other_chain):
+def contacting_residues(cif_path, target_chain, other_chain, cutoff):
     """Target residues whose CA lies within the cutoff of the other chain's CA atoms.
 
     Used to recover the epitope an existing binder already engages, so a redesign is
@@ -243,7 +243,7 @@ def contacting_residues(cif_path, target_chain, other_chain):
         if label_seq in hits:
             continue
         for ox, oy, oz in other_ca:
-            if (x - ox) ** 2 + (y - oy) ** 2 + (z - oz) ** 2 <= CONTACT_CUTOFF_A ** 2:
+            if (x - ox) ** 2 + (y - oy) ** 2 + (z - oz) ** 2 <= cutoff ** 2:
                 hits.add(label_seq)
                 break
     return sorted(hits)
@@ -269,15 +269,20 @@ def build_binder_redesign(params, inventory):
         # What distinguishes a redesign from a fresh binder: the existing binder's own
         # epitope becomes the hotspot set, so the new chain is aimed at the same patch.
         # Without this the task would be byte-identical to task=binder.
+        cutoff = params["epitope_cutoff_a"]
         epitope = contacting_residues(
-            "./inputs/target.cif", target["label_asym_id"], redesign["label_asym_id"]
+            "./inputs/target.cif",
+            target["label_asym_id"],
+            redesign["label_asym_id"],
+            cutoff,
         )
         if epitope:
             print(
                 f"Derived {len(epitope)} hotspot(s) from chain "
                 f"{redesign['label_asym_id']}'s existing contacts with "
                 f"{target['label_asym_id']} (label {', '.join(str(e) for e in epitope)}), "
-                f"within {CONTACT_CUTOFF_A} A CA-CA. Set hotspot_residues to override.",
+                f"within {cutoff} A CA-CA (epitope_cutoff_a). Set hotspot_residues to "
+                "name them yourself.",
                 flush=True,
             )
             conditions.update(
@@ -286,7 +291,7 @@ def build_binder_redesign(params, inventory):
         else:
             print(
                 f"WARNING: chain {redesign['label_asym_id']} makes no CA-CA contact with "
-                f"{target['label_asym_id']} within {CONTACT_CUTOFF_A} A, so no epitope "
+                f"{target['label_asym_id']} within {cutoff} A, so no epitope "
                 "could be derived. This run is equivalent to task=binder. Give "
                 "hotspot_residues to aim it.",
                 flush=True,
@@ -577,6 +582,7 @@ def main():
         "motif_residues": os.environ.get("PARAM_MOTIF_RESIDUES", ""),
         "redesign_chain": os.environ.get("PARAM_REDESIGN_CHAIN", "B"),
         "residue_numbering": os.environ.get("PARAM_RESIDUE_NUMBERING", "auth"),
+        "epitope_cutoff_a": float(os.environ.get("PARAM_EPITOPE_CUTOFF_A", "8.0")),
     }
 
     if params["task"] not in TASKS:
@@ -590,6 +596,16 @@ def main():
         fail(
             f"binder_length '{params['binder_length']}' is not a length or range, "
             "e.g. 80 or 50-120."
+        )
+    cutoff = params["epitope_cutoff_a"]
+    if cutoff <= 0:
+        fail(f"epitope_cutoff_a must be positive, got {cutoff}.")
+    if not 4.0 <= cutoff <= 15.0:
+        print(
+            f"WARNING: epitope_cutoff_a={cutoff} A is outside the range that reads as an "
+            "interface. Below about 4 A almost nothing qualifies; above about 15 A it "
+            "stops being contact and becomes the whole face of the target.",
+            flush=True,
         )
     if params["contig"] and params["task"] == "monomer":
         fail(
