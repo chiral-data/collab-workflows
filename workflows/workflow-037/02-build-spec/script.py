@@ -76,9 +76,18 @@ def load_inventory(path):
 
 
 def chain_by_id(inventory, chain_id):
-    """Resolve a user-supplied chain id against either numbering."""
+    """Resolve a user-supplied chain id against either numbering, label first.
+
+    An id can be the label_asym_id of one chain and the auth_asym_id of a different one.
+    Node 01 resolves that case to the label match and says so; this has to agree with it,
+    or the two nodes name different chains for the same parameter and the one the user is
+    shown is not the one the design is built against.
+    """
     for chain in inventory["chains"]:
-        if chain_id in (chain["label_asym_id"], chain["auth_asym_id"]):
+        if chain_id == chain["label_asym_id"]:
+            return chain
+    for chain in inventory["chains"]:
+        if chain_id == chain["auth_asym_id"]:
             return chain
     present = ", ".join(
         f"{c['label_asym_id']}(auth {c['auth_asym_id']})" for c in inventory["chains"]
@@ -771,6 +780,34 @@ def count_flagged(cif_path, column):
     return sum(1 for value in values if str(value).strip() == "True")
 
 
+def hotspot_selections(conditions):
+    return [
+        entry["select"]
+        for entries in conditions["C_HOT"].values()
+        for entry in entries
+    ]
+
+
+def expected_hotspot_atoms(conditions):
+    """How many atoms the C_HOT selections ask for, or None if that cannot be counted.
+
+    The selections are the ones sel() just produced, so the atom list is always the
+    bracketed final field: sel('A/*/38/[CD1,CG1]'). Anything that does not match that
+    shape returns None and the caller falls back to the total-miss check rather than
+    failing a spec on a counting rule it cannot apply.
+    """
+    total = 0
+    for query in hotspot_selections(conditions):
+        match = re.search(r"/\[([^\]]*)\]'\)$", query)
+        if not match:
+            return None
+        names = [name for name in match.group(1).split(",") if name.strip()]
+        if not names:
+            return None
+        total += len(names)
+    return total
+
+
 def verify_hotspots_landed(preview_path, conditions):
     """Check the rendered system really carries the hotspots the spec asked for.
 
@@ -782,6 +819,7 @@ def verify_hotspots_landed(preview_path, conditions):
     """
     if "C_HOT" not in conditions:
         return
+    expected = expected_hotspot_atoms(conditions)
     flagged = count_flagged(preview_path, HOTSPOT_COLUMN)
     if flagged is None:
         print(
@@ -790,18 +828,35 @@ def verify_hotspots_landed(preview_path, conditions):
             flush=True,
         )
         return
+    queries = " ".join(hotspot_selections(conditions))
     if flagged == 0:
-        queries = " ".join(
-            entry["select"]
-            for by_value in [conditions["C_HOT"]]
-            for entries in by_value.values()
-            for entry in entries
-        )
         fail(
             f"The spec asks for hotspots ({queries}) but the rendered system flags no "
             "atoms at all, so C_HOT conditions nothing and generation would produce an "
             "unaimed design. The selection parsed but matched nothing — check the chain "
             "and residue ids against the inventory printed by node 01."
+        )
+    # A partial miss is the more dangerous shape: most of the aim lands, one selection
+    # quietly matches nothing, and the design is aimed at a patch the user did not ask
+    # for. Comparing against the atoms actually requested is what catches it; a bare
+    # non-zero check passes it at rc=0.
+    if expected is not None and flagged < expected:
+        fail(
+            f"The spec asks for {expected} hotspot atom(s) ({queries}) but the rendered "
+            f"system flags only {flagged}. At least one selection matched nothing, so the "
+            "design would be aimed at only part of the patch you asked for. Check every "
+            "chain, residue id and atom name against the inventory printed by node 01, "
+            "and confirm each residue is inside the contig."
+        )
+    # Over-flagging is not a mis-aim and is not worth refusing a run over: a residue kept
+    # at more than one altloc can carry the same atom name twice, and both copies are
+    # correctly inside the patch the user asked for. Say so rather than fail.
+    if expected is not None and flagged > expected:
+        print(
+            f"NOTE: the spec names {expected} hotspot atom(s) and the rendered system "
+            f"flags {flagged}. Every requested atom landed; the extras are additional "
+            "copies of the same atom names (alternate conformations).",
+            flush=True,
         )
     print(f"C_HOT marks {flagged} atom(s) in the rendered system.", flush=True)
 
