@@ -158,13 +158,21 @@ def run_generation(argv, cwd, env, timeout_s):
         start_new_session=True,
     )
     tail = deque(maxlen=TAIL_LINES)
+    # The reader is a daemon and the join below is bounded, so the snapshot of the tail
+    # can in principle run while a line is still being appended: a grandchild that
+    # survives the kill keeps the pipe open and the thread alive. Copying a deque that
+    # is being mutated raises, and the traceback would land exactly where the timeout
+    # explanation belongs. Not reproducible in 200k tries -- copying 40 lines fits
+    # inside one GIL slice -- but cheap to make impossible rather than merely unlikely.
+    tail_lock = threading.Lock()
     state = {"oom": False}
 
     def pump():
         for line in proc.stdout:
             sys.stdout.write(line)
             sys.stdout.flush()
-            tail.append(line.rstrip("\n"))
+            with tail_lock:
+                tail.append(line.rstrip("\n"))
             if any(marker in line for marker in OOM_MARKERS):
                 state["oom"] = True
 
@@ -179,7 +187,9 @@ def run_generation(argv, cwd, env, timeout_s):
         returncode = None
         kill_tree(proc)
     reader.join(timeout=10)
-    return returncode, timed_out, state["oom"], list(tail)
+    with tail_lock:
+        captured = list(tail)
+    return returncode, timed_out, state["oom"], captured
 
 
 def oom_advice(saw_oom):

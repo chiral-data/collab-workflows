@@ -34,6 +34,7 @@ to turn a spec into an annotated CIF, so a bad spec fails here in seconds instea
 minutes into a GPU job.
 """
 import json
+import math
 import os
 import re
 import shutil
@@ -61,10 +62,18 @@ def numeric_param(env_name, display_name, default, cast):
     if raw is None or raw.strip() == "":
         return default
     try:
-        return cast(raw)
+        value = cast(raw)
     except ValueError:
         kind = "a whole number" if cast is int else "a number"
         fail(f"{display_name} must be {kind}, got '{raw}'.")
+    # float() accepts 'nan', 'inf' and anything that overflows to inf, and none of them
+    # are caught by a range check: every comparison against nan is false, so a nan
+    # cutoff passes "must be positive" and "outside the expected range" alike and then
+    # makes every distance test fail, producing an empty interface rather than an error.
+    # inf does the opposite and takes the whole chain.
+    if not math.isfinite(value):
+        fail(f"{display_name} must be a finite number, got '{raw}'.")
+    return value
 
 
 def load_inventory(path):
@@ -324,7 +333,15 @@ def load_heavy_atoms(cif_path):
     """Heavy atoms grouped by (label_asym_id, label_seq_id).
 
     Hydrogens are excluded because upstream excludes them when it marks hotspots, and
-    alternate locations are collapsed to the first so one atom is not counted twice.
+    alternate locations are collapsed to one so the same atom is not counted twice.
+
+    The collapse keeps the lowest-labelled altloc present for each atom rather than
+    keeping altloc A specifically. Those are the same thing on most files and not on
+    some: a residue modelled only at B and C -- which happens where A was rejected in
+    refinement -- carries no atom labelled A at all, and whitelisting A dropped that
+    residue out of the interface entirely. It could then never be picked as a hotspot
+    and nothing would say why. Taking the lowest label present also makes the choice
+    independent of the order the atoms appear in the file.
     """
     from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 
@@ -341,20 +358,24 @@ def load_heavy_atoms(cif_path):
     )
 
     atoms = {}
+    kept_altloc = {}
     for i in range(len(asym)):
         if seq[i] in (".", "?", ""):
             continue
         if element[i].strip().upper() in ("H", "D"):
-            continue
-        if altloc[i] not in (".", "?", "", "A"):
             continue
         try:
             point = (float(xs[i]), float(ys[i]), float(zs[i]))
         except ValueError:
             continue
         key = (asym[i], int(seq[i]))
-        bucket = atoms.setdefault(key, {})
-        bucket.setdefault(name[i], point)
+        atom_name = name[i]
+        alt = "" if altloc[i] in (".", "?") else altloc[i]
+        previous = kept_altloc.get((key, atom_name))
+        if previous is not None and previous <= alt:
+            continue
+        atoms.setdefault(key, {})[atom_name] = point
+        kept_altloc[(key, atom_name)] = alt
     return {key: sorted(bucket.items()) for key, bucket in atoms.items()}
 
 
@@ -422,6 +443,18 @@ def choose_hotspot_atoms(pool, budget):
         ):
             continue
         chosen.append((distance, label_seq, atom_name, point))
+    if len(chosen) < allowed:
+        # Under-delivering is legitimate -- a small or tightly packed epitope genuinely
+        # has nowhere to put another well-separated mark -- but it is not obvious from
+        # the outside, and the printed cap would otherwise be the last number the user
+        # sees before a smaller one appears with no explanation.
+        print(
+            f"NOTE: {allowed} hotspot atom(s) were allowed here but only {len(chosen)} "
+            f"could be placed. Picks are one per residue and at least "
+            f"{MIN_HOTSPOT_SEPARATION_A:g} A apart, and this epitope has no room for "
+            "more; the design is conditioned on the smaller number.",
+            flush=True,
+        )
     return chosen
 
 
@@ -775,7 +808,12 @@ def count_flagged(cif_path, column):
     values = cif.get(column)
     if values is None:
         return None
-    if isinstance(values, str):  # a single-row loop collapses to a scalar
+    if isinstance(values, str):
+        # Measured against the pinned Biopython: every category comes back as a list,
+        # a one-row loop and a bare key/value pair included, so this does not fire
+        # today. It stays because the failure if it ever did would be silent and
+        # wrong-way-round -- a string is iterable, so the count would run over its
+        # characters, reach 0, and report a valid spec as marking no hotspot at all.
         values = [values]
     return sum(1 for value in values if str(value).strip() == "True")
 
