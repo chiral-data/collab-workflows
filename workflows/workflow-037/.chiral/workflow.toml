@@ -77,7 +77,7 @@ hint = "Number of designs to generate"
 [params.seed]
 type = "integer"
 default = 42
-hint = "Random seed for reproducible generation"
+hint = "Seed passed to rfd4-generate and recorded in the manifest; upstream leaves torch_deterministic false, so runs repeat on fixed hardware but are not guaranteed bit-identical across GPUs or driver versions"
 
 [params.generate_timeout_s]
 type = "integer"
@@ -98,3 +98,8 @@ hint = "Pinned HuggingFace revision of nvidia/RFD4-Proteina (flow + autoencoder 
 type = "integer"
 default = 10
 hint = "Number of designs shown in the report structure viewer"
+
+[params.batch_size]
+type = "integer"
+default = 1
+hint = "Designs per forward pass; lower is the remedy when a large target exhausts GPU memory"

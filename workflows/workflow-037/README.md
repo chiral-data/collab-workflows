@@ -170,9 +170,11 @@ structures are then flattened out of `inference_samples/` into the node's output
 that directory is missing or the count does not match `num_replicates`. `--dry-run` prints the
 resolved argv and exits 0 without touching the GPU.
 
-**Scientific notes:** `seed` plus the pinned checkpoint revision are what make a run reproducible;
-the flow model and the autoencoder are a *matched pair*, so pinning one revision for both is not
-optional. `disable_compile` trades a slow `torch.compile` warm-up for slower per-design inference,
+**Scientific notes:** `seed` plus the pinned checkpoint revision are what let a run repeat; the flow
+model and the autoencoder are a *matched pair*, so pinning one revision for both is not optional.
+Note that upstream leaves `torch_deterministic` false and this node does not change it, so a repeat
+is empirical rather than guaranteed — same seed and same hardware reproduced designs byte for byte
+in testing, but a different GPU or driver may not. `disable_compile` trades a slow `torch.compile` warm-up for slower per-design inference,
 which is the right trade for a handful of designs and the wrong one for hundreds.
 
 **Outputs:**
@@ -373,10 +375,26 @@ silently conditions the wrong residues.
 
 - **Type:** integer / string
 - **Default:** `42` / `a06e2509c7033b010fc43614e9fd840303588502`
-- **Description:** Reproducibility controls, both recorded in `generation_manifest.json`.
+- **Description:** Provenance controls, both recorded in `generation_manifest.json`.
 - **Guidance:** Change `seed` to sample different designs from the same spec. Leave the revision
   alone unless you rebuild the image: the flow model and autoencoder are a matched pair, and the
   weights are baked in at this revision.
+
+  `seed` does not make generation bit-reproducible on its own. Upstream's `inference.yaml` leaves
+  `torch_deterministic` false — that is the switch that locks cuDNN and cuBLAS to deterministic
+  algorithms — and this node does not override it. In practice the same seed on the same GPU and
+  driver reproduced designs byte for byte; across different hardware, treat the seed as provenance
+  rather than a guarantee.
+
+### batch_size
+
+- **Type:** integer
+- **Default:** `1`
+- **Description:** How many designs are generated per forward pass.
+- **Guidance:** This is the knob to reach for when a larger target exhausts GPU memory: lowering it
+  (or leaving it at 1) trades throughput for a smaller peak allocation. Raising it speeds up large
+  batches on a card with memory to spare. If generation hits an allocator out-of-memory condition,
+  node 03 now says so explicitly rather than stalling, and this is the first parameter to change.
 
 ### disable_compile
 

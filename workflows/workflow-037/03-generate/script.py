@@ -94,7 +94,9 @@ def package_version():
         return "unknown"
 
 
-def build_argv(spec_name, out_dir, num_replicates, seed, disable_compile, revision):
+def build_argv(
+    spec_name, out_dir, num_replicates, seed, disable_compile, revision, batch_size
+):
     # Upstream's documented generation call:
     #   rfd4-generate inputs=binder.yaml num_replicates=2 out_dir=./runs/first '~metrics'
     # The shell quoting upstream notes around ~metrics is moot here: argv goes to
@@ -106,6 +108,7 @@ def build_argv(spec_name, out_dir, num_replicates, seed, disable_compile, revisi
         f"num_replicates={num_replicates}",
         f"seed={seed}",
         f"hf_ckpt_revision={revision}",
+        f"batch_size={batch_size}",
         "~metrics",
     ]
     if disable_compile:
@@ -280,8 +283,18 @@ def main():
             f"'{os.environ.get('PARAM_GENERATE_TIMEOUT_S')}'"
         )
 
+    try:
+        batch_size = int(os.environ.get("PARAM_BATCH_SIZE", "1"))
+    except ValueError:
+        fail(
+            "batch_size must be a whole number, got "
+            f"'{os.environ.get('PARAM_BATCH_SIZE')}'"
+        )
+
     if num_replicates < 1:
         fail(f"num_replicates must be at least 1, got {num_replicates}")
+    if batch_size < 1:
+        fail(f"batch_size must be at least 1, got {batch_size}")
     if timeout_s < 1:
         fail(f"generate_timeout_s must be at least 1 second, got {timeout_s}")
 
@@ -301,7 +314,15 @@ def main():
         fail(f"Condition spec not found: {spec_path}")
     target_path = f"./inputs/{TARGET_NAME}"
 
-    argv = build_argv(SPEC_NAME, "out", num_replicates, seed, disable_compile, hf_ckpt_revision)
+    argv = build_argv(
+        SPEC_NAME,
+        "out",
+        num_replicates,
+        seed,
+        disable_compile,
+        hf_ckpt_revision,
+        batch_size,
+    )
 
     print(f"rfd4-proteina version: {package_version()}", flush=True)
     print(f"Checkpoint revision: {hf_ckpt_revision}", flush=True)
@@ -374,6 +395,11 @@ def main():
         "designs": designs,
         "seed": seed,
         "disable_compile": disable_compile,
+        "batch_size": batch_size,
+        # Upstream's configs/inference.yaml defaults torch_deterministic to false and this
+        # node does not change it, so the seed is recorded for provenance and reproduces in
+        # practice on fixed hardware rather than being guaranteed to.
+        "torch_deterministic": False,
         "hf_ckpt_revision": hf_ckpt_revision,
         "rfd4_proteina_version": package_version(),
         "gpu": gpu_info(),

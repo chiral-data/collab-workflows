@@ -230,10 +230,17 @@ spec builder is mis-rendering.
 
 ## Biosafety
 
-RFD4's HF Spaces screen every input and design with SecureDNA; the model card is explicit that the
-**CLI/Python path does not**. This workflow uses the CLI path, so designs come out unscreened.
-**Decided: no screening node.** Instead, a prominent notice in the README and in `report.html`
-states that designs are unscreened and require biosecurity review before synthesis.
+RFD4's HF Spaces screen every input and design with SecureDNA. Neither the GitHub README nor the
+model card says anything about the CLI/Python path either way — they are silent, not explicit, and
+an earlier version of this document overstated that. The substance holds on stronger evidence: a
+search of the whole upstream source for "securedna" returns exactly one hit, in README.md, and no
+code implements screening. **The CLI/Python path performs none**, and this workflow uses it, so
+designs come out unscreened.
+
+**Decided: no screening node.** Instead the fact is recorded where it travels: a prominent notice in
+the README and in `report.html`, `securedna_screened: false` in `generation_manifest.json`, and an
+`UNSCREENED` tag on every record of `sequences.fasta`, which is the artifact built to leave this
+workflow.
 
 ## Process note
 
