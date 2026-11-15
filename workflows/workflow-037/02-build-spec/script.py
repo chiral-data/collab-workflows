@@ -236,33 +236,80 @@ def chain_segment(chain):
     return f"{chain['label_asym_id']}{lo}-{hi}"
 
 
-def reject_offtarget(residues, target, param_name):
-    """Refuse residues that name a chain the contig does not preserve.
+PRESERVED_SEGMENT_RE = re.compile(r"^([A-Za-z][A-Za-z0-9]*?)(\d+)(?:-(\d+))?$")
 
-    The conditioned contigs are "<length>, /0, <target segment>": the target chain is the
-    only input chain carried into the designed system. A selection naming any other chain
-    is resolved against a system that does not contain it, so upstream's parser accepts the
-    query, matches nothing, and conditions nothing — with no error anywhere. The run then
-    spends full GPU time on an unaimed design while every log line says it was aimed.
+
+def contig_chain_ids(contig):
+    """Chain ids of the preserved segments in a contig, or None if it cannot be read.
+
+    A preserved segment names a chain and a residue range, "A1-115"; an expandable one is
+    a bare length, "50-120"; "/0" is a chain break. Returning None rather than an empty
+    set for anything unrecognised matters: the caller refuses selections on the strength
+    of this, and a contig it cannot parse is not evidence that a chain is absent.
+    """
+    chains = set()
+    for raw in contig.split(","):
+        segment = raw.strip()
+        if not segment or segment.startswith("/"):
+            continue
+        if LENGTH_RE.match(segment):  # expandable: a length or a range of lengths
+            continue
+        match = PRESERVED_SEGMENT_RE.match(segment)
+        if not match:
+            return None
+        chains.add(match.group(1))
+    return chains
+
+
+def reject_offtarget(residues, target, param_name, contig=""):
+    """Refuse residues naming a chain the contig does not preserve.
+
+    A selection naming an absent chain is resolved against a system that does not contain
+    it, so upstream's parser accepts the query, matches nothing, and conditions nothing —
+    with no error anywhere. The run then spends full GPU time on an unaimed design while
+    every log line says it was aimed.
 
     Naming the input's second chain is the likely mistake, not an exotic one: on a complex
     the binder usually is chain B, redesign_chain defaults to "B", and "aim at the binder's
     residues" is a reasonable thing to try. It is also the most confusing failure, because
     the designed segment is itself labelled with a free chain id, so sel('B/...') can look
     like it addresses the new binder when it addresses nothing at all.
+
+    Which chains count as present depends on the contig actually used. The derived contigs
+    are "<length>, /0, <target segment>", where the target is the only input chain. A
+    contig override can preserve others, and this must read it rather than assume: refusing
+    a selection with "only the target chain is preserved" when the user's own contig
+    plainly preserves the chain they named is a worse failure than the one being prevented,
+    because the message is false and the fix it asks for is wrong.
     """
     target_id = target["label_asym_id"]
-    stray = sorted({chain for chain, _ in residues if chain != target_id})
-    if stray:
-        fail(
-            f"{param_name} names chain(s) {', '.join(stray)}, but only the target chain "
-            f"({target_id}) is preserved by the contig. Residues on any other chain are "
-            "absent from the designed system, so they would condition nothing and the run "
-            "would produce an unaimed design.\n"
+    preserved = contig_chain_ids(contig) if contig else {target_id}
+    if preserved is None:
+        # An unreadable contig is the user's to debug: check_contig() and then upstream's
+        # own parser will speak to it. Guessing here could only refuse something valid.
+        return
+    stray = sorted({chain for chain, _ in residues if chain not in preserved})
+    if not stray:
+        return
+    if preserved == {target_id}:
+        detail = (
+            f"but only the target chain ({target_id}) is preserved by the contig.\n"
             f"Hotspots name residues on the TARGET that the new chain should engage, so "
             f"give them on chain {target_id}. They cannot name the binder: the binder is "
             "what is being designed and does not exist yet."
         )
+    else:
+        detail = (
+            f"but the contig in use preserves only {', '.join(sorted(preserved))}.\n"
+            "Name residues on a chain the contig carries, or widen the contig to carry "
+            "the one you want."
+        )
+    fail(
+        f"{param_name} names chain(s) {', '.join(stray)}, {detail}\n"
+        "Residues on a chain the contig does not carry are absent from the designed "
+        "system, so they would condition nothing and the run would produce an unaimed "
+        "design."
+    )
 
 
 def resolve_hotspots(params, inventory, target, atoms):
@@ -274,7 +321,7 @@ def resolve_hotspots(params, inventory, target, atoms):
         inventory,
         params["residue_numbering"],
     )
-    reject_offtarget(residues, target, "hotspot_residues")
+    reject_offtarget(residues, target, "hotspot_residues", params["contig"])
 
     structure = atoms()
     hotspots = []
