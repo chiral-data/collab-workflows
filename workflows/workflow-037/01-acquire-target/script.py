@@ -219,6 +219,7 @@ def build_inventory(cif_path):
     auth_asym = column("_atom_site.auth_asym_id")
     label_seq = column("_atom_site.label_seq_id")
     auth_seq = column("_atom_site.auth_seq_id")
+    ins_code = column("_atom_site.pdbx_PDB_ins_code", "?")
     comp_id = column("_atom_site.label_comp_id")
 
     chains = {}
@@ -250,6 +251,7 @@ def build_inventory(cif_path):
             {
                 "label_seq_id": int(label_seq[i]),
                 "auth_seq_id": auth_seq[i],
+                "ins_code": "" if ins_code[i] in (".", "?", "") else ins_code[i],
                 "comp_id": comp_id[i],
                 "one_letter": THREE_TO_ONE.get(comp_id[i], "X"),
             }
@@ -268,18 +270,32 @@ def build_inventory(cif_path):
         ambiguous = []
         for residue in residues:
             auth_key = str(residue["auth_seq_id"])
+            # label_seq_id is unique within a chain by construction, so this map always
+            # gets an entry. It used to be written only when the author number was new,
+            # which made it incomplete exactly for insertion-code residues (12E8 chain B:
+            # 214 entries for 221 residues). Node 02 tests membership of this map to
+            # decide whether a label-numbered residue exists, so a missing entry rejected
+            # a residue that is present -- and the advice printed below is to switch to
+            # label numbering, which led straight into that rejection.
+            label_to_auth[str(residue["label_seq_id"])] = auth_key + residue["ins_code"]
             if auth_key in auth_to_label:
-                # Insertion codes make one author number cover several residues.
+                # One author number covering several residues: an insertion code tells
+                # them apart, but a residue token like 'A100A' has nowhere to put it.
                 ambiguous.append(auth_key)
                 continue
             auth_to_label[auth_key] = residue["label_seq_id"]
-            label_to_auth[str(residue["label_seq_id"])] = auth_key
         if ambiguous:
+            inserted = [
+                f"{r['auth_seq_id']}{r['ins_code']}->{r['label_seq_id']}"
+                for r in residues
+                if r["ins_code"]
+            ]
             print(
                 f"WARNING: chain {chain['label_asym_id']} has repeated author numbers "
-                f"({', '.join(sorted(set(ambiguous)))}), probably insertion codes. "
-                "Author->label translation uses the first occurrence; give those "
-                "residues in label numbering (residue_numbering=label) to be exact.",
+                f"({', '.join(sorted(set(ambiguous)))}), from insertion codes. "
+                "Author->label translation uses the first occurrence, so author "
+                "numbering cannot name the others. Use residue_numbering=label and "
+                f"these label numbers: {', '.join(inserted) if inserted else 'see inventory'}.",
                 flush=True,
             )
         inventory["chains"].append(
