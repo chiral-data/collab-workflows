@@ -11,6 +11,14 @@ outputs = [
 
 [container]
 image = "rfd4-proteina:2026_11_04"
+# Redundant under silva 0.6.0, which reads [resources] below and emits a Note that this
+# key is ignored. Kept because 0.5.0 is still installed at /usr/local/bin on the GPU
+# estate, and its schema has no [resources] at all: there, use_gpu = true is the only
+# thing that passes the device through, and this is the one node that cannot run without
+# one. Carrying both costs a cosmetic Note; carrying neither costs a CPU-only run that
+# fails at check_gpu(). The CPU nodes do not need the counterpart, since use_gpu = false
+# was already the default under 0.5.0.
+use_gpu = true
 
 [resources]
 gpu = "required"
