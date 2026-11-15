@@ -30,8 +30,9 @@ RUN uv pip install --system --no-cache --no-sources \
       --torch-backend cu126 "rfd4-proteina[all-cuda12]==0.0.3"
 
 # Node dependencies: structure parsing (01, 04, 05), spec emission (02),
-# .cif.zst inputs (01), RCSB fetch (01). Pinned so the CPU nodes are reproducible
-# independently of whatever rfd4-proteina happens to pull in.
+# .cif.zst inputs (01), RCSB fetch (01). Pinned so these do not drift with whatever
+# rfd4-proteina happens to pull in. Not a complete pin of the CPU nodes: node 04
+# imports numpy, which is not pinned here and comes from rfd4-proteina's closure.
 RUN uv pip install --system --no-cache \
       "biopython==1.85" \
       "pyyaml==6.0.2" \

@@ -5,7 +5,7 @@ Invoke rfd4-generate on the validated condition spec, with the checkpoint revisi
 and the baked-in weights used offline, then flatten inference_samples/ into ./outputs/.
 
 Three deliberate choices:
-  * argv is a Python list passed to subprocess.run WITHOUT shell=True. The `~metrics`
+  * argv is a Python list passed to subprocess.Popen WITHOUT shell=True. The `~metrics`
     override is a shell-expansion hazard (upstream quotes it specifically to stop `~`
     becoming $HOME); bypassing the shell removes that class of bug entirely.
   * HF_HUB_OFFLINE=1, so an image with baked-in weights never silently hits the network.
@@ -133,7 +133,7 @@ def build_argv(
     # Upstream's documented generation call:
     #   rfd4-generate inputs=binder.yaml num_replicates=2 out_dir=./runs/first '~metrics'
     # The shell quoting upstream notes around ~metrics is moot here: argv goes to
-    # subprocess.run as a list, so nothing expands ~ to $HOME.
+    # Popen as a list, so nothing expands ~ to $HOME.
     argv = [
         "rfd4-generate",
         f"inputs={spec_name}",
@@ -383,20 +383,25 @@ def main():
     elapsed = round(time.time() - started, 1)
 
     # The scratch directory is left in place on every failure path below: it holds the
-    # spec and the partial output tree, which is what a post-mortem needs.
+    # spec and the partial output tree, which is what a post-mortem needs. It only
+    # survives long enough to be read when this node is run directly, as the README's
+    # docker invocation does; under Silva the container exits with the job and takes the
+    # directory with it, so the message says where it would be rather than promising it
+    # is still there. The retained tail above is what reaches a Silva user.
+    kept = f"\nRun directory, if this container outlives the job: {run_dir}"
     if timed_out:
         fail(
             f"rfd4-generate exceeded its {timeout_s}s budget and was killed after "
             f"{elapsed}s. Raise generate_timeout_s if the job was merely slow."
             + oom_advice(saw_oom)
             + f"\nLast output:\n  " + "\n  ".join(tail[-12:])
-            + f"\nRun directory kept for inspection: {run_dir}"
+            + kept
         )
     if returncode != 0:
         fail(
             f"rfd4-generate exited {returncode} after {elapsed}s (output above)."
             + oom_advice(saw_oom)
-            + f"\nRun directory kept for inspection: {run_dir}"
+            + kept
         )
     if saw_oom:
         print(

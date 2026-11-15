@@ -1,10 +1,12 @@
 # workflow-037 — RFD4-Proteina De Novo Design (design doc)
 
 Status: **built and run end to end on a GPU node.** `rfd4-proteina:2026_11_04` (10.3 GB) on
-amd-c12-1, an RTX 3060 Ti with 8 GB. All five nodes have run in the image against PDB 5O45:
+amd-c12-1, an RTX 3060 Ti with 8 GB. All six nodes have run in the image against PDB 5O45:
 node 02's spec is accepted by RFD4's own parser, generation produced 61- and 101-residue binders
 contacting the target, `task=monomer` produced a 70-residue single chain, and nodes 04 and 05 ran
-over both multi-chain and single-chain output. This document is the design rationale and the record
+over both multi-chain and single-chain output, and node 06 exported a tagged FASTA. The
+`binder_redesign` task has since been run end to end on 4ZQK as well. This document is the
+design rationale and the record
 of decisions; it also holds the draft `[Workflow]` issue body and PR description for whenever the
 work is filed.
 
@@ -75,7 +77,7 @@ Deliberately **not** copied from workflow-013: `cp inputs/* .`, bash-side param 
 CLI flags, writing to cwd, and `pip install -r requirements.txt` at runtime (pitfall #4 in
 `SILVA_MIGRATION_GUIDE.md` §9).
 
-Node 03 builds the `rfd4-generate` argv as a **Python list passed to `subprocess.run` without
+Node 03 builds the `rfd4-generate` argv as a **Python list passed to `subprocess.Popen` without
 `shell=True`**. The `~metrics` override is a shell-expansion hazard (upstream docs quote it
 specifically to stop `~` becoming `$HOME`); bypassing the shell removes that class of bug entirely.
 It also sets `HF_HUB_OFFLINE=1`, so a baked-in-weights image never silently reaches for the network.
@@ -102,6 +104,9 @@ In the image, on the GPU node (2026-11-13), against PDB 5O45 fetched from RCSB:
   assumed.
 - **Node 04 and 05** over that real output, both the two-chain binder case and the single-chain
   monomer case.
+- **Node 06** over the same output: one record per design, each carrying the `UNSCREENED` tag.
+- **`binder_redesign` on 4ZQK** end to end, nodes 01-06, deriving its epitope from the existing
+  binder's contacts rather than from named hotspots.
 
 Still only exercised with stand-in data: nothing. The earlier stand-in structures (5O45 with its
 chains reordered) have been superseded by real generated designs.
@@ -114,8 +119,12 @@ GPU node (2026-11-12/13). What the pre-build guesses got wrong is recorded in
 
 1. **VRAM headroom is unmeasured.** A 190-residue system (a 50-120 residue binder against
    129-residue PD-L1) fits comfortably on an RTX 3060 Ti with 8 GB — compute 8.6, far below
-   upstream's smallest tested device, and it works. Where the ceiling actually is, and what
-   `batch_size` to drop to when a larger target hits it, is not established.
+   upstream's smallest tested device, and it works. Where the ceiling actually is is still not
+   established. `batch_size` is now exposed as a parameter, so there is a lever to pull when a
+   larger target hits that ceiling; what remains unknown is where to set it, and the parameter
+   has only been exercised at its default of 1. A run at `batch_size=2` would also be the first
+   test of whether `collect_designs()` handles a batched `inference_samples/` layout, which is
+   assumed rather than verified.
 2. **`monomer` works, but its output quality is the open question.** The scaffold is now generated
    (see below), so the task runs; the one test design was the requested length but extended and
    poly-glutamate-tailed. Whether that is the sampler at defaults, the absence of any scoring, or
@@ -219,7 +228,7 @@ docker run --rm --gpus all \
 Node 03 first runs with `--dry-run` (prints resolved argv, exits 0, no GPU) — the testability
 pattern workflow-026's `02_predict` uses.
 
-Chain + end-to-end: `cp /tmp/wf037-nodeN/outputs/* /tmp/wf037-nodeN+1/inputs/` through all five
+Chain + end-to-end: `cp /tmp/wf037-nodeN/outputs/* /tmp/wf037-nodeN+1/inputs/` through all six
 nodes, confirm `report.html` renders with a populated Mol* viewer, then run under Silva with
 `export SILVA_WORKFLOW_HOME=…` and capture the green-checkmark screenshot the §6 checklist requires.
 
@@ -254,8 +263,8 @@ file whenever desired.
 > **[Workflow] RFD4-Proteina de novo protein design**
 >
 > Add a multi-task generative design workflow built on RFD4-Proteina (RosettaCommons + NVIDIA
-> GenAIR, BSD-3), which supersedes RFdiffusion 1/2/3. Five nodes: acquire target → build and
-> validate condition spec (CPU) → generate (GPU) → analyze → report. Supports binder,
+> GenAIR, BSD-3), which supersedes RFdiffusion 1/2/3. Six nodes: acquire target → build and
+> validate condition spec (CPU) → generate (GPU) → analyze → report → export FASTA. Supports binder,
 > motif_scaffold, monomer and binder_redesign tasks from an uploaded structure or an RCSB
 > accession.
 >
@@ -266,7 +275,7 @@ file whenever desired.
 
 ### Draft PR description
 
-> Adds `workflows/workflow-037/` — RFD4-Proteina de novo design, 5 nodes on one shared image
+> Adds `workflows/workflow-037/` — RFD4-Proteina de novo design, 6 nodes on one shared image
 > (`rfd4-proteina:2026_11_04`, `python:3.12-slim` base, weights baked at a pinned HF revision).
 >
 > - `01-acquire-target` — upload or RCSB fetch, normalise to mmCIF, inventory both residue numberings
@@ -274,6 +283,7 @@ file whenever desired.
 > - `03-generate` — `rfd4-generate` with `~metrics`, offline pinned weights, `--dry-run` support
 > - `04-analyze` — geometric per-design metrics table
 > - `05-report` — `report.html` with embedded data and a Mol* viewer (libraries from CDN)
+> - `06-export-fasta` — one FASTA record per design, tagged `UNSCREENED`, for workflow-026
 >
 > Registry: root `README.md` entry #37, `workflows/CHANGELOG.md`, `apps/applications.json`.
 >

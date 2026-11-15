@@ -164,7 +164,7 @@ is the file to open: it shows exactly which residues the model was told to hold.
 **Goal:** Generate `num_replicates` designs against the spec.
 
 **Process:** Copies the spec and `target.cif` into a scratch directory (the spec's `input:` is a
-bare relative filename) and runs `rfd4-generate` there as an argv list via `subprocess.run` without
+bare relative filename) and runs `rfd4-generate` there as an argv list via `subprocess.Popen` without
 `shell=True`, with `HF_HUB_OFFLINE=1` so the baked-in weights are never re-fetched. Generated
 structures are then flattened out of `inference_samples/` into the node's outputs, with a warning if
 that directory is missing or the count does not match `num_replicates`. `--dry-run` prints the
@@ -323,6 +323,27 @@ silently conditions the wrong residues.
   relative to the downstream filtering and most designs are discarded. Raise `disable_compile` to
   `false` once the batch is large enough to amortise the warm-up.
 
+  **Raise `generate_timeout_s` with it.** All replicates are produced by one `rfd4-generate` call
+  under one wall-clock budget, and the default budget is 3600 s. Measured on an L40S at
+  `binder_length=50-120`, a replicate costs roughly 35–50 s after load, so 100 replicates needs
+  something like 3500–5000 s and will hit the default. See `generate_timeout_s` below.
+
+### generate_timeout_s
+
+- **Type:** integer (seconds)
+- **Default:** 3600
+- **Description:** Wall-clock budget for the whole `rfd4-generate` call. On expiry the process
+  group is ended and node 03 exits 1.
+- **Guidance:** The budget covers every replicate in one call, not one design, so it has to scale
+  with `num_replicates`. Roughly 35–50 s per replicate at `binder_length=50-120` on an L40S, plus
+  60–90 s of model load, plus several minutes of `torch.compile` warm-up if `disable_compile` is
+  `false`. Allow headroom: longer binders and larger targets both cost more.
+
+  The budget exists because a CUDA out-of-memory condition does not stop generation. The caching
+  allocator logs it as a warning and the process carries on holding the GPU without making
+  progress, so without a budget the node would hang indefinitely. When the output contains an OOM
+  marker, node 03 says so in the failure message instead of reporting a bare timeout.
+
 ### binder_length
 
 - **Type:** string (`N` or `N-M`)
@@ -343,14 +364,25 @@ silently conditions the wrong residues.
   match. Two or three surface residues on the epitope of interest is typical; conditioning a large
   patch over-constrains the design.
 
-  Hotspots must name residues on `target_chain`. They cannot name the binder — the binder is what
-  is being designed and is not in the input. Naming any other chain is refused, because such a
-  selection parses, matches nothing, and would otherwise produce an unaimed design in silence.
+  Hotspots must name residues on a chain the contig preserves. With the derived contigs that is
+  `target_chain` and nothing else — in particular not the binder, which is what is being designed
+  and is not in the input. Naming an absent chain is refused, because such a selection parses,
+  matches nothing, and would otherwise produce an unaimed design in silence. If you supply your
+  own `contig`, node 02 reads it and refuses only chains that contig does not carry.
 
   You name residues; node 02 marks **atoms**, picking the side-chain atoms that reach furthest
-  from CA (two per residue, or CA itself for glycine). That matches upstream, whose own example is
-  `sel('A/*/56/[CG,OH]')` — "the PD-L1 side chain atoms to engage". It prints how many atoms it
-  marked, and warns past `max_hotspot_atoms`.
+  from CA — up to two per residue, fewer where the residue has fewer (alanine gives one), and CA
+  itself for glycine. That matches upstream, whose own example is `sel('A/*/56/[CG,OH]')` — "the
+  PD-L1 side chain atoms to engage". It prints how many atoms it marked, and warns past
+  `max_hotspot_atoms`.
+
+  The **derived** epitope that `binder_redesign` computes does not apply that side-chain
+  restriction, and the difference is deliberate. It draws from every heavy atom within
+  `epitope_contact_cutoff_a`, which is upstream's eligible set, so it can mark a main-chain
+  carbonyl oxygen — on 4ZQK two of its six marks are backbone O. The named path has no binder to
+  measure against, so "which atoms of this residue would a binder engage" has to be answered from
+  the residue alone, and the end of the side chain is the only defensible answer. Whether RFD4
+  responds to a marked backbone carbonyl as it does to a marked side-chain atom is untested here.
 
 ### contig
 
@@ -358,11 +390,26 @@ silently conditions the wrong residues.
 - **Default:** `""`
 - **Description:** Advanced escape hatch. When set it replaces the derived contig verbatim. Not
   accepted with `task=monomer`, which uses a scaffold rather than a contig.
-- **Guidance:** Use it for layouts the four tasks do not express (multiple chain breaks, several
-  designed segments). Residue ids are `label_seq_id`, and no translation is applied to this string.
-  Note that node 04 attributes the **first** chain to the design and the rest to the target, so a
-  contig with several designed segments makes its per-design metrics and interface counts wrong;
-  node 04 warns when it sees more than two chains.
+- **Guidance:** Use it for layouts the four tasks do not express — several designed segments, or a
+  different span of the target than `target_chain` gives you. Residue ids are `label_seq_id`, and
+  no translation is applied to this string.
+
+  **A contig that preserves more than one input chain does not currently work.** The task builders
+  hold the target chain alone (`C_CRDGRP` + `C_SEQ`), so any other preserved chain is left without
+  a coordinate group and upstream groups it with the designed chain, which fails validation:
+
+  ```
+  [index_group_molecule_must_be_connected] ... token pair(s) of one index group have no path
+  between them in the bond graph though they are one molecule: C/1-B/1, C/1-B/2, ...
+  ```
+
+  This is caught on CPU in node 02, before any GPU time, but there is no parameter that fixes it —
+  holding a second chain would need a change to the builders. Keep `contig` to one preserved input
+  chain.
+
+  Note also that node 04 attributes the **first** chain to the design and the rest to the target,
+  so a contig with several designed segments makes its per-design metrics and interface counts
+  wrong; node 04 warns when it sees more than two chains.
 
 ### target_chain / redesign_chain
 
@@ -518,6 +565,7 @@ Chain the nodes by copying each node's `outputs/` into the next node's `inputs/`
 | Setting | Test (default) | Production |
 |---------|---------------|------------|
 | `num_replicates` | 4 | 100+ |
+| `generate_timeout_s` | 3600 | scale with `num_replicates` — ~35–50 s each, so 100+ needs 5400+ |
 | `disable_compile` | `true` | `false` (amortises the warm-up over a large batch) |
 | `top_n` | 10 | 10–25 (report size scales with it) |
 
@@ -575,6 +623,35 @@ worth a look if the holes sit at the interface you are targeting.
 Only this node's own comment annotation is written and the spec is not validated. That is the
 development path outside the image; inside the image it means the image is broken, and node 02
 stops rather than continuing.
+
+**Node 02: "hotspot_residues names chain(s) B, but only the target chain (A) is preserved"**
+Hotspots name residues on the target that the designed chain should engage. They cannot name the
+binder: with `task=binder` the binder does not exist yet, and with `binder_redesign` the existing
+one is replaced. Give the residues on `target_chain`. If you supplied your own `contig`, node 02
+reads it and this message instead names the chains that contig preserves.
+
+**Node 02: "The spec asks for N hotspot atom(s) ... but the rendered system flags only M"**
+At least one selection parsed but matched nothing, so the design would be aimed at part of the
+patch you asked for. Usually a residue id outside the contig, or an atom name that residue does
+not have. Check every id against `target_inventory.json` from node 01, and confirm each residue
+falls inside the contig node 02 printed.
+
+**Node 02: "epitope_cutoff_a has been replaced by epitope_contact_cutoff_a"**
+The old parameter was a CA–CA distance defaulting to 8.0 Å; the new one is a heavy-atom contact
+distance defaulting to 4.5 Å, which is the criterion RFD4 was trained with. The same number means
+different things under the two rules, so the value is not carried over. Remove the old parameter,
+and set the new one only if you need something other than 4.5.
+
+**Node 03: "rfd4-generate exceeded its Ns budget"**
+All replicates run under one wall-clock budget. Either the run genuinely needs longer — scale
+`generate_timeout_s` with `num_replicates`, see that parameter — or generation stalled. If the
+message also reports a CUDA out-of-memory condition, it stalled: the allocator logs OOM as a
+warning and keeps the GPU without making progress, so reduce `binder_length` or `num_replicates`,
+or use a GPU with more memory.
+
+**Node 03: "hf_ckpt_revision ... is not baked into this image"**
+The weights are baked in at one revision and this node runs offline, so no other revision can be
+fetched. The message lists what the image has. Rebuild the image to change it.
 
 ## References
 
