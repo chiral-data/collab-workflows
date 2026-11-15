@@ -171,6 +171,93 @@ def canonicalise_label_numbering(path):
         handle.write("#\n")
 
 
+def collapse_to_first_model(path):
+    """Keep only the first model of an NMR/ensemble structure.
+
+    An mmCIF holding N models repeats every atom N times, distinguished only by
+    _atom_site.pdbx_PDB_model_num. Nothing downstream splits them: the inventory
+    de-duplicates by (chain, label_seq_id) so the residue counts look right, but the
+    file handed to RFD4 is N superimposed copies of the target. 2KOX is 640 models --
+    787,840 atom rows for a 76-residue protein.
+
+    Only the _atom_site loop is touched; every other line is passed through byte for
+    byte, so the entry's header survives.
+    """
+    def tokenise(line):
+        out, buf, quote = [], [], ""
+        for ch in line.rstrip("\n"):
+            if quote:
+                if ch == quote:
+                    quote = ""
+                    out.append("".join(buf))
+                    buf = []
+                else:
+                    buf.append(ch)
+            elif ch in "'\"":
+                quote = ch
+            elif ch.isspace():
+                if buf:
+                    out.append("".join(buf))
+                    buf = []
+            else:
+                buf.append(ch)
+        if buf:
+            out.append("".join(buf))
+        return out
+
+    with open(path, errors="replace") as handle:
+        lines = handle.readlines()
+
+    columns, start = [], None
+    for i, line in enumerate(lines):
+        if line.strip().startswith("_atom_site."):
+            if not columns:
+                start = i
+            columns.append(line.strip())
+        elif columns:
+            start_body = i
+            break
+    else:
+        return
+    if not columns or "_atom_site.pdbx_PDB_model_num" not in columns:
+        return
+    model_col = columns.index("_atom_site.pdbx_PDB_model_num")
+
+    first_model, models, kept, dropped = None, set(), [], 0
+    for line in lines[start_body:]:
+        stripped = line.strip()
+        if stripped.startswith("#") or stripped.startswith("loop_") or stripped.startswith("_"):
+            kept.append((None, line))
+            continue
+        fields = tokenise(line)
+        if len(fields) != len(columns):
+            kept.append((None, line))
+            continue
+        model = fields[model_col]
+        models.add(model)
+        if first_model is None:
+            first_model = model
+        if model == first_model:
+            kept.append((model, line))
+        else:
+            dropped += 1
+
+    if len(models) <= 1:
+        return
+
+    print(
+        f"WARNING: this structure holds {len(models)} models (an NMR or ensemble entry). "
+        f"Keeping model {first_model} and dropping {dropped} atom rows from the rest. "
+        "RFD4 is given one structure, not an ensemble; without this it would receive "
+        f"{len(models)} superimposed copies of the target. Upload a single-model file "
+        "if you want a specific one.",
+        flush=True,
+    )
+    with open(path, "w") as handle:
+        handle.writelines(lines[:start_body])
+        handle.writelines(line for _, line in kept)
+
+
 def normalise(src, dest):
     lower = src.lower()
     if lower.endswith(".cif.zst"):
@@ -346,6 +433,8 @@ def main():
             flush=True,
         )
         sys.exit(1)
+
+    collapse_to_first_model(target_cif)
 
     inventory = build_inventory(target_cif)
     inventory["source"] = source
