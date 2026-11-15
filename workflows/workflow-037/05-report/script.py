@@ -45,6 +45,21 @@ def fail(message):
     sys.exit(1)
 
 
+def int_param(env_name, display_name, default):
+    """Read a whole-number parameter, failing the way every other bad parameter does.
+
+    Casting inline at the point of use turns a typo into a raw ValueError traceback, which
+    reads as a crash in the workflow rather than as the user error it is.
+    """
+    raw = os.environ.get(env_name)
+    if raw is None or raw.strip() == "":
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        fail(f"{display_name} must be a whole number, got '{raw}'.")
+
+
 def build_html(metrics, structures, top_n):
     designs = metrics.get("designs", [])
     payload = json.dumps(
@@ -249,7 +264,7 @@ if (DATA.structures.length) select(DATA.structures[0].name);
 def main():
     os.makedirs("./outputs", exist_ok=True)
 
-    top_n = int(os.environ.get("PARAM_TOP_N", "10"))
+    top_n = int_param("PARAM_TOP_N", "top_n", 10)
     if top_n < 1:
         fail(f"top_n must be at least 1, got {top_n}")
 

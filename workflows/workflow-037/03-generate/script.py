@@ -50,6 +50,39 @@ def fail(message):
     sys.exit(1)
 
 
+def int_param(env_name, display_name, default):
+    """Read a whole-number parameter, failing the way every other bad parameter does.
+
+    Casting inline at the point of use turns a typo into a raw ValueError traceback, which
+    reads as a crash in the workflow rather than as the user error it is.
+    """
+    raw = os.environ.get(env_name)
+    if raw is None or raw.strip() == "":
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        fail(f"{display_name} must be a whole number, got '{raw}'.")
+
+
+def bool_param(env_name, display_name, default):
+    """Read a true/false parameter, accepting what a person would reasonably type.
+
+    Comparing against the literal "true" quietly treats "1", "yes" and "True " as false,
+    which reverses the default rather than reporting anything. Silva emits "true"/"false"
+    for a boolean parameter, so this mostly matters when the variable is set by hand.
+    """
+    raw = os.environ.get(env_name)
+    if raw is None or raw.strip() == "":
+        return default
+    value = raw.strip().lower()
+    if value in ("true", "1", "yes", "on"):
+        return True
+    if value in ("false", "0", "no", "off"):
+        return False
+    fail(f"{display_name} must be true or false, got '{raw}'.")
+
+
 def check_gpu():
     try:
         result = subprocess.run(["nvidia-smi"], capture_output=True)
@@ -278,28 +311,14 @@ def main():
 
     os.makedirs("./outputs", exist_ok=True)
 
-    num_replicates = int(os.environ.get("PARAM_NUM_REPLICATES", "4"))
-    seed = int(os.environ.get("PARAM_SEED", "42"))
-    disable_compile = os.environ.get("PARAM_DISABLE_COMPILE", "true").lower() == "true"
+    num_replicates = int_param("PARAM_NUM_REPLICATES", "num_replicates", 4)
+    seed = int_param("PARAM_SEED", "seed", 42)
+    disable_compile = bool_param("PARAM_DISABLE_COMPILE", "disable_compile", True)
     hf_ckpt_revision = os.environ.get(
         "PARAM_HF_CKPT_REVISION", "a06e2509c7033b010fc43614e9fd840303588502"
     )
-
-    try:
-        timeout_s = int(os.environ.get("PARAM_GENERATE_TIMEOUT_S", "3600"))
-    except ValueError:
-        fail(
-            "generate_timeout_s must be a whole number of seconds, got "
-            f"'{os.environ.get('PARAM_GENERATE_TIMEOUT_S')}'"
-        )
-
-    try:
-        batch_size = int(os.environ.get("PARAM_BATCH_SIZE", "1"))
-    except ValueError:
-        fail(
-            "batch_size must be a whole number, got "
-            f"'{os.environ.get('PARAM_BATCH_SIZE')}'"
-        )
+    timeout_s = int_param("PARAM_GENERATE_TIMEOUT_S", "generate_timeout_s", 3600)
+    batch_size = int_param("PARAM_BATCH_SIZE", "batch_size", 1)
 
     if num_replicates < 1:
         fail(f"num_replicates must be at least 1, got {num_replicates}")
