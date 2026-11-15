@@ -37,6 +37,7 @@ TABLE_COLUMNS = [
     ("n_interface_contacts", "Contacts"),
     ("n_target_residues_contacted", "Target res."),
     ("min_interchain_ca_distance_A", "Min CA-CA (Å)"),
+    ("steric_clash", "Clash"),
 ]
 
 
@@ -108,9 +109,18 @@ def build_html(metrics, structures, top_n):
     <div class="col-lg-7">
       <h2 class="h5">Designs</h2>
       <p class="text-muted small mb-2">
-        Ordered by interface contacts, descending &mdash; a convenience, not a ranking.
-        Generation ran with <code>~metrics</code>, so there is no confidence, affinity or
-        self-consistency estimate to rank by, and contact counts rise with designed length.
+        Ordered by interface contacts, descending, with clashing designs moved to the
+        bottom &mdash; a convenience, not a ranking. Generation ran with
+        <code>~metrics</code>, so there is no confidence, affinity or self-consistency
+        estimate to rank by, and contact counts rise with designed length.
+      </p>
+      <p class="text-muted small mb-2">
+        <strong>Clash</strong> marks a design whose closest inter-chain C&alpha;&ndash;C&alpha;
+        distance is under 3.8&nbsp;&Aring; &mdash; shorter than the C&alpha;&ndash;C&alpha;
+        virtual bond between two covalently joined residues, so the chains are passing
+        through each other rather than touching. Such a design has the highest contact
+        count of all, which is why it is ranked last here instead of first. Treat a
+        flagged design as discarded.
       </p>
       <div class="table-responsive">
         <table class="table table-sm table-hover align-middle" id="metrics-table">
@@ -283,14 +293,22 @@ def main():
 
     rows = metrics.get("designs", [])
     by_name = {row["design"]: row for row in rows}
-    # Convenience ordering, not a ranking — see the module docstring.
-    ordered = sorted(
-        designs,
-        key=lambda path: (
-            -(by_name.get(os.path.basename(path), {}).get("n_interface_contacts") or 0),
+
+    def order_key(path):
+        row = by_name.get(os.path.basename(path), {})
+        # A clashing design has backbone passing through the target, so it scores the
+        # *highest* raw contact count there is — ordering on contacts alone puts the
+        # least physical design at the top of the report and the first structure in the
+        # viewer. Sink them instead: they are still shown, still counted, and flagged in
+        # their own column, but they stop being what the reader sees first.
+        return (
+            bool(row.get("steric_clash")),
+            -(row.get("n_interface_contacts") or 0),
             os.path.basename(path),
-        ),
-    )
+        )
+
+    # Convenience ordering, not a ranking — see the module docstring.
+    ordered = sorted(designs, key=order_key)
     metrics["designs"] = [
         by_name[os.path.basename(path)]
         for path in ordered

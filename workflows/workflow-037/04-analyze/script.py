@@ -35,6 +35,15 @@ import sys
 
 CONTACT_CUTOFF_A = 8.0  # CA-CA. See the note below on why this is not node 02's 4.5.
 
+# Below this, two chains are interpenetrating rather than touching. The anchor is the
+# CA-CA virtual bond: consecutive, covalently bonded residues in a trans peptide sit
+# 3.80-3.81 A apart, and that is as close as two alpha carbons get in real polypeptide.
+# Two CAs on *different* chains closer than a covalent CA-CA bond is not a tight
+# interface, it is backbone passing through backbone. Generation is free to produce it,
+# nothing upstream rejects it, and it scores *better* on a raw contact count than a good
+# design does, so it has to be caught here or it reaches the top of the report.
+CLASH_CA_DISTANCE_A = 3.8
+
 HYDROPHOBIC = set("AVILMFWYC")
 POSITIVE = set("KR")
 NEGATIVE = set("DE")
@@ -60,6 +69,7 @@ COLUMNS = [
     "n_interface_contacts",
     "n_target_residues_contacted",
     "min_interchain_ca_distance_A",
+    "steric_clash",
     "chain_lengths",
 ]
 
@@ -193,6 +203,9 @@ def analyze(path):
         "n_interface_contacts": contacts,
         "n_target_residues_contacted": contacted,
         "min_interchain_ca_distance_A": min_distance,
+        "steric_clash": (
+            min_distance is not None and min_distance < CLASH_CA_DISTANCE_A
+        ),
         "chain_lengths": ";".join(f"{cid}:{len(res)}" for cid, res in chains),
     }
 
@@ -240,7 +253,18 @@ def main():
         print(
             f"  {row['design']}: designed chain {row['designed_chain']} "
             f"len={row['designed_length']}, contacts={row['n_interface_contacts']}, "
-            f"Rg={row['radius_of_gyration_A']} A",
+            f"Rg={row['radius_of_gyration_A']} A"
+            + (" [STERIC CLASH]" if row["steric_clash"] else ""),
+            flush=True,
+        )
+    clashing = [row["design"] for row in rows if row["steric_clash"]]
+    if clashing:
+        print(
+            f"WARNING: {len(clashing)} design(s) have an inter-chain CA-CA distance under "
+            f"{CLASH_CA_DISTANCE_A} A, which is shorter than the CA-CA virtual bond between "
+            "two bonded residues: the chains interpenetrate rather than dock. "
+            f"({', '.join(clashing)}) A clash inflates the contact count rather than "
+            "lowering it, so these would otherwise read as the best designs in the batch.",
             flush=True,
         )
     print("Wrote ./outputs/design_metrics.csv and ./outputs/design_metrics.json", flush=True)
