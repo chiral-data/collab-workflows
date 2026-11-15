@@ -1,5 +1,5 @@
 name = "Export FASTA"
-description = "Write the designed sequences as sequences.fasta, ready to hand to workflow-026 for refolding"
+description = "Write the designed sequences as a batch FASTA plus one single-design FASTA per design for workflow-026"
 inputs = [
   "*_generated.cif",
   "design_metrics.json",
@@ -7,6 +7,7 @@ inputs = [
 ]
 outputs = [
   "sequences.fasta",
+  "refold_*.fasta",
 ]
 
 [container]

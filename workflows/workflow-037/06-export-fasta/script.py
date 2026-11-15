@@ -1,18 +1,43 @@
 #!/usr/bin/env python3
 """Node 06 — Export FASTA.
 
-Write the designed sequences as `sequences.fasta`, which is exactly the filename and format
-workflow-026 (ColabFold) takes as its input, so refolding a batch of designs is a file copy
-rather than a reformatting job.
+Write the designed sequences in the filename and format workflow-026 (ColabFold) reads.
 
-Why this node exists: this workflow runs with `~metrics` and scores nothing, so a design's
-only real test is independent refolding — fold the sequence, check the fold matches the
-backbone RFD4 drew (self-consistency), and keep the designs that survive. That filter lives
-in workflow-026; this node is the handoff.
+Two artifacts, because they answer different questions:
 
-Each record holds one design's generated chain alone. Refolding that answers "does this
-sequence fold to the shape it was designed as?", which is the standard self-consistency
-check and the only one this handoff can support.
+  sequences.fasta        every design, one record each. The batch record, and what you
+                         read or archive. NOT what you hand to workflow-026.
+  refold_<design>.fasta  one design per file. This is the unit workflow-026 can process
+                         correctly, and there is one run of workflow-026 per file.
+
+Why not hand workflow-026 the batch directly, when its input is named sequences.fasta and
+would otherwise be a file copy: it processes one job per run, and a multi-record FASTA
+silently becomes one conflated job rather than N independent ones. The prediction step
+itself is fine — colabfold_batch makes each record its own job — but everything after it
+assumes a single job:
+
+  * 026/01_validate_fasta and 026/02_predict both set is_multimer = len(records) > 1, so N
+    independent monomers are labelled "multimer" and pair_mode auto-resolves to
+    unpaired_paired. Harmless to a single-chain prediction, wrong in every log line.
+  * 026/02_predict copies every colabfold output flat into ./outputs/, so N designs' files
+    land in one directory with nothing separating them.
+  * 026/03_analyze_confidence then globs *_scores_rank_*.json across all of them, takes
+    job_id from whichever file sorts first, sorts by rank alone and truncates to top_n. At
+    3 designs x 5 models the "top 5" are ranks 1,1,1,2,2 drawn from three different
+    designs, all reported under one design's name. Its chain_lengths comes from the whole
+    FASTA, so three designs' lengths are read as one job's three chains.
+  * 026/04_pymol_render takes its structure from an unsorted glob and its pLDDT from a
+    rank-sorted list — two different orderings over a mixed set.
+
+None of that fails loudly. It produces a confidence report about a design that does not
+exist. One design per file is what makes the handoff mean what it says.
+
+What refolding does and does not tell you: workflow-026 returns pLDDT and PAE — a
+confidence estimate. It does not compare the predicted structure against the backbone this
+workflow generated, and it cannot, because only the sequence travels. That comparison is
+self-consistency RMSD, it is the standard test for a generative design, and nothing in
+either workflow performs it today. A sequence can refold confidently into a fold that is
+not the one it was designed as, and this handoff would call that a success.
 
 There is deliberately no complex-export mode. Writing every chain colon-joined is the
 only encoding that would make ColabFold predict the complex, because workflow-026 hands
@@ -35,6 +60,7 @@ import sys
 
 LINE_WIDTH = 60
 OUTPUT_NAME = "sequences.fasta"
+PER_DESIGN_PREFIX = "refold_"
 MANIFEST_NAME = "generation_manifest.json"
 
 # Carried on every record's description line. sequences.fasta is the only artifact built
@@ -196,6 +222,12 @@ def main():
         for record_id, label, sequence in records:
             handle.write(f">{record_id} {label} {tag}\n{wrap(sequence)}\n")
 
+    # One file per design: the unit workflow-026 can process without conflating designs.
+    # See the module docstring for what goes wrong when it is handed the batch instead.
+    for record_id, label, sequence in records:
+        with open(f"./outputs/{PER_DESIGN_PREFIX}{record_id}.fasta", "w") as handle:
+            handle.write(f">{record_id} {label} {tag}\n{wrap(sequence)}\n")
+
     for name, why in skipped:
         print(f"WARNING: skipped {name}: {why}", flush=True)
     if unknown_total:
@@ -214,8 +246,21 @@ def main():
     )
     print(f"Every record is tagged: {tag}", flush=True)
     print(
-        "Hand this file to workflow-026 as its sequences.fasta to refold the designs and "
-        "filter on self-consistency; nothing in this workflow scores them.",
+        f"Also wrote {len(records)} single-design file(s) {PER_DESIGN_PREFIX}*.fasta.",
+        flush=True,
+    )
+    print(
+        "To refold: run workflow-026 once per " + PER_DESIGN_PREFIX + "*.fasta file, "
+        "renaming it to sequences.fasta. Do NOT hand it the batch file above — "
+        "workflow-026 reports one job per run, so several records in one file are "
+        "conflated into a single mislabelled result rather than refused.",
+        flush=True,
+    )
+    print(
+        "What comes back is pLDDT and PAE, a confidence estimate. It is not "
+        "self-consistency: nothing compares the prediction against the backbone generated "
+        "here, because only the sequence travels. A sequence can refold confidently into "
+        "the wrong fold.",
         flush=True,
     )
 

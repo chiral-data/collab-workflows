@@ -50,9 +50,13 @@ Do not use it as a one-stop binder campaign: this workflow generates and stops. 
 no pLDDT, no self-consistency RMSD, and the metrics it does report are geometry and composition, not
 confidence. For an end-to-end scored campaign use **workflow-033** (RFdiffusion → ProteinMPNN →
 Boltz2) or **workflow-013** (BoltzGen); to fold a sequence you already have, use **workflow-026**
-(ColabFold). The intended follow-up is to feed designs from here into workflow-026 and check
-self-consistency: node 06 writes `sequences.fasta` for exactly that, but the refolding and the
-filtering happen there, not here. The most common mistake is
+(ColabFold). The intended follow-up is to feed designs from here into workflow-026, which returns
+pLDDT and PAE for each design. Be clear about what that is: a confidence estimate, **not**
+self-consistency. Nothing compares the prediction against the backbone generated here, because node
+06 exports sequences and the designed backbone never travels. Self-consistency RMSD is the standard
+test for a generative design and neither workflow performs it today, so a sequence that refolds
+confidently into a different fold passes. Workflow-026 also filters nothing — it scores, and the
+judgement is yours. The most common mistake is
 residue numbering — see [Input requirements](#input-requirements).
 
 ## Architecture and data flow
@@ -206,23 +210,27 @@ so they cannot dilute the ratios.
 
 ### Node 06: Export FASTA
 
-**Goal:** The designed sequences in the form workflow-026 reads, so refolding is a file copy.
+**Goal:** The designed sequences in the form workflow-026 reads, one file per design.
 
 **Process:** Reads the sequence of each design out of its mmCIF (not out of the metrics table, so
 the structures stay authoritative) and writes one FASTA record per design to `sequences.fasta`,
-wrapped at 60 columns, ordered as node 04 ordered them. Each record holds the generated chain
-alone. Record ids are made filesystem-safe because ColabFold names its outputs after them. Designs
-with an empty or all-unknown sequence are skipped with a warning rather than written as junk.
+wrapped at 60 columns, ordered as node 04 ordered them, plus one single-design file
+`refold_<design>.fasta` each. Each record holds the generated chain alone. Record ids are made
+filesystem-safe because ColabFold names its outputs after them. Designs with an empty or
+all-unknown sequence are skipped with a warning rather than written as junk.
 
 **Scientific notes:** This node is the bridge to the scoring this workflow deliberately omits. A
-generated backbone plus sequence is a hypothesis; the standard test is self-consistency — fold the
-sequence independently and ask whether the prediction matches the designed backbone. Refolding the
-designed chain alone answers that. Unknown residues (`X`) are
+generated backbone plus sequence is a hypothesis, and the standard test is self-consistency: fold
+the sequence independently and measure the prediction against the designed backbone. **This handoff
+does not do that**, and cannot as wired, because only the sequence travels — what comes back is
+confidence, which a wrongly-folded sequence can also earn. Closing that gap needs the backbone
+carried alongside and an RMSD step that exists in neither workflow. Unknown residues (`X`) are
 counted and warned about, since ColabFold treats them as sequence gaps and they depress confidence
 for reasons that have nothing to do with the design.
 
 **Outputs:**
-- `sequences.fasta` — one record per design, ready for workflow-026
+- `sequences.fasta` — every design, one record each; the batch record, not the handoff
+- `refold_<design>.fasta` — one design per file; this is what workflow-026 takes, one run per file
 
 ### Node 05: Report
 
@@ -483,8 +491,16 @@ up as a changed first chain rather than as quietly wrong metrics.
 ### sequences.fasta
 
 One FASTA record per design, holding that design's generated chain and named after the design file
-so results can be traced back. Hand it to workflow-026 unchanged — the filename is the one that
-workflow expects.
+so results can be traced back.
+
+**Hand workflow-026 one `refold_<design>.fasta` at a time, renamed to `sequences.fasta` — not the
+batch file.** Workflow-026 reports one job per run. Its prediction step is fine with several
+records, since ColabFold makes each one its own job, but every step after it assumes a single job:
+`03_analyze_confidence` globs the score files of all designs together, takes the job id from
+whichever sorts first, then sorts by model rank alone and truncates. With three designs and five
+models the reported "top 5" are ranks 1,1,1,2,2 drawn from three different designs, filed under one
+design's name, with the three designs' lengths read as one job's three chains. It does not fail —
+it produces a confident report about a design that does not exist.
 
 Every record's description carries `UNSCREENED - computational design, requires biosecurity
 review`. This file is the only artifact built to leave the workflow, so it is the one that has to
