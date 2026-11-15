@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-python in_silico_screening.py
+python3 in_silico_screening.py

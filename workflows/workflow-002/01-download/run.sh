@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-python download.py
+python3 download.py

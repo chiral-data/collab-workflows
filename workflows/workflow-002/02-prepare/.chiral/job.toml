@@ -3,7 +3,7 @@ description = "Downloads and prepares target protein structure"
 outputs = ["*.pdb", "*.pqr", "config.txt"]
 
 [container]
-image = "ghcr.io/chiral-data/smina:2025_10_17_v2"
+image = "ghcr.io/chiral-data/smina:2025_11_06"
 
 [scripts]
 run = "run.sh"
