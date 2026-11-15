@@ -1,0 +1,134 @@
+{
+  "_comment": [
+    "Each fixture is a real RCSB entry chosen because probe_entry.py MEASURED the shape in",
+    "the downloaded file. 'evidence' is what that tool reported -- not a claim from the",
+    "literature and not a recollection. Re-run tests/probe_entry.py against the download",
+    "directory to confirm the entries still carry these shapes.",
+    "",
+    "'expect' entries with \"status\": \"open\" are known, documented gaps: check_fixtures.py",
+    "reports them as GAP and does not fail the run. Fixing one means deleting its status",
+    "field, at which point the suite enforces it."
+  ],
+  "fixtures": [
+    {
+      "id": "12E8",
+      "shape": "Fab with Kabat insertion codes in CDR-H2 and CDR-H3",
+      "evidence": "4 chains; 3 distinct insertion codes (A,B,C); 6 author numbers covering more than one residue; 80 zero-occupancy atoms",
+      "why": "Chain H carries 52A (CDR-H2), 82A/B/C (FR3) and 100A/B/C (CDR-H3). The CDR residues are exactly the ones a user would name as hotspots on an antibody target.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "inserted_residues_addressable", "finding": "#1"},
+        {"check": "dropped_chains_named", "finding": "#10", "status": "open"}
+      ]
+    },
+    {
+      "id": "1IGT",
+      "shape": "intact IgG: insertion codes plus N-linked glycans",
+      "evidence": "4 chains; 7 insertion codes; 6 duplicate author numbers; 6 non-polymer components (BMA,FUC,FUL,GAL,MAN,NAG); 18 zero-occupancy atoms",
+      "why": "Same insertion-code shape as 12E8 but with branched glycans attached, so it also exercises the non-polymer path.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "inserted_residues_addressable", "finding": "#1"},
+        {"check": "nonpolymer_named", "components": ["NAG"], "finding": "#4", "status": "open"},
+        {"check": "dropped_chains_named", "finding": "#10", "status": "open"}
+      ]
+    },
+    {
+      "id": "1G03",
+      "shape": "NMR ensemble, 20 models",
+      "evidence": "20 models in pdbx_PDB_model_num; 1 chain; 41620 atom rows",
+      "why": "Smallest honest multi-model case: 2081 atoms present 20 times over.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "log_mentions_models", "finding": "#5"},
+        {"check": "single_model_output", "finding": "#5"}
+      ]
+    },
+    {
+      "id": "2KOX",
+      "shape": "NMR ensemble, 640 models (stress case)",
+      "evidence": "640 models; 1 chain; 787840 atom rows for a 76-residue protein",
+      "why": "The size at which passing an ensemble through is unmissable: 640 superimposed copies of the target would reach RFD4 as one structure.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "log_mentions_models", "finding": "#5"},
+        {"check": "single_model_output", "finding": "#5"}
+      ]
+    },
+    {
+      "id": "1ZNF",
+      "shape": "zinc finger: NMR ensemble, bound Zn, capped termini",
+      "evidence": "37 models; 1 ZN non-polymer; 2 modified polymer components (ACE,NH2); 333 HETATM carrying a label_seq_id",
+      "why": "Three shapes at once, and the Zn is structural -- deleting it silently changes what the target is.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "log_mentions_models", "finding": "#5"},
+        {"check": "single_model_output", "finding": "#5"},
+        {"check": "nonpolymer_named", "components": ["ZN"], "finding": "#4"}
+      ]
+    },
+    {
+      "id": "1A3N",
+      "shape": "haemoglobin: 4 chains, haem cofactor, A/B altlocs",
+      "evidence": "4 chains; 1 HEM non-polymer; altlocs A,B; 37 zero-occupancy atoms",
+      "why": "The haem sits at the chain interface, so dropping it changes the interface the design is scored against.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "nonpolymer_named", "components": ["HEM"], "finding": "#4", "status": "open"},
+        {"check": "dropped_chains_named", "finding": "#10", "status": "open"}
+      ]
+    },
+    {
+      "id": "1BRS",
+      "shape": "barnase-barstar, 6 chains (three copies of the complex)",
+      "evidence": "6 chains; altlocs A,B; no insertion codes",
+      "why": "Five of six chains are dropped by the contig. A user who picked this entry for its interface should be told which copy survived.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "D"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "dropped_chains_named", "finding": "#10", "status": "open"}
+      ]
+    },
+    {
+      "id": "5O45",
+      "shape": "macrocyclic peptide bound to PD-L1 (this workflow's own sample input)",
+      "evidence": "2 chains; 5 modified polymer components (9KK,CCS,MEA,NH2,SAR); 106 HETATM carrying a label_seq_id; 44 zero-occupancy atoms; altlocs A,B,C",
+      "why": "The entry that first showed HETATM filtering shortens a chain. Also the only fixture with an altloc beyond B.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "B"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "chain_length", "chain": "B", "n_residues": 15, "finding": "#3"}
+      ]
+    },
+    {
+      "id": "1UBQ",
+      "shape": "ubiquitin: single chain, nothing unusual",
+      "evidence": "1 model; 1 chain; no insertion codes, no modified residues, no non-polymer, no altlocs, no zero-occupancy atoms",
+      "why": "Control. Any failure here is the harness or a regression in the common path, not an exotic input.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "monomer"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "control"},
+        {"check": "single_model_output", "finding": "control"},
+        {"check": "no_warnings", "finding": "control"}
+      ]
+    },
+    {
+      "id": "4ZQK",
+      "shape": "PD-1/PD-L1 complex (the documented worked example)",
+      "evidence": "2 chains; 1 NA ion; no insertion codes, no modified residues, no altlocs",
+      "why": "The example the README is written around. If this stops working the documentation is wrong.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "B"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "regression"},
+        {"check": "single_model_output", "finding": "regression"},
+        {"check": "nonpolymer_named", "components": ["NA"], "finding": "#4", "status": "open"}
+      ]
+    }
+  ]
+}

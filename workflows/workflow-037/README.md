@@ -610,6 +610,25 @@ this reason. It also makes the CA-CA geometry misleading: the macrocycle's alpha
 ring away from the contact surface, which is why a CA-CA epitope rule misses so much of its
 interface. 5O45 remains the right demo for `task=binder`, where chain B is ignored.
 
+## Regression suite
+
+`tests/` runs nodes 01 and 02 over ten real RCSB entries and checks the output against a
+measurement of the input, taken by a parser that is not the one the nodes use.
+
+```sh
+./tests/run_fixtures.sh
+```
+
+All ten entries exit 0 on both nodes, which is why the suite does not look at exit codes.
+It asks whether a residue the file contains can actually be addressed, whether an NMR
+ensemble was noticed, whether a cofactor was named before being dropped. The first run
+found twelve such answers wrong.
+
+Fixtures are chosen by measuring a downloaded structure, never from reputation, and
+`tests/fixtures.json` records the measurement next to each entry. Two findings are
+tracked there as known gaps (`"status": "open"`); they report without failing the run.
+See `tests/README.md`.
+
 ## Troubleshooting
 
 **Node 02: "Condition spec rejected by RFD4"**
