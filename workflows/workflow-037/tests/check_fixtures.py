@@ -15,8 +15,10 @@ Run:  python3 -I tests/check_fixtures.py <results-dir> <downloads-dir>
 
 Both directories are produced by tests/run_fixtures.sh.
 """
+import glob
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -220,7 +222,7 @@ def check_no_warnings(fx, _):
 # --- node 04 checks: these read a node 04 run rather than a node 01 inventory ------
 
 def load_metrics(case_dir):
-    path = os.path.join(case_dir, "outputs", "design_metrics.json")
+    path = os.path.join(case_dir, "n4", "outputs", "design_metrics.json")
     if not os.path.exists(path):
         return None
     with open(path) as handle:
@@ -249,7 +251,7 @@ def check_node04_designed_chain(case_dir, expect):
 def check_design_rows_in_numeric_order(case_dir, _):
     """design_10 must not sort between design_1 and design_2."""
     import csv
-    path = os.path.join(case_dir, "outputs", "design_metrics.csv")
+    path = os.path.join(case_dir, "n4", "outputs", "design_metrics.csv")
     if not os.path.exists(path):
         return FAIL, "node 04 produced no design_metrics.csv"
     with open(path) as handle:
@@ -266,9 +268,119 @@ def check_design_rows_in_numeric_order(case_dir, _):
     return FAIL, f"row order is lexicographic: {shown} ..."
 
 
+def check_node04_geometry(case_dir, expect):
+    """Node 04 must notice output that is not a folded polypeptide.
+
+    Nothing else in the pipeline would: contacts, net charge, composition and radius of
+    gyration are all computable on an unfolded chain, and all look ordinary. This is the
+    only check that would fail if the model itself were broken.
+    """
+    payload = load_metrics(case_dir)
+    if payload is None:
+        return FAIL, "node 04 produced no design_metrics.json"
+    designs = payload.get("designs") or []
+    if not designs:
+        return FAIL, "no designs in the metrics payload"
+    row = designs[0]
+    breaks, ratio = row.get("chain_breaks"), row.get("compactness_ratio")
+    detail = (f"chain_breaks={breaks} Rg={row.get('radius_of_gyration_A')} "
+              f"expected={row.get('expected_radius_of_gyration_A')} ratio={ratio}")
+    log = ""
+    log_path = os.path.join(case_dir, "n4.log")
+    if os.path.exists(log_path):
+        with open(log_path, errors="replace") as handle:
+            log = handle.read()
+
+    if "min_chain_breaks" in expect:
+        if (breaks or 0) < expect["min_chain_breaks"]:
+            return FAIL, detail + f"; expected at least {expect['min_chain_breaks']}"
+        if "peptide bond spans" not in log:
+            return FAIL, detail + "; breaks found but node 04 printed no warning"
+    if expect.get("max_chain_breaks") is not None:
+        if (breaks or 0) > expect["max_chain_breaks"]:
+            return FAIL, detail + f"; expected at most {expect['max_chain_breaks']}"
+    if expect.get("overextended") is True:
+        if ratio is None or ratio <= 1.8:
+            return FAIL, detail + "; expected a ratio above the 1.8 limit"
+        if "more extended than a folded protein" not in log:
+            return FAIL, detail + "; overextended but node 04 printed no warning"
+    if expect.get("overextended") is False:
+        if ratio is not None and ratio > 1.8:
+            return FAIL, detail + "; flagged as overextended but should not be"
+        if "more extended than a folded protein" in log:
+            return FAIL, detail + "; node 04 warned about a compact design"
+    return PASS, detail
+
+
+def check_node05_clash_ranked_last(case_dir, expect):
+    """A clashing design must not be presented first."""
+    path = os.path.join(case_dir, "n5", "outputs", "report.html")
+    if not os.path.exists(path):
+        return FAIL, "node 05 produced no report.html"
+    with open(path, errors="replace") as handle:
+        html = handle.read()
+    order = []
+    for name in re.findall(r'"name":\s*"(design_\d+_generated\.cif)"', html):
+        if name not in order:
+            order.append(name)
+    if not order:
+        return FAIL, "no design names found in the report"
+    clashing = expect.get("clashing", "design_0_generated.cif")
+    if clashing not in order:
+        return FAIL, f"{clashing} absent from the report; got {order}"
+    shown = [n.replace("_generated.cif", "") for n in order]
+    if order[-1] != clashing:
+        return FAIL, f"clashing design is not last: {shown}"
+    return PASS, f"order {shown}; clashing design last"
+
+
+def check_node05_reports_clash(case_dir, _):
+    path = os.path.join(case_dir, "n5", "outputs", "report.html")
+    if not os.path.exists(path):
+        return FAIL, "node 05 produced no report.html"
+    with open(path, errors="replace") as handle:
+        html = handle.read()
+    if "Clash" not in html:
+        return FAIL, "report has no Clash column"
+    if '"steric_clash": true' not in html.lower().replace("True", "true"):
+        return FAIL, "report does not carry a steric_clash flag"
+    return PASS, "Clash column present and a design is flagged"
+
+
+def check_node06_per_design_fasta(case_dir, expect):
+    """One FASTA per design, each holding exactly one record.
+
+    The batch file going to workflow-026 as a single multi-record run is what conflates
+    designs there, so the per-design files are the whole point of the export.
+    """
+    out = os.path.join(case_dir, "n6", "outputs")
+    per = sorted(glob.glob(os.path.join(out, "refold_*.fasta")))
+    want_n = expect["n_designs"]
+    if len(per) != want_n:
+        return FAIL, f"{len(per)} refold_*.fasta for {want_n} design(s)"
+    if not os.path.exists(os.path.join(out, "sequences.fasta")):
+        return FAIL, "no sequences.fasta batch file"
+    want_seq = expect.get("sequence")
+    for path in per:
+        with open(path, errors="replace") as handle:
+            lines = [l.strip() for l in handle if l.strip()]
+        headers = [l for l in lines if l.startswith(">")]
+        sequence = "".join(l for l in lines if not l.startswith(">"))
+        if len(headers) != 1:
+            return FAIL, f"{os.path.basename(path)} holds {len(headers)} records"
+        if want_seq and sequence != want_seq:
+            return FAIL, (f"{os.path.basename(path)} sequence {sequence!r} "
+                          f"!= designed chain {want_seq!r}")
+    return PASS, f"{len(per)} single-record file(s), each matching the designed chain"
+
+
 NODE04_CHECKS = {
     "node04_designed_chain": check_node04_designed_chain,
     "design_rows_in_numeric_order": check_design_rows_in_numeric_order,
+    "node04_geometry": check_node04_geometry,
+    "node05_clash_ranked_last": check_node05_clash_ranked_last,
+    "node05_reports_clash": check_node05_reports_clash,
+    "node06_per_design_fasta": check_node06_per_design_fasta,
 }
 
 
@@ -344,9 +456,9 @@ def main():
         rows.append(("node02", case["name"], status, detail))
         tally[status] += 1
 
-    # --- node 04, on structures built by make_designs.py ---
-    for case in manifest.get("node04", []):
-        case_dir = os.path.join(results, "_node04", case["name"])
+    # --- nodes 04, 05 and 06, on structures built by make_designs.py ---
+    for case in manifest.get("downstream", []):
+        case_dir = os.path.join(results, "_downstream", case["name"])
         for expect in case.get("expect", []):
             name = expect["check"]
             runner = NODE04_CHECKS.get(name)
@@ -359,7 +471,8 @@ def main():
             if status == FAIL and expect.get("status") == "open":
                 status = GAP
             tag = expect.get("finding", "")
-            rows.append(("node04", f"{name} [{tag}]" if tag else name, status, detail))
+            label = name.split("_")[0] if name.startswith("node0") else "node04"
+            rows.append((label, f"{name} [{tag}]" if tag else name, status, detail))
             tally[status] += 1
 
     width = max(len(r[1]) for r in rows) + 2

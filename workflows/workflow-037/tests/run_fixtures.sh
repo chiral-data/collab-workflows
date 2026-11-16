@@ -122,25 +122,50 @@ with open('$TESTS/fixtures.json') as f:
 done <<< "$names"
 
 echo
-echo "== node 04, on structures from tests/make_designs.py"
+echo "== nodes 04, 05 and 06, on structures from tests/make_designs.py"
 cases=$(python3 -I -c "
 import json
 with open('$TESTS/fixtures.json') as f:
-    for x in json.load(f).get('node04', []):
-        print(x['name'], x['n_designs'], str(x.get('swap_chains', False)), sep='|')
+    for x in json.load(f).get('downstream', []):
+        print(x['name'], x['n_designs'], x.get('shape', 'compact'),
+              x.get('length', 10), sep='|')
 ")
-while IFS='|' read -r NAME N SWAP; do
+while IFS='|' read -r NAME N SHAPE LEN; do
   [ -n "$NAME" ] || continue
-  D="$OUT/_node04/$NAME"; rm -rf "$D"; mkdir -p "$D/inputs" "$D/outputs"
-  cp "$WF/04-analyze/script.py" "$WF/04-analyze/run.sh" "$D/"
-  if [ "$SWAP" = "True" ]; then
-    python3 -I "$TESTS/make_designs.py" "$D/inputs" "$N" swap > /dev/null
-  else
-    python3 -I "$TESTS/make_designs.py" "$D/inputs" "$N" > /dev/null
-  fi
-  docker run --rm --network none -v "$D":/workspace -w /workspace \
-    "$IMG" bash run.sh > "$D/log" 2>&1
-  printf '  %-42s node04 rc=%s  (%s design(s))\n' "$NAME" "$?" "$N"
+  D="$OUT/_downstream/$NAME"; rm -rf "$D"
+  mkdir -p "$D/n4/inputs" "$D/n4/outputs" "$D/n5/inputs" "$D/n5/outputs" \
+           "$D/n6/inputs" "$D/n6/outputs"
+  python3 -I "$TESTS/make_designs.py" "$D/n4/inputs" "$N" "$SHAPE" "$LEN" > /dev/null
+
+  # Node 06 declares the generation manifest as an input. Node 03 is not run here, so
+  # the harness supplies the smallest one that carries real provenance fields.
+  python3 -I -c "
+import json
+json.dump({'seed': 0, 'designs_collected': $N, 'rfd4_proteina_version': 'fixture',
+           'securedna_screened': False},
+          open('$D/n4/inputs/generation_manifest.json', 'w'), indent=2)
+"
+  cp "$WF/04-analyze/script.py" "$WF/04-analyze/run.sh" "$D/n4/"
+  docker run --rm --network none -v "$D/n4":/workspace -w /workspace \
+    "$IMG" bash run.sh > "$D/n4.log" 2>&1
+  RC4=$?
+
+  cp "$WF/05-report/script.py" "$WF/05-report/run.sh" "$D/n5/"
+  cp "$D/n4/inputs"/*_generated.cif "$D/n5/inputs/" 2>/dev/null
+  cp "$D/n4/outputs"/* "$D/n5/inputs/" 2>/dev/null
+  docker run --rm --network none -v "$D/n5":/workspace -w /workspace \
+    "$IMG" bash run.sh > "$D/n5.log" 2>&1
+  RC5=$?
+
+  cp "$WF/06-export-fasta/script.py" "$WF/06-export-fasta/run.sh" "$D/n6/"
+  cp "$D/n4/inputs"/*_generated.cif "$D/n6/inputs/" 2>/dev/null
+  cp "$D/n4/inputs/generation_manifest.json" "$D/n6/inputs/" 2>/dev/null
+  cp "$D/n4/outputs"/* "$D/n6/inputs/" 2>/dev/null
+  docker run --rm --network none -v "$D/n6":/workspace -w /workspace \
+    "$IMG" bash run.sh > "$D/n6.log" 2>&1
+  RC6=$?
+
+  printf '  %-26s %-9s n=%-3s 04=%s 05=%s 06=%s\n' "$NAME" "$SHAPE" "$N" "$RC4" "$RC5" "$RC6"
 done <<< "$cases"
 
 echo

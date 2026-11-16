@@ -1,8 +1,8 @@
 # workflow-037 fixture suite
 
 Ten real RCSB entries run through nodes 01 and 02, the inputs node 02 must refuse, and
-node 04 driven by structures built for the purpose -- all checked against a measurement
-of the input rather than against an exit code.
+nodes 04, 05 and 06 driven by structures built for the purpose -- all checked against a
+measurement of the input rather than against an exit code.
 
 ## Why this exists
 
@@ -32,17 +32,37 @@ It runs three sections:
 - **rejections** -- inputs node 02 must refuse, asserting both the exit status and that
   the refusal gives the stated reason. One entry checks a legitimate override is still
   accepted, so a guard cannot pass by rejecting everything.
-- **node04** -- node 04 over structures from `make_designs.py`.
+- **downstream** -- nodes 04, 05 and 06 in sequence, over structures from
+  `make_designs.py`.
 
 Needs `docker`, `curl`, `python3`, and the image from `../Dockerfile`
 (override with `RFD4_IMAGE=...`). Structures are fetched once and cached.
 Exit status is 0 when nothing in the `FAIL` column; known gaps do not fail the run.
 
-Node 03 is out of scope: it needs a GPU and minutes per design. Node 04 is reached
-anyway, because it reads only chain ids, residue names, sequence numbers and CA
-coordinates, so `make_designs.py` builds two-chain structures directly. That exercises
-it exactly as a real design does, and deterministically, which a sampled design never
-could. Nodes 05 and 06 are not yet covered.
+Node 03 is out of scope: it needs a GPU and minutes per design. Everything after it is
+reached anyway, because nodes 04, 05 and 06 read only chain ids, residue names, sequence
+numbers and CA coordinates, so `make_designs.py` builds two-chain structures directly.
+That exercises them exactly as a real design does, and deterministically, which a sampled
+design never could.
+
+## What this does not establish
+
+The suite tests the plumbing, not the science. Passing means the pipeline does not
+silently corrupt, drop, mislabel or misnumber its input, and that it notices output which
+is not a folded polypeptide. It does not mean a design is good.
+
+Nothing here refolds a sequence, computes self-consistency, or compares a result against
+a published one. The fixtures are real entries chosen for the input shapes they carry,
+not because the workflow is known to reproduce a literature result on them. There is no
+positive control in the sense of a target with a known-good designed binder.
+
+The `model-sanity` cases are the closest thing to one. A broken checkpoint would leave
+every other check passing -- contacts, net charge, composition and radius of gyration are
+all computable on an unfolded chain and all look ordinary -- so node 04 measures CA-CA
+spacing and compares Rg against 2.2*N^0.38 A, and the suite feeds it a folded chain, an
+unfolded one and a broken one to prove the check fires where it should and stays quiet
+where it should. That catches a model that has stopped working. It will not catch a model
+that works and produces designs which do not bind.
 
 The pieces run on their own too:
 
