@@ -66,6 +66,9 @@ COLUMNS = [
     "hydrophobic_fraction",
     "net_charge",
     "radius_of_gyration_A",
+    "expected_radius_of_gyration_A",
+    "compactness_ratio",
+    "chain_breaks",
     "n_interface_contacts",
     "n_target_residues_contacted",
     "min_interchain_ca_distance_A",
@@ -132,6 +135,51 @@ def read_chains(path):
     return chains
 
 
+# A trans peptide bond puts consecutive alpha carbons 3.80-3.81 A apart; cis prolines
+# and ordinary distortion stay well inside this window. Outside it there is no bond.
+CA_BOND_MIN_A = 2.8
+CA_BOND_MAX_A = 4.8
+
+# A compact folded protein has Rg ~ 2.2 * N^0.38 A; a chemically denatured one follows
+# Rg ~ 2.54 * N^0.522 A (Kohn et al. 2004). The second over the first is 2.06 at N=60 and
+# 2.35 at N=150, so an unfolded chain sits at roughly twice the compact value whatever
+# its length, and the ratio separates a fold from a coil without knowing the fold.
+#
+# The limit is measured, not chosen. Nineteen designs from six archived runs of this
+# workflow ranged 0.94 to 1.49, the loose end being monomer and motif_scaffold runs,
+# which produce more elongated folds than binder runs do. 1.8 clears the worst real
+# design by 0.31 and sits 0.26 below the tightest coil. A straight chain, for reference,
+# comes out at 6.3.
+#
+# This is a broken-model check, not a quality check: it catches output that is not a
+# folded protein at all. It will not notice a design that folds and does not bind.
+COMPACT_COEFFICIENT = 2.2
+COMPACT_EXPONENT = 0.38
+COMPACTNESS_LIMIT = 1.8
+MIN_LENGTH_FOR_COMPACTNESS = 30
+
+
+def count_chain_breaks(coords):
+    """Consecutive alpha carbons that no peptide bond could join.
+
+    Computed over the CA positions in sequence order. A design arrives as one continuous
+    chain, so any break means the model emitted something that is not a polypeptide.
+    """
+    import numpy as np
+
+    if len(coords) < 2:
+        return 0
+    points = np.array(coords, dtype=float)
+    distances = np.sqrt(((points[1:] - points[:-1]) ** 2).sum(axis=1))
+    return int(((distances < CA_BOND_MIN_A) | (distances > CA_BOND_MAX_A)).sum())
+
+
+def expected_radius_of_gyration(n_residues):
+    if n_residues < 1:
+        return None
+    return COMPACT_COEFFICIENT * (n_residues ** COMPACT_EXPONENT)
+
+
 def radius_of_gyration(coords):
     import numpy as np
 
@@ -177,6 +225,19 @@ def analyze(path):
 
     contacts, contacted, min_distance = interface(designed_coords, target_coords)
     gyration = radius_of_gyration(designed_coords)
+    breaks = count_chain_breaks(designed_coords)
+    expected_gyration = expected_radius_of_gyration(len(designed))
+    ratio = (
+        round(gyration / expected_gyration, 2)
+        if gyration is not None and expected_gyration
+        else None
+    )
+    # Only a verdict where the relation means something; the number is still reported.
+    overextended = (
+        ratio is not None
+        and len(designed) >= MIN_LENGTH_FOR_COMPACTNESS
+        and ratio > COMPACTNESS_LIMIT
+    )
     if len(chains) > 2:
         print(
             f"WARNING: '{os.path.basename(path)}' has {len(chains)} chains. This node "
@@ -200,6 +261,11 @@ def analyze(path):
         "net_charge": sum(1 for c in sequence if c in POSITIVE)
         - sum(1 for c in sequence if c in NEGATIVE),
         "radius_of_gyration_A": round(gyration, 2) if gyration is not None else None,
+        "expected_radius_of_gyration_A": (
+            round(expected_gyration, 2) if expected_gyration is not None else None
+        ),
+        "compactness_ratio": ratio,
+        "chain_breaks": breaks,
         "n_interface_contacts": contacts,
         "n_target_residues_contacted": contacted,
         "min_interchain_ca_distance_A": min_distance,
@@ -249,6 +315,37 @@ def main():
     with open("./outputs/design_metrics.json", "w") as handle:
         json.dump(payload, handle, indent=2)
 
+    broken = [r for r in rows if r["chain_breaks"]]
+    if broken:
+        named = ", ".join(f"{r['design']} ({r['chain_breaks']})" for r in broken)
+        print(
+            f"WARNING: {len(broken)} design(s) contain a gap between consecutive alpha "
+            f"carbons that no peptide bond spans: {named}. A design arrives as one "
+            "continuous chain, so this is not a borderline geometry -- it means the "
+            "model emitted something that is not a polypeptide. Check the checkpoint "
+            "and the generation log before reading any other number here.",
+            flush=True,
+        )
+    loose = [
+        r for r in rows
+        if r["compactness_ratio"] is not None
+        and r["designed_length"] >= MIN_LENGTH_FOR_COMPACTNESS
+        and r["compactness_ratio"] > COMPACTNESS_LIMIT
+    ]
+    if loose:
+        named = ", ".join(
+            f"{r['design']} ({r['radius_of_gyration_A']} A vs "
+            f"{r['expected_radius_of_gyration_A']} A expected)" for r in loose
+        )
+        print(
+            f"WARNING: {len(loose)} design(s) are far more extended than a folded protein "
+            f"of their length: {named}. Rg should be near 2.2*N^0.38 A for a compact "
+            "fold; several times that is a chain that has not folded. This is what a "
+            "wrong checkpoint or a failed generation looks like, and no other metric "
+            "here would show it -- contacts, charge and composition are all still "
+            "computable on an unfolded chain.",
+            flush=True,
+        )
     for row in rows:
         print(
             f"  {row['design']}: designed chain {row['designed_chain']} "
