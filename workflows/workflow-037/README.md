@@ -627,7 +627,7 @@ ensemble was noticed, whether a modified residue survived the PDB conversion, wh
 cofactor was named before being dropped. The first run found twelve such answers wrong.
 
 Fixtures are chosen by measuring a downloaded structure, never from reputation, and
-`tests/fixtures.json` records the measurement next to each entry. Four findings are
+`tests/fixtures.json` records the measurement next to each entry. Two findings are
 tracked there as known gaps (`"status": "open"`); they report without failing the run.
 See `tests/README.md`.
 

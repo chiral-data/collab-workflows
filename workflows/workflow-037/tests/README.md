@@ -89,10 +89,6 @@ real-looking coordinates*, present in four of the twelve (12E8: 80 atoms, 5O45: 
 Expectations marked `"status": "open"` in `fixtures.json` report as `GAP` and do not fail
 the run. They are real, reproduced, and not yet fixed:
 
-- **#4** — non-polymer entities (HEM, NAG, NA) are dropped without being named. A haem at
-  a chain interface changes what the interface is.
-- **#10** — chains the contig does not preserve are deleted without being named. 1BRS
-  loses five of six.
 - **#27** — node 04 identifies the design as the first chain in the file. Node 02 now
   refuses the contig that would reverse that, so the reachable path is closed, but node
   04 itself is still position-dependent: the `reversed-chain-order` case shows it
