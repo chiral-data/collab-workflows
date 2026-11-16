@@ -488,6 +488,14 @@ measure, rather than reported as zero. For a two-chain design, zero contacts mea
 the target and can be dropped immediately; beyond that, these numbers rank nothing. `chain_lengths` records every chain, so an unexpected layout shows
 up as a changed first chain rather than as quietly wrong metrics.
 
+`chain_breaks` counts consecutive alpha carbons further apart than a peptide bond reaches, and
+`compactness_ratio` is `radius_of_gyration_A` over `expected_radius_of_gyration_A`, the latter being
+2.2·N^0.38 Å for a compact fold. These two exist to catch output that is not a folded polypeptide at
+all — a wrong checkpoint, a failed generation. Nothing else here would: contacts, charge, composition
+and even Rg itself are all computable on an unfolded chain and all look ordinary. A denatured chain
+sits near ratio 2.1; designs from this workflow have measured 0.94 to 1.49, and the warning fires
+above 1.8. They say nothing about whether a folded design is any *good*.
+
 ### sequences.fasta
 
 One FASTA record per design, holding that design's generated chain and named after the design file
@@ -630,6 +638,14 @@ Fixtures are chosen by measuring a downloaded structure, never from reputation, 
 `tests/fixtures.json` records the measurement next to each entry. Two findings are
 tracked there as known gaps (`"status": "open"`); they report without failing the run.
 See `tests/README.md`.
+
+**What this suite does not establish.** It tests the plumbing, not the science. Passing means the
+pipeline does not silently corrupt, drop, mislabel or misnumber what it is given, and that it
+notices output which is not a folded polypeptide. It does not mean any design is good. Nothing here
+refolds a sequence, computes self-consistency, or compares a result against a published one — the
+structures are chosen for the input shapes they carry, not because the workflow is known to
+reproduce a literature result on them. Design quality is unvalidated until something predicts the
+sequence back, which is what the workflow-026 handoff is for.
 
 ## Troubleshooting
 
