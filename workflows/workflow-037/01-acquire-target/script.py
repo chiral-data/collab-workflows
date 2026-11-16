@@ -194,17 +194,46 @@ def canonicalise_label_numbering(path):
                 occupied[key[0]] = neighbours
                 pending = True
 
+    # Non-polymers need a label_asym_id of their own. Giving every atom its author chain
+    # id puts the chain's waters and ligands in the same asym as its residues, and RFD4
+    # refuses that outright:
+    #   CIF label_asym_id 'A' mixes defined and missing label_seq_id values.
+    # Which meant the PDB path could never reach the GPU for any structure with waters in
+    # it -- that is, for essentially every crystal structure.
+    taken = set(auth_asym)
+
+    def fresh_asym_id():
+        import string
+        for letter in string.ascii_uppercase:
+            if letter not in taken:
+                taken.add(letter)
+                return letter
+        for first in string.ascii_uppercase:
+            for second in string.ascii_uppercase:
+                candidate = first + second
+                if candidate not in taken:
+                    taken.add(candidate)
+                    return candidate
+        fail("Ran out of label_asym_id values while separating non-polymers.")
+
+    nonpolymer_asym = {}
     counters = {}
     assigned = {}
     new_asym = []
     new_seq = []
     for i in range(n_atoms):
         chain = auth_asym[i]
-        new_asym.append(chain)
         key = (chain, auth_seq[i], ins_code[i])
         if key not in polymer:
+            # One asym per (chain, component): the chain's waters together, each ligand
+            # type its own, which is what an mmCIF from the PDB would look like.
+            bucket = (chain, comp[i])
+            if bucket not in nonpolymer_asym:
+                nonpolymer_asym[bucket] = fresh_asym_id()
+            new_asym.append(nonpolymer_asym[bucket])
             new_seq.append(".")  # ligands and waters carry no label_seq_id
             continue
+        new_asym.append(chain)
         if key not in assigned:
             counters[chain] = counters.get(chain, 0) + 1
             assigned[key] = counters[chain]
