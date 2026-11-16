@@ -777,6 +777,37 @@ BUILDERS = {
 }
 
 
+def report_dropped_chains(contig, inventory):
+    """Name the chains the contig does not carry into the designed system.
+
+    Everything the contig does not preserve is absent from what RFD4 is given. That is
+    the right default -- the point of a contig is to choose -- but it is a different
+    structure from the one that was uploaded, and nothing said so. 1BRS holds three
+    copies of the barnase-barstar complex; five of its six chains vanish here without
+    a word, and every interface number downstream is computed against what is left.
+    """
+    preserved = contig_chain_ids(contig)
+    if preserved is None:
+        # An unreadable contig is reported by check_contig and upstream; guessing which
+        # chains it drops would be worse than saying nothing.
+        return
+    dropped = [c for c in inventory["chains"] if c["label_asym_id"] not in preserved]
+    if not dropped:
+        return
+    named = ", ".join(
+        f"{c['label_asym_id']} (auth {c['auth_asym_id']}, {c['n_residues']} residues)"
+        for c in dropped
+    )
+    print(
+        f"WARNING: the contig preserves {', '.join(sorted(preserved))}. "
+        f"{len(dropped)} other chain(s) in target.cif are not carried into the designed "
+        f"system: {named}. They are absent from the model's view and from every interface "
+        "number computed downstream. Widen the contig if one of them is part of the "
+        "interface you are designing against.",
+        flush=True,
+    )
+
+
 def check_contig(contig):
     """Upstream rejects a contig whose segments are all expandable.
 
@@ -1129,6 +1160,7 @@ def main():
             )
     if contig:
         check_contig(contig)
+        report_dropped_chains(contig, inventory)
 
     example = {"input": "target.cif"}
     if as_annotated_cif:

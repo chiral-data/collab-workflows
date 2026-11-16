@@ -148,9 +148,15 @@ def check_dropped_chains_named(fx, _):
     dropped = [c for c in fx.chains if c not in contig]
     if not dropped:
         return PASS, "contig preserves every chain"
-    said = any(word in fx.n2_log for word in ("not preserved", "dropped", "discard"))
-    detail = f"{len(dropped)} dropped {dropped}; node 02 names them: {said}"
-    return (PASS, detail) if said else (FAIL, detail)
+    # Each dropped chain must be named individually. A phrase match would pass on the
+    # unrelated "derived contig ... discarded" note that a contig override prints.
+    warnings = "\n".join(
+        line for line in fx.n2_log.splitlines() if line.startswith("WARNING"))
+    unnamed = [c for c in dropped if f"{c} (auth " not in warnings]
+    detail = f"{len(dropped)} dropped {dropped}"
+    if unnamed:
+        return FAIL, detail + f"; not named in any warning: {unnamed}"
+    return PASS, detail + "; each one named in a warning"
 
 
 def check_chain_length(fx, expect):
