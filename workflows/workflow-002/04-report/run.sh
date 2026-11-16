@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-python report.py
+python3 report.py

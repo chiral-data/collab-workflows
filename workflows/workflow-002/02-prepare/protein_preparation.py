@@ -7,6 +7,7 @@ Converted from Protein_Preparation/Protein_Preparation.ipynb
 
 import os
 import subprocess
+import sys
 import urllib.request
 
 import numpy as np
@@ -209,7 +210,9 @@ def add_amber_charges(fixed_pdb_file):
 
     try:
         subprocess.run(
-            ["pdb2pqr", "--ff=AMBER", fixed_pdb_file, pqr_file],
+            # Invoked as a module, not the console script: the image's
+            # pdb2pqr entry point resolves to a Python 2 interpreter.
+            [sys.executable, "-m", "pdb2pqr", "--ff=AMBER", fixed_pdb_file, pqr_file],
             check=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,

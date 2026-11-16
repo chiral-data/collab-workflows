@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-python protein_preparation.py
+python3 protein_preparation.py

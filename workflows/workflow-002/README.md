@@ -167,7 +167,7 @@ A text file listing all successfully docked compounds sorted by binding energy (
 All nodes use the same container image:
 
 ```bash
-docker pull ghcr.io/chiral-data/smina:2025_10_17_v2
+docker pull ghcr.io/chiral-data/smina:2025_11_06
 ```
 
 ### Running on Silva
