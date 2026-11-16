@@ -612,20 +612,22 @@ interface. 5O45 remains the right demo for `task=binder`, where chain B is ignor
 
 ## Regression suite
 
-`tests/` runs nodes 01 and 02 over ten real RCSB entries and checks the output against a
-measurement of the input, taken by a parser that is not the one the nodes use.
+`tests/` runs nodes 01 and 02 over ten real RCSB entries, checks that node 02 refuses
+the inputs it should, and drives node 04 with structures built for the purpose. Output
+is checked against a measurement of the input, taken by a parser that is not the one the
+nodes use.
 
 ```sh
 ./tests/run_fixtures.sh
 ```
 
-All ten entries exit 0 on both nodes, which is why the suite does not look at exit codes.
+Every entry exits 0 on both nodes, which is why the suite does not look at exit codes.
 It asks whether a residue the file contains can actually be addressed, whether an NMR
-ensemble was noticed, whether a cofactor was named before being dropped. The first run
-found twelve such answers wrong.
+ensemble was noticed, whether a modified residue survived the PDB conversion, whether a
+cofactor was named before being dropped. The first run found twelve such answers wrong.
 
 Fixtures are chosen by measuring a downloaded structure, never from reputation, and
-`tests/fixtures.json` records the measurement next to each entry. Two findings are
+`tests/fixtures.json` records the measurement next to each entry. Four findings are
 tracked there as known gaps (`"status": "open"`); they report without failing the run.
 See `tests/README.md`.
 
