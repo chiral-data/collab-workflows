@@ -23,8 +23,16 @@ import sys
 
 R_KCAL = 1.9872036e-3  # gas constant in kcal/(mol·K)
 
-binder_chain = os.environ.get('PARAM_BINDER_CHAIN', 'A')
-receptor_chain = os.environ.get('PARAM_RECEPTOR_CHAIN', 'B')
+# Fixed, not configurable. This node only ever reads node 04's folded complexes,
+# and node 02 guarantees their labelling. They were previously params, which made
+# receptor_chain collide with the workflow-level param of the same name — that one
+# means "the chain to extract from the input PDB" and is merged into every job, so
+# node 05 inherited its 'A' and scored each binder against itself.
+BINDER_CHAIN = 'A'
+RECEPTOR_CHAIN = 'B'
+
+binder_chain = BINDER_CHAIN
+receptor_chain = RECEPTOR_CHAIN
 temperature = float(os.environ.get('PARAM_TEMPERATURE', '25.0'))
 distance_cutoff = float(os.environ.get('PARAM_DISTANCE_CUTOFF', '5.5'))
 top_n = int(os.environ.get('PARAM_TOP_N', '10'))

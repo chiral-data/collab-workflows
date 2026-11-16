@@ -16,7 +16,7 @@ hint    = "Chain ID of the receptor in the input PDB (used in node 01; nodes 02-
 [params.hotspot_residues]
 type    = "string"
 default = ""
-hint    = "Comma-separated residue IDs for binding site, e.g. A55,A58,A102. Empty = RFdiffusion selects automatically"
+hint    = "Comma-separated residue IDs for binding site, e.g. A38,A42,A45. Empty = RFdiffusion selects automatically"
 
 [params.num_designs]
 type    = "integer"

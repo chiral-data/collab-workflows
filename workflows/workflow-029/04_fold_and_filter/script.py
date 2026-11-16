@@ -3,7 +3,7 @@
 ColabFold fold-and-filter for binder designs.
 
 Key conventions:
-- Chain A = binder, chain B = receptor (RFdiffusion convention)
+- Chain A = binder, chain B = receptor (relabelled by node 02)
 - ProteinMPNN FASTA files contain num_seq_per_target records each.
   We iterate every record, creating one ColabFold job per sequence.
   Design IDs: design_001_seq_0, design_001_seq_1, ...
@@ -28,7 +28,7 @@ from Bio.PDB import PDBParser, PPBuilder, Superimposer
 os.makedirs('./outputs/folded', exist_ok=True)
 
 num_recycle = int(os.environ.get('PARAM_NUM_RECYCLE', '6'))
-msa_mode = os.environ.get('PARAM_MSA_MODE', 'single_sequence')
+msa_mode = os.environ.get('PARAM_MSA_MODE', 'mmseqs2_uniref_env')
 min_iptm = float(os.environ.get('PARAM_MIN_IPTM', '0.6'))
 min_plddt_binder = float(os.environ.get('PARAM_MIN_PLDDT_BINDER', '80.0'))
 max_bb_rmsd = float(os.environ.get('PARAM_MAX_BB_RMSD', '1.5'))
@@ -43,15 +43,33 @@ print(f'Filters: iPTM>={min_iptm}, pLDDT_binder>={min_plddt_binder}, '
       f'RMSD<={max_bb_rmsd}, PAE_interaction<={max_pae_interaction}', flush=True)
 
 
+def read_break_records(pdb_path):
+    """(prev, next, missing, distance) per chain break, as node 01 measured them."""
+    breaks = []
+    with open(pdb_path) as f:
+        for line in f:
+            if line.startswith('REMARK 999 BREAK '):
+                fields = line.split()
+                breaks.append((int(fields[3]), int(fields[4]), int(fields[5]), float(fields[6])))
+            elif not line.startswith('REMARK'):
+                break
+    return breaks
+
+
 def get_receptor_sequence(pdb_path):
-    """Extract receptor sequence from validated_target.pdb chain A using PPBuilder."""
+    """Receptor sequence from validated_target.pdb chain A using PPBuilder.
+
+    PPBuilder splits on the C-N distance and the fragments are concatenated, so a
+    gap in the deposited coordinates is folded as though a peptide bond spanned
+    it. ColabFold cannot express a gap inside a chain, and trimming to one
+    segment is worse: the fragment models at around 42 pLDDT where the whole
+    chain reaches 81, and interface PAE follows the worse-modelled chain.
+    """
     parser = PDBParser(QUIET=True)
     structure = parser.get_structure('receptor', pdb_path)
     ppb = PPBuilder()
-    seqs = []
-    for pp in ppb.build_peptides(structure[0]['A']):
-        seqs.append(str(pp.get_sequence()))
-    return ''.join(seqs)
+    return ''.join(str(pp.get_sequence())
+                   for pp in ppb.build_peptides(structure[0]['A']))
 
 
 def get_ca_atoms_by_position(chain):
@@ -102,7 +120,14 @@ def compute_rmsd(folded_pdb_path, backbone_pdb_path):
     return float(sup.rms), None
 
 
-# Extract receptor sequence once
+# Extract receptor sequence once, whole. Any chain break is reported rather than
+# cut around: see the docstring above for why trimming is the worse trade.
+receptor_breaks = read_break_records('./inputs/validated_target.pdb')
+if receptor_breaks:
+    spans = ', '.join(f'{p}|{n} ({m} missing, {d:.1f} Å)' for p, n, m, d in receptor_breaks)
+    print(f'WARNING: receptor carries {len(receptor_breaks)} chain break(s), folded as though '
+          f'bonded because a ColabFold chain cannot express a gap: {spans}', flush=True)
+
 receptor_seq = get_receptor_sequence('./inputs/validated_target.pdb')
 if not receptor_seq:
     print('ERROR: Could not extract receptor sequence from validated_target.pdb', flush=True)
@@ -191,7 +216,7 @@ for fasta_path in fasta_files:
                 print(f'  WARNING: No rank-001 score JSON found for {design_seq_id}', flush=True)
                 filter_report.append({
                     'design_id': design_seq_id,
-                    'iptm': None, 'plddt_binder': None,
+                    'iptm': None, 'plddt_binder': None, 'plddt_receptor': None,
                     'bb_rmsd': None, 'pae_interaction': None,
                     'pass': False, 'fail_reasons': ['no_score_file'],
                 })
@@ -205,6 +230,11 @@ for fasta_path in fasta_files:
             # pLDDT binder: first binder_length elements of flat plddt array
             plddt_all = scores.get('plddt', [])
             plddt_binder = float(np.mean(plddt_all[:binder_length])) if plddt_all else 0.0
+            # The receptor is the remainder of the same array. Diagnostic only, never
+            # filtered on: without it a failing funnel cannot distinguish a bad design
+            # from a receptor that was never modelled.
+            plddt_receptor = (float(np.mean(plddt_all[binder_length:]))
+                              if len(plddt_all) > binder_length else None)
 
             # PAE interaction: mean of the off-diagonal cross-chain block
             # Block rows 0..binder_length-1, cols binder_length..end (and its transpose)
@@ -258,6 +288,7 @@ for fasta_path in fasta_files:
                 'design_id': design_seq_id,
                 'iptm': round(iptm, 4),
                 'plddt_binder': round(plddt_binder, 3),
+                'plddt_receptor': round(plddt_receptor, 3) if plddt_receptor is not None else None,
                 'bb_rmsd': round(bb_rmsd, 3) if bb_rmsd is not None else None,
                 'pae_interaction': round(pae_interaction, 3) if pae_interaction != float('inf') else None,
                 'pass': passed,
@@ -267,8 +298,9 @@ for fasta_path in fasta_files:
 
             status = 'PASS' if passed else f'FAIL ({",".join(fail_reasons)})'
             rmsd_str = f'{bb_rmsd:.2f}' if bb_rmsd is not None else 'N/A'
+            receptor_str = f'{plddt_receptor:.1f}' if plddt_receptor is not None else 'N/A'
             print(f'  {design_seq_id}: iPTM={iptm:.3f} pLDDT={plddt_binder:.1f} '
-                  f'RMSD={rmsd_str} '
+                  f'pLDDT_receptor={receptor_str} RMSD={rmsd_str} '
                   f'PAE={pae_interaction:.1f} → {status}', flush=True)
 
             if passed and folded_pdb_path:
