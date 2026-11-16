@@ -21,7 +21,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from probe_entry import probe  # noqa: E402
+from probe_entry import atom_site, probe  # noqa: E402
 
 PASS, FAIL, GAP, SKIP = "PASS", "FAIL", "GAP", "SKIP"
 
@@ -35,7 +35,7 @@ class Fixture:
         base = os.path.join(results, self.id)
         self.inv_path = os.path.join(base, "n1", "outputs", "target_inventory.json")
         self.out_cif = os.path.join(base, "n1", "outputs", "target.cif")
-        self.src_cif = os.path.join(downloads, self.id + ".cif")
+        self.src_cif = os.path.join(downloads, spec.get("source", self.id + ".cif"))
         self.n1_log = self._read(os.path.join(base, "n1.log"))
         self.n2_log = self._read(os.path.join(base, "n2.log"))
         self.spec_yaml = self._read(
@@ -150,11 +150,107 @@ def check_chain_length(fx, expect):
         FAIL, f"chain {cid}: {got} residues, expected {want}")
 
 
+def check_chain_nonstandard(fx, expect):
+    """Non-standard residues must be counted. If they are dropped from the chain instead,
+    the count reads 0 and the heavily-modified-chain warning can never fire."""
+    cid, want = expect["chain"], expect["n_nonstandard"]
+    chain = fx.chains.get(cid)
+    if chain is None:
+        return FAIL, f"chain {cid} absent (have {sorted(fx.chains)})"
+    got = chain["n_nonstandard"]
+    detail = f"chain {cid}: {got} non-standard of {chain['n_residues']}"
+    return (PASS, detail) if got == want else (FAIL, detail + f", expected {want}")
+
+
+def check_no_mixed_asym_id(fx, _):
+    """No label_asym_id may hold both polymer and non-polymer atoms.
+
+    RFD4 refuses such a file outright ("mixes defined and missing label_seq_id values"),
+    so this is not a style point -- it decides whether the structure can be used at all.
+    """
+    if not os.path.exists(fx.out_cif):
+        return FAIL, "no target.cif"
+    idx, rows = atom_site(fx.out_cif)
+    i_asym = idx.get("_atom_site.label_asym_id")
+    i_seq = idx.get("_atom_site.label_seq_id")
+    i_comp = idx.get("_atom_site.label_comp_id")
+    if i_asym is None or i_seq is None:
+        return FAIL, "target.cif has no label_asym_id/label_seq_id columns"
+    tally = {}
+    for row in rows:
+        has_seq = row[i_seq] not in (".", "?", "")
+        entry = tally.setdefault(row[i_asym], [0, 0, set()])
+        entry[0 if has_seq else 1] += 1
+        if not has_seq and i_comp is not None:
+            entry[2].add(row[i_comp])
+    mixed = [(a, v) for a, v in tally.items() if v[0] and v[1]]
+    if mixed:
+        asym, (withseq, without, comps) = mixed[0]
+        return FAIL, (f"{len(mixed)} mixed; label_asym_id {asym} has {withseq} polymer "
+                      f"and {without} non-polymer atoms {sorted(comps)[:4]}")
+    return PASS, f"{len(tally)} asym id(s), none mixing polymer and non-polymer"
+
+
 def check_no_warnings(fx, _):
     warnings = [l for l in fx.n1_log.splitlines() if l.startswith("WARNING")]
     if warnings:
         return FAIL, f"{len(warnings)} warning(s): {warnings[0][:70]}"
     return PASS, "clean run"
+
+
+# --- node 04 checks: these read a node 04 run rather than a node 01 inventory ------
+
+def load_metrics(case_dir):
+    path = os.path.join(case_dir, "outputs", "design_metrics.json")
+    if not os.path.exists(path):
+        return None
+    with open(path) as handle:
+        return json.load(handle)
+
+
+def check_node04_designed_chain(case_dir, expect):
+    """Node 04 names the first chain of the file as the design. These inputs are built
+    with a known designed chain, so the answer is checkable rather than plausible."""
+    payload = load_metrics(case_dir)
+    if payload is None:
+        return FAIL, "node 04 produced no design_metrics.json"
+    designs = payload.get("designs") or []
+    if not designs:
+        return FAIL, "no designs in the metrics payload"
+    row = designs[0]
+    got_chain, got_len = row.get("designed_chain"), row.get("designed_length")
+    want_chain, want_len = expect["chain"], expect["n_residues"]
+    detail = (f"designed_chain={got_chain} designed_length={got_len} "
+              f"(chain_lengths {row.get('chain_lengths')})")
+    if got_chain == want_chain and got_len == want_len:
+        return PASS, detail
+    return FAIL, detail + f"; expected {want_chain}/{want_len}"
+
+
+def check_design_rows_in_numeric_order(case_dir, _):
+    """design_10 must not sort between design_1 and design_2."""
+    import csv
+    path = os.path.join(case_dir, "outputs", "design_metrics.csv")
+    if not os.path.exists(path):
+        return FAIL, "node 04 produced no design_metrics.csv"
+    with open(path) as handle:
+        names = [row["design"] for row in csv.DictReader(handle)]
+
+    def index(name):
+        digits = "".join(c for c in name.split("_")[1] if c.isdigit())
+        return int(digits) if digits else -1
+
+    got = [index(n) for n in names]
+    if got == sorted(got):
+        return PASS, f"{len(got)} rows in numeric order"
+    shown = " ".join(n.replace("_generated.cif", "") for n in names[:6])
+    return FAIL, f"row order is lexicographic: {shown} ..."
+
+
+NODE04_CHECKS = {
+    "node04_designed_chain": check_node04_designed_chain,
+    "design_rows_in_numeric_order": check_design_rows_in_numeric_order,
+}
 
 
 CHECKS = {
@@ -165,6 +261,8 @@ CHECKS = {
     "nonpolymer_named": check_nonpolymer_named,
     "dropped_chains_named": check_dropped_chains_named,
     "chain_length": check_chain_length,
+    "chain_nonstandard": check_chain_nonstandard,
+    "no_mixed_asym_id": check_no_mixed_asym_id,
     "no_warnings": check_no_warnings,
 }
 
@@ -195,6 +293,54 @@ def main():
                 status = GAP
             tag = expect.get("finding", "")
             rows.append((fx.id, f"{name} [{tag}]" if tag else name, status, detail))
+            tally[status] += 1
+
+    # --- node 02 must refuse these, and must not refuse the last one ---
+    for case in manifest.get("rejections", []):
+        slug = case["name"].replace(" ", "-")
+        case_dir = os.path.join(results, "_rejections", slug)
+        rc_path = os.path.join(case_dir, "rc")
+        if not os.path.exists(rc_path):
+            rows.append(("node02", case["name"], FAIL, "case was not run"))
+            tally[FAIL] += 1
+            continue
+        with open(rc_path) as handle:
+            rc = handle.read().strip()
+        log = ""
+        log_path = os.path.join(case_dir, "log")
+        if os.path.exists(log_path):
+            with open(log_path, errors="replace") as handle:
+                log = handle.read()
+        if case.get("expect_ok"):
+            status = PASS if rc == "0" else FAIL
+            detail = f"rc={rc}, accepted as it should be" if rc == "0" else f"rc={rc}, refused"
+        else:
+            fragment = case.get("expect_error", "")
+            if rc == "0":
+                status, detail = FAIL, "accepted; node 02 raised nothing"
+            elif fragment and fragment not in log:
+                status, detail = FAIL, f"refused (rc={rc}) but not for the stated reason"
+            else:
+                status, detail = PASS, f"refused (rc={rc}) with the expected reason"
+        rows.append(("node02", case["name"], status, detail))
+        tally[status] += 1
+
+    # --- node 04, on structures built by make_designs.py ---
+    for case in manifest.get("node04", []):
+        case_dir = os.path.join(results, "_node04", case["name"])
+        for expect in case.get("expect", []):
+            name = expect["check"]
+            runner = NODE04_CHECKS.get(name)
+            if runner is None:
+                status, detail = SKIP, "no such check"
+            elif not os.path.isdir(case_dir):
+                status, detail = FAIL, "case was not run"
+            else:
+                status, detail = runner(case_dir, expect)
+            if status == FAIL and expect.get("status") == "open":
+                status = GAP
+            tag = expect.get("finding", "")
+            rows.append(("node04", f"{name} [{tag}]" if tag else name, status, detail))
             tally[status] += 1
 
     width = max(len(r[1]) for r in rows) + 2

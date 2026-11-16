@@ -103,7 +103,22 @@
       "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "B"},
       "expect": [
         {"check": "label_to_auth_complete", "finding": "#1"},
-        {"check": "chain_length", "chain": "B", "n_residues": 15, "finding": "#3"}
+        {"check": "chain_length", "chain": "B", "n_residues": 15, "finding": "#3"},
+        {"check": "no_mixed_asym_id", "finding": "#3b"}
+      ]
+    },
+    {
+      "id": "5O45-pdb",
+      "source": "5O45.pdb",
+      "shape": "the same macrocycle entry, taken through the PDB conversion path",
+      "evidence": "chain B is 15 residues, 7 non-standard (MEA, 9KK, SAR, MEA, SAR, CCS, NH2); 14 carry a full N/CA/C backbone and NH2 is an amide cap carrying only N; the chain's waters start at 101",
+      "why": "A PDB file has no label_seq_id, so node 01 assigns it. Deciding polymer membership from the ATOM/HETATM flag deleted every modified residue: this chain came out as 8 residues reporting n_nonstandard=0, which also disarmed the warning that exists to catch a heavily modified chain. The same entry as the mmCIF fixture above, so the two paths can be compared directly.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "B"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "chain_length", "chain": "B", "n_residues": 15, "finding": "#3"},
+        {"check": "chain_nonstandard", "chain": "B", "n_nonstandard": 7, "finding": "#3"},
+        {"check": "no_mixed_asym_id", "finding": "#3b"}
       ]
     },
     {
@@ -128,6 +143,53 @@
         {"check": "label_to_auth_complete", "finding": "regression"},
         {"check": "single_model_output", "finding": "regression"},
         {"check": "nonpolymer_named", "components": ["NA"], "finding": "#4", "status": "open"}
+      ]
+    }
+  ],
+
+  "_rejections_comment": "Inputs node 02 must REFUSE, and one it must still accept. A guard that cannot be shown refusing is not a guard.",
+  "rejections": [
+    {
+      "id": "4ZQK",
+      "name": "target-first contig is refused",
+      "why": "RFD4 writes chains in contig order and node 04 reads the first chain as the design, so a contig naming the target first makes designed_chain, designed_length, the designed sequence, the hydrophobic fraction, the net charge and the radius of gyration all describe the target. Nothing downstream can notice: the chain count is unchanged and every number is plausible.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_CONTIG": "A1-115, /0, 50-120"},
+      "expect_error": "puts the preserved segment"
+    },
+    {
+      "id": "4ZQK",
+      "name": "designed-first contig is still accepted",
+      "why": "The guard above must not cost a legitimate override.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_CONTIG": "50-120, /0, A1-115"},
+      "expect_ok": true
+    }
+  ],
+
+  "_node04_comment": "Node 03 needs a GPU and minutes per design, so node 04 is tested on structures built by tests/make_designs.py. Node 04 reads only chain ids, residue names, sequence numbers and CA coordinates, so a hand-built two-chain mmCIF exercises it exactly as a real design does -- and deterministically, which a sampled design never could.",
+  "node04": [
+    {
+      "name": "designed-chain-is-first",
+      "n_designs": 1,
+      "why": "Pins the convention node 02's contig guard exists to protect.",
+      "expect": [
+        {"check": "node04_designed_chain", "chain": "B", "n_residues": 10, "finding": "#27"}
+      ]
+    },
+    {
+      "name": "reversed-chain-order",
+      "n_designs": 1,
+      "swap_chains": true,
+      "why": "The same atoms with the chains written in the opposite order. Node 04 still cannot tell, which is why the guard lives in node 02; this keeps the residual gap visible rather than remembered.",
+      "expect": [
+        {"check": "node04_designed_chain", "chain": "B", "n_residues": 10, "finding": "#27", "status": "open"}
+      ]
+    },
+    {
+      "name": "ordering-at-12-designs",
+      "n_designs": 12,
+      "why": "Lexicographic sort puts design_10 and design_11 between design_1 and design_2. Display order only -- every row carries its own name, and nodes 05 and 06 key by name rather than by position -- but a reader reconciling the table against a run directory should not have to work that out.",
+      "expect": [
+        {"check": "design_rows_in_numeric_order", "finding": "#51", "status": "open"}
       ]
     }
   ]
