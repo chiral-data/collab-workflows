@@ -114,14 +114,27 @@ def check_single_model_output(fx, _):
 
 
 def check_nonpolymer_named(fx, expect):
+    """A non-polymer in the file must reach both the inventory and the printed output.
+
+    Checked against the inventory rather than by grepping the log, because a two-letter
+    component like NA matches inside NAG and inside 'nan' -- a log scan would have
+    reported this as passing while the entity was still invisible.
+    """
     want = expect.get("components", [])
     present = [c for c in want if c in fx.truth.get("nonpolymer_list", [])]
     if not present:
         return FAIL, f"{want} not in the input at all; fixture no longer fits"
-    named = [c for c in present if c in fx.n1_log]
-    if not named:
-        return FAIL, f"{present} present in input, never named in node 01 output"
-    return PASS, f"named: {named}"
+    entities = fx.inventory.get("non_polymer") or []
+    reported = {e["comp_id"] for e in entities}
+    missing = [c for c in present if c not in reported]
+    if missing:
+        return FAIL, f"{present} in the input, missing from the inventory: {missing}"
+    shown = [c for c in present if f" {c} " in fx.n1_log]
+    if len(shown) != len(present):
+        return FAIL, f"{present} inventoried but not printed"
+    nearest = [f"{e['comp_id']}->{e['nearest_chain']}@{e['min_distance_A']}A"
+               for e in entities if e["comp_id"] in present][:3]
+    return PASS, f"{len(entities)} entit(y/ies) inventoried and printed; {nearest}"
 
 
 def check_dropped_chains_named(fx, _):

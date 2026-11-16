@@ -367,6 +367,33 @@ def normalise(src, dest):
         shutil.copyfile(src, dest)
 
 
+SOLVENT = {"HOH", "DOD", "WAT"}
+
+# Within this of a chain's heavy atoms, a non-polymer is touching it rather than merely
+# nearby. Same number as node 02's epitope_contact_cutoff_a default, and for the same
+# reason: it is the distance at which two heavy atoms are in contact.
+CONTACT_A = 4.5
+
+
+def min_distance(points_a, points_b):
+    """Smallest distance between two sets of points, or None if either is empty."""
+    if not points_a or not points_b:
+        return None
+    try:
+        import numpy as np
+    except ImportError:
+        best = None
+        for ax, ay, az in points_a:
+            for bx, by, bz in points_b:
+                d = ((ax - bx) ** 2 + (ay - by) ** 2 + (az - bz) ** 2) ** 0.5
+                if best is None or d < best:
+                    best = d
+        return best
+    a = np.array(points_a, dtype=float)
+    b = np.array(points_b, dtype=float)
+    return float(np.sqrt(((a[:, None, :] - b[None, :, :]) ** 2).sum(axis=2)).min())
+
+
 def build_inventory(cif_path):
     """Per-chain residue inventory with both numberings, read from _atom_site."""
     from Bio.PDB.MMCIF2Dict import MMCIF2Dict
@@ -397,8 +424,20 @@ def build_inventory(cif_path):
     auth_seq = column("_atom_site.auth_seq_id")
     ins_code = column("_atom_site.pdbx_PDB_ins_code", "?")
     comp_id = column("_atom_site.label_comp_id")
+    element = column("_atom_site.type_symbol", "C")
+    xs = column("_atom_site.Cartn_x")
+    ys = column("_atom_site.Cartn_y")
+    zs = column("_atom_site.Cartn_z")
+
+    def coordinate(index):
+        try:
+            return (float(xs[index]), float(ys[index]), float(zs[index]))
+        except (TypeError, ValueError):
+            return None
 
     chains = {}
+    chain_points = {}
+    non_polymer = {}
     seen = set()
     for i in range(n_atoms):
         # label_seq_id is the only polymer test that matters. Non-polymer entities — ligands,
@@ -410,7 +449,33 @@ def build_inventory(cif_path):
         # report as 8 residues. The count feeds node 02's binder_length advice, so a short
         # count misleads directly.
         if label_seq[i] in (".", "?", ""):
+            # Non-polymer: a ligand, ion, cofactor or glycan. Nothing downstream carries
+            # these into the designed system, which is a defensible choice -- RFD4 is
+            # given a polypeptide to design against. Saying nothing about them is not:
+            # a haem wedged into a chain interface is part of what that interface IS, and
+            # a design built and scored without it was aimed at a surface that does not
+            # exist in the real structure.
+            if comp_id[i] not in SOLVENT:
+                key = (comp_id[i], label_asym[i], auth_seq[i])
+                entry = non_polymer.get(key)
+                if entry is None:
+                    entry = non_polymer[key] = {
+                        "comp_id": comp_id[i],
+                        "label_asym_id": label_asym[i],
+                        "auth_asym_id": auth_asym[i],
+                        "auth_seq_id": auth_seq[i],
+                        "n_atoms": 0,
+                        "points": [],
+                    }
+                entry["n_atoms"] += 1
+                point = coordinate(i)
+                if point is not None and element[i].strip().upper() not in ("H", "D"):
+                    entry["points"].append(point)
             continue
+        if element[i].strip().upper() not in ("H", "D"):
+            point = coordinate(i)
+            if point is not None:
+                chain_points.setdefault(label_asym[i], []).append(point)
         key = (label_asym[i], label_seq[i])
         if key in seen:
             continue
@@ -437,7 +502,31 @@ def build_inventory(cif_path):
         print("ERROR: No polymer residues found in the target structure.", flush=True)
         sys.exit(1)
 
-    inventory = {"source_file": os.path.basename(cif_path), "chains": []}
+    entities = []
+    for entry in non_polymer.values():
+        nearest, closest = None, None
+        for chain_id, points in chain_points.items():
+            distance = min_distance(entry["points"], points)
+            if distance is not None and (closest is None or distance < closest):
+                nearest, closest = chain_id, distance
+        entities.append(
+            {
+                "comp_id": entry["comp_id"],
+                "label_asym_id": entry["label_asym_id"],
+                "auth_asym_id": entry["auth_asym_id"],
+                "auth_seq_id": entry["auth_seq_id"],
+                "n_atoms": entry["n_atoms"],
+                "nearest_chain": nearest,
+                "min_distance_A": round(closest, 2) if closest is not None else None,
+            }
+        )
+    entities.sort(key=lambda e: (e["comp_id"], e["auth_asym_id"], str(e["auth_seq_id"])))
+
+    inventory = {
+        "source_file": os.path.basename(cif_path),
+        "chains": [],
+        "non_polymer": entities,
+    }
     for label_id in sorted(chains):
         chain = chains[label_id]
         residues = sorted(chain["residues"], key=lambda r: r["label_seq_id"])
@@ -578,6 +667,49 @@ def main():
             f"{chain['n_residues']} residues{nonstd}, "
             f"label {chain['label_seq_range'][0]}-{chain['label_seq_range'][1]}, "
             f"auth {chain['auth_seq_range'][0]}-{chain['auth_seq_range'][1]}",
+            flush=True,
+        )
+    entities = inventory.get("non_polymer") or []
+    if entities:
+        print(
+            f"Non-polymer entities ({len(entities)}): not part of any chain, and not "
+            "carried into the designed system.",
+            flush=True,
+        )
+        for entity in entities:
+            where = (
+                f"nearest chain {entity['nearest_chain']} at {entity['min_distance_A']} A"
+                if entity["min_distance_A"] is not None
+                else "position unknown"
+            )
+            print(
+                f"  {entity['comp_id']} {entity['auth_asym_id']}{entity['auth_seq_id']}: "
+                f"{entity['n_atoms']} atom{'' if entity['n_atoms'] == 1 else 's'}, {where}",
+                flush=True,
+            )
+    target_label = inventory["target_chain_resolved"]["label_asym_id"]
+    touching = [
+        e
+        for e in entities
+        if e["nearest_chain"] == target_label
+        and e["min_distance_A"] is not None
+        and e["min_distance_A"] <= CONTACT_A
+    ]
+    if touching:
+        named = ", ".join(
+            f"{e['comp_id']} {e['auth_asym_id']}{e['auth_seq_id']} ({e['min_distance_A']} A)"
+            for e in touching
+        )
+        subject = (
+            "1 non-polymer entity is" if len(touching) == 1
+            else f"{len(touching)} non-polymer entities are"
+        )
+        print(
+            f"WARNING: {subject} in contact with target "
+            f"chain {target_label}: {named}. They are not carried into the designed "
+            "system, so the design is built and scored against a surface the real "
+            "structure does not present. If one of them is part of the interface you "
+            "care about, this target is a poor fit for the workflow as it stands.",
             flush=True,
         )
     heavily_modified = [

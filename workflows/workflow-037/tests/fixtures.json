@@ -31,7 +31,7 @@
       "expect": [
         {"check": "label_to_auth_complete", "finding": "#1"},
         {"check": "inserted_residues_addressable", "finding": "#1"},
-        {"check": "nonpolymer_named", "components": ["NAG"], "finding": "#4", "status": "open"},
+        {"check": "nonpolymer_named", "components": ["NAG"], "finding": "#4"},
         {"check": "dropped_chains_named", "finding": "#10", "status": "open"}
       ]
     },
@@ -80,7 +80,7 @@
       "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
       "expect": [
         {"check": "label_to_auth_complete", "finding": "#1"},
-        {"check": "nonpolymer_named", "components": ["HEM"], "finding": "#4", "status": "open"},
+        {"check": "nonpolymer_named", "components": ["HEM"], "finding": "#4"},
         {"check": "dropped_chains_named", "finding": "#10", "status": "open"}
       ]
     },
@@ -142,7 +142,7 @@
       "expect": [
         {"check": "label_to_auth_complete", "finding": "regression"},
         {"check": "single_model_output", "finding": "regression"},
-        {"check": "nonpolymer_named", "components": ["NA"], "finding": "#4", "status": "open"}
+        {"check": "nonpolymer_named", "components": ["NA"], "finding": "#4"}
       ]
     }
   ],
