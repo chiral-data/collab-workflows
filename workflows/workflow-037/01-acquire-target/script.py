@@ -134,6 +134,66 @@ def canonicalise_label_numbering(path):
     comp = cif.get("_atom_site.label_comp_id", ["UNK"] * n_atoms)
     group = cif.get("_atom_site.group_PDB", ["ATOM"] * n_atoms)
 
+    atom_name = cif.get("_atom_site.label_atom_id", ["?"] * n_atoms)
+
+    # Decide polymer membership from chemistry, not from the ATOM/HETATM flag. A modified
+    # residue inside a chain (MSE, SAR, CCS, MEA, 9KK) is written as HETATM, so the old
+    # test -- ATOM or a standard three-letter code -- deleted it from the chain entirely.
+    # 5O45 chain B is 15 residues; it came out of this function as 8, and because the
+    # dropped ones were also the non-standard ones the chain then reported n_nonstandard=0,
+    # which disarmed the very warning that exists to catch this.
+    residues = {}
+    for i in range(n_atoms):
+        key = (auth_asym[i], auth_seq[i], ins_code[i])
+        entry = residues.get(key)
+        if entry is None:
+            entry = residues[key] = {"comp": comp[i], "group": group[i], "atoms": set()}
+        entry["atoms"].add(atom_name[i].strip())
+
+    BACKBONE = {"N", "CA", "C"}
+    polymer = set()
+    for key, entry in residues.items():
+        if entry["group"] == "ATOM" or entry["comp"] in THREE_TO_ONE:
+            polymer.add(key)
+        elif BACKBONE <= entry["atoms"]:
+            # An amino acid by construction, whatever the component code says.
+            polymer.add(key)
+
+    def seq_number(value):
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return None
+
+    # Terminal caps (ACE, NH2) carry only part of a backbone -- NH2 is N plus hydrogens --
+    # so the test above misses them, but mmCIF numbers them in the chain. Accept a
+    # non-solvent residue that has at least one backbone atom name and sits immediately
+    # beside a residue already accepted. Waters fail both halves: no backbone atom, and
+    # they are numbered well past the chain (5O45 chain B ends at 15, its waters start at
+    # 101), so neither they nor a ligand parked after the chain can creep in.
+    occupied = {}
+    for chain_id, number, _ in polymer:
+        value = seq_number(number)
+        if value is not None:
+            occupied.setdefault(chain_id, set()).add(value)
+    pending = True
+    while pending:
+        pending = False
+        for key, entry in residues.items():
+            if key in polymer or entry["comp"] == "HOH":
+                continue
+            if not (BACKBONE & entry["atoms"]):
+                continue
+            value = seq_number(key[1])
+            if value is None:
+                continue
+            neighbours = occupied.get(key[0], set())
+            if value - 1 in neighbours or value + 1 in neighbours:
+                polymer.add(key)
+                neighbours.add(value)
+                occupied[key[0]] = neighbours
+                pending = True
+
     counters = {}
     assigned = {}
     new_asym = []
@@ -141,11 +201,10 @@ def canonicalise_label_numbering(path):
     for i in range(n_atoms):
         chain = auth_asym[i]
         new_asym.append(chain)
-        is_polymer = group[i] == "ATOM" or comp[i] in THREE_TO_ONE
-        if not is_polymer:
+        key = (chain, auth_seq[i], ins_code[i])
+        if key not in polymer:
             new_seq.append(".")  # ligands and waters carry no label_seq_id
             continue
-        key = (chain, auth_seq[i], ins_code[i])
         if key not in assigned:
             counters[chain] = counters.get(chain, 0) + 1
             assigned[key] = counters[chain]
@@ -267,9 +326,10 @@ def normalise(src, dest):
         print(f"Converting PDB to mmCIF: {src}", flush=True)
         print(
             "NOTE: PDB input has no label_seq_id; conversion assigns it sequentially "
-            "per chain over standard residues only, so modified residues are skipped and "
-            "the numbering can differ from the same entry's RCSB mmCIF. Prefer mmCIF "
-            "input when the target contains modified residues.",
+            "per chain. Residues are taken into the chain when they carry a backbone "
+            "(N, CA, C), or cap one that does, so modified residues are kept -- but the "
+            "resulting numbering can still differ from the same entry's RCSB mmCIF. "
+            "Prefer mmCIF input when the target contains modified residues.",
             flush=True,
         )
         pdb_to_mmcif(src, dest)
