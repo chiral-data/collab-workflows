@@ -778,13 +778,41 @@ BUILDERS = {
 
 
 def check_contig(contig):
-    """Upstream rejects a contig whose segments are all expandable."""
+    """Upstream rejects a contig whose segments are all expandable.
+
+    This also enforces designed-segment-first, which is not upstream's rule but ours.
+    Node 04 identifies the design as the first chain of each generated structure, and
+    RFD4 writes chains in contig order, so a contig that names the target first makes
+    every per-design metric describe the target instead. Nothing downstream can notice:
+    the chain count is unchanged, the numbers are all plausible, and node 04's
+    several-chains warning does not fire on the ordinary two-chain case.
+
+    The contigs this node derives always put the length first, so this only ever bites a
+    hand-written `contig` override.
+    """
     segments = [s.strip() for s in contig.split(",") if s.strip() and s.strip() != "/0"]
     preserved = [s for s in segments if not LENGTH_RE.match(s)]
     if not preserved:
         fail(
             f"Contig '{contig}' has no preserved segment. Upstream rejects a contig built "
             "only from expandable lengths, since the input exists to be referenced."
+        )
+    if segments and not LENGTH_RE.match(segments[0]):
+        designed = next((s for s in segments if LENGTH_RE.match(s)), None)
+        rewritten = (
+            f"{designed}, /0, " + ", ".join(s for s in segments if s != designed)
+            if designed
+            else None
+        )
+        fail(
+            f"Contig '{contig}' puts the preserved segment '{segments[0]}' first. The "
+            "designed length has to come first: node 04 reads the first chain of each "
+            "generated structure as the design, so a target-first contig makes "
+            "designed_chain, designed_length, the designed sequence, the hydrophobic "
+            "fraction, the net charge and the radius of gyration all describe the target "
+            "-- with no error and no warning, because the chain count is unchanged.\n"
+            + (f"Write it as '{rewritten}'." if rewritten else
+               "Put the designed length first.")
         )
 
 
