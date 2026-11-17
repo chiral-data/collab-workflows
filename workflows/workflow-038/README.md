@@ -130,6 +130,9 @@ Boltz YAML is converted with `bioemu2 convert-boltz`.
 **Scientific notes:** The inventory records the **token** count, not just residues: BioEmu2's
 memory and compute both scale with tokens (one per polymer residue, one per ligand atom), so
 that is the number that predicts whether a run fits on the GPU. Over 10k tokens the node warns.
+The count comes from `AllAtomStructure.num_tokens`, and `system_inventory.json` records which
+attribute supplied it in `n_tokens_from`, so a bioemu2 API change shows up as changed provenance
+rather than as a token total that is quietly null and a size warning that never fires.
 
 **Outputs:** `system.yaml`, `system_inventory.json`
 

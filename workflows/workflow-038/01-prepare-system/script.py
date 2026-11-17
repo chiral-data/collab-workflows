@@ -198,21 +198,35 @@ def build_inventory(system, source):
         "n_chains": 0,
         "n_polymer_residues": 0,
         "n_tokens": None,
+        "n_tokens_from": None,
         "has_ligands": False,
         "has_nucleic_acid": False,
         "protein_chains": [],
     }
 
+    # `num_tokens` is the field name on AllAtomStructure (bioemu2/structure/all_atom_structure.py:
+    # `num_tokens: int  # Number of tokens (different from num_residues in presence of ligands)`).
+    # This read was `n_tokens` and so always returned None, which left the token total null in the
+    # inventory, the >10k guard below unreachable, and the README claiming a check that never ran.
+    # The attribute that answered is recorded, so a renamed field shows up as a changed provenance
+    # string rather than as a silently absent number.
     try:
         from bioemu2.structure import AllAtomStructure
 
         structure = AllAtomStructure.from_system(system)
-        n_tokens = getattr(structure, "n_tokens", None)
-        if n_tokens is None:
-            tokens = getattr(structure, "tokens", None)
-            n_tokens = len(tokens) if tokens is not None else None
-        if n_tokens is not None:
-            inventory["n_tokens"] = int(n_tokens)
+        for attribute in ("num_tokens", "n_tokens"):
+            value = getattr(structure, attribute, None)
+            if value is not None:
+                inventory["n_tokens"] = int(value)
+                inventory["n_tokens_from"] = f"AllAtomStructure.{attribute}"
+                break
+        else:
+            print(
+                "WARNING: AllAtomStructure exposed neither num_tokens nor n_tokens, so the "
+                "token total is unknown and the GPU-fit warning cannot be applied. This is a "
+                "bioemu2 API change, not a problem with the input.",
+                flush=True,
+            )
     except Exception as exc:
         print(f"WARNING: could not compute token count: {exc}", flush=True)
 
@@ -299,7 +313,8 @@ def main():
     tokens = inventory["n_tokens"]
     print(
         f"{inventory['n_chains']} chain(s), {inventory['n_polymer_residues']} polymer "
-        f"residues, {tokens if tokens is not None else 'unknown'} tokens",
+        f"residues, {tokens if tokens is not None else 'unknown'} tokens "
+        f"(from {inventory['n_tokens_from'] or 'nothing — unavailable'})",
         flush=True,
     )
     if isinstance(tokens, int) and tokens > 10000:
