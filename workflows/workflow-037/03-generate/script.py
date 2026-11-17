@@ -45,13 +45,58 @@ OOM_MARKERS = (
 TAIL_LINES = 40
 
 
-def target_chain_ids(path):
-    """Chain ids present in the target this run was conditioned on.
+def preserved_chain_ids(spec_path):
+    """Target chain ids of the designed system, read off the contig node 02 wrote.
 
-    Recorded in the manifest so node 04 can tell the design from the target by reading
-    rather than by position. This node is the last one holding both the target it was
-    given and the structures that came back, so it is the right place to say which chains
-    were already there; everything downstream only sees the result.
+    Not the chain ids in target.cif, which answer a different question. That file is the
+    whole normalised entry: every polymer chain the contig did not preserve, plus one
+    label_asym_id per ligand and solvent group. On 4ZQK it carries A, B, C, D and E where
+    the designed system holds one chain -- and the generator draws the designed chain's
+    id from the same alphabet, so the design comes back as B, which is already in that
+    list. Node 04 is then left with no candidate at all, falls back to the first chain in
+    the file, and the manifest written to spare it that guess has made it no wiser.
+
+    The contig is where node 02 said which chains the design is built against, so that is
+    the fact to carry forward rather than re-derive. Returns [] for a spec with no contig,
+    which is the monomer passthrough: there is no target, and the design is the only
+    chain in the output.
+    """
+    import re
+
+    try:
+        import yaml
+
+        with open(spec_path) as handle:
+            spec = yaml.safe_load(handle) or {}
+        contig = (spec.get("design") or {}).get("contig")
+    except Exception as exc:
+        print(f"WARNING: could not read the contig from '{spec_path}': {exc}", flush=True)
+        return None
+    if not contig:
+        return []
+    chains = []
+    # Segments are "<length>", "<length>-<length>", "/0" and "<chain><start>-<end>".
+    # Only the last names a chain, and it is the only one that starts with a letter.
+    for token in str(contig).split(","):
+        match = re.match(r"^([A-Za-z]+)-?\d", token.strip())
+        if match and match.group(1) not in chains:
+            chains.append(match.group(1))
+    if not chains:
+        print(
+            f"WARNING: no preserved chain found in contig '{contig}'; falling back to "
+            "the chain ids in target.cif.",
+            flush=True,
+        )
+        return None
+    return chains
+
+
+def target_chain_ids(path):
+    """Every chain id in the target file -- the fallback when the contig cannot be read.
+
+    Superseded by preserved_chain_ids(), which reads node 02's decision instead of
+    re-deriving it. Kept because a spec this node cannot parse should still leave node 04
+    something rather than nothing, and because for a single-chain target the two agree.
     """
     from Bio.PDB.MMCIF2Dict import MMCIF2Dict
 
@@ -449,19 +494,24 @@ def main():
             flush=True,
         )
 
-    target_chains = (
-        target_chain_ids(target_path) if os.path.exists(target_path) else None
-    )
+    target_chains = preserved_chain_ids(spec_path)
+    if target_chains is None:
+        target_chains = (
+            target_chain_ids(target_path) if os.path.exists(target_path) else None
+        )
 
     manifest = {
         "argv": argv,
         "num_replicates": num_replicates,
         "designs_collected": len(designs),
         "designs": designs,
-        # Which chains came in as target. Node 04 needs this to name the designed chain
-        # without reading anything into chain order: the design is the chain that was not
-        # already there. The contig does put the designed segment first, but that is a
-        # fact about node 02, and a node two steps downstream should not be inferring it.
+        # The chains of the designed system that came in as target, taken from the
+        # contig. Node 04 needs this to name the designed chain without reading anything
+        # into chain order: the design is the chain that was not already there. The
+        # contig does put the designed segment first, but that is a fact about node 02,
+        # and a node two steps downstream should not be inferring it. Reading the whole
+        # target file instead lists chains the contig dropped and the solvent's asym
+        # ids, which can collide with the id the generator gives the design.
         "target_chains": target_chains,
         "seed": seed,
         "disable_compile": disable_compile,

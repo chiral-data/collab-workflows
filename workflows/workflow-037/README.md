@@ -193,21 +193,35 @@ which is the right trade for a handful of designs and the wrong one for hundreds
 **Outputs:**
 - `*_generated.cif` — one structure per design
 - `generation_manifest.json` — resolved argv, seed, checkpoint revision, package version, GPU,
-  elapsed time, and the unscreened-designs note
+  elapsed time, the unscreened-designs note, and `target_chains`: the chains of the designed
+  system, read from the contig in `design_spec.yaml` rather than from `target.cif`. The two are
+  not the same list — `target.cif` is the whole normalised entry, including chains the contig
+  dropped and one `label_asym_id` per ligand and solvent group, and the generator draws the
+  designed chain's id from that same alphabet. Reading the file would hand node 04 a list that
+  can contain the design's own id.
 
 ### Node 04: Analyze Designs
 
 **Goal:** Turn the generated structures into a comparable per-design metrics table.
 
 **Process:** Reads `_atom_site` from each design and identifies the designed chain as the one that
-was not in the target: node 03 records the target's chain ids in `generation_manifest.json`, and the
-chain of a generated file whose id is not among them is the design. The rest are target. It then
+was not in the target: node 03 records the designed system's target chain ids in
+`generation_manifest.json`, taken from the contig, and the chain of a generated file whose id is not
+among them is the design. The rest are target. It then
 computes length, sequence, hydrophobic fraction, net charge, CA radius of gyration, and a CA–CA
 interface at an 8 Å cutoff: total contacts, distinct target residues contacted, and minimum
 interchain distance. Every row records `designed_chain_source`, so a design that fell back to the
 first chain — no manifest, or chain ids that do not separate the chains cleanly — is distinguishable
 from one where the question was actually answered. All chains and their lengths are reported
 alongside, so a changed output layout is visible rather than silently mis-attributed.
+
+One numbering caveat when reading a design against the target it was aimed at: RFD4 renumbers the
+preserved target chain from 1 in its output. Where the target's `label_seq_id` already started at 1
+the two agree, but where it did not — a crystallised fragment whose first residues are unmodelled —
+the generated file's target numbering is shifted from the numbering node 01 inventoried and node 02
+conditioned on. Barnase in 1BRS starts at label 3, so its hotspot at label 83 is residue 81 in the
+generated structure. The metrics here are counts and are unaffected; it matters when mapping a
+design's contacts back to the residues you named.
 
 **Scientific notes:** Generation runs with `~metrics`, so every number here is geometric — computed
 from coordinates, not predicted. They are useful as filters and sanity checks (a binder with zero

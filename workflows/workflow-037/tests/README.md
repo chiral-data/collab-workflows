@@ -51,6 +51,13 @@ The suite tests the plumbing, not the science. Passing means the pipeline does n
 silently corrupt, drop, mislabel or misnumber its input, and that it notices output which
 is not a folded polypeptide. It does not mean a design is good.
 
+Node 03 is not run, so nothing here exercises the manifest it writes. The downstream
+cases supply one by hand, which means the fields node 04 reads are tested but the code
+that fills them is not: `target_chains` was wrong on every real run for a target carrying
+more than one chain, and the suite passed throughout. That gap is structural -- node 03
+needs a GPU and minutes per design -- so it is closed by running the pipeline end to end
+on a GPU host, not here.
+
 Nothing here refolds a sequence, computes self-consistency, or compares a result against
 a published one. The fixtures are real entries chosen for the input shapes they carry,
 not because the workflow is known to reproduce a literature result on them. There is no
