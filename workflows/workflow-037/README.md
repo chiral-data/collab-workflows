@@ -50,12 +50,14 @@ Do not use it as a one-stop binder campaign: this workflow generates and stops. 
 no pLDDT, no self-consistency RMSD, and the metrics it does report are geometry and composition, not
 confidence. For an end-to-end scored campaign use **workflow-033** (RFdiffusion → ProteinMPNN →
 Boltz2) or **workflow-013** (BoltzGen); to fold a sequence you already have, use **workflow-026**
-(ColabFold). The intended follow-up is to feed designs from here into workflow-026, which returns
-pLDDT and PAE for each design. Be clear about what that is: a confidence estimate, **not**
-self-consistency. Nothing compares the prediction against the backbone generated here, because node
-06 exports sequences and the designed backbone never travels. Self-consistency RMSD is the standard
-test for a generative design and neither workflow performs it today, so a sequence that refolds
-confidently into a different fold passes. Workflow-026 also filters nothing — it scores, and the
+(ColabFold). Feeding designs from here into workflow-026 returns pLDDT and PAE for each design. Be
+clear about what that is: a confidence estimate, **not** self-consistency. Nothing compares the
+prediction against the backbone generated here, because the FASTA carries the sequence and the
+designed backbone stays behind. Self-consistency RMSD is the standard test for a generative design
+and neither workflow performs it today, so a sequence that refolds confidently into a different fold
+passes. A step that did perform it would read node 03's `*_generated.cif` and node 04's
+`design_metrics.json`, not the exported FASTA, because those are what carry the backbone and the
+identity of the designed chain. Workflow-026 also filters nothing — it scores, and the
 judgement is yours. The most common mistake is
 residue numbering — see [Input requirements](#input-requirements).
 
@@ -82,7 +84,9 @@ target (upload or PDB ID)
 
 Nodes run 01 → 02 → 03 → 04, then 05 and 06 both read node 03's structures and node 04's metrics.
 Only node 03 requires a GPU. Node 06's `sequences.fasta` is named for where it goes next: drop it
-into workflow-026 as its input to refold the designs.
+into workflow-026 as its input to refold the designs. Refolding is not validation, though — scoring
+a design against its own backbone needs the backbone, so that step reads `*_generated.cif` and
+`design_metrics.json` instead. See [Node 06](#node-06-export-fasta).
 
 ## Input requirements
 
@@ -190,12 +194,15 @@ which is the right trade for a handful of designs and the wrong one for hundreds
 
 **Goal:** Turn the generated structures into a comparable per-design metrics table.
 
-**Process:** Reads `_atom_site` from each design, treats the first chain in the file as the designed
-chain (node 02's contig puts the designed segment ahead of the chain break) and the rest as target,
-then computes length, sequence, hydrophobic fraction, net charge, CA radius of gyration, and a CA–CA
+**Process:** Reads `_atom_site` from each design and identifies the designed chain as the one that
+was not in the target: node 03 records the target's chain ids in `generation_manifest.json`, and the
+chain of a generated file whose id is not among them is the design. The rest are target. It then
+computes length, sequence, hydrophobic fraction, net charge, CA radius of gyration, and a CA–CA
 interface at an 8 Å cutoff: total contacts, distinct target residues contacted, and minimum
-interchain distance. All chains and their lengths are reported alongside, so a changed output layout
-is visible rather than silently mis-attributed.
+interchain distance. Every row records `designed_chain_source`, so a design that fell back to the
+first chain — no manifest, or chain ids that do not separate the chains cleanly — is distinguishable
+from one where the question was actually answered. All chains and their lengths are reported
+alongside, so a changed output layout is visible rather than silently mis-attributed.
 
 **Scientific notes:** Generation runs with `~metrics`, so every number here is geometric — computed
 from coordinates, not predicted. They are useful as filters and sanity checks (a binder with zero
@@ -215,16 +222,20 @@ so they cannot dilute the ratios.
 **Process:** Reads the sequence of each design out of its mmCIF (not out of the metrics table, so
 the structures stay authoritative) and writes one FASTA record per design to `sequences.fasta`,
 wrapped at 60 columns, ordered as node 04 ordered them, plus one single-design file
-`refold_<design>.fasta` each. Each record holds the generated chain alone. Record ids are made
+`refold_<design>.fasta` each. Each record holds the designed chain alone, and which chain that is
+comes from node 04's `designed_chain` rather than from its position in the file. Record ids are made
 filesystem-safe because ColabFold names its outputs after them. Designs with an empty or
 all-unknown sequence are skipped with a warning rather than written as junk.
 
-**Scientific notes:** This node is the bridge to the scoring this workflow deliberately omits. A
-generated backbone plus sequence is a hypothesis, and the standard test is self-consistency: fold
-the sequence independently and measure the prediction against the designed backbone. **This handoff
-does not do that**, and cannot as wired, because only the sequence travels — what comes back is
-confidence, which a wrongly-folded sequence can also earn. Closing that gap needs the backbone
-carried alongside and an RMSD step that exists in neither workflow. Unknown residues (`X`) are
+**Scientific notes:** A generated backbone plus sequence is a hypothesis, and the standard test is
+self-consistency: fold the sequence independently and measure the prediction against the designed
+backbone. **This node is not that handoff and cannot be**, because only the sequence travels — what
+comes back from a predictor is confidence, which a wrongly-folded sequence can also earn.
+Self-consistency needs the backbone, so the artifacts a validation step has to read are node 03's
+`*_generated.cif`, which carries the designed chain and the target together in one file, and node
+04's `design_metrics.json`, which names the designed chain so the validator reads it instead of
+re-deriving it. The FASTA export stays, because folding a sequence is a useful thing to do on its
+own — it is simply not the input a scoring step takes. Unknown residues (`X`) are
 counted and warned about, since ColabFold treats them as sequence gaps and they depress confidence
 for reasons that have nothing to do with the design.
 
@@ -488,8 +499,9 @@ One row per design. `designed_length` and `designed_sequence` describe the gener
 interface at an 8 Å CA–CA cutoff — a coarse definition that counts proximity, not interaction
 energy. They are **blank for a single-chain design** (`monomer`), where there is no interface to
 measure, rather than reported as zero. For a two-chain design, zero contacts means it did not engage
-the target and can be dropped immediately; beyond that, these numbers rank nothing. `chain_lengths` records every chain, so an unexpected layout shows
-up as a changed first chain rather than as quietly wrong metrics.
+the target and can be dropped immediately; beyond that, these numbers rank nothing. `chain_lengths`
+records every chain and `designed_chain_source` records how the designed chain was identified, so an
+unexpected layout shows up as a named fallback rather than as quietly wrong metrics.
 
 `chain_breaks` counts consecutive alpha carbons further apart than a peptide bond reaches, and
 `compactness_ratio` is `radius_of_gyration_A` over `expected_radius_of_gyration_A`, the latter being
@@ -638,17 +650,19 @@ ensemble was noticed, whether a modified residue survived the PDB conversion, wh
 cofactor was named before being dropped. The first run found twelve such answers wrong.
 
 Fixtures are chosen by measuring a downloaded structure, never from reputation, and
-`tests/fixtures.json` records the measurement next to each entry. Two findings are
-tracked there as known gaps (`"status": "open"`); they report without failing the run.
-See `tests/README.md`.
+`tests/fixtures.json` records the measurement next to each entry. A finding that is
+reproduced but not yet fixed is marked `"status": "open"` there and reports without
+failing the run; nothing is marked open today. See `tests/README.md`.
 
 **What this suite does not establish.** It tests the plumbing, not the science. Passing means the
 pipeline does not silently corrupt, drop, mislabel or misnumber what it is given, and that it
 notices output which is not a folded polypeptide. It does not mean any design is good. Nothing here
 refolds a sequence, computes self-consistency, or compares a result against a published one — the
 structures are chosen for the input shapes they carry, not because the workflow is known to
-reproduce a literature result on them. Design quality is unvalidated until something predicts the
-sequence back, which is what the workflow-026 handoff is for.
+reproduce a literature result on them. Design quality stays unvalidated until something refolds a
+sequence and measures the prediction against the backbone that was designed — which neither this
+workflow nor workflow-026 does. The artifacts such a step would read are `*_generated.cif` and
+`design_metrics.json`, not the exported FASTA.
 
 ## Troubleshooting
 

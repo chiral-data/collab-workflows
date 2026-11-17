@@ -137,12 +137,14 @@ while IFS='|' read -r NAME N SHAPE LEN; do
            "$D/n6/inputs" "$D/n6/outputs"
   python3 -I "$TESTS/make_designs.py" "$D/n4/inputs" "$N" "$SHAPE" "$LEN" > /dev/null
 
-  # Node 06 declares the generation manifest as an input. Node 03 is not run here, so
-  # the harness supplies the smallest one that carries real provenance fields.
+  # Nodes 04 and 06 declare the generation manifest as an input. Node 03 is not run
+  # here, so the harness supplies the smallest one carrying the fields they read --
+  # including target_chains, which is how node 04 tells the design from the target.
+  # make_designs.py always writes the target as chain A and the design as chain B.
   python3 -I -c "
 import json
 json.dump({'seed': 0, 'designs_collected': $N, 'rfd4_proteina_version': 'fixture',
-           'securedna_screened': False},
+           'securedna_screened': False, 'target_chains': ['A']},
           open('$D/n4/inputs/generation_manifest.json', 'w'), indent=2)
 "
   cp "$WF/04-analyze/script.py" "$WF/04-analyze/run.sh" "$D/n4/"

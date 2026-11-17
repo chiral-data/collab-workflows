@@ -22,10 +22,20 @@ resolve individual atom contacts in a backbone that was generated, not measured.
 So the number in the report's "Contacts" column is not the number of hotspot atoms the
 design was aimed with, and it is not meant to be.
 
-Chain convention: the designed chain is taken to be the FIRST chain in the file, because
-the contig built by node 02 puts the designed segment ahead of the chain break
-("50-120, /0, A1-129"). Remaining chains are treated as target. All chains are reported
-individually too, so a layout change is visible rather than silently mis-attributed.
+Chain convention: the designed chain is the one that was NOT in the target. Node 03
+records the target's chain ids in generation_manifest.json, and the chain of a generated
+file whose id is not among them is the design; the rest are target.
+
+This node used to take the first chain in the file. That is true of what node 02's contig
+produces ("50-120, /0, A1-129"), but it is a fact about node 02 being asserted two nodes
+away from where it is decided, and when it did not hold -- chains written target-first --
+every metric was attributed to the target without a word. Reading the answer costs one
+field in the manifest and removes the assumption entirely.
+
+Where the manifest is missing, or the ids do not separate the chains cleanly, the first
+chain is used, the log says so, and the row records designed_chain_source, so a fallback
+is visible rather than indistinguishable from a resolved answer. All chains are reported
+individually in chain_lengths either way.
 """
 import csv
 import glob
@@ -61,6 +71,7 @@ COLUMNS = [
     "design",
     "n_chains",
     "designed_chain",
+    "designed_chain_source",
     "designed_length",
     "total_length",
     "designed_sequence",
@@ -213,10 +224,47 @@ def interface(designed_coords, target_coords):
     )
 
 
-def analyze(path):
+def resolve_designed_chain(chains, target_chains, path):
+    """Pick the designed chain, and say how it was picked.
+
+    Returns (index, source). With the target's chain ids in hand this is a set
+    difference, not a guess. Two cases decline to answer: no ids recorded, and more than
+    one chain left over after removing the target's -- a multi-segment design, or chains
+    relabelled by upstream. Choosing silently in either case would be worse than the
+    first-chain fallback plus a warning, because the answer would look resolved.
+    """
+    if target_chains:
+        known = set(target_chains)
+        candidates = [i for i, (cid, _) in enumerate(chains) if cid not in known]
+        if len(candidates) == 1:
+            return candidates[0], "manifest-target-chains"
+        if len(chains) == 1:
+            # monomer and motif_scaffold runs come back as the design alone. Even if its
+            # id collides with a target chain id, there is only one chain to report.
+            return 0, "single-chain"
+        print(
+            f"WARNING: '{os.path.basename(path)}' has chains "
+            f"{[cid for cid, _ in chains]} and this run's target chains were "
+            f"{sorted(known)}, which leaves {len(candidates)} candidate(s) for the "
+            "design. Falling back to the first chain in the file; check chain_lengths.",
+            flush=True,
+        )
+    elif len(chains) > 1:
+        print(
+            "WARNING: generation_manifest.json records no target chains, so the design "
+            f"in '{os.path.basename(path)}' is being taken as the first chain in the "
+            "file. That holds for the contigs this workflow builds, and is not checked "
+            "here.",
+            flush=True,
+        )
+    return 0, "assumed-first-chain"
+
+
+def analyze(path, target_chains=None):
     chains = read_chains(path)
-    designed_id, designed = chains[0]
-    targets = chains[1:]
+    index, chain_source = resolve_designed_chain(chains, target_chains, path)
+    designed_id, designed = chains[index]
+    targets = [pair for i, pair in enumerate(chains) if i != index]
 
     sequence = "".join(residue["one_letter"] for residue in designed)
     designed_coords = [r["ca"] for r in designed if r["ca"] is not None]
@@ -242,9 +290,9 @@ def analyze(path):
     if len(chains) > 2:
         print(
             f"WARNING: '{os.path.basename(path)}' has {len(chains)} chains. This node "
-            f"treats the first ({designed_id}) as the design and the rest as target, so "
-            "with several designed segments the extra ones are counted as target and the "
-            "interface numbers mix designed-to-designed contacts in. Check chain_lengths.",
+            f"treats {designed_id} as the design and the rest as target, so with several "
+            "designed segments the extra ones are counted as target and the interface "
+            "numbers mix designed-to-designed contacts in. Check chain_lengths.",
             flush=True,
         )
     # X is an unrecognised residue; excluded from composition so it cannot dilute the ratio.
@@ -255,6 +303,7 @@ def analyze(path):
         "design": os.path.basename(path),
         "n_chains": len(chains),
         "designed_chain": designed_id,
+        "designed_chain_source": chain_source,
         "designed_length": len(designed),
         "total_length": sum(len(residues) for _, residues in chains),
         "designed_sequence": sequence,
@@ -275,6 +324,25 @@ def analyze(path):
         ),
         "chain_lengths": ";".join(f"{cid}:{len(res)}" for cid, res in chains),
     }
+
+
+def chain_convention(rows):
+    """One phrase for the report's run info, naming how the designed chain was chosen.
+
+    Spelled out per source rather than summarised, because a batch where some designs
+    resolved and others fell back would otherwise be reported as whichever reads better.
+    """
+    wording = {
+        "manifest-target-chains": (
+            "the chain absent from the run's target, read from the generation manifest"
+        ),
+        "single-chain": "the only chain in the file",
+        "assumed-first-chain": (
+            "first chain in file, assumed: no target chain ids to check against"
+        ),
+    }
+    sources = sorted({row.get("designed_chain_source") for row in rows})
+    return "; ".join(wording.get(source, str(source)) for source in sources)
 
 
 def natural_key(name):
@@ -307,7 +375,11 @@ def main():
 
     print(f"Found {len(designs)} generated design(s)", flush=True)
 
-    rows = [analyze(path) for path in designs]
+    target_chains = manifest.get("target_chains")
+    if target_chains:
+        print(f"Target chains recorded by node 03: {target_chains}", flush=True)
+
+    rows = [analyze(path, target_chains) for path in designs]
 
     with open("./outputs/design_metrics.csv", "w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=COLUMNS)
@@ -317,7 +389,7 @@ def main():
     payload = {
         "n_designs": len(rows),
         "contact_cutoff_angstrom": CONTACT_CUTOFF_A,
-        "designed_chain_convention": "first chain in file",
+        "designed_chain_convention": chain_convention(rows),
         "metrics_are_geometric_only": True,
         "seed": manifest.get("seed"),
         "hf_ckpt_revision": manifest.get("hf_ckpt_revision"),

@@ -182,9 +182,10 @@
       "n_designs": 1,
       "shape": "swap",
       "length": 10,
-      "why": "The same atoms with the chains written in the opposite order. Node 04 still cannot tell, which is why the guard lives in node 02; this keeps the residual gap visible rather than remembered.",
+      "why": "The same atoms with the chains written in the opposite order. Node 04 reads the target's chain ids from the generation manifest and takes the design to be the chain that is not among them, so file order carries no meaning for it; node 06 then exports the chain node 04 named. Before that both read chain zero, and this case reported the target as the design, with its sequence exported under the design's name.",
       "expect": [
-        {"check": "node04_designed_chain", "chain": "B", "n_residues": 10, "finding": "#27", "status": "open"}
+        {"check": "node04_designed_chain", "chain": "B", "n_residues": 10, "finding": "#27"},
+        {"check": "node06_per_design_fasta", "n_designs": 1, "sequence": "ALEKIAELKA", "finding": "#27"}
       ]
     },
     {

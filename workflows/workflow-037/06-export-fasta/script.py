@@ -177,14 +177,24 @@ def main():
     if not designs:
         fail("No generated structures found in ./inputs/ (*_generated.cif)")
 
-    # Metrics are optional here: they only supply the ordering node 04 already decided on.
+    # Node 04 has already decided the two things this node would otherwise decide
+    # again: what order the designs go in, and which chain of each file is the design.
+    # Both are read from its metrics rather than recomputed. The order is cosmetic; the
+    # chain is not. Exporting the wrong one writes the target's sequence into the FASTA
+    # under the design's name, which is wrong, silent and entirely plausible-looking.
     order = {}
+    designed_chain = {}
     metrics_path = "./inputs/design_metrics.json"
     if os.path.exists(metrics_path):
         try:
             with open(metrics_path) as handle:
                 rows = json.load(handle).get("designs", [])
             order = {row["design"]: index for index, row in enumerate(rows)}
+            designed_chain = {
+                row["design"]: row.get("designed_chain")
+                for row in rows
+                if row.get("designed_chain")
+            }
         except Exception as exc:
             print(f"WARNING: could not read design metrics: {exc}", flush=True)
     def natural_key(name):
@@ -203,8 +213,24 @@ def main():
         if not chains:
             skipped.append((base, "no polymer chains"))
             continue
-        sequence = chains[0][1]
-        label = f"chain={chains[0][0]} len={len(sequence)}"
+        wanted = designed_chain.get(os.path.basename(path))
+        picked = next((pair for pair in chains if pair[0] == wanted), None)
+        if wanted and picked is None:
+            print(
+                f"WARNING: node 04 named chain {wanted} as the design in {base}, but "
+                f"this file has {[cid for cid, _ in chains]}. Exporting the first chain.",
+                flush=True,
+            )
+        if picked is None:
+            if not wanted and len(chains) > 1:
+                print(
+                    f"WARNING: no designed chain recorded for {base}, so the first chain "
+                    "in the file is being exported.",
+                    flush=True,
+                )
+            picked = chains[0]
+        chain_id, sequence = picked
+        label = f"chain={chain_id} len={len(sequence)}"
         residues = sequence
         if not residues:
             skipped.append((base, "empty sequence"))

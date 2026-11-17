@@ -107,18 +107,21 @@ real-looking coordinates*, present in four of the twelve (12E8: 80 atoms, 5O45: 
 ## Known gaps
 
 Expectations marked `"status": "open"` in `fixtures.json` report as `GAP` and do not fail
-the run. They are real, reproduced, and not yet fixed:
+the run. They are real, reproduced, and not yet fixed.
 
-- **#27** — node 04 identifies the design as the first chain in the file. Node 02 now
-  refuses the contig that would reverse that, so the reachable path is closed, but node
-  04 itself is still position-dependent: the `reversed-chain-order` case shows it
-  reporting the target as the design.
-- **#51** — designs sort lexicographically, so `design_10` lands between `design_1` and
-  `design_2`. Display order only: every row carries its own name, and nodes 05 and 06
-  key by name rather than by position.
+**Nothing is marked open today.** Two findings were tracked here and both are closed:
 
-Fixing one means deleting its `status` field. The suite then enforces it, and a
-regression shows up as `FAIL` rather than as silence.
+- **#27** — node 04 identified the design as the first chain in the file. It now reads
+  the target's chain ids out of `generation_manifest.json` and takes the design to be the
+  chain that is not among them; node 06 exports the chain node 04 named. The
+  `reversed-chain-order` case enforces both.
+- **#51** — designs sorted lexicographically, so `design_10` landed between `design_1`
+  and `design_2`. Node 04 sorts numerically and nodes 05 and 06 inherit that order.
+  `ordering-at-12-designs` enforces it.
+
+Marking a finding open is how a reproduced but unfixed defect gets recorded: add
+`"status": "open"` and the suite reports it without failing. Deleting the field enforces
+it, and a regression shows up as `FAIL` rather than as silence.
 
 ## Adding a fixture
 

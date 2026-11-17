@@ -45,6 +45,33 @@ OOM_MARKERS = (
 TAIL_LINES = 40
 
 
+def target_chain_ids(path):
+    """Chain ids present in the target this run was conditioned on.
+
+    Recorded in the manifest so node 04 can tell the design from the target by reading
+    rather than by position. This node is the last one holding both the target it was
+    given and the structures that came back, so it is the right place to say which chains
+    were already there; everything downstream only sees the result.
+    """
+    from Bio.PDB.MMCIF2Dict import MMCIF2Dict
+
+    try:
+        cif = MMCIF2Dict(path)
+    except Exception as exc:
+        print(f"WARNING: could not read chain ids from '{path}': {exc}", flush=True)
+        return None
+    asym = cif.get("_atom_site.label_asym_id")
+    if not asym:
+        print(f"WARNING: '{path}' has no _atom_site records; no target chains recorded.",
+              flush=True)
+        return None
+    seen = []
+    for chain in asym:
+        if chain not in seen:
+            seen.append(chain)
+    return seen
+
+
 def fail(message):
     print(f"ERROR: {message}", flush=True)
     sys.exit(1)
@@ -422,11 +449,20 @@ def main():
             flush=True,
         )
 
+    target_chains = (
+        target_chain_ids(target_path) if os.path.exists(target_path) else None
+    )
+
     manifest = {
         "argv": argv,
         "num_replicates": num_replicates,
         "designs_collected": len(designs),
         "designs": designs,
+        # Which chains came in as target. Node 04 needs this to name the designed chain
+        # without reading anything into chain order: the design is the chain that was not
+        # already there. The contig does put the designed segment first, but that is a
+        # fact about node 02, and a node two steps downstream should not be inferring it.
+        "target_chains": target_chains,
         "seed": seed,
         "disable_compile": disable_compile,
         "batch_size": batch_size,

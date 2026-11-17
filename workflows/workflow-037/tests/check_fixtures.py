@@ -230,8 +230,9 @@ def load_metrics(case_dir):
 
 
 def check_node04_designed_chain(case_dir, expect):
-    """Node 04 names the first chain of the file as the design. These inputs are built
-    with a known designed chain, so the answer is checkable rather than plausible."""
+    """Node 04 names the chain that was not in the target as the design. These inputs
+    are built with a known designed chain, so the answer is checkable rather than
+    plausible -- including when the chains are written in the other order."""
     payload = load_metrics(case_dir)
     if payload is None:
         return FAIL, "node 04 produced no design_metrics.json"
