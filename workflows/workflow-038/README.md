@@ -244,8 +244,20 @@ chart, an Rg histogram, a pairwise-RMSD heatmap on a single sequential hue, a pe
 line chart, a per-frame table and a 3Dmol viewer that animates the representative frames.
 Bootstrap 5, Plotly and 3Dmol come from CDN; no local assets.
 
+The RMSF chart draws one trace per chain, dashed by chain and coloured by ensemble, against
+position along the chain rather than author residue number. One trace across every chain strokes
+back to the left edge wherever a chain restarts its numbering, which reads as a flexible region
+and is an artefact of the axis. The viewer caption says how many of its frames are genuine
+cluster centres and how many are filler, and which frame they were superposed on.
+
+This node takes no `top_n`. How many frames are in the viewer is node 05's decision and is read
+from `ensemble_summary.json`; a second copy of the parameter here could disagree with the file it
+describes.
+
 **Scientific notes:** The report **leads** with the interpretation caveats rather than burying
-them, and shows the MSA depth beside the results so a narrow ensemble can be attributed.
+them. It states the alignment depth beside the results, and separately whether the alignment
+reached the model at all, because those two were able to disagree without anything looking
+wrong. Provenance records what the model was given, not only what node 02 fetched.
 
 **Outputs:** `report.html`
 

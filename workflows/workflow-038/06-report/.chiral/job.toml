@@ -19,8 +19,3 @@ gpu = "none"
 
 [scripts]
 run = "run.sh"
-
-[params.top_n]
-type = "integer"
-default = 10
-hint = "Number of frames written to the multi-model PDB and shown in the report's 3D viewer"

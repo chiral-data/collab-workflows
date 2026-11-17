@@ -206,9 +206,7 @@ HTML = """<!doctype html>
         never a free energy.</li>
     <li><strong>Sampled frames are independent draws, not a trajectory.</strong> Frame order
         carries no time information.{propagation_note}</li>
-    <li><strong>Quality tracks alignment depth.</strong> This run used an MSA of
-        {msa_depth} row(s) from {msa_source}. Shallow alignments are upstream's stated first
-        cause of degraded ensembles.</li>
+    <li><strong>The alignment conditions everything else.</strong> {msa_sentence}</li>
     <li><strong>Every number here is geometric.</strong> Nothing in this report is a
         confidence estimate, and BioEmu2 is research software, not a validated commercial
         tool.</li>
@@ -355,19 +353,36 @@ function draw() {{
       '<p class="meta">Too many frames for a pairwise matrix; see the per-frame table.</p>';
   }}
 
-  // Per-residue RMSF.
-  const rmsfTraces = DATA.ensembles
-    .filter(e => e.rmsf && e.rmsf.length)
-    .map((e, i) => ({{
-      x: e.rmsf.map(r => r.resSeq), y: e.rmsf.map(r => r.rmsf_nm),
-      name: e.label, mode: 'lines', type: 'scatter',
-      line: {{ color: colors[i % 2], width: 2 }},
-      hovertemplate: e.label + ' %{{text}}%{{x}}<br>RMSF %{{y:.3f}} nm<extra></extra>',
-      text: e.rmsf.map(r => r.resName + ' ')
-    }}));
+  // Per-residue RMSF — one trace per chain per ensemble. Plotting every chain as one line
+  // against resSeq draws a stroke back to the left edge wherever a new chain restarts its
+  // numbering, which reads as a flexible region and is an artefact of the x axis.
+  const DASHES = ['solid', 'dash', 'dot', 'dashdot'];
+  const rmsfTraces = [];
+  DATA.ensembles.forEach((e, i) => {{
+    if (!e.rmsf || !e.rmsf.length) return;
+    const chains = [];
+    e.rmsf.forEach(r => {{ if (!chains.includes(r.chain)) chains.push(r.chain); }});
+    chains.forEach((chain, ci) => {{
+      const residues = e.rmsf.filter(r => r.chain === chain);
+      rmsfTraces.push({{
+        // Position along the selection, so consecutive residues are consecutive points
+        // whatever the author numbering does. The real residue is in the hover text.
+        x: residues.map((r, k) => k + 1),
+        y: residues.map(r => r.rmsf_nm),
+        name: chains.length > 1 ? e.label + ' chain ' + chain : e.label,
+        mode: 'lines', type: 'scatter',
+        line: {{ color: colors[i % 2], width: 2, dash: DASHES[ci % DASHES.length] }},
+        hovertemplate: '%{{text}}<br>RMSF %{{y:.3f}} nm<extra></extra>',
+        text: residues.map(r => e.label + ' chain ' + r.chain + ' ' + r.resName + r.resSeq)
+      }});
+    }});
+  }});
   if (rmsfTraces.length) {{
-    const l = layout(c, 'Residue', 'RMSF (nm)');
-    l.hovermode = 'x unified';
+    const l = layout(c, 'Residue position along the chain', 'RMSF (nm)');
+    l.hovermode = 'closest';
+    l.showlegend = rmsfTraces.length > 1;
+    l.legend = {{ orientation: 'h', y: -0.22, font: {{ color: c.secondary }} }};
+    if (l.showlegend) {{ l.margin.b = 86; }}
     Plotly.newPlot('rmsf-chart', rmsfTraces, l, CONFIG);
   }} else {{
     document.getElementById('rmsf-chart').innerHTML =
@@ -406,8 +421,9 @@ if (DATA.pdb) {{
 """
 
 VIEWER_BLOCK = """<div class="d-flex justify-content-between align-items-center mb-2">
-    <div class="meta">{n} representative frame(s), chosen as cluster centres. Each model is a
-      separate sampled conformation, not a step along a path.</div>
+    <div class="meta">{n} representative frame(s): {provenance}. Each model is a separate
+      sampled conformation, not a step along a path. All are superposed on {aligned_on}, so
+      what moves on screen is conformational change and not rigid-body tumbling.</div>
     <button id="animate" class="btn btn-sm btn-outline-secondary">Animate frames</button>
   </div>
   <div id="viewer"></div>"""
@@ -420,9 +436,64 @@ def status_pill(status):
     if status == "rejected":
         return '<span class="pill"><span class="dot" ' \
                'style="background:var(--status-critical)"></span>&#10007; rejected</span>'
+    if status == "unavailable":
+        return ('<span class="pill"><span class="dot" '
+                'style="background:var(--status-warning)"></span>! not available</span>')
     if status in ("not_checked", ""):
         return '<span class="pill" style="color:var(--text-muted)">not checked</span>'
     return f'<span class="pill">{status}</span>'
+
+
+def format_counts(counts):
+    """Render a {name: count} mapping, or None so the row shows an em dash."""
+    if not isinstance(counts, dict) or not counts:
+        return None
+    return ", ".join(
+        f"{name} &times;{count}"
+        for name, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))
+    )
+
+
+def alignment_sentence(sampling):
+    """One sentence about the alignment the model was actually conditioned on.
+
+    BioEmu2 is conditioned on an MSA, so its depth bounds what the ensemble can be. The
+    report states the depth beside the results for that reason, and states separately whether
+    the alignment reached the model: those two were able to disagree, and when they did, the
+    run looked normal.
+    """
+    depth = sampling.get("msa_min_depth")
+    source = sampling.get("msa_source")
+    loaded = sampling.get("msa_loaded")
+
+    if loaded is False and sampling.get("msa_how"):
+        return (
+            f"No alignment was used: {sampling['msa_how']}. BioEmu2 is conditioned on an "
+            "alignment, so read everything below as the unconditioned case."
+        )
+    if depth is None:
+        return (
+            "The alignment depth was not recorded for this run, so a narrow ensemble cannot "
+            "be attributed to a shallow alignment or ruled out as one."
+        )
+
+    sentence = (
+        f"This run was conditioned on an alignment of {depth} row(s)"
+        f"{f' from {source}' if source else ''}."
+    )
+    if depth < 32:
+        sentence += (
+            " That is shallow. BioEmu2 is conditioned on the alignment, and upstream names "
+            "shallow or poor alignments — orphan and some viral proteins — as a cause of "
+            "degraded ensembles, so treat a narrow or odd result here as unexplained rather "
+            "than as a finding."
+        )
+    else:
+        sentence += (
+            " Depth is shown here because the ensemble is conditioned on it: a narrow result "
+            "from a shallow alignment is not evidence of a rigid protein."
+        )
+    return sentence
 
 
 def tile(label, value, unit=""):
@@ -436,8 +507,9 @@ def tile(label, value, unit=""):
 def main():
     os.makedirs("./outputs", exist_ok=True)
 
-    top_n = int(os.environ.get("PARAM_TOP_N", "10"))
-
+    # No top_n here: the number of viewer frames is node 05's decision and is read from
+    # ensemble_summary.json. A second copy of the parameter in this node could disagree with
+    # the file it is describing, and the one in the file is the one that is true.
     summary = read_json("./inputs/ensemble_summary.json", "ensemble summary")
     sampling = read_json("./inputs/sampling_manifest.json", "sampling manifest", default={})
     propagation = read_json(
@@ -480,6 +552,10 @@ def main():
 
     pass_rate = physicality.get("pass_rate")
     pass_display = "not checked" if pass_rate is None else f"{round(pass_rate * 100)}%"
+
+    propagated = ensembles_summary.get("propagated", {}) or {}
+    prop_physicality = propagated.get("physicality", {}) or {}
+    prop_pass_rate = prop_physicality.get("pass_rate")
 
     tiles = "".join(
         [
@@ -529,14 +605,49 @@ def main():
         ("Precision", settings.get("precision")),
         ("Matmul precision", settings.get("matmul_precision")),
         ("Physicality filter", settings.get("physicality_filter")),
+        ("Physicality not checked because", sampling.get("physicality_not_checked_because")),
+        ("Rejection reasons", format_counts(sampling.get("rejection_reasons"))),
         ("MSA source", sampling.get("msa_source")),
         ("MSA minimum depth", sampling.get("msa_min_depth")),
+        # What the model was given, which is not the same claim as what node 02 fetched.
+        ("Alignment given to the model", sampling.get("msa_how")),
+        ("Alignment files", ", ".join(sampling.get("msa_files") or []) or None),
         ("RMSD atom selection", sampled.get("rmsd_atom_selection")),
+        (
+            "Chains with no C-&alpha; atom",
+            ", ".join(sampled.get("excluded_chains") or []) or None,
+        ),
         ("Cluster threshold (nm)", sampled.get("rmsd_cluster_threshold_nm")),
+        ("Medoid frame", sampled.get("medoid_frame")),
+        ("Pairwise RMSD pairs measured", (sampled.get("pairwise_rmsd") or {}).get("n_pairs")),
         ("Propagation", "enabled" if propagation_enabled else "disabled"),
         ("Lag time (ns)", propagation.get("lag_time_ns") if propagation_enabled else None),
+        (
+            "Propagation sampler",
+            propagation.get("sampler") if propagation_enabled else None,
+        ),
+        (
+            "Propagated endpoints passing physicality",
+            (
+                None
+                if not propagation_enabled
+                else (
+                    "not checked"
+                    if prop_pass_rate is None
+                    else f"{round(prop_pass_rate * 100)}%"
+                )
+            ),
+        ),
+        (
+            "Alignment reused for propagation",
+            propagation.get("msa_how") if propagation_enabled else None,
+        ),
         ("GPU", sampling.get("gpu")),
         ("Sampling time (s)", sampling.get("elapsed_seconds")),
+        (
+            "Propagation time (s)",
+            propagation.get("elapsed_seconds") if propagation_enabled else None,
+        ),
     ]
     provenance = "".join(
         f'<tr><th style="width:38%">{label}</th>'
@@ -545,8 +656,27 @@ def main():
     )
 
     n_viewer = len(summary.get("viewer_frames") or [])
+    n_from_clusters = summary.get("viewer_frames_from_clusters")
+    if n_from_clusters is None:
+        viewer_provenance = "selection not recorded by node 05"
+    elif n_from_clusters == n_viewer:
+        viewer_provenance = "all of them cluster centres"
+    elif n_from_clusters == 0:
+        viewer_provenance = (
+            "none of them cluster centres, because no clustering was done — these are the "
+            "first frames of the ensemble"
+        )
+    else:
+        viewer_provenance = (
+            f"{n_from_clusters} cluster centre(s) and {n_viewer - n_from_clusters} further "
+            "frame(s) taken in order to fill the set"
+        )
+    aligned_frame = summary.get("viewer_frames_superposed_on_frame")
+    aligned_on = (
+        f"frame {aligned_frame}" if aligned_frame is not None else "the medoid frame"
+    )
     viewer_block = (
-        VIEWER_BLOCK.format(n=n_viewer)
+        VIEWER_BLOCK.format(n=n_viewer, provenance=viewer_provenance, aligned_on=aligned_on)
         if pdb_text
         else '<p class="meta">No structures available for the 3D viewer.</p>'
     )
@@ -566,7 +696,7 @@ def main():
         else " Propagation was disabled for this run."
     )
 
-    msa_depth = sampling.get("msa_min_depth")
+    msa_sentence = alignment_sentence(sampling)
     data = {
         "ensembles": ensembles,
         "rmsdMatrix": summary.get("rmsd_matrix") or [],
@@ -579,8 +709,7 @@ def main():
         threedmol=THREEDMOL_CDN,
         headline=headline,
         propagation_note=propagation_note,
-        msa_depth="unknown" if msa_depth is None else msa_depth,
-        msa_source=sampling.get("msa_source") or "an unrecorded source",
+        msa_sentence=msa_sentence,
         tiles=tiles,
         legend=legend,
         rows="".join(table_rows),
@@ -596,7 +725,7 @@ def main():
     print(f"Wrote ./outputs/report.html ({size_kb} KB)", flush=True)
     print(
         f"  {len(rows)} frame row(s), {len(ensembles)} ensemble(s), "
-        f"{n_viewer} viewer frame(s), top_n={top_n}",
+        f"{n_viewer} viewer frame(s) ({n_from_clusters} cluster centre(s))",
         flush=True,
     )
 
