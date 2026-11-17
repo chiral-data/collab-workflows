@@ -79,12 +79,17 @@ target (upload or PDB ID)
    │                         │
    ├─────────────────────────┼────────► [05-report] ──────► report.html
    │                         │
-   └─────────────────────────┴────────► [06-export-fasta] ─► sequences.fasta
+   └─────────────────────────┴────────► [06-export-fasta] ─► refold_<design>.fasta  (one per
+                                                                design; + sequences.fasta,
+                                                                the batch record)
 ```
 
 Nodes run 01 → 02 → 03 → 04, then 05 and 06 both read node 03's structures and node 04's metrics.
-Only node 03 requires a GPU. Node 06's `sequences.fasta` is named for where it goes next: drop it
-into workflow-026 as its input to refold the designs. Refolding is not validation, though — scoring
+Only node 03 requires a GPU. Node 06 writes one `refold_<design>.fasta` per design, and that is
+what goes to workflow-026: one run per file, renamed to `sequences.fasta` on the way in. Node 06's
+own `sequences.fasta` is the batch record of every design, **not** the handoff — workflow-026
+reports one job per run, so a file holding several records comes back as a single result under one
+design's name. Refolding is not validation either, though — scoring
 a design against its own backbone needs the backbone, so that step reads `*_generated.cif` and
 `design_metrics.json` instead. See [Node 06](#node-06-export-fasta).
 
