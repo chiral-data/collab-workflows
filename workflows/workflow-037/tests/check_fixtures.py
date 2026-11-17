@@ -95,6 +95,56 @@ def check_inserted_residues_addressable(fx, _):
     return PASS, f"{found} inserted residue(s) addressable and uniquely labelled"
 
 
+def check_insertion_codes_warned_at_use(fx, _):
+    """Node 02 must name the residues an author-numbered hotspot cannot reach.
+
+    The spec itself is not wrong: author numbering means the first occurrence, and that
+    is what gets conditioned. What is checked here is that the loss is announced where
+    the residue is named -- node 01's warning is about the structure and arrives in a
+    different node's log -- and that the shadowed residues really are absent from the
+    spec, so the message and the spec agree.
+
+    Which residues are shadowed is measured from the inventory, not listed here, so the
+    check still fits if the fixture's hotspot span changes.
+    """
+    tokens = fx.spec.get("params", {}).get("PARAM_HOTSPOT_RESIDUES", "")
+    wanted = set()
+    for token in tokens.split(","):
+        match = re.match(r"^([A-Za-z]*)(\d+)(?:-(\d+))?$", token.strip())
+        if match:
+            start = int(match.group(2))
+            wanted.update(range(start, int(match.group(3) or start) + 1))
+    if not wanted:
+        return FAIL, "fixture names no hotspot residues, so nothing can be shadowed"
+
+    # Only the target chain: hotspots may name no other, and a residue numbered 100A on
+    # a different chain of the same Fab would otherwise stand in for the one at issue.
+    wanted_chain = fx.spec.get("params", {}).get("PARAM_TARGET_CHAIN", "")
+    target = fx.chains.get(wanted_chain) or next(
+        (c for c in fx.chains.values() if c.get("auth_asym_id") == wanted_chain), None)
+    if target is None:
+        return FAIL, f"target chain {wanted_chain!r} is not in the inventory"
+
+    shadowed = []
+    for residue in target.get("residues", []):
+        if residue.get("ins_code") and int(residue["auth_seq_id"]) in wanted:
+            shadowed.append((f"{residue['auth_seq_id']}{residue['ins_code']}",
+                             residue["label_seq_id"]))
+    if not shadowed:
+        return FAIL, "no requested hotspot carries an insertion code; fixture no longer fits"
+
+    warnings = [l for l in fx.n2_log.splitlines() if l.startswith("WARNING")]
+    missing = [name for name, _ in shadowed
+               if not any(name in line for line in warnings)]
+    if missing:
+        return FAIL, f"node 02 never named {', '.join(missing)} as unreachable"
+    leaked = [str(seq) for _, seq in shadowed if f"/{seq}/" in fx.spec_yaml]
+    if leaked:
+        return FAIL, f"spec conditions label {', '.join(leaked)}, which auth cannot name"
+    return PASS, (f"{len(shadowed)} shadowed residue(s) named in node 02's log "
+                  "and absent from the spec")
+
+
 def check_log_mentions_models(fx, _):
     models = fx.truth.get("models", 1)
     if models <= 1:
@@ -388,6 +438,7 @@ NODE04_CHECKS = {
 CHECKS = {
     "label_to_auth_complete": check_label_to_auth_complete,
     "inserted_residues_addressable": check_inserted_residues_addressable,
+    "insertion_codes_warned_at_use": check_insertion_codes_warned_at_use,
     "log_mentions_models": check_log_mentions_models,
     "single_model_output": check_single_model_output,
     "nonpolymer_named": check_nonpolymer_named,

@@ -23,6 +23,17 @@
       ]
     },
     {
+      "id": "12E8-hotspots",
+      "source": "12E8.cif",
+      "shape": "the same Fab, with a hotspot span named in author numbering over CDR-H3",
+      "evidence": "author 100 on chain H covers 4 residues -- 100, 100A, 100B, 100C -- at label 104, 105, 106, 107; auth_to_label maps 100 to 104 alone",
+      "why": "Node 01 warns that author->label translation takes the first occurrence. This fixture pins the warning where the loss actually happens: the user names the residue in node 02, against a different parameter, and three of the four residues in the span are not conditioned.",
+      "params": {"PARAM_TARGET_CHAIN": "H", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth", "PARAM_HOTSPOT_RESIDUES": "H99-101"},
+      "expect": [
+        {"check": "insertion_codes_warned_at_use", "finding": "#52"}
+      ]
+    },
+    {
       "id": "1IGT",
       "shape": "intact IgG: insertion codes plus N-linked glycans",
       "evidence": "4 chains; 7 insertion codes; 6 duplicate author numbers; 6 non-polymer components (BMA,FUC,FUL,GAL,MAN,NAG); 18 zero-occupancy atoms",

@@ -130,7 +130,8 @@ have no `label_seq_id` and are excluded from the inventory, since they cannot ap
 PDB input is the weaker path: it carries no polymer definition, so modified residues are left out of
 the numbering and a chain containing them will number differently than the same entry's RCSB mmCIF.
 Prefer mmCIF when the target has modified residues. Repeated author numbers (insertion codes) make
-author->label translation ambiguous; the node warns and maps the first occurrence.
+author->label translation ambiguous; the node warns and maps the first occurrence, and node 02
+repeats that warning against the parameter that names the residue.
 
 **Outputs:**
 - `target.cif` — the target, normalised to mmCIF
@@ -160,7 +161,11 @@ naming a residue without naming atoms marks every atom in it, backbone included;
 freezes a set of residues relative to each other while letting the group move; `C_SEQ` freezes
 identity. A motif graft therefore needs `C_CRDGRP` *and* `C_SEQ` — geometry without identity
 scaffolds the right shape with the wrong chemistry. When a design comes out wrong, `spec_preview.cif`
-is the file to open: it shows exactly which residues the model was told to hold.
+is the file to open: it shows exactly which residues the model was told to hold. Author
+numbering cannot name a residue carrying an insertion code -- `100A` is not a number -- so a
+hotspot or motif given in author numbering on such a chain conditions the first occurrence only.
+The node says so where the residue is named, listing the residues it could not reach and the label
+numbers that would reach them; on an antibody those are the CDR residues themselves.
 
 **Outputs:**
 - `design_spec.yaml` — the condition spec handed to `rfd4-generate`

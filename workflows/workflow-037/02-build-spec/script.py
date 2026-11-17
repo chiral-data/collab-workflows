@@ -124,6 +124,27 @@ def parse_residue_tokens(spec, default_chain):
     return out
 
 
+def insertion_code_siblings(chain, auth_residue_id):
+    """Residues sharing this author number through an insertion code, label id and all.
+
+    Node 01 already warns that author->label translation takes the first occurrence, and
+    lists the label numbers of the residues it cannot name. The warning is repeated here
+    because this is where the loss actually happens. Node 01 warns about the structure;
+    the user names the residue in a different node, against a different parameter, and
+    nothing in between mentions it again. On an antibody the shadowed residues are
+    100A/100B/100C in CDR-H3 -- exactly the ones someone would name as hotspots.
+    """
+    prefix = str(auth_residue_id)
+    siblings = []
+    for label_seq, auth in chain.get("label_to_auth", {}).items():
+        # Suffix must be alphabetic, or auth 1000 would read as a sibling of auth 100.
+        suffix = auth[len(prefix):]
+        if auth.startswith(prefix) and suffix and suffix.isalpha():
+            siblings.append((auth, int(label_seq)))
+    siblings.sort(key=lambda item: item[1])
+    return siblings
+
+
 def to_label_ids(residues, inventory, numbering):
     """Translate (chain, residue) pairs to (label_asym_id, label_seq_id)."""
     translated = []
@@ -147,6 +168,18 @@ def to_label_ids(residues, inventory, numbering):
                     "If you meant mmCIF numbering, set residue_numbering=label."
                 )
             label_seq = int(label_seq)
+            shadowed = insertion_code_siblings(chain, residue_id)
+            if shadowed:
+                names = ", ".join(name for name, _ in shadowed)
+                labels = ", ".join(str(seq) for _, seq in shadowed)
+                print(
+                    f"WARNING: {chain_id}{residue_id} (author numbering) names label "
+                    f"{label_seq} and nothing else. Chain {chain['label_asym_id']} also "
+                    f"carries {names} at label {labels}, which author numbering cannot "
+                    "address, so those residues are not conditioned here. Set "
+                    "residue_numbering=label and name the label numbers to include them.",
+                    flush=True,
+                )
         translated.append((chain["label_asym_id"], label_seq))
     return translated
 

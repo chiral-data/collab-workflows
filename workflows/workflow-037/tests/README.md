@@ -93,6 +93,7 @@ real-looking coordinates*, present in four of the twelve (12E8: 80 atoms, 5O45: 
 | Entry | Shape | Catches |
 |---|---|---|
 | 12E8 | Fab, Kabat insertion codes 52A / 82A-C / 100A-C | residues in CDR-H2 and CDR-H3 that could not be addressed |
+| 12E8-hotspots | the same Fab, hotspots named over CDR-H3 in author numbering | insertion-coded residues left out of a hotspot span with nothing said where it happens |
 | 1IGT | intact IgG, insertion codes + N-glycans | same, plus branched non-polymer |
 | 1G03 | NMR, 20 models | ensemble passed through whole |
 | 2KOX | NMR, 640 models | same, at 787,840 atom rows for a 76-residue protein |
