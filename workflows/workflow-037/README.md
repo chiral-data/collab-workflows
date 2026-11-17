@@ -239,8 +239,11 @@ for reasons that have nothing to do with the design.
 **Process:** Inlines the metrics table and the top `top_n` structures into a single `report.html`
 (Bootstrap 5, Plotly and Mol* from CDN, all data as inline JS), with a click-a-row-to-view table, a
 length-vs-contacts scatter, a Mol* viewer switchable across designs, and a run-provenance list.
-Designs are ordered by interface contacts descending — a convenience, not a ranking. The biosafety
-notice is rendered as a top-level alert, not a footnote.
+Designs are listed in name order with clashing ones moved to the bottom, and the report says in so
+many words that the order is not a ranking. Nothing in this workflow has measured design quality, and
+every column in the table is a geometric description an unfolded chain can score well on — ordering
+on one would read as a verdict the numbers cannot support. The biosafety notice is rendered as a
+top-level alert, not a footnote.
 
 **Scientific notes:** The report carries its own *data*: structures and metrics are embedded
 rather than referenced, so it survives being emailed or archived away from the run directory.

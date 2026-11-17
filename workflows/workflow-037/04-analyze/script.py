@@ -31,6 +31,7 @@ import csv
 import glob
 import json
 import os
+import re
 import sys
 
 CONTACT_CUTOFF_A = 8.0  # CA-CA. See the note below on why this is not node 02's 4.5.
@@ -276,10 +277,22 @@ def analyze(path):
     }
 
 
+def natural_key(name):
+    """Sort key that reads runs of digits as numbers.
+
+    RFD4 names designs with a trailing index, so a plain lexicographic sort puts
+    design_10 between design_1 and design_2. Every node downstream keys off the
+    design name, so the order only ever affected what a reader sees -- but what a
+    reader sees is the whole point of the next two nodes.
+    """
+    return [int(p) if p.isdigit() else p for p in re.split(r"(\d+)", name)]
+
+
 def main():
     os.makedirs("./outputs", exist_ok=True)
 
-    designs = sorted(glob.glob("./inputs/*_generated.cif"))
+    designs = sorted(glob.glob("./inputs/*_generated.cif"),
+                     key=lambda p: natural_key(os.path.basename(p)))
     if not designs:
         fail("No generated structures found in ./inputs/ (*_generated.cif)")
 

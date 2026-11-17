@@ -192,9 +192,9 @@
       "n_designs": 12,
       "shape": "compact",
       "length": 10,
-      "why": "Lexicographic sort puts design_10 and design_11 between design_1 and design_2. Display order only -- every row carries its own name, and nodes 05 and 06 key by name rather than by position -- but a reader reconciling the table against a run directory should not have to work that out.",
+      "why": "Lexicographic sort puts design_10 and design_11 between design_1 and design_2. Display order only -- every row carries its own name, and nodes 05 and 06 key by name rather than by position -- but a reader reconciling the table against a run directory should not have to work that out. Node 04 now sorts numerically and nodes 05 and 06 inherit that order, so this is a regression guard rather than a gap.",
       "expect": [
-        {"check": "design_rows_in_numeric_order", "finding": "#51", "status": "open"}
+        {"check": "design_rows_in_numeric_order", "finding": "#51"}
       ]
     },
     {

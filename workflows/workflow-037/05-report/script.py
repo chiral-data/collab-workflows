@@ -13,13 +13,16 @@ The report carries the biosafety notice prominently: the RFD4 CLI and Python API
 SecureDNA screening (only the HF Spaces apps do), so designs leaving this workflow are
 unscreened and require review before synthesis.
 
-Designs are ordered by interface contacts (descending) for binder-style runs, falling back
-to design name when nothing has a target to contact. That ordering is a convenience, not a
-ranking: with `~metrics` there is no confidence or affinity estimate to rank by.
+Designs are listed in name order, with clashing ones moved to the bottom. That is not a
+ranking and nothing here is: with `~metrics` there is no confidence, affinity or
+self-consistency estimate, and every column in the table is a geometric description that an
+unfolded chain can score well on. An ordering built from any of them would read as a verdict
+the numbers cannot support, so the report does not offer one.
 """
 import glob
 import json
 import os
+import re
 import sys
 
 BOOTSTRAP_CSS = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -109,18 +112,20 @@ def build_html(metrics, structures, top_n):
     <div class="col-lg-7">
       <h2 class="h5">Designs</h2>
       <p class="text-muted small mb-2">
-        Ordered by interface contacts, descending, with clashing designs moved to the
-        bottom &mdash; a convenience, not a ranking. Generation ran with
+        <strong>This table is not a ranking, and the order means nothing.</strong> Designs
+        are listed by name, with clashing ones moved to the bottom. Generation ran with
         <code>~metrics</code>, so there is no confidence, affinity or self-consistency
-        estimate to rank by, and contact counts rise with designed length.
+        estimate here, and every column below is a geometric description that an unfolded
+        chain can score well on &mdash; contact counts in particular rise with designed
+        length and are highest of all for a design passing through its target. Which of
+        these designs is worth making is not a question this report answers.
       </p>
       <p class="text-muted small mb-2">
         <strong>Clash</strong> marks a design whose closest inter-chain C&alpha;&ndash;C&alpha;
         distance is under 3.8&nbsp;&Aring; &mdash; shorter than the C&alpha;&ndash;C&alpha;
         virtual bond between two covalently joined residues, so the chains are passing
-        through each other rather than touching. Such a design has the highest contact
-        count of all, which is why it is ranked last here instead of first. Treat a
-        flagged design as discarded.
+        through each other rather than touching. Treat a flagged design as discarded;
+        it is listed last for that reason, not as a low score.
       </p>
       <div class="table-responsive">
         <table class="table table-sm table-hover align-middle" id="metrics-table">
@@ -294,20 +299,27 @@ def main():
     rows = metrics.get("designs", [])
     by_name = {row["design"]: row for row in rows}
 
+    def natural_key(name):
+        """Sort key that reads runs of digits as numbers, so design_2 precedes design_10."""
+        return [int(p) if p.isdigit() else p for p in re.split(r"(\d+)", name)]
+
     def order_key(path):
         row = by_name.get(os.path.basename(path), {})
-        # A clashing design has backbone passing through the target, so it scores the
-        # *highest* raw contact count there is — ordering on contacts alone puts the
-        # least physical design at the top of the report and the first structure in the
-        # viewer. Sink them instead: they are still shown, still counted, and flagged in
-        # their own column, but they stop being what the reader sees first.
-        return (
-            bool(row.get("steric_clash")),
-            -(row.get("n_interface_contacts") or 0),
-            os.path.basename(path),
-        )
+        # Name order, with one exception. A clashing design has backbone passing through
+        # the target, so it is not a candidate at all and does not belong among the ones
+        # a reader scrolls first; it stays in the table, still counted and flagged in its
+        # own column, but it sinks.
+        #
+        # This used to order on interface contacts, descending. That was wrong twice over.
+        # A clash scores the *highest* raw contact count there is, so the metric rewards
+        # exactly the design that should rank last, and sinking clashes was a patch over
+        # that rather than a fix. More importantly, contact count is not quality: it rises
+        # with designed length, it is computable on an unfolded chain, and nothing in this
+        # workflow has measured whether any design folds or binds. Sorting on it put a
+        # number at the top of the page that readers would take as a winner. Name order
+        # makes no claim at all, which is the only honest claim available here.
+        return (bool(row.get("steric_clash")), natural_key(os.path.basename(path)))
 
-    # Convenience ordering, not a ranking — see the module docstring.
     ordered = sorted(designs, key=order_key)
     metrics["designs"] = [
         by_name[os.path.basename(path)]

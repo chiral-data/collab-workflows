@@ -187,7 +187,12 @@ def main():
             order = {row["design"]: index for index, row in enumerate(rows)}
         except Exception as exc:
             print(f"WARNING: could not read design metrics: {exc}", flush=True)
-    designs.sort(key=lambda p: (order.get(os.path.basename(p), 10**6), os.path.basename(p)))
+    def natural_key(name):
+        """Sort key that reads runs of digits as numbers, so design_2 precedes design_10."""
+        return [int(p) if p.isdigit() else p for p in re.split(r"(\d+)", name)]
+
+    designs.sort(key=lambda p: (order.get(os.path.basename(p), 10**6),
+                                natural_key(os.path.basename(p))))
 
     records = []
     skipped = []
