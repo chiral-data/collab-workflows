@@ -226,7 +226,8 @@
       "length": 60,
       "why": "An extended chain with perfect bond lengths: the shape is wrong, not the chemistry. This is what a wrong checkpoint produces, and no other metric in the pipeline would show it -- contacts, charge and composition are all computable on an unfolded chain and all look ordinary.",
       "expect": [
-        {"check": "node04_geometry", "overextended": true, "max_chain_breaks": 0, "finding": "model-sanity"}
+        {"check": "node04_geometry", "overextended": true, "max_chain_breaks": 0, "finding": "model-sanity"},
+        {"check": "node05_reports_geometry", "overextended": true, "finding": "#53"}
       ]
     },
     {
@@ -236,7 +237,8 @@
       "length": 60,
       "why": "One residue displaced 12 A from its neighbour. A design arrives as a single continuous chain, so a gap no peptide bond spans means the output is not a polypeptide.",
       "expect": [
-        {"check": "node04_geometry", "min_chain_breaks": 1, "finding": "model-sanity"}
+        {"check": "node04_geometry", "min_chain_breaks": 1, "finding": "model-sanity"},
+        {"check": "node05_reports_geometry", "min_chain_breaks": 1, "finding": "#53"}
       ]
     },
     {

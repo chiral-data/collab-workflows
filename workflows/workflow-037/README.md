@@ -269,8 +269,11 @@ for reasons that have nothing to do with the design.
 **Process:** Inlines the metrics table and the top `top_n` structures into a single `report.html`
 (Bootstrap 5, Plotly and Mol* from CDN, all data as inline JS), with a click-a-row-to-view table, a
 length-vs-contacts scatter, a Mol* viewer switchable across designs, and a run-provenance list.
-Designs are listed in name order with clashing ones moved to the bottom, and the report says in so
-many words that the order is not a ranking. Nothing in this workflow has measured design quality, and
+Designs are listed in name order with clashing ones — and ones node 04 judged not to be folded
+polypeptides at all — moved to the bottom, and the report says in so many words that the order is
+not a ranking. `Compactness`, `Chain breaks` and `Unfolded` are rendered as columns with a note
+saying what they catch: they are the only columns that would reveal a broken checkpoint, and a
+report that omitted them left a design node 04 had called unfolded looking ordinary. Nothing in this workflow has measured design quality, and
 every column in the table is a geometric description an unfolded chain can score well on — ordering
 on one would read as a verdict the numbers cannot support. The biosafety notice is rendered as a
 top-level alert, not a footnote.
@@ -528,7 +531,11 @@ unexpected layout shows up as a named fallback rather than as quietly wrong metr
 all — a wrong checkpoint, a failed generation. Nothing else here would: contacts, charge, composition
 and even Rg itself are all computable on an unfolded chain and all look ordinary. A denatured chain
 sits near ratio 2.1; designs from this workflow have measured 0.94 to 1.49, and the warning fires
-above 1.8. They say nothing about whether a folded design is any *good*.
+above 1.8. `overextended` is that verdict as a field — the ratio past 1.8 on a design long enough
+for the relation to mean anything — so the report and this table agree with the warning node 04
+printed instead of each re-deriving the threshold. All three are rendered in the report, because a
+reader who only ever opens `report.html` is exactly the reader who needs to be told the output is
+not a protein. They say nothing about whether a folded design is any *good*.
 
 ### sequences.fasta
 

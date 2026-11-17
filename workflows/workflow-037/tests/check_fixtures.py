@@ -398,6 +398,33 @@ def check_node05_reports_clash(case_dir, _):
     return PASS, "Clash column present and a design is flagged"
 
 
+def check_node05_reports_geometry(case_dir, expect):
+    """The report must carry node 04's verdict that a design is not a folded polypeptide.
+
+    Node 04 warns, but the report is what gets emailed and archived, and it used to render
+    an unfolded design as an ordinary row: neither compactness_ratio nor chain_breaks was
+    a column, so the only visible number was a radius of gyration with nothing to compare
+    it against. The payload has always carried both -- this checks a reader sees them.
+    """
+    path = os.path.join(case_dir, "n5", "outputs", "report.html")
+    if not os.path.exists(path):
+        return FAIL, "node 05 produced no report.html"
+    with open(path, errors="replace") as handle:
+        html = handle.read()
+    missing = [label for label in ("Compactness", "Chain breaks", "Unfolded")
+               if label not in html]
+    if missing:
+        return FAIL, f"report has no {', '.join(missing)} column"
+    payload = load_metrics(case_dir)
+    row = ((payload or {}).get("designs") or [{}])[0]
+    if expect.get("overextended") and not row.get("overextended"):
+        return FAIL, "node 04 did not flag the design as overextended"
+    if expect.get("min_chain_breaks") and not row.get("chain_breaks"):
+        return FAIL, "node 04 recorded no chain break to report"
+    return PASS, ("geometry columns present; "
+                  f"overextended={row.get('overextended')} breaks={row.get('chain_breaks')}")
+
+
 def check_node06_per_design_fasta(case_dir, expect):
     """One FASTA per design, each holding exactly one record.
 
@@ -431,6 +458,7 @@ NODE04_CHECKS = {
     "node04_geometry": check_node04_geometry,
     "node05_clash_ranked_last": check_node05_clash_ranked_last,
     "node05_reports_clash": check_node05_reports_clash,
+    "node05_reports_geometry": check_node05_reports_geometry,
     "node06_per_design_fasta": check_node06_per_design_fasta,
 }
 

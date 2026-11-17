@@ -37,11 +37,29 @@ TABLE_COLUMNS = [
     ("hydrophobic_fraction", "Hydrophobic"),
     ("net_charge", "Net charge"),
     ("radius_of_gyration_A", "Rg (Å)"),
+    ("compactness_ratio", "Compactness"),
+    ("chain_breaks", "Chain breaks"),
+    ("overextended", "Unfolded"),
     ("n_interface_contacts", "Contacts"),
     ("n_target_residues_contacted", "Target res."),
     ("min_interchain_ca_distance_A", "Min CA-CA (Å)"),
     ("steric_clash", "Clash"),
 ]
+
+
+def not_a_folded_polypeptide(row):
+    """Node 04's verdict on whether this is a protein at all, read rather than recomputed.
+
+    Two ways out: a chain that has not folded (overextended), and a backbone with a gap no
+    peptide bond spans. Node 04 warns about both and nothing in this report used to carry
+    either, so a design the previous node called "what a wrong checkpoint looks like"
+    arrived here as an ordinary row with an unremarkable Rg in it.
+    """
+    try:
+        breaks = int(row.get("chain_breaks") or 0)
+    except (TypeError, ValueError):
+        breaks = 0
+    return bool(row.get("overextended")) or breaks > 0
 
 
 def fail(message):
@@ -113,12 +131,23 @@ def build_html(metrics, structures, top_n):
       <h2 class="h5">Designs</h2>
       <p class="text-muted small mb-2">
         <strong>This table is not a ranking, and the order means nothing.</strong> Designs
-        are listed by name, with clashing ones moved to the bottom. Generation ran with
+        are listed by name, with clashing ones and ones that are not folded polypeptides
+        moved to the bottom. Generation ran with
         <code>~metrics</code>, so there is no confidence, affinity or self-consistency
         estimate here, and every column below is a geometric description that an unfolded
         chain can score well on &mdash; contact counts in particular rise with designed
         length and are highest of all for a design passing through its target. Which of
         these designs is worth making is not a question this report answers.
+      </p>
+      <p class="text-muted small mb-2">
+        <strong>Compactness</strong> is the radius of gyration over the 2.2&middot;N^0.38&nbsp;&Aring;
+        expected of a compact fold, <strong>Chain breaks</strong> counts consecutive
+        alpha carbons too far apart for a peptide bond, and <strong>Unfolded</strong> is
+        this pipeline's verdict that the chain is too extended to be a folded protein of
+        its length. These are the only columns here that would reveal a broken checkpoint
+        or a failed generation: every other number stays ordinary on a chain that never
+        folded. A design flagged in either of the last two is not a design &mdash; read
+        the generation log before reading anything else in this table.
       </p>
       <p class="text-muted small mb-2">
         <strong>Clash</strong> marks a design whose closest inter-chain C&alpha;&ndash;C&alpha;
@@ -318,7 +347,10 @@ def main():
         # workflow has measured whether any design folds or binds. Sorting on it put a
         # number at the top of the page that readers would take as a winner. Name order
         # makes no claim at all, which is the only honest claim available here.
-        return (bool(row.get("steric_clash")), natural_key(os.path.basename(path)))
+        return (
+            bool(row.get("steric_clash")) or not_a_folded_polypeptide(row),
+            natural_key(os.path.basename(path)),
+        )
 
     ordered = sorted(designs, key=order_key)
     metrics["designs"] = [

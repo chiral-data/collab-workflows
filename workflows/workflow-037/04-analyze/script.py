@@ -80,6 +80,7 @@ COLUMNS = [
     "radius_of_gyration_A",
     "expected_radius_of_gyration_A",
     "compactness_ratio",
+    "overextended",
     "chain_breaks",
     "n_interface_contacts",
     "n_target_residues_contacted",
@@ -315,6 +316,11 @@ def analyze(path, target_chains=None):
             round(expected_gyration, 2) if expected_gyration is not None else None
         ),
         "compactness_ratio": ratio,
+        # The verdict, not just the number. Node 05 renders this rather than applying
+        # COMPACTNESS_LIMIT itself: the threshold and the minimum length it is only
+        # meaningful above are this node's to decide, and a report that re-derived them
+        # could disagree with the warning printed here about the same design.
+        "overextended": overextended,
         "chain_breaks": breaks,
         "n_interface_contacts": contacts,
         "n_target_residues_contacted": contacted,
@@ -411,12 +417,7 @@ def main():
             "and the generation log before reading any other number here.",
             flush=True,
         )
-    loose = [
-        r for r in rows
-        if r["compactness_ratio"] is not None
-        and r["designed_length"] >= MIN_LENGTH_FOR_COMPACTNESS
-        and r["compactness_ratio"] > COMPACTNESS_LIMIT
-    ]
+    loose = [r for r in rows if r["overextended"]]
     if loose:
         named = ", ".join(
             f"{r['design']} ({r['radius_of_gyration_A']} A vs "
