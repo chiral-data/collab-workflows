@@ -162,8 +162,8 @@ the sampling and the analysis side, and no mmCIF is parsed anywhere in this work
 | 01 | `01-prepare-system` | (params; optional upload) | `system.yaml`, `system_inventory.json` | No |
 | 02 | `02-fetch-msa` | `system.yaml`, `system_inventory.json` | `msa/`, `msa_summary.json`, `system.yaml` | No |
 | 03 | `03-sample` | `system.yaml`, `msa_summary.json`, `msa/` | `samples.xtc`, `topology.cif`, `physicality.json`, `system.yaml`, `sampling_manifest.json`, `msa/` | **Yes** |
-| 04 | `04-propagate` | node 03 ensemble | `propagated_samples.xtc`, `propagated_topology.cif`, `propagation_manifest.json` | **Yes** |
-| 05 | `05-analyze` | nodes 03 + 04 | `ensemble_metrics.csv`, `ensemble_summary.json`, `ensemble_top.pdb` | No |
+| 04 | `04-propagate` | node 03 ensemble, `physicality.json`, `sampling_manifest.json`, `msa/` | `propagated_samples.xtc`, `propagated_topology.cif`, `propagated_physicality.json`, `propagation_manifest.json` | **Yes** |
+| 05 | `05-analyze` | nodes 03 + 04, minus `topology.cif` which nothing reads | `ensemble_metrics.csv`, `ensemble_summary.json`, `ensemble_top.pdb` | No |
 | 06 | `06-report` | nodes 03 + 04 + 05 | `report.html` | No |
 
 ```text
@@ -181,7 +181,8 @@ params / uploaded system or structure
    ├───────────────┐
    │               ▼
    │        [04-propagate] (GPU, identity when disabled)
-   │               │   └──► propagated_samples.xtc, propagation_manifest.json
+   │               │   └──► propagated_samples.xtc, propagated_physicality.json,
+   │               │        propagation_manifest.json
    ├───────────────┼──────────► [05-analyze] ──► ensemble_metrics.csv,
    │               │                │            ensemble_summary.json, ensemble_top.pdb
    └───────────────┴────────────────┴──────────► [06-report] ──► report.html

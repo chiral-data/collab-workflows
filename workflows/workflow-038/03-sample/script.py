@@ -341,9 +341,30 @@ def main():
     except Exception as exc:
         fail(f"Could not save the ensemble: {exc}")
 
+    # `checked` is False in two unrelated situations, and the distinction has to survive into
+    # the manifest. bioemu2's check_physicality returns passed=all-True, checked=False both
+    # when mode is no_filter (the thresholds were switched off) and when the system has no
+    # eligible protein atoms (there was nothing to check). Counting that all-True array as
+    # passes reported pass_rate 1.0 for a run where nothing was ever examined.
     passed = getattr(physicality, "passed", None)
     checked = bool(getattr(physicality, "checked", False))
-    n_passed = int(sum(bool(x) for x in passed)) if passed is not None else None
+    if physicality_filter == "no_filter":
+        not_checked_because = "physicality_filter=no_filter, so no thresholds were applied"
+    elif not checked:
+        not_checked_because = (
+            "no eligible protein atoms: bioemu2 checks only multi-residue chains containing "
+            "a standard amino acid"
+        )
+    else:
+        not_checked_because = None
+
+    n_passed = int(sum(bool(x) for x in passed)) if (checked and passed is not None) else None
+    reasons = list(getattr(physicality, "reasons", None) or [])
+    reason_counts = {}
+    if checked:
+        for reason in reasons:
+            if reason:
+                reason_counts[str(reason)] = reason_counts.get(str(reason), 0) + 1
 
     manifest = {
         "settings": settings,
@@ -351,12 +372,19 @@ def main():
         "n_frames": int(samples.n_frames),
         "n_atoms": int(samples.n_atoms),
         "physicality_checked": checked,
+        "physicality_not_checked_because": not_checked_because,
         "n_passed": n_passed,
         "pass_rate": (
             round(n_passed / samples.n_frames, 3)
             if n_passed is not None and samples.n_frames
             else None
         ),
+        # First failed check per rejected frame, counted. These are bioemu2's threshold names:
+        # bad_bonds_backbone, bad_bonds_sidechain, bad_bonds_sulfur, within_residue_clashes,
+        # valence_exceeded, isolated_atoms, same_chain_residue_clashes,
+        # cross_chain_residue_clashes, duplicate_atoms, atoms_mismatch, bonds_mismatch, or
+        # non_finite_atoms.
+        "rejection_reasons": reason_counts,
         "msa_source": msa_summary.get("source"),
         "msa_min_depth": msa_summary.get("min_depth"),
         # What the model was actually given, as distinct from what node 02 fetched. These
@@ -387,14 +415,23 @@ def main():
     )
     if n_passed is not None and checked:
         print(f"Physicality: {n_passed}/{samples.n_frames} frame(s) passed", flush=True)
+        if reason_counts:
+            print(f"  first failed check per rejected frame: {reason_counts}", flush=True)
         if n_passed == 0:
             print(
                 "WARNING: no frame passed the physicality checks. Rejected frames are kept "
                 "by design, but consider a steering sampler (edm_gd or edm_fk).",
                 flush=True,
             )
+        elif n_passed * 2 < samples.n_frames:
+            print(
+                f"WARNING: more than half the frames ({samples.n_frames - n_passed}/"
+                f"{samples.n_frames}) failed the physicality checks. Upstream treats this as "
+                "a sign that the checkpoint or the system needs review.",
+                flush=True,
+            )
     else:
-        print("Physicality: not checked (no eligible protein atoms)", flush=True)
+        print(f"Physicality: not checked — {not_checked_because}", flush=True)
 
 
 if __name__ == "__main__":

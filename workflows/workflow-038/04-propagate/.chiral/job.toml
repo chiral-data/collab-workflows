@@ -3,6 +3,7 @@ description = "Draw one time-lagged endpoint per sampled conformation with the i
 inputs = [
   "samples.xtc",
   "topology.cif",
+  "physicality.json",
   "system.yaml",
   "sampling_manifest.json",
   "msa",
@@ -10,6 +11,7 @@ inputs = [
 outputs = [
   "propagated_samples.xtc",
   "propagated_topology.cif",
+  "propagated_physicality.json",
   "propagation_manifest.json",
 ]
 
@@ -51,7 +53,12 @@ hint = "Random seed; batch i uses seed + i. Set to -1 for unseeded sampling"
 [params.sampler]
 type = "string"
 default = "edm"
-hint = "Sampling algorithm: edm (unsteered), edm_gd, edm_fk, or edm_fkc (steered toward physicality)"
+hint = "Sampling algorithm for propagation: edm (unsteered) or edm_gd. edm_fk and edm_fkc enable resampling, which needs identical starting frames, so they are rejected here"
+
+[params.physicality_filter]
+type = "string"
+default = "high_quality"
+hint = "Physicality check mode reported per propagated endpoint: high_quality, high_quality_per_residue, no_violations, or no_filter. Endpoints are never removed"
 
 [params.precision]
 type = "string"

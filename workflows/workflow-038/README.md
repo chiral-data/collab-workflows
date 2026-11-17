@@ -78,7 +78,8 @@ sequence / structure / system YAML / RCSB accession
    ├──────────────┐
    │              ▼
    │        [04-propagate] (GPU, identity when disabled)
-   │              │   └──► propagated_samples.xtc, propagation_manifest.json
+   │              │   └──► propagated_samples.xtc, propagated_physicality.json,
+   │              │        propagation_manifest.json
    │              │
    ├──────────────┼──────────► [05-analyze] ──► ensemble_metrics.csv,
    │              │                 │           ensemble_summary.json, ensemble_top.pdb
@@ -193,10 +194,22 @@ not match the ensemble they started from, and no later node could detect the dif
 this is a failure and not a warning. `propagation_manifest.json` records which alignment was
 used.
 
+It runs `check_physicality()` on the endpoints and writes `propagated_physicality.json`, with
+the same contract as node 03: every endpoint keeps its place and the verdict is reported, never
+enforced. On a pass-through run that file is node 03's report copied forward, because the frames
+are node 03's frames.
+
+`sampler` is restricted here. `edm_fk` and `edm_fkc` turn on resampling, which copies particles
+within a group of consecutive samples and so requires every frame in a group to be identical.
+The starting frames are node 03's samples, which are all different, so the node rejects those
+two up front with that reason rather than letting the failure surface from inside BioEmu2.
+`edm` and `edm_gd` are supported; `edm_gd`'s preset sets `resampling_interval=None`.
+
 **Scientific notes:** The result is one endpoint per start point at the chosen lag, **not** a
 continuous path. Upstream recommends lags of 1–1000 ns, the range the model was trained for.
 
-**Outputs:** `propagated_samples.xtc`, `propagated_topology.cif`, `propagation_manifest.json`
+**Outputs:** `propagated_samples.xtc`, `propagated_topology.cif`,
+`propagated_physicality.json`, `propagation_manifest.json`
 
 ### Node 05: Analyze Ensemble
 
@@ -205,11 +218,20 @@ continuous path. Upstream recommends lags of 1–1000 ns, the range the model wa
 **Process:** Binds the XTC to the system's own topology (no mmCIF parsing), then computes
 per-frame radius of gyration and C-α RMSD to the ensemble medoid, a pairwise RMSD matrix,
 per-residue RMSF about the mean structure, and a cluster count by greedy medoid assignment at
-`rmsd_cluster_threshold_nm`. Writes a multi-model PDB of cluster centres for the viewer.
+`rmsd_cluster_threshold_nm`. Writes a multi-model PDB of representative frames for the viewer,
+superposed on the medoid so the viewer animates conformational change rather than tumbling.
+
+The C-α set is selected as `protein and name CA`, not `name CA`. mdtraj matches atom names, and
+a calcium ion is an atom named CA in a residue named CA, so the plain selection folds structural
+calcium into the C-α set and shifts every RMSD, every RMSF and the medoid itself. Chains that
+contribute no C-α atom are named in `ensemble_summary.json` under `excluded_chains`; they stay
+in the frames and in the radius of gyration, which is computed over every atom.
 
 **Scientific notes:** Every quantity is geometric. Cluster sizes are **frame counts**, not
-populations, and this node deliberately computes no thermodynamic quantity. Above 200 frames the
-O(n²) matrix and clustering are skipped and RMSD is measured against frame 0 instead.
+populations, and this node deliberately computes no thermodynamic quantity. The pairwise pass
+streams one row at a time, so the medoid and the ensemble spread are measured over every pair at
+any frame count; above 200 frames only the matrix itself is dropped, which costs the heatmap and
+the cluster count and nothing else.
 
 **Outputs:** `ensemble_metrics.csv`, `ensemble_summary.json`, `ensemble_top.pdb`
 
@@ -272,14 +294,19 @@ drawn, and for `edm_fk`/`edm_fkc` also changes the resampling population.
 
 | Value / Range | Description |
 |---------------|-------------|
-| `edm` (default) | Ordinary, unsteered EDM sampling. |
-| `edm_gd` | Gradient guidance toward the default physicality potentials. |
-| `edm_fk` | Adds Feynman-Kac resampling. |
-| `edm_fkc` | Feynman-Kac corrector. |
+| `edm` (default) | Ordinary, unsteered EDM sampling. `EDMSampler(step_scale=1.0)` in equilibrium mode, 1.5 in structure mode. |
+| `edm_gd` | Gradient guidance toward the default physicality potentials. `GuidedFKSampler(resampling_interval=None)`. |
+| `edm_fk` | The same guidance plus Feynman-Kac resampling every 3 steps. Node 03 only. |
+| `edm_fkc` | Feynman-Kac corrector, resampling when the effective sample size falls below 0.9. Node 03 only. |
 
 **Trade-off:** The steered samplers raise the physicality pass rate at the cost of time, and
 they tilt the sampled distribution — which is the point, and also a reason not to read the
 result as an unbiased ensemble.
+
+Node 04 accepts only `edm` and `edm_gd`. Resampling copies particles within a group of
+consecutive samples, so BioEmu2 requires every starting frame in a group to be identical;
+propagation starts from node 03's samples, which are all different. Node 04 rejects `edm_fk` and
+`edm_fkc` with that reason instead of letting it fail inside the model.
 
 **Test vs production:** `edm` unless the physicality pass rate is poor.
 
@@ -287,13 +314,25 @@ result as an unbiased ensemble.
 
 | Value / Range | Description |
 |---------------|-------------|
-| `high_quality` (default) | Upstream's default check set for bond lengths, clashes, chirality and chain breaks. |
-| `high_quality_per_residue` | The same checks, applied per residue. |
-| `no_violations` | No violation tolerated. |
-| `no_filter` | Skip the checks; every frame is recorded as `not_checked`. |
+| `high_quality` (default) | Upstream's default preset: small violation counts tolerated per frame. |
+| `high_quality_per_residue` | The same checks with the counts divided by the residue count, so the tolerance scales with size. |
+| `no_violations` | Every threshold at zero. |
+| `no_filter` | Run no check at all; every frame is recorded as `not_checked`. |
+
+The checks behind every preset, with upstream's own names, which are what appears in a frame's
+`reason` field: `bad_bonds_backbone`, `bad_bonds_sidechain`, `bad_bonds_sulfur` (a bonded S–S
+pair outside the disulfide window — no preset tolerates one), `within_residue_clashes`,
+`valence_exceeded`, `isolated_atoms`, `same_chain_residue_clashes`,
+`cross_chain_residue_clashes`, `duplicate_atoms`, `atoms_mismatch`, `bonds_mismatch`, and
+`non_finite_atoms`, which rejects a frame under every preset. There is **no chirality check**,
+and no backbone-dihedral or chain-break check either; this table previously claimed one.
 
 **Trade-off:** None in output content — **frames are never removed**, whatever the setting. This
 only changes the verdict recorded per frame.
+
+With `no_filter` the manifest reports `n_passed` and `pass_rate` as null rather than as a clean
+sweep. BioEmu2 returns an all-true `passed` array in that case, so counting it reports 100% of
+frames passing a check that never ran.
 
 ### propagate / lag_time_ns
 
@@ -364,10 +403,19 @@ Each frame is an independent all-atom conformation. There is no time ordering, a
 
 ### physicality.json
 
-One entry per frame: zero-based `frame`, `status` (`passed` / `rejected` / `not_checked`) and
-the first failed check in `reason`. **Rejected frames remain in the XTC** — that is upstream's
-design, not a bug. Filter with `samples[physicality.passed]` if you need only clean frames. No
-nucleic-acid or ligand physicality checks are performed.
+A JSON list, one entry per frame: zero-based `frame`, `status` (`passed` / `rejected` /
+`not_checked`) and the first failed check in `reason`. **Rejected frames remain in the XTC** —
+that is upstream's design, not a bug. To keep only clean frames, read the list and slice the
+trajectory on the frames whose status is `passed`.
+
+Only multi-residue chains containing at least one standard amino acid are checked. A
+nucleic-acid chain, a ligand or a lone ion is not, and `not_checked` for the whole file means
+either `physicality_filter = no_filter` or a system with no such chain —
+`sampling_manifest.json` says which in `physicality_not_checked_because`.
+
+`propagated_physicality.json` is the same format for node 04's endpoints. It carries one extra
+status, `unavailable`, used when the check itself could not run: that is deliberately not one of
+BioEmu2's three values, so it cannot be read as "not checked".
 
 ### ensemble_metrics.csv
 
@@ -381,6 +429,14 @@ Ensemble-level: Rg mean/std/range, pairwise RMSD statistics and the full matrix 
 frames), per-residue RMSF, the medoid frame, and clusters at the chosen threshold. **Cluster
 sizes are frame counts.** They are not populations, not probabilities, and not free energies,
 because BioEmu2's sampling frequency is not a calibrated Boltzmann probability.
+
+`rmsd_atom_selection` records the selection the RMSD and RMSF were computed over, and
+`excluded_chains` the chains that contributed no C-α atom. `viewer_frames` are the frames in
+`ensemble_top.pdb`, `viewer_frames_from_clusters` says how many of them are genuine cluster
+centres rather than consecutive filler, and `viewer_frames_superposed_on_frame` names the frame
+they were superposed on. Each per-residue RMSF entry carries both `chain` (the chain id) and
+`chain_index`, so a multi-chain trace can be split by chain instead of being drawn as one line
+across a discontinuity.
 
 ### report.html
 

@@ -33,6 +33,20 @@ import time
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
 
 SAMPLERS = {"edm", "edm_gd", "edm_fk", "edm_fkc"}
+# Samplers whose presets enable resampling, which propagation cannot use. `edm_fk` is
+# GuidedFKSampler() with resampling_interval=3 and `edm_fkc` is FKCSampler() with
+# ess_threshold=0.9, while `edm_gd` is GuidedFKSampler(resampling_interval=None) and so is
+# fine. propagate_with_embeddings() requires every block of resampling_group_size consecutive
+# x0 frames to be byte-identical, because resampling copies particles within a group and each
+# group must share one conditioning frame. Node 03's samples are all different by
+# construction, so these two can never work here.
+RESAMPLING_SAMPLERS = {"edm_fk", "edm_fkc"}
+PHYSICALITY_MODES = {
+    "high_quality",
+    "high_quality_per_residue",
+    "no_violations",
+    "no_filter",
+}
 PRECISIONS = {"bf16-mixed", "32-true"}
 MATMUL_PRECISIONS = {"highest", "high", "medium"}
 
@@ -92,6 +106,18 @@ def package_version():
         return "unknown"
 
 
+def n_frames_in(xtc_path):
+    """Frame count of an XTC, for a per-frame record written without loading the model."""
+    try:
+        import mdtraj
+
+        with mdtraj.open(xtc_path) as handle:
+            return len(handle)
+    except Exception as exc:
+        print(f"WARNING: could not count frames in {xtc_path}: {exc}", flush=True)
+        return 0
+
+
 def read_json(path, label):
     if not os.path.exists(path):
         print(f"WARNING: {label} not found at {path}", flush=True)
@@ -109,10 +135,35 @@ def write_manifest(payload):
         json.dump(payload, handle, indent=2)
 
 
+def write_unavailable_physicality(n_frames, reason):
+    """Record one `unavailable` verdict per frame.
+
+    Every declared output has to exist, and an absent physicality file would read downstream
+    as "not checked" — which is a real BioEmu2 state meaning the thresholds were disabled, not
+    this one. `unavailable` is deliberately not in upstream's vocabulary of passed / rejected /
+    not_checked, so it cannot be mistaken for any of them.
+    """
+    records = [
+        {"frame": frame, "status": "unavailable", "reason": reason} for frame in range(n_frames)
+    ]
+    with open("./outputs/propagated_physicality.json", "w") as handle:
+        json.dump(records, handle, indent=2)
+
+
 def passthrough(reason):
     """Identity propagation: copy node 03's ensemble into the declared output names."""
     shutil.copyfile("./inputs/samples.xtc", "./outputs/propagated_samples.xtc")
     shutil.copyfile("./inputs/topology.cif", "./outputs/propagated_topology.cif")
+    # These frames *are* node 03's frames, so its verdicts describe them exactly. Copying the
+    # report forward keeps the declared output present and keeps the physicality column
+    # populated for a pass-through run, rather than blanking it.
+    if os.path.exists("./inputs/physicality.json"):
+        shutil.copyfile("./inputs/physicality.json", "./outputs/propagated_physicality.json")
+    else:
+        write_unavailable_physicality(
+            n_frames_in("./inputs/samples.xtc"),
+            "node 03's physicality.json was not staged into node 04",
+        )
     write_manifest(
         {
             "enabled": False,
@@ -137,6 +188,11 @@ def main():
     batch_size = int(os.environ.get("PARAM_BATCH_SIZE", "0"))
     seed = int(os.environ.get("PARAM_SEED", "42"))
     sampler = choice("sampler", os.environ.get("PARAM_SAMPLER", "edm"), SAMPLERS)
+    physicality_filter = choice(
+        "physicality_filter",
+        os.environ.get("PARAM_PHYSICALITY_FILTER", "high_quality"),
+        PHYSICALITY_MODES,
+    )
     precision = choice("precision", os.environ.get("PARAM_PRECISION", "bf16-mixed"), PRECISIONS)
     matmul_precision = choice(
         "matmul_precision",
@@ -164,6 +220,17 @@ def main():
         passthrough("propagate parameter is false")
         return
 
+    if sampler in RESAMPLING_SAMPLERS:
+        fail(
+            f"sampler='{sampler}' cannot be used with propagation. Its preset enables "
+            "resampling, and resampling copies particles within a group of consecutive "
+            "samples, so bioemu2 requires every frame in a group to be identical. The "
+            "starting frames here are node 03's samples, which are all different, so this "
+            "would fail inside propagate_with_embeddings with a message about frames "
+            "differing. Use sampler='edm', or 'edm_gd', whose preset sets "
+            "resampling_interval=None and is supported."
+        )
+
     if lag_time_ns <= 0:
         fail(f"lag_time_ns must be positive, got {lag_time_ns}")
     if not (LAG_MIN_NS <= lag_time_ns <= LAG_MAX_NS):
@@ -180,6 +247,7 @@ def main():
         "batch_size": resolved_batch_size,
         "seed": resolved_seed,
         "sampler": sampler,
+        "physicality_filter": physicality_filter,
         "precision": precision,
         "matmul_precision": matmul_precision,
         "session_mode": "equilibrium",
@@ -196,7 +264,14 @@ def main():
 
     import mdtraj
 
-    from bioemu2 import EmuSession, System, get_msa, load_model, save_frames
+    from bioemu2 import (
+        EmuSession,
+        System,
+        check_physicality,
+        get_msa,
+        load_model,
+        save_frames,
+    )
 
     try:
         system = System.from_yaml(Path("./inputs/system.yaml"))
@@ -307,6 +382,24 @@ def main():
     shutil.copyfile(f"{staging}/topology.cif", "./outputs/propagated_topology.cif")
     shutil.rmtree(staging, ignore_errors=True)
 
+    # A propagated endpoint can be unphysical exactly as a sampled frame can, and upstream
+    # checks every frame at the end of a multi-step rollout for that reason. Without this,
+    # node 03's frames carried a verdict and node 04's carried none, so the report showed a
+    # blank column for the half of the ensemble that had been through an extra model pass.
+    # Frames are reported, never removed, which is the same contract as node 03.
+    physicality = None
+    try:
+        physicality = check_physicality(endpoints, system=system, mode=physicality_filter)
+        physicality.save("./outputs/propagated_physicality.json")
+    except Exception as exc:
+        print(
+            f"WARNING: could not check the propagated endpoints' physicality: {exc}. The "
+            "endpoints are still written; node 05 reports the verdict as unavailable rather "
+            "than as a pass.",
+            flush=True,
+        )
+        write_unavailable_physicality(int(endpoints.n_frames), f"check failed: {exc}")
+
     settings.update(
         {
             "bioemu2_version": package_version(),
@@ -317,6 +410,14 @@ def main():
             "msa_loaded": msa_record["loaded"],
             "msa_how": msa_record["how"],
             "msa_files": msa_record["files"],
+            "physicality_checked": bool(
+                physicality is not None and getattr(physicality, "checked", False)
+            ),
+            "n_passed": (
+                int(sum(bool(x) for x in physicality.passed))
+                if physicality is not None and getattr(physicality, "checked", False)
+                else None
+            ),
             "note": (
                 "One time-lagged endpoint per starting frame, in input order. This is a "
                 "lagged endpoint per start point, not a continuous trajectory."

@@ -1,12 +1,16 @@
 name = "Analyze Ensemble"
 description = "Turn the sampled ensemble into per-frame and ensemble-level geometric metrics, and write a multi-model PDB of representative frames for the report viewer"
+# topology.cif is deliberately not declared: this node builds the topology from
+# system.yaml, because the XTC carries coordinates only and mdtraj's PDBx/mmCIF reader is
+# the weak link. Declaring a file nothing reads invites the next reader to assume it is
+# the authority on atom order.
 inputs = [
   "samples.xtc",
-  "topology.cif",
   "physicality.json",
   "system.yaml",
   "sampling_manifest.json",
   "propagated_samples.xtc",
+  "propagated_physicality.json",
   "propagation_manifest.json",
 ]
 outputs = [
