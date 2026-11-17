@@ -116,32 +116,76 @@ def choice(name, value, allowed):
     return value
 
 
-def load_alignment(system):
-    """Load node 02's A3M files. Returns an MSA, or None when there is nothing to load."""
-    a3m_files = sorted(glob.glob("./inputs/msa/*.a3m"))
+def staged_alignment(msa_summary):
+    """Return the A3M paths Silva staged, refusing to continue if any are missing.
+
+    Sampling without an alignment must never be a silent fallback. `EmuSession` builds its
+    own MSA when handed `msa=None`, which means querying the public ColabFold server from
+    inside a node that is supposed to be offline, and the run then looks exactly like a
+    successful one: frames are produced, exit status is 0, and the manifest records the
+    alignment node 02 fetched rather than the one the model actually used.
+
+    Two independent bugs produced that outcome before this check existed. The declarations
+    said `msa/*.a3m`, and Silva matches an `inputs` entry by **basename**, so the pattern
+    could never match and the directory was never staged. `get_msa` was then handed `str`
+    paths where it requires `Path`, so even a staged alignment would have been rejected.
+    Whether an alignment is due is node 02's finding, not this node's guess: it is read from
+    `protein_chains` in msa_summary.json (see CLAUDE.md, "don't re-derive upstream facts").
+    """
+    expected = list(msa_summary.get("protein_chains") or [])
+    a3m_files = sorted(Path(p) for p in glob.glob("./inputs/msa/*.a3m"))
+
+    if not a3m_files and expected:
+        fail(
+            f"Node 02 reported protein chain(s) {expected} and so fetched an alignment, but "
+            "no .a3m file was staged into ./inputs/msa. Sampling would continue by having "
+            "BioEmu2 fetch its own alignment over the network, so this stops here instead. "
+            "Check that node 02 declares `msa` as an output and this node declares it as an "
+            "input: Silva matches an input entry by basename, so a pattern such as "
+            "'msa/*.a3m' stages nothing and fails silently."
+        )
     if not a3m_files:
         print(
-            "No alignment files from node 02 — sampling without an explicit MSA. For a "
-            "protein system this is unexpected; check node 02's msa_summary.json.",
+            "No alignment to load, and node 02 reported no protein chain, so BioEmu2 needs "
+            "none. Sampling without an MSA.",
             flush=True,
         )
-        return None
+    return a3m_files, expected
+
+
+def load_alignment(system, a3m_files):
+    """Load node 02's A3M files. Returns (msa, record); record states the path taken."""
+    if not a3m_files:
+        return None, {
+            "loaded": False,
+            "how": "no alignment was due (node 02 reported no protein chain)",
+            "files": [],
+        }
 
     from bioemu2 import get_msa
 
-    source = {os.path.splitext(os.path.basename(p))[0]: p for p in a3m_files}
+    # Keys are chain ids, since node 02 writes one <chain>.a3m per protein chain. Values are
+    # Path, not str: get_msa calls Path methods on them and raises on a plain string.
+    source = {path.stem: path for path in a3m_files}
     print(f"Loading {len(source)} alignment(s) from disk: {sorted(source)}", flush=True)
     try:
         # A dict maps one A3M per protein chain; a lone chain can be passed as a bare path.
         if len(source) == 1:
-            return get_msa(system, source=next(iter(source.values())))
-        return get_msa(system, source=source)
+            msa = get_msa(system, source=next(iter(source.values())))
+        else:
+            msa = get_msa(system, source=source)
     except Exception as exc:
         fail(
             f"Could not load the alignment from node 02: {exc}. The first record of each "
             "A3M must be the query and must match the system's sequence after gaps and "
             "insertions are removed."
         )
+    return msa, {
+        "loaded": True,
+        "how": "read from node 02's A3M files",
+        "files": [f"msa/{path.name}" for path in a3m_files],
+        "chains": sorted(source),
+    }
 
 
 def main():
@@ -198,6 +242,15 @@ def main():
 
     msa_summary = read_json("./inputs/msa_summary.json", "MSA summary")
 
+    # Checked before the dry-run exit, so `--dry-run` is a real test of the staging: the
+    # defect this guards against costs nothing to reproduce and needs no GPU.
+    a3m_files, expected_chains = staged_alignment(msa_summary)
+    print(
+        f"Alignment staged: {[p.name for p in a3m_files] or 'none'} "
+        f"(node 02 reported protein chain(s) {expected_chains or 'none'})",
+        flush=True,
+    )
+
     settings = {
         "mode": mode,
         "num_samples": num_samples,
@@ -229,7 +282,7 @@ def main():
     except Exception as exc:
         fail(f"Could not load system YAML '{system_path}': {exc}")
 
-    msa = load_alignment(system)
+    msa, msa_record = load_alignment(system, a3m_files)
 
     print("Loading the model", flush=True)
     try:
@@ -306,6 +359,11 @@ def main():
         ),
         "msa_source": msa_summary.get("source"),
         "msa_min_depth": msa_summary.get("min_depth"),
+        # What the model was actually given, as distinct from what node 02 fetched. These
+        # differed silently while the alignment was failing to stage.
+        "msa_loaded": msa_record["loaded"],
+        "msa_how": msa_record["how"],
+        "msa_files": msa_record["files"],
         "gpu": gpu_info(),
         "elapsed_seconds": elapsed,
         "frames_are_independent_samples": True,

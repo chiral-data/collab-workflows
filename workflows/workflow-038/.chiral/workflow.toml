@@ -1,9 +1,13 @@
+schema_version = "1.1"
 name = "BioEmu2 Equilibrium Ensemble Emulation"
 description = "Sample conformational ensembles with BioEmu2: equilibrium ensembles, folded-structure prediction, and time-lagged propagation from a sequence, structure or RCSB accession"
 
 [dependencies]
 02-fetch-msa = ["01-prepare-system"]
-03-sample = ["01-prepare-system", "02-fetch-msa"]
+# Node 02 passes system.yaml through, so 03 takes it from one parent. Listing 01 as
+# well made two parents emit system.yaml, and Silva copies every parent's outputs
+# into inputs/ first-wins by declared order, so which copy survived was arbitrary.
+03-sample = ["02-fetch-msa"]
 04-propagate = ["03-sample"]
 05-analyze = ["03-sample", "04-propagate"]
 06-report = ["03-sample", "04-propagate", "05-analyze"]

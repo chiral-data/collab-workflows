@@ -7,11 +7,14 @@ inputs = [
 outputs = [
   "system.yaml",
   "msa_summary.json",
-  "msa/*.a3m",
+  "msa",
 ]
 
 [container]
 image = "bioemu2:2026_11_11"
+
+[resources]
+gpu = "none"
 
 [scripts]
 run = "run.sh"

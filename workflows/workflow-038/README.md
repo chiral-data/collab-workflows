@@ -70,24 +70,32 @@ sequence / structure / system YAML / RCSB accession
 [01-prepare-system] ──────► system.yaml, system_inventory.json
    │
    ▼
-[02-fetch-msa]  (network) ─► msa/*.a3m, msa_summary.json
+[02-fetch-msa]  (network) ─► msa/, msa_summary.json, system.yaml
    │
    ▼
-[03-sample]     (GPU) ─────► samples.xtc, topology.cif, physicality.json
-   │
-   ▼
-[04-propagate]  (GPU) ─────► propagated_samples.xtc, propagation_manifest.json
-   │
-   ▼
-[05-analyze] ──────────────► ensemble_metrics.csv, ensemble_summary.json, ensemble_top.pdb
-   │
-   ▼
-[06-report] ───────────────► report.html
+[03-sample]     (GPU) ─────► samples.xtc, topology.cif, physicality.json, msa/
+   │                          sampling_manifest.json, system.yaml
+   ├──────────────┐
+   │              ▼
+   │        [04-propagate] (GPU, identity when disabled)
+   │              │   └──► propagated_samples.xtc, propagation_manifest.json
+   │              │
+   ├──────────────┼──────────► [05-analyze] ──► ensemble_metrics.csv,
+   │              │                 │           ensemble_summary.json, ensemble_top.pdb
+   │              │                 │
+   └──────────────┴─────────────────┴──────────► [06-report] ──► report.html
 ```
 
-Nodes run sequentially 01 → 06. Only nodes 03 and 04 need a GPU. Node 02 is the only node that
-needs network access; it writes the alignment to disk so node 03 runs fully offline with
-`HF_HUB_OFFLINE=1` against the checkpoint baked into the image.
+Nodes run in the order 01 → 02 → 03 → 04 → 05 → 06, but the graph is not a single chain:
+node 05 reads from both 03 and 04, and node 06 reads from 03, 04 and 05. That is why the
+`enabled` flag in `propagation_manifest.json` has to be plumbed forward, since both later nodes
+need to know whether node 04 actually propagated or passed the ensemble through.
+
+Only nodes 03 and 04 need a GPU. Node 02 is the only node that needs network access; it writes
+the alignment to disk so node 03 runs offline against the checkpoint baked into the image, with
+`HF_HUB_OFFLINE=1` set. Note that `HF_HUB_OFFLINE` constrains Hugging Face only: if the
+alignment were ever missing, BioEmu2 would fetch one itself from the public ColabFold server,
+so nodes 03 and 04 now fail rather than sample without the alignment they were given.
 
 ## Input requirements
 
@@ -138,7 +146,7 @@ the whole step (Docker-only today — see open item 7).
 upstream names shallow or poor MSAs (orphan proteins, some viral proteins) as the first cause of
 degradation. `msa_summary.json` records the depth per chain and the node warns below 32 rows.
 
-**Outputs:** `system.yaml`, `msa_summary.json`, `msa/*.a3m`
+**Outputs:** `system.yaml`, `msa_summary.json`, `msa/` (one `<chain>.a3m` per protein chain)
 
 ### Node 03: Sample Conformations
 
@@ -148,7 +156,15 @@ degradation. `msa_summary.json` records the depth per chain and the node warns b
 and node 02's alignment, samples, runs `check_physicality()`, and writes everything with
 `save_frames()`. Uses the **Python API rather than the CLI** because the CLI has no flag for
 supplying a pre-computed alignment. `--dry-run` resolves and prints every setting without
-touching the GPU.
+touching the GPU, and it also checks that the alignment was staged, so the plumbing can be
+tested on a CPU.
+
+The node refuses to sample if node 02 reported protein chains and no `.a3m` arrived. That is
+not defensiveness about a missing file: `EmuSession` fetches its own alignment when given
+none, so the alternative is a node that quietly queries the ColabFold server, exits 0, and
+records node 02's alignment in the manifest rather than the one it used. `sampling_manifest.json`
+therefore carries `msa_loaded`, `msa_how` and `msa_files` describing what the model was given,
+separately from `msa_source` describing what node 02 fetched.
 
 **Scientific notes:** `mode` selects the task the model was trained for — `structure` sharpens
 toward one accurate fold, `equilibrium` samples the ensemble. Physicality is **reported, never
@@ -156,7 +172,7 @@ enforced**: rejected frames stay in the XTC by design, as upstream intends, and 
 surfaced instead.
 
 **Outputs:** `samples.xtc`, `topology.cif`, `physicality.json`, `system.yaml`,
-`sampling_manifest.json`, `msa/*.a3m`
+`sampling_manifest.json`, `msa/`
 
 ### Node 04: Propagate Ensemble
 
@@ -167,6 +183,12 @@ calls `EmuSession.propagate(lag_time_ns=…)` in equilibrium mode. When false, i
 ensemble through unchanged and records `enabled: false` — an identity propagation, so the
 declared outputs always exist (a declared-but-unwritten output is a silent failure in Silva).
 Nodes 05 and 06 read that flag and never present identity frames as time-lagged.
+
+It reuses node 03's alignment rather than fetching one, and stops if node 03 recorded an
+alignment that did not arrive here. Endpoints drawn against a freshly fetched alignment would
+not match the ensemble they started from, and no later node could detect the difference, so
+this is a failure and not a warning. `propagation_manifest.json` records which alignment was
+used.
 
 **Scientific notes:** The result is one endpoint per start point at the chosen lag, **not** a
 continuous path. Upstream recommends lags of 1–1000 ns, the range the model was trained for.

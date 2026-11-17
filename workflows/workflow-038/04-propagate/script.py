@@ -92,6 +92,18 @@ def package_version():
         return "unknown"
 
 
+def read_json(path, label):
+    if not os.path.exists(path):
+        print(f"WARNING: {label} not found at {path}", flush=True)
+        return {}
+    try:
+        with open(path) as handle:
+            return json.load(handle)
+    except Exception as exc:
+        print(f"WARNING: could not read {label}: {exc}", flush=True)
+        return {}
+
+
 def write_manifest(payload):
     with open("./outputs/propagation_manifest.json", "w") as handle:
         json.dump(payload, handle, indent=2)
@@ -136,6 +148,8 @@ def main():
         path = f"./inputs/{name}"
         if not os.path.exists(path):
             fail(f"Required input not found: {path}")
+
+    sampling_manifest = read_json("./inputs/sampling_manifest.json", "sampling manifest")
 
     if batch_size < 0:
         fail(f"batch_size must be 0 (BioEmu2 default) or positive, got {batch_size}")
@@ -198,10 +212,30 @@ def main():
         fail("The starting ensemble contains no frames.")
     print(f"Starting from {x0.n_frames} conformation(s)", flush=True)
 
-    a3m_files = sorted(glob.glob("./inputs/msa/*.a3m"))
+    # Whether an alignment is due is node 03's recorded finding, not a guess from whatever
+    # happens to be on disk here. A warning is the wrong response to a missing one: handing
+    # EmuSession msa=None makes it fetch an alignment itself from the public ColabFold
+    # server, so the node would propagate against a different alignment from the one node 03
+    # sampled with, over the network, in a node that sets HF_HUB_OFFLINE and claims to need
+    # none. Nothing downstream could tell.
+    a3m_files = sorted(Path(p) for p in glob.glob("./inputs/msa/*.a3m"))
+    msa_due = bool(sampling_manifest.get("msa_loaded"))
     msa = None
+    msa_record = {"loaded": False, "how": "no alignment was due", "files": []}
+
+    if msa_due and not a3m_files:
+        fail(
+            "Node 03 sampled with an alignment "
+            f"({sampling_manifest.get('msa_files') or 'files not recorded'}) but none was "
+            "staged into ./inputs/msa here. Propagating would have BioEmu2 fetch its own "
+            "alignment over the network, giving endpoints that do not match the ensemble "
+            "they started from. Check that node 03 declares `msa` as an output and this node "
+            "declares it as an input, by directory name: Silva matches an input entry by "
+            "basename, so 'msa/*.a3m' stages nothing."
+        )
     if a3m_files:
-        source = {os.path.splitext(os.path.basename(p))[0]: p for p in a3m_files}
+        # Values are Path: get_msa calls Path methods on its source and raises on a str.
+        source = {path.stem: path for path in a3m_files}
         try:
             msa = (
                 get_msa(system, source=next(iter(source.values())))
@@ -209,7 +243,21 @@ def main():
                 else get_msa(system, source=source)
             )
         except Exception as exc:
-            print(f"WARNING: could not reuse node 02's alignment: {exc}", flush=True)
+            fail(
+                f"Could not reuse node 03's alignment: {exc}. Continuing without it would "
+                "silently propagate against a freshly fetched alignment instead."
+            )
+        msa_record = {
+            "loaded": True,
+            "how": "reused node 03's A3M files",
+            "files": [f"msa/{path.name}" for path in a3m_files],
+            "chains": sorted(source),
+        }
+    elif not msa_due:
+        print(
+            "No alignment to reuse, and node 03 recorded none, so BioEmu2 needs none.",
+            flush=True,
+        )
 
     try:
         model = load_model(
@@ -266,6 +314,9 @@ def main():
             "n_endpoint_frames": int(endpoints.n_frames),
             "gpu": gpu_info(),
             "elapsed_seconds": elapsed,
+            "msa_loaded": msa_record["loaded"],
+            "msa_how": msa_record["how"],
+            "msa_files": msa_record["files"],
             "note": (
                 "One time-lagged endpoint per starting frame, in input order. This is a "
                 "lagged endpoint per start point, not a continuous trajectory."

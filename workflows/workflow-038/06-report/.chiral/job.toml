@@ -14,6 +14,9 @@ outputs = [
 [container]
 image = "bioemu2:2026_11_11"
 
+[resources]
+gpu = "none"
+
 [scripts]
 run = "run.sh"
 

@@ -139,8 +139,10 @@ def main():
             flush=True,
         )
         summary["source"] = "none (no protein chain)"
-        # Keep the declared msa/*.a3m glob honest: there is genuinely nothing to write, and
-        # node 03 treats an empty directory as "let BioEmu2 decide".
+        # msa/ is declared as a directory and was created above, so it ships empty rather
+        # than missing. The empty-but-present directory is not a fallback signal on its own:
+        # node 03 decides whether an alignment was due from protein_chains in this summary,
+        # which is why that key is written on every path including this one.
         with open("./outputs/msa_summary.json", "w") as handle:
             json.dump(summary, handle, indent=2)
         return

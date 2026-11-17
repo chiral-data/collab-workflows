@@ -106,7 +106,7 @@ Splitting it has three concrete payoffs:
 2. **Node 03 becomes network-free.** Node 02 writes `msa/<chain>.a3m` into its outputs, node 03
    loads those files, and the checkpoint is already baked into the image — so node 03 runs with
    `HF_HUB_OFFLINE=1` and never reaches for the network at all.
-3. **The alignment becomes an inspectable, reusable artifact.** `msa/*.a3m` and
+3. **The alignment becomes an inspectable, reusable artifact.** `msa/` and
    `msa_summary.json` (depth per chain) are exactly what you want to look at when an ensemble
    comes out suspiciously narrow, because shallow MSA is upstream's stated first cause of
    degraded quality. The user can also drop their own A3M into the inputs and skip the server
@@ -160,8 +160,8 @@ the sampling and the analysis side, and no mmCIF is parsed anywhere in this work
 | Node | Name | Inputs | Outputs | GPU |
 |------|------|--------|---------|-----|
 | 01 | `01-prepare-system` | (params; optional upload) | `system.yaml`, `system_inventory.json` | No |
-| 02 | `02-fetch-msa` | `system.yaml` | `msa/*.a3m`, `msa_summary.json`, `system.yaml` | No |
-| 03 | `03-sample` | `system.yaml`, `msa/*.a3m` | `samples.xtc`, `topology.cif`, `physicality.json`, `system.yaml`, `sampling_manifest.json`, `msa/*.a3m` | **Yes** |
+| 02 | `02-fetch-msa` | `system.yaml`, `system_inventory.json` | `msa/`, `msa_summary.json`, `system.yaml` | No |
+| 03 | `03-sample` | `system.yaml`, `msa_summary.json`, `msa/` | `samples.xtc`, `topology.cif`, `physicality.json`, `system.yaml`, `sampling_manifest.json`, `msa/` | **Yes** |
 | 04 | `04-propagate` | node 03 ensemble | `propagated_samples.xtc`, `propagated_topology.cif`, `propagation_manifest.json` | **Yes** |
 | 05 | `05-analyze` | nodes 03 + 04 | `ensemble_metrics.csv`, `ensemble_summary.json`, `ensemble_top.pdb` | No |
 | 06 | `06-report` | nodes 03 + 04 + 05 | `report.html` | No |
@@ -173,19 +173,18 @@ params / uploaded system or structure
 [01-prepare-system] ──► system.yaml, system_inventory.json
    │
    ▼
-[02-fetch-msa]  (network) ──► msa/*.a3m, msa_summary.json
+[02-fetch-msa]  (network) ──► msa/, msa_summary.json, system.yaml
    │
    ▼
-[03-sample]     (GPU) ──► samples.xtc, topology.cif, physicality.json
-   │
-   ▼
-[04-propagate]  (GPU, identity when disabled) ──► propagated_samples.xtc
-   │
-   ▼
-[05-analyze] ──► ensemble_metrics.csv, ensemble_summary.json, ensemble_top.pdb
-   │
-   ▼
-[06-report] ──► report.html
+[03-sample]     (GPU) ──► samples.xtc, topology.cif, physicality.json, msa/
+   │                      sampling_manifest.json, system.yaml
+   ├───────────────┐
+   │               ▼
+   │        [04-propagate] (GPU, identity when disabled)
+   │               │   └──► propagated_samples.xtc, propagation_manifest.json
+   ├───────────────┼──────────► [05-analyze] ──► ensemble_metrics.csv,
+   │               │                │            ensemble_summary.json, ensemble_top.pdb
+   └───────────────┴────────────────┴──────────► [06-report] ──► report.html
 ```
 
 Six nodes rather than five: `02-fetch-msa` earns its place for the reasons above, and analysis
@@ -252,10 +251,14 @@ Image name `bioemu2:2026_11_11`. The repo's shared-image CI
    Fix by either adding a second `file` param bound to node 02, or having node 01 pass uploaded
    A3M files through to its outputs; the second needs open item 8 resolved first. The READMEs
    now state the limitation rather than promising the feature.
-8. **Silva's behaviour on a glob output that matches nothing is unverified.** Nodes 02 and 03
-   declare `msa/*.a3m`, which is empty for a system with no protein chain (nucleic-acid or
-   ligand-only). If Silva treats an unmatched glob as a missing declared output, that edge case
-   fails. Confirm against Silva before relying on optional glob outputs anywhere.
+8. **Closed, and it was the other half of the question that mattered.** An *output* glob
+   matching nothing is harmless: `collect_output_files` runs its patterns under
+   `shopt -s nullglob`, logs "matched no files", and exits 0. The fatal half was the *input*
+   pattern. Silva matches an `inputs` entry against the **basename only**, so `msa/*.a3m` could
+   never match anything, the directory was never staged, and node 03 sampled with no alignment
+   while reporting the one node 02 fetched. Both sides now declare the directory name `msa`,
+   following merged workflow-029's `inputs = ["backbones"]`. `silva validate` names this class
+   of error directly, which is the lesson: run it before anything else.
 
 
 ## Verification plan

@@ -3,7 +3,7 @@ description = "Run bioemu2 sample-equilibrium or predict-structure on the prepar
 inputs = [
   "system.yaml",
   "msa_summary.json",
-  "msa/*.a3m",
+  "msa",
 ]
 outputs = [
   "samples.xtc",
@@ -11,12 +11,20 @@ outputs = [
   "physicality.json",
   "system.yaml",
   "sampling_manifest.json",
-  "msa/*.a3m",
+  "msa",
 ]
 
 [container]
 image = "bioemu2:2026_11_11"
+# Redundant under silva 0.6.0, which reads [resources] below and emits a Note that this
+# key is ignored. Kept because 0.5.0 is still installed on the GPU estate and its schema
+# has no [resources] at all: there, use_gpu = true is the only thing that passes the
+# device through. Carrying both costs a cosmetic Note; carrying neither costs a CPU-only
+# run. The CPU nodes need no counterpart, since use_gpu = false was already 0.5.0's default.
 use_gpu = true
+
+[resources]
+gpu = "required"
 
 [scripts]
 run = "run.sh"

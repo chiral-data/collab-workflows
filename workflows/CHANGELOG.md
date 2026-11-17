@@ -19,7 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `02-fetch-msa` is its own CPU node: the alignment is the only step needing the public
     internet, so fetching it to disk turns a server outage or rate limit into a seconds-long
     CPU failure instead of a failed GPU job, and lets `03-sample` run with `HF_HUB_OFFLINE=1`.
-    User-supplied `<chain>.a3m` files skip the server entirely.
+    User-supplied `<chain>.a3m` files skip the server entirely. The alignment moves between
+    nodes as the directory `msa`, declared by name rather than as `msa/*.a3m`: Silva matches an
+    `inputs` entry by basename, so the pattern staged nothing and nodes 03/04 sampled with no
+    alignment at all. Both now refuse to run when node 02 reported protein chains and no A3M
+    arrived, since `EmuSession` otherwise fetches its own over the network and the manifest
+    would still name node 02's.
   - Nodes 03/04 drive the BioEmu2 Python API rather than its CLI, because the CLI exposes no
     flag for a pre-computed MSA; `--num-steps` is deliberately not exposed, as
     `EmuSession.sample()` has no equivalent.
