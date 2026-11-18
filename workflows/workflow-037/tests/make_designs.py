@@ -16,12 +16,20 @@ Shapes, chosen so the geometry checks in node 04 have something real to fail on:
             whole thing is globular. This is what a good design looks like.
   extended  a straight line. CA-CA distances are still correct -- it is the shape that
             is wrong, which is precisely the failure a broken checkpoint produces.
+  helix     a textbook alpha-helix: CA radius 2.3 A, rise 1.5 A, 100 deg per residue.
+            Neither compact nor broken -- a real secondary structure, and the shape a
+            single-helix binder arrives in. The lattice and straight-line shapes between
+            them cannot produce it, so without this shape nothing in the suite asks what
+            the compactness check does to a fold that is genuinely elongated and
+            genuinely folded. Cross-checked against 2ZTA chain A, a 32-residue leucine
+            zipper helix: measured Rg 13.67 A, this shape at 32 gives 14.04 A.
   broken    compact, with one residue displaced to open a gap no peptide bond spans.
   clash     a compact design interpenetrating the target rather than docked against it.
   swap      compact, but with the chains written target-first.
 
 Run:  python3 -I tests/make_designs.py <out-dir> <n-designs> [shape] [length]
 """
+import math
 import os
 import sys
 
@@ -83,6 +91,25 @@ def straight_walk(n, step=CA_STEP_A, origin=(0.0, 0.0, 0.0)):
     return [(ox, oy, oz + i * step) for i in range(n)]
 
 
+# Textbook alpha-helix CA geometry. The three together put consecutive alpha carbons
+# 3.83 A apart, inside the 2.8-4.8 A window node 04 accepts, so this shape exercises the
+# compactness check with the chain-break check deliberately silent.
+HELIX_RADIUS_A = 2.3
+HELIX_RISE_A = 1.5
+HELIX_TWIST_DEG = 100.0
+
+
+def helix_walk(n, origin=(0.0, 0.0, 0.0)):
+    ox, oy, oz = origin
+    points = []
+    for i in range(n):
+        theta = math.radians(HELIX_TWIST_DEG * i)
+        points.append((ox + HELIX_RADIUS_A * math.cos(theta),
+                       oy + HELIX_RADIUS_A * math.sin(theta),
+                       oz + HELIX_RISE_A * i))
+    return points
+
+
 def rows_for(chain_id, entity, cycle, points, start_id):
     rows, atom_id = [], start_id
     for i, point in enumerate(points, start=1):
@@ -103,6 +130,8 @@ def design_sequence(length):
 def write_design(path, shape, length, target_length):
     if shape == "extended":
         designed = straight_walk(length)
+    elif shape == "helix":
+        designed = helix_walk(length)
     else:
         designed = lattice_walk(length)
     if shape == "broken" and len(designed) > 2:
@@ -116,7 +145,13 @@ def write_design(path, shape, length, target_length):
     # length 30, so every design came out flagged as clashing and the ranking case was
     # testing nothing. 6 A clears the 3.8 A clash threshold and still falls inside the
     # 8 A contact cutoff, so the designs have a real interface to be scored on.
-    separation = lattice_extent(length) + 6.0
+    # A helix reaches along z, not across the lattice box, so its own extent along x is
+    # one radius. Using the lattice figure here would push the target 80 A clear of a
+    # 50-mer helix and leave the design with no interface to be scored on at all.
+    if shape == "helix":
+        separation = HELIX_RADIUS_A + 6.0
+    else:
+        separation = lattice_extent(length) + 6.0
     offset = (1.0, 0.0, 0.0) if shape == "clash" else (separation, 0.0, 0.0)
     target = lattice_walk(target_length, origin=offset)
 

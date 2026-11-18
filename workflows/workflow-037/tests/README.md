@@ -48,8 +48,10 @@ design never could.
 ## What this does not establish
 
 The suite tests the plumbing, not the science. Passing means the pipeline does not
-silently corrupt, drop, mislabel or misnumber its input, and that it notices output which
-is not a folded polypeptide. It does not mean a design is good.
+silently corrupt, drop, mislabel or misnumber its input, and that its geometry flags fire
+where they should. A chain break means the output is not a polypeptide; a compactness
+flag means only that the design is not compact for its length. It does not mean a design
+is good.
 
 Node 03 is not run, so nothing here exercises the manifest it writes. The downstream
 cases supply one by hand, which means the fields node 04 reads are tested but the code
@@ -71,15 +73,25 @@ unfolded one and a broken one to prove the check fires where it should and stays
 where it should. That catches a model that has stopped working. It will not catch a model
 that works and produces designs which do not bind.
 
+`helical-design` is in that group for the opposite reason: to pin what the compactness
+flag costs. It is a textbook 50-residue alpha-helix, inside the default `binder_length`
+of 50-120, and it is flagged -- ratio 2.24. The 1.8 limit was calibrated on 19 archived
+designs from this workflow, every one of them globular, and until this fixture existed
+nothing here asked what the limit does to a fold that is elongated on purpose. Measured
+on real entries with the same code, spectrin repeats come out at 2.27, collagen at 3.06
+and tropomyosin at 6.35, where a straight chain is 6.3 -- so no Rg cutoff separates them,
+and the flag is reported as "not compact", never as a verdict that the design is not a
+protein. The fixture exists so that nobody tightens the limit without seeing the cost.
+
 Reporting those measurements is a separate claim from making them, and it is checked
-separately. `unfolded-design` and `broken-backbone` assert that node 05 renders the
-columns carrying node 04's verdict -- read out of the report's own `DATA` object, not by
-searching the page, because node 05 explains its columns in prose and so every column
-label appears in the file whether the column is built or not. `unfolded-ranked-last`
-covers the sink rule: it puts one unfolded design among two ordinary ones and asserts no
-folded design is ranked below a flagged one. The clash fixture cannot stand in for it,
-because clashes sort into a bucket of their own -- a node 05 that sank clashes and
-nothing else passes every other ordering check in the suite.
+separately. `unfolded-design`, `helical-design` and `broken-backbone` assert that node 05
+renders the columns carrying node 04's flags -- read out of the report's own `DATA`
+object, not by searching the page, because node 05 explains its columns in prose and so
+every column label appears in the file whether the column is built or not.
+`unfolded-ranked-last` covers the sink rule: it puts one unfolded design among two
+ordinary ones and asserts no unflagged design is ranked below a flagged one. The clash
+fixture cannot stand in for it, because clashes sort into a bucket of their own -- a node
+05 that sank clashes and nothing else passes every other ordering check in the suite.
 
 The pieces run on their own too:
 

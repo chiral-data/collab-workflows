@@ -351,11 +351,18 @@ def check_design_rows_in_numeric_order(case_dir, _):
 
 
 def check_node04_geometry(case_dir, expect):
-    """Node 04 must notice output that is not a folded polypeptide.
+    """Node 04 must measure the two geometric flags, and fire them where they belong.
 
-    Nothing else in the pipeline would: contacts, net charge, composition and radius of
-    gyration are all computable on an unfolded chain, and all look ordinary. This is the
-    only check that would fail if the model itself were broken.
+    Nothing else in the pipeline would notice a broken model: contacts, net charge,
+    composition and radius of gyration are all computable on an unfolded chain, and all
+    look ordinary. This is the only check that would fail if the model itself were broken.
+
+    The two flags are not equally strong, and the fixtures hold both readings. A chain
+    break means the output is not a polypeptide. Not-compact means the ratio is past 1.8
+    and nothing more: 'unfolded-design' is a straight chain, which deserves the flag, and
+    'helical-design' is a textbook alpha-helix, which gets it too and is a real fold. Both
+    are expected to be flagged, which is the point -- the flag is what is asserted here,
+    not a verdict about what the design is.
     """
     payload = load_metrics(case_dir)
     if payload is None:
@@ -381,15 +388,25 @@ def check_node04_geometry(case_dir, expect):
     if expect.get("max_chain_breaks") is not None:
         if (breaks or 0) > expect["max_chain_breaks"]:
             return FAIL, detail + f"; expected at most {expect['max_chain_breaks']}"
+    # Match the compactness warning on the two numbers it reports, not on its wording.
+    # This used to look for the phrase "more extended than a folded protein", so
+    # rewording the warning -- which is what narrowing the claim required -- broke the
+    # check while the behaviour was unchanged. "<Rg> A vs <expected> A expected" is that
+    # warning's own format and nothing else here prints it, so the assertion is pinned to
+    # what node 04 measured rather than to how it phrased it.
+    signature = (f"{row.get('radius_of_gyration_A')} A vs "
+                 f"{row.get('expected_radius_of_gyration_A')} A expected")
+    warned = any(line.startswith("WARNING") and signature in line
+                 for line in log.splitlines())
     if expect.get("overextended") is True:
         if ratio is None or ratio <= 1.8:
             return FAIL, detail + "; expected a ratio above the 1.8 limit"
-        if "more extended than a folded protein" not in log:
+        if not warned:
             return FAIL, detail + "; overextended but node 04 printed no warning"
     if expect.get("overextended") is False:
         if ratio is not None and ratio > 1.8:
             return FAIL, detail + "; flagged as overextended but should not be"
-        if "more extended than a folded protein" in log:
+        if warned:
             return FAIL, detail + "; node 04 warned about a compact design"
     return PASS, detail
 

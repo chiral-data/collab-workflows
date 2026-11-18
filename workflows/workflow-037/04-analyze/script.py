@@ -156,7 +156,7 @@ CA_BOND_MAX_A = 4.8
 # A compact folded protein has Rg ~ 2.2 * N^0.38 A; a chemically denatured one follows
 # Rg ~ 2.54 * N^0.522 A (Kohn et al. 2004). The second over the first is 2.06 at N=60 and
 # 2.35 at N=150, so an unfolded chain sits at roughly twice the compact value whatever
-# its length, and the ratio separates a fold from a coil without knowing the fold.
+# its length.
 #
 # The limit is measured, not chosen. Nineteen designs from six archived runs of this
 # workflow ranged 0.94 to 1.49, the loose end being monomer and motif_scaffold runs,
@@ -164,8 +164,28 @@ CA_BOND_MAX_A = 4.8
 # design by 0.31 and sits 0.26 below the tightest coil. A straight chain, for reference,
 # comes out at 6.3.
 #
-# This is a broken-model check, not a quality check: it catches output that is not a
-# folded protein at all. It will not notice a design that folds and does not bind.
+# What the ratio measures is compactness for the length, and that is all it measures. It
+# is NOT a folded/not-folded verdict, because real folded proteins are not all compact.
+# Measured on experimental structures, chain by chain, with this same code:
+#
+#   4ZQK PD-1/PD-L1      1.02, 1.05      globular complex, the worked example
+#   1BRS barnase/barstar 0.97 - 1.03     globular complex
+#   2ZTA leucine zipper  1.67            one 32-residue helix, passes by 0.13
+#   1U4Q spectrin 15-17  2.27            three-helix repeats end to end: FLAGGED
+#   1IC2 tropomyosin     2.91 - 2.97     coiled coil: FLAGGED
+#   1BKV collagen        3.06 - 3.10     triple helix: FLAGGED
+#   2TMA tropomyosin     6.35            FLAGGED, and a straight chain is 6.3
+#
+# An ideal alpha-helix (CA radius 2.3 A, rise 1.5 A, 100 deg per residue) crosses 1.8 at
+# 36 residues and reaches 2.24 at 50 -- so every length in this workflow's default
+# binder_length of 50-120 is flagged if the design is a single helix. tests/make_designs.py
+# carries that shape, and the 'helical-design' fixture pins the figure.
+#
+# No Rg cutoff can fix this: tropomyosin and a straight chain land on the same number.
+# Separating them needs a second, local measure of packing, which this node does not
+# compute. So the flag is reported as "not compact for its length", the designs it flags
+# are sunk in the report rather than dropped, and nothing here calls a design unfolded.
+# It will not notice a design that folds and does not bind.
 COMPACT_COEFFICIENT = 2.2
 COMPACT_EXPONENT = 0.38
 COMPACTNESS_LIMIT = 1.8
@@ -429,12 +449,15 @@ def main():
             f"{r['expected_radius_of_gyration_A']} A expected)" for r in loose
         )
         print(
-            f"WARNING: {len(loose)} design(s) are far more extended than a folded protein "
-            f"of their length: {named}. Rg should be near 2.2*N^0.38 A for a compact "
-            "fold; several times that is a chain that has not folded. This is what a "
-            "wrong checkpoint or a failed generation looks like, and no other metric "
-            "here would show it -- contacts, charge and composition are all still "
-            "computable on an unfolded chain.",
+            f"WARNING: {len(loose)} design(s) are not compact for their length: {named}. "
+            "Rg should be near 2.2*N^0.38 A for a compact fold. A failed generation or a "
+            "wrong checkpoint looks like this, and no other metric here would show it -- "
+            "contacts, charge and composition are all still computable on a chain that "
+            "has not folded. But so does a design that folded into something elongated: "
+            "a single helix past 36 residues reaches this ratio, and so do real "
+            "proteins -- spectrin repeats measure 2.27, collagen 3.06, tropomyosin 6.35. "
+            "This number cannot tell those cases apart, so read it as 'not compact', not "
+            "as 'not a protein', and look at the structure before discarding anything.",
             flush=True,
         )
     for row in rows:

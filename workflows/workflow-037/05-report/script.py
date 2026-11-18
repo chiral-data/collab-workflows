@@ -39,7 +39,7 @@ TABLE_COLUMNS = [
     ("radius_of_gyration_A", "Rg (Å)"),
     ("compactness_ratio", "Compactness"),
     ("chain_breaks", "Chain breaks"),
-    ("overextended", "Unfolded"),
+    ("overextended", "Not compact"),
     ("n_interface_contacts", "Contacts"),
     ("n_target_residues_contacted", "Target res."),
     ("min_interchain_ca_distance_A", "Min CA-CA (Å)"),
@@ -47,13 +47,21 @@ TABLE_COLUMNS = [
 ]
 
 
-def not_a_folded_polypeptide(row):
-    """Node 04's verdict on whether this is a protein at all, read rather than recomputed.
+def geometry_flagged(row):
+    """Node 04's two geometric flags, read rather than recomputed.
 
-    Two ways out: a chain that has not folded (overextended), and a backbone with a gap no
-    peptide bond spans. Node 04 warns about both and nothing in this report used to carry
-    either, so a design the previous node called "what a wrong checkpoint looks like"
-    arrived here as an ordinary row with an unremarkable Rg in it.
+    A backbone gap no peptide bond spans, and a chain that is not compact for its length.
+    Node 04 warns about both and nothing in this report used to carry either, so a design
+    the previous node called "what a wrong checkpoint looks like" arrived here as an
+    ordinary row with an unremarkable Rg in it.
+
+    The two flags do not carry the same weight and this function deliberately does not
+    pretend otherwise -- it decides sort order, not merit. A gap means the output is not a
+    polypeptide. Not-compact means only that: an ideal alpha-helix trips it at 36
+    residues, and so do real folded proteins (spectrin 2.27, collagen 3.06, tropomyosin
+    6.35, against 6.3 for a straight chain). It was named not_a_folded_polypeptide, which
+    asserted the strong reading for both, and the report said "Unfolded" on the strength
+    of it. Both now say what the number supports.
     """
     # These rows are node 04's design_metrics.json, so the values arrive typed: an int
     # and a bool. Reading them as text would need str-to-bool care, because every value
@@ -135,7 +143,7 @@ def build_html(metrics, structures, top_n):
       <h2 class="h5">Designs</h2>
       <p class="text-muted small mb-2">
         <strong>This table is not a ranking, and the order means nothing.</strong> Designs
-        are listed by name, with clashing ones and ones that are not folded polypeptides
+        are listed by name, with clashing ones and geometrically flagged ones
         moved to the bottom. Generation ran with
         <code>~metrics</code>, so there is no confidence, affinity or self-consistency
         estimate here, and every column below is a geometric description that an unfolded
@@ -146,12 +154,20 @@ def build_html(metrics, structures, top_n):
       <p class="text-muted small mb-2">
         <strong>Compactness</strong> is the radius of gyration over the 2.2&middot;N^0.38&nbsp;&Aring;
         expected of a compact fold, <strong>Chain breaks</strong> counts consecutive
-        alpha carbons too far apart for a peptide bond, and <strong>Unfolded</strong> is
-        this pipeline's verdict that the chain is too extended to be a folded protein of
-        its length. These are the only columns here that would reveal a broken checkpoint
-        or a failed generation: every other number stays ordinary on a chain that never
-        folded. A design flagged in either of the last two is not a design &mdash; read
-        the generation log before reading anything else in this table.
+        alpha carbons too far apart for a peptide bond, and <strong>Not compact</strong>
+        marks a compactness ratio past 1.8. These are the only columns here that would
+        reveal a broken checkpoint or a failed generation: every other number stays
+        ordinary on a chain that never folded.
+      </p>
+      <p class="text-muted small mb-2">
+        A <strong>chain break</strong> does mean the output is not a polypeptide: a design
+        arrives as one continuous chain. <strong>Not compact</strong> is weaker, and says
+        only what it says. A failed generation is flagged by it, but so is a design that
+        folded into something elongated: a single helix past 36 residues trips it, and
+        among real proteins measured with this same code so do spectrin repeats (2.27),
+        collagen (3.06) and tropomyosin (6.35), which lands on the same ratio as a
+        straight chain. Flagged designs are moved to the bottom rather than dropped, and
+        telling the two cases apart means looking at the structure.
       </p>
       <p class="text-muted small mb-2">
         <strong>Clash</strong> marks a design whose closest inter-chain C&alpha;&ndash;C&alpha;
@@ -357,7 +373,7 @@ def main():
         # is an invariant this report has had since it stopped ranking on contacts.
         return (
             bool(row.get("steric_clash")),
-            not_a_folded_polypeptide(row),
+            geometry_flagged(row),
             natural_key(os.path.basename(path)),
         )
 

@@ -231,7 +231,8 @@ design's contacts back to the residues you named.
 **Scientific notes:** Generation runs with `~metrics`, so every number here is geometric — computed
 from coordinates, not predicted. They are useful as filters and sanity checks (a binder with zero
 contacts missed the target; an extreme hydrophobic fraction suggests an aggregation-prone surface;
-Rg far off the expected range for the length suggests an unfolded or collapsed backbone), and
+Rg far off the expected range for the length suggests a backbone that is not compact, which
+covers both an unfolded chain and a fold that is elongated on purpose), and
 useless as confidence estimates. Unrecognised residues are scored `X` and excluded from composition
 so they cannot dilute the ratios.
 
@@ -274,11 +275,14 @@ for reasons that have nothing to do with the design.
 **Process:** Inlines the metrics table and the top `top_n` structures into a single `report.html`
 (Bootstrap 5, Plotly and Mol* from CDN, all data as inline JS), with a click-a-row-to-view table, a
 length-vs-contacts scatter, a Mol* viewer switchable across designs, and a run-provenance list.
-Designs are listed in name order with clashing ones — and ones node 04 judged not to be folded
-polypeptides at all — moved to the bottom, and the report says in so many words that the order is
-not a ranking. `Compactness`, `Chain breaks` and `Unfolded` are rendered as columns with a note
-saying what they catch: they are the only columns that would reveal a broken checkpoint, and a
-report that omitted them left a design node 04 had called unfolded looking ordinary. Nothing in this workflow has measured design quality, and
+Designs are listed in name order with clashing ones — and ones node 04 flagged on geometry —
+moved to the bottom, and the report says in so many words that the order is
+not a ranking. `Compactness`, `Chain breaks` and `Not compact` are rendered as columns with a note
+saying what they catch and what they do not: they are the only columns that would reveal a broken
+checkpoint, and a report that omitted them left a flagged design looking ordinary. The note also
+says that a chain break means the output is not a polypeptide while `Not compact` means only that
+the ratio is past 1.8 — a single helix past 36 residues trips it, and so do real elongated folds.
+Flagged designs are sunk, never dropped. Nothing in this workflow has measured design quality, and
 every column in the table is a geometric description an unfolded chain can score well on — ordering
 on one would read as a verdict the numbers cannot support. The biosafety notice is rendered as a
 top-level alert, not a footnote.
@@ -532,15 +536,39 @@ unexpected layout shows up as a named fallback rather than as quietly wrong metr
 
 `chain_breaks` counts consecutive alpha carbons further apart than a peptide bond reaches, and
 `compactness_ratio` is `radius_of_gyration_A` over `expected_radius_of_gyration_A`, the latter being
-2.2·N^0.38 Å for a compact fold. These two exist to catch output that is not a folded polypeptide at
-all — a wrong checkpoint, a failed generation. Nothing else here would: contacts, charge, composition
+2.2·N^0.38 Å for a compact fold. These two exist to catch a wrong checkpoint or a failed generation.
+Nothing else here would: contacts, charge, composition
 and even Rg itself are all computable on an unfolded chain and all look ordinary. A denatured chain
 sits near ratio 2.1; designs from this workflow have measured 0.94 to 1.49, and the warning fires
-above 1.8. `overextended` is that verdict as a field — the ratio past 1.8 on a design long enough
+above 1.8. `overextended` is that flag as a field — the ratio past 1.8 on a design long enough
 for the relation to mean anything — so the report and this table agree with the warning node 04
-printed instead of each re-deriving the threshold. All three are rendered in the report, because a
-reader who only ever opens `report.html` is exactly the reader who needs to be told the output is
-not a protein. They say nothing about whether a folded design is any *good*.
+printed instead of each re-deriving the threshold.
+
+**The two flags do not carry the same weight.** A chain break means the output is not a polypeptide:
+a design arrives as one continuous chain, so a gap no peptide bond spans has no innocent reading.
+`overextended` is weaker and means exactly what it says — not compact for its length. It was
+calibrated on 19 archived designs from this workflow, all of them globular, and it flags elongated
+folds that are perfectly real. Measured on experimental structures with this same code:
+
+| Structure | Compactness ratio | Flagged at 1.8 |
+|---|---|---|
+| 4ZQK PD-1/PD-L1 | 1.02, 1.05 | no |
+| 1BRS barnase/barstar | 0.97–1.03 | no |
+| 2ZTA GCN4 leucine zipper (32 aa helix) | 1.67 | no, by 0.13 |
+| 1U4Q spectrin repeats 15–17 | 2.27 | **yes** |
+| 1IC2 tropomyosin fragment | 2.91–2.97 | **yes** |
+| 1BKV collagen | 3.06–3.10 | **yes** |
+| 2TMA tropomyosin | 6.35 | **yes** |
+| straight chain, for reference | 6.3 | yes |
+
+An ideal α-helix crosses 1.8 at 36 residues and reaches 2.24 at 50, so a single-helix design is
+flagged at every length in the default `binder_length` of 50–120. No Rg cutoff can separate these
+cases — tropomyosin and a straight chain land on the same number — and separating them needs a local
+measure of packing that node 04 does not compute. So the warning says "not compact for its length",
+the report column is `Not compact`, and flagged designs are sunk in the report rather than dropped.
+All three fields are rendered in the report, because a reader who only ever opens `report.html` is
+exactly the reader who needs to be told the geometry was flagged and what that does and does not
+mean. They say nothing about whether a folded design is any *good*.
 
 ### sequences.fasta
 
@@ -686,8 +714,10 @@ reproduced but not yet fixed is marked `"status": "open"` there and reports with
 failing the run; nothing is marked open today. See `tests/README.md`.
 
 **What this suite does not establish.** It tests the plumbing, not the science. Passing means the
-pipeline does not silently corrupt, drop, mislabel or misnumber what it is given, and that it
-notices output which is not a folded polypeptide. It does not mean any design is good. Nothing here
+pipeline does not silently corrupt, drop, mislabel or misnumber what it is given, and that its
+geometry flags fire where they should. A chain break means the output is not a polypeptide; a
+compactness flag means only that the design is not compact for its length, which an elongated
+real fold is too. It does not mean any design is good. Nothing here
 refolds a sequence, computes self-consistency, or compares a result against a published one — the
 structures are chosen for the input shapes they carry, not because the workflow is known to
 reproduce a literature result on them. Design quality stays unvalidated until something refolds a

@@ -242,6 +242,17 @@
       ]
     },
     {
+      "name": "helical-design",
+      "n_designs": 1,
+      "shape": "helix",
+      "length": 50,
+      "why": "A textbook alpha-helix, 50 residues, inside this workflow's default binder_length of 50-120. It measures Rg 21.77 A against 9.73 A expected -- ratio 2.24, flagged. The flag is correct and the fixture pins it, because what it means is narrower than it used to claim: the limit of 1.8 was calibrated on 19 archived designs, all of them globular, and nothing in the suite asked what it does to a fold that is elongated on purpose. Measured on real structures with this same code, spectrin repeats come out at 2.27, collagen at 3.06 and tropomyosin at 6.35, where a straight chain is 6.3. So node 04 reports 'not compact for its length' and node 05 renders a 'Not compact' column; neither calls the design unfolded, and the suite now has the case that forced that wording.",
+      "expect": [
+        {"check": "node04_geometry", "overextended": true, "max_chain_breaks": 0, "finding": "model-sanity"},
+        {"check": "node05_reports_geometry", "overextended": true, "finding": "#53"}
+      ]
+    },
+    {
       "name": "broken-backbone",
       "n_designs": 1,
       "shape": "broken",
