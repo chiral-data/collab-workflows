@@ -250,6 +250,11 @@ def resolve_designed_chain(chains, target_chains, path):
             "design. Falling back to the first chain in the file; check chain_lengths.",
             flush=True,
         )
+    elif len(chains) == 1:
+        # A monomer spec has no target, so node 03 correctly records no target chains.
+        # One chain in the file is then the design by construction, and reporting that as
+        # a fallback makes a correct manifest look like a missing one.
+        return 0, "single-chain"
     elif len(chains) > 1:
         print(
             "WARNING: generation_manifest.json records no target chains, so the design "

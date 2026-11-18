@@ -55,6 +55,10 @@ def not_a_folded_polypeptide(row):
     either, so a design the previous node called "what a wrong checkpoint looks like"
     arrived here as an ordinary row with an unremarkable Rg in it.
     """
+    # These rows are node 04's design_metrics.json, so the values arrive typed: an int
+    # and a bool. Reading them as text would need str-to-bool care, because every value
+    # in node 04's CSV is a non-empty string and "False" is true there -- but nothing
+    # here reads that file, and pretending otherwise would hide which input this is.
     try:
         breaks = int(row.get("chain_breaks") or 0)
     except (TypeError, ValueError):
@@ -347,8 +351,13 @@ def main():
         # workflow has measured whether any design folds or binds. Sorting on it put a
         # number at the top of the page that readers would take as a winner. Name order
         # makes no claim at all, which is the only honest claim available here.
+        # Three buckets, not two. Collapsing them into one "discard" flag sorted by name
+        # inside it, which let a geometrically flagged design displace a clashing one from
+        # last place whenever its name sorted later -- and "the clashing design is last"
+        # is an invariant this report has had since it stopped ranking on contacts.
         return (
-            bool(row.get("steric_clash")) or not_a_folded_polypeptide(row),
+            bool(row.get("steric_clash")),
+            not_a_folded_polypeptide(row),
             natural_key(os.path.basename(path)),
         )
 

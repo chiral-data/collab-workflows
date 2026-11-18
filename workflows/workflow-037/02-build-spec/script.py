@@ -168,7 +168,16 @@ def to_label_ids(residues, inventory, numbering):
                     "If you meant mmCIF numbering, set residue_numbering=label."
                 )
             label_seq = int(label_seq)
-            shadowed = insertion_code_siblings(chain, residue_id)
+            # Drop the residue the lookup actually landed on. Where the plain base
+            # residue is unmodelled, auth_to_label resolves the author number to the
+            # first occurrence that *does* exist, which carries an insertion code -- and
+            # listing that one as unreachable would contradict the spec written three
+            # lines later, which conditions exactly it.
+            shadowed = [
+                sibling
+                for sibling in insertion_code_siblings(chain, residue_id)
+                if sibling[1] != label_seq
+            ]
             if shadowed:
                 names = ", ".join(name for name, _ in shadowed)
                 labels = ", ".join(str(seq) for _, seq in shadowed)

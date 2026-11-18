@@ -71,6 +71,16 @@ unfolded one and a broken one to prove the check fires where it should and stays
 where it should. That catches a model that has stopped working. It will not catch a model
 that works and produces designs which do not bind.
 
+Reporting those measurements is a separate claim from making them, and it is checked
+separately. `unfolded-design` and `broken-backbone` assert that node 05 renders the
+columns carrying node 04's verdict -- read out of the report's own `DATA` object, not by
+searching the page, because node 05 explains its columns in prose and so every column
+label appears in the file whether the column is built or not. `unfolded-ranked-last`
+covers the sink rule: it puts one unfolded design among two ordinary ones and asserts no
+folded design is ranked below a flagged one. The clash fixture cannot stand in for it,
+because clashes sort into a bucket of their own -- a node 05 that sank clashes and
+nothing else passes every other ordering check in the suite.
+
 The pieces run on their own too:
 
 ```sh

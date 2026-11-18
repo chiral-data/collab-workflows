@@ -47,6 +47,17 @@
       ]
     },
     {
+      "id": "1IGT-hotspots",
+      "source": "1IGT.cif",
+      "shape": "an author-numbered hotspot whose bare residue is unmodelled, so the lookup lands on an insertion-coded one",
+      "evidence": "author 100 on chain B covers 4 residues -- 100H, 100I, 100J, 100K -- at label 102, 103, 104, 105, and no bare 100; auth_to_label maps 100 to 102, which is 100H",
+      "why": "12E8 cannot distinguish the residue a hotspot reaches from the residues it shadows, because every base residue there is modelled and the lookup always lands on the bare one. Here it lands on 100H, so the fixture pins both halves: 100H is conditioned, and only 100I-100K are reported unreachable. The earlier message named 100H in both roles at once.",
+      "params": {"PARAM_TARGET_CHAIN": "B", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth", "PARAM_HOTSPOT_RESIDUES": "100"},
+      "expect": [
+        {"check": "insertion_codes_warned_at_use", "finding": "#52"}
+      ]
+    },
+    {
       "id": "1G03",
       "shape": "NMR ensemble, 20 models",
       "evidence": "20 models in pdbx_PDB_model_num; 1 chain; 41620 atom rows",
@@ -250,6 +261,16 @@
       "expect": [
         {"check": "node05_reports_clash", "finding": "#30"},
         {"check": "node05_clash_ranked_last", "clashing": "design_0_generated.cif", "finding": "#30"}
+      ]
+    },
+    {
+      "name": "unfolded-ranked-last",
+      "n_designs": 3,
+      "shape": "extended",
+      "length": 60,
+      "why": "One unfolded design among two ordinary ones, so the report has something to sort. The clash fixture cannot cover the sink rule: clashes sort into a bucket of their own, and a report that sank only clashes would still pass every ordering check in the suite.",
+      "expect": [
+        {"check": "node05_unfolded_ranked_last", "unfolded": "design_0_generated.cif", "finding": "#53"}
       ]
     },
     {

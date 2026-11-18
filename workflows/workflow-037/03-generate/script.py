@@ -72,7 +72,16 @@ def preserved_chain_ids(spec_path):
     except Exception as exc:
         print(f"WARNING: could not read the contig from '{spec_path}': {exc}", flush=True)
         return None
+    if not isinstance(spec, dict) or "design" not in spec:
+        print(
+            f"WARNING: '{spec_path}' has no design section to read a contig from; "
+            "falling back to the chain ids in target.cif.",
+            flush=True,
+        )
+        return None
     if not contig:
+        # The monomer passthrough, and the only case where "no target chains" is an
+        # answer rather than a failure to find one.
         return []
     chains = []
     # Segments are "<length>", "<length>-<length>", "/0" and "<chain><start>-<end>".

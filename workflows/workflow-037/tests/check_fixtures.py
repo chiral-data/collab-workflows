@@ -125,11 +125,29 @@ def check_insertion_codes_warned_at_use(fx, _):
     if target is None:
         return FAIL, f"target chain {wanted_chain!r} is not in the inventory"
 
-    shadowed = []
+    # The residue each author number actually resolves to is not shadowed by anything --
+    # it is the one being conditioned. On 12E8 that is always the bare residue, so the
+    # distinction is invisible there. On 1IGT author 100 has no bare form and resolves to
+    # 100H, and demanding that node 02 call 100H unreachable demands a message that
+    # contradicts the spec written beside it.
+    resolved = {}
+    for auth_num in wanted:
+        label_seq = target.get("auth_to_label", {}).get(str(auth_num))
+        if label_seq is not None:
+            resolved[auth_num] = int(label_seq)
+
+    shadowed, conditioned = [], []
     for residue in target.get("residues", []):
-        if residue.get("ins_code") and int(residue["auth_seq_id"]) in wanted:
-            shadowed.append((f"{residue['auth_seq_id']}{residue['ins_code']}",
-                             residue["label_seq_id"]))
+        if not residue.get("ins_code"):
+            continue
+        auth_num = int(residue["auth_seq_id"])
+        if auth_num not in wanted:
+            continue
+        name = f"{residue['auth_seq_id']}{residue['ins_code']}"
+        if resolved.get(auth_num) == residue["label_seq_id"]:
+            conditioned.append((name, residue["label_seq_id"]))
+        else:
+            shadowed.append((name, residue["label_seq_id"]))
     if not shadowed:
         return FAIL, "no requested hotspot carries an insertion code; fixture no longer fits"
 
@@ -141,8 +159,21 @@ def check_insertion_codes_warned_at_use(fx, _):
     leaked = [str(seq) for _, seq in shadowed if f"/{seq}/" in fx.spec_yaml]
     if leaked:
         return FAIL, f"spec conditions label {', '.join(leaked)}, which auth cannot name"
-    return PASS, (f"{len(shadowed)} shadowed residue(s) named in node 02's log "
-                  "and absent from the spec")
+    # The other half, and the half that was missing: an insertion-coded residue the
+    # lookup landed on must be conditioned, and must not also be called unreachable.
+    for name, label_seq in conditioned:
+        if any(name in line for line in warnings):
+            return FAIL, (f"node 02 calls {name} unreachable, but author "
+                          f"{name[:-1]} resolves to it at label {label_seq}")
+        if f"/{label_seq}/" not in fx.spec_yaml:
+            return FAIL, (f"author {name[:-1]} resolves to {name} at label {label_seq}, "
+                          "which the spec does not condition")
+    detail = (f"{len(shadowed)} shadowed residue(s) named in node 02's log "
+              "and absent from the spec")
+    if conditioned:
+        detail += (f"; {', '.join(n for n, _ in conditioned)} conditioned as the "
+                   "residue(s) author numbering resolves to")
+    return PASS, detail
 
 
 def check_log_mentions_models(fx, _):
@@ -365,64 +396,139 @@ def check_node04_geometry(case_dir, expect):
 
 def check_node05_clash_ranked_last(case_dir, expect):
     """A clashing design must not be presented first."""
-    path = os.path.join(case_dir, "n5", "outputs", "report.html")
-    if not os.path.exists(path):
-        return FAIL, "node 05 produced no report.html"
-    with open(path, errors="replace") as handle:
-        html = handle.read()
-    order = []
-    for name in re.findall(r'"name":\s*"(design_\d+_generated\.cif)"', html):
-        if name not in order:
-            order.append(name)
+    data, problem = report_payload(case_dir)
+    if data is None:
+        return FAIL, problem
+    designs = (data.get("metrics") or {}).get("designs") or []
+    order = [row.get("design", "?") for row in designs]
     if not order:
         return FAIL, "no design names found in the report"
     clashing = expect.get("clashing", "design_0_generated.cif")
     if clashing not in order:
-        return FAIL, f"{clashing} absent from the report; got {order}"
-    shown = [n.replace("_generated.cif", "") for n in order]
+        return FAIL, "%s absent from the report; got %s" % (clashing, order)
+    if not designs[order.index(clashing)].get("steric_clash"):
+        return FAIL, "%s is not flagged clashing, so its rank proves nothing" % clashing
+    shown = [name.replace("_generated.cif", "") for name in order]
     if order[-1] != clashing:
-        return FAIL, f"clashing design is not last: {shown}"
-    return PASS, f"order {shown}; clashing design last"
-
-
+        return FAIL, "clashing design is not last: %s" % shown
+    return PASS, "order %s; clashing design last" % shown
 def check_node05_reports_clash(case_dir, _):
-    path = os.path.join(case_dir, "n5", "outputs", "report.html")
-    if not os.path.exists(path):
-        return FAIL, "node 05 produced no report.html"
-    with open(path, errors="replace") as handle:
-        html = handle.read()
-    if "Clash" not in html:
-        return FAIL, "report has no Clash column"
-    if '"steric_clash": true' not in html.lower().replace("True", "true"):
+    """The Clash column is rendered, and the clashing design carries the flag.
+
+    Read from the payload, not the page text: node 05 names its columns in prose, so
+    "Clash" appears in report.html whether or not the column is built.
+    """
+    data, problem = report_payload(case_dir)
+    if data is None:
+        return FAIL, problem
+    rendered = [key for key, _label in data.get("columns", [])]
+    if "steric_clash" not in rendered:
+        return FAIL, "report renders no Clash column"
+    designs = (data.get("metrics") or {}).get("designs") or []
+    if not any(row.get("steric_clash") for row in designs):
         return FAIL, "report does not carry a steric_clash flag"
-    return PASS, "Clash column present and a design is flagged"
+    return PASS, "Clash column rendered and a design is flagged"
+def report_payload(case_dir):
+    """The DATA object node 05 embeds, parsed.
 
-
-def check_node05_reports_geometry(case_dir, expect):
-    """The report must carry node 04's verdict that a design is not a folded polypeptide.
-
-    Node 04 warns, but the report is what gets emailed and archived, and it used to render
-    an unfolded design as an ordinary row: neither compactness_ratio nor chain_breaks was
-    a column, so the only visible number was a radius of gyration with nothing to compare
-    it against. The payload has always carried both -- this checks a reader sees them.
+    Checking the report by searching its text does not work: the page explains its own
+    columns in prose, so every column label appears in the file whether or not a column
+    is rendered. The table is built by inline JS from this object, so this is what a
+    reader actually sees.
     """
     path = os.path.join(case_dir, "n5", "outputs", "report.html")
     if not os.path.exists(path):
-        return FAIL, "node 05 produced no report.html"
+        return None, "node 05 produced no report.html"
     with open(path, errors="replace") as handle:
         html = handle.read()
-    missing = [label for label in ("Compactness", "Chain breaks", "Unfolded")
-               if label not in html]
+    marker = "const DATA = "
+    if marker not in html:
+        return None, "report embeds no DATA object"
+    blob = html[html.index(marker) + len(marker):]
+    cut = blob.find(chr(10) + "const TOP_N")
+    if cut == -1:
+        return None, "report's DATA object is not delimited as expected"
+    try:
+        return json.loads(blob[:cut].rstrip().rstrip(";")), ""
+    except ValueError as exc:
+        return None, f"report's DATA object is not valid JSON: {exc}"
+
+
+def check_node05_reports_geometry(case_dir, expect):
+    """The report must render node 04's flags, not merely carry them.
+
+    chain_breaks and compactness_ratio were in the payload and in the CSV long before
+    they were columns, and a design node 04 had flagged still arrived in the report
+    as an ordinary row. So this reads the rendered column list rather than the page text,
+    and reads the flag out of node 05's own copy of the metrics rather than node 04's
+    file -- node04_geometry already tests node 04 on these same fixtures, and a check
+    that re-read that file would pass on a report that showed none of it.
+    """
+    data, problem = report_payload(case_dir)
+    if data is None:
+        return FAIL, problem
+    rendered = [key for key, _ in data.get("columns", [])]
+    missing = [c for c in ("compactness_ratio", "chain_breaks", "overextended")
+               if c not in rendered]
     if missing:
-        return FAIL, f"report has no {', '.join(missing)} column"
-    payload = load_metrics(case_dir)
-    row = ((payload or {}).get("designs") or [{}])[0]
+        return FAIL, f"report renders no column for {', '.join(missing)}"
+
+    designs = (data.get("metrics") or {}).get("designs") or []
+    if not designs:
+        return FAIL, "report carries no design rows"
+    row = designs[0] if len(designs) == 1 else None
+    if row is None:
+        flagged = [d for d in designs
+                   if d.get("overextended") or d.get("chain_breaks")]
+        if not flagged:
+            return FAIL, "no design in the report carries a geometry flag"
+        row = flagged[0]
     if expect.get("overextended") and not row.get("overextended"):
-        return FAIL, "node 04 did not flag the design as overextended"
+        return FAIL, "the report's own row does not carry node 04's overextended flag"
     if expect.get("min_chain_breaks") and not row.get("chain_breaks"):
-        return FAIL, "node 04 recorded no chain break to report"
-    return PASS, ("geometry columns present; "
-                  f"overextended={row.get('overextended')} breaks={row.get('chain_breaks')}")
+        return FAIL, "the report's own row records no chain break"
+    return PASS, (f"columns rendered; overextended={row.get('overextended')} "
+                  f"breaks={row.get('chain_breaks')}")
+
+
+def check_node05_unfolded_ranked_last(case_dir, expect):
+    """A design node 04 flagged on geometry must sort below every unflagged one.
+
+    The clash fixture cannot stand in for this. Clashes sort into a bucket of their own,
+    so a report that sank clashes and nothing else would still pass every other ordering
+    check in the suite -- which is exactly what the sink rule was added to change.
+
+    Sinking is an ordering rule, not a verdict. The fixture is a straight chain, which has
+    genuinely not folded, but the same sink catches an elongated real fold -- see the
+    'helical-design' fixture. The designs are moved, not dropped, and the report says
+    'Not compact' rather than naming them unfolded.
+    """
+    data, problem = report_payload(case_dir)
+    if data is None:
+        return FAIL, problem
+    designs = (data.get("metrics") or {}).get("designs") or []
+    if len(designs) < 2:
+        return FAIL, "ordering needs two designs or more; report has %d" % len(designs)
+    order = [row.get("design", "?") for row in designs]
+    shown = [name.replace("_generated.cif", "") for name in order]
+    named = expect.get("unfolded", "design_0_generated.cif")
+    if named not in order:
+        return FAIL, "%s absent from the report; got %s" % (named, order)
+
+    def flagged(row):
+        return bool(row.get("overextended")) or bool(row.get("chain_breaks"))
+
+    if not flagged(designs[order.index(named)]):
+        return FAIL, "%s carries no geometry flag, so its rank proves nothing" % named
+    flags = [flagged(row) for row in designs]
+    if all(flags):
+        return FAIL, "every design is flagged, so the ordering proves nothing: %s" % shown
+    # The property, rather than just "the named one is last": once the list reaches a
+    # flagged design no ordinary one may follow it.
+    first_flagged = flags.index(True)
+    if False in flags[first_flagged:]:
+        return FAIL, "an unflagged design is ranked below a flagged one: %s" % shown
+    return PASS, "order %s; flagged design(s) sunk below the unflagged ones" % shown
 
 
 def check_node06_per_design_fasta(case_dir, expect):
@@ -459,6 +565,7 @@ NODE04_CHECKS = {
     "node05_clash_ranked_last": check_node05_clash_ranked_last,
     "node05_reports_clash": check_node05_reports_clash,
     "node05_reports_geometry": check_node05_reports_geometry,
+    "node05_unfolded_ranked_last": check_node05_unfolded_ranked_last,
     "node06_per_design_fasta": check_node06_per_design_fasta,
 }
 
