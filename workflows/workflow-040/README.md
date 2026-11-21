@@ -144,7 +144,8 @@ the hints, which carry the reasoning.
 | Scaffold | done |
 | `01-ingest-designs` | **implemented** |
 | `02-build-prediction-inputs` | **implemented** (mono path; `cplx_` is Phase 2) |
-| Nodes 03–05 | **not implemented** |
+| `03-predict` | **implemented**, with `--dry-run` for CI |
+| Nodes 04–05 | **not implemented** |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest` |
 | Test harness | not written — `tests/fixtures.json` is the data, the checks are not built |
 | Phase 2 | specced, §11.1 closed by measurement |

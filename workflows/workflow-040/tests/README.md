@@ -219,11 +219,22 @@ Full detail, with params and expectations, is in `fixtures.json`. This is the ma
 | id | What it catches | Pins |
 |---|---|---|
 | `argv-no-host-url` | `--host-url` never appears in argv | 026's unconditional default |
-| `argv-model-type-mono` | `alphafold2_ptm` on the mono path | §6 |
-| `argv-model-type-cplx` | `alphafold2_multimer_v3` on the cplx path | 029 |
-| `argv-msa-mode-phase1` | `single_sequence` on the mono path | §4 |
-| `timeout-kills-process-group` | a child that ignores SIGTERM is still killed, because generation spawns workers that outlive the direct child | `755d4af2` |
+| `argv-model-type-mono` | `alphafold2_ptm` **and** `--msa-mode single_sequence` on the mono path | §6, §4 |
+| `argv-model-type-cplx` | `alphafold2_multimer_v3` on the cplx path, still with no `--host-url` | 029 |
+| `timeout-kills-process-group` | a child that ignores SIGTERM is still killed, because the predictor spawns workers that outlive the direct child | `755d4af2` |
 | `per-design-failure-continues` | one failed prediction is recorded and the batch continues | §6 |
+
+`--dry-run` is node 03's own flag, copied from `026/02_predict/script.py:37`. It resolves
+every argv, writes the manifest and exits without starting the predictor or touching a
+device — which is what makes the offline and model-type guarantees assertable on a machine
+with no GPU. The flags *are* the guarantee, and they are decided in this node.
+
+**What the node cannot assert about the network, and who does.** It can guarantee
+`--host-url` is absent, and records `host_url_passed: false` in the manifest. It cannot
+prove from inside its own process that no egress happened. That proof is the harness
+running it under `docker run --network none`, which is how the offline claim was measured
+in the first place — see [reference/](reference/). So `no_network_reached` is a check on
+the *harness*, not on the node, and the node records the flags it would have needed.
 
 ### Section `scoring` — nodes 04 and 05, synthetic predictions
 
