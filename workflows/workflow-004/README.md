@@ -240,7 +240,7 @@ The dashboard reports distance-based contacts (< 4.0 Å) between the docked liga
 All six nodes use a single unified container image built from the included Dockerfile.
 
 ```bash
-docker build -t vina-workflow:latest .
+docker build -t vina-workflow:2026_11_21 .
 ```
 
 Key tools installed: Python 3.11, BioPython, PDBFixer, OpenMM, RDKit, OpenBabel, AutoDock Vina, Meeko, P2Rank 2.4.2 (Java), Gemmi.

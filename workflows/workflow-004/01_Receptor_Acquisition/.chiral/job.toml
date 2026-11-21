@@ -3,7 +3,7 @@ description = "Download and validate receptor structures from RCSB PDB"
 outputs = ["outputs/receptor_metadata.json", "outputs/*.pdb", "outputs/report.html"]
 
 [container]
-image = "vina-workflow:latest"
+image = "vina-workflow:2026_11_21"
 
 [scripts]
 run = "run.sh"
