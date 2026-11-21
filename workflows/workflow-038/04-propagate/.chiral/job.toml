@@ -50,6 +50,11 @@ type = "integer"
 default = 42
 hint = "Random seed; batch i uses seed + i. Set to -1 for unseeded sampling"
 
+[params.num_steps]
+type = "integer"
+default = 0
+hint = "Denoising steps per sample; 0 uses the sampler preset's default of 200. Fewer is faster and coarser"
+
 [params.sampler]
 type = "string"
 default = "edm"

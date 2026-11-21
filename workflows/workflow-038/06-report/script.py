@@ -595,11 +595,22 @@ def main():
         )
 
     provenance_pairs = [
+        ("System source", (summary.get("system") or {}).get("source")),
+        (
+            "Chains",
+            ", ".join((summary.get("system") or {}).get("chain_ids") or []) or None,
+        ),
+        ("Polymer residues", (summary.get("system") or {}).get("n_polymer_residues")),
+        ("Tokens", (summary.get("system") or {}).get("n_tokens")),
         ("BioEmu2 version", sampling.get("bioemu2_version")),
         ("Checkpoint", settings.get("checkpoint")),
         ("Checkpoint revision", settings.get("hf_ckpt_revision")),
         ("Mode", settings.get("mode")),
         ("Sampler", settings.get("sampler")),
+        (
+            "Denoising steps",
+            settings.get("num_steps") or "200 (the preset default)",
+        ),
         ("Seed", settings.get("seed")),
         ("Batch size", settings.get("batch_size")),
         ("Precision", settings.get("precision")),

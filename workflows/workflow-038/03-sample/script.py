@@ -116,6 +116,52 @@ def choice(name, value, allowed):
     return value
 
 
+def advise_batch_size(n_tokens, num_samples, batch_size):
+    """Print upstream's own batch-size advice without acting on it.
+
+    bioemu2's `warn_batch_size` logs this estimate of the largest batch that fits:
+
+        max(1, int(0.8 * total_memory / (0.3e6 * num_tokens) - num_tokens / 75))
+
+    It only warns, and that warning goes to a logger this node does not configure, so it is
+    recomputed and printed here. It is deliberately **not** applied: batch_size changes which
+    samples are drawn, so deriving it from the GPU would make a run unreproducible on a
+    different card while reporting the same seed. The number a run used is the one in the
+    manifest, and the advice is advice.
+    """
+    if not isinstance(n_tokens, int) or n_tokens <= 0:
+        print(
+            "Batch-size advice unavailable: node 01's token count did not reach this node.",
+            flush=True,
+        )
+        return
+    effective = batch_size if batch_size is not None else num_samples
+    try:
+        import torch
+
+        if not torch.cuda.is_available():
+            return
+        total_memory = torch.cuda.get_device_properties(0).total_memory
+    except Exception as exc:
+        print(f"Batch-size advice unavailable: {exc}", flush=True)
+        return
+
+    estimate = max(1, int(0.8 * total_memory / (0.3e6 * n_tokens) - n_tokens / 75))
+    print(
+        f"Batch size in use: {effective} "
+        f"({'explicit' if batch_size is not None else 'the BioEmu2 default, num_samples'}). "
+        f"Upstream's estimate of the largest batch that fits {n_tokens} token(s) in "
+        f"{round(total_memory / 1024 ** 3, 1)} GiB is {estimate}.",
+        flush=True,
+    )
+    if min(effective, num_samples) > estimate:
+        print(
+            f"WARNING: batch size {effective} is above that estimate, so this run may run out "
+            f"of GPU memory. Set batch_size={estimate} or lower if it does.",
+            flush=True,
+        )
+
+
 def staged_alignment(msa_summary):
     """Return the A3M paths Silva staged, refusing to continue if any are missing.
 
@@ -210,6 +256,7 @@ def main():
         MATMUL_PRECISIONS,
     )
     compile_denoiser = os.environ.get("PARAM_COMPILE_DENOISER", "false").lower() == "true"
+    num_steps = int(os.environ.get("PARAM_NUM_STEPS", "0"))
     hf_ckpt_revision = os.environ.get(
         "PARAM_HF_CKPT_REVISION", "dd4b0c1b69984b68edcb6200a544213be4d75242"
     )
@@ -218,6 +265,8 @@ def main():
         fail(f"num_samples must be at least 1, got {num_samples}")
     if batch_size < 0:
         fail(f"batch_size must be 0 (BioEmu2 default) or positive, got {batch_size}")
+    if num_steps < 0:
+        fail(f"num_steps must be 0 (the sampler preset's default) or positive, got {num_steps}")
     if mode == "structure" and num_samples > 1:
         print(
             f"NOTE: mode=structure with num_samples={num_samples}. Structure mode is for one "
@@ -228,6 +277,7 @@ def main():
     # 0 and -1 are the Silva-side encodings of "let BioEmu2 decide".
     resolved_batch_size = batch_size if batch_size > 0 else None
     resolved_seed = seed if seed >= 0 else None
+    resolved_num_steps = num_steps if num_steps > 0 else None
 
     system_path = "./inputs/system.yaml"
     if not os.path.exists(system_path):
@@ -241,6 +291,16 @@ def main():
         shutil.copyfile(a3m, os.path.join("./outputs/msa", os.path.basename(a3m)))
 
     msa_summary = read_json("./inputs/msa_summary.json", "MSA summary")
+    inventory = read_json("./inputs/system_inventory.json", "system inventory")
+    if os.path.exists("./inputs/system_inventory.json"):
+        shutil.copyfile(
+            "./inputs/system_inventory.json", "./outputs/system_inventory.json"
+        )
+    else:
+        # Keep the declared output present rather than letting the node fail on a missing
+        # file it only forwards. The empty marker says which it is.
+        with open("./outputs/system_inventory.json", "w") as handle:
+            json.dump({"unavailable": "node 01's inventory was not staged into node 03"}, handle)
 
     # Checked before the dry-run exit, so `--dry-run` is a real test of the staging: the
     # defect this guards against costs nothing to reproduce and needs no GPU.
@@ -261,6 +321,8 @@ def main():
         "precision": precision,
         "matmul_precision": matmul_precision,
         "compile_denoiser": compile_denoiser,
+        # None means the preset's own default, which is 200 for every sampler bioemu2 ships.
+        "num_steps": resolved_num_steps,
         "checkpoint": "bioemu2-preview",
         "hf_ckpt_revision": hf_ckpt_revision,
     }
@@ -274,6 +336,7 @@ def main():
 
     check_gpu()
     print(f"GPU: {gpu_info()}", flush=True)
+    advise_batch_size(inventory.get("n_tokens"), num_samples, resolved_batch_size)
 
     from bioemu2 import EmuSession, System, check_physicality, load_model, save_frames
 
@@ -301,13 +364,33 @@ def main():
 
     session = EmuSession(system, model, mode, msa=msa)
 
+    # A string preset is the public API and is what a default run passes. num_steps lives on
+    # the sampler object rather than on sample(), so a non-default step count means building
+    # the sampler here with sampler_from_preset, which applies the mode's step scale (1.5 for
+    # structure, 1.0 for equilibrium) exactly as the string path would.
+    sampler_arg = sampler
+    if resolved_num_steps is not None:
+        try:
+            from bioemu2.sampling import sampler_from_preset
+
+            sampler_arg = sampler_from_preset(
+                sampler, mode=mode, num_steps=resolved_num_steps
+            )
+        except Exception as exc:
+            fail(
+                f"num_steps={resolved_num_steps} was requested but the sampler could not be "
+                f"configured: {exc}. Set num_steps=0 to use the preset's default of 200 "
+                "steps, which goes through bioemu2's public string-preset path."
+            )
+        print(f"Sampler configured with num_steps={resolved_num_steps}", flush=True)
+
     print(f"Sampling {num_samples} structure(s) in {mode} mode", flush=True)
     started = time.time()
     try:
         samples = session.sample(
             num_samples,
             batch_size=resolved_batch_size,
-            sampler=sampler,
+            sampler=sampler_arg,
             seed=resolved_seed,
         )
     except Exception as exc:

@@ -428,6 +428,7 @@ def main():
     topology = system.topology
 
     sampling_manifest = read_json("./inputs/sampling_manifest.json", "sampling manifest")
+    inventory = read_json("./inputs/system_inventory.json", "system inventory")
     propagation_manifest = read_json("./inputs/propagation_manifest.json", "propagation manifest")
 
     equilibrium = load_trajectory("./inputs/samples.xtc", topology, "sampled")
@@ -523,6 +524,18 @@ def main():
         "bioemu2_version": sampling_manifest.get("bioemu2_version"),
         "msa_source": sampling_manifest.get("msa_source"),
         "msa_min_depth": sampling_manifest.get("msa_min_depth"),
+        # What was sampled, as node 01 determined it. Carried rather than re-derived, so the
+        # report describes the system that went in and not one re-read from the topology.
+        "system": {
+            "source": inventory.get("source"),
+            "chain_ids": inventory.get("chain_ids"),
+            "n_chains": inventory.get("n_chains"),
+            "n_polymer_residues": inventory.get("n_polymer_residues"),
+            "n_tokens": inventory.get("n_tokens"),
+            "protein_chains": inventory.get("protein_chains"),
+            "has_ligands": inventory.get("has_ligands"),
+            "has_nucleic_acid": inventory.get("has_nucleic_acid"),
+        },
         "metrics_are_geometric_only": True,
         "caveat": (
             "Sampling frequency is not a calibrated Boltzmann probability. Cluster sizes are "

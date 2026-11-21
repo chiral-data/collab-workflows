@@ -70,7 +70,7 @@ sequence / structure / system YAML / RCSB accession
 [01-prepare-system] ──────► system.yaml, system_inventory.json
    │
    ▼
-[02-fetch-msa]  (network) ─► msa/, msa_summary.json, system.yaml
+[02-fetch-msa]  (network) ─► msa/, msa_summary.json, system.yaml, system_inventory.json
    │
    ▼
 [03-sample]     (GPU) ─────► samples.xtc, topology.cif, physicality.json, msa/
@@ -150,7 +150,8 @@ the whole step (Docker-only today — see open item 7).
 upstream names shallow or poor MSAs (orphan proteins, some viral proteins) as the first cause of
 degradation. `msa_summary.json` records the depth per chain and the node warns below 32 rows.
 
-**Outputs:** `system.yaml`, `msa_summary.json`, `msa/` (one `<chain>.a3m` per protein chain)
+**Outputs:** `system.yaml`, `system_inventory.json`, `msa_summary.json`, `msa/` (one
+`<chain>.a3m` per protein chain)
 
 ### Node 03: Sample Conformations
 
@@ -162,6 +163,11 @@ and node 02's alignment, samples, runs `check_physicality()`, and writes everyth
 supplying a pre-computed alignment. `--dry-run` resolves and prints every setting without
 touching the GPU, and it also checks that the alignment was staged, so the plumbing can be
 tested on a CPU.
+
+The node prints BioEmu2's own estimate of the largest batch that fits the GPU, computed from
+the token count node 01 measured, and warns when the batch in use is above it. It does not
+apply the estimate: `batch_size` changes which samples are drawn, so deriving it from whichever
+card the job landed on would make a run irreproducible while still reporting the same seed.
 
 The node refuses to sample if node 02 reported protein chains and no `.a3m` arrived. That is
 not defensiveness about a missing file: `EmuSession` fetches its own alignment when given
@@ -176,7 +182,7 @@ enforced**: rejected frames stay in the XTC by design, as upstream intends, and 
 surfaced instead.
 
 **Outputs:** `samples.xtc`, `topology.cif`, `physicality.json`, `system.yaml`,
-`sampling_manifest.json`, `msa/`
+`system_inventory.json`, `sampling_manifest.json`, `msa/`
 
 ### Node 04: Propagate Ensemble
 
@@ -301,6 +307,26 @@ BioEmu2 runs `ceil(num_samples / batch_size)` batches. Changing it changes the e
 drawn, and for `edm_fk`/`edm_fkc` also changes the resampling population.
 
 **Test vs production:** `0` until you hit an out-of-memory error, then halve until it fits.
+
+### num_steps
+
+| Value / Range | Description |
+|---------------|-------------|
+| `0` (default) | Use the sampler preset's own step count, which is 200 for every sampler BioEmu2 ships. |
+| 20–100 | Faster and coarser. Useful for a smoke test or for sweeping a parameter. |
+| 200+ | Diminishing returns; the presets were tuned at 200. |
+
+**Trade-off:** Runtime is close to linear in `num_steps`, and fewer steps means a less converged
+denoising trajectory. Reducing it is a speed-for-quality trade, not a free win.
+
+**Implementation note:** the step count belongs to the sampler object, not to
+`EmuSession.sample()`. A default run therefore passes the sampler name as a string, which is
+BioEmu2's documented path; only a non-zero `num_steps` builds the sampler with
+`sampler_from_preset(preset, mode=…, num_steps=…)`, which applies the same step scale the string
+path would. If that ever stops working the node fails and names the fallback, instead of
+accepting the parameter and ignoring it.
+
+**Test vs production:** `0`. Lower it only when you are deliberately trading quality for speed.
 
 ### sampler
 

@@ -186,6 +186,7 @@ def main():
     enabled = os.environ.get("PARAM_PROPAGATE", "false").lower() == "true"
     lag_time_ns = float(os.environ.get("PARAM_LAG_TIME_NS", "1.0"))
     batch_size = int(os.environ.get("PARAM_BATCH_SIZE", "0"))
+    num_steps = int(os.environ.get("PARAM_NUM_STEPS", "0"))
     seed = int(os.environ.get("PARAM_SEED", "42"))
     sampler = choice("sampler", os.environ.get("PARAM_SAMPLER", "edm"), SAMPLERS)
     physicality_filter = choice(
@@ -209,8 +210,11 @@ def main():
 
     if batch_size < 0:
         fail(f"batch_size must be 0 (BioEmu2 default) or positive, got {batch_size}")
+    if num_steps < 0:
+        fail(f"num_steps must be 0 (the sampler preset's default) or positive, got {num_steps}")
     resolved_batch_size = batch_size if batch_size > 0 else None
     resolved_seed = seed if seed >= 0 else None
+    resolved_num_steps = num_steps if num_steps > 0 else None
 
     if not enabled:
         if dry_run:
@@ -247,6 +251,7 @@ def main():
         "batch_size": resolved_batch_size,
         "seed": resolved_seed,
         "sampler": sampler,
+        "num_steps": resolved_num_steps,
         "physicality_filter": physicality_filter,
         "precision": precision,
         "matmul_precision": matmul_precision,
@@ -346,6 +351,25 @@ def main():
     # Propagation needs equilibrium embeddings whatever node 03 sampled in.
     session = EmuSession(system, model, "equilibrium", msa=msa)
 
+    # As in node 03: the string preset is the public path and num_steps lives on the sampler
+    # object, so a non-default step count is the only reason to build one here. Propagation
+    # always uses the equilibrium step scale of 1.0, which is what bioemu2 would pick anyway
+    # and what it warns about if overridden.
+    sampler_arg = sampler
+    if resolved_num_steps is not None:
+        try:
+            from bioemu2.sampling import sampler_from_preset
+
+            sampler_arg = sampler_from_preset(
+                sampler, mode="equilibrium", num_steps=resolved_num_steps
+            )
+        except Exception as exc:
+            fail(
+                f"num_steps={resolved_num_steps} was requested but the sampler could not be "
+                f"configured: {exc}. Set num_steps=0 for the preset's default of 200 steps."
+            )
+        print(f"Sampler configured with num_steps={resolved_num_steps}", flush=True)
+
     print(f"Propagating by {lag_time_ns} ns", flush=True)
     started = time.time()
     try:
@@ -353,7 +377,7 @@ def main():
             x0,
             lag_time_ns=lag_time_ns,
             batch_size=resolved_batch_size,
-            sampler=sampler,
+            sampler=sampler_arg,
             seed=resolved_seed,
         )
     except Exception as exc:

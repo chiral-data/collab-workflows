@@ -141,10 +141,18 @@ and 04 drive the Python API instead. A bonus: `save_frames()` writes exactly `sa
 `topology.cif` and `physicality.json` into the directory it is handed, so node 03 points it at
 `./outputs/` and copies nothing.
 
-One consequence worth stating plainly: **`--num-steps` has no Python equivalent.**
+**`--num-steps` does have a Python equivalent, and this design originally said it did not.**
 `EmuSession.sample()` takes `num_samples`, `batch_size`, `sampler`, `seed`, `progress` and
-`partial_dir`; the step count belongs to the configured sampler object. So no `num_steps`
-parameter is exposed here, rather than one that silently does nothing.
+`partial_dir`, and the step count does belong to the sampler object — but `sampler` is typed
+`SamplerPreset | Sampler`, so a configured sampler can be passed straight in, and
+`sampler_from_preset(preset, mode=…, num_steps=…)` builds one with the mode's step scale
+already applied. The step count is exposed as `num_steps`, defaulting to 0, which means the
+preset's own default of 200. Only a non-zero value takes the sampler-object path, so a default
+run stays on the string-preset API.
+
+The lesson is narrower than "read the source": the original claim was drawn from
+`sample()`'s parameter *names* without reading its parameter *types*, and the type was the
+answer.
 
 **The topology comes from the System, not from the CIF.** `samples.xtc` carries coordinates
 only, and MDTraj's PDBx/mmCIF support is the weak link in that chain. But `System` already

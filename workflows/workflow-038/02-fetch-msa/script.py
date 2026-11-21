@@ -97,6 +97,17 @@ def main():
 
     # Pass the system through unchanged so node 03 gets it from one upstream node.
     shutil.copyfile(system_path, "./outputs/system.yaml")
+    # The inventory travels with it. Node 03 needs the token count to advise on batch size and
+    # the report needs the chain list to say what was sampled; both would otherwise be
+    # recomputed downstream from the same file, which is the defect class CLAUDE.md names.
+    if os.path.exists("./inputs/system_inventory.json"):
+        shutil.copyfile("./inputs/system_inventory.json", "./outputs/system_inventory.json")
+    else:
+        print(
+            "WARNING: node 01's system_inventory.json was not staged here, so the token count "
+            "and chain list will be absent downstream.",
+            flush=True,
+        )
 
     if msa_depth < 0:
         fail(f"msa_depth must be 0 (full alignment) or positive, got {msa_depth}")

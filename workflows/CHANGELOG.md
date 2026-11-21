@@ -26,8 +26,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     arrived, since `EmuSession` otherwise fetches its own over the network and the manifest
     would still name node 02's.
   - Nodes 03/04 drive the BioEmu2 Python API rather than its CLI, because the CLI exposes no
-    flag for a pre-computed MSA; `--num-steps` is deliberately not exposed, as
-    `EmuSession.sample()` has no equivalent.
+    flag for a pre-computed MSA. `num_steps` *is* exposed: `EmuSession.sample()` takes
+    `sampler: SamplerPreset | Sampler`, so `sampler_from_preset(preset, mode=…, num_steps=…)`
+    reaches the step count. A default run still passes the string preset.
+  - Node 01's `system_inventory.json` travels the length of the pipeline, so the report states
+    the chains and token count node 01 measured rather than re-reading them from the topology.
+    Node 03 prints BioEmu2's own largest-fitting-batch estimate from that token count and warns
+    when the batch exceeds it, without applying it — `batch_size` changes which samples are
+    drawn, so deriving it from the card would break reproducibility across GPUs.
   - `04-propagate` always writes its declared outputs, passing the ensemble through as an
     identity propagation when disabled, because Silva has no conditionally-skipped node and a
     declared-but-unwritten output is a silent failure.
