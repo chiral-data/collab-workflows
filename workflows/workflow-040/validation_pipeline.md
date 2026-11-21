@@ -489,7 +489,7 @@ alongside the value so a reader can re-filter without re-running.
 | Metric | Default | Source | Caveat |
 |---|---|---|---|
 | `sc_rmsd_A` | < 2.0 | common self-consistency convention in the design literature | scale-dependent; a 30-mer and a 150-mer should not share a cutoff |
-| `plddt_binder` | > 80 | standard AF2 confidence banding | measures fold confidence, not binding |
+| `plddt_binder` | > 80 | standard AF2 confidence banding | **may reject, never admit** — measured: 115 alanines score 95.8 (§8.6) |
 | `pae_interaction` | < 10 | Bennett et al. 2023, the strongest in-silico discriminator they report | **see below** |
 | `iptm` | > 0.5 | AF2-multimer convention | weaker than `pae_interaction`; secondary |
 | `plddt_target` | none | — | diagnostic only; never gates |
@@ -568,6 +568,20 @@ length. All exit 0. All produce a number. Assert against a measurement of the in
 a parser that is not the one under test — 037's `probe_entry.py` parses `_atom_site` by
 hand for exactly this reason.
 
+**And the inverse, found in 040's own Gate B judge.** `report_controls.py` crashed on a
+provenance field one control did not carry. The `KeyError` landed after the results table
+and before the verdict line, so the control run's `VERDICT.txt` is a file that reads like
+a complete report and contains **no verdict at all** — correct numbers, absent conclusion,
+and the only signal a non-zero exit nobody was reading. Then the fix for it had the same
+shape pointed the other way: the provenance gate iterated the records that existed, so a
+*deleted* record produced no row and passed while a *partial* one was refused.
+
+Both say the same thing. **A thing that is absent generates no output to inspect**, so a
+report has to enumerate what it expected and name what is missing, and a judge's verdict
+has to be reachable even when part of the report fails. `tests/falsify_controls.sh` exists
+because neither defect was visible by reading the code; both turned up the first time the
+judge was asked to refuse something.
+
 ### 8.4 A check that passes for the wrong reason is worse than no check
 
 It is also evidence, which is what makes it worse. Four instances in 037:
@@ -584,8 +598,27 @@ It is also evidence, which is what makes it worse. Four instances in 037:
 
 Rules for 040: assert on structured output and numbers, never on rendered prose; and
 **verify every check is non-vacuous** by suppressing the behaviour and confirming the
-check fails. 037 did this explicitly and recorded it in the commit message.
+check fails. 037 did this explicitly and recorded it in the commit message. In 040 this is
+mechanical: `tests/check_fixtures.py` corrupts the artifact tree ~35 ways and requires
+every passing check to fail under at least one corruption. That pass immediately found one
+vacuous check and one corruption that was a no-op, both in the suite itself.
 
+**A fifth instance, found in this spec, in revision 1's own test plan.** §9 asked for a
+native validated complex as the positive control. It is the most defensible-sounding
+choice available and it is wrong, because §4 — five sections earlier, in the same
+document — fixes `msa_mode = single_sequence`, which is the mode a native protein cannot
+be predicted in. Measured on the GPU: 4ZQK PD-1 49.33 pLDDT, 1BRS barnase 43.09.
+
+This is the class pointed at a *control* rather than at a check, and the mechanism is the
+same: **"use a real experimentally validated structure" is unimpeachable in the abstract,
+so no one took it back to §4 to see whether it was being predicted in a mode it could
+survive.** A control inherits every assumption of the pipeline it runs through. Choosing
+it by its pedigree rather than against those assumptions is how a control ends up
+measuring the settings instead of the thing.
+
+What caught it was adding the control that distinguishes the two explanations — `C12`, a
+designed positive. Without it, "the positives failed" is equally consistent with a broken
+scorer; §9 records both.
 ### 8.5 A design that failed must appear as failed, not vanish
 
 026 drops what it cannot score. A report that omits failures reads as a batch where
@@ -597,6 +630,44 @@ This is 037's reason for existing in the shape it has, and 040 inherits the trap
 than escaping it. `sc_rmsd_A` is computable on a prediction that converged on nothing;
 `iptm` is a number whatever went in. The only defence is a negative control that must
 score badly (§9).
+
+**Measured, while building the Tier 2 controls.** The argument had never been run against
+real structures. It has now. `C1` is PD-1 from 4ZQK with its own sequence on its own
+backbone; `C3` is the same backbone with the same residues **permuted**. Through
+workflow-037's node 04 they are not merely similar, they are identical on every column it
+reports:
+
+| | length | hydrophobic | net charge | Rg (Å) | compactness | contacts | min Cα (Å) | clash | breaks |
+|---|---|---|---|---|---|---|---|---|---|
+| `C1` native | 115 | 0.478 | −1 | 13.58 | 1.02 | 17 | 5.77 | no | 0 |
+| `C3` scrambled | 115 | 0.478 | −1 | 13.58 | 1.02 | 17 | 5.77 | no | 0 |
+| `C4` poly-alanine | 115 | 1.0 | 0 | 13.58 | 1.02 | 17 | 5.77 | no | 0 |
+
+A permutation preserves composition, so even the composition columns do not move; `C4`
+differs on two of ten and is otherwise the same structure. 037 cannot distinguish a native
+binder from a scramble of it **at all**, and says so about itself — this is the measurement
+behind that claim rather than an inference from it. Which is the case for 040 existing,
+and also the reason `C3` is kept separate from `C4`: a scorer could plausibly be caught
+out by a sequence with the right composition and not by one with the wrong composition.
+
+**And measured for 040 itself, which is the half that matters here.** The paragraph above
+says 037 cannot tell a native binder from a scramble of it, and offers 040's structural
+metrics as the answer. One of those two metrics does not survive the same test:
+
+| | `sc_rmsd_A` | `plddt_binder` |
+|---|---|---|
+| `C12` designed, the one passing design | 0.9272 | 95.05 |
+| `C4` 115 alanines | 49.0800 | **95.81** |
+
+**A sequence encoding nothing scores higher than the real design on `plddt_binder`**, and
+clears §7's 80.0 threshold. This is the class in its sharpest form: the metric computable
+on garbage does not merely look ordinary on garbage, it looks **excellent**, and it is a
+gating metric. `sc_rmsd_A` is the one that discriminates, by a factor of 50.
+
+The reason is not a defect in the metric but a limit on what it means. pLDDT is confidence
+in *a* fold; poly-alanine genuinely does make a confident helix. Only `sc_rmsd_A` asks the
+question this workflow is for — whether the fold is *the designed one*. Hence: `plddt_binder`
+may reject, never admit (§9).
 
 ### 8.7 Never default a missing metric to a number
 
@@ -732,34 +803,77 @@ are authoritative, and a disagreement between them is a bug in this one.
 Mirrors 037's suite: real inputs, measured properties, assertions against the input
 rather than against an exit code. Plus the thing 037's suite could never have.
 
-### Positive control — the piece that has been missing
+### Positive control — measured, and the first version of it was wrong
 
-Take a **native, experimentally validated** complex from the PDB and feed it through 040
-as though it were a design: the native binder chain's own sequence, against its own
-backbone.
+**Amended after running it.** Revision 1 asked for a native complex as the positive
+control. That has now been run on the GPU, and the native positives failed. The measured
+result and what it means are in `tests/reference/tier2-phase1-controls.md`; the short
+version is that the control was mis-specified, not the scorer.
 
-- 4ZQK (PD-1/PD-L1) — already 037's worked example, and already a 037 fixture.
-- 1BRS (barnase–barstar) — a textbook high-affinity complex, also already a 037 fixture.
-  Note barnase's label numbering starts at 3, which makes it the right case for the
-  renumbering assertion in §6/node 04.
+The positive control must be a **designed** binder: an idealised backbone carrying a
+designed sequence, scored against its own backbone.
 
-A native binder on its own backbone **must** score well: `sc_rmsd_A` low, `plddt_binder`
-high, and in Phase 2 `pae_interaction` good. **If 040 scores a real complex badly, 040 is
-wrong.** This is the first test that can falsify the scoring itself rather than the
-plumbing, and it is what calibrates §7's thresholds.
+- `C12` — `make_designs.py`'s 60-residue idealised helix carrying its `ALEKIAELKA` cycle.
+  Measured: `sc_rmsd_A` **0.9272**, `plddt_binder` **95.05**, exported as the one passing
+  design. A designed sequence recovers its own backbone to under 1 Å.
+
+**If 040 scores a designed binder badly, 040 is wrong.** This is still the first test that
+can falsify the scoring rather than the plumbing — it is only the choice of positive that
+changed.
+
+Why the native entries cannot do this job: §4 fixes `msa_mode = single_sequence`, on the
+grounds that a de novo binder has no homologs and designed proteins are idealised. A
+native immunoglobulin domain is the exact opposite — it depends on the alignment it is not
+being given. So a native positive run at `single_sequence` measures AF2's single-sequence
+weakness on natural proteins, not 040's scoring. Measured: 4ZQK PD-1 at 49.33 pLDDT,
+1BRS barnase at 43.09. Both well-determined experimental structures; neither folds from
+sequence alone.
+
+This was predictable from §4 and was not predicted. It is a §8.4 defect in the shape the
+class did not yet cover: **the control passed review for the wrong reason.** "Use a real
+validated complex" sounds unimpeachable and is why nobody checked it against the
+prediction mode two sections earlier. §8.4 is now amended to name it.
+
+The native entries are kept as **diagnostics** (below), because the numbers they produce
+are exactly what §4's Phase 2 MSA decision needs.
 
 Verify each entry by measurement before trusting it, per §8.14, and record the
-measurement. 1BRS holds three copies of the complex across six chains — 037 found that
-five of the six vanished silently from its own pipeline (`53d1d460`) — so "chain A" is not
-a sufficient description of what is being tested.
+measurement. That mattered twice here: 1BRS holds three copies of the complex across six
+chains — 037 lost five of six silently (`53d1d460`) — and **4ZQK chain B carries an
+8-residue internal gap** (52→61), which would have been a positive control that failed for
+a reason unrelated to the score. Chain A, 115 residues, no gaps, is the binder.
 
-### Negative control
+### Negative control — and the metric it disqualified
 
 The same backbone with a scrambled or poly-alanine sequence. Must score badly. A filter
 that passes everything is not a filter, and unlike the positive control this one catches a
 scorer that is simply generous (§8.6).
 
-### Diagnostic control — new, and specific to §4
+This control did its job and then some. Measured:
+
+| | `sc_rmsd_A` | `plddt_binder` | passes |
+|---|---|---|---|
+| `C12` designed positive | 0.9272 | 95.05 | yes |
+| `C3` scrambled | 18.8308 | 44.94 | no |
+| `C4` poly-alanine | 49.0800 | **95.81** | no |
+
+**115 alanines score 95.81 pLDDT — above the real design, and past §7's 80.0 threshold.**
+It is rejected only because `sc_rmsd_A` catches it, 49 Å from the backbone it is meant to
+reproduce.
+
+This is not a bug: poly-alanine makes an excellent helix and AF2 is right to be confident
+it does. But confidence in *a* fold is not evidence of *the designed* fold. So
+**`plddt_binder` must never gate alone.** It can reject a design the predictor is unsure
+about; it cannot admit one. §7's threshold stands, read in that light, and §8.6 now carries
+this as its measured example — the sharper form of the class, where the metric computable
+on garbage does not look ordinary but **excellent**.
+
+`C3` lands at 18.83 Å against the native's 16.51 Å. Those 2.3 Å are not a usable
+separation; both are simply "did not refold". A margin between positives and negatives is
+only meaningful once the positives are designs, which is the other half of why the control
+set had to change.
+
+### Diagnostic control — new, specific to §4, and now half-measured
 
 Run one positive control through the complex path **three ways**: `single_sequence`,
 target-only MSA, and full MSA. Read `iptm`, `pae_interaction` and **both** chains' pLDDT
@@ -769,6 +883,19 @@ This is the experiment that settles §4 empirically rather than by argument. It 
 structure and three predictions. It tells you whether the target-only alignment recovers
 the full-MSA numbers, and `2359ffa4` exists precisely because the per-chain pLDDT needed
 to interpret such a result was missing once before.
+
+**The `single_sequence` arm has now been run**, as a side effect of the positive control
+being mis-specified:
+
+| | | `plddt_binder` | `ptm` |
+|---|---|---|---|
+| `C1` | 4ZQK PD-1, native, `single_sequence` | 49.33 | 0.40 |
+| `C2` | 1BRS barnase, native, `single_sequence` | 43.09 | 0.36 |
+
+So the baseline the other two arms must beat is in hand, and it is low. `C1` and `C2` are
+kept in the control set for this and only this — they are diagnostics, not positives, and
+`tests/report_controls.py` scores them that way. Phase 2 adds the target-only and full-MSA
+arms against these numbers.
 
 ### Plumbing, no GPU
 

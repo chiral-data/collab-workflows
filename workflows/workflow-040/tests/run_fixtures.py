@@ -478,6 +478,20 @@ class Case:
         return binary, extra_env
 
     def stage_predict_timeout(self):
+        """Did the worker outlive the node? Observable on the host, not in a container.
+
+        The worker records its own pid and the harness looks for /proc/<pid> afterwards.
+        In the container that number is a pid in the container's OWN namespace, so looking
+        for it on the host finds nothing whatever happened -- and the check would have
+        passed for exactly the reason §8.4 says is worse than no check. Running the probe
+        inside the container is no better: the container exits when node 03 returns and
+        takes everything in it down, so the worker dies regardless of what node 03 did.
+
+        So the harness records whether it could observe anything at all, and the check
+        reports a gap rather than a pass when it could not. The claim is established by
+        the host-interpreter run, where the pid means what it says, and that is stated in
+        the check's own detail rather than left for someone to notice.
+        """
         if not self._to_predict():
             return
         pidfile = self.path("worker.pid")
@@ -485,11 +499,11 @@ class Case:
             STANDIN_SIGTERM, {"STANDIN_PIDFILE": pidfile},
         )
         self.node("n3", path_prepend=binary, extra_env=env, timeout=240)
-        alive = None
-        pid = None
+        observable = not self.runner.use_docker
+        alive, pid = None, None
         if os.path.exists(pidfile):
             pid = (open(pidfile).read() or "").strip()
-            if pid.isdigit():
+            if pid.isdigit() and observable:
                 alive = os.path.exists(f"/proc/{pid}")
                 if alive:
                     # Do not leave it running whatever the verdict is; the check reads
@@ -500,9 +514,19 @@ class Case:
                         pass
         self.steps.append({
             "step": "worker", "rc": 0, "log": None,
-            "stdout": json.dumps({"pid": pid, "alive_after_node_returned": alive}),
-            "stderr": "", "command": f"check /proc/{pid}",
-            "note": json.dumps({"pid": pid, "alive": alive}),
+            "stdout": json.dumps({"pid": pid, "alive_after_node_returned": alive,
+                                  "observable": observable}),
+            "stderr": "", "command": (f"check /proc/{pid}" if observable else
+                                      "not checked: the pid is container-namespaced"),
+            "note": json.dumps({
+                "pid": pid, "alive": alive, "observable": observable,
+                "why": None if observable else (
+                    "node 03 ran in a container, so the recorded pid is in the "
+                    "container's pid namespace and means nothing on this host; and the "
+                    "container's own exit would have ended the worker regardless, so "
+                    "running the probe inside it would answer a different question."
+                ),
+            }),
         })
 
     def stage_predict_partial(self):

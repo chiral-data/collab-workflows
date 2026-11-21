@@ -20,6 +20,21 @@ these files existed, everything this repo knew about the scores-file shape came 
 | Captured | 2026-11-21 |
 | Network | `docker run --network none` — **every file here was produced with no network at all** |
 
+## The control run write-up
+
+### `tier2-phase1-controls.md`
+
+Not a captured artifact but the measured results of the Tier 2 Phase 1 control run: five
+controls through all five nodes on the GPU, offline, twice. It is here rather than in
+`tests/README.md` because it is evidence with provenance attached, and because two of its
+three findings revise decisions in `validation_pipeline.md` rather than describing the
+suite.
+
+The short version: the scorer is right on a designed binder (0.93 A at 95.05 pLDDT,
+exported), the native positive controls were the wrong controls for a workflow that
+predicts at `single_sequence`, and `plddt_binder` cannot gate alone because 115 alanines
+score 95.81.
+
 ## Files
 
 ### `monomer_scores_rank_001.json`

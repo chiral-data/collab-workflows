@@ -35,12 +35,19 @@ It reaches nodes 04 and 05 without a GPU the same way 037 reached its nodes 04�
 nodes read structured output, not the predictor, so a hand-built prediction exercises them
 exactly as a real one does, and deterministically, which a sampled prediction never could.
 
-### Tier 2 — GPU. Run by hand on the GPU host, numbers recorded in the PR body.
+### Tier 2 — GPU. Run by hand on the GPU host, numbers recorded here.
 
 The controls that can falsify the scoring itself. This mirrors how every 037 fix was
 verified — each commit message carries its measured numbers, e.g. "Verified on the GPU
 node: the clash is flagged at 0.49 Å and sorts last despite its 570 contacts"
 (`304006fa`). The suite cannot run these in CI and does not pretend to.
+
+**Phase 1 of this tier has run, twice, and it found more than Tier 1 did.** Five controls
+through all five nodes on a real GPU with `--network none`: the scorer is right on a
+designed binder (0.93 Å at 95 pLDDT, exported with its `UNSCREENED` tag), the native
+positive controls were the wrong controls, and `plddt_binder` cannot gate alone because
+115 alanines score 95.8. Numbers, provenance and reasoning in
+[`reference/tier2-phase1-controls.md`](reference/tier2-phase1-controls.md).
 
 ## Merge gate
 
@@ -68,33 +75,57 @@ Items 1–3 are enforced by the suite itself and printed at the end of every run
 
 ### Gate B — Tier 2, required per phase
 
-**Phase 1 (self-consistency):** controls `C1`–`C4` and `C6`.
+**Phase 1 (self-consistency): MET, 2026-11-21.** Measured twice on the GPU host, offline.
+Full numbers, provenance and findings in
+[`reference/tier2-phase1-controls.md`](reference/tier2-phase1-controls.md).
 
-- `C1`, `C2` — native binders on their own backbones **must pass** the Phase 1
-  thresholds.
-- `C3`, `C4` — scrambled and poly-alanine sequences on those same backbones **must
-  fail** them.
-- The **separation margin** between the worst positive and the best negative is stated
-  in the PR. If they do not separate, 040 is wrong and does not merge. This is the one
-  check that can falsify the scoring rather than the plumbing.
+| | role | len | `sc_rmsd_A` | `plddt_binder` | passes |
+|---|---|---|---|---|---|
+| `C12` designed helix | positive | 60 | **0.9272** | **95.05** | **yes** |
+| `C3` scrambled | negative | 115 | 18.8308 | 44.94 | no |
+| `C4` poly-alanine | negative | 115 | 49.0800 | **95.81** | no |
+| `C1` 4ZQK PD-1 native | diagnostic | 115 | 16.5096 | 49.33 | no |
+| `C2` 1BRS barnase native | diagnostic | 108 | 11.5737 | 43.09 | no |
+
+- `C12` — a designed sequence on an idealised backbone **must pass**, and does: it
+  recovers its own backbone to under 1 Å at 95 pLDDT, and is the one design exported,
+  carrying the `UNSCREENED` tag.
+- `C3`, `C4` — scrambled and poly-alanine sequences **must fail**, and do.
+- The **separation margin** on `sc_rmsd_A` is **+17.90 Å**. If the positives and negatives
+  do not separate, 040 is wrong and does not merge. This is the one check that can falsify
+  the scoring rather than the plumbing.
+- `plddt_binder` is **measured but does not gate**: `C4`, 115 alanines, scores 95.81 —
+  above the real design, and past the 80.0 threshold. It may reject a design, never admit
+  one. See finding 3.
+- `C1`, `C2` — **downgraded from positives to diagnostics after being run.** They failed,
+  and the control was wrong rather than the scorer: §4 predicts at `single_sequence`, which
+  is the mode a native protein cannot be folded in. They are now the `single_sequence`
+  baseline that Phase 2's MSA arms are measured against. See finding 2.
+- The judge is shown refusing: `bash tests/falsify_controls.sh <run>` mutates one number
+  at a time and requires a `NOT MET` each time. Six of six refused, and that pass found
+  two defects in the judge itself.
 - `C6` — a real prediction killed at a short timeout, with `nvidia-smi` showing the
-  device freed afterwards, as `755d4af2` verified for 037.
-- Every number recorded in the PR body, including both chains' pLDDT.
+  device freed afterwards, as `755d4af2` verified for 037. **Not yet run.**
+- Every number recorded here and in the reference file, including both chains' pLDDT.
 
-**Phase 2 (interface scoring):** adds `C7`–`C11`.
+**Phase 2 (interface scoring):** adds `C7`–`C11`. Not built.
 
-- `C7` is the three-way MSA diagnostic that settles §4 by measurement.
+- `C7` is the three-way MSA diagnostic that settles §4 by measurement. One of its three
+  arms is now in hand: `single_sequence` on a native chain gives 49.33 and 43.09 pLDDT,
+  which is the number the other two arms have to beat.
 - Phase 2 does not merge if `C7` shows the target-only alignment failing to recover the
   full-MSA numbers — that is the §11.1 gate, and the answer is to re-make the §4 decision,
   not to patch around it.
 
-**Phase 3 (calibration):** thresholds re-derived from `C1`–`C11` and written into the
+**Phase 3 (calibration):** thresholds re-derived from the controls and written into the
 README beside each number, with what was measured. Until then `pae_interaction` ships as
-a provisional band, not a gate (§7).
+a provisional band, not a gate (§7), and `plddt_binder` ships knowing a poly-alanine
+clears it.
 
 ## Harness
 
-Six pieces. One already existed and was extended in place rather than forked.
+Ten pieces: six for Tier 1, four more for Tier 2. One already existed and was extended in
+place rather than forked.
 
 | Piece | Role |
 |---|---|
@@ -104,6 +135,16 @@ Six pieces. One already existed and was extended in place rather than forked.
 | `run_fixtures.sh` | The entry point, at the name 037's suite uses. A wrapper. |
 | `run_fixtures.py` | Stages and runs every CI case, and **decides nothing**. Leaves each step's inputs, outputs, log and exit code on disk. |
 | `check_fixtures.py` | The `CHECKS` table and the falsification pass. Reads the tree; **runs nothing**. Each check returns `(status, detail)` and the detail carries the numbers, so a failure reads as evidence rather than as an assertion. |
+
+Tier 2 has the same split -- one piece builds, one runs, one judges, one attacks the judge:
+
+| Piece | Role |
+|---|---|
+| `make_controls.py` | Turns a deposited mmCIF into 040's input format: picks a chain by `auth_asym_id`, applies `native` / `scrambled` / `poly-alanine` to the **sequence only**, asserts the backbone did not move, and records what it did. |
+| `make_c12_provenance.py` | Measures the provenance of `C12`, the one control that comes from 037's `make_designs.py` rather than the PDB, with the same reader and field names as the other four. |
+| `run_controls.sh` | Fetches the entries, probes them, builds the controls, and runs 037 node 04 plus all five 040 nodes **in the image, on the GPU, with `--network none`**. Guards free space first and refuses below 8G. |
+| `report_controls.py` | Judges Gate B Phase 1: per-control verdict, separation margin with its sign, provenance. Reads `design_scores.json`; recomputes nothing. |
+| `falsify_controls.sh` | Mutates one number or flag in a copy of a control run and requires `report_controls.py` to refuse. A `MET` verdict means nothing without it (§8.13). |
 
 Running and judging are separate files on purpose. A runner that also judged could only
 report pass or fail, and when something failed there was nothing left to look at — which
@@ -398,23 +439,33 @@ first). They now carry a `measured` field saying so:
 
 ### Section `controls` — Tier 2, GPU
 
-| id | Phase | Experiment | Must |
-|---|---|---|---|
-| `C1` | 1 | 4ZQK: PD-1's own sequence on its own backbone, mono path | score well |
-| `C2` | 1 | 1BRS: barstar's own sequence on its own backbone, mono path | score well, and exercise barnase's label numbering starting at 3 |
-| `C3` | 1 | the `C1` backbone with its sequence scrambled | score badly |
-| `C4` | 1 | the `C1` backbone with a poly-alanine sequence | score badly |
-| `C5` | 1 | real archived 037 designs | record the numbers — this is 040's first honest ranking |
-| `C6` | 1 | a prediction killed at a short budget | the whole process tree dies and `nvidia-smi` shows the device freed |
-| `C7` | 2 | **4ZQK complex, three ways**: `single_sequence`, target-only MSA, full MSA — reading `iptm`, `pae_interaction` and **both** chains' pLDDT each time | settle §4 by measurement; the §11.1 gate |
-| `C8` | 2 | 1BRS as a native complex | good interface metrics |
-| `C9` | 2 | the same complex, binder scrambled | bad interface metrics |
-| `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused |
-| `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was |
+| id | Phase | Experiment | Must | Status |
+|---|---|---|---|---|
+| `C12` | 1 | **the positive control**: 037's idealised 60-residue helix carrying its `ALEKIAELKA` designed sequence, mono path | score well | **0.9272 Å, 95.05 — passes** |
+| `C3` | 1 | the `C1` backbone with its sequence scrambled | score badly | 18.8308 Å, 44.94 — fails |
+| `C4` | 1 | the `C1` backbone with a poly-alanine sequence | score badly | 49.0800 Å, **95.81** — fails on RMSD only |
+| `C1` | 1 | 4ZQK: PD-1's own sequence on its own backbone, mono path | *was* "score well"; now a `single_sequence` diagnostic | 16.5096 Å, 49.33 |
+| `C2` | 1 | 1BRS: barnase's own sequence on its own backbone, mono path, exercising its label numbering starting at 3 | *was* "score well"; now a `single_sequence` diagnostic | 11.5737 Å, 43.09 |
+| `C5` | 1 | real archived 037 designs | record the numbers — this is 040's first honest ranking | blocked: inputs not committed |
+| `C6` | 1 | a prediction killed at a short budget | the whole process tree dies and `nvidia-smi` shows the device freed | not run |
+| `C7` | 2 | **4ZQK complex, three ways**: `single_sequence`, target-only MSA, full MSA — reading `iptm`, `pae_interaction` and **both** chains' pLDDT each time | settle §4 by measurement; the §11.1 gate | arm 1 of 3 in hand, from `C1`/`C2` |
+| `C8` | 2 | 1BRS as a native complex | good interface metrics | not built |
+| `C9` | 2 | the same complex, binder scrambled | bad interface metrics | not built |
+| `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused | not built |
+| `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was | not built |
+
+**`C12` was added after the first control run and it is the reason Phase 1 has a verdict
+at all.** `C1`–`C4` between them cannot tell a mis-specified positive control apart from a
+broken scorer: when the natives fail, both explanations fit. A designed positive in the
+same run decides it. That it was missing from revision 1's plan is recorded as §8.4's
+fifth instance, because "use a real experimentally validated complex" is the kind of
+choice that passes review on its pedigree without anyone checking it against the
+prediction mode two sections earlier.
 
 `C7` is the experiment that earns its GPU time twice over: it is both the Phase 2 gate and
 the calibration input for `pae_interaction`, and it is the reason `plddt_target` is a
-first-class output rather than a diagnostic afterthought.
+first-class output rather than a diagnostic afterthought. `C1` and `C2` are now its
+baseline arm rather than dead weight.
 
 ## Choosing a fixture
 
@@ -459,6 +510,9 @@ All 52 CI cases run. Measured on the host interpreter on 2026-11-21:
 | falsification | 50 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
 | Gate A as the gate | **not met** — it has not yet run in `colabfold:2026_10_08` |
+| Gate B Phase 1 | **met**, measured twice on the GPU, offline |
+| Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
+| Gate B Phase 2/3 | not met — not built |
 
 The last line is the point of the banner the suite prints: a run outside the image is a dry
 run, says so in its header, in `run.json` and in its verdict, and does not count. The five
@@ -499,6 +553,22 @@ none of them is allowed to pass either.
 | `monomer-on-complex-path` | node 01 does refuse, with the "score_interface is Phase 2 and not built" message rather than the single-chain one. The refusal is recorded verbatim. |
 | `cplx-input-missing-colon` | every step exits 0, because there is no complex input to be missing a colon from |
 
+### One claim each run cannot make
+
+`timeout-kills-process-group` → `sigterm_ignoring_child_killed` passes on the host and
+reports `GAP` **in the image**, which is why the two runs are not interchangeable.
+
+The worker records its own pid and the harness looks for `/proc/<pid>` afterwards. Inside
+a container that number belongs to the container's own pid namespace, so looking for it on
+the host finds nothing whatever node 03 did — and the check would have passed for exactly
+the reason §8.4 calls worse than no check. Probing from inside the container answers a
+different question, because the container's exit ends the worker regardless. So the
+harness records whether it could observe anything, and the check says so.
+
+The claim is established by the host run. Everything else is established by the image run.
+Both are needed and neither subsumes the other; the gate is the image run plus this one
+line.
+
 Seven other Phase 2 `scoring` cases **already pass**, because node 04 slices from the
 recorded `chain_order` rather than from an assumption and reads `iptm` and
 `pae_interaction` whenever they are present. Those are listed as phase 2 in
@@ -524,7 +594,18 @@ omission.
 **Needs inputs that are not in the repo:**
 
 - **`C5` has no inputs.** 037's archived GPU designs are not committed. Either commit a
-  few CIFs plus their `design_metrics.json`, or regenerate them on the GPU host.
+  few CIFs plus their `design_metrics.json`, or regenerate them on the GPU host. This is
+  now the most valuable missing case in the suite: `C12` establishes that the scorer works
+  on a designed sequence, and `C5` is the only thing that would say how it ranks designs
+  that were not built to be easy.
+
+**Run by hand, not yet run:**
+
+- **`C6` needs a real prediction killed at a short budget**, with `nvidia-smi` showing
+  the device freed afterwards. Tier 1 covers the timeout path with a stand-in, and §6
+  records that a process leaving its process group escapes the kill; what is untested is
+  the same kill against a real `colabfold_batch` holding GPU memory. It is the last Phase 1
+  control outstanding.
 
 **Needs a generator shape `make_designs.py` does not have:**
 
@@ -560,7 +641,7 @@ case mutates the inventory instead, which is a less tidy fixture and a more hone
 decimal places rather than an inaccuracy. It changed how node 04 rounds. Details above,
 under `make_predictions.py`.
 
-## What running the suite found
+## What running the Tier 1 suite found
 
 **`no-score-file-is-failure` caught a second real defect in node 04.** §8.7 says a metric
 that could not be computed is `null` with a recorded reason, because a null with no reason
@@ -602,6 +683,45 @@ one ran two nodes where the check needed five. Every one of them showed up as a 
 the first full run. The lesson is the one already in §8.16 and it keeps arriving: the
 harness is the least-reviewed code in the repo and the most likely thing to be wrong.
 
+## What running the Tier 2 controls found
+
+Tier 1 found defects in nodes and in the harness. Tier 2 found defects in the *plan*,
+which is the only tier that can.
+
+**The pipeline is correct on the input class it is for.** `C12`, a designed sequence on an
+idealised backbone, went through ingest, input construction, a real offline GPU
+prediction, superposition, filtering and the report, and came out at **0.9272 Å and 95.05
+pLDDT** — the one design exported, carrying its `UNSCREENED` tag with the thresholds
+printed beside the values. Node 04's numbers matched the predictor's own log to the digit
+(49.3→49.33, 43.1→43.09, 45→44.94, 95.8→95.81), which independently confirms the pLDDT
+slicing and the parsing.
+
+**The positive controls in revision 1's plan were the wrong controls.** Native complexes
+predicted at `single_sequence` score 49.33 and 43.09 pLDDT, because §4 chose that mode for
+designed binders and a native immunoglobulin domain is the opposite case. The plan asked
+for the most defensible-sounding control available and nobody carried it back five
+sections to check it against the prediction mode. Recorded as §8.4's fifth instance;
+`C1`/`C2` are now diagnostics and the `single_sequence` baseline for §4's Phase 2 arms.
+
+**`plddt_binder` cannot gate alone.** `C4`, 115 alanines, scores **95.81** — above the
+real design's 95.05, and past the 80.0 threshold. Only `sc_rmsd_A` rejects it, at 49 Å.
+This is §8.6 in a sharper form than the class was written for: the metric computable on
+garbage does not look ordinary on garbage, it looks *excellent*, and it is a gating
+metric. `plddt_binder` may reject a design, never admit one.
+
+**The Gate B judge could lose its own verdict.** `report_controls.py` raised a `KeyError`
+on a provenance field one control did not carry, after the results table and before the
+verdict line — so a control run's `VERDICT.txt` is a file that reads like a complete
+report and contains no verdict at all. Then the fix had the same defect inverted: a
+*deleted* provenance record produced no row and passed, while a *partial* one was
+correctly refused. Both found by `falsify_controls.sh`, neither visible by reading the
+code, and both now §8.3 instances.
+
+**4ZQK chain B has an 8-residue internal gap.** Probing before choosing, per §8.14, moved
+the binder to chain A. Had it not, the positive control would have failed for a reason
+unrelated to the score — and given that the natives failed anyway, the gap would have been
+a second wrong explanation sitting underneath the first.
+
 ## What this suite does not establish
 
 Stating this plainly is part of the suite, for the same reason 037 states its own limits
@@ -611,18 +731,28 @@ expensive mistake available here.
 - **It does not establish that a passing design binds.** There is no experimental binding
   data anywhere in this repo. Everything here is in silico, and a design that passes every
   threshold is a better hypothesis, not a result.
-- **The positive controls are native complexes, which are an easier problem than
-  designs.** A native pair has co-evolutionary signal a designed one cannot have (§4). `C1`
-  and `C2` establish that the scorer is not broken; they do not establish that it
-  discriminates among designs.
+- **The positive control is a synthetic idealised helix, which is the easiest designed
+  positive there is.** `C12` is a textbook backbone carrying a repeating designed
+  sequence. It establishes that the scorer is not broken; it does not establish that the
+  scorer discriminates among *real* designs, which is `C5` and is still blocked. The
+  native complexes that were supposed to do this job cannot: predicted at
+  `single_sequence` they fail for a reason unrelated to the score (finding 2).
 - **The negative controls are scrambles, and a scramble is an easy negative.** The hard
   case is a design that looks fine and does not bind, and nothing in this repo can produce
   one without wet-lab data. So the suite can catch a scorer that is broken or merely
   generous; it cannot measure how well a working scorer ranks real candidates.
-- **Five models, one seed, no variance estimate.** 029 recorded all five AF2 models
-  agreeing on one native complex (iPTM 0.850–0.857). Nothing establishes that designs
-  behave as tidily, and 037 found that its own seed reproducibility was empirical rather
-  than guaranteed, since `torch_deterministic` is left false upstream (`11bb5149`).
+- **Five models, one seed, and a two-run variance figure that is not a distribution.**
+  Repeating the whole Phase 1 control set gave `sc_rmsd_A` within ~0.03 Å and
+  `plddt_binder` within ~0.04 — enough to say a 2 Å threshold is not being decided by
+  noise, and not enough to be called variance. Nothing here varies the seed or the model
+  set. 029 recorded all five AF2 models agreeing on one native complex (iPTM 0.850–0.857);
+  nothing establishes that designs behave as tidily, and 037 found its own seed
+  reproducibility was empirical rather than guaranteed, since `torch_deterministic` is
+  left false upstream (`11bb5149`).
+- **A passing `plddt_binder` means very little on its own.** Measured: 115 alanines
+  score 95.81, above the real design. `sc_rmsd_A` is doing the discriminating, and any
+  future metric added to the gate has to be shown to survive the poly-alanine control
+  before it is trusted (§8.6).
 - **Nothing here tests 037.** 040 consumes 037's output and `validation_pipeline.md` §10
   requires no changes to it. If 037 changes its contract, this suite notices only through
   the `ingest` section's fixtures.

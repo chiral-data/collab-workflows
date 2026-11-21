@@ -790,6 +790,13 @@ def c_sigterm_ignoring_child_killed(c, spec):
               f"{seen.get('pid')}; after node 03 returned, /proc/{seen.get('pid')} "
               f"existed: {seen.get('alive')}. node 03 rc={c.rc('n3')}, manifest statuses "
               f"{statuses}")
+    if not seen.get("observable", True):
+        # Reported as a gap rather than a pass, which is the only honest answer: an
+        # unobservable claim that returns PASS is the check passing for the wrong reason,
+        # and that is worse than no check at all (§8.4).
+        return GAP, (f"not observable in this run: {seen.get('why')} The claim is "
+                     f"established by the host-interpreter run of this same case, where "
+                     f"the pid is this host's. " + detail)
     if seen.get("pid") is None:
         return FAIL, "the worker never recorded a pid. " + detail
     if seen.get("alive"):
@@ -2341,7 +2348,9 @@ NOT_IN_THE_TREE = {
         "the claim is about a process that no longer exists, recorded live by the harness "
         "as /proc/<pid> existing or not. It was falsified for real during the build: the "
         "first stand-in put its worker behind setsid, the worker survived, and the check "
-        "failed. See validation_pipeline.md §6.",
+        "failed. See validation_pipeline.md §6. It is also the one check the IMAGE run "
+        "cannot make -- a container pid means nothing on the host -- so there it reports a "
+        "gap, and the host run is what establishes it.",
     "no_network_reached":
         "partly in the tree -- add-host-url breaks the argv half -- and partly in the "
         "container's --network none, which is a property of the run rather than of any "

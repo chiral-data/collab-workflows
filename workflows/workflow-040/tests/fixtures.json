@@ -1091,7 +1091,7 @@
       "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity"
     }
   ],
-  "_controls_comment": "Tier 2. These need a GPU and cannot run in CI; they are run by hand on the GPU host and their numbers recorded in the PR body, which is how every workflow-037 fix was verified. They are the only cases that can falsify the SCORING rather than the plumbing -- if 040 scores a real complex badly, 040 is wrong -- and they are what calibrates the thresholds in validation_pipeline.md \u00a77.",
+  "_controls_comment": "Tier 2. These need a GPU and cannot run in CI; they are run by hand on the GPU host with tests/run_controls.sh, judged by tests/report_controls.py and the judge is attacked by tests/falsify_controls.sh. Measured numbers live in tests/reference/tier2-phase1-controls.md. They are the only cases that can falsify the SCORING rather than the plumbing, and they are what calibrates the thresholds in validation_pipeline.md \u00a77. REVISED after the first run: the positive control is C12, a DESIGNED sequence on an idealised backbone, not the native complexes C1/C2. Natives are predicted at msa_mode=single_sequence (\u00a74), which is the mode they cannot be folded in, so they measure AF2 rather than 040 and are diagnostics now. And plddt_binder is recorded but does not gate: C4, 115 alanines, scores 95.81, above the real design (\u00a78.6).",
   "controls": [
     {
       "id": "C1",
@@ -1112,7 +1112,10 @@
         "plddt_target",
         "ptm",
         "wall_clock_s"
-      ]
+      ],
+      "role": "diagnostic (was positive)",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 16.5096, plddt_binder 49.33, ptm 0.40, 115 residues, chain A (not B -- chain B carries an 8-residue internal gap at 52->61, which would have made this a positive control that failed for a reason unrelated to the score). It FAILED the thresholds, and the control was wrong rather than the scorer: see must_was below. Kept as the single_sequence baseline arm of C7. 4ZQK.cif sha256 f5012ba58d76099b.",
+      "must_was": "'sc_rmsd_A < 2.0, plddt_binder > 80'. Withdrawn. \u00a74 fixes msa_mode=single_sequence because a de novo binder has no homologs and designed proteins are idealised; a native immunoglobulin domain is the opposite and depends on the alignment it is not given. A native positive at single_sequence measures the prediction mode. Recorded as \u00a78.4's fifth instance: the control passed review on its pedigree without being checked against the mode five sections earlier."
     },
     {
       "id": "C2",
@@ -1133,7 +1136,10 @@
         "plddt_binder",
         "plddt_target",
         "first_residue_id"
-      ]
+      ],
+      "role": "diagnostic (was positive)",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 11.5737, plddt_binder 43.09, ptm 0.36, 108 residues, chain A, first_residue_id 3 -- the renumbering hazard exercised for real, and node 04 handled it. FAILED the thresholds, same reason as C1. 1BRS.cif sha256 1c98dcc3eac7ccb8.",
+      "must_was": "same as C1, and withdrawn for the same reason."
     },
     {
       "id": "C3",
@@ -1150,7 +1156,9 @@
         "sc_rmsd_A",
         "plddt_binder",
         "plddt_target"
-      ]
+      ],
+      "role": "negative",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 18.8308, plddt_binder 44.94, ptm 0.30. Correctly fails. 107 of 115 positions changed identity and the composition is identical, which is why it is kept separate from C4. Note it lands only 2.3 A from the native C1, so the two are not separated by RMSD -- both are simply 'did not refold'. A margin is only meaningful against a designed positive."
     },
     {
       "id": "C4",
@@ -1167,6 +1175,34 @@
         "sc_rmsd_A",
         "plddt_binder",
         "plddt_target"
+      ],
+      "role": "negative",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 49.0800, plddt_binder 95.81, ptm 0.53. Correctly fails, but ONLY on sc_rmsd_A. Its plddt_binder of 95.81 is the HIGHEST in the control set -- above the real design's 95.05 -- and clears the 80.0 threshold. Poly-alanine makes an excellent helix and AF2 is right to be confident about it; confidence in A fold is not evidence of THE designed fold. This is why plddt_binder may reject a design and never admit one (\u00a78.6, \u00a77), and it is the single most useful number the control set produced."
+    },
+    {
+      "id": "C12",
+      "tier": "gpu",
+      "phase": 1,
+      "role": "positive",
+      "name": "designed-sequence positive control",
+      "entry": "generated: workflow-037/tests/make_designs.py shape=helix length=60",
+      "evidence": "measured off the generated file by tests/make_c12_provenance.py with the same reader as the other controls: chain B, 60 residues, ids 1..60, 0 gaps, sequence ALEKIAELKA x6. The backbone is a textbook alpha helix -- CA radius 2.3 A, rise 1.5 A, 100 deg per residue -- cross-checked against 2ZTA when make_designs.py's helix shape was added.",
+      "why": "THE positive control, and the case that gives Gate B Phase 1 a verdict at all. C1-C4 between them cannot tell a mis-specified positive control apart from a broken scorer: when the natives fail, both explanations fit. A designed positive in the same run decides it. It is also the right class of input on its own merits -- \u00a74 chose single_sequence precisely for idealised designed binders with no homologs, which is what this is.",
+      "pins": "\u00a79, \u00a74, \u00a78.4",
+      "must": {
+        "sc_rmsd_A": "< 2.0",
+        "plddt_binder": "> 80",
+        "exported": "appears in passing_sequences.fasta with the UNSCREENED tag"
+      },
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 0.9272, plddt_binder 95.05, ptm 0.86, 45.2 s. PASSES, and is the one design exported -- passing_sequences.fasta carries it with its thresholds beside its values and the UNSCREENED biosecurity tag. A designed sequence recovers its own backbone to under 1 A with no alignment. This is the whole pipeline validated end to end on a real offline GPU prediction. Separation from the best negative on sc_rmsd_A: +17.90 A.",
+      "limits": "A synthetic idealised helix is the easiest designed positive there is, and it has no interface at all. It establishes the scorer is not broken; it says nothing about how the scorer RANKS real designs (that is C5, still blocked) and nothing about binding.",
+      "record": [
+        "sc_rmsd_A",
+        "plddt_binder",
+        "ptm",
+        "wall_clock_s",
+        "exported_to_fasta",
+        "unscreened_tag_present"
       ]
     },
     {
