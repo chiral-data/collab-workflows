@@ -612,6 +612,40 @@
       "expect_error": "whole number"
     },
     {
+      "id": "binder-too-short-for-rmsd",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a binder too short for a superposition to mean anything is refused",
+      "source": "make_designs.py shape=compact length=3",
+      "why": "A Kabsch superposition needs three non-collinear points to be defined at all and four before the fit stops being exactly determined by its own inputs. Below that the self-consistency RMSD this workflow exists to report is a number without a meaning -- and it is a SMALL number, so it reads as an excellent design. The floor is geometric, not a design-quality threshold: 037's binder_length default is 50-120 and nothing in 040 second-guesses it.",
+      "pins": "\u00a76",
+      "params": {},
+      "expect_error": "fewer than 4"
+    },
+    {
+      "id": "sequence-outside-alphabet",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a residue code node 02 does not accept is refused before the GPU",
+      "source": "make_designs.py shape=compact, then design_inventory.json rewritten to carry a Z",
+      "why": "026 validates every sequence against ACDEFGHIKLMNPQRSTVWYX and refuses anything else (d3d707ed), so an unaccepted code is refused INSIDE the predictor, after the GPU has been allocated. Node 01 scores an unrecognised residue as X, which this alphabet accepts, so the only way to reach this guard is for the two nodes to disagree -- which is exactly the state worth failing on, and the only way to show the guard refusing at all (\u00a78.13).",
+      "pins": "\u00a78.13, d3d707ed",
+      "params": {},
+      "expect_error": "outside the accepted alphabet",
+      "measured": "no generator shape can reach this: node 01 maps every unknown residue to X and X is in the alphabet. The case mutates the inventory instead, and the refusal was measured to happen BEFORE any file is written -- ./outputs/ was empty after the refusal."
+    },
+    {
+      "id": "inventory-arrays-misaligned",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a sequence and coordinate array of different lengths is refused",
+      "source": "make_designs.py shape=compact, then one coordinate dropped from design_inventory.json",
+      "why": "Node 01 keeps binder_sequence, binder_residue_ids and binder_ca index-aligned on purpose, holding null where a residue has no CA rather than dropping the position, because node 04's RMSD maps the two structures BY POSITION -- three renumberings stack in this workflow and no correspondence by residue number survives them (ef74646e). A length mismatch means the alignment was broken somewhere, and continuing would silently shift every residue after the break.",
+      "pins": "\u00a78.1, ef74646e",
+      "params": {},
+      "expect_error": "coordinate slot"
+    },
+    {
       "id": "threshold-negative",
       "tier": "ci",
       "phase": 1,

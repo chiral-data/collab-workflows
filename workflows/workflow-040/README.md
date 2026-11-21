@@ -47,7 +47,7 @@ files plus `design_metrics.json`.
 | Node | GPU | Reads | Writes |
 |---|---|---|---|
 | `01-ingest-designs` | no | `*_generated.cif`, `design_metrics.json` | `design_inventory.json`, `design_metrics.json` (passed through) |
-| `02-build-prediction-inputs` | no | `design_inventory.json` | `mono_*.fasta`, `prediction_inputs.json` |
+| `02-build-prediction-inputs` | no | `design_inventory.json` | `mono_<design>.fasta` (one record each), `prediction_inputs.json` |
 | `03-predict` | **yes** | `mono_*.fasta`, `prediction_inputs.json` | `<design>_scores_rank_*.json`, `<design>_*rank_*.pdb`, `prediction_manifest.json` |
 | `04-score` | no | inventory, predictions, manifests | `design_scores.json`, `design_scores.csv` |
 | `05-filter-and-report` | no | `design_scores.json` | `passing_sequences.fasta`, `validation_metrics.csv`, `report.html` |
@@ -143,7 +143,8 @@ the hints, which carry the reasoning.
 |---|---|
 | Scaffold | done |
 | `01-ingest-designs` | **implemented** |
-| Nodes 02–05 | **not implemented** |
+| `02-build-prediction-inputs` | **implemented** (mono path; `cplx_` is Phase 2) |
+| Nodes 03–05 | **not implemented** |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest` |
 | Test harness | not written — `tests/fixtures.json` is the data, the checks are not built |
 | Phase 2 | specced, §11.1 closed by measurement |

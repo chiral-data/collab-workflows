@@ -260,6 +260,9 @@ This is the core. Every case has an answer known before the node runs.
 | `threshold-nan` / `threshold-inf` | refused **by name**; neither is caught by a range check, because every comparison against `nan` is false (`55edd8fc`) |
 | `threshold-non-numeric` | fails the same way every other bad parameter does (`975ab379`) |
 | `num-models-non-integer` | a count read as a float: `float("2.5")` succeeds where `int("2.5")` raises, so the cast decides whether the typo is caught at all |
+| `binder-too-short-for-rmsd` | fewer than 4 Cα makes the superposition exactly determined by its own inputs, so the RMSD is a *small* number without a meaning — it reads as an excellent design |
+| `sequence-outside-alphabet` | a code 026 would refuse inside the predictor, refused here instead, before the GPU is allocated |
+| `inventory-arrays-misaligned` | sequence and coordinate arrays of different lengths, which would shift every residue after the break |
 | `threshold-negative` | refused |
 | `monomer-on-complex-path` | refused, not scored against an absent target |
 | `cplx-input-missing-colon` | refused at node 02, where it costs nothing, rather than at the predictor |
@@ -320,20 +323,30 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 ## Scope
 
-59 experiments, 55 distinct checks to implement.
+62 experiments, 58 distinct checks to implement.
 
 | Section | Cases | Phase 1 | Phase 2 | Blocked |
 |---|---|---|---|---|
 | `ingest` | 14 | 11 | 3 | — |
 | `predict` | 5 | 4 | 1 | — |
 | `scoring` | 21 | 14 | 7 | — |
-| `rejections` | 8 | 6 | 2 | — |
+| `rejections` | 11 | 9 | 2 | — |
 | `controls` (GPU) | 11 | 6 | 5 | 2 |
 
-So Phase 1's gate is 35 CI cases plus 6 GPU controls. Nothing is blocked on the harness
-any more: the six generator shapes four `ingest` cases were waiting on are built, and
-`num-models-non-integer` was added when the built node showed `threshold-non-numeric` was
-asserting the wrong message.
+So Phase 1's gate is 38 CI cases plus 6 GPU controls. Nothing is blocked on the harness
+any more: the six generator shapes four `ingest` cases were waiting on are built.
+
+The count grew by four while nodes 01 and 02 were written, and every one came from
+building rather than from planning:
+
+- `num-models-non-integer`, when the built node showed `threshold-non-numeric` was
+  asserting a message for the wrong cast.
+- `binder-too-short-for-rmsd`, `sequence-outside-alphabet` and
+  `inventory-arrays-misaligned`, which are three guards node 02 needed and nothing else in
+  the suite could be seen refusing (§8.13). One of them, `sequence-outside-alphabet`,
+  **cannot be reached from any generator shape at all**, because node 01 maps every
+  unrecognised residue to `X` and `X` is in the alphabet; it mutates the inventory, and
+  its `measured` field says so.
 
 ## Known gaps
 
