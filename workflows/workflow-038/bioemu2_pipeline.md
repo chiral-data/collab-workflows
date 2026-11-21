@@ -230,29 +230,48 @@ Image name `bioemu2:2026_11_11`. The repo's shared-image CI
 
 ## Open items
 
-1. **`openmm` must have a PyPI wheel for cp312.** It is a hard BioEmu2 dependency and is
-   historically conda-first. If `pip install` cannot resolve it on `python:3.12-slim`, switch
-   the base image to `continuumio/miniconda3`, `conda install -c conda-forge openmm` first, then
-   pip-install BioEmu2 — the workflow-004/-016 pattern. Resolve at first build.
+1. **Closed: openmm installs from PyPI, no conda base image needed.** bioemu2 requires it
+   unpinned, and PyPI publishes cp312 manylinux wheels. Resolved 2026-11-20 to
+   `openmm-8.3.1-cp312-cp312-manylinux_2_28_x86_64`; manylinux_2_28 needs glibc >= 2.28 and
+   `python:3.12-slim` (Debian 12) ships 2.36. Reproduce without building anything:
+   `pip download openmm --no-deps --python-version 312 --only-binary=:all: --platform
+   manylinux_2_28_x86_64`. The `continuumio/miniconda3` fallback is dropped from the Dockerfile.
 2. **Verify `0.1.0rc0` is still the newest pre-release** at build time
    (`pip index versions bioemu2 --pre`) and re-pin if not. It is a *preview*; the API may move.
-3. **`physicality.json`'s exact schema is unconfirmed.** Upstream documents the *fields* (`frame`,
-   `status`, `reason`) but not the envelope, so node 05 accepts either a bare list or
-   `{"frames": [...]}` and degrades to blank statuses otherwise. Confirm against a real file on
-   the first run and tighten the parser.
-4. **VRAM floor is unknown.** Upstream's smallest tested device is an 80 GB A100 and gives no
-   guidance for smaller cards. Establish the largest system that fits the estate's GPUs at
-   `batch_size=1`, then set the `batch_size` default from measurement instead of from
-   `num_samples`.
+3. **Closed: `physicality.json` is a bare JSON list.** `PhysicalityReport.save()` in
+   `bioemu2/physicality.py` writes `[{"frame": i, "status": ..., "reason": ...}]` with status in
+   `passed` / `rejected` / `not_checked`, and `not_checked` whenever `checked` is false or the
+   mode is `no_filter`. The `{"frames": [...]}` envelope node 05 also accepted does not exist,
+   so that branch was dead code tolerating a format upstream never writes. Node 05 now parses
+   the real shape and fails on anything else instead of degrading to blank statuses, which is
+   what let a dropped file look like a run where no check was requested.
+4. **VRAM floor is unknown, and two published numbers depend on it.** Upstream's smallest
+   tested device is an 80 GB A100 and gives no guidance for smaller cards. Establish the
+   largest system that fits the estate's GPUs at `batch_size=1`. Two things are currently
+   estimates waiting on that measurement: `requirements.memory_gb: 16` in
+   `apps/applications.json`, which was a guess, and the compute-capability floor of 7.0 in the
+   README, which is inherited from the cu126 wheels rather than measured — settle the latter
+   with `torch.cuda.get_arch_list()` inside the built image. Node 03 now prints BioEmu2's own
+   largest-fitting-batch estimate on every run, so the campaign produces the number as a
+   side effect rather than needing a separate experiment.
+
+9. **The root README's numbering depends on merge order.** The list jumps from 36 to 38,
+   because workflow-037 is on the `workflow/rfd4-proteina` branch and not yet merged. Markdown
+   renumbers an ordered list sequentially, so until 037 lands this entry renders as "37". This
+   is a merge-order note for the reviewer, not something to work around in the source — the
+   numbers come right on their own once both branches are in.
 5. **No resume.** `EmuSession.sample()` only writes resumable batches when it is given
    `partial_dir`, and node 03 does not pass one — so nothing pollutes `./outputs/`, but a
    pre-empted production run restarts from zero. If large runs start getting pre-empted, pass a
    `partial_dir` outside `./outputs/` and have Silva's retry reuse it; note that resuming
    changes the RNG story (batch *i* uses `seed + i` with a seed, new randomness without one).
-6. **Trp-cage MSA depth.** The 20-residue test system may return a very shallow alignment, which
-   is fine for a smoke test but makes the ensemble scientifically uninteresting. Consider adding
-   adenylate kinase (1AKE, upstream's own example, a genuine two-state system) as a second,
-   slower sample input.
+6. **Trp-cage MSA depth.** The 20-residue test system may return a very shallow alignment,
+   which is fine for a smoke test but makes the ensemble scientifically uninteresting. The GPU
+   campaign therefore runs four systems, not one: 1UBQ (ubiquitin, the well-behaved control),
+   1AKE (adenylate kinase, upstream's own example and a genuine two-state system), 5PTI (BPTI,
+   three disulfides, so the `bad_bonds_sulfur` check is actually exercised) and 2ZTA (the GCN4
+   leucine zipper, a homodimer, so the two-chain alignment and the per-chain RMSF split are
+   exercised). Trp-cage stays as the bundled smoke-test input.
 7. **A user-supplied A3M cannot reach node 02 through Silva.** Node 02 reads `./inputs/*.a3m`
    and uses it verbatim, which works when the node is run directly with Docker — but Silva's
    only file-typed parameter (`input_file`) routes to node 01, and node 02's inputs come from
@@ -282,7 +301,7 @@ Build-time checks (these also resolve open items 1–2):
 docker build -t bioemu2:2026_11_11 workflows/workflow-038/
 docker run --rm bioemu2:2026_11_11 bioemu2 --help
 docker run --rm bioemu2:2026_11_11 python -c "import bioemu2, openmm, mdtraj, biotite; print('OK')"
-docker run --rm bioemu2:2026_11_11 ls -l /models/models--microsoft--bioemu2
+docker run --rm bioemu2:2026_11_11 ls -l /models/hub/models--microsoft--bioemu2
 docker run --rm --gpus all bioemu2:2026_11_11 \
   python -c "import torch; print(torch.cuda.is_available(), torch.version.cuda)"
 docker run --rm --gpus all bioemu2:2026_11_11 \
@@ -314,10 +333,18 @@ requires.
 
 1. `samples.xtc` holds exactly `num_samples` frames and `physicality.json` has one entry per
    frame, with `frame` zero-based and contiguous.
-2. Frames are **not** identical — pairwise C-α RMSD across the ensemble has non-zero spread.
-   A collapsed ensemble means the MSA or the mode is wrong, not that the protein is rigid.
-3. `mode=structure` with `num_samples=1` on Trp-cage (1L2Y) returns a compact, physicality-
-   `passed` frame: a known 20-residue fold is the cheapest end-to-end truth available.
+2. The ensemble has not collapsed. "Non-zero spread" is **not** the test: two independently
+   sampled frames always differ, so that condition is met by any output whatsoever. For a
+   folded protein in `equilibrium` mode the maximum pairwise C-α RMSD has to clear roughly
+   0.1 nm, the scale of ordinary backbone fluctuation; below that the ensemble is one structure
+   plus sampling noise. Node 05's own collapse warning fires at 1e-3 nm, which catches only the
+   degenerate case, so this gate is the stricter one and is checked by eye against
+   `ensemble_summary.json` until the first run gives a measured per-system baseline.
+3. `mode=structure` with `num_samples=1` on Trp-cage (1L2Y) returns a compact frame. Whether
+   it passes the physicality checks is to be **measured, not asserted**: nothing here has run
+   on a GPU yet, and a 20-residue miniprotein with a single tryptophan cage is not obviously an
+   easy case for a bond-geometry check. Record the verdict and the first failed check if any,
+   and only then decide whether a pass belongs in this gate.
 4. The ground truth worth having is upstream's own example: **adenylate kinase (1AKE)** in
    equilibrium mode should sample both the open and closed lobe conformations. If the ensemble
    shows only one, sampling is broken in a way no smaller test would reveal.

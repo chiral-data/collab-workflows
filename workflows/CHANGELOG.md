@@ -19,7 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `02-fetch-msa` is its own CPU node: the alignment is the only step needing the public
     internet, so fetching it to disk turns a server outage or rate limit into a seconds-long
     CPU failure instead of a failed GPU job, and lets `03-sample` run with `HF_HUB_OFFLINE=1`.
-    User-supplied `<chain>.a3m` files skip the server entirely. The alignment moves between
+    User-supplied `<chain>.a3m` files skip the server entirely — today only when the node is
+    run directly with Docker, since Silva's one file-typed parameter routes to node 01 (open
+    item 7); `msa_depth` does not apply to an uploaded alignment and the node says so rather
+    than appearing to subsample it. The alignment moves between
     nodes as the directory `msa`, declared by name rather than as `msa/*.a3m`: Silva matches an
     `inputs` entry by basename, so the pattern staged nothing and nodes 03/04 sampled with no
     alignment at all. Both now refuse to run when node 02 reported protein chains and no A3M

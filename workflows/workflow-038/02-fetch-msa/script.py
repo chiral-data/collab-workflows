@@ -163,6 +163,17 @@ def main():
     if uploaded:
         print(f"Using {len(uploaded)} user-supplied alignment(s); no server contacted.", flush=True)
         summary["source"] = "user-supplied A3M"
+        # msa_depth subsamples what comes back from the server. An uploaded alignment is used
+        # verbatim, so the parameter does nothing here — say so rather than leaving a run that
+        # looks subsampled and is not.
+        if msa_depth > 0:
+            print(
+                f"NOTE: msa_depth={msa_depth} is ignored for a user-supplied alignment, which "
+                "is used exactly as given. Subsample the file before uploading it if you want "
+                "a shallower alignment.",
+                flush=True,
+            )
+            summary["msa_depth_applied"] = False
         for chain, path in uploaded.items():
             dest = os.path.join(A3M_DIR, f"{chain}.a3m")
             shutil.copyfile(path, dest)
@@ -211,6 +222,7 @@ def main():
                 "rows": count_a3m_rows(dest),
                 "subsampled": subsampled,
             }
+        summary["msa_depth_applied"] = bool(msa_depth > 0 and subsampled)
 
     written = sorted(glob.glob(os.path.join(A3M_DIR, "*.a3m")))
     if not written:

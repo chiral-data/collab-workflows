@@ -146,9 +146,13 @@ from the public ColabFold server on a cache miss, optionally subsamples it to `m
 and writes `msa/<chain>.a3m`. Pre-supplied A3M files in the node's input directory short-circuit
 the whole step (Docker-only today — see open item 7).
 
-**Scientific notes:** Alignment depth is the single strongest predictor of ensemble quality —
-upstream names shallow or poor MSAs (orphan proteins, some viral proteins) as the first cause of
-degradation. `msa_summary.json` records the depth per chain and the node warns below 32 rows.
+**Scientific notes:** BioEmu2 is conditioned on the alignment, so its depth bounds what the
+ensemble can be. Upstream names shallow or poor MSAs — orphan proteins, some viral proteins — as
+a cause of degraded quality; it does not rank the causes, and neither does this workflow.
+`msa_summary.json` records the depth per chain, and the node warns below 32 rows. **32 is this
+workflow's own threshold**, not an upstream number: it is low enough that a real alignment
+rarely trips it and high enough to catch a near-empty one. Treat it as a prompt to look at the
+depth, not as a pass mark.
 
 **Outputs:** `system.yaml`, `system_inventory.json`, `msa_summary.json`, `msa/` (one
 `<chain>.a3m` per protein chain)
@@ -391,9 +395,15 @@ for something it was not trained on, and the node warns.
 | `msa_depth = N` | Subsample to N rows. |
 | `use_env = true` (default) | Include the environmental database in the ColabFold search. |
 
-**Trade-off:** Shallower alignments embed faster and use less memory (trunk cost scales with
-rows × tokens²) but degrade ensemble quality. Subsampling is a deliberate experiment, not an
-optimisation.
+**Trade-off:** Shallower alignments give the MSA module less to process, so the trunk embedding
+is faster and its activations smaller. The pair representation is quadratic in tokens and is
+unaffected by depth, so depth does not buy back the cost of a large system. (An earlier version
+of this line asserted a combined `rows × tokens²` cost; that product is not something upstream
+states and is not something this workflow has measured.) Subsampling degrades ensemble quality
+and is a deliberate experiment, not an optimisation.
+
+`msa_depth` applies only to an alignment fetched from the server. A pre-supplied `<chain>.a3m`
+is used exactly as given, and node 02 warns rather than appearing to subsample it.
 
 ### precision / matmul_precision / compile_denoiser
 
@@ -500,13 +510,29 @@ docker run --rm bioemu2:2026_11_11 bioemu2 --help
 docker run --rm --gpus all bioemu2:2026_11_11 nvidia-smi --query-gpu=name,compute_cap --format=csv
 ```
 
-Compute capability must be 7.0 or newer. Then run a node, node 03 shown:
+Compute capability must be 7.0 or newer. Then run a node. Node 03 reads its inputs from
+`./inputs`, so the directory has to be populated first — running it against an empty one fails
+on the missing `system.yaml`, which is the node working correctly and not a build problem. The
+shortest path is to run nodes 01 and 02 first and hand their outputs on:
+
+```bash
+mkdir -p /tmp/wf038/{inputs,outputs}
+```
+
+```bash
+docker run --rm -v /tmp/wf038/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-038/01-prepare-system:/workspace -w /workspace -e PARAM_PDB_ID=1UBQ bioemu2:2026_11_11 bash run.sh
+```
+
+Then copy that node's `outputs/` into the next node's `inputs/` and repeat for node 02, whose
+outputs are node 03's inputs:
 
 ```bash
 docker run --rm --gpus all -v /tmp/wf038/inputs:/workspace/inputs -v /tmp/wf038/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-038/03-sample:/workspace -w /workspace -e PARAM_MODE=equilibrium -e PARAM_NUM_SAMPLES=8 -e PARAM_SEED=42 bioemu2:2026_11_11 bash run.sh --dry-run
 ```
 
-Drop `--dry-run` to actually sample. Both GPU nodes support it.
+Drop `--dry-run` to actually sample. Both GPU nodes support it, and node 03's dry run also
+checks that the alignment was staged, so it is a real test of the plumbing rather than only of
+the parameters.
 
 ### Running on Silva
 
@@ -524,16 +550,28 @@ Drop `--dry-run` to actually sample. Both GPU nodes support it.
 | `propagate` | `false` | `true` if you want dynamics |
 | input | bundled Trp-cage (20 residues, seconds) | your system, or `pdb_id = "1AKE"` |
 
-The bundled Trp-cage system samples in well under a minute. A successful run ends with
-`report.html` showing 8 frames, a non-zero pairwise RMSD spread, and an animating 3D viewer.
+The bundled Trp-cage system is expected to sample in well under a minute, though no timing has
+been measured yet. A successful run ends with `report.html` showing 8 frames and an animating 3D
+viewer.
+
+Do not read "non-zero pairwise RMSD" as a pass: two independently sampled frames always differ,
+so that condition is satisfied by any output at all, including a collapsed one. For a folded
+protein in `equilibrium` mode the maximum pairwise C-α RMSD should clear roughly 0.1 nm, the
+scale of ordinary backbone fluctuation; below that the ensemble is one structure plus noise.
+That figure is a floor for spotting collapse, not a validation of the ensemble.
 
 ## Requirements
 
-- **GPU:** NVIDIA, compute capability ≥ 7.0 (V100, T4, A100, RTX A6000, L40S, H100, B200).
-  Below 7.0 is unsupported. Upstream's smallest tested device is an 80 GB A100, so VRAM
-  headroom on smaller cards is unmeasured.
-- **CUDA:** 12.6 via the `[cuda12]` extra. The `[cuda]` extra needs a CUDA 13 driver, which
-  this estate does not have.
+- **GPU:** NVIDIA, compute capability ≥ 7.0 (V100, T4, A100, RTX A6000, L40S, H100).
+  Not B200: sm_100 needs CUDA 12.8 or newer and this image is built on cu126. The 7.0 floor is
+  inherited from the cu126 wheels and has **not been measured** — settle it on the host with
+  `python -c "import torch; print(torch.cuda.get_arch_list())"` inside the image, and if `sm_70`
+  is absent the floor is 7.5 and V100 comes off this list. Upstream's smallest tested device is
+  an 80 GB A100, so VRAM headroom on smaller cards is unmeasured too.
+- **CUDA:** 12.6 via the `[cuda12]` extra, which pins `torch==2.13.0+cu126`. The `[cuda]` extra
+  pins no torch at all — it would resolve anywhere in BioEmu2's `>=2.11,<2.14` range, so the
+  image would differ between builds — and it needs the CUDA 13 cuEquivariance ops, which raise
+  the driver floor. The cu13 kernels are a speed optimisation, not a capability.
 - **Network:** node 02 only (public ColabFold MSA server).
 - **Disk:** ~1.91 GiB of model weights baked into the image.
 
