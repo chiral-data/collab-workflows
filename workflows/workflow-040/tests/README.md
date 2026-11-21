@@ -89,7 +89,7 @@ Four pieces. One already existed and was extended in place rather than forked.
 | Piece | Status | Role |
 |---|---|---|
 | `make_designs.py` | **037's, extended in place** | builds the design CIFs that are 040's *input*. See below. |
-| `make_predictions.py` | **to write** | builds the synthetic *predictions* — a `rank_001` PDB plus a scores JSON — with a known correct answer. |
+| `make_predictions.py` | **written** | builds the synthetic *predictions* — a `rank_001` PDB plus a scores JSON — with a known correct answer. |
 | `probe_design.py` | **to write** | measures a design CIF independently: chains, lengths, sequences, residue ids, gaps. Must not share a parser with any node, per 037's `probe_entry.py`. |
 | `check_fixtures.py` | **to write** | the `CHECKS` table. Each entry returns `(status, detail)`, and the detail string carries the numbers so a failure reads as evidence rather than as an assertion. |
 
@@ -131,11 +131,54 @@ CIF does not contain, and `no-metrics-file` withholds it.
 It emits, per case, a prediction directory and a `truth.json`. Three constructions, chosen
 so that the answer does not depend on the generator being right:
 
-| Shape | Construction | True `sc_rmsd_A` | Why this one |
+| Shape | Construction | True `sc_rmsd_A` | Reported | Why this one |
+|---|---|---|---|---|
+| `identity` | the design backbone, copied | **0, by construction** | `0.0` | needs no Kabsch to know the answer |
+| `rotated` | the design backbone under a rigid rotation and a large translation | **0, by construction** | `0.0005` | needs no Kabsch to know the answer, and it is the keystone test |
+| `displaced:<d>` | a displacement field of RMS magnitude exactly *d*, projected orthogonal to every rigid motion, then rigidly moved | **d** | `1.9999` at *d* = 2 | calibrates magnitude |
+
+#### Why `displaced` needs the projection, and how the generator proves it
+
+A displacement with any component along a translation or a rotation is partly absorbed by
+the superposition, so the true RMSD falls below *d* by an amount that depends on the
+geometry — and then no fixture can state it.
+
+With `P = Q + D`, both centred, the cross-covariance is `H = Qᵀ Q + Dᵀ Q`, and the optimal
+rotation is the identity exactly when `H` is symmetric positive definite. `Qᵀ Q` always is.
+The antisymmetric part of `Dᵀ Q` vanishes iff `Σᵢ (Qᵢ × Dᵢ) = 0`, which is precisely the
+statement that `D` is orthogonal to every infinitesimal rotation. So the generator starts
+from an alternating field, removes its mean, removes the least-squares rotation generator,
+and only then scales the remainder to RMS *d*.
+
+That is an argument, so it is also checked. `make_predictions.py` runs **its own Kabsch,
+which node 04 never sees**, and refuses to write the case unless the construction measures
+*d* to 1e-9 **and** the recovered rotation is the identity to 1e-9. If a geometry ever makes
+`H` non-positive — *d* large against the structure's own extent — the generator fails loudly
+rather than quietly handing node 04 an expected value that is wrong.
+
+#### The reported numbers are not the constructed ones, and that is the format's floor
+
+A PDB `ATOM` record carries three decimal places. Every coordinate is therefore rounded to
+0.001 Å on the way out — about 0.0005 Å per axis — which puts a floor under the RMSD of
+roughly 1e-4 Å. Measured on the 30-residue case:
+
+| Shape | Constructed | As written to the PDB | Node 04 reports |
 |---|---|---|---|
-| `identity` | the design backbone, copied | **0, by construction** | needs no Kabsch to know the answer |
-| `rotated` | the design backbone under a rigid rotation and a large translation | **0, by construction** | needs no Kabsch to know the answer, and it is the keystone test |
-| `displaced:<d>` | alternate Cα displaced ±d perpendicular to the chain axis: centroid preserved, no rotation improves the fit | **d** | calibrates magnitude |
+| `identity` | 0 | 2.06e-15 | `0.0` |
+| `rotated` | 0 | 0.00050538 | `0.0005` |
+| `displaced:2.0` | 2.0 | 1.99988314 | `1.9999` |
+
+`identity` loses nothing because the lattice walk's coordinates are already whole
+thousandths. `rotated` does, because rotating them lands between representable values.
+
+Two consequences, both deliberate. `truth.json` records `sc_rmsd_A` **and**
+`sc_rmsd_A_as_written`, so a check that wants better than 1e-3 compares against the file
+rather than against the intention. And node 04 reports `sc_rmsd_A` to **four** decimal
+places — one more than the data carries — because rounding to three would print the
+keystone case as `0.001`, sitting exactly on its own tolerance.
+
+None of which blunts the keystone: 0.0005 Å is five orders of magnitude below the
+**259.98 Å** that the same two structures give when the superposition is skipped.
 
 `identity` and `rotated` are the important two, and they are important because their
 answer is independent of any superposition code. **A node 04 that forgets to superimpose
@@ -250,6 +293,7 @@ This is the core. Every case has an answer known before the node runs.
 | **`plddt-slice-target-first`** | **the same, read from the tail when the order is target-first** — a node hardcoding 029's head-slice passes the previous case and fails this one | §8.1 |
 | `plddt-length-mismatch` | `len(plddt) != n_target + n_binder` is refused | §8.1 |
 | `missing-iptm-is-null` | a monomer's absent `iptm` becomes `null`, never 0.0 | §8.7 |
+| `missing-plddt-is-null` | an absent `plddt` becomes `null` and the design fails on "not measured", not on an invented number — and this is the one that **gates** | §8.7 |
 | `missing-pae-is-null` | an absent `pae` becomes `null`, never `inf` | §8.7 |
 | `pae-both-blocks-averaged` | an asymmetric PAE matrix is averaged over **both** off-diagonal blocks | §7 |
 | `plddt-target-recorded` | the target's pLDDT is recorded and never gates | `2359ffa4` |
@@ -334,21 +378,21 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 ## Scope
 
-62 experiments, 58 distinct checks to implement.
+63 experiments, 59 distinct checks to implement.
 
 | Section | Cases | Phase 1 | Phase 2 | Blocked |
 |---|---|---|---|---|
 | `ingest` | 14 | 11 | 3 | — |
 | `predict` | 5 | 4 | 1 | — |
-| `scoring` | 21 | 14 | 7 | — |
+| `scoring` | 22 | 15 | 7 | — |
 | `rejections` | 11 | 9 | 2 | — |
 | `controls` (GPU) | 11 | 6 | 5 | 2 |
 
-So Phase 1's gate is 38 CI cases plus 6 GPU controls. Nothing is blocked on the harness
+So Phase 1's gate is 39 CI cases plus 6 GPU controls. Nothing is blocked on the harness
 any more: the six generator shapes four `ingest` cases were waiting on are built.
 
-The count grew by four while nodes 01 and 02 were written, and every one came from
-building rather than from planning:
+The count grew by five while nodes 01–04 were written, and every one came from building
+rather than from planning:
 
 - `num-models-non-integer`, when the built node showed `threshold-non-numeric` was
   asserting a message for the wrong cast.
@@ -358,6 +402,14 @@ building rather than from planning:
   **cannot be reached from any generator shape at all**, because node 01 maps every
   unrecognised residue to `X` and `X` is in the alphabet; it mutates the inventory, and
   its `measured` field says so.
+- `missing-plddt-is-null`, the companion to `missing-iptm-is-null` and the one that
+  matters more, because `plddt_binder` gates and `iptm` does not. A node defaulting it to
+  0.0 fails the design and a node defaulting it to 100.0 passes it; both read as verdicts.
+
+Every `scoring` entry now carries a `harness` field holding the exact
+`make_predictions.py` invocation that builds it, so the data says how to construct the
+case and `run_fixtures.sh` does not have to know. Where the built node's output differs
+from the constructed truth, a `measured` field says by how much and why.
 
 ## Known gaps
 
@@ -388,11 +440,37 @@ excuse — listed here so none of them becomes a silent omission.
 
 **Needs a generator shape `make_designs.py` does not have:**
 
-Four `ingest` cases carry a `needs` field and cannot run until it is built —
-`multichain-target`, `gapped-target`, `target-numbering-from-3` and
-`nonstandard-residues`. All four are extensions to 037's generator rather than new code:
-it already writes mmCIF with exact Cα spacing, so each is a variation on its chain-writing
-loop. Extend it in place, in 037's tree, so both workflows' suites get them.
+~~Four `ingest` cases carry a `needs` field.~~ **Done**, extended in 037's tree in place so
+both workflows' suites get the shapes. No entry carries `needs` any more.
+
+## What building the nodes found
+
+Kept here because a suite that never caught anything is not evidence that the code is
+right — it is evidence that nothing was asked of it.
+
+**`rmsd-length-mismatch` caught a real defect in node 04.** The node compared the
+prediction against node 02's *declaration*, which agreed, and never against the design it
+is supposed to be a refolding of. So `zip()` silently truncated to the shorter array: a
+32-residue prediction scored against a 30-residue design came out at **`sc_rmsd_A` = 0.0,
+reported as PASSING**. Every other check in the node passed. The fix is a second, separate
+assertion against the designed length, and the case's `measured` field records the
+sequence of events.
+
+That is the whole argument for the case, and it is worth noticing that the case was
+written before node 04 existed and the defect was not one anybody predicted — the fixture
+specified an outcome, and the outcome is what caught it.
+
+**Two fixtures were wrong about their own subject** (`threshold-inf`,
+`threshold-non-numeric`), and the built node is what showed it. Details above, in the
+`rejections` section.
+
+**One guard turned out to be unreachable from the generator** (`sequence-outside-alphabet`),
+because node 01 maps every unrecognised residue to `X` and `X` is in the alphabet. The
+case mutates the inventory instead, which is a less tidy fixture and a more honest one.
+
+**The reported RMSD is not the constructed RMSD**, and that is the PDB format's three
+decimal places rather than an inaccuracy. It changed how node 04 rounds. Details above,
+under `make_predictions.py`.
 
 ## What this suite does not establish
 

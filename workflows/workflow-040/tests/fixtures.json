@@ -299,10 +299,12 @@
     }
   ],
 
-  "_scoring_comment": "Nodes 04 and 05 over synthetic predictions from make_predictions.py, each with an answer known before the node runs. The two keystone cases -- rmsd-identity and rmsd-rotated-copy -- have answers that are 0 BY CONSTRUCTION and so need no superposition code to establish, which is what keeps them independent of the code under test.",
+  "_scoring_comment": "Nodes 04 and 05 over synthetic predictions from make_predictions.py, each with an answer known before the node runs. The 'harness' field on each entry is the exact make_predictions.py invocation, so the data says how to build the case and run_fixtures.sh does not have to know. A 'measured' field records what the built node really produced, and where that differs from the constructed truth it says why. The two keystone cases -- rmsd-identity and rmsd-rotated-copy -- have answers that are 0 BY CONSTRUCTION and so need no superposition code to establish, which is what keeps them independent of the code under test.",
   "scoring": [
     {
       "id": "rmsd-identity",
+      "harness": "make_predictions.py --shape identity",
+      "measured": "0.0 exactly. The lattice walk's coordinates are already whole thousandths, so writing them to a PDB loses nothing: the written file superposes onto the design at 2.06e-15, which is floating point and nothing else.",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -315,6 +317,8 @@
     },
     {
       "id": "rmsd-rotated-copy",
+      "harness": "make_predictions.py --shape rotated",
+      "measured": "node 04 reports 0.0005. The construction is exactly 0 and the written file measures 0.00050538: a PDB ATOM record carries three decimal places, so rotating the coordinates puts them between representable values and the rounding survives as a floor on the RMSD. It is five orders of magnitude below the 259.98 A that the SAME two structures give when the superposition is skipped, which is the distinction this case exists to make. sc_rmsd_A is reported to four decimals for this reason -- rounding to three would print 0.001 and sit exactly on the tolerance.",
       "tier": "ci",
       "phase": 1,
       "prediction": "rotated",
@@ -327,6 +331,8 @@
     },
     {
       "id": "rmsd-known-displacement",
+      "harness": "make_predictions.py --shape displaced:2.0",
+      "measured": "node 04 reports 1.9999 against a construction of exactly 2.0, the 1.2e-4 difference being the same PDB rounding. make_predictions.py refuses to write the case at all unless its own Kabsch -- which node 04 never sees -- measures the construction at 2.0 to 1e-9 AND finds the optimal rotation to be the identity to 1e-9, because a displacement with any rigid-motion component is partly absorbed by the superposition and the true answer would then be below 2.0 by an amount no fixture could state.",
       "tier": "ci",
       "phase": 1,
       "prediction": "displaced:2.0",
@@ -339,6 +345,8 @@
     },
     {
       "id": "rmsd-length-mismatch",
+      "harness": "make_predictions.py --shape identity --length-delta 2",
+      "measured": "THIS CASE CAUGHT A REAL DEFECT. Node 04 compared the prediction against node 02's declaration, which agreed, and never against the design it is supposed to be a refolding of -- so zip() truncated to the shorter array, the RMSD came out 0.0 over a 30-residue prefix of a 32-residue prediction, and the design was reported as PASSING. The refusal is now a second, separate check against the designed length.",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -350,6 +358,8 @@
     },
     {
       "id": "plddt-slice-binder-first",
+      "harness": "make_predictions.py --chain-order binder,target --plddt-binder 25.0 --plddt-target 85.0 --iptm 0.6 --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "measured": "plddt_binder 25.0 and plddt_target 85.0, measured. Phase 2 in the plan, but node 04 slices from the recorded chain_order generically, so this already holds in Phase 1's code.",
       "tier": "ci",
       "phase": 2,
       "prediction": "complex-scores",
@@ -365,6 +375,8 @@
     },
     {
       "id": "plddt-slice-target-first",
+      "harness": "make_predictions.py --chain-order target,binder --plddt-binder 25.0 --plddt-target 85.0 --iptm 0.6 --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "measured": "plddt_binder 25.0 and plddt_target 85.0 -- the SAME numbers as the previous case from the opposite end of the array, measured. A node hardcoding 029's plddt[:binder_length] returns 85.0 here and passes the previous case.",
       "tier": "ci",
       "phase": 2,
       "prediction": "complex-scores",
@@ -380,6 +392,7 @@
     },
     {
       "id": "plddt-length-mismatch",
+      "harness": "make_predictions.py --chain-order target,binder --plddt-delta 3",
       "tier": "ci",
       "phase": 2,
       "prediction": "complex-scores",
@@ -390,6 +403,8 @@
     },
     {
       "id": "missing-iptm-is-null",
+      "harness": "make_predictions.py --shape identity",
+      "measured": "iptm is null with a recorded reason, and the reason names the monomer case. This is not a constructed absence: the real monomer scores file in tests/reference/ has no iptm key at all.",
       "tier": "ci",
       "phase": 1,
       "prediction": "monomer-scores",
@@ -402,7 +417,25 @@
       ]
     },
     {
+      "id": "missing-plddt-is-null",
+      "tier": "ci",
+      "phase": 1,
+      "harness": "make_predictions.py --shape identity --omit plddt",
+      "evidence": "constructed: the scores file is written without its plddt key, which is the only metric in Phase 1 that gates besides sc_rmsd_A",
+      "why": "The companion to missing-iptm-is-null, and the one that matters more, because plddt_binder GATES. A node defaulting it to 0.0 fails the design, which looks like a verdict; a node defaulting it to 100.0 passes it. Null with a reason is the only answer that does not invent one, and the design then fails on 'plddt_binder (not measured)' rather than on a number.",
+      "pins": "\u00a78.7",
+      "params": {},
+      "measured": "plddt_binder is null, the reason names the file and the missing key, and the design is reported not passing with failed_thresholds = 'plddt_binder (not measured)'. The RMSD is still computed and still reported: one absent metric does not discard the measurements that were made.",
+      "expect": [
+        {"check": "metric_is_null", "metric": "plddt_binder", "finding": "\u00a78.7"},
+        {"check": "metric_not_value", "metric": "plddt_binder", "value": 0.0, "finding": "\u00a78.7"},
+        {"check": "null_reason_recorded", "metric": "plddt_binder", "finding": "\u00a78.7"},
+        {"check": "design_not_passing", "finding": "\u00a78.7"}
+      ]
+    },
+    {
       "id": "missing-pae-is-null",
+      "harness": "make_predictions.py --chain-order target,binder --omit pae --iptm 0.6",
       "tier": "ci",
       "phase": 2,
       "prediction": "complex-scores",
@@ -417,6 +450,8 @@
     },
     {
       "id": "pae-both-blocks-averaged",
+      "harness": "make_predictions.py --chain-order target,binder --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "measured": "exactly 10.0, measured, from blocks of 6.0 and 14.0. Averaging one block alone gives 6.0 or 14.0, so either single-block reading is visibly wrong rather than plausibly different.",
       "tier": "ci",
       "phase": 2,
       "prediction": "complex-scores",
@@ -430,6 +465,7 @@
     },
     {
       "id": "plddt-target-is-diagnostic-only",
+      "harness": "make_predictions.py --chain-order target,binder --plddt-target 38.4 --plddt-binder 90.0",
       "tier": "ci",
       "phase": 2,
       "prediction": "complex-scores",
@@ -445,6 +481,7 @@
     },
     {
       "id": "merge-by-name-not-position",
+      "harness": "make_predictions.py --shape identity",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -458,6 +495,7 @@
     },
     {
       "id": "no-score-file-is-failure",
+      "harness": "make_predictions.py --shape identity --no-score-file design_1",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -471,6 +509,8 @@
     },
     {
       "id": "cplx-returned-one-chain",
+      "harness": "make_predictions.py --chain-order target,binder --chains 1",
+      "measured": "refused at node 04 as well as node 03. make_predictions declares chain_order ['target','binder'] and writes one chain of 30 residues, which is what a cplx_ input with its ':' stripped really comes back as.",
       "tier": "ci",
       "phase": 2,
       "prediction": "complex-scores",
@@ -481,6 +521,7 @@
     },
     {
       "id": "failed-design-appears-in-report",
+      "harness": "make_predictions.py --shape identity --fail-design design_1",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -495,6 +536,7 @@
     },
     {
       "id": "metrics-are-columns",
+      "harness": "make_predictions.py --chain-order target,binder --plddt-target 85.0",
       "tier": "ci",
       "phase": 1,
       "prediction": "displaced:3.0",
@@ -507,6 +549,7 @@
     },
     {
       "id": "source-shown-in-report",
+      "harness": "make_predictions.py --shape identity",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -519,6 +562,7 @@
     },
     {
       "id": "numeric-ordering-at-12",
+      "harness": "make_predictions.py --shape identity",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -531,6 +575,7 @@
     },
     {
       "id": "offline-report-keeps-provenance",
+      "harness": "make_predictions.py --shape identity",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -544,6 +589,7 @@
     },
     {
       "id": "biosafety-tag-travels",
+      "harness": "make_predictions.py --shape identity",
       "tier": "ci",
       "phase": 1,
       "prediction": "identity",
@@ -558,6 +604,7 @@
     },
     {
       "id": "threshold-recorded-beside-value",
+      "harness": "make_predictions.py --shape identity",
       "tier": "ci",
       "phase": 1,
       "prediction": "displaced:1.5",
