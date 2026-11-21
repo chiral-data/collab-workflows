@@ -144,6 +144,12 @@ COLUMNS = [
     "binder_chain",
     "designed_chain_source",
     "binder_length",
+    # Carried, not looked up. Node 05 exports the passing sequences and node 04 is its
+    # only dependency, so the alternative is node 05 declaring design_inventory.json as an
+    # input it would otherwise have no business reading -- and silva would not route it
+    # there anyway, since node 05 depends on this node alone. Passing the fact forward is
+    # the rule (CLAUDE.md).
+    "binder_sequence",
     "sc_rmsd_A",
     "sc_rmsd_n_residues",
     "plddt_binder",
@@ -345,6 +351,7 @@ def score_one(entry, prediction, max_rmsd, min_plddt):
         "binder_chain": entry["binder_chain"],
         "designed_chain_source": entry["designed_chain_source"],
         "binder_length": entry["n_binder_residues"],
+        "binder_sequence": entry["binder_sequence"],
         "n_unknown": entry["n_unknown"],
         "max_sc_rmsd_a": max_rmsd,
         "min_plddt_binder": min_plddt,
@@ -629,6 +636,7 @@ def main():
                 "binder_chain": entry["binder_chain"],
                 "designed_chain_source": entry["designed_chain_source"],
                 "binder_length": entry["n_binder_residues"],
+                "binder_sequence": entry["binder_sequence"],
                 "n_unknown": entry["n_unknown"],
                 "passes": False,
                 "failed_thresholds": "",

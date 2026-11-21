@@ -66,7 +66,7 @@ hint = "Wall-clock budget in seconds for one prediction; the process group is ki
 [params.top_n]
 type = "integer"
 default = 10
-hint = "Number of designs whose structures are embedded in the report viewer; rows beyond it are inert and say so"
+hint = "Size of the shortlist the report highlights. Rows below it are greyed and otherwise identical -- every design is in the table. Phase 1's report embeds no structures: the comparison a reader wants is the refold laid OVER the design, which is node 04's superposition rather than a structure, and a viewer showing two structures in unrelated frames looks like evidence without being any"
 
 [params.score_interface]
 type = "boolean"

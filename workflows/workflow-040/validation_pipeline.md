@@ -437,6 +437,31 @@ screening disclaimer entirely when offline, because Plotly comes from a CDN and 
 exception aborted the rest of the script, taking the run-info block with it
 (`cb418341`).
 
+**Amended during the build.** Isolating renderers is the fix 037 reached for, and it is
+not the strongest one available: the parts of this page that matter are written as **static
+HTML, server-side**, so no arrangement of a missing CDN, a disabled script or a hostile
+cache can remove the provenance block, the biosafety notice, the thresholds or the metrics
+table. JavaScript is enhancement only — sorting the table — and is still wrapped in 037's
+`RENDERERS` loop, so the pattern is carried rather than discarded. A side benefit that
+matters for the suite: the offline case is now checkable by reading the file instead of by
+driving a browser.
+
+**Amended during the build: `top_n` does not embed structures.** Revision 1 had it mean
+"structures embedded in the report". It means the size of the shortlist the report
+highlights, and every design is still in the table.
+
+The reason is worth more than the feature. What a reader wants is the refolded binder laid
+*over* the designed one, and that is not a structure, it is a **superposition** — node 04's,
+the rotation it already computed to produce `sc_rmsd_A`. A viewer here would either
+re-derive it, which is §8.1 exactly, or show two structures in unrelated frames and invite
+the reader to eyeball an RMSD, which is worse than showing nothing because it looks like
+evidence. It would also cost two passthroughs: the PDBs reach node 04 and stop there.
+
+So Phase 1's report carries numbers and provenance, which is what §7 says its job is while
+the ranking metric is uncalibrated. Writing *superposed* coordinates out of node 04 and
+viewing them here is a well-scoped later change, and it belongs with Phase 3, where there
+is something calibrated to look at.
+
 The biosafety statement from 037 travels into every artifact here. A sequence that has
 passed validation is *more* likely to be synthesised, not less, so the screening notice
 matters more at this stage than at generation. Two mechanical constraints on the tag,

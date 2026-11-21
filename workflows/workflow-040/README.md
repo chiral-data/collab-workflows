@@ -50,7 +50,7 @@ files plus `design_metrics.json`.
 | `02-build-prediction-inputs` | no | `design_inventory.json` | `mono_<design>.fasta` (one record each), `prediction_inputs.json` |
 | `03-predict` | **yes** | `mono_*.fasta`, `prediction_inputs.json` | `<design>_scores_rank_*.json`, `<design>_*rank_*.pdb`, `prediction_manifest.json` |
 | `04-score` | no | inventory, predictions, manifests | `design_scores.json`, `design_scores.csv` — one row per design, failures included |
-| `05-filter-and-report` | no | `design_scores.json` | `passing_sequences.fasta`, `validation_metrics.csv`, `report.html` |
+| `05-filter-and-report` | no | `design_scores.json` | `passing_sequences.fasta`, `validation_metrics.csv`, `report.html` (static; needs no JavaScript to be complete) |
 
 ```
 [037] *_generated.cif + design_metrics.json
@@ -134,7 +134,7 @@ the hints, which carry the reasoning.
 | `num_recycle` | integer | `3` | right for a monomer; 026 records 6–12 for multimers, so Phase 2 should raise it |
 | `msa_mode` | string | `single_sequence` | correct for a lone de novo binder, wrong for a complex — [§4](validation_pipeline.md) |
 | `predict_timeout_s` | integer | `1800` | unmeasured for this workflow — [§11.5](validation_pipeline.md) |
-| `top_n` | integer | `10` | structures embedded in the report; later rows are inert |
+| `top_n` | integer | `10` | size of the shortlist the report highlights; every design is still in the table |
 | `score_interface` | boolean | `false` | Phase 2, not built. Setting it true is **refused**, not ignored |
 
 ## Status
@@ -146,7 +146,7 @@ the hints, which carry the reasoning.
 | `02-build-prediction-inputs` | **implemented** (mono path; `cplx_` is Phase 2) |
 | `03-predict` | **implemented**, with `--dry-run` for CI |
 | `04-score` | **implemented** (Phase 1 metrics; `iptm` and `pae_interaction` read when present) |
-| `05-filter-and-report` | **not implemented** |
+| `05-filter-and-report` | **implemented**; report is static HTML, no structure viewer in Phase 1 |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest`; `tests/make_predictions.py` written |
 | Test harness | checks not built — `tests/fixtures.json` is the data |
 | Phase 2 | specced, §11.1 closed by measurement |
