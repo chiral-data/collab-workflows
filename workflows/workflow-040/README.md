@@ -46,7 +46,7 @@ files plus `design_metrics.json`.
 
 | Node | GPU | Reads | Writes |
 |---|---|---|---|
-| `01-ingest-designs` | no | `*_generated.cif`, `design_metrics.json` | `design_inventory.json` |
+| `01-ingest-designs` | no | `*_generated.cif`, `design_metrics.json` | `design_inventory.json`, `design_metrics.json` (passed through) |
 | `02-build-prediction-inputs` | no | `design_inventory.json` | `mono_*.fasta`, `prediction_inputs.json` |
 | `03-predict` | **yes** | `mono_*.fasta`, `prediction_inputs.json` | `<design>_scores_rank_*.json`, `<design>_*rank_*.pdb`, `prediction_manifest.json` |
 | `04-score` | no | inventory, predictions, manifests | `design_scores.json`, `design_scores.csv` |
@@ -67,11 +67,17 @@ files plus `design_metrics.json`.
   [05-filter-and-report] ──► passing_sequences.fasta, report.html
 ```
 
-`01b-align-target` is specced but not scaffolded: it belongs to Phase 2, and its contract
-cannot be written until the a3m spike in
-[§11.1](validation_pipeline.md) resolves. The letter suffix is so that adding it later does
-not renumber nodes 02–05, which would invalidate every saved `params.json` and every
-cross-reference.
+`01b-align-target` is specced but not scaffolded: it belongs to Phase 2. The a3m question
+that gated it is [closed by measurement](tests/reference/) — `colabfold_batch` does accept
+an alignment for the target with the binder present only as its own query — so what is
+left is building it, not deciding whether it can exist. The letter suffix is so that adding
+it later does not renumber nodes 02–05, which would invalidate every saved `params.json`
+and every cross-reference.
+
+Node 01 also **refuses every bad parameter**, including the ones it never reads. It is the
+only node guaranteed to run before the GPU node, and a `nan` threshold first noticed by
+node 05 has already cost the GPU its minutes. Nodes 04 and 05 parse their own thresholds
+with the same helper, so a node run on its own is still safe.
 
 ## Image
 
@@ -136,9 +142,11 @@ the hints, which carry the reasoning.
 | | |
 |---|---|
 | Scaffold | done |
-| Nodes 01–05 | **not implemented** |
+| `01-ingest-designs` | **implemented** |
+| Nodes 02–05 | **not implemented** |
+| Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest` |
 | Test harness | not written — `tests/fixtures.json` is the data, the checks are not built |
-| Phase 2 | specced, gated on the §11.1 spike |
+| Phase 2 | specced, §11.1 closed by measurement |
 | Phase 3 | thresholds uncalibrated |
 
 Prerequisites from [§11](validation_pipeline.md) and [tests/README.md](tests/README.md):
@@ -150,6 +158,8 @@ Prerequisites from [§11](validation_pipeline.md) and [tests/README.md](tests/RE
 3. ~~Capture a real monomer prediction, and the complex equivalent~~ — **done**, both in
    [tests/reference/](tests/reference/) with provenance. This also closed the §11.1 a3m
    gate, so Phase 2 proceeds as designed.
-4. Extend `workflow-037/tests/make_designs.py` with the four shapes four `ingest` cases
-   need: a multi-chain target, an internally gapped target, a target numbered from 3, and
-   a design carrying non-standard residues.
+4. ~~Extend `workflow-037/tests/make_designs.py` with the shapes four `ingest` cases
+   need~~ — **done**, in place, six shapes plus `--manifest`; the original six verified
+   byte-identical at three lengths. See [tests/README.md](tests/README.md).
+
+Nothing is outstanding. What remains is building nodes 02–05 and the check harness.

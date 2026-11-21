@@ -21,7 +21,7 @@
     "cannot run until that is built, and says so rather than silently passing."
   ],
 
-  "_ingest_comment": "Nodes 01 and 02 over design CIFs -- 040's input is 037's output. Synthetic structures come from workflow-037/tests/make_designs.py, reused rather than rewritten: it already builds exact 3.8 A Ca spacing in compact, extended, helix, broken, clash and swap shapes, chain B as the design and chain A as the target.",
+  "_ingest_comment": "Nodes 01 and 02 over design CIFs -- 040's input is 037's output. Synthetic structures come from workflow-037/tests/make_designs.py, reused rather than rewritten: it already builds exact 3.8 A Ca spacing in compact, extended, helix, broken, clash and swap shapes, chain B as the design and chain A as the target. 040 extended it IN PLACE with six shapes that vary the target or the residue names rather than the design -- monomer, multichain, gapped, renumbered, nonstandard, allnonstandard -- plus a --manifest flag that writes the target chain ids it actually used, so the harness no longer restates them. Verified byte-identical output for all six original shapes at lengths 10, 30 and 50 before anything was added. design_metrics.json is NOT synthesised: the harness runs workflow-037 node 04 over the generated structures, so the designed_chain_source 040 reads comes from the node that really produces it.",
   "ingest": [
     {
       "id": "resolved-chain-good-path",
@@ -72,7 +72,7 @@
       "id": "monomer-single-chain",
       "tier": "ci",
       "phase": 1,
-      "source": "make_designs.py shape=compact, 1 chain",
+      "source": "make_designs.py shape=monomer",
       "shape": "a single-chain design, as monomer and motif_scaffold runs produce",
       "evidence": "037 node 04 returns source = single-chain for a one-chain file, deliberately NOT reporting it as a fallback, because doing so made a correct manifest look like a missing one (04-analyze/script.py:265, 275)",
       "why": "Revision 1 of the spec said designed_chain_source is either 'metrics' or 'assumed-first-chain'. 037 writes three values and this is the third. Accept it on the self-consistency path -- a monomer has a backbone to recover -- and refuse it on the complex path, where there is no target to score an interface against.",
@@ -100,7 +100,7 @@
       "id": "multichain-target",
       "tier": "ci",
       "phase": 1,
-      "needs": "make_designs.py: a shape writing a design plus two target chains",
+      "source": "make_designs.py shape=multichain -- target chains A and C, skipping the design's own B, so nothing can pass by assuming the targets are the letters following it",
       "shape": "one design chain against two target chains",
       "evidence": "inherited from 037's 1BRS fixture -- '6 chains; altlocs A,B; no insertion codes', three copies of the barnase-barstar complex, of which 037 found five of six chains vanishing silently before 53d1d460",
       "why": "A real target is routinely more than one chain. All target chains and their sequences must be recorded, in a defined order, because node 02 concatenates them into the complex input and node 04 slices pLDDT by that order. A target silently reduced to its first chain scores an interface against the wrong surface.",
@@ -115,7 +115,7 @@
       "id": "gapped-target",
       "tier": "ci",
       "phase": 2,
-      "needs": "make_designs.py: a shape with an internal numbering gap in the target chain",
+      "source": "make_designs.py shape=gapped -- 4 residues absent from the target's numbering and the second segment moved 12 A, so the junction is not a peptide bond either",
       "shape": "a target chain with a disordered loop missing from the coordinates",
       "evidence": "029 measured the consequence rather than the shape: a receptor trimmed to the segment carrying the epitope models at ~42 pLDDT where the whole chain reaches 81, and the interface PAE floor moved 7.6 -> 15.4 A against a threshold of 10, taking two runs from 2/16 to 0/16 (8e4772a7)",
       "why": "Targets come from RCSB, so disordered gaps are ordinary, not exotic. ColabFold cannot express a gap inside a chain, and the measured answer is to fold the chain WHOLE and disclose that each break is fused -- not to trim around it, which was argued for on first principles and then measured to be much worse. Node 01 must detect the gap so node 03 can say so.",
@@ -131,7 +131,7 @@
       "id": "target-numbering-from-3",
       "tier": "ci",
       "phase": 1,
-      "needs": "make_designs.py: a target chain whose label numbering starts above 1",
+      "source": "make_designs.py shape=renumbered -- target numbered from 3, which is where barnase starts in 1BRS",
       "shape": "a target whose first residue is label 3, not label 1",
       "evidence": "037 recorded that RFD4 renumbers the preserved target chain from 1 in its output, so for barnase in 1BRS -- which starts at label 3 -- the generated structure's target numbering is already shifted from what node 02 conditioned on (ef74646e)",
       "why": "Three renumberings stack here: the deposited entry's, RFD4's, and ColabFold's own renumber-from-1-per-chain. Any correspondence established by matching residue numbers is therefore wrong somewhere in the chain. Node 01 records residue ids in chain ORDER and node 04 maps by position, asserting the mapping.",
@@ -146,7 +146,7 @@
       "id": "nonstandard-residues",
       "tier": "ci",
       "phase": 1,
-      "needs": "make_designs.py: a design chain carrying modified residues",
+      "source": "make_designs.py shape=nonstandard for the count and shape=allnonstandard for the skip -- two runs, because a sequence that is partly X has to be folded with the X counted while one that is entirely X has nothing to fold",
       "shape": "a design whose sequence contains residues with no one-letter code",
       "evidence": "inherited from 037's 5O45 fixture -- '2 chains; 5 modified polymer components (9KK,CCS,MEA,NH2,SAR); 106 HETATM carrying a label_seq_id'",
       "why": "037 node 06 skips a design whose sequence is empty or all-unknown rather than writing junk, and counts unknown residues because ColabFold folds X as a sequence gap, which depresses confidence for reasons unrelated to the design. 040 inherits both problems and must not silently feed X-laden sequences to a predictor and then report the resulting low pLDDT as a design defect.",
@@ -570,7 +570,7 @@
     }
   ],
 
-  "_rejections_comment": "Inputs node 02 or node 04 must refuse, asserting both the exit status and that the refusal gives the stated reason. The last entry checks a legitimate input is still accepted, so no guard can pass by rejecting everything -- 037 added that entry for exactly this reason (4b1a611a).",
+  "_rejections_comment": "Inputs the workflow must refuse, asserting both the exit status and that the refusal gives the stated reason. The last entry checks that a legitimate input is still accepted, so no guard can pass by rejecting everything -- 037 added that entry for exactly this reason (4b1a611a). Every PARAMETER is refused at node 01, which is the only node guaranteed to run before the GPU node: a nan threshold first noticed by node 05 has already cost the GPU its minutes, and 8.8 is the record of what a nan does when it is not refused. Nodes 04 and 05 still parse their own thresholds with the same helper, so a node run standalone is safe too -- node 01 is the gate, not the only check. Two entries here carry a measured field: they asserted a message string before any node existed, and the built node proved both strings wrong (8.16).",
   "rejections": [
     {
       "id": "threshold-nan",
@@ -579,7 +579,7 @@
       "name": "a nan threshold is refused by name",
       "why": "037's numeric_param() accepted nan and inf. Neither is caught by a range check, because every comparison against nan is false: nan passed 'must be positive' and passed 'outside the expected range' without a warning, and then made every distance test false, so the node reported no contacts on a structure that has plenty (55edd8fc). 040 has four float thresholds, every one of them compared against a measurement.",
       "params": {"PARAM_MAX_SC_RMSD_A": "nan"},
-      "expect_error": "nan"
+      "expect_error": "parses as nan"
     },
     {
       "id": "threshold-inf",
@@ -588,7 +588,8 @@
       "name": "an inf threshold is refused by name",
       "why": "inf does the reverse of nan and takes everything, so a filter set to inf passes every design while looking configured. 1e400 parses to inf and must be refused too.",
       "params": {"PARAM_MAX_SC_RMSD_A": "1e400"},
-      "expect_error": "inf"
+      "expect_error": "parses as inf",
+      "measured": "the refusal names the value AFTER parsing -- \"must be a finite number, got '1e400', which parses as inf\". This entry asked for the substring 'inf', which neither '1e400' nor the phrase 'finite number' contains, so it would have failed against any correct implementation. §8.16: suspect the harness first."
     },
     {
       "id": "threshold-non-numeric",
@@ -597,6 +598,17 @@
       "name": "a non-numeric threshold fails the way every other bad parameter does",
       "why": "037 added two cleanly-handled parameters to node 03 and left two raw int() casts ten lines above them, so PARAM_NUM_REPLICATES=abc produced a bare ValueError traceback -- which reads as the workflow crashing rather than as a typo in a parameter (975ab379). Uniformity is the point: all five of 040's numeric parameters fail with the same shape of message.",
       "params": {"PARAM_MIN_PLDDT_BINDER": "abc"},
+      "expect_error": "must be a number",
+      "measured": "min_plddt_binder is a float, and 037's numeric_param says \"a whole number\" only for an int cast (02-build-spec/script.py:67). This entry asked for 'whole number' before the node existed and was wrong about its own subject; the int cast now has its own entry below so both messages are pinned."
+    },
+    {
+      "id": "num-models-non-integer",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a fractional count is refused as a whole number, not truncated",
+      "why": "float('2.5') succeeds where int('2.5') raises, so which cast a parameter is read with decides whether a typo is caught at all. num_models, num_recycle, predict_timeout_s and top_n are counts: read as floats they reach the predictor as 2.5 models and are truncated by whatever consumes them, so the run quietly does something other than what was asked. Paired with threshold-non-numeric, this shows the two casts give two different messages and that neither accepts junk.",
+      "pins": "\u00a78.8, 975ab379",
+      "params": {"PARAM_NUM_MODELS": "2.5"},
       "expect_error": "whole number"
     },
     {
@@ -615,7 +627,7 @@
       "name": "a single-chain design is refused on the complex path",
       "why": "designed_chain_source == single-chain means a monomer or motif_scaffold run, so there is no target to score an interface against. Scoring one anyway produces an iptm and a pae_interaction from a prediction with one chain, which is 026's bug arriving by a different route.",
       "params": {"PARAM_SCORE_INTERFACE": "true"},
-      "source": "make_designs.py shape=compact, 1 chain",
+      "source": "make_designs.py shape=monomer",
       "expect_error": "single"
     },
     {

@@ -84,14 +84,47 @@ a provisional band, not a gate (§7).
 
 ## Harness
 
-Four pieces. Two already exist and are reused rather than rewritten.
+Four pieces. One already existed and was extended in place rather than forked.
 
 | Piece | Status | Role |
 |---|---|---|
-| `make_designs.py` | **reuse 037's** | builds the design CIFs that are 040's *input*. Shapes `compact`, `extended`, `helix`, `broken`, `clash`, `swap`, at any length, with exact 3.8 Å Cα spacing. |
+| `make_designs.py` | **037's, extended in place** | builds the design CIFs that are 040's *input*. See below. |
 | `make_predictions.py` | **to write** | builds the synthetic *predictions* — a `rank_001` PDB plus a scores JSON — with a known correct answer. |
 | `probe_design.py` | **to write** | measures a design CIF independently: chains, lengths, sequences, residue ids, gaps. Must not share a parser with any node, per 037's `probe_entry.py`. |
 | `check_fixtures.py` | **to write** | the `CHECKS` table. Each entry returns `(status, detail)`, and the detail string carries the numbers so a failure reads as evidence rather than as an assertion. |
+
+### `make_designs.py` — extended, not forked
+
+It already built six shapes that vary **the design**: `compact`, `extended`, `helix`,
+`broken`, `clash`, `swap`, at any length, with exact 3.8 Å Cα spacing. 040 needs shapes
+that vary **the target** and **the residue names** instead, because that is what its
+ingest node has to get right, so six were added to the same file:
+
+| Shape | What it is | Which case needs it |
+|---|---|---|
+| `monomer` | the design chain alone, no target | `monomer-single-chain`, `monomer-on-complex-path` |
+| `multichain` | one design, two target chains **A and C** — skipping the design's own B, so nothing passes by assuming the targets are the letters after it | `multichain-target` |
+| `gapped` | 4 residues absent from the target's numbering, second segment moved 12 Å so the junction is not a peptide bond either | `gapped-target` |
+| `renumbered` | target numbered from 3, where barnase starts in 1BRS | `target-numbering-from-3` |
+| `nonstandard` | 9KK, CCS, SAR among ordinary residues: some X, still foldable | `nonstandard-residues`, the count |
+| `allnonstandard` | every design residue modified: the sequence is entirely X | `nonstandard-residues`, the skip |
+
+A `--manifest` flag writes `generation_manifest.json` carrying the target chain ids the
+generator **actually used**. 037's own harness writes that file inline with
+`target_chains: ["A"]`, which is right for the six original shapes and wrong for
+`multichain` and `monomer`; the flag is the general form, and it means the harness stops
+restating a fact the generator decides.
+
+Nothing the original six shapes produce changed. That was verified rather than asserted:
+all six were generated from the pre-change file and the post-change file at lengths 10, 30
+and 50, three designs each, and diffed — **byte-identical, 18 of 18**.
+
+**`design_metrics.json` is not synthesised.** It is `designed_chain_source`'s only source,
+and inventing a file to carry it would be inventing the answer. The harness runs
+**workflow-037's node 04** over the generated structures and uses what comes out, so
+`resolved-chain-good-path` asserts a value the real producer really produced. The negative
+cases then mutate that file: `named-chain-absent` rewrites `designed_chain` to a chain the
+CIF does not contain, and `no-metrics-file` withholds it.
 
 ### `make_predictions.py` — the part that carries the weight
 
@@ -226,10 +259,27 @@ This is the core. Every case has an answer known before the node runs.
 |---|---|
 | `threshold-nan` / `threshold-inf` | refused **by name**; neither is caught by a range check, because every comparison against `nan` is false (`55edd8fc`) |
 | `threshold-non-numeric` | fails the same way every other bad parameter does (`975ab379`) |
+| `num-models-non-integer` | a count read as a float: `float("2.5")` succeeds where `int("2.5")` raises, so the cast decides whether the typo is caught at all |
 | `threshold-negative` | refused |
 | `monomer-on-complex-path` | refused, not scored against an absent target |
 | `cplx-input-missing-colon` | refused at node 02, where it costs nothing, rather than at the predictor |
 | `boundary-value-accepted` | a threshold exactly on its limit is **accepted** — so no guard can pass by refusing everything (`4b1a611a`, `b6b741e9`) |
+
+Every parameter is refused at **node 01**. It is the only node guaranteed to run before
+the GPU node, and a `nan` first noticed by node 05 has already cost the GPU its minutes.
+Nodes 04 and 05 still parse their own thresholds with the same helper, so a node run
+standalone is safe too — node 01 is the gate, not the only check.
+
+Three of these entries asserted a message string before any node existed, and the built
+node showed two of them were wrong about their own subject (§8.16, suspect the harness
+first). They now carry a `measured` field saying so:
+
+- `threshold-inf` expected the substring `inf`, which is in neither `1e400` nor "must be
+  a finite number". The node now names the **parsed** value — "which parses as inf" —
+  which is both better diagnostics and an assertion that can actually hold.
+- `threshold-non-numeric` expected "whole number" for `min_plddt_binder`, which is a
+  float; 037's helper says "a whole number" only for an `int` cast. The float path says
+  "must be a number", and the `int` path got its own entry so both messages are pinned.
 
 ### Section `controls` — Tier 2, GPU
 
@@ -270,18 +320,20 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 ## Scope
 
-58 experiments, 54 distinct checks to implement.
+59 experiments, 55 distinct checks to implement.
 
 | Section | Cases | Phase 1 | Phase 2 | Blocked |
 |---|---|---|---|---|
-| `ingest` | 14 | 11 | 3 | 4 need new generator shapes |
+| `ingest` | 14 | 11 | 3 | — |
 | `predict` | 5 | 4 | 1 | — |
 | `scoring` | 21 | 14 | 7 | — |
-| `rejections` | 7 | 5 | 2 | — |
+| `rejections` | 8 | 6 | 2 | — |
 | `controls` (GPU) | 11 | 6 | 5 | 2 |
 
-So Phase 1's gate is 34 CI cases plus 6 GPU controls, of which 4 CI cases need a
-generator shape that does not exist yet.
+So Phase 1's gate is 35 CI cases plus 6 GPU controls. Nothing is blocked on the harness
+any more: the six generator shapes four `ingest` cases were waiting on are built, and
+`num-models-non-integer` was added when the built node showed `threshold-non-numeric` was
+asserting the wrong message.
 
 ## Known gaps
 

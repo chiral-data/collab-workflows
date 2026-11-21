@@ -27,8 +27,55 @@ Shapes, chosen so the geometry checks in node 04 have something real to fail on:
   clash     a compact design interpenetrating the target rather than docked against it.
   swap      compact, but with the chains written target-first.
 
-Run:  python3 -I tests/make_designs.py <out-dir> <n-designs> [shape] [length]
+Added for workflow-040, which reads the same structures (the five shapes above describe
+the DESIGN; these five describe the TARGET or the residue names, which is what 040's
+ingest node has to get right):
+
+  monomer   the design chain alone, no target. What a monomer or motif_scaffold run comes
+            back as, and the only input for which 'designed_chain_source = single-chain'
+            is the correct answer rather than a fallback. 040 must accept it on the
+            self-consistency path and refuse it on the complex path -- there is no target
+            to score an interface against.
+  multichain
+            one design chain against TWO target chains, A and C. A real target is
+            routinely more than one chain: 037's own 1BRS fixture is three copies of the
+            barnase-barstar complex, and five of its six chains vanished silently before
+            53d1d460. The chain ids are deliberately not consecutive, so nothing can pass
+            by assuming the targets are the alphabetical run after the design.
+  gapped    a target chain with an internal numbering gap, and the second segment
+            displaced so the junction is not a peptide bond -- which is what a
+            disordered loop absent from the coordinates actually looks like. Ordinary in
+            anything from RCSB. ColabFold cannot express a gap inside a chain, and the
+            measured answer is to fold the chain whole and disclose the fusion: trimming
+            to the segment carrying the epitope gave ~42 pLDDT where the whole chain
+            reaches 81 (8e4772a7).
+  renumbered
+            a target chain whose label numbering starts at 3, not 1. Three renumberings
+            stack in 040 -- the deposited entry's, RFD4's renumber-from-1, and
+            ColabFold's own renumber-from-1-per-chain -- so any correspondence
+            established by matching residue NUMBERS is wrong somewhere. Residue ids are
+            recorded in chain order and the mapping is by position (ef74646e).
+  nonstandard
+            a design chain carrying modified residues with no one-letter code, taken from
+            037's 5O45 fixture (9KK, CCS, MEA, NH2, SAR). They score X, and X has to be
+            COUNTED: ColabFold folds X as a sequence gap, which depresses confidence for
+            reasons that have nothing to do with the design, so a low pLDDT here must not
+            be reported as a design defect.
+  allnonstandard
+            every residue of the design modified, so the sequence is entirely X. There is
+            nothing for a predictor to fold, and the design must be skipped and marked
+            rather than sent to the GPU (54bf21b6).
+
+--manifest also writes generation_manifest.json beside the structures, carrying the
+target chain ids this generator actually used -- which is the field node 03 records and
+node 04 resolves the designed chain from. 037's own run_fixtures.sh writes that file
+inline with target_chains = ["A"], which is correct for the five original shapes and
+wrong for 'multichain' and 'monomer'; the flag is the general form, and it means the
+harness does not restate a fact this file decides.
+
+Run:  python3 -I tests/make_designs.py <out-dir> <n-designs> [shape] [length] [--manifest]
 """
+import json
 import math
 import os
 import sys
@@ -47,11 +94,27 @@ CA_STEP_A = 3.8
 # against it exactly.
 DESIGN_CYCLE = ["ALA", "LEU", "GLU", "LYS", "ILE", "ALA", "GLU", "LEU", "LYS", "ALA"]
 TARGET_CYCLE = ["GLY", "SER", "THR", "VAL", "PRO", "ASN", "ASP", "TYR", "PHE", "TRP"]
+# Modified polymer components from 037's 5O45 fixture: real PDB chemical component ids
+# with no one-letter code, so a parser must score them X rather than recognise them.
+NONSTANDARD_CYCLE = ["9KK", "CCS", "MEA", "NH2", "SAR"]
+# A few of them among ordinary residues: enough that the unknown count is non-zero while
+# the sequence is still foldable, which is the case that must be counted rather than
+# skipped.
+MIXED_CYCLE = ["ALA", "9KK", "LEU", "GLU", "CCS", "LYS", "ILE", "SAR", "GLU", "ALA"]
 ONE_LETTER = {
     "ALA": "A", "LEU": "L", "GLU": "E", "LYS": "K", "ILE": "I",
     "GLY": "G", "SER": "S", "THR": "T", "VAL": "V", "PRO": "P",
     "ASN": "N", "ASP": "D", "TYR": "Y", "PHE": "F", "TRP": "W",
 }
+
+# Where a target chain's numbering starts, for the 'renumbered' shape. 3, because that is
+# where barnase starts in 1BRS -- the entry 037 pinned the renumbering problem against.
+RENUMBER_FIRST_ID = 3
+# The 'gapped' shape drops this many residues from the middle of the target's numbering.
+GAP_MISSING_RESIDUES = 4
+# And moves the second segment this far, so the junction is not a peptide bond. The same
+# 12 A the 'broken' shape uses, and for the same reason: no peptide bond reaches that far.
+GAP_DISPLACEMENT_A = 12.0
 
 
 def lattice_walk(n, step=CA_STEP_A, origin=(0.0, 0.0, 0.0)):
@@ -110,24 +173,42 @@ def helix_walk(n, origin=(0.0, 0.0, 0.0)):
     return points
 
 
-def rows_for(chain_id, entity, cycle, points, start_id):
+def rows_for(chain_id, entity, cycle, points, start_id, seq_ids=None):
+    """mmCIF _atom_site rows for one chain, one CA per residue.
+
+    seq_ids overrides label_seq_id, which is otherwise 1..n. The composition cycle is
+    indexed by POSITION in the chain, not by label_seq_id, so renumbering a chain does
+    not also change its sequence -- those are two different fixtures and conflating them
+    would make either one unreadable.
+    """
     rows, atom_id = [], start_id
     for i, point in enumerate(points, start=1):
         comp = cycle[(i - 1) % len(cycle)]
+        label = str(seq_ids[i - 1]) if seq_ids else str(i)
         rows.append([
-            "ATOM", str(atom_id), "C", "CA", ".", comp, chain_id, entity, str(i), "?",
+            "ATOM", str(atom_id), "C", "CA", ".", comp, chain_id, entity, label, "?",
             f"{point[0]:.3f}", f"{point[1]:.3f}", f"{point[2]:.3f}",
-            "1.00", "20.00", str(i), chain_id, "1",
+            "1.00", "20.00", label, chain_id, "1",
         ])
         atom_id += 1
     return rows, atom_id
 
 
-def design_sequence(length):
-    return "".join(ONE_LETTER[DESIGN_CYCLE[i % len(DESIGN_CYCLE)]] for i in range(length))
+def design_sequence(length, cycle=DESIGN_CYCLE):
+    """The one-letter sequence of a design of this length. X where there is no code."""
+    return "".join(ONE_LETTER.get(cycle[i % len(cycle)], "X") for i in range(length))
+
+
+def design_cycle_for(shape):
+    if shape == "nonstandard":
+        return MIXED_CYCLE
+    if shape == "allnonstandard":
+        return NONSTANDARD_CYCLE
+    return DESIGN_CYCLE
 
 
 def write_design(path, shape, length, target_length):
+    """Write one structure. Returns the target chain ids it used, in file order."""
     if shape == "extended":
         designed = straight_walk(length)
     elif shape == "helix":
@@ -153,11 +234,54 @@ def write_design(path, shape, length, target_length):
     else:
         separation = lattice_extent(length) + 6.0
     offset = (1.0, 0.0, 0.0) if shape == "clash" else (separation, 0.0, 0.0)
-    target = lattice_walk(target_length, origin=offset)
 
-    design_rows, next_id = rows_for("B", "1", DESIGN_CYCLE, designed, 1)
-    target_rows, _ = rows_for("A", "0", TARGET_CYCLE, target, next_id)
-    blocks = [target_rows, design_rows] if shape == "swap" else [design_rows, target_rows]
+    design_rows, next_id = rows_for(
+        "B", "1", design_cycle_for(shape), designed, 1
+    )
+
+    target_blocks, target_chains = [], []
+    if shape == "monomer":
+        pass
+    elif shape == "multichain":
+        # Two target chains, A and C. The ids skip B -- which the design holds -- so a
+        # consumer cannot pass by assuming the targets are the letters following it.
+        half = max(target_length // 2, 1)
+        first = lattice_walk(half, origin=offset)
+        second_offset = (offset[0] + lattice_extent(half) + 6.0, offset[1], offset[2])
+        second = lattice_walk(target_length - half, origin=second_offset)
+        rows_a, next_id = rows_for("A", "0", TARGET_CYCLE, first, next_id)
+        rows_c, next_id = rows_for("C", "2", TARGET_CYCLE, second, next_id)
+        target_blocks, target_chains = [rows_a, rows_c], ["A", "C"]
+    elif shape == "gapped":
+        # One chain, two segments, with GAP_MISSING_RESIDUES absent from the numbering and
+        # the second segment moved so the junction is not a bond.
+        split = max(target_length // 2, 1)
+        head = lattice_walk(split, origin=offset)
+        tail_offset = (offset[0], offset[1] + GAP_DISPLACEMENT_A, offset[2])
+        tail = lattice_walk(target_length - split, origin=tail_offset)
+        ids = list(range(1, split + 1)) + [
+            split + GAP_MISSING_RESIDUES + 1 + i for i in range(target_length - split)
+        ]
+        rows_a, next_id = rows_for(
+            "A", "0", TARGET_CYCLE, head + tail, next_id, seq_ids=ids
+        )
+        target_blocks, target_chains = [rows_a], ["A"]
+    elif shape == "renumbered":
+        points = lattice_walk(target_length, origin=offset)
+        ids = [RENUMBER_FIRST_ID + i for i in range(target_length)]
+        rows_a, next_id = rows_for(
+            "A", "0", TARGET_CYCLE, points, next_id, seq_ids=ids
+        )
+        target_blocks, target_chains = [rows_a], ["A"]
+    else:
+        points = lattice_walk(target_length, origin=offset)
+        rows_a, next_id = rows_for("A", "0", TARGET_CYCLE, points, next_id)
+        target_blocks, target_chains = [rows_a], ["A"]
+
+    if shape == "swap":
+        blocks = target_blocks + [design_rows]
+    else:
+        blocks = [design_rows] + target_blocks
 
     with open(path, "w") as handle:
         handle.write(f"data_{os.path.basename(path)}\n#\nloop_\n")
@@ -167,25 +291,41 @@ def write_design(path, shape, length, target_length):
             for row in block:
                 handle.write(" ".join(row) + "\n")
         handle.write("#\n")
+    return target_chains
 
 
 def main():
-    if len(sys.argv) < 3:
+    argv = [a for a in sys.argv[1:] if a != "--manifest"]
+    write_manifest = "--manifest" in sys.argv[1:]
+    if len(argv) < 2:
         print(__doc__)
         return 2
-    out_dir, count = sys.argv[1], int(sys.argv[2])
-    shape = sys.argv[3] if len(sys.argv) > 3 else "compact"
-    length = int(sys.argv[4]) if len(sys.argv) > 4 else 10
+    out_dir, count = argv[0], int(argv[1])
+    shape = argv[2] if len(argv) > 2 else "compact"
+    length = int(argv[3]) if len(argv) > 3 else 10
     target_length = max(length * 2, 20)
     os.makedirs(out_dir, exist_ok=True)
+    target_chains = []
     for i in range(count):
         # Only the first design carries the shape; the rest are ordinary, so a case can
         # ask whether one bad design is ranked and reported correctly among good ones.
         this = shape if i == 0 else "compact"
-        write_design(os.path.join(out_dir, f"design_{i}_generated.cif"),
-                     this, length, target_length)
+        used = write_design(os.path.join(out_dir, f"design_{i}_generated.cif"),
+                            this, length, target_length)
+        if i == 0:
+            target_chains = used
+    if write_manifest:
+        # The ids this file actually used, not a restatement of them. A 'monomer' run
+        # correctly records none, which is what makes 'single-chain' the right answer
+        # downstream rather than a fallback.
+        with open(os.path.join(out_dir, "generation_manifest.json"), "w") as handle:
+            json.dump({
+                "target_chains": target_chains,
+                "note": "written by tests/make_designs.py; synthetic, not a real run",
+            }, handle, indent=2)
     print(f"wrote {count} design(s) to {out_dir}: shape={shape} length={length} "
-          f"sequence={design_sequence(length)}")
+          f"target_chains={target_chains or 'none'} "
+          f"sequence={design_sequence(length, design_cycle_for(shape))}")
     return 0
 
 
