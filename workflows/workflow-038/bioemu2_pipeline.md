@@ -168,7 +168,7 @@ the sampling and the analysis side, and no mmCIF is parsed anywhere in this work
 | Node | Name | Inputs | Outputs | GPU |
 |------|------|--------|---------|-----|
 | 01 | `01-prepare-system` | (params; optional upload) | `system.yaml`, `system_inventory.json` | No |
-| 02 | `02-fetch-msa` | `system.yaml`, `system_inventory.json` | `msa/`, `msa_summary.json`, `system.yaml` | No |
+| 02 | `02-fetch-msa` | `system.yaml`, `system_inventory.json` | `msa/` (unpaired + paired A3M), `msa_summary.json`, `system.yaml`, `system_inventory.json` | No |
 | 03 | `03-sample` | `system.yaml`, `msa_summary.json`, `msa/` | `samples.xtc`, `topology.cif`, `physicality.json`, `system.yaml`, `sampling_manifest.json`, `msa/` | **Yes** |
 | 04 | `04-propagate` | node 03 ensemble, `physicality.json`, `sampling_manifest.json`, `msa/` | `propagated_samples.xtc`, `propagated_topology.cif`, `propagated_physicality.json`, `propagation_manifest.json` | **Yes** |
 | 05 | `05-analyze` | nodes 03 + 04, minus `topology.cif` which nothing reads | `ensemble_metrics.csv`, `ensemble_summary.json`, `ensemble_top.pdb` | No |

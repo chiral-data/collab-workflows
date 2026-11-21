@@ -32,6 +32,21 @@ def fail(message):
     sys.exit(1)
 
 
+def unpaired_a3m_paths(directory):
+    """The per-chain unpaired A3M files, excluding the paired ones.
+
+    A plain `*.a3m` glob also matches `<chain>.paired.a3m`, whose stem is `<chain>.paired` and
+    is not a chain id. bioemu2's `load_a3m_msa` requires the mapping's keys to equal the
+    system's protein chain ids exactly, so including the paired files would make it raise.
+    This one helper is the only place that distinction is encoded.
+    """
+    return sorted(
+        path
+        for path in glob.glob(os.path.join(directory, "*.a3m"))
+        if not path.endswith(".paired.a3m")
+    )
+
+
 def count_a3m_rows(path):
     """Number of records in an A3M file: every line beginning with '>'."""
     rows = 0
@@ -63,7 +78,7 @@ def user_supplied_a3m(protein_chains):
     A single uploaded A3M is taken to be the alignment for a single-protein-chain system.
     For several chains, files must be named <chain>.a3m.
     """
-    uploads = sorted(glob.glob("./inputs/*.a3m"))
+    uploads = unpaired_a3m_paths("./inputs")
     if not uploads:
         return {}
     if len(uploads) == 1 and len(protein_chains) == 1:
@@ -181,7 +196,12 @@ def main():
                 "a3m": f"msa/{chain}.a3m",
                 "rows": count_a3m_rows(dest),
                 "subsampled": False,
+                # An uploaded set is unpaired only. For a heteromer this gives up the paired
+                # feature the model would otherwise get, which is a real cost of the upload
+                # path and is recorded rather than hidden.
+                "paired_a3m": None,
             }
+        summary["paired"] = False
     else:
         from bioemu2 import get_msa
 
@@ -199,6 +219,26 @@ def main():
                 "uploading <chain>.a3m files into the workflow inputs."
             )
         summary["source"] = "ColabFold server"
+        # A heteromer gets two alignments per chain from ColabFold: the independent (unpaired)
+        # one and a positionally paired one. The model uses both — bioemu2's pairmixer is built
+        # with use_paired_feature=True, and prepare_structure() substitutes zeros when the
+        # paired side is None — so writing only the unpaired half silently degrades every
+        # multi-sequence complex. get_msa returns paired alignments only when the system has
+        # more than one unique protein sequence, so a monomer or homomer legitimately has none.
+        paired_available = getattr(msa, "paired_a3m", None) is not None
+        summary["paired"] = paired_available
+        if paired_available:
+            print(
+                "Heteromer: writing the positionally paired alignment alongside the unpaired "
+                "one, so node 03 can hand the model both.",
+                flush=True,
+            )
+        else:
+            print(
+                "No paired alignment: the system has one unique protein sequence, so BioEmu2 "
+                "needs only the unpaired alignment.",
+                flush=True,
+            )
 
         subsampled = False
         if msa_depth > 0:
@@ -221,12 +261,37 @@ def main():
                 "a3m": f"msa/{chain}.a3m",
                 "rows": count_a3m_rows(dest),
                 "subsampled": subsampled,
+                "paired_a3m": None,
             }
+            if paired_available:
+                # Subsampling happened on the MSA object above, which applies one set of row
+                # indices to every chain and to both alignments, so the paired rows stay
+                # positionally aligned with each other. Extracting the text per chain
+                # afterwards cannot break that; extracting first and subsampling per file
+                # would have.
+                try:
+                    paired_text = msa.a3m(chain, paired=True)
+                except Exception as exc:
+                    fail(
+                        f"The alignment reported a paired set but chain '{chain}' could not be "
+                        f"extracted from it: {exc}"
+                    )
+                paired_dest = os.path.join(A3M_DIR, f"{chain}.paired.a3m")
+                with open(paired_dest, "w") as handle:
+                    handle.write(paired_text)
+                summary["chains"][chain]["paired_a3m"] = f"msa/{chain}.paired.a3m"
+                summary["chains"][chain]["paired_rows"] = count_a3m_rows(paired_dest)
         summary["msa_depth_applied"] = bool(msa_depth > 0 and subsampled)
 
-    written = sorted(glob.glob(os.path.join(A3M_DIR, "*.a3m")))
+    written = sorted(unpaired_a3m_paths(A3M_DIR))
     if not written:
         fail("No alignment files were written, but the system has protein chains.")
+    if len(written) != len(protein_chains):
+        fail(
+            f"Wrote {len(written)} unpaired alignment(s) for {len(protein_chains)} protein "
+            "chain(s). bioemu2's load_a3m_msa requires exactly one per chain and rejects a "
+            "mismatch, so this would fail in node 03 instead."
+        )
 
     depths = {chain: info["rows"] for chain, info in summary["chains"].items()}
     summary["min_depth"] = min(depths.values()) if depths else 0

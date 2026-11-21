@@ -33,6 +33,9 @@ import time
 os.environ.setdefault("HF_HUB_OFFLINE", "1")
 
 SAMPLERS = {"edm", "edm_gd", "edm_fk", "edm_fkc"}
+
+# Mirrors node 02's naming. See node 03 for why the two sets must not be mixed.
+PAIRED_SUFFIX = ".paired.a3m"
 # Samplers whose presets enable resampling, which propagation cannot use. `edm_fk` is
 # GuidedFKSampler() with resampling_interval=3 and `edm_fkc` is FKCSampler() with
 # ess_threshold=0.9, while `edm_gd` is GuidedFKSampler(resampling_interval=None) and so is
@@ -270,6 +273,7 @@ def main():
     import mdtraj
 
     from bioemu2 import (
+        MSA,
         EmuSession,
         System,
         check_physicality,
@@ -298,10 +302,19 @@ def main():
     # server, so the node would propagate against a different alignment from the one node 03
     # sampled with, over the network, in a node that sets HF_HUB_OFFLINE and claims to need
     # none. Nothing downstream could tell.
-    a3m_files = sorted(Path(p) for p in glob.glob("./inputs/msa/*.a3m"))
+    a3m_files = sorted(
+        Path(p)
+        for p in glob.glob("./inputs/msa/*.a3m")
+        if not p.endswith(PAIRED_SUFFIX)
+    )
+    paired_paths = {
+        os.path.basename(p)[: -len(PAIRED_SUFFIX)]: Path(p)
+        for p in sorted(glob.glob("./inputs/msa/*" + PAIRED_SUFFIX))
+    }
     msa_due = bool(sampling_manifest.get("msa_loaded"))
+    paired_due = bool(sampling_manifest.get("msa_paired"))
     msa = None
-    msa_record = {"loaded": False, "how": "no alignment was due", "files": []}
+    msa_record = {"loaded": False, "how": "no alignment was due", "files": [], "paired": False}
 
     if msa_due and not a3m_files:
         fail(
@@ -313,6 +326,15 @@ def main():
             "declares it as an input, by directory name: Silva matches an input entry by "
             "basename, so 'msa/*.a3m' stages nothing."
         )
+    if paired_due and set(paired_paths) != {path.stem for path in a3m_files}:
+        fail(
+            "Node 03 sampled with a paired alignment but the paired files staged here cover "
+            f"{sorted(paired_paths)} against chains "
+            f"{sorted(path.stem for path in a3m_files)}. Propagating from the unpaired "
+            "alignment alone would condition the endpoints differently from the ensemble they "
+            "start from, which nothing downstream could detect."
+        )
+
     if a3m_files:
         # Values are Path: get_msa calls Path methods on its source and raises on a str.
         source = {path.stem: path for path in a3m_files}
@@ -322,6 +344,17 @@ def main():
                 if len(source) == 1
                 else get_msa(system, source=source)
             )
+            if paired_paths:
+                # load_a3m_msa returns an unpaired MSA whatever is on disk, so the paired half
+                # is attached here exactly as node 03 does it. The model treats a missing
+                # paired feature as zeros, so skipping this silently changes the run.
+                msa = MSA(
+                    unpaired_a3m=dict(msa.unpaired_a3m),
+                    paired_a3m={
+                        chain: path.read_text()
+                        for chain, path in sorted(paired_paths.items())
+                    },
+                )
         except Exception as exc:
             fail(
                 f"Could not reuse node 03's alignment: {exc}. Continuing without it would "
@@ -329,8 +362,16 @@ def main():
             )
         msa_record = {
             "loaded": True,
-            "how": "reused node 03's A3M files",
-            "files": [f"msa/{path.name}" for path in a3m_files],
+            "how": (
+                "reused node 03's A3M files, paired and unpaired"
+                if paired_paths
+                else "reused node 03's A3M files (unpaired only; none was due)"
+            ),
+            "files": (
+                [f"msa/{path.name}" for path in a3m_files]
+                + [f"msa/{path.name}" for path in sorted(paired_paths.values())]
+            ),
+            "paired": bool(paired_paths),
             "chains": sorted(source),
         }
     elif not msa_due:
@@ -434,6 +475,7 @@ def main():
             "msa_loaded": msa_record["loaded"],
             "msa_how": msa_record["how"],
             "msa_files": msa_record["files"],
+            "msa_paired": msa_record["paired"],
             "physicality_checked": bool(
                 physicality is not None and getattr(physicality, "checked", False)
             ),

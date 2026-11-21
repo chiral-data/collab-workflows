@@ -146,6 +146,21 @@ from the public ColabFold server on a cache miss, optionally subsamples it to `m
 and writes `msa/<chain>.a3m`. Pre-supplied A3M files in the node's input directory short-circuit
 the whole step (Docker-only today — see open item 7).
 
+A **heteromer gets two alignments per chain**, and both are written. ColabFold returns the
+independent alignment and a positionally paired one whenever the system has more than one unique
+protein sequence, and BioEmu2 uses both: its pairmixer is constructed with
+`use_paired_feature=True`, and `prepare_structure()` substitutes zeros when the paired side is
+absent. Writing only the unpaired half would therefore degrade every multi-sequence complex
+without failing. The paired set goes to `msa/<chain>.paired.a3m`, and node 03 reattaches it.
+
+Subsampling happens on the alignment object before the per-chain text is extracted, which
+matters: `MSA.__getitem__` applies one set of row indices to every chain and to both alignments
+at once, so the paired rows stay positionally matched. Subsampling the files individually
+afterwards would silently break the pairing.
+
+A monomer or homomer has one unique sequence and so has no paired alignment. That is correct,
+not a missing file, and `msa_summary.json` records which case a run was in under `paired`.
+
 **Scientific notes:** BioEmu2 is conditioned on the alignment, so its depth bounds what the
 ensemble can be. Upstream names shallow or poor MSAs — orphan proteins, some viral proteins — as
 a cause of degraded quality; it does not rank the causes, and neither does this workflow.
@@ -155,7 +170,7 @@ rarely trips it and high enough to catch a near-empty one. Treat it as a prompt 
 depth, not as a pass mark.
 
 **Outputs:** `system.yaml`, `system_inventory.json`, `msa_summary.json`, `msa/` (one
-`<chain>.a3m` per protein chain)
+`<chain>.a3m` per protein chain, plus `<chain>.paired.a3m` for a heteromer)
 
 ### Node 03: Sample Conformations
 
@@ -172,6 +187,13 @@ The node prints BioEmu2's own estimate of the largest batch that fits the GPU, c
 the token count node 01 measured, and warns when the batch in use is above it. It does not
 apply the estimate: `batch_size` changes which samples are drawn, so deriving it from whichever
 card the job landed on would make a run irreproducible while still reporting the same seed.
+
+It reattaches the paired alignment when node 02 wrote one. `load_a3m_msa` returns an unpaired
+`MSA` whatever is on disk, so node 03 loads the per-chain files through `get_msa` — which is
+what validates each A3M's query row against the system's own sequence — and then rebuilds the
+`MSA` with the paired texts added. A partial paired set is a failure rather than a fallback: the
+paired alignment is matched across chains, so using some of it is not a degraded version of
+using all of it.
 
 The node refuses to sample if node 02 reported protein chains and no `.a3m` arrived. That is
 not defensiveness about a missing file: `EmuSession` fetches its own alignment when given

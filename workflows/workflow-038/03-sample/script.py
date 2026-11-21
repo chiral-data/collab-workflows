@@ -46,6 +46,10 @@ PHYSICALITY_MODES = {
 PRECISIONS = {"bf16-mixed", "32-true"}
 MATMUL_PRECISIONS = {"highest", "high", "medium"}
 
+# Node 02 writes <chain>.a3m for the independent alignment and <chain>.paired.a3m for the
+# positionally paired one a heteromer also gets. The two must never be mixed in one mapping.
+PAIRED_SUFFIX = ".paired.a3m"
+
 
 def fail(message):
     print(f"ERROR: {message}", flush=True)
@@ -162,6 +166,32 @@ def advise_batch_size(n_tokens, num_samples, batch_size):
         )
 
 
+def unpaired_a3m_paths(directory):
+    """The per-chain unpaired A3M paths, excluding node 02's paired files.
+
+    `<chain>.paired.a3m` has the stem `<chain>.paired`, which is not a chain id, and
+    bioemu2's `load_a3m_msa` requires the mapping's keys to equal the system's protein chain
+    ids exactly. A plain `*.a3m` glob would therefore make it raise.
+    """
+    return sorted(
+        Path(path)
+        for path in glob.glob(os.path.join(directory, "*.a3m"))
+        if not path.endswith(PAIRED_SUFFIX)
+    )
+
+
+def paired_a3m_paths(directory):
+    """Node 02's positionally paired A3M files, as {chain_id: Path}.
+
+    The chain id is the basename with `.paired.a3m` removed. `Path.stem` is not enough:
+    for `A.paired.a3m` it gives `A.paired`, and bioemu2 keys an MSA by chain id.
+    """
+    return {
+        os.path.basename(path)[: -len(PAIRED_SUFFIX)]: Path(path)
+        for path in sorted(glob.glob(os.path.join(directory, "*" + PAIRED_SUFFIX)))
+    }
+
+
 def staged_alignment(msa_summary):
     """Return the A3M paths Silva staged, refusing to continue if any are missing.
 
@@ -179,7 +209,7 @@ def staged_alignment(msa_summary):
     `protein_chains` in msa_summary.json (see CLAUDE.md, "don't re-derive upstream facts").
     """
     expected = list(msa_summary.get("protein_chains") or [])
-    a3m_files = sorted(Path(p) for p in glob.glob("./inputs/msa/*.a3m"))
+    a3m_files = unpaired_a3m_paths("./inputs/msa")
 
     if not a3m_files and expected:
         fail(
@@ -199,16 +229,17 @@ def staged_alignment(msa_summary):
     return a3m_files, expected
 
 
-def load_alignment(system, a3m_files):
+def load_alignment(system, a3m_files, msa_summary):
     """Load node 02's A3M files. Returns (msa, record); record states the path taken."""
     if not a3m_files:
         return None, {
             "loaded": False,
             "how": "no alignment was due (node 02 reported no protein chain)",
             "files": [],
+            "paired": False,
         }
 
-    from bioemu2 import get_msa
+    from bioemu2 import MSA, get_msa
 
     # Keys are chain ids, since node 02 writes one <chain>.a3m per protein chain. Values are
     # Path, not str: get_msa calls Path methods on them and raises on a plain string.
@@ -216,6 +247,9 @@ def load_alignment(system, a3m_files):
     print(f"Loading {len(source)} alignment(s) from disk: {sorted(source)}", flush=True)
     try:
         # A dict maps one A3M per protein chain; a lone chain can be passed as a bare path.
+        # Either way this goes through load_a3m_msa, which checks every A3M's query row
+        # against the system's own sequence — the validation is the reason to come in through
+        # get_msa rather than constructing an MSA by hand.
         if len(source) == 1:
             msa = get_msa(system, source=next(iter(source.values())))
         else:
@@ -226,10 +260,55 @@ def load_alignment(system, a3m_files):
             "A3M must be the query and must match the system's sequence after gaps and "
             "insertions are removed."
         )
+
+    files = [f"msa/{path.name}" for path in a3m_files]
+    paired_paths = paired_a3m_paths("./inputs/msa")
+    paired_expected = bool(msa_summary.get("paired"))
+
+    if paired_expected and set(paired_paths) != set(source):
+        fail(
+            f"Node 02 recorded a paired alignment for chains {sorted(source)} but the staged "
+            f"paired files cover {sorted(paired_paths)}. A heteromer's paired alignment is "
+            "positionally matched across chains, so a partial set cannot be used and "
+            "continuing would quietly drop the paired feature the model expects."
+        )
+
+    if paired_paths:
+        # load_a3m_msa only ever returns an unpaired MSA, so the paired half has to be
+        # attached here. MSA is a frozen dataclass whose __post_init__ requires the paired and
+        # unpaired chain id sets to match, which is the check that this is well formed.
+        try:
+            msa = MSA(
+                unpaired_a3m=dict(msa.unpaired_a3m),
+                paired_a3m={
+                    chain: path.read_text() for chain, path in sorted(paired_paths.items())
+                },
+            )
+        except Exception as exc:
+            fail(f"Could not attach node 02's paired alignment: {exc}")
+        files += [f"msa/{path.name}" for path in sorted(paired_paths.values())]
+        print(
+            f"Attached the paired alignment for {len(paired_paths)} chain(s). BioEmu2's "
+            "pairmixer uses it as a feature and substitutes zeros without it, so a heteromer "
+            "sampled from the unpaired alignment alone is a different and worse run.",
+            flush=True,
+        )
+    elif not paired_expected:
+        print(
+            "No paired alignment, and node 02 recorded none: a system with one unique protein "
+            "sequence needs only the unpaired alignment.",
+            flush=True,
+        )
+
     return msa, {
         "loaded": True,
-        "how": "read from node 02's A3M files",
-        "files": [f"msa/{path.name}" for path in a3m_files],
+        "how": (
+            "read from node 02's A3M files, paired and unpaired"
+            if paired_paths
+            else "read from node 02's A3M files (unpaired only; none was due)"
+        ),
+        "files": files,
+        "paired": bool(paired_paths),
         "chains": sorted(source),
     }
 
@@ -286,6 +365,7 @@ def main():
 
     # Pass the alignment through so node 04 can propagate without re-querying the MSA
     # server. Node 04 depends on this node, not on node 02.
+    # Every A3M, paired files included, so node 04 propagates against the same alignment.
     os.makedirs("./outputs/msa", exist_ok=True)
     for a3m in sorted(glob.glob("./inputs/msa/*.a3m")):
         shutil.copyfile(a3m, os.path.join("./outputs/msa", os.path.basename(a3m)))
@@ -345,7 +425,7 @@ def main():
     except Exception as exc:
         fail(f"Could not load system YAML '{system_path}': {exc}")
 
-    msa, msa_record = load_alignment(system, a3m_files)
+    msa, msa_record = load_alignment(system, a3m_files, msa_summary)
 
     print("Loading the model", flush=True)
     try:
@@ -475,6 +555,7 @@ def main():
         "msa_loaded": msa_record["loaded"],
         "msa_how": msa_record["how"],
         "msa_files": msa_record["files"],
+        "msa_paired": msa_record["paired"],
         "gpu": gpu_info(),
         "elapsed_seconds": elapsed,
         "frames_are_independent_samples": True,

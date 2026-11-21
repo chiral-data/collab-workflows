@@ -27,7 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     `inputs` entry by basename, so the pattern staged nothing and nodes 03/04 sampled with no
     alignment at all. Both now refuse to run when node 02 reported protein chains and no A3M
     arrived, since `EmuSession` otherwise fetches its own over the network and the manifest
-    would still name node 02's.
+    would still name node 02's. A heteromer's **positionally paired** alignment is written and
+    reattached as well (`msa/<chain>.paired.a3m`): `load_a3m_msa` always returns an unpaired
+    MSA, and BioEmu2's pairmixer substitutes zeros for a missing paired feature, so carrying
+    only the unpaired half degraded every multi-sequence complex without failing.
   - Nodes 03/04 drive the BioEmu2 Python API rather than its CLI, because the CLI exposes no
     flag for a pre-computed MSA. `num_steps` *is* exposed: `EmuSession.sample()` takes
     `sampler: SamplerPreset | Sampler`, so `sampler_from_preset(preset, mode=…, num_steps=…)`
