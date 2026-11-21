@@ -374,6 +374,17 @@ with a `kill_tree()` that escalates SIGTERM → SIGKILL. A prediction that stall
 device exactly the same way. Budgets differ per path: a 5-model complex prediction is not
 a monomer prediction.
 
+**What that mechanism does not cover, measured while building the suite.** A process-group
+kill reaches every process still in the group, which is what makes it the right fix for
+workers that merely ignore SIGTERM. It cannot reach a process that has left the group. The
+suite's first stand-in predictor put its worker behind `setsid`, the worker survived the
+kill, and the case failed — correctly, and for a reason that is not a defect in node 03:
+catching that would mean walking `/proc` for descendants or running the predictor under a
+cgroup, neither of which 037 did or claimed. `colabfold_batch` and JAX do not detach their
+workers, so the limit is theoretical for this workflow and is written down rather than
+chased. The stand-in now reproduces what 037 actually measured: a worker in the same group
+with `trap '' TERM`, which the SIGTERM → SIGKILL escalation ends.
+
 Retain the predictor's output so a failure can be diagnosed rather than inferred
 (`755d4af2` for the OOM case; `2359ffa4` for the opposite mistake — 029 discarded
 ColabFold output unless the design passed, so a failing funnel could not be diagnosed
@@ -595,6 +606,18 @@ as a measured bad interface; `inf` fails the threshold, so a missing measurement
 rendered as a verdict. Both are indistinguishable from a real result downstream.
 
 040: `null` plus a recorded reason. Never a sentinel that survives into a comparison.
+
+**Amended during the build.** The rule has a second half that was not written down and
+was therefore half-implemented. Node 04 filled `null_reasons` on the branch where the
+prediction was recorded as failed, and left it empty on three other early returns — no
+manifest entry, a prediction recorded `ok` that named no rank_001 files, and a PDB that
+would not parse. Each of those set the row's own `reason` and nothing per metric, so
+`design_scores.json` carried a blank `plddt_binder` with nothing beside it: null, and
+unexplained, which is the exact state this section exists to forbid. Found by the suite's
+`no-score-file-is-failure` case, which is the only one of the four that the fixtures
+reach. Fixed by making the three branches go through one `bail()` that writes the row's
+cause into every metric's reason, so a branch added later cannot forget. The lesson is
+that "a null carries a reason" has to be enforced in one place, not restated at each exit.
 
 ### 8.8 Refuse non-finite parameters by name
 

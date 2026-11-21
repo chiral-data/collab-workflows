@@ -148,9 +148,19 @@ the hints, which carry the reasoning.
 | `04-score` | **implemented** (Phase 1 metrics; `iptm` and `pae_interaction` read when present) |
 | `05-filter-and-report` | **implemented**; report is static HTML, no structure viewer in Phase 1 |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest`; `tests/make_predictions.py` written |
-| Test harness | checks not built — `tests/fixtures.json` is the data |
-| Phase 2 | specced, §11.1 closed by measurement |
+| Test harness | **built** — `run_fixtures.sh` stages and runs, `check_fixtures.py` judges and falsifies |
+| Tier 1 suite | **47 pass, 0 FAIL, 5 gap** of 52 CI cases; 55/55 checks implemented, invoked and falsifiable. Run on the host, **not yet in the image**, so Gate A is met but not satisfied — see [tests/README.md](tests/README.md) |
+| Tier 2 controls | not run. Needs the GPU host |
+| Phase 2 | specced, §11.1 closed by measurement. The 5 gaps are all the complex path |
 | Phase 3 | thresholds uncalibrated |
+
+```
+bash tests/run_fixtures.sh          # stage, run, judge, falsify  (~1 min)
+```
+
+It prints a loud banner when it is not running in `colabfold:2026_10_08`, and says in its
+verdict that such a run is a dry run. A suite that quietly certified something it never
+ran in the right place would be worse than no suite.
 
 Prerequisites from [§11](validation_pipeline.md) and [tests/README.md](tests/README.md):
 
@@ -165,4 +175,5 @@ Prerequisites from [§11](validation_pipeline.md) and [tests/README.md](tests/RE
    need~~ — **done**, in place, six shapes plus `--manifest`; the original six verified
    byte-identical at three lengths. See [tests/README.md](tests/README.md).
 
-Nothing is outstanding. What remains is building nodes 02–05 and the check harness.
+Nothing is outstanding on that list. What remains is a Tier 1 run inside the image, the
+Tier 2 GPU controls, and Phase 2.

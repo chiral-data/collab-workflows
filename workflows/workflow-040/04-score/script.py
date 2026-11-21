@@ -84,6 +84,16 @@ Copy 026. A metric that could not be computed is null, and the reason is recorde
 null_reasons beside it, so "absent because this is a monomer" and "absent because the
 file was truncated" do not read alike.
 
+That applies to the rows that give up early too, and at first it did not. score_one()
+returns before measuring anything in four cases -- no manifest entry, a prediction node 03
+recorded as failed, a prediction recorded 'ok' that named no rank_001 files, and a PDB
+that would not parse -- and only the second one filled null_reasons. The other three left
+design_scores.json carrying a blank plddt_binder with nothing beside it, which is the
+state this whole section exists to forbid, arrived at by a different door. The suite's
+no-score-file-is-failure case is what caught it. All four now go through bail(), which
+writes the row's own cause into every metric in METRICS_NULLED_ON_BAIL, so a branch added
+later cannot forget to.
+
 Merge by name
 -------------
 Keyed on the design name, never by position. Workflow-037's metrics rows may arrive in a
@@ -177,6 +187,14 @@ COLUMNS = [
 # numbers, given §4. It warns and never gates: 029's absence of this number produced a
 # wrong diagnosis, and the fix is to report it, not to filter on it (2359ffa4).
 LOW_TARGET_PLDDT_WARN = 70.0
+
+# Every metric that score_one() can report, so a row that gives up early can say why each
+# one is null in one place rather than per branch. Listed here, beside COLUMNS, because a
+# metric added to COLUMNS and forgotten here comes out null and unexplained.
+METRICS_NULLED_ON_BAIL = (
+    "sc_rmsd_A", "plddt_binder", "plddt_target", "iptm", "pae_interaction",
+    "ptm", "max_pae",
+)
 
 
 def fail(message):
@@ -361,21 +379,32 @@ def score_one(entry, prediction, max_rmsd, min_plddt):
     })
     null_reasons = {}
 
+    def bail(reason):
+        """Record the row's cause AND the per-metric reason, for every metric at once.
+
+        Every metric on this row is null, and a null with no recorded reason cannot be
+        told apart from a null nobody noticed (§8.7) -- which is the whole argument for
+        null_reasons existing. Three of these early returns used to set row["reason"] and
+        leave null_reasons empty, so design_scores.json carried a blank plddt_binder with
+        nothing beside it; the suite's no-score-file-is-failure case caught it. One
+        function now, so a branch added later cannot forget.
+        """
+        row["reason"] = reason
+        for metric in METRICS_NULLED_ON_BAIL:
+            null_reasons[metric] = reason
+        return row, null_reasons
+
     if prediction is None:
-        row["reason"] = (
+        return bail(
             "no prediction: node 03's manifest has no entry for this design. It is a row "
             "here with a stated cause rather than an omission (§8.5)."
         )
-        return row, null_reasons
 
     if prediction.get("status") != "ok":
-        row["reason"] = prediction.get("reason") or (
-            f"node 03 recorded status '{prediction.get('status')}'"
-        )
-        for metric in ("sc_rmsd_A", "plddt_binder", "plddt_target", "iptm",
-                       "pae_interaction", "ptm", "max_pae"):
-            null_reasons[metric] = "the prediction failed, so nothing was measured"
-        return row, null_reasons
+        return bail(prediction.get("reason") or (
+            f"node 03 recorded status '{prediction.get('status')}', so nothing was "
+            "measured"
+        ))
 
     chain_order = prediction["chain_order"]
     chain_lengths = prediction["chain_lengths"]
@@ -383,18 +412,17 @@ def score_one(entry, prediction, max_rmsd, min_plddt):
     scores_name = prediction.get("scores_rank_001")
     pdb_name = prediction.get("pdb_rank_001")
     if not scores_name or not pdb_name:
-        row["reason"] = (
-            "node 03 recorded status 'ok' but named no rank_001 scores file or PDB. Exit "
-            "codes see nothing (§8.3): there is nothing here to measure."
+        return bail(
+            "node 03 recorded status 'ok' but named no rank_001 "
+            + ("scores file" if not scores_name else "PDB")
+            + ". Exit codes see nothing (§8.3): there is nothing here to measure."
         )
-        return row, null_reasons
 
     scores = load_json(os.path.join("./inputs", scores_name), "prediction scores")
 
     chains, error = read_pdb_chains(os.path.join("./inputs", pdb_name))
     if chains is None:
-        row["reason"] = f"could not read the predicted structure: {error}"
-        return row, null_reasons
+        return bail(f"could not read the predicted structure: {error}")
 
     if len(chains) != len(chain_order):
         # Fatal for the run, not for this design. A complex that came back one chain means

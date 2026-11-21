@@ -50,11 +50,21 @@ node: the clash is flagged at 0.49 Å and sorts last despite its 570 contacts"
    do not fail the run.
 2. **Every `GAP` is listed in "Known gaps" below**, with what it is and why it is not
    fixed. An unlisted gap is a fail.
-3. **Every check demonstrated non-vacuous.** For each check, suppress the behaviour it
-   asserts and confirm the check fails. Record this in the PR. This is not ceremony: 037
-   shipped four checks that passed for the wrong reason, and a check that passes
-   vacuously is worse than no check because it is also evidence (§8.4).
+3. **Every check demonstrated non-vacuous — mechanically, every run.** `check_fixtures.py`
+   reads a tree on disk and nothing else, so corrupting that tree is a suppression of the
+   behaviour. After judging, it copies each case's tree once per corruption, applies one
+   edit a plausibly-wrong node would have produced, and re-runs every check that passed.
+   A check that no corruption can break is reported `VACUOUS` and fails the gate. The
+   handful of claims that do not live in an artifact at all — a process that no longer
+   exists, three exit codes, the container's `--network none` — are named in
+   `NOT_IN_THE_TREE` with what does falsify each, so "nothing broke it" cannot quietly
+   mean two different things. This is not ceremony: 037 shipped four checks that passed
+   for the wrong reason, and a check that passes vacuously is worse than no check because
+   it is also evidence (§8.4).
 4. **Docs updated in the same commit** as the behaviour they describe (§8.15).
+
+Items 1–3 are enforced by the suite itself and printed at the end of every run. Item 1 and
+3 also decide its exit code.
 
 ### Gate B — Tier 2, required per phase
 
@@ -84,14 +94,61 @@ a provisional band, not a gate (§7).
 
 ## Harness
 
-Four pieces. One already existed and was extended in place rather than forked.
+Six pieces. One already existed and was extended in place rather than forked.
 
-| Piece | Status | Role |
-|---|---|---|
-| `make_designs.py` | **037's, extended in place** | builds the design CIFs that are 040's *input*. See below. |
-| `make_predictions.py` | **written** | builds the synthetic *predictions* — a `rank_001` PDB plus a scores JSON — with a known correct answer. |
-| `probe_design.py` | **to write** | measures a design CIF independently: chains, lengths, sequences, residue ids, gaps. Must not share a parser with any node, per 037's `probe_entry.py`. |
-| `check_fixtures.py` | **to write** | the `CHECKS` table. Each entry returns `(status, detail)`, and the detail string carries the numbers so a failure reads as evidence rather than as an assertion. |
+| Piece | Role |
+|---|---|
+| `make_designs.py` | 037's, **extended in place**. Builds the design CIFs that are 040's *input*. See below. |
+| `make_predictions.py` | Builds the synthetic *predictions* — a `rank_001` PDB plus a scores JSON — with a known correct answer. |
+| `probe_design.py` | Measures a design CIF independently: chains, lengths, sequences, residue ids, gaps, and an md5 of the Cα coordinates in order. Shares no parser with any node, per 037's `probe_entry.py` (§8.4). |
+| `run_fixtures.sh` | The entry point, at the name 037's suite uses. A wrapper. |
+| `run_fixtures.py` | Stages and runs every CI case, and **decides nothing**. Leaves each step's inputs, outputs, log and exit code on disk. |
+| `check_fixtures.py` | The `CHECKS` table and the falsification pass. Reads the tree; **runs nothing**. Each check returns `(status, detail)` and the detail carries the numbers, so a failure reads as evidence rather than as an assertion. |
+
+Running and judging are separate files on purpose. A runner that also judged could only
+report pass or fail, and when something failed there was nothing left to look at — which
+is how 037's first suite went. Here a verdict can be re-taken, with a changed check,
+against a run already on disk:
+
+```
+bash tests/run_fixtures.sh                       # stage, run, judge
+python3 tests/check_fixtures.py tests/fixture-runs/latest --verbose
+python3 tests/check_fixtures.py tests/fixture-runs/latest --no-falsify
+bash tests/run_fixtures.sh --only rmsd-identity  # or --section scoring
+```
+
+### How a case says what it needs
+
+Every CI entry carries a `harness` field: one space-separated `key=value` grammar for all
+four sections, not one per section, because a harness that has to know which section a
+case came from is a harness that can stage the wrong thing.
+
+| Token | Meaning |
+|---|---|
+| `shape=` | a `make_designs.py` shape (default `compact`) |
+| `n=` / `len=` | how many designs, and the binder length |
+| `metrics=` | `node04` (default) runs **workflow-037's own node 04** to produce the real `design_metrics.json`; `none` withholds it |
+| `mutate=` | a named edit applied to a staged file after it is written and before the next node reads it |
+| `also=` | a second, independent tree in the same case, for a claim that needs two shapes |
+| `stage=` | how far to run: `ingest`, `rerun`, `predict-dry`, `predict-dry-cplx`, `predict-timeout`, `predict-partial`, `full` |
+| `mp=` | everything after it goes to `make_predictions.py` verbatim, so it comes last |
+
+The harness never restates what the entry already says: parameters come from `params`, and
+whether a case must fail comes from `expect_error`.
+
+`design_metrics.json` is **not synthesised.** It is 037 node 04's output, the whole
+`designed_chain` contract rests on what that node actually writes, and a stand-in would
+agree with the spec instead of with 037. Negative cases mutate the real file.
+
+### Two stand-in predictors, on PATH
+
+Node 03 resolves `colabfold_batch` from `PATH` and that is deliberately not overridable by
+an environment variable, so two cases put a stand-in of that name in the case's own `bin/`
+and prepend it. One installs `trap '' TERM` and leaves a worker in the same process group;
+the other fails for exactly one design and writes plausible output for the rest.
+`nvidia-smi` is stood in the same way, because those cases are about the subprocess
+contract rather than about device detection. Both stand-ins print what they are, into the
+log the checker reads.
 
 ### `make_designs.py` — extended, not forked
 
@@ -378,7 +435,7 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 ## Scope
 
-63 experiments, 59 distinct checks to implement.
+63 experiments, 55 distinct checks, all implemented.
 
 | Section | Cases | Phase 1 | Phase 2 | Blocked |
 |---|---|---|---|---|
@@ -390,6 +447,22 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 So Phase 1's gate is 39 CI cases plus 6 GPU controls. Nothing is blocked on the harness
 any more: the six generator shapes four `ingest` cases were waiting on are built.
+
+### Where it stands
+
+All 52 CI cases run. Measured on the host interpreter on 2026-11-21:
+
+| | |
+|---|---|
+| cases | **47 pass, 0 FAIL, 5 gap** |
+| checks | 55 named, 55 implemented, 55 invoked |
+| falsification | 50 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
+| Gate A on the host | **met** |
+| Gate A as the gate | **not met** — it has not yet run in `colabfold:2026_10_08` |
+
+The last line is the point of the banner the suite prints: a run outside the image is a dry
+run, says so in its header, in `run.json` and in its verdict, and does not count. The five
+gaps are the complex path and nothing else; they are listed below.
 
 The count grew by five while nodes 01–04 were written, and every one came from building
 rather than from planning:
@@ -406,20 +479,35 @@ rather than from planning:
   matters more, because `plddt_binder` gates and `iptm` does not. A node defaulting it to
   0.0 fails the design and a node defaulting it to 100.0 passes it; both read as verdicts.
 
-Every `scoring` entry now carries a `harness` field holding the exact
-`make_predictions.py` invocation that builds it, so the data says how to construct the
-case and `run_fixtures.sh` does not have to know. Where the built node's output differs
-from the constructed truth, a `measured` field says by how much and why.
+Where the built node's output differs from the constructed truth, a `measured` field says
+by how much and why.
 
 ## Known gaps
 
-Nothing is built, so nothing is reproduced-but-unfixed yet. When that happens it is
-recorded here and marked `"status": "open"` in `fixtures.json`, so the suite reports it
-without failing. Deleting the status field is what makes the suite enforce it, and a
-regression then shows up as `FAIL` rather than as silence.
+### Reached and not measurable yet — the complex path
 
-Carried forward as blocked at the start of the build. Each is a build task, not an
-excuse — listed here so none of them becomes a silent omission.
+These five are run every time, and each one reports `GAP` with the reason the artifact it
+needs does not exist. Phase 2 is specced and not built: node 02 writes no `cplx_` record,
+so nothing downstream ever sees a complex. None of them is counted against the gate, and
+none of them is allowed to pass either.
+
+| Case | What it is waiting for |
+|---|---|
+| `gapped-target` → `fusion_disclosed` | the target is never folded in Phase 1, so no fusion can be disclosed. Its other two checks, on recording the gap and not trimming the chain, **pass today**. |
+| `cplx-input-has-one-colon` | both checks need a `cplx_` file to count colons in |
+| `argv-model-type-cplx` → `argv_includes` | `alphafold2_multimer_v3` is never selected, because no record asks for a complex. `argv_excludes` on the same case **passes today**. |
+| `monomer-on-complex-path` | node 01 does refuse, with the "score_interface is Phase 2 and not built" message rather than the single-chain one. The refusal is recorded verbatim. |
+| `cplx-input-missing-colon` | every step exits 0, because there is no complex input to be missing a colon from |
+
+Seven other Phase 2 `scoring` cases **already pass**, because node 04 slices from the
+recorded `chain_order` rather than from an assumption and reads `iptm` and
+`pae_interaction` whenever they are present. Those are listed as phase 2 in
+`fixtures.json` and reported as passes, not gaps.
+
+### Carried forward as blocked
+
+Each is a build task, not an excuse — listed here so none of them becomes a silent
+omission.
 
 **Needs a measurement before the case can exist:**
 
@@ -471,6 +559,48 @@ case mutates the inventory instead, which is a less tidy fixture and a more hone
 **The reported RMSD is not the constructed RMSD**, and that is the PDB format's three
 decimal places rather than an inaccuracy. It changed how node 04 rounds. Details above,
 under `make_predictions.py`.
+
+## What running the suite found
+
+**`no-score-file-is-failure` caught a second real defect in node 04.** §8.7 says a metric
+that could not be computed is `null` with a recorded reason, because a null with no reason
+cannot be told apart from a null nobody noticed. `score_one()` returns early in four cases,
+and only one of them filled `null_reasons`. So a design whose prediction came back with no
+`rank_001` scores file was reported with a blank `plddt_binder` and **nothing beside it** —
+exactly the state the section forbids, arrived at through a different door. All four early
+returns now go through one `bail()` that writes the row's cause into every metric, so a
+branch added later cannot forget. Three of the four were unreachable from any fixture; the
+one that was reachable is what found them.
+
+**The case was itself wrong twice before it could find that.** It asked for a reason naming
+`no_score_file`, a snake_case token no node in this repo writes, and the harness was
+marking the design failed in the manifest — so node 04 was *reading a verdict* rather than
+reaching one, and would have passed while noticing nothing. `make_predictions.py` now
+records the prediction as `ok` and simply writes no scores file, which is the only version
+of this case node 04 has to solve. §8.16, twice over, on one fixture.
+
+**The first stand-in predictor was unfair, and the unfairness was worth writing down.** It
+put its worker behind `setsid`, the worker survived the process-group kill, and the case
+failed — correctly, because a process-group kill cannot reach a process that has left the
+group. That is a real limit of 037's fix rather than a defect in it, and catching it would
+mean walking `/proc` or a cgroup, neither of which 037 did or claimed. The stand-in now
+reproduces what 037 actually measured; the limit is stated in `validation_pipeline.md` §6
+instead of being hidden behind a stand-in nothing could pass.
+
+**One check came out vacuous on the first falsification pass**, and one corruption was a
+no-op. `mono_record_count` could not be broken, because the only corruption that changed a
+record count merged several files and the case it runs on has one design; it now has a
+corruption that appends a second record to a single file. And `blank-node-log` emptied the
+`.log` files beside the tree while the checker reads stdout from `run.json`, so two
+log-reading checks were being credited to deleting an artifact instead. Both are the
+falsification pass doing its job on the suite rather than on the nodes.
+
+**Four of the five harness strings were wrong when first written**, in ways that made cases
+test less than they claimed: two lost the `make_predictions.py` options that created the
+failure they were about, one withheld nothing where the case needed the fallback path, and
+one ran two nodes where the check needed five. Every one of them showed up as a `FAIL` on
+the first full run. The lesson is the one already in §8.16 and it keeps arriving: the
+harness is the least-reviewed code in the repo and the most likely thing to be wrong.
 
 ## What this suite does not establish
 

@@ -64,6 +64,11 @@ Run
     --chain-order O      comma-separated, from {binder,target}     (default binder)
     --plddt-binder V     fill value for the binder block           (default 90.0)
     --plddt-target V     fill value for the target block           (default 85.0)
+    --plddt-ramp S       add S per design, so design i gets plddt_binder + i*S. Without
+                         it every design carries the same numbers, and a node that
+                         associated scores with designs by POSITION would score every
+                         design correctly by accident -- which is 026's conflation bug
+                         passing its own test (818954e9)
     --iptm V             iptm value to write
     --omit KEYS          comma-separated keys to leave OUT: iptm,pae,plddt,max_pae,ptm
     --pae-target-binder V   PAE in the target->binder block
@@ -72,7 +77,9 @@ Run
     --length-delta N     write N extra (or fewer) binder residues than the design has
     --plddt-delta N      write a plddt array N entries longer than the chain lengths
     --chains N           force the PDB to carry N chains
-    --no-score-file D    write no scores file for design D
+    --no-score-file D    write no scores file for design D, while still recording the
+                         prediction as ok -- the predictor exited 0 and produced nothing,
+                         which is the only version of this case node 04 has to solve
     --fail-design D      mark design D as failed in the manifest, with no output files
     --model-type T       recorded in filenames and the manifest    (default alphafold2_ptm)
 """
@@ -292,6 +299,7 @@ def parse_args(argv):
         "chain_order": "binder",
         "plddt_binder": 90.0,
         "plddt_target": 85.0,
+        "plddt_ramp": 0.0,
         "iptm": None,
         "omit": "",
         "pae_target_binder": None,
@@ -304,8 +312,8 @@ def parse_args(argv):
         "fail_design": None,
         "model_type": "alphafold2_ptm",
     }
-    floats = {"plddt_binder", "plddt_target", "iptm", "pae_target_binder",
-              "pae_binder_target", "pae_diagonal"}
+    floats = {"plddt_binder", "plddt_target", "plddt_ramp", "iptm",
+              "pae_target_binder", "pae_binder_target", "pae_diagonal"}
     ints = {"length_delta", "plddt_delta", "chains"}
     i = 0
     while i < len(argv):
@@ -346,11 +354,15 @@ def main():
     by_name = {e["design"]: e for e in inventory["designs"]}
 
     predictions, truth_rows = [], []
-    for record in declared.get("inputs") or []:
+    for index, record in enumerate(declared.get("inputs") or []):
         design = record["design"]
         entry = by_name.get(design)
         if entry is None:
             die(f"'{design}' is declared as an input but is not in the inventory")
+
+        # Per design, so no two designs carry the same confidence unless --plddt-ramp is
+        # left at zero. The ramp is what makes a merge-by-name check able to fail.
+        plddt_binder_value = options["plddt_binder"] + index * options["plddt_ramp"]
 
         base = {
             "design": design,
@@ -455,7 +467,7 @@ def main():
 
         plddt = []
         for name, length in zip(written_order, lengths):
-            value = (options["plddt_binder"] if name == "binder"
+            value = (plddt_binder_value if name == "binder"
                      else options["plddt_target"])
             plddt.extend([value] * length)
         if options["plddt_delta"]:
@@ -500,7 +512,12 @@ def main():
                 json.dump(scores, handle, indent=2)
             outputs.append(scores_name)
 
-        failed = design == options["no_score_file"]
+        # --no-score-file is NOT recorded as a failure, deliberately. The whole point of
+        # the case is that the predictor exited 0 and produced nothing: if this file
+        # marked the design failed, node 04 would be reading a verdict instead of
+        # reaching one, and the check would pass without node 04 ever noticing the
+        # missing file. Exit codes see nothing (§8.3).
+        missing_scores = design == options["no_score_file"]
         predictions.append({
             **base,
             "chain_order": written_order,
@@ -512,26 +529,23 @@ def main():
             "expected_chains": len(written_order),
             "expected_residues": total,
             "returned_chains": {cid: len(seq) for cid, seq, _ in blocks},
-            "status": "failed" if failed else "ok",
-            "reason": (
-                "synthetic: colabfold_batch exited 0 and produced no rank_001 scores "
-                "file. Exit codes see nothing (§8.3)." if failed else None
-            ),
+            "status": "ok",
+            "reason": None,
             "outputs": sorted(outputs),
-            **({} if failed else {
-                "scores_rank_001": scores_name,
-                "pdb_rank_001": pdb_name,
-            }),
+            "pdb_rank_001": pdb_name,
+            **({} if missing_scores else {"scores_rank_001": scores_name}),
         })
         truth_rows.append({
             "design": design,
-            "status": "failed" if failed else "ok",
+            "status": "ok",
+            # What node 04 is expected to DISCOVER, not what it is told.
+            "scores_file_written": not missing_scores,
             "sc_rmsd_A": truth,
             # The same number measured off the written file. These differ by about 1e-4
             # because a PDB carries three decimal places; node 04 reads the file, so a
             # check that wants better than 1e-3 should compare against this one.
             "sc_rmsd_A_as_written": truth_as_written,
-            "plddt_binder": options["plddt_binder"],
+            "plddt_binder": plddt_binder_value,
             "plddt_target": (options["plddt_target"]
                              if "target" in written_order else None),
             "iptm": options["iptm"] if "iptm" not in omit else None,
