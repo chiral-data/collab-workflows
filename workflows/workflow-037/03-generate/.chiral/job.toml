@@ -1,0 +1,57 @@
+name = "Generate Designs"
+description = "Run rfd4-generate against the condition spec with pinned, offline weights and metrics disabled"
+inputs = [
+  "design_spec.yaml",
+  "target.cif",
+]
+outputs = [
+  "*_generated.cif",
+  "generation_manifest.json",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+# Redundant under silva 0.6.0, which reads [resources] below and emits a Note that this
+# key is ignored. Kept because 0.5.0 is still installed at /usr/local/bin on the GPU
+# estate, and its schema has no [resources] at all: there, use_gpu = true is the only
+# thing that passes the device through, and this is the one node that cannot run without
+# one. Carrying both costs a cosmetic Note; carrying neither costs a CPU-only run that
+# fails at check_gpu(). The CPU nodes do not need the counterpart, since use_gpu = false
+# was already the default under 0.5.0.
+use_gpu = true
+
+[resources]
+gpu = "required"
+
+[scripts]
+run = "run.sh"
+
+[params.num_replicates]
+type = "integer"
+default = 4
+hint = "Number of designs to generate"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Seed passed to rfd4-generate and recorded in the manifest; upstream leaves torch_deterministic false, so runs repeat on fixed hardware but are not guaranteed bit-identical across GPUs or driver versions"
+
+[params.disable_compile]
+type = "boolean"
+default = true
+hint = "Skip the slow torch.compile warm-up by setting compile_lengths=null"
+
+[params.hf_ckpt_revision]
+type = "string"
+default = "a06e2509c7033b010fc43614e9fd840303588502"
+hint = "Pinned HuggingFace revision of nvidia/RFD4-Proteina (flow + autoencoder are a matched pair)"
+
+[params.generate_timeout_s]
+type = "integer"
+default = 3600
+hint = "Wall-clock budget in seconds for one rfd4-generate call; the job is killed past it"
+
+[params.batch_size]
+type = "integer"
+default = 1
+hint = "Designs per forward pass; lower is the remedy when a large target exhausts GPU memory"

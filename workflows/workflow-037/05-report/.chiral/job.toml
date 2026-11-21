@@ -1,0 +1,23 @@
+name = "Report"
+description = "Build an HTML report embedding the design metrics table, run provenance and an interactive structure viewer"
+inputs = [
+  "*_generated.cif",
+  "design_metrics.json",
+]
+outputs = [
+  "report.html",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+
+[resources]
+gpu = "none"
+
+[scripts]
+run = "run.sh"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of designs shown in the report structure viewer"
