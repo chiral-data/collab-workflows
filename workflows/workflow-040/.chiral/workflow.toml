@@ -2,10 +2,17 @@ schema_version = "1.1"
 name = "Binder Design Validation"
 description = "Score binder designs by refolding them independently: self-consistency RMSD and fold confidence, from the designed backbones rather than from an exported sequence"
 
-# Phase 1 only. Nodes 01-05 are the self-consistency path; the complex path and the
-# target-alignment node (01b-align-target) are specced in validation_pipeline.md §12 and
-# deliberately not scaffolded. A node that exists and does nothing is worse than one that
-# does not exist, and 01b's contract cannot be written until the §11.1 a3m spike resolves.
+# Phase 1 and Phase 2. 01b-align-target was added once the §11.1 a3m spike resolved: a
+# paired a3m with the target aligned and the binder present only as its own query produced
+# a genuine two-chain prediction offline, so §4's decision -- align the target only, once
+# per run, never the binder -- is buildable as specified. Before that the node had no
+# writable contract and was deliberately left unscaffolded.
+#
+# 01b runs on EVERY run, not only Phase 2 ones. On a Phase 1 run it writes a
+# target_alignment.json saying it was a no-op and why, and touches no network. That is
+# §8.3: an empty output directory and a zero exit code are indistinguishable from a node
+# that ran and found nothing, and node 02 has to be able to tell "no alignment was asked
+# for" from "an alignment was asked for and failed".
 #
 # Edges are the minimum. Two reasons, both learned in workflow-037:
 #
@@ -18,8 +25,13 @@ description = "Score binder designs by refolding them independently: self-consis
 #      (CLAUDE.md, and §8.1 of the spec). So node 02 records the chain order it chose,
 #      node 03 carries it into prediction_manifest.json, and node 04 reads it from there
 #      instead of taking an edge back to 02.
+#   3. 01b depends on 01 alone, and node 02 depends on both. They share no output name:
+#      01 writes design_inventory.json and design_metrics.json, 01b writes target_msa.a3m
+#      and target_alignment.json. That was checked before the edge was added, which is the
+#      rule 7fba161c cost.
 [dependencies]
-02-build-prediction-inputs = ["01-ingest-designs"]
+01b-align-target = ["01-ingest-designs"]
+02-build-prediction-inputs = ["01-ingest-designs", "01b-align-target"]
 03-predict = ["02-build-prediction-inputs"]
 04-score = ["01-ingest-designs", "03-predict"]
 05-filter-and-report = ["04-score"]
@@ -71,4 +83,35 @@ hint = "Size of the shortlist the report highlights. Rows below it are greyed an
 [params.score_interface]
 type = "boolean"
 default = false
-hint = "Phase 2 interface scoring (iptm, pae_interaction). NOT BUILT: setting this true is refused with an explanation rather than ignored, because a parameter that silently does nothing is worse than one that is absent (d3d707ed). See §12"
+hint = "Phase 2 interface scoring: predict the design as a TARGET:BINDER complex and report iptm, pae_interaction and the target's own pLDDT alongside the Phase 1 self-consistency numbers. Needs a target alignment, which 01b-align-target produces; a run that cannot get one FAILS rather than falling back to single_sequence, because §4 measured what that fallback does to the numbers (iPTM 0.100 against 0.860). Phase 1 remains the default and is correct on its own terms, not a degraded mode"
+
+# -- Phase 2 only ----------------------------------------------------------------------
+#
+# Declared once, here, like every other shared parameter. The thresholds are provisional
+# bands rather than gates until Phase 3 calibrates them, and each says so in its own hint
+# rather than relying on the reader having read §7.
+
+[params.msa_source]
+type = "string"
+default = "file"
+hint = "Where 01b-align-target gets the target alignment: 'file' reads an a3m from its inputs, 'server' queries the MSA server. 'file' is the default so that EGRESS HAS TO BE ASKED FOR -- a run that does not ask for it never opens a socket. Only the target sequence is ever sent, and the designed binders are not inputs to that node"
+
+[params.min_msa_sequences]
+type = "integer"
+default = 2
+hint = "Fewest sequences 01b will accept in the target alignment: the query plus at least one homolog. An alignment of one sequence IS single_sequence under another name, and §4's argument is that interface numbers measured that way are about the prediction mode rather than the design. Refused by name rather than used"
+
+[params.min_iptm]
+type = "float"
+default = 0.5
+hint = "Interface pTM floor. AF2-multimer convention, and WEAKER than pae_interaction -- Bennett et al. 2023 report the latter as the stronger discriminator, so this is secondary. Provisional until Phase 3; workflow-029 uses 0.6 on native complexes"
+
+[params.max_pae_interaction]
+type = "float"
+default = 10.0
+hint = "Interface PAE ceiling in angstroms. The strongest in-silico discriminator in Bennett et al. 2023, but their cutoff comes from protocols using AF2 INITIAL GUESS, which hands the predictor the designed complex as a starting point; vanilla ColabFold does not, so the number will not transfer unchanged. It is also floored by how well the TARGET was modelled (§4, 8e4772a7): a target at ~42 pLDDT moved the floor from 7.6 to 15.4 A and made 10.0 unreachable for a whole batch. Reported as a provisional band, not a gate, until Phase 3"
+
+[params.num_recycle_cplx]
+type = "integer"
+default = 6
+hint = "Recycles for the COMPLEX prediction, separate from num_recycle because 3 is right for a monomer and workflow-026 records 6-12 as the recommendation for multimers. Not inherited: inheriting it is how a multimer silently gets a monomer's budget"

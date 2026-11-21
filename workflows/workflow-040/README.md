@@ -143,10 +143,11 @@ the hints, which carry the reasoning.
 |---|---|
 | Scaffold | done |
 | `01-ingest-designs` | **implemented** |
-| `02-build-prediction-inputs` | **implemented** (mono path; `cplx_` is Phase 2) |
-| `03-predict` | **implemented**, with `--dry-run` for CI |
-| `04-score` | **implemented** (Phase 1 metrics; `iptm` and `pae_interaction` read when present) |
-| `05-filter-and-report` | **implemented**; report is static HTML, no structure viewer in Phase 1 |
+| `01b-align-target` | **implemented** — Phase 2. Aligns the target once per run; the only node permitted egress, and the designed sequences are not inputs to it |
+| `02-build-prediction-inputs` | **implemented**, both paths: `mono_<d>.fasta` always, plus `cplx_<d>.fasta` and `pairedmsa_<d>.a3m` when `score_interface` is on |
+| `03-predict` | **implemented**, both paths, with `--dry-run` for CI. The complex path has its own `msa_mode` and **refuses `single_sequence`**, which silently discards a precomputed alignment |
+| `04-score` | **implemented**, both paths. Self-consistency from the monomer, `iptm` / `pae_interaction` / `plddt_target` / `plddt_binder_in_complex` from the complex. Interface metrics are **reported and do not gate by default** |
+| `05-filter-and-report` | **implemented**; report is static HTML, no structure viewer. Says per row whether the interface was scored and whether it gated |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest`; `tests/make_predictions.py` written |
 | Test harness | **built** — `run_fixtures.sh` stages and runs, `check_fixtures.py` judges and falsifies; `run_controls.sh`, `report_controls.py` and `falsify_controls.sh` do the same for the GPU tier |
 | Tier 1 suite | **48 pass, 0 FAIL, 5 gap** of 53 CI cases; 56/56 checks implemented, invoked and falsifiable |
@@ -154,8 +155,8 @@ the hints, which carry the reasoning.
 | Tier 2 controls, Phase 1 | **Gate B met**, measured twice on the GPU with `--network none`. The `C12` designed positive passes at 0.93 Å / 95.05; scrambled and poly-alanine fail; `sc_rmsd_A` separates them by 17.9 Å. Judge falsified 6/6. Found that the native positive controls were the wrong controls and that `plddt_binder` cannot gate alone — [tests/reference/tier2-phase1-controls.md](tests/reference/tier2-phase1-controls.md) |
 | Tier 2 controls, `C6` | **met** — a real `colabfold_batch` holding 2357 MiB killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB. Found a node 03 defect: the predictor's stdout is block-buffered, so a kill lost it and the timeout reason was empty |
 | Tier 2 controls, Phase 2 | not built. `C5` (real 037 designs) is the only Phase 1 control still outstanding |
-| Phase 2 | specced, §11.1 closed by measurement. The 5 gaps are all the complex path |
-| Phase 3 | thresholds uncalibrated |
+| Phase 2 | **built and unvalidated.** `01b` plus the `cplx_` path through 02–05. Controls `C7`–`C11` not run, and the Tier 1 Phase 2 cases are not written, so the 5 gaps are still gaps |
+| Phase 3 | thresholds uncalibrated. `iptm` and `pae_interaction` have had no control run against them, which is why they do not gate |
 
 ```
 bash tests/run_fixtures.sh                     # Tier 1: stage, run, judge, falsify (~1 min)
@@ -196,3 +197,9 @@ Two things the Tier 2 controls changed, both recorded in
 - **A killed prediction loses its stdout**, because `colabfold_batch` block-buffers into a
   pipe. Node 03 now falls back to colabfold's own log file for the timeout reason and says
   which source it used; the OOM scan had the same blind spot and is fixed with it (§6).
+- **`--msa-mode single_sequence` silently discards a precomputed alignment.** ColabFold
+  clamps `max_seq` to 1 in that mode, so the model sees one sequence — while the re-saved
+  a3m, `config.json` and `coverage.png` all record that an alignment was used. One clause
+  of §11.1's closure rested on `coverage.png`, and it was wrong: that plot is written from
+  the *parsed* alignment, before the clamp. The complex path refuses `single_sequence` by
+  name (§11.1, §8.4).

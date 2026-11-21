@@ -1,0 +1,51 @@
+name = "Align Target"
+description = "Phase 2 only: align the TARGET chain once per run, so the designed binder can be paired against it unaligned. The one node in this workflow permitted network egress, and the designed sequences are not inputs to it"
+
+# The inventory, and nothing else. This is the structural reason a designed sequence
+# cannot leak from the only node that touches the network: it is not an input here. The
+# target chains are read out of node 01's inventory, which is also where node 02 and node
+# 04 read what they need -- a fact an upstream node decided is passed forward and read,
+# never re-derived (§8.1).
+#
+# design_metrics.json is NOT taken, although node 01 re-emits it. This node has no use for
+# it, and a dependency that pulls inputs it does not read is how 037's node 03 ended up
+# with two parents writing target.cif and no way to say which one won (7fba161c).
+inputs = [
+  "design_inventory.json",
+]
+
+# target_alignment.json is written on EVERY run, including a Phase 1 run where this node
+# has nothing to do. An empty output directory and a zero exit code are indistinguishable
+# from a node that ran and found nothing (§8.3), so the Phase 1 case records that it was
+# a no-op and why, and node 02 can tell "not asked for" from "asked for and failed".
+outputs = [
+  "target_msa.a3m",
+  "target_alignment.json",
+]
+
+[container]
+image = "colabfold:2026_10_08"
+
+[resources]
+gpu = "none"
+
+# THE DECLARED EGRESS BOUNDARY, and the reason this is a node rather than a function.
+#
+# Every other node in this workflow runs with no network at all, and node 03's offline
+# guarantee is tested under `docker run --network none`. This one may reach the MSA server,
+# and it says so here so that the boundary is a single declared fact in one file rather
+# than a property of five scripts. Workflows 029 had to retrofit exactly this
+# (92cf05b5, 8a6dcebf).
+#
+# What goes out is ONE sequence: the fused target chain, which is public native protein
+# from the PDB. The designed binders are not inputs to this node.
+#
+# PARAM_MSA_SOURCE defaults to "file", so egress has to be asked for; a run that does not
+# ask for it never opens a socket.
+[network]
+egress = "optional"
+hosts = ["api.colabfold.com"]
+reason = "MSA server for the target chain only; see validation_pipeline.md §4"
+
+[scripts]
+run = "run.sh"

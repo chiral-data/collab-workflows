@@ -151,6 +151,7 @@ COLUMNS = [
     ("sc_rmsd_A", "sc_rmsd (A)"),
     ("plddt_binder", "pLDDT binder"),
     ("plddt_target", "pLDDT target"),
+    ("plddt_binder_in_complex", "pLDDT binder in cplx"),
     ("iptm", "ipTM"),
     ("pae_interaction", "PAE interface"),
     ("ptm", "pTM"),
@@ -186,15 +187,27 @@ CLAIMS = [
      "fail. It is here because 029's absence of this number produced a wrong diagnosis -- "
      "interface filters read as unreachable when the real cause was a target that had "
      "been modelled blind (2359ffa4)."),
+    ("plddt_binder_in_complex", None,
+     "Phase 2, diagnostic",
+     "The binder's confidence predicted IN CONTEXT, which is not the same number as "
+     "plddt_binder and does not replace it. plddt_binder is the binder predicted ALONE, "
+     "which is the self-consistency question. 029 had only one of the two and so could "
+     "not tell a binder that folds alone but not against its target from one that folds "
+     "in neither case."),
     ("iptm", None,
-     "Phase 2, not gating in Phase 1",
+     "Phase 2, reported, does not gate by default",
      "Absent from a monomer prediction entirely -- not zero, absent -- so a blank here on "
-     "a Phase 1 run is the normal case and not a failure."),
+     "a Phase 1 run is the normal case and not a failure. On a Phase 2 run it is measured "
+     "and REPORTED; it decides nothing unless gate_on_interface was set, and the Run "
+     "table below says which it was. No control has yet been run against this metric."),
     ("pae_interaction", None,
      "provisional band, not a gate",
-     "Phase 2. Mean predicted aligned error over BOTH off-diagonal blocks. Presented as a "
-     "value with a provisional band rather than as a gate until the Phase 3 controls have "
-     "run."),
+     "Phase 2. Mean predicted aligned error over BOTH off-diagonal blocks. A value with a "
+     "provisional band rather than a gate: its published cutoff comes from protocols "
+     "using AF2 initial guess, which this workflow does not use, and it is floored by how "
+     "well the TARGET modelled -- a target at ~42 pLDDT moved the floor from 7.6 to 15.4 A "
+     "and put 10.0 out of reach for a whole batch (8e4772a7). Read the pLDDT target column "
+     "beside it, always."),
 ]
 
 
@@ -324,8 +337,14 @@ def provenance_html(scores):
         ("Phase", scores.get("phase")),
         ("max_sc_rmsd_A", thresholds.get("max_sc_rmsd_a")),
         ("min_plddt_binder", thresholds.get("min_plddt_binder")),
+        ("min_iptm", thresholds.get("min_iptm")),
+        ("max_pae_interaction", thresholds.get("max_pae_interaction")),
         ("Thresholds calibrated", scores.get("thresholds_are_calibrated")),
         ("Gating metrics", ", ".join(scores.get("gating_metrics") or [])),
+        ("Diagnostic only", ", ".join(scores.get("diagnostic_metrics") or [])),
+        ("Interface scored", scores.get("score_interface")),
+        ("Interface gated", scores.get("interface_gated")),
+        ("Designs with an interface", scores.get("n_interface_scored")),
         ("Chain resolved by", ", ".join(scores.get("designed_chain_sources") or [])),
         ("Target numbering gaps", scores.get("n_target_numbering_gaps")),
         ("Predictor model", predictor.get("model_type")),
@@ -435,8 +454,17 @@ description line:
 Self-consistency: each designed sequence was refolded by a predictor that never saw the
 design, and the refold compared against the backbone the sequence was designed as. Passing
 means <em>the sequence encodes its own structure</em>. It does not mean the design binds
-anything. Interface scoring is Phase 2, and the thresholds below are literature
-conventions rather than figures calibrated against this workflow's own controls.
+anything.
+</p>
+<p>
+Interface scoring, when it ran, is an ADDITION to that and not a replacement for it. The
+Run table says whether it ran and whether it gated. By default it does not gate: ipTM and
+PAE interface are measured and reported, and <em>pass</em> still means self-consistency
+alone. Every threshold here is a literature convention rather than a figure calibrated
+against this workflow own controls, and the one control set that has run measured what
+that is worth -- a 115-residue poly-alanine, a sequence encoding nothing, scored 95.8
+pLDDT and cleared the binder-confidence cutoff. Self-consistency RMSD was the only metric
+that rejected it.
 </p>
 
 <h2>Run</h2>

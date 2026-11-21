@@ -672,6 +672,21 @@ cannot show to be a listing — a listing that could not be taken is not an empt
 Both were found by running the thing against reality rather than by reading it. That is
 the only method in this list that has ever worked.
 
+**An eighth, and this spec was the one that got it wrong.** §11.1 closed the Phase 2 gate
+partly on the words "`coverage.png` written, so an MSA was really consumed". ColabFold
+writes that plot from the *parsed* alignment, before `max_seq` is applied, so it attests
+that the a3m was read and not that the model ever saw it — and under
+`--msa-mode single_sequence` the model sees exactly one sequence. The artifact that looked
+like proof of consumption is produced identically whether or not consumption happened.
+
+This is the class at its most expensive, because the wrong conclusion was **written into
+the spec as a closed gate** and the whole of Phase 2 was built on top of it. What caught
+it was not re-reading the sentence; it was reading `colabfold.batch`'s source while
+implementing node 03, and then measuring both arms (`tests/probe_msa_clamp.sh`). The rule
+this adds to the list: **an artifact is evidence of the step that writes it, and of
+nothing downstream of that step.** Ask what writes the file before treating its existence
+as a result.
+
 ### 8.5 A design that failed must appear as failed, not vanish
 
 026 drops what it cannot score. A report that omits failures reads as a batch where
@@ -1021,8 +1036,48 @@ default is not a lie, provided the node never passes `--host-url`.
 
 **Does `colabfold_batch` accept a partially-aligned complex a3m? Yes.** A paired a3m with
 the target aligned and the binder present only as its own query produced a genuine
-two-chain prediction (34 A / 29 B, `iptm` 0.14, `coverage.png` written, so an MSA was
-really consumed), offline. **§4's decision stands and Phase 2 is unblocked as designed.**
+two-chain prediction (34 A / 29 B, `iptm` 0.14), offline. **§4's decision stands and
+Phase 2 is unblocked as designed.**
+
+**One clause of that finding was wrong, and it was found while building Phase 2.** The
+original wording added "`coverage.png` written, so an MSA was really consumed". It is not
+sound. ColabFold writes `coverage.png` and re-saves the parsed a3m from
+`unserialize_msa()`'s output, *before* `max_seq` is applied (`batch.py:284-287`) — so both
+artifacts say the alignment was **parsed**, and neither says it reached the model.
+
+And it did not. `batch.py:137-142`:
+
+```
+if msa_mode == "single_sequence":
+    num_seqs = 1
+    ...
+    max_seq = min(num_seqs, max_seq)
+```
+
+while `batch.py:258-270` shows that when `a3m_lines is not None` the alignment is read by
+`unserialize_msa()` and `msa_mode` is never consulted for MSA *generation* at all. So an
+a3m handed in together with `--msa-mode single_sequence` is parsed, re-saved, plotted —
+and the model is fed **one sequence**.
+
+Measured, same a3m, same seed, both arms offline (`tests/probe_msa_clamp.sh`):
+
+| `msa_mode` | `iptm` | `ptm` | `max_pae` | mean pLDDT |
+|---|---|---|---|---|
+| `single_sequence` | 0.270 | 0.510 | 23.27 | 75.3 |
+| `mmseqs2_uniref_env` | 0.120 | 0.440 | 27.84 | 66.2 |
+
+The numbers differ, so the clamp is real. **Which arm scores higher says nothing about
+alignments**: that file's homologs are synthetic variants built to probe the format, and a
+tiny, synthetic, heavily gapped MSA can be worse than none. The finding is the
+*difference*, not its sign.
+
+Consequence, now implemented in node 03: the complex path has its own `msa_mode`
+(`PARAM_MSA_MODE_CPLX`, default `mmseqs2_uniref_env`) and **refuses `single_sequence` by
+name**. Passing it would report interface numbers measured at effectively
+`single_sequence` while `config.json`, the re-saved a3m and `coverage.png` all recorded
+that an alignment was used — §4's exact failure, and invisible. `mmseqs2_uniref_env`
+reaches no network when an a3m is the input, which is what makes it safe to pass, and node
+03 guarantees the a3m *is* the input by refusing to fall back to the fasta.
 
 The format had to be read out of `colabfold.batch.unserialize_msa()` rather than guessed:
 two hand-rolled attempts were rejected with `ValueError: MSA 0 must contain at least one
@@ -1098,6 +1153,12 @@ replicates" landing on its own 3600 s default, killing the job hours in.
 
 ## 12. Phasing
 
+**Status, 2026-11-21.** Phase 1 is built and is the merge gate it was specced to be:
+Gate A met in `colabfold:2026_10_08`, Gate B Phase 1 met on the GPU with `C6`, only `C5`
+outstanding. Phase 2 is built — `01b-align-target` and the `cplx_` path through nodes
+02–05 — and its own controls `C7`–`C11` are not yet run, so it is implemented and
+unvalidated. Phase 3 has not started.
+
 **Phase 1 — self-consistency only. This is what gets built.**
 
 Nodes 01, 02 (mono only), 03 (`alphafold2_ptm`, `single_sequence`, offline), 04
@@ -1111,13 +1172,46 @@ half and §11.5.
 Carry `plddt_target` from the start even though Phase 1 has no interface metric for it to
 explain. It costs nothing, and it is the number that makes a Phase 2 result interpretable.
 
-**Phase 2 — interface scoring. Architecture settled, gated on a spike.**
+**Phase 2 — interface scoring. Built; controls not yet run.**
 
 Adds `01b-align-target`, the `cplx_` path through nodes 02–05, and `iptm` +
 `pae_interaction`. Target-only MSA per §4, which is a decision, not an option left open.
 
-Gate: §11.1. If the a3m shape is not accepted, stop and re-make the §4 decision rather
-than quietly falling back to the public server.
+Gate: §11.1, and it passed — the a3m shape is accepted. But see §11.1's amendment: one
+clause of that closure was wrong, and the correction is load-bearing. `--msa-mode
+single_sequence` silently discards a precomputed alignment (`max_seq` clamps to 1), while
+still re-saving the a3m and writing `coverage.png`. So the complex path has its own
+`msa_mode` and refuses `single_sequence` by name.
+
+What is built:
+
+- `01b-align-target` aligns the target once per run. It is the only node permitted egress,
+  it declares that in its `job.toml`, and **the designed sequences are not inputs to it** —
+  which is a fact about its inputs rather than a promise about its code. `PARAM_MSA_SOURCE`
+  defaults to `file`, so egress has to be asked for.
+- It **never falls back**. An alignment holding only its own query is `single_sequence`
+  under another name and is refused by name, because §4's whole argument is that interface
+  numbers measured that way are about the prediction mode rather than the design.
+- Node 02 writes two files per design on the complex path: `cplx_<design>.fasta`
+  (`TARGET:BINDER`, the declaration, where the `:` rule is enforceable) and
+  `pairedmsa_<design>.a3m` (what the predictor consumes). Node 03 cross-checks them
+  against each other before spending GPU time.
+- Node 04 keeps `sc_rmsd_A` and `plddt_binder` from the **monomer** prediction and overlays
+  `plddt_target`, `iptm`, `pae_interaction` and `plddt_binder_in_complex` from the
+  complex. Phase 2 adds interface scoring; it does not replace self-consistency.
+- Predictions are keyed by `(design, mode)`. Keyed by design alone, the two predictions per
+  design would collapse to whichever came last — 026's conflation bug by a new route.
+
+**Interface metrics do not gate by default**, and that is a decision rather than an
+omission. §7 ships `pae_interaction` as a provisional band; and the Tier 2 controls
+measured what an uncalibrated confidence threshold is worth, with a 115-residue
+poly-alanine clearing `plddt_binder` ≥ 80 at 95.81 (§8.6). `iptm` and `pae_interaction`
+have had no equivalent control run against them at all. They are reported with their
+thresholds beside them, every row records whether they gated, and
+`PARAM_GATE_ON_INTERFACE=true` turns gating on explicitly.
+
+What is not done: controls `C7`–`C11`. Phase 2 is implemented and unvalidated, and the
+README says so rather than implying a tested path.
 
 **Phase 3 — calibration.**
 
@@ -1125,4 +1219,7 @@ Run §9's controls, including the three-way diagnostic. Set thresholds from meas
 and write what was measured into the README beside each number. Until this phase lands,
 `pae_interaction` is a provisional band and not a gate (§7).
 
-Phase 1 is the smallest thing that is genuinely useful. Ship it before starting Phase 2.
+Phase 1 is the smallest thing that is genuinely useful, and it is the part that has been
+validated. Phase 2 is built on top of it without changing it: a Phase 1 run reads the same
+flags, writes the same columns and gates on the same two metrics as before Phase 2
+existed, which is why Gate A still measures what it measured.

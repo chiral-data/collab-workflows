@@ -173,6 +173,22 @@ COLUMNS = [
     "failed_thresholds",
     "max_sc_rmsd_a",
     "min_plddt_binder",
+    # Phase 2. Null on a Phase 1 run, where they are not merely unmeasured but
+    # meaningless: there is no interface in a monomer prediction.
+    #
+    # plddt_binder_in_complex is NOT the same number as plddt_binder and does not replace
+    # it. plddt_binder is the binder predicted ALONE, which is the self-consistency
+    # question; this is the binder predicted in context. 029 had only one of the two and
+    # so could not tell a binder that folds alone but not against its target from one
+    # that folds in neither case.
+    "plddt_binder_in_complex",
+    "interface_scored",
+    "interface_gated",
+    "interface_reason",
+    "min_iptm",
+    "max_pae_interaction",
+    "cplx_msa_mode",
+    "cplx_binder_aligned",
     # Merged from 037, by name. Kept to the few that say whether a bad score has a
     # geometric explanation already on record; the full table stays in design_metrics.json.
     "gen_compactness_ratio",
@@ -596,19 +612,191 @@ def score_one(entry, prediction, max_rmsd, min_plddt):
     return row, null_reasons
 
 
-def main():
-    if bool_param("PARAM_SCORE_INTERFACE", "score_interface", False):
-        fail(
-            "score_interface = true is Phase 2 and is not built. This node computes no "
-            "iptm and no pae_interaction from a monomer prediction -- there is no "
-            "interface in one -- so the flag would be dropped and the run would report "
-            "self-consistency numbers under the heading the user asked for (§8.7, §12)."
+def add_interface(entry, row, null_reasons, prediction, limits, gate):
+    """Overlay the interface metrics from the COMPLEX prediction onto a scored row.
+
+    Phase 2 ADDS interface scoring; it does not replace self-consistency. sc_rmsd_A and
+    plddt_binder keep coming from the monomer prediction, because whether the binder folds
+    as designed is the question this workflow exists to answer and an interface metric
+    says nothing about it. This function only ever writes plddt_target, iptm and
+    pae_interaction -- the three things a monomer cannot produce.
+
+    GATING IS OPT-IN AND OFF BY DEFAULT, which is a decision and not an omission:
+
+      * §7 ships pae_interaction as a provisional band rather than a gate. Its published
+        cutoff comes from protocols using AF2 INITIAL GUESS, which hands the predictor the
+        designed complex as a starting point; vanilla ColabFold does not, so the number
+        does not transfer. It is also floored by how well the TARGET was modelled -- a
+        target at ~42 pLDDT moved the floor from 7.6 to 15.4 A and put 10.0 out of reach
+        for a whole batch (8e4772a7, §4).
+      * And the Tier 2 controls measured what an uncalibrated threshold on a confidence
+        metric is worth: 115 alanines score 95.81 plddt_binder, above the real design, and
+        clear the 80.0 cutoff. A metric can be confidently excellent about nothing
+        (§8.6). iptm and pae_interaction have had no equivalent control run against them
+        at all.
+
+    So the numbers are reported, with their thresholds beside them and a recorded flag
+    saying they did not gate. A reader must not be able to mistake `passes` for a verdict
+    about the interface, which is why the flag is in the row rather than in the README.
+    """
+    row["interface_scored"] = False
+    row["interface_gated"] = bool(gate)
+    row["min_iptm"] = limits["min_iptm"]
+    row["max_pae_interaction"] = limits["max_pae_interaction"]
+
+    if prediction is None:
+        reason = (
+            "score_interface was asked for, but node 03's manifest has no COMPLEX "
+            "prediction for this design. The self-consistency numbers above are real; "
+            "the interface was not measured, and is null rather than a number (§8.7)."
         )
+        for metric in ("iptm", "pae_interaction", "plddt_target"):
+            null_reasons[metric] = reason
+            row[metric] = None
+        row["interface_reason"] = reason
+        return row, null_reasons
+
+    if prediction.get("status") != "ok":
+        reason = prediction.get("reason") or (
+            f"the complex prediction recorded status {prediction.get('status')!r}"
+        )
+        for metric in ("iptm", "pae_interaction", "plddt_target"):
+            null_reasons[metric] = reason
+            row[metric] = None
+        row["interface_reason"] = reason
+        return row, null_reasons
+
+    scores_name = prediction.get("scores_rank_001")
+    if not scores_name:
+        reason = (
+            "the complex prediction is 'ok' but names no rank_001 scores file, so there "
+            "is nothing to read (§8.3)."
+        )
+        for metric in ("iptm", "pae_interaction", "plddt_target"):
+            null_reasons[metric] = reason
+            row[metric] = None
+        row["interface_reason"] = reason
+        return row, null_reasons
+
+    scores = load_json(os.path.join("./inputs", scores_name), "complex scores")
+    chain_order = prediction["chain_order"]
+    chain_lengths = prediction["chain_lengths"]
+
+    # The assertion §8.1 asks for, on the complex array this time. If the recorded lengths
+    # do not describe the array, every slice below is of the wrong residues and each one
+    # still produces a plausible number.
+    if "plddt" not in scores:
+        null_reasons["plddt_target"] = f"'{scores_name}' carries no 'plddt' key"
+    else:
+        blocks = slice_by_order(
+            scores["plddt"], chain_order, chain_lengths, f"'{scores_name}' plddt"
+        )
+        target = blocks.get("target") or []
+        if target:
+            row["plddt_target"] = round(sum(target) / len(target), 2)
+            null_reasons.pop("plddt_target", None)
+        else:
+            null_reasons["plddt_target"] = (
+                f"'{scores_name}' has no target block under chain order {chain_order}"
+            )
+        # The binder's confidence IN THE COMPLEX, which is a different number from the
+        # monomer's and is recorded separately rather than overwriting it. 029 had only
+        # one and could not tell a binder that folds alone but not in context from one
+        # that does neither.
+        binder = blocks.get("binder") or []
+        if binder:
+            row["plddt_binder_in_complex"] = round(sum(binder) / len(binder), 2)
+
+    row["iptm"] = float(scores["iptm"]) if "iptm" in scores else None
+    if "iptm" in scores:
+        null_reasons.pop("iptm", None)
+    else:
+        null_reasons["iptm"] = (
+            f"'{scores_name}' carries no 'iptm' key, although this is a complex "
+            f"prediction with model_type {prediction.get('model_type')!r}. Measured in "
+            "tests/reference/: a real multimer scores file does carry it, so its absence "
+            "here means the prediction was not the multimer it was recorded as."
+        )
+
+    if "pae" not in scores:
+        null_reasons["pae_interaction"] = (
+            f"'{scores_name}' carries no 'pae' key, so the interface error was not "
+            "measured. Not inf: inf fails a threshold and renders a missing measurement "
+            "as a verdict (§8.7)."
+        )
+    else:
+        value, why = interface_pae(scores["pae"], chain_order, chain_lengths)
+        if value is None:
+            null_reasons["pae_interaction"] = why
+        else:
+            row["pae_interaction"] = round(value, 3)
+            null_reasons.pop("pae_interaction", None)
+
+    row["interface_scored"] = True
+    row["interface_reason"] = None
+    row["cplx_msa_mode"] = prediction.get("msa_mode")
+    row["cplx_binder_aligned"] = prediction.get("binder_aligned", False)
+
+    # The low-target warning, which never gates. 029's wrong diagnosis came from not
+    # HAVING this number, and the fix is to report it rather than filter on it (2359ffa4).
+    if row.get("plddt_target") is not None and row["plddt_target"] < LOW_TARGET_PLDDT_WARN:
+        print(
+            f"WARNING: '{row['design']}': the target modelled at "
+            f"{row['plddt_target']} pLDDT, below {LOW_TARGET_PLDDT_WARN}. Interface PAE "
+            "can be no better than the worse-modelled of the two chains (8e4772a7), so "
+            f"this design's pae_interaction of {row.get('pae_interaction')} is floored by "
+            "the target rather than by the design. This is diagnostic and does not gate.",
+            flush=True,
+        )
+
+    if not gate:
+        return row, null_reasons
+
+    # Opt-in gating. Added to the existing failure list rather than replacing it, so a
+    # design that fails self-consistency still says so.
+    failed = [part for part in (row.get("failed_thresholds") or "").split("; ") if part]
+    if row["iptm"] is None:
+        failed.append("iptm (not measured)")
+    elif row["iptm"] < limits["min_iptm"]:
+        failed.append(f"iptm {row['iptm']} < {limits['min_iptm']}")
+    if row["pae_interaction"] is None:
+        failed.append("pae_interaction (not measured)")
+    elif row["pae_interaction"] > limits["max_pae_interaction"]:
+        failed.append(
+            f"pae_interaction {row['pae_interaction']} > "
+            f"{limits['max_pae_interaction']}"
+        )
+    row["passes"] = not failed
+    row["failed_thresholds"] = "; ".join(failed)
+    row["reason"] = None if not failed else "; ".join(failed)
+    return row, null_reasons
+
+
+def main():
+    score_interface = bool_param("PARAM_SCORE_INTERFACE", "score_interface", False)
 
     max_rmsd = positive_param("PARAM_MAX_SC_RMSD_A", "max_sc_rmsd_a", 2.0, float)
     min_plddt = numeric_param("PARAM_MIN_PLDDT_BINDER", "min_plddt_binder", 80.0, float)
     if not 0.0 <= min_plddt <= 100.0:
         fail(f"min_plddt_binder is a pLDDT, so it must be 0-100, got {min_plddt}.")
+
+    # Phase 2 limits. Read and range-checked on every run, including a Phase 1 one: a
+    # parameter that is only validated when it is used is a parameter that accepts nan
+    # quietly until the day it matters (§8.8).
+    min_iptm = numeric_param("PARAM_MIN_IPTM", "min_iptm", 0.5, float)
+    if not 0.0 <= min_iptm <= 1.0:
+        fail(f"min_iptm is an iPTM, so it must be 0-1, got {min_iptm}.")
+    max_pae_interaction = positive_param(
+        "PARAM_MAX_PAE_INTERACTION", "max_pae_interaction", 10.0, float
+    )
+    gate_interface = bool_param("PARAM_GATE_ON_INTERFACE", "gate_on_interface", False)
+    if gate_interface and not score_interface:
+        fail(
+            "gate_on_interface = true with score_interface = false. There would be no "
+            "interface metric to gate on, so every design would fail for want of a "
+            "measurement that was never asked for. Set score_interface = true, or leave "
+            "both off."
+        )
 
     os.makedirs("./outputs", exist_ok=True)
 
@@ -622,8 +810,55 @@ def main():
     if not designs:
         fail("node 01's inventory lists no designs.")
 
-    # Keyed by the design name, never by position (818954e9).
-    predictions = {p["design"]: p for p in manifest.get("predictions") or []}
+    # Keyed by the design name, never by position (818954e9) -- AND by mode, because
+    # Phase 2 puts TWO predictions in the manifest for every design. A dict keyed on the
+    # design alone would silently keep whichever came last, which is 026's conflation bug
+    # arriving by a new route: the complex's confidence would be read as the monomer's
+    # self-consistency, and every number would still look reasonable.
+    predictions, collisions = {}, []
+    for prediction in manifest.get("predictions") or []:
+        key = (prediction["design"], prediction.get("mode", "mono"))
+        if key in predictions:
+            collisions.append(key)
+        predictions[key] = prediction
+    if collisions:
+        fail(
+            f"node 03's manifest holds more than one prediction for {collisions}. One "
+            "design and one mode name exactly one prediction; two means the manifest was "
+            "written twice or a design name repeats, and keying by it would silently take "
+            "whichever came last (818954e9)."
+        )
+
+    limits = {"min_iptm": min_iptm, "max_pae_interaction": max_pae_interaction}
+    if score_interface:
+        n_cplx = len([k for k in predictions if k[1] == "cplx"])
+        if not n_cplx:
+            fail(
+                "score_interface = true, but node 03's manifest holds no complex "
+                "prediction at all. Scoring the monomers and reporting them under a "
+                "Phase 2 heading is the failure this check exists for: every interface "
+                "column would be null and the run would otherwise look successful "
+                "(§8.3, §8.7)."
+            )
+        print(
+            f"Phase 2: {n_cplx} complex prediction(s) to score alongside the "
+            f"self-consistency ones. Interface thresholds min_iptm={min_iptm} "
+            f"max_pae_interaction={max_pae_interaction} are "
+            + ("GATING" if gate_interface else "REPORTED AND DO NOT GATE")
+            + ".",
+            flush=True,
+        )
+        if not gate_interface:
+            print(
+                "  They do not gate by default on purpose. §7 ships pae_interaction as a "
+                "provisional band: its published cutoff assumes AF2 initial guess, which "
+                "this workflow does not use, and it is floored by how well the target "
+                "modelled (8e4772a7). And the Tier 2 controls measured what an "
+                "uncalibrated confidence threshold is worth -- 115 alanines clear "
+                "plddt_binder 80.0 at 95.81 (§8.6). Set PARAM_GATE_ON_INTERFACE=true to "
+                "gate anyway; every row records which it was.",
+                flush=True,
+            )
     if manifest.get("dry_run"):
         fail(
             "prediction_manifest.json records dry_run = true, so node 03 resolved its "
@@ -679,8 +914,13 @@ def main():
             continue
 
         row, null_reasons = score_one(
-            entry, predictions.get(entry["design"]), max_rmsd, min_plddt
+            entry, predictions.get((entry["design"], "mono")), max_rmsd, min_plddt
         )
+        if score_interface and row["status"] == "scored":
+            row, null_reasons = add_interface(
+                entry, row, null_reasons,
+                predictions.get((entry["design"], "cplx")), limits, gate_interface,
+            )
         gen = gen_rows.get(entry["design"])
         if gen:
             row["gen_compactness_ratio"] = gen.get("compactness_ratio")
@@ -700,18 +940,43 @@ def main():
         "n_passing": len(passing),
         "n_failed": len([r for r in rows if r["status"] == "failed"]),
         "n_skipped": len([r for r in rows if r["status"] == "skipped"]),
-        "phase": 1,
-        "score_interface": False,
+        "phase": 2 if score_interface else 1,
+        "score_interface": score_interface,
+        "interface_gated": bool(gate_interface),
+        "n_interface_scored": len([r for r in rows if r.get("interface_scored")]),
         # Beside the values they were compared against, so a reader can re-filter without
         # re-running. Defaults to calibrate, not truth (§7).
         "thresholds": {
             "max_sc_rmsd_a": max_rmsd,
             "min_plddt_binder": min_plddt,
+            **({"min_iptm": min_iptm,
+                "max_pae_interaction": max_pae_interaction} if score_interface else {}),
         },
         "thresholds_are_calibrated": False,
-        "gating_metrics": ["sc_rmsd_A", "plddt_binder"],
-        "diagnostic_metrics": ["plddt_target", "ptm", "max_pae", "iptm",
-                               "pae_interaction"],
+        # What actually decided `passes`, as opposed to what was reported. On a Phase 2
+        # run with gating off, iptm and pae_interaction are in the row and not in this
+        # list, and that difference is the whole point of recording both.
+        "gating_metrics": ["sc_rmsd_A", "plddt_binder"] + (
+            ["iptm", "pae_interaction"] if (score_interface and gate_interface) else []
+        ),
+        "diagnostic_metrics": ["plddt_target", "ptm", "max_pae"] + (
+            ["plddt_binder_in_complex"] if score_interface else []
+        ) + ([] if (score_interface and gate_interface) else
+             ["iptm", "pae_interaction"]),
+        "why_interface_does_not_gate": None if (
+            not score_interface or gate_interface
+        ) else (
+            "§7 ships pae_interaction as a provisional band rather than a gate: its "
+            "published cutoff comes from protocols using AF2 initial guess, which this "
+            "workflow does not use, and it is floored by how well the TARGET modelled -- "
+            "a target at ~42 pLDDT moved the floor from 7.6 to 15.4 A and put 10.0 out of "
+            "reach for a whole batch (8e4772a7). The Tier 2 controls also measured what "
+            "an uncalibrated confidence threshold is worth: 115 alanines score 95.81 "
+            "plddt_binder, above the real design, and clear the 80.0 cutoff (§8.6). iptm "
+            "and pae_interaction have had no equivalent control run against them. They "
+            "are reported with their thresholds beside them; set "
+            "PARAM_GATE_ON_INTERFACE=true to gate anyway."
+        ),
         "order": "numeric by design name, decided here; node 05 inherits it",
         "designed_chain_sources": inventory.get("designed_chain_sources"),
         "designed_chain_convention": (metrics or {}).get("designed_chain_convention"),

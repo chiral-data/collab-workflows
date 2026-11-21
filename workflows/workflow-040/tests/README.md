@@ -113,7 +113,8 @@ Full numbers, provenance and findings in
   names the source.
 - Every number recorded here and in the reference file, including both chains' pLDDT.
 
-**Phase 2 (interface scoring):** adds `C7`–`C11`. Not built.
+**Phase 2 (interface scoring):** adds `C7`–`C11`. **The nodes are built; none of these
+controls has been run.**
 
 - `C7` is the three-way MSA diagnostic that settles §4 by measurement. One of its three
   arms is now in hand: `single_sequence` on a native chain gives 49.33 and 43.09 pLDDT,
@@ -537,6 +538,13 @@ The figures above are the host run on the 53-case suite. The image figures are t
 suite as it stood before control `C6` added a case; a 53-case image run is in flight and
 its numbers replace them when it lands.
 
+**Gate A as recorded here is Gate A for Phase 1.** Both runs above test the code as of the
+last commit before Phase 2 landed. Phase 2 changed nodes 01–05 and added 01b, so the
+figures are re-measured on both the host and the image before Gate A can be claimed for
+the workflow as it now stands. Nothing above is withdrawn — those runs really happened,
+against the code they name — but they are not a statement about the complex path, and
+neither is any number in this file.
+
 The count grew by six — five while nodes 01–04 were written and one from running the GPU
 controls — and every one came from building or measuring rather than from planning:
 
@@ -567,17 +575,29 @@ by how much and why.
 ### Reached and not measurable yet — the complex path
 
 These five are run every time, and each one reports `GAP` with the reason the artifact it
-needs does not exist. Phase 2 is specced and not built: node 02 writes no `cplx_` record,
-so nothing downstream ever sees a complex. None of them is counted against the gate, and
-none of them is allowed to pass either.
+needs does not exist. None of them is counted against the gate, and none of them is
+allowed to pass either.
+
+**The reason has changed, and the gaps have not.** Phase 2 is now built: node 02 does
+write `cplx_<d>.fasta` and `pairedmsa_<d>.a3m`, and node 03 does select the multimer
+model. What these five still lack is a *harness* that stages the complex path — a target
+alignment in node 01b's inputs, `score_interface` on, and for one case a mutation that
+strips the colon back out after node 02 has written it. Until `run_fixtures.py` stages
+that, each case runs the monomer path and the check finds nothing to read. Writing those
+cases is the next piece of work, and it is what turns `fusion_disclosed`,
+`cplx_colon_count`, `cplx_halves_nonempty` and `argv_includes` from names into checks.
+
+Calling them gaps while the code exists is deliberate: a check that has never been run
+against the thing it names is not evidence, and §8.13 is explicit that a guard which
+cannot be shown refusing is not a guard.
 
 | Case | What it is waiting for |
 |---|---|
 | `gapped-target` → `fusion_disclosed` | the target is never folded in Phase 1, so no fusion can be disclosed. Its other two checks, on recording the gap and not trimming the chain, **pass today**. |
 | `cplx-input-has-one-colon` | both checks need a `cplx_` file to count colons in |
 | `argv-model-type-cplx` → `argv_includes` | `alphafold2_multimer_v3` is never selected, because no record asks for a complex. `argv_excludes` on the same case **passes today**. |
-| `monomer-on-complex-path` | node 01 does refuse, with the "score_interface is Phase 2 and not built" message rather than the single-chain one. The refusal is recorded verbatim. |
-| `cplx-input-missing-colon` | every step exits 0, because there is no complex input to be missing a colon from |
+| `monomer-on-complex-path` | the "score_interface is Phase 2 and not built" refusal this case used to trip on is gone, because Phase 2 is built. The single-chain refusal it is actually asserting lives on the complex path, which the harness does not stage yet. |
+| `cplx-input-missing-colon` | node 02 writes the colon itself, so nothing is missing one. Showing the node 03 guard refuse needs a `mutate` that strips the colon after node 02 writes the file and before node 03 reads it. |
 
 ### One claim each run cannot make
 

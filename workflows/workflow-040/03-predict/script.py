@@ -380,6 +380,137 @@ def build_argv(record, in_dir, out_dir, num_models, num_recycle, msa_mode):
     return argv
 
 
+def cross_check_cplx(fasta_path, a3m_path, record):
+    """The fasta and the a3m must describe the same complex. Returns a reason or None.
+
+    Node 02 writes two representations of one fact on the complex path: cplx_<d>.fasta
+    (TARGET:BINDER, the declaration, where the ':' rule is enforceable) and
+    pairedmsa_<d>.a3m (what the predictor consumes). Two representations are only better
+    than one if they are checked against each other, which is what this does -- and it
+    does it before any GPU time is spent, for 37c23bb5's reason.
+
+    Each disagreement below produces a PREDICTION rather than an error if it goes
+    unchecked, which is the §8.3 case: unserialize_msa slices the query row by the
+    DECLARED lengths, so a wrong declaration returns two chains of the wrong sizes, and
+    node 04 then averages a plddt slice that does not describe the binder.
+    """
+    try:
+        with open(fasta_path) as handle:
+            body = "".join(
+                line.strip() for line in handle if line.strip()
+                and not line.startswith(">")
+            )
+    except OSError as error:
+        return f"could not read {os.path.basename(fasta_path)}: {error}"
+
+    if body.count(":") != 1:
+        return (
+            f"{os.path.basename(fasta_path)} holds {body.count(':')} colon(s), not 1. "
+            "Node 02 verified this on write, so the file has changed since."
+        )
+    target_seq, binder_seq = body.split(":")
+
+    try:
+        with open(a3m_path) as handle:
+            lines = [line.rstrip("\n") for line in handle if line.strip()]
+    except OSError as error:
+        return f"could not read {os.path.basename(a3m_path)}: {error}"
+
+    if not lines or not lines[0].startswith("#"):
+        return f"{os.path.basename(a3m_path)} has no '#<len1>,<len2>' header"
+    declared = lines[0][1:].split("\t")[0]
+    expect = f"{len(target_seq)},{len(binder_seq)}"
+    if declared != expect:
+        return (
+            f"{os.path.basename(a3m_path)} declares chain lengths {declared!r} but "
+            f"{os.path.basename(fasta_path)}'s halves are {expect!r}. unserialize_msa "
+            "slices the query by the declared lengths, so this returns two chains of the "
+            "wrong sizes and no error."
+        )
+
+    recorded = ",".join(str(n) for n in record["chain_lengths"])
+    if recorded != expect:
+        return (
+            f"node 02 recorded chain_lengths {recorded!r} but its own fasta's halves are "
+            f"{expect!r}. Node 04 slices by the recorded value, so the two must agree."
+        )
+
+    rows = [lines[i + 1] for i in range(1, len(lines) - 1, 2) if lines[i].startswith(">")]
+    if not rows:
+        return f"{os.path.basename(a3m_path)} holds no sequence rows"
+    query = rows[0]
+    if query != target_seq + binder_seq:
+        return (
+            f"{os.path.basename(a3m_path)}'s query row is not the fasta's "
+            "TARGET+BINDER concatenation. The two files describe different complexes, and "
+            "the a3m is the one the predictor reads."
+        )
+    if record["chain_order"] != ["target", "binder"]:
+        return (
+            f"node 02 recorded chain_order {record['chain_order']!r} for a complex "
+            "record. The a3m is written target-first, so any other order means node 04 "
+            "would slice the wrong half (029 slices plddt[:binder_length])."
+        )
+    return None
+
+
+def check_cplx_msa_mode(msa_mode, a3m_name):
+    """Refuse the combination that silently discards a precomputed alignment.
+
+    MEASURED, in tests/probe_msa_clamp.sh. colabfold/batch.py:137-142:
+
+        if msa_mode == "single_sequence":
+            num_seqs = 1
+            ...
+            max_seq = min(num_seqs, max_seq)
+
+    and batch.py:258-270 shows that when a3m_lines is not None the alignment is read by
+    unserialize_msa() and msa_mode is never consulted for MSA GENERATION at all. Put
+    together: an a3m handed in with --msa-mode single_sequence is parsed, is re-saved as
+    <job>.a3m, and gets a coverage.png -- and the model is fed ONE sequence.
+
+    Every artifact that looks like proof an alignment was used is written from
+    unserialize_msa()'s output BEFORE the clamp (batch.py:284-287), which is why §11.1's
+    spike concluded "coverage.png written, so an MSA was really consumed" and could not
+    have known otherwise. Measured on the same a3m, same seed, offline, both arms:
+
+        msa_mode             iptm    ptm    max_pae   mean plddt
+        single_sequence      0.270   0.510  23.27     75.3
+        mmseqs2_uniref_env   0.120   0.440  27.84     66.2
+
+    The numbers differ, so the clamp is real. (Which arm scores HIGHER says nothing about
+    alignments: that reference file's homologs are synthetic variants built to probe the
+    format, and a tiny synthetic heavily-gapped MSA can be worse than none. The finding is
+    the difference, not its sign.)
+
+    So a Phase 2 run at single_sequence would report interface numbers measured at
+    effectively single_sequence, while config.json, the re-saved a3m and coverage.png all
+    said an alignment was used. That is §4's exact failure mode and it is invisible --
+    which is why it is refused by name here rather than warned about.
+
+    mmseqs2_uniref_env is safe to pass ALONGSIDE an a3m: use_msa and use_env only feed
+    get_msa_and_templates, which is not called when a3m_lines is not None. The caller
+    guarantees the a3m is what is being passed -- see the fail() below it.
+    """
+    if msa_mode == "single_sequence":
+        fail(
+            f"the complex path was asked for with msa_mode='single_sequence' and a "
+            f"precomputed alignment ({a3m_name}). That combination silently throws the "
+            "alignment away: colabfold sets max_seq = 1 when msa_mode is "
+            "single_sequence (batch.py:137-142), so the model is fed one sequence, while "
+            "the re-saved a3m, config.json and coverage.png all record that an alignment "
+            "was used. Measured in tests/probe_msa_clamp.sh: the same a3m gives iptm "
+            "0.270 at single_sequence and 0.120 at mmseqs2_uniref_env, so the clamp "
+            "changes what the model sees.\n"
+            "  §4's whole decision is that interface metrics measured without a target "
+            "alignment are about the prediction mode rather than the design (029: iPTM "
+            "0.100 against 0.860). Reporting them under a Phase 2 heading is the failure "
+            "this refusal exists to prevent.\n"
+            "  Set PARAM_MSA_MODE_CPLX to mmseqs2_uniref_env (the default), which does "
+            "NOT reach the network when an a3m is supplied, or run Phase 1."
+        )
+
+
 def read_pdb_chains(path):
     """Return {chain_id: residue_count} from a predicted PDB, by CA atoms.
 
@@ -473,14 +604,31 @@ def main():
     timeout_s = positive_param(
         "PARAM_PREDICT_TIMEOUT_S", "predict_timeout_s", 1800, int
     )
+    # The MONO path's msa_mode. Still locked to single_sequence, and still correct rather
+    # than a compromise: a de novo binder predicted alone has no homologs to align (§4),
+    # and anything else would need the network, which this node never has.
     msa_mode = (os.environ.get("PARAM_MSA_MODE") or "single_sequence").strip()
     if msa_mode != "single_sequence":
         fail(
-            f"msa_mode '{msa_mode}' is not available in Phase 1, which predicts the binder "
-            "alone -- a de novo sequence has no homologs to align (§4). Anything else "
-            "would also need the network, and this node never passes --host-url. The "
-            "target-only alignment is Phase 2 and arrives with 01b-align-target."
+            f"msa_mode '{msa_mode}' is not available for the self-consistency prediction, "
+            "which predicts the binder alone -- a de novo sequence has no homologs to "
+            "align (§4). Anything else would also need the network, and this node never "
+            "passes --host-url. The complex path has its own setting, "
+            "PARAM_MSA_MODE_CPLX, because it consumes a precomputed alignment instead."
         )
+
+    # The CPLX path's msa_mode, separate because the two paths are different predictions
+    # and sharing the value is how one silently gets the other's. See
+    # check_cplx_msa_mode() for the measurement that makes single_sequence unusable here
+    # even though it sounds like the safe choice.
+    msa_mode_cplx = (
+        os.environ.get("PARAM_MSA_MODE_CPLX") or "mmseqs2_uniref_env"
+    ).strip()
+    # Not inherited. 3 recycles is right for a monomer; 026 records 6-12 for multimers,
+    # and inheriting is how a multimer silently gets a monomer's budget.
+    num_recycle_cplx = positive_param(
+        "PARAM_NUM_RECYCLE_CPLX", "num_recycle_cplx", 6, int
+    )
 
     os.makedirs("./outputs", exist_ok=True)
 
@@ -539,12 +687,95 @@ def main():
         scratch_out = os.path.join("./cf", design, "out")
         os.makedirs(scratch_in, exist_ok=True)
         os.makedirs(scratch_out, exist_ok=True)
-        shutil.copyfile(fasta, os.path.join(scratch_in, record["path"]))
+
+        this_msa_mode = msa_mode
+        this_recycle = num_recycle
+        msa_from = "msa_mode"
+
+        if record["mode"] == "cplx":
+            # The a3m is the input, NOT the fasta, and the fasta is deliberately not
+            # copied in beside it: colabfold_batch takes a directory, so two readable
+            # inputs would be two predictions.
+            #
+            # And there is no fallback to the fasta if the a3m is missing. A bare
+            # TARGET:BINDER fasta under mmseqs2_uniref_env would make colabfold align BOTH
+            # chains -- sending the designed binder to the MSA server, which is the one
+            # thing §4 guarantees never happens. So an absent a3m is a failure, and that
+            # is also what makes the msa_mode below safe: mmseqs2_uniref_env is only ever
+            # passed when the input really is a precomputed alignment.
+            a3m_name = record.get("paired_msa")
+            if not a3m_name:
+                results.append({
+                    **{k: record[k] for k in
+                       ("design", "mode", "chain_order", "chain_lengths",
+                        "expected_chains", "expected_residues")},
+                    "status": "failed",
+                    "reason": (
+                        "node 02 declared a complex record with no paired_msa. The "
+                        "complex path needs the precomputed alignment; predicting the "
+                        "TARGET:BINDER fasta instead would align the designed binder as "
+                        "well, which §4 forbids, so this is refused rather than "
+                        "downgraded."
+                    ),
+                    "argv": None, "elapsed_s": None, "outputs": [],
+                })
+                print(f"  {design}: FAILED, complex record with no paired a3m", flush=True)
+                continue
+
+            a3m_path = os.path.join("./inputs", a3m_name)
+            if not os.path.exists(a3m_path):
+                results.append({
+                    **{k: record[k] for k in
+                       ("design", "mode", "chain_order", "chain_lengths",
+                        "expected_chains", "expected_residues")},
+                    "status": "failed",
+                    "reason": (
+                        f"node 02 declared '{a3m_name}' but it is not in ./inputs/. Not "
+                        "falling back to the fasta: that would align the designed binder."
+                    ),
+                    "argv": None, "elapsed_s": None, "outputs": [],
+                })
+                print(f"  {design}: FAILED, paired a3m missing", flush=True)
+                continue
+
+            # Cross-check the two representations against each other before spending GPU
+            # time. The a3m's declared lengths are what unserialize_msa slices by, and the
+            # fasta's halves are what node 02 said it was asking for; if they disagree,
+            # the prediction comes back as two chains of the wrong sizes with no error,
+            # and node 04 then slices a plddt array by numbers that do not describe it.
+            problem = cross_check_cplx(fasta, a3m_path, record)
+            if problem:
+                results.append({
+                    **{k: record[k] for k in
+                       ("design", "mode", "chain_order", "chain_lengths",
+                        "expected_chains", "expected_residues")},
+                    "status": "failed", "reason": problem,
+                    "argv": None, "elapsed_s": None, "outputs": [],
+                })
+                print(f"  {design}: FAILED, {problem[:80]}", flush=True)
+                continue
+
+            this_msa_mode = msa_mode_cplx
+            this_recycle = num_recycle_cplx
+            msa_from = f"the precomputed alignment {a3m_name}"
+            check_cplx_msa_mode(this_msa_mode, a3m_name)
+            shutil.copyfile(a3m_path, os.path.join(scratch_in, a3m_name))
+        else:
+            shutil.copyfile(fasta, os.path.join(scratch_in, record["path"]))
 
         argv = build_argv(
-            record, scratch_in, scratch_out, num_models, num_recycle, msa_mode
+            record, scratch_in, scratch_out, num_models, this_recycle, this_msa_mode
         )
         print(f"  {design}: {' '.join(argv)}", flush=True)
+        if record["mode"] == "cplx":
+            print(
+                f"    the alignment comes from {msa_from}, not from --msa-mode. "
+                f"--msa-mode is passed as {this_msa_mode!r} because single_sequence "
+                "would clamp max_seq to 1 and discard it (batch.py:137-142, measured in "
+                "tests/probe_msa_clamp.sh); it reaches no network when an a3m is the "
+                "input. The binder carries no alignment of its own.",
+                flush=True,
+            )
 
         entry = {
             **{k: record[k] for k in
@@ -553,14 +784,19 @@ def main():
             "record_id": record["record_id"],
             "argv": argv,
             "model_type": argv[argv.index("--model-type") + 1],
-            "msa_mode": msa_mode,
+            "msa_mode": this_msa_mode,
+            "msa_source": msa_from,
             "num_models": num_models,
-            "num_recycle": num_recycle,
+            "num_recycle": this_recycle,
             "host_url_passed": False,
             "outputs": [],
             "log": None,
             "elapsed_s": None,
         }
+        if record["mode"] == "cplx":
+            entry["paired_msa"] = record.get("paired_msa")
+            entry["n_target_homologs_in_msa"] = record.get("n_target_homologs_in_msa")
+            entry["binder_aligned"] = False
 
         if dry_run:
             entry["status"] = "dry-run"
@@ -670,11 +906,31 @@ def main():
         "n_ok": len([e for e in results if e["status"] == "ok"]),
         "n_failed": len(failed),
         "dry_run": dry_run,
-        "phase": 1,
+        "phase": declared.get("phase", 1),
+        # Per path, because there are now two kinds of prediction in one run and a single
+        # pair of workflow-level values would describe only one of them. Node 05 reads
+        # these to say which question each row answers.
         "model_type": MODEL_TYPE_MONO,
         "msa_mode": msa_mode,
-        "num_models": num_models,
         "num_recycle": num_recycle,
+        "cplx": None if not any(e["mode"] == "cplx" for e in results) else {
+            "model_type": MODEL_TYPE_CPLX,
+            "msa_mode": msa_mode_cplx,
+            "num_recycle": num_recycle_cplx,
+            "msa_from": "the precomputed alignment written by 02 from 01b's target a3m",
+            "binder_aligned": False,
+            # The reason the msa_mode above is not single_sequence, recorded where a
+            # reader of the manifest will see it rather than only in the source.
+            "why_not_single_sequence": (
+                "colabfold clamps max_seq to 1 when msa_mode is single_sequence "
+                "(batch.py:137-142), which discards a precomputed alignment while still "
+                "re-saving the a3m and writing coverage.png. Measured in "
+                "tests/probe_msa_clamp.sh: same a3m, iptm 0.270 at single_sequence "
+                "against 0.120 at mmseqs2_uniref_env. mmseqs2_uniref_env reaches no "
+                "network when an a3m is the input (batch.py:258-270)."
+            ),
+        },
+        "num_models": num_models,
         "predict_timeout_s": timeout_s,
         # The offline guarantee, as far as this node can state it: the flag is never
         # passed, and the proof of no egress is the harness's --network none.

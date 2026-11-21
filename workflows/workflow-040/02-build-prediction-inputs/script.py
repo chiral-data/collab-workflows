@@ -3,9 +3,25 @@
 
 Contract
 --------
-Reads   design_inventory.json
-Writes  mono_<design>.fasta      the binder sequence alone, exactly one record
-        prediction_inputs.json   what was written, and the facts node 04 needs
+Reads   design_inventory.json         from 01-ingest-designs
+        target_alignment.json         from 01b-align-target
+        target_msa.a3m                from 01b-align-target, Phase 2 only
+Writes  mono_<design>.fasta           the binder sequence alone, exactly one record
+        cplx_<design>.fasta           TARGET:BINDER, one record -- Phase 2 only
+        pairedmsa_<design>.a3m        what the predictor consumes -- Phase 2 only
+        prediction_inputs.json        what was written, and the facts node 04 needs
+
+The mono input is written in BOTH phases. Phase 2 ADDS interface scoring, it does not
+replace self-consistency: an interface metric says nothing about whether the binder folds
+as designed, which is the question this workflow exists to answer.
+
+Two files per design on the complex path, and they are not redundant. cplx_<design>.fasta
+is the declaration -- what was asked for, in the form the spec validates, with the ':'
+rule enforceable on it. pairedmsa_<design>.a3m is what colabfold_batch actually reads,
+in §11.1's measured format: the target carries its alignment and the binder is present
+only as its own query. A bare TARGET:BINDER fasta would make the predictor align BOTH
+chains, which is exactly what §4 decided against. Node 03 is handed both and cross-checks
+them, so each representation is validated against the other.
 
 Validation happens here because it is free here. A bad alphabet, a length outside bounds
 or a missing chain costs nothing to catch on CPU and costs GPU minutes to catch inside
@@ -39,7 +55,7 @@ prediction_inputs.json, per design
 ----------------------------------
     design              keyed on, everywhere
     path                the file written, basename only
-    mode                "mono" in Phase 1
+    mode                "mono", or "cplx" for the Phase 2 complex record
     record_id           what ColabFold will name its outputs after
     chain_order         ["binder"] in Phase 1; ["target", "binder"] in Phase 2
     chain_lengths       parallel to chain_order
@@ -87,17 +103,28 @@ a non-empty output directory corrupted backbones it had already fixed -- and it 
 real, during a GPU smoke test, on a directory left by an earlier run (4d1a523e).
 
 Rewriting this node's own outputs is safe, because they are derived from the inventory and
-nothing else: same inventory, same bytes. What is NOT safe is a mono_*.fasta left behind
-for a design that is not in this run. Node 03 globs mono_*.fasta, so a stale file is
-predicted, and node 04 then scores a design the inventory has never heard of. That is
-refused, and the refusal leaves every existing file exactly as it was.
+the target alignment and nothing else: same inputs, same bytes. What is NOT safe is a
+mono_*.fasta or cplx_*.fasta left behind for a design that is not in this run. Node 03
+globs both, so a stale file is predicted, and node 04 then scores a design the inventory
+has never heard of. A stale cplx_ file is the worse of the two, because it comes back as
+an interface number filed under a design name that does not exist. Both are refused, and
+the refusal leaves every existing file exactly as it was.
 
 Fails when
 ----------
   * a binder sequence carries a residue outside the accepted alphabet
   * a binder is too short for a superposition to mean anything
-  * score_interface is true (Phase 2 is not built -- say so, do not ignore it)
-  * the output directory holds a mono_*.fasta for a design not in this run
+  * score_interface is true and 01b-align-target produced no alignment. NOT a fallback
+    to single_sequence: §4 measured what that does to the numbers (iPTM 0.100 against
+    0.860, receptor pLDDT 38.4 against 83.7), so a run that cannot align the target
+    stops rather than reporting interface metrics that are about the prediction mode.
+  * the target alignment holds only its own query, which is single_sequence under
+    another name
+  * the designs in one batch do not share a target (01b refuses this first)
+  * the paired a3m's declared chain lengths disagree with the record, or a chain has no
+    single-chain row -- the two ways §11.1's format fails, one silently and one loudly
+  * the output directory holds a mono_*.fasta or cplx_*.fasta for a design not in this
+    run
   * the file it just wrote does not pass the colon and record-count checks
 """
 import json
@@ -129,6 +156,34 @@ LONG_SEQUENCE_WARN_RESIDUES = 1000
 
 MONO_PREFIX = "mono_"
 FASTA_SUFFIX = ".fasta"
+
+# Phase 2. TWO files per design, and they are not redundant.
+#
+#   cplx_<design>.fasta     TARGET:BINDER, one record. The DECLARATION: it is what was
+#                           asked for, in the form the spec validates (a ':' is required
+#                           here and forbidden in a mono_ file -- 026's bug from both
+#                           directions), and it is human-readable.
+#   pairedmsa_<design>.a3m  What the predictor actually consumes. §11.1's measured format:
+#                           the target carries its alignment and the binder is present
+#                           only as its own query.
+#
+# The a3m could not simply replace the fasta, because the a3m has no ':' in it -- its
+# chain boundary is the '#<len1>,<len2>' header -- so the colon checks would have nothing
+# to read and the spec's rule would become unenforceable. And the fasta could not replace
+# the a3m, because a bare TARGET:BINDER fasta makes colabfold_batch compute an MSA for
+# BOTH chains, which is the thing §4 decided against: the designed binder must never be
+# aligned or sent anywhere.
+#
+# So node 03 is given both and cross-checks them: the a3m's declared lengths must match
+# the fasta's two halves. Two representations of one fact, each validated against the
+# other, is the opposite of a single unchecked one.
+CPLX_PREFIX = "cplx_"
+PAIRED_MSA_PREFIX = "pairedmsa_"
+A3M_SUFFIX = ".a3m"
+
+# unserialize_msa()'s chain ids. 101 is the first chain, 102 the second; they are not
+# residue numbers and not the design's own chain letters.
+A3M_CHAIN_IDS = ["101", "102"]
 
 
 def fail(message):
@@ -185,28 +240,41 @@ def load_inventory(path):
 
 
 def check_rerun(out_dir, expected_names):
-    """Refuse a stale mono_*.fasta before writing anything at all.
+    """Refuse a stale prediction input before writing anything at all.
 
     Order matters: the refusal has to happen before the first write, or a run that is
     refused has still half-replaced the directory it refused to touch (4d1a523e).
+
+    Every prefix this node writes is checked, not just mono_. A stale cplx_ file is the
+    worse case of the two: node 03 globs both, so a complex input left over from a design
+    that is not in this run would be predicted and scored as an interface, and node 05
+    would report it under a design name the inventory has never heard of.
     """
     if not os.path.isdir(out_dir):
         return
-    existing = sorted(
-        name for name in os.listdir(out_dir)
-        if name.startswith(MONO_PREFIX) and name.endswith(FASTA_SUFFIX)
-    )
-    expected = {f"{MONO_PREFIX}{name}{FASTA_SUFFIX}" for name in expected_names}
+    patterns = [
+        (MONO_PREFIX, FASTA_SUFFIX),
+        (CPLX_PREFIX, FASTA_SUFFIX),
+        (PAIRED_MSA_PREFIX, A3M_SUFFIX),
+    ]
+    existing, expected = [], set()
+    for prefix, suffix in patterns:
+        existing += sorted(
+            name for name in os.listdir(out_dir)
+            if name.startswith(prefix) and name.endswith(suffix)
+        )
+        expected |= {f"{prefix}{name}{suffix}" for name in expected_names}
     stale = [name for name in existing if name not in expected]
     if stale:
         fail(
             f"./outputs/ already holds {len(stale)} prediction input(s) for design(s) "
             f"that are not in this run: {', '.join(stale)}. Node 03 globs "
-            f"{MONO_PREFIX}*{FASTA_SUFFIX}, so these would be predicted, and node 04 "
-            "would then score designs the inventory has never heard of. Nothing has been "
-            "written and nothing has been removed -- clear ./outputs/ or run in a fresh "
-            "directory. (029's node 04 re-ran over a populated directory during a GPU "
-            "smoke test and swapped already-swapped chains back: 4d1a523e.)"
+            f"{MONO_PREFIX}*{FASTA_SUFFIX} and {CPLX_PREFIX}*{FASTA_SUFFIX}, so these "
+            "would be predicted, and node 04 would then score designs the inventory has "
+            "never heard of. Nothing has been written and nothing has been removed -- "
+            "clear ./outputs/ or run in a fresh directory. (029's node 04 re-ran over a "
+            "populated directory during a GPU smoke test and swapped already-swapped "
+            "chains back: 4d1a523e.)"
         )
     if existing:
         print(
@@ -245,6 +313,262 @@ def write_mono(out_dir, entry):
         "designed_chain_source": entry["designed_chain_source"],
         "n_unknown": entry["n_unknown"],
     }
+
+
+def match_columns(row):
+    """An a3m row reduced to its match columns: uppercase residues and '-' deletions.
+
+    a3m encodes an insertion relative to the query as a LOWERCASE letter, which occupies
+    no alignment column. Dropping them makes every row exactly as long as the query, which
+    is the shape §11.1 measured working -- the captured reference file's homolog rows are
+    len(chain1) match columns followed by len(chain2) gaps, with no lowercase anywhere.
+    Keeping the insertions would be more faithful and is not worth the risk: the format
+    had to be read out of unserialize_msa()'s source as it was, after two guesses were
+    rejected outright.
+    """
+    return "".join(c for c in row if c == "-" or c.isupper())
+
+
+def write_cplx(out_dir, entry, target):
+    """cplx_<design>.fasta -- TARGET:BINDER, one record.
+
+    TARGET FIRST, deliberately, and this is the decision node 04 depends on. The scores
+    JSON carries no chain boundaries, so node 04 slices the per-residue plddt array by
+    position. Workflow-029 slices plddt[:binder_length] because ITS binder is chain A; in
+    this order the binder is the TAIL, and a node 04 that copied 029's slice would average
+    the TARGET's pLDDT and report it as the binder's. The order is a fact this node
+    decides, so this node records it (§8.1) and node 04 reads it rather than assuming.
+    """
+    design = entry["design"]
+    binder = entry["binder_sequence"]
+    path = os.path.join(out_dir, f"{CPLX_PREFIX}{design}{FASTA_SUFFIX}")
+
+    with open(path, "w") as handle:
+        handle.write(f">{design}\n{target['sequence']}:{binder}\n")
+
+    return {
+        "design": design,
+        "path": os.path.basename(path),
+        "mode": "cplx",
+        "record_id": design,
+        "chain_order": ["target", "binder"],
+        "chain_lengths": [target["n_residues"], len(binder)],
+        "expected_chains": 2,
+        "expected_residues": target["n_residues"] + len(binder),
+        "binder_chain_in_design": entry["binder_chain"],
+        "designed_chain_source": entry["designed_chain_source"],
+        "n_unknown": entry["n_unknown"],
+        "target_chains": target["chains"],
+        "target_n_residues": target["n_residues"],
+        "target_fusion": target["fusion"],
+    }
+
+
+def write_paired_msa(out_dir, entry, target):
+    """pairedmsa_<design>.a3m -- the target aligned, the binder as its own query only.
+
+    §11.1's measured format, which had to be read out of colabfold.batch's
+    unserialize_msa() after two hand-rolled attempts were rejected with
+    'MSA 0 must contain at least one sequence'. The rule both missed:
+
+        any row carrying residues in two or more chain segments goes to the PAIRED block
+        for every chain, and only single-chain rows populate unpaired_chunks[j] -- so
+        EVERY chain needs at least one single-chain row, including its own query.
+
+    A concatenated query alone leaves every unpaired block empty and generate_input_feature
+    raises. Hence rows 2 and 3 below, which look redundant and are load-bearing.
+    """
+    design = entry["design"]
+    binder = entry["binder_sequence"]
+    t_len, b_len = target["n_residues"], len(binder)
+    path = os.path.join(out_dir, f"{PAIRED_MSA_PREFIX}{design}{A3M_SUFFIX}")
+
+    lines = [f"#{t_len},{b_len}\t1,1"]
+    # The paired row: residues in both segments, so unserialize_msa sends it to the paired
+    # block for both chains. It is also a3m_lines[2], which gets sliced by the declared
+    # lengths to recover each chain's query -- so the declared lengths and this row have
+    # to agree exactly or the chains come back wrong without an error.
+    lines += [f">{A3M_CHAIN_IDS[0]}", f"{target['sequence']}{binder}"]
+    # One single-chain row per chain, each seeding its own unpaired block.
+    lines += [f">{A3M_CHAIN_IDS[0]}", f"{target['sequence']}{'-' * b_len}"]
+    lines += [f">{A3M_CHAIN_IDS[1]}", f"{'-' * t_len}{binder}"]
+
+    # The target's homologs, padded into chain 1's segment. The binder gets none: it is a
+    # de novo design with no homologs, and §4's decision is that it is never aligned.
+    n_homologs = 0
+    for name, row in target["alignment"][1:]:
+        columns = match_columns(row)
+        if len(columns) != t_len:
+            # Skipped rather than padded or truncated: a row that does not line up with
+            # the query is not an alignment of it, and silently reshaping it would put
+            # the wrong residue in a column and change what the target looks like.
+            print(
+                f"  NOTE: {design}: dropped alignment row {name!r} -- {len(columns)} "
+                f"match column(s) against a {t_len}-residue target query. A row that "
+                "does not line up with the query is not an alignment of it.",
+                flush=True,
+            )
+            continue
+        safe = name.replace(">", "_").replace("\t", " ").strip() or f"hom{n_homologs}"
+        lines += [f">{safe}", f"{columns}{'-' * b_len}"]
+        n_homologs += 1
+
+    with open(path, "w") as handle:
+        handle.write("\n".join(lines) + "\n")
+
+    return os.path.basename(path), n_homologs
+
+
+def verify_paired_msa(path, record):
+    """Read the a3m back and check the three things that fail silently.
+
+    Each of these produces a prediction rather than an error if it is wrong, which is the
+    §8.3 case: a mis-declared length gives two chains of the wrong sizes, and node 04 then
+    slices a plddt array by numbers that do not describe it.
+    """
+    t_len, b_len = record["chain_lengths"]
+    with open(path) as handle:
+        raw = [line.rstrip("\n") for line in handle if line.strip()]
+
+    if not raw or not raw[0].startswith("#"):
+        fail(f"'{os.path.basename(path)}' has no '#<len1>,<len2>' header.")
+    declared = raw[0][1:].split("\t")[0]
+    if declared != f"{t_len},{b_len}":
+        fail(
+            f"'{os.path.basename(path)}' declares chain lengths {declared!r} but the "
+            f"record says {t_len},{b_len}. unserialize_msa slices the query row by the "
+            "DECLARED lengths, so a mismatch returns two chains of the wrong sizes and "
+            "no error at all."
+        )
+
+    rows = [(raw[i][1:], raw[i + 1]) for i in range(1, len(raw) - 1, 2)
+            if raw[i].startswith(">")]
+    if not rows:
+        fail(f"'{os.path.basename(path)}' holds no sequence rows.")
+
+    query = rows[0][1]
+    if len(query) != t_len + b_len:
+        fail(
+            f"'{os.path.basename(path)}' query row is {len(query)} column(s), not "
+            f"{t_len + b_len}. It is sliced by the declared lengths, so this silently "
+            "mis-assigns residues between the chains."
+        )
+
+    # The §11.1 rule, checked rather than assumed: every chain needs a single-chain row.
+    singles = {0: 0, 1: 0}
+    for _, row in rows:
+        if len(row) != t_len + b_len:
+            continue
+        head, tail = row[:t_len], row[t_len:]
+        head_has = any(c != "-" for c in head)
+        tail_has = any(c != "-" for c in tail)
+        if head_has and not tail_has:
+            singles[0] += 1
+        elif tail_has and not head_has:
+            singles[1] += 1
+    missing = [i for i, n in singles.items() if n == 0]
+    if missing:
+        fail(
+            f"'{os.path.basename(path)}' has no single-chain row for chain(s) "
+            f"{[A3M_CHAIN_IDS[i] for i in missing]}. unserialize_msa only populates "
+            "unpaired_chunks[j] from single-chain rows, so generate_input_feature raises "
+            "'MSA 0 must contain at least one sequence' -- which is exactly how §11.1's "
+            "two hand-rolled attempts failed."
+        )
+
+    # A colon here would be read as a chain break on top of the declared lengths.
+    if any(":" in row for _, row in rows):
+        fail(f"'{os.path.basename(path)}' contains a colon; its chain split is the header.")
+
+    return {"n_rows": len(rows), "declared": declared,
+            "single_chain_rows": {A3M_CHAIN_IDS[i]: n for i, n in singles.items()}}
+
+
+def load_target(alignment_path, a3m_path):
+    """The target and its alignment, from 01b. Refused rather than guessed at.
+
+    01b writes target_alignment.json on every run, including a Phase 1 one where it says
+    it was a no-op. So this can tell "no alignment was asked for" from "an alignment was
+    asked for and failed", which an absent file could not (§8.3).
+    """
+    if not os.path.exists(alignment_path):
+        fail(
+            "score_interface = true but there is no target_alignment.json. "
+            "01b-align-target must run first; it is a dependency of this node, so an "
+            "absent file means that node did not run rather than that it found nothing."
+        )
+    with open(alignment_path) as handle:
+        record = json.load(handle)
+
+    if not record.get("aligned"):
+        fail(
+            "score_interface = true but 01b-align-target reports no alignment: "
+            f"{record.get('reason') or 'no reason recorded'}. This node will not write a "
+            "complex input without one. §4 measured what predicting a complex at "
+            "single_sequence does -- iPTM 0.100 against 0.860, receptor pLDDT 38.4 "
+            "against 83.7 -- so the numbers would be about the prediction mode rather "
+            "than the design, and nothing downstream would say so."
+        )
+    if not os.path.exists(a3m_path):
+        fail(
+            f"target_alignment.json says it aligned the target, but {a3m_path} is not "
+            "here. Refusing rather than proceeding with an alignment that is only a "
+            "claim in a JSON file."
+        )
+
+    header, records = read_a3m_rows(a3m_path)
+    if header is not None and "," in header:
+        fail(f"{a3m_path} carries a paired a3m header; 01b writes a single-chain one.")
+    if not records:
+        fail(f"{a3m_path} holds no sequences.")
+
+    sequence = record["target_sequence"]
+    if match_columns(records[0][1]).replace("-", "") != sequence:
+        fail(
+            f"{a3m_path}'s query is not the target sequence target_alignment.json "
+            "records. One of the two is describing a different protein, and pairing the "
+            "binder against the wrong receptor would produce an interface number for it."
+        )
+    if len(records) < 2:
+        fail(
+            f"{a3m_path} holds {len(records)} sequence(s). An alignment of the query "
+            "alone is single_sequence under another name; 01b refuses this too and "
+            "refuses it first, but this node is reachable on its own."
+        )
+
+    return {
+        "sequence": sequence,
+        "n_residues": record["target_n_residues"],
+        "chains": record.get("target_chains") or [],
+        "fusion": record.get("target_fusion") or [],
+        "alignment": records,
+        "n_sequences": len(records),
+        "a3m_sha256": record.get("a3m_sha256"),
+        "msa_source": record.get("source"),
+    }
+
+
+def read_a3m_rows(path):
+    """(header, [(name, sequence)]). Hand-rolled: see 01b for why not biopython."""
+    header, name, chunks, out = None, None, [], []
+    with open(path, errors="replace") as handle:
+        for raw in handle:
+            line = raw.strip()
+            if not line:
+                continue
+            if line.startswith("#"):
+                if header is None:
+                    header = line
+                continue
+            if line.startswith(">"):
+                if name is not None:
+                    out.append((name, "".join(chunks)))
+                name, chunks = line[1:].strip(), []
+                continue
+            chunks.append(line)
+    if name is not None:
+        out.append((name, "".join(chunks)))
+    return header, out
 
 
 def verify_written(path, expect_colons):
@@ -294,15 +618,7 @@ def verify_written(path, expect_colons):
 
 
 def main():
-    # Phase 1 only. Node 01 refuses this too and refuses it first, which is the point:
-    # this node is reachable on its own, so it carries its own copy rather than trusting
-    # that something upstream ran.
-    if bool_param("PARAM_SCORE_INTERFACE", "score_interface", False):
-        fail(
-            "score_interface = true is Phase 2 and is not built. This node writes no "
-            f"cplx_ input, so the flag would be silently dropped and the run would report "
-            "self-consistency numbers under the heading the user asked for (§8.7, §12)."
-        )
+    score_interface = bool_param("PARAM_SCORE_INTERFACE", "score_interface", False)
     numeric_param("PARAM_NUM_MODELS", "num_models", 5, int)
 
     os.makedirs("./outputs", exist_ok=True)
@@ -345,10 +661,31 @@ def main():
                 "by position; a mismatch here means they were not."
             )
 
+    # Loaded before anything is written, so a Phase 2 run with no usable alignment fails
+    # with an empty output directory rather than a half-written one.
+    target = None
+    if score_interface:
+        target = load_target(
+            "./inputs/target_alignment.json", "./inputs/target_msa.a3m"
+        )
+        print(
+            f"Phase 2: a {target['n_residues']}-residue target over chain(s) "
+            f"{target['chains']}, {target['n_sequences']} alignment sequence(s) from "
+            f"{target['msa_source']}. The binder is paired against it UNALIGNED and is "
+            "not sent anywhere (§4).",
+            flush=True,
+        )
+        for line in target["fusion"]:
+            print(f"  WARNING: {line} (§8.12).", flush=True)
+
     check_rerun("./outputs", [e["design"] for e in eligible])
 
     records = []
     for entry in eligible:
+        # The mono input is written in BOTH phases. Phase 2 adds interface scoring, it
+        # does not replace self-consistency: an interface metric says nothing about
+        # whether the binder folds as designed, which is the question this workflow was
+        # built to answer.
         record = write_mono("./outputs", entry)
         n_records, n_colons = verify_written(
             os.path.join("./outputs", record["path"]), expect_colons=0
@@ -357,12 +694,43 @@ def main():
         record["verified_colons_in_sequence"] = n_colons
         records.append(record)
 
+        if not score_interface:
+            continue
+
+        cplx = write_cplx("./outputs", entry, target)
+        n_records, n_colons = verify_written(
+            os.path.join("./outputs", cplx["path"]), expect_colons=1
+        )
+        cplx["verified_records_in_file"] = n_records
+        cplx["verified_colons_in_sequence"] = n_colons
+
+        msa_name, n_homologs = write_paired_msa("./outputs", entry, target)
+        cplx["paired_msa"] = msa_name
+        cplx["n_target_homologs_in_msa"] = n_homologs
+        cplx["paired_msa_verified"] = verify_paired_msa(
+            os.path.join("./outputs", msa_name), cplx
+        )
+        cplx["binder_aligned"] = False
+        cplx["target_a3m_sha256"] = target["a3m_sha256"]
+        records.append(cplx)
+
     payload = {
         "n_inputs": len(records),
         "n_skipped": len(skipped),
-        "phase": 1,
-        "mode": "mono",
-        "score_interface": False,
+        "phase": 2 if score_interface else 1,
+        "mode": "mono+cplx" if score_interface else "mono",
+        "score_interface": score_interface,
+        # Recorded whether or not Phase 2 ran, so node 03 and node 05 can say which
+        # question was asked rather than inferring it from which files exist.
+        "target": None if not score_interface else {
+            "chains": target["chains"],
+            "n_residues": target["n_residues"],
+            "n_alignment_sequences": target["n_sequences"],
+            "msa_source": target["msa_source"],
+            "a3m_sha256": target["a3m_sha256"],
+            "fusion": target["fusion"],
+            "binder_aligned": False,
+        },
         "alphabet": ALPHABET_STRING,
         "min_binder_residues": MIN_BINDER_RESIDUES,
         # Carried forward from node 01 rather than recomputed, so one wording of the chain
@@ -383,10 +751,21 @@ def main():
         json.dump(payload, handle, indent=2)
 
     for record in records:
+        extra = ""
+        if record["mode"] == "cplx":
+            verified = record["paired_msa_verified"]
+            extra = (
+                f"; {record['paired_msa']} declares {verified['declared']} over "
+                f"{verified['n_rows']} row(s) with "
+                f"{record['n_target_homologs_in_msa']} target homolog(s) and no binder "
+                f"alignment, single-chain rows {verified['single_chain_rows']}"
+            )
         print(
             f"  {record['path']}: 1 record, {record['expected_residues']} residue(s), "
-            f"{record['verified_colons_in_sequence']} colon(s)"
-            + (f", {record['n_unknown']} X" if record["n_unknown"] else ""),
+            f"{record['verified_colons_in_sequence']} colon(s), "
+            f"chain_order={record['chain_order']} lengths={record['chain_lengths']}"
+            + (f", {record['n_unknown']} X" if record["n_unknown"] else "")
+            + extra,
             flush=True,
         )
     for entry in skipped:

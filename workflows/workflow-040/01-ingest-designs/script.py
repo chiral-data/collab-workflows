@@ -84,7 +84,12 @@ Fails when
   * a design's binder chain resolves to zero residues
   * two designs resolve to the same name
   * any parameter is non-finite, out of range, or the wrong type
-  * score_interface is true, which is Phase 2 and not built
+
+Does not read score_interface at all. This node does the same work in both phases --
+resolve the binder chain and record the target chains -- and both paths read the one
+inventory it writes. A node that validated a flag it never uses would be asserting
+something about a sibling node behaviour (8.1); 01b, 02 and 04 each read it, because each
+behaves differently under it.
 
 Does NOT fail when design_metrics.json is absent, or when a target chain carries internal
 gaps -- gaps are measured and reported, because node 03 has to disclose that it folds the
@@ -196,13 +201,15 @@ def check_parameters():
             "01b-align-target."
         )
 
-    if bool_param("PARAM_SCORE_INTERFACE", "score_interface", False):
-        fail(
-            "score_interface = true is Phase 2 and is not built. Refusing rather than "
-            "ignoring it: a run that silently dropped the flag would report "
-            "self-consistency numbers under the heading the user asked for, and nothing "
-            "in the output would say the interface was never scored (§8.7, §12)."
-        )
+    # score_interface is no longer refused here: Phase 2 is built, and this node's work is
+    # the same either way. It reads the designed structures and resolves which chain is
+    # the binder, which is what BOTH paths need -- the complex path then takes the target
+    # chains out of the same inventory. Nothing about the flag changes what this node
+    # does, so it does not read it, and a node that validated a flag it never uses would
+    # be asserting something about a sibling's behaviour (§8.1).
+    #
+    # 01b-align-target, node 02 and node 04 each read it, because each behaves differently
+    # under it. The flag is refused nowhere now; it is implemented.
 
 
 def read_chains(path):
