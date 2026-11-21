@@ -5,11 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2026-11-12]
+## [2026-11-20]
 
 ### Added
 
-- workflow-038: BioEmu2 Equilibrium Ensemble Emulation — **scaffold, untested against a GPU**
+- workflow-038: BioEmu2 Equilibrium Ensemble Emulation — run end to end on a GPU
   (6 nodes: 01-prepare-system, 02-fetch-msa, 03-sample, 04-propagate, 05-analyze, 06-report).
   - Conformational ensemble emulation on BioEmu2 (Microsoft Research AI for Science, MIT,
     public preview 2026-10-20). First workflow in the repo that samples how an existing
@@ -45,11 +45,72 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     declared-but-unwritten output is a silent failure.
   - Nodes 04-05 bind the XTC to the System's own topology rather than parsing `topology.cif`,
     sidestepping mdtraj's mmCIF support entirely.
-  - Shared image `bioemu2:2026_11_11` (`python:3.12-slim`, CUDA 12.6 via the `[cuda12]` extra
-    because the `[cuda]` extra needs a CUDA 13 driver the estate lacks; `[cuda12]` also covers
-    compute capability 7.0, so V100 works). HF checkpoint pinned to
-    `dd4b0c1b69984b68edcb6200a544213be4d75242` (1.91 GiB). Registered in
+  - Shared image `bioemu2:2026_11_20` (`python:3.12-slim`, 9.58 GB; CUDA 12.6 via the
+    `[cuda12]` extra because the `[cuda]` extra needs a CUDA 13 driver the estate lacks and
+    pins no torch version at all). Compute-capability floor **measured** rather than inherited:
+    `torch.cuda.get_arch_list()` in the built image returns `sm_50 … sm_90`, so `sm_70` is
+    present (V100 works) and `sm_100` is absent (not B200). HF checkpoint pinned to
+    `dd4b0c1b69984b68edcb6200a544213be4d75242` (1.91 GiB); measured in the image: openmm 8.6.1,
+    mdtraj 1.11.2, torch 2.13.0+cu126, numpy 2.4.6, biotite 2.0.0. Registered in
     `apps/applications.json`.
+  - The image also pre-warms **126 chemical component definitions** into `BIOEMU2_CCD_CACHE`
+    and `BIOEMU2_TEMPLATE_CACHE`. Anything that is not a standard residue — an ion, a cofactor,
+    a terminal cap, a modified residue — is built from its CCD entry, which bioemu2 downloads
+    from `files.rcsb.org` the first time it meets the code, from inside `system.topology`: a
+    call nodes 01, 03, 04 and 05 all make. Five of the seven test entries needed one (1CLL `CA`
+    and `EOH`, 1A3N `HEM`, 1AKE `AP5`, 5PTI `PO4`/`UNX`/`DOD`, 2ZTA `ACE`), and node 01 used to
+    swallow the failure into a warning and write `n_tokens: null`, which also made the
+    batch-size advice and the >10k GPU-fit guard unreachable on every holo system. Node 01 now
+    fails there — nodes 03-05 build the same structure — and every node that builds a topology
+    names the component and the cache in the error.
+  - Node 01 exposes upstream's `include_ligands` and `exclude_ligands`, lists every non-polymer
+    component it kept by CCD code in `system_inventory.json`, and warns about two classes worth
+    a second look: placeholders (`UNX`, `UNK`, `UNL`, `DUM` — density the depositor could not
+    identify) and solvent that upstream does not treat as solvent (`DOD`, the deuterated water
+    of a neutron structure; `System.from_cif` omits `HOH` and keeps `DOD`). `n_polymer_residues`
+    is labelled for what upstream documents it to be — the entity sequence, including residues
+    the input structure does not resolve, so 1CLL is 148 where its crystal resolves 144.
+  - Node 03's `--dry-run` is a gate rather than a parameter echo: it verifies the alignment was
+    staged, resolves the topology, and compares each staged A3M's query row against the sequence
+    the system states for that chain. bioemu2 compares neither — not `get_msa`, not
+    `load_a3m_msa` — so an alignment for a different protein was accepted and produced an
+    ensemble whose frame count, physicality rate and geometry were all unremarkable.
+  - Node 05's collapse warning fired below `1e-3` nm, which an XTC's 0.001 nm coordinate
+    quantisation makes unreachable: one conformation written twice and read back measures about
+    0.002 nm apart. Now 0.01 nm, with the measurement recorded next to the constant.
+  - The image also installs `gcc` and `libc6-dev`, which are a **runtime** requirement: triton
+    compiles its kernel launchers on first use and shells out to a C compiler, and
+    `python:3.12-slim` carries neither. 1UBQ (76 tokens), 5PTI (65) and 2ZTA (72) never reached
+    that path; 1CLL (155) failed inside `EmuSession.sample()` with "Failed to find C compiler",
+    after the model had loaded, which reads as a size limit or a bad input rather than a missing
+    package.
+  - Measured on an RTX 3060 Ti (8 GB, sm_86, driver 580.178.04, 7.66 GiB usable), 8 samples per
+    system in one batch: 1UBQ 31.2 s with 8/8 frames physical, Rg 1.1597 ± 0.0056 nm against an
+    experimental 1.17 nm and max pairwise C-α RMSD 0.2204 nm; 5PTI Rg 1.1214 nm; 2ZTA Rg
+    1.5244 nm over 4 clusters (a parallel coiled coil, so 1.39× the globular scaling is the fold
+    rather than a failure); 1BNA, which has no protein chain, through all six nodes on the
+    all-atom fallback; and 1CLL Rg 1.5677 nm with max pairwise RMSD 1.3682 nm over 8 clusters on
+    a 148-C-α selection that excludes its four calcium ions — calmodulin's lobes pivot about a
+    flexible central helix, so a broad multi-state ensemble is the literature answer, and the
+    contrast with ubiquitin's single 0.22 nm cluster is the nearest thing here to a scientific
+    control. 1AKE (542 tokens) and 1A3N (746) run out of memory, with node 03's own OOM message
+    — and re-run at batch 1 they fail on the same allocation as at batch 8, 1.06 and 1.46 GiB,
+    so on this card the peak is set by the token count and lowering the batch moves nothing.
+    Upstream's batch estimate, which node 03 prints, had said 33 and 19 would fit; it is now
+    labelled an upper bound rather than a ceiling, and the node's OOM advice says to try a
+    lower batch but not to expect much and names the token count instead. The README states
+    the ceiling as a size range — 8 GB holds somewhere above 155 and below 542 tokens — because
+    that is the variable that binds. Node 02's paired-alignment path is confirmed against the
+    live server: 1A3N recorded `paired: true` for its two unique sequences, with unpaired depths
+    of 4522 and 5023 rows per chain and a paired alignment of 8794 rows identical in depth across
+    all four chains, which is what a positionally paired alignment has to be, and node 03's log
+    shows it attached to all four chains before the allocation failed — so no heteromer ensemble
+    exists on this hardware, which `tests/README.md` records as the one open gap.
+  - Time-lagged propagation run for real for the first time, on 1UBQ at the default 1 ns lag:
+    8 endpoints from 8 start points, all 8 physical, mean Rg 1.1628 nm against 1.1597 nm before
+    propagation and spread 0.1943 nm against 0.2204 nm. A rigid fold moving slightly and staying
+    folded over a nanosecond is the expected answer, so this is strong evidence about the
+    plumbing and weak evidence about the dynamics; node 04's **Scientific notes** say so.
   - Sampling frequency is **not** a calibrated Boltzmann probability and sampled frames are
     independent draws, not a trajectory; the README and `report.html` both lead with this.
   - Design doc, decisions and open build-time questions in

@@ -10,7 +10,9 @@ Chart choices (the data's job picks the form):
   * Rg distribution         — magnitude/shape, histogram, single series
   * Pairwise C-alpha RMSD   — continuous magnitude, heatmap on ONE sequential blue hue
                               (never a rainbow; the lightest step means "identical")
-  * Per-residue RMSF        — change along the chain, line, one series per ensemble
+  * RMSF along the chain    — one series per chain per ensemble; per residue when the
+                              selection is C-alphas, per atom when node 05 fell back to every
+                              atom for a system with no protein chain, and labelled as such
   * Physicality             — state, so the fixed status palette with an icon and a label;
                               never colour alone
 
@@ -246,8 +248,7 @@ HTML = """<!doctype html>
 <div class="card2">
   <div class="legend">{legend}</div>
   <div id="rmsf-chart" class="chart"></div>
-  <div class="meta">Per-residue RMSF about the mean structure, after superposition on the
-    medoid frame. Peaks are the flexible regions — loops and termini.</div>
+  <div class="meta">{rmsf_caption}</div>
 </div>
 
 <h2>Representative structures</h2>
@@ -378,7 +379,7 @@ function draw() {{
     }});
   }});
   if (rmsfTraces.length) {{
-    const l = layout(c, 'Residue position along the chain', 'RMSF (nm)');
+    const l = layout(c, '{rmsf_axis}', 'RMSF (nm)');
     l.hovermode = 'closest';
     l.showlegend = rmsfTraces.length > 1;
     l.legend = {{ orientation: 'h', y: -0.22, font: {{ color: c.secondary }} }};
@@ -600,8 +601,23 @@ def main():
             "Chains",
             ", ".join((summary.get("system") or {}).get("chain_ids") or []) or None,
         ),
-        ("Polymer residues", (summary.get("system") or {}).get("n_polymer_residues")),
+        # Labelled for what it is. Upstream's own documentation for System.from_cif says
+        # "polymer sequences include unresolved residues from the mmCIF entity tables", so this
+        # is the construct BioEmu2 modelled, not the residue count of the input structure --
+        # 1CLL is a 148-residue protein whose crystal resolves 144, and the ensemble has 148.
+        ("Polymer residues (entity sequence)",
+         (summary.get("system") or {}).get("n_polymer_residues")),
         ("Tokens", (summary.get("system") or {}).get("n_tokens")),
+        # What else was in the system. Every one of these is sampled as ligand tokens, and the
+        # difference between a cofactor and a cryoprotectant is not visible in a yes/no flag.
+        (
+            "Non-polymer components sampled",
+            ", ".join(
+                f"{item.get('ccd_code') or '?'} ({item.get('asym_id')})"
+                for item in ((summary.get("system") or {}).get("ligand_components") or [])
+            )
+            or ("none" if (summary.get("system") or {}).get("has_ligands") is False else None),
+        ),
         ("BioEmu2 version", sampling.get("bioemu2_version")),
         ("Checkpoint", settings.get("checkpoint")),
         ("Checkpoint revision", settings.get("hf_ckpt_revision")),
@@ -714,6 +730,20 @@ def main():
         "pdb": pdb_text,
     }
 
+    # One RMSF point per selected atom, which is one per residue only when the selection is
+    # C-alphas. Node 05 falls back to every atom for a system with no protein chain — 1BNA
+    # gives 492 points over 24 nucleotides — and calling that "per-residue" would be a
+    # four-fold overstatement of the resolution, with no way for a reader to tell.
+    selection = (sampled.get("rmsd_atom_selection") or "").lower()
+    per_atom = "ca" not in selection
+    rmsf_caption = (
+        ("Per-atom" if per_atom else "Per-residue")
+        + " RMSF about the mean structure, after superposition on the medoid frame, computed "
+        + f"over {sampled.get('rmsd_atom_selection') or 'the selected atoms'}. Peaks are the "
+        "flexible regions — loops and termini."
+    )
+    rmsf_axis = ("Atom" if per_atom else "Residue") + " position along the selection"
+
     html = HTML.format(
         bootstrap=BOOTSTRAP_CDN,
         plotly=PLOTLY_CDN,
@@ -723,6 +753,8 @@ def main():
         msa_sentence=msa_sentence,
         tiles=tiles,
         legend=legend,
+        rmsf_caption=rmsf_caption,
+        rmsf_axis=rmsf_axis,
         rows="".join(table_rows),
         provenance=provenance,
         viewer_block=viewer_block,

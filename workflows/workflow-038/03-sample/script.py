@@ -17,7 +17,12 @@ the network. If the image were built wrong, this turns a silent multi-gigabyte d
 an immediate, legible error.
 
 Supports --dry-run: resolve and print every setting, then exit 0 without loading the model
-or touching the GPU.
+or touching the GPU. The dry run is a real gate, not a parameter echo. Before it exits it
+checks that node 02's alignment was actually staged (the directory must be named `msa`, since
+Silva matches an inputs entry by basename), resolves the system's topology — which is what
+builds every non-standard component and is the only step that can reach the network — and
+compares each staged A3M's query row against the sequence the system states for that chain.
+All three cost seconds on a CPU and each one of them is a defect that used to reach the GPU.
 
 Mode semantics (upstream): `structure` applies heuristic sharpening at step_scale 1.5 for one
 accurate folded structure; `equilibrium` uses step_scale 1.0 unsharpened for a range of
@@ -26,6 +31,7 @@ conformations. Returned frames are independent samples, NOT a time series.
 import glob
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -49,6 +55,30 @@ MATMUL_PRECISIONS = {"highest", "high", "medium"}
 # Node 02 writes <chain>.a3m for the independent alignment and <chain>.paired.a3m for the
 # positionally paired one a heteromer also gets. The two must never be mixed in one mapping.
 PAIRED_SUFFIX = ".paired.a3m"
+
+
+# Anything that is not a standard residue — an ion, a cofactor, a terminal cap, a modified
+# residue — is built from its CCD definition, which bioemu2 downloads from files.rcsb.org the
+# first time it meets the code and caches under BIOEMU2_CCD_CACHE / BIOEMU2_TEMPLATE_CACHE.
+# The image pre-warms the common codes, so an air-gapped run works for those and only those.
+# Without this explanation the failure surfaces as a DNS error raised four frames inside the
+# library, which reads as a broken image rather than as a missing chemical component.
+def ccd_advice(exc):
+    """The sentence that turns a connection error into an actionable one, or '' if unrelated."""
+    text = str(exc)
+    if "ligands/download" not in text and "rcsb.org" not in text:
+        return ""
+    match = re.search(r"ligands/download/([A-Za-z0-9]+)\.cif", text)
+    code = match.group(1) if match else None
+    return (
+        " This is bioemu2 fetching the CCD definition for "
+        + (f"component '{code}'" if code else "a non-standard component")
+        + " from files.rcsb.org, which it does the first time it meets a code that is not a "
+        "standard residue. The image pre-warms the common ions, caps, cofactors and modified "
+        "residues into BIOEMU2_CCD_CACHE and BIOEMU2_TEMPLATE_CACHE; this code is not among "
+        "them, so this node needs network access, or those cache directories have to be "
+        "supplied already holding it."
+    )
 
 
 def fail(message):
@@ -128,10 +158,21 @@ def advise_batch_size(n_tokens, num_samples, batch_size):
         max(1, int(0.8 * total_memory / (0.3e6 * num_tokens) - num_tokens / 75))
 
     It only warns, and that warning goes to a logger this node does not configure, so it is
-    recomputed and printed here. It is deliberately **not** applied: batch_size changes which
-    samples are drawn, so deriving it from the GPU would make a run unreproducible on a
-    different card while reporting the same seed. The number a run used is the one in the
-    manifest, and the advice is advice.
+    recomputed and printed here. It is optimistic on a small card: measured on an 8 GB RTX
+    3060 Ti, 542 tokens (1AKE) and 746 tokens (1A3N) both ran out of memory at batch 8, where
+    the formula gave 33 and 19. The formula is linear in tokens and upstream's tested device is
+    an 80 GB A100, so it is reported as upstream's estimate and labelled as not a ceiling.
+
+    Lowering the batch does not necessarily help, which is the part a reader is most likely to
+    get wrong. Re-run at batch 1, both systems failed on the *same* allocation as at batch 8 --
+    1.06 GiB for 542 tokens, 1.46 GiB for 746 -- so on that card the peak is set by the token
+    count and not by how many samples are denoised together. Below some size the batch is the
+    knob; above it there is no batch that fits, and the node says so rather than inviting a
+    search that cannot succeed.
+
+    It is deliberately **not** applied: batch_size changes which samples are drawn, so deriving
+    it from the GPU would make a run unreproducible on a different card while reporting the
+    same seed. The number a run used is the one in the manifest, and the advice is advice.
     """
     if not isinstance(n_tokens, int) or n_tokens <= 0:
         print(
@@ -155,7 +196,12 @@ def advise_batch_size(n_tokens, num_samples, batch_size):
         f"Batch size in use: {effective} "
         f"({'explicit' if batch_size is not None else 'the BioEmu2 default, num_samples'}). "
         f"Upstream's estimate of the largest batch that fits {n_tokens} token(s) in "
-        f"{round(total_memory / 1024 ** 3, 1)} GiB is {estimate}.",
+        f"{round(total_memory / 1024 ** 3, 1)} GiB is {estimate}. That estimate is not a "
+        "ceiling: measured on an 8 GB card, 542 tokens ran out of memory at batch 8 and again "
+        "at batch 1, on the same allocation both times, where this formula said 33 would fit; "
+        "746 tokens likewise, where it said 19. The peak scaled with the token count and not "
+        "with the batch, so treat this number as an upper bound to come down from and the token "
+        "count as what decides whether the system fits a card at all.",
         flush=True,
     )
     if min(effective, num_samples) > estimate:
@@ -227,6 +273,96 @@ def staged_alignment(msa_summary):
             flush=True,
         )
     return a3m_files, expected
+
+
+def system_sequences(system):
+    """{asym_id: sequence} for the protein entities, as the System itself states them."""
+    sequences = {}
+    for entity in getattr(system, "entities", []) or []:
+        entity_type = str(
+            getattr(entity, "entity_type", None) or type(entity).__name__
+        ).lower()
+        if "protein" not in entity_type:
+            continue
+        sequence = getattr(entity, "sequence", None)
+        if not isinstance(sequence, str):
+            continue
+        for asym_id in list(getattr(entity, "asym_ids", []) or []):
+            sequences[str(asym_id)] = sequence
+    return sequences
+
+
+def a3m_query(path):
+    """The query sequence of an A3M: its first sequence row, with insertions removed.
+
+    A3M marks insertions relative to the query with lower-case letters, and the query row
+    itself carries none -- but strip them anyway, so a file that does is still comparable.
+    """
+    seen_header = False
+    with open(path, errors="replace") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if line.startswith(">"):
+                if seen_header:
+                    break
+                seen_header = True
+                continue
+            if seen_header:
+                return "".join(c for c in line if not c.islower() and c != "-")
+    return ""
+
+
+def verify_alignment_queries(system, a3m_files):
+    """Refuse an alignment whose query is not this system's sequence.
+
+    bioemu2's `load_a3m_msa` does not compare the query row against the System, so an
+    alignment for a different protein is accepted, conditions the model on the wrong
+    evolutionary signal, and produces an ensemble that looks entirely ordinary. Nothing
+    downstream can detect it: the frame count, the physicality rate and the geometry are all
+    unremarkable.
+
+    Only the chains whose sequence is entirely standard are compared strictly. Where the
+    System carries `X` -- a modified residue, a terminal cap -- there is no letter an alignment
+    could carry at that position, so a legitimate uploaded alignment differs from the System's
+    sequence by construction; those are reported rather than refused.
+    """
+    sequences = system_sequences(system)
+    if not sequences or not a3m_files:
+        return
+    for path in a3m_files:
+        chain = path.stem
+        expected = sequences.get(chain)
+        if not expected:
+            continue
+        query = a3m_query(str(path))
+        if not query:
+            fail(f"{path.name} has no query sequence: its first record carries no residues.")
+        if query == expected:
+            continue
+        if "X" in expected:
+            print(
+                f"NOTE: {path.name} ({len(query)} residues) does not match chain {chain}'s "
+                f"sequence ({len(expected)} residues), which contains a non-standard residue "
+                "(X) that an alignment cannot represent. Not treated as an error: the "
+                "difference is expected on this chain. Check the file if the ensemble looks "
+                "wrong.",
+                flush=True,
+            )
+            continue
+        detail = (
+            f"length {len(query)} against {len(expected)}"
+            if len(query) != len(expected)
+            else f"{sum(1 for a, b in zip(query, expected) if a != b)} differing position(s)"
+        )
+        fail(
+            f"The alignment in {path.name} is not an alignment of chain {chain}: its query row "
+            f"differs from the sequence in the system ({detail}). bioemu2 does not compare the "
+            "two, so this would condition the model on a different protein and produce an "
+            "ensemble that looks ordinary and is wrong. Query starts "
+            f"'{query[:30]}', chain {chain} starts '{expected[:30]}'."
+        )
 
 
 def load_alignment(system, a3m_files, msa_summary):
@@ -391,6 +527,28 @@ def main():
         flush=True,
     )
 
+    from bioemu2 import System
+
+    try:
+        system = System.from_yaml(Path(system_path))
+    except Exception as exc:
+        fail(f"Could not load system YAML '{system_path}': {exc}")
+
+    # Before the dry-run exit, and before the model is loaded, because both of these are about
+    # the input rather than the run: the topology resolves every non-standard component (and is
+    # the step that can reach for the network), and the alignment check compares what was staged
+    # against what the system says it is. A dry run that gets past here has had its chemistry
+    # and its alignment checked on a CPU in seconds.
+    try:
+        topology = system.topology
+    except Exception as exc:
+        fail(f"Could not build the system's topology: {exc}.{ccd_advice(exc)}")
+    print(
+        f"Topology resolved: {topology.n_atoms} atoms, {topology.n_residues} residues",
+        flush=True,
+    )
+    verify_alignment_queries(system, a3m_files)
+
     settings = {
         "mode": mode,
         "num_samples": num_samples,
@@ -418,12 +576,7 @@ def main():
     print(f"GPU: {gpu_info()}", flush=True)
     advise_batch_size(inventory.get("n_tokens"), num_samples, resolved_batch_size)
 
-    from bioemu2 import EmuSession, System, check_physicality, load_model, save_frames
-
-    try:
-        system = System.from_yaml(Path(system_path))
-    except Exception as exc:
-        fail(f"Could not load system YAML '{system_path}': {exc}")
+    from bioemu2 import EmuSession, check_physicality, load_model, save_frames
 
     msa, msa_record = load_alignment(system, a3m_files, msa_summary)
 
@@ -477,10 +630,14 @@ def main():
         message = str(exc)
         if "out of memory" in message.lower():
             fail(
-                f"Out of GPU memory: {exc}. Lower batch_size (currently "
-                f"{resolved_batch_size or num_samples}); if it already fails at 1, the system "
-                "is too large for one GPU and context-parallel sampling, which needs four, "
-                "is out of scope for this workflow."
+                f"Out of GPU memory: {exc}. Try a lower batch_size (currently "
+                f"{resolved_batch_size or num_samples}), but do not expect much from it: "
+                "measured on an 8 GB card, a 542-token and a 746-token system each failed at "
+                "batch 1 on the same allocation that failed at batch 8, because the peak is set "
+                f"by the token count ({inventory.get('n_tokens') or 'unknown'} here) rather "
+                "than by the number of samples. If batch 1 fails, this system "
+                "needs a larger card; context-parallel sampling, which needs four GPUs, is out "
+                "of scope for this workflow."
             )
         fail(f"Sampling failed: {exc}")
     elapsed = round(time.time() - started, 1)

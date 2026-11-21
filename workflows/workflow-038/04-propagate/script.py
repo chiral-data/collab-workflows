@@ -24,6 +24,7 @@ Supports --dry-run.
 import glob
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -56,6 +57,30 @@ MATMUL_PRECISIONS = {"highest", "high", "medium"}
 # Upstream's recommended range for --lag-time-ns.
 LAG_MIN_NS = 1.0
 LAG_MAX_NS = 1000.0
+
+
+# Anything that is not a standard residue — an ion, a cofactor, a terminal cap, a modified
+# residue — is built from its CCD definition, which bioemu2 downloads from files.rcsb.org the
+# first time it meets the code and caches under BIOEMU2_CCD_CACHE / BIOEMU2_TEMPLATE_CACHE.
+# The image pre-warms the common codes, so an air-gapped run works for those and only those.
+# Without this explanation the failure surfaces as a DNS error raised four frames inside the
+# library, which reads as a broken image rather than as a missing chemical component.
+def ccd_advice(exc):
+    """The sentence that turns a connection error into an actionable one, or '' if unrelated."""
+    text = str(exc)
+    if "ligands/download" not in text and "rcsb.org" not in text:
+        return ""
+    match = re.search(r"ligands/download/([A-Za-z0-9]+)\.cif", text)
+    code = match.group(1) if match else None
+    return (
+        " This is bioemu2 fetching the CCD definition for "
+        + (f"component '{code}'" if code else "a non-standard component")
+        + " from files.rcsb.org, which it does the first time it meets a code that is not a "
+        "standard residue. The image pre-warms the common ions, caps, cofactors and modified "
+        "residues into BIOEMU2_CCD_CACHE and BIOEMU2_TEMPLATE_CACHE; this code is not among "
+        "them, so this node needs network access, or those cache directories have to be "
+        "supplied already holding it."
+    )
 
 
 def fail(message):
@@ -288,8 +313,14 @@ def main():
         fail(f"Could not load system YAML: {exc}")
 
     # Bind the XTC to the System's own topology: guaranteed atom-order match, no CIF parsing.
+    # Resolved in its own step, because building the topology and reading the trajectory fail
+    # for entirely different reasons and only one of them is about chemistry.
     try:
-        x0 = mdtraj.load_xtc("./inputs/samples.xtc", top=system.topology)
+        topology = system.topology
+    except Exception as exc:
+        fail(f"Could not build the system's topology: {exc}.{ccd_advice(exc)}")
+    try:
+        x0 = mdtraj.load_xtc("./inputs/samples.xtc", top=topology)
     except Exception as exc:
         fail(f"Could not load the starting ensemble: {exc}")
     if x0.n_frames == 0:

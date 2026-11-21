@@ -331,13 +331,13 @@
     {
       "id": "bioemu2",
       "name": "BioEmu2",
-      "version": "2026_11_11",
+      "version": "2026_11_20",
       "category": "Molecular Dynamics",
       "description": "Conformational ensemble emulation: equilibrium ensembles, folded structures and time-lagged propagation",
-      "long_description": "BioEmu2 (Microsoft Research AI for Science) is a ~500M-parameter all-atom diffusion model that emits ensembles of conformations rather than a single structure, covering proteins, nucleic acids, ligands and multi-chain complexes. It supports folded-structure prediction, equilibrium ensemble sampling, and time-lagged propagation via implicit transfer operator models. This image installs the CUDA 12.6 profile (the cuda12 extra, which pins torch==2.13.0+cu126 so the image is reproducible between builds) and bakes in the bioemu2-preview checkpoint at a pinned revision. The compute-capability floor and the memory figure below are both inherited estimates rather than measurements. Note: sampling frequency is not a calibrated Boltzmann probability, and this is a research preview, not a validated commercial tool.",
+      "long_description": "BioEmu2 (Microsoft Research AI for Science) is a ~500M-parameter all-atom diffusion model that emits ensembles of conformations rather than a single structure, covering proteins, nucleic acids, ligands and multi-chain complexes. It supports folded-structure prediction, equilibrium ensemble sampling, and time-lagged propagation via implicit transfer operator models. This image installs the CUDA 12.6 profile (the cuda12 extra, which pins torch==2.13.0+cu126 so the image is reproducible between builds) and bakes in the bioemu2-preview checkpoint at a pinned revision, plus the chemical component definitions for 126 common ions, cofactors, caps, sugars and modified residues, which bioemu2 would otherwise download from files.rcsb.org the first time it builds a topology containing one. The compute-capability floor is measured in the built image: torch.cuda.get_arch_list() returns sm_50 through sm_90, so compute capability 7.0 (V100) is supported and 10.0 (B200) is not. The memory figure below is host RAM and is still an estimate. GPU memory is the figure that decides what will run, and it is set by the size of the system rather than by the number of samples: on an 8 GB card, systems of 65-155 tokens sample 8 conformations in one batch in under a minute, while a 542-token system ran out of memory at every batch size tried, including 1. Size the card by token count. Note: sampling frequency is not a calibrated Boltzmann probability, and this is a research preview, not a validated commercial tool.",
       "base_image": "python:3.12-slim",
       "registry": "ghcr.io/chiral-data",
-      "image_path": "/bioemu2:2026_11_11",
+      "image_path": "/bioemu2:2026_11_20",
       "tags": [
         "protein",
         "conformational-ensemble",

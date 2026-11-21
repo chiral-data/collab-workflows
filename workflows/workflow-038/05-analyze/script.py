@@ -22,6 +22,7 @@ ensemble only when node 04 actually propagated.
 import csv
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -38,6 +39,41 @@ COLUMNS = [
 
 # A pairwise RMSD matrix is O(n^2); above this many frames it is summarised, not stored.
 MAX_MATRIX_FRAMES = 200
+
+# Below this the frames are the same conformation and the "ensemble" is one structure.
+#
+# Not zero, and not float epsilon: an XTC stores coordinates to 0.001 nm, so two frames that
+# hold the identical conformation come back from the file differing by about that much, and
+# superposing them adds a little more. Measured on a fixture of one conformation repeated
+# with random rigid rotations, the worst pair reads 0.0018-0.0022 nm -- so the 1e-3 nm test this
+# replaces could never fire on a real collapsed ensemble written through an XTC, which is the
+# only way this node ever sees one. 0.01 nm is an order of magnitude above the file format's
+# quantisation and an order below the smallest backbone difference that means anything.
+COLLAPSE_NM = 0.01
+
+
+# Anything that is not a standard residue — an ion, a cofactor, a terminal cap, a modified
+# residue — is built from its CCD definition, which bioemu2 downloads from files.rcsb.org the
+# first time it meets the code and caches under BIOEMU2_CCD_CACHE / BIOEMU2_TEMPLATE_CACHE.
+# The image pre-warms the common codes, so an air-gapped run works for those and only those.
+# Without this explanation the failure surfaces as a DNS error raised four frames inside the
+# library, which reads as a broken image rather than as a missing chemical component.
+def ccd_advice(exc):
+    """The sentence that turns a connection error into an actionable one, or '' if unrelated."""
+    text = str(exc)
+    if "ligands/download" not in text and "rcsb.org" not in text:
+        return ""
+    match = re.search(r"ligands/download/([A-Za-z0-9]+)\.cif", text)
+    code = match.group(1) if match else None
+    return (
+        " This is bioemu2 fetching the CCD definition for "
+        + (f"component '{code}'" if code else "a non-standard component")
+        + " from files.rcsb.org, which it does the first time it meets a code that is not a "
+        "standard residue. The image pre-warms the common ions, caps, cofactors and modified "
+        "residues into BIOEMU2_CCD_CACHE and BIOEMU2_TEMPLATE_CACHE; this code is not among "
+        "them, so this node needs network access, or those cache directories have to be "
+        "supplied already holding it."
+    )
 
 
 def fail(message):
@@ -425,7 +461,10 @@ def main():
         system = System.from_yaml(Path("./inputs/system.yaml"))
     except Exception as exc:
         fail(f"Could not load system YAML: {exc}")
-    topology = system.topology
+    try:
+        topology = system.topology
+    except Exception as exc:
+        fail(f"Could not build the system's topology: {exc}.{ccd_advice(exc)}")
 
     sampling_manifest = read_json("./inputs/sampling_manifest.json", "sampling manifest")
     inventory = read_json("./inputs/system_inventory.json", "system inventory")
@@ -534,6 +573,10 @@ def main():
             "n_tokens": inventory.get("n_tokens"),
             "protein_chains": inventory.get("protein_chains"),
             "has_ligands": inventory.get("has_ligands"),
+            # Named, because "has ligands: yes" does not distinguish four structural calcium
+            # ions from one ethanol left over from the cryoprotectant, and BioEmu2 samples both.
+            "ligand_components": inventory.get("ligand_components"),
+            "n_polymer_residues_from": inventory.get("n_polymer_residues_from"),
             "has_nucleic_acid": inventory.get("has_nucleic_acid"),
         },
         "metrics_are_geometric_only": True,
@@ -557,10 +600,12 @@ def main():
             f"max {summary['pairwise_rmsd']['max_nm']} nm",
             flush=True,
         )
-        if summary["pairwise_rmsd"]["max_nm"] < 1e-3:
+        if summary["pairwise_rmsd"]["max_nm"] < COLLAPSE_NM:
             print(
-                "WARNING: the ensemble has collapsed — every frame is effectively identical. "
-                "Check mode (equilibrium vs structure) and the MSA depth.",
+                f"WARNING: the ensemble has collapsed — the largest pairwise C-alpha RMSD is "
+                f"{summary['pairwise_rmsd']['max_nm']} nm, below the {COLLAPSE_NM} nm at which "
+                "frames stop being distinguishable from one conformation written twice. Check "
+                "mode (equilibrium vs structure) and the MSA depth.",
                 flush=True,
             )
     if summary["n_clusters"] is not None:

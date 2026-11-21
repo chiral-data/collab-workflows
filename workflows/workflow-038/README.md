@@ -109,6 +109,15 @@ One system, supplied any of these ways (first match wins):
    ligands.
 3. **`sequence`** — a raw one-letter protein sequence.
 
+For a structure or an accession, `include_ligands` (default true) and `exclude_ligands` control
+which non-polymer components come along. The default keeps every one of them, which is right —
+dropping a component silently is worse than sampling one — but it does mean the cryoprotectant
+is sampled too: 1CLL carries an ethanol beside its four structural calcium ions, and all five
+become ligand tokens. The node lists every component it kept, by CCD code, so
+`exclude_ligands=EOH` is a decision rather than a guess. The two parameters do not apply to a
+system YAML, a FASTA or a bare sequence, which declare their own components; the node says so
+when they are set anyway.
+
 Node 02 also accepts pre-computed `<chain>.a3m` alignment files placed in its input directory,
 in which case it contacts no server at all. **This path is currently reachable only when running
 node 02 directly with Docker** (mount your A3M files into `/workspace/inputs`); no workflow
@@ -126,14 +135,34 @@ See [input_files/README.md](input_files/README.md) for the bundled Trp-cage test
 **Process:** Detects the input by extension and funnels everything through `System` —
 `from_yaml`, `from_cif`, `from_description` or `from_pdb_id` — then writes it back out with
 `to_yaml()` and loads it again as a validation step. PDB input is converted to mmCIF first;
-Boltz YAML is converted with `bioemu2 convert-boltz`.
+Boltz YAML is converted with `bioemu2 convert-boltz`. It then builds the all-atom structure,
+which both counts the tokens and resolves every non-standard component, and **fails** if that
+cannot be done: nodes 03, 04 and 05 build the same structure from the same system, so there is
+nothing to be gained by discovering it later, on a GPU, after the checkpoint has loaded.
 
 **Scientific notes:** The inventory records the **token** count, not just residues: BioEmu2's
 memory and compute both scale with tokens (one per polymer residue, one per ligand atom), so
 that is the number that predicts whether a run fits on the GPU. Over 10k tokens the node warns.
 The count comes from `AllAtomStructure.num_tokens`, and `system_inventory.json` records which
 attribute supplied it in `n_tokens_from`, so a bioemu2 API change shows up as changed provenance
-rather than as a token total that is quietly null and a size warning that never fires.
+rather than as a token total that is quietly null and a size warning that never fires. Measured:
+1UBQ is 76 tokens for 76 residues, and 1CLL is 155 — 148 residues, 4 calcium ions and ethanol's
+3 heavy atoms.
+
+`n_polymer_residues` is the length of the **entity sequence**, which is what BioEmu2 models.
+Upstream's `System.from_cif` documents it: "polymer sequences include unresolved residues from
+the mmCIF entity tables". So the number is not the residue count of the input coordinates —
+1CLL is a 148-residue protein whose crystal resolves 144, and the ensemble has all 148. The
+inventory records that in `n_polymer_residues_from` and the report labels the row *entity
+sequence*, because the two readings differ on most real entries and only one of them is what
+was sampled.
+
+Every non-polymer component is listed by CCD code in `ligand_components`, and a **placeholder**
+component raises a warning: `UNX` (unknown atom or ion), `UNK` (unknown residue), `UNL`
+(unknown ligand) and `DUM` (dummy atom) are what a depositor writes for density that could not
+be identified, so sampling one means modelling a molecule whose chemistry nobody has
+established. 5PTI carries a `UNX`. The warning names the codes and the `exclude_ligands` string
+that drops them.
 
 **Outputs:** `system.yaml`, `system_inventory.json`
 
@@ -180,8 +209,11 @@ depth, not as a pass mark.
 and node 02's alignment, samples, runs `check_physicality()`, and writes everything with
 `save_frames()`. Uses the **Python API rather than the CLI** because the CLI has no flag for
 supplying a pre-computed alignment. `--dry-run` resolves and prints every setting without
-touching the GPU, and it also checks that the alignment was staged, so the plumbing can be
-tested on a CPU.
+touching the GPU, and it is a real gate rather than a parameter echo: it checks that the
+alignment was staged, resolves the system's topology — the step that builds every non-standard
+component — and compares each staged A3M's query row against the sequence the system states for
+that chain. All three run on a CPU in seconds, and each one is a defect that used to reach the
+GPU before being noticed.
 
 The node prints BioEmu2's own estimate of the largest batch that fits the GPU, computed from
 the token count node 01 measured, and warns when the batch in use is above it. It does not
@@ -189,11 +221,19 @@ apply the estimate: `batch_size` changes which samples are drawn, so deriving it
 card the job landed on would make a run irreproducible while still reporting the same seed.
 
 It reattaches the paired alignment when node 02 wrote one. `load_a3m_msa` returns an unpaired
-`MSA` whatever is on disk, so node 03 loads the per-chain files through `get_msa` — which is
-what validates each A3M's query row against the system's own sequence — and then rebuilds the
-`MSA` with the paired texts added. A partial paired set is a failure rather than a fallback: the
-paired alignment is matched across chains, so using some of it is not a degraded version of
-using all of it.
+`MSA` whatever is on disk, so node 03 loads the per-chain files through `get_msa` and then
+rebuilds the `MSA` with the paired texts added. A partial paired set is a failure rather than a
+fallback: the paired alignment is matched across chains, so using some of it is not a degraded
+version of using all of it.
+
+It also checks that the alignment belongs to this system. bioemu2 does **not** compare an A3M's
+query row against the sequence in the `System` — neither `get_msa` nor `load_a3m_msa` does — so
+an alignment for a different protein is accepted, conditions the model on the wrong evolutionary
+signal, and yields an ensemble whose frame count, physicality rate and geometry are all
+unremarkable. Node 03 compares them itself, before the model loads, and refuses on a mismatch.
+One case is reported rather than refused: where the system's sequence carries `X` for a
+non-standard residue or a terminal cap, no alignment can carry a letter at that position, so a
+legitimate file differs there by construction.
 
 The node refuses to sample if node 02 reported protein chains and no `.a3m` arrived. That is
 not defensiveness about a missing file: `EmuSession` fetches its own alignment when given
@@ -240,6 +280,13 @@ two up front with that reason rather than letting the failure surface from insid
 **Scientific notes:** The result is one endpoint per start point at the chosen lag, **not** a
 continuous path. Upstream recommends lags of 1–1000 ns, the range the model was trained for.
 
+Measured once, on ubiquitin at the default 1 ns lag: 8 endpoints from 8 start points, all 8
+physical, mean Rg 1.1628 nm against 1.1597 nm before propagation and a spread of 0.1943 nm
+against 0.2204 nm. That is what a rigid fold should do over a nanosecond — move slightly and
+stay folded — so it is evidence the path is wired correctly, and only weak evidence about the
+dynamics. A system where the lag is expected to matter has not been propagated here, because
+the ones in the test campaign that would show it do not fit the reference card.
+
 **Outputs:** `propagated_samples.xtc`, `propagated_topology.cif`,
 `propagated_physicality.json`, `propagation_manifest.json`
 
@@ -264,6 +311,16 @@ populations, and this node deliberately computes no thermodynamic quantity. The 
 streams one row at a time, so the medoid and the ensemble spread are measured over every pair at
 any frame count; above 200 frames only the matrix itself is dropped, which costs the heatmap and
 the cluster count and nothing else.
+
+The collapse warning fires below **0.01 nm** of maximum pairwise C-α RMSD. Not zero, and not
+float epsilon: an XTC quantises coordinates to 0.001 nm, so one conformation written twice and
+read back differs by about that much — measured 0.0018-0.0022 nm on a fixture of a single
+conformation repeated with random rigid rotations — and the 1e-3 nm test this replaces could never
+fire on a real collapsed ensemble, which is the only kind this node ever sees. 0.01 nm is an
+order of magnitude above the file format's quantisation and an order below the smallest backbone
+difference that means anything. It is a floor for "the frames are not identical", not a
+statement that the ensemble has conformational spread; that threshold is roughly 0.1 nm, and it
+is a reader's judgement, not a warning.
 
 **Outputs:** `ensemble_metrics.csv`, `ensemble_summary.json`, `ensemble_top.pdb`
 
@@ -295,6 +352,25 @@ wrong. Provenance records what the model was given, not only what node 02 fetche
 
 ## Parameters
 
+### include_ligands / exclude_ligands
+
+Which non-polymer components of a structure or RCSB entry come along. `include_ligands` defaults
+to true, which is upstream's own default and the right one: every ion, cofactor and modified
+residue stays, and dropping one silently would be worse than sampling one. The consequence is
+that the crystallisation chemistry stays too, and BioEmu2 samples all of it as ligand tokens.
+Measured on real entries: 1CLL carries an ethanol beside its four structural calcium ions
+(155 tokens for a 148-residue protein), 5PTI carries a phosphate, a `UNX` placeholder and a
+`DOD` — deuterated water, because it is a neutron structure, and upstream omits waters written
+as HOH but not those written as DOD.
+
+`exclude_ligands` takes CCD codes, comma separated, and drops those while keeping the rest:
+`exclude_ligands=EOH,DOD`. It cannot be combined with `include_ligands=false`, which already
+drops everything; the node refuses that combination rather than ignoring one of them. Node 01
+lists every component it kept, by code, in the log and in `system_inventory.json`, and warns
+about the two classes worth a second look — placeholders (`UNX`, `UNK`, `UNL`, `DUM`: density
+nobody identified) and solvent (`DOD`). Neither parameter applies to a system YAML, a FASTA or a
+bare sequence, which declare their own components.
+
 ### mode
 
 | Value / Range | Description |
@@ -317,7 +393,8 @@ cheapest end-to-end correctness check.
 | 100–1000+ | Production. Required before any cluster count means anything. |
 
 **Trade-off:** Runtime scales roughly linearly in `num_samples` once the trunk embedding is
-paid for; peak memory scales with `batch_size`, not `num_samples`.
+paid for; peak memory scales with `batch_size`, not `num_samples` — on top of a floor set by
+the token count, which for a large system is the whole of it.
 
 **Test vs production:** 8 for a smoke test, 100+ for a real ensemble.
 
@@ -332,7 +409,10 @@ paid for; peak memory scales with `batch_size`, not `num_samples`.
 BioEmu2 runs `ceil(num_samples / batch_size)` batches. Changing it changes the exact samples
 drawn, and for `edm_fk`/`edm_fkc` also changes the resampling population.
 
-**Test vs production:** `0` until you hit an out-of-memory error, then halve until it fits.
+**Test vs production:** `0` until you hit an out-of-memory error, then halve until it fits —
+with the caveat that this works only while the batch is what the memory is going on. For a
+system large relative to the card it is not: measured on 8 GB, 542 and 746 tokens failed at
+batch 1 on the same allocation as at batch 8 (see **VRAM** under *Requirements*).
 
 ### num_steps
 
@@ -407,7 +487,9 @@ frames passing a check that never ran.
 | `lag_time_ns = 1.0` (default) | Upstream recommends 1–1000 ns, the trained range. |
 
 **Trade-off:** Propagation roughly doubles GPU time. Outside 1–1000 ns the model is being asked
-for something it was not trained on, and the node warns.
+for something it was not trained on, and the node warns. On ubiquitin at 1 ns the ensemble
+barely moves (see node 04's *Scientific notes*), which is the expected answer for a rigid fold
+and not a reason to believe nothing happened.
 
 ### msa_depth / use_env
 
@@ -500,6 +582,13 @@ frames), per-residue RMSF, the medoid frame, and clusters at the chosen threshol
 sizes are frame counts.** They are not populations, not probabilities, and not free energies,
 because BioEmu2's sampling frequency is not a calibrated Boltzmann probability.
 
+`system` carries node 01's findings forward rather than re-deriving them: the source, the chain
+ids, the token count, `n_polymer_residues` with its `n_polymer_residues_from` provenance (the
+entity sequence, which includes residues the input structure does not resolve), and
+`ligand_components`, every non-polymer component by CCD code and asym id. The report shows that
+list, because "has ligands: yes" does not distinguish four structural calcium ions from one
+ethanol, and BioEmu2 samples both.
+
 `rmsd_atom_selection` records the selection the RMSD and RMSF were computed over, and
 `excluded_chains` the chains that contributed no C-α atom. `viewer_frames` are the frames in
 `ensemble_top.pdb`, `viewer_frames_from_clusters` says how many of them are genuine cluster
@@ -516,20 +605,20 @@ Self-contained. Opens in any browser with no local assets.
 
 ### Running with Docker
 
-Built from [Dockerfile](Dockerfile) as `bioemu2:2026_11_11`.
+Built from [Dockerfile](Dockerfile) as `bioemu2:2026_11_20`.
 
 ```bash
-docker build -t bioemu2:2026_11_11 workflows/workflow-038/
+docker build -t bioemu2:2026_11_20 workflows/workflow-038/
 ```
 
 Smoke-test the image before running any node:
 
 ```bash
-docker run --rm bioemu2:2026_11_11 bioemu2 --help
+docker run --rm bioemu2:2026_11_20 bioemu2 --help
 ```
 
 ```bash
-docker run --rm --gpus all bioemu2:2026_11_11 nvidia-smi --query-gpu=name,compute_cap --format=csv
+docker run --rm --gpus all bioemu2:2026_11_20 nvidia-smi --query-gpu=name,compute_cap --format=csv
 ```
 
 Compute capability must be 7.0 or newer. Then run a node. Node 03 reads its inputs from
@@ -542,19 +631,25 @@ mkdir -p /tmp/wf038/{inputs,outputs}
 ```
 
 ```bash
-docker run --rm -v /tmp/wf038/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-038/01-prepare-system:/workspace -w /workspace -e PARAM_PDB_ID=1UBQ bioemu2:2026_11_11 bash run.sh
+docker run --rm -v /tmp/wf038/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-038/01-prepare-system:/workspace -w /workspace -e PARAM_PDB_ID=1UBQ bioemu2:2026_11_20 bash run.sh
 ```
 
 Then copy that node's `outputs/` into the next node's `inputs/` and repeat for node 02, whose
 outputs are node 03's inputs:
 
 ```bash
-docker run --rm --gpus all -v /tmp/wf038/inputs:/workspace/inputs -v /tmp/wf038/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-038/03-sample:/workspace -w /workspace -e PARAM_MODE=equilibrium -e PARAM_NUM_SAMPLES=8 -e PARAM_SEED=42 bioemu2:2026_11_11 bash run.sh --dry-run
+docker run --rm --gpus all -v /tmp/wf038/inputs:/workspace/inputs -v /tmp/wf038/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-038/03-sample:/workspace -w /workspace -e PARAM_MODE=equilibrium -e PARAM_NUM_SAMPLES=8 -e PARAM_SEED=42 bioemu2:2026_11_20 bash run.sh --dry-run
 ```
 
-Drop `--dry-run` to actually sample. Both GPU nodes support it, and node 03's dry run also
-checks that the alignment was staged, so it is a real test of the plumbing rather than only of
-the parameters.
+Drop `--dry-run` to actually sample. Both GPU nodes support it, and node 03's dry run checks
+the alignment was staged, resolves the system's topology and compares each A3M's query row
+against the sequence the system states — a real test of the plumbing, the chemistry and the
+input's identity rather than of the parameters alone. It needs no GPU.
+
+The whole suite in [tests/](tests/README.md) is built on that: `tests/run_fixtures.sh` runs
+nodes 01, 02 and the node 03 dry run over seven RCSB entries plus nodes 04-06 over
+deterministic ensembles, all offline, and `tests/run_gpu_campaign.sh` runs the real thing on a
+card.
 
 ### Running on Silva
 
@@ -572,41 +667,72 @@ the parameters.
 | `propagate` | `false` | `true` if you want dynamics |
 | input | bundled Trp-cage (20 residues, seconds) | your system, or `pdb_id = "1AKE"` |
 
-The bundled Trp-cage system is expected to sample in well under a minute, though no timing has
-been measured yet. A successful run ends with `report.html` showing 8 frames and an animating 3D
-viewer.
+Measured on an RTX 3060 Ti (8 GB, compute capability 8.6, driver 580.178.04): ubiquitin (1UBQ,
+76 tokens), 8 samples in `equilibrium` mode, 31.2 s in node 03, 8 of 8 frames passing
+physicality. The bundled Trp-cage system is smaller again. A successful run ends with
+`report.html` showing 8 frames and an animating 3D viewer.
 
 Do not read "non-zero pairwise RMSD" as a pass: two independently sampled frames always differ,
 so that condition is satisfied by any output at all, including a collapsed one. For a folded
 protein in `equilibrium` mode the maximum pairwise C-α RMSD should clear roughly 0.1 nm, the
 scale of ordinary backbone fluctuation; below that the ensemble is one structure plus noise.
-That figure is a floor for spotting collapse, not a validation of the ensemble.
+That figure is a floor for spotting collapse, not a validation of the ensemble. Node 05 warns
+below 0.01 nm, which is a different and much weaker claim — it is the point at which the frames
+stop being distinguishable from one conformation written twice, given that an XTC quantises
+coordinates to 0.001 nm. Clearing 0.01 nm means the frames differ; clearing 0.1 nm means the
+ensemble has conformational spread. Measured: 1UBQ, 8 samples, max pairwise C-α RMSD 0.2204 nm,
+Rg 1.1597 ± 0.0056 nm against an experimental 1.17 nm.
 
 ## Requirements
 
 - **GPU:** NVIDIA, compute capability ≥ 7.0 (V100, T4, A100, RTX A6000, L40S, H100).
-  Not B200: sm_100 needs CUDA 12.8 or newer and this image is built on cu126. The 7.0 floor is
-  inherited from the cu126 wheels and has **not been measured** — settle it on the host with
-  `python -c "import torch; print(torch.cuda.get_arch_list())"` inside the image, and if `sm_70`
-  is absent the floor is 7.5 and V100 comes off this list. Upstream's smallest tested device is
-  an 80 GB A100, so VRAM headroom on smaller cards is unmeasured too.
+  Not B200: sm_100 needs CUDA 12.8 or newer and this image is built on cu126. **Measured** in
+  the built image — `torch.cuda.get_arch_list()` returns
+  `['sm_50', 'sm_60', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'sm_90']` — so `sm_70` is present and
+  the 7.0 floor is real rather than inherited, and `sm_100` is absent, which is the B200
+  exclusion.
+- **VRAM:** the limit is the **token count**, not the sample count. Measured on an 8 GB RTX
+  3060 Ti (sm_86, 7.66 GiB usable): 1UBQ (76 tokens, 31.2 s), 5PTI (65), 2ZTA (72) and 1BNA
+  (69) sample 8 in one batch in well under a minute, and 1CLL (155) samples. 1AKE (542 tokens)
+  and 1A3N (746) **run out of memory at batch 8 and again at batch 1** — each time on the same
+  allocation, 1.06 GiB and 1.46 GiB respectively — so on this card lowering the batch does not
+  move the ceiling at all. Upstream's own estimate, which node 03 prints, said 33 and 19 would
+  fit; it is linear in the token count and calibrated on an 80 GB A100, and on a small card it
+  is an upper bound to come down from rather than a ceiling. Plan by size: 8 GB holds a few
+  hundred tokens, somewhere above 155 and below 542, and a system past that needs a larger
+  card regardless of `batch_size`.
 - **CUDA:** 12.6 via the `[cuda12]` extra, which pins `torch==2.13.0+cu126`. The `[cuda]` extra
   pins no torch at all — it would resolve anywhere in BioEmu2's `>=2.11,<2.14` range, so the
   image would differ between builds — and it needs the CUDA 13 cuEquivariance ops, which raise
   the driver floor. The cu13 kernels are a speed optimisation, not a capability.
-- **Network:** node 02 only (public ColabFold MSA server).
-- **Disk:** ~1.91 GiB of model weights baked into the image.
+- **Network:** node 02 for the public ColabFold MSA server, and nodes 01, 03, 04 and 05 **only**
+  for a non-standard component whose CCD definition is not already in the image. Anything that
+  is not a standard residue — an ion, a cofactor, a terminal cap, a modified residue — is built
+  from its CCD entry, which bioemu2 fetches from `files.rcsb.org` the first time it meets the
+  code, from inside `system.topology`. The image pre-warms 126 codes (ions, caps, cofactors,
+  sugars, crystallisation additives, the frequent modified residues) into `BIOEMU2_CCD_CACHE`
+  and `BIOEMU2_TEMPLATE_CACHE`, so the common cases need no network at all; an unlisted code
+  does, and every node that builds a topology says exactly that, naming the component.
+- **Disk:** 9.58 GB image, of which ~1.91 GiB is model weights and ~2 MB the CCD cache.
 
 ## Troubleshooting
 
 **Node 02 fails retrieving the MSA**
 The public ColabFold server is unreachable or rate-limiting. Retry later, or run node 02
 directly with Docker and mount pre-computed `<chain>.a3m` files into `/workspace/inputs` to skip
-the server entirely.
+the server entirely. bioemu2 also caches each chain's result under `BIOEMU2_MSA_CACHE`, which
+the image points at `/models/colabfold_msa` inside the container: mount a host directory there
+and a repeated run skips the server. `tests/run_gpu_campaign.sh` does exactly that, because the
+MSA fetches rather than the GPU are most of its wall time.
 
 **Node 03 reports out of GPU memory**
-Lower `batch_size`. If it already fails at `batch_size = 1`, the system does not fit on one GPU;
-context-parallel sampling needs four and is out of scope here.
+Try a lower `batch_size`, but check the token count in the same log before spending long on it.
+Measured on an 8 GB card, a 542-token and a 746-token system each failed at `batch_size = 1` on
+the same allocation that failed at batch 8: the peak was set by the size of the system, not by
+how many samples were denoised together. If batch 1 fails, the system needs a larger card —
+context-parallel sampling needs four GPUs and is out of scope here. Do not read the batch
+estimate node 03 prints as a ceiling either: it is upstream's formula, and it said 33 would fit
+for the system that fitted none.
 
 **Node 03 cannot load the model**
 The checkpoint is baked into the image under `$HF_HOME` and `HF_HUB_OFFLINE=1` is set, so this
@@ -623,6 +749,28 @@ exactly what they are for.
 **`System.from_cif()` cannot import my structure**
 It reads composition from mmCIF metadata (`_entity_poly` and friends), not from coordinates, so
 a coordinates-only CIF will not import. Use an RCSB file, or write a system YAML.
+
+**A node fails with a connection error for `files.rcsb.org/ligands/download/XXX.cif`**
+`XXX` is a chemical component the image does not already carry. bioemu2 builds every
+non-standard component from its CCD definition and downloads it the first time it meets the
+code, from inside `system.topology` — which nodes 01, 03, 04 and 05 all call. Either give that
+node network access, or add the code to the pre-warm list in the `Dockerfile` and rebuild, or
+drop the component with `exclude_ligands=XXX`. The node names the code in the error for exactly
+this reason.
+
+**A component cannot be modelled at all**
+`UNL`, the unknown-ligand placeholder, raises inside bioemu2's own template builder even with
+the CCD in hand. Node 01 fails, lists the system's non-polymer components and names the
+`exclude_ligands` parameter. `UNX`, `UNK` and `DUM` do build, and node 01 warns about them
+instead: they are a depositor's codes for density that could not be identified, so sampling one
+means modelling a molecule of unknown chemistry.
+
+**The log is full of `libcue_ops.so: libcuda.so.1`, pynvml failures and "NVIDIA RTX A6000"**
+Expected on the CPU nodes (01, 02, 05, 06), which run without `--gpus`. bioemu2 probes for the
+CUDA equivariance ops and for NVML, finds neither, and falls back to a built-in default device
+description — the "RTX A6000" in that line is a placeholder, not the card in the machine. It is
+noise. On a GPU node the probe succeeds and the lines do not appear; `nvidia-smi` in node 03's
+log is the authoritative statement of which device ran.
 
 ## References
 

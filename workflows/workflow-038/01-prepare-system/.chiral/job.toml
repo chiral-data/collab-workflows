@@ -7,7 +7,7 @@ outputs = [
 ]
 
 [container]
-image = "bioemu2:2026_11_11"
+image = "bioemu2:2026_11_20"
 
 [resources]
 gpu = "none"
@@ -24,3 +24,13 @@ hint = "RCSB accession to use as the system (biological assembly 1, all chains a
 type = "string"
 default = ""
 hint = "Raw one-letter protein sequence, used only if no file is uploaded and pdb_id is empty"
+
+[params.include_ligands]
+type = "boolean"
+default = true
+hint = "Keep the non-water components of a structure or RCSB entry — ions, cofactors, and also cryoprotectants and buffer molecules, all of which BioEmu2 then samples as ligand tokens. Set false to sample the polymers alone. Ignored for a system YAML, a FASTA or a raw sequence, which declare their own components"
+
+[params.exclude_ligands]
+type = "string"
+default = ""
+hint = "CCD codes to drop while keeping the rest, comma separated (e.g. 'EOH,GOL,MPD,PEG,DMS' — the common cryoprotectants and buffers). Cannot be combined with include_ligands=false. The log and system_inventory.json name every component that survives, so check there before excluding"

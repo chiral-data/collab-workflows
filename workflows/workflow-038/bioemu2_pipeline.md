@@ -1,8 +1,8 @@
 # workflow-038 — BioEmu2 Equilibrium Ensemble Emulation (design doc)
 
-Status: **scaffold committed, untested against a GPU.** This document is the design rationale
-and the record of decisions; it also holds the draft `[Workflow]` issue body and PR description
-for whenever the work is filed.
+Status: **run end to end on a GPU, with a fixture suite over seven RCSB entries**
+(`tests/README.md`). This document is the design rationale and the record of decisions; it also
+holds the draft `[Workflow]` issue body and PR description for whenever the work is filed.
 
 ## Context
 
@@ -223,7 +223,7 @@ rather than after a trunk embedding.
 Both also set `HF_HUB_OFFLINE=1` **before importing bioemu2**, so a mis-built image turns a
 silent multi-gigabyte download into an immediate, legible error.
 
-Image name `bioemu2:2026_11_11`. The repo's shared-image CI
+Image name `bioemu2:2026_11_20`. The repo's shared-image CI
 (`build-changed-shared-workflow-images.yml`) greps the tag out of `job.toml` with
 `grep -A20 '\[container\]' | grep '^image'`, so **`image = "..."` must sit at column 0 within
 20 lines of `[container]`** in every `job.toml`.
@@ -231,11 +231,12 @@ Image name `bioemu2:2026_11_11`. The repo's shared-image CI
 ## Open items
 
 1. **Closed: openmm installs from PyPI, no conda base image needed.** bioemu2 requires it
-   unpinned, and PyPI publishes cp312 manylinux wheels. Resolved 2026-11-20 to
-   `openmm-8.3.1-cp312-cp312-manylinux_2_28_x86_64`; manylinux_2_28 needs glibc >= 2.28 and
+   unpinned, and PyPI publishes cp312 manylinux wheels. manylinux_2_28 needs glibc >= 2.28 and
    `python:3.12-slim` (Debian 12) ships 2.36. Reproduce without building anything:
    `pip download openmm --no-deps --python-version 312 --only-binary=:all: --platform
    manylinux_2_28_x86_64`. The `continuumio/miniconda3` fallback is dropped from the Dockerfile.
+   Measured in the built image (2026-11-20): openmm 8.6.1, mdtraj 1.11.2, torch 2.13.0+cu126,
+   numpy 2.4.6, biotite 2.0.0, bioemu2 0.1.0rc0.
 2. **Verify `0.1.0rc0` is still the newest pre-release** at build time
    (`pip index versions bioemu2 --pre`) and re-pin if not. It is a *preview*; the API may move.
 3. **Closed: `physicality.json` is a bare JSON list.** `PhysicalityReport.save()` in
@@ -245,15 +246,27 @@ Image name `bioemu2:2026_11_11`. The repo's shared-image CI
    so that branch was dead code tolerating a format upstream never writes. Node 05 now parses
    the real shape and fails on anything else instead of degrading to blank statuses, which is
    what let a dropped file look like a run where no check was requested.
-4. **VRAM floor is unknown, and two published numbers depend on it.** Upstream's smallest
-   tested device is an 80 GB A100 and gives no guidance for smaller cards. Establish the
-   largest system that fits the estate's GPUs at `batch_size=1`. Two things are currently
-   estimates waiting on that measurement: `requirements.memory_gb: 16` in
-   `apps/applications.json`, which was a guess, and the compute-capability floor of 7.0 in the
-   README, which is inherited from the cu126 wheels rather than measured — settle the latter
-   with `torch.cuda.get_arch_list()` inside the built image. Node 03 now prints BioEmu2's own
-   largest-fitting-batch estimate on every run, so the campaign produces the number as a
-   side effect rather than needing a separate experiment.
+4. **Half closed: the compute-capability floor is measured, the VRAM ceiling is not.**
+   `torch.cuda.get_arch_list()` in the built image returns
+   `['sm_50', 'sm_60', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'sm_90']`, so `sm_70` is present —
+   the 7.0 floor and the V100 claim are real rather than inherited — and `sm_100` is absent,
+   which is the B200 exclusion. The pipeline has been run end to end on an 8 GB RTX 3060 Ti
+   (sm_86, driver 580.178.04, 7.66 GiB usable), 8 samples in one batch: 1UBQ (76 tokens,
+   31.2 s), 5PTI (65), 2ZTA (72), 1BNA (69) and 1CLL (155) all complete; **1AKE (542 tokens)
+   and 1A3N (746) run out of memory**, with node 03's own OOM message and advice. The useful
+   finding is the gap between that and upstream's estimate, which node 03 prints: it gave 33
+   for 542 tokens and 19 for 746, both at least four times optimistic on this card. The formula
+   is linear in tokens and upstream's tested device is an 80 GB A100, so node 03, the README and
+   the troubleshooting section now all say the estimate is an upper bound rather than a ceiling.
+   **Now closed, with the opposite answer to the one expected.** Re-run at `BATCH_SIZE=1`, both
+   systems failed on the *same* allocation as at batch 8 — 1.06 GiB for 542 tokens, 1.46 GiB for
+   746 — so on this card the batch is not what the memory is going on: the peak is set by the
+   token count. Upstream's formula is not merely optimistic here, it scales the variable that
+   does not bind. Node 03's OOM message now says to try a lower batch but not to expect much,
+   and names the token count as what to come down on; the README states the ceiling as a size
+   range (8 GB holds somewhere above 155 and below 542 tokens) rather than as a batch to tune.
+   `requirements.memory_gb: 16` in `apps/applications.json` remains an estimate and is labelled
+   as one — it is a VRAM-adjacent guess for the host, and nothing here has measured it.
 
 9. **The root README's numbering depends on merge order.** The list jumps from 36 to 38,
    because workflow-037 is on the `workflow/rfd4-proteina` branch and not yet merged. Markdown
@@ -267,11 +280,15 @@ Image name `bioemu2:2026_11_11`. The repo's shared-image CI
    changes the RNG story (batch *i* uses `seed + i` with a seed, new randomness without one).
 6. **Trp-cage MSA depth.** The 20-residue test system may return a very shallow alignment,
    which is fine for a smoke test but makes the ensemble scientifically uninteresting. The GPU
-   campaign therefore runs four systems, not one: 1UBQ (ubiquitin, the well-behaved control),
+   campaign therefore runs seven systems, not one: 1UBQ (ubiquitin, the well-behaved control),
    1AKE (adenylate kinase, upstream's own example and a genuine two-state system), 5PTI (BPTI,
-   three disulfides, so the `bad_bonds_sulfur` check is actually exercised) and 2ZTA (the GCN4
+   three disulfides, so the `bad_bonds_sulfur` check is actually exercised), 2ZTA (the GCN4
    leucine zipper, a homodimer, so the two-chain alignment and the per-chain RMSF split are
-   exercised). Trp-cage stays as the bundled smoke-test input.
+   exercised), 1CLL (calmodulin, four structural calcium ions, every one an atom named `CA`),
+   1A3N (haemoglobin, four chains over two sequences, so a **paired** alignment is due) and
+   1BNA (B-DNA, no protein chain, so no alignment is due and none must be demanded).
+   `tests/README.md` says what each one catches. Trp-cage stays as the bundled smoke-test
+   input.
 7. **A user-supplied A3M cannot reach node 02 through Silva.** Node 02 reads `./inputs/*.a3m`
    and uses it verbatim, which works when the node is run directly with Docker — but Silva's
    only file-typed parameter (`input_file`) routes to node 01, and node 02's inputs come from
@@ -279,6 +296,20 @@ Image name `bioemu2:2026_11_11`. The repo's shared-image CI
    Fix by either adding a second `file` param bound to node 02, or having node 01 pass uploaded
    A3M files through to its outputs; the second needs open item 8 resolved first. The READMEs
    now state the limitation rather than promising the feature.
+10. **Closed: every non-standard component needs the network, from inside `system.topology`.**
+   An ion, a cofactor, a terminal cap or a modified residue is built from its CCD definition,
+   which bioemu2 downloads from `files.rcsb.org` the first time it meets the code
+   (`bioemu2/structure/templates.py`, `_CCD_URL`), caching under `BIOEMU2_CCD_CACHE` and
+   `BIOEMU2_TEMPLATE_CACHE`. That call is reached from `system.topology`, which nodes 01, 03, 04
+   and 05 all make, so an air-gapped run of any holo system failed four frames inside the
+   library with a DNS error. Found by running the fixture suite with `--network none`: five of
+   the seven entries hit it. The image now pre-warms 126 codes (~2 MB), each node names the
+   component and the cache when a fetch fails, and node 01 fails rather than warning, because
+   the nodes after it build the same structure. Two of the names were themselves findings:
+   5PTI's `DOD` (deuterated water — upstream omits waters written `HOH`, not those written
+   `DOD`) and its `UNX` (density nobody identified). `UNL` cannot be built at all; node 01
+   lists the components and names `exclude_ligands`.
+
 8. **Closed, and it was the other half of the question that mattered.** An *output* glob
    matching nothing is harmless: `collect_output_files` runs its patterns under
    `shopt -s nullglob`, logs "matched no files", and exits 0. The fatal half was the *input*
@@ -292,19 +323,20 @@ Image name `bioemu2:2026_11_11`. The repo's shared-image CI
 ## Verification plan
 
 Per `SILVA_MIGRATION_GUIDE.md` §6 — all must pass before this workflow is considered done.
-**None of it has been run yet**; the scaffold is written against verified upstream
-documentation, not against a built image.
+**Run on 2026-11-20** against the built image on an RTX 3060 Ti, plus the offline fixture
+suite in `tests/` over seven RCSB entries. `tests/README.md` records what passed, what each
+fixture catches, and what the suite still cannot establish.
 
 Build-time checks (these also resolve open items 1–2):
 
 ```bash
-docker build -t bioemu2:2026_11_11 workflows/workflow-038/
-docker run --rm bioemu2:2026_11_11 bioemu2 --help
-docker run --rm bioemu2:2026_11_11 python -c "import bioemu2, openmm, mdtraj, biotite; print('OK')"
-docker run --rm bioemu2:2026_11_11 ls -l /models/hub/models--microsoft--bioemu2
-docker run --rm --gpus all bioemu2:2026_11_11 \
+docker build -t bioemu2:2026_11_20 workflows/workflow-038/
+docker run --rm bioemu2:2026_11_20 bioemu2 --help
+docker run --rm bioemu2:2026_11_20 python -c "import bioemu2, openmm, mdtraj, biotite; print('OK')"
+docker run --rm bioemu2:2026_11_20 ls -l /models/hub/models--microsoft--bioemu2
+docker run --rm --gpus all bioemu2:2026_11_20 \
   python -c "import torch; print(torch.cuda.is_available(), torch.version.cuda)"
-docker run --rm --gpus all bioemu2:2026_11_11 \
+docker run --rm --gpus all bioemu2:2026_11_20 \
   nvidia-smi --query-gpu=name,compute_cap --format=csv
 ```
 
@@ -321,7 +353,7 @@ docker run --rm --gpus all \
   -v $(pwd)/workflows/workflow-038/03-sample:/workspace \
   -w /workspace \
   -e PARAM_MODE=equilibrium -e PARAM_NUM_SAMPLES=8 -e PARAM_SEED=42 \
-  bioemu2:2026_11_11 bash run.sh --dry-run    # then again without --dry-run
+  bioemu2:2026_11_20 bash run.sh --dry-run    # then again without --dry-run
 ```
 
 Chain + end-to-end: `cp -r /tmp/wf038-nodeN/outputs/* /tmp/wf038-nodeN+1/inputs/` through all
@@ -348,6 +380,15 @@ requires.
 4. The ground truth worth having is upstream's own example: **adenylate kinase (1AKE)** in
    equilibrium mode should sample both the open and closed lobe conformations. If the ensemble
    shows only one, sampling is broken in a way no smaller test would reveal.
+
+   **Not achieved on the available hardware.** 1AKE is 542 tokens and does not fit the 8 GB
+   reference card at any batch size, so no 1AKE ensemble exists to judge. The substitute the
+   campaign actually measured is **calmodulin (1CLL)**, 155 tokens: Rg 1.5677 nm with max
+   pairwise C-α RMSD 1.3682 nm over 8 clusters, against ubiquitin's 1.1597 nm over a single
+   0.2204 nm cluster. A two-lobed protein that pivots about a flexible central helix coming out
+   multi-state while a rigid fold comes out single-state is the same kind of evidence 1AKE was
+   wanted for, one system smaller. It is a weaker control — nothing here identifies the clusters
+   as the open and closed states — and the 1AKE check stays worth running on a larger card.
 
 ## Scientific caveats this workflow must not paper over
 
@@ -393,24 +434,53 @@ maintainer, so that gate no longer applies. The drafts below are here to file wh
 
 ### Draft PR description
 
-> Adds `workflows/workflow-038/` — BioEmu2 equilibrium ensemble emulation, 6 nodes on one shared
-> image (`bioemu2:2026_11_11`, `python:3.12-slim` base, the 1.91 GiB `bioemu2-preview`
-> checkpoint baked at a pinned HF revision).
+> Adds `workflows/workflow-038/` — BioEmu2 equilibrium ensemble emulation, six nodes on one
+> shared image (`bioemu2:2026_11_20`, `python:3.12-slim` base, the 1.91 GiB `bioemu2-preview`
+> checkpoint baked at a pinned HF revision, plus the CCD definitions for 126 common components).
+> Nothing in the repo samples how an existing protein *moves*; this does.
 >
-> - `01-prepare-system` — resolve a system YAML from an upload, a structure file, a raw sequence
->   or an RCSB accession; inventory chains and tokens
-> - `02-fetch-msa` — ColabFold alignment to disk as A3M, so node 03 needs no network
-> - `03-sample` — `sample-equilibrium` or `predict-structure`, offline pinned weights,
->   `--dry-run` support
-> - `04-propagate` — time-lagged endpoints; identity pass-through when disabled, so declared
->   outputs are always written
-> - `05-analyze` — per-frame and ensemble metrics, plus a multi-model PDB for the viewer
-> - `06-report` — self-contained `report.html` with an animating 3Dmol ensemble
+> - `01-prepare-system` — resolve a system from an upload, a structure file, a raw sequence or an
+>   RCSB accession; inventory chains, tokens and every non-polymer component by CCD code
+> - `02-fetch-msa` — ColabFold alignment to disk as A3M, unpaired and, for a heteromer, paired,
+>   so node 03 needs no network
+> - `03-sample` — `equilibrium` or `structure` mode on pinned offline weights, with a
+>   `--dry-run` that checks the staging, the chemistry and the alignment's identity on a CPU
+> - `04-propagate` — time-lagged endpoints; an identity pass-through when disabled, so the
+>   declared outputs always exist
+> - `05-analyze` — per-frame and ensemble geometry, clusters, per-chain RMSF, and a multi-model
+>   PDB of representative frames
+> - `06-report` — one self-contained `report.html` with an animating 3Dmol ensemble
+>
+> **Verified on a GPU, not only reviewed.** On an RTX 3060 Ti (8 GB, sm_86): 1UBQ samples 8
+> frames in 31.2 s with 8/8 physical and Rg 1.1597 nm against an experimental 1.17 nm; 5PTI,
+> 2ZTA, 1CLL and 1BNA (no protein chain) run through all six nodes; and the time-lagged path
+> runs for real on 1UBQ at a 1 ns lag, giving 8 physical endpoints at Rg 1.1628 nm against
+> 1.1597 before it. 1CLL is the ensemble worth looking at: max pairwise C-α RMSD 1.3682 nm over
+> 8 clusters on a 148-C-α selection that correctly excludes its four calcium ions, against
+> ubiquitin's single 0.2204 nm cluster — a two-lobed protein coming out multi-state and a rigid
+> one coming out single-state.
+>
+> 1AKE (542 tokens) and 1A3N (746) do not fit the card, at batch 8 or at batch 1, both times on
+> the same allocation — so the ceiling is the token count rather than the batch, which is what
+> the README now says and what node 03's OOM message now advises. The image's compute-capability
+> floor is measured rather than inherited: `torch.cuda.get_arch_list()` returns `sm_50 … sm_90`,
+> so V100 is in and B200 is out.
+>
+> `tests/` holds a fixture suite over seven RCSB entries, chosen by measurement — `probe_entry.py`
+> parses `_atom_site` by hand so it shares no parser with the code under test — split into an
+> offline driver and the GPU campaign. 1CLL is in it because a calcium ion is an atom named `CA`
+> and mdtraj's `name CA` matches atom names, which silently puts 148 atoms in a 144-C-α
+> selection. The offline driver runs every node with `--network none`, which is what turned a
+> class of silent failures into named ones: it is how the CCD network dependency, the
+> `n_tokens: null` on every holo system, and 5PTI's `DOD` and `UNX` components were found.
+> `tests/README.md` says what each entry catches, what the suite cannot establish, and the one
+> gap that stays open — no heteromer finishes the pipeline on an 8 GB card.
 >
 > Registry: root `README.md` entry #38, `workflows/CHANGELOG.md`, `apps/applications.json`.
 >
 > Sampling frequencies are **not** calibrated Boltzmann probabilities and frames are independent
-> samples rather than a trajectory; the README and the report both say so.
+> samples rather than a trajectory; cluster sizes are frame counts, not populations. The README
+> and the report both lead with that.
 
 ## References
 

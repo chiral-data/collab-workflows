@@ -21,7 +21,7 @@ outputs = [
 ]
 
 [container]
-image = "bioemu2:2026_11_11"
+image = "bioemu2:2026_11_20"
 
 [resources]
 gpu = "none"
