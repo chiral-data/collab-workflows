@@ -1,0 +1,41 @@
+name = "Annotate Sequences"
+description = "Number every clone with ANARCI, assign chain type and closest germline, delimit the CDRs, scan for sequence liability motifs, and reject sequences that are not variable domains"
+inputs = []
+outputs = [
+  "annotations.json",
+  "annotations.csv",
+  "liabilities.csv",
+  "panel_manifest.json",
+  "clones.fasta",
+]
+
+[container]
+image = "antibody-triage:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.receptor_type]
+type = "string"
+default = "auto"
+hint = "Receptor class: antibody (paired VH/VL), nanobody (VHH only), or auto to decide per clone from the chains present"
+
+[params.numbering_scheme]
+type = "string"
+default = "imgt"
+hint = "Numbering scheme for annotation and CDR boundaries: imgt, chothia, kabat, martin or aho"
+
+[params.cdr_definition]
+type = "string"
+default = "imgt"
+hint = "CDR boundary definition used for the developability metrics: imgt (what TAP itself uses), chothia, kabat or north. Each definition is evaluated in the numbering scheme it is defined on, so node 01 numbers a second time when this differs from numbering_scheme"
+
+[params.allowed_species]
+type = "string"
+default = "human,mouse"
+hint = "Comma-separated germline species ANARCI may assign; narrows chain-type calls and the germline identity baseline"
+
+[params.liability_motifs]
+type = "string"
+default = "default"
+hint = "Sequence liability motif set to scan CDRs for: default or a path to a custom JSON motif file"

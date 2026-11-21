@@ -1,0 +1,17 @@
+{
+  "receptor_type": "auto",
+  "numbering_scheme": "imgt",
+  "cdr_definition": "imgt",
+  "allowed_species": "human,mouse",
+  "refine_structures": true,
+  "tap_threshold_set": "clinical",
+  "liability_motifs": "default",
+  "humanness_db": "human-oas",
+  "peptide_length": 9,
+  "mutate_scan": true,
+  "scan_region": "cdr",
+  "scan_stepwise_masking": false,
+  "max_mutants_per_clone": 20,
+  "top_n": 10,
+  "seed": 42
+}

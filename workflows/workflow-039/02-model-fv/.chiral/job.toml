@@ -1,0 +1,27 @@
+name = "Model Fv Structures"
+description = "Predict an Fv structure per clone with ABodyBuilder2 (or NanoBodyBuilder2 for VHH) from the baked-in weights, keeping the ensemble spread as a per-residue error estimate in the B-factor column"
+inputs = [
+  "annotations.json",
+  "panel_manifest.json",
+]
+outputs = [
+  "models/*.pdb",
+  "model_summary.csv",
+  "modelling_manifest.json",
+]
+
+[container]
+image = "antibody-triage:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.receptor_type]
+type = "string"
+default = "auto"
+hint = "Receptor class: antibody (ABodyBuilder2), nanobody (NanoBodyBuilder2), or auto per clone"
+
+[params.refine_structures]
+type = "boolean"
+default = true
+hint = "Run ImmuneBuilder's OpenMM refinement on each model. Off is several times faster and leaves minor geometry violations in place"

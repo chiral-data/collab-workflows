@@ -1,0 +1,26 @@
+name = "Rank Panel"
+description = "Join every per-clone metric into one table, apply the pass/warn/fail flag logic, and rank the panel so the output is a shortlist of clones to express rather than a pile of numbers"
+inputs = [
+  "annotations.csv",
+  "liabilities.csv",
+  "developability.csv",
+  "flags.csv",
+  "humanness.csv",
+  "proposals.csv",
+  "model_summary.csv",
+]
+outputs = [
+  "ranked_panel.csv",
+  "panel_summary.json",
+]
+
+[container]
+image = "antibody-triage:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of clones marked as the shortlist and carried into the report's detail section"

@@ -1,0 +1,32 @@
+name = "Humanness"
+description = "Score each variable domain against the human antibody repertoire with promb 9-mer prevalence, and against its closest germline by sequence identity, to flag clones likely to need humanization"
+inputs = [
+  "annotations.json",
+  "clones.fasta",
+]
+outputs = [
+  "humanness.csv",
+  "humanness.json",
+  "peptide_detail.csv",
+]
+
+[container]
+image = "antibody-triage:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.humanness_db]
+type = "string"
+default = "human-oas"
+hint = "promb reference database: human-oas (antibody 9-mers seen in >=10% of human subjects, the OASis-like score), human-reference or human-swissprot"
+
+[params.peptide_length]
+type = "integer"
+default = 9
+hint = "Peptide length for the humanness score; ignored for human-oas, whose peptide length is fixed at 9"
+
+[params.allowed_species]
+type = "string"
+default = "human,mouse"
+hint = "Comma-separated germline species ANARCI may assign; sets the germline identity baseline"

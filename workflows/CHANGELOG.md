@@ -5,6 +5,68 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-11-12]
+
+### Added
+
+- workflow-039: Antibody Developability Triage — **implemented, never executed**
+  (7 nodes: 01-annotate, 02-model-fv, 03-developability, 04-humanness, 05-mutate-scan, 06-rank,
+  07-report). Every node is written and compiles; the image has not been built and no node has
+  run against the real tools, so no number in the workflow has been produced by running it.
+  - First workflow on `main` that treats antibodies *as antibodies*: the existing docking
+    (-016, -017), structure (-012, -018, -026) and design (-013, -033, -037) workflows have no
+    concept of a CDR. Answers "which of these clones do we express?" for a panel. The unmerged
+    `workflow-abodybuilder3` branch (June 2026) does predict antibody Fv structures with
+    ABodyBuilder3 and overlaps with node 02; recorded as open item 8 rather than ignored.
+  - CPU only, deliberately — no GPU node at all. ABodyBuilder2 is ~seconds per antibody and
+    AbLang2 scores a panel in one forward pass per clone, which is what makes triaging a few
+    hundred clones affordable rather than triaging a hand-picked ten.
+  - Antigen deliberately out of scope: no epitope mapping, no paratope-from-complex analysis,
+    no affinity prediction. Including them would force a complex predictor and a GPU, costing
+    the workflow its only real advantage. Users are pointed at -012/-016/-018 instead.
+  - Node 03 reimplements the five TAP developability metrics from the Methods of Raybould et
+    al. (PNAS 2019, CC BY), because TAP ships as a web service with no redistributable source:
+    PSH/PPC/PNC pair sums over the CDR vicinity, SFvCSP, and total CDR length, with the
+    paper's own exposure (>=7.5% relative ASA, Shrake-Rupley), CDR-vicinity (exposed CDR and
+    anchor residues plus exposed residues within 4 A) and salt-bridge (<=3.2 A N+-O-)
+    definitions. Thresholds are Table 2's, cited, with the amber bands implemented inclusively.
+    Labelled "TAP-style" everywhere.
+  - Two deviations from TAP are recorded in `developability.json` rather than hidden: whole-
+    residue relative ASA against Tien et al. (2013) instead of side-chain exposure against a
+    Yang Zhu & Blundell reference we do not have, and ABodyBuilder2 models where TAP calibrated
+    on ABodyBuilder v1. Node 03 reports the panel's PSH mean against the published
+    clinical-stage mean (123.30 +/- 16.60) and warns past 3 SD, so a calibration offset is
+    visible rather than silent.
+  - Humanness via promb's `human-oas` 9-mer set (MIT, pip-installable) rather than BioPhi's
+    OASis, which needs a 22 GB database download. MHC-II prediction omitted entirely: the field
+    standard is academic-use-only and mhcflurry is class I, so humanness is reported as a proxy
+    and labelled as one rather than shipping a licence violation or a misread class-I score.
+  - Node 05 re-screens every AbLang2 proposal: no new liability motif, no newly unpaired
+    cysteine, and no substitution that pushes a flagged clone further in its flagged direction.
+    Dropped proposals are written out with the rule that rejected them.
+  - Classic ANARCI rather than the better-maintained ANARCII, because ImmuneBuilder imports
+    `anarci` by name in the code path before every prediction; two numbering engines that can
+    disagree on CDR boundaries would be worse than one stale engine.
+  - Whole image is BSD-3/MIT/Apache-2.0 — no academic-only component, no large download.
+  - Shared image `antibody-triage:2026_11_11` (`continuumio/miniconda3`, Python 3.11, Torch CPU
+    wheels; OpenMM, pdbfixer and ANARCI from conda-forge/bioconda because they are conda-first
+    upstream). ImmuneBuilder 1.2, ablang2 0.2.1 and promb 1.0.2 pinned exactly, with all model
+    weights and the humanness database baked in at build time so every node runs offline.
+  - Nothing is filtered at any stage: liabilities and developability flags are columns, ranking
+    is a sort, and per-clone failures are recorded rather than fatal — a node fails hard only
+    when every clone fails or an input is missing.
+  - `tests/test_logic.py`: 95 dependency-free checks over CDR/anchor derivation, motif
+    scanning, the hydrophobicity normalization, the pair sums on synthetic geometry,
+    salt-bridge detection, every Table 2 boundary, the re-screen rules and the ranking order.
+    Writing them found a real bug: the cysteine rule rejected any parity change, which would
+    have blocked repairing an already-unpaired cysteine; it now rejects only newly odd counts.
+  - A design recheck before implementation corrected five things from the first draft: TAP uses
+    IMGT CDR definitions (not North, which is only its canonical-form clustering), Table 2's
+    absolute thresholds are published (so `tap_threshold_set` defaults to `clinical`), the
+    metric formulas are fully specified in Methods, ImmuneBuilder's `save()` always refines (so
+    the unrefined path adds error B-factors itself), and the exposure reference is a genuine
+    deviation rather than a detail.
+
 ## [2026-07-24]
 
 ### Added
