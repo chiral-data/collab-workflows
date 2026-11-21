@@ -1,0 +1,27 @@
+name = "Fetch MSA"
+description = "Retrieve the ColabFold alignment for each protein chain and write it to disk as A3M, so the GPU sampling node needs no network access"
+inputs = [
+  "system.yaml",
+  "system_inventory.json",
+]
+outputs = [
+  "system.yaml",
+  "msa_summary.json",
+  "msa/*.a3m",
+]
+
+[container]
+image = "bioemu2:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.msa_depth]
+type = "integer"
+default = 0
+hint = "Subsample the alignment to this many rows; 0 keeps the full alignment. Shallower alignments degrade ensemble quality"
+
+[params.use_env]
+type = "boolean"
+default = true
+hint = "Include the environmental database in the ColabFold MSA search"

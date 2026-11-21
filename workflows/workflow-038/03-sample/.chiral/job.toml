@@ -1,0 +1,72 @@
+name = "Sample Conformations"
+description = "Run bioemu2 sample-equilibrium or predict-structure on the prepared system with the baked-in checkpoint, offline, and collect the ensemble with its per-frame physicality report"
+inputs = [
+  "system.yaml",
+  "msa_summary.json",
+  "msa/*.a3m",
+]
+outputs = [
+  "samples.xtc",
+  "topology.cif",
+  "physicality.json",
+  "system.yaml",
+  "sampling_manifest.json",
+  "msa/*.a3m",
+]
+
+[container]
+image = "bioemu2:2026_11_11"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.mode]
+type = "string"
+default = "equilibrium"
+hint = "Sampling mode: equilibrium (range of conformations) or structure (one accurate folded structure)"
+
+[params.num_samples]
+type = "integer"
+default = 8
+hint = "Number of conformations to generate"
+
+[params.batch_size]
+type = "integer"
+default = 0
+hint = "Conformations denoised together; 0 uses the BioEmu2 default (all of them at once)"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed; batch i uses seed + i. Set to -1 for unseeded sampling"
+
+[params.sampler]
+type = "string"
+default = "edm"
+hint = "Sampling algorithm: edm (unsteered), edm_gd, edm_fk, or edm_fkc (steered toward physicality)"
+
+[params.physicality_filter]
+type = "string"
+default = "high_quality"
+hint = "Physicality check mode reported per frame: high_quality, high_quality_per_residue, no_violations, or no_filter. Frames are never removed"
+
+[params.precision]
+type = "string"
+default = "bf16-mixed"
+hint = "Trunk embedding precision: bf16-mixed (fast) or 32-true (full precision)"
+
+[params.matmul_precision]
+type = "string"
+default = "high"
+hint = "Float32 matmul precision during denoising: high (TF32), highest, or medium"
+
+[params.compile_denoiser]
+type = "boolean"
+default = false
+hint = "Compile the denoiser. Only worth it for many samples on small systems (<128 tokens); compilation itself costs time"
+
+[params.hf_ckpt_revision]
+type = "string"
+default = "dd4b0c1b69984b68edcb6200a544213be4d75242"
+hint = "Pinned HuggingFace revision of microsoft/bioemu2, recorded for provenance; weights are baked into the image at build time"

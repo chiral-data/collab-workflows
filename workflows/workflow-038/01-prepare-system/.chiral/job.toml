@@ -1,0 +1,23 @@
+name = "Prepare System"
+description = "Resolve the molecular system from an uploaded system YAML, structure or FASTA file, an RCSB accession, or a raw sequence, and emit a validated BioEmu2 system YAML plus a token inventory"
+inputs = []
+outputs = [
+  "system.yaml",
+  "system_inventory.json",
+]
+
+[container]
+image = "bioemu2:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.pdb_id]
+type = "string"
+default = ""
+hint = "RCSB accession to use as the system (biological assembly 1, all chains and ligands); ignored if a file is uploaded"
+
+[params.sequence]
+type = "string"
+default = ""
+hint = "Raw one-letter protein sequence, used only if no file is uploaded and pdb_id is empty"

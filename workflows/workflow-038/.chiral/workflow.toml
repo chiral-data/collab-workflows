@@ -1,0 +1,104 @@
+name = "BioEmu2 Equilibrium Ensemble Emulation"
+description = "Sample conformational ensembles with BioEmu2: equilibrium ensembles, folded-structure prediction, and time-lagged propagation from a sequence, structure or RCSB accession"
+
+[dependencies]
+02-fetch-msa = ["01-prepare-system"]
+03-sample = ["01-prepare-system", "02-fetch-msa"]
+04-propagate = ["03-sample"]
+05-analyze = ["03-sample", "04-propagate"]
+06-report = ["03-sample", "04-propagate", "05-analyze"]
+
+[params.input_file]
+type = "file"
+default = "input_files/trp_cage_system.yaml"
+hint = "BioEmu2 system YAML, or a .cif/.pdb structure or .fasta sequence file to build one from"
+
+[params.pdb_id]
+type = "string"
+default = ""
+hint = "RCSB accession to use as the system (biological assembly 1, all chains and ligands); ignored if a file is uploaded"
+
+[params.sequence]
+type = "string"
+default = ""
+hint = "Raw one-letter protein sequence, used only if no file is uploaded and pdb_id is empty"
+
+[params.mode]
+type = "string"
+default = "equilibrium"
+hint = "Sampling mode: equilibrium (range of conformations) or structure (one accurate folded structure)"
+
+[params.num_samples]
+type = "integer"
+default = 8
+hint = "Number of conformations to generate"
+
+[params.batch_size]
+type = "integer"
+default = 0
+hint = "Conformations denoised together; 0 uses the BioEmu2 default (all of them at once)"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed; batch i uses seed + i. Set to -1 for unseeded sampling"
+
+[params.sampler]
+type = "string"
+default = "edm"
+hint = "Sampling algorithm: edm (unsteered), edm_gd, edm_fk, or edm_fkc (steered toward physicality)"
+
+[params.physicality_filter]
+type = "string"
+default = "high_quality"
+hint = "Physicality check mode reported per frame: high_quality, high_quality_per_residue, no_violations, or no_filter. Frames are never removed"
+
+[params.precision]
+type = "string"
+default = "bf16-mixed"
+hint = "Trunk embedding precision: bf16-mixed (fast) or 32-true (full precision)"
+
+[params.matmul_precision]
+type = "string"
+default = "high"
+hint = "Float32 matmul precision during denoising: high (TF32), highest, or medium"
+
+[params.compile_denoiser]
+type = "boolean"
+default = false
+hint = "Compile the denoiser. Only worth it for many samples on small systems (<128 tokens); compilation itself costs time"
+
+[params.msa_depth]
+type = "integer"
+default = 0
+hint = "Subsample the alignment to this many rows; 0 keeps the full alignment. Shallower alignments degrade ensemble quality"
+
+[params.use_env]
+type = "boolean"
+default = true
+hint = "Include the environmental database in the ColabFold MSA search"
+
+[params.propagate]
+type = "boolean"
+default = false
+hint = "Run time-lagged propagation in node 04. When false, node 04 passes the ensemble through unchanged"
+
+[params.lag_time_ns]
+type = "float"
+default = 1.0
+hint = "Propagation lag time in nanoseconds; upstream recommends 1 to 1000"
+
+[params.hf_ckpt_revision]
+type = "string"
+default = "dd4b0c1b69984b68edcb6200a544213be4d75242"
+hint = "Pinned HuggingFace revision of microsoft/bioemu2, recorded for provenance; weights are baked into the image at build time"
+
+[params.rmsd_cluster_threshold_nm]
+type = "float"
+default = 0.2
+hint = "C-alpha RMSD threshold in nm for counting distinct conformational clusters in the ensemble"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of frames written to the multi-model PDB and shown in the report's 3D viewer"

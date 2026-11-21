@@ -5,6 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-11-12]
+
+### Added
+
+- workflow-038: BioEmu2 Equilibrium Ensemble Emulation — **scaffold, untested against a GPU**
+  (6 nodes: 01-prepare-system, 02-fetch-msa, 03-sample, 04-propagate, 05-analyze, 06-report).
+  - Conformational ensemble emulation on BioEmu2 (Microsoft Research AI for Science, MIT,
+    public preview 2026-10-20). First workflow in the repo that samples how an existing
+    protein *moves* rather than predicting one structure or designing a new one.
+  - Covers all three BioEmu2 modes by parameter: `predict-structure`, `sample-equilibrium`,
+    and time-lagged `propagate`.
+  - `02-fetch-msa` is its own CPU node: the alignment is the only step needing the public
+    internet, so fetching it to disk turns a server outage or rate limit into a seconds-long
+    CPU failure instead of a failed GPU job, and lets `03-sample` run with `HF_HUB_OFFLINE=1`.
+    User-supplied `<chain>.a3m` files skip the server entirely.
+  - Nodes 03/04 drive the BioEmu2 Python API rather than its CLI, because the CLI exposes no
+    flag for a pre-computed MSA; `--num-steps` is deliberately not exposed, as
+    `EmuSession.sample()` has no equivalent.
+  - `04-propagate` always writes its declared outputs, passing the ensemble through as an
+    identity propagation when disabled, because Silva has no conditionally-skipped node and a
+    declared-but-unwritten output is a silent failure.
+  - Nodes 04-05 bind the XTC to the System's own topology rather than parsing `topology.cif`,
+    sidestepping mdtraj's mmCIF support entirely.
+  - Shared image `bioemu2:2026_11_11` (`python:3.12-slim`, CUDA 12.6 via the `[cuda12]` extra
+    because the `[cuda]` extra needs a CUDA 13 driver the estate lacks; `[cuda12]` also covers
+    compute capability 7.0, so V100 works). HF checkpoint pinned to
+    `dd4b0c1b69984b68edcb6200a544213be4d75242` (1.91 GiB). Registered in
+    `apps/applications.json`.
+  - Sampling frequency is **not** a calibrated Boltzmann probability and sampled frames are
+    independent draws, not a trajectory; the README and `report.html` both lead with this.
+  - Design doc, decisions and open build-time questions in
+    `workflows/workflow-038/bioemu2_pipeline.md`.
+
 ## [2026-07-24]
 
 ### Added

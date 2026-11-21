@@ -1,0 +1,23 @@
+name = "Report"
+description = "Build a self-contained HTML report with the ensemble metrics, conformational spread plots and an animating 3D viewer of representative frames"
+inputs = [
+  "ensemble_metrics.csv",
+  "ensemble_summary.json",
+  "ensemble_top.pdb",
+  "sampling_manifest.json",
+  "propagation_manifest.json",
+]
+outputs = [
+  "report.html",
+]
+
+[container]
+image = "bioemu2:2026_11_11"
+
+[scripts]
+run = "run.sh"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of frames written to the multi-model PDB and shown in the report's 3D viewer"

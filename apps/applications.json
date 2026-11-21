@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-14",
+  "last_updated": "2026-11-12",
   "applications": [
     {
       "id": "boltz",
@@ -327,6 +327,31 @@
         "cuda_version": "11.8"
       },
       "documentation_url": "https://github.com/lbcb-sci/RiNALMo"
+    },
+    {
+      "id": "bioemu2",
+      "name": "BioEmu2",
+      "version": "2026_11_11",
+      "category": "Molecular Dynamics",
+      "description": "Conformational ensemble emulation: equilibrium ensembles, folded structures and time-lagged propagation",
+      "long_description": "BioEmu2 (Microsoft Research AI for Science) is a ~500M-parameter all-atom diffusion model that emits ensembles of conformations rather than a single structure, covering proteins, nucleic acids, ligands and multi-chain complexes. It supports folded-structure prediction, equilibrium ensemble sampling, and time-lagged propagation via implicit transfer operator models. This image installs the CUDA 12.6 profile (the cuda12 extra, which also covers compute capability 7.0) and bakes in the bioemu2-preview checkpoint at a pinned revision. Note: sampling frequency is not a calibrated Boltzmann probability, and this is a research preview, not a validated commercial tool.",
+      "base_image": "python:3.12-slim",
+      "registry": "ghcr.io/chiral-data",
+      "image_path": "/bioemu2:2026_11_11",
+      "tags": [
+        "protein",
+        "conformational-ensemble",
+        "molecular-dynamics",
+        "generative",
+        "ml",
+        "gpu"
+      ],
+      "requirements": {
+        "gpu": true,
+        "memory_gb": 16,
+        "cuda_version": "12.6"
+      },
+      "documentation_url": "https://github.com/microsoft/bioemu2"
     }
   ]
 }

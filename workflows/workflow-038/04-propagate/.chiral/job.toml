@@ -1,0 +1,56 @@
+name = "Propagate Ensemble"
+description = "Draw one time-lagged endpoint per sampled conformation with the implicit transfer operator model; passes the ensemble through unchanged when propagation is disabled"
+inputs = [
+  "samples.xtc",
+  "topology.cif",
+  "system.yaml",
+  "sampling_manifest.json",
+  "msa/*.a3m",
+]
+outputs = [
+  "propagated_samples.xtc",
+  "propagated_topology.cif",
+  "propagation_manifest.json",
+]
+
+[container]
+image = "bioemu2:2026_11_11"
+use_gpu = true
+
+[scripts]
+run = "run.sh"
+
+[params.propagate]
+type = "boolean"
+default = false
+hint = "Run time-lagged propagation in node 04. When false, node 04 passes the ensemble through unchanged"
+
+[params.lag_time_ns]
+type = "float"
+default = 1.0
+hint = "Propagation lag time in nanoseconds; upstream recommends 1 to 1000"
+
+[params.batch_size]
+type = "integer"
+default = 0
+hint = "Conformations denoised together; 0 uses the BioEmu2 default (all of them at once)"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed; batch i uses seed + i. Set to -1 for unseeded sampling"
+
+[params.sampler]
+type = "string"
+default = "edm"
+hint = "Sampling algorithm: edm (unsteered), edm_gd, edm_fk, or edm_fkc (steered toward physicality)"
+
+[params.precision]
+type = "string"
+default = "bf16-mixed"
+hint = "Trunk embedding precision: bf16-mixed (fast) or 32-true (full precision)"
+
+[params.matmul_precision]
+type = "string"
+default = "high"
+hint = "Float32 matmul precision during denoising: high (TF32), highest, or medium"
