@@ -78,6 +78,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Node 05's collapse warning fired below `1e-3` nm, which an XTC's 0.001 nm coordinate
     quantisation makes unreachable: one conformation written twice and read back measures about
     0.002 nm apart. Now 0.01 nm, with the measurement recorded next to the constant.
+  - `tests/`: a fixture suite over seven real RCSB entries (`tests/README.md`), split into an
+    offline driver (`run_fixtures.sh`: unit checks, nodes 01-02 plus node 03 `--dry-run`,
+    refusals and their counter-cases, and nodes 04-06 over deterministic ensembles) and a GPU
+    campaign (`run_gpu_campaign.sh`) that runs the whole pipeline for real against the MSA
+    server. Every check compares what a node *reported* against an independent measurement of
+    the input: `probe_entry.py` parses `_atom_site` by hand, so it shares no parser with the
+    code under test. 1CLL is there because a calcium ion is an atom named `CA` and mdtraj's
+    `name CA` matches atom names, which silently puts 148 atoms in a 144-C-α selection. The
+    campaign driver records each node's exit status next to its log, and the checker uses it to
+    separate a node that ran and produced nothing from one that was never reached: a system too
+    large for the card reports its downstream checks as skipped-with-the-reason, and a separate
+    check requires that the node which stopped said why before it did. A `FAIL` therefore always
+    means a node that ran and got something wrong. Against `bioemu2:2026_11_20` the offline
+    suite reports 56 pass / 0 fail / 0 gap / 2 skipped and the campaign 86 pass / 0 fail /
+    42 skipped; two successive campaigns returned every measured number identical, so seed 42
+    reproduces a run rather than merely labelling one.
   - The image also installs `gcc` and `libc6-dev`, which are a **runtime** requirement: triton
     compiles its kernel launchers on first use and shells out to a C compiler, and
     `python:3.12-slim` carries neither. 1UBQ (76 tokens), 5PTI (65) and 2ZTA (72) never reached
