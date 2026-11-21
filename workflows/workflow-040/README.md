@@ -87,12 +87,33 @@ its own, for three reasons:
 - It bakes the AlphaFold2 weights at build time (`python -m colabfold.download`), so
   `single_sequence` mode has no reason to reach the network.
 
-Two things to know. It is a **local tag, not in the `ghcr.io/chiral-data` registry** —
-there is no `apps/c/colabfold_*` — so it exists only where someone has built it from 026's
-Dockerfile. And the `chown -R root:root /cache` in that Dockerfile has to stay in the same
-`RUN` as the download: the upstream weight archives carry owner IDs above 65535, which
-hosts with a limited UID/GID range cannot apply, and a later `RUN` would copy the weights
-into a new layer.
+It is a **local tag, not in the `ghcr.io/chiral-data` registry** — there is no
+`apps/c/colabfold_*` — so it exists only where someone has built it from 026's Dockerfile.
+And the `chown -R root:root /cache` in that Dockerfile has to stay in the same `RUN` as the
+download: the upstream weight archives carry owner IDs above 65535, which hosts with a
+limited UID/GID range cannot apply, and a later `RUN` would copy the weights into a new
+layer.
+
+Measured in the image on 2026-11-21: ColabFold 1.6.1, numpy 2.5.3, biopython 1.85, scipy
+1.17.1, jax 0.5.3 resolving to `CudaDevice(id=0)`, and 5.3 GB of baked weights in `/cache`.
+Biopython 1.85 is the version that warns rather than raises on a FASTA comment line, which
+is the hazard behind node 05's "no `;` banner" rule.
+
+### Working on the GPU host
+
+`amd-c12-1` already carries `colabfold:2026_10_08` and `rfd4-proteina:2026_11_04`, so
+neither needs building. Two things about that host cost an hour to find and are worth
+writing down:
+
+- **Docker is rootless**, and its socket is `/run/user/1009/docker.sock`.
+- **`DOCKER_HOST` exported in `~/.bashrc` points at `~/.docker/run/docker.sock`, which
+  does not exist.** Any non-login shell — which is what `ssh host 'cmd'` and any script
+  run with `bash -s` gets — therefore fails with "Cannot connect to the Docker daemon",
+  and `docker images` reports nothing at all rather than reporting an error. That is how
+  this workflow briefly concluded the host had no images on it.
+
+So scripts here set `DOCKER_HOST=unix:///run/user/1009/docker.sock` explicitly rather than
+relying on the profile.
 
 ## Parameters
 
@@ -120,14 +141,15 @@ the hints, which carry the reasoning.
 | Phase 2 | specced, gated on the §11.1 spike |
 | Phase 3 | thresholds uncalibrated |
 
-Open before the nodes land, from [§11](validation_pipeline.md) and
-[tests/README.md](tests/README.md):
+Prerequisites from [§11](validation_pipeline.md) and [tests/README.md](tests/README.md):
 
-1. Confirm `colabfold:2026_10_08` is present on the GPU host, or rebuild it.
-2. Confirm `colabfold_batch` does not reach the network in `single_sequence` mode.
-3. Capture a real monomer prediction — scores JSON and `rank_001` PDB — and commit it as a
-   fixture **before** writing node 04's parser. The complex equivalent has never been
-   captured in this repo at all.
+1. ~~Confirm `colabfold:2026_10_08` is present on the GPU host~~ — **done**, already built
+   there, 14.7 GB.
+2. ~~Confirm `colabfold_batch` does not reach the network in `single_sequence` mode~~ —
+   **done**, a prediction completed under `docker run --network none` in 61 s.
+3. ~~Capture a real monomer prediction, and the complex equivalent~~ — **done**, both in
+   [tests/reference/](tests/reference/) with provenance. This also closed the §11.1 a3m
+   gate, so Phase 2 proceeds as designed.
 4. Extend `workflow-037/tests/make_designs.py` with the four shapes four `ingest` cases
    need: a multi-chain target, an internally gapped target, a target numbered from 3, and
    a design carrying non-standard residues.

@@ -136,21 +136,27 @@ That last line is why §8.7 is a live hazard for Phase 1 and not a hypothetical:
 correctly, in one line: `iptm = float(data["iptm"]) if "iptm" in data else None`
 (`026/03_analyze_confidence/script.py:86`). Copy 026, not 029.
 
-Two more shapes to confirm during the build, both cheap once a real run exists:
+Both of these were open when this plan was written, and both are now measured — see
+[reference/](reference/) for the files and their provenance:
 
-1. The **complex** scores file, which this repo has never captured. `iptm` and a
-   rectangular-blocked `pae` are expected; nothing here has measured them.
-2. The **output filename prefix**. The sample's model file is
-   `sequences_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb`, confirming the
-   `unrelaxed_rank_001` and `alphafold2_ptm` substrings. 037 records that ColabFold names
-   its outputs after the record id, which is why node 06 makes ids filesystem-safe
-   (`54bf21b6`) — 040 node 02 must do the same, and the mapping back from output to design
-   must be by that prefix, never by directory listing order.
+1. The **complex** scores file: captured. `plddt` is a flat `list[63]` spanning both
+   chains, `pae` is `63×63`, `iptm` is present at 0.2. The predicted PDB put the target in
+   chain A and the binder in chain B, so `TARGET:BINDER` makes the binder the **tail** of
+   the array.
+2. The **output filename prefix**: confirmed. A record named `mono_design_0` produced
+   `mono_design_0_scores_rank_001_alphafold2_ptm_model_1_seed_000.json` and
+   `mono_design_0_unrelaxed_rank_001_...pdb`. So the prefix is the record id exactly, and
+   node 02's per-design filename flows straight through — which is what lets node 04 map
+   output back to design by prefix rather than by listing order. Node 02 must still make
+   ids filesystem-safe (`54bf21b6`).
 
-**Capture both and commit them as fixtures before writing node 04's parser.** 037's
-`54dc7def` is the warning: it read the real package and found that "several of the
-documented guesses this workflow was built on were wrong." A fixture earns its place by
-measurement, never by reputation.
+One trap the capture exposed: the raw scores file and
+`026/sample_outputs/confidence_summary.json` are **not the same shape**. The latter is
+026's post-processed summary, with `plddt_per_residue`, `plddt_mean` and
+`interface_pae_mean`. A parser written against those names fails on the real file. This is
+`54dc7def` in miniature — it read the real package and found "several of the documented
+guesses this workflow was built on were wrong." A fixture earns its place by measurement,
+never by reputation.
 
 ## The experiments
 
@@ -289,9 +295,11 @@ excuse — listed here so none of them becomes a silent omission.
 
 **Needs a measurement before the case can exist:**
 
-- **The complex scores-file shape is unmeasured.** No run in this repo has produced one;
-  everything known about it comes from 029's and 026's *reader* code. Capture one and
-  commit it before writing node 04's parser.
+- ~~The complex scores-file shape is unmeasured.~~ **Done.** Both the monomer and the
+  complex scores files are captured in [reference/](reference/), measured on the GPU host
+  with `--network none`. `iptm` is absent from the monomer file and present at 0.2 in the
+  complex one; neither carries a chain boundary. The working target-only-MSA a3m is
+  captured there too, which closed §11.1.
 - **`C11` needs a target with a measured internal gap.** 029 records chain D of 2B5I
   carrying a 38-residue gap whose ends are 33.9 Å apart (`11ddf044`), which is a starting
   point — but it must be re-probed rather than taken from a commit message, which is the

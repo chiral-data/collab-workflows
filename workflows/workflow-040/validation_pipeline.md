@@ -783,30 +783,55 @@ dependency.
 
 Revision 1 listed five. Three are now closed by evidence already in the repo.
 
-### 11.1 Open, and gating: does `colabfold_batch` accept a partially-aligned complex a3m?
+### 11.1 CLOSED — both halves, measured on the GPU host 2026-11-21
 
-Specifically: an a3m whose `#` header declares two chains, where the target carries a deep
-alignment and the binder is present only as its bare query sequence. This is the entire
-mechanism of §4's decision. The `.a3m` input path and the header format are documented;
-this shape is not confirmed.
+**Does the prediction run fully offline with baked weights? Yes.** `colabfold_batch` under
+`docker run --network none` produced a 35-residue monomer prediction in 61 s, `rc=0`,
+logging "Running on GPU", with jax 0.5.3 on `CudaDevice(id=0)`. The weights are baked by
+026's Dockerfile (`python -m colabfold.download`), 5.3 GB in `/cache`. So the offline
+default is not a lie, provided the node never passes `--host-url`.
 
-**Spike: ~1 hour.** If it fails, §4's first rejected alternative becomes the design, and
-that is a decision to re-make rather than a detail to patch.
+**Does `colabfold_batch` accept a partially-aligned complex a3m? Yes.** A paired a3m with
+the target aligned and the binder present only as its own query produced a genuine
+two-chain prediction (34 A / 29 B, `iptm` 0.14, `coverage.png` written, so an MSA was
+really consumed), offline. **§4's decision stands and Phase 2 is unblocked as designed.**
 
-Folded into the same spike, since it needs the same image: **does the prediction run fully
-offline with baked weights?** Weights must be in the image, and the node must not pass
-`--host-url`. Revision 1's question #1, still open, now cheaper to answer alongside this
-one.
+The format had to be read out of `colabfold.batch.unserialize_msa()` rather than guessed:
+two hand-rolled attempts were rejected with `ValueError: MSA 0 must contain at least one
+sequence`. The rule both missed is that any row carrying residues in two or more chain
+segments goes to the **paired** block for every chain, and only single-chain rows populate
+`unpaired_chunks[j]` — so **every chain needs at least one single-chain row, including its
+own query.** A concatenated query alone leaves every unpaired block empty. The exact
+working shape, and the captured file, are in `tests/reference/`.
 
-### 11.2 Closed: what does `colabfold_batch` emit for PAE, and does it carry chain boundaries?
+That is the second time on this branch that reading the installed source beat reasoning
+about it, which is the same lesson as 037's `54dc7def`.
 
-`*_scores_rank_001_*.json` carries `plddt` (flat per-residue array), `pae` (full N×N
-matrix), `iptm` and `ptm`. It carries **no chain boundaries**, which is why §6 makes the
-chain order an explicit output of node 02 and an assertion in node 04. Verified in
-`029/04_fold_and_filter/script.py:203-223`.
+### 11.2 Closed, and now measured rather than inferred
 
-Residual, and small: confirm the key names for the monomer model (`alphafold2_ptm`), which
-has no `iptm`. §8.7 is the rule that keeps a missing key from becoming a number.
+Both scores files are captured in `tests/reference/` with their provenance. Measured keys:
+
+| | monomer (`alphafold2_ptm`) | complex (`alphafold2_multimer_v3`) |
+|---|---|---|
+| `plddt` | `list[35]` | `list[63]`, spanning both chains |
+| `pae` | `list[35][35]` | `list[63][63]` |
+| `max_pae` | 21.15625 | 25.375 |
+| `ptm` | 0.57 | 0.47 |
+| `iptm` | **absent** | 0.2 |
+
+**No chain boundary appears in either file**, which is why §6 makes the chain order an
+explicit output of node 02 and an assertion in node 04.
+
+The residual is closed too, and it matters more than it looked: `iptm` is absent from the
+monomer file, so on Phase 1's monomer-only path 029's `scores.get('iptm', 0.0)` would
+report a measured-looking 0.0 for *every design in every run*. 026's one-liner is the
+correct form. §8.7.
+
+One further trap, found while capturing: the raw ColabFold file and
+`026/sample_outputs/confidence_summary.json` are **not the same shape**. The latter is
+026's own post-processed summary, with `plddt_per_residue`, `plddt_mean` and
+`interface_pae_mean`. A parser written against the summary's key names fails on the real
+file. Node 04 reads the raw file.
 
 ### 11.3 Closed, and reframed: how much discrimination is lost without AF2 initial guess?
 
