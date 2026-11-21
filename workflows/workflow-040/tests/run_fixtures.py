@@ -101,6 +101,34 @@ sleep 600
 echo "STAND-IN: slept the whole way, which should never be reached"
 """
 
+# A predictor that says nothing on stdout and writes its progress only to its own log
+# file, then hangs until it is killed.
+#
+# This is the REAL colabfold_batch's behaviour under a kill, measured in control C6: its
+# stdout is a pipe rather than a tty, so it is block-buffered, and a process killed before
+# the buffer fills takes every line with it. A completed prediction leaves a 3 KB
+# `<design>_predict.log`; one killed at 35s leaves zero bytes, and the timeout reason read
+# "Last lines: " with nothing after it.
+#
+# STANDIN_SIGTERM prints to stdout and flushes line by line, so it could never have shown
+# this -- the Tier 1 check passed on output the real predictor does not produce at that
+# moment. That is §8.4 with the stand-in as the culprit: the check was right about the
+# stand-in and wrong about the world. This one reproduces the world.
+STANDIN_SILENT_LOGFILE = """#!/bin/bash
+# No stdout at all, deliberately: everything goes to the log file colabfold writes.
+out_dir="$2"
+mkdir -p "$out_dir"
+name="$(head -1 "$1"/*.fasta | sed 's/^>//' | tr -d '\\r' | awk '{print $1}')"
+{
+  echo "2026-11-21 10:46:04,178 Running colabfold 1.6.1"
+  echo "2026-11-21 10:46:05,897 Running on GPU"
+  echo "2026-11-21 10:46:05,942 Query 1/1: $name (length 60)"
+  echo "STAND-IN logfile: this line exists only in the predictor's own log"
+} > "$out_dir/log.txt"
+trap '' TERM
+sleep 600
+"""
+
 # A predictor that fails for exactly one design and succeeds for the rest. It writes a
 # plausible scores file and PDB for the ones it does not fail, so the batch has real
 # output to carry forward -- 029 threw that output away and then could not tell a bad
@@ -529,6 +557,20 @@ class Case:
             }),
         })
 
+    def stage_predict_timeout_buffered(self):
+        """A predictor killed before its buffered stdout ever reached node 03.
+
+        Nothing to sample afterwards and nothing to observe about pids: the claim here is
+        purely about the recorded reason. When stdout is empty, node 03 has to fall back to
+        the predictor's own log file -- which it has already collected -- and SAY that is
+        where the lines came from, because "the predictor said nothing" and "the
+        predictor's output was buffered away" are different facts (§8.7).
+        """
+        if not self._to_predict():
+            return
+        binary, env = self._standin(STANDIN_SILENT_LOGFILE, {})
+        self.node("n3", path_prepend=binary, extra_env=env, timeout=240)
+
     def stage_predict_partial(self):
         if not self._to_predict():
             return
@@ -572,6 +614,7 @@ class Case:
             "predict-dry": self.stage_predict_dry,
             "predict-dry-cplx": lambda: self.stage_predict_dry(cplx=True),
             "predict-timeout": self.stage_predict_timeout,
+            "predict-timeout-buffered": self.stage_predict_timeout_buffered,
             "predict-partial": self.stage_predict_partial,
             "full": self.stage_full,
         }[stage]()

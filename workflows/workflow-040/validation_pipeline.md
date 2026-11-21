@@ -385,6 +385,31 @@ workers, so the limit is theoretical for this workflow and is written down rathe
 chased. The stand-in now reproduces what 037 actually measured: a worker in the same group
 with `trap '' TERM`, which the SIGTERM → SIGKILL escalation ends.
 
+**Verified against the real predictor, in control `C6`.** A 35 s budget against
+`colabfold_batch` holding 2357 MiB: 85 predictor process lines sampled mid-prediction, the
+process group killed at the budget, **nothing of the predictor alive afterwards inside a
+container that outlived the node**, and the device back to 1 MiB. The container has to be
+started first and left up for that claim to mean anything — under `docker run` the
+container's exit kills everything in it whatever `kill_tree()` did, which is the same
+reason the Tier 1 suite reports a gap rather than a pass for this in the image.
+
+**Retaining the output is harder than it looks, and node 03 was getting it wrong.**
+`colabfold_batch`'s stdout is a pipe rather than a tty, so it is block-buffered: a
+completed prediction leaves a 3 KB captured log and one killed at 35 s leaves **zero
+bytes**. The timeout reason therefore read `Last lines: ` with nothing after it — the one
+thing a reader needs at that moment. The lines were never lost, because ColabFold also
+logs through the `logging` module to its own `<record>_log.txt`, which `collect()` has
+already copied into `./outputs` before the reason is built. So the tail falls back to that
+file and **names which source it came from**: "the predictor said nothing" and "the
+predictor's output was buffered away" are different facts, and a reason that conflates
+them is worse than one that admits the gap (§8.7).
+
+The OOM scan had the same blind spot — it only ever read stdout, so an allocator OOM
+followed by a timeout was invisible, which is the precise scenario `755d4af2` exists for:
+the allocator warns, the job keeps the GPU without progressing, the budget kills it, and
+every line that said so dies in the buffer. The fallback file is scanned for the markers
+too.
+
 Retain the predictor's output so a failure can be diagnosed rather than inferred
 (`755d4af2` for the OOM case; `2359ffa4` for the opposite mistake — 029 discarded
 ColabFold output unless the design passed, so a failing funnel could not be diagnosed
@@ -619,6 +644,34 @@ measuring the settings instead of the thing.
 What caught it was adding the control that distinguishes the two explanations — `C12`, a
 designed positive. Without it, "the positives failed" is equally consistent with a broken
 scorer; §9 records both.
+**A sixth and a seventh, both from control `C6`, and the sixth is the most instructive
+instance in this list because the check was correct.**
+
+`timeout_message_carries_output` requires the predictor's own output in the recorded
+timeout reason, and it passed. It passed because `STANDIN_SIGTERM` prints to stdout and
+flushes line by line. The real `colabfold_batch` writes to a *pipe*, so its stdout is
+block-buffered, and a process killed at 35 s takes the whole buffer with it: a completed
+prediction leaves a 3 KB captured log, a killed one leaves **zero bytes**, and the reason
+read `Last lines: ` with nothing after it.
+
+Nothing was wrong with the check's logic. **The stand-in was not a stand-in for the thing
+it stood in for**, on the one axis the check cared about. A stand-in is a claim about the
+real tool's behaviour, and that claim needs the same scrutiny as an assertion — which is
+easy to forget, because the stand-in lives in the harness and reads like scaffolding. The
+answer was a second stand-in (`STANDIN_SILENT_LOGFILE`) that reproduces the buffering, and
+a case that requires node 03's stdout capture to be genuinely zero bytes, so it cannot
+quietly become a test of the ordinary path.
+
+The seventh is the plainer kind, in `C6`'s own judge. It sampled processes with
+`docker exec ps`; the image has no `ps`; the listing therefore held
+`OCI runtime exec failed: ... executable file not found`, with no process lines in it, and
+the judge read that as "nothing of the predictor survived" and **passed the single most
+important claim in the control**. It now uses `docker top` and refuses any listing it
+cannot show to be a listing — a listing that could not be taken is not an empty listing.
+
+Both were found by running the thing against reality rather than by reading it. That is
+the only method in this list that has ever worked.
+
 ### 8.5 A design that failed must appear as failed, not vanish
 
 026 drops what it cannot score. A report that omits failures reads as a batch where

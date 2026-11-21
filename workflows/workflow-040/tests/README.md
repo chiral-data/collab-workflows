@@ -104,8 +104,13 @@ Full numbers, provenance and findings in
 - The judge is shown refusing: `bash tests/falsify_controls.sh <run>` mutates one number
   at a time and requires a `NOT MET` each time. Six of six refused, and that pass found
   two defects in the judge itself.
-- `C6` — a real prediction killed at a short timeout, with `nvidia-smi` showing the
-  device freed afterwards, as `755d4af2` verified for 037. **Not yet run.**
+- `C6` — a real prediction killed at a short timeout. **MET.** A 35 s budget against a
+  `colabfold_batch` holding 2357 MiB: 85 predictor process lines sampled mid-prediction,
+  nothing of it alive afterwards **inside a container that outlived the node**, the device
+  back to 1 MiB, and all five designs recorded failed with the budget in the reason. It
+  found a real defect in node 03 — the predictor's stdout is block-buffered, so a killed
+  run lost it and the reason was empty; it now falls back to colabfold's own log file and
+  names the source.
 - Every number recorded here and in the reference file, including both chains' pLDDT.
 
 **Phase 2 (interface scoring):** adds `C7`–`C11`. Not built.
@@ -145,6 +150,8 @@ Tier 2 has the same split -- one piece builds, one runs, one judges, one attacks
 | `run_controls.sh` | Fetches the entries, probes them, builds the controls, and runs 037 node 04 plus all five 040 nodes **in the image, on the GPU, with `--network none`**. Guards free space first and refuses below 8G. |
 | `report_controls.py` | Judges Gate B Phase 1: per-control verdict, separation margin with its sign, provenance. Reads `design_scores.json`; recomputes nothing. |
 | `falsify_controls.sh` | Mutates one number or flag in a copy of a control run and requires `report_controls.py` to refuse. A `MET` verdict means nothing without it (§8.13). |
+| `run_c6.sh` | Control `C6`: starts a container that **outlives the node**, runs node 03 in it under a short budget against a real prediction, samples what is alive mid-run, and asks afterwards what survived. |
+| `report_c6.py` | Judges `C6`'s five claims, and refuses a process listing it cannot show to be a listing. |
 
 Running and judging are separate files on purpose. A runner that also judged could only
 report pass or fail, and when something failed there was nothing left to look at — which
@@ -501,25 +508,37 @@ any more: the six generator shapes four `ingest` cases were waiting on are built
 
 ### Where it stands
 
-All 52 CI cases run. Measured on the host interpreter on 2026-11-21:
+All 53 CI cases run. Measured on the host interpreter on 2026-11-21:
 
 | | |
 |---|---|
-| cases | **47 pass, 0 FAIL, 5 gap** |
-| checks | 55 named, 55 implemented, 55 invoked |
-| falsification | 50 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
+| cases | **48 pass, 0 FAIL, 5 gap** of 53 |
+| checks | 56 named, 56 implemented, 56 invoked |
+| falsification | 51 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
-| Gate A as the gate | **not met** — it has not yet run in `colabfold:2026_10_08` |
-| Gate B Phase 1 | **met**, measured twice on the GPU, offline |
+| Gate A **in the image** | **met** — 46 pass, 0 FAIL, 6 gap of 52, 55/55 checks, 50 falsified, 0 vacuous |
+| Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
 | Gate B Phase 2/3 | not met — not built |
 
-The last line is the point of the banner the suite prints: a run outside the image is a dry
-run, says so in its header, in `run.json` and in its verdict, and does not count. The five
-gaps are the complex path and nothing else; they are listed below.
+**Gate A has now been satisfied in `colabfold:2026_10_08`**, which is the only run that
+counts. The suite prints `RUNNING IN colabfold:2026_10_08 -- this is the gate.` at the top
+of that run, and a dry run says so instead, in its header, in `run.json` and in its
+verdict.
 
-The count grew by five while nodes 01–04 were written, and every one came from building
-rather than from planning:
+The image run differs from the host run in exactly one way, and it is the way it was built
+to differ: **six gaps rather than five.** The sixth is `sigterm_ignoring_child_killed`,
+which reports a gap in a container because a pid recorded inside one means nothing on the
+host — the claim is established by the host run and the image run says so rather than
+quietly passing (§8.4). The other five gaps are the complex path and nothing else; they
+are listed below.
+
+The figures above are the host run on the 53-case suite. The image figures are the 52-case
+suite as it stood before control `C6` added a case; a 53-case image run is in flight and
+its numbers replace them when it lands.
+
+The count grew by six — five while nodes 01–04 were written and one from running the GPU
+controls — and every one came from building or measuring rather than from planning:
 
 - `num-models-non-integer`, when the built node showed `threshold-non-numeric` was
   asserting a message for the wrong cast.
@@ -532,6 +551,13 @@ rather than from planning:
 - `missing-plddt-is-null`, the companion to `missing-iptm-is-null` and the one that
   matters more, because `plddt_binder` gates and `iptm` does not. A node defaulting it to
   0.0 fails the design and a node defaulting it to 100.0 passes it; both read as verdicts.
+- `timeout-tail-falls-back-to-predictor-log`, from control `C6`, and the only case in the
+  suite that exists because a **stand-in** was wrong rather than a node. The real
+  predictor's stdout is block-buffered and a kill destroys it; `STANDIN_SIGTERM` flushes
+  line by line, so `timeout_message_carries_output` was passing on output the real tool
+  does not produce at that moment. There is now a second stand-in that reproduces the
+  buffering, and the new case requires node 03's stdout capture to be genuinely zero
+  bytes so it cannot drift into testing the ordinary path.
 
 Where the built node's output differs from the constructed truth, a `measured` field says
 by how much and why.
@@ -599,13 +625,8 @@ omission.
   on a designed sequence, and `C5` is the only thing that would say how it ranks designs
   that were not built to be easy.
 
-**Run by hand, not yet run:**
-
-- **`C6` needs a real prediction killed at a short budget**, with `nvidia-smi` showing
-  the device freed afterwards. Tier 1 covers the timeout path with a stand-in, and §6
-  records that a process leaving its process group escapes the kill; what is untested is
-  the same kill against a real `colabfold_batch` holding GPU memory. It is the last Phase 1
-  control outstanding.
+~~**Run by hand, not yet run:** `C6`.~~ **Done**, and it found a node 03 defect plus two
+defects in its own judge. See [reference/tier2-phase1-controls.md](reference/tier2-phase1-controls.md).
 
 **Needs a generator shape `make_designs.py` does not have:**
 

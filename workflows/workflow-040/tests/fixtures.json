@@ -444,6 +444,28 @@
       "harness": "shape=compact n=1 len=10 stage=predict-timeout"
     },
     {
+      "id": "timeout-tail-falls-back-to-predictor-log",
+      "tier": "ci",
+      "phase": 1,
+      "why": "MEASURED in control C6, and it is a defect this suite would never have found on its own. Real colabfold_batch writes its stdout to a pipe, so it is block-buffered; a process killed at 35s takes the whole buffer with it. The completed control run leaves a 3 KB <design>_predict.log and the killed one leaves ZERO bytes, so node 03's timeout reason read 'Last lines: ' with nothing after it -- the one thing a reader needs at that moment was the one thing lost. It was not actually lost: colabfold logs through the logging module to its own <record>_log.txt, which node 03's collect() has already copied into ./outputs before the reason is built. The node now falls back to that file and names it as the source. The existing timeout case cannot catch this because STANDIN_SIGTERM prints to stdout and flushes line by line, so the check passed on output the real predictor does not produce at that moment -- the check was right about the stand-in and wrong about the world (\u00a78.4).",
+      "pins": "\u00a78.4, \u00a78.7, C6",
+      "params": {
+        "PARAM_PREDICT_TIMEOUT_S": "5"
+      },
+      "expect": [
+        {
+          "check": "timeout_tail_from_log_file",
+          "finding": "C6"
+        },
+        {
+          "check": "failed_design_in_manifest",
+          "finding": "C6"
+        }
+      ],
+      "measured": "C6, run2: every one of the five designs' <design>_predict.log came back 0 bytes while <design>_log.txt carried the five progress lines colabfold had written. The GPU peak was 2357 MiB and 85 colabfold process lines were sampled, so the predictor was certainly running and certainly producing output -- it simply never reached node 03's pipe. Also fixed alongside: the OOM scan read only stdout, so an allocator OOM followed by a timeout was invisible for the same reason; the fallback file is scanned for the markers too.",
+      "harness": "shape=compact n=1 len=10 stage=predict-timeout-buffered"
+    },
+    {
       "id": "per-design-failure-continues",
       "tier": "ci",
       "phase": 1,

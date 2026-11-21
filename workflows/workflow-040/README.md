@@ -149,9 +149,11 @@ the hints, which carry the reasoning.
 | `05-filter-and-report` | **implemented**; report is static HTML, no structure viewer in Phase 1 |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest`; `tests/make_predictions.py` written |
 | Test harness | **built** — `run_fixtures.sh` stages and runs, `check_fixtures.py` judges and falsifies; `run_controls.sh`, `report_controls.py` and `falsify_controls.sh` do the same for the GPU tier |
-| Tier 1 suite | **47 pass, 0 FAIL, 5 gap** of 52 CI cases; 55/55 checks implemented, invoked and falsifiable. Run on the host, **not yet in the image**, so Gate A is met but not satisfied — see [tests/README.md](tests/README.md) |
+| Tier 1 suite | **48 pass, 0 FAIL, 5 gap** of 53 CI cases; 56/56 checks implemented, invoked and falsifiable |
+| **Gate A** | **met in `colabfold:2026_10_08`**, which is the only run that counts: 46 pass, 0 FAIL, 6 gap of 52, 55/55 checks, 50 falsified, 0 vacuous. The sixth gap is the container-pid claim the image deliberately refuses to pass (§8.4). A 53-case image run is in flight — see [tests/README.md](tests/README.md) |
 | Tier 2 controls, Phase 1 | **Gate B met**, measured twice on the GPU with `--network none`. The `C12` designed positive passes at 0.93 Å / 95.05; scrambled and poly-alanine fail; `sc_rmsd_A` separates them by 17.9 Å. Judge falsified 6/6. Found that the native positive controls were the wrong controls and that `plddt_binder` cannot gate alone — [tests/reference/tier2-phase1-controls.md](tests/reference/tier2-phase1-controls.md) |
-| Tier 2 controls, Phase 2 | not built. `C5` (real 037 designs) and `C6` (killed prediction) still outstanding in Phase 1 |
+| Tier 2 controls, `C6` | **met** — a real `colabfold_batch` holding 2357 MiB killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB. Found a node 03 defect: the predictor's stdout is block-buffered, so a kill lost it and the timeout reason was empty |
+| Tier 2 controls, Phase 2 | not built. `C5` (real 037 designs) is the only Phase 1 control still outstanding |
 | Phase 2 | specced, §11.1 closed by measurement. The 5 gaps are all the complex path |
 | Phase 3 | thresholds uncalibrated |
 
@@ -159,6 +161,7 @@ the hints, which carry the reasoning.
 bash tests/run_fixtures.sh                     # Tier 1: stage, run, judge, falsify (~1 min)
 bash tests/run_controls.sh                     # Tier 2: GPU, offline, ~6 min, needs the image
 bash tests/falsify_controls.sh <control-run>   # show the Gate B judge refusing
+bash tests/run_c6.sh <control-run> <out> 35     # C6: kill a real prediction at a budget
 ```
 
 It prints a loud banner when it is not running in `colabfold:2026_10_08`, and says in its
@@ -178,8 +181,8 @@ Prerequisites from [§11](validation_pipeline.md) and [tests/README.md](tests/RE
    need~~ — **done**, in place, six shapes plus `--manifest`; the original six verified
    byte-identical at three lengths. See [tests/README.md](tests/README.md).
 
-Nothing is outstanding on that list. What remains is a Tier 1 run inside the image, `C5`
-and `C6`, and Phase 2.
+Nothing is outstanding on that list. What remains is a Tier 1 run inside the image, `C5`,
+and Phase 2.
 
 Two things the Tier 2 controls changed, both recorded in
 [validation_pipeline.md](validation_pipeline.md) beside the decisions they revise:
@@ -190,3 +193,6 @@ Two things the Tier 2 controls changed, both recorded in
 - **A native complex is not a usable positive control for this workflow.** §4 predicts at
   `single_sequence`; natives need the alignment they are not being given, and score 49.33
   and 43.09 pLDDT. They are diagnostics now (§8.4, §9).
+- **A killed prediction loses its stdout**, because `colabfold_batch` block-buffers into a
+  pipe. Node 03 now falls back to colabfold's own log file for the timeout reason and says
+  which source it used; the OOM scan had the same blind spot and is fixed with it (§6).

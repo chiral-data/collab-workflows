@@ -300,6 +300,57 @@ def run_prediction(argv, timeout_s, log_path):
     return returncode, timed_out, state["oom"], captured
 
 
+def predictor_tail(captured, outputs, out_dir, design):
+    """The predictor's last lines, from its stdout or from its own log file.
+
+    Returns (lines, source, saw_oom_in_fallback).
+
+    MEASURED, in control C6: colabfold_batch's stdout is block-buffered because it is a
+    pipe rather than a tty, so when the process is KILLED the buffer dies with it. A
+    completed prediction leaves a 3 KB `<design>_predict.log`; one killed at 35s leaves
+    **zero bytes**, and the timeout reason then reads "Last lines: " with nothing after it.
+    The one thing a reader needs at that moment is the one thing that was lost.
+
+    But it is not actually lost. ColabFold logs through the logging module to its own
+    `<design>_log.txt`, which is written as it goes and which collect() has already copied
+    into ./outputs by the time this is called. So the tail falls back to that file and says
+    which source it came from, because "the predictor said nothing" and "the predictor's
+    stdout was buffered away" are different facts and a reason that conflates them is
+    worse than one that admits the gap (§8.7).
+
+    The OOM scan has the same blind spot for the same reason -- it only ever saw stdout --
+    so the fallback file is scanned for the markers too. An OOM followed by a timeout was
+    previously invisible: the allocator warns, the job keeps the GPU without progressing,
+    the budget kills it, and every line that said so was in the lost buffer.
+    """
+    if captured:
+        return captured, "the predictor's stdout", False
+
+    # ColabFold's own log, named after the record rather than the design.
+    candidates = [name for name in outputs if name.endswith("_log.txt")]
+    for name in sorted(candidates):
+        path = os.path.join(out_dir, name)
+        try:
+            with open(path, errors="replace") as handle:
+                lines = [line.rstrip("\n") for line in handle if line.strip()]
+        except OSError:
+            continue
+        if not lines:
+            continue
+        saw_oom = any(marker in line for line in lines for marker in OOM_MARKERS)
+        return (
+            lines[-TAIL_LINES:],
+            f"colabfold's own {name} -- its stdout was block-buffered and lost when the "
+            f"process was killed (C6)",
+            saw_oom,
+        )
+
+    return [], (
+        f"nothing: stdout was buffered away when the process was killed, and no "
+        f"*_log.txt was collected for {design}"
+    ), False
+
+
 def oom_advice(saw_oom):
     if not saw_oom:
         return ""
@@ -531,18 +582,28 @@ def main():
         # afterwards (2359ffa4).
         entry["outputs"] = collect(scratch_out, "./outputs", design)
 
+        if timed_out or returncode != 0:
+            # Collected first, above, so colabfold's own log is already on disk and can
+            # stand in for the stdout that a kill throws away. See predictor_tail().
+            tail, tail_source, oom_in_log = predictor_tail(
+                tail, entry["outputs"], "./outputs", design
+            )
+            saw_oom = saw_oom or oom_in_log
+            entry["saw_oom"] = saw_oom
+            entry["tail_source"] = tail_source
+
         if timed_out:
             entry["status"] = "failed"
             entry["reason"] = (
                 f"timed out after {timeout_s}s and the whole process group was killed."
                 + oom_advice(saw_oom)
-                + " Last lines: " + " | ".join(tail[-5:])
+                + f" Last lines, from {tail_source}: " + " | ".join(tail[-5:])
             )
         elif returncode != 0:
             entry["status"] = "failed"
             entry["reason"] = (
                 f"colabfold_batch exited {returncode}." + oom_advice(saw_oom)
-                + " Last lines: " + " | ".join(tail[-5:])
+                + f" Last lines, from {tail_source}: " + " | ".join(tail[-5:])
             )
         else:
             scores = rank_one(entry["outputs"], SCORES_RANK_RE, ".json")

@@ -110,6 +110,11 @@ class View:
         return sorted(n for n in os.listdir(where)
                       if os.path.isfile(os.path.join(where, n)))
 
+    def size(self, *parts):
+        """Bytes, or None if absent. A zero-byte file and a missing one are different."""
+        full = self.path(*parts)
+        return os.path.getsize(full) if os.path.exists(full) else None
+
     def step(self, name):
         for entry in self.record.get("steps") or []:
             if entry["step"] == name:
@@ -823,6 +828,53 @@ def c_timeout_message_carries_output(c, spec):
     detail = (f"{marks}; reasons recorded in the manifest: {reasons}; log files retained "
               f"in node 03's outputs: {retained}")
     return (PASS if all(marks.values()) else FAIL), detail
+
+
+def c_timeout_tail_from_log_file(c, spec):
+    """When stdout was buffered away, the reason must come from the predictor's own log.
+
+    Measured in control C6: real colabfold_batch stdout is block-buffered, so a killed
+    prediction leaves a ZERO-byte `<design>_predict.log` and the reason used to read
+    "Last lines: " with nothing after it. The lines were never lost -- colabfold logs
+    through the logging module to its own `<record>_log.txt`, which node 03 has already
+    collected by then.
+
+    So three things have to hold, and the middle one is the point: the reason has to carry
+    the log file's content, it has to NAME that file as the source rather than implying
+    stdout, and node 03's own stdout capture has to be genuinely empty -- otherwise this
+    case is testing the ordinary path under a different name.
+    """
+    manifest = c.manifest() or {}
+    rows = manifest.get("predictions") or []
+    if not rows:
+        return FAIL, f"no predictions in the manifest; node 03 rc={c.rc('n3')}"
+
+    retained = [n for n in c.files("n3", "outputs") if n.endswith("_log.txt")]
+    marks, detail = {}, []
+    for row in rows:
+        reason = row.get("reason") or ""
+        source = row.get("tail_source") or ""
+        marks[f"{row['design']}: names the timeout"] = bool(
+            re.search(r"timed out", reason, re.I))
+        # The log file's own words, which the stand-in writes nowhere else.
+        marks[f"{row['design']}: carries the log file's lines"] = (
+            "STAND-IN logfile" in reason)
+        marks[f"{row['design']}: names the fallback source"] = (
+            "_log.txt" in source and "buffered" in source)
+        marks[f"{row['design']}: does not claim stdout"] = (
+            "the predictor's stdout" != source)
+        detail.append(f"{row['design']}: tail_source={source[:80]!r}")
+
+    # A stand-in that printed to stdout would make all of the above pass through the
+    # ordinary path. The whole case rests on this being empty.
+    predict_logs = [n for n in c.files("n3", "outputs") if n.endswith("_predict.log")]
+    sizes = {n: c.size("n3", "outputs", n) for n in predict_logs}
+    marks["stdout capture really was empty"] = bool(sizes) and all(
+        s == 0 for s in sizes.values())
+
+    return (PASS if all(marks.values()) else FAIL), (
+        f"{marks}; {'; '.join(detail)}; colabfold logs collected: {retained}; "
+        f"stdout capture sizes: {sizes}")
 
 
 def c_failed_design_in_manifest(c, spec):
@@ -1565,6 +1617,12 @@ CHECKS = {
         "requires the predictor's own stdout lines in the recorded reason, so a bare "
         "'timed out' fails.",
     ),
+    "timeout_tail_from_log_file": (
+        c_timeout_tail_from_log_file,
+        "requires the reason to fall back to the predictor's own log file when stdout "
+        "was buffered away, and to name that file as the source. A node that reported an "
+        "empty tail, or that claimed stdout, fails.",
+    ),
     "failed_design_in_manifest": (
         c_failed_design_in_manifest,
         "a failure that aborted the batch or vanished from the manifest fails, and so "
@@ -1977,6 +2035,35 @@ def x_mark_everything_ok(d):
     return _edit_json(_manifest_path(d), change)
 
 
+def x_claim_stdout_for_buffered_tail(d):
+    """Node 03 as it was before C6: an empty tail, reported as if it came from stdout.
+
+    The precise defect, rather than the blunt one. `mark-everything-ok` also breaks the
+    buffered-tail check, but it breaks it by destroying the whole failure record, which
+    would equally break a check that only looked at the status. This corruption leaves
+    everything else intact and changes only where the lines are said to have come from,
+    so the check has to be reading the thing it claims to read.
+    """
+    def change(payload):
+        touched = 0
+        for prediction in payload.get("predictions") or []:
+            if prediction.get("status") == "ok":
+                continue
+            prediction["tail_source"] = "the predictor's stdout"
+            reason = prediction.get("reason") or ""
+            if "Last lines, from" in reason:
+                prediction["reason"] = (
+                    reason.split("Last lines, from")[0] + "Last lines: "
+                )
+            touched += 1
+        if not touched:
+            return None
+        return (f"rewrote {touched} failed prediction(s) to claim the tail came from "
+                "stdout, and emptied the tail -- node 03 as it behaved before C6")
+
+    return _edit_json(_manifest_path(d), change)
+
+
 def x_drop_failed_prediction(d):
     def change(payload):
         rows = payload.get("predictions") or []
@@ -2314,6 +2401,11 @@ CORRUPTIONS = [
     ("break-declared-lengths", x_break_declared_lengths),
     ("wrong-model-type", x_wrong_model_type),
     ("add-host-url", x_add_host_url),
+    # Before mark-everything-ok, which also breaks the buffered-tail check but does it by
+    # destroying the whole failure record. falsify() stops at the first corruption that
+    # flips a check, so the precise one has to come first or the check gets credited to
+    # the blunt one and nobody learns anything.
+    ("claim-stdout-for-buffered-tail", x_claim_stdout_for_buffered_tail),
     ("mark-everything-ok", x_mark_everything_ok),
     ("drop-failed-prediction", x_drop_failed_prediction),
     ("shift-rmsd", x_shift_rmsd),

@@ -10,7 +10,8 @@ shows that judge refusing**, which is the only reason to believe it when it agre
 
 **Verdict: Gate B Phase 1 MET** — `C12` passes, `C3` and `C4` fail, and `sc_rmsd_A`
 separates them by 17.90 Å. `plddt_binder` does not separate, by −0.76, and that is a
-recorded finding rather than a failure; see finding 3.
+recorded finding rather than a failure; see finding 3. `C6`, the killed prediction, is
+also MET. Only `C5` is outstanding, and it is blocked on inputs.
 
 ## Provenance
 
@@ -155,6 +156,81 @@ provenance gate iterated over the records that *existed*, so deleting
 one that got through. The controls expected to have provenance are now enumerated, so an
 absence produces a row. This is the sixth line of the table above, and it is in the table
 because it was not caught by reading the code.
+
+## C6 — a real prediction killed at a short budget
+
+The last Phase 1 control, and the one that tests node 03's `kill_tree()` against a real
+`colabfold_batch` holding GPU memory rather than against a shell stand-in. Run by
+`bash tests/run_c6.sh <control-run> <out> 35`, judged by `tests/report_c6.py`.
+
+**Verdict: MET**, all five claims, 2026-11-21.
+
+| claim | measured |
+|---|---|
+| stopped at the budget, did not complete | 177 s over 5 designs at a 35 s budget; a completed prediction takes 45–67 s **each** |
+| the predictor was really running | **85** `colabfold` process lines sampled inside the container; GPU peaked at **2357 MiB** against a 1 MiB baseline |
+| nothing of the predictor survived | a real process table, no predictor process, in a container that **outlived the node** |
+| the GPU was freed | 1 MiB before, 1 MiB after |
+| every design recorded failed, with the timeout and budget named | 5 of 5, each reason naming the 35 s budget |
+
+### Why the container has to outlive the node
+
+The obvious version of this control is `docker run` a node that times out. It is worthless:
+a container's exit kills every process in it and frees the device no matter how badly
+`kill_tree()` is written, so the check would pass for the wrong reason (§8.4). The same
+problem is why the Tier 1 suite reports `GAP` rather than `PASS` for the worker-survival
+claim in the image — a pid recorded inside a container means nothing on the host.
+
+So `run_c6.sh` starts the container first with `sleep infinity`, runs node 03 through
+`docker exec`, and *then* asks what is still alive inside it. And because "nothing
+survived" is vacuous if nothing was ever there, a sampler records what was running
+mid-prediction. That sampler is why claim 2 exists and why it is checked before claim 3.
+
+### Two defects in this control, before it was allowed to pass
+
+**The first version passed claim 3 for exactly the wrong reason.** It sampled with
+`docker exec ps`, and the image has no `ps`, so the after-listing contained
+`OCI runtime exec failed: ... "ps": executable file not found` — no process lines, which
+the judge read as "nothing survived" and passed. §8.4 again, and this time inside the
+checking code. The fix is `docker top`, which runs the *host's* `ps` against the
+container's pids and prints a `PID` header the judge can require as proof it really
+listed. `report_c6.py` now refuses a listing it cannot show to be a listing: a listing
+that could not be taken is not an empty listing.
+
+**And at a 20 s budget the recorded reason was empty**, which turned out to be a real
+defect in node 03 rather than a cosmetic one. See below.
+
+## The defect C6 found in node 03
+
+`colabfold_batch`'s stdout is a pipe, not a tty, so it is block-buffered. A process killed
+before the buffer fills takes every line with it:
+
+| | `<design>_predict.log` (node 03's stdout capture) | `<design>_log.txt` (colabfold's own) |
+|---|---|---|
+| completed prediction | 3042 bytes | written |
+| killed at 35 s | **0 bytes** | **written, 5 progress lines** |
+
+So node 03's timeout reason read `Last lines: ` with nothing after it. The one thing a
+reader needs at that moment was the one thing lost — and it was not actually lost, because
+ColabFold logs through the `logging` module to its own file, which node 03's `collect()`
+has *already copied into `./outputs`* before the reason is built.
+
+Fixed: `predictor_tail()` falls back to that file and **names it as the source**, because
+"the predictor said nothing" and "the predictor's output was buffered away" are different
+facts and a reason that conflates them is worse than one that admits the gap (§8.7). The
+same blind spot applied to the OOM scan, which only ever saw stdout — an allocator OOM
+followed by a timeout was invisible, since the allocator warns, the job keeps the GPU
+without progressing, the budget kills it, and every line saying so was in the lost buffer.
+The fallback file is scanned for the markers too.
+
+**Why Tier 1 could not have found this.** `STANDIN_SIGTERM` prints to stdout and flushes
+line by line, so `timeout_message_carries_output` passed on output the real predictor does
+not produce at that moment. The check was right about the stand-in and wrong about the
+world. There is now a second stand-in, `STANDIN_SILENT_LOGFILE`, which writes only to its
+log file and says nothing on stdout, and a case
+`timeout-tail-falls-back-to-predictor-log` that requires the fallback, requires the source
+to be named, and requires node 03's stdout capture to be genuinely zero bytes — otherwise
+the case would be testing the ordinary path under a different name.
 
 ## What this does not say
 
