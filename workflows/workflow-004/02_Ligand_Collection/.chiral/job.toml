@@ -3,7 +3,7 @@ description = "Download ligand structures from PubChem"
 outputs = ["outputs/ligands_metadata.json", "outputs/*.sdf", "outputs/report.html"]
 
 [container]
-image = "vina-workflow:latest"
+image = "vina-workflow:2026_11_21"
 
 [scripts]
 run = "run.sh"

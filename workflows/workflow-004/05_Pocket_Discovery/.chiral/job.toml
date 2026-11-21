@@ -3,7 +3,7 @@ description = "Predict binding pockets using P2Rank and define grid box"
 outputs = ["outputs/pocket_discovery_metadata.json", "outputs/pockets.pdb", "outputs/grid_config.json", "outputs/report.html"]
 
 [container]
-image = "vina-workflow:latest"
+image = "vina-workflow:2026_11_21"
 
 [scripts]
 run = "run.sh"

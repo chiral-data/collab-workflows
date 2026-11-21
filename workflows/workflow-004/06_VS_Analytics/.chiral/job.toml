@@ -3,7 +3,7 @@ description = "High-throughput docking with AutoDock Vina and dashboard generati
 outputs = ["outputs/virtual_screening_metadata.json", "outputs/*_docked.pdbqt", "outputs/report.html"]
 
 [container]
-image = "vina-workflow:latest"
+image = "vina-workflow:2026_11_21"
 
 [scripts]
 run = "run.sh"

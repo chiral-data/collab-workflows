@@ -3,7 +3,7 @@ description = "Prepare receptor for docking (PDBFixer, Protonation, PDBQT conver
 outputs = ["outputs/refined_receptor_metadata.json", "outputs/receptor.pdbqt", "outputs/protein_fixed.pdb", "outputs/report.html"]
 
 [container]
-image = "vina-workflow:latest"
+image = "vina-workflow:2026_11_21"
 
 [scripts]
 run = "run.sh"

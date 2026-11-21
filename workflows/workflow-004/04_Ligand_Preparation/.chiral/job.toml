@@ -3,7 +3,7 @@ description = "Convert ligands to PDBQT format with torsion tree generation"
 outputs = ["outputs/refined_ligands_metadata.json", "outputs/*.pdbqt", "outputs/report.html"]
 
 [container]
-image = "vina-workflow:latest"
+image = "vina-workflow:2026_11_21"
 
 [scripts]
 run = "run.sh"

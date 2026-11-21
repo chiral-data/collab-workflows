@@ -3,7 +3,7 @@
 
 Write-Host "=== Building Unified Vina Workflow Docker Image ===" -ForegroundColor Green
 
-$IMAGE_NAME = "vina-workflow:latest"
+$IMAGE_NAME = "vina-workflow:2026_11_21"
 
 Write-Host "`nBuilding $IMAGE_NAME..." -ForegroundColor Cyan
 docker build -t $IMAGE_NAME .
