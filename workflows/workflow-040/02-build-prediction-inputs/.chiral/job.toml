@@ -1,0 +1,18 @@
+name = "Build Prediction Inputs"
+description = "Write one single-record FASTA per design, and record the chain order node 04 will slice by"
+inputs = [
+  "design_inventory.json",
+]
+outputs = [
+  "mono_*.fasta",
+  "prediction_inputs.json",
+]
+
+[container]
+image = "colabfold:2026_10_08"
+
+[resources]
+gpu = "none"
+
+[scripts]
+run = "run.sh"

@@ -1,0 +1,40 @@
+name = "Predict Structures"
+description = "Refold each designed sequence independently with ColabFold, one invocation per design, offline"
+inputs = [
+  "mono_*.fasta",
+  "prediction_inputs.json",
+]
+# Flat, and prefixed per design. Silva's ports match file NAMES, not paths, so a
+# per-design subdirectory would be flattened on the way into node 04's inputs -- which is
+# exactly how workflow-026 conflates designs: its 02_predict "copies all colabfold output
+# flat into ./outputs/, so N designs' files land in one directory undistinguished"
+# (818954e9). The separation therefore has to live in the filename, and it does: ColabFold
+# names its outputs after the record id, and node 02 writes one record per design.
+# Workflow-037 node 03 flattens the same way and keeps a parent-directory prefix on a name
+# collision rather than overwriting silently (cb3f6d23).
+#
+# All five ranks are kept, not just rank_001. Node 04 selects rank_001; the rest are what
+# makes a bad score diagnosable afterwards, which 029 lost by discarding prediction output
+# for designs that failed (2359ffa4).
+outputs = [
+  "*_scores_rank_*.json",
+  "*_rank_*.pdb",
+  "prediction_manifest.json",
+]
+
+[container]
+image = "colabfold:2026_10_08"
+# Redundant under silva 0.6.0, which reads [resources] below and emits a Note that this
+# key is ignored. Kept for the same reason workflow-037 keeps it (97a16f7c): silva 0.5.0
+# is still installed at /usr/local/bin on the GPU estate and its schema has no
+# [resources] at all, so there use_gpu = true is the only thing that passes the device
+# through. This is the one node that cannot run without one. Carrying both costs a
+# cosmetic Note; carrying neither costs a CPU-only scheduling decision. The CPU nodes get
+# no counterpart, since use_gpu = false was already 0.5.0's default.
+use_gpu = true
+
+[resources]
+gpu = "required"
+
+[scripts]
+run = "run.sh"

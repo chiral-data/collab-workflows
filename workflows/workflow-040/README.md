@@ -1,0 +1,133 @@
+# workflow-040 — Binder Design Validation
+
+**Scaffold only. No node is implemented; every one exits 1.**
+
+This README is a skeleton. It gets filled in node by node, in the same commit as the node
+it describes — a README that describes behaviour the code does not have is a bug in this
+repo, not a follow-up (`CLAUDE.md`).
+
+- Design spec and decisions: [validation_pipeline.md](validation_pipeline.md)
+- Test suite and merge gate: [tests/README.md](tests/README.md),
+  [tests/fixtures.json](tests/fixtures.json)
+
+## What this workflow is for
+
+Workflow-037 generates binder candidates and stops. Every metric it reports is geometric
+by declaration — contact counts, radius of gyration, net charge, composition — and every
+one of them is computable on a design that folds into nothing and binds nothing. On such
+a design they all look ordinary. 037 says so itself, and its report deliberately ranks
+nothing as a result.
+
+This workflow refolds each designed sequence with a predictor that never saw the design,
+and asks whether the sequence encodes the structure it was designed as. That is
+*self-consistency*, and it is the first filter that can tell a candidate from a
+plausible-looking string.
+
+It reads 037's **structures**, not its exported FASTA. A sequence alone cannot be compared
+against a backbone that stayed behind, which is why the handoff is the `*_generated.cif`
+files plus `design_metrics.json`.
+
+## When not to use this
+
+- **It does not tell you a design binds.** A sequence can recover its own backbone and
+  bind nothing. Interface scoring is Phase 2 and is not built; see
+  [§12](validation_pipeline.md) for the phasing and
+  [§4](validation_pipeline.md) for why the complex path needs a decision that Phase 1
+  does not.
+- **There is no experimental data anywhere in this repo.** Everything here is in silico.
+  A design that passes every threshold is a better hypothesis, not a result.
+- **The thresholds are uncalibrated.** They are literature conventions until the Phase 3
+  controls run. `tests/README.md` says what the suite does and does not establish.
+- **Designs are unscreened.** 037's designs carry no SecureDNA screening, and passing
+  validation makes synthesis *more* likely, not less. The notice travels into every
+  artifact here.
+
+## Nodes
+
+| Node | GPU | Reads | Writes |
+|---|---|---|---|
+| `01-ingest-designs` | no | `*_generated.cif`, `design_metrics.json` | `design_inventory.json` |
+| `02-build-prediction-inputs` | no | `design_inventory.json` | `mono_*.fasta`, `prediction_inputs.json` |
+| `03-predict` | **yes** | `mono_*.fasta`, `prediction_inputs.json` | `<design>_scores_rank_*.json`, `<design>_*rank_*.pdb`, `prediction_manifest.json` |
+| `04-score` | no | inventory, predictions, manifests | `design_scores.json`, `design_scores.csv` |
+| `05-filter-and-report` | no | `design_scores.json` | `passing_sequences.fasta`, `validation_metrics.csv`, `report.html` |
+
+```
+[037] *_generated.cif + design_metrics.json
+        │
+  [01-ingest-designs] ──► design_inventory.json  (binder chain, sequence,
+        │                                          residue ids and Ca coords IN ORDER)
+  [02-build-prediction-inputs] ──► mono_<design>.fasta, one record each
+        │
+  [03-predict]  (GPU) ──► <design>_scores_rank_*.json, <design>_*rank_*.pdb,
+        │                 prediction_manifest.json      (flat, prefixed per design)
+        │
+  [04-score] ──► design_scores.json   (sc_rmsd_A, plddt_binder)
+        │
+  [05-filter-and-report] ──► passing_sequences.fasta, report.html
+```
+
+`01b-align-target` is specced but not scaffolded: it belongs to Phase 2, and its contract
+cannot be written until the a3m spike in
+[§11.1](validation_pipeline.md) resolves. The letter suffix is so that adding it later does
+not renumber nodes 02–05, which would invalidate every saved `params.json` and every
+cross-reference.
+
+## Image
+
+`colabfold:2026_10_08`, built from
+[workflow-026's Dockerfile](../workflow-026/Dockerfile). This workflow defines no image of
+its own, for three reasons:
+
+- It is the only ColabFold image in this repo, and workflow-029's node 04 already borrows
+  it rather than forking one.
+- Its base is `ghcr.io/sokrypton/colabfold:1.6.1-cuda12` — the same ColabFold version that
+  produced `workflow-026/sample_outputs/confidence_summary.json`, which is the measured
+  reference for the scores-file shape node 04 parses.
+- It bakes the AlphaFold2 weights at build time (`python -m colabfold.download`), so
+  `single_sequence` mode has no reason to reach the network.
+
+Two things to know. It is a **local tag, not in the `ghcr.io/chiral-data` registry** —
+there is no `apps/c/colabfold_*` — so it exists only where someone has built it from 026's
+Dockerfile. And the `chown -R root:root /cache` in that Dockerfile has to stay in the same
+`RUN` as the download: the upstream weight archives carry owner IDs above 65535, which
+hosts with a limited UID/GID range cannot apply, and a later `RUN` would copy the weights
+into a new layer.
+
+## Parameters
+
+Declared once, at workflow level. See [`.chiral/workflow.toml`](.chiral/workflow.toml) for
+the hints, which carry the reasoning.
+
+| Parameter | Type | Default | Notes |
+|---|---|---|---|
+| `max_sc_rmsd_a` | float | `2.0` | self-consistency cutoff, Å. Scale-dependent; a default to calibrate |
+| `min_plddt_binder` | float | `80.0` | fold confidence, not binding |
+| `num_models` | integer | `5` | scores read from `rank_001` |
+| `num_recycle` | integer | `3` | right for a monomer; 026 records 6–12 for multimers, so Phase 2 should raise it |
+| `msa_mode` | string | `single_sequence` | correct for a lone de novo binder, wrong for a complex — [§4](validation_pipeline.md) |
+| `predict_timeout_s` | integer | `1800` | unmeasured for this workflow — [§11.5](validation_pipeline.md) |
+| `top_n` | integer | `10` | structures embedded in the report; later rows are inert |
+| `score_interface` | boolean | `false` | Phase 2, not built. Setting it true is **refused**, not ignored |
+
+## Status
+
+| | |
+|---|---|
+| Scaffold | done |
+| Nodes 01–05 | **not implemented** |
+| Test harness | not written — `tests/fixtures.json` is the data, the checks are not built |
+| Phase 2 | specced, gated on the §11.1 spike |
+| Phase 3 | thresholds uncalibrated |
+
+Open before the nodes land, from [§11](validation_pipeline.md) and
+[tests/README.md](tests/README.md):
+
+1. Confirm `colabfold:2026_10_08` is present on the GPU host, or rebuild it.
+2. Confirm `colabfold_batch` does not reach the network in `single_sequence` mode.
+3. Capture a real monomer prediction — scores JSON and `rank_001` PDB — and commit it as a
+   fixture **before** writing node 04's parser. The complex equivalent has never been
+   captured in this repo at all.
+4. Extend `workflow-037/tests/make_designs.py` with the four shapes four `ingest` cases
+   need: a multi-chain target, an internally gapped target, a target numbered from 3, and
+   a design carrying non-standard residues.

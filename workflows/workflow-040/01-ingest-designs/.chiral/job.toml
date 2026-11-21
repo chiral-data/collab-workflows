@@ -1,0 +1,19 @@
+name = "Ingest Designs"
+description = "Read the designed structures and resolve, per design, which chain is the binder -- by reading workflow-037's answer, not by re-deriving it"
+inputs = [
+  "*_generated.cif",
+  "design_metrics.json",
+]
+outputs = [
+  "design_inventory.json",
+  "design_metrics.json",
+]
+
+[container]
+image = "colabfold:2026_10_08"
+
+[resources]
+gpu = "none"
+
+[scripts]
+run = "run.sh"

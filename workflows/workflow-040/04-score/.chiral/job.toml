@@ -1,0 +1,22 @@
+name = "Score Designs"
+description = "Self-consistency RMSD and fold confidence per design, merged with workflow-037's generation metrics by name"
+inputs = [
+  "design_inventory.json",
+  "design_metrics.json",
+  "*_scores_rank_*.json",
+  "*_rank_*.pdb",
+  "prediction_manifest.json",
+]
+outputs = [
+  "design_scores.json",
+  "design_scores.csv",
+]
+
+[container]
+image = "colabfold:2026_10_08"
+
+[resources]
+gpu = "none"
+
+[scripts]
+run = "run.sh"

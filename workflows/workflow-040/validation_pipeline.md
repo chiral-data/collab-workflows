@@ -341,8 +341,14 @@ Run the predictor once per input file. GPU.
 | `--model-type` | `alphafold2_ptm` | `alphafold2_multimer_v3` |
 | `--msa-mode` | `single_sequence` | target-only a3m per §4 |
 | `--num-models` | 5 | 5 |
-| `--num-recycle` | 3 | 3 |
+| `--num-recycle` | 3 | **raise it — see below** |
 | `--host-url` | not passed | not passed |
+
+Revision 1 specified `--num-recycle 3` on both paths. 026's own pipeline doc records the
+value as "`3` for monomers — recommended 6–12 for multimers, set explicitly per run type",
+and 029 exposes it as a parameter. So 3 is right for Phase 1 and probably too few for
+Phase 2. Recycles multiply wall clock directly, so this is also an input to §11.5 rather
+than a free change.
 
 `--model-type` was missing from revision 1 entirely. It is not optional: the multimer
 model is what produces `iptm` at all, and running a single chain through it is not the

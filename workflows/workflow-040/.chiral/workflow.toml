@@ -1,0 +1,74 @@
+schema_version = "1.1"
+name = "Binder Design Validation"
+description = "Score binder designs by refolding them independently: self-consistency RMSD and fold confidence, from the designed backbones rather than from an exported sequence"
+
+# Phase 1 only. Nodes 01-05 are the self-consistency path; the complex path and the
+# target-alignment node (01b-align-target) are specced in validation_pipeline.md §12 and
+# deliberately not scaffolded. A node that exists and does nothing is worse than one that
+# does not exist, and 01b's contract cannot be written until the §11.1 a3m spike resolves.
+#
+# Edges are the minimum. Two reasons, both learned in workflow-037:
+#
+#   1. Silva copies every dependency's outputs into the dependent's inputs, so two
+#      dependencies writing the same filename leaves which one survives up to iteration
+#      order. 037 node 03 depended on both 01 and 02 and both wrote target.cif -- harmless
+#      for three tasks and fatal for the fourth (7fba161c). No two parents here share an
+#      output name; check that before adding an edge.
+#   2. A fact an upstream node decided is passed forward and read, never re-derived
+#      (CLAUDE.md, and §8.1 of the spec). So node 02 records the chain order it chose,
+#      node 03 carries it into prediction_manifest.json, and node 04 reads it from there
+#      instead of taking an edge back to 02.
+[dependencies]
+02-build-prediction-inputs = ["01-ingest-designs"]
+03-predict = ["02-build-prediction-inputs"]
+04-score = ["01-ingest-designs", "03-predict"]
+05-filter-and-report = ["04-score"]
+
+# Shared parameters are declared HERE and once. Workflow-029 declared receptor_chain at
+# both workflow and job level with different values, and because Silva's TUI passes an
+# empty map where the headless runner synthesises a node's job.toml defaults, node 05
+# inherited the workflow's value, PARAM_BINDER_CHAIN was never set, and every design was
+# scored against itself -- prodigy --selection A A (72e3a492). The fix was to recognise
+# that neither value was ever configuration. Anything not genuinely user-configurable
+# belongs in the node as a module constant, not as a parameter with a default in two
+# places. See also 326ab541, which moved the remaining duplicates up here.
+
+[params.max_sc_rmsd_a]
+type = "float"
+default = 2.0
+hint = "Self-consistency cutoff in angstroms: Ca RMSD of the refolded binder against the designed backbone. A default to calibrate, not truth -- scale-dependent, so a 30-mer and a 150-mer should not really share it. See validation_pipeline.md §7"
+
+[params.min_plddt_binder]
+type = "float"
+default = 80.0
+hint = "Mean pLDDT over the binder residues, below which a design is filtered. Standard AF2 confidence banding; measures fold confidence, not binding"
+
+[params.num_models]
+type = "integer"
+default = 5
+hint = "ColabFold models per prediction; scores are read from rank_001"
+
+[params.num_recycle]
+type = "integer"
+default = 3
+hint = "Recycles per prediction. 3 is right for a monomer; workflow-026 records 6-12 as the recommendation for multimers, so the Phase 2 complex path should raise this rather than inherit it. Recycles multiply GPU time, so this feeds the budget question in §11.5"
+
+[params.msa_mode]
+type = "string"
+default = "single_sequence"
+hint = "Alignment mode. single_sequence is correct for a de novo binder predicted alone -- it has no homologs, and designed proteins are idealised, which is why self-consistency works without an MSA. It is NOT correct for a complex: workflow-029 measured the target modelling at ~40 pLDDT instead of ~84 in this mode, which caps every interface metric (2361277f). See §4"
+
+[params.predict_timeout_s]
+type = "integer"
+default = 1800
+hint = "Wall-clock budget in seconds for one prediction; the process group is killed past it. Unmeasured for this workflow -- §11.5"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of designs whose structures are embedded in the report viewer; rows beyond it are inert and say so"
+
+[params.score_interface]
+type = "boolean"
+default = false
+hint = "Phase 2 interface scoring (iptm, pae_interaction). NOT BUILT: setting this true is refused with an explanation rather than ignored, because a parameter that silently does nothing is worse than one that is absent (d3d707ed). See §12"
