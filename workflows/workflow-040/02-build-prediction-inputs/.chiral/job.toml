@@ -1,10 +1,27 @@
 name = "Build Prediction Inputs"
 description = "Write one single-record FASTA per design, and record the chain order node 04 will slice by"
+
+# target_alignment.json comes from 01b on every run, Phase 1 or not: in Phase 1 it says it
+# was a no-op, which is what lets this node tell "no alignment was asked for" from "one was
+# asked for and failed" (§8.3). target_msa.a3m exists only when there is one.
 inputs = [
   "design_inventory.json",
+  "target_alignment.json",
+  "target_msa.a3m",
 ]
+
+# Three prefixes, three names, no overlap with any other node's output. The complex path
+# writes TWO files per design -- the declaration with the colon in it, and the paired
+# alignment the predictor actually consumes -- and both have to be declared here or node
+# 03 never receives them. That is not a hypothetical: the first version of this file
+# declared only mono_*.fasta while the node wrote all three, `silva validate` reported
+# "6 job(s) ok", and the complex path would have degraded silently to monomer-only on
+# every real run. The suite caught it because its harness reads these globs rather than
+# carrying its own copy of them (§8.3).
 outputs = [
   "mono_*.fasta",
+  "cplx_*.fasta",
+  "pairedmsa_*.a3m",
   "prediction_inputs.json",
 ]
 

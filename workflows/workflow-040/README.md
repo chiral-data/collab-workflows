@@ -30,10 +30,12 @@ files plus `design_metrics.json`.
 ## When not to use this
 
 - **It does not tell you a design binds.** A sequence can recover its own backbone and
-  bind nothing. Interface scoring is Phase 2 and is not built; see
-  [§12](validation_pipeline.md) for the phasing and
-  [§4](validation_pipeline.md) for why the complex path needs a decision that Phase 1
-  does not.
+  bind nothing. Interface scoring is built, off by default, and **uncalibrated**: `iptm`
+  and `pae_interaction` are reported and do not gate, because no control has yet been run
+  against either threshold and 115 alanines already score 95.81 pLDDT. Turning
+  `score_interface` on buys you a number to look at, not a verdict. See
+  [§12](validation_pipeline.md) for the phasing and [§4](validation_pipeline.md) for the
+  MSA decision the complex path rests on.
 - **There is no experimental data anywhere in this repo.** Everything here is in silico.
   A design that passes every threshold is a better hypothesis, not a result.
 - **The thresholds are uncalibrated.** They are literature conventions until the Phase 3
@@ -131,11 +133,11 @@ the hints, which carry the reasoning.
 | `max_sc_rmsd_a` | float | `2.0` | self-consistency cutoff, Å. Scale-dependent; a default to calibrate |
 | `min_plddt_binder` | float | `80.0` | fold confidence, not binding |
 | `num_models` | integer | `5` | scores read from `rank_001` |
-| `num_recycle` | integer | `3` | right for a monomer; 026 records 6–12 for multimers, so Phase 2 should raise it |
-| `msa_mode` | string | `single_sequence` | correct for a lone de novo binder, wrong for a complex — [§4](validation_pipeline.md) |
+| `num_recycle` | integer | `3` | right for a monomer; the complex path has its own `num_recycle_cplx`, default 6, after 026's 6–12 for multimers |
+| `msa_mode` | string | `single_sequence` | correct for a lone de novo binder, wrong for a complex — [§4](validation_pipeline.md). The complex path uses `msa_mode_cplx` and **refuses** `single_sequence`, which discards a precomputed alignment while still re-saving it |
 | `predict_timeout_s` | integer | `1800` | unmeasured for this workflow — [§11.5](validation_pipeline.md) |
 | `top_n` | integer | `10` | size of the shortlist the report highlights; every design is still in the table |
-| `score_interface` | boolean | `false` | Phase 2, not built. Setting it true is **refused**, not ignored |
+| `score_interface` | boolean | `false` | Phase 2. Setting it true adds a second prediction per design, through the multimer model against the aligned target, and requires `01b-align-target` to have produced an alignment |
 
 ## Status
 
@@ -150,12 +152,12 @@ the hints, which carry the reasoning.
 | `05-filter-and-report` | **implemented**; report is static HTML, no structure viewer. Says per row whether the interface was scored and whether it gated |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest`; `tests/make_predictions.py` written |
 | Test harness | **built** — `run_fixtures.sh` stages and runs, `check_fixtures.py` judges and falsifies; `run_controls.sh`, `report_controls.py` and `falsify_controls.sh` do the same for the GPU tier |
-| Tier 1 suite | **48 pass, 0 FAIL, 5 gap** of 53 CI cases; 56/56 checks implemented, invoked and falsifiable |
-| **Gate A** | **met in `colabfold:2026_10_08`**, which is the only run that counts: 46 pass, 0 FAIL, 6 gap of 52, 55/55 checks, 50 falsified, 0 vacuous. The sixth gap is the container-pid claim the image deliberately refuses to pass (§8.4). A 53-case image run is in flight — see [tests/README.md](tests/README.md) |
+| Tier 1 suite | **53 pass, 0 FAIL, 0 gap** of 53 CI cases on the host; 56/56 checks implemented, invoked and falsifiable, 54 falsified by a corruption and 0 vacuous. Every case reaches the thing it is about, which is new as of 2026-11-21 |
+| **Gate A** | **met in `colabfold:2026_10_08` for Phase 1** — 47 pass, 0 FAIL, 6 gap of 53, 56/56 checks, 51 falsified, 0 vacuous. That run tested the commit before the Phase 2 cases landed, so it does not speak for the complex path; the image run against this code is in flight. One gap in the image is by design: the container-pid claim the image refuses to pass (§8.4) — see [tests/README.md](tests/README.md) |
 | Tier 2 controls, Phase 1 | **Gate B met**, measured twice on the GPU with `--network none`. The `C12` designed positive passes at 0.93 Å / 95.05; scrambled and poly-alanine fail; `sc_rmsd_A` separates them by 17.9 Å. Judge falsified 6/6. Found that the native positive controls were the wrong controls and that `plddt_binder` cannot gate alone — [tests/reference/tier2-phase1-controls.md](tests/reference/tier2-phase1-controls.md) |
 | Tier 2 controls, `C6` | **met** — a real `colabfold_batch` holding 2357 MiB killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB. Found a node 03 defect: the predictor's stdout is block-buffered, so a kill lost it and the timeout reason was empty |
-| Tier 2 controls, Phase 2 | not built. `C5` (real 037 designs) is the only Phase 1 control still outstanding |
-| Phase 2 | **built and unvalidated.** `01b` plus the `cplx_` path through 02–05. Controls `C7`–`C11` not run, and the Tier 1 Phase 2 cases are not written, so the 5 gaps are still gaps |
+| Tier 2 controls, Phase 2 | `C7`–`C11` **not run.** No GPU has yet folded a complex through this workflow. `C5` (real 037 designs) is the only Phase 1 control still outstanding |
+| Phase 2 | **built, and validated in CI only.** `01b` plus the `cplx_` path through 02–05, with all five of the suite's complex-path cases now passing and falsifiable. Making them run found four defects, one of which would have degraded every complex to a monomer on a real Silva run. What is still missing is a GPU: no interface metric in this workflow has been produced from a real multimer prediction |
 | Phase 3 | thresholds uncalibrated. `iptm` and `pae_interaction` have had no control run against them, which is why they do not gate |
 
 ```

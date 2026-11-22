@@ -45,9 +45,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FAIL, GAP, PASS = "FAIL", "GAP", "PASS"
 RANK = {FAIL: 0, GAP: 1, PASS: 2}
 
-PHASE2_NOT_BUILT = (
-    "Phase 2 is not built: node 02 writes no cplx_ record, so nothing downstream ever "
-    "sees a complex. This is a gap, not a pass."
+NO_COMPLEX_STAGED = (
+    "No complex reached this step, so the claim cannot be measured here. Phase 2 IS "
+    "built; what this means is that this case did not ask for the complex path -- "
+    "PARAM_SCORE_INTERFACE in its params -- or node 01b refused before node 02 could "
+    "write one. Either way it is a gap, not a pass."
 )
 
 
@@ -138,6 +140,11 @@ class View:
         return [s for s in (self.record.get("steps") or []) if s["rc"] != 0]
 
     # -- named artifacts ---------------------------------------------------------
+
+    def wants_interface(self):
+        """Did this case ASK for the complex path? Read from its params, like the harness."""
+        value = (self.record.get("params") or {}).get("PARAM_SCORE_INTERFACE", "")
+        return str(value).strip().lower() == "true"
 
     def inventory(self, step="n1"):
         return self.json(step, "outputs", "design_inventory.json")
@@ -345,23 +352,55 @@ def c_inventory_records_gaps(c, spec):
 
 
 def c_fusion_disclosed(c, spec):
-    """Each numbering break in a folded target must be disclosed as a fusion.
+    """Every numbering break in a folded target must be disclosed as a fusion, by name.
 
-    Phase 1 never folds the target, so there is nothing to disclose yet. The gap is the
-    answer, and it is the honest one: 029 measured that trimming around a gap is far worse
-    than fusing it and saying so (8e4772a7), and until the complex path exists this suite
-    cannot show either.
+    029 trimmed a gapped receptor to the segment carrying the epitope and measured ~42
+    pLDDT against 81 for the whole chain (8e4772a7), so 040 folds the chain WHOLE and the
+    junction it creates is a real defect kept knowingly. A defect kept knowingly has to be
+    stated, and stated where the numbers are read.
+
+    What this does NOT accept: the string "fus" appearing in prediction_inputs.json. The
+    payload carries a `fusion` key whether or not anything was fused, so the key name
+    alone satisfied the first version of this check -- which is §8.4's case, a check that
+    passes for the wrong reason. So this counts the gaps node 01 measured and requires a
+    disclosure naming each one's boundary residues.
     """
     decl = c.inputs_decl() or {}
     modes = sorted({r.get("mode") for r in decl.get("inputs") or []})
-    if modes and modes != ["mono"]:
-        text = json.dumps(decl)
-        said = "fus" in text.lower()
-        return (PASS if said else FAIL), (
-            f"modes={modes}; node 02's declaration mentions a fusion: {said}"
+    if not modes or modes == ["mono"]:
+        return GAP, (f"modes={modes or 'none declared'}; the target is only folded on the "
+                     f"complex path, so no fusion can be disclosed. " + NO_COMPLEX_STAGED)
+
+    inv = c.inventory()
+    if not inv:
+        return FAIL, "no design_inventory.json was written, so there are no gaps to match"
+    gaps = [{"chain": chain["chain"], **gap}
+            for row in inv["designs"] if not row.get("skipped")
+            for chain in (row.get("target_chains") or [])
+            for gap in (chain.get("gaps") or [])]
+    if not gaps:
+        return FAIL, ("the inventory records no target numbering gap, so this case is not "
+                      "the shape it says it is and the disclosure cannot be checked "
+                      "(§8.14). A gapped target is the whole point of the case.")
+
+    target = (decl.get("target") or {})
+    disclosed = [str(line) for line in (target.get("fusion") or [])]
+    blob = " ".join(disclosed).lower()
+    missing = [g for g in gaps
+               if not (str(g["after"]) in blob and str(g["before"]) in blob
+                       and str(g["chain"]).lower() in blob)]
+    detail = (f"modes={modes}; the inventory measured {len(gaps)} numbering gap(s) "
+              f"{[(g['chain'], g['after'], g['before']) for g in gaps]}; node 02 declared "
+              f"{len(disclosed)} fusion line(s): {disclosed}")
+    if not disclosed:
+        return FAIL, ("the target was folded and nothing was disclosed. " + detail)
+    if missing:
+        return FAIL, (
+            f"{len(missing)} gap(s) are folded over without being named: "
+            f"{[(g['chain'], g['after'], g['before']) for g in missing]}. A disclosure "
+            f"that does not say WHERE the junction is cannot be acted on. " + detail
         )
-    return GAP, (f"modes={modes or 'none declared'}; the target is never folded on the "
-                 f"Phase 1 path, so no fusion can be disclosed. " + PHASE2_NOT_BUILT)
+    return PASS, detail
 
 
 def c_target_not_trimmed(c, spec):
@@ -613,10 +652,24 @@ def c_mono_has_no_colon(c, spec):
 
 
 def _cplx_gap(c, what):
+    """No cplx_ file to read. A gap if none was asked for, a FAILURE if one was.
+
+    Node 02 writing no complex when score_interface asked for one is the defect this
+    whole section is about, and reporting it as a gap would be the §8.5 case: a failure
+    that does not appear as a failure. So the two are told apart here, by what the case
+    asked for rather than by what came out.
+    """
     decl = c.inputs_decl() or {}
     files = [n for n in c.files("n2", "outputs") if n.startswith("cplx_")]
-    return GAP, (f"node 02 declared mode={decl.get('mode')!r} and wrote {files or 'no'} "
-                 f"cplx_ file(s), so {what} cannot be measured. " + PHASE2_NOT_BUILT)
+    detail = (f"node 02 declared mode={decl.get('mode')!r} and wrote {files or 'no'} "
+              f"cplx_ file(s), so {what} cannot be measured")
+    if c.wants_interface():
+        return FAIL, (
+            f"{detail}. This case set PARAM_SCORE_INTERFACE=true, so a complex WAS asked "
+            f"for and node 02 did not write one. node 02 rc={c.rc('n2')}, node 01b "
+            f"rc={c.rc('nalign')}."
+        )
+    return GAP, detail + ". " + NO_COMPLEX_STAGED
 
 
 def c_cplx_colon_count(c, spec):
@@ -722,11 +775,26 @@ def c_recorded_lengths_sum_asserted(c, spec):
 # node 03
 # ===========================================================================
 
-def _argvs(c):
+def _argvs(c, mode=None):
+    """{'<design>/<mode>': argv}. Keyed by BOTH, because the complex path runs two.
+
+    The first version keyed on design alone. On the complex path node 03 runs each design
+    twice -- mono through alphafold2_ptm and cplx through alphafold2_multimer_v3 -- so one
+    of the two silently replaced the other in this dict, and whichever survived was the
+    one every argv check then read. The model-type check would have compared the monomer's
+    argv against the multimer value and failed a correct node, or passed a wrong one,
+    depending only on manifest order (§8.16).
+    """
     manifest = c.manifest()
     if not manifest:
         return None
-    return {p["design"]: p.get("argv") or [] for p in manifest["predictions"]}
+    out = {}
+    for prediction in manifest["predictions"]:
+        this = prediction.get("mode", "mono")
+        if mode is not None and this != mode:
+            continue
+        out[f"{prediction['design']}/{this}"] = prediction.get("argv") or []
+    return out
 
 
 def c_argv_excludes(c, spec):
@@ -736,8 +804,8 @@ def c_argv_excludes(c, spec):
     flag = spec["flag"]
     offenders = {d: v for d, v in argvs.items() if flag in v}
     manifest = c.manifest()
-    detail = (f"{len(argvs)} resolved argv(s), none containing {flag}: "
-              f"{not offenders}. First: {argvs[sorted(argvs)[0]]}. The manifest records "
+    detail = (f"{len(argvs)} resolved argv(s) over {sorted(argvs)}, none containing "
+              f"{flag}: {not offenders}. First: {argvs[sorted(argvs)[0]]}. It records "
               f"host_url_passed={manifest.get('host_url_passed')} and "
               f"network_expected={manifest.get('network_expected')!r}")
     return (PASS if not offenders else FAIL), (
@@ -746,19 +814,35 @@ def c_argv_excludes(c, spec):
 
 
 def c_argv_includes(c, spec):
-    argvs = _argvs(c)
+    """The flag is present with the stated value, in every argv the spec is about.
+
+    `mode` in the spec narrows it to one path. Without that, a flag whose correct value
+    DIFFERS by path -- --model-type above all -- could only be asserted by picking one
+    argv and hoping, which is what keying on design alone used to do for us.
+    """
+    mode = spec.get("mode")
+    argvs = _argvs(c, mode)
     if argvs is None:
         return FAIL, f"no prediction_manifest.json; node 03 rc={c.rc('n3')}"
     flag, want = spec["flag"], spec["value"]
-    got = {}
-    for design, argv in argvs.items():
-        got[design] = argv[argv.index(flag) + 1] if flag in argv else None
-    wrong = {d: v for d, v in got.items() if v != want}
-    detail = f"{flag} per design: {got}; wanted {want!r}"
-    if wrong and want == "alphafold2_multimer_v3":
+
+    if not argvs:
+        # No argv of this mode was resolved. Whether that is a gap or a defect depends on
+        # whether a complex was ever declared -- and that distinction is the check, so it
+        # is read off node 02's declaration rather than assumed either way (§8.3).
         decl = c.inputs_decl() or {}
-        return GAP, (f"{detail}. node 02 declared mode={decl.get('mode')!r}, so the "
-                     f"multimer model is never selected. " + PHASE2_NOT_BUILT)
+        modes = sorted({r.get("mode") for r in (decl.get("inputs") or [])})
+        if mode and mode not in modes:
+            return GAP, (f"node 03 resolved no argv with mode={mode!r}; node 02 declared "
+                         f"modes={modes or 'none'}. " + NO_COMPLEX_STAGED)
+        return FAIL, (f"node 02 declared modes={modes} including {mode!r}, but node 03 "
+                      f"resolved no argv for it, so the prediction was never run")
+
+    got = {key: (argv[argv.index(flag) + 1] if flag in argv else None)
+           for key, argv in argvs.items()}
+    wrong = {k: v for k, v in got.items() if v != want}
+    detail = (f"{flag} per design/mode{'' if not mode else f' (mode={mode})'}: {got}; "
+              f"wanted {want!r}")
     return (PASS if not wrong else FAIL), detail
 
 
@@ -1120,7 +1204,7 @@ def c_low_target_plddt_warned(c, spec):
               f"the value: {names_value}")
     if value is None:
         return GAP, ("there is no target in this prediction, so there is no target "
-                     "confidence to warn about. " + PHASE2_NOT_BUILT)
+                     "confidence to warn about. " + NO_COMPLEX_STAGED)
     if not warned:
         return FAIL, ("029's wrong diagnosis came from this number being absent, not from "
                       "it being low (2359ffa4), so a low value has to be said out "
@@ -1505,8 +1589,9 @@ CHECKS = {
     ),
     "fusion_disclosed": (
         c_fusion_disclosed,
-        "Phase 2. Returns GAP while node 02 declares mono only, and becomes a real check "
-        "the moment a target is folded.",
+        "Phase 2. Every numbering gap the inventory measured must be named, with its "
+        "boundary residues, in the fusion the declaration discloses. GAP only when no "
+        "complex was declared; a `fusion` key carrying an empty list fails.",
     ),
     "target_not_trimmed": (
         c_target_not_trimmed,
@@ -1561,12 +1646,14 @@ CHECKS = {
     ),
     "cplx_colon_count": (
         c_cplx_colon_count,
-        "Phase 2. GAP until a cplx_ file exists; then zero colons and two colons both "
-        "fail.",
+        "Phase 2. Exactly one colon per cplx_ file: zero folds a monomer and reports its "
+        "confidence as an interface, two predicts three chains. A case that asked for the "
+        "complex path and got no cplx_ file FAILS; one that never asked for it is a gap.",
     ),
     "cplx_halves_nonempty": (
         c_cplx_halves_nonempty,
-        "Phase 2. GAP until a cplx_ file exists; then an empty half fails.",
+        "Phase 2. Both halves non-empty, because 'TARGET:' has exactly one colon and "
+        "folds one chain, so counting separators is not enough on its own.",
     ),
     "mono_file_per_design": (
         c_mono_file_per_design,
@@ -1945,6 +2032,74 @@ def x_second_record_in_mono(d):
                 handle.write(">second_record\nAAAAAAAAAA\n")
             return f"appended a second record to {name}"
     return None
+
+
+def x_blank_fusion_disclosure(d):
+    """Fold the gapped target and say nothing about it. 8e4772a7's defect, undisclosed.
+
+    The gap stays in the inventory, the complex is still declared, and only the disclosure
+    goes -- which is the one thing fusion_disclosed is about. Keeping the rest intact is
+    the point: a corruption that also removes the shape would make the check fail for a
+    reason that is not its own.
+    """
+    path = os.path.join(d, "n2", "outputs", "prediction_inputs.json")
+    if not os.path.exists(path):
+        return None
+    payload = json.load(open(path))
+    target = payload.get("target")
+    if not isinstance(target, dict):
+        return None
+    before = list(target.get("fusion") or [])
+    if not before:
+        return None
+    target["fusion"] = []
+    json.dump(payload, open(path, "w"), indent=2)
+    return (f"emptied target.fusion in prediction_inputs.json, dropping {len(before)} "
+            f"disclosure(s): {before}")
+
+
+def _cplx_fastas(d):
+    where = os.path.join(d, "n2", "outputs")
+    if not os.path.isdir(where):
+        return []
+    return [os.path.join(where, n) for n in sorted(os.listdir(where))
+            if n.startswith("cplx_") and n.endswith(".fasta")]
+
+
+def x_drop_colon_from_cplx(d):
+    """Remove the chain break. The monomer prediction that reports itself as an interface.
+
+    This is 026's bug in one byte: zero colons folds one chain, and every interface
+    quantity computed off it is a number about a monomer. cplx_colon_count exists to catch
+    exactly this, so this is what has to make it fail.
+    """
+    hit = {}
+    for path in _cplx_fastas(d):
+        body = open(path).read()
+        open(path, "w").write(body.replace(":", ""))
+        hit[os.path.basename(path)] = body.count(":")
+    return (f"removed the chain break from {len(hit)} cplx_ fasta(s): {hit} colon(s) each"
+            if hit else None)
+
+
+def x_empty_cplx_half(d):
+    """Keep the colon and empty the binder half, which is the other way to fold one chain.
+
+    Counting colons is not enough on its own: 'TARGET:' has exactly one. 029 asserts both
+    halves non-empty for this reason (04_fold_and_filter/script.py:161), and a check that
+    only counted separators would pass this file while the prediction it produced was a
+    monomer again.
+    """
+    hit = []
+    for path in _cplx_fastas(d):
+        lines = open(path).read().splitlines()
+        for index, line in enumerate(lines):
+            if ":" in line:
+                lines[index] = line.split(":")[0] + ":"
+                break
+        open(path, "w").write("\n".join(lines) + "\n")
+        hit.append(os.path.basename(path))
+    return f"emptied the binder half of {hit}, leaving the colon in place" if hit else None
 
 
 def x_colon_in_mono(d):
@@ -2389,6 +2544,15 @@ def x_blank_node_log(d, record):
 # itself worth seeing.
 CORRUPTIONS = [
     # wrong values, right files
+    #
+    # blank-fusion-disclosure comes FIRST, ahead of truncate-target. Both make
+    # fusion_disclosed fail, but only one makes it fail for its own reason: truncate-target
+    # empties the gaps list, so the check fails because the case is no longer a gapped
+    # target at all. That proves the check reads the inventory and says nothing about
+    # whether it reads the disclosure. falsify() stops at the first corruption that flips a
+    # check, so the order here decides which reason gets recorded -- and a check falsified
+    # for the wrong reason is only a little better than one that is never falsified (§8.4).
+    ("blank-fusion-disclosure", x_blank_fusion_disclosure),
     ("wrong-binder-chain", x_wrong_binder_chain),
     ("truncate-target", x_truncate_target),
     ("renumber-from-one", x_renumber_from_one),
@@ -2397,6 +2561,11 @@ CORRUPTIONS = [
     ("second-record-in-mono", x_second_record_in_mono),
     ("remove-one-mono", x_remove_one_mono),
     ("colon-in-mono", x_colon_in_mono),
+    # Value-level before deletion, per the ordering note on this table: falsify() stops at
+    # the first corruption that flips a check, and a deleted file would shadow both of
+    # these with a weaker reason.
+    ("empty-cplx-half", x_empty_cplx_half),
+    ("drop-colon-from-cplx", x_drop_colon_from_cplx),
     ("batch-fasta", x_batch_fasta),
     ("break-declared-lengths", x_break_declared_lengths),
     ("wrong-model-type", x_wrong_model_type),
@@ -2453,9 +2622,14 @@ NOT_IN_THE_TREE = {
         "accept the stale file, which is what 029 did (4d1a523e).",
     "expect_error":
         "the claim is a non-zero exit and a phrase in the message, so what falsifies it is "
-        "a node that accepts the input. The suite shows that for real: "
-        "cplx-input-missing-colon runs every step to 0 and is reported as a gap for "
-        "exactly that reason.",
+        "a node that accepts the input -- which is a change to a node, not a corruption of "
+        "the tree. cplx-input-missing-colon used to be the live demonstration: it ran "
+        "every step to 0 and was reported as a gap for exactly that reason. It no longer "
+        "is, because the guard it was aimed at now refuses, so that demonstration is gone "
+        "and is not replaced by a weaker one. What stops 'refuse everything' from passing "
+        "all 14 of these is structural rather than a corruption: boundary-value-accepted "
+        "is an input sitting exactly on every limit that MUST be accepted, so a guard made "
+        "strict enough to pass these fails that one.",
     "expect_ok":
         "the counter-entry to every refusal: a guard that refused this input would fail "
         "it. It is the one case in the suite whose whole job is to fail if the guards are "

@@ -1,7 +1,12 @@
 name = "Predict Structures"
 description = "Refold each designed sequence independently with ColabFold, one invocation per design, offline"
+# cplx_*.fasta and pairedmsa_*.a3m arrive only when score_interface asked for them. The
+# node reads prediction_inputs.json for what to run and never globs for work, so an absent
+# complex is an absent record rather than an empty directory it has to interpret.
 inputs = [
   "mono_*.fasta",
+  "cplx_*.fasta",
+  "pairedmsa_*.a3m",
   "prediction_inputs.json",
 ]
 # Flat, and prefixed per design. Silva's ports match file NAMES, not paths, so a

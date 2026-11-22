@@ -687,6 +687,27 @@ this adds to the list: **an artifact is evidence of the step that writes it, and
 nothing downstream of that step.** Ask what writes the file before treating its existence
 as a result.
 
+**A ninth and a tenth, both found the first time the complex path's cases ran.** Neither
+was visible by reading the check.
+
+`fusion_disclosed` searched `prediction_inputs.json` for the substring `fus`. The payload
+carries a `fusion` key whether or not anything was fused, so the check was satisfied by
+the key's own name and would have passed a node that folded a gapped target in silence.
+It now counts the numbering gaps node 01 measured and requires each one's boundary
+residues to appear in the disclosure — and the corruption that falsifies it empties the
+`fusion` list while leaving the gap and the complex intact, so the check fails for its own
+reason rather than because the case stopped being a gapped target. **Order the
+corruptions**: falsification stops at the first one that flips a check, so the first one
+that flips it decides what the record says it establishes.
+
+`_argvs` keyed its dictionary on the design name. On the complex path node 03 runs each
+design twice, monomer through `alphafold2_ptm` and complex through
+`alphafold2_multimer_v3`, so one silently replaced the other and whichever survived was
+the argv every argv check then read. `--model-type` would have been compared against the
+wrong path's value, passing or failing a correct node according to manifest order alone.
+This is §8.16's shape as much as this one's: the case reported a gap, the first suspicion
+was the node, and the defect was in the harness.
+
 ### 8.5 A design that failed must appear as failed, not vanish
 
 026 drops what it cannot score. A report that omits failures reads as a batch where
@@ -795,6 +816,23 @@ both 01 and 02, and both wrote `target.cif`. Silva copies every dependency's out
 the dependent's inputs, so which file survived was down to iteration order — harmless for
 three of four tasks and fatal for the fourth (`7fba161c`). Declare the minimum edges, and
 never let two dependencies write the same name.
+
+**And declare every file a node writes, because Silva copies the declaration and not the
+directory.** 040's own instance, found on 2026-11-21: node 02 wrote `mono_*.fasta`,
+`cplx_*.fasta`, `pairedmsa_*.a3m` and `prediction_inputs.json`, and its `job.toml`
+declared the first and the last. Nothing complained. `silva validate` reported "6 job(s)
+ok" — it checks that the declarations are well formed, not that they match what the code
+writes, and nothing in the chain can check that. The node passed standing alone, because
+standing alone it writes into its own `./outputs/` and everything is there. A hand smoke
+test passed too, because it copied `n2/outputs/*` wholesale. On a real Silva run node 03
+would have received the monomer input and nothing else, found no complex to predict, and
+reported a clean monomer-only success for a run that had asked for interface scoring.
+
+What caught it was the suite's harness reading those globs out of `job.toml` rather than
+carrying its own copy. That choice was made for this reason and written down before it
+paid off, and it generalises: **a harness that restates a contract cannot test it.** Any
+harness copy of a port list, a parameter default or a filename convention goes on agreeing
+with itself after the thing it describes has changed.
 
 ### 8.11 Guard before rewriting, and make it idempotent
 
@@ -1156,8 +1194,15 @@ replicates" landing on its own 3600 s default, killing the job hours in.
 **Status, 2026-11-21.** Phase 1 is built and is the merge gate it was specced to be:
 Gate A met in `colabfold:2026_10_08`, Gate B Phase 1 met on the GPU with `C6`, only `C5`
 outstanding. Phase 2 is built — `01b-align-target` and the `cplx_` path through nodes
-02–05 — and its own controls `C7`–`C11` are not yet run, so it is implemented and
-unvalidated. Phase 3 has not started.
+02–05 — and is now validated **in CI**: all thirteen of its Tier 1 cases pass and are
+falsifiable, where five of them had been gaps from the day they were written. Making
+those five run found four defects, the worst of which would have degraded every complex
+prediction to a monomer on a real Silva run while `silva validate` reported six jobs ok.
+
+What Phase 2 still has no evidence for is anything a GPU produces. Controls `C7`–`C11`
+have not been run, no interface metric in this workflow has come from a real multimer
+prediction, and `iptm` and `pae_interaction` consequently do not gate. Phase 3 has not
+started.
 
 **Phase 1 — self-consistency only. This is what gets built.**
 
@@ -1210,8 +1255,14 @@ have had no equivalent control run against them at all. They are reported with t
 thresholds beside them, every row records whether they gated, and
 `PARAM_GATE_ON_INTERFACE=true` turns gating on explicitly.
 
-What is not done: controls `C7`–`C11`. Phase 2 is implemented and unvalidated, and the
-README says so rather than implying a tested path.
+What is not done: controls `C7`–`C11`, and with them every claim that needs a real
+prediction. The CI cases establish the plumbing — that two inputs are written and
+declared, that the multimer model is selected for the complex and only for the complex,
+that a fused target is disclosed with its boundary residues, that a tampered input is
+refused before the predictor starts, and that a monomer is refused on this path at all.
+They establish nothing about the numbers, which is the §8.6 distinction: metrics
+computable on garbage look ordinary. The README says so rather than implying a tested
+path.
 
 **Phase 3 — calibration.**
 

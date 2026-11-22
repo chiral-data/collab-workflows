@@ -130,13 +130,14 @@ clears it.
 
 ## Harness
 
-Ten pieces: six for Tier 1, four more for Tier 2. One already existed and was extended in
-place rather than forked.
+Eleven pieces: seven for Tier 1, four more for Tier 2. One already existed and was
+extended in place rather than forked.
 
 | Piece | Role |
 |---|---|
 | `make_designs.py` | 037's, **extended in place**. Builds the design CIFs that are 040's *input*. See below. |
 | `make_predictions.py` | Builds the synthetic *predictions* — a `rank_001` PDB plus a scores JSON — with a known correct answer. |
+| `make_target_msa.py` | Builds the target alignment node 01b reads on the complex path, with the query taken **out of the inventory node 01 just wrote** and the homologs built from it by point substitution. A hard-coded a3m would mismatch the query and 01b would correctly refuse it, which would test the refusal instead of the path. It refuses nothing itself: a monomer, or a batch disagreeing about its target, is 01b's refusal to make, and a harness that pre-empted it would leave the node's guard never shown refusing (§8.13). |
 | `probe_design.py` | Measures a design CIF independently: chains, lengths, sequences, residue ids, gaps, and an md5 of the Cα coordinates in order. Shares no parser with any node, per 037's `probe_entry.py` (§8.4). |
 | `run_fixtures.sh` | The entry point, at the name 037's suite uses. A wrapper. |
 | `run_fixtures.py` | Stages and runs every CI case, and **decides nothing**. Leaves each step's inputs, outputs, log and exit code on disk. |
@@ -459,7 +460,7 @@ first). They now carry a `measured` field saying so:
 | `C7` | 2 | **4ZQK complex, three ways**: `single_sequence`, target-only MSA, full MSA — reading `iptm`, `pae_interaction` and **both** chains' pLDDT each time | settle §4 by measurement; the §11.1 gate | arm 1 of 3 in hand, from `C1`/`C2` |
 | `C8` | 2 | 1BRS as a native complex | good interface metrics | not built |
 | `C9` | 2 | the same complex, binder scrambled | bad interface metrics | not built |
-| `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused | not built |
+| `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused | not run. The CI case `cplx-input-missing-colon` now shows node 03 refusing this before the predictor starts, so what `C10` is left to establish is the half nobody can assert offline: what ColabFold actually returns for a colon-less complex |
 | `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was | not built |
 
 **`C12` was added after the first control run and it is the reason Phase 1 has a verdict
@@ -494,56 +495,68 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 ## Scope
 
-63 experiments, 55 distinct checks, all implemented.
+65 experiments, 56 distinct checks, all implemented, all invoked, none vacuous.
 
 | Section | Cases | Phase 1 | Phase 2 | Blocked |
 |---|---|---|---|---|
 | `ingest` | 14 | 11 | 3 | — |
-| `predict` | 5 | 4 | 1 | — |
+| `predict` | 6 | 5 | 1 | — |
 | `scoring` | 22 | 15 | 7 | — |
 | `rejections` | 11 | 9 | 2 | — |
-| `controls` (GPU) | 11 | 6 | 5 | 2 |
+| `controls` (GPU) | 12 | 7 | 5 | 1 |
 
-So Phase 1's gate is 39 CI cases plus 6 GPU controls. Nothing is blocked on the harness
-any more: the six generator shapes four `ingest` cases were waiting on are built.
+So Phase 1's gate is 40 CI cases plus 7 GPU controls, and Phase 2 adds 13 CI cases and 5
+controls. Nothing is blocked on the harness any more: the six generator shapes four
+`ingest` cases were waiting on are built, and the one case still blocked is `C5`, which
+needs real archived 037 designs that are not in this repo.
+
+Read these off `fixtures.json` rather than trusting the table — it had drifted by three
+while the suite grew, which is the ordinary fate of a count kept by hand:
+
+```
+python3 -c 'import json; d = json.load(open("tests/fixtures.json"));
+print({k: len(v) for k, v in d.items() if isinstance(v, list)})'
+```
 
 ### Where it stands
 
-All 53 CI cases run. Measured on the host interpreter on 2026-11-21:
+All 53 CI cases run, on both paths. Measured on the host interpreter on 2026-11-21,
+after the Phase 2 cases landed:
 
 | | |
 |---|---|
-| cases | **48 pass, 0 FAIL, 5 gap** of 53 |
+| cases | **53 pass, 0 FAIL, 0 gap** of 53 |
 | checks | 56 named, 56 implemented, 56 invoked |
-| falsification | 51 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
+| falsification | 54 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
-| Gate A **in the image** | **met** — 46 pass, 0 FAIL, 6 gap of 52, 55/55 checks, 50 falsified, 0 vacuous |
+| Gate A **in the image** | in flight against this code. The last image run — 47 pass, 0 FAIL, 6 gap of 53, 56/56, 51 falsified, 0 vacuous — tested the commit before Phase 2 and does not speak for it |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
-| Gate B Phase 2/3 | not met — not built |
+| Gate B Phase 2/3 | not met. `C7`–`C11` have never been run |
 
-**Gate A has now been satisfied in `colabfold:2026_10_08`**, which is the only run that
-counts. The suite prints `RUNNING IN colabfold:2026_10_08 -- this is the gate.` at the top
+**The five complex-path gaps are closed.** Every case in the suite now reaches the thing
+it is about, which is the first run where that has been true. The five are listed under
+"Known gaps" below with what each was waiting for and the four defects that came out of
+making them run — including one that would have degraded every complex prediction to a
+monomer, silently, on a real Silva run.
+
+**Gate A is only satisfied in `colabfold:2026_10_08`**, which is the only run that
+counts; the host figures above are a dry run and the suite says so in its own verdict. The suite prints `RUNNING IN colabfold:2026_10_08 -- this is the gate.` at the top
 of that run, and a dry run says so instead, in its header, in `run.json` and in its
 verdict.
 
-The image run differs from the host run in exactly one way, and it is the way it was built
-to differ: **six gaps rather than five.** The sixth is `sigterm_ignoring_child_killed`,
+The image run differs from the host run in exactly one way, and it is the way it was
+built to differ: **one gap rather than none.** It is `sigterm_ignoring_child_killed`,
 which reports a gap in a container because a pid recorded inside one means nothing on the
 host — the claim is established by the host run and the image run says so rather than
-quietly passing (§8.4). The other five gaps are the complex path and nothing else; they
-are listed below.
+quietly passing (§8.4).
 
-The figures above are the host run on the 53-case suite. The image figures are the 52-case
-suite as it stood before control `C6` added a case; a 53-case image run is in flight and
-its numbers replace them when it lands.
-
-**Gate A as recorded here is Gate A for Phase 1.** Both runs above test the code as of the
-last commit before Phase 2 landed. Phase 2 changed nodes 01–05 and added 01b, so the
-figures are re-measured on both the host and the image before Gate A can be claimed for
-the workflow as it now stands. Nothing above is withdrawn — those runs really happened,
-against the code they name — but they are not a statement about the complex path, and
-neither is any number in this file.
+**Gate A in the image has not yet been re-measured against the complex path.** The
+53-case image run recorded above is the code as of the commit before Phase 2's cases
+landed, and it is not withdrawn: it really happened, against the code it names. It is
+simply not a statement about the five cases that were gaps when it ran. Until the image
+run against this code lands, Gate A for the workflow as it now stands is unproven, and
+the host figures do not substitute for it.
 
 The count grew by six — five while nodes 01–04 were written and one from running the GPU
 controls — and every one came from building or measuring rather than from planning:
@@ -572,32 +585,55 @@ by how much and why.
 
 ## Known gaps
 
-### Reached and not measurable yet — the complex path
+### Closed: the complex path, measured
 
-These five are run every time, and each one reports `GAP` with the reason the artifact it
-needs does not exist. None of them is counted against the gate, and none of them is
-allowed to pass either.
+**These five were gaps in every run until 2026-11-21, and are now checks.** They are
+recorded here rather than deleted, because what each one was waiting for, and what it
+found when it finally ran, is the only reason to believe the check means anything.
 
-**The reason has changed, and the gaps have not.** Phase 2 is now built: node 02 does
-write `cplx_<d>.fasta` and `pairedmsa_<d>.a3m`, and node 03 does select the multimer
-model. What these five still lack is a *harness* that stages the complex path — a target
-alignment in node 01b's inputs, `score_interface` on, and for one case a mutation that
-strips the colon back out after node 02 has written it. Until `run_fixtures.py` stages
-that, each case runs the monomer path and the check finds nothing to read. Writing those
-cases is the next piece of work, and it is what turns `fusion_disclosed`,
-`cplx_colon_count`, `cplx_halves_nonempty` and `argv_includes` from names into checks.
+| Case | What it was waiting for | What it found |
+|---|---|---|
+| `cplx-input-has-one-colon` | a `cplx_` file to count colons in | passes. One colon, halves of 20 and 10 residues |
+| `gapped-target` → `fusion_disclosed` | a folded target, so a fusion could be disclosed | passes, and the check itself was wrong: see below |
+| `argv-model-type-cplx` → `argv_includes` | a record asking for the multimer model | passes, and found the harness reading one argv per design where the complex path runs two |
+| `monomer-on-complex-path` | the single-chain refusal to live somewhere reachable | passes. Node 01b refuses: a monomer declares no target chain, so there is nothing to align |
+| `cplx-input-missing-colon` | an input that reaches node 03 missing its colon | passes, and moved node 03's guard from a per-design failure to a hard stop |
 
-Calling them gaps while the code exists is deliberate: a check that has never been run
-against the thing it names is not evidence, and §8.13 is explicit that a guard which
-cannot be shown refusing is not a guard.
+Four defects came out of making them run, and none of them was visible from reading the
+code:
 
-| Case | What it is waiting for |
-|---|---|
-| `gapped-target` → `fusion_disclosed` | the target is never folded in Phase 1, so no fusion can be disclosed. Its other two checks, on recording the gap and not trimming the chain, **pass today**. |
-| `cplx-input-has-one-colon` | both checks need a `cplx_` file to count colons in |
-| `argv-model-type-cplx` → `argv_includes` | `alphafold2_multimer_v3` is never selected, because no record asks for a complex. `argv_excludes` on the same case **passes today**. |
-| `monomer-on-complex-path` | the "score_interface is Phase 2 and not built" refusal this case used to trip on is gone, because Phase 2 is built. The single-chain refusal it is actually asserting lives on the complex path, which the harness does not stage yet. |
-| `cplx-input-missing-colon` | node 02 writes the colon itself, so nothing is missing one. Showing the node 03 guard refuse needs a `mutate` that strips the colon after node 02 writes the file and before node 03 reads it. |
+**Node 02 wrote three files and declared one.** `job.toml` listed `mono_*.fasta` and
+`prediction_inputs.json` as its outputs while the node also wrote `cplx_*.fasta` and
+`pairedmsa_*.a3m`. `silva validate` reported "6 job(s) ok", the smoke test passed, and
+every complex would have degraded silently to monomer-only on a real run, because Silva
+copies a node's *declared* outputs and nothing else. The suite caught it because its
+harness reads those globs out of `job.toml` rather than carrying its own copy of the port
+list — which is the one thing the harness docstring says that choice is for.
+
+**`fusion_disclosed` passed on a key name.** It searched `prediction_inputs.json` for the
+substring `fus`, and the payload carries a `fusion` key whether or not anything was fused.
+It now counts the numbering gaps node 01 measured and requires each one's boundary
+residues to appear in the disclosure. §8.4, again: a check that passes for the wrong
+reason is worse than no check.
+
+**The argv checks read one prediction per design.** `_argvs` was keyed on the design name,
+and on the complex path node 03 runs each design twice — monomer through `alphafold2_ptm`,
+complex through `alphafold2_multimer_v3`. One of the two silently replaced the other, so
+whichever survived was the one every argv check then read, and `--model-type` would have
+been compared against the wrong path's value depending only on manifest order. Keyed on
+`design/mode` now, and `argv_includes` takes an optional `mode` so a flag whose correct
+value differs by path can be asserted at all.
+
+**A corrupt input was a per-design failure.** Node 03 recorded the missing colon against
+that design and carried on, which is right for a predictor that fell over on one sequence
+and wrong here: node 02 writes both files and reads them back before returning, so a
+disagreement means something changed the tree after it ran, and nothing in node 03 can say
+what else that touched. It is a hard stop now, and the per-design contract — 037's
+measured lesson (`755d4af2`) — is untouched for actual prediction failures.
+
+A fifth, smaller one: node 03's warning counted prediction records and called them
+designs, so a design whose monomer was fine and whose complex was not read as
+"1 of 2 design(s) have no usable prediction: design_0". Both counts are stated now.
 
 ### One claim each run cannot make
 
@@ -615,10 +651,12 @@ The claim is established by the host run. Everything else is established by the 
 Both are needed and neither subsumes the other; the gate is the image run plus this one
 line.
 
-Seven other Phase 2 `scoring` cases **already pass**, because node 04 slices from the
-recorded `chain_order` rather than from an assumption and reads `iptm` and
-`pae_interaction` whenever they are present. Those are listed as phase 2 in
-`fixtures.json` and reported as passes, not gaps.
+Seven other Phase 2 `scoring` cases pass for a different reason: node 04 slices from the
+recorded `chain_order` rather than from an assumption, and reads `iptm` and
+`pae_interaction` whenever they are present. Those ran green through the whole of Phase 1,
+over predictions `make_predictions.py` built to carry interface metrics. They are
+evidence about node 04's arithmetic and not about the complex path, which is why they
+were never counted as Phase 2 being partly done.
 
 ### Carried forward as blocked
 

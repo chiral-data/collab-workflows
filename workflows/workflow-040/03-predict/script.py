@@ -743,17 +743,25 @@ def main():
             # fasta's halves are what node 02 said it was asking for; if they disagree,
             # the prediction comes back as two chains of the wrong sizes with no error,
             # and node 04 then slices a plddt array by numbers that do not describe it.
+            #
+            # This is a HARD STOP, not a per-design failure, and the distinction is the
+            # point. The batch-continue contract comes from 037 (755d4af2) and is about
+            # the PREDICTOR failing on one design -- an OOM, a sequence it cannot fold --
+            # where the other designs are still sound. This is different: node 02 wrote
+            # these two files and read them back before returning, so a disagreement means
+            # the tree changed after it ran. Nothing here can say which files that touched,
+            # so carrying on would predict the remaining designs out of inputs whose
+            # integrity has just been disproved, and report them as ok.
             problem = cross_check_cplx(fasta, a3m_path, record)
             if problem:
-                results.append({
-                    **{k: record[k] for k in
-                       ("design", "mode", "chain_order", "chain_lengths",
-                        "expected_chains", "expected_residues")},
-                    "status": "failed", "reason": problem,
-                    "argv": None, "elapsed_s": None, "outputs": [],
-                })
-                print(f"  {design}: FAILED, {problem[:80]}", flush=True)
-                continue
+                fail(
+                    f"{design}: {problem} This is an integrity failure rather than a "
+                    "prediction failure, so the batch stops here instead of continuing. "
+                    "Node 02 verifies both files on write, so whatever changed them also "
+                    "had access to every other input in this directory, and a design "
+                    "predicted from an input that cannot be trusted would be reported as "
+                    "ok. Re-run node 02."
+                )
 
             this_msa_mode = msa_mode_cplx
             this_recycle = num_recycle_cplx
@@ -948,17 +956,30 @@ def main():
         json.dump(manifest, handle, indent=2)
 
     if failed:
+        # Counted over PREDICTIONS, and the mode said, because on the complex path there
+        # are two per design. "1 of 2 design(s) have no usable prediction: design_0" was
+        # what this printed for a design whose monomer was fine and whose complex was
+        # not -- a true count of records described as a count of designs, which reads as
+        # the design having failed outright. A roll-up over designs that lost EVERY mode
+        # is the separate statement, so both are made rather than conflated.
+        lost_all = sorted({
+            e["design"] for e in failed
+            if not any(o["design"] == e["design"] for o in ok)
+        })
         print(
-            f"WARNING: {len(failed)} of {len(records)} design(s) have no usable "
-            f"prediction: {', '.join(e['design'] for e in failed)}. Each is recorded in "
-            "prediction_manifest.json with its reason and its retained log, and node 05 "
-            "renders it as a failed row rather than omitting it (§8.5). The batch "
-            "continued.",
+            f"WARNING: {len(failed)} of {len(records)} prediction(s) failed: "
+            + ", ".join(f"{e['design']}/{e.get('mode', 'mono')}" for e in failed)
+            + ". Each is recorded in prediction_manifest.json with its reason and its "
+            "retained log, and node 05 renders it as a failed row rather than omitting "
+            "it (§8.5). The batch continued."
+            + (f" {len(lost_all)} design(s) have no usable prediction at all: "
+               f"{', '.join(lost_all)}." if lost_all else
+               " Every design still has at least one usable prediction."),
             flush=True,
         )
     if not ok:
         fail(
-            f"All {len(records)} design(s) failed to predict. The per-design reasons and "
+            f"All {len(records)} prediction(s) failed. The per-prediction reasons and "
             "logs are in ./outputs/. Reporting success with nothing scored would make an "
             "empty report look like a clean one."
         )

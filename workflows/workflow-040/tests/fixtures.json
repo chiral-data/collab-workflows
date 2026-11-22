@@ -177,7 +177,9 @@
       "evidence": "029 measured the consequence rather than the shape: a receptor trimmed to the segment carrying the epitope models at ~42 pLDDT where the whole chain reaches 81, and the interface PAE floor moved 7.6 -> 15.4 A against a threshold of 10, taking two runs from 2/16 to 0/16 (8e4772a7)",
       "why": "Targets come from RCSB, so disordered gaps are ordinary, not exotic. ColabFold cannot express a gap inside a chain, and the measured answer is to fold the chain WHOLE and disclose that each break is fused -- not to trim around it, which was argued for on first principles and then measured to be much worse. Node 01 must detect the gap so node 03 can say so.",
       "pins": "\u00a78.12, 8e4772a7",
-      "params": {},
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
       "expect": [
         {
           "check": "inventory_records_gaps",
@@ -273,7 +275,9 @@
       "evidence": "029 builds its complex input as f'{binder_seq}:{receptor_seq}' and asserts both halves are non-empty before folding (04_fold_and_filter/script.py:161)",
       "why": "Exactly one colon, and the two halves non-empty. Zero colons silently predicts a monomer and reports its confidence as an interface -- which is 026's bug -- and two colons predicts three chains.",
       "pins": "\u00a76",
-      "params": {},
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
       "expect": [
         {
           "check": "cplx_colon_count",
@@ -406,12 +410,15 @@
       "phase": 2,
       "why": "The multimer model is what produces iptm at all; running a complex through alphafold2_ptm yields no interface quantity, and running a monomer through the multimer model is not the prediction anyone means. 029 sets alphafold2_multimer_v3 explicitly (04_fold_and_filter/script.py:182).",
       "pins": "\u00a76",
-      "params": {},
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
       "expect": [
         {
           "check": "argv_includes",
           "flag": "--model-type",
           "value": "alphafold2_multimer_v3",
+          "mode": "cplx",
           "finding": "\u00a76"
         },
         {
@@ -420,7 +427,7 @@
           "finding": "\u00a74"
         }
       ],
-      "harness": "shape=compact n=1 len=10 stage=predict-dry-cplx"
+      "harness": "shape=compact n=1 len=10 stage=predict-dry"
     },
     {
       "id": "timeout-kills-process-group",
@@ -1093,11 +1100,14 @@
       "id": "cplx-input-missing-colon",
       "tier": "ci",
       "phase": 2,
-      "name": "a complex input with no colon is refused at node 02",
+      "name": "a complex input with no colon is refused before the GPU is spent on it",
       "why": "Caught where it costs nothing instead of at the predictor where it costs GPU minutes -- which is why 037 made spec validation its own CPU node (37c23bb5). Without this guard the prediction returns one chain and the chain-count assertion in node 03 is the only thing left to catch it.",
-      "params": {},
+      "measured": "Written against node 02 and then moved, once node 02 was built. Node 02 writes the colon itself and reads the bytes back before returning (verify_written), so no INPUT to node 02 can produce a cplx_ file that is missing its colon: the guard this case was aimed at cannot be reached from where the case was pointing. The reachable guard is node 03's cross_check_cplx, which re-reads the file it is about to stage, so the case now corrupts the file BETWEEN the two nodes with mutate=strip-colon -- which is also what node 03's refusal says has happened. Until Phase 2 was built this case ran every step to 0 and was reported as a gap for exactly that reason, which is the only honest thing it could have said (8.13).",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
       "expect_error": "colon",
-      "harness": "shape=compact n=1 len=10 stage=ingest"
+      "harness": "shape=compact n=1 len=10 stage=predict-dry mutate=strip-colon"
     },
     {
       "id": "boundary-value-accepted",
@@ -1351,5 +1361,5 @@
       ]
     }
   ],
-  "_harness_comment": "Every CI entry's 'harness' field is a space-separated list of key=value tokens, read by run_fixtures.py. There is one grammar rather than one per section, because a harness that needs to know which section a case came from is a harness that can stage the wrong thing. Tokens -- shape: a tests/make_designs.py shape (default compact). n: how many designs. len: binder length. metrics: node04 (default, runs workflow-037's node 04 to produce the real design_metrics.json) or none (withhold it). mutate: a named edit applied to a staged file after it is written and before the next node reads it -- chain-c, bad-letter, drop-ca, reverse-manifest. stage: how far to run -- ingest (nodes 01-02), rerun (01-02, then 02 again over its own outputs, then again with a stale file), predict-dry and predict-dry-cplx (01-03 with --dry-run), predict-timeout and predict-partial (01-03 against a stand-in predictor), full (01-02, then tests/make_predictions.py in place of node 03, then 04-05). mp: everything after it goes to make_predictions.py verbatim, so it comes last. The harness never restates what the entry already says: parameters come from 'params', and whether a case must fail comes from 'expect_error'."
+  "_harness_comment": "Every CI entry's 'harness' field is a space-separated list of key=value tokens, read by run_fixtures.py. There is one grammar rather than one per section, because a harness that needs to know which section a case came from is a harness that can stage the wrong thing. Tokens -- shape: a tests/make_designs.py shape (default compact). n: how many designs. len: binder length. metrics: node04 (default, runs workflow-037's node 04 to produce the real design_metrics.json) or none (withhold it). mutate: a named edit applied to a staged file after it is written and before the next node reads it -- chain-c, bad-letter, drop-ca, strip-colon, reverse-manifest. stage: how far to run -- ingest (nodes 01, 01b, 02), rerun (the same, then 02 again over its own outputs, then again with a stale file), predict-dry (01-03 with --dry-run), predict-timeout and predict-partial (01-03 against a stand-in predictor), full (01-02, then tests/make_predictions.py in place of node 03, then 04-05). mp: everything after it goes to make_predictions.py verbatim, so it comes last. There is NO cplx stage and no cplx token: whether a case takes the complex path is PARAM_SCORE_INTERFACE in its 'params', and the harness reads it there -- a second place to say it is a second place for it to disagree with the node. When it is set, the harness builds a stand-in target alignment from the inventory node 01 just wrote (tests/make_target_msa.py) and 01b reads it as a file, because the suite does not touch the network. Node 01b runs on EVERY case either way, as it does in .chiral/workflow.toml, so the Phase 1 cases exercise its no-op path too. The harness never restates what the entry already says: parameters come from 'params', and whether a case must fail comes from 'expect_error'."
 }

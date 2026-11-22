@@ -16,6 +16,19 @@ sees, so that is all this gives it. Output globs come from each node's own job.t
 than being restated here: a harness that carried its own copy of the port list would keep
 passing after job.toml changed, which is the shape of defect this suite exists to catch.
 
+The complex path
+----------------
+Node 01b runs on every case, as it does in the DAG; on the Phase 1 path it writes a
+target_alignment.json saying it was a no-op, which is what makes "did 01b run?" a question
+with an answer (§8.3). A case takes the complex path when its own `params` set
+PARAM_SCORE_INTERFACE, and there is no harness token for it: a second place to say so is a
+second place for it to disagree with the node. When it is set, the harness builds a
+stand-in target alignment out of the inventory node 01 has just written
+(make_target_msa.py) and 01b reads it from a file, because the suite does not touch the
+network. That tool refuses nothing -- a monomer, or a batch disagreeing about its target,
+is a refusal belonging to 01b, and a harness that pre-empted it would leave the node's
+guard never shown refusing (§8.13).
+
 Container, or not
 -----------------
 The gate is the suite running in `colabfold:2026_10_08`, because that is where the
@@ -58,9 +71,13 @@ IMAGE = "colabfold:2026_10_08"
 GENERATOR = os.path.join(WORKFLOWS, "workflow-037", "tests", "make_designs.py")
 METRICS_NODE = os.path.join(WORKFLOWS, "workflow-037", "04-analyze", "script.py")
 PREDICTIONS = os.path.join(HERE, "make_predictions.py")
+TARGET_MSA = os.path.join(HERE, "make_target_msa.py")
 
 NODES = {
     "n1": "01-ingest-designs",
+    # Not "n1b": that step name is already taken by also_run()'s second tree, and a step
+    # name meaning two things is how a harness comes to stage the wrong directory.
+    "nalign": "01b-align-target",
     "n2": "02-build-prediction-inputs",
     "n3": "03-predict",
     "n4": "04-score",
@@ -72,7 +89,8 @@ NODES = {
 # this may run under, so it is restated here and asserted against the toml at startup.
 EDGES = {
     "n1": [],
-    "n2": ["n1"],
+    "nalign": ["n1"],
+    "n2": ["n1", "nalign"],
     "n3": ["n2"],
     "n4": ["n1", "n3"],
     "n5": ["n4"],
@@ -426,12 +444,45 @@ class Case:
 
     has_pred = False
 
+    def wants_interface(self):
+        """Does this case ask for the complex path? The ENTRY says so, not the harness.
+
+        PARAM_SCORE_INTERFACE lives in the fixture's `params`, so there is one place it is
+        stated and no way for two to disagree. A harness that staged a complex the node
+        was never told to build would be a case testing the harness.
+        """
+        return self.params.get("PARAM_SCORE_INTERFACE", "").strip().lower() == "true"
+
+    def align(self):
+        """Run node 01b, as Silva does on EVERY run. Returns its exit code.
+
+        01b is a dependency of node 02 in .chiral/workflow.toml, so it runs whether or not
+        an interface is being scored; on the Phase 1 path it writes a target_alignment.json
+        saying it was a no-op. Skipping it when score_interface is false would mean the
+        Phase 1 cases ran a DAG the workflow does not have, and would leave the no-op path
+        -- the one that makes "did 01b run?" answerable at all (§8.3) -- never executed.
+
+        On the complex path 01b also needs an alignment to read. It comes from the
+        inventory node 01 just wrote, via make_target_msa.py, which writes nothing when
+        there is no single agreed target -- so 01b is reached and 01b does the refusing
+        (§8.13).
+        """
+        self.feed("nalign")
+        if self.wants_interface():
+            self.tool("target-msa", TARGET_MSA, [
+                self.path("nalign", "inputs", "design_inventory.json"),
+                self.path("nalign", "inputs", "target_msa.a3m"),
+            ])
+        return self.node("nalign")
+
     def stage_ingest(self):
         if not self.generate():
             return
         self.feed("n1")
         self.mutate("n1-inputs")
         if self.node("n1") != 0:
+            return
+        if self.align() != 0:
             return
         self.feed("n2")
         self.mutate("n2-inputs")
@@ -442,6 +493,8 @@ class Case:
             return
         self.feed("n1")
         if self.node("n1") != 0:
+            return
+        if self.align() != 0:
             return
         self.feed("n2")
         if self.node("n2") != 0:
@@ -471,27 +524,31 @@ class Case:
         self.feed("n1")
         if self.node("n1") != 0:
             return False
+        if self.align() != 0:
+            return False
         self.feed("n2")
         if self.node("n2") != 0:
             return False
         self.feed("n3")
+        self.mutate("n3-inputs")
         return True
 
-    def stage_predict_dry(self, cplx=False):
+    def stage_predict_dry(self):
         if not self._to_predict():
             return
-        if cplx:
-            # Phase 1's node 02 writes no cplx_ record, so there is nothing to run the
-            # multimer model over. Recorded as reached-but-empty rather than skipped, so
-            # the checker reports a gap instead of a pass.
-            inputs = self.path("n3", "inputs", "prediction_inputs.json")
+        # What node 02 actually declared, recorded before node 03 runs. On the complex
+        # path this is how a check can tell "the multimer model was not selected" from
+        # "no record ever asked for it", which an argv assertion alone cannot.
+        inputs = self.path("n3", "inputs", "prediction_inputs.json")
+        modes = []
+        if os.path.exists(inputs):
             declared = json.load(open(inputs))
             modes = sorted({r.get("mode") for r in declared.get("inputs") or []})
-            self.steps.append({
-                "step": "cplx-probe", "rc": 0, "log": None,
-                "stdout": json.dumps({"modes": modes}), "stderr": "",
-                "command": "inspect prediction_inputs.json", "note": json.dumps(modes),
-            })
+        self.steps.append({
+            "step": "cplx-probe", "rc": 0, "log": None,
+            "stdout": json.dumps({"modes": modes}), "stderr": "",
+            "command": "inspect prediction_inputs.json", "note": json.dumps(modes),
+        })
         self.node("n3", argv=["--dry-run"])
 
     def _standin(self, body, extra_env):
@@ -586,6 +643,8 @@ class Case:
         self.mutate("n1-inputs")
         if self.node("n1") != 0:
             return
+        if self.align() != 0:
+            return
         self.feed("n2")
         self.mutate("n2-inputs")
         if self.node("n2") != 0:
@@ -612,7 +671,6 @@ class Case:
             "ingest": self.stage_ingest,
             "rerun": self.stage_rerun,
             "predict-dry": self.stage_predict_dry,
-            "predict-dry-cplx": lambda: self.stage_predict_dry(cplx=True),
             "predict-timeout": self.stage_predict_timeout,
             "predict-timeout-buffered": self.stage_predict_timeout_buffered,
             "predict-partial": self.stage_predict_partial,
@@ -687,10 +745,42 @@ def _mutate_reverse_manifest(case):
             "POSITION now pairs every design with another design's numbers")
 
 
+def _mutate_strip_colon(case):
+    """Remove the colon from every cplx_ fasta, after node 02 wrote and verified it.
+
+    Node 02 writes the colon itself and reads the bytes back before returning, so no
+    input it is given can reach node 03 with the colon missing -- which means node 03's
+    own colon guard could never be SHOWN refusing, and §8.13 says a guard that cannot be
+    shown refusing is not a guard. This is the corruption that reaches it: a file changed
+    between the two nodes, which is exactly what node 03's refusal says has happened.
+
+    A missing colon is the defect that matters most here because it does not fail. It
+    predicts a single chain and reports its confidence as an interface, which is 026's
+    bug (§8.6).
+    """
+    touched = {}
+    directory = case.path("n3", "inputs")
+    for name in sorted(os.listdir(directory) if os.path.isdir(directory) else []):
+        if not (name.startswith("cplx_") and name.endswith(".fasta")):
+            continue
+        path = os.path.join(directory, name)
+        before = open(path).read()
+        after = before.replace(":", "")
+        with open(path, "w") as handle:
+            handle.write(after)
+        touched[name] = [before.count(":"), after.count(":")]
+    if not touched:
+        return ("NO cplx_ FASTA TO MUTATE in n3/inputs, so node 03 was handed nothing "
+                "that could be missing a colon. The case cannot make its claim.")
+    return (f"colons stripped from {len(touched)} cplx_ fasta file(s) after node 02 "
+            f"verified them: {touched}")
+
+
 MUTATIONS = {
     "chain-c": ("n1-inputs", _mutate_chain_c),
     "bad-letter": ("n2-inputs", _mutate_bad_letter),
     "drop-ca": ("n2-inputs", _mutate_drop_ca),
+    "strip-colon": ("n3-inputs", _mutate_strip_colon),
     "reverse-manifest": ("n4-inputs", _mutate_reverse_manifest),
 }
 
