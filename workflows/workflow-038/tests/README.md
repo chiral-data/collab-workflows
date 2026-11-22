@@ -178,10 +178,12 @@ in the campaign loop because one frame has no ensemble to check and the loop's m
 all ensemble measurements; the fixture carries it instead.
 
 On an 8 GB RTX 3060 Ti (sm_86, driver 580.178.04), 8 samples per system in one batch, seed 42:
-**86 pass, 0 fail, 42 skipped** over the seven systems and the propagated case. Two successive
+**86 pass, 0 fail, 42 skipped** over the seven systems and the propagated case. Three
 campaigns on the same card returned every Rg, every max pairwise RMSD and every cluster count
 identical to the digit, so the seed reproduces a run rather than merely labelling one — which
-is worth knowing before reading any difference between two runs as a result.
+is worth knowing before reading any difference between two runs as a result. Wall-clock time is
+the exception and is not seeded: node 03 took 31.2 s on one campaign and 34.0 s on another for
+the same 1UBQ run, so the timings here are a range and not a benchmark.
 
 The two counts below are different quantities and the table keeps them apart: tokens are what
 the GPU pays for (one per polymer residue, one per *ligand atom*), while the Rg scaling is a
@@ -194,7 +196,7 @@ exactly that reason.
 
 | System | Tokens | Protein residues | Result |
 |---|---|---|---|
-| 1UBQ | 76 | 76 | Rg 1.1597 nm (expected 1.14, experimental 1.17), max pairwise C-α RMSD 0.2204 nm, 1 cluster, 8/8 physical, 31.2 s |
+| 1UBQ | 76 | 76 | Rg 1.1597 nm (expected 1.14, experimental 1.17), max pairwise C-α RMSD 0.2204 nm, 1 cluster, 8/8 physical, 31-34 s |
 | 5PTI | 65 | 58 | Rg 1.1214 nm (expected 1.03, ratio 1.09), max RMSD 0.1698 nm, 1 cluster, 8/8 physical |
 | 2ZTA | 72 | 66 of 68 | Rg 1.5244 nm (expected 1.08), max RMSD 0.3342 nm, **4 clusters** — a parallel coiled coil is elongated, so 1.41× the globular scaling is the fold, not a failure |
 | 1BNA | 24 | 0 | Rg 1.3226 nm, max RMSD 0.0623 nm, 492-atom all-atom selection — the no-protein fallback, exercised end to end. 24 tokens for a B-DNA dodecamer duplex: 12 nucleotides per strand, and no Rg expectation, because the globular relation is for proteins and the check skips it |

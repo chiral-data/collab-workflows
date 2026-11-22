@@ -170,7 +170,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     after the model had loaded, which reads as a size limit or a bad input rather than a missing
     package.
   - Measured on an RTX 3060 Ti (8 GB, sm_86, driver 580.178.04, 7.66 GiB usable), 8 samples per
-    system in one batch: 1UBQ 31.2 s with 8/8 frames physical, Rg 1.1597 ± 0.0056 nm against an
+    system in one batch: 1UBQ in 31-34 s with 8/8 frames physical, Rg 1.1597 ± 0.0056 nm against an
     experimental 1.17 nm and max pairwise C-α RMSD 0.2204 nm; 5PTI Rg 1.1214 nm; 2ZTA Rg
     1.5244 nm over 4 clusters (a parallel coiled coil, so 1.41× the globular scaling is the fold
     rather than a failure); 1BNA, which has no protein chain, through all six nodes on the

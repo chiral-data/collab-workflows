@@ -712,7 +712,7 @@ card.
 | input | bundled Trp-cage (20 residues, seconds) | your system, or `pdb_id = "1AKE"` |
 
 Measured on an RTX 3060 Ti (8 GB, compute capability 8.6, driver 580.178.04): ubiquitin (1UBQ,
-76 tokens), 8 samples in `equilibrium` mode, 31.2 s in node 03, 8 of 8 frames passing
+76 tokens), 8 samples in `equilibrium` mode, 31-34 s in node 03, 8 of 8 frames passing
 physicality. The bundled Trp-cage system is smaller again. A successful run ends with
 `report.html` showing 8 frames and an animating 3D viewer.
 
@@ -736,7 +736,7 @@ Rg 1.1597 ± 0.0056 nm against an experimental 1.17 nm.
   the 7.0 floor is real rather than inherited, and `sm_100` is absent, which is the B200
   exclusion.
 - **VRAM:** the limit is the **token count**, not the sample count. Measured on an 8 GB RTX
-  3060 Ti (sm_86, 7.66 GiB usable): 1UBQ (76 tokens, 31.2 s), 5PTI (65), 2ZTA (72) and 1BNA
+  3060 Ti (sm_86, 7.66 GiB usable): 1UBQ (76 tokens, 31-34 s), 5PTI (65), 2ZTA (72) and 1BNA
   (24) sample 8 in one batch in well under a minute, and 1CLL (155) samples. 1AKE (542 tokens)
   and 1A3N (746) **run out of memory at batch 8 and again at batch 1** — each time on the same
   allocation, 1.06 GiB and 1.46 GiB respectively — so on this card lowering the batch does not

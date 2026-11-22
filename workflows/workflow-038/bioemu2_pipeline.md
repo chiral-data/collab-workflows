@@ -252,7 +252,7 @@ Image name `bioemu2:2026_11_20`. The repo's shared-image CI
    the 7.0 floor and the V100 claim are real rather than inherited — and `sm_100` is absent,
    which is the B200 exclusion. The pipeline has been run end to end on an 8 GB RTX 3060 Ti
    (sm_86, driver 580.178.04, 7.66 GiB usable), 8 samples in one batch: 1UBQ (76 tokens,
-   31.2 s), 5PTI (65), 2ZTA (72), 1BNA (24) and 1CLL (155) all complete; **1AKE (542 tokens)
+   31-34 s), 5PTI (65), 2ZTA (72), 1BNA (24) and 1CLL (155) all complete; **1AKE (542 tokens)
    and 1A3N (746) run out of memory**, with node 03's own OOM message and advice. The useful
    finding is the gap between that and upstream's estimate, which node 03 prints: it gave 33
    for 542 tokens and 19 for 746, both at least four times optimistic on this card. The formula
@@ -465,7 +465,8 @@ maintainer, so that gate no longer applies. The drafts below are here to file wh
 > - `06-report` — one self-contained `report.html` with an animating 3Dmol ensemble
 >
 > **Verified on a GPU, not only reviewed.** On an RTX 3060 Ti (8 GB, sm_86): 1UBQ samples 8
-> frames in 31.2 s with 8/8 physical and Rg 1.1597 nm against an experimental 1.17 nm; 5PTI,
+> frames in about half a minute with 8/8 physical and Rg 1.1597 nm against an experimental
+> 1.17 nm; 5PTI,
 > 2ZTA, 1CLL and 1BNA (no protein chain) run through all six nodes; and the time-lagged path
 > runs for real on 1UBQ at a 1 ns lag, giving 8 physical endpoints at Rg 1.1628 nm against
 > 1.1597 before it. 1CLL is the ensemble worth looking at: max pairwise C-α RMSD 1.3682 nm over
