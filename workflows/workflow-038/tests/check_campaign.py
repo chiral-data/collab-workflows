@@ -676,15 +676,51 @@ def main():
         print(__doc__)
         return 2
     results, downloads = sys.argv[1], sys.argv[2]
-    entries = sorted(
+
+    # The cases the driver says it ran, not the directories that happen to be here. Taking
+    # `os.listdir` as the case list had it both ways: a scratch directory left in the tree
+    # reported as a system that failed every check after node 01, and a system the driver was
+    # asked for but never got to left no directory and so appeared nowhere -- the report said
+    # nothing about it rather than saying it was missing.
+    manifest = os.path.join(results, "campaign_cases.txt")
+    present = sorted(
         name for name in os.listdir(results) if os.path.isdir(os.path.join(results, name))
     )
+    declared = None
+    if os.path.exists(manifest):
+        with open(manifest) as handle:
+            declared = [line.strip() for line in handle if line.strip()]
+    if declared:
+        entries = declared
+        missing = [name for name in declared if name not in present]
+        extra = [name for name in present if name not in declared]
+        if extra:
+            print(
+                f"note: ignoring {len(extra)} directory(ies) the driver did not record as a "
+                f"case: {', '.join(extra)}"
+            )
+    else:
+        entries = present
+        missing = []
+        print(
+            f"note: {manifest} is absent, so every directory here is being treated as a case. "
+            "That is a pre-manifest or hand-assembled tree; re-run run_gpu_campaign.sh for a "
+            "report that knows which cases were asked for."
+        )
     if not entries:
         print(f"no case directories in {results}")
         return 1
 
     rows, tally = [], {PASS: 0, FAIL: 0, GAP: 0, SKIP: 0}
+    for name in missing:
+        rows.append(
+            (name, "case ran at all", FAIL,
+             "the driver recorded this case but wrote no directory for it: it never ran")
+        )
+        tally[FAIL] += 1
     for entry in entries:
+        if entry in missing:
+            continue  # already reported once above; sixteen more rows would say no more
         case = Case(results, downloads, entry)
         aborted_at, aborted_why = first_aborted(case)
         for label, runner, needs in CHECKS:

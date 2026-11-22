@@ -205,6 +205,14 @@ print(' | '.join(out))
 " 2>/dev/null)"
 fi
 
+# The cases this run actually drove, recorded for the checker to read rather than infer.
+# check_campaign.py used to take every directory under $OUT as a case, which made a scratch
+# directory left in the tree look like a failed system, and -- worse -- made a system this
+# driver was asked for but never created a directory for simply absent from the report.
+: > "$OUT/campaign_cases.txt"
+for ID in "${SYSTEMS[@]}"; do echo "$ID" >> "$OUT/campaign_cases.txt"; done
+[ -d "$OUT/$PROP_SRC-propagated" ] && echo "$PROP_SRC-propagated" >> "$OUT/campaign_cases.txt"
+
 echo
 echo "== checking the measured ensembles against the measured inputs"
 python3 -I "$TESTS/check_campaign.py" "$OUT" "$DL"

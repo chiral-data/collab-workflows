@@ -364,6 +364,9 @@ Everything tracked here is closed and enforced:
   measurement's own noise — `clustering-below-the-rmsd-noise-floor-terminates`.
 - the campaign reporting a green run for a system whose first node died —
   `an-abort-never-skips-the-check-that-judges-it`.
+- the campaign judging whichever directories happened to be in the results tree, rather than
+  the cases the driver ran — `run_gpu_campaign.sh` now records them in
+  `results/campaign_cases.txt` and the checker reads it.
 
 Those last two came from a review of this suite rather than of the workflow, and both were
 defects in the testing, which is the part nothing else tests:
@@ -376,6 +379,16 @@ defects in the testing, which is the part nothing else tests:
   the GPU until something killed it. The centre is now absorbed unconditionally, because a
   frame is in its own cluster by definition, and the node warns when the threshold is below
   the floor instead of silently returning one cluster per frame.
+- **the campaign checked directories, not cases.** `check_campaign.py` took every directory
+  under the results tree as a case. That cut both ways: a scratch directory left behind
+  reported as a system failing every check after node 01 — eight of them, from this session's
+  own parameter probes, turned a 86/0/42 report into 104/54/98 — and a system the driver was
+  asked for but never reached left no directory at all, so the report said nothing about it
+  rather than saying it was missing. The driver now writes `campaign_cases.txt` and the
+  checker reads that: an undeclared directory is named and ignored, a declared case with no
+  directory is a failure, and the run exits non-zero. Same rule as the rest of the pipeline —
+  the component that knows a fact records it, and the one downstream reads it instead of
+  inferring it.
 - **the campaign's abort handling skipped its own judge.** `check_campaign.py` converts FAIL
   to SKIP for any check needing a node at or after the one that aborted, since an output
   nobody wrote is not evidence. `check_failure_was_reported` is the check that decides

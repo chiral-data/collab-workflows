@@ -109,6 +109,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     0. It is now excluded by identity rather than by node index, and a unit check holds it.
     The two propagation checks that read node 05 while declaring node 04 were failing rather
     than skipping when node 05 was what died.
+  - The GPU campaign judged whichever directories were in its results tree rather than the
+    cases the driver ran. A scratch directory left behind reported as a system that failed
+    every check after node 01, and a system the driver was asked for but never reached left no
+    directory and so appeared nowhere in the report. `run_gpu_campaign.sh` now records its
+    case list in `results/campaign_cases.txt` and the checker reads it: an undeclared
+    directory is named and ignored, and a declared case with no directory fails.
   - Node 04 could publish a physicality verdict that contradicted its own manifest: the
     `check_physicality` call and the `.save()` were in one `try`, so a check that succeeded
     and then failed to write left `physicality_checked: true` with a pass count in the
