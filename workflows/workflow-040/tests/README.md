@@ -130,8 +130,10 @@ clears it.
 
 ## Harness
 
-Eleven pieces: seven for Tier 1, four more for Tier 2. One already existed and was
-extended in place rather than forked.
+Seventeen pieces: seven for Tier 1, ten for Tier 2. One already existed and was extended
+in place rather than forked. Three more are one-off probes, listed at the end — they
+answer a question once and are kept so the answer can be re-taken, not run on every
+change.
 
 | Piece | Role |
 |---|---|
@@ -154,6 +156,39 @@ Tier 2 has the same split -- one piece builds, one runs, one judges, one attacks
 | `falsify_controls.sh` | Mutates one number or flag in a copy of a control run and requires `report_controls.py` to refuse. A `MET` verdict means nothing without it (§8.13). |
 | `run_c6.sh` | Control `C6`: starts a container that **outlives the node**, runs node 03 in it under a short budget against a real prediction, samples what is alive mid-run, and asks afterwards what survived. |
 | `report_c6.py` | Judges `C6`'s five claims, and refuses a process listing it cannot show to be a listing. |
+
+And the same four-way split again for Phase 2, because the interface metrics are a
+different claim and share nothing with the self-consistency ones but the tree they are
+read from:
+
+| Piece | Role |
+|---|---|
+| `run_controls_phase2.sh` | `C8` and `C9` in **one run, one target, two binders**: barnase native and barnase shuffled on barstar. Identical coordinates, identical composition, identical numbering; the sequence is the only difference, which is what makes it a control rather than two experiments. Runs node 01b, both prediction inputs, the multimer model on the GPU, and nodes 04–05 — and shows node 03 refusing `single_sequence` on the complex path before spending GPU time on the real one. |
+| `report_controls_phase2.py` | Judges Gate B Phase 2. `iptm` gates; `pae_interaction`, `plddt_target` and `plddt_binder_in_complex` are printed as diagnostics and do not, because no control has calibrated them. |
+| `falsify_controls_phase2.sh` | Seven mutations, each of which must be refused: the positive collapsing, the negative scoring as well as the positive, the separation inverting, the gating metric going missing, a control row vanishing, a control appearing twice, and the `single_sequence` refusal never being exercised. |
+
+**What `C8`/`C9` can and cannot establish** is worth being blunt about, because it is the
+difference between a control and a calibration. The run is offline, so the target
+alignment is **synthetic** — homologs built from the target's own sequence by point
+substitution. §11.1 measured what that costs directly: on a synthetic a3m, `iptm` came out
+*lower* with the alignment than without it. So the absolute numbers this run produces are
+not threshold material and the report refuses to be read as though they were. What it
+establishes is **separation**: whether 040 can tell a real binder from the same backbone
+with its residues shuffled. That is the Gate B Phase 2 question, and §8.6 is why it has to
+be asked — `iptm` is a number whatever went in.
+
+`C7` is the control that needs a real target MSA, which needs one fetch from
+`api.colabfold.com`. That is outward-facing, so it is not something the script does on its
+own: `--allow-egress` turns it on, and until someone turns it on §4's decision stays half
+measured. The binder is not an input to node 01b, so even then no designed sequence can be
+sent — that is structural rather than a promise.
+
+And three one-off probes, which are not part of either gate:
+
+| Piece | Role |
+|---|---|
+| `probe_msa_clamp.sh` + `report_msa_clamp.py` | The measurement §11.1 rests on: the same a3m under both `msa_mode` values, offline, asking whether `single_sequence` discards it. It does. The probe's own verdict says that **which arm scores higher means nothing** — the homologs are synthetic and the finding is the difference, not its sign. |
+| `smoke_phase2.sh` | Walks the complex path once on the host interpreter with no GPU, printing what each node wrote. It decides nothing and asserts nothing; it exists so the fixtures written against the path are written against something that has actually run. It is also the thing that did *not* catch node 02's undeclared outputs, because it copies `n2/outputs/*` wholesale — which is the difference between a smoke test and a suite. |
 
 Running and judging are separate files on purpose. A runner that also judged could only
 report pass or fail, and when something failed there was nothing left to look at — which
@@ -456,10 +491,10 @@ first). They now carry a `measured` field saying so:
 | `C1` | 1 | 4ZQK: PD-1's own sequence on its own backbone, mono path | *was* "score well"; now a `single_sequence` diagnostic | 16.5096 Å, 49.33 |
 | `C2` | 1 | 1BRS: barnase's own sequence on its own backbone, mono path, exercising its label numbering starting at 3 | *was* "score well"; now a `single_sequence` diagnostic | 11.5737 Å, 43.09 |
 | `C5` | 1 | real archived 037 designs | record the numbers — this is 040's first honest ranking | blocked: inputs not committed |
-| `C6` | 1 | a prediction killed at a short budget | the whole process tree dies and `nvidia-smi` shows the device freed | not run |
+| `C6` | 1 | a prediction killed at a short budget | the whole process tree dies and `nvidia-smi` shows the device freed | **met** — 2357 MiB held, killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB |
 | `C7` | 2 | **4ZQK complex, three ways**: `single_sequence`, target-only MSA, full MSA — reading `iptm`, `pae_interaction` and **both** chains' pLDDT each time | settle §4 by measurement; the §11.1 gate | arm 1 of 3 in hand, from `C1`/`C2` |
-| `C8` | 2 | 1BRS as a native complex | good interface metrics | not built |
-| `C9` | 2 | the same complex, binder scrambled | bad interface metrics | not built |
+| `C8` | 2 | 1BRS barnase on barstar, native | good interface metrics | **harness built, not yet run.** `run_controls_phase2.sh` |
+| `C9` | 2 | the same backbone, binder sequence scrambled | bad interface metrics | **harness built, not yet run.** Same run as `C8`, same target |
 | `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused | not run. The CI case `cplx-input-missing-colon` now shows node 03 refusing this before the predictor starts, so what `C10` is left to establish is the half nobody can assert offline: what ColabFold actually returns for a colon-less complex |
 | `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was | not built |
 

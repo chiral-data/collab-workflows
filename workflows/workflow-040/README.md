@@ -165,6 +165,8 @@ bash tests/run_fixtures.sh                     # Tier 1: stage, run, judge, fals
 bash tests/run_controls.sh                     # Tier 2: GPU, offline, ~6 min, needs the image
 bash tests/falsify_controls.sh <control-run>   # show the Gate B judge refusing
 bash tests/run_c6.sh <control-run> <out> 35     # C6: kill a real prediction at a budget
+bash tests/run_controls_phase2.sh              # Tier 2 Phase 2: C8/C9, the interface pair
+bash tests/falsify_controls_phase2.sh <run>    # show the Phase 2 judge refusing
 ```
 
 It prints a loud banner when it is not running in `colabfold:2026_10_08`, and says in its
