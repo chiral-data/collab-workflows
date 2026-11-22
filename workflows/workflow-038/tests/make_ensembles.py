@@ -29,9 +29,20 @@ rotation is not a different conformation, so:
     With the rotation present that difference is visible; without it the bug is invisible.
 
 Usage:
-    python3 -I make_ensembles.py <out-dir> <system.yaml> <n_frames> <shape> [physicality]
+    python3 -I make_ensembles.py <out-dir> <system.yaml> <n_frames> <shape> \
+        [physicality] [mode]
 
-`physicality` is `passed` (default) or `not_checked`.
+`physicality` is `passed` (default) or `not_checked`. `mode` is `equilibrium` (default) or
+`structure`, and is written into the manifest's `settings.mode`, because node 05 reads it to
+decide whether a single frame with no pairwise spread is the configuration that was asked for
+or an ensemble that collapsed.
+
+Every argument that changes the coordinates -- shape, frame count, atom count and mode --
+is part of the seed, so a case's frames are a function of what the case asked for and nothing
+else. The seed is a CRC32 of those in `main()`, not Python's `hash()`, which is salted per
+process and made this script draw a different ensemble on every run while its docstring
+claimed determinism. `physicality` is deliberately not in the seed: it only labels the
+manifest and must not move an atom.
 """
 import json
 import os

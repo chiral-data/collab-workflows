@@ -494,6 +494,13 @@ def main():
             "than as a pass.",
             flush=True,
         )
+        # Dropped deliberately. `check_physicality` and `save` are both inside the try, so a
+        # check that succeeded and then failed to write left a live object here while the file
+        # on disk said "unavailable" -- and the manifest below is built from the object. That
+        # published `physicality_checked: true` with a pass count beside a JSON file declaring
+        # the verdict unavailable: two outputs of one node disagreeing, with whichever one a
+        # reader happened to open deciding the answer.
+        physicality = None
         write_unavailable_physicality(int(endpoints.n_frames), f"check failed: {exc}")
 
     settings.update(

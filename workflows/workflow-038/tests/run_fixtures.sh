@@ -124,13 +124,20 @@ while IFS=$'\t' read -r SLUG ID INPUT ENVS; do
 done < <(python3 -I "$TESTS/plan.py" fixtures)
 
 # The ensembles the downstream and node-04 cases are driven from. Built once per (source,
-# frames, shape, physicality) and reused, because make_ensembles.py is deterministic.
+# frames, shape, physicality, mode) and reused, because make_ensembles.py is deterministic:
+# mode is in the key because it is in the seed, so leaving it out served a structure-mode
+# case the ensemble built for the equilibrium one.
 base_for () {  # $1 = source id, $2 = n_frames, $3 = shape, $4 = physicality, $5 = mode
   local ID="$1" N="$2" SHAPE="$3" PHYS="$4" MODE="${5:-equilibrium}"
   local KEY="$ID-$N-$SHAPE-$PHYS-$MODE"
   local B="$OUT/bases/$KEY"
   if [ ! -s "$B/samples.xtc" ]; then
-    # A fixture case's slug is its entry id, so the fixture run's system.yaml is here.
+    # A downstream case's `source` is an entry id, and fixture results are written under
+    # the case *slug* -- so this path resolves only for an entry whose slug is its id, i.e.
+    # one with no `name` of its own. Every `source` in fixtures.json is such an entry; a new
+    # downstream case that sources from a named one (`5PTI-as-an-apo-protein`, say) would
+    # land here and be told its fixture case must run first. The fixture case must also
+    # actually have run, which the full suite guarantees and a single-case run does not.
     local SYS="$OUT/fixtures/$ID/01/outputs/system.yaml"
     if [ ! -s "$SYS" ]; then
       echo "   ERROR: no system.yaml for $ID; its fixture case must run first" >&2

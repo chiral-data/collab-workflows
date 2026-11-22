@@ -28,6 +28,14 @@ PASS, FAIL, GAP, SKIP = "PASS", "FAIL", "GAP", "SKIP"
 # deliberately: this suite checks that the node's test fires, so it has to test the same thing.
 COLLAPSE_NM = 0.01
 
+# What a frame measures against *itself*, which is a different quantity from the one above:
+# mdtraj's RMSD is a float32 QCP and an XTC quantises to 0.001 nm, so the self-distance is
+# 0.0013-0.0018 nm, never 0. Used only to confirm that `rmsd_to_medoid_nm` was measured from
+# the frame the summary names. It shared COLLAPSE_NM's value before, which tied an assertion
+# about numerical noise to a threshold about conformational spread: moving either for its own
+# reasons would have silently changed the other.
+SELF_DISTANCE_FLOOR_NM = 0.01
+
 
 def read_json(path, default=None):
     if not os.path.exists(path):
@@ -157,7 +165,24 @@ def inventory_matches_probe(case):
         return FAIL, f"node 01 wrote no inventory (exit {case.rc('01')})"
     truth = case.truth
     if not truth:
-        return SKIP, "input was not probed"
+        # A case that staged a structure file has a file to probe, so an unprobed input is a
+        # broken suite, not an inapplicable check. Returning SKIP here meant a renamed or
+        # empty download directory turned all seven of these into skips and left the run
+        # green: the checks that compare node 01 against the file would simply stop running,
+        # and nothing in the output would say the comparison had stopped happening.
+        if str(case.entry.get("input") or "structure") != "none":
+            return FAIL, (
+                "nothing was probed for this case, but it stages a structure file: looked for "
+                f"{os.path.join(case.dir, 'base', 'topology.cif')} and "
+                f"{os.path.join(case.downloads, str(case.entry.get('source') or case.entry.get('id')))}.cif"
+            )
+        return SKIP, "this case stages no structure file, so there is nothing to probe"
+    if not truth.get("chain_ids"):
+        return FAIL, (
+            f"the probe read {truth.get('measured_from')} and found no chains: it parsed the "
+            "file without measuring it, so every check that compares node 01 against the file "
+            "is comparing against nothing"
+        )
     problems = []
     reported = set(inventory.get("chain_ids") or [])
     measured = set(truth.get("chain_ids") or [])
@@ -231,15 +256,26 @@ def inventory_reports_ligands(case):
     if not inventory:
         return FAIL, "node 01 wrote no inventory"
     truth = case.truth or {}
-    hetero = truth.get("hetero_rows") or 0
-    if not hetero:
-        return SKIP, "no non-polymer rows in the file"
+    # Gate on the components the probe identified, not on `hetero_rows`, which counts water
+    # rows -- and node 01 is right to drop water. A structure whose only non-polymer rows are
+    # HOH has a non-zero `hetero_rows` and a correct `has_ligands=false`, and this check would
+    # have called that a failure. No entry has that shape today, so the defect was latent:
+    # the first water-only entry anyone added would have hit it.
+    components = truth.get("nonpolymer_components")
+    rows = truth.get("hetero_rows") or 0
+    if components is None:
+        return SKIP, "the probe measured no component list for this entry"
+    if not components:
+        return SKIP, (
+            f"{rows} non-polymer atom row(s), all of them water"
+            if rows else "no non-polymer rows in the file"
+        )
     if not inventory.get("has_ligands"):
         return FAIL, (
-            f"{hetero} non-polymer atom row(s) in the file and has_ligands is "
+            f"the file carries {components} and has_ligands is "
             f"{inventory.get('has_ligands')!r}"
         )
-    return PASS, f"has_ligands=true, against {hetero} non-polymer atom row(s) measured"
+    return PASS, f"has_ligands=true, against {components} measured in the file"
 
 
 def inventory_from_sequence(case):
@@ -276,11 +312,22 @@ def inventory_from_sequence(case):
     stated = str((chains[0] if chains else {}).get("sequence") or "")
     if stated.upper() != sequence.upper():
         problems.append(f"the chain's stated sequence is {stated!r}, not the input")
+    # Node 01 records which of its four ways in it took, and this case exists to exercise one
+    # of them. Checking only the shape of the result left the path itself unasserted: a run
+    # that silently fell back to a staged structure file of the same protein would satisfy
+    # every count above and still mean the sequence branch had never executed.
+    source = str(inventory.get("source") or "")
+    if source != "sequence parameter":
+        problems.append(
+            f"source is {source!r}, not 'sequence parameter': node 01 did not take the "
+            "sequence path"
+        )
     if problems:
         return FAIL, "; ".join(problems)
     return PASS, (
         f"1 chain of {len(sequence)} residue(s), {inventory.get('n_tokens')} token(s), no "
-        f"components, and the chain's sequence is the input string: {inventory.get('source')}"
+        f"components, the chain's sequence is the input string, and node 01 recorded the "
+        f"path it took as {source!r}"
     )
 
 
@@ -698,15 +745,22 @@ def node05_medoid_measured_over_all_pairs(case):
             f"medoid_frame={medoid} but rmsd_to_medoid_nm is smallest at frame {argmin} "
             f"({distances[argmin]} against {distances.get(medoid)} nm)"
         )
-    # The floor mdtraj's own arithmetic puts on a frame measured against itself, and the same
-    # order as the XTC quantisation. Anything above it means the named frame is not the one
-    # the column was measured from.
-    if distances[medoid] >= COLLAPSE_NM:
+    if distances[medoid] >= SELF_DISTANCE_FLOOR_NM:
         return FAIL, (
             f"rmsd_to_medoid_nm is {distances[medoid]} nm at the medoid itself, above the "
-            f"{COLLAPSE_NM} nm numerical floor: the column was measured from some other frame"
+            f"{SELF_DISTANCE_FLOOR_NM} nm numerical floor: the column was measured from some "
+            "other frame"
         )
     others = sorted(d for f, d in distances.items() if f != medoid)
+    if not others:
+        # One frame is its own medoid at distance ~0, and there is no next-closest frame to
+        # compare it against. Reading `others[0]` here raised IndexError instead -- reachable
+        # from `mode = structure` with `num_samples = 1`, which is the README's own
+        # recommended single-structure configuration.
+        return PASS, (
+            f"1 frame, which is its own medoid at {distances[medoid]} nm; there is no second "
+            "frame to rank it against, so the argmin is trivially correct"
+        )
     return PASS, (
         f"{frames} frames, all {pairs} pair(s) measured; rmsd_to_medoid is smallest at frame "
         f"{argmin} == medoid_frame at {distances[medoid]} nm, against {others[0]} nm for the "

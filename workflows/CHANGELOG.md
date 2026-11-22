@@ -109,6 +109,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     0. It is now excluded by identity rather than by node index, and a unit check holds it.
     The two propagation checks that read node 05 while declaring node 04 were failing rather
     than skipping when node 05 was what died.
+  - Node 04 could publish a physicality verdict that contradicted its own manifest: the
+    `check_physicality` call and the `.save()` were in one `try`, so a check that succeeded
+    and then failed to write left `physicality_checked: true` with a pass count in the
+    manifest beside a JSON file declaring the verdict unavailable.
   - `tests/`: a fixture suite over seven real RCSB entries (`tests/README.md`), split into an
     offline driver (`run_fixtures.sh`: unit checks, nodes 01-02 plus node 03 `--dry-run`,
     refusals and their counter-cases, and nodes 04-06 over deterministic ensembles) and a GPU
