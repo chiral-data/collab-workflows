@@ -573,7 +573,7 @@ after the Phase 2 cases landed:
 | checks | 58 named, 58 implemented, 58 invoked |
 | falsification | 56 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
-| Gate A **in the image** | in flight against this code. The last image run — 47 pass, 0 FAIL, 6 gap of 53, 56/56, 51 falsified, 0 vacuous — tested the commit before Phase 2 and does not speak for it |
+| Gate A **in the image** | **met, complex path included** — 52 pass, 0 FAIL, 1 gap of 53, 56/56 checks, 54 falsified, 0 vacuous. Evidence at `~/wf040-evidence/tier1-image-53case-phase2/`. Covers the 53-case suite; the run covering the two cases added after it is in flight |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
 | Gate B Phase 2/3 | not met. `C7`–`C11` have never been run |
@@ -611,15 +611,22 @@ which reports a gap in a container because a pid recorded inside one means nothi
 host — the claim is established by the host run and the image run says so rather than
 quietly passing (§8.4).
 
-**Gate A in the image has not yet been re-measured against the complex path.** The
-53-case image run recorded above is the code as of the commit before Phase 2's cases
-landed, and it is not withdrawn: it really happened, against the code it names. It is
-simply not a statement about the five cases that were gaps when it ran. Until the image
-run against this code lands, Gate A for the workflow as it now stands is unproven, and
-the host figures do not substitute for it.
+**Gate A in the image now covers the complex path.** All five cases that had reported a
+gap in every previous run — `cplx-input-has-one-colon`, `gapped-target`,
+`argv-model-type-cplx`, `monomer-on-complex-path` and `cplx-input-missing-colon` — pass in
+`colabfold:2026_10_08`. That is the first run in which the suite has had nothing left to
+say it could not measure.
 
-The count grew by six — five while nodes 01–04 were written and one from running the GPU
-controls — and every one came from building or measuring rather than from planning:
+Two cases were added after that run started, `binder-plddt-in-complex-is-the-binder` and
+the `binder_length_measured` expectation on `rmsd-identity`, bringing the suite to 54 and
+the checks to 58. The image run covering those is in flight. Until it lands, the image
+figure above is exact for the 53 cases it names and silent about the two it does not —
+which is the only thing it can honestly be, and the host figures do not substitute for
+it.
+
+The count grew by eight — five while nodes 01–04 were written, one from running the GPU
+controls, and two from the audits — and every one came from building or measuring rather
+than from planning:
 
 - `num-models-non-integer`, when the built node showed `threshold-non-numeric` was
   asserting a message for the wrong cast.
@@ -639,6 +646,9 @@ controls — and every one came from building or measuring rather than from plan
   does not produce at that moment. There is now a second stand-in that reproduces the
   buffering, and the new case requires node 03's stdout capture to be genuinely zero
   bytes so it cannot drift into testing the ordinary path.
+- `binder-plddt-in-complex-is-the-binder` and the `binder_length_measured` expectation,
+  both from the audits rather than from a failure. Neither column was wrong; both were
+  **unasserted**, which is the condition an audit can see and a passing suite cannot.
 
 Where the built node's output differs from the constructed truth, a `measured` field says
 by how much and why.
