@@ -113,12 +113,33 @@ Full numbers, provenance and findings in
   names the source.
 - Every number recorded here and in the reference file, including both chains' pLDDT.
 
-**Phase 2 (interface scoring):** adds `C7`–`C11`. **The nodes are built; none of these
-controls has been run.**
+**Phase 2 (interface scoring):** adds `C7`–`C11`. **`C8` and `C9` have now been run on
+the GPU, and Gate B Phase 2 is NOT MET** — `iptm` 0.0900 for the native positive against
+0.1700 for the scrambled negative, margin −0.0800.
 
-- `C7` is the three-way MSA diagnostic that settles §4 by measurement. One of its three
-  arms is now in hand: `single_sequence` on a native chain gives 49.33 and 43.09 pLDDT,
-  which is the number the other two arms have to beat.
+**The cause is the control, not the scoring.** The offline target alignment
+`make_target_msa.py` builds is 9 rows, each differing from the query at exactly 1 of 87
+positions, so it carries no covariation; the target modelled at **38.28 pLDDT**, which is
+§4's recorded `single_sequence` receptor figure of 38.4. Per `8e4772a7` the interface
+can be no better than the worse-modelled chain, so both arms measured the same floor and
+the sign of the 0.09/0.17 difference is noise. Node 04 diagnosed this in the run itself.
+
+**Separation is not measurable offline with a synthetic alignment.**
+`run_controls_phase2.sh` was built on the assumption that it was, and that assumption has
+now been refuted by measurement. Full numbers, the refuted premise and what it costs are in
+`tests/reference/tier2-phase2-controls.md`.
+
+- **Phase 2 has no positive control capable of returning a meaningful interface number.**
+  That is the real gap: until one exists, Phase 2 cannot tell a broken scorer from a broken
+  control, the way Phase 1's `C12` could. The interface path is plumbed and guarded, and
+  **unvalidated as a score**.
+- `C8` and `C9` need a real target MSA, which needs the same `api.colabfold.com` fetch
+  `C7` was already waiting on. All three now unblock together, and that fetch is the user's
+  call: `run_controls_phase2.sh` will not make it without `--allow-egress`.
+- `C7` is the three-way MSA diagnostic that settles §4 by measurement. Two of its three
+  arms are now in hand: `single_sequence` on a native chain gives 49.33 and 43.09 pLDDT,
+  and an uninformative 9-row alignment gives 38.28 — i.e. the same thing, which is the
+  point. Only the full-MSA arm is missing, and it is the one that needs egress.
 - Phase 2 does not merge if `C7` shows the target-only alignment failing to recover the
   full-MSA numbers — that is the §11.1 gate, and the answer is to re-make the §4 decision,
   not to patch around it.
@@ -172,17 +193,31 @@ read from:
 |---|---|
 | `run_controls_phase2.sh` | `C8` and `C9` in **one run, one target, two binders**: barnase native and barnase shuffled on barstar. Identical coordinates, identical composition, identical numbering; the sequence is the only difference, which is what makes it a control rather than two experiments. Runs node 01b, both prediction inputs, the multimer model on the GPU, and nodes 04–05 — and shows node 03 refusing `single_sequence` on the complex path before spending GPU time on the real one. |
 | `report_controls_phase2.py` | Judges Gate B Phase 2. `iptm` gates; `pae_interaction`, `plddt_target` and `plddt_binder_in_complex` are printed as diagnostics and do not, because no control has calibrated them. |
-| `falsify_controls_phase2.sh` | Seven mutations, each of which must be refused: the positive collapsing, the negative scoring as well as the positive, the separation inverting, the gating metric going missing, a control row vanishing, a control appearing twice, and the `single_sequence` refusal never being exercised. |
+| `falsify_controls_phase2.sh` | Seven mutations, each of which must be refused: the positive collapsing, the negative scoring as well as the positive, the separation inverting, the gating metric going missing, a control row vanishing, a control appearing twice, and the `single_sequence` refusal never being exercised. Checks the honest run passes first (§8.16), so on a real run it **aborts** while Phase 2 is NOT MET. `--synthetic` builds a fabricated passing tree so the judge can be shown refusing at all (§8.13); that tree's numbers are typed, not measured, and the file says so. |
 
-**What `C8`/`C9` can and cannot establish** is worth being blunt about, because it is the
-difference between a control and a calibration. The run is offline, so the target
-alignment is **synthetic** — homologs built from the target's own sequence by point
-substitution. §11.1 measured what that costs directly: on a synthetic a3m, `iptm` came out
-*lower* with the alignment than without it. So the absolute numbers this run produces are
-not threshold material and the report refuses to be read as though they were. What it
-establishes is **separation**: whether 040 can tell a real binder from the same backbone
-with its residues shuffled. That is the Gate B Phase 2 question, and §8.6 is why it has to
-be asked — `iptm` is a number whatever went in.
+**What `C8`/`C9` can and cannot establish** — and this paragraph used to get it wrong, so
+the correction is left visible rather than tidied away.
+
+It said: the offline target alignment is synthetic, so the absolute numbers are not
+threshold material, but what the run still establishes is **separation** — whether 040 can
+tell a real binder from the same backbone with its residues shuffled.
+
+**The second half was an assumption, it was never measured, and the run refuted it.** With
+a synthetic alignment the target is not modelled at all (38.28 pLDDT, §4's
+`single_sequence` figure), and per `8e4772a7` the interface can be no better than the
+worse-modelled chain — so both arms sit on the same floor and the ordering is noise.
+`iptm` came out 0.0900 native against 0.1700 scrambled.
+
+Worse, §11.1 had already measured the cost of a synthetic a3m and this paragraph cited it:
+`iptm` 0.120 with the alignment against 0.270 without. The number saying "synthetic
+alignments can be worse than none" was quoted one sentence before the claim it undermines.
+
+So what `C8`/`C9` establish offline is the **plumbing**: node 01b aligns, node 02 builds a
+paired a3m, node 03 runs the multimer model and refuses `single_sequence`, node 04 slices
+the binder's block out of the complex, node 05 reports. All of that is now demonstrated on
+real deposited coordinates on a GPU. **Separation is not establishable offline**, and
+§8.6 still stands: `iptm` is a number whatever went in, which is exactly why the negative
+control is required and why it cannot be run against a floored target.
 
 `C7` is the control that needs a real target MSA, which needs one fetch from
 `api.colabfold.com`. That is outward-facing, so it is not something the script does on its
@@ -502,8 +537,8 @@ first). They now carry a `measured` field saying so:
 | `C5` | 1 | real archived 037 designs | record the numbers — this is 040's first honest ranking | blocked: inputs not committed |
 | `C6` | 1 | a prediction killed at a short budget | the whole process tree dies and `nvidia-smi` shows the device freed | **met** — 2357 MiB held, killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB |
 | `C7` | 2 | **4ZQK complex, three ways**: `single_sequence`, target-only MSA, full MSA — reading `iptm`, `pae_interaction` and **both** chains' pLDDT each time | settle §4 by measurement; the §11.1 gate | arm 1 of 3 in hand, from `C1`/`C2` |
-| `C8` | 2 | 1BRS barnase on barstar, native | good interface metrics | **harness built, not yet run.** `run_controls_phase2.sh` |
-| `C9` | 2 | the same backbone, binder sequence scrambled | bad interface metrics | **harness built, not yet run.** Same run as `C8`, same target |
+| `C8` | 2 | 1BRS barnase on barstar, native | good interface metrics | **run 2026-11-22; FAILED on an uninformative target MSA.** `iptm` 0.0900, target at 38.28 pLDDT. Needs egress |
+| `C9` | 2 | the same backbone, binder sequence scrambled | bad interface metrics | **run 2026-11-22; scored 0.1700, above the positive.** Same floor, same cause |
 | `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused | not run. The CI case `cplx-input-missing-colon` now shows node 03 refusing this before the predictor starts, so what `C10` is left to establish is the half nobody can assert offline: what ColabFold actually returns for a colon-less complex |
 | `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was | not built |
 
@@ -564,7 +599,7 @@ print({k: len(v) for k, v in d.items() if isinstance(v, list)})'
 
 ### Where it stands
 
-All 53 CI cases run, on both paths. Measured on the host interpreter on 2026-11-21,
+All 54 CI cases run, on both paths. Measured on the host interpreter on 2026-11-22,
 after the Phase 2 cases landed:
 
 | | |
@@ -576,7 +611,9 @@ after the Phase 2 cases landed:
 | Gate A **in the image** | **met, complex path included** — 52 pass, 0 FAIL, 1 gap of 53, 56/56 checks, 54 falsified, 0 vacuous. Evidence at `~/wf040-evidence/tier1-image-53case-phase2/`. Covers the 53-case suite; the run covering the two cases added after it is in flight |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
-| Gate B Phase 2/3 | not met. `C7`–`C11` have never been run |
+| Gate B Phase 2 | **not met, and now measured**. `C8`/`C9` ran on the GPU: `iptm` margin −0.0800. The control's offline alignment floored the target at 38.28 pLDDT, so this is a verdict on the control, not on the scoring. `tests/reference/tier2-phase2-controls.md` |
+| Gate B Phase 2, falsified | 7 mutations, 7 refused — but against `--synthetic`, a fabricated passing tree, because no real passing run exists to mutate. A weaker record than Phase 1's, and it stays weaker until `C8`/`C9` get a real alignment |
+| Gate B Phase 3 | not met. `C10`/`C11` partly covered; calibration not started |
 
 **The five complex-path gaps are closed.** Every case in the suite now reaches the thing
 it is about, which is the first run where that has been true. The five are listed under

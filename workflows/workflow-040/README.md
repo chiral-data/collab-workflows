@@ -156,8 +156,8 @@ the hints, which carry the reasoning.
 | **Gate A** | **met in `colabfold:2026_10_08`, complex path included** — 52 pass, 0 FAIL, 1 gap of 53, 56/56 checks, 54 falsified, 0 vacuous. All five complex-path cases pass in the image, where they had been gaps in every run before. The one gap is by design: the container-pid claim the image refuses to pass rather than pass for the wrong reason (§8.4). Two later cases bring the suite to 54, and the image run covering those is in flight — see [tests/README.md](tests/README.md) |
 | Tier 2 controls, Phase 1 | **Gate B met**, measured twice on the GPU with `--network none`. The `C12` designed positive passes at 0.93 Å / 95.05; scrambled and poly-alanine fail; `sc_rmsd_A` separates them by 17.9 Å. Judge falsified 6/6. Found that the native positive controls were the wrong controls and that `plddt_binder` cannot gate alone — [tests/reference/tier2-phase1-controls.md](tests/reference/tier2-phase1-controls.md) |
 | Tier 2 controls, `C6` | **met** — a real `colabfold_batch` holding 2357 MiB killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB. Found a node 03 defect: the predictor's stdout is block-buffered, so a kill lost it and the timeout reason was empty |
-| Tier 2 controls, Phase 2 | `C7`–`C11` **not run.** No GPU has yet folded a complex through this workflow. `C5` (real 037 designs) is the only Phase 1 control still outstanding |
-| Phase 2 | **built, and validated in CI only.** `01b` plus the `cplx_` path through 02–05, with all five of the suite's complex-path cases now passing and falsifiable. Making them run found four defects, one of which would have degraded every complex to a monomer on a real Silva run. What is still missing is a GPU: no interface metric in this workflow has been produced from a real multimer prediction |
+| Tier 2 controls, Phase 2 | **`C8`/`C9` run on the GPU 2026-11-22; Gate B Phase 2 NOT MET.** `iptm` 0.0900 native against 0.1700 scrambled, margin −0.0800. The cause is the control's offline target alignment, which floored the target at 38.28 pLDDT — §4's `single_sequence` figure — so both arms measured the same floor. A verdict on the control, not the scoring; node 04 diagnosed it in the run. `C7`, `C8`, `C9` now all need one `api.colabfold.com` fetch. `C10`/`C11` not run; `C5` still outstanding — [tests/reference/tier2-phase2-controls.md](tests/reference/tier2-phase2-controls.md) |
+| Phase 2 | **built; plumbed and guarded on a GPU, unvalidated as a score.** `01b` plus the `cplx_` path through 02–05, all five complex-path cases passing and falsifiable. Four real multimer predictions have now completed on the GPU, so interface metrics do come out — but they do not separate a native complex from a shuffle, because the only target alignment available offline is uninformative. Phase 2 has no positive control whose target is modelled well enough for its interface numbers to mean anything, and that is the gap that blocks it |
 | Phase 3 | thresholds uncalibrated. `iptm` and `pae_interaction` have had no control run against them, which is why they do not gate |
 
 ```
@@ -166,7 +166,8 @@ bash tests/run_controls.sh                     # Tier 2: GPU, offline, ~6 min, n
 bash tests/falsify_controls.sh <control-run>   # show the Gate B judge refusing
 bash tests/run_c6.sh <control-run> <out> 35     # C6: kill a real prediction at a budget
 bash tests/run_controls_phase2.sh              # Tier 2 Phase 2: C8/C9, the interface pair
-bash tests/falsify_controls_phase2.sh <run>    # show the Phase 2 judge refusing
+bash tests/falsify_controls_phase2.sh --synthetic   # show the Phase 2 judge refusing
+                                               # (a real run aborts it: Phase 2 is NOT MET)
 python3 tests/audit_ports.py                   # declared ports vs what the code touches
 python3 tests/audit_coverage.py                # node 04 columns no check ever names
 ```

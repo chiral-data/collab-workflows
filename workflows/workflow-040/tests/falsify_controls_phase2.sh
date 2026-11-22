@@ -15,14 +15,60 @@
 # before deletions: a deleted file produces a shorter, louder refusal that would mask a
 # subtler one that should also have been caught.
 #
+# --synthetic, and why it had to exist
+# ------------------------------------
+# The honest-run check below aborts on every run this repo has: Gate B Phase 2 is NOT MET,
+# because the offline target alignment floors the target to ~38 pLDDT and takes iptm with
+# it (tests/reference/tier2-phase2-controls.md). That abort is correct -- grading mutations
+# against a tree that already fails proves nothing -- but it also means the judge could
+# never be shown refusing at all, and 8.13 says a guard that cannot be shown refusing is
+# not a guard. So --synthetic fabricates the minimal tree the judge accepts, with a
+# separation that was typed rather than measured, purely so the mutations can be graded.
+#
+# The fabricated numbers are evidence about the JUDGE and about nothing else. They say
+# nothing about this workflow's scoring, they are not a Phase 2 result, and the tree itself
+# carries a _FABRICATED key saying so -- because a file of plausible scores sitting in a
+# temp directory is exactly the thing that gets mistaken for a measurement later.
+#
 # Usage:  bash tests/falsify_controls_phase2.sh <RUN_DIR>
+#         bash tests/falsify_controls_phase2.sh --synthetic
 set -uo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
-RUN="${1:?usage: falsify_controls_phase2.sh <RUN_DIR>}"
 JUDGE="$HERE/report_controls_phase2.py"
 WORK="${TMPDIR:-/tmp}/wf040-falsify-p2.$$"
 SCORES="n4/outputs/design_scores.json"
+
+SYNTHETIC=0
+if [ "${1:-}" = "--synthetic" ]; then SYNTHETIC=1; shift; fi
+
+if [ "$SYNTHETIC" = "1" ]; then
+  RUN="$WORK/synthetic-run"
+  mkdir -p "$RUN/n4/outputs"
+  echo "=== building a FABRICATED passing run: this grades the judge, not the workflow"
+  python3 -I - "$RUN/$SCORES" <<'FAKE' || exit 2
+import json, sys
+# Round, obviously-typed numbers. A fabricated tree should not be able to pass for a
+# measured one, so nothing here is near a real figure from any recorded run.
+json.dump({
+    "_FABRICATED": "Typed by falsify_controls_phase2.sh --synthetic to exercise the "
+                   "judge. NOT a measurement. Not a Phase 2 result. See the script "
+                   "header and tests/reference/tier2-phase2-controls.md.",
+    "designs": [
+        {"design": "C8", "iptm": 0.90, "pae_interaction": 5.0,
+         "plddt_target": 85.0, "plddt_binder_in_complex": 80.0},
+        {"design": "C9", "iptm": 0.10, "pae_interaction": 25.0,
+         "plddt_target": 84.0, "plddt_binder_in_complex": 40.0},
+    ],
+}, open(sys.argv[1], "w"), indent=2)
+FAKE
+  {
+    echo "PARAM_MSA_MODE_CPLX=single_sequence refused"
+    echo "exit=1 (non-zero is the pass)"
+  } > "$RUN/n3-refuse.log"
+else
+  RUN="${1:?usage: falsify_controls_phase2.sh <RUN_DIR> | --synthetic}"
+fi
 
 [ -f "$RUN/$SCORES" ] || { echo "no $SCORES under $RUN" >&2; exit 2; }
 

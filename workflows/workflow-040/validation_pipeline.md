@@ -899,6 +899,50 @@ separation is now measured from the design's own extent.
 040's synthetic predictions have the same shape of risk: a fixture that "proves" the
 scorer wrong is more likely to be a fixture with the wrong geometry.
 
+### 8.17 A control built on an unmeasured assumption tests the assumption
+
+§8.1 says do not re-derive what is already known. The mirror of it is worse and harder to
+see: do not *assert* what is not known and then build a gate on top of it.
+
+`run_controls_phase2.sh` was built on the premise that **separation survives a depressed
+baseline** — that if the positive and the negative are modelled under the same handicap,
+the positive still comes out ahead by enough to read. Nobody measured that. It was measured
+by running the control, and it is false: with the target floored at 38.28 pLDDT by an
+uninformative 9-row alignment, `iptm` came out 0.0900 for the native complex and 0.1700 for
+the shuffle. Both numbers are the floor, and which one is larger is noise.
+
+The cost is not just a wasted run. For as long as the premise went unexamined, a NOT MET
+from this control was going to be read as "040 cannot score an interface", which is a
+different and much more expensive conclusion than the true one.
+
+**The contradicting measurement was already in this document, in the section that
+specified the control.** §11.1's own table, same a3m, same seed, both arms offline:
+`iptm` 0.120 with the synthetic alignment against 0.270 without it. §11.1 wrote the
+conclusion down too — *"a tiny, synthetic, heavily gapped MSA can be worse than none"* —
+and then declined to draw it, on the correct narrow ground that the finding there was the
+*difference* and not its sign. Narrowly right, and it left a measured warning sitting
+unused two sections above a control that depended on the opposite being true.
+
+§4 held the other half: a 38.4 receptor-side pLDDT at `single_sequence`, which is the
+38.28 this run reproduced. And §9's Phase 1 finding 2 is the identical error about the
+*binder* — native positives run at `single_sequence` could not work, and §4 had said why
+in advance. The Phase 2 script was written **after** that finding was filed and repeated
+it about the target. A lesson that only applies to the example it was learned on is not a
+lesson.
+
+So this was not a gap in the evidence. It was a gap in reading the evidence already
+collected, which is §8.1's failure mode wearing the opposite coat: the premise felt like
+background rather than a claim, so it was never looked up.
+
+Two practical rules come out of it:
+
+- **Write down what a control assumes about its own inputs, next to the control.** The
+  premise here was never stated anywhere, which is why it was never checked.
+- **A control needs an arm that distinguishes "the thing under test is broken" from "this
+  control cannot tell".** Phase 1 had `C12` for exactly that and it was decisive. Phase 2
+  has no equivalent, and until it does, a Phase 2 verdict is uninterpretable in the
+  direction that matters.
+
 ## 9. Test plan
 
 **The suite itself is specified in `tests/README.md` and `tests/fixtures.json`, and it is
@@ -1191,7 +1235,7 @@ replicates" landing on its own 3600 s default, killing the job hours in.
 
 ## 12. Phasing
 
-**Status, 2026-11-21.** Phase 1 is built and is the merge gate it was specced to be:
+**Status, 2026-11-22.** Phase 1 is built and is the merge gate it was specced to be:
 Gate A met in `colabfold:2026_10_08`, Gate B Phase 1 met on the GPU with `C6`, only `C5`
 outstanding. Phase 2 is built — `01b-align-target` and the `cplx_` path through nodes
 02–05 — and is now validated **in CI**: all thirteen of its Tier 1 cases pass and are
@@ -1199,10 +1243,31 @@ falsifiable, where five of them had been gaps from the day they were written. Ma
 those five run found four defects, the worst of which would have degraded every complex
 prediction to a monomer on a real Silva run while `silva validate` reported six jobs ok.
 
-What Phase 2 still has no evidence for is anything a GPU produces. Controls `C7`–`C11`
-have not been run, no interface metric in this workflow has come from a real multimer
-prediction, and `iptm` and `pae_interaction` consequently do not gate. Phase 3 has not
-started.
+**Gate B Phase 2 has now been run, and it is NOT MET.** `C8` (1BRS barnase native on
+barstar) scored `iptm` 0.0900 against `C9`'s 0.1700 — the scrambled negative beat the
+native positive, margin −0.0800. Four real multimer predictions completed on the GPU, so
+the interface path does produce numbers; those numbers just do not separate.
+
+**The verdict is on the control, not the scoring, and the workflow said so itself.** Node
+04 warned in the run that both targets were modelled below 70 pLDDT (38.28 and 39.19).
+38.28 is §4's recorded `single_sequence` receptor figure of 38.4 — reached while passing
+`mmseqs2_uniref_env`, because the offline 9-row alignment differs from the query at exactly
+one position per row and carries no covariation. Per `8e4772a7` the interface can be no
+better than the worse-modelled chain, so both arms measured the same floor.
+
+**The assumption that broke was mine and it was never measured:** that separation survives
+a depressed baseline. `run_controls_phase2.sh` and its judge were built on it. §4 already
+held the number that predicted otherwise, which makes this the same error as §9's Phase 1
+finding 2 — made one phase later, about the target instead of the binder, in a script
+written after that finding was filed. Recorded in
+`tests/reference/tier2-phase2-controls.md` and as §8.17.
+
+So: **separation is not measurable offline with a synthetic alignment.** `C7`, `C8` and
+`C9` all now need the same one fetch from `api.colabfold.com`, which is the user's call and
+requires `--allow-egress`. `iptm` and `pae_interaction` still do not gate. Phase 2 has no
+positive control capable of returning a meaningful interface number, which is the real gap:
+until one exists Phase 2 cannot tell a broken scorer from a broken control the way Phase
+1's `C12` could. Phase 3 has not started.
 
 **Phase 1 — self-consistency only. This is what gets built.**
 
@@ -1217,7 +1282,8 @@ half and §11.5.
 Carry `plddt_target` from the start even though Phase 1 has no interface metric for it to
 explain. It costs nothing, and it is the number that makes a Phase 2 result interpretable.
 
-**Phase 2 — interface scoring. Built; controls not yet run.**
+**Phase 2 — interface scoring. Built; controls run and NOT MET on the control's own
+alignment. Plumbed and guarded, unvalidated as a score.**
 
 Adds `01b-align-target`, the `cplx_` path through nodes 02–05, and `iptm` +
 `pae_interaction`. Target-only MSA per §4, which is a decision, not an option left open.
