@@ -497,6 +497,48 @@ def c_unknown_residues_counted(c, spec):
     return PASS, detail + f"; node 02 carries n_unknown={carried} forward"
 
 
+def c_binder_length_measured(c, spec):
+    """The length node 04 reports is the binder's, measured independently.
+
+    Found by tests/audit_coverage.py: binder_length is in node 04's COLUMNS, is rendered
+    as "Length" by node 05, and no check and no fixture named it. It is the column a
+    reader uses to judge every other number on the row -- a 30-residue binder at 1.2 A is
+    a different claim from a 300-residue one -- and it travels three hops from the CIF
+    (node 01 counts it, node 02 carries it, node 04 files it under binder_length), so
+    there are three places for it to come loose.
+
+    probe_design.py shares no parser with any node (§8.4), so it is the thing that can
+    disagree. It also has to agree with the sequence node 04 itself reports, which catches
+    the case where the length is right and the sequence beside it is another design's.
+    """
+    row = c.design(spec.get("design"))
+    if not row:
+        return _no_row(c, spec)
+    inv = c.inventory()
+    if not inv:
+        return FAIL, "no design_inventory.json was written"
+    entry = next((r for r in inv["designs"] if r["design"] == row["design"]), None)
+    if entry is None:
+        return FAIL, (f"node 04 scored {row['design']!r}, which is not in the inventory; "
+                      f"it holds {[r['design'] for r in inv['designs']]}")
+
+    measured = c.probe_chain(entry["binder_chain"])
+    reported = row.get("binder_length")
+    sequence = row.get("binder_sequence") or ""
+    detail = (f"node 04 reports binder_length={reported} with a binder_sequence of "
+              f"{len(sequence)} residue(s); probe_design measures "
+              f"{measured['n_residues']} in chain {entry['binder_chain']}; the inventory "
+              f"records n_binder_residues={entry.get('n_binder_residues')}")
+    if reported is None:
+        return FAIL, "binder_length is absent from the scored row. " + detail
+    if reported != measured["n_residues"]:
+        return FAIL, ("the reported length is not the chain's length. " + detail)
+    if len(sequence) != reported:
+        return FAIL, ("the length and the sequence beside it describe different "
+                      "molecules, so one of them belongs to another design. " + detail)
+    return PASS, detail
+
+
 def c_all_unknown_design_skipped(c, spec):
     """A sequence that is entirely unknown has nothing to fold, so it must be skipped.
 
@@ -1692,6 +1734,12 @@ CHECKS = {
         c_unknown_residues_counted,
         "must equal probe_design's own count of X in the sequence.",
     ),
+    "binder_length_measured": (
+        c_binder_length_measured,
+        "must equal probe_design's own residue count for the binder chain, and must "
+        "equal the length of the binder_sequence node 04 reports beside it. A length and "
+        "a sequence that disagree mean one of them belongs to another design.",
+    ),
     "all_unknown_design_skipped": (
         c_all_unknown_design_skipped,
         "runs a second, all-unknown shape and requires both a skip and no FASTA for it; "
@@ -2687,6 +2735,10 @@ CORRUPTIONS = [
     ("mark-everything-ok", x_mark_everything_ok),
     ("drop-failed-prediction", x_drop_failed_prediction),
     ("shift-rmsd", x_shift_rmsd),
+    # No corruption of binder_length's own value is needed: wrong-binder-chain already
+    # makes binder_length_measured fail for its own reason, because probe_design then
+    # measures the target chain and the lengths disagree. A second corruption that only
+    # ever lost the race to the first would be dead weight in this table.
     ("claim-target-as-binder-plddt", x_claim_target_as_binder_plddt),
     ("swap-plddt", x_swap_plddt),
     ("shift-pae", x_shift_pae),

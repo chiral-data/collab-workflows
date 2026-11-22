@@ -152,7 +152,7 @@ the hints, which carry the reasoning.
 | `05-filter-and-report` | **implemented**; report is static HTML, no structure viewer. Says per row whether the interface was scored and whether it gated |
 | Test generator | `workflow-037/tests/make_designs.py` extended in place: six new shapes and `--manifest`; `tests/make_predictions.py` written |
 | Test harness | **built** — `run_fixtures.sh` stages and runs, `check_fixtures.py` judges and falsifies; `run_controls.sh`, `report_controls.py` and `falsify_controls.sh` do the same for the GPU tier |
-| Tier 1 suite | **54 pass, 0 FAIL, 0 gap** of 54 CI cases on the host; 57/57 checks implemented, invoked and falsifiable, 55 falsified by a corruption and 0 vacuous. Every case reaches the thing it is about, which is new as of 2026-11-21 |
+| Tier 1 suite | **54 pass, 0 FAIL, 0 gap** of 54 CI cases on the host; 58/58 checks implemented, invoked and falsifiable, 56 falsified by a corruption and 0 vacuous. Every case reaches the thing it is about, which is new as of 2026-11-21 |
 | **Gate A** | **met in `colabfold:2026_10_08` for Phase 1** — 47 pass, 0 FAIL, 6 gap of 53, 56/56 checks, 51 falsified, 0 vacuous. That run tested the commit before the Phase 2 cases landed, so it does not speak for the complex path; the image run against this code is in flight. One gap in the image is by design: the container-pid claim the image refuses to pass (§8.4) — see [tests/README.md](tests/README.md) |
 | Tier 2 controls, Phase 1 | **Gate B met**, measured twice on the GPU with `--network none`. The `C12` designed positive passes at 0.93 Å / 95.05; scrambled and poly-alanine fail; `sc_rmsd_A` separates them by 17.9 Å. Judge falsified 6/6. Found that the native positive controls were the wrong controls and that `plddt_binder` cannot gate alone — [tests/reference/tier2-phase1-controls.md](tests/reference/tier2-phase1-controls.md) |
 | Tier 2 controls, `C6` | **met** — a real `colabfold_batch` holding 2357 MiB killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB. Found a node 03 defect: the predictor's stdout is block-buffered, so a kill lost it and the timeout reason was empty |
@@ -168,6 +168,7 @@ bash tests/run_c6.sh <control-run> <out> 35     # C6: kill a real prediction at 
 bash tests/run_controls_phase2.sh              # Tier 2 Phase 2: C8/C9, the interface pair
 bash tests/falsify_controls_phase2.sh <run>    # show the Phase 2 judge refusing
 python3 tests/audit_ports.py                   # declared ports vs what the code touches
+python3 tests/audit_coverage.py                # node 04 columns no check ever names
 ```
 
 It prints a loud banner when it is not running in `colabfold:2026_10_08`, and says in its

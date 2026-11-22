@@ -514,6 +514,10 @@
           "value": 0.0,
           "tolerance": 0.001,
           "finding": "keystone"
+        },
+        {
+          "check": "binder_length_measured",
+          "finding": "audit"
         }
       ]
     },

@@ -131,9 +131,16 @@ clears it.
 ## Harness
 
 Seventeen pieces: seven for Tier 1, ten for Tier 2. One already existed and was extended
-in place rather than forked. Four more sit outside both gates and are listed at the end:
-one static audit, two probes that answered a question once and are kept so the answer can
+in place rather than forked. Five more sit outside both gates and are listed at the end:
+two static audits, two probes that answered a question once and are kept so the answer can
 be re-taken, and one hand smoke test.
+
+**The two audits are there because the suite missed something.** Both were written after a
+defect got past it, and both answer their question statically, in a second, without staging
+anything: `audit_ports.py` after node 02 wrote three files and declared one, and
+`audit_coverage.py` after a rendered column turned out to have no check. Neither replaces
+the suite. What they do is close the gap the suite cannot close by itself — noticing what
+is *absent*, which is §8.3's whole subject and the hardest thing for a test to see.
 
 | Piece | Role |
 |---|---|
@@ -183,10 +190,11 @@ own: `--allow-egress` turns it on, and until someone turns it on §4's decision 
 measured. The binder is not an input to node 01b, so even then no designed sequence can be
 sent — that is structural rather than a promise.
 
-And three standing checks that are not part of either gate — one audit and two probes:
+And four standing checks that are not part of either gate — two audits and two probes:
 
 | Piece | Role |
 |---|---|
+| `audit_coverage.py` | Asks which of node 04's columns no check and no fixture ever names. Written after `plddt_binder_in_complex` turned out to be one of them, and it found a second: `binder_length`, the column a reader judges every other number on a row against, travelling three hops from the CIF with nothing asserting it at the end. Output is a **list to justify, not a verdict**: a column either gets a check or gets an entry in `ASSERTED_INDIRECTLY` saying what covers it, so the answer is written down rather than left to whoever reads the diff. Word-boundary matching on purpose — `plddt_binder` must not count as covering `plddt_binder_in_complex`, which is the exact pair that slipped through. |
 | `audit_ports.py` | Checks every node's declared `inputs`/`outputs` against the `./inputs/<name>` and `./outputs/<name>` paths its code actually mentions. Written after node 02 wrote three files and declared one, which `silva validate` cannot see because it checks that declarations are well formed, not that they match the code. Run-time-built names are **printed, not skipped** — a tool that quietly ignored what it could not parse would be §8.3's case. An undeclared write has to appear in `DELIBERATELY_UNDECLARED` with its reason, so the exception list cannot grow by accident. Takes a second and stages nothing; it is a second opinion, not a replacement for the suite. |
 | `probe_msa_clamp.sh` + `report_msa_clamp.py` | The measurement §11.1 rests on: the same a3m under both `msa_mode` values, offline, asking whether `single_sequence` discards it. It does. The probe's own verdict says that **which arm scores higher means nothing** — the homologs are synthetic and the finding is the difference, not its sign. |
 | `smoke_phase2.sh` | Walks the complex path once on the host interpreter with no GPU, printing what each node wrote. It decides nothing and asserts nothing; it exists so the fixtures written against the path are written against something that has actually run. It is also the thing that did *not* catch node 02's undeclared outputs, because it copies `n2/outputs/*` wholesale — which is the difference between a smoke test and a suite. |
@@ -531,7 +539,7 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 ## Scope
 
-66 experiments, 57 distinct checks, all implemented, all invoked, none vacuous.
+66 experiments, 58 distinct checks, all implemented, all invoked, none vacuous.
 
 | Section | Cases | Phase 1 | Phase 2 | Blocked |
 |---|---|---|---|---|
@@ -562,8 +570,8 @@ after the Phase 2 cases landed:
 | | |
 |---|---|
 | cases | **54 pass, 0 FAIL, 0 gap** of 54 |
-| checks | 57 named, 57 implemented, 57 invoked |
-| falsification | 55 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
+| checks | 58 named, 58 implemented, 58 invoked |
+| falsification | 56 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
 | Gate A **in the image** | in flight against this code. The last image run — 47 pass, 0 FAIL, 6 gap of 53, 56/56, 51 falsified, 0 vacuous — tested the commit before Phase 2 and does not speak for it |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
