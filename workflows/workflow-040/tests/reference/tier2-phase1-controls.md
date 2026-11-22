@@ -25,6 +25,16 @@ also MET. Only `C5` is outstanding, and it is blocked on inputs.
 | Wall clock | 45–67 s per design |
 | Runs | two independent runs, 2026-11-21 (`wf040-controls-run`, `...-run2`) |
 | Entries | `4ZQK` sha256 `f5012ba58d76099b…`, `1BRS` sha256 `1c98dcc3eac7ccb8…`, fetched from RCSB and re-fetched independently on the host to the same digests |
+| Nodes run | 037 node 04, then 040 nodes 01, 02, 03, 04, 05 — **not 01b**, which did not exist yet |
+
+**Both runs predate node `01b-align-target`, and the numbers are unaffected.** With
+`score_interface` false, node 02 never calls `load_target` and never reads anything 01b
+writes, so 01b contributes nothing to any value in this file. `run_controls.sh` now runs
+it anyway, so the script matches the DAG and the no-op branch gets exercised on the GPU
+host — but that is DAG fidelity, not a correction, and re-running these controls would
+produce the same table for the same reason. Said here rather than left to be worked out,
+because "the evidence was produced by an earlier version of the script" is exactly the
+sort of thing that quietly stops being true.
 
 Chains were chosen from a probe of each entry, not from memory — `tests/README.md`,
 "Choosing a fixture". That mattered: **4ZQK chain B carries an 8-residue internal gap**

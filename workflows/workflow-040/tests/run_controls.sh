@@ -142,9 +142,23 @@ mkdir -p "$OUT/n1/inputs"
 cp "$OUT"/g/*_generated.cif "$OUT/m/outputs/design_metrics.json" "$OUT/n1/inputs/"
 run_node n1 "$WF/01-ingest-designs/script.py"
 
+# 01b runs here too, although this is the Phase 1 path and it has nothing to align. It is
+# a dependency of node 02 in .chiral/workflow.toml, so skipping it would mean this script
+# ran a DAG the workflow does not have -- and the no-op branch, the one that writes a
+# target_alignment.json saying it was a no-op so that "did 01b run?" has an answer at all
+# (§8.3), would never be exercised on the GPU host.
+#
+# The recorded Gate B Phase 1 evidence predates this step. It is unaffected: with
+# score_interface off, node 02 never calls load_target, so 01b contributes nothing to any
+# number in that run. See tests/reference/tier2-phase1-controls.md.
+say "040 node 01b: align target (a no-op on the Phase 1 path, which is the point)"
+mkdir -p "$OUT/n1b/inputs"
+cp "$OUT/n1/outputs/design_inventory.json" "$OUT/n1b/inputs/"
+run_node n1b "$WF/01b-align-target/script.py"
+
 say "040 node 02: prediction inputs"
 mkdir -p "$OUT/n2/inputs"
-cp "$OUT"/n1/outputs/* "$OUT/n2/inputs/"
+cp "$OUT"/n1/outputs/* "$OUT"/n1b/outputs/* "$OUT/n2/inputs/"
 run_node n2 "$WF/02-build-prediction-inputs/script.py"
 
 say "040 node 03: REAL prediction on the GPU, offline"
