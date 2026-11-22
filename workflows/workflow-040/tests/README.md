@@ -608,7 +608,7 @@ after the Phase 2 cases landed:
 | checks | 58 named, 58 implemented, 58 invoked |
 | falsification | 56 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
-| Gate A **in the image** | **met, complex path included** — 52 pass, 0 FAIL, 1 gap of 53, 56/56 checks, 54 falsified, 0 vacuous. Evidence at `~/wf040-evidence/tier1-image-53case-phase2/`. Covers the 53-case suite; the run covering the two cases added after it is in flight |
+| Gate A **in the image** | **met on the full 54-case suite, complex path included** — 53 pass, 0 FAIL, 1 gap of 54, 58/58 checks, 56 falsified, 2 not in the tree, 0 vacuous. Evidence at `~/wf040-evidence/tier1-image-54case-final/`, with the tree's md5s recorded beside the verdict. The one gap is `sigterm_ignoring_child_killed`, by design |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
 | Gate B Phase 2 | **not met, and now measured**. `C8`/`C9` ran on the GPU: `iptm` margin −0.0800. The control's offline alignment floored the target at 38.28 pLDDT, so this is a verdict on the control, not on the scoring. `tests/reference/tier2-phase2-controls.md` |
@@ -654,12 +654,20 @@ gap in every previous run — `cplx-input-has-one-colon`, `gapped-target`,
 `colabfold:2026_10_08`. That is the first run in which the suite has had nothing left to
 say it could not measure.
 
-Two cases were added after that run started, `binder-plddt-in-complex-is-the-binder` and
-the `binder_length_measured` expectation on `rmsd-identity`, bringing the suite to 54 and
-the checks to 58. The image run covering those is in flight. Until it lands, the image
-figure above is exact for the 53 cases it names and silent about the two it does not —
-which is the only thing it can honestly be, and the host figures do not substitute for
-it.
+Two cases were added after the 53-case image run started,
+`binder-plddt-in-complex-is-the-binder` and the `binder_length_measured` expectation on
+`rmsd-identity`, bringing the suite to 54 and the checks to 58. **That run has now been
+redone on the full suite and Gate A is met on all 54**, so the earlier figure is
+superseded rather than patched.
+
+Worth recording how close that went wrong. The 53-case run was very nearly reported as
+covering 54: the trees on both machines hashed identically when checked, which looked like
+confirmation. It was not — the run had started 31 minutes **before** the two cases were
+rsynced, so an identical tree at check time said nothing about the tree at run time. What
+caught it was the run's own case count disagreeing with the host's by one. The lesson is
+narrow and worth keeping: **a hash proves what a file is now, not what a process read
+earlier.** The evidence directory now stores the md5s next to the verdict, written in the
+same step, so the two cannot drift apart again.
 
 The count grew by eight — five while nodes 01–04 were written, one from running the GPU
 controls, and two from the audits — and every one came from building or measuring rather
