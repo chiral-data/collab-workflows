@@ -1072,6 +1072,85 @@ def _plddt(c, spec, key):
     return PASS, detail
 
 
+def c_plddt_binder_in_complex(c, spec):
+    """The binder's confidence IN the complex is the BINDER's block, not the target's.
+
+    Not a fill-value comparison. This re-slices the raw plddt array itself, out of the
+    scores file node 04 read, using the chain_order and chain_lengths the manifest
+    records -- arithmetic that shares nothing with the node under test (§8.4). Node 04's
+    number has to equal the binder block's mean and not the target block's.
+
+    And it refuses a case whose two blocks are indistinguishable. If the target and binder
+    fill values are equal, a node that sliced the wrong block passes this check, and a
+    check that cannot tell the two apart is not measuring the thing it is named after.
+    That refusal is the reason the case carries two different fills.
+    """
+    row = c.design(spec.get("design"))
+    if not row:
+        return _no_row(c, spec)
+    manifest = c.manifest()
+    if not manifest:
+        return FAIL, f"no prediction_manifest.json; node 03 rc={c.rc('n3')}"
+
+    cplx = [p for p in manifest["predictions"] if p.get("mode") == "cplx"]
+    if not cplx:
+        return GAP, ("no prediction in this run has mode='cplx', so there is no complex "
+                     "block to slice. " + NO_COMPLEX_STAGED)
+    if len(cplx) > 1 and not spec.get("design"):
+        return FAIL, (f"{len(cplx)} complex predictions and the fixture names no design, "
+                      "so which row this is about is undecided")
+    prediction = next((p for p in cplx if p["design"] == row["design"]), None)
+    if prediction is None:
+        return FAIL, (f"node 04 scored {row['design']!r} but no complex prediction was "
+                      f"recorded for it; complexes are for "
+                      f"{[p['design'] for p in cplx]}")
+
+    name = prediction.get("scores_rank_001")
+    scores = None
+    for where in (("n4", "inputs"), ("n3", "outputs"), ("pred",)):
+        if name:
+            scores = c.json(*where, name)
+        if scores is not None:
+            break
+    if scores is None or "plddt" not in scores:
+        return FAIL, (f"the complex scores file {name!r} is not readable or carries no "
+                      f"'plddt' key, so the slice cannot be checked independently")
+
+    order, lengths = prediction["chain_order"], prediction["chain_lengths"]
+    array = scores["plddt"]
+    if sum(lengths) != len(array):
+        return FAIL, (f"the recorded lengths {lengths} sum to {sum(lengths)} but the "
+                      f"plddt array holds {len(array)}, so every slice is of the wrong "
+                      "residues and each one still produces a plausible number")
+    blocks, at = {}, 0
+    for chain, length in zip(order, lengths):
+        blocks[chain] = array[at:at + length]
+        at += length
+    means = {k: round(sum(v) / len(v), 2) for k, v in blocks.items() if v}
+
+    got = row.get("plddt_binder_in_complex")
+    detail = (f"node 04 reports plddt_binder_in_complex={got}; re-slicing the array by "
+              f"chain_order={order} lengths={lengths} gives {means}")
+    if "binder" not in means or "target" not in means:
+        return FAIL, f"the complex has no binder and target block to tell apart. {detail}"
+    if abs(means["binder"] - means["target"]) < 1.0:
+        return FAIL, (
+            "the binder and target blocks are within 1.0 pLDDT of each other, so a node "
+            "that sliced the wrong one would pass this check. The case has to write two "
+            f"clearly different fills for it to measure anything (§8.4). {detail}"
+        )
+    if got is None:
+        return FAIL, ("the metric is absent on a complex that has a binder block. "
+                      f"null_reasons={row.get('null_reasons')}. {detail}")
+    if not near(got, means["binder"], spec.get("tolerance", 0.05)):
+        if near(got, means["target"], spec.get("tolerance", 0.05)):
+            return FAIL, ("node 04 reported the TARGET's block as the binder's "
+                          "confidence, which is 026's defect by a different route. "
+                          + detail)
+        return FAIL, "the value matches neither block. " + detail
+    return PASS, detail
+
+
 def c_plddt_binder(c, spec):
     return _plddt(c, spec, "plddt_binder")
 
@@ -1744,6 +1823,13 @@ CHECKS = {
         "same slice from the other end, and a third case sets it to 38.4 to show it is "
         "read rather than assumed.",
     ),
+    "plddt_binder_in_complex": (
+        c_plddt_binder_in_complex,
+        "Phase 2. Re-slices the raw plddt array by the recorded chain_order and "
+        "chain_lengths and requires node 04's value to be the BINDER block's mean, not "
+        "the target's. Refuses a case whose two blocks are within 1.0 of each other, "
+        "because a swapped slice would pass that one.",
+    ),
     "metric_is_null": (
         c_metric_is_null,
         "the key is genuinely absent from the scores file, so a node with a .get(key, 0.0) "
@@ -2246,6 +2332,29 @@ def x_shift_rmsd(d):
     return _edit_json(os.path.join(d, "n4", "outputs", "design_scores.json"), change)
 
 
+def x_claim_target_as_binder_plddt(d):
+    """Report the TARGET block's confidence as the binder's. 026's defect by another route.
+
+    The one corruption that makes plddt_binder_in_complex fail for its OWN reason. Without
+    it that check is falsified only by deleting design_scores.json, which proves it reads
+    the file and nothing about whether it reads the right block -- the same weakness
+    fusion_disclosed had (§8.4).
+    """
+    def change(payload):
+        hit = 0
+        for row in payload["designs"]:
+            if (row.get("plddt_binder_in_complex") is not None
+                    and row.get("plddt_target") is not None):
+                row["plddt_binder_in_complex"] = row["plddt_target"]
+                hit += 1
+        if not hit:
+            return None
+        return (f"plddt_binder_in_complex set to plddt_target on {hit} row(s), which is "
+                "what slicing the complex array from the wrong end produces")
+
+    return _edit_json(os.path.join(d, "n4", "outputs", "design_scores.json"), change)
+
+
 def x_swap_plddt(d):
     def change(payload):
         swapped = 0
@@ -2578,6 +2687,7 @@ CORRUPTIONS = [
     ("mark-everything-ok", x_mark_everything_ok),
     ("drop-failed-prediction", x_drop_failed_prediction),
     ("shift-rmsd", x_shift_rmsd),
+    ("claim-target-as-binder-plddt", x_claim_target_as_binder_plddt),
     ("swap-plddt", x_swap_plddt),
     ("shift-pae", x_shift_pae),
     ("sentinel-nulls", x_sentinel_nulls),

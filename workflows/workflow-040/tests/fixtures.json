@@ -773,6 +773,32 @@
       ]
     },
     {
+      "id": "binder-plddt-in-complex-is-the-binder",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --plddt-binder 25.0 --plddt-target 85.0 --iptm 0.6 --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "tier": "ci",
+      "phase": 2,
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
+      "prediction": "a complex whose two chains carry deliberately far-apart pLDDT: target 85.0 over 60 residues, binder 25.0 over 30",
+      "why": "plddt_binder_in_complex is a NEW column that node 05 renders and, until this case, nothing checked. It is the binder's confidence in context, sliced out of the complex's pLDDT array by the recorded chain_order and chain_lengths. Slice the wrong block and the TARGET's confidence is reported as the binder's -- 026's defect by a different route, and a number that looks entirely ordinary (8.6). The two fills are 60 pLDDT apart on purpose: with equal fills a swapped slice passes, and the check refuses a case whose blocks it cannot tell apart.",
+      "pins": "§8.6, 026-bug",
+      "measured": "Written after an audit found the column had zero checks and appeared nowhere in fixtures.json. The same audit found node 04 emitting it as null with NO null_reason on every Phase 1 run, while the CSV omitted the column entirely -- which the comment beside METRICS_NULLED_ON_BAIL had predicted in advance: 'a metric added to COLUMNS and forgotten here comes out null and unexplained'. It was added to COLUMNS and forgotten there.",
+      "expect": [
+        {
+          "check": "plddt_binder_in_complex",
+          "tolerance": 0.05,
+          "finding": "026-bug"
+        },
+        {
+          "check": "plddt_target",
+          "value": 85.0,
+          "tolerance": 0.05,
+          "finding": "§4"
+        }
+      ]
+    },
+    {
       "id": "merge-by-name-not-position",
       "harness": "shape=compact n=3 len=30 mutate=reverse-manifest stage=full mp=--shape identity --plddt-ramp 2.0",
       "tier": "ci",

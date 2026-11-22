@@ -531,17 +531,17 @@ thresholds, so a mislabelled control miscalibrates the whole workflow.
 
 ## Scope
 
-65 experiments, 56 distinct checks, all implemented, all invoked, none vacuous.
+66 experiments, 57 distinct checks, all implemented, all invoked, none vacuous.
 
 | Section | Cases | Phase 1 | Phase 2 | Blocked |
 |---|---|---|---|---|
 | `ingest` | 14 | 11 | 3 | — |
 | `predict` | 6 | 5 | 1 | — |
-| `scoring` | 22 | 15 | 7 | — |
+| `scoring` | 23 | 15 | 8 | — |
 | `rejections` | 11 | 9 | 2 | — |
 | `controls` (GPU) | 12 | 7 | 5 | 1 |
 
-So Phase 1's gate is 40 CI cases plus 7 GPU controls, and Phase 2 adds 13 CI cases and 5
+So Phase 1's gate is 40 CI cases plus 7 GPU controls, and Phase 2 adds 14 CI cases and 5
 controls. Nothing is blocked on the harness any more: the six generator shapes four
 `ingest` cases were waiting on are built, and the one case still blocked is `C5`, which
 needs real archived 037 designs that are not in this repo.
@@ -561,9 +561,9 @@ after the Phase 2 cases landed:
 
 | | |
 |---|---|
-| cases | **53 pass, 0 FAIL, 0 gap** of 53 |
-| checks | 56 named, 56 implemented, 56 invoked |
-| falsification | 54 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
+| cases | **54 pass, 0 FAIL, 0 gap** of 54 |
+| checks | 57 named, 57 implemented, 57 invoked |
+| falsification | 55 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
 | Gate A **in the image** | in flight against this code. The last image run — 47 pass, 0 FAIL, 6 gap of 53, 56/56, 51 falsified, 0 vacuous — tested the commit before Phase 2 and does not speak for it |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
@@ -575,6 +575,22 @@ it is about, which is the first run where that has been true. The five are liste
 "Known gaps" below with what each was waiting for and the four defects that came out of
 making them run — including one that would have degraded every complex prediction to a
 monomer, silently, on a real Silva run.
+
+**The 54th case exists because a column had no check.** `plddt_binder_in_complex` is
+rendered by node 05 and, until `binder-plddt-in-complex-is-the-binder`, was asserted by
+nothing and appeared nowhere in `fixtures.json`. It is sliced out of the complex's pLDDT
+array by the recorded chain order, so slicing the wrong block reports the *target's*
+confidence as the binder's — 026's defect by another route, and a number that reads as
+entirely ordinary (§8.6). The check re-slices the raw array itself rather than comparing a
+fill value, and refuses a case whose two blocks are within 1.0 pLDDT of each other,
+because a swapped slice passes that one.
+
+Writing it turned up a second defect in node 04, which its own source had predicted. The
+comment beside `METRICS_NULLED_ON_BAIL` reads "a metric added to COLUMNS and forgotten here
+comes out null and unexplained" — and `plddt_binder_in_complex` had been added to `COLUMNS`
+and forgotten there. On every Phase 1 run it came out `null` in the JSON with no reason
+attached while the CSV omitted the column altogether, which is the §8.7 case and the way a
+reader concludes a metric was measured and came back empty.
 
 **Gate A is only satisfied in `colabfold:2026_10_08`**, which is the only run that
 counts; the host figures above are a dry run and the suite says so in its own verdict. The suite prints `RUNNING IN colabfold:2026_10_08 -- this is the gate.` at the top

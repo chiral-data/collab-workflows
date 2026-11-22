@@ -209,8 +209,33 @@ LOW_TARGET_PLDDT_WARN = 70.0
 # metric added to COLUMNS and forgotten here comes out null and unexplained.
 METRICS_NULLED_ON_BAIL = (
     "sc_rmsd_A", "plddt_binder", "plddt_target", "iptm", "pae_interaction",
-    "ptm", "max_pae",
+    "ptm", "max_pae", "plddt_binder_in_complex",
 )
+
+# Phase 2's own metrics. The comment above COLUMNS says they are "null on a Phase 1 run,
+# where they are not merely unmeasured but meaningless" -- and that sentence has to be in
+# the ROW, not only in the source. plddt_binder_in_complex was added to COLUMNS and
+# forgotten here, and came out exactly as the comment beside METRICS_NULLED_ON_BAIL
+# predicted: null and unexplained, in the JSON, while the CSV omitted the column
+# altogether. Two representations of one fact disagreeing is how a reader concludes the
+# metric was measured and came back empty.
+INTERFACE_METRICS = ("plddt_binder_in_complex", "iptm", "pae_interaction", "plddt_target")
+
+
+def explain_unset_interface(row, null_reasons, score_interface):
+    """Every interface metric still None must say why. Nulls are explained or they lie."""
+    for metric in INTERFACE_METRICS:
+        if row.get(metric) is not None or null_reasons.get(metric):
+            continue
+        null_reasons[metric] = (
+            "score_interface is false, so this run predicted the binder alone. There is "
+            "no interface in a monomer prediction, so this is meaningless here rather "
+            "than merely unmeasured (§4)."
+            if not score_interface else
+            "no complex prediction was scored for this design, and nothing above said "
+            "why. This reason is the fallback and its presence is itself a defect: it "
+            "means a branch returned without explaining its own null (§8.7)."
+        )
 
 
 def fail(message):
@@ -686,7 +711,11 @@ def add_interface(entry, row, null_reasons, prediction, limits, gate):
     # do not describe the array, every slice below is of the wrong residues and each one
     # still produces a plausible number.
     if "plddt" not in scores:
-        null_reasons["plddt_target"] = f"'{scores_name}' carries no 'plddt' key"
+        # Both columns come out of this one array, so both are absent when it is, and both
+        # say so. Only plddt_target did at first, which left the other reported as simply
+        # not there (§8.7).
+        for metric in ("plddt_target", "plddt_binder_in_complex"):
+            null_reasons[metric] = f"'{scores_name}' carries no 'plddt' key"
     else:
         blocks = slice_by_order(
             scores["plddt"], chain_order, chain_lengths, f"'{scores_name}' plddt"
@@ -706,6 +735,16 @@ def add_interface(entry, row, null_reasons, prediction, limits, gate):
         binder = blocks.get("binder") or []
         if binder:
             row["plddt_binder_in_complex"] = round(sum(binder) / len(binder), 2)
+        else:
+            # Said, rather than left absent. The target block above records a reason when
+            # it is empty and this one did not, so a complex whose binder block could not
+            # be sliced produced a row with the column simply missing and nothing saying
+            # why -- §8.3's case and §8.7's. An absent metric is an absence with a reason
+            # attached, never a gap a reader is left to fill in.
+            null_reasons["plddt_binder_in_complex"] = (
+                f"'{scores_name}' has no binder block under chain order {chain_order} "
+                f"with lengths {chain_lengths}"
+            )
 
     row["iptm"] = float(scores["iptm"]) if "iptm" in scores else None
     if "iptm" in scores:
@@ -921,6 +960,7 @@ def main():
                 entry, row, null_reasons,
                 predictions.get((entry["design"], "cplx")), limits, gate_interface,
             )
+        explain_unset_interface(row, null_reasons, score_interface)
         gen = gen_rows.get(entry["design"])
         if gen:
             row["gen_compactness_ratio"] = gen.get("compactness_ratio")
