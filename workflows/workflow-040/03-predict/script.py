@@ -819,6 +819,14 @@ def main():
         )
         entry["elapsed_s"] = round(time.monotonic() - started, 1)
         entry["log"] = log_name
+        # Where that name is resolvable, said once per record rather than left to be
+        # inferred. The log is deliberately NOT a declared output of this node: declaring
+        # it would copy it into node 04's inputs, where nothing reads it, and a dependency
+        # that pulls inputs it does not read is how 037's node 03 ended up with two
+        # parents writing target.cif (§8.10, 7fba161c). So it stays here, and the record
+        # says so -- a pointer whose base nobody states is a pointer into the wrong
+        # directory for whoever follows it next.
+        entry["log_dir"] = "03-predict/outputs (this node's own, not copied downstream)"
         entry["saw_oom"] = saw_oom
 
         # Collected whether or not the run succeeded: 029 discarded ColabFold output

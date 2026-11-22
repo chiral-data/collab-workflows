@@ -111,25 +111,37 @@ def read_a3m(path):
     a comment at all -- it is cardinality information, and a reader that silently dropped
     it would turn a complex alignment into a single-chain one without saying so.
     """
+    with open(path, errors="replace") as handle:
+        return parse_a3m(handle, path)
+
+
+def parse_a3m(lines, where):
+    """The parser itself, over any iterable of lines. `where` only names the source.
+
+    Split out of read_a3m so the SERVER path never has to put what it fetched on disk in
+    order to read it. It used to write the downloaded bytes into ./outputs/_server.a3m and
+    delete the file afterwards -- a download parked, however briefly, inside this node's
+    own declared output directory, and left there for good if the node died in between.
+    Nothing needs it to be a file, so it is not one.
+    """
     records, name, chunks = [], None, []
     header = None
-    with open(path, errors="replace") as handle:
-        for raw in handle:
-            line = raw.strip()
-            if not line:
-                continue
-            if line.startswith("#"):
-                if header is None:
-                    header = line
-                continue
-            if line.startswith(">"):
-                if name is not None:
-                    records.append((name, "".join(chunks)))
-                name, chunks = line[1:].strip(), []
-                continue
-            if name is None:
-                fail(f"{path}: a sequence line appears before any '>' header: {line[:60]!r}")
-            chunks.append(line)
+    for raw in lines:
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("#"):
+            if header is None:
+                header = line
+            continue
+        if line.startswith(">"):
+            if name is not None:
+                records.append((name, "".join(chunks)))
+            name, chunks = line[1:].strip(), []
+            continue
+        if name is None:
+            fail(f"{where}: a sequence line appears before any '>' header: {line[:60]!r}")
+        chunks.append(line)
     if name is not None:
         records.append((name, "".join(chunks)))
     return header, records
@@ -328,11 +340,13 @@ def from_server(target, host, timeout_s):
             extracted = archive.extractfile(member)
             if extracted is None:
                 continue
-            scratch = os.path.join("./outputs", "_server.a3m")
-            with open(scratch, "wb") as handle:
-                handle.write(extracted.read())
-            _, records = read_a3m(scratch)
-            os.remove(scratch)
+            # Parsed in memory. The member's own name is never used as a path and nothing
+            # is extracted to disk, so a tar entry called ../../anything is just a member
+            # this loop skips or reads -- not a file it writes.
+            text = extracted.read().decode("utf-8", errors="replace")
+            _, records = parse_a3m(
+                text.splitlines(), f"the a3m member {member.name!r} of the server's tar"
+            )
             if records:
                 break
 
