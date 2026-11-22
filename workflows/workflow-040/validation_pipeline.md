@@ -943,6 +943,32 @@ Two practical rules come out of it:
   has no equivalent, and until it does, a Phase 2 verdict is uninterpretable in the
   direction that matters.
 
+**Both rules were then followed, and the error landed again anyway.** The real-MSA run's
+expectations were pre-registered with provenance, as the first rule asks. The primary claim
+held exactly — `plddt_target` 38.28 → 85.42 against §4's predicted 83.7. `iptm` still did
+not separate, because the **binder** was on the floor at 38.55, and the pre-registration
+had required only the *target* to be modelled.
+
+`8e4772a7`'s rule is **symmetric over the two chains**. The condition derived from it was
+not. It was derived from the symptom in front of me — run 1's floored target — rather than
+from the rule, so it could not tell "the scorer failed" from "the other chain is floored",
+which was the only distinction it existed to make.
+
+So a third rule, and it is the one with teeth:
+
+- **Derive a control's conditions from the rule, not from the last failure.** Writing the
+  premise down is necessary and does nothing to make it complete. If the governing finding
+  is symmetric, the condition must be symmetric; if it quantifies over both chains, so must
+  the check. The two weaker rules above are about recording assumptions. This one is about
+  where they come from, and it is the only one that would have caught this.
+
+Counted plainly: this is the same error three times, about a different chain each time —
+Phase 1's native binder (§9 finding 2), Phase 2's synthetic target (above), Phase 2's
+native binder (here). It is enforced now rather than remembered:
+`report_controls_phase2.py` applies the modelled-chain floor to both chains of every
+control and returns `NOT INTERPRETABLE` instead of a separation margin when either is
+below it.
+
 ## 9. Test plan
 
 **The suite itself is specified in `tests/README.md` and `tests/fixtures.json`, and it is
@@ -1243,10 +1269,20 @@ falsifiable, where five of them had been gaps from the day they were written. Ma
 those five run found four defects, the worst of which would have degraded every complex
 prediction to a monomer on a real Silva run while `silva validate` reported six jobs ok.
 
-**Gate B Phase 2 has now been run, and it is NOT MET.** `C8` (1BRS barnase native on
-barstar) scored `iptm` 0.0900 against `C9`'s 0.1700 — the scrambled negative beat the
-native positive, margin −0.0800. Four real multimer predictions completed on the GPU, so
-the interface path does produce numbers; those numbers just do not separate.
+**Gate B Phase 2 has been run twice and the verdict is `NOT INTERPRETABLE`.** Run 1,
+offline, gave `iptm` 0.0900 for the native positive against `C9`'s 0.1700. Run 2 fetched a
+real 3600-sequence target alignment from `api.colabfold.com` and gave 0.1900 against
+0.2500. Eight real multimer predictions across the two runs, so the interface path
+produces numbers; they do not separate.
+
+**Run 2 settled the target half and exposed the other one.** `plddt_target` went 38.28 →
+**85.42**, against §4's predicted 38.4 → 83.7 — the alignment did exactly what §4 said.
+But `plddt_binder_in_complex` is **38.55**, and §4 gives the binder no alignment by design
+because a de novo binder has no homologs. `C8`'s binder is native barnase, which Phase 1
+already measured at 43.09 unaligned. So the control is mis-specified in the mirror image of
+`C1`/`C2`, and 040's interface scoring is **unvalidated rather than disproven**: no Phase 2
+control has yet had both chains modelled. See §8.17's third rule, and
+`tests/reference/tier2-phase2-controls.md`.
 
 **The verdict is on the control, not the scoring, and the workflow said so itself.** Node
 04 warned in the run that both targets were modelled below 70 pLDDT (38.28 and 39.19).
@@ -1282,8 +1318,8 @@ half and §11.5.
 Carry `plddt_target` from the start even though Phase 1 has no interface metric for it to
 explain. It costs nothing, and it is the number that makes a Phase 2 result interpretable.
 
-**Phase 2 — interface scoring. Built; controls run and NOT MET on the control's own
-alignment. Plumbed and guarded, unvalidated as a score.**
+**Phase 2 — interface scoring. Built; controls run twice, verdict `NOT INTERPRETABLE`.
+Plumbed, guarded, exercised against a real alignment, and unvalidated as a score.**
 
 Adds `01b-align-target`, the `cplx_` path through nodes 02–05, and `iptm` +
 `pae_interaction`. Target-only MSA per §4, which is a decision, not an option left open.

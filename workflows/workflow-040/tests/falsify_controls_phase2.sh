@@ -57,8 +57,12 @@ json.dump({
     "designs": [
         {"design": "C8", "iptm": 0.90, "pae_interaction": 5.0,
          "plddt_target": 85.0, "plddt_binder_in_complex": 80.0},
+        # Both chains above the judge's 70.0 modelled floor for BOTH controls, or the
+        # run is NOT INTERPRETABLE and the honest-run check below fails. A scramble can
+        # be modelled confidently -- Phase 1 measured 115 alanines at 95.81 -- so a
+        # well-modelled negative with a bad interface is the right shape here.
         {"design": "C9", "iptm": 0.10, "pae_interaction": 25.0,
-         "plddt_target": 84.0, "plddt_binder_in_complex": 40.0},
+         "plddt_target": 84.0, "plddt_binder_in_complex": 75.0},
     ],
 }, open(sys.argv[1], "w"), indent=2)
 FAKE
@@ -149,7 +153,12 @@ mutate negative-row-removed \
 mutate duplicate-positive \
   'd["designs"].append(dict(rows["C8"]))' || RC=1
 
-# 7. The guard is never shown refusing. Not a mutation of the scores, so it is done here
+# 7. A chain is not modelled. Must come back NOT INTERPRETABLE rather than MET -- and
+#    rather than NOT MET, which is the conflation this check exists to break.
+mutate binder-chain-not-modelled \
+  'rows["C8"]["plddt_binder_in_complex"] = 38.55' || RC=1
+
+# 8. The guard is never shown refusing. Not a mutation of the scores, so it is done here
 #    rather than through mutate().
 echo "  --- and one that is not about the scores"
 COPY="$WORK/refusal-not-shown"

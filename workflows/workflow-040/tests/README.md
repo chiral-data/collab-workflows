@@ -113,20 +113,31 @@ Full numbers, provenance and findings in
   names the source.
 - Every number recorded here and in the reference file, including both chains' pLDDT.
 
-**Phase 2 (interface scoring):** adds `C7`–`C11`. **`C8` and `C9` have now been run on
-the GPU, and Gate B Phase 2 is NOT MET** — `iptm` 0.0900 for the native positive against
-0.1700 for the scrambled negative, margin −0.0800.
+**Phase 2 (interface scoring):** adds `C7`–`C11`. **`C8`/`C9` have been run twice on the
+GPU — once offline, once with a real 3600-sequence alignment — and Gate B Phase 2 is
+`NOT INTERPRETABLE`**, which is now a distinct verdict from NOT MET.
 
-**The cause is the control, not the scoring.** The offline target alignment
-`make_target_msa.py` builds is 9 rows, each differing from the query at exactly 1 of 87
-positions, so it carries no covariation; the target modelled at **38.28 pLDDT**, which is
-§4's recorded `single_sequence` receptor figure of 38.4. Per `8e4772a7` the interface
-can be no better than the worse-modelled chain, so both arms measured the same floor and
-the sign of the 0.09/0.17 difference is noise. Node 04 diagnosed this in the run itself.
+| run | target MSA | `plddt_target` | `plddt_binder_in_complex` | `iptm` C8 / C9 |
+|---|---|---|---|---|
+| 1, offline | 9 synthetic rows | 38.28 / 39.19 | 34.99 / 30.05 | 0.0900 / 0.1700 |
+| 2, `--allow-egress` | **3600 from the server** | **85.42 / 85.98** | 38.55 / 43.26 | 0.1900 / 0.2500 |
 
-**Separation is not measurable offline with a synthetic alignment.**
-`run_controls_phase2.sh` was built on the assumption that it was, and that assumption has
-now been refuted by measurement. Full numbers, the refuted premise and what it costs are in
+**Run 2 confirmed the primary pre-registered claim and still could not tell.**
+`plddt_target` went 38.28 → 85.42, which is §4's predicted 38.4 → 83.7 almost exactly. But
+`iptm` still does not separate, because the **binder** is now the floored chain at 38.55 —
+and that is Phase 1's measured figure for native barnase given no alignment (43.09; this
+run's own monomer arm says 43.47).
+
+**`C8`/`C9` are mis-specified in the mirror image of `C1`/`C2`.** §4 gives the binder no
+alignment by design, which is correct for a de novo design and wrong for native barnase.
+Phase 1 retired its native *binder* for this; Phase 2 fixed its native *target* and left
+the native binder in place. Third time, same error, different chain.
+
+**So 040's interface scoring remains unvalidated — not disproven.** No Phase 2 control has
+yet had **both** chains modelled, and the judge now refuses to report separation at all
+when either is below 70 pLDDT. What Phase 2 needs is a **designed** binder known to bind,
+with a solved complex: `C12`'s move one phase up. Full numbers, the pre-registration, the
+way its refutation condition triggered and why that condition was itself too weak are in
 `tests/reference/tier2-phase2-controls.md`.
 
 - **Phase 2 has no positive control capable of returning a meaningful interface number.**
@@ -139,7 +150,10 @@ now been refuted by measurement. Full numbers, the refuted premise and what it c
 - `C7` is the three-way MSA diagnostic that settles §4 by measurement. Two of its three
   arms are now in hand: `single_sequence` on a native chain gives 49.33 and 43.09 pLDDT,
   and an uninformative 9-row alignment gives 38.28 — i.e. the same thing, which is the
-  point. Only the full-MSA arm is missing, and it is the one that needs egress.
+  point. **The full-MSA arm is now in hand too**: run 2's 3600-sequence alignment gives
+  85.42, so §4's three-way comparison is complete on the target side — 38.4 unaligned,
+  38.28 on a synthetic alignment, 85.42 on a real one. §4's decision is measured, not
+  assumed.
 - Phase 2 does not merge if `C7` shows the target-only alignment failing to recover the
   full-MSA numbers — that is the §11.1 gate, and the answer is to re-make the §4 decision,
   not to patch around it.
@@ -192,8 +206,8 @@ read from:
 | Piece | Role |
 |---|---|
 | `run_controls_phase2.sh` | `C8` and `C9` in **one run, one target, two binders**: barnase native and barnase shuffled on barstar. Identical coordinates, identical composition, identical numbering; the sequence is the only difference, which is what makes it a control rather than two experiments. Runs node 01b, both prediction inputs, the multimer model on the GPU, and nodes 04–05 — and shows node 03 refusing `single_sequence` on the complex path before spending GPU time on the real one. |
-| `report_controls_phase2.py` | Judges Gate B Phase 2. `iptm` gates; `pae_interaction`, `plddt_target` and `plddt_binder_in_complex` are printed as diagnostics and do not, because no control has calibrated them. |
-| `falsify_controls_phase2.sh` | Seven mutations, each of which must be refused: the positive collapsing, the negative scoring as well as the positive, the separation inverting, the gating metric going missing, a control row vanishing, a control appearing twice, and the `single_sequence` refusal never being exercised. Checks the honest run passes first (§8.16), so on a real run it **aborts** while Phase 2 is NOT MET. `--synthetic` builds a fabricated passing tree so the judge can be shown refusing at all (§8.13); that tree's numbers are typed, not measured, and the file says so. |
+| `report_controls_phase2.py` | Judges Gate B Phase 2. **Applies a 70.0 pLDDT modelled-chain floor to both chains of every control first**, and returns `NOT INTERPRETABLE` (exit 2) without printing any separation margin when either is below it — because `8e4772a7` is symmetric and a margin read off a floored chain measures the floor. Otherwise `iptm` gates; `pae_interaction`, `plddt_target` and `plddt_binder_in_complex` are diagnostics, since no control has calibrated them. |
+| `falsify_controls_phase2.sh` | Eight mutations, each of which must be refused: the positive collapsing, the negative scoring as well as the positive, the separation inverting, the gating metric going missing, a control row vanishing, a control appearing twice, **a chain below the modelled floor** (which must come back `NOT INTERPRETABLE`, not MET and not NOT MET), and the `single_sequence` refusal never being exercised. Checks the honest run passes first (§8.16), so on a real run it **aborts** while Phase 2 cannot pass. `--synthetic` builds a fabricated passing tree so the judge can be shown refusing at all (§8.13); that tree's numbers are typed, not measured, and the file says so. |
 
 **What `C8`/`C9` can and cannot establish** — and this paragraph used to get it wrong, so
 the correction is left visible rather than tidied away.
@@ -550,8 +564,8 @@ first). They now carry a `measured` field saying so:
 | `C5` | 1 | real archived 037 designs | record the numbers — this is 040's first honest ranking | blocked: inputs not committed |
 | `C6` | 1 | a prediction killed at a short budget | the whole process tree dies and `nvidia-smi` shows the device freed | **met** — 2357 MiB held, killed at a 35 s budget, nothing surviving in a container that outlived the node, device back to 1 MiB |
 | `C7` | 2 | **4ZQK complex, three ways**: `single_sequence`, target-only MSA, full MSA — reading `iptm`, `pae_interaction` and **both** chains' pLDDT each time | settle §4 by measurement; the §11.1 gate | arm 1 of 3 in hand, from `C1`/`C2` |
-| `C8` | 2 | 1BRS barnase on barstar, native | good interface metrics | **run 2026-11-22; FAILED on an uninformative target MSA.** `iptm` 0.0900, target at 38.28 pLDDT. Needs egress |
-| `C9` | 2 | the same backbone, binder sequence scrambled | bad interface metrics | **run 2026-11-22; scored 0.1700, above the positive.** Same floor, same cause |
+| `C8` | 2 | 1BRS barnase on barstar, native | good interface metrics | **run twice 2026-11-22; `NOT INTERPRETABLE`.** Real 3600-seq MSA lifted the target to 85.42, but the binder is native barnase at 38.55 and §4 gives the binder no alignment. Mis-specified: needs a **designed** binder |
+| `C9` | 2 | the same backbone, binder sequence scrambled | bad interface metrics | **run twice; scored above the positive both times** (0.1700, then 0.2500). Reproducible, and a property of unaligned native barnase versus a scramble of it rather than of 040 |
 | `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused | not run. The CI case `cplx-input-missing-colon` now shows node 03 refusing this before the predictor starts, so what `C10` is left to establish is the half nobody can assert offline: what ColabFold actually returns for a colon-less complex |
 | `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was | not built |
 
@@ -624,8 +638,8 @@ after the Phase 2 cases landed:
 | Gate A **in the image** | **met on the full 54-case suite, complex path included** — 53 pass, 0 FAIL, 1 gap of 54, 58/58 checks, 56 falsified, 2 not in the tree, 0 vacuous. Evidence at `~/wf040-evidence/tier1-image-54case-final/`, with the tree's md5s recorded beside the verdict. The one gap is `sigterm_ignoring_child_killed`, by design |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
-| Gate B Phase 2 | **not met, and now measured**. `C8`/`C9` ran on the GPU: `iptm` margin −0.0800. The control's offline alignment floored the target at 38.28 pLDDT, so this is a verdict on the control, not on the scoring. `tests/reference/tier2-phase2-controls.md` |
-| Gate B Phase 2, falsified | 7 mutations, 7 refused — but against `--synthetic`, a fabricated passing tree, because no real passing run exists to mutate. A weaker record than Phase 1's, and it stays weaker until `C8`/`C9` get a real alignment |
+| Gate B Phase 2 | **`NOT INTERPRETABLE`**, measured twice. Run 2's real 3600-sequence alignment lifted `plddt_target` 38.28 → 85.42 as §4 predicted, but the **binder** is floored at 38.55 (native barnase, given no alignment by §4's design), so the interface is still capped and no margin means anything. A verdict on the control; 040's interface scoring is unvalidated, not disproven. `tests/reference/tier2-phase2-controls.md` |
+| Gate B Phase 2, falsified | 8 mutations, 8 refused, against `--synthetic` — a fabricated passing tree, because no real passing run exists to mutate. The eighth floors one chain and requires `NOT INTERPRETABLE` rather than MET or NOT MET. Still a weaker record than Phase 1's six against a genuinely passing run |
 | Gate B Phase 3 | not met. `C10`/`C11` partly covered; calibration not started |
 
 **The five complex-path gaps are closed.** Every case in the suite now reaches the thing

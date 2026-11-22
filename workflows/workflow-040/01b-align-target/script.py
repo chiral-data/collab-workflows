@@ -334,8 +334,9 @@ def from_server(target, host, timeout_s, forbidden):
 
     print(
         f"  NETWORK: submitting {target['n_residues']} target residues to {host}. "
-        "This is the only egress in the workflow. No designed sequence is an input to "
-        "this node.",
+        "This is the only egress in the workflow. The payload was checked for every "
+        "designed sequence in the inventory before this POST and carries none; the "
+        "binders ARE in this node's input, so that is a check, not an absence.",
         flush=True,
     )
 
@@ -552,8 +553,9 @@ def main():
     print(
         f"01b-align-target: {len(records)} sequence(s) "
         f"({len(records) - 1} homolog(s)) for a {target['n_residues']}-residue target, "
-        f"from {record['source']}. sha256={digest[:16]}. The binder is not aligned and "
-        f"is not an input to this node.",
+        f"from {record['source']}. sha256={digest[:16]}. The binder is not aligned "
+        f"(§4) and no designed sequence was in the payload, which is checked rather "
+        f"than assumed -- see assert_no_designed_sequence().",
         flush=True,
     )
     return 0

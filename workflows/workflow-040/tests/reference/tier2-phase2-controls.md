@@ -191,21 +191,181 @@ a real alignment lifts `plddt_target` past 70 **and** `iptm` still fails to sepa
 is a real possibility and it is written here so it cannot be quietly reinterpreted later:
 the diagnosis is a hypothesis with a stated refutation condition, not a conclusion.
 
-## Finding 3: what has to happen next, and why it needs the user
+## Run 2: the real alignment. The primary claim held; the control still cannot tell
 
-**`C8` and `C9` need a real target MSA, which needs one fetch from `api.colabfold.com`.**
+Run `~/wf040-controls-phase2/20261122-115101`, 2026-11-22, with `--allow-egress`. Node 01b
+submitted the 87-residue barstar target to `api.colabfold.com` and received **3600
+sequences (3599 homologs)**, sha256 `479c3311e183d652`, `source: server`,
+`network_used: true` — against run 1's 9 synthetic rows. Egress was scoped to node 01b;
+every other node stayed on `--network=none`.
 
-That is an outward-facing network call from the GPU host, so `run_controls_phase2.sh` will
-not make it without `--allow-egress`, which switches `PARAM_MSA_SOURCE` to `server` and
-opens `--network=bridge` for that one node only. The flag exists so that reaching the
-network is a decision somebody made, not a thing a test script did.
+| | `iptm` | `pae_interaction` | `plddt_target` | `plddt_binder_in_complex` |
+|---|---|---|---|---|
+| `C8` positive, native | 0.1900 | 20.8920 | **85.4200** | **38.5500** |
+| `C9` negative, scrambled | **0.2500** | 18.7060 | **85.9800** | **43.2600** |
 
-This is the user's call and has not been made. It is the same fetch `C7` was already
-waiting on, so `C7`, `C8` and `C9` now unblock together.
+Monomer arm, unchanged by the target alignment and reported for reproducibility:
 
-**Separation is not measurable offline with a synthetic alignment.** That sentence is the
-result of this run. An offline Phase 2 control is not a cheaper version of the real one; it
-is a measurement of the floor.
+| | `sc_rmsd_A` | `plddt_binder` | run 1 | Phase 1 |
+|---|---|---|---|---|
+| `C8` | 11.3239 | 43.47 | 11.5527 / 43.12 | `C2` 11.5737 / 43.09 |
+| `C9` | 16.9864 | 49.22 | 16.9880 / 49.19 | — |
+
+### Against the pre-registration, in the order it fixed
+
+**1. `plddt_target` > 70? YES, and almost exactly as predicted.** 38.28 → **85.42**. §4's
+table said 38.4 → 83.7 changing only `msa_mode` on a native complex. The real alignment
+did precisely what §4 said it would, on a different entry, two years of commits later.
+Finding 1's narrow diagnosis — that the 9-row synthetic a3m floored the target — is
+**confirmed by measurement**.
+
+**2. Does `iptm` separate? NO.** 0.1900 against 0.2500, margin −0.0600. The scramble again
+scores higher than the native, as it did in run 1 (0.0900 against 0.1700). Two independent
+runs, different target alignments, same sign.
+
+### My refutation condition triggered, and my pre-registration was too weak
+
+This file's pre-registration said, in as many words:
+
+> Finding 1 claims the uninformative alignment is why Phase 2 failed. That claim is wrong
+> if a real alignment lifts `plddt_target` past 70 **and** `iptm` still fails to separate.
+
+Both halves happened. By the letter of what was written before the run, finding 1's
+diagnosis is refuted and this is the first evidence against 040's interface scoring.
+
+**That condition was defective, and the defect is mine.** `8e4772a7`'s rule — the
+interface can be no better than the worse-modelled chain — is **symmetric over the two
+chains**, and the pre-registration applied it to the target only. It required one chain to
+be modelled and said nothing about the other. So it could not distinguish "the scorer
+failed" from "the other chain is on the floor", which is the single distinction the whole
+exercise existed to make.
+
+And the other chain is on the floor. **`plddt_binder_in_complex` is 38.55 and 43.26.**
+That is not a new number: Phase 1 measured native barnase at `single_sequence` as **43.09
+`plddt_binder`**, and this run's own monomer arm gives **43.47**. The binder is sitting at
+its own no-alignment floor, in isolation and in complex, to within a pLDDT point.
+
+So: writing the premise down was right and insufficient. **A premise can be written down
+and still be wrong in the same way the unwritten one was** — §8.17 recurring inside the
+correction for §8.17. What would have caught it is not more discipline about writing
+things down; it is deriving the condition from the rule (`8e4772a7` is symmetric, so the
+condition must be) rather than from the symptom in front of me (run 1's floored target).
+
+### Why the binder is floored, and why that is not a bug
+
+§4 gives the binder **no alignment at all**, by design: *a de novo binder has no homologs,
+and designed proteins are idealised*. `binder_aligned=False` in every run above. That is
+correct for the input class this workflow exists for.
+
+`C8`'s binder is **native barnase**. A native immunoglobulin-like domain cannot be folded
+from its sequence alone — which is Phase 1's finding 2, verbatim, about `C1`/`C2`. So
+`C8`/`C9` are mis-specified in the exact mirror image of the controls Phase 1 already
+retired: Phase 1 used a native **binder** as a positive and had to replace it with a
+designed one; Phase 2 then fixed its native **target** with an alignment and left the
+native binder in place.
+
+**Three times now, the same error about a different chain.** §8.17's two practical rules
+were both followed this round — the premise was written down, with provenance — and the
+error still landed, because the rules were about *recording* assumptions rather than about
+*deriving* them from what is already measured.
+
+### What this does and does not establish
+
+- **`plddt_target` is fixed, and the egress path works end to end.** 3600 real sequences,
+  the target modelled at 85, node 01b's guard shown refusing, the alignment's digest and
+  provenance recorded. That part of Phase 2 is done.
+- **040's interface scoring is still unvalidated — not disproven.** There has still never
+  been a Phase 2 control with **both** chains modelled. Nothing here licenses a statement
+  in either direction, and the judge now refuses to make one.
+- **The negative outscoring the positive is reproducible** across two runs and both
+  alignments. On current evidence that is a property of *native barnase given no
+  alignment* versus *a scramble of it*, not a property of 040. Phase 1's `C4` is the
+  precedent: 115 alanines scored 95.81, above the real design. A sequence encoding nothing
+  can be modelled confidently (§8.6).
+
+### The judge now distinguishes the two outcomes
+
+"NOT MET" was doing two jobs: *the scorer failed* and *this control cannot tell*. Run 1's
+verdict was briefly readable as the first when it was always the second, and that reading
+is what cost a day.
+
+`report_controls_phase2.py` now applies the modelled-chain floor to **both** chains of
+**every** control before it reports separation at all, and returns a distinct
+**NOT INTERPRETABLE** verdict with exit code 2 when a chain is below it. Re-judging run 2
+gives:
+
+> Gate B Phase 2: NOT INTERPRETABLE — this control cannot tell
+>   - `C8` `plddt_binder_in_complex` is 38.55, below the 70.0 floor, so that chain was not
+>     modelled and no interface number computed against it means anything (`8e4772a7`).
+>   - `C9` `plddt_binder_in_complex` is 43.26, below the 70.0 floor …
+
+Separation is not printed at all in that state, so there is no margin lying around to be
+quoted out of context. An eighth falsifier mutation (`binder-chain-not-modelled`) floors
+one chain and requires this verdict rather than MET **or** NOT MET.
+
+**That change introduced a defect of its own, caught by running it.** The new verdict
+printed in an output shape of its own, and `falsify_controls_phase2.sh` quotes the first
+`NOT MET:`-or-`  - ` line as the reason a mutation was caught — so the eighth mutation was
+recorded as refused with an **empty reason**, a pass that looks like a pass and says
+nothing. The same thing had already happened once in this script, for the early-exit
+versus bulleted shapes. Two output formats were one too many; a third was the point to fix
+the writer instead of adding a third grep to the reader, so every refusal this judge makes
+now prints as a `  - ` bullet.
+
+### What Phase 2's positive control actually requires
+
+Stated as a specification, because this is the third control to fail on it:
+
+**Both chains must be modellable under the flags §4 mandates** — the target with an
+alignment, the binder with **none**. That means the binder must be a **designed** sequence,
+not a native one. It is Phase 1's `C12` move, one phase up: `C12` recovered its own
+backbone at 0.93 Å / 95.05 pLDDT from sequence alone precisely because it was designed.
+
+And for a *positive*, the designed binder must be one that is **known to bind** its target,
+with a solved complex to measure against. That is a stronger requirement than any control
+in this repo has met:
+
+- `C12` is designed but has **no interface at all**.
+- `C5`'s 037 designs are designed, but nothing establishes that any of them binds, so they
+  cannot serve as a positive — only as unknowns.
+- `C8`/`C9` have a real interface but a native binder.
+
+So the next step is identifying a deposited complex whose binder chain is an
+experimentally validated de novo design and whose target is native. That is a literature
+and PDB question, not a code question, and it is the first thing Phase 2 needs. Until such
+an entry is in hand and probed the way `make_controls.py --list` probes every other entry,
+Phase 2 has no positive control and Gate B Phase 2 cannot be met by any amount of GPU time.
+
+## Finding 3: the egress path, now exercised
+
+**`C8` and `C9` needed a real target MSA, which needed one fetch from
+`api.colabfold.com`.** That fetch has been made, with `--allow-egress`, and run 2 above is
+its result.
+
+What crossed the boundary: **one POST carrying the 87-residue barstar target sequence**,
+public deposited protein from 1BRS. `--allow-egress` switches `PARAM_MSA_SOURCE` to
+`server` and opens `--network=bridge` **for node 01b only** — every other node in the run
+stayed on `--network=none`, and the script resets it immediately after. The flag exists so
+that reaching the network is a decision somebody made rather than something a test script
+did on its own.
+
+Recorded provenance: 3600 sequences, `source: server`, `network_used: true`, sha256
+`479c3311e183d652`, `host_url_passed: false`. The alignment's digest is in
+`target_alignment.json` so the run can be told apart from an offline one without reading
+the log.
+
+**And the boundary was checked before it was used.** The claim that a designed binder could
+never cross it was false — three files said the designed sequences were not inputs to node
+01b, and `design_inventory.json` carries `binder_sequence` for every design and is 01b's
+only input. It is now enforced by `assert_no_designed_sequence()` immediately before the
+POST, with the fixture case `egress-refuses-a-designed-sequence` showing it refuse. See
+that commit; it is the one piece of this work that was about disclosure rather than about a
+number.
+
+**Separation is not measurable offline with a synthetic alignment.** That sentence is run
+1's result and it stands. An offline Phase 2 control is not a cheaper version of the real
+one; it is a measurement of the floor. Run 2 then showed that a real alignment is
+*necessary and not sufficient*.
 
 ## Finding 4: a real internal gap, on real deposited coordinates
 

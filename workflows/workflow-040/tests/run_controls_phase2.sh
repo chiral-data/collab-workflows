@@ -122,7 +122,10 @@ MSA_SOURCE="file"
 if [ "$ALLOW_EGRESS" = "1" ]; then
   MSA_SOURCE="server"
   say "EGRESS ALLOWED: node 01b will align the TARGET against api.colabfold.com"
-  echo "  The binder is not an input to 01b, so no designed sequence can be sent."
+  echo "  One sequence goes out: the fused TARGET chain, public protein from the PDB."
+  echo "  The designed binders ARE in 01b's input (they ride in design_inventory.json);"
+  echo "  assert_no_designed_sequence() refuses the POST if one is in the payload, and"
+  echo "  fixture case egress-refuses-a-designed-sequence shows it refusing."
 fi
 
 say "037 node 04: the real design_metrics.json producer"

@@ -149,6 +149,63 @@ def main(argv):
               "passed a deleted provenance file while refusing a partial one (§8.13).")
         return 1
 
+    # ------------------------------------------------- is this run interpretable at all?
+    # 8e4772a7: the interface can be no better than the WORSE-modelled of the two chains.
+    # That rule is SYMMETRIC, and until this check existed nothing enforced it on either
+    # chain. Both Phase 2 runs to date were capped by a chain nobody had required to be
+    # modelled:
+    #
+    #   run 1 (synthetic alignment)  the TARGET at 38.28 -- §4's single_sequence figure
+    #   run 2 (real 3600-seq MSA)    the BINDER at 38.55 -- native barnase, given no
+    #                                alignment by §4's design, which is correct for a
+    #                                DESIGNED binder and wrong for this control
+    #
+    # Run 2's pre-registration got this half right: it required plddt_target > 70 and said
+    # nothing about the binder, so a symmetric rule was applied to one side. The floored
+    # binder was then found by reading the numbers rather than by any check (§8.17 again,
+    # and the second time in the same control).
+    #
+    # So NOT MET is split in two. A run whose chains are not modelled says NOTHING about
+    # separation, and reporting that as NOT MET invites exactly the reading that cost this
+    # workflow a day -- that 040 cannot score an interface. "This control cannot tell" and
+    # "the scorer failed" are different findings with different remedies, so they get
+    # different words and different exit codes.
+    MODELLED_FLOOR = 70.0
+    CHAINS = ("plddt_target", "plddt_binder_in_complex")
+    floored = []
+    for name in list(POSITIVE) + list(NEGATIVE):
+        for column in CHAINS:
+            value = number(rows[name], column)
+            if value is None or value < MODELLED_FLOOR:
+                floored.append((name, column, value))
+
+    if floored:
+        print("\n" + "=" * 78)
+        print("Gate B Phase 2: NOT INTERPRETABLE -- this control cannot tell")
+        # EVERY refusal this judge makes prints as a "  - " bullet, this one included.
+        # falsify_controls_phase2.sh quotes the first such line as the reason a mutation
+        # was caught. When NOT INTERPRETABLE was first added with an output shape of its
+        # own, the falsifier recorded that mutation as refused with an EMPTY reason: a
+        # pass that looks like a pass and tells nobody what was caught. The same thing had
+        # already happened once, for the early-exit versus bulleted shapes. Two formats
+        # were one too many and a third was the point to stop adding greps to the reader
+        # and standardise the writer instead.
+        for name, column, value in floored:
+            shown = "NOT MEASURED" if value is None else f"{value:.2f}"
+            print(f"  - {name} {column} is {shown}, below the {MODELLED_FLOOR:.1f} "
+                  "floor, so that chain was not modelled and no interface number "
+                  "computed against it means anything (8e4772a7).")
+        print("  Separation is not reported, because a chain that was not modelled caps "
+              "the interface")
+        print("  metrics regardless of the design (8e4772a7), so any margin read off them "
+              "would be a")
+        print("  measurement of the floor. This is NOT a verdict on 040's interface "
+              "scoring: it is a")
+        print("  statement that this control cannot produce one. See")
+        print("  tests/reference/tier2-phase2-controls.md.")
+        print("=" * 78)
+        return 2
+
     # ---------------------------------------------------------------- separation
     print("\nseparation -- the worst positive against the best negative")
     verdict_lines = []
