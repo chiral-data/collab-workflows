@@ -84,7 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     and then warned that the ensemble had collapsed and to check the mode. `pairwise_rmsd` now
     carries `n_pairs: 0` with null statistics, node 05 states that a spread needs two frames,
     and node 06's tile reads *n/a, needs 2+ frames*. Measured on a GPU: 1UBQ returns one frame
-    at Rg 1.1616 nm and the bundled Trp-cage 1L2Y one at 0.7146 nm against 0.697 expected,
+    at Rg 1.1616 nm and the bundled Trp-cage 1L2Y one at 0.7146 nm against 0.6868 expected,
     both physical under `high_quality` checking. One frame from an *equilibrium* run is still
     a wasted run, and the spurious warning was the only thing that had said so, so node 03
     warns before the GPU time is spent and node 05's message is keyed off the mode node 03
@@ -113,6 +113,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     `check_physicality` call and the `.save()` were in one `try`, so a check that succeeded
     and then failed to write left `physicality_checked: true` with a pass count in the
     manifest beside a JSON file declaring the verdict unavailable.
+  - Documentation corrections, all against re-measured values: the globular-scaling
+    expectation for a 20-residue chain is 0.6868 nm, not 0.697; 1BNA is 24 tokens (a B-DNA
+    dodecamer duplex), not 69; 2ZTA's Rg is 1.41x the scaling, not 1.39x. The campaign table
+    had been quoting token counts as residue counts, which is what put the wrong expectations
+    in it — tokens are one per polymer residue and one per *ligand atom*, so 5PTI is 65 tokens
+    over 58 residues. Measured one code at a time on 5PTI: `PO4` costs five tokens, `UNX` and
+    `DOD` one each, and the file's 63 D2O molecules over 189 atom rows arrive as a single
+    `DOD` component worth a single token — so node 01's "1 solvent component" warning now says
+    it counts components rather than waters, since what is kept is a stray component and not a
+    solvent shell.
+    1.5244 nm over 4 clusters (a parallel coiled coil, so 1.41× the globular scaling is the fold
   - `tests/`: a fixture suite over seven real RCSB entries (`tests/README.md`), split into an
     offline driver (`run_fixtures.sh`: unit checks, nodes 01-02 plus node 03 `--dry-run`,
     refusals and their counter-cases, and nodes 04-06 over deterministic ensembles) and a GPU
@@ -155,7 +166,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Measured on an RTX 3060 Ti (8 GB, sm_86, driver 580.178.04, 7.66 GiB usable), 8 samples per
     system in one batch: 1UBQ 31.2 s with 8/8 frames physical, Rg 1.1597 ± 0.0056 nm against an
     experimental 1.17 nm and max pairwise C-α RMSD 0.2204 nm; 5PTI Rg 1.1214 nm; 2ZTA Rg
-    1.5244 nm over 4 clusters (a parallel coiled coil, so 1.39× the globular scaling is the fold
+    1.5244 nm over 4 clusters (a parallel coiled coil, so 1.41× the globular scaling is the fold
     rather than a failure); 1BNA, which has no protein chain, through all six nodes on the
     all-atom fallback; and 1CLL Rg 1.5677 nm with max pairwise RMSD 1.3682 nm over 8 clusters on
     a 148-C-α selection that excludes its four calcium ions — calmodulin's lobes pivot about a

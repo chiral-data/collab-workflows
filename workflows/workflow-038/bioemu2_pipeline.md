@@ -252,7 +252,7 @@ Image name `bioemu2:2026_11_20`. The repo's shared-image CI
    the 7.0 floor and the V100 claim are real rather than inherited — and `sm_100` is absent,
    which is the B200 exclusion. The pipeline has been run end to end on an 8 GB RTX 3060 Ti
    (sm_86, driver 580.178.04, 7.66 GiB usable), 8 samples in one batch: 1UBQ (76 tokens,
-   31.2 s), 5PTI (65), 2ZTA (72), 1BNA (69) and 1CLL (155) all complete; **1AKE (542 tokens)
+   31.2 s), 5PTI (65), 2ZTA (72), 1BNA (24) and 1CLL (155) all complete; **1AKE (542 tokens)
    and 1A3N (746) run out of memory**, with node 03's own OOM message and advice. The useful
    finding is the gap between that and upstream's estimate, which node 03 prints: it gave 33
    for 542 tokens and 19 for 746, both at least four times optimistic on this card. The formula
@@ -379,14 +379,17 @@ requires.
    miniprotein with a single tryptophan cage is not obviously an easy case for a bond-geometry
    check.
 
-   **Measured, and it passes.** 1L2Y returns one frame at Rg 0.7146 nm against 0.697 expected
+   **Measured, and it passes.** 1L2Y returns one frame at Rg 0.7146 nm against 0.6868 expected
    for 20 residues, and 1UBQ in the same mode returns 1.1616 nm against an equilibrium mean of
    1.1597 — compact in both cases. `check_physicality` ran in `high_quality` mode and wrote one
    passing record each, so no check failed and there is no first failure to report. Running it
    also found the defect the gate existed to find, which was not in the model: node 05 reported
    a pairwise spread of `0.0` over zero pairs and then warned that the ensemble had collapsed,
    on the configuration this gate recommends. The statistics are now null with `n_pairs: 0`,
-   and `single-frame-ensemble-has-no-spread` in `tests/fixtures.json` holds the line.
+   and two fixtures in `tests/fixtures.json` hold the line:
+   `single-frame-structure-run-has-no-spread`, which requires the calm explanation, and
+   `single-frame-equilibrium-run-is-warned-about`, which requires the warning — because the
+   same single frame is the right answer in one mode and a wasted run in the other.
 4. The ground truth worth having is upstream's own example: **adenylate kinase (1AKE)** in
    equilibrium mode should sample both the open and closed lobe conformations. If the ensemble
    shows only one, sampling is broken in a way no smaller test would reveal.

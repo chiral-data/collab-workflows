@@ -183,16 +183,25 @@ campaigns on the same card returned every Rg, every max pairwise RMSD and every 
 identical to the digit, so the seed reproduces a run rather than merely labelling one — which
 is worth knowing before reading any difference between two runs as a result.
 
-| System | Tokens | Result |
-|---|---|---|
-| 1UBQ | 76 | Rg 1.1597 nm (expected 1.16, experimental 1.17), max pairwise C-α RMSD 0.2204 nm, 1 cluster, 8/8 physical, 31.2 s |
-| 5PTI | 65 | Rg 1.1214 nm (expected 1.04), max RMSD 0.1698 nm, 1 cluster, 8/8 physical |
-| 2ZTA | 72 | Rg 1.5244 nm (expected 1.10), max RMSD 0.3342 nm, **4 clusters** — a parallel coiled coil is elongated, so 1.39× the globular scaling is the fold, not a failure |
-| 1BNA | 69 | Rg 1.3226 nm, max RMSD 0.0623 nm, 492-atom all-atom selection — the no-protein fallback, exercised end to end |
-| 1CLL | 155 | Rg 1.5677 nm (expected 1.48), max RMSD **1.3682 nm** over **8 clusters**, 148-C-α selection with the 4 calcium ions excluded. Calmodulin's two lobes pivot about a flexible central helix, so a broad multi-state ensemble is the literature answer — and the contrast with ubiquitin's single 0.22 nm cluster is the closest thing here to a scientific control. It is also the system that needed a C compiler in the image, which 1UBQ, 5PTI and 2ZTA did not |
-| 1AKE | 542 | **out of memory, at batch 8 and again at batch 1**, where upstream's estimate said 33 would fit. Both attempts died on the same 1.06 GiB allocation |
-| 1A3N | 746 | **out of memory, at batch 8 and again at batch 1**, estimate 19; the same 1.46 GiB allocation both times. Node 02's paired-alignment path works against the live server even so: `paired: true`, unpaired depths 4522/5023 per chain and a paired alignment of 8794 rows that is the same depth on all four chains, as a positionally paired alignment must be, and node 01 measured 746 tokens |
-| 1UBQ, propagated | 76 | The time-lagged path, run for real: 8 frames at lag 1.0 ns, 601 atoms unchanged, 8/8 physical, Rg 1.1628 nm against 1.1597 before propagation and spread 0.1943 nm against 0.2204. Propagating a rigid fold by 1 ns should move it slightly and should not unfold it, and that is what the numbers say. It is a weak test of the dynamics and a real test of the plumbing — nothing else in either suite runs `propagate_with_embeddings` |
+The two counts below are different quantities and the table keeps them apart: tokens are what
+the GPU pays for (one per polymer residue, one per *ligand atom*), while the Rg scaling is a
+relation over **protein residues**. Reading one for the other is what put a wrong expectation
+in this table — 5PTI is 65 tokens and 58 residues, 2ZTA 72 and 66. Where two residue counts
+appear, the first is the standard amino acids and the second the entity sequence: 2ZTA's
+entity is 68 residues, two of which are `ACE` caps rather than amino acids, and the scaling
+relation is over the 66 that are. `check_radius_of_gyration` uses the standard count for
+exactly that reason.
+
+| System | Tokens | Protein residues | Result |
+|---|---|---|---|
+| 1UBQ | 76 | 76 | Rg 1.1597 nm (expected 1.14, experimental 1.17), max pairwise C-α RMSD 0.2204 nm, 1 cluster, 8/8 physical, 31.2 s |
+| 5PTI | 65 | 58 | Rg 1.1214 nm (expected 1.03, ratio 1.09), max RMSD 0.1698 nm, 1 cluster, 8/8 physical |
+| 2ZTA | 72 | 66 of 68 | Rg 1.5244 nm (expected 1.08), max RMSD 0.3342 nm, **4 clusters** — a parallel coiled coil is elongated, so 1.41× the globular scaling is the fold, not a failure |
+| 1BNA | 24 | 0 | Rg 1.3226 nm, max RMSD 0.0623 nm, 492-atom all-atom selection — the no-protein fallback, exercised end to end. 24 tokens for a B-DNA dodecamer duplex: 12 nucleotides per strand, and no Rg expectation, because the globular relation is for proteins and the check skips it |
+| 1CLL | 155 | 148 | Rg 1.5677 nm (expected 1.47, ratio 1.07), max RMSD **1.3682 nm** over **8 clusters**, 148-C-α selection with the 4 calcium ions excluded. Calmodulin's two lobes pivot about a flexible central helix, so a broad multi-state ensemble is the literature answer — and the contrast with ubiquitin's single 0.22 nm cluster is the closest thing here to a scientific control. It is also the system that needed a C compiler in the image, which 1UBQ, 5PTI and 2ZTA did not |
+| 1AKE | 542 | 214 per chain, 428 modelled | **out of memory, at batch 8 and again at batch 1**, where upstream's estimate said 33 would fit. Both attempts died on the same 1.06 GiB allocation |
+| 1A3N | 746 | 574 | **out of memory, at batch 8 and again at batch 1**, estimate 19; the same 1.46 GiB allocation both times. Node 02's paired-alignment path works against the live server even so: `paired: true`, unpaired depths 4522/5023 per chain and a paired alignment of 8794 rows that is the same depth on all four chains, as a positionally paired alignment must be, and node 01 measured 746 tokens |
+| 1UBQ, propagated | 76 | 76 | The time-lagged path, run for real: 8 frames at lag 1.0 ns, 601 atoms unchanged, 8/8 physical, Rg 1.1628 nm against 1.1597 before propagation and spread 0.1943 nm against 0.2204. Propagating a rigid fold by 1 ns should move it slightly and should not unfold it, and that is what the numbers say. It is a weak test of the dynamics and a real test of the plumbing — nothing else in either suite runs `propagate_with_embeddings` |
 
 Three of those are findings rather than results. The C compiler is a runtime dependency of
 triton's kernel launcher that `python:3.12-slim` does not carry, and the first system to need
@@ -317,7 +326,7 @@ can see that; `len(residue_rmsf) == 144` can.
 | 1A3N | haemoglobin, 4 chains over 2 sequences, 4 haems | a paired alignment **is** due; the heteromer path; cofactors at the interface |
 | 1AKE | adenylate kinase, 2 chains, AP5A inhibitor | upstream's own example and a real two-state enzyme, chosen as the case where the ensemble should be interesting rather than merely well formed. At 542 tokens it does not fit the 8 GB reference card at any batch size, so on this hardware it is an input-measurement and failure-reporting case, and 1CLL carries the interesting ensemble instead |
 | 1BNA | B-DNA dodecamer, no protein chain | no alignment is due and none must be demanded — the counter-case to the staging guard |
-| 5PTI with `exclude_ligands=UNX,DOD` | the same entry, placeholder and heavy water dropped | node 01's own warnings name this parameter as the remedy, and nothing had ever run it. Measured: 4 chains and 65 tokens become 2 chains and 63, with `PO4` surviving and the two excluded codes gone — one token each, which is the arithmetic the check asserts |
+| 5PTI with `exclude_ligands=UNX,DOD` | the same entry, placeholder and heavy water dropped | node 01's own warnings name this parameter as the remedy, and nothing had ever run it. Measured: 4 chains and 65 tokens become 2 chains and 63, with `PO4` surviving and the two excluded codes gone — one token each, which is the arithmetic the check asserts. One token each despite the file holding 63 D₂O molecules over 189 atom rows: the loader presents them as a single `DOD` component, so what gets sampled is not the solvent shell |
 | 5PTI with `include_ligands=false` | the same entry as an apo protein | the stronger assertion: with every component dropped the token count has to fall to the polymer residue count, and it does — 58 and 58 |
 | ubiquitin from a bare `sequence` | the raw-sequence input path, no file staged | three of node 01's four advertised inputs had never been run. With no file to parse and no entity tables to read, the length of the string is the whole truth: one chain, 76 residues, 76 tokens, no components, and the chain's stated sequence equal to the input |
 

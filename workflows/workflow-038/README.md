@@ -379,6 +379,16 @@ Measured on real entries: 1CLL carries an ethanol beside its four structural cal
 `DOD` — deuterated water, because it is a neutron structure, and upstream omits waters written
 as HOH but not those written as DOD.
 
+A component's cost is one token **per atom**, not one per component, so the filters are worth
+more than their component count suggests. 5PTI measured one code at a time: 58 tokens for the
+protein alone, 63 with the phosphate (`PO4`, five atoms), 64 with either the placeholder or the
+heavy water, and 65 with all three. The `UNX` and the `DOD` are one token each — but the file
+holds 63 D₂O molecules over 189 atom rows, which bioemu2's loader presents as a single `DOD`
+component worth a single token. So the sampled system is not carrying that solvent shell, and
+the warning's "1 solvent component" is a count of components, not of waters. Worth knowing
+before reading `exclude_ligands=DOD` as freeing much: on this entry it frees one token. The
+phosphate is the expensive one.
+
 `exclude_ligands` takes CCD codes, comma separated, and drops those while keeping the rest:
 `exclude_ligands=EOH,DOD`. It cannot be combined with `include_ligands=false`, which already
 drops everything; the node refuses that combination rather than ignoring one of them. Node 01
@@ -400,7 +410,7 @@ bare sequence, which declare their own components.
 **Test vs production:** Leave at `equilibrium`. Use `structure` with `num_samples = 1` as the
 cheapest end-to-end correctness check. Measured on an 8 GB card: 1UBQ returns one frame at
 Rg 1.1616 nm (its equilibrium mean is 1.1597) and the bundled Trp-cage 1L2Y one at 0.7146 nm
-against 0.697 expected for 20 residues — compact in both cases, with `check_physicality` run
+against 0.6868 expected for 20 residues — compact in both cases, with `check_physicality` run
 in `high_quality` mode and one record written. A single-frame run reports no pairwise spread
 and no cluster structure worth the name, which is correct and not a failure.
 
@@ -727,7 +737,7 @@ Rg 1.1597 ± 0.0056 nm against an experimental 1.17 nm.
   exclusion.
 - **VRAM:** the limit is the **token count**, not the sample count. Measured on an 8 GB RTX
   3060 Ti (sm_86, 7.66 GiB usable): 1UBQ (76 tokens, 31.2 s), 5PTI (65), 2ZTA (72) and 1BNA
-  (69) sample 8 in one batch in well under a minute, and 1CLL (155) samples. 1AKE (542 tokens)
+  (24) sample 8 in one batch in well under a minute, and 1CLL (155) samples. 1AKE (542 tokens)
   and 1A3N (746) **run out of memory at batch 8 and again at batch 1** — each time on the same
   allocation, 1.06 GiB and 1.46 GiB respectively — so on this card lowering the batch does not
   move the ceiling at all. Upstream's own estimate, which node 03 prints, said 33 and 19 would

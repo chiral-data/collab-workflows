@@ -466,8 +466,11 @@ def main():
         print(
             f"WARNING: this system contains {count} solvent component(s) {solvent}. BioEmu2 omits "
             "waters written as HOH, but a neutron structure writes them as DOD — deuterated "
-            "water — and those are kept and sampled as ligand tokens. Drop them with "
-            f"exclude_ligands={','.join(solvent)} unless you want the solvent modelled.",
+            "water — and those are kept and sampled as ligand tokens. That count is of "
+            "components, not of molecules: 5PTI's 63 D2O molecules arrive here as one DOD "
+            "component worth one token, so this is a stray component in the system rather than "
+            "a solvent shell around it. Drop them with "
+            f"exclude_ligands={','.join(solvent)} if you did not mean to sample solvent.",
             flush=True,
         )
 
