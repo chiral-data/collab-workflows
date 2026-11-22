@@ -468,6 +468,7 @@ class Case:
         (§8.13).
         """
         self.feed("nalign")
+        self.mutate("nalign-inputs")
         if self.wants_interface():
             self.tool("target-msa", TARGET_MSA, [
                 self.path("nalign", "inputs", "design_inventory.json"),
@@ -776,12 +777,42 @@ def _mutate_strip_colon(case):
             f"verified them: {touched}")
 
 
+def _mutate_target_is_binder(case):
+    """Put a designed sequence into the payload node 01b would send.
+
+    No generator shape produces this and none should: a target chain that IS the designed
+    binder is a state the workflow forbids upstream. That is exactly the argument
+    `sequence-outside-alphabet` makes -- the only way to show a guard refusing is to reach
+    it, and the only way to reach this one is to construct the state it exists for
+    (\u00a78.13).
+
+    Every design's target is rewritten, not just the first, because `target_of()` refuses a
+    batch whose designs disagree about their target and would stop there instead -- a
+    refusal for the wrong reason, which is worse than none (\u00a78.4).
+    """
+    path = case.path("nalign", "inputs", "design_inventory.json")
+    with open(path) as handle:
+        inventory = json.load(handle)
+    binder = inventory["designs"][0]["binder_sequence"]
+    for row in inventory["designs"]:
+        for chain in row.get("target_chains") or []:
+            chain["sequence"] = binder
+            chain["residue_ids"] = list(range(1, len(binder) + 1))
+            chain["n_residues"] = len(binder)
+            chain["gaps"] = []
+    with open(path, "w") as handle:
+        json.dump(inventory, handle, indent=2)
+    return (f"every target_chains[].sequence := binder_sequence of "
+            f"{inventory['designs'][0]['design']!r} ({len(binder)} residues)")
+
+
 MUTATIONS = {
     "chain-c": ("n1-inputs", _mutate_chain_c),
     "bad-letter": ("n2-inputs", _mutate_bad_letter),
     "drop-ca": ("n2-inputs", _mutate_drop_ca),
     "strip-colon": ("n3-inputs", _mutate_strip_colon),
     "reverse-manifest": ("n4-inputs", _mutate_reverse_manifest),
+    "target-is-binder": ("nalign-inputs", _mutate_target_is_binder),
 }
 
 

@@ -786,7 +786,7 @@
       },
       "prediction": "a complex whose two chains carry deliberately far-apart pLDDT: target 85.0 over 60 residues, binder 25.0 over 30",
       "why": "plddt_binder_in_complex is a NEW column that node 05 renders and, until this case, nothing checked. It is the binder's confidence in context, sliced out of the complex's pLDDT array by the recorded chain_order and chain_lengths. Slice the wrong block and the TARGET's confidence is reported as the binder's -- 026's defect by a different route, and a number that looks entirely ordinary (8.6). The two fills are 60 pLDDT apart on purpose: with equal fills a swapped slice passes, and the check refuses a case whose blocks it cannot tell apart.",
-      "pins": "§8.6, 026-bug",
+      "pins": "\u00a78.6, 026-bug",
       "measured": "Written after an audit found the column had zero checks and appeared nowhere in fixtures.json. The same audit found node 04 emitting it as null with NO null_reason on every Phase 1 run, while the CSV omitted the column entirely -- which the comment beside METRICS_NULLED_ON_BAIL had predicted in advance: 'a metric added to COLUMNS and forgotten here comes out null and unexplained'. It was added to COLUMNS and forgotten there.",
       "expect": [
         {
@@ -798,7 +798,7 @@
           "check": "plddt_target",
           "value": 85.0,
           "tolerance": 0.05,
-          "finding": "§4"
+          "finding": "\u00a74"
         }
       ]
     },
@@ -1151,6 +1151,22 @@
       },
       "expect_ok": true,
       "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity"
+    },
+    {
+      "id": "egress-refuses-a-designed-sequence",
+      "tier": "ci",
+      "phase": 2,
+      "name": "the only node with network access refuses to send a designed sequence",
+      "source": "make_designs.py shape=compact, then design_inventory.json rewritten so the target chain IS the binder",
+      "why": "Node 01b is the one node in this workflow permitted egress, and until this case existed the reason to believe a designed binder could never cross it was a COMMENT. job.toml, the module docstring and tests/README.md all said the designed sequences were not inputs to the node, and that this made a leak structurally impossible rather than a promise about the code. That was false: design_inventory.json carries binder_sequence for every design and is 01b's only input. The binder stayed out of the payload because target_of() returns target-derived fields and from_server() reads target['sequence'] -- true, and one edit away from not being true, in the only place in the workflow that opens a socket. A de novo binder is unpublished work and the MSA server is a third party, so this is the one guard in 040 whose failure mode is disclosure rather than a bad number.",
+      "pins": "\u00a78.4, \u00a78.13",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true",
+        "PARAM_MSA_SOURCE": "server"
+      },
+      "expect_error": "contains the designed sequence of",
+      "measured": "The fixture nodes run under docker with no network at all, so a node that reached the socket would fail with a connection error. Requiring the REFUSING TO SEND message by name is therefore also the proof that the guard fired BEFORE the POST rather than the network doing the work -- the two failures are not distinguishable by exit code alone (\u00a78.3).",
+      "harness": "shape=compact n=1 len=10 stage=ingest mutate=target-is-binder"
     }
   ],
   "_controls_comment": "Tier 2. These need a GPU and cannot run in CI; they are run by hand on the GPU host with tests/run_controls.sh, judged by tests/report_controls.py and the judge is attacked by tests/falsify_controls.sh. Measured numbers live in tests/reference/tier2-phase1-controls.md. They are the only cases that can falsify the SCORING rather than the plumbing, and they are what calibrates the thresholds in validation_pipeline.md \u00a77. REVISED after the first run: the positive control is C12, a DESIGNED sequence on an idealised backbone, not the native complexes C1/C2. Natives are predicted at msa_mode=single_sequence (\u00a74), which is the mode they cannot be folded in, so they measure AF2 rather than 040 and are diagnostics now. And plddt_binder is recorded but does not gate: C4, 115 alanines, scores 95.81, above the real design (\u00a78.6).",

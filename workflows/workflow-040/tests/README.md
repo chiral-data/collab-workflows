@@ -222,8 +222,21 @@ control is required and why it cannot be run against a floored target.
 `C7` is the control that needs a real target MSA, which needs one fetch from
 `api.colabfold.com`. That is outward-facing, so it is not something the script does on its
 own: `--allow-egress` turns it on, and until someone turns it on §4's decision stays half
-measured. The binder is not an input to node 01b, so even then no designed sequence can be
-sent — that is structural rather than a promise.
+measured.
+
+**This paragraph used to end with a false reassurance, and it was the load-bearing one.**
+It said the binder is not an input to node 01b, so no designed sequence can be sent, and
+that this was "structural rather than a promise". `design_inventory.json` carries
+`binder_sequence` for every design and it is 01b's only input, so the designed sequences
+are inputs. What actually kept them out of the payload was that `target_of()` returns
+target-derived fields and `from_server()` reads `target['sequence']` — correct, and one
+edit away from not being correct, in the only node that can open a socket.
+
+It is now a check: `assert_no_designed_sequence()` runs immediately before the POST,
+against the binder sequences read from the real inventory, and the case
+`egress-refuses-a-designed-sequence` requires it to refuse by name before any socket
+opens. Found while checking that claim rather than trusting it, immediately before turning
+egress on for the first time.
 
 And four standing checks that are not part of either gate — two audits and two probes:
 

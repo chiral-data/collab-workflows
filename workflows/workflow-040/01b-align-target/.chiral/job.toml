@@ -1,11 +1,17 @@
 name = "Align Target"
 description = "Phase 2 only: align the TARGET chain once per run, so the designed binder can be paired against it unaligned. The one node in this workflow permitted network egress, and the designed sequences are not inputs to it"
 
-# The inventory, and nothing else. This is the structural reason a designed sequence
-# cannot leak from the only node that touches the network: it is not an input here. The
-# target chains are read out of node 01's inventory, which is also where node 02 and node
-# 04 read what they need -- a fact an upstream node decided is passed forward and read,
-# never re-derived (§8.1).
+# The inventory, and nothing else. The target chains are read out of node 01's inventory,
+# which is also where node 02 and node 04 read what they need -- a fact an upstream node
+# decided is passed forward and read, never re-derived (§8.1).
+#
+# This comment used to say the inventory being the only input was "the structural reason a
+# designed sequence cannot leak from the only node that touches the network". That was
+# FALSE: design_inventory.json carries binder_sequence for every design, so the designed
+# sequences are very much inputs here. What keeps them out of the outgoing payload is
+# assert_no_designed_sequence() in script.py, checked immediately before the POST and
+# shown refusing by the fixture case egress-refuses-a-designed-sequence. Corrected rather
+# than quietly deleted, because this was the justification for the whole egress boundary.
 #
 # design_metrics.json is NOT taken, although node 01 re-emits it. This node has no use for
 # it, and a dependency that pulls inputs it does not read is how 037's node 03 ended up
@@ -38,7 +44,8 @@ gpu = "none"
 # (92cf05b5, 8a6dcebf).
 #
 # What goes out is ONE sequence: the fused target chain, which is public native protein
-# from the PDB. The designed binders are not inputs to this node.
+# from the PDB. The designed binders ARE inputs to this node (they ride in the inventory),
+# and are kept out of the payload by a check, not by their absence -- see above.
 #
 # PARAM_MSA_SOURCE defaults to "file", so egress has to be asked for; a run that does not
 # ask for it never opens a socket.

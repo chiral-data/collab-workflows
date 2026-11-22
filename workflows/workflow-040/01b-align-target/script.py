@@ -11,11 +11,21 @@ an alignment per run rather than per design is the difference between one networ
 a hundred.
 
 Egress: this is the ONLY node in the workflow permitted to touch the network, and it says
-so in its own job.toml. The designed sequences are NOT inputs to this node -- it reads the
-target chains out of node 01's inventory and nothing else -- which is the structural reason
-a design cannot leak from here. That is not a promise about the code's behaviour, it is a
-fact about its inputs. Workflows 029 had to retrofit a declared egress boundary after the
-fact (92cf05b5, 8a6dcebf); 040 starts with one.
+so in its own job.toml. Exactly one sequence goes out: the fused target chain, which is
+public native protein from the PDB.
+
+What keeps the designed binders out of that payload is a CHECK, not their absence. This
+docstring used to claim the opposite -- that the designed sequences were not inputs here,
+and that this was "not a promise about the code's behaviour, it is a fact about its
+inputs". That was false, and it was the most confident sentence in the file.
+design_inventory.json carries `binder_sequence` for every design and it is this node's
+only input. The binder stayed out of the payload because `target_of()` returns
+target-derived fields only and `from_server()` reads `target['sequence']`: true, correct,
+and one edit away from not being true, in the one node that can open a socket.
+assert_no_designed_sequence() now enforces it immediately before the POST, and
+tests/fixtures.json shows it refusing. Workflows 029 had to retrofit a declared egress
+boundary after the fact (92cf05b5, 8a6dcebf); 040 starts with one, and now also starts
+with a reason to believe it.
 
 WHAT §4 DECIDED, AND WHY A FALLBACK HERE WOULD BE THE WORST POSSIBLE BUG
 
@@ -229,6 +239,54 @@ def target_of(inventory):
     }
 
 
+def designed_sequences(inventory):
+    """Every designed sequence in the inventory, with the design that owns it.
+
+    These are the strings that must never leave this node. They are collected from the
+    same inventory the target is read from, because the thing a guard has to be given is
+    the real payload-adjacent data, not a restatement of it (§8.10).
+    """
+    out = []
+    for row in inventory.get("designs") or []:
+        sequence = (row.get("binder_sequence") or "").strip().upper()
+        if sequence:
+            out.append((row.get("design"), sequence))
+    return out
+
+
+def assert_no_designed_sequence(query, forbidden):
+    """Refuse to send a payload containing a designed sequence.
+
+    THE CLAIM THIS REPLACES WAS FALSE, and it was load-bearing. job.toml and
+    tests/README.md both said a designed sequence "cannot leak" from this node because it
+    "is not an input here" -- structural, not a promise. It is an input:
+    design_inventory.json carries `binder_sequence` for every design, and it is this
+    node's only input. What actually kept the binder out of the payload was that
+    `target_of()` returns a dict of target-derived fields and `from_server()` reads
+    `target['sequence']` from it. True, and one edit away from not being true, in the only
+    node in this workflow permitted to open a socket.
+
+    §8.4's shape exactly: a check -- here, a documented safety property -- that holds for
+    a reason other than the one given. So the property is now enforced where it matters,
+    immediately before the POST, against the sequences read from the actual inventory.
+
+    This is a guard, so it can be shown refusing: tests/fixtures.json case
+    `egress-refuses-a-designed-sequence` crafts an inventory whose fused target CONTAINS a
+    binder sequence and requires this to fail by name, before any socket is opened.
+    """
+    leaked = sorted({design for design, sequence in forbidden if sequence in query})
+    if leaked:
+        fail(
+            "REFUSING TO SEND: the outgoing MSA query contains the designed sequence of "
+            f"{leaked}. This node is the only egress in the workflow and a designed "
+            "sequence must never cross it -- a de novo binder is unpublished work and the "
+            "MSA server is a third party. Nothing has been sent; no socket was opened.\n"
+            "  This is checked rather than assumed because the sequences ARE present in "
+            "this node's input: design_inventory.json carries binder_sequence for every "
+            "design. The earlier claim that a leak was structurally impossible was wrong."
+        )
+
+
 def from_file(target, path):
     """An alignment supplied as a file. Validated against the target, not trusted."""
     if not os.path.exists(path):
@@ -258,14 +316,22 @@ def from_file(target, path):
     return records, {"source": "file", "path": os.path.basename(path)}
 
 
-def from_server(target, host, timeout_s):
+def from_server(target, host, timeout_s, forbidden):
     """The MSA server. The ONLY egress in this workflow, and only the target goes out.
 
     What is sent is one sequence: the fused target chain, which is public native protein
-    from the PDB. The designed binders are not inputs to this node and cannot be sent
-    from it.
+    from the PDB.
+
+    The designed binders ARE in this node's input -- design_inventory.json carries
+    binder_sequence for every design -- so "they cannot be sent" is enforced by
+    assert_no_designed_sequence() below, not by their absence. See that function for the
+    claim it replaced.
     """
     query = f">target\n{target['sequence']}\n"
+
+    # Before the socket, not after. A guard that runs after the POST is a log entry.
+    assert_no_designed_sequence(query, forbidden)
+
     print(
         f"  NETWORK: submitting {target['n_residues']} target residues to {host}. "
         "This is the only egress in the workflow. No designed sequence is an input to "
@@ -419,7 +485,8 @@ def main():
     elif source == "server":
         host = (os.environ.get("PARAM_MSA_HOST_URL") or DEFAULT_HOST).strip()
         records, provenance = from_server(
-            target, host, int_param("PARAM_MSA_TIMEOUT_S", 1200)
+            target, host, int_param("PARAM_MSA_TIMEOUT_S", 1200),
+            designed_sequences(inventory),
         )
         provenance["network_used"] = True
     else:

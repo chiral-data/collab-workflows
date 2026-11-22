@@ -2789,7 +2789,7 @@ NOT_IN_THE_TREE = {
         "every step to 0 and was reported as a gap for exactly that reason. It no longer "
         "is, because the guard it was aimed at now refuses, so that demonstration is gone "
         "and is not replaced by a weaker one. What stops 'refuse everything' from passing "
-        "all 14 of these is structural rather than a corruption: boundary-value-accepted "
+        "all 15 of these is structural rather than a corruption: boundary-value-accepted "
         "is an input sitting exactly on every limit that MUST be accepted, so a guard made "
         "strict enough to pass these fails that one.",
     "expect_ok":

@@ -31,7 +31,8 @@ said so itself before the judge did. See finding 1.
 | GPU | 1 MiB used before, 1 MiB after — the device was left free |
 | Wall clock | monomer 70.2 / 70.6 s, complex 260.1 / 220.6 s |
 | Disk | 18G free before, 18G after, against an 8G floor |
-| Entry | `1BRS` chain A (barnase, 87 res as resolved) on chain D (barstar, 108 res) |
+| Entry | `1BRS`. **Binder** = chain A, barnase, 108 res resolved, ids 3..110, no gaps. **Target** = chain D, barstar, 87 res resolved, ids 1..89, gap 63→66. Both read off the run's own probe, not from memory |
+| Chain relabelling | `make_controls.py` writes the target as chain A and the design as chain B, so the *output* chain A is barstar. The probe's chain letters and the prediction's are not the same letters — see the correction note below |
 | Nodes run | 037 node 04, then 040 nodes 01, 01b, 02, 03, 04, 05 |
 
 All four predictions completed: `status=ok` for both designs in both modes. Nothing here is
@@ -144,6 +145,52 @@ well enough for its interface numbers to mean anything. Until there is, Phase 2 
 distinguish a broken scorer from a broken control, and no amount of re-running it offline
 will change that.
 
+## Pre-registered: what the real-MSA run must produce
+
+Written **before** that run, and deliberately so. The whole reason Phase 2's first attempt
+cost a day is that its central premise was never written down where it could be checked
+(§8.17). So the next run's expectations go here first, with their provenance, and the
+result is read against them rather than explained after the fact.
+
+Every number below is either **measured in this repo** with a commit to point at, or a
+**stated convention**, or **explicitly unknown**. Nothing is a guess dressed as a target.
+
+| | prediction | where it comes from | status |
+|---|---|---|---|
+| `plddt_target` | **rises from 38.28 to > 70** | §4's table: 38.4 → 83.7 changing only `msa_mode` on a native complex (029, `2361277f`). 70.0 is node 04's own warning threshold | **measured, and this is the primary claim** |
+| `iptm`, `C8` | **> `C9`'s, by a margin that is not noise** | §8.6: the gate is separation, not an absolute | **measured requirement** |
+| `iptm`, `C8` absolute | somewhere in **0.100 – 0.860**, and nearer the bottom is not a failure | 029 got 0.860 on a native pair where **both** chains had deep MSAs. Here the binder is given none, by §4's design (`binder_aligned=False`) | **bounded, not predicted** |
+| `pae_interaction`, `C8` | between **27.6 Å and 7.7 Å** | same table, same caveat | **bounded, not predicted** |
+| `iptm` ≥ 0.5 as "confident interface" | **not used as a gate** | AF2-multimer convention, recorded in §7's threshold table | **convention, uncalibrated** |
+| `C9` | stays low | it is the same backbone with the residues permuted, and 037's node 04 reports it as **identical** to `C8` on every column it has (§8.6's measured table) | **measured requirement** |
+
+### The primary claim, and why it is the one that matters
+
+**`plddt_target` must come off the floor.** That is mechanical, not hopeful: §4 measured a
+native receptor going 38.4 → 83.7 on `msa_mode` alone, and this run's 38.28 is that same
+floor. If a real alignment does not move it past 70, then the fetch did not do what it was
+for, and **no interface number from that run is interpretable either** — `8e4772a7` again,
+the interface can be no better than the worse-modelled chain.
+
+So the reading order is fixed in advance:
+
+1. **`plddt_target` > 70?** If no, stop. The run says nothing about separation, exactly as
+   this one did, and the conclusion is about the alignment, not the scorer.
+2. **Only then, does `iptm` separate?** If yes, Gate B Phase 2 is met. If no, *that* is the
+   first evidence this repo has ever had that 040's interface scoring does not work, and it
+   would be a finding about the workflow rather than the control.
+
+Step 1 is what this file's first version lacked the discipline to require, and it is the
+reason the 0.09-against-0.17 result was briefly readable as "040 cannot score an
+interface". It never was.
+
+### What would falsify the diagnosis in finding 1
+
+Finding 1 claims the uninformative alignment is why Phase 2 failed. That claim is wrong if
+a real alignment lifts `plddt_target` past 70 **and** `iptm` still fails to separate. That
+is a real possibility and it is written here so it cannot be quietly reinterpreted later:
+the diagnosis is a hypothesis with a stated refutation condition, not a conclusion.
+
 ## Finding 3: what has to happen next, and why it needs the user
 
 **`C8` and `C9` need a real target MSA, which needs one fetch from `api.colabfold.com`.**
@@ -162,9 +209,10 @@ is a measurement of the floor.
 
 ## Finding 4: a real internal gap, on real deposited coordinates
 
-Unplanned, and worth having. **Barstar chain A in 1BRS is missing 2 residues between 63 and
-66**, so node 01's §8.12 fusion warning fired on deposited coordinates rather than on a
-fixture, and node 02 disclosed it in `prediction_inputs.json`:
+Unplanned, and worth having. **Barstar — 1BRS chain D, relabelled to chain A on the way
+in — is missing 2 residues between 63 and 66**, so node 01's §8.12 fusion warning fired on
+deposited coordinates rather than on a fixture, and node 02 disclosed it in
+`prediction_inputs.json`:
 
 > chain A is missing 2 residue(s) between 63 and 66, and the two sides are fused
 
@@ -172,6 +220,21 @@ The judge printed it in the provenance block. `C11`'s shape — a gapped target 
 through to the report — is therefore present in a real GPU run, not only in the Tier 1
 tree. The disclosure is what §8.12 requires: the gap is not silently trimmed, and the
 fusion is declared where a reader of the inputs will see it.
+
+### A correction to this file's first version
+
+The provenance row originally read "chain A (barnase, 87 res) on chain D (barstar, 108
+res)". **The two lengths were swapped**: barnase is the 108-residue chain and barstar the
+87-residue one, as the run's own `probe-1BRS.txt` says and as `--binder A --target D` in
+`run_controls_phase2.sh` implies. Nothing downstream depended on it — no measured number
+changes — but it is corrected here rather than silently, because a provenance table whose
+numbers are decorative is worse than no provenance table.
+
+The confusion has a cause worth naming: **there are two sets of chain letters.** The PDB's
+(barnase A, barstar D) and the workflow's, because `make_controls.py` relabels the target
+to A and the design to B. So "chain A" means barnase in the probe and barstar in
+`prediction_inputs.json`. Anything quoting a chain letter in this workflow has to say
+which set it is using.
 
 ## Is the verdict worth anything?
 
