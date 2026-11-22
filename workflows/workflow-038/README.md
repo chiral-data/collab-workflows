@@ -551,6 +551,15 @@ slightly.
 **Trade-off:** The cluster count is entirely a function of this threshold; it is a descriptive
 choice, not a measurement. Report it alongside any cluster count — the report does.
 
+**Floor.** Backbone-level clustering lives at 0.1–0.3 nm. Below about 0.002 nm there is
+nothing to cluster: mdtraj computes RMSD in float32, so a frame measured against *itself*
+reads 0.0013–0.0018 nm, and any threshold under that is finer than the measurement. The node
+warns and returns one cluster per frame, which is the honest answer. It used to hang instead —
+the centre of a cluster failed its own membership test, so the assignment loop never
+terminated and the node spun on the GPU. Measured on 1UBQ's 12-frame ensemble, the pairwise
+distribution is 0.1146–0.1338 nm, so the count there is 12 at any threshold up to 0.11, 4 at
+0.12, and 1 from 0.13 up: the parameter is sharp, and a figure quoted without it says little.
+
 ### seed
 
 `42` by default; batch *i* uses `seed + i`. Set to `-1` for unseeded sampling, which is what

@@ -34,6 +34,24 @@
           "check": "unit_select_frames"
         }
       ]
+    },
+    {
+      "name": "clustering-below-the-rmsd-noise-floor-terminates",
+      "why": "mdtraj.rmsd is a float32 QCP, so a frame against itself measures 0.0013-0.0018 nm rather than 0. greedy_clusters tested membership with matrix[centre, i] <= threshold, which at a threshold below that floor excluded the centre from its own cluster: absorbed came back empty, unassigned never shrank, and node 05 looped forever holding the GPU. rmsd_cluster_threshold_nm = 0.001 is a value the workflow's own parameters accept, so the hang was reachable without any malformed input.",
+      "expect": [
+        {
+          "check": "unit_greedy_clusters_terminates"
+        }
+      ]
+    },
+    {
+      "name": "an-abort-never-skips-the-check-that-judges-it",
+      "why": "check_campaign.py turns FAIL into SKIP for checks that needed a node at or after the one that aborted, because an output nobody wrote is not evidence. check_failure_was_reported is the check that decides whether a stop was a reported resource limit or a silent death, and it reads node 01 -- so an abort at node 01 converted the judge together with everything it was meant to judge: 0 pass, 0 fail, 16 skipped, exit 0, and a green campaign for a system whose first node died. The judge is now excluded by identity rather than by node index.",
+      "expect": [
+        {
+          "check": "unit_campaign_judge_is_never_skipped"
+        }
+      ]
     }
   ],
   "fixtures": [

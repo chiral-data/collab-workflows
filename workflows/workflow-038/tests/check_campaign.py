@@ -33,8 +33,9 @@ COLLAPSE_FLOOR_NM = 0.1
 # enough for a real fold and still catches an unfolded or exploded structure.
 #
 # Generous on purpose: the relation is for a *globular* fold, and a fold that is elongated by
-# design sits well above it without being wrong. Measured here: 1UBQ 1.00x, 5PTI 1.08x, and
-# 2ZTA — the GCN4 leucine zipper, a parallel coiled coil — 1.39x. Tightening this limit would
+# design sits well above it without being wrong. Measured here, as this suite prints them:
+# 1UBQ 1.02x, 5PTI 1.09x, and 2ZTA — the GCN4 leucine zipper, a parallel coiled coil — 1.41x
+# (over its 66 standard residues). Tightening this limit would
 # flag the coiled coil, so it stays loose and the check keeps its real job: catching a chain
 # that has unfolded or exploded, which lands far outside any fold's range.
 RG_TOLERANCE = 1.5
@@ -611,8 +612,15 @@ def check_failure_was_reported(case):
     exits non-zero -- otherwise a real defect that the node happens to describe politely
     would leave a green run behind a wall of skips.
     """
+    # `run_gpu_campaign.sh` writes a `<node>.rc` for every node it runs, so an absent set means
+    # the results tree was not produced by the driver -- an older tree, or a hand-assembled
+    # one. That is a skip rather than a failure, but it is also the one way this check can be
+    # silenced, so it says so in those words instead of reading as "nothing to check here".
     if not case.rc:
-        return SKIP, "the driver recorded no exit statuses for this case"
+        return SKIP, (
+            "no <node>.rc files: this results tree was not written by run_gpu_campaign.sh, so "
+            "whether a node stopped cannot be judged at all -- re-run the driver"
+        )
     node, reason = first_aborted(case)
     if node is None:
         return PASS, f"every node exited 0 ({len(case.rc)} recorded)"
@@ -635,6 +643,11 @@ def check_failure_was_reported(case):
 # (label, function, the node whose output the check reads). The node matters because a run
 # that stopped at node 03 cannot be judged on node 05's numbers: those checks report as
 # skipped-with-a-reason rather than as failures, so a FAIL always means a node that ran.
+#
+# The declared node must be the *latest* node a check reads, not the earliest: declaring an
+# earlier one leaves the check failing on output that an abort explains. `main()` exempts
+# `check_failure_was_reported` from the conversion by identity, since it is the check that
+# judges the abort and no node index can express that.
 CHECKS = [
     ("stopped only on a resource limit", check_failure_was_reported, "01"),
     ("token count measured", check_token_count, "01"),
@@ -649,8 +662,11 @@ CHECKS = [
     ("medoid is the argmin", check_medoid_is_argmin, "05"),
     ("viewer models superposed", check_viewer_frames_superposed, "05"),
     ("report carries its claims", check_report, "06"),
-    ("identity propagation is labelled", check_propagation_disabled_cleanly, "04"),
-    ("propagation produced a second ensemble", check_propagation_ran, "04"),
+    # Both of these compare node 04's manifest against what node 05 analysed, so node 05 is
+    # the latest node they need: declaring "04" left them failing rather than skipping when
+    # node 05 was the node that died.
+    ("identity propagation is labelled", check_propagation_disabled_cleanly, "05"),
+    ("propagation produced a second ensemble", check_propagation_ran, "05"),
     ("propagated frames are still folded", check_propagated_is_physical, "05"),
 ]
 
@@ -677,10 +693,17 @@ def main():
             except Exception as exc:  # a check must not take the run down with it
                 status, detail = FAIL, f"check raised {type(exc).__name__}: {exc}"
             # A check whose input never got written because an earlier node stopped is not
-            # evidence of anything. `check_failure_was_reported` is what judges that stop,
-            # and it reads node 01, so it is never converted here.
+            # evidence of anything, so it becomes a SKIP rather than a FAIL.
+            #
+            # `check_failure_was_reported` is excluded by identity, not by node index. It is
+            # the check that judges the stop, and it reads node 01 -- so an abort *at* node 01
+            # satisfies `index("01") >= index("01")` and converted the judge along with
+            # everything it was meant to judge: 0 pass, 0 fail, 16 skipped, exit 0, a green
+            # campaign for a system whose first node died. An earlier comment here claimed
+            # reading node 01 made it immune; the opposite was true.
             if (
                 status == FAIL
+                and runner is not check_failure_was_reported
                 and aborted_at is not None
                 and aborted_why is not None
                 and NODE_ORDER.index(needs) >= NODE_ORDER.index(aborted_at)

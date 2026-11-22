@@ -351,6 +351,30 @@ Everything tracked here is closed and enforced:
 - the three propagation states that must not collapse into "propagation was disabled" —
   `node05_refuses_missing_manifest`, `node05_refuses_lost_ensemble`,
   `node05_passthrough_not_treated_as_lagged`.
+- node 05 looping forever when `rmsd_cluster_threshold_nm` is finer than the RMSD
+  measurement's own noise — `clustering-below-the-rmsd-noise-floor-terminates`.
+- the campaign reporting a green run for a system whose first node died —
+  `an-abort-never-skips-the-check-that-judges-it`.
+
+Those last two came from a review of this suite rather than of the workflow, and both were
+defects in the testing, which is the part nothing else tests:
+
+- **`greedy_clusters` could not terminate below the RMSD noise floor.** `mdtraj.rmsd` is a
+  float32 QCP, so a frame measured against itself reads 0.0013–0.0018 nm rather than 0. The
+  membership test was `matrix[centre, i] <= threshold`, so at `rmsd_cluster_threshold_nm =
+  0.001` — a value the parameter accepts, validated only as positive — the centre failed its
+  own test, `absorbed` came back empty, the unassigned set never shrank, and node 05 spun on
+  the GPU until something killed it. The centre is now absorbed unconditionally, because a
+  frame is in its own cluster by definition, and the node warns when the threshold is below
+  the floor instead of silently returning one cluster per frame.
+- **the campaign's abort handling skipped its own judge.** `check_campaign.py` converts FAIL
+  to SKIP for any check needing a node at or after the one that aborted, since an output
+  nobody wrote is not evidence. `check_failure_was_reported` is the check that decides
+  whether a stop was a reported resource limit or a silent death — and it reads node 01, so
+  an abort *at* node 01 satisfied the conversion test and skipped the judge along with all
+  fifteen checks it was meant to judge: 0 pass, 0 fail, 16 skipped, exit 0. The judge is now
+  excluded by identity rather than by node index. A comment at that line had asserted the
+  invariant held; it was never tested, and it was false.
 
 Marking a finding open is how a reproduced but unfixed defect gets recorded: add
 `"status": "open"` and the suite reports it without failing. Deleting the field enforces

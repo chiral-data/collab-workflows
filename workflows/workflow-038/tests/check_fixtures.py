@@ -140,6 +140,14 @@ def unit_select_frames(case):
     return unit_result(case, "unit_select_frames")
 
 
+def unit_greedy_clusters_terminates(case):
+    return unit_result(case, "unit_greedy_clusters_terminates")
+
+
+def unit_campaign_judge_is_never_skipped(case):
+    return unit_result(case, "unit_campaign_judge_is_never_skipped")
+
+
 # -------------------------------------------------------------- fixtures section
 
 def inventory_matches_probe(case):
@@ -1079,6 +1087,8 @@ CHECKS = {
     "unit_a3m_path_helpers": unit_a3m_path_helpers,
     "unit_pairwise_pass": unit_pairwise_pass,
     "unit_select_frames": unit_select_frames,
+    "unit_greedy_clusters_terminates": unit_greedy_clusters_terminates,
+    "unit_campaign_judge_is_never_skipped": unit_campaign_judge_is_never_skipped,
     "inventory_matches_probe": inventory_matches_probe,
     "inventory_tokens_measured": inventory_tokens_measured,
     "inventory_reports_ligands": inventory_reports_ligands,

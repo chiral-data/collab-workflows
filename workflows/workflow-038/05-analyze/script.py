@@ -18,6 +18,13 @@ Per-frame: radius of gyration, C-alpha RMSD to the ensemble medoid, physicality 
 Ensemble: Rg spread, pairwise C-alpha RMSD matrix, per-residue RMSF, cluster count at a
 given RMSD threshold, physicality pass rate. Propagated frames are analysed as a second
 ensemble only when node 04 actually propagated.
+
+Two numerical floors bound what this node can say, and both are properties of the
+measurement rather than of the ensemble. `mdtraj.rmsd` is a float32 QCP, so a frame measured
+against itself reads 0.0013-0.0018 nm; and an XTC quantises coordinates to 0.001 nm, so one
+conformation written twice reads about 0.002 nm apart. Hence COLLAPSE_NM at 0.01 nm rather
+than at zero, and hence RMSD_SELF_FLOOR_NM, below which a cluster threshold is finer than
+the arithmetic underneath it and every frame is necessarily its own cluster.
 """
 import csv
 import json
@@ -50,6 +57,11 @@ MAX_MATRIX_FRAMES = 200
 # only way this node ever sees one. 0.01 nm is an order of magnitude above the file format's
 # quantisation and an order below the smallest backbone difference that means anything.
 COLLAPSE_NM = 0.01
+
+# What a frame measures against *itself*. mdtraj's RMSD is a float32 QCP, so the diagonal of
+# the matrix is 0.0013-0.0018 nm rather than 0. Nothing below this is a distance; it is the
+# measurement's own noise. Used to reject a cluster threshold that cannot mean anything.
+RMSD_SELF_FLOOR_NM = 0.002
 
 
 # Anything that is not a standard residue — an ion, a cofactor, a terminal cap, a modified
@@ -222,6 +234,15 @@ def greedy_clusters(matrix, threshold):
     Repeatedly take the unassigned frame with the most unassigned neighbours within
     `threshold` as a cluster centre, and absorb its neighbours. Order-independent given the
     matrix, and needs no extra dependency.
+
+    The centre is absorbed unconditionally, because a frame belongs to its own cluster by
+    definition and `matrix[centre, centre]` cannot be relied on to say so. `mdtraj.rmsd` is a
+    float32 QCP, so a frame against itself measures 0.0013-0.0018 nm rather than 0; with a
+    `threshold` below that floor -- `rmsd_cluster_threshold_nm = 0.001` is enough -- the
+    membership test excluded the centre, `absorbed` came back empty, `unassigned` never
+    shrank and this loop ran forever on the GPU. Guaranteeing the centre makes every frame
+    its own cluster at a sub-floor threshold, which is the right answer for a distance
+    smaller than the measurement's own noise, and terminates in n passes.
     """
     import numpy as np
 
@@ -234,7 +255,7 @@ def greedy_clusters(matrix, threshold):
             (int((matrix[i, members] <= threshold).sum()), i) for i in members
         ]
         _, centre = max(neighbour_counts)
-        absorbed = [i for i in members if matrix[centre, i] <= threshold]
+        absorbed = [i for i in members if matrix[centre, i] <= threshold or i == centre]
         clusters.append({"centre": int(centre), "size": len(absorbed),
                          "members": [int(i) for i in absorbed]})
         unassigned -= set(absorbed)
@@ -452,6 +473,19 @@ def main():
 
     if threshold <= 0:
         fail(f"rmsd_cluster_threshold_nm must be positive, got {threshold}")
+    # mdtraj.rmsd is a float32 QCP: a frame against itself measures 0.0013-0.0018 nm, so a
+    # threshold at or below that is finer than the measurement can resolve and every frame
+    # comes back as its own cluster. That is the honest answer, but it is not the answer the
+    # caller expected from a cluster threshold, so say so rather than printing the count flat.
+    if threshold <= RMSD_SELF_FLOOR_NM:
+        print(
+            f"WARNING: rmsd_cluster_threshold_nm={threshold} nm is at or below the "
+            f"{RMSD_SELF_FLOOR_NM} nm floor of the RMSD measurement itself (mdtraj's RMSD is "
+            "computed in float32, so a frame against itself does not measure zero). Nothing "
+            "can cluster at this scale: expect one cluster per frame. Backbone-level "
+            "clustering is 0.1-0.3 nm.",
+            flush=True,
+        )
     if top_n < 1:
         fail(f"top_n must be at least 1, got {top_n}")
 

@@ -90,6 +90,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     warns before the GPU time is spent and node 05's message is keyed off the mode node 03
     recorded. Two fixtures hold both halves, because a node that said nothing in either case
     would pass a single-mode fixture.
+  - Node 05 could not finish clustering below the RMSD measurement's own noise floor.
+    `mdtraj.rmsd` is a float32 QCP, so a frame against itself reads 0.0013-0.0018 nm, not 0;
+    the membership test `matrix[centre, i] <= threshold` therefore excluded a cluster centre
+    from its own cluster once `rmsd_cluster_threshold_nm` dropped under that, the unassigned
+    set never shrank, and the node spun on the GPU until something killed it. The parameter
+    was validated only as positive, so `0.001` reached it. The centre is now absorbed
+    unconditionally — a frame is in its own cluster by definition — and the node warns that
+    nothing can cluster below the floor rather than returning one cluster per frame in
+    silence. The hint and the README now give the usable band (0.1-0.3 nm) and, for 1UBQ's
+    12-frame ensemble, the measured distribution behind it.
+  - The GPU campaign reported a green run for a system whose first node died.
+    `check_campaign.py` turns FAIL into SKIP for a check that needed a node at or after the
+    one that aborted, because an output nobody wrote is not evidence.
+    `check_failure_was_reported` is the check that distinguishes a reported resource limit
+    from a silent death, and it reads node 01 — so an abort *at* node 01 converted the judge
+    together with the fifteen checks it was meant to judge: 0 pass, 0 fail, 16 skipped, exit
+    0. It is now excluded by identity rather than by node index, and a unit check holds it.
+    The two propagation checks that read node 05 while declaring node 04 were failing rather
+    than skipping when node 05 was what died.
   - `tests/`: a fixture suite over seven real RCSB entries (`tests/README.md`), split into an
     offline driver (`run_fixtures.sh`: unit checks, nodes 01-02 plus node 03 `--dry-run`,
     refusals and their counter-cases, and nodes 04-06 over deterministic ensembles) and a GPU

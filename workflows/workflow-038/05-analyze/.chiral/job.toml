@@ -32,7 +32,7 @@ run = "run.sh"
 [params.rmsd_cluster_threshold_nm]
 type = "float"
 default = 0.2
-hint = "C-alpha RMSD threshold in nm for counting distinct conformational clusters in the ensemble"
+hint = "C-alpha RMSD threshold in nm for counting distinct conformational clusters in the ensemble. Backbone-level clustering is 0.1-0.3 nm; below about 0.002 nm nothing can cluster, because that is the noise floor of the RMSD measurement itself, and every frame comes back as its own cluster"
 
 [params.top_n]
 type = "integer"

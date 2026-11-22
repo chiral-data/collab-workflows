@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""The three checks that need no input file, only the node code and mdtraj.
+"""The checks that need no input file, only the node code, mdtraj and the suite itself.
 
-Run inside the image, because `pairwise_pass` is mdtraj all the way down:
+Run inside the image, because `pairwise_pass` and `greedy_clusters` are mdtraj and numpy
+all the way down:
 
     python -I tests/unit_checks.py <out.json>
 
@@ -161,10 +162,108 @@ def unit_select_frames():
     )
 
 
+def unit_greedy_clusters_terminates():
+    """Clustering below the RMSD measurement's own noise floor must terminate.
+
+    `mdtraj.rmsd` is a float32 QCP, so `matrix[i, i]` is 0.0013-0.0018 nm, not 0. The
+    membership test was `matrix[centre, i] <= threshold`, which at a sub-floor threshold
+    excluded the centre from its own cluster: `absorbed` empty, `unassigned` never shrinking,
+    an infinite loop holding the GPU. `rmsd_cluster_threshold_nm = 0.001` is a value a user
+    can type, so this is reachable from the workflow's own parameters.
+    """
+    import numpy as np
+
+    analyze = load("05-analyze")
+    # A realistic diagonal: what a frame measures against itself in float32.
+    matrix = np.array(
+        [[0.0015, 0.42, 0.37], [0.42, 0.0016, 0.40], [0.37, 0.40, 0.0014]],
+        dtype=np.float32,
+    )
+    below = analyze.greedy_clusters(matrix, 0.001)  # below the floor: hung before the fix
+    if len(below) != 3 or any(c["size"] != 1 for c in below):
+        return "fail", (
+            f"a sub-floor threshold gave {len(below)} cluster(s) with sizes "
+            f"{[c['size'] for c in below]}; every frame should be its own cluster"
+        )
+    if any(c["centre"] not in c["members"] for c in below):
+        return "fail", "a cluster centre is missing from its own members"
+    wide = analyze.greedy_clusters(matrix, 0.5)  # everything within one threshold
+    if len(wide) != 1 or wide[0]["size"] != 3:
+        return "fail", f"a wide threshold gave {len(wide)} cluster(s), expected 1 of size 3"
+    one = analyze.greedy_clusters(np.array([[0.0015]], dtype=np.float32), 0.001)
+    if len(one) != 1 or one[0]["members"] != [0]:
+        return "fail", f"a single frame below the floor gave {one}"
+    if analyze.RMSD_SELF_FLOOR_NM <= 0:
+        return "fail", "RMSD_SELF_FLOOR_NM is not positive"
+    return "pass", (
+        f"3 frames cluster to 3 below the {analyze.RMSD_SELF_FLOOR_NM} nm floor and to 1 "
+        "at 0.5 nm, every centre is in its own cluster, and one frame terminates"
+    )
+
+
+def unit_campaign_judge_is_never_skipped():
+    """The check that judges an abort must not be converted to SKIP by that same abort.
+
+    `check_campaign.py` converts FAIL to SKIP for any check needing a node at or after the
+    one that aborted, because an unwritten output is not evidence. `check_failure_was_reported`
+    is the check that decides whether the stop was a reported resource limit or a silent
+    death, and it reads node 01 -- so an abort *at* node 01 used to convert the judge along
+    with everything it judged, leaving 0 pass / 0 fail / 16 skipped and exit 0: a green
+    campaign for a system whose first node died.
+    """
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "check_campaign.py")
+    spec = importlib.util.spec_from_file_location("check_campaign", path)
+    campaign = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(campaign)
+
+    class Aborted:
+        """A case whose node 01 died for a reason that is not a resource limit."""
+        rc = {"01": 1}
+        logs = {"01": "ERROR: Could not build the all-atom structure for component AP5"}
+
+    case = Aborted()
+    node, why = campaign.first_aborted(case)
+    if node != "01":
+        return "fail", f"first_aborted saw {node!r}, expected '01'"
+    status, _ = campaign.check_failure_was_reported(case)
+    if status != campaign.FAIL:
+        return "fail", f"the judge returned {status} on a non-resource stop at node 01"
+
+    converted = [
+        label
+        for label, runner, needs in campaign.CHECKS
+        if runner is not campaign.check_failure_was_reported
+        and campaign.NODE_ORDER.index(needs) >= campaign.NODE_ORDER.index(node)
+    ]
+    judges = [
+        label
+        for label, runner, _ in campaign.CHECKS
+        if runner is campaign.check_failure_was_reported
+    ]
+    if len(judges) != 1:
+        return "fail", f"expected exactly one judging check, found {len(judges)}"
+    if judges[0] in converted:
+        return "fail", "the judging check is still eligible for FAIL->SKIP conversion"
+    # And a resource limit still passes, so an OOM stays a green skip rather than a failure.
+    class OutOfMemory:
+        rc = {"03": 1}
+        logs = {"03": "ERROR: CUDA out of memory. Tried to allocate 2.00 GiB"}
+
+    status, _ = campaign.check_failure_was_reported(OutOfMemory())
+    if status != campaign.PASS:
+        return "fail", f"an out-of-memory stop returned {status}, expected PASS"
+    return "pass", (
+        f"a non-resource stop at node 01 fails the judge, which stays out of the "
+        f"{len(converted)} check(s) the abort converts, and an OOM still passes"
+    )
+
+
 CHECKS = {
     "unit_a3m_path_helpers": unit_a3m_path_helpers,
     "unit_pairwise_pass": unit_pairwise_pass,
     "unit_select_frames": unit_select_frames,
+    "unit_greedy_clusters_terminates": unit_greedy_clusters_terminates,
+    "unit_campaign_judge_is_never_skipped": unit_campaign_judge_is_never_skipped,
 }
 
 
