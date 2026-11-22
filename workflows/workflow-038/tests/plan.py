@@ -4,7 +4,7 @@
     python3 -I tests/plan.py entries          # the structures to download
     python3 -I tests/plan.py fixtures         # slug  id
     python3 -I tests/plan.py rejections       # slug  id  stage  setup  env...
-    python3 -I tests/plan.py downstream       # slug  source  n_frames  shape  physicality  setup  env...
+    python3 -I tests/plan.py downstream       # slug source n_frames shape physicality mode setup env...
 
 Tab separated, one case per line. A case added to fixtures.json is run by the driver with
 no change to the driver -- which is the point: the expectations and the run cannot drift
@@ -39,7 +39,21 @@ def main():
 
     if section == "fixtures":
         for entry in spec["fixtures"]:
-            print("\t".join([slug(entry["id"]), entry["id"]]))
+            # `id` is the RCSB entry the case runs on; `name` defaults to it, so two cases can
+            # run the same entry under different parameters.
+            print(
+                "\t".join(
+                    [
+                        slug(entry.get("name") or entry["id"]),
+                        entry["id"],
+                        # Whether the entry's structure file is staged. A case testing the
+                        # `sequence` or `pdb_id` input must stage none, since node 01 takes
+                        # the first match and a file present would win.
+                        entry.get("input", "structure"),
+                    ]
+                    + env(entry)
+                )
+            )
         return 0
 
     if section == "rejections":
@@ -61,6 +75,7 @@ def main():
                 str(entry.get("n_frames", 6)),
                 entry.get("ensemble", "spread"),
                 entry.get("physicality", "passed"),
+                entry.get("mode", "equilibrium"),
                 entry.get("setup") or "none",
             ]
             print("\t".join(fields + env(entry)))

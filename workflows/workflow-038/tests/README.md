@@ -47,12 +47,51 @@ compiler and the real VRAM ceiling — both below, under *What the campaign meas
   raise a warning naming the code and the `exclude_ligands` string that drops it. `UNL`, the
   unknown-ligand placeholder, cannot be built at all — it raises inside bioemu2's own template
   builder — so node 01 lists the system's non-polymer components and names the parameter instead
-  of failing with an `AttributeError`.
+  of failing with an `AttributeError`. The advice was a sentence for a while before it was a
+  measured fact: two 5PTI fixtures now run `exclude_ligands=UNX,DOD` and `include_ligands=false`
+  and check the arithmetic, because advice that does not work is worse than none — a reader who
+  tries it once stops reading the rest.
+- **A single frame was reported as a collapsed ensemble.** `mode = structure` with
+  `num_samples = 1` is the configuration the README recommends for predicting one folded
+  structure, and it was never run with a model until this pass: no fixture set `mode`, and the
+  campaign runs `equilibrium`. Run on a GPU, 1UBQ gave one frame at Rg 1.1616 nm and the
+  bundled Trp-cage 1L2Y one at 0.7146 nm — both compact, both physical, and both announced by
+  node 05 as *the ensemble has collapsed*, with advice to check the mode the user had set
+  correctly. The cause was a statistic over zero pairs reported as `0.0`, which is exactly the
+  collapse signature. `pairwise_rmsd` now carries `n_pairs: 0` with null statistics, node 05
+  says a spread needs two frames, and the report's tile reads *n/a, needs 2+ frames*.
+
+  Fixing it almost introduced the opposite defect. One frame from an **equilibrium** run is a
+  wasted run — no spread, no clusters, an identically zero RMSF — and the spurious collapse
+  warning was the only thing that had ever said so. So the message is now mode-aware, read
+  from the mode node 03 recorded rather than guessed from the frame count, and two fixtures
+  hold both halves: `single-frame-structure-run-has-no-spread` asserts no warning, and
+  `single-frame-equilibrium-run-is-warned-about` asserts there is one. A node that printed
+  nothing for either would pass the first fixture on its own.
 - **"Polymer residues" was two different numbers.** Node 01 counts the entity sequence,
   which upstream documents as including residues the structure does not resolve; the probe
   counts resolved residues. 1CLL is a 148-residue protein whose crystal resolves 144, and
   the ensemble BioEmu2 produces has all 148. Neither number was wrong; the label was. The
   inventory now records where its number comes from and the report says *entity sequence*.
+
+Two of the findings were in the suite itself, and they belong on this list because a test
+that passes by luck is worse than no test.
+
+- **The fixture ensembles were not deterministic.** `make_ensembles.py` seeded its generator
+  from `abs(hash((shape, n_frames, n_atoms)))`, and Python salts the hash of a `str` per
+  process unless `PYTHONHASHSEED` is set — so every run drew a different ensemble while the
+  comment above the line claimed a rerun was byte-identical. It now seeds from a CRC of the
+  same key, and the mode is part of it. Verified the way the claim is stated: rebuilding
+  `1CLL-6-spread-passed-equilibrium` in a fresh directory reproduced the same
+  `samples.xtc`, md5 `88e68a63`, as the suite's own copy.
+- **The medoid check asserted something that is not true.** It required `rmsd_to_medoid_nm`
+  to be zero at the frame named as the medoid, which is the obvious identity test and wrong:
+  mdtraj's RMSD is a float32 QCP, and a frame measured against itself comes back at
+  0.0013-0.0018 nm — the same order as the XTC quantisation, and the reason the collapse
+  floor is where it is. Combined with the unseeded dice it passed twice and failed on the
+  third run, on unchanged node code. The check now asserts what the quantity means: the
+  medoid is the argmin, and its own distance sits below the numerical floor rather than at
+  zero.
 
 That comparison is the entire design. `probe_entry.py` parses `_atom_site` by hand rather
 than through Biopython or biotite, so the measurement does not share a parser — or a bug —
@@ -72,13 +111,18 @@ expectations is run by the driver with no change to the driver:
 - **unit** — the three checks that need only the node code and mdtraj: the A3M path
   helpers, the streaming pairwise pass against a dense reference, and frame selection.
 - **fixtures** — nodes 01 and 02 over real entries, then node 03 `--dry-run`, with the
-  output checked against the measured input. The dry run is three gates, not a parameter
+  output checked against the measured input. A case may carry parameters, so two cases can
+  run the same entry under different ones: 5PTI appears three times, unfiltered, with
+  `exclude_ligands=UNX,DOD`, and with `include_ligands=false`. The dry run is three gates, not a parameter
   echo: the alignment is staged, the topology resolves, and each A3M's query row matches
   the sequence the system states for its chain.
 - **rejections** — inputs the pipeline must refuse, asserting both the exit status and that
   the refusal gives the stated reason. Three entries check that a legitimate input is still
   accepted, so a guard cannot pass by refusing everything.
 - **downstream** — nodes 04, 05 and 06 in sequence over ensembles from `make_ensembles.py`.
+  A case declares its frame count, the shape of the spread, the physicality verdict and the
+  sampling mode, and `make_ensembles.py` writes the manifest node 03 would have written — so
+  a check on a mode-dependent message is driven by the mode, not by a guess from the data.
 
 Every container runs with `--network none`. Node 02 is exercised on its uploaded-alignment
 path, with one A3M per protein chain from `make_a3m.py` whose query row is the chain's
@@ -117,7 +161,7 @@ Needs `docker`, `curl`, `python3` and the image from `../Dockerfile` (override w
 `BIOEMU2_IMAGE=...`). Entries are fetched once and cached. Exit status is 0 when nothing is
 in the `FAIL` column; known gaps do not fail the run.
 
-As of `bioemu2:2026_11_20` the offline suite reports **56 pass, 0 fail, 0 gap, 2 skipped**
+As of `bioemu2:2026_11_20` the offline suite reports **70 pass, 0 fail, 0 gap, 2 skipped**
 and the campaign **86 pass, 0 fail, 42 skipped**. The two skips offline are both `node02_paired_expectation`
 on the heteromers: the offline driver exercises node 02's user-supplied-A3M path, which is
 unpaired by construction, so whether a paired alignment is produced when one is due can only
@@ -126,6 +170,12 @@ are each printed with their reason, and most belong to the two systems that do n
 card.
 
 ### What the campaign measured
+
+The campaign samples in `equilibrium` mode. `structure` mode was measured separately, once,
+on 1UBQ and on the bundled Trp-cage 1L2Y at `num_samples = 1`: Rg 1.1616 and 0.7146 nm, one
+physical frame each, which is how the single-frame collapse warning above was found. It is not
+in the campaign loop because one frame has no ensemble to check and the loop's measurements are
+all ensemble measurements; the fixture carries it instead.
 
 On an 8 GB RTX 3060 Ti (sm_86, driver 580.178.04), 8 samples per system in one batch, seed 42:
 **86 pass, 0 fail, 42 skipped** over the seven systems and the propagated case. Two successive
@@ -202,11 +252,34 @@ number that stops being ordinary when the checkpoint, the precision or the align
 wrong. 1UBQ measured 1.1597 nm against 1.16 nm expected and an experimental 1.17 nm.
 
 Nothing here reproduces a published ensemble, compares a free-energy surface, or validates
-a state population. The entries were chosen for the input shapes they carry. 1AKE is the
-closest thing to a scientific positive control — adenylate kinase is a textbook two-state
-enzyme and upstream's own example — and even there the claim is only that the ensemble is
-physically sensible and spans more than one conformation, not that the populations are
-right. Frame counts are not populations, and the report says so on every page.
+a state population. The entries were chosen for the input shapes they carry. 1AKE was picked
+to be the scientific positive control — adenylate kinase is a textbook two-state enzyme and
+upstream's own example — but it does not fit the reference card, so the control that actually
+ran is 1CLL: calmodulin's two lobes pivot about a flexible central helix, and it comes out
+multi-state (8 clusters, 1.37 nm) where ubiquitin comes out single-state (1 cluster, 0.22 nm).
+Even there the claim is only that the ensembles are physically sensible and differ in the
+direction the literature says they should, not that the populations are right. Frame counts
+are not populations, and the report says so on every page.
+
+Not every input path is covered here. Node 01 accepts an upload, a structure file, a raw
+`sequence` or an RCSB `pdb_id`, and until this pass the suite staged a structure file every
+time, so three of the four advertised ways in had never been taken. `sequence` is covered now
+— `ubiquitin-from-a-bare-sequence` stages no file at all and asserts that the inventory
+matches the length of the string, which on that path is the entire truth about the system.
+`pdb_id` needs the network, so it was measured once by hand instead: 1UBQ resolves to
+`RCSB:1UBQ` at 76 residues and 76 tokens, with the log recording the assembly and the ligand
+policy. `rmsd_cluster_threshold_nm` is covered too, by
+`cluster-count-follows-the-threshold-asked-for`, which re-derives the cluster count from the
+published matrix under node 05's own greedy rule — tie-break included, since a check that
+broke ties the other way would be re-deriving a different algorithm. Its threshold comes
+from the fixture's own measured distance distribution, not from a round number: the 66
+pairwise distances run 0.1146 to 0.1338 nm, so the count is 12 below 0.12 nm, 4 at 0.12 and
+1 above 0.13. 0.12 is the only value where both ignoring the parameter and applying it at
+the wrong scale change the answer. `msa_depth` and
+`use_env` remain unexercised; both apply only to an alignment fetched from the server, which
+the offline driver never does. The parameters that *are* covered are
+in the fixture table, and the two ligand filters were added because node 01 prints their
+names as advice — advice that nothing had ever run.
 
 ## Choosing a fixture
 
@@ -244,6 +317,9 @@ can see that; `len(residue_rmsf) == 144` can.
 | 1A3N | haemoglobin, 4 chains over 2 sequences, 4 haems | a paired alignment **is** due; the heteromer path; cofactors at the interface |
 | 1AKE | adenylate kinase, 2 chains, AP5A inhibitor | upstream's own example and a real two-state enzyme, chosen as the case where the ensemble should be interesting rather than merely well formed. At 542 tokens it does not fit the 8 GB reference card at any batch size, so on this hardware it is an input-measurement and failure-reporting case, and 1CLL carries the interesting ensemble instead |
 | 1BNA | B-DNA dodecamer, no protein chain | no alignment is due and none must be demanded — the counter-case to the staging guard |
+| 5PTI with `exclude_ligands=UNX,DOD` | the same entry, placeholder and heavy water dropped | node 01's own warnings name this parameter as the remedy, and nothing had ever run it. Measured: 4 chains and 65 tokens become 2 chains and 63, with `PO4` surviving and the two excluded codes gone — one token each, which is the arithmetic the check asserts |
+| 5PTI with `include_ligands=false` | the same entry as an apo protein | the stronger assertion: with every component dropped the token count has to fall to the polymer residue count, and it does — 58 and 58 |
+| ubiquitin from a bare `sequence` | the raw-sequence input path, no file staged | three of node 01's four advertised inputs had never been run. With no file to parse and no entity tables to read, the length of the string is the whole truth: one chain, 76 residues, 76 tokens, no components, and the chain's stated sequence equal to the input |
 
 ## Known gaps
 

@@ -36,6 +36,7 @@ Usage:
 import json
 import os
 import sys
+import zlib
 
 
 def rotation(rng):
@@ -81,9 +82,16 @@ def main():
         return 2
     out_dir, system_path, n_frames, shape = sys.argv[1:5]
     physicality_status = sys.argv[5] if len(sys.argv) > 5 else "passed"
+    # The mode node 03 would have recorded. Node 05 reads it rather than inferring anything
+    # from the frame count, so a fixture that wants to exercise a mode-dependent message has
+    # to declare the mode here.
+    mode = sys.argv[6] if len(sys.argv) > 6 else "equilibrium"
     n_frames = int(n_frames)
     if shape not in ("spread", "identical"):
         print(f"ERROR: unknown shape '{shape}'")
+        return 2
+    if mode not in ("equilibrium", "structure"):
+        print(f"ERROR: unknown mode '{mode}'")
         return 2
 
     import mdtraj
@@ -97,9 +105,17 @@ def main():
     topology = system.topology
     n_atoms = topology.n_atoms
 
-    # Seeded per shape and size, so a rerun of the same case is byte-identical and a
+    # Seeded per shape, size and mode, so a rerun of the same case is byte-identical and a
     # different case is genuinely different.
-    rng = np.random.default_rng(abs(hash((shape, n_frames, n_atoms))) % (2**32))
+    #
+    # Not `hash()`. Python salts the hash of a str per process unless PYTHONHASHSEED is set,
+    # so this used to draw a different ensemble on every run while claiming to be
+    # deterministic -- and that hid a flaky check: `node05_medoid_measured_over_all_pairs`
+    # asserted that `rmsd_to_medoid_nm` is zero at the medoid, which is only true to within
+    # mdtraj's float32 RMSD noise (measured 0.0013-0.0018 nm for a frame against itself), so
+    # it passed or failed depending on which frame the dice made the medoid.
+    key = f"{shape}-{n_frames}-{n_atoms}-{mode}".encode()
+    rng = np.random.default_rng(zlib.crc32(key))
 
     base = base_conformation(n_atoms)
     frames = np.empty((n_frames, n_atoms, 3), dtype=np.float32)
@@ -130,7 +146,7 @@ def main():
     n_passed = sum(1 for r in records if r["status"] == "passed") if checked else None
     manifest = {
         "settings": {
-            "mode": "equilibrium",
+            "mode": mode,
             "num_samples": n_frames,
             "batch_size": None,
             "seed": 42,

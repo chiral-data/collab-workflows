@@ -200,10 +200,14 @@ def pairwise_pass(traj, indices, keep_matrix):
             smallest = min(smallest, float(upper.min()))
 
     n_pairs = n * (n - 1) // 2
+    # With one frame there are no pairs, and the spread is undefined rather than zero. These
+    # were 0.0, which reads as "every frame is identical" -- the collapse signature -- and so
+    # made a single-frame run, which is what `mode = structure` with `num_samples = 1` is for,
+    # report itself as collapsed. A number nobody measured must not look like one somebody did.
     stats = {
-        "mean_nm": round(total / n_pairs, 4) if n_pairs else 0.0,
-        "max_nm": round(largest, 4) if n_pairs else 0.0,
-        "min_nm": round(smallest, 4) if n_pairs else 0.0,
+        "mean_nm": round(total / n_pairs, 4) if n_pairs else None,
+        "max_nm": round(largest, 4) if n_pairs else None,
+        "min_nm": round(smallest, 4) if n_pairs else None,
         "n_pairs": n_pairs,
     }
     if matrix is not None:
@@ -594,13 +598,14 @@ def main():
         f"Rg {rg['mean']} +/- {rg['std']} nm (range {rg['min']}-{rg['max']})",
         flush=True,
     )
-    if summary["pairwise_rmsd"]:
+    pairwise = summary["pairwise_rmsd"] or {}
+    if pairwise and pairwise.get("n_pairs"):
         print(
-            f"Pairwise C-alpha RMSD: mean {summary['pairwise_rmsd']['mean_nm']} nm, "
-            f"max {summary['pairwise_rmsd']['max_nm']} nm",
+            f"Pairwise C-alpha RMSD: mean {pairwise['mean_nm']} nm, "
+            f"max {pairwise['max_nm']} nm",
             flush=True,
         )
-        if summary["pairwise_rmsd"]["max_nm"] < COLLAPSE_NM:
+        if pairwise["max_nm"] < COLLAPSE_NM:
             print(
                 f"WARNING: the ensemble has collapsed — the largest pairwise C-alpha RMSD is "
                 f"{summary['pairwise_rmsd']['max_nm']} nm, below the {COLLAPSE_NM} nm at which "
@@ -608,6 +613,23 @@ def main():
                 "mode (equilibrium vs structure) and the MSA depth.",
                 flush=True,
             )
+    elif pairwise:
+        # The mode decides whether this is expected or a wasted run, and node 03 recorded it,
+        # so there is no need to guess from the frame count.
+        run_mode = (sampling_manifest.get("settings") or {}).get("mode") or "unrecorded"
+        expected = run_mode == "structure"
+        print(
+            f"Pairwise C-alpha RMSD: not defined for {summary['n_frames']} frame(s) — a spread "
+            "needs two. No collapse check applies, which is the expected state for "
+            "`mode = structure` with `num_samples = 1`."
+            if expected
+            else f"WARNING: {summary['n_frames']} frame(s) from a "
+            f"'{run_mode}' run. There is no pairwise spread, no cluster structure "
+            "and no RMSF to read: an equilibrium ensemble of one is one draw. Re-run with "
+            "num_samples of 8 or more, or with mode=structure if a single structure was the "
+            "intention.",
+            flush=True,
+        )
     if summary["n_clusters"] is not None:
         print(
             f"{summary['n_clusters']} cluster(s) at {threshold} nm; medoid frame {medoid}",

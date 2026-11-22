@@ -563,7 +563,12 @@ def main():
             tile("Frames", sampled.get("n_frames", "—")),
             tile("Mode", settings.get("mode", "—")),
             tile("Mean R<sub>g</sub>", fmt(rg_stats.get("mean"), 3), "nm"),
-            tile("Max pairwise RMSD", fmt(pairwise.get("max_nm"), 3), "nm"),
+            # One frame has no pairwise spread. Showing a dash and "nm" invites the reader to
+            # supply the missing number themselves, usually as zero -- which is the collapse
+            # signature -- so the tile says instead that the quantity needs two frames.
+            tile("Max pairwise RMSD", fmt(pairwise.get("max_nm"), 3), "nm")
+            if pairwise.get("n_pairs")
+            else tile("Max pairwise RMSD", "n/a", "needs 2+ frames"),
             tile(
                 "Clusters",
                 sampled.get("n_clusters") if sampled.get("n_clusters") is not None else "—",

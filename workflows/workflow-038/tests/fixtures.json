@@ -177,6 +177,61 @@
           "check": "node03_dryrun_accepts_absent_alignment"
         }
       ]
+    },
+    {
+      "id": "5PTI",
+      "name": "5PTI-without-the-placeholder-and-the-heavy-water",
+      "shape": "BPTI with exclude_ligands=UNX,DOD",
+      "evidence": "Measured: the unfiltered run reports 4 chains, 65 tokens and components PO4, UNX, DOD; with exclude_ligands=UNX,DOD it reports 2 chains, 63 tokens and PO4 alone. UNX and DOD are one token each, which is the arithmetic the check asserts.",
+      "why": "Node 01's own warnings tell the reader to drop a placeholder with exclude_ligands=UNX and a neutron structure's heavy water with exclude_ligands=DOD. Nothing had ever run that parameter, so the advice was unverified -- and advice that does not work is worse than no advice, because the reader stops looking. This case makes the remedy part of the suite.",
+      "params": {
+        "PARAM_EXCLUDE_LIGANDS": "UNX,DOD"
+      },
+      "expect": [
+        {
+          "check": "inventory_honours_ligand_filters"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        }
+      ]
+    },
+    {
+      "id": "5PTI",
+      "name": "5PTI-as-an-apo-protein",
+      "shape": "BPTI with include_ligands=false",
+      "evidence": "Measured: 1 chain, 58 tokens, no components -- equal to the 58 polymer residues, so the token count is the protein alone.",
+      "why": "The other half of the ligand controls, and the stronger assertion: with every non-polymer component dropped the token count has to equal the polymer residue count. A filter that silently kept something would show up as a token count above the residue count, which is exactly how the unfiltered entry reads.",
+      "params": {
+        "PARAM_INCLUDE_LIGANDS": "false"
+      },
+      "expect": [
+        {
+          "check": "inventory_honours_ligand_filters"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        }
+      ]
+    },
+    {
+      "id": "1UBQ",
+      "name": "ubiquitin-from-a-bare-sequence",
+      "input": "none",
+      "shape": "the raw-sequence input path, no file staged",
+      "evidence": "The 1UBQ entry measures 76 polymer residues and 76 tokens from its structure file; this sequence is the same 76 residues, so the two paths have to agree.",
+      "why": "Node 01 advertises four ways in -- an upload, a structure file, a raw sequence and an RCSB accession -- and the suite staged a structure file in every case, so three were never exercised. The sequence path has no file to parse and no entity tables to read, which makes it the one case where the length of the input string is the entire truth about the system: if the inventory disagrees, nothing else can be blamed.",
+      "params": {
+        "PARAM_SEQUENCE": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+      },
+      "expect": [
+        {
+          "check": "inventory_from_sequence"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        }
+      ]
     }
   ],
   "rejections": [
@@ -236,6 +291,18 @@
       "setup": "corrupt_msa_query",
       "why": "An uploaded A3M whose first row is not the system's own sequence used to be used anyway: bioemu2's load_a3m_msa does not compare the query row against the sequence in the System, so the alignment conditioned the model on a different protein and the run looked entirely ordinary -- frame count, physicality rate and geometry all unremarkable. Reproduced by replacing the query row with a poly-glycine string of the same length. Node 03 now compares every staged A3M's query against the sequence the System states for that chain, before the model is loaded, so the dry run catches it. A chain whose stated sequence contains X -- a modified residue or a cap, which an alignment cannot represent -- is reported rather than refused, because there the difference is expected.",
       "expect_error": "query"
+    },
+    {
+      "name": "node 01 refuses include_ligands=false together with exclude_ligands",
+      "id": "5PTI",
+      "stage": "node01",
+      "setup": "none",
+      "params": {
+        "PARAM_INCLUDE_LIGANDS": "false",
+        "PARAM_EXCLUDE_LIGANDS": "UNX"
+      },
+      "expect_error": "cannot be combined with include_ligands=false",
+      "why": "Upstream's `from_cif` forbids the combination, and a node that passed both through would surface that as a TypeError from inside the library. It is also a question a user can reasonably ask -- drop everything except one named thing -- so the refusal has to say which parameter does what rather than only that the call failed. Paired with the two 5PTI filter fixtures, which prove each parameter works on its own, so this guard cannot be satisfied by refusing the filters outright."
     }
   ],
   "downstream": [
@@ -400,6 +467,61 @@
           "check": "node06_report_built"
         }
       ]
+    },
+    {
+      "name": "single-frame-structure-run-has-no-spread",
+      "source": "1UBQ",
+      "n_frames": 1,
+      "ensemble": "spread",
+      "why": "`mode = structure` with `num_samples = 1` is the configuration the README recommends for predicting a folded structure, and it produces one frame. Node 05 reported `max_nm: 0.0` for it -- a statistic over zero pairs -- and then warned that the ensemble had collapsed and that the reader should check the mode, which was correct. Measured on a GPU: 1UBQ in structure mode gives Rg 1.1616 nm and 1L2Y 0.7146 nm, both compact, both single frames, and both used to be announced as collapsed.",
+      "expect": [
+        {
+          "check": "node05_single_frame_spread_undefined"
+        },
+        {
+          "check": "node05_selection_recorded"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ],
+      "mode": "structure"
+    },
+    {
+      "name": "single-frame-equilibrium-run-is-warned-about",
+      "source": "1UBQ",
+      "n_frames": 1,
+      "ensemble": "spread",
+      "mode": "equilibrium",
+      "why": "The counter-case to the structure-mode fixture, so the fix is not just silence. One frame from an equilibrium run is a wasted run -- no spread, no clusters, an identically zero RMSF -- and node 05 has to say so. Without this entry a node that printed nothing at all for one frame would pass the structure-mode fixture, and the user who typed num_samples=1 by mistake would get a report full of blanks and no explanation.",
+      "expect": [
+        {
+          "check": "node05_single_frame_spread_undefined"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ]
+    },
+    {
+      "name": "cluster-count-follows-the-threshold-asked-for",
+      "source": "1UBQ",
+      "n_frames": 12,
+      "ensemble": "spread",
+      "mode": "equilibrium",
+      "why": "`rmsd_cluster_threshold_nm` is the parameter behind the most quotable number in the report -- 'this ensemble has N conformational states' -- and no test had ever set it. The threshold is chosen from the fixture's measured distance distribution rather than picked round: at 0.12 nm the count is 4 of 12 frames, so both ignoring the parameter and applying it at the wrong scale change the answer. The check re-derives the count from the published matrix under node 05's own greedy rule, tie-break included, so agreement means the number came from the threshold asked for.",
+      "params": {
+        "PARAM_RMSD_CLUSTER_THRESHOLD_NM": "0.12"
+      },
+      "expect": [
+        {
+          "check": "node05_cluster_threshold_applied"
+        },
+        {
+          "check": "node05_medoid_measured_over_all_pairs"
+        }
+      ],
+      "evidence": "Measured on this fixture's own matrix: the 66 pairwise distances run 0.1146 to 0.1338 nm, so the count is 12 at any threshold up to 0.11, 4 at 0.12 and 1 from 0.13 up. 0.12 is the one value in the discriminating band -- a node that ignored the parameter and clustered at its 0.2 nm default would report 1, and a node that clustered at anything below 0.12 would report 12."
     }
   ]
 }

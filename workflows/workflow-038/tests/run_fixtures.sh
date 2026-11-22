@@ -100,11 +100,14 @@ in_image python -I tests/unit_checks.py /work/results/unit/unit_results.json \
 
 echo
 echo "== fixtures"
-while IFS=$'\t' read -r SLUG ID; do
+while IFS=$'\t' read -r SLUG ID INPUT ENVS; do
   wanted "$SLUG" || continue
   D="$OUT/fixtures/$SLUG"; rm -rf "$D"; mkdir -p "$D/01/inputs"
-  cp "$DL/$ID.cif" "$D/01/inputs/"
-  run_node "$D" 01-prepare-system ""; RC1=$?
+  read -r -a ENV_ARR <<< "${ENVS:-}"
+  # `none` leaves the input directory empty, which is how the sequence and accession paths
+  # are reached: node 01 takes the first match, so a staged file would win over either.
+  [ "$INPUT" = "none" ] || cp "$DL/$ID.cif" "$D/01/inputs/"
+  run_node "$D" 01-prepare-system "" "${ENV_ARR[@]}"; RC1=$?
 
   stage "$D" 02 01
   # The uploaded-alignment path, so no server is contacted. For a system with no protein
@@ -113,18 +116,18 @@ while IFS=$'\t' read -r SLUG ID; do
     python3 -I "$TESTS/make_a3m.py" "$DL/$ID.cif" \
       "$D/01/outputs/system_inventory.json" "$D/02/inputs" >/dev/null
   fi
-  run_node "$D" 02-fetch-msa ""; RC2=$?
+  run_node "$D" 02-fetch-msa "" "${ENV_ARR[@]}"; RC2=$?
 
   stage "$D" 03 02
-  run_node "$D" 03-sample --dry-run "PARAM_NUM_SAMPLES=4"; RC3=$?
-  printf '  %-6s node01=%s node02=%s node03(dry)=%s\n' "$ID" "$RC1" "$RC2" "$RC3"
+  run_node "$D" 03-sample --dry-run "PARAM_NUM_SAMPLES=4" "${ENV_ARR[@]}"; RC3=$?
+  printf '  %-42s node01=%s node02=%s node03(dry)=%s\n' "$SLUG" "$RC1" "$RC2" "$RC3"
 done < <(python3 -I "$TESTS/plan.py" fixtures)
 
 # The ensembles the downstream and node-04 cases are driven from. Built once per (source,
 # frames, shape, physicality) and reused, because make_ensembles.py is deterministic.
-base_for () {  # $1 = source id, $2 = n_frames, $3 = shape, $4 = physicality
-  local ID="$1" N="$2" SHAPE="$3" PHYS="$4"
-  local KEY="$ID-$N-$SHAPE-$PHYS"
+base_for () {  # $1 = source id, $2 = n_frames, $3 = shape, $4 = physicality, $5 = mode
+  local ID="$1" N="$2" SHAPE="$3" PHYS="$4" MODE="${5:-equilibrium}"
+  local KEY="$ID-$N-$SHAPE-$PHYS-$MODE"
   local B="$OUT/bases/$KEY"
   if [ ! -s "$B/samples.xtc" ]; then
     # A fixture case's slug is its entry id, so the fixture run's system.yaml is here.
@@ -137,6 +140,7 @@ base_for () {  # $1 = source id, $2 = n_frames, $3 = shape, $4 = physicality
     cp "$SYS" "$B/system.yaml"
     in_image python -I tests/make_ensembles.py \
       "/work/results/bases/$KEY" "/work/results/bases/$KEY/system.yaml" "$N" "$SHAPE" "$PHYS" \
+      "$MODE" \
       > "$B/make.log" 2>&1 \
       || { echo "   ERROR: make_ensembles failed for $KEY; see $B/make.log" >&2; return 1; }
   fi
@@ -176,6 +180,12 @@ with open(path, 'w') as handle:
         done ;;
     esac
     run_node "$D" 03-sample --dry-run "PARAM_NUM_SAMPLES=4" "${ENV_ARR[@]}"; RC=$?
+  elif [ "$STAGE" = "node01" ]; then
+    # A parameter combination node 01 has to refuse before it resolves anything. No staging
+    # beyond the entry itself, which is the point: the refusal must not depend on the input.
+    mkdir -p "$D/01/inputs"
+    cp "$DL/$ID.cif" "$D/01/inputs/"
+    run_node "$D" 01-prepare-system "" "${ENV_ARR[@]}"; RC=$?
   else
     B=$(base_for "$ID" 6 spread passed) || continue
     mkdir -p "$D/04/inputs"
@@ -188,12 +198,12 @@ done < <(python3 -I "$TESTS/plan.py" rejections)
 
 echo
 echo "== downstream"
-while IFS=$'\t' read -r SLUG SOURCE N SHAPE PHYS SETUP ENVS; do
+while IFS=$'\t' read -r SLUG SOURCE N SHAPE PHYS MODE SETUP ENVS; do
   wanted "$SLUG" || continue
   D="$OUT/downstream/$SLUG"; rm -rf "$D"; mkdir -p "$D"
   read -r -a ENV_ARR <<< "${ENVS:-}"
 
-  B=$(base_for "$SOURCE" "$N" "$SHAPE" "$PHYS") || continue
+  B=$(base_for "$SOURCE" "$N" "$SHAPE" "$PHYS" "$MODE") || continue
   mkdir -p "$D/base"
   cp -a "$B/." "$D/base/" 2>/dev/null
   rm -f "$D/base/make.log"

@@ -464,6 +464,20 @@ def main():
         os.environ.get("PARAM_PHYSICALITY_FILTER", "high_quality"),
         PHYSICALITY_MODES,
     )
+    # One sample is the documented way to use `structure` mode and a mistake in `equilibrium`
+    # mode: the whole point of an equilibrium run is the spread across frames, and a single
+    # draw has none. This used to surface downstream as node 05 warning that the ensemble had
+    # collapsed, which was the right alarm attached to the wrong cause -- it fired on the
+    # correct `structure` run too. Saying it here costs nothing and precedes the GPU time.
+    if num_samples == 1 and mode == "equilibrium":
+        print(
+            "WARNING: num_samples=1 in equilibrium mode. That is one draw from the ensemble, "
+            "not the ensemble: there is no pairwise spread to measure, no cluster structure, "
+            "and the RMSF is identically zero. Use 8 or more for an ensemble, or "
+            "mode=structure if a single predicted structure is what you want.",
+            flush=True,
+        )
+
     precision = choice("precision", os.environ.get("PARAM_PRECISION", "bf16-mixed"), PRECISIONS)
     matmul_precision = choice(
         "matmul_precision",

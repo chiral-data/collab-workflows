@@ -67,6 +67,9 @@ class Case:
         self.name = entry.get("name") or entry.get("id")
         self.dir = os.path.join(results, section, slug(self.name))
         self.downloads = downloads
+        # The parameters the driver ran this case under, so a check can assert what a
+        # parameter did rather than hard-coding the value the fixture happens to use.
+        self.params = entry.get("params") or {}
         self._truth = None
 
     def out(self, node, name):
@@ -91,7 +94,10 @@ class Case:
         to match, and which also records whether the shape being tested for is present.
         """
         if self._truth is None:
-            source = self.entry.get("source") or self.name
+            # `source` for a downstream or rejection case, `id` for a fixture -- which is
+            # not the same as the name once two cases run the same entry under different
+            # parameters. Falling back to the name would silently measure nothing.
+            source = self.entry.get("source") or self.entry.get("id") or self.name
             candidates = [
                 os.path.join(self.dir, "base", "topology.cif"),
                 os.path.join(self.downloads, f"{source}.cif"),
@@ -226,6 +232,123 @@ def inventory_reports_ligands(case):
             f"{inventory.get('has_ligands')!r}"
         )
     return PASS, f"has_ligands=true, against {hetero} non-polymer atom row(s) measured"
+
+
+def inventory_from_sequence(case):
+    """The raw-sequence input path: one chain, the stated length, and no components.
+
+    Node 01 accepts an upload, a structure file, a raw `sequence` or an RCSB accession, and
+    until this case the suite staged a structure file every time -- so three of the four
+    advertised ways in were never taken. The sequence path is the one with no file to parse
+    and no metadata to read: the length of the string is the whole truth about the system, so
+    an inventory that disagrees with it has nothing to blame but itself.
+    """
+    sequence = str((case.params or {}).get("PARAM_SEQUENCE") or "").strip()
+    if not sequence:
+        return SKIP, "this case does not set a sequence"
+    inventory = case.json("01", "system_inventory.json")
+    if not inventory:
+        return FAIL, f"node 01 wrote no inventory (exit {case.rc('01')})"
+    problems = []
+    if inventory.get("n_chains") != 1:
+        problems.append(f"n_chains={inventory.get('n_chains')}, expected 1")
+    if inventory.get("n_polymer_residues") != len(sequence):
+        problems.append(
+            f"n_polymer_residues={inventory.get('n_polymer_residues')} for a "
+            f"{len(sequence)}-residue sequence"
+        )
+    if inventory.get("n_tokens") != len(sequence):
+        problems.append(
+            f"n_tokens={inventory.get('n_tokens')} for a {len(sequence)}-residue sequence "
+            "with no components"
+        )
+    if inventory.get("ligand_components"):
+        problems.append(f"ligand_components={inventory.get('ligand_components')}")
+    chains = inventory.get("chains") or []
+    stated = str((chains[0] if chains else {}).get("sequence") or "")
+    if stated.upper() != sequence.upper():
+        problems.append(f"the chain's stated sequence is {stated!r}, not the input")
+    if problems:
+        return FAIL, "; ".join(problems)
+    return PASS, (
+        f"1 chain of {len(sequence)} residue(s), {inventory.get('n_tokens')} token(s), no "
+        f"components, and the chain's sequence is the input string: {inventory.get('source')}"
+    )
+
+
+def inventory_honours_ligand_filters(case):
+    """`include_ligands` and `exclude_ligands` must do what node 01's own advice says.
+
+    Node 01 warns about a placeholder component and about a neutron structure's heavy water,
+    and both warnings name `exclude_ligands=<CODE>` as the remedy. Nothing had ever run that
+    parameter: the advice was a sentence, not a measured fact, and advice that does not work
+    is worse than none because a reader who tries it once stops reading the rest.
+
+    The assertion is arithmetic, against the components `probe_entry.py` measured in the file
+    rather than against another run of the same code. Excluded codes must be gone, the codes
+    that were not excluded must still be there, and -- when every component is dropped -- the
+    token count must fall to the polymer residue count, because a token is a residue or a
+    component and there are no components left.
+    """
+    inventory = case.json("01", "system_inventory.json")
+    if not inventory:
+        return FAIL, f"node 01 wrote no inventory (exit {case.rc('01')})"
+    params = case.params or {}
+    excluded = {
+        code.strip().upper()
+        for code in str(params.get("PARAM_EXCLUDE_LIGANDS", "")).replace(",", " ").split()
+        if code.strip()
+    }
+    include = str(params.get("PARAM_INCLUDE_LIGANDS", "true")).strip().lower() != "false"
+    if not excluded and include:
+        return SKIP, "this case sets neither ligand filter"
+
+    kept = {
+        str(entry.get("ccd_code") or "").upper()
+        for entry in (inventory.get("ligand_components") or [])
+    } - {""}
+    # The probe's component set omits water, including `DOD` -- as every tool but bioemu2
+    # does, which is the finding that put DOD here in the first place. So the probe decides
+    # which codes must *survive*, and node 01's own inventory decides which must be *gone*:
+    # it is the thing that reports DOD as a component, so a DOD that leaked is still caught.
+    in_file = set((case.truth or {}).get("nonpolymer_components") or [])
+    leaked = kept & excluded
+    if leaked:
+        return FAIL, (
+            f"exclude_ligands named {sorted(excluded)} and the inventory still reports "
+            f"{sorted(leaked)}"
+        )
+    if not include and kept:
+        return FAIL, f"include_ligands=false and the inventory still reports {sorted(kept)}"
+
+    residues = inventory.get("n_polymer_residues")
+    tokens = inventory.get("n_tokens")
+    if not include:
+        if tokens != residues:
+            return FAIL, (
+                f"include_ligands=false leaves {tokens} token(s) against {residues} polymer "
+                "residue(s): a token is a residue or a component, so something was kept"
+            )
+        return PASS, (
+            f"include_ligands=false: no components, and {tokens} token(s) equals the "
+            f"{residues} polymer residue(s), so nothing else is being modelled"
+        )
+
+    # A code in the file that was not excluded has to survive. The probe's own set omits
+    # waters, so only the codes it did measure are asserted here.
+    should_survive = {code for code in in_file if code not in excluded}
+    missing = should_survive - kept
+    if missing:
+        return FAIL, (
+            f"exclude_ligands named {sorted(excluded)} but {sorted(missing)} also "
+            f"disappeared; the inventory kept {sorted(kept)}"
+        )
+    if tokens is None or residues is None or tokens < residues:
+        return FAIL, f"{tokens} token(s) against {residues} polymer residue(s)"
+    return PASS, (
+        f"excluded {sorted(excluded)}; kept {sorted(kept)} of the {sorted(in_file)} measured "
+        f"in the file, at {tokens} token(s) over {residues} polymer residue(s)"
+    )
 
 
 def node02_no_protein_chain(case):
@@ -480,13 +603,69 @@ def node05_matrix_dropped_above_cap(case):
     return PASS, f"{frames} frames: matrix not retained, as designed"
 
 
+def node05_cluster_threshold_applied(case):
+    """The cluster count must come from the threshold that was asked for.
+
+    `rmsd_cluster_threshold_nm` is the parameter behind the single most quotable number in
+    the report -- "this ensemble has N conformational states" -- and nothing had ever set it.
+    A node that ignored it, or recorded one value while clustering at another, would produce
+    a plausible count under any input, so the check reads the threshold back out of the
+    summary and then re-derives the count from the published matrix at that threshold.
+    """
+    asked = (case.params or {}).get("PARAM_RMSD_CLUSTER_THRESHOLD_NM")
+    if asked is None:
+        return SKIP, "this case does not set the cluster threshold"
+    asked = float(asked)
+    summary = case.json("05", "ensemble_summary.json") or {}
+    sampled = (summary.get("ensembles") or {}).get("sampled") or {}
+    recorded = sampled.get("rmsd_cluster_threshold_nm")
+    if recorded is None:
+        return FAIL, "node 05 recorded no cluster threshold"
+    if abs(float(recorded) - asked) > 1e-9:
+        return FAIL, f"asked for {asked} nm and the summary records {recorded} nm"
+    matrix = summary.get("rmsd_matrix")
+    count = sampled.get("n_clusters")
+    if not matrix:
+        return FAIL, "no published matrix to re-derive the count from"
+    # The same greedy medoid assignment node 05 documents: take the frame with the most
+    # neighbours within the threshold, remove it and its neighbours, repeat. The tie-break is
+    # copied deliberately -- node 05 takes `max((count, index))`, so a tie goes to the higher
+    # index. A check that broke ties the other way would be re-deriving a different algorithm
+    # and would disagree on exactly the data where the count is interesting.
+    remaining = set(range(len(matrix)))
+    derived = 0
+    while remaining:
+        _, best = max(
+            (sum(1 for g in remaining if float(matrix[f][g]) <= asked), f) for f in remaining
+        )
+        remaining -= {g for g in remaining if float(matrix[best][g]) <= asked}
+        derived += 1
+    if derived != count:
+        return FAIL, (
+            f"node 05 reports {count} cluster(s) at {asked} nm; the published matrix gives "
+            f"{derived} under the same rule"
+        )
+    return PASS, (
+        f"{count} cluster(s) at the {asked} nm asked for, re-derived from the published "
+        f"{len(matrix)}x{len(matrix)} matrix"
+    )
+
+
 def node05_medoid_measured_over_all_pairs(case):
     """The medoid must stay measured where the matrix is dropped.
 
     Node 05 used to set `medoid = 0` above 200 frames while keeping the column name
     `rmsd_to_medoid_nm`, so the ensemble's reference frame silently became "whichever frame
     was sampled first". Two things prove it is real now: the spread covers every pair, and
-    the per-frame RMSD-to-medoid column is zero exactly at the frame named as the medoid.
+    the per-frame RMSD-to-medoid column is smallest at the frame named as the medoid.
+
+    Smallest, not zero. This check used to require a zero there, which looks like the obvious
+    identity test and is wrong: mdtraj's RMSD is a float32 QCP, and a frame against itself
+    measures 0.0013-0.0018 nm rather than 0 -- the same order as the XTC quantisation. The
+    assertion held or failed depending on which frame the fixture's dice made the medoid, and
+    the fixture's dice were themselves unseeded (see `make_ensembles.py`). So it is written
+    the way the quantity is actually defined: the medoid is the argmin, and its own distance
+    sits at the numerical floor rather than at zero.
     """
     sampled = sampled_summary(case)
     if not sampled:
@@ -505,15 +684,25 @@ def node05_medoid_measured_over_all_pairs(case):
         distances = {int(r["frame"]): float(r["rmsd_to_medoid_nm"]) for r in rows}
     except (KeyError, ValueError) as exc:
         return FAIL, f"could not read rmsd_to_medoid_nm: {exc}"
-    zeros = [f for f, d in distances.items() if d < 1e-6]
-    if zeros != [medoid]:
-        return FAIL, (
-            f"medoid_frame={medoid} but rmsd_to_medoid_nm is zero at {zeros}"
-        )
     argmin = min(distances, key=lambda f: distances[f])
+    if argmin != medoid:
+        return FAIL, (
+            f"medoid_frame={medoid} but rmsd_to_medoid_nm is smallest at frame {argmin} "
+            f"({distances[argmin]} against {distances.get(medoid)} nm)"
+        )
+    # The floor mdtraj's own arithmetic puts on a frame measured against itself, and the same
+    # order as the XTC quantisation. Anything above it means the named frame is not the one
+    # the column was measured from.
+    if distances[medoid] >= COLLAPSE_NM:
+        return FAIL, (
+            f"rmsd_to_medoid_nm is {distances[medoid]} nm at the medoid itself, above the "
+            f"{COLLAPSE_NM} nm numerical floor: the column was measured from some other frame"
+        )
+    others = sorted(d for f, d in distances.items() if f != medoid)
     return PASS, (
-        f"{frames} frames, all {pairs} pair(s) measured; rmsd_to_medoid is 0 at frame "
-        f"{argmin} == medoid_frame, so the reference frame is real"
+        f"{frames} frames, all {pairs} pair(s) measured; rmsd_to_medoid is smallest at frame "
+        f"{argmin} == medoid_frame at {distances[medoid]} nm, against {others[0]} nm for the "
+        "next closest, so the reference frame is real"
     )
 
 
@@ -524,8 +713,14 @@ def node05_collapse_warned(case):
     sampled = sampled_summary(case)
     if not sampled:
         return FAIL, "node 05 wrote no summary"
-    maximum = (sampled.get("pairwise_rmsd") or {}).get("max_nm")
+    pairwise = sampled.get("pairwise_rmsd") or {}
+    maximum = pairwise.get("max_nm")
     log = case.log("05")
+    if pairwise.get("n_pairs") == 0:
+        return FAIL, (
+            "this fixture carries several identical frames, so a pair count of 0 means the "
+            "frames never reached node 05"
+        )
     if maximum is None:
         return FAIL, "no pairwise RMSD recorded"
     # The same threshold node 05 warns at. An XTC quantises coordinates to 0.001 nm, so one
@@ -762,6 +957,71 @@ def sampled_summary(case):
     return (summary.get("ensembles") or {}).get("sampled") or {}
 
 
+def node05_single_frame_spread_undefined(case):
+    """One frame has no pairwise spread, and must not be reported as a collapsed ensemble.
+
+    `mode = structure` with `num_samples = 1` is a documented configuration -- it is what
+    the workflow recommends for predicting a folded structure -- and it produces exactly one
+    frame. Node 05 used to report `max_nm: 0.0` for it and then warn that the ensemble had
+    collapsed, advising the reader to check the mode they had set correctly. The statistics
+    are now null with `n_pairs: 0`, and the node says a spread needs two frames.
+    """
+    sampled = sampled_summary(case)
+    if not sampled:
+        return FAIL, f"node 05 wrote no summary (exit {case.rc('05')})"
+    frames = sampled.get("n_frames")
+    if frames != 1:
+        return FAIL, f"this case is meant to carry one frame; node 05 saw {frames}"
+    pairwise = sampled.get("pairwise_rmsd") or {}
+    if pairwise.get("n_pairs") != 0:
+        return FAIL, f"n_pairs is {pairwise.get('n_pairs')} for a single frame, expected 0"
+    stated = {key: pairwise.get(key) for key in ("max_nm", "mean_nm", "min_nm")}
+    numeric = {key: value for key, value in stated.items() if value is not None}
+    if numeric:
+        return FAIL, (
+            f"a spread over zero pairs is reported as a number: {numeric}. 0.0 is the "
+            "collapse signature, so this makes a one-frame run look like a failed one"
+        )
+    log = case.log("05")
+    if "has collapsed" in log:
+        return FAIL, "node 05 warned that a single-frame ensemble had collapsed"
+    # The two modes are different claims, and node 05 reads the mode from the manifest node 03
+    # wrote. One frame is what `structure` mode is for, so it must explain itself and not warn;
+    # one frame from an `equilibrium` run is a wasted run, so it must warn. A node that printed
+    # the same line for both, or nothing at all, would pass a single-mode fixture either way.
+    summary = case.json("05", "ensemble_summary.json") or {}
+    mode = summary.get("mode")
+    warned = "an equilibrium ensemble of one is one draw" in log
+    explained = "a spread needs two" in log
+    if mode == "structure":
+        if warned:
+            return FAIL, (
+                "node 05 warned about a one-frame `structure` run, which is the configuration "
+                "the README recommends for predicting a single structure"
+            )
+        if not explained:
+            return FAIL, (
+                "node 05 said nothing about why there is no spread: silence here reads as a "
+                "check that passed"
+            )
+    elif not warned:
+        return FAIL, (
+            f"node 05 said nothing about one frame from a '{mode}' run: the spread, the "
+            "clusters and the RMSF are all empty and the reader is not told why"
+        )
+    report = read_text(case.out("06", "report.html"))
+    if report and "needs 2+ frames" not in report:
+        return FAIL, (
+            "the report does not say the pairwise tile needs two frames, so a reader fills "
+            "the blank in themselves"
+        )
+    return PASS, (
+        f"1 frame in '{mode}' mode: n_pairs=0 with null statistics, no collapse warning, "
+        f"{'no' if mode == 'structure' else 'a'} one-draw warning, and the report labels the "
+        "tile"
+    )
+
+
 def report_data(report):
     """The report's own DATA object, so a check reads what the page plots rather than
     searching the prose -- node 06 explains its charts in text, so every label appears in
@@ -793,7 +1053,12 @@ def check_rejection(case):
     much, since a guard that refuses everything passes every refusal test."""
     entry = case.entry
     stage = entry.get("stage", "")
-    node = "03" if "node03" in stage else "04"
+    # The node whose exit status decides the case. Keyed off the stage name rather than
+    # defaulting to 04, so a stage nobody taught this function about fails loudly instead of
+    # reading some other node's log and reporting whatever it finds there.
+    node = {"node01": "01", "node03_dryrun": "03", "node04_dryrun": "04"}.get(stage)
+    if node is None:
+        return FAIL, f"unknown rejection stage {stage!r}"
     rc = case.rc(node)
     log = case.log(node)
     if rc is None:
@@ -817,6 +1082,8 @@ CHECKS = {
     "inventory_matches_probe": inventory_matches_probe,
     "inventory_tokens_measured": inventory_tokens_measured,
     "inventory_reports_ligands": inventory_reports_ligands,
+    "inventory_honours_ligand_filters": inventory_honours_ligand_filters,
+    "inventory_from_sequence": inventory_from_sequence,
     "node02_no_protein_chain": node02_no_protein_chain,
     "node02_paired_expectation": node02_paired_expectation,
     "node02_upload_path_records_no_pairing": node02_upload_path_records_no_pairing,
@@ -829,7 +1096,9 @@ CHECKS = {
     "node06_rmsf_traces_per_chain": node06_rmsf_traces_per_chain,
     "node05_matrix_dropped_above_cap": node05_matrix_dropped_above_cap,
     "node05_medoid_measured_over_all_pairs": node05_medoid_measured_over_all_pairs,
+    "node05_cluster_threshold_applied": node05_cluster_threshold_applied,
     "node05_collapse_warned": node05_collapse_warned,
+    "node05_single_frame_spread_undefined": node05_single_frame_spread_undefined,
     "node05_single_cluster": node05_single_cluster,
     "node05_pass_rate_null_when_unchecked": node05_pass_rate_null_when_unchecked,
     "node06_pass_rate_not_shown_as_clean": node06_pass_rate_not_shown_as_clean,

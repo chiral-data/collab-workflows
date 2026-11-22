@@ -45,7 +45,7 @@ hint = "Sampling mode: equilibrium (range of conformations) or structure (one ac
 [params.num_samples]
 type = "integer"
 default = 8
-hint = "Number of conformations to generate"
+hint = "Number of conformations to generate. 1 only makes sense with mode=structure: one draw from an equilibrium run has no spread, no clusters and no RMSF, and both nodes 03 and 05 warn about it"
 
 [params.batch_size]
 type = "integer"

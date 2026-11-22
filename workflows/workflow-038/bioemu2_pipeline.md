@@ -369,14 +369,24 @@ requires.
    sampled frames always differ, so that condition is met by any output whatsoever. For a
    folded protein in `equilibrium` mode the maximum pairwise C-α RMSD has to clear roughly
    0.1 nm, the scale of ordinary backbone fluctuation; below that the ensemble is one structure
-   plus sampling noise. Node 05's own collapse warning fires at 1e-3 nm, which catches only the
-   degenerate case, so this gate is the stricter one and is checked by eye against
-   `ensemble_summary.json` until the first run gives a measured per-system baseline.
+   plus sampling noise. Node 05's own collapse warning fires at 0.01 nm — it used to be 1e-3,
+   which an XTC's 0.001 nm coordinate quantisation made unreachable — so it catches only the
+   degenerate case and this gate stays the stricter one. It is no longer checked by eye:
+   `check_campaign.py` asserts it against a measured 0.1 nm floor, and the per-system baseline
+   is in `tests/README.md` (1UBQ 0.2204 nm, 5PTI 0.1698, 2ZTA 0.3342, 1CLL 1.3682).
 3. `mode=structure` with `num_samples=1` on Trp-cage (1L2Y) returns a compact frame. Whether
-   it passes the physicality checks is to be **measured, not asserted**: nothing here has run
-   on a GPU yet, and a 20-residue miniprotein with a single tryptophan cage is not obviously an
-   easy case for a bond-geometry check. Record the verdict and the first failed check if any,
-   and only then decide whether a pass belongs in this gate.
+   it passes the physicality checks was to be **measured, not asserted**, since a 20-residue
+   miniprotein with a single tryptophan cage is not obviously an easy case for a bond-geometry
+   check.
+
+   **Measured, and it passes.** 1L2Y returns one frame at Rg 0.7146 nm against 0.697 expected
+   for 20 residues, and 1UBQ in the same mode returns 1.1616 nm against an equilibrium mean of
+   1.1597 — compact in both cases. `check_physicality` ran in `high_quality` mode and wrote one
+   passing record each, so no check failed and there is no first failure to report. Running it
+   also found the defect the gate existed to find, which was not in the model: node 05 reported
+   a pairwise spread of `0.0` over zero pairs and then warned that the ensemble had collapsed,
+   on the configuration this gate recommends. The statistics are now null with `n_pairs: 0`,
+   and `single-frame-ensemble-has-no-spread` in `tests/fixtures.json` holds the line.
 4. The ground truth worth having is upstream's own example: **adenylate kinase (1AKE)** in
    equilibrium mode should sample both the open and closed lobe conformations. If the ensemble
    shows only one, sampling is broken in a way no smaller test would reveal.

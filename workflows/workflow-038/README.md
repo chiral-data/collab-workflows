@@ -322,6 +322,22 @@ difference that means anything. It is a floor for "the frames are not identical"
 statement that the ensemble has conformational spread; that threshold is roughly 0.1 nm, and it
 is a reader's judgement, not a warning.
 
+A single frame is not a collapsed ensemble. With `num_samples = 1` — which is what
+`mode = structure` is for — there are no pairs, so the spread is undefined rather than zero:
+`pairwise_rmsd` carries `n_pairs: 0` with null statistics, node 05 says a spread needs two
+frames, and the report's tile reads *n/a, needs 2+ frames*. Those numbers used to be `0.0`,
+which is the collapse signature, so the workflow's own recommended way to predict one
+structure announced that the ensemble had collapsed and told the reader to check the mode they
+had set correctly.
+
+One frame from an `equilibrium` run is a different matter and is warned about, by node 03
+before the GPU time is spent and by node 05 after: an equilibrium ensemble of one is one
+draw, with no spread, no cluster structure and an identically zero RMSF. The distinction is
+read from the mode node 03 recorded in `sampling_manifest.json`, not inferred from the frame
+count, and `tests/fixtures.json` carries both halves —
+`single-frame-structure-run-has-no-spread` and `single-frame-equilibrium-run-is-warned-about`
+— so neither the false alarm nor the silence can come back.
+
 **Outputs:** `ensemble_metrics.csv`, `ensemble_summary.json`, `ensemble_top.pdb`
 
 ### Node 06: Report
@@ -382,7 +398,11 @@ bare sequence, which declare their own components.
 `equilibrium` the reverse. They are different trained tasks, not quality settings.
 
 **Test vs production:** Leave at `equilibrium`. Use `structure` with `num_samples = 1` as the
-cheapest end-to-end correctness check.
+cheapest end-to-end correctness check. Measured on an 8 GB card: 1UBQ returns one frame at
+Rg 1.1616 nm (its equilibrium mean is 1.1597) and the bundled Trp-cage 1L2Y one at 0.7146 nm
+against 0.697 expected for 20 residues — compact in both cases, with `check_physicality` run
+in `high_quality` mode and one record written. A single-frame run reports no pairwise spread
+and no cluster structure worth the name, which is correct and not a failure.
 
 ### num_samples
 
@@ -575,6 +595,11 @@ One row per frame per ensemble: `radius_of_gyration_nm` (compactness — a flat 
 equilibrium run means the ensemble collapsed), `rmsd_to_medoid_nm` (how unusual the frame is
 relative to the ensemble centre), and the physicality verdict.
 
+The medoid's own row is not exactly zero. mdtraj's RMSD is a single-precision QCP fit, and a
+frame measured against itself comes back at 0.001-0.002 nm — the same order as the XTC
+coordinate quantisation, which is why the collapse threshold sits at 0.01 nm. The medoid is
+the row with the smallest value, not the row equal to zero.
+
 ### ensemble_summary.json
 
 Ensemble-level: Rg mean/std/range, pairwise RMSD statistics and the full matrix (up to 200
@@ -739,8 +764,12 @@ The checkpoint is baked into the image under `$HF_HOME` and `HF_HUB_OFFLINE=1` i
 is an image-build problem, not a network one. Rebuild and check the `snapshot_download` layer.
 
 **The ensemble has collapsed (every frame identical)**
-Node 05 warns when the maximum pairwise RMSD is near zero. Check that `mode` is `equilibrium`
-rather than `structure`, and check the MSA depth in `msa_summary.json`.
+Node 05 warns when the maximum pairwise RMSD is below 0.01 nm over two or more frames. Check
+that `mode` is `equilibrium` rather than `structure`, and check the MSA depth in
+`msa_summary.json`. A run with `num_samples = 1` does not produce this warning and should not:
+one frame has no spread to lose. In `structure` mode node 05 says so and moves on; in
+`equilibrium` mode it warns that one draw is not an ensemble, and node 03 warns about the
+same thing before the sampling starts.
 
 **No frame passed the physicality checks**
 Rejected frames are kept by design. Try a steering sampler (`edm_gd` or `edm_fk`), which is

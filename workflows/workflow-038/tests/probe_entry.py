@@ -196,6 +196,18 @@ def probe(path):
         "n_polymer_residues": sum(
             len(chains[c]["residues"]) for c in protein_chains + nucleic_chains
         ),
+        # Every component on a chain that is neither protein nor nucleic acid, measured from
+        # the file. This is what `include_ligands` and `exclude_ligands` act on, so a check
+        # on those parameters can compare the inventory against the entry rather than against
+        # another run of the same code.
+        "nonpolymer_components": sorted(
+            {
+                comp
+                for chain in other_chains
+                for comp in chains[chain]["comps"]
+                if comp not in WATER
+            }
+        ),
         "ca_atoms": ca_atoms,
         "calcium_atoms": calcium_atoms,
         "sg_atoms": sg_atoms,

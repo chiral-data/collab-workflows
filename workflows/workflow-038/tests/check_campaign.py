@@ -325,6 +325,11 @@ def check_not_collapsed(case):
         return SKIP, "collapse floor is stated for folded proteins"
     pairwise = case.sampled.get("pairwise_rmsd") or {}
     maximum = pairwise.get("max_nm")
+    if pairwise.get("n_pairs") == 0:
+        return SKIP, (
+            f"{case.sampled.get('n_frames')} frame(s): a spread needs two, so there is "
+            "nothing here that could have collapsed"
+        )
     if maximum is None:
         return FAIL, "no pairwise RMSD recorded"
     if maximum <= COLLAPSE_FLOOR_NM:
@@ -492,10 +497,11 @@ def check_propagation_ran(case):
             f"{propagated['n_frames']} frame(s)"
         )
     moved = (propagated.get("pairwise_rmsd") or {}).get("max_nm")
+    spread = f"{moved} nm" if moved is not None else "undefined (fewer than two frames)"
     return PASS, (
         f"{propagated['n_frames']} frame(s) at lag {manifest.get('lag_time_ns')} ns, "
         f"{propagated['n_atoms']} atoms unchanged, {len(records)} physicality record(s); "
-        f"spread within the propagated ensemble {moved} nm"
+        f"spread within the propagated ensemble {spread}"
     )
 
 

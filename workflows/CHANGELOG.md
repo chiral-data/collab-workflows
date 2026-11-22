@@ -78,6 +78,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Node 05's collapse warning fired below `1e-3` nm, which an XTC's 0.001 nm coordinate
     quantisation makes unreachable: one conformation written twice and read back measures about
     0.002 nm apart. Now 0.01 nm, with the measurement recorded next to the constant.
+  - A single frame is no longer reported as a collapsed ensemble. `mode = structure` with
+    `num_samples = 1` is the configuration the README recommends for predicting one folded
+    structure; node 05 reported `max_nm: 0.0` over zero pairs for it — the collapse signature —
+    and then warned that the ensemble had collapsed and to check the mode. `pairwise_rmsd` now
+    carries `n_pairs: 0` with null statistics, node 05 states that a spread needs two frames,
+    and node 06's tile reads *n/a, needs 2+ frames*. Measured on a GPU: 1UBQ returns one frame
+    at Rg 1.1616 nm and the bundled Trp-cage 1L2Y one at 0.7146 nm against 0.697 expected,
+    both physical under `high_quality` checking. One frame from an *equilibrium* run is still
+    a wasted run, and the spurious warning was the only thing that had said so, so node 03
+    warns before the GPU time is spent and node 05's message is keyed off the mode node 03
+    recorded. Two fixtures hold both halves, because a node that said nothing in either case
+    would pass a single-mode fixture.
   - `tests/`: a fixture suite over seven real RCSB entries (`tests/README.md`), split into an
     offline driver (`run_fixtures.sh`: unit checks, nodes 01-02 plus node 03 `--dry-run`,
     refusals and their counter-cases, and nodes 04-06 over deterministic ensembles) and a GPU
@@ -91,9 +103,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     large for the card reports its downstream checks as skipped-with-the-reason, and a separate
     check requires that the node which stopped said why before it did. A `FAIL` therefore always
     means a node that ran and got something wrong. Against `bioemu2:2026_11_20` the offline
-    suite reports 56 pass / 0 fail / 0 gap / 2 skipped and the campaign 86 pass / 0 fail /
+    suite reports 70 pass / 0 fail / 0 gap / 2 skipped and the campaign 86 pass / 0 fail /
     42 skipped; two successive campaigns returned every measured number identical, so seed 42
-    reproduces a run rather than merely labelling one.
+    reproduces a run rather than merely labelling one. Two findings were in the suite itself:
+    `make_ensembles.py` seeded from `hash()`, which Python salts per process, so its fixtures
+    were redrawn on every run while claiming to be byte-identical; and the medoid check
+    required `rmsd_to_medoid_nm` to be zero at the medoid, which mdtraj's float32 RMSD never
+    returns (0.0013-0.0018 nm for a frame against itself). Together they made a check that
+    passed or failed on the dice. Both are fixed, and the check now asserts the medoid is the
+    argmin with its own distance below that floor.
+  - Coverage gaps closed in the same pass, each of them a parameter the workflow advertises
+    and no test had ever set: `exclude_ligands` and `include_ligands` (two 5PTI fixtures,
+    measured — 65 tokens with `PO4`/`UNX`/`DOD`, 63 with the placeholder and the heavy water
+    dropped, 58 with every component dropped, which is the polymer residue count exactly),
+    the combination of the two that upstream forbids (a refusal naming which parameter does
+    what), the raw `sequence` input, `mode = structure`, and `rmsd_cluster_threshold_nm` —
+    the parameter behind the report's most quotable number, checked by re-deriving the
+    cluster count from the published matrix under node 05's own greedy rule, tie-break
+    included. `pdb_id` needs the network and
+    was measured by hand: 1UBQ resolves to `RCSB:1UBQ` at 76 residues and 76 tokens.
+    `msa_depth` and `use_env` remain unexercised and `tests/README.md` says so.
   - The image also installs `gcc` and `libc6-dev`, which are a **runtime** requirement: triton
     compiles its kernel launchers on first use and shells out to a C compiler, and
     `python:3.12-slim` carries neither. 1UBQ (76 tokens), 5PTI (65) and 2ZTA (72) never reached
