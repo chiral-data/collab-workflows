@@ -838,6 +838,31 @@ def main():
     say("=" * 78)
 
     payload = json.load(open(os.path.join(HERE, "fixtures.json")))
+
+    # An --only id that matches nothing is a typo, and a typo here is a run that tests
+    # less than whoever typed it believes. The first version skipped silently: asking for
+    # three cases and getting two printed no complaint and exited 0, so the missing one
+    # looked like a case that had passed. Refuse instead, and name what is close.
+    if only:
+        known = {entry["id"] for section in ("ingest", "predict", "scoring", "rejections")
+                 for entry in payload[section]} | {e["id"] for e in payload["controls"]}
+        unknown = sorted(only - known)
+        if unknown:
+            import difflib
+            lines = []
+            for name in unknown:
+                near = difflib.get_close_matches(name, sorted(known), n=3, cutoff=0.5)
+                lines.append(f"  {name!r}" + (f" -- did you mean {near}?" if near else ""))
+            raise SystemExit(
+                "run_fixtures: --only names {} id(s) that are not in fixtures.json:\n{}\n"
+                "Nothing was run. A silently ignored id is a case you think you tested."
+                .format(len(unknown), "\n".join(lines))
+            )
+        gpu_only = sorted(only & {e["id"] for e in payload["controls"]})
+        if gpu_only:
+            say(f"note: {gpu_only} are tier 'gpu' controls and are not run here. "
+                "See tests/run_controls.sh and tests/run_controls_phase2.sh.")
+
     runner = Runner(use_docker, root)
     results = []
     for section in ("ingest", "predict", "scoring", "rejections"):
