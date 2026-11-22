@@ -626,16 +626,16 @@ print({k: len(v) for k, v in d.items() if isinstance(v, list)})'
 
 ### Where it stands
 
-All 54 CI cases run, on both paths. Measured on the host interpreter on 2026-11-22,
-after the Phase 2 cases landed:
+All 55 CI cases run, on both paths. Measured on the host interpreter on 2026-11-22,
+after the Phase 2 cases and the egress guard landed:
 
 | | |
 |---|---|
-| cases | **54 pass, 0 FAIL, 0 gap** of 54 |
+| cases | **55 pass, 0 FAIL, 0 gap** of 55 |
 | checks | 58 named, 58 implemented, 58 invoked |
 | falsification | 56 broken by a corruption, 3 not in the tree and accounted for, **0 vacuous** |
 | Gate A on the host | **met** |
-| Gate A **in the image** | **met on the full 54-case suite, complex path included** — 53 pass, 0 FAIL, 1 gap of 54, 58/58 checks, 56 falsified, 2 not in the tree, 0 vacuous. Evidence at `~/wf040-evidence/tier1-image-54case-final/`, with the tree's md5s recorded beside the verdict. The one gap is `sigterm_ignoring_child_killed`, by design |
+| Gate A **in the image** | **met on the full 55-case suite, complex path and the egress guard included** — 54 pass, 0 FAIL, 1 gap of 55, 58/58 checks, 56 falsified, 2 not in the tree, 0 vacuous. Evidence at `~/wf040-evidence/tier1-image-55case-egress/`, with the tree's md5s recorded beside the verdict and matching the committed tree. The one gap is `sigterm_ignoring_child_killed`, by design |
 | Gate B Phase 1 | **met**, measured twice on the GPU, offline; `C6` met separately |
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
 | Gate B Phase 2 | **`NOT INTERPRETABLE`**, measured twice. Run 2's real 3600-sequence alignment lifted `plddt_target` 38.28 → 85.42 as §4 predicted, but the **binder** is floored at 38.55 (native barnase, given no alignment by §4's design), so the interface is still capped and no margin means anything. A verdict on the control; 040's interface scoring is unvalidated, not disproven. `tests/reference/tier2-phase2-controls.md` |
