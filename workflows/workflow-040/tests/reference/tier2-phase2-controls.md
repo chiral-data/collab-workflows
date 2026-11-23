@@ -439,6 +439,65 @@ which is more than it had before.
   chain is confident, not that the junction is right. The disclosure exists precisely
   because that distinction cannot be read off the number.
 
+## `C10` is MET, and it corrected its own rationale
+
+`bash tests/run_c10.sh <phase2-run>`, judged by `tests/report_c10.py`. Two arms differing
+by **exactly one byte**: the real `cplx_C8.fasta`, and the same file with its `:` deleted
+by `tr -d` rather than retyped, so the arms cannot drift in any other character. Both go
+to `colabfold_batch` **directly**.
+
+**Bypassing node 03 is the right thing to do here and only here.** Node 03 refuses a
+colon-less complex, so what the predictor does with one cannot be observed through the
+workflow. The subject is the predictor's behaviour, not the workflow's, and the workflow is
+built so this input never reaches it.
+
+`alphafold2_multimer_v3`, `--msa-mode single_sequence`, no a3m, 1 model, 3 recycles. The
+clamp §11.1 found matters only when an alignment is handed in and then discarded; nothing
+is handed in here. The chain count does not depend on MSA depth.
+
+| arm | input | chains returned | `iptm` | `ptm` | complained? |
+|---|---|---|---|---|---|
+| A | `target:binder`, 1 colon | **2** — 87 and 108 | 0.08 | 0.20 | no |
+| B | colon deleted, 195 residues | **1** — 195 | **none** | 0.20 | **no** |
+
+### The measurement
+
+**The fusion is real and it is silent.** The two sequences become a single 195-residue
+chain, a chimera that is not the complex anyone asked for, and `colabfold_batch` exits zero
+and says nothing about it. A pipeline without node 03's guard would carry that structure
+forward with no signal at all that the input had been degraded.
+
+**And no `iptm` comes out.** ColabFold omits it for a single-chain prediction, which is the
+sane behaviour: there is no interface to score. `ptm` is still reported at 0.20.
+
+### Which refutes half of the rationale I wrote for this control
+
+`run_c10.sh`'s header originally justified the control by saying the hazard was a fused
+chain **still producing an `iptm`** — a plausible interface number from an input declaring
+no interface, §8.6's trap in its sharpest form. The fusion half is correct. The `iptm` half
+was **asserted, not measured**, and measurement refuted it.
+
+That is §8.17's error again, this time in the rationale of the control sent to settle the
+question — and the third rule earns its keep: the claim was not derived from anything, it
+was carried over from the shape of a different finding (§8.6's "metrics computable on
+garbage look ordinary", which is true of `sc_rmsd_A` and `plddt_binder` and happens not to
+be true of `iptm` on a single chain).
+
+**Node 03's own message never made that claim**, which is worth stating plainly: it says
+only that the colon count is wrong and that node 02 verified the file on write, so the file
+has changed since. That remains exactly right, and the guard remains necessary — for the
+silent fusion, not for a fabricated interface number. Both new files are corrected in
+place.
+
+### What `C10` does not establish
+
+- **One entry, one model, one seed.** Whether ColabFold's `iptm` omission is a stable
+  contract or an artifact of this version is not established, and node 04 should keep
+  nulling an absent metric rather than trusting the omission (§8.7).
+- `iptm` 0.08 on arm A is *not* a finding about the colon. It is `single_sequence` with no
+  alignment, consistent with every other unaligned number in this file. The control was
+  about chain count.
+
 ## Is the verdict worth anything?
 
 Seven mutations, every one refused, and the honest tree checked first:
