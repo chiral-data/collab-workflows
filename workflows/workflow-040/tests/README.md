@@ -567,7 +567,7 @@ first). They now carry a `measured` field saying so:
 | `C8` | 2 | 1BRS barnase on barstar, native | good interface metrics | **run twice 2026-11-22; `NOT INTERPRETABLE`.** Real 3600-seq MSA lifted the target to 85.42, but the binder is native barnase at 38.55 and §4 gives the binder no alignment. Mis-specified: needs a **designed** binder |
 | `C9` | 2 | the same backbone, binder sequence scrambled | bad interface metrics | **run twice; scored above the positive both times** (0.1700, then 0.2500). Reproducible, and a property of unaligned native barnase versus a scramble of it rather than of 040 |
 | `C10` | 2 | a real `cplx_` input with its `:` stripped | come back one chain and be refused | not run. The CI case `cplx-input-missing-colon` now shows node 03 refusing this before the predictor starts, so what `C10` is left to establish is the half nobody can assert offline: what ColabFold actually returns for a colon-less complex |
-| `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was | not built |
+| `C11` | 2 | a real target carrying an internal gap, folded whole | both chains' pLDDT recorded; the whole-chain fold not degraded as `8e4772a7`'s trim was | **MET** from run 2, no extra compute. Barstar's real 2-residue gap at 63→66, fused and disclosed through three files, whole chain at **85.42** pLDDT against the trim's ~42 |
 
 **`C12` was added after the first control run and it is the reason Phase 1 has a verdict
 at all.** `C1`–`C4` between them cannot tell a mis-specified positive control apart from a
@@ -640,7 +640,7 @@ after the Phase 2 cases and the egress guard landed:
 | Gate B Phase 1, falsified | 6 mutations, 6 refused — and that pass found 2 defects in the judge |
 | Gate B Phase 2 | **`NOT INTERPRETABLE`**, measured twice. Run 2's real 3600-sequence alignment lifted `plddt_target` 38.28 → 85.42 as §4 predicted, but the **binder** is floored at 38.55 (native barnase, given no alignment by §4's design), so the interface is still capped and no margin means anything. A verdict on the control; 040's interface scoring is unvalidated, not disproven. `tests/reference/tier2-phase2-controls.md` |
 | Gate B Phase 2, falsified | 8 mutations, 8 refused, against `--synthetic` — a fabricated passing tree, because no real passing run exists to mutate. The eighth floors one chain and requires `NOT INTERPRETABLE` rather than MET or NOT MET. Still a weaker record than Phase 1's six against a genuinely passing run |
-| Gate B Phase 3 | not met. `C10`/`C11` partly covered; calibration not started |
+| Gate B Phase 3 | not met, and blocked behind Phase 2 by construction: it re-derives thresholds FROM the controls. `C11` **met**; `C10` has its offline half covered and needs one GPU run for the other; calibration not started |
 
 **The five complex-path gaps are closed.** Every case in the suite now reaches the thing
 it is about, which is the first run where that has been true. The five are listed under

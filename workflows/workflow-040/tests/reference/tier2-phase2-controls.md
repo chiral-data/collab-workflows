@@ -396,6 +396,49 @@ to A and the design to B. So "chain A" means barnase in the probe and barstar in
 `prediction_inputs.json`. Anything quoting a chain letter in this workflow has to say
 which set it is using.
 
+## `C11` is MET, from run 2's data, with no further compute
+
+`C11` asks for a real target carrying an internal gap, folded whole, with both chains'
+pLDDT recorded and the whole-chain fold **not** degraded the way `8e4772a7`'s trim was. Run
+2 satisfies every clause, because barstar turned out to carry a genuine gap. Nothing was
+run for this; it is a claim read off a run that already happened.
+
+| clause | measured |
+|---|---|
+| a real target with an internal gap | 1BRS barstar, **2 residues missing between 63 and 66**, ids 1..89 over 87 resolved residues, on deposited coordinates |
+| node 01 detects it | `design_inventory.json` records `{"after": 63, "before": 66, "missing": 2}` |
+| node 01 warns | the §8.12 warning fired, citing `8e4772a7` and the measured cost of trimming |
+| folded whole, not trimmed | one 87-residue query; no segment was dropped |
+| the fusion is disclosed | `prediction_inputs.json` → `target.fusion`, and carried into `target_alignment.json` |
+| both chains' pLDDT recorded | target **85.42**, binder **38.55** |
+| the whole-chain fold not degraded | **85.42** against `8e4772a7`'s trimmed ~42 |
+
+The disclosure propagates through three files rather than being computed once and dropped,
+which is what §8.12 asks for: the gap is not silently repaired, and a reader of the
+prediction inputs is told the junction is a fusion.
+
+**An incidental corroboration worth noting.** Node 01's warning quotes `8e4772a7`'s figure
+for the undamaged case as "the whole chain reaches 81". This run measured **85.42** on a
+different entry, a different organism and a different alignment. Those are not the same
+experiment and the agreement is not a replication — but a number quoted from another
+workflow's commit has now been found in the right neighbourhood by 040's own measurement,
+which is more than it had before.
+
+### What `C11` does not establish
+
+- **It is not a controlled trim-versus-fuse comparison on this entry.** Only the fused arm
+  was run. The controlled comparison is `8e4772a7`'s and already exists; re-deriving a
+  settled decision is what §8.1 warns against, and the trimmed arm would also need the
+  3600-row alignment sliced to the retained columns, which is a new opportunity to be
+  wrong about something already known.
+- **The gap is small.** Two residues, and the two flanks are close in space. A 20-residue
+  disordered loop fused across is a different proposition, and nothing here speaks to it.
+  `8e4772a7`'s case was the larger one, which is the reason to keep citing it.
+- **85.42 is the gapped chain modelled well, not the gap modelled well.** The two residues
+  are absent from the deposited coordinates and remain absent; pLDDT says the rest of the
+  chain is confident, not that the junction is right. The disclosure exists precisely
+  because that distinction cannot be read off the number.
+
 ## Is the verdict worth anything?
 
 Seven mutations, every one refused, and the honest tree checked first:
