@@ -44,11 +44,48 @@ WF="$(dirname "$HERE")"
 WORKFLOWS="$(dirname "$WF")"
 IMAGE="colabfold:2026_10_08"
 
+# WHICH PAIR. Default is C8/C9, the pair this script was written for, so every command
+# recorded in the docs and in the evidence directories keeps working unchanged.
+#
+# --pair c13 selects the designed-binder control. The difference that matters is not the
+# entry, it is that C13's BINDER is a synthetic construct rather than a native chain, so
+# both chains can be modelled under the flags section 4 mandates: the target from its
+# alignment, the binder from nothing. C8/C9's binder is native barnase and cannot be,
+# which is why they came back NOT INTERPRETABLE twice.
+#
+# Parameterised rather than copied into a second script: the staging, the egress scoping,
+# the n3-refuse step and the free-space floor are identical, and a 160-line copy would be
+# two things to keep in step (the docs-with-code rule, and 8.15).
+PAIR="c8"
 ALLOW_EGRESS=0
 ARGS=()
-for arg in "$@"; do
-  if [ "$arg" = "--allow-egress" ]; then ALLOW_EGRESS=1; else ARGS+=("$arg"); fi
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --allow-egress) ALLOW_EGRESS=1 ;;
+    --pair) PAIR="${2:?--pair needs a value: c8 or c13}"; shift ;;
+    --pair=*) PAIR="${1#--pair=}" ;;
+    *) ARGS+=("$1") ;;
+  esac
+  shift
 done
+
+case "$PAIR" in
+  c8)
+    ENTRY="1BRS"; BINDER_CHAIN="A"; TARGET_CHAIN="D"
+    POS="C8"; NEG="C9"
+    PAIR_NOTE="barnase (auth A) on barstar (auth D). The binder is NATIVE, so it cannot be modelled without an alignment and section 4 gives it none: this pair is NOT INTERPRETABLE by construction and is kept as the measured record of that."
+    ;;
+  c13)
+    ENTRY="7XYQ"; BINDER_CHAIN="B"; TARGET_CHAIN="A"
+    POS="C13"; NEG="C14"
+    PAIR_NOTE="DBL1_03 (auth B, a synthetic construct, 124 res) on human PD-L1 (auth A, 203 res, 4-residue gap at 165->170). The binder is DESIGNED, so both chains can be modelled under section 4's flags. Pre-registered in tests/reference/tier2-phase2-controls.md BEFORE this code existed."
+    ;;
+  *)
+    echo "run_controls_phase2: --pair must be c8 or c13, got '$PAIR'." >&2
+    echo "Guessing would mean guessing which experiment you meant." >&2
+    exit 1
+    ;;
+esac
 OUT="${ARGS[0]:-$HOME/wf040-controls-phase2/$(date +%Y%m%d-%H%M%S)}"
 DL="${ARGS[1]:-$HOME/wf040-downloads}"
 
@@ -78,17 +115,17 @@ say "out: $OUT"
 # fetched from the PDB is untrusted input and must not be able to put a module on the
 # import path. (NOT -I for this repo's own node scripts -- it implies -s and hides the
 # user site-packages where biopython lives.)
-if [ ! -s "$DL/1BRS.cif" ]; then
-  say "fetching 1BRS"
-  curl -fsSL "https://files.rcsb.org/download/1BRS.cif" -o "$DL/1BRS.cif" || {
-    echo "REFUSING: could not fetch 1BRS." >&2; exit 1; }
+if [ ! -s "$DL/$ENTRY.cif" ]; then
+  say "fetching $ENTRY"
+  curl -fsSL "https://files.rcsb.org/download/$ENTRY.cif" -o "$DL/$ENTRY.cif" || {
+    echo "REFUSING: could not fetch $ENTRY." >&2; exit 1; }
 fi
-sha256sum "$DL/1BRS.cif" | tee "$OUT/entry-sha256.txt"
+sha256sum "$DL/$ENTRY.cif" | tee "$OUT/entry-sha256.txt"
 
 # Probed, then chosen from the probe. 037 lost five of 1BRS's six chains to "chain A"
 # (53d1d460), so the chain ids are read off the probe rather than assumed.
-say "probing 1BRS"
-python3 -I "$HERE/make_controls.py" --list "$DL/1BRS.cif" | tee "$OUT/probe-1BRS.txt"
+say "probing $ENTRY"
+python3 -I "$HERE/make_controls.py" --list "$DL/$ENTRY.cif" | tee "$OUT/probe-$ENTRY.txt"
 
 # ---------------------------------------------------------------- build the two
 # Barnase (auth A) as the binder, barstar (auth D) as the target: a real, tight,
@@ -97,12 +134,17 @@ python3 -I "$HERE/make_controls.py" --list "$DL/1BRS.cif" | tee "$OUT/probe-1BRS
 # composition, length, numbering and every coordinate are identical between the two and
 # the only thing that differs is the sequence. That is what makes the comparison a control
 # rather than two experiments.
-say "building C8 (native) and C9 (scrambled) on one target"
+say "pair $PAIR: $PAIR_NOTE"
+say "building $POS (native) and $NEG (scrambled) on one target"
 mkdir -p "$OUT/g"
-python3 -I "$HERE/make_controls.py" "$DL/1BRS.cif" "$OUT/g" \
-  --name C8 --binder A --target D --sequence native || exit 1
-python3 -I "$HERE/make_controls.py" "$DL/1BRS.cif" "$OUT/g" \
-  --name C9 --binder A --target D --sequence scrambled --seed 0 || exit 1
+printf '%s\n' "$PAIR" "$ENTRY" "$BINDER_CHAIN" "$TARGET_CHAIN" "$POS" "$NEG" \
+  > "$OUT/pair.txt"
+python3 -I "$HERE/make_controls.py" "$DL/$ENTRY.cif" "$OUT/g" \
+  --name "$POS" --binder "$BINDER_CHAIN" --target "$TARGET_CHAIN" \
+  --sequence native || exit 1
+python3 -I "$HERE/make_controls.py" "$DL/$ENTRY.cif" "$OUT/g" \
+  --name "$NEG" --binder "$BINDER_CHAIN" --target "$TARGET_CHAIN" \
+  --sequence scrambled --seed 0 || exit 1
 python3 -I "$HERE/probe_design.py" "$OUT/g" | tee "$OUT/probe-controls.txt"
 
 # ---------------------------------------------------------------- run the nodes

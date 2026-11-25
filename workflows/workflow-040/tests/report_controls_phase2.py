@@ -28,8 +28,43 @@ import sys
 # The positive and the negative, with what each is. Named here rather than inferred from
 # the scores, because a judge that worked out which control was the positive from which one
 # scored better would pass any run (§8.4).
-POSITIVE = {"C8": "1BRS barnase on barstar, the deposited sequence (NATIVE)"}
-NEGATIVE = {"C9": "the same backbone, same residues, order shuffled (SCRAMBLED)"}
+# The pairs this judge knows, keyed by the token run_controls_phase2.sh writes to pair.txt.
+# Named here rather than inferred from the scores, because a judge that worked out which
+# control was the positive from which one scored better would pass any run (8.4).
+PAIRS = {
+    "c8": (
+        {"C8": "1BRS barnase on barstar, the deposited sequence (NATIVE binder)"},
+        {"C9": "the same backbone, same residues, order shuffled (SCRAMBLED)"},
+    ),
+    "c13": (
+        {"C13": "7XYQ DBL1_03 on human PD-L1, the deposited sequence (DESIGNED binder)"},
+        {"C14": "the same backbone, same residues, order shuffled (SCRAMBLED)"},
+    ),
+}
+
+# The default is the pair this judge was written for, so an older run directory with no
+# pair.txt in it still reads correctly rather than erroring or, worse, being judged against
+# the wrong control names.
+DEFAULT_PAIR = "c8"
+
+
+def pair_of(out):
+    """Which pair this run is, read from the run itself.
+
+    run_controls_phase2.sh writes pair.txt as its first act after choosing. Reading it back
+    rather than taking it as an argument means the judge cannot be pointed at a run and
+    told it is something else -- the run says what it is, and a run that predates pair.txt
+    is the default pair, which is what it was.
+    """
+    path = os.path.join(out, "pair.txt")
+    if not os.path.exists(path):
+        return DEFAULT_PAIR, f"no pair.txt; assuming {DEFAULT_PAIR!r} (a pre-pair.txt run)"
+    token = (open(path).readline() or "").strip().lower()
+    if token not in PAIRS:
+        return None, (f"pair.txt says {token!r}, which this judge does not know. "
+                      f"Known: {sorted(PAIRS)}. Refusing to guess which control is the "
+                      "positive.")
+    return token, f"pair {token!r}, from pair.txt"
 
 # (column, direction, gates). `gates` records whether this metric is allowed to decide the
 # verdict. iptm is the interface quantity the multimer model exists to produce, so it
@@ -84,6 +119,16 @@ def main(argv):
     print("workflow-040 Tier 2, Phase 2: does interface scoring separate a shuffle?")
     print(f"  run: {out}")
     print("=" * 78)
+
+    token, note = pair_of(out)
+    if token is None:
+        print(f"\nNOT MET: {note}")
+        return 1
+    POSITIVE, NEGATIVE = PAIRS[token]
+    print(f"\n{note}")
+    for name, description in list(POSITIVE.items()) + list(NEGATIVE.items()):
+        role = "POSITIVE" if name in POSITIVE else "NEGATIVE"
+        print(f"  {name:<5} {role:<9} {description}")
 
     scores, why = load(os.path.join(out, "n4", "outputs", "design_scores.json"),
                        "design_scores.json")

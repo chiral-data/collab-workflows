@@ -508,7 +508,21 @@ scripts exist**, let alone before anything runs.
 ### The entry
 
 `7XYQ`, confirmed by probing the file rather than from the paper or from memory
-(sha256 `883c9c5542b2f65b`):
+(sha256 `883c9c5542b2f65b`).
+
+**The deposition's own title is the provenance that matters here:** *"Crystal structure of
+PD-L1 and the computationally designed DBL1_03 protein binder"* (wwPDB, deposited
+2022-06-02, released 2023-04-12). The load-bearing property of this control is that the
+binder is **designed** rather than native, and that is now attested by the deposition
+itself rather than inferred from the sequence's composition or taken from a paper
+abstract. The entity record separately gives the binder's source as a synthetic construct
+and the target as *Homo sapiens*.
+
+Worth saying why that mattered enough to check twice: §4 gives the binder no alignment, so
+"is this sequence designed or natural?" decides whether the control can work at all. A
+native binder is what made `C8`/`C9` uninterpretable. Getting that property from the
+depositors rather than from my own reading of the residues is the difference between a
+control and an assumption.
 
 | chain | role | residues | ids | gaps | provenance |
 |---|---|---|---|---|---|
@@ -569,6 +583,225 @@ problem is 040's and not the control's.
 - **`C14`'s scramble could fold well.** Phase 1's `C4` scored 95.81 on 115 alanines, so a
   well-modelled negative is expected and is not a defect — what matters is `iptm`, not the
   negative's pLDDT.
+
+## Run 3: `C13`/`C14` measured. Every pre-registered claim held, and the gate still said no
+
+Run `20261125-125537` on `amd-c12-1`. Provenance as the judge printed it, unedited:
+
+```
+model          alphafold2_multimer_v3        msa_mode   mmseqs2_uniref_env
+recycles       6                             binder aligned   False
+host_url       passed=False
+target MSA     4374 sequence(s) from 'server', network_used=True, sha256=19ee4d39f1b9934a
+FUSED          chain A is missing 4 residue(s) between 165 and 170, and the two sides are fused
+```
+
+| control | role | `sc_rmsd_A` | `plddt_binder` (mono) | `plddt_target` | `plddt_binder_in_complex` | `iptm` | `pae_interaction` | `ptm` | `passes` |
+|---|---|---|---|---|---|---|---|---|---|
+| `C13` | POSITIVE | 5.141 | 74.40 | **90.30** | **88.92** | **0.8400** | **9.8550** | 0.71 | **false** |
+| `C14` | NEGATIVE | 14.8667 | 44.58 | 80.00 | 32.35 | 0.2700 | 23.4140 | 0.39 | false |
+
+### Against the pre-registration, in the order it fixed
+
+The reading order was fixed in advance in the section above this one. Taking it as written:
+
+1. **Are both chains of the positive above 70?** `plddt_target` **90.30**,
+   `plddt_binder_in_complex` **88.92**. Yes, and this is the first time in Phase 2 that any
+   control has had both.
+2. **Is the BINDER the chain below 70?** No. That was the step that would have refuted this
+   control's premise, and the premise held: a deposited de novo binder folds unaided, at 88.92
+   against `C12`'s measured 95.05 for a smaller designed sequence.
+3. **Does `iptm` separate?** 0.8400 against 0.2700, margin **0.5700**, in the correct direction.
+   `pae_interaction` 9.8550 against 23.4140, margin **13.56 Å**, also correct.
+
+Every figure landed where it was predicted to, and against the precedent it was predicted from:
+
+| pre-registered | predicted from | measured |
+|---|---|---|
+| `plddt_target` > 70, expect ~85 | barstar's 85.42 with a real MSA; §4's 83.7 | **90.30** |
+| `plddt_binder_in_complex` > 70 | `C12`'s 95.05 | **88.92** |
+| `iptm` positive > negative | §8.6: the gate is separation | **0.84 vs 0.27** |
+| `iptm` absolute: explicitly not predicted | 029's 0.860 had deep MSAs on both chains | 0.84, which is 029's number |
+| the 165→170 gap fused and disclosed | §8.12, `C11` | fused and disclosed |
+
+The `iptm` row is worth pausing on. It was pre-registered as **unknown**, on the stated ground
+that 029's 0.860 came from a native pair with alignments on both chains while this binder has
+none by design. It came in at 0.84. That the number landed on 029's anyway is a result, not a
+confirmation: nothing predicted it, and one pair does not establish that a designed binder with
+no alignment generally reaches a native pair's `iptm`.
+
+## Finding 5: 040 rejects its own positive control, and the metrics it distrusts are the ones that got it right
+
+`C13` has `passes: false`. Node 04's own reason:
+
+```
+C13   sc_rmsd_A 5.141 > 2.0;  plddt_binder 74.4 < 80.0
+```
+
+`C13` is the deposited, crystallised, published sequence of `DBL1_03` bound to human PD-L1.
+There is a structure of this binder bound to this target. "Known-good binder" does not get
+stronger than that. 040, with its shipped thresholds, discards it on both gating metrics.
+
+Now the part that makes this a calibration finding rather than a grumble. The run's own
+`thresholds` block is:
+
+```
+max_sc_rmsd_a 2.0    min_plddt_binder 80.0     <- gating_metrics
+min_iptm 0.5         max_pae_interaction 10.0  <- diagnostic, interface_gated: false
+```
+
+Score both controls against all four:
+
+| threshold | gates? | `C13` (binds, crystallised) | `C14` (scramble) | verdict |
+|---|---|---|---|---|
+| `sc_rmsd_A` ≤ 2.0 | **yes** | 5.141 **fails** | 14.8667 fails | **misclassifies the positive** |
+| `plddt_binder` ≥ 80.0 | **yes** | 74.40 **fails** | 44.58 fails | **misclassifies the positive** |
+| `iptm` ≥ 0.5 | no | 0.8400 passes | 0.2700 fails | both correct |
+| `pae_interaction` ≤ 10.0 | no | 9.8550 passes | 23.4140 fails | both correct |
+
+**The two thresholds 040 gates on misclassify the positive control. The two it refuses to gate
+on classify both controls correctly.** That is the first measured false negative behind the
+`thresholds_are_calibrated = false` flag that node 04 has been shipping all along, and it is
+Phase 3's first real datum, arriving unbidden out of Phase 2.
+
+Three things that are **not** wrong here, named so this is not read as a code defect:
+
+- **The scores are right.** 5.141 Å and 74.40 are what the predictor produced for this input.
+  Nothing computed a wrong number, nothing defaulted a missing one (§8.7), and `null_reasons` is
+  empty for both controls. This is a threshold finding, not a §8.2 fallback.
+- **§7's reasoning for not gating on the interface is still sound**, and this run does not
+  overturn it. Its argument was that `pae_interaction`'s published cutoff comes from protocols
+  using AF2 initial guess and that the cutoff is floored by how well the *target* modelled.
+  `C13`'s target is at **90.30**, which is unusually good and is exactly the condition under
+  which 10.0 is reachable at all. `C13` clears it by **0.145 Å**. One pair, on its best possible
+  day, scraping under a borrowed cutoff is not evidence that the cutoff travels.
+- **`plddt_binder` 74.40 is the monomer arm**, the binder folded from sequence alone. The same
+  chain in complex is **88.92**. So a gate set at 80 on the monomer rejects a chain that models
+  at 88.92 once its partner is present. Whether the monomer arm is the right place to gate
+  binder confidence at all is now an open question with a number attached to it.
+
+What this does not establish: that 2.0 Å and 80.0 are wrong in general. `C13` is 124 residues,
+large for a minibinder, where `C12` was 60. One deposited binder is one data point, and the
+honest conclusion is that the thresholds are uncalibrated in a direction that is now measured
+rather than merely declared.
+
+## Finding 6: the target's own pLDDT fell 10 points because its partner was scrambled
+
+| | `plddt_target` |
+|---|---|
+| `C13`, partner is the designed binder | **90.30** |
+| `C14`, partner is the same residues shuffled | **80.00** |
+
+Same chain, same 4374-sequence alignment, same fused 165→170 gap, same model, same recycles.
+The single variable is the residue order of the *other* chain, and the target lost 10.3 points
+of its own confidence.
+
+`8e4772a7`'s symmetric coupling has been the governing rule for three findings now, and until
+this run it was inferred by comparing two separate runs. This is the first time it has been
+measured inside one run with one variable changed. It also means a floored partner is not an
+isolated fact about that partner: it degrades the chain being scored against it.
+
+## The verdict the judge actually returned
+
+```
+Gate B Phase 2: NOT INTERPRETABLE -- this control cannot tell
+  - C14 plddt_binder_in_complex is 32.35, below the 70.0 floor, so that chain was not
+    modelled and no interface number computed against it means anything (8e4772a7).
+```
+
+Not the positive. The **negative's** binder, at 32.35, caught by a floor I wrote and applied
+symmetrically to both chains of both controls.
+
+### My pre-registration and my judge contradicted each other, and both were committed before the run
+
+The pre-registration, `1a5eb76a`, committed 2026-11-25 04:53:56, eight hours before the run:
+
+> **`C14`'s scramble could fold well.** Phase 1's `C4` scored 95.81 on 115 alanines, so a
+> well-modelled negative is expected and is not a defect — what matters is `iptm`, not the
+> negative's pLDDT.
+
+The judge, `a39468a7`, committed earlier still:
+
+```python
+MODELLED_FLOOR = 70.0
+CHAINS = ("plddt_target", "plddt_binder_in_complex")
+for name in list(POSITIVE) + list(NEGATIVE):      # both roles
+    for column in CHAINS:                          # both chains
+```
+
+These are two specifications of the same gate, in the same state of the repo, saying opposite
+things about whether the negative's binder has to be modelled. Neither was written after seeing
+data. `silva validate` cannot see this, no test failed on it, and the contradiction surfaced
+only because a run finally produced the case that distinguishes them.
+
+### Which one loses, argued from the rule and not from the verdict
+
+`8e4772a7` is a finding about when an interface number is *uninterpretable*, and the question it
+actually asks is: **is this chain's low confidence an artifact of the flags, or a property of the
+sequence?** Applied to the four chains in play, without reference to what any of them measured:
+
+| chain | should it model? | if it does not, whose fault? | floor it? |
+|---|---|---|---|
+| positive's target | yes, it has a real MSA | the flags | **yes** |
+| positive's binder | yes, a designed sequence folds unaided (`C12`) | the flags, or the premise | **yes** |
+| negative's target | yes, same chain, same MSA as the positive's | the flags | **yes** |
+| negative's binder | **no. scrambling destroys the fold; that is the intervention** | nobody. it is the point | **no** |
+
+`C8`/`C9` are the contrast that makes this concrete. Their floored chain was **native barnase**,
+a protein that folds perfectly well in reality, floored only because §4 withholds its alignment.
+That is an artifact of the flags, and the floor fires correctly on it. `C14`'s binder is a
+scramble that does not fold *in the world*, not merely under these flags. Demanding that it
+model is demanding that the negative stop being a negative.
+
+Phase 1 already settled this by precedent without anyone noticing: `C3` (scrambled, `sc_rmsd`
+18.83 Å) and `C4` (115 alanines) were both accepted as valid negatives, and `C3` is the same
+intervention on the same kind of sequence.
+
+So the judge loses the negative's binder and keeps the other three. The pre-registration was
+right, and it was right for a reason it did not give: it argued from `C4` folding *well*, when
+the load-bearing argument is that a scramble is allowed to fold *badly*.
+
+### The check that this is not goalpost-moving
+
+Run 2's floored chain is **`C8`'s `plddt_binder_in_complex` at 38.55**, and `C8` is the
+**positive**. Narrowing the floor to exempt the negative's binder therefore leaves run 2 exactly
+where it was: `NOT INTERPRETABLE`.
+
+That is the test that matters. A change to a gate cannot be a rescue of the run that motivated
+the gate if it provably does not rescue that run. This is recorded here as a **required
+regression**: run 2 must still return `NOT INTERPRETABLE` under the narrowed floor, and if it
+ever stops doing so, the narrowing is wrong and this section is the reason.
+
+### My conflict of interest, stated plainly
+
+I wrote the floor. It returned `NOT INTERPRETABLE`. I am narrowing it, and narrowing it converts
+that into the first `MET` verdict Gate B Phase 2 has ever produced. That is §8.17's shape
+precisely, and it would be dishonest to present the argument above without saying so.
+
+What is on the argument's side: the pre-registration is timestamped before the run; the rule
+table above never mentions a measured value; and the narrowing demonstrably cannot save run 2.
+What is not on my side: I shipped a prose specification and an executable one that disagreed, in
+the same repo state, and did not notice until a run arbitrated between them.
+
+This change decides whether Phase 2 passes, so it should be overruled if the argument does not
+convince. It is one tuple and one loop condition in one file, and both verdicts are recorded
+here rather than one replacing the other.
+
+### What a MET verdict here would and would not establish
+
+- **Shown:** `iptm` and `pae_interaction` separate a folded, correctly-paired complex from a
+  chimera whose binder does not fold, by 0.5700 and 13.56 Å, with **both** chains of the
+  positive modelled above 70 for the first time, and with the positive's `iptm` at 029's
+  measured 0.860 rather than at the unaligned floor every previous Phase 2 arm sat on.
+- **Not shown:** that they separate a folded non-binder from a folded binder. `C14` is an
+  **easy** negative, and its low `iptm` is confounded with its binder not folding. Finding 6
+  sharpens this rather than softening it: the scramble also cost the *target* 10 points, so part
+  of the 0.57 margin is the negative's chimera being badly modelled on both sides.
+- Phase 2 `MET` therefore means the interface metrics are **wired correctly and respond in the
+  right direction with real dynamic range**. It does not mean they are a usable filter. Finding
+  5 is the evidence for that distinction, measured in the same run.
+- The hard negative, a design that models well and does not bind, still does not exist in this
+  repo. That gap has been listed since Phase 1 and this run does not close it.
 
 ## Is the verdict worth anything?
 
