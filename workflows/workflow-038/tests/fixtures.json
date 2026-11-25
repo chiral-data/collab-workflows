@@ -1,0 +1,545 @@
+{
+  "_comment": [
+    "Expectations for the workflow-038 fixture suite. Every entry's `evidence` is what",
+    "tests/probe_entry.py reported from the downloaded file on 2026-11-20. Re-run the probe",
+    "before trusting it: RCSB re-releases entries, and a fixture earns its place by",
+    "measurement, never by reputation.",
+    "An expectation carrying \"status\": \"open\" is a reproduced but unfixed defect. It reports",
+    "as GAP and does not fail the run. Deleting the field makes the suite enforce it."
+  ],
+  "unit": [
+    {
+      "name": "paired-files-stay-out-of-the-unpaired-set",
+      "why": "A plain *.a3m glob also matches <chain>.paired.a3m, whose Path.stem is '<chain>.paired' and is not a chain id. bioemu2's load_a3m_msa requires the mapping's keys to equal the system's protein chain ids exactly, so a leak makes it raise -- and the obvious fix (globbing everything) is the bug.",
+      "expect": [
+        {
+          "check": "unit_a3m_path_helpers"
+        }
+      ]
+    },
+    {
+      "name": "streaming-pairwise-pass-equals-the-dense-matrix",
+      "why": "Node 05 dropped the pairwise matrix above 200 frames and silently set medoid = 0 while keeping the column name 'rmsd_to_medoid_nm'. The streaming pass exists so the medoid and the spread survive at any frame count; if it disagrees with the dense reference it has reintroduced the defect in a new form.",
+      "expect": [
+        {
+          "check": "unit_pairwise_pass"
+        }
+      ]
+    },
+    {
+      "name": "frame-selection-reports-its-own-filler",
+      "why": "select_frames pads with consecutive frames when there are fewer clusters than top_n, and the report captioned all of them as cluster centres. The returned count is what the caption is built from, so it has to be exact at the boundaries: no clusters, fewer clusters than top_n, more than the 20 the JSON keeps.",
+      "expect": [
+        {
+          "check": "unit_select_frames"
+        }
+      ]
+    },
+    {
+      "name": "clustering-below-the-rmsd-noise-floor-terminates",
+      "why": "mdtraj.rmsd is a float32 QCP, so a frame against itself measures 0.0013-0.0018 nm rather than 0. greedy_clusters tested membership with matrix[centre, i] <= threshold, which at a threshold below that floor excluded the centre from its own cluster: absorbed came back empty, unassigned never shrank, and node 05 looped forever holding the GPU. rmsd_cluster_threshold_nm = 0.001 is a value the workflow's own parameters accept, so the hang was reachable without any malformed input.",
+      "expect": [
+        {
+          "check": "unit_greedy_clusters_terminates"
+        }
+      ]
+    },
+    {
+      "name": "an-abort-never-skips-the-check-that-judges-it",
+      "why": "check_campaign.py turns FAIL into SKIP for checks that needed a node at or after the one that aborted, because an output nobody wrote is not evidence. check_failure_was_reported is the check that decides whether a stop was a reported resource limit or a silent death, and it reads node 01 -- so an abort at node 01 converted the judge together with everything it was meant to judge: 0 pass, 0 fail, 16 skipped, exit 0, and a green campaign for a system whose first node died. The judge is now excluded by identity rather than by node index.",
+      "expect": [
+        {
+          "check": "unit_campaign_judge_is_never_skipped"
+        }
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "1UBQ",
+      "shape": "ubiquitin, one chain, nothing unusual",
+      "evidence": "2 chains, 1 protein, 1 unique sequence, 76 polymer residues, 76 CA, 0 Ca2+, 0 SG",
+      "why": "Control. A failure here is the harness, not the input.",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_matches_probe"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        },
+        {
+          "check": "node03_dryrun_accepts_staged_alignment"
+        },
+        {
+          "check": "no_warnings"
+        }
+      ]
+    },
+    {
+      "id": "1CLL",
+      "shape": "calmodulin with four structural Ca2+ ions",
+      "evidence": "7 chains, 1 protein, 144 polymer residues, 144 CA, 4 Ca2+, 0 SG",
+      "why": "The whole reason this fixture exists: a calcium ion is an atom named CA in a residue named CA. mdtraj's `name CA` matches atom names, so the plain selection returns 148 where the protein has 144 C-alphas, shifting every RMSD, every RMSF and the medoid frame with nothing in the output to show it. 144 against 148 is a four-atom difference that no exit code can see.",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_matches_probe"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        },
+        {
+          "check": "inventory_reports_ligands"
+        },
+        {
+          "check": "node03_dryrun_accepts_staged_alignment"
+        }
+      ]
+    },
+    {
+      "id": "5PTI",
+      "shape": "BPTI, three disulfides",
+      "evidence": "4 chains, 1 protein, 58 polymer residues, 58 CA, 0 Ca2+, 6 SG",
+      "why": "Six cysteine SG atoms is three disulfides, which is what makes BioEmu2's bad_bonds_sulfur threshold reachable at all -- no preset tolerates a single S-S pair outside the disulfide window. It is also the case for check_physicality(system=...), which resolves the system's declared bonds so a real disulfide is not counted as a violation.",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_matches_probe"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        },
+        {
+          "check": "node03_dryrun_accepts_staged_alignment"
+        }
+      ]
+    },
+    {
+      "id": "2ZTA",
+      "shape": "GCN4 leucine zipper, two identical chains",
+      "evidence": "4 chains, 2 protein, 1 unique sequence, 64 polymer residues, 62 CA, 0 Ca2+, 0 SG",
+      "why": "A homodimer: two protein chains but one unique sequence, so ColabFold returns no paired alignment and none is due. It is the counter-case to 1A3N -- a node that demanded paired files whenever there were two chains would pass 1A3N and fail here. It also gives node 05 two chains to split the per-residue RMSF across, which was previously drawn as one line that strokes back to the left edge where the second chain restarts its numbering.",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_matches_probe"
+        },
+        {
+          "check": "node02_paired_expectation"
+        },
+        {
+          "check": "node02_upload_path_records_no_pairing"
+        },
+        {
+          "check": "node03_dryrun_accepts_staged_alignment"
+        }
+      ]
+    },
+    {
+      "id": "1A3N",
+      "shape": "haemoglobin, four chains over two sequences, four haems",
+      "evidence": "12 chains, 4 protein, 2 unique sequences, 572 polymer residues, 572 CA, 0 Ca2+, 6 SG",
+      "why": "Two unique protein sequences, so this is the heteromer case and a positionally paired alignment IS due. Node 02 fetched it and threw it away: load_a3m_msa always returns MSA(paired_a3m=None), and bioemu2's pairmixer substitutes zeros for the paired feature, so every complex sampled worse than it should with nothing in the output saying so. A monomer smoke test can never find this.",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_matches_probe"
+        },
+        {
+          "check": "inventory_reports_ligands"
+        },
+        {
+          "check": "node02_paired_expectation"
+        },
+        {
+          "check": "node02_upload_path_records_no_pairing"
+        },
+        {
+          "check": "node03_dryrun_accepts_staged_alignment"
+        }
+      ]
+    },
+    {
+      "id": "1AKE",
+      "shape": "adenylate kinase with the AP5A bisubstrate inhibitor",
+      "evidence": "6 chains, 2 protein, 1 unique sequence, 428 polymer residues, 428 CA, 0 Ca2+, 2 SG",
+      "why": "Upstream's own worked example and a genuine two-state enzyme, so it is the one fixture where a real ensemble is expected to be interesting rather than merely well formed. At 428 residues it is also the largest fixture here, which is what makes the batch-size advisory produce a number worth reading.",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_matches_probe"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        },
+        {
+          "check": "inventory_reports_ligands"
+        }
+      ]
+    },
+    {
+      "id": "1BNA",
+      "shape": "B-DNA dodecamer, no protein at all",
+      "evidence": "4 chains, 0 protein, 24 polymer residues, 0 CA, 0 Ca2+, 0 SG",
+      "why": "The only input where an empty alignment is correct. Node 02 must report `none (no protein chain)` and write an empty msa/ rather than failing, and node 03 must then sample without an MSA rather than refusing -- while still refusing when a protein chain WAS reported and no alignment arrived. Those two behaviours are one branch apart and a fixture that only tested the refusing side would let the other rot.",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_matches_probe"
+        },
+        {
+          "check": "node02_no_protein_chain"
+        },
+        {
+          "check": "node03_dryrun_accepts_absent_alignment"
+        }
+      ]
+    },
+    {
+      "id": "5PTI",
+      "name": "5PTI-without-the-placeholder-and-the-heavy-water",
+      "shape": "BPTI with exclude_ligands=UNX,DOD",
+      "evidence": "Measured: the unfiltered run reports 4 chains, 65 tokens and components PO4, UNX, DOD; with exclude_ligands=UNX,DOD it reports 2 chains, 63 tokens and PO4 alone. UNX and DOD are one token each, which is the arithmetic the check asserts.",
+      "why": "Node 01's own warnings tell the reader to drop a placeholder with exclude_ligands=UNX and a neutron structure's heavy water with exclude_ligands=DOD. Nothing had ever run that parameter, so the advice was unverified -- and advice that does not work is worse than no advice, because the reader stops looking. This case makes the remedy part of the suite.",
+      "params": {
+        "PARAM_EXCLUDE_LIGANDS": "UNX,DOD"
+      },
+      "expect": [
+        {
+          "check": "inventory_honours_ligand_filters"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        }
+      ]
+    },
+    {
+      "id": "5PTI",
+      "name": "5PTI-as-an-apo-protein",
+      "shape": "BPTI with include_ligands=false",
+      "evidence": "Measured: 1 chain, 58 tokens, no components -- equal to the 58 polymer residues, so the token count is the protein alone.",
+      "why": "The other half of the ligand controls, and the stronger assertion: with every non-polymer component dropped the token count has to equal the polymer residue count. A filter that silently kept something would show up as a token count above the residue count, which is exactly how the unfiltered entry reads.",
+      "params": {
+        "PARAM_INCLUDE_LIGANDS": "false"
+      },
+      "expect": [
+        {
+          "check": "inventory_honours_ligand_filters"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        }
+      ]
+    },
+    {
+      "id": "1UBQ",
+      "name": "ubiquitin-from-a-bare-sequence",
+      "input": "none",
+      "shape": "the raw-sequence input path, no file staged",
+      "evidence": "The 1UBQ entry measures 76 polymer residues and 76 tokens from its structure file; this sequence is the same 76 residues, so the two paths have to agree.",
+      "why": "Node 01 advertises four ways in -- an upload, a structure file, a raw sequence and an RCSB accession -- and the suite staged a structure file in every case, so three were never exercised. The sequence path has no file to parse and no entity tables to read, which makes it the one case where the length of the input string is the entire truth about the system: if the inventory disagrees, nothing else can be blamed.",
+      "params": {
+        "PARAM_SEQUENCE": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+      },
+      "expect": [
+        {
+          "check": "inventory_from_sequence"
+        },
+        {
+          "check": "inventory_tokens_measured"
+        }
+      ]
+    }
+  ],
+  "rejections": [
+    {
+      "name": "node 03 refuses to sample when the alignment never arrived",
+      "id": "1UBQ",
+      "stage": "node03_dryrun",
+      "setup": "drop_msa",
+      "expect_error": "no .a3m file was staged",
+      "why": "The defect that started this suite. Nodes 02 and 03 declared the alignment as `msa/*.a3m`, and Silva matches an inputs entry by basename, so the pattern never matched and the directory was never staged. EmuSession builds its own MSA when handed msa=None, which means querying the public ColabFold server from a node that sets HF_HUB_OFFLINE=1 -- frames appeared, the run went green, and the manifest recorded the alignment node 02 fetched rather than the one the model used. Nothing downstream could tell."
+    },
+    {
+      "name": "node 03 accepts an absent alignment when none was due",
+      "id": "1BNA",
+      "stage": "node03_dryrun",
+      "setup": "drop_msa",
+      "expect_ok": true,
+      "why": "The guard above must key off node 02's finding and not off the directory being empty. Without this case a node that simply refused every empty msa/ would pass the rejection test and break every nucleic-acid or ligand-only system."
+    },
+    {
+      "name": "node 04 refuses edm_fk, which cannot propagate",
+      "id": "1UBQ",
+      "stage": "node04_dryrun",
+      "params": {
+        "PARAM_PROPAGATE": "true",
+        "PARAM_SAMPLER": "edm_fk"
+      },
+      "expect_error": "resampling",
+      "why": "edm_fk's preset sets resampling_interval=3, and propagate_with_embeddings requires every frame in a resampling group to be byte-identical because resampling copies particles within a group. Propagation starts from node 03's samples, which are all different by construction, so this could never work -- it failed deep inside the model with a message about frames differing. Rejecting it up front is only useful if the reason survives."
+    },
+    {
+      "name": "node 04 refuses edm_fkc for the same reason",
+      "id": "1UBQ",
+      "stage": "node04_dryrun",
+      "params": {
+        "PARAM_PROPAGATE": "true",
+        "PARAM_SAMPLER": "edm_fkc"
+      },
+      "expect_error": "resampling",
+      "why": "edm_fkc reaches the same constraint by a different field -- FKCSampler sets ess_threshold=0.9 rather than resampling_interval -- so a guard written against one attribute would let the other through."
+    },
+    {
+      "name": "node 04 accepts edm_gd, which can propagate",
+      "id": "1UBQ",
+      "stage": "node04_dryrun",
+      "params": {
+        "PARAM_PROPAGATE": "true",
+        "PARAM_SAMPLER": "edm_gd"
+      },
+      "expect_ok": true,
+      "why": "edm_gd is GuidedFKSampler(resampling_interval=None), so resampling is off and propagation is supported. Without this case a guard could pass by rejecting every steered sampler, which would remove a capability the model has."
+    },
+    {
+      "name": "node 03 refuses an alignment whose query is not the system sequence",
+      "id": "1UBQ",
+      "stage": "node03_dryrun",
+      "setup": "corrupt_msa_query",
+      "why": "An uploaded A3M whose first row is not the system's own sequence used to be used anyway: bioemu2's load_a3m_msa does not compare the query row against the sequence in the System, so the alignment conditioned the model on a different protein and the run looked entirely ordinary -- frame count, physicality rate and geometry all unremarkable. Reproduced by replacing the query row with a poly-glycine string of the same length. Node 03 now compares every staged A3M's query against the sequence the System states for that chain, before the model is loaded, so the dry run catches it. A chain whose stated sequence contains X -- a modified residue or a cap, which an alignment cannot represent -- is reported rather than refused, because there the difference is expected.",
+      "expect_error": "query"
+    },
+    {
+      "name": "node 01 refuses include_ligands=false together with exclude_ligands",
+      "id": "5PTI",
+      "stage": "node01",
+      "setup": "none",
+      "params": {
+        "PARAM_INCLUDE_LIGANDS": "false",
+        "PARAM_EXCLUDE_LIGANDS": "UNX"
+      },
+      "expect_error": "cannot be combined with include_ligands=false",
+      "why": "Upstream's `from_cif` forbids the combination, and a node that passed both through would surface that as a TypeError from inside the library. It is also a question a user can reasonably ask -- drop everything except one named thing -- so the refusal has to say which parameter does what rather than only that the call failed. Paired with the two 5PTI filter fixtures, which prove each parameter works on its own, so this guard cannot be satisfied by refusing the filters outright."
+    }
+  ],
+  "downstream": [
+    {
+      "name": "calcium-not-counted-as-c-alpha",
+      "source": "1CLL",
+      "n_frames": 6,
+      "ensemble": "spread",
+      "why": "The regression for the selection bug, measured rather than asserted: the number of per-residue RMSF entries node 05 writes is the size of its C-alpha set, so it must equal the 144 C-alpha atoms the probe counted and not the 148 that `name CA` returns on this entry.",
+      "expect": [
+        {
+          "check": "node05_ca_selection_excludes_ions"
+        },
+        {
+          "check": "node05_selection_recorded"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ]
+    },
+    {
+      "name": "two-chains-split-the-rmsf-trace",
+      "source": "2ZTA",
+      "n_frames": 6,
+      "ensemble": "spread",
+      "why": "A homodimer's per-residue RMSF must carry a chain label per entry, so the report can draw one trace per chain. Drawn as a single series against residue number it strokes back to the left edge where the second chain restarts, which reads as a flexible region and is an artefact of the axis.",
+      "expect": [
+        {
+          "check": "node05_rmsf_has_multiple_chains"
+        },
+        {
+          "check": "node06_rmsf_traces_per_chain"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ]
+    },
+    {
+      "name": "medoid-survives-above-the-matrix-cap",
+      "source": "1UBQ",
+      "n_frames": 250,
+      "ensemble": "spread",
+      "why": "Above 200 frames node 05 used to skip the pairwise matrix and set medoid = 0 while still calling the column rmsd_to_medoid_nm. The matrix is still dropped -- that is deliberate, it is the heatmap's cost -- but the medoid and the spread must now be measured over all 31,125 pairs.",
+      "expect": [
+        {
+          "check": "node05_matrix_dropped_above_cap"
+        },
+        {
+          "check": "node05_medoid_measured_over_all_pairs"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ]
+    },
+    {
+      "name": "collapsed-ensemble-is-reported",
+      "source": "1UBQ",
+      "n_frames": 6,
+      "ensemble": "identical",
+      "why": "Every frame identical is the signature of a broken model or a wrong mode, and it is the one ensemble shape that looks perfectly healthy in every other number: Rg is constant, physicality passes, clustering finds one cluster. Node 05 must say so.",
+      "expect": [
+        {
+          "check": "node05_collapse_warned"
+        },
+        {
+          "check": "node05_single_cluster"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ]
+    },
+    {
+      "name": "no-filter-reports-no-pass-rate",
+      "source": "1UBQ",
+      "n_frames": 6,
+      "ensemble": "spread",
+      "physicality": "not_checked",
+      "why": "bioemu2 returns an all-true passed array with checked=False when the thresholds are switched off, so summing it reported 100% of frames passing a check that never ran. A null pass rate and a 100% pass rate are opposite claims.",
+      "expect": [
+        {
+          "check": "node05_pass_rate_null_when_unchecked"
+        },
+        {
+          "check": "node06_pass_rate_not_shown_as_clean"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ],
+      "params": {
+        "PARAM_PHYSICALITY_FILTER": "no_filter"
+      }
+    },
+    {
+      "name": "propagation-passthrough-writes-every-output",
+      "source": "1UBQ",
+      "n_frames": 6,
+      "ensemble": "spread",
+      "run_node04": true,
+      "why": "Silva has no conditionally-skipped node, so node 04 must write all four declared outputs even when propagation is off -- including propagated_physicality.json, which on this path is node 03's report copied forward because the frames are node 03's frames. A declared output that is never written is a silent failure.",
+      "expect": [
+        {
+          "check": "node04_passthrough_outputs_complete"
+        },
+        {
+          "check": "node04_passthrough_physicality_carried"
+        },
+        {
+          "check": "node05_passthrough_not_treated_as_lagged"
+        }
+      ]
+    },
+    {
+      "name": "missing-propagation-manifest-is-not-disabled-propagation",
+      "source": "1UBQ",
+      "n_frames": 6,
+      "ensemble": "spread",
+      "setup": "drop_propagation_manifest",
+      "expect_node05_failure": true,
+      "why": "Node 04 writes a manifest on every path, so an absent one is a staging failure. Reading it as `enabled: false` made a lost output render as an ordinary single-ensemble report -- the three cases shared one message.",
+      "expect": [
+        {
+          "check": "node05_refuses_missing_manifest"
+        }
+      ]
+    },
+    {
+      "name": "lost-propagated-ensemble-is-not-disabled-propagation",
+      "source": "1UBQ",
+      "n_frames": 6,
+      "ensemble": "spread",
+      "setup": "lose_propagated_ensemble",
+      "expect_node05_failure": true,
+      "why": "The other half of the same conflation: a manifest saying propagation ran, with no XTC beside it. Analysing the sampled ensemble alone would silently drop the propagation that was paid for.",
+      "expect": [
+        {
+          "check": "node05_refuses_lost_ensemble"
+        }
+      ]
+    },
+    {
+      "name": "viewer-frames-report-their-own-filler",
+      "source": "1UBQ",
+      "n_frames": 4,
+      "ensemble": "identical",
+      "params": {
+        "PARAM_TOP_N": "10"
+      },
+      "why": "Four identical frames cluster into one, so a top_n of 10 can only be filled with filler. The viewer caption asserted all of its frames were cluster centres, which here is wrong for three of the four and wrong for every frame when no clustering was done at all.",
+      "expect": [
+        {
+          "check": "node05_filler_counted_honestly"
+        },
+        {
+          "check": "node06_caption_matches_selection"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ]
+    },
+    {
+      "name": "single-frame-structure-run-has-no-spread",
+      "source": "1UBQ",
+      "n_frames": 1,
+      "ensemble": "spread",
+      "why": "`mode = structure` with `num_samples = 1` is the configuration the README recommends for predicting a folded structure, and it produces one frame. Node 05 reported `max_nm: 0.0` for it -- a statistic over zero pairs -- and then warned that the ensemble had collapsed and that the reader should check the mode, which was correct. Measured on a GPU: 1UBQ in structure mode gives Rg 1.1616 nm and 1L2Y 0.7146 nm, both compact, both single frames, and both used to be announced as collapsed.",
+      "expect": [
+        {
+          "check": "node05_single_frame_spread_undefined"
+        },
+        {
+          "check": "node05_selection_recorded"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ],
+      "mode": "structure"
+    },
+    {
+      "name": "single-frame-equilibrium-run-is-warned-about",
+      "source": "1UBQ",
+      "n_frames": 1,
+      "ensemble": "spread",
+      "mode": "equilibrium",
+      "why": "The counter-case to the structure-mode fixture, so the fix is not just silence. One frame from an equilibrium run is a wasted run -- no spread, no clusters, an identically zero RMSF -- and node 05 has to say so. Without this entry a node that printed nothing at all for one frame would pass the structure-mode fixture, and the user who typed num_samples=1 by mistake would get a report full of blanks and no explanation.",
+      "expect": [
+        {
+          "check": "node05_single_frame_spread_undefined"
+        },
+        {
+          "check": "node06_report_built"
+        }
+      ]
+    },
+    {
+      "name": "cluster-count-follows-the-threshold-asked-for",
+      "source": "1UBQ",
+      "n_frames": 12,
+      "ensemble": "spread",
+      "mode": "equilibrium",
+      "why": "`rmsd_cluster_threshold_nm` is the parameter behind the most quotable number in the report -- 'this ensemble has N conformational states' -- and no test had ever set it. The threshold is chosen from the fixture's measured distance distribution rather than picked round: at 0.12 nm the count is 4 of 12 frames, so both ignoring the parameter and applying it at the wrong scale change the answer. The check re-derives the count from the published matrix under node 05's own greedy rule, tie-break included, so agreement means the number came from the threshold asked for.",
+      "params": {
+        "PARAM_RMSD_CLUSTER_THRESHOLD_NM": "0.12"
+      },
+      "expect": [
+        {
+          "check": "node05_cluster_threshold_applied"
+        },
+        {
+          "check": "node05_medoid_measured_over_all_pairs"
+        }
+      ],
+      "evidence": "Measured on this fixture's own matrix: the 66 pairwise distances run 0.1146 to 0.1338 nm, so the count is 12 at any threshold up to 0.11, 4 at 0.12 and 1 from 0.13 up. 0.12 is the one value in the discriminating band -- a node that ignored the parameter and clustered at its 0.2 nm default would report 1, and a node that clustered at anything below 0.12 would report 12."
+    }
+  ]
+}

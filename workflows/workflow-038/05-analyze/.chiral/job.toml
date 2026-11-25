@@ -1,0 +1,40 @@
+name = "Analyze Ensemble"
+description = "Turn the sampled ensemble into per-frame and ensemble-level geometric metrics, and write a multi-model PDB of representative frames for the report viewer"
+# topology.cif is deliberately not declared: this node builds the topology from
+# system.yaml, because the XTC carries coordinates only and mdtraj's PDBx/mmCIF reader is
+# the weak link. Declaring a file nothing reads invites the next reader to assume it is
+# the authority on atom order.
+inputs = [
+  "samples.xtc",
+  "physicality.json",
+  "system.yaml",
+  "system_inventory.json",
+  "sampling_manifest.json",
+  "propagated_samples.xtc",
+  "propagated_physicality.json",
+  "propagation_manifest.json",
+]
+outputs = [
+  "ensemble_metrics.csv",
+  "ensemble_summary.json",
+  "ensemble_top.pdb",
+]
+
+[container]
+image = "bioemu2:2026_11_20"
+
+[resources]
+gpu = "none"
+
+[scripts]
+run = "run.sh"
+
+[params.rmsd_cluster_threshold_nm]
+type = "float"
+default = 0.2
+hint = "C-alpha RMSD threshold in nm for counting distinct conformational clusters in the ensemble. Backbone-level clustering is 0.1-0.3 nm; below about 0.002 nm nothing can cluster, because that is the noise floor of the RMSD measurement itself, and every frame comes back as its own cluster"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Number of frames written to the multi-model PDB and shown in the report's 3D viewer"

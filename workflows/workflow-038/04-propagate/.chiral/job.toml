@@ -1,0 +1,76 @@
+name = "Propagate Ensemble"
+description = "Draw one time-lagged endpoint per sampled conformation with the implicit transfer operator model; passes the ensemble through unchanged when propagation is disabled"
+inputs = [
+  "samples.xtc",
+  "topology.cif",
+  "physicality.json",
+  "system.yaml",
+  "sampling_manifest.json",
+  "msa",
+]
+outputs = [
+  "propagated_samples.xtc",
+  "propagated_topology.cif",
+  "propagated_physicality.json",
+  "propagation_manifest.json",
+]
+
+[container]
+image = "bioemu2:2026_11_20"
+# Redundant under silva 0.6.0, which reads [resources] below and emits a Note that this
+# key is ignored. Kept because 0.5.0 is still installed on the GPU estate and its schema
+# has no [resources] at all: there, use_gpu = true is the only thing that passes the
+# device through. Carrying both costs a cosmetic Note; carrying neither costs a CPU-only
+# run. The CPU nodes need no counterpart, since use_gpu = false was already 0.5.0's default.
+use_gpu = true
+
+[resources]
+gpu = "required"
+
+[scripts]
+run = "run.sh"
+
+[params.propagate]
+type = "boolean"
+default = false
+hint = "Run time-lagged propagation in node 04. When false, node 04 passes the ensemble through unchanged"
+
+[params.lag_time_ns]
+type = "float"
+default = 1.0
+hint = "Propagation lag time in nanoseconds; upstream recommends 1 to 1000"
+
+[params.batch_size]
+type = "integer"
+default = 0
+hint = "Conformations denoised together; 0 uses the BioEmu2 default (all of them at once)"
+
+[params.seed]
+type = "integer"
+default = 42
+hint = "Random seed; batch i uses seed + i. Set to -1 for unseeded sampling"
+
+[params.num_steps]
+type = "integer"
+default = 0
+hint = "Denoising steps per sample; 0 uses the sampler preset's default of 200. Fewer is faster and coarser"
+
+[params.sampler]
+type = "string"
+default = "edm"
+hint = "Sampling algorithm for propagation: edm (unsteered) or edm_gd. edm_fk and edm_fkc enable resampling, which needs identical starting frames, so they are rejected here"
+
+[params.physicality_filter]
+type = "string"
+default = "high_quality"
+hint = "Physicality check mode reported per propagated endpoint: high_quality, high_quality_per_residue, no_violations, or no_filter. Endpoints are never removed"
+
+[params.precision]
+type = "string"
+default = "bf16-mixed"
+hint = "Trunk embedding precision: bf16-mixed (fast) or 32-true (full precision)"
+
+[params.matmul_precision]
+type = "string"
+default = "high"
+hint = "Float32 matmul precision during denoising: high (TF32), highest, or medium"
