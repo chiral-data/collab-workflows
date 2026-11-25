@@ -838,6 +838,13 @@ should have failed, because no real passing run exists to mutate. Phase 1's judg
 stronger record: its six mutations were applied to a run that genuinely passed. This one's
 record is weaker, and it stays weaker until `C8`/`C9` run with a real alignment.
 
+> **Retired 2026-11-25, and not by `C8`/`C9`.** Run 3 is the first Phase 2 run to pass the
+> judge, so the falsifier no longer aborts and the mutations are now applied to **real
+> measured scores**. Ten mutations refused against run 3's own tree, plus one exemption
+> granted and disclosed; the record below supersedes this one. The prediction in the last
+> sentence was right about what was needed and wrong about which control would supply it,
+> which is the point of `C13`/`C14` existing at all.
+
 ## The guard that was shown refusing
 
 Before spending any GPU time, `run_controls_phase2.sh` runs an `n3-refuse` step requiring
@@ -875,3 +882,132 @@ The judge requires that log to exist. Deleting it is the seventh mutation above.
   monomer path and does not transfer.
 - Nothing here is experimental validation. These are predictions of a deposited complex,
   and `1BRS` is in AF2's training data.
+
+## Gate B Phase 2 is MET, on `C13`/`C14`, with the narrowing applied and shown both ways
+
+The narrowing argued two sections above is now in `report_controls_phase2.py`: the floor
+applies to the positive's two chains and to the negative's **target**, and not to the
+negative's **binder**, because a scramble is allowed not to fold and that is the
+intervention rather than an artifact of the flags.
+
+### The verdict
+
+```
+Gate B Phase 2: MET -- iptm separates by +0.5700
+```
+
+| metric | positive `C13` | negative `C14` | margin | gates? |
+|---|---|---|---|---|
+| `iptm` | 0.8400 | 0.2700 | **+0.5700** | **yes** |
+| `pae_interaction` | 9.8550 | 23.4140 | +13.5590 | diagnostic |
+| `plddt_target` | 90.3000 | 80.0000 | +10.3000 | diagnostic |
+| `plddt_binder_in_complex` | 88.9200 | 32.3500 | +56.5700 | diagnostic |
+
+Printed with the verdict, in the judge's own output, not only here:
+
+```
+limit: C14 plddt_binder_in_complex is 32.35, below the 70.0 floor.
+   This does NOT make the run uninterpretable: a scramble is allowed not to fold,
+   and that is the intervention rather than an artifact of the flags. It DOES
+   confound the negative, whose low interface numbers now mean "does not bind"
+   AND "does not fold" together. So this is an EASY negative, and part of any
+   margin below is the chimera being badly modelled on both sides.
+```
+
+### The regression that makes the narrowing a correction and not a rescue
+
+| run | pair | floored chain | role | verdict under the narrowed floor |
+|---|---|---|---|---|
+| 2, `20261122-115101` | `c8` | `plddt_binder_in_complex` 38.55 | **POSITIVE** | `NOT INTERPRETABLE`, exit 2 |
+| 3, `20261125-125537` | `c13` | `plddt_binder_in_complex` 32.35 | NEGATIVE | `MET`, exit 0, limit disclosed |
+
+Run 2's floored chain is the positive's. The narrowing exempts the negative's. So it
+**cannot** rescue the run that motivated the floor, and that is the whole argument that it
+is not a goalpost moving under its own verdict (§8.18's third rule). Both runs are judged
+by the same file in the evidence directory below, in the same step.
+
+### Eleven checks, on real measured scores
+
+| check | result | reason recorded |
+|---|---|---|
+| positive `iptm` → 0.05 | refused | does not separate, margin −0.2200 |
+| negative `iptm` ← positive's | refused | does not separate, margin +0.0000 |
+| positive and negative swapped | refused | does not separate, margin −0.5700 |
+| positive `iptm` removed | refused | missing on a gating metric (§8.7) |
+| the negative's row deleted | refused | `['C14']` produced no row |
+| the positive's row duplicated | refused | design `'C13'` appears twice |
+| positive's **binder** floored to 38.55 | refused | not modelled, `8e4772a7` |
+| positive's **target** floored to 38.55 | refused | not modelled, `8e4772a7` |
+| negative's **target** floored to 38.55 | refused | not modelled, `8e4772a7` |
+| `n3-refuse.log` deleted | refused | `single_sequence` refusal never exercised (§8.13) |
+| negative's **binder** floored to 32.35 | **permitted, and disclosed** | the exemption, pinned |
+
+The last row is the one that makes the narrowing a decision rather than an accident. An
+exemption nothing can be shown *granting* is a gap, so `permit()` fails in both directions:
+if the judge refuses the exempt case, and if it accepts it **without printing the limit**.
+A verdict that quietly dropped the observation would look stronger than the run supports.
+
+The ninth row is the narrowing's boundary. The negative's binder is exempt and its target
+is not, because the target is the same chain with the same alignment as the positive's, so
+a drop there is the flags' fault. Without that mutation the narrowing would be untested in
+the one direction where getting it wrong turns the gate into a formality.
+
+### A defect found by this falsification, in the thing doing the falsifying
+
+The first run of the falsifier against run 3 reported all ten mutations refused. Every
+reason it recorded was wrong:
+
+```
+[refused]  positive-iptm-collapses -- C14 plddt_binder_in_complex is 32.35, below the 70.0 floor.
+[refused]  separation-inverted     -- C14 plddt_binder_in_complex is 32.35, below the 70.0 floor.
+[refused]  refusal-not-shown       -- C14 plddt_binder_in_complex is 32.35, below the 70.0 floor.
+```
+
+`C14`'s floored binder is a property of the **honest** run, identical in all ten mutated
+copies, and has nothing to do with any mutation. The cause: the new limits block printed
+`  - ` bullets, and `reason()` quotes the first `  - ` line as the reason a mutation was
+caught. The refusals were real. The record was fiction.
+
+This judge already carried a comment saying every refusal prints as a `  - ` bullet,
+written after that seam produced a wrong record **twice**. Both earlier times were refusals
+that did not use the shape. This was the inverse, a non-refusal that did, and it shows the
+invariant had only ever been written in one direction. It is a biconditional now, the
+limits print as `limit:`, and the fix is in the writer rather than a third grep in the
+reader. Filed as §8.18's second rule.
+
+Worth stating plainly: this defect would have made a `MET` verdict look fully falsified
+while the falsification proved nothing, in the one commit where I had the strongest reason
+to want a `MET` verdict. It was caught by reading the reasons rather than the exit code.
+
+### Evidence
+
+`~/wf040-evidence/tier2-phase2-c13-met/` on `amd-c12-1`, written in a single step together
+with the md5s of the three scripts that produced it, because a hash taken afterwards proves
+what a file is now and not what a process read when it ran:
+
+```
+4c52bdc5b362338c9d195e805130cabd  tests/report_controls_phase2.py
+6939cf923ecfd017eb697a7c19ea03f3  tests/falsify_controls_phase2.sh
+3d21ccd26b72e67e954b964a26ec1016  tests/run_controls_phase2.sh
+
+1-verdict-run3-c13.txt      MET, exit 0
+2-regression-run2-c8.txt    NOT INTERPRETABLE, exit 2
+3-falsify-run3-real.txt     10 refused, 1 permitted and disclosed, exit 0
+4-falsify-synthetic.txt     10 refused, exit 0
+df-before.txt / df-after.txt   38G free, against the scripts' 8G floor
+```
+
+All three hashes match the committed tree.
+
+### Reproducing it
+
+```
+bash tests/run_controls_phase2.sh --pair c13 --allow-egress   # needs the GPU and egress
+python3 tests/report_controls_phase2.py <RUN_DIR>
+bash tests/falsify_controls_phase2.sh <RUN_DIR>               # real tree, now that one passes
+bash tests/falsify_controls_phase2.sh --synthetic             # the judge alone
+```
+
+`--allow-egress` is required and is the user's call: the target MSA is fetched from
+`api.colabfold.com`, which is the only step in this workflow that reaches the network, and
+node 01b refuses to send a payload containing any designed sequence from the inventory.

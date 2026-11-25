@@ -42,6 +42,39 @@ PAIRS = {
     ),
 }
 
+# What a MET verdict explicitly does not establish, per pair. Kept beside PAIRS so that
+# adding a pair without deciding its limits is a KeyError at the verdict rather than the
+# previous pair's limits printed under a different experiment.
+CAVEATS = {
+    "c8": [
+        "  - Nothing about thresholds. The target alignment in an offline run is",
+        "    synthetic, and \u00a711.1 measured a small synthetic a3m scoring WORSE than no",
+        "    alignment at all, so these absolute values are not calibration inputs.",
+        "    pae_interaction is printed as a diagnostic for that reason and does not",
+        "    gate here, and does not gate in the workflow either (\u00a77).",
+        "  - Nothing about designed binders. C8 is a native pair with deep MSAs on both",
+        "    sides; \u00a74 records 029's 0.100 -> 0.860 as an UPPER bound for the designed",
+        "    case, and nothing in this repo has measured the designed case.",
+    ],
+    "c13": [
+        "  - Nothing about thresholds, and the run says the OPPOSITE of calibration: C13",
+        "    is a crystallised, deposited, published binder and 040's shipped gating",
+        "    thresholds REJECT it (sc_rmsd_A 5.141 > 2.0; plddt_binder 74.4 < 80.0), while",
+        "    the two it refuses to gate on classify both controls correctly. That is a",
+        "    measured false negative, it is Phase 3's problem, and separation here does",
+        "    not license any cutoff. n=1 pair, and C13 clears 10.0 A by 0.145.",
+        "  - Little about designed binders in general. This pair DOES measure the designed",
+        "    case for the first time (plddt_binder_in_complex 88.92 with no alignment,",
+        "    against C12's 95.05), which retires the C8-era caveat. But it is ONE deposited",
+        "    binder at 124 residues where C12 was 60, and \u00a74's 0.860 upper bound was never",
+        "    a prediction that a designed binder would reach it. C13's 0.84 landing there",
+        "    was pre-registered as explicitly UNKNOWN and is a result, not a confirmation.",
+        "  - Nothing about targets without homologs. C13's target is human PD-L1 with a",
+        "    4374-sequence alignment and modelled at 90.30. A target whose MSA is shallow",
+        "    puts the interface back on the floor (8e4772a7), and that case is unmeasured.",
+    ],
+}
+
 # The default is the pair this judge was written for, so an older run directory with no
 # pair.txt in it still reads correctly rather than erroring or, worse, being judged against
 # the wrong control names.
@@ -216,18 +249,77 @@ def main(argv):
     # "the scorer failed" are different findings with different remedies, so they get
     # different words and different exit codes.
     MODELLED_FLOOR = 70.0
-    CHAINS = ("plddt_target", "plddt_binder_in_complex")
+
+    # WHICH CHAINS THE FLOOR APPLIES TO, AND WHY IT IS NOT SYMMETRIC OVER THE ROLES.
+    #
+    # 8e4772a7 is a finding about when an interface number is UNINTERPRETABLE, and the
+    # question it actually asks is whether a chain's low confidence is an artifact of the
+    # FLAGS or a property of the SEQUENCE. That distinction is not symmetric over roles:
+    #
+    #   positive's target   should model, it has a real MSA                   -> floor it
+    #   positive's binder   should model, a designed sequence folds unaided
+    #                       (C12 measured 95.05, C13 measured 88.92)          -> floor it
+    #   negative's target   should model, same chain and same MSA as the
+    #                       positive's, so a drop here is the flags' fault     -> floor it
+    #   negative's binder   should NOT model. scrambling destroys the fold,
+    #                       and that IS the intervention                  -> DO NOT floor
+    #
+    # C8/C9 are the contrast that makes this concrete. Their floored chain was native
+    # barnase, a protein that folds perfectly well in reality and was floored only because
+    # §4 withholds its alignment: an artifact of the flags, and the floor fires on it
+    # correctly. A scramble does not fold IN THE WORLD, not merely under these flags, so
+    # requiring it to model is requiring the negative to stop being a negative. Phase 1
+    # settled this by precedent without anyone noticing: C3 (scrambled, sc_rmsd 18.83 A)
+    # and C4 (115 alanines) are both accepted negatives, and C3 is this same intervention.
+    #
+    # THIS IS A NARROWING MADE AFTER SEEING A RUN, which is the suspect direction (§8.17),
+    # so the two things that keep it honest are written here in the code rather than left
+    # in the doc where the next reader of this function will not look:
+    #
+    #   1. The pre-registration committed in 1a5eb76a, EIGHT HOURS BEFORE the run, already
+    #      said that a well-modelled negative is expected and that what matters is iptm and
+    #      not the negative's pLDDT. The prose specification and this executable one
+    #      contradicted each other in one repo state. The run arbitrated between them; it
+    #      did not invent the question, and nothing here was written to fit a number.
+    #   2. Run 2's floored chain is C8's plddt_binder_in_complex at 38.55, and C8 is the
+    #      POSITIVE, so this narrowing provably does NOT rescue the run that motivated the
+    #      floor in the first place. A gate change that cannot save the failure behind it
+    #      is not a rescue of that failure. falsify_controls_phase2.sh checks both the
+    #      chains that must still floor and that run 2 still comes back NOT INTERPRETABLE.
+    #
+    # What the narrowing does NOT do is make the negative a good negative. A floored binder
+    # on the negative side confounds "does not bind" with "does not fold", so it is carried
+    # forward as a stated LIMIT on the verdict rather than deleted from the output.
+    FLOORED_CHAINS = {
+        "positive": ("plddt_target", "plddt_binder_in_complex"),
+        "negative": ("plddt_target",),
+    }
+    CONFOUNDING_CHAINS = {"negative": ("plddt_binder_in_complex",)}
+
+    roles = ([(name, "positive") for name in POSITIVE]
+             + [(name, "negative") for name in NEGATIVE])
+
     floored = []
-    for name in list(POSITIVE) + list(NEGATIVE):
-        for column in CHAINS:
+    confounded = []
+    for name, role in roles:
+        for column in FLOORED_CHAINS[role]:
             value = number(rows[name], column)
             if value is None or value < MODELLED_FLOOR:
                 floored.append((name, column, value))
+        for column in CONFOUNDING_CHAINS.get(role, ()):
+            value = number(rows[name], column)
+            if value is None or value < MODELLED_FLOOR:
+                confounded.append((name, column, value))
 
     if floored:
         print("\n" + "=" * 78)
         print("Gate B Phase 2: NOT INTERPRETABLE -- this control cannot tell")
-        # EVERY refusal this judge makes prints as a "  - " bullet, this one included.
+        # EVERY refusal this judge makes prints as a "  - " bullet, this one included,
+        # AND NOTHING ELSE MAY USE THAT SHAPE. The second half is not decoration: the
+        # "limits on whatever verdict follows" block below was added as "  - " bullets and
+        # immediately made the falsifier attribute every mutation of run 3 to the honest
+        # run's own floored negative. One direction of this rule had been written down for
+        # two sessions; the other had not, and that is the half that broke.
         # falsify_controls_phase2.sh quotes the first such line as the reason a mutation
         # was caught. When NOT INTERPRETABLE was first added with an output shape of its
         # own, the falsifier recorded that mutation as refused with an EMPTY reason: a
@@ -305,6 +397,39 @@ def main(argv):
                 "record that it was used (§11.1)."
             )
 
+    # ------------------------------------------------- limits carried into the verdict
+    # Printed for BOTH verdicts. The negative's binder being on the floor no longer stops
+    # the run being read, but it changes what the reading is worth, and a limit that only
+    # appears when the news is bad is not a limit, it is an excuse.
+    if confounded:
+        print("\nlimits on whatever verdict follows")
+        # NOT a "  - " bullet. That shape is RESERVED for "this is why the run was
+        # refused", and falsify_controls_phase2.sh reads the first one as the reason a
+        # mutation was caught. Printed as a bullet, these lines made every mutation of
+        # run 3 record as refused because of C14's floored binder: the honest run's own
+        # property, identical in every mutated copy, and nothing to do with the mutation.
+        # The refusals were real and the reasons on the record were fiction, which is §8.4
+        # in the reporting layer rather than the checking layer.
+        for name, column, value in confounded:
+            shown = "NOT MEASURED" if value is None else f"{value:.2f}"
+            print(f"  limit: {name} {column} is {shown}, below the "
+                  f"{MODELLED_FLOOR:.1f} floor.")
+        print("    This does NOT make the run uninterpretable: a scramble is allowed not "
+              "to fold,")
+        print("    and that is the intervention rather than an artifact of the flags. It "
+              "DOES")
+        print("    confound the negative, whose low interface numbers now mean \"does not "
+              "bind\"")
+        print("    AND \"does not fold\" together. So this is an EASY negative, and part "
+              "of any")
+        print("    margin below is the chimera being badly modelled on both sides "
+              "(8e4772a7:")
+        print("    a scrambled partner cost C13's target 10.3 points of its own pLDDT). "
+              "The hard")
+        print("    negative, a design that models well and does not bind, does not exist "
+              "in this")
+        print("    repo and this run does not create one.")
+
     # ---------------------------------------------------------------- verdict
     print("\n" + "=" * 78)
     if failures:
@@ -319,14 +444,13 @@ def main(argv):
         f"{c} separates by {m:+.4f}" for c, m in gating))
     print()
     print("What this does NOT say:")
-    print("  - Nothing about thresholds. The target alignment in an offline run is")
-    print("    synthetic, and §11.1 measured a small synthetic a3m scoring WORSE than no")
-    print("    alignment at all, so these absolute values are not calibration inputs.")
-    print("    pae_interaction is printed as a diagnostic for that reason and does not")
-    print("    gate here, and does not gate in the workflow either (§7).")
-    print("  - Nothing about designed binders. C8 is a native pair with deep MSAs on both")
-    print("    sides; §4 records 029's 0.100 -> 0.860 as an UPPER bound for the designed")
-    print("    case, and nothing in this repo has measured the designed case.")
+    # Per-pair, because these sentences are claims about the controls and the C8 set are
+    # FALSE of C13. "Nothing in this repo has measured the designed case" was accurate
+    # while C8/C9 were the only pair; printed underneath a C13 verdict it would be the
+    # judge contradicting the run it is judging. A caveat that is wrong is worse than no
+    # caveat, for the same reason a check that passes for the wrong reason is (§8.4).
+    for line in CAVEATS[token]:
+        print(line)
     print("  - Nothing until this judge has been shown refusing:")
     print("    bash tests/falsify_controls_phase2.sh <this directory>")
     print("=" * 78)

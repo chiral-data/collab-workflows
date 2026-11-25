@@ -943,6 +943,53 @@ Two practical rules come out of it:
   has no equivalent, and until it does, a Phase 2 verdict is uninterpretable in the
   direction that matters.
 
+### 8.18 Two specifications of one rule will disagree, and the one nothing executes loses in silence
+
+`C13`/`C14` was pre-registered in `1a5eb76a` and the pre-registration said, in writing,
+that a well-modelled negative is expected and that *"what matters is `iptm`, not the
+negative's pLDDT."* The judge that grades the same control, committed earlier in
+`a39468a7`, floored **both** chains of **both** roles, so it required exactly the thing the
+pre-registration said was not required.
+
+Both were in the repo at the same time. Both predate the run. Neither is wrong about its
+own intent. `silva validate` cannot see a contradiction between prose and code, no test
+failed, and nothing surfaced it until a run finally produced the case that distinguishes
+them: a negative whose binder sat at 32.35 while everything else cleared the floor. The
+executable specification won by default, because it was the only one that ran.
+
+This is not a documentation lag. A pre-registration *is* a specification of the gate, with
+the specific job of being written before the data so the gate cannot move afterwards. When
+it and the judge disagree, the project has two gates and will silently apply whichever one
+happens to be code.
+
+Three rules:
+
+- **A pre-registration and the check that grades it are one artifact with two halves. Write
+  them in the same commit and read them against each other before the run, not after.** The
+  reading takes a minute. Here it would have been the minute that mattered, because the
+  contradiction was legible on the page the whole time.
+- **State an output-shape convention as a biconditional.** This judge's rule was "every
+  refusal prints as a `  - ` bullet", and `falsify_controls_phase2.sh` quotes the first such
+  bullet as the reason a mutation was caught. Adding a `  - ` bullet for something that is
+  *not* a refusal — a stated limit on the verdict — made the falsifier record all ten
+  mutations of the `C13` run as caught because of the honest run's own floored negative.
+  **The refusals were real and every reason on the record was fiction.** That is §8.4 moved
+  into the reporting layer, where it is harder to see because nothing failed. Third time
+  this seam has produced a wrong record; the first two were refusals that did not use the
+  shape, this one was a non-refusal that did, and the fix both times was the writer, not
+  another grep in the reader.
+- **A post-hoc narrowing of a gate must be tested against the run that motivated the
+  gate.** §8.17 warns against moving a goalpost after seeing the data, but it does not say
+  how to tell a correction from a rescue. This does: if the narrowing would also rescue the
+  earlier failure the gate was written for, it is the rescue. Run 2's floored chain is
+  `C8`'s binder and `C8` is the **positive**, so narrowing the floor to exempt the
+  *negative's* binder provably leaves run 2 `NOT INTERPRETABLE`. That is now a required
+  regression with a mutation of its own, and it is the only reason the narrowing is
+  defensible rather than convenient. Pair it with the inverse check: an exemption that
+  nothing can be shown *granting* is not a decision, it is a gap, so
+  `falsify_controls_phase2.sh` has a `permit()` arm that fails both if the judge refuses
+  the exempt case and if it accepts it without disclosing the limit.
+
 **Both rules were then followed, and the error landed again anyway.** The real-MSA run's
 expectations were pre-registered with provenance, as the first rule asks. The primary claim
 held exactly — `plddt_target` 38.28 → 85.42 against §4's predicted 83.7. `iptm` still did
@@ -1261,7 +1308,7 @@ replicates" landing on its own 3600 s default, killing the job hours in.
 
 ## 12. Phasing
 
-**Status, 2026-11-22.** Phase 1 is built and is the merge gate it was specced to be:
+**Status, 2026-11-25.** Phase 1 is built and is the merge gate it was specced to be:
 Gate A met in `colabfold:2026_10_08`, Gate B Phase 1 met on the GPU with `C6`, only `C5`
 outstanding. Phase 2 is built — `01b-align-target` and the `cplx_` path through nodes
 02–05 — and is now validated **in CI**: all thirteen of its Tier 1 cases pass and are
@@ -1269,11 +1316,31 @@ falsifiable, where five of them had been gaps from the day they were written. Ma
 those five run found four defects, the worst of which would have degraded every complex
 prediction to a monomer on a real Silva run while `silva validate` reported six jobs ok.
 
-**Gate B Phase 2 has been run twice and the verdict is `NOT INTERPRETABLE`.** Run 1,
-offline, gave `iptm` 0.0900 for the native positive against `C9`'s 0.1700. Run 2 fetched a
-real 3600-sequence target alignment from `api.colabfold.com` and gave 0.1900 against
-0.2500. Eight real multimer predictions across the two runs, so the interface path
-produces numbers; they do not separate.
+**Gate B Phase 2 is MET, on run 3, with `C13`/`C14`.** `iptm` separates **0.8400 against
+0.2700**, margin **+0.5700**, with `pae_interaction` 9.8550 against 23.4140 as a
+diagnostic. Ten falsifier mutations refused against the real measured tree and one
+exemption granted and disclosed. Evidence in
+`~/wf040-evidence/tier2-phase2-c13-met/` and the full record in
+`tests/reference/tier2-phase2-controls.md`.
+
+What made it possible was fixing the **control**, not the workflow. `C13` is `7XYQ`'s
+`DBL1_03`, a deposited de novo binder on human PD-L1, so both chains can be modelled under
+§4's flags: the target from a 4374-sequence alignment, the binder from nothing. It is the
+first Phase 2 control to have both chains above 70, at **90.30** and **88.92**, and the
+88.92 is the measurement this repo had never made — that a designed sequence folds unaided
+in a complex, against `C12`'s 95.05 for a monomer.
+
+**The verdict carries two limits, both printed by the judge itself.** `C14` is an *easy*
+negative: its binder is at 32.35, so its low interface numbers mean "does not bind" and
+"does not fold" together, and part of the margin is a badly modelled chimera. The hard
+negative, a design that models well and does not bind, still does not exist in this repo.
+And the gate establishes **direction and dynamic range, not calibration** — see below,
+because the same run says something sharper about the thresholds.
+
+**Runs 1 and 2 remain `NOT INTERPRETABLE` and that is the correct verdict for them.** Run
+1, offline, gave `iptm` 0.0900 for the native positive against `C9`'s 0.1700. Run 2 fetched
+a real 3600-sequence target alignment from `api.colabfold.com` and gave 0.1900 against
+0.2500. Twelve real multimer predictions across the three runs now.
 
 **Run 2 settled the target half and exposed the other one.** `plddt_target` went 38.28 →
 **85.42**, against §4's predicted 38.4 → 83.7 — the alignment did exactly what §4 said.
@@ -1298,12 +1365,34 @@ finding 2 — made one phase later, about the target instead of the binder, in a
 written after that finding was filed. Recorded in
 `tests/reference/tier2-phase2-controls.md` and as §8.17.
 
-So: **separation is not measurable offline with a synthetic alignment.** `C7`, `C8` and
-`C9` all now need the same one fetch from `api.colabfold.com`, which is the user's call and
-requires `--allow-egress`. `iptm` and `pae_interaction` still do not gate. Phase 2 has no
-positive control capable of returning a meaningful interface number, which is the real gap:
-until one exists Phase 2 cannot tell a broken scorer from a broken control the way Phase
-1's `C12` could. Phase 3 has not started.
+So: **separation is not measurable offline with a synthetic alignment**, and it is not
+measurable at all against a positive whose binder cannot be modelled. `C13`/`C14` is the
+control that can tell a broken scorer from a broken control, which is what Phase 2 lacked
+and what `C12` gave Phase 1. It needs one fetch from `api.colabfold.com`, which is the
+user's call and requires `--allow-egress`.
+
+**`iptm` and `pae_interaction` still do not gate in the workflow, and run 3 is the first
+measured argument that they should.** `C13` is a crystallised, deposited, published binder
+and 040's two **gating** thresholds reject it:
+
+```
+C13   sc_rmsd_A 5.141 > 2.0;  plddt_binder 74.4 < 80.0        -> passes: false
+```
+
+while the two thresholds the workflow deliberately does **not** gate on, `min_iptm` 0.5 and
+`max_pae_interaction` 10.0, classify both controls correctly. That is a measured **false
+negative on a known-good binder**, and it is the first real content behind node 04's
+`thresholds_are_calibrated = false`. Three qualifications that keep it honest: the scores
+themselves are correct and `null_reasons` is empty, so this is not an §8.2 fallback; §7's
+reason for not gating the interface still stands, since `C13`'s target at 90.30 pLDDT is
+exactly the condition under which 10.0 Å is reachable and `C13` clears it by 0.145 Å; and
+`plddt_binder` 74.40 is the **monomer** arm, where the same chain in complex is 88.92, so a
+gate at 80 on the monomer rejects a chain that models at 88.92 with its partner present.
+
+One deposited binder at 124 residues is one data point, so this does not say 2.0 Å and 80.0
+are wrong in general. It says they are uncalibrated in a direction that is now measured
+rather than declared, and that **Phase 3 has its first datum, which arrived out of Phase
+2.** Phase 3 itself has not started.
 
 **Phase 1 — self-consistency only. This is what gets built.**
 
