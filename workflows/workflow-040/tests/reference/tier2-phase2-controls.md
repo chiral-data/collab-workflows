@@ -498,6 +498,78 @@ place.
   alignment, consistent with every other unaligned number in this file. The control was
   about chain count.
 
+## `C13`/`C14`: the designed-binder control, pre-registered before it is built
+
+Phase 2's three failures so far were all one error about a different chain: a chain the
+flags could not model, and no requirement that it be modelled. `C13`/`C14` are the attempt
+to fix the control rather than the workflow, and **this section is written before the
+scripts exist**, let alone before anything runs.
+
+### The entry
+
+`7XYQ`, confirmed by probing the file rather than from the paper or from memory
+(sha256 `883c9c5542b2f65b`):
+
+| chain | role | residues | ids | gaps | provenance |
+|---|---|---|---|---|---|
+| A | **target** | 203 | 1..207 | **165→170, 4 missing** | human PD-L1 (`CD274`), native, so it has homologs |
+| B | **binder** | 124 | 1..124 | none | `DBL1_03`, deposited as a **synthetic construct** |
+
+This is the first control in the repo where **both** chains can be modelled under the flags
+§4 mandates: the target from an alignment, the binder from **nothing**, because a designed
+sequence is supposed to fold unaided. That is the whole point, and it is exactly the move
+`C12` made for Phase 1.
+
+The target's 4-residue gap will be fused and disclosed. That is §8.12's path and `C11` just
+measured it as benign at this scale, so it is a known cost rather than a confound.
+
+### Pre-registered, with provenance for every figure
+
+| | prediction | where it comes from | status |
+|---|---|---|---|
+| `plddt_target` | **> 70**, expect ~85 | barstar measured **85.42** with a real server MSA; §4's table says 83.7 | measured precedent |
+| `plddt_binder_in_complex` | **> 70** | `C12` measured **95.05** for a designed sequence folded from sequence alone | **the new claim, and this control's entire premise** |
+| **both** of the above | required before separation is reported at all | `8e4772a7` is **symmetric over the two chains** | **derived from the rule, not from the last failure** |
+| `iptm`, `C13` vs `C14` | `C13` > `C14`, by a margin that is not noise | §8.6: the gate is separation, not an absolute | measured requirement |
+| `iptm`, `C13` absolute | **not predicted** | 029's 0.860 was a native pair with deep MSAs on *both* chains; here the binder has none by design | explicitly unknown |
+| target fusion | the 165→170 gap fused and disclosed through to the report | §8.12, `C11` | required behaviour |
+
+The third row is the one that matters and the one I got wrong last time. `8e4772a7`
+quantifies over **both** chains, so the condition does too. Writing the premise down was
+never the missing piece; deriving it from the governing finding was (§8.17's third rule).
+
+### Reading order, fixed in advance
+
+1. **Are both chains above 70?** If not, `NOT INTERPRETABLE`, and the judge already
+   enforces this and names the floored chain.
+2. **If the BINDER is the one below 70**, that refutes this control's premise — that a
+   deposited de novo binder folds unaided — and it is a finding about `DBL1_03` or about
+   designed binders at 124 residues, **not** about 040. 124 residues is large for a
+   minibinder and `C12` was 60 idealised ones, so this is a real possibility and it is
+   named here so it cannot be reinterpreted later.
+3. **Only if both clear 70**: does `iptm` separate? If yes, **Gate B Phase 2 is MET**. If
+   no, that is the **first interpretable evidence against 040's interface scoring** this
+   repo has ever had, and it would be a finding about the workflow.
+
+### What would refute the standing diagnosis
+
+The current diagnosis is that `C8`/`C9` failed because their binder was native and
+unalignable. **That is wrong if both chains clear 70 here and `iptm` still fails to
+separate.** Stated now, symmetric this time, with no escape hatch: if that happens, the
+problem is 040's and not the control's.
+
+### What would invalidate `C13`/`C14` themselves
+
+- **If `DBL1_03` needs an alignment to fold.** The deposition says synthetic construct, but
+  a binder built by grafting a motif onto a natural scaffold can carry a natural sequence,
+  and a natural sequence needs an MSA like any other. Step 2 above is what detects this.
+- **If the fused target models badly.** `C11` measured a 2-residue fusion as benign; this
+  gap is 4 and in a different fold. If `plddt_target` comes in low, the fusion is the first
+  suspect and `8e4772a7`'s larger case is the precedent to read.
+- **`C14`'s scramble could fold well.** Phase 1's `C4` scored 95.81 on 115 alanines, so a
+  well-modelled negative is expected and is not a defect — what matters is `iptm`, not the
+  negative's pLDDT.
+
 ## Is the verdict worth anything?
 
 Seven mutations, every one refused, and the honest tree checked first:
