@@ -246,7 +246,7 @@ Image name `bioemu2:2026_11_20`. The repo's shared-image CI
    so that branch was dead code tolerating a format upstream never writes. Node 05 now parses
    the real shape and fails on anything else instead of degrading to blank statuses, which is
    what let a dropped file look like a run where no check was requested.
-4. **Half closed: the compute-capability floor is measured, the VRAM ceiling is not.**
+4. **Closed: the compute-capability floor and the VRAM ceiling are both measured.**
    `torch.cuda.get_arch_list()` in the built image returns
    `['sm_50', 'sm_60', 'sm_70', 'sm_75', 'sm_80', 'sm_86', 'sm_90']`, so `sm_70` is present —
    the 7.0 floor and the V100 claim are real rather than inherited — and `sm_100` is absent,
@@ -258,7 +258,7 @@ Image name `bioemu2:2026_11_20`. The repo's shared-image CI
    for 542 tokens and 19 for 746, both at least four times optimistic on this card. The formula
    is linear in tokens and upstream's tested device is an 80 GB A100, so node 03, the README and
    the troubleshooting section now all say the estimate is an upper bound rather than a ceiling.
-   **Now closed, with the opposite answer to the one expected.** Re-run at `BATCH_SIZE=1`, both
+   The ceiling itself then answered the opposite of what was expected. Re-run at `BATCH_SIZE=1`, both
    systems failed on the *same* allocation as at batch 8 — 1.06 GiB for 542 tokens, 1.46 GiB for
    746 — so on this card the batch is not what the memory is going on: the peak is set by the
    token count. Upstream's formula is not merely optimistic here, it scales the variable that
