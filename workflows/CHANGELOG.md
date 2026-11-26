@@ -5,6 +5,61 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-11-25]
+
+### Added
+
+- workflow-040: Binder Design Validation — **Gate A is met in the image on all 55 cases;
+  Gate B Phase 1 and Phase 2 are met on the GPU** (6 nodes: 01-ingest-designs,
+  01b-align-target, 02-build-prediction-inputs, 03-predict, 04-score,
+  05-filter-and-report). Depends on workflow-037, which must merge first: it reads 037's
+  `*_generated.cif` and `design_metrics.json`, and extends
+  `workflow-037/tests/make_designs.py` in place.
+  - The self-consistency filter 037 deliberately omits. Every metric 037 reports is
+    geometric, and all of them look ordinary on a design that folds into nothing, so each
+    sequence is refolded with a predictor that never saw it and compared against the
+    backbone it was designed as.
+  - Reads 037's structures rather than its exported FASTA: a sequence alone cannot be
+    compared against a backbone that stayed behind.
+  - Two tiers gate the merge. Tier 1 scores hand-built predictions whose correct answer is
+    known, and every passing check is broken on purpose and required to fail, because 037
+    shipped four checks that passed for the wrong reason. Tier 2 runs real predictions on
+    the GPU under `--network none` against designed positive and negative controls.
+  - `plddt_binder` is measured and does not gate alone: a 115-residue poly-alanine scores
+    95.81, above the real design. `sc_rmsd_A` is the metric doing the discriminating.
+  - Interface scoring (`score_interface`) is built, off by default and **uncalibrated**.
+    `iptm` and `pae_interaction` are reported and do not gate, pending Phase 3 controls.
+  - `01b-align-target` is the only node permitted egress, and the designed sequences are
+    not inputs to it. The boundary is enforced in the job config and checked by the suite.
+  - Designs remain un-screened upstream, and passing validation makes synthesis more
+    likely: the SecureDNA notice travels into every artifact here.
+  - Design doc and decisions in `workflows/workflow-040/validation_pipeline.md`; suite and
+    merge gate in `workflows/workflow-040/tests/README.md`.
+
+## [2026-11-11]
+
+### Added
+
+- workflow-037: RFD4-Proteina De Novo Design (6 nodes: 01-acquire-target, 02-build-spec,
+  03-generate, 04-analyze, 05-report, 06-export-fasta). Built and run end to end on a GPU node
+  against PDB 5O45.
+  - Generative protein design on RFD4-Proteina (RosettaCommons + NVIDIA GenAIR, BSD-3), which
+    supersedes RFdiffusion 1/2/3. Multi-task via a `task` param: binder, motif_scaffold,
+    monomer, binder_redesign.
+  - Generation only (`~metrics`): no refolding oracle, so one GPU node and a small image.
+    Self-consistency scoring is deferred to a follow-up workflow chaining into workflow-026.
+  - `02-build-spec` validates the condition spec to an annotated CIF on CPU before any GPU
+    time is spent, turning the most common RFD4 failure mode (`sel()`/`contig` errors) from a
+    20-minute GPU failure into a 10-second CPU one.
+  - `01-acquire-target` emits both `label_seq_id` and `auth_seq_id` per chain, because RFD4
+    contigs use mmCIF `label_seq_id` while RCSB files are author-numbered.
+  - Shared image `rfd4-proteina:2026_11_04` (`python:3.12-slim`, CUDA 12 profile via
+    `[all-cuda12]` + `--torch-backend cu126`, HF checkpoint pinned to
+    `a06e2509c7033b010fc43614e9fd840303588502`). Registered in `apps/applications.json`.
+  - Designs are **not** SecureDNA-screened: the RFD4 CLI/Python path does no screening. No
+    screening node by design; the README and report carry the notice.
+  - Design doc and open build-time questions in `workflows/workflow-037/rfd4_pipeline.md`.
+
 ## [2026-07-24]
 
 ### Added

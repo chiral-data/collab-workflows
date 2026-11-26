@@ -1,0 +1,298 @@
+{
+  "_comment": [
+    "Each fixture is a real RCSB entry chosen because probe_entry.py MEASURED the shape in",
+    "the downloaded file. 'evidence' is what that tool reported -- not a claim from the",
+    "literature and not a recollection. Re-run tests/probe_entry.py against the download",
+    "directory to confirm the entries still carry these shapes.",
+    "",
+    "'expect' entries with \"status\": \"open\" are known, documented gaps: check_fixtures.py",
+    "reports them as GAP and does not fail the run. Fixing one means deleting its status",
+    "field, at which point the suite enforces it."
+  ],
+  "fixtures": [
+    {
+      "id": "12E8",
+      "shape": "Fab with Kabat insertion codes in CDR-H2 and CDR-H3",
+      "evidence": "4 chains; 3 distinct insertion codes (A,B,C); 6 author numbers covering more than one residue; 80 zero-occupancy atoms",
+      "why": "Chain H carries 52A (CDR-H2), 82A/B/C (FR3) and 100A/B/C (CDR-H3). The CDR residues are exactly the ones a user would name as hotspots on an antibody target.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "inserted_residues_addressable", "finding": "#1"},
+        {"check": "dropped_chains_named", "finding": "#10"}
+      ]
+    },
+    {
+      "id": "12E8-hotspots",
+      "source": "12E8.cif",
+      "shape": "the same Fab, with a hotspot span named in author numbering over CDR-H3",
+      "evidence": "author 100 on chain H covers 4 residues -- 100, 100A, 100B, 100C -- at label 104, 105, 106, 107; auth_to_label maps 100 to 104 alone",
+      "why": "Node 01 warns that author->label translation takes the first occurrence. This fixture pins the warning where the loss actually happens: the user names the residue in node 02, against a different parameter, and three of the four residues in the span are not conditioned.",
+      "params": {"PARAM_TARGET_CHAIN": "H", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth", "PARAM_HOTSPOT_RESIDUES": "H99-101"},
+      "expect": [
+        {"check": "insertion_codes_warned_at_use", "finding": "#52"}
+      ]
+    },
+    {
+      "id": "1IGT",
+      "shape": "intact IgG: insertion codes plus N-linked glycans",
+      "evidence": "4 chains; 7 insertion codes; 6 duplicate author numbers; 6 non-polymer components (BMA,FUC,FUL,GAL,MAN,NAG); 18 zero-occupancy atoms",
+      "why": "Same insertion-code shape as 12E8 but with branched glycans attached, so it also exercises the non-polymer path.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "inserted_residues_addressable", "finding": "#1"},
+        {"check": "nonpolymer_named", "components": ["NAG"], "finding": "#4"},
+        {"check": "dropped_chains_named", "finding": "#10"}
+      ]
+    },
+    {
+      "id": "1IGT-hotspots",
+      "source": "1IGT.cif",
+      "shape": "an author-numbered hotspot whose bare residue is unmodelled, so the lookup lands on an insertion-coded one",
+      "evidence": "author 100 on chain B covers 4 residues -- 100H, 100I, 100J, 100K -- at label 102, 103, 104, 105, and no bare 100; auth_to_label maps 100 to 102, which is 100H",
+      "why": "12E8 cannot distinguish the residue a hotspot reaches from the residues it shadows, because every base residue there is modelled and the lookup always lands on the bare one. Here it lands on 100H, so the fixture pins both halves: 100H is conditioned, and only 100I-100K are reported unreachable. The earlier message named 100H in both roles at once.",
+      "params": {"PARAM_TARGET_CHAIN": "B", "PARAM_TASK": "binder", "PARAM_RESIDUE_NUMBERING": "auth", "PARAM_HOTSPOT_RESIDUES": "100"},
+      "expect": [
+        {"check": "insertion_codes_warned_at_use", "finding": "#52"}
+      ]
+    },
+    {
+      "id": "1G03",
+      "shape": "NMR ensemble, 20 models",
+      "evidence": "20 models in pdbx_PDB_model_num; 1 chain; 41620 atom rows",
+      "why": "Smallest honest multi-model case: 2081 atoms present 20 times over.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "log_mentions_models", "finding": "#5"},
+        {"check": "single_model_output", "finding": "#5"}
+      ]
+    },
+    {
+      "id": "2KOX",
+      "shape": "NMR ensemble, 640 models (stress case)",
+      "evidence": "640 models; 1 chain; 787840 atom rows for a 76-residue protein",
+      "why": "The size at which passing an ensemble through is unmissable: 640 superimposed copies of the target would reach RFD4 as one structure.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "log_mentions_models", "finding": "#5"},
+        {"check": "single_model_output", "finding": "#5"}
+      ]
+    },
+    {
+      "id": "1ZNF",
+      "shape": "zinc finger: NMR ensemble, bound Zn, capped termini",
+      "evidence": "37 models; 1 ZN non-polymer; 2 modified polymer components (ACE,NH2); 333 HETATM carrying a label_seq_id",
+      "why": "Three shapes at once, and the Zn is structural -- deleting it silently changes what the target is.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "log_mentions_models", "finding": "#5"},
+        {"check": "single_model_output", "finding": "#5"},
+        {"check": "nonpolymer_named", "components": ["ZN"], "finding": "#4"}
+      ]
+    },
+    {
+      "id": "1A3N",
+      "shape": "haemoglobin: 4 chains, haem cofactor, A/B altlocs",
+      "evidence": "4 chains; 1 HEM non-polymer; altlocs A,B; 37 zero-occupancy atoms",
+      "why": "The haem sits at the chain interface, so dropping it changes the interface the design is scored against.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "nonpolymer_named", "components": ["HEM"], "finding": "#4"},
+        {"check": "dropped_chains_named", "finding": "#10"}
+      ]
+    },
+    {
+      "id": "1BRS",
+      "shape": "barnase-barstar, 6 chains (three copies of the complex)",
+      "evidence": "6 chains; altlocs A,B; no insertion codes",
+      "why": "Five of six chains are dropped by the contig. A user who picked this entry for its interface should be told which copy survived.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "D"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "dropped_chains_named", "finding": "#10"}
+      ]
+    },
+    {
+      "id": "5O45",
+      "shape": "macrocyclic peptide bound to PD-L1 (this workflow's own sample input)",
+      "evidence": "2 chains; 5 modified polymer components (9KK,CCS,MEA,NH2,SAR); 106 HETATM carrying a label_seq_id; 44 zero-occupancy atoms; altlocs A,B,C",
+      "why": "The entry that first showed HETATM filtering shortens a chain. Also the only fixture with an altloc beyond B.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "B"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "chain_length", "chain": "B", "n_residues": 15, "finding": "#3"},
+        {"check": "no_mixed_asym_id", "finding": "#3b"}
+      ]
+    },
+    {
+      "id": "5O45-pdb",
+      "source": "5O45.pdb",
+      "shape": "the same macrocycle entry, taken through the PDB conversion path",
+      "evidence": "chain B is 15 residues, 7 non-standard (MEA, 9KK, SAR, MEA, SAR, CCS, NH2); 14 carry a full N/CA/C backbone and NH2 is an amide cap carrying only N; the chain's waters start at 101",
+      "why": "A PDB file has no label_seq_id, so node 01 assigns it. Deciding polymer membership from the ATOM/HETATM flag deleted every modified residue: this chain came out as 8 residues reporting n_nonstandard=0, which also disarmed the warning that exists to catch a heavily modified chain. The same entry as the mmCIF fixture above, so the two paths can be compared directly.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "B"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "#1"},
+        {"check": "chain_length", "chain": "B", "n_residues": 15, "finding": "#3"},
+        {"check": "chain_nonstandard", "chain": "B", "n_nonstandard": 7, "finding": "#3"},
+        {"check": "no_mixed_asym_id", "finding": "#3b"}
+      ]
+    },
+    {
+      "id": "1UBQ",
+      "shape": "ubiquitin: single chain, nothing unusual",
+      "evidence": "1 model; 1 chain; no insertion codes, no modified residues, no non-polymer, no altlocs, no zero-occupancy atoms",
+      "why": "Control. Any failure here is the harness or a regression in the common path, not an exotic input.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "monomer"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "control"},
+        {"check": "single_model_output", "finding": "control"},
+        {"check": "no_warnings", "finding": "control"}
+      ]
+    },
+    {
+      "id": "4ZQK",
+      "shape": "PD-1/PD-L1 complex (the documented worked example)",
+      "evidence": "2 chains; 1 NA ion; no insertion codes, no modified residues, no altlocs",
+      "why": "The example the README is written around. If this stops working the documentation is wrong.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder_redesign", "PARAM_REDESIGN_CHAIN": "B"},
+      "expect": [
+        {"check": "label_to_auth_complete", "finding": "regression"},
+        {"check": "single_model_output", "finding": "regression"},
+        {"check": "nonpolymer_named", "components": ["NA"], "finding": "#4"}
+      ]
+    }
+  ],
+
+  "_rejections_comment": "Inputs node 02 must REFUSE, and one it must still accept. A guard that cannot be shown refusing is not a guard.",
+  "rejections": [
+    {
+      "id": "4ZQK",
+      "name": "target-first contig is refused",
+      "why": "RFD4 writes chains in contig order and node 04 reads the first chain as the design, so a contig naming the target first makes designed_chain, designed_length, the designed sequence, the hydrophobic fraction, the net charge and the radius of gyration all describe the target. Nothing downstream can notice: the chain count is unchanged and every number is plausible.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_CONTIG": "A1-115, /0, 50-120"},
+      "expect_error": "puts the preserved segment"
+    },
+    {
+      "id": "4ZQK",
+      "name": "designed-first contig is still accepted",
+      "why": "The guard above must not cost a legitimate override.",
+      "params": {"PARAM_TARGET_CHAIN": "A", "PARAM_TASK": "binder", "PARAM_CONTIG": "50-120, /0, A1-115"},
+      "expect_ok": true
+    }
+  ],
+
+  "_downstream_comment": "Node 03 needs a GPU and minutes per design, so nodes 04, 05 and 06 are tested on structures from tests/make_designs.py. They read only chain ids, residue names, sequence numbers and CA coordinates, so a hand-built mmCIF exercises them exactly as a real design does -- and deterministically, which a sampled design cannot be. Each case runs 04, then 05, then 06 on the same structures.",
+  "downstream": [
+    {
+      "name": "designed-chain-is-first",
+      "n_designs": 1,
+      "shape": "compact",
+      "length": 10,
+      "why": "Pins the convention node 02's contig guard exists to protect.",
+      "expect": [
+        {"check": "node04_designed_chain", "chain": "B", "n_residues": 10, "finding": "#27"}
+      ]
+    },
+    {
+      "name": "reversed-chain-order",
+      "n_designs": 1,
+      "shape": "swap",
+      "length": 10,
+      "why": "The same atoms with the chains written in the opposite order. Node 04 reads the target's chain ids from the generation manifest and takes the design to be the chain that is not among them, so file order carries no meaning for it; node 06 then exports the chain node 04 named. Before that both read chain zero, and this case reported the target as the design, with its sequence exported under the design's name.",
+      "expect": [
+        {"check": "node04_designed_chain", "chain": "B", "n_residues": 10, "finding": "#27"},
+        {"check": "node06_per_design_fasta", "n_designs": 1, "sequence": "ALEKIAELKA", "finding": "#27"}
+      ]
+    },
+    {
+      "name": "ordering-at-12-designs",
+      "n_designs": 12,
+      "shape": "compact",
+      "length": 10,
+      "why": "Lexicographic sort puts design_10 and design_11 between design_1 and design_2. Display order only -- every row carries its own name, and nodes 05 and 06 key by name rather than by position -- but a reader reconciling the table against a run directory should not have to work that out. Node 04 now sorts numerically and nodes 05 and 06 inherit that order, so this is a regression guard rather than a gap.",
+      "expect": [
+        {"check": "design_rows_in_numeric_order", "finding": "#51"}
+      ]
+    },
+    {
+      "name": "folded-design",
+      "n_designs": 1,
+      "shape": "compact",
+      "length": 60,
+      "why": "The negative control for the geometry checks. A compact chain at the right CA-CA spacing must raise nothing, or the warnings are noise and will be ignored when they matter.",
+      "expect": [
+        {"check": "node04_geometry", "max_chain_breaks": 0, "overextended": false, "finding": "model-sanity"}
+      ]
+    },
+    {
+      "name": "unfolded-design",
+      "n_designs": 1,
+      "shape": "extended",
+      "length": 60,
+      "why": "An extended chain with perfect bond lengths: the shape is wrong, not the chemistry. This is what a wrong checkpoint produces, and no other metric in the pipeline would show it -- contacts, charge and composition are all computable on an unfolded chain and all look ordinary.",
+      "expect": [
+        {"check": "node04_geometry", "overextended": true, "max_chain_breaks": 0, "finding": "model-sanity"},
+        {"check": "node05_reports_geometry", "overextended": true, "finding": "#53"}
+      ]
+    },
+    {
+      "name": "helical-design",
+      "n_designs": 1,
+      "shape": "helix",
+      "length": 50,
+      "why": "A textbook alpha-helix, 50 residues, inside this workflow's default binder_length of 50-120. It measures Rg 21.77 A against 9.73 A expected -- ratio 2.24, flagged. The flag is correct and the fixture pins it, because what it means is narrower than it used to claim: the limit of 1.8 was calibrated on 19 archived designs, all of them globular, and nothing in the suite asked what it does to a fold that is elongated on purpose. Measured on real structures with this same code, spectrin repeats come out at 2.27, collagen at 3.06 and tropomyosin at 6.35, where a straight chain is 6.3. So node 04 reports 'not compact for its length' and node 05 renders a 'Not compact' column; neither calls the design unfolded, and the suite now has the case that forced that wording.",
+      "expect": [
+        {"check": "node04_geometry", "overextended": true, "max_chain_breaks": 0, "finding": "model-sanity"},
+        {"check": "node05_reports_geometry", "overextended": true, "finding": "#53"}
+      ]
+    },
+    {
+      "name": "broken-backbone",
+      "n_designs": 1,
+      "shape": "broken",
+      "length": 60,
+      "why": "One residue displaced 12 A from its neighbour. A design arrives as a single continuous chain, so a gap no peptide bond spans means the output is not a polypeptide.",
+      "expect": [
+        {"check": "node04_geometry", "min_chain_breaks": 1, "finding": "model-sanity"},
+        {"check": "node05_reports_geometry", "min_chain_breaks": 1, "finding": "#53"}
+      ]
+    },
+    {
+      "name": "clashing-design-is-ranked-last",
+      "n_designs": 3,
+      "shape": "clash",
+      "length": 30,
+      "why": "An interpenetrating design maximises a raw contact count, so ranking on contacts alone puts the one physically impossible design first. design_0 is built interpenetrating the target; the other two are ordinary.",
+      "expect": [
+        {"check": "node05_reports_clash", "finding": "#30"},
+        {"check": "node05_clash_ranked_last", "clashing": "design_0_generated.cif", "finding": "#30"}
+      ]
+    },
+    {
+      "name": "unfolded-ranked-last",
+      "n_designs": 3,
+      "shape": "extended",
+      "length": 60,
+      "why": "One unfolded design among two ordinary ones, so the report has something to sort. The clash fixture cannot cover the sink rule: clashes sort into a bucket of their own, and a report that sank only clashes would still pass every ordering check in the suite.",
+      "expect": [
+        {"check": "node05_unfolded_ranked_last", "unfolded": "design_0_generated.cif", "finding": "#53"}
+      ]
+    },
+    {
+      "name": "one-fasta-per-design",
+      "n_designs": 3,
+      "shape": "compact",
+      "length": 10,
+      "why": "Workflow-026 conflates designs when handed one multi-record FASTA, so the per-design files are the point of the export. Each must hold exactly one record, and that record must be the designed chain -- not the target.",
+      "expect": [
+        {"check": "node06_per_design_fasta", "n_designs": 3, "sequence": "ALEKIAELKA", "finding": "#026-handoff"}
+      ]
+    }
+  ]
+}

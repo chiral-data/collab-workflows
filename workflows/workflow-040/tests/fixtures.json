@@ -1,0 +1,1411 @@
+{
+  "_comment": [
+    "Acceptance criteria for workflow-040. Nothing here runs yet: no node exists.",
+    "Read tests/README.md first -- it holds the merge gate and the two-tier split.",
+    "",
+    "Schema follows workflow-037/tests/fixtures.json so one harness shape serves both.",
+    "Each entry carries:",
+    "  tier      'ci' (no GPU, every change) or 'gpu' (by hand, numbers recorded in the PR)",
+    "  phase     1 = self-consistency, 2 = interface scoring",
+    "  evidence  what was MEASURED, and by what. Never a recollection, never a citation.",
+    "            Entries reusing a structure 037 already probed inherit its evidence string",
+    "            verbatim rather than restating it -- the same 'do not re-derive an upstream",
+    "            fact' rule the workflow itself follows.",
+    "  why       what a reader would get wrong without this case.",
+    "  pins      the defect class in validation_pipeline.md \u00a78, or the commit that found it.",
+    "",
+    "'expect' entries with \"status\": \"open\" are known, documented gaps: they report as GAP",
+    "and do not fail the run. Deleting the status field is what makes the suite enforce one.",
+    "",
+    "'needs' names a harness capability that does not exist yet. An entry carrying 'needs'",
+    "cannot run until that is built, and says so rather than silently passing."
+  ],
+  "_ingest_comment": "Nodes 01 and 02 over design CIFs -- 040's input is 037's output. Synthetic structures come from workflow-037/tests/make_designs.py, reused rather than rewritten: it already builds exact 3.8 A Ca spacing in compact, extended, helix, broken, clash and swap shapes, chain B as the design and chain A as the target. 040 extended it IN PLACE with six shapes that vary the target or the residue names rather than the design -- monomer, multichain, gapped, renumbered, nonstandard, allnonstandard -- plus a --manifest flag that writes the target chain ids it actually used, so the harness no longer restates them. Verified byte-identical output for all six original shapes at lengths 10, 30 and 50 before anything was added. design_metrics.json is NOT synthesised: the harness runs workflow-037 node 04 over the generated structures, so the designed_chain_source 040 reads comes from the node that really produces it.",
+  "ingest": [
+    {
+      "id": "resolved-chain-good-path",
+      "tier": "ci",
+      "phase": 1,
+      "shape": "compact, 2 chains, with a design_metrics.json that resolves cleanly",
+      "evidence": "make_designs.py writes chain B as the design and chain A as the target; 037 node 04 records designed_chain_source = manifest-target-chains when the set difference leaves exactly one candidate (04-analyze/script.py:263)",
+      "why": "The most important case in this section, and the one 037 did not have. Its first-chain fallback was in force on EVERY real run for weeks because node 03 listed every label_asym_id in target.cif -- on 4ZQK that is the target, a dropped chain, a sodium and two solvent groups -- so the set difference found no candidate. And it was right every time, because the design does come out first. Nothing failed. Asserting the fallback works is not enough: this asserts the GOOD PATH WAS TAKEN on an ordinary input.",
+      "pins": "\u00a78.2, ef74646e",
+      "params": {
+        "PARAM_MIN_PLDDT_BINDER": "80.0",
+        "PARAM_MAX_SC_RMSD_A": "2.0"
+      },
+      "expect": [
+        {
+          "check": "inventory_designed_chain",
+          "chain": "B",
+          "n_residues": 10,
+          "finding": "#27"
+        },
+        {
+          "check": "inventory_chain_source",
+          "source": "manifest-target-chains",
+          "finding": "\u00a78.2"
+        }
+      ],
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "reversed-chain-order",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=swap",
+      "shape": "the same atoms with the chains written target-first",
+      "evidence": "037's own reversed-chain-order downstream case: the same coordinates reported as designed_chain=A designed_length=129 instead of B/66, with every metric then describing the target",
+      "why": "Finding #27. The binder must be resolved by reading designed_chain, not by file position. 037 could not notice this failure: the chain count is unchanged, every number is plausible, and its warning only fired above two chains.",
+      "pins": "\u00a78.1, 252ee072",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_designed_chain",
+          "chain": "B",
+          "n_residues": 10,
+          "finding": "#27"
+        },
+        {
+          "check": "inventory_chain_source",
+          "source": "manifest-target-chains",
+          "finding": "#27"
+        }
+      ],
+      "harness": "shape=swap n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "no-metrics-file",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=compact, design_metrics.json withheld",
+      "shape": "a design CIF with no metrics beside it",
+      "evidence": "037 node 04 writes designed_chain_source = assumed-first-chain and prints a warning naming the file when no target chains are recorded (04-analyze/script.py:280)",
+      "why": "An absent metrics file is a stated-fallback path, not an error, so node 01 must proceed. What it must not do is produce an answer that looks resolved. The value has to reach the report, not just the manifest.",
+      "pins": "\u00a78.2, \u00a75",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_chain_source",
+          "source": "assumed-first-chain",
+          "finding": "\u00a78.2"
+        },
+        {
+          "check": "fallback_stated_in_log",
+          "finding": "\u00a78.2"
+        },
+        {
+          "check": "source_reaches_report",
+          "finding": "\u00a78.2"
+        }
+      ],
+      "harness": "shape=compact n=1 len=30 metrics=none stage=full"
+    },
+    {
+      "id": "monomer-single-chain",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=monomer",
+      "shape": "a single-chain design, as monomer and motif_scaffold runs produce",
+      "evidence": "037 node 04 returns source = single-chain for a one-chain file, deliberately NOT reporting it as a fallback, because doing so made a correct manifest look like a missing one (04-analyze/script.py:265, 275)",
+      "why": "Revision 1 of the spec said designed_chain_source is either 'metrics' or 'assumed-first-chain'. 037 writes three values and this is the third. Accept it on the self-consistency path -- a monomer has a backbone to recover -- and refuse it on the complex path, where there is no target to score an interface against.",
+      "pins": "\u00a75",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_chain_source",
+          "source": "single-chain",
+          "finding": "\u00a75"
+        },
+        {
+          "check": "mono_input_written",
+          "n_designs": 1,
+          "finding": "\u00a75"
+        },
+        {
+          "check": "cplx_input_not_written",
+          "finding": "\u00a75"
+        }
+      ],
+      "harness": "shape=monomer n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "named-chain-absent",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=compact, metrics naming chain C",
+      "shape": "design_metrics.json names a chain the CIF does not contain",
+      "evidence": "constructed; make_designs.py emits chains A and B only",
+      "why": "The contract says read the designed chain rather than deriving it. Reading it does not mean trusting it blindly -- a metrics file naming an absent chain is a contract violation and must fail here, not resolve to something plausible two nodes later.",
+      "pins": "\u00a76",
+      "params": {},
+      "expect_error": "not in the structure",
+      "harness": "shape=compact n=1 len=10 mutate=chain-c stage=ingest"
+    },
+    {
+      "id": "multichain-target",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=multichain -- target chains A and C, skipping the design's own B, so nothing can pass by assuming the targets are the letters following it",
+      "shape": "one design chain against two target chains",
+      "evidence": "inherited from 037's 1BRS fixture -- '6 chains; altlocs A,B; no insertion codes', three copies of the barnase-barstar complex, of which 037 found five of six chains vanishing silently before 53d1d460",
+      "why": "A real target is routinely more than one chain. All target chains and their sequences must be recorded, in a defined order, because node 02 concatenates them into the complex input and node 04 slices pLDDT by that order. A target silently reduced to its first chain scores an interface against the wrong surface.",
+      "pins": "\u00a78.1, 53d1d460",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_target_chains",
+          "chains": [
+            "A",
+            "C"
+          ],
+          "finding": "53d1d460"
+        },
+        {
+          "check": "inventory_chain_order_recorded",
+          "finding": "\u00a78.1"
+        }
+      ],
+      "harness": "shape=multichain n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "gapped-target",
+      "tier": "ci",
+      "phase": 2,
+      "source": "make_designs.py shape=gapped -- 4 residues absent from the target's numbering and the second segment moved 12 A, so the junction is not a peptide bond either",
+      "shape": "a target chain with a disordered loop missing from the coordinates",
+      "evidence": "029 measured the consequence rather than the shape: a receptor trimmed to the segment carrying the epitope models at ~42 pLDDT where the whole chain reaches 81, and the interface PAE floor moved 7.6 -> 15.4 A against a threshold of 10, taking two runs from 2/16 to 0/16 (8e4772a7)",
+      "why": "Targets come from RCSB, so disordered gaps are ordinary, not exotic. ColabFold cannot express a gap inside a chain, and the measured answer is to fold the chain WHOLE and disclose that each break is fused -- not to trim around it, which was argued for on first principles and then measured to be much worse. Node 01 must detect the gap so node 03 can say so.",
+      "pins": "\u00a78.12, 8e4772a7",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
+      "expect": [
+        {
+          "check": "inventory_records_gaps",
+          "min_gaps": 1,
+          "finding": "\u00a78.12"
+        },
+        {
+          "check": "fusion_disclosed",
+          "finding": "\u00a78.12"
+        },
+        {
+          "check": "target_not_trimmed",
+          "finding": "\u00a78.12"
+        }
+      ],
+      "harness": "shape=gapped n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "target-numbering-from-3",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=renumbered -- target numbered from 3, which is where barnase starts in 1BRS",
+      "shape": "a target whose first residue is label 3, not label 1",
+      "evidence": "037 recorded that RFD4 renumbers the preserved target chain from 1 in its output, so for barnase in 1BRS -- which starts at label 3 -- the generated structure's target numbering is already shifted from what node 02 conditioned on (ef74646e)",
+      "why": "Three renumberings stack here: the deposited entry's, RFD4's, and ColabFold's own renumber-from-1-per-chain. Any correspondence established by matching residue numbers is therefore wrong somewhere in the chain. Node 01 records residue ids in chain ORDER and node 04 maps by position, asserting the mapping.",
+      "pins": "\u00a76, ef74646e",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_residue_ids_in_order",
+          "first_id": 3,
+          "finding": "ef74646e"
+        },
+        {
+          "check": "rmsd_mapping_asserted",
+          "finding": "\u00a78.1"
+        }
+      ],
+      "harness": "shape=renumbered n=1 len=30 stage=full"
+    },
+    {
+      "id": "nonstandard-residues",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=nonstandard for the count and shape=allnonstandard for the skip -- two runs, because a sequence that is partly X has to be folded with the X counted while one that is entirely X has nothing to fold",
+      "shape": "a design whose sequence contains residues with no one-letter code",
+      "evidence": "inherited from 037's 5O45 fixture -- '2 chains; 5 modified polymer components (9KK,CCS,MEA,NH2,SAR); 106 HETATM carrying a label_seq_id'",
+      "why": "037 node 06 skips a design whose sequence is empty or all-unknown rather than writing junk, and counts unknown residues because ColabFold folds X as a sequence gap, which depresses confidence for reasons unrelated to the design. 040 inherits both problems and must not silently feed X-laden sequences to a predictor and then report the resulting low pLDDT as a design defect.",
+      "pins": "54bf21b6",
+      "params": {},
+      "expect": [
+        {
+          "check": "unknown_residues_counted",
+          "min_unknown": 1,
+          "finding": "54bf21b6"
+        },
+        {
+          "check": "all_unknown_design_skipped",
+          "finding": "54bf21b6"
+        }
+      ],
+      "harness": "shape=nonstandard n=1 len=10 stage=ingest also=allnonstandard"
+    },
+    {
+      "id": "mono-input-has-no-colon",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=compact",
+      "shape": "the binder alone, one record",
+      "evidence": "037 removed fasta_mode=complex because 026 validates every sequence against ACDEFGHIKLMNPQRSTVWYX, which has no ':' (d3d707ed); and 026 reads a colon in a record id or description as a chain-break marker, which is why 037's UNSCREENED tag carries none (7709809b)",
+      "why": "The inverse of 026's defect. A colon in a mono input would make the predictor treat one design as two chains, so this is checked here where it costs nothing rather than at the predictor where it costs GPU minutes.",
+      "pins": "\u00a76",
+      "params": {},
+      "expect": [
+        {
+          "check": "mono_record_count",
+          "n_records": 1,
+          "finding": "818954e9"
+        },
+        {
+          "check": "mono_has_no_colon",
+          "finding": "d3d707ed"
+        }
+      ],
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "cplx-input-has-one-colon",
+      "tier": "ci",
+      "phase": 2,
+      "source": "make_designs.py shape=compact",
+      "shape": "target and binder as two chains, one record",
+      "evidence": "029 builds its complex input as f'{binder_seq}:{receptor_seq}' and asserts both halves are non-empty before folding (04_fold_and_filter/script.py:161)",
+      "why": "Exactly one colon, and the two halves non-empty. Zero colons silently predicts a monomer and reports its confidence as an interface -- which is 026's bug -- and two colons predicts three chains.",
+      "pins": "\u00a76",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
+      "expect": [
+        {
+          "check": "cplx_colon_count",
+          "n_colons": 1,
+          "finding": "026-bug"
+        },
+        {
+          "check": "cplx_halves_nonempty",
+          "finding": "026-bug"
+        }
+      ],
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "one-file-per-design",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=compact, 3 designs",
+      "shape": "three designs",
+      "evidence": "026/02_predict copies all ColabFold output flat into ./outputs/, and 026/03_analyze_confidence globs ./inputs/*_scores_rank_*.json across every design and takes job_id from whichever file sorts first; three designs at five models makes the reported 'top 5' ranks 1,1,1,2,2 drawn from three different designs, filed under one design's name (818954e9)",
+      "why": "The conflation bug, which produces a confident report about a design that does not exist. One design per file, one invocation per file, one output directory per design, and the mapping back by filename prefix -- never by listing order. 037 also makes record ids filesystem-safe because ColabFold names its outputs after them (54bf21b6); 040 must do the same.",
+      "pins": "818954e9",
+      "params": {},
+      "expect": [
+        {
+          "check": "mono_file_per_design",
+          "n_designs": 3,
+          "finding": "818954e9"
+        },
+        {
+          "check": "no_batch_file_written",
+          "finding": "818954e9"
+        },
+        {
+          "check": "record_ids_filesystem_safe",
+          "finding": "54bf21b6"
+        }
+      ],
+      "harness": "shape=compact n=3 len=10 stage=ingest"
+    },
+    {
+      "id": "chain-order-recorded",
+      "tier": "ci",
+      "phase": 2,
+      "source": "make_designs.py shape=compact",
+      "shape": "a complex input, with the order node 02 chose recorded in its output",
+      "evidence": "the real ColabFold 1.6.1 output in workflow-026/sample_outputs/confidence_summary.json carries plddt_per_residue of length 164 == chain_lengths[0] and a 164x164 pae, and no chain boundary anywhere",
+      "why": "The scores file carries no chain boundaries, so node 04 must slice by position. Which position depends on the order node 02 wrote, so node 02 records it and node 04 reads it. This is the fact that must not be re-derived.",
+      "pins": "\u00a78.1",
+      "params": {},
+      "expect": [
+        {
+          "check": "inventory_chain_order_recorded",
+          "finding": "\u00a78.1"
+        },
+        {
+          "check": "recorded_lengths_sum_asserted",
+          "finding": "\u00a78.1"
+        }
+      ],
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder"
+    },
+    {
+      "id": "rerun-over-populated-dir",
+      "tier": "ci",
+      "phase": 1,
+      "source": "make_designs.py shape=compact, run twice",
+      "shape": "node 02 then node 03 run a second time over directories left by the first",
+      "evidence": "029's swap_binder_to_chain_a flipped chains unconditionally and was not idempotent, so re-running over a non-empty backbones/ directory swapped already-swapped files back and put the receptor on chain A. It fired during a GPU smoke test, on a directory left by an earlier run (4d1a523e)",
+      "why": "Not hypothetical, and not caught by anything downstream. Re-running must be safe or refused, and a refusal must leave the existing files as they were.",
+      "pins": "\u00a78.11, 4d1a523e",
+      "params": {},
+      "expect": [
+        {
+          "check": "rerun_idempotent_or_refused",
+          "finding": "\u00a78.11"
+        }
+      ],
+      "harness": "shape=compact n=2 len=10 stage=rerun"
+    }
+  ],
+  "_predict_comment": "Node 03 under --dry-run, copying the pattern at 026/02_predict/script.py:37. No GPU, no network: these cases assert what the node WOULD run, which is where the offline and model-type guarantees live.",
+  "predict": [
+    {
+      "id": "argv-no-host-url",
+      "tier": "ci",
+      "phase": 1,
+      "why": "026 passes --host-url unconditionally, defaulting to https://api.colabfold.com (02_predict/script.py:58). That is how a workflow reaches a third-party service without anyone deciding it should. 040 must never pass it, on either path.",
+      "pins": "\u00a76, \u00a74",
+      "params": {},
+      "expect": [
+        {
+          "check": "argv_excludes",
+          "flag": "--host-url",
+          "finding": "\u00a74"
+        },
+        {
+          "check": "no_network_reached",
+          "finding": "\u00a711.1"
+        }
+      ],
+      "harness": "shape=compact n=2 len=10 stage=predict-dry"
+    },
+    {
+      "id": "argv-model-type-mono",
+      "tier": "ci",
+      "phase": 1,
+      "why": "Revision 1 of the spec never mentioned --model-type. The monomer path needs alphafold2_ptm, confirmed present in the real sample's model filename 'sequences_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb'.",
+      "pins": "\u00a76",
+      "params": {},
+      "expect": [
+        {
+          "check": "argv_includes",
+          "flag": "--model-type",
+          "value": "alphafold2_ptm",
+          "finding": "\u00a76"
+        },
+        {
+          "check": "argv_includes",
+          "flag": "--msa-mode",
+          "value": "single_sequence",
+          "finding": "\u00a74"
+        }
+      ],
+      "harness": "shape=compact n=2 len=10 stage=predict-dry"
+    },
+    {
+      "id": "argv-model-type-cplx",
+      "tier": "ci",
+      "phase": 2,
+      "why": "The multimer model is what produces iptm at all; running a complex through alphafold2_ptm yields no interface quantity, and running a monomer through the multimer model is not the prediction anyone means. 029 sets alphafold2_multimer_v3 explicitly (04_fold_and_filter/script.py:182).",
+      "pins": "\u00a76",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
+      "expect": [
+        {
+          "check": "argv_includes",
+          "flag": "--model-type",
+          "value": "alphafold2_multimer_v3",
+          "mode": "cplx",
+          "finding": "\u00a76"
+        },
+        {
+          "check": "argv_excludes",
+          "flag": "--host-url",
+          "finding": "\u00a74"
+        }
+      ],
+      "harness": "shape=compact n=1 len=10 stage=predict-dry"
+    },
+    {
+      "id": "timeout-kills-process-group",
+      "tier": "ci",
+      "phase": 1,
+      "why": "037 found subprocess.run's own timeout insufficient: it signals the direct child while generation spawns workers that go on holding the GPU. The run outlived the harness that started it -- the client was killed, the container was not, and the GPU had to be freed by hand. The fix was Popen in its own process group with kill_tree() escalating SIGTERM to SIGKILL, verified against a child installing SIG_IGN for SIGTERM, which waits out the 20 s and dies of SIGKILL at rc=-9 (755d4af2, 55edd8fc).",
+      "pins": "\u00a76, 755d4af2",
+      "params": {
+        "PARAM_PREDICT_TIMEOUT_S": "5"
+      },
+      "expect": [
+        {
+          "check": "sigterm_ignoring_child_killed",
+          "finding": "755d4af2"
+        },
+        {
+          "check": "timeout_message_carries_output",
+          "finding": "755d4af2"
+        }
+      ],
+      "harness": "shape=compact n=1 len=10 stage=predict-timeout"
+    },
+    {
+      "id": "timeout-tail-falls-back-to-predictor-log",
+      "tier": "ci",
+      "phase": 1,
+      "why": "MEASURED in control C6, and it is a defect this suite would never have found on its own. Real colabfold_batch writes its stdout to a pipe, so it is block-buffered; a process killed at 35s takes the whole buffer with it. The completed control run leaves a 3 KB <design>_predict.log and the killed one leaves ZERO bytes, so node 03's timeout reason read 'Last lines: ' with nothing after it -- the one thing a reader needs at that moment was the one thing lost. It was not actually lost: colabfold logs through the logging module to its own <record>_log.txt, which node 03's collect() has already copied into ./outputs before the reason is built. The node now falls back to that file and names it as the source. The existing timeout case cannot catch this because STANDIN_SIGTERM prints to stdout and flushes line by line, so the check passed on output the real predictor does not produce at that moment -- the check was right about the stand-in and wrong about the world (\u00a78.4).",
+      "pins": "\u00a78.4, \u00a78.7, C6",
+      "params": {
+        "PARAM_PREDICT_TIMEOUT_S": "5"
+      },
+      "expect": [
+        {
+          "check": "timeout_tail_from_log_file",
+          "finding": "C6"
+        },
+        {
+          "check": "failed_design_in_manifest",
+          "finding": "C6"
+        }
+      ],
+      "measured": "C6, run2: every one of the five designs' <design>_predict.log came back 0 bytes while <design>_log.txt carried the five progress lines colabfold had written. The GPU peak was 2357 MiB and 85 colabfold process lines were sampled, so the predictor was certainly running and certainly producing output -- it simply never reached node 03's pipe. Also fixed alongside: the OOM scan read only stdout, so an allocator OOM followed by a timeout was invisible for the same reason; the fallback file is scanned for the markers too.",
+      "harness": "shape=compact n=1 len=10 stage=predict-timeout-buffered"
+    },
+    {
+      "id": "per-design-failure-continues",
+      "tier": "ci",
+      "phase": 1,
+      "why": "One failed prediction must not abort the batch, and must not vanish from it either. 029 discarded a prediction's ColabFold output unless the design passed, so a failing funnel could not afterwards distinguish a bad design from a target that was never modelled -- an ambiguity that cost a wrong diagnosis once (2359ffa4).",
+      "pins": "\u00a78.5, 2359ffa4",
+      "params": {},
+      "expect": [
+        {
+          "check": "failed_design_in_manifest",
+          "finding": "\u00a78.5"
+        },
+        {
+          "check": "batch_continues_after_failure",
+          "finding": "\u00a78.5"
+        },
+        {
+          "check": "predictor_output_retained",
+          "finding": "2359ffa4"
+        }
+      ],
+      "harness": "shape=compact n=3 len=10 stage=predict-partial"
+    }
+  ],
+  "_scoring_comment": "Nodes 04 and 05 over synthetic predictions from make_predictions.py, each with an answer known before the node runs. The 'harness' field on each entry is the exact make_predictions.py invocation, so the data says how to build the case and run_fixtures.sh does not have to know. A 'measured' field records what the built node really produced, and where that differs from the constructed truth it says why. The two keystone cases -- rmsd-identity and rmsd-rotated-copy -- have answers that are 0 BY CONSTRUCTION and so need no superposition code to establish, which is what keeps them independent of the code under test.",
+  "scoring": [
+    {
+      "id": "rmsd-identity",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity",
+      "measured": "0.0 exactly. The lattice walk's coordinates are already whole thousandths, so writing them to a PDB loses nothing: the written file superposes onto the design at 2.06e-15, which is floating point and nothing else.",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "length": 60,
+      "why": "The design backbone handed back unchanged. Floor case: anything other than 0 means the comparison is not comparing what it claims to.",
+      "pins": "keystone",
+      "expect": [
+        {
+          "check": "sc_rmsd",
+          "value": 0.0,
+          "tolerance": 0.001,
+          "finding": "keystone"
+        },
+        {
+          "check": "binder_length_measured",
+          "finding": "audit"
+        }
+      ]
+    },
+    {
+      "id": "rmsd-rotated-copy",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape rotated",
+      "measured": "node 04 reports 0.0005. The construction is exactly 0 and the written file measures 0.00050538: a PDB ATOM record carries three decimal places, so rotating the coordinates puts them between representable values and the rounding survives as a floor on the RMSD. It is five orders of magnitude below the 259.98 A that the SAME two structures give when the superposition is skipped, which is the distinction this case exists to make. sc_rmsd_A is reported to four decimals for this reason -- rounding to three would print 0.001 and sit exactly on the tolerance.",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "rotated",
+      "length": 60,
+      "why": "THE keystone test. The same backbone under a rigid rotation and a 100 A translation: still 0 after Kabsch, and 0 is known by construction without computing anything. A node 04 that forgets to superimpose returns ~0 for rmsd-identity and something enormous here -- so it would pass the floor case and then reject every good design, reporting a batch of perfect designs as uniformly terrible. That is exactly how 029's chain-order defect presented: every design failed all four filters with iPTM near 0.2, binder pLDDT near 40 and Ca RMSD near 16 A, and nothing errored.",
+      "pins": "keystone, d5ba7487",
+      "expect": [
+        {
+          "check": "sc_rmsd",
+          "value": 0.0,
+          "tolerance": 0.001,
+          "finding": "keystone"
+        }
+      ]
+    },
+    {
+      "id": "rmsd-known-displacement",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape displaced:2.0",
+      "measured": "node 04 reports 1.9999 against a construction of exactly 2.0, the 1.2e-4 difference being the same PDB rounding. make_predictions.py refuses to write the case at all unless its own Kabsch -- which node 04 never sees -- measures the construction at 2.0 to 1e-9 AND finds the optimal rotation to be the identity to 1e-9, because a displacement with any rigid-motion component is partly absorbed by the superposition and the true answer would then be below 2.0 by an amount no fixture could state.",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "displaced:2.0",
+      "length": 60,
+      "why": "Magnitude calibration. Alternate Ca displaced +/-2.0 A perpendicular to the chain axis: the centroid is preserved and no rotation improves the fit, so the true RMSD is 2.000. make_predictions.py verifies this with its own Kabsch and refuses to emit the case if the measured truth differs from 2.0 by more than 1e-6, so the number is proven rather than asserted.",
+      "pins": "\u00a77",
+      "expect": [
+        {
+          "check": "sc_rmsd",
+          "value": 2.0,
+          "tolerance": 0.001,
+          "finding": "\u00a77"
+        }
+      ]
+    },
+    {
+      "id": "rmsd-length-mismatch",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity --length-delta 2",
+      "measured": "THIS CASE CAUGHT A REAL DEFECT. Node 04 compared the prediction against node 02's declaration, which agreed, and never against the design it is supposed to be a refolding of -- so zip() truncated to the shorter array, the RMSD came out 0.0 over a 30-residue prefix of a 32-residue prediction, and the design was reported as PASSING. The refusal is now a second, separate check against the designed length.",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "length": 60,
+      "prediction_length": 59,
+      "why": "A prediction one residue short of the design. Truncating to the shorter and scoring produces a plausible number from a mis-registered comparison -- and a one-residue offset along a chain gives a large but not absurd RMSD, which reads as a mediocre design rather than as a bug. Equal lengths and a 1:1 mapping are asserted, never assumed.",
+      "pins": "\u00a78.1",
+      "expect_error": "mapping"
+    },
+    {
+      "id": "plddt-slice-binder-first",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order binder,target --plddt-binder 25.0 --plddt-target 85.0 --iptm 0.6 --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "measured": "plddt_binder 25.0 and plddt_target 85.0, measured. Phase 2 in the plan, but node 04 slices from the recorded chain_order generically, so this already holds in Phase 1's code.",
+      "tier": "ci",
+      "phase": 2,
+      "prediction": "complex-scores",
+      "chain_order": "binder-first",
+      "plddt_binder_value": 25.0,
+      "plddt_target_value": 85.0,
+      "why": "Binder 60 residues at pLDDT 25, target 164 at 85, written binder-first. Read from the head.",
+      "pins": "\u00a78.1",
+      "expect": [
+        {
+          "check": "plddt_binder",
+          "value": 25.0,
+          "tolerance": 0.01,
+          "finding": "\u00a78.1"
+        },
+        {
+          "check": "plddt_target",
+          "value": 85.0,
+          "tolerance": 0.01,
+          "finding": "2359ffa4"
+        }
+      ]
+    },
+    {
+      "id": "plddt-slice-target-first",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --plddt-binder 25.0 --plddt-target 85.0 --iptm 0.6 --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "measured": "plddt_binder 25.0 and plddt_target 85.0 -- the SAME numbers as the previous case from the opposite end of the array, measured. A node hardcoding 029's plddt[:binder_length] returns 85.0 here and passes the previous case.",
+      "tier": "ci",
+      "phase": 2,
+      "prediction": "complex-scores",
+      "chain_order": "target-first",
+      "plddt_binder_value": 25.0,
+      "plddt_target_value": 85.0,
+      "why": "The same two numbers with the chains written the other way round, so the binder is the TAIL of the array. This is the case that catches the likeliest single error in node 04: 029 slices plddt[:binder_length] because its binder is chain A, and the spec's complex input is TARGET:BINDER. A node 04 that copies 029's slice verbatim passes the previous case and fails this one -- and in production would silently report the target's confidence as the binder's, which on a well-modelled target means every design looks good.",
+      "pins": "\u00a78.1",
+      "expect": [
+        {
+          "check": "plddt_binder",
+          "value": 25.0,
+          "tolerance": 0.01,
+          "finding": "\u00a78.1"
+        },
+        {
+          "check": "plddt_target",
+          "value": 85.0,
+          "tolerance": 0.01,
+          "finding": "2359ffa4"
+        }
+      ]
+    },
+    {
+      "id": "plddt-length-mismatch",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --plddt-delta 3",
+      "tier": "ci",
+      "phase": 2,
+      "prediction": "complex-scores",
+      "plddt_length_delta": -1,
+      "why": "A pLDDT array one shorter than the recorded chain lengths sum to. Every slice downstream is then off by one at best, and the result is still a number. The assertion len(plddt) == n_target + n_binder is the only thing standing between a position assumption and a plausible wrong answer.",
+      "pins": "\u00a78.1",
+      "expect_error": "length"
+    },
+    {
+      "id": "missing-iptm-is-null",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity",
+      "measured": "iptm is null with a recorded reason, and the reason names the monomer case. This is not a constructed absence: the real monomer scores file in tests/reference/ has no iptm key at all.",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "monomer-scores",
+      "why": "MEASURED, not hypothetical: the real ColabFold 1.6.1 monomer run in workflow-026/sample_outputs/confidence_summary.json has iptm absent on all five models, with ptm present at 0.88-0.90. 029 reads scores.get('iptm', 0.0), which on Phase 1's monomer-only path would report 0.0 -- a measured-looking bad interface -- for every design in every run. 026 does it correctly in one line: iptm = float(data['iptm']) if 'iptm' in data else None (03_analyze_confidence/script.py:86). Copy 026.",
+      "pins": "\u00a78.7",
+      "expect": [
+        {
+          "check": "metric_is_null",
+          "metric": "iptm",
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "metric_not_value",
+          "metric": "iptm",
+          "value": 0.0,
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "null_reason_recorded",
+          "metric": "iptm",
+          "finding": "\u00a78.7"
+        }
+      ]
+    },
+    {
+      "id": "missing-plddt-is-null",
+      "tier": "ci",
+      "phase": 1,
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity --omit plddt",
+      "evidence": "constructed: the scores file is written without its plddt key, which is the only metric in Phase 1 that gates besides sc_rmsd_A",
+      "why": "The companion to missing-iptm-is-null, and the one that matters more, because plddt_binder GATES. A node defaulting it to 0.0 fails the design, which looks like a verdict; a node defaulting it to 100.0 passes it. Null with a reason is the only answer that does not invent one, and the design then fails on 'plddt_binder (not measured)' rather than on a number.",
+      "pins": "\u00a78.7",
+      "params": {},
+      "measured": "plddt_binder is null, the reason names the file and the missing key, and the design is reported not passing with failed_thresholds = 'plddt_binder (not measured)'. The RMSD is still computed and still reported: one absent metric does not discard the measurements that were made.",
+      "expect": [
+        {
+          "check": "metric_is_null",
+          "metric": "plddt_binder",
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "metric_not_value",
+          "metric": "plddt_binder",
+          "value": 0.0,
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "null_reason_recorded",
+          "metric": "plddt_binder",
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "design_not_passing",
+          "finding": "\u00a78.7"
+        }
+      ]
+    },
+    {
+      "id": "missing-pae-is-null",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --omit pae --iptm 0.6",
+      "tier": "ci",
+      "phase": 2,
+      "prediction": "complex-scores",
+      "omit": [
+        "pae"
+      ],
+      "why": "029 sets pae_interaction = float('inf') when the matrix is absent, which then FAILS the max_pae_interaction threshold -- so a missing measurement is rendered as a verdict, and indistinguishable from a design that genuinely scored badly.",
+      "pins": "\u00a78.7",
+      "expect": [
+        {
+          "check": "metric_is_null",
+          "metric": "pae_interaction",
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "metric_not_value",
+          "metric": "pae_interaction",
+          "value": "inf",
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "null_reason_recorded",
+          "metric": "pae_interaction",
+          "finding": "\u00a78.7"
+        }
+      ]
+    },
+    {
+      "id": "pae-both-blocks-averaged",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "measured": "exactly 10.0, measured, from blocks of 6.0 and 14.0. Averaging one block alone gives 6.0 or 14.0, so either single-block reading is visibly wrong rather than plausibly different.",
+      "tier": "ci",
+      "phase": 2,
+      "prediction": "complex-scores",
+      "pae_block_target_binder": 6.0,
+      "pae_block_binder_target": 14.0,
+      "why": "A deliberately asymmetric PAE matrix: the target-rows/binder-cols block means 6.0 and the reverse block means 14.0, so the correct answer over both is exactly 10.0. A node averaging only one block returns 6.0 or 14.0 -- and against the default threshold of < 10 the first silently PASSES a design sitting exactly on the boundary while the second fails it. 029 concatenates both blocks (04_fold_and_filter/script.py:217-219), which is the behaviour to match.",
+      "pins": "\u00a77",
+      "expect": [
+        {
+          "check": "pae_interaction",
+          "value": 10.0,
+          "tolerance": 0.01,
+          "finding": "\u00a77"
+        }
+      ]
+    },
+    {
+      "id": "plddt-target-is-diagnostic-only",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --plddt-target 38.4 --plddt-binder 90.0",
+      "tier": "ci",
+      "phase": 2,
+      "prediction": "complex-scores",
+      "plddt_target_value": 38.4,
+      "plddt_binder_value": 90.0,
+      "why": "A badly modelled target beside a confident binder -- 38.4 is 029's own measured single_sequence receptor pLDDT. The number must be recorded and must NOT gate: it is the diagnostic that distinguishes a bad design from a target that was never modelled, and 029 added it only after that ambiguity produced a wrong diagnosis and had to be resolved by computing the value by hand outside the pipeline (2359ffa4). Given \u00a74, this is 040's single most likely cause of bad interface numbers.",
+      "pins": "2359ffa4, \u00a74",
+      "expect": [
+        {
+          "check": "plddt_target",
+          "value": 38.4,
+          "tolerance": 0.01,
+          "finding": "2359ffa4"
+        },
+        {
+          "check": "metric_does_not_gate",
+          "metric": "plddt_target",
+          "finding": "2359ffa4"
+        },
+        {
+          "check": "low_target_plddt_warned",
+          "finding": "\u00a74"
+        }
+      ]
+    },
+    {
+      "id": "binder-plddt-in-complex-is-the-binder",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --plddt-binder 25.0 --plddt-target 85.0 --iptm 0.6 --pae-target-binder 6.0 --pae-binder-target 14.0",
+      "tier": "ci",
+      "phase": 2,
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
+      "prediction": "a complex whose two chains carry deliberately far-apart pLDDT: target 85.0 over 60 residues, binder 25.0 over 30",
+      "why": "plddt_binder_in_complex is a NEW column that node 05 renders and, until this case, nothing checked. It is the binder's confidence in context, sliced out of the complex's pLDDT array by the recorded chain_order and chain_lengths. Slice the wrong block and the TARGET's confidence is reported as the binder's -- 026's defect by a different route, and a number that looks entirely ordinary (8.6). The two fills are 60 pLDDT apart on purpose: with equal fills a swapped slice passes, and the check refuses a case whose blocks it cannot tell apart.",
+      "pins": "\u00a78.6, 026-bug",
+      "measured": "Written after an audit found the column had zero checks and appeared nowhere in fixtures.json. The same audit found node 04 emitting it as null with NO null_reason on every Phase 1 run, while the CSV omitted the column entirely -- which the comment beside METRICS_NULLED_ON_BAIL had predicted in advance: 'a metric added to COLUMNS and forgotten here comes out null and unexplained'. It was added to COLUMNS and forgotten there.",
+      "expect": [
+        {
+          "check": "plddt_binder_in_complex",
+          "tolerance": 0.05,
+          "finding": "026-bug"
+        },
+        {
+          "check": "plddt_target",
+          "value": 85.0,
+          "tolerance": 0.05,
+          "finding": "\u00a74"
+        }
+      ]
+    },
+    {
+      "id": "merge-by-name-not-position",
+      "harness": "shape=compact n=3 len=30 mutate=reverse-manifest stage=full mp=--shape identity --plddt-ramp 2.0",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "n_designs": 3,
+      "metrics_order": "shuffled",
+      "why": "037's design_metrics.json rows presented in a different order from the designs. Merging by position puts one design's generation metrics against another's scores, and every row stays plausible. 026's conflation bug is the same error one level up: it takes job_id from whichever scores file sorts first.",
+      "pins": "818954e9",
+      "expect": [
+        {
+          "check": "metrics_merged_by_name",
+          "n_designs": 3,
+          "finding": "818954e9"
+        }
+      ]
+    },
+    {
+      "id": "no-score-file-is-failure",
+      "harness": "shape=compact n=2 len=30 stage=full mp=--shape identity --no-score-file design_1",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "omit": [
+        "scores_json"
+      ],
+      "why": "The rank_001 scores file absent. 029 records this as a failure with null metrics and reason 'no_score_file', which is correct; the defect to avoid is scoring it as zeros.",
+      "pins": "\u00a78.7",
+      "expect": [
+        {
+          "check": "design_recorded_failed",
+          "reason": "named no rank_001 scores file",
+          "finding": "\u00a78.3"
+        },
+        {
+          "check": "metric_is_null",
+          "metric": "plddt_binder",
+          "design": "design_1",
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "null_reason_recorded",
+          "metric": "plddt_binder",
+          "design": "design_1",
+          "finding": "\u00a78.7"
+        },
+        {
+          "check": "design_not_passing",
+          "finding": "\u00a78.3"
+        }
+      ],
+      "measured": "The first version of this entry asked for a reason naming 'no_score_file', a snake_case token no node in this repo writes -- every reason here is a sentence. Worse, the harness was marking the design failed in the manifest, so node 04 was reading a verdict rather than reaching one and would have passed without ever noticing the missing file. make_predictions.py now records the prediction as ok and simply writes no scores file, which is the only form of this case node 04 has to solve, and the expectation is node 04's own wording: \"node 03 recorded status 'ok' but named no rank_001 scores file or PDB. Exit codes see nothing.\" \u00a78.16 again: suspect the harness first."
+    },
+    {
+      "id": "cplx-returned-one-chain",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --chains 1",
+      "measured": "refused at node 04 as well as node 03. make_predictions declares chain_order ['target','binder'] and writes one chain of 30 residues, which is what a cplx_ input with its ':' stripped really comes back as.",
+      "tier": "ci",
+      "phase": 2,
+      "prediction": "complex-scores",
+      "returned_chains": 1,
+      "why": "A complex prediction that came back as a single chain: the ':' was dropped somewhere, so the result is a monomer masquerading as a complex. This is 026's exact failure -- it labels independent monomers a multimer and sets --pair-mode unpaired_paired, and the flag changes nothing because there is no complex. Every interface number computed from such a prediction is meaningless and none of them look it.",
+      "pins": "026-bug",
+      "expect_error": "chain"
+    },
+    {
+      "id": "failed-design-appears-in-report",
+      "harness": "shape=compact n=2 len=30 stage=full mp=--shape identity --fail-design design_1",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "n_designs": 3,
+      "fail_design": "design_1",
+      "why": "A report that omits what it could not score reads as a batch where everything worked. Blank metrics and a stated reason, as a row.",
+      "pins": "\u00a78.5",
+      "expect": [
+        {
+          "check": "report_row_present",
+          "design": "design_1",
+          "finding": "\u00a78.5"
+        },
+        {
+          "check": "report_row_states_reason",
+          "design": "design_1",
+          "finding": "\u00a78.5"
+        }
+      ]
+    },
+    {
+      "id": "metrics-are-columns",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--chain-order target,binder --plddt-target 85.0",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "displaced:3.0",
+      "length": 60,
+      "why": "A design failing the sc_rmsd threshold must show the number that failed it, as a column. 037 warned about an unfolded design in the node log while the report rendered it as an ordinary row -- the one artifact built to be emailed away from the run directory was the one that did not carry the evidence (179003b9). And the check must read the report's own DATA payload, not search the page: node 05 explains its columns in prose, so every column label appears in the file whether the column was built or not, and checks matching prose passed either way (bf84359b).",
+      "pins": "\u00a78.4, 179003b9",
+      "expect": [
+        {
+          "check": "report_columns_from_data",
+          "columns": [
+            "sc_rmsd_A",
+            "plddt_binder",
+            "plddt_target"
+          ],
+          "finding": "179003b9"
+        }
+      ]
+    },
+    {
+      "id": "source-shown-in-report",
+      "harness": "shape=compact n=1 len=30 metrics=none stage=full",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "chain_source": "assumed-first-chain",
+      "why": "The fallback must reach the reader, not stop at the manifest. 037's report prints which path was taken rather than a fixed phrase, precisely because the fallback had been silently in force on every real run.",
+      "pins": "\u00a78.2, ef74646e",
+      "expect": [
+        {
+          "check": "report_shows_chain_source",
+          "source": "assumed-first-chain",
+          "finding": "\u00a78.2"
+        }
+      ]
+    },
+    {
+      "id": "numeric-ordering-at-12",
+      "harness": "shape=compact n=12 len=30 stage=full",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "n_designs": 12,
+      "why": "Finding #51. Lexicographic sort puts design_10 and design_11 between design_1 and design_2. Node 04 sorts, node 05 inherits, so there is one source of order -- the alternative is two nodes deciding the same thing and eventually disagreeing about the same design.",
+      "pins": "#51, 179003b9",
+      "expect": [
+        {
+          "check": "design_rows_in_numeric_order",
+          "finding": "#51"
+        }
+      ]
+    },
+    {
+      "id": "offline-report-keeps-provenance",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "cdn": "unreachable",
+      "why": "037's report called renderTable, renderPlot and renderRunInfo as a bare sequence. Plotly comes from a CDN, so with no network renderPlot threw and the exception aborted the rest of the script -- taking the Run block with it, which is where the seed, the checkpoint revision and 'SecureDNA screened: no' live. The table still rendered, so the page looked fine while the disclaimer had silently gone (cb418341). Renderers isolated, provenance drawn first.",
+      "pins": "cb418341",
+      "expect": [
+        {
+          "check": "report_renders_provenance_offline",
+          "finding": "cb418341"
+        },
+        {
+          "check": "report_renders_table_offline",
+          "finding": "cb418341"
+        }
+      ]
+    },
+    {
+      "id": "biosafety-tag-travels",
+      "harness": "shape=compact n=2 len=30 stage=full",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "identity",
+      "n_designs": 2,
+      "why": "037's no-screening warning was in the README, the report, the node output and the manifest -- everywhere except the FASTA, the one artifact built to leave the workflow (7709809b). It matters MORE here: a sequence that has passed validation is more likely to be synthesised, not less. Two mechanical constraints, both load-bearing: no leading ';' banner, because Biopython 1.87 raises on comment lines, and no colon in the tag, because a colon in a record id or description is read as a chain-break marker -- which is sharper for 040, since it uses colons deliberately in its cplx inputs.",
+      "pins": "7709809b",
+      "expect": [
+        {
+          "check": "passing_fasta_tagged",
+          "n_records": 2,
+          "finding": "7709809b"
+        },
+        {
+          "check": "tag_has_no_colon",
+          "finding": "7709809b"
+        },
+        {
+          "check": "fasta_has_no_comment_banner",
+          "finding": "7709809b"
+        }
+      ]
+    },
+    {
+      "id": "threshold-recorded-beside-value",
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity",
+      "tier": "ci",
+      "phase": 1,
+      "prediction": "displaced:1.5",
+      "length": 60,
+      "why": "Every threshold is a default to calibrate, not truth, so the value it was compared against travels with it and a reader can re-filter without re-running. 037's compactness limit was first drafted at 1.5 and would have fired on three real monomer designs at 1.44, 1.46 and 1.49; running it over the archive before shipping is what caught that (fd75d77b).",
+      "pins": "\u00a77",
+      "expect": [
+        {
+          "check": "thresholds_in_output",
+          "metrics": [
+            "sc_rmsd_A",
+            "plddt_binder"
+          ],
+          "finding": "\u00a77"
+        }
+      ]
+    }
+  ],
+  "_rejections_comment": "Inputs the workflow must refuse, asserting both the exit status and that the refusal gives the stated reason. The last entry checks that a legitimate input is still accepted, so no guard can pass by rejecting everything -- 037 added that entry for exactly this reason (4b1a611a). Every PARAMETER is refused at node 01, which is the only node guaranteed to run before the GPU node: a nan threshold first noticed by node 05 has already cost the GPU its minutes, and 8.8 is the record of what a nan does when it is not refused. Nodes 04 and 05 still parse their own thresholds with the same helper, so a node run standalone is safe too -- node 01 is the gate, not the only check. Two entries here carry a measured field: they asserted a message string before any node existed, and the built node proved both strings wrong (8.16).",
+  "rejections": [
+    {
+      "id": "threshold-nan",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a nan threshold is refused by name",
+      "why": "037's numeric_param() accepted nan and inf. Neither is caught by a range check, because every comparison against nan is false: nan passed 'must be positive' and passed 'outside the expected range' without a warning, and then made every distance test false, so the node reported no contacts on a structure that has plenty (55edd8fc). 040 has four float thresholds, every one of them compared against a measurement.",
+      "params": {
+        "PARAM_MAX_SC_RMSD_A": "nan"
+      },
+      "expect_error": "parses as nan",
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "threshold-inf",
+      "tier": "ci",
+      "phase": 1,
+      "name": "an inf threshold is refused by name",
+      "why": "inf does the reverse of nan and takes everything, so a filter set to inf passes every design while looking configured. 1e400 parses to inf and must be refused too.",
+      "params": {
+        "PARAM_MAX_SC_RMSD_A": "1e400"
+      },
+      "expect_error": "parses as inf",
+      "measured": "the refusal names the value AFTER parsing -- \"must be a finite number, got '1e400', which parses as inf\". This entry asked for the substring 'inf', which neither '1e400' nor the phrase 'finite number' contains, so it would have failed against any correct implementation. \u00a78.16: suspect the harness first.",
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "threshold-non-numeric",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a non-numeric threshold fails the way every other bad parameter does",
+      "why": "037 added two cleanly-handled parameters to node 03 and left two raw int() casts ten lines above them, so PARAM_NUM_REPLICATES=abc produced a bare ValueError traceback -- which reads as the workflow crashing rather than as a typo in a parameter (975ab379). Uniformity is the point: all five of 040's numeric parameters fail with the same shape of message.",
+      "params": {
+        "PARAM_MIN_PLDDT_BINDER": "abc"
+      },
+      "expect_error": "must be a number",
+      "measured": "min_plddt_binder is a float, and 037's numeric_param says \"a whole number\" only for an int cast (02-build-spec/script.py:67). This entry asked for 'whole number' before the node existed and was wrong about its own subject; the int cast now has its own entry below so both messages are pinned.",
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "num-models-non-integer",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a fractional count is refused as a whole number, not truncated",
+      "why": "float('2.5') succeeds where int('2.5') raises, so which cast a parameter is read with decides whether a typo is caught at all. num_models, num_recycle, predict_timeout_s and top_n are counts: read as floats they reach the predictor as 2.5 models and are truncated by whatever consumes them, so the run quietly does something other than what was asked. Paired with threshold-non-numeric, this shows the two casts give two different messages and that neither accepts junk.",
+      "pins": "\u00a78.8, 975ab379",
+      "params": {
+        "PARAM_NUM_MODELS": "2.5"
+      },
+      "expect_error": "whole number",
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "binder-too-short-for-rmsd",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a binder too short for a superposition to mean anything is refused",
+      "source": "make_designs.py shape=compact length=3",
+      "why": "A Kabsch superposition needs three non-collinear points to be defined at all and four before the fit stops being exactly determined by its own inputs. Below that the self-consistency RMSD this workflow exists to report is a number without a meaning -- and it is a SMALL number, so it reads as an excellent design. The floor is geometric, not a design-quality threshold: 037's binder_length default is 50-120 and nothing in 040 second-guesses it.",
+      "pins": "\u00a76",
+      "params": {},
+      "expect_error": "fewer than 4",
+      "harness": "shape=compact n=1 len=3 stage=ingest"
+    },
+    {
+      "id": "sequence-outside-alphabet",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a residue code node 02 does not accept is refused before the GPU",
+      "source": "make_designs.py shape=compact, then design_inventory.json rewritten to carry a Z",
+      "why": "026 validates every sequence against ACDEFGHIKLMNPQRSTVWYX and refuses anything else (d3d707ed), so an unaccepted code is refused INSIDE the predictor, after the GPU has been allocated. Node 01 scores an unrecognised residue as X, which this alphabet accepts, so the only way to reach this guard is for the two nodes to disagree -- which is exactly the state worth failing on, and the only way to show the guard refusing at all (\u00a78.13).",
+      "pins": "\u00a78.13, d3d707ed",
+      "params": {},
+      "expect_error": "outside the accepted alphabet",
+      "measured": "no generator shape can reach this: node 01 maps every unknown residue to X and X is in the alphabet. The case mutates the inventory instead, and the refusal was measured to happen BEFORE any file is written -- ./outputs/ was empty after the refusal.",
+      "harness": "shape=compact n=1 len=10 mutate=bad-letter stage=ingest"
+    },
+    {
+      "id": "inventory-arrays-misaligned",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a sequence and coordinate array of different lengths is refused",
+      "source": "make_designs.py shape=compact, then one coordinate dropped from design_inventory.json",
+      "why": "Node 01 keeps binder_sequence, binder_residue_ids and binder_ca index-aligned on purpose, holding null where a residue has no CA rather than dropping the position, because node 04's RMSD maps the two structures BY POSITION -- three renumberings stack in this workflow and no correspondence by residue number survives them (ef74646e). A length mismatch means the alignment was broken somewhere, and continuing would silently shift every residue after the break.",
+      "pins": "\u00a78.1, ef74646e",
+      "params": {},
+      "expect_error": "coordinate slot",
+      "harness": "shape=compact n=1 len=10 mutate=drop-ca stage=ingest"
+    },
+    {
+      "id": "threshold-negative",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a negative RMSD threshold is refused",
+      "why": "An RMSD cannot be negative, so the parameter is meaningless rather than merely unusual.",
+      "params": {
+        "PARAM_MAX_SC_RMSD_A": "-1"
+      },
+      "expect_error": "positive",
+      "harness": "shape=compact n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "monomer-on-complex-path",
+      "tier": "ci",
+      "phase": 2,
+      "name": "a single-chain design is refused on the complex path",
+      "why": "designed_chain_source == single-chain means a monomer or motif_scaffold run, so there is no target to score an interface against. Scoring one anyway produces an iptm and a pae_interaction from a prediction with one chain, which is 026's bug arriving by a different route.",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
+      "source": "make_designs.py shape=monomer",
+      "expect_error": "single",
+      "harness": "shape=monomer n=1 len=10 stage=ingest"
+    },
+    {
+      "id": "cplx-input-missing-colon",
+      "tier": "ci",
+      "phase": 2,
+      "name": "a complex input with no colon is refused before the GPU is spent on it",
+      "why": "Caught where it costs nothing instead of at the predictor where it costs GPU minutes -- which is why 037 made spec validation its own CPU node (37c23bb5). Without this guard the prediction returns one chain and the chain-count assertion in node 03 is the only thing left to catch it.",
+      "measured": "Written against node 02 and then moved, once node 02 was built. Node 02 writes the colon itself and reads the bytes back before returning (verify_written), so no INPUT to node 02 can produce a cplx_ file that is missing its colon: the guard this case was aimed at cannot be reached from where the case was pointing. The reachable guard is node 03's cross_check_cplx, which re-reads the file it is about to stage, so the case now corrupts the file BETWEEN the two nodes with mutate=strip-colon -- which is also what node 03's refusal says has happened. Until Phase 2 was built this case ran every step to 0 and was reported as a gap for exactly that reason, which is the only honest thing it could have said (8.13).",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true"
+      },
+      "expect_error": "colon",
+      "harness": "shape=compact n=1 len=10 stage=predict-dry mutate=strip-colon"
+    },
+    {
+      "id": "boundary-value-accepted",
+      "tier": "ci",
+      "phase": 1,
+      "name": "a threshold exactly on its limit is still accepted",
+      "why": "A guard that costs a legitimate input is not worth having, and a guard that refuses everything passes every refusal check in the suite while being useless. 037 carries the same counter-entry: 'a designed-first override is still accepted, which the suite also checks, because a guard that costs a legitimate input is not worth having' (b6b741e9).",
+      "params": {
+        "PARAM_MAX_SC_RMSD_A": "2.0",
+        "PARAM_MIN_PLDDT_BINDER": "80.0"
+      },
+      "expect_ok": true,
+      "harness": "shape=compact n=1 len=30 stage=full mp=--shape identity"
+    },
+    {
+      "id": "egress-refuses-a-designed-sequence",
+      "tier": "ci",
+      "phase": 2,
+      "name": "the only node with network access refuses to send a designed sequence",
+      "source": "make_designs.py shape=compact, then design_inventory.json rewritten so the target chain IS the binder",
+      "why": "Node 01b is the one node in this workflow permitted egress, and until this case existed the reason to believe a designed binder could never cross it was a COMMENT. job.toml, the module docstring and tests/README.md all said the designed sequences were not inputs to the node, and that this made a leak structurally impossible rather than a promise about the code. That was false: design_inventory.json carries binder_sequence for every design and is 01b's only input. The binder stayed out of the payload because target_of() returns target-derived fields and from_server() reads target['sequence'] -- true, and one edit away from not being true, in the only place in the workflow that opens a socket. A de novo binder is unpublished work and the MSA server is a third party, so this is the one guard in 040 whose failure mode is disclosure rather than a bad number.",
+      "pins": "\u00a78.4, \u00a78.13",
+      "params": {
+        "PARAM_SCORE_INTERFACE": "true",
+        "PARAM_MSA_SOURCE": "server"
+      },
+      "expect_error": "contains the designed sequence of",
+      "measured": "The fixture nodes run under docker with no network at all, so a node that reached the socket would fail with a connection error. Requiring the REFUSING TO SEND message by name is therefore also the proof that the guard fired BEFORE the POST rather than the network doing the work -- the two failures are not distinguishable by exit code alone (\u00a78.3).",
+      "harness": "shape=compact n=1 len=10 stage=ingest mutate=target-is-binder"
+    }
+  ],
+  "_controls_comment": "Tier 2. These need a GPU and cannot run in CI; they are run by hand on the GPU host with tests/run_controls.sh, judged by tests/report_controls.py and the judge is attacked by tests/falsify_controls.sh. Measured numbers live in tests/reference/tier2-phase1-controls.md. They are the only cases that can falsify the SCORING rather than the plumbing, and they are what calibrates the thresholds in validation_pipeline.md \u00a77. REVISED after the first run: the positive control is C12, a DESIGNED sequence on an idealised backbone, not the native complexes C1/C2. Natives are predicted at msa_mode=single_sequence (\u00a74), which is the mode they cannot be folded in, so they measure AF2 rather than 040 and are diagnostics now. And plddt_binder is recorded but does not gate: C4, 115 alanines, scores 95.81, above the real design (\u00a78.6).",
+  "controls": [
+    {
+      "id": "C1",
+      "tier": "gpu",
+      "phase": 1,
+      "name": "4ZQK native positive control",
+      "entry": "4ZQK",
+      "evidence": "inherited from 037's 4ZQK fixture -- '2 chains; 1 NA ion; no insertion codes, no modified residues, no altlocs'; and 037's measurement of the entry: chain A PD-L1 115 residues label 1-115 auth 18-132, chain B PD-1 106 residues over label 1-114 auth 33-146 (8faf5168)",
+      "why": "PD-1's own sequence on its own backbone, fed through 040 as though it were a design. A native, experimentally validated binder MUST score well. This is the first test in either workflow that can falsify the scoring itself rather than the plumbing, and it is also 037's documented worked example, so the two workflows share a reference point.",
+      "pins": "\u00a79",
+      "must": {
+        "sc_rmsd_A": "< 2.0",
+        "plddt_binder": "> 80"
+      },
+      "record": [
+        "sc_rmsd_A",
+        "plddt_binder",
+        "plddt_target",
+        "ptm",
+        "wall_clock_s"
+      ],
+      "role": "diagnostic (was positive)",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 16.5096, plddt_binder 49.33, ptm 0.40, 115 residues, chain A (not B -- chain B carries an 8-residue internal gap at 52->61, which would have made this a positive control that failed for a reason unrelated to the score). It FAILED the thresholds, and the control was wrong rather than the scorer: see must_was below. Kept as the single_sequence baseline arm of C7. 4ZQK.cif sha256 f5012ba58d76099b.",
+      "must_was": "'sc_rmsd_A < 2.0, plddt_binder > 80'. Withdrawn. \u00a74 fixes msa_mode=single_sequence because a de novo binder has no homologs and designed proteins are idealised; a native immunoglobulin domain is the opposite and depends on the alignment it is not given. A native positive at single_sequence measures the prediction mode. Recorded as \u00a78.4's fifth instance: the control passed review on its pedigree without being checked against the mode five sections earlier."
+    },
+    {
+      "id": "C2",
+      "tier": "gpu",
+      "phase": 1,
+      "name": "1BRS native positive control",
+      "entry": "1BRS",
+      "evidence": "inherited from 037's 1BRS fixture -- '6 chains; altlocs A,B; no insertion codes', three copies of the barnase-barstar complex; and 037's note that barnase's label numbering starts at 3 (ef74646e)",
+      "why": "A textbook high-affinity complex, and the entry that exercises the renumbering hazard for real: barnase starts at label 3, so a correspondence built by matching residue numbers rather than positions fails here and nowhere else in the control set. Note that 'chain A' is not a sufficient description of this entry -- 037 found five of its six chains vanishing silently (53d1d460) -- so the chain actually used is recorded.",
+      "pins": "\u00a79, ef74646e",
+      "must": {
+        "sc_rmsd_A": "< 2.0",
+        "plddt_binder": "> 80"
+      },
+      "record": [
+        "chain_used",
+        "sc_rmsd_A",
+        "plddt_binder",
+        "plddt_target",
+        "first_residue_id"
+      ],
+      "role": "diagnostic (was positive)",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 11.5737, plddt_binder 43.09, ptm 0.36, 108 residues, chain A, first_residue_id 3 -- the renumbering hazard exercised for real, and node 04 handled it. FAILED the thresholds, same reason as C1. 1BRS.cif sha256 1c98dcc3eac7ccb8.",
+      "must_was": "same as C1, and withdrawn for the same reason."
+    },
+    {
+      "id": "C3",
+      "tier": "gpu",
+      "phase": 1,
+      "name": "scrambled negative control",
+      "entry": "4ZQK",
+      "why": "C1's backbone with its sequence shuffled. Must score badly. A filter that passes everything is not a filter, and unlike the positive controls this one catches a scorer that is simply generous rather than one that is broken.",
+      "pins": "\u00a79, \u00a78.6",
+      "must": {
+        "sc_rmsd_A": "fails the threshold"
+      },
+      "record": [
+        "sc_rmsd_A",
+        "plddt_binder",
+        "plddt_target"
+      ],
+      "role": "negative",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 18.8308, plddt_binder 44.94, ptm 0.30. Correctly fails. 107 of 115 positions changed identity and the composition is identical, which is why it is kept separate from C4. Note it lands only 2.3 A from the native C1, so the two are not separated by RMSD -- both are simply 'did not refold'. A margin is only meaningful against a designed positive."
+    },
+    {
+      "id": "C4",
+      "tier": "gpu",
+      "phase": 1,
+      "name": "poly-alanine negative control",
+      "entry": "4ZQK",
+      "why": "The same backbone with a poly-alanine sequence: a sequence that encodes no particular fold at all. Separately from C3 because a scramble preserves composition while poly-alanine does not, and a scorer could plausibly be fooled by one and not the other.",
+      "pins": "\u00a79",
+      "must": {
+        "sc_rmsd_A": "fails the threshold"
+      },
+      "record": [
+        "sc_rmsd_A",
+        "plddt_binder",
+        "plddt_target"
+      ],
+      "role": "negative",
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 49.0800, plddt_binder 95.81, ptm 0.53. Correctly fails, but ONLY on sc_rmsd_A. Its plddt_binder of 95.81 is the HIGHEST in the control set -- above the real design's 95.05 -- and clears the 80.0 threshold. Poly-alanine makes an excellent helix and AF2 is right to be confident about it; confidence in A fold is not evidence of THE designed fold. This is why plddt_binder may reject a design and never admit one (\u00a78.6, \u00a77), and it is the single most useful number the control set produced."
+    },
+    {
+      "id": "C12",
+      "tier": "gpu",
+      "phase": 1,
+      "role": "positive",
+      "name": "designed-sequence positive control",
+      "entry": "generated: workflow-037/tests/make_designs.py shape=helix length=60",
+      "evidence": "measured off the generated file by tests/make_c12_provenance.py with the same reader as the other controls: chain B, 60 residues, ids 1..60, 0 gaps, sequence ALEKIAELKA x6. The backbone is a textbook alpha helix -- CA radius 2.3 A, rise 1.5 A, 100 deg per residue -- cross-checked against 2ZTA when make_designs.py's helix shape was added.",
+      "why": "THE positive control, and the case that gives Gate B Phase 1 a verdict at all. C1-C4 between them cannot tell a mis-specified positive control apart from a broken scorer: when the natives fail, both explanations fit. A designed positive in the same run decides it. It is also the right class of input on its own merits -- \u00a74 chose single_sequence precisely for idealised designed binders with no homologs, which is what this is.",
+      "pins": "\u00a79, \u00a74, \u00a78.4",
+      "must": {
+        "sc_rmsd_A": "< 2.0",
+        "plddt_binder": "> 80",
+        "exported": "appears in passing_sequences.fasta with the UNSCREENED tag"
+      },
+      "measured": "RAN ON THE GPU, twice, offline: sc_rmsd_A 0.9272, plddt_binder 95.05, ptm 0.86, 45.2 s. PASSES, and is the one design exported -- passing_sequences.fasta carries it with its thresholds beside its values and the UNSCREENED biosecurity tag. A designed sequence recovers its own backbone to under 1 A with no alignment. This is the whole pipeline validated end to end on a real offline GPU prediction. Separation from the best negative on sc_rmsd_A: +17.90 A.",
+      "limits": "A synthetic idealised helix is the easiest designed positive there is, and it has no interface at all. It establishes the scorer is not broken; it says nothing about how the scorer RANKS real designs (that is C5, still blocked) and nothing about binding.",
+      "record": [
+        "sc_rmsd_A",
+        "plddt_binder",
+        "ptm",
+        "wall_clock_s",
+        "exported_to_fasta",
+        "unscreened_tag_present"
+      ]
+    },
+    {
+      "id": "C5",
+      "tier": "gpu",
+      "phase": 1,
+      "name": "real workflow-037 designs",
+      "status": "open",
+      "why": "The first honest ranking 037's output has ever had. 037 measured its real GPU designs coming through its own geometry checks unflagged at compactness ratios 1.02 and 1.06 (179003b9), so they are plausible structures; nothing has ever asked whether their sequences recover their backbones.",
+      "pins": "\u00a79",
+      "blocked_on": "037's archived GPU designs are not in this repo. Either commit a few CIFs plus their design_metrics.json, or regenerate them on the GPU host. Until then this control cannot run, which is why it opens as a recorded gap rather than a silent omission.",
+      "record": [
+        "n_designs",
+        "sc_rmsd_A per design",
+        "plddt_binder per design",
+        "n_passing"
+      ]
+    },
+    {
+      "id": "C6",
+      "tier": "gpu",
+      "phase": 1,
+      "name": "a real prediction killed at a short budget",
+      "why": "The CI case proves kill_tree() ends a process group; only a real run proves the GPU is actually freed. 037 verified exactly this: 'With generate_timeout_s=25 a real job is killed at 27.8s with rc=1, the message carries the last output, and nvidia-smi then reports 1 MiB used and no compute apps -- the whole tree is gone' (755d4af2). Without it, a stalled prediction holds the device and outlives the harness that started it.",
+      "pins": "755d4af2",
+      "must": {
+        "nvidia_smi_after": "no compute apps on the device"
+      },
+      "record": [
+        "rc",
+        "elapsed_s",
+        "nvidia_smi_after"
+      ]
+    },
+    {
+      "id": "C7",
+      "tier": "gpu",
+      "phase": 2,
+      "name": "4ZQK complex, three MSA modes",
+      "entry": "4ZQK",
+      "why": "The Phase 2 gate AND the calibration input, which is why it earns its GPU time twice over. Run the same complex three ways -- single_sequence, target-only MSA, full MSA -- reading iptm, pae_interaction and BOTH chains' pLDDT each time. 029's measurement on a native complex, changing only msa_mode, was iPTM 0.100 -> 0.860, interface PAE 27.6 -> 7.7 A and receptor pLDDT 38.4 -> 83.7 (2361277f), but that was the full MSA; the middle column has never been measured by anyone here and it is the entire basis of the \u00a74 decision. If target-only does not substantially recover the full-MSA numbers, Phase 2 does not merge and \u00a74 is re-decided rather than patched.",
+      "pins": "\u00a74, \u00a711.1, 2361277f",
+      "must": {
+        "target_only": "recovers the full-MSA iptm and pae_interaction"
+      },
+      "record": [
+        "iptm x3",
+        "pae_interaction x3",
+        "plddt_binder x3",
+        "plddt_target x3",
+        "wall_clock_s x3",
+        "egress per mode"
+      ]
+    },
+    {
+      "id": "C8",
+      "tier": "gpu",
+      "phase": 2,
+      "name": "1BRS native complex positive control",
+      "entry": "1BRS",
+      "why": "The interface-metric counterpart to C2. A textbook high-affinity native complex must score well on iptm and pae_interaction, or the interface scoring is wrong.",
+      "pins": "\u00a79",
+      "must": {
+        "iptm": "> 0.5",
+        "pae_interaction": "< 10"
+      },
+      "record": [
+        "iptm",
+        "pae_interaction",
+        "plddt_binder",
+        "plddt_target"
+      ]
+    },
+    {
+      "id": "C9",
+      "tier": "gpu",
+      "phase": 2,
+      "name": "scrambled binder in a native complex",
+      "entry": "1BRS",
+      "why": "C8's complex with the binder scrambled. Must score badly on the interface metrics. The separation between C8 and C9 is what makes pae_interaction a filter rather than a number, and it is what Phase 3 calibrates the threshold against -- the literature cutoff of < 10 comes from protocols using AF2 initial guess and will not transfer unchanged.",
+      "pins": "\u00a77, \u00a79",
+      "must": {
+        "iptm": "fails the threshold"
+      },
+      "record": [
+        "iptm",
+        "pae_interaction",
+        "plddt_binder",
+        "plddt_target"
+      ]
+    },
+    {
+      "id": "C10",
+      "tier": "gpu",
+      "phase": 2,
+      "name": "a real complex input with its colon stripped",
+      "entry": "4ZQK",
+      "why": "The CI case asserts node 04 refuses a single-chain complex prediction. This asserts the real predictor actually produces one from a colonless input, so the guard is defending against something that happens rather than something imagined. 026 has been in this state all along: it labels independent monomers a multimer, sets --pair-mode unpaired_paired, and the flag changes nothing because there is no complex.",
+      "pins": "026-bug",
+      "must": {
+        "node_03": "refuses, naming the chain count"
+      },
+      "record": [
+        "n_chains_returned",
+        "exit_status",
+        "message"
+      ]
+    },
+    {
+      "id": "C11",
+      "tier": "gpu",
+      "phase": 2,
+      "name": "a gapped target folded whole",
+      "status": "open",
+      "why": "029 measured that trimming a gapped receptor to the segment carrying the epitope drops it to ~42 pLDDT against 81 for the whole chain, moving the interface PAE floor from 7.6 to 15.4 A and taking two runs from 2/16 to 0/16 (8e4772a7). 040 folds the chain whole and discloses the fused junction. This control confirms the whole-chain fold is not degraded by the fusion on a real gapped target, which is the knowingly-kept defect the decision rests on.",
+      "pins": "\u00a78.12, 8e4772a7",
+      "blocked_on": "needs a target entry with a measured internal gap. 029 records chain D of 2B5I carrying a 38-residue gap whose ends are 33.9 A apart (11ddf044), which is a starting point but must be re-probed rather than taken from the commit message.",
+      "record": [
+        "n_gaps",
+        "widest_gap_A",
+        "plddt_target",
+        "plddt_binder",
+        "pae_interaction"
+      ]
+    }
+  ],
+  "_harness_comment": "Every CI entry's 'harness' field is a space-separated list of key=value tokens, read by run_fixtures.py. There is one grammar rather than one per section, because a harness that needs to know which section a case came from is a harness that can stage the wrong thing. Tokens -- shape: a tests/make_designs.py shape (default compact). n: how many designs. len: binder length. metrics: node04 (default, runs workflow-037's node 04 to produce the real design_metrics.json) or none (withhold it). mutate: a named edit applied to a staged file after it is written and before the next node reads it -- chain-c, bad-letter, drop-ca, strip-colon, reverse-manifest. stage: how far to run -- ingest (nodes 01, 01b, 02), rerun (the same, then 02 again over its own outputs, then again with a stale file), predict-dry (01-03 with --dry-run), predict-timeout and predict-partial (01-03 against a stand-in predictor), full (01-02, then tests/make_predictions.py in place of node 03, then 04-05). mp: everything after it goes to make_predictions.py verbatim, so it comes last. There is NO cplx stage and no cplx token: whether a case takes the complex path is PARAM_SCORE_INTERFACE in its 'params', and the harness reads it there -- a second place to say it is a second place for it to disagree with the node. When it is set, the harness builds a stand-in target alignment from the inventory node 01 just wrote (tests/make_target_msa.py) and 01b reads it as a file, because the suite does not touch the network. Node 01b runs on EVERY case either way, as it does in .chiral/workflow.toml, so the Phase 1 cases exercise its no-op path too. The harness never restates what the entry already says: parameters come from 'params', and whether a case must fail comes from 'expect_error'."
+}

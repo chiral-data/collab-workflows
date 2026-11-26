@@ -1,0 +1,20 @@
+name = "Export FASTA"
+description = "Write the designed sequences as a batch FASTA plus one single-design FASTA per design for workflow-026"
+inputs = [
+  "*_generated.cif",
+  "design_metrics.json",
+  "generation_manifest.json",
+]
+outputs = [
+  "sequences.fasta",
+  "refold_*.fasta",
+]
+
+[container]
+image = "rfd4-proteina:2026_11_04"
+
+[resources]
+gpu = "none"
+
+[scripts]
+run = "run.sh"

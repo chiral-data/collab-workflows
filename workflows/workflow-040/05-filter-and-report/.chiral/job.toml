@@ -1,0 +1,19 @@
+name = "Filter and Report"
+description = "Rank the scored designs, export the ones that pass, and render a report that carries the numbers the ranking rests on"
+inputs = [
+  "design_scores.json",
+]
+outputs = [
+  "passing_sequences.fasta",
+  "validation_metrics.csv",
+  "report.html",
+]
+
+[container]
+image = "colabfold:2026_10_08"
+
+[resources]
+gpu = "none"
+
+[scripts]
+run = "run.sh"

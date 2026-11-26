@@ -1,0 +1,117 @@
+schema_version = "1.1"
+name = "Binder Design Validation"
+description = "Score binder designs by refolding them independently: self-consistency RMSD and fold confidence, from the designed backbones rather than from an exported sequence"
+
+# Phase 1 and Phase 2. 01b-align-target was added once the §11.1 a3m spike resolved: a
+# paired a3m with the target aligned and the binder present only as its own query produced
+# a genuine two-chain prediction offline, so §4's decision -- align the target only, once
+# per run, never the binder -- is buildable as specified. Before that the node had no
+# writable contract and was deliberately left unscaffolded.
+#
+# 01b runs on EVERY run, not only Phase 2 ones. On a Phase 1 run it writes a
+# target_alignment.json saying it was a no-op and why, and touches no network. That is
+# §8.3: an empty output directory and a zero exit code are indistinguishable from a node
+# that ran and found nothing, and node 02 has to be able to tell "no alignment was asked
+# for" from "an alignment was asked for and failed".
+#
+# Edges are the minimum. Two reasons, both learned in workflow-037:
+#
+#   1. Silva copies every dependency's outputs into the dependent's inputs, so two
+#      dependencies writing the same filename leaves which one survives up to iteration
+#      order. 037 node 03 depended on both 01 and 02 and both wrote target.cif -- harmless
+#      for three tasks and fatal for the fourth (7fba161c). No two parents here share an
+#      output name; check that before adding an edge.
+#   2. A fact an upstream node decided is passed forward and read, never re-derived
+#      (CLAUDE.md, and §8.1 of the spec). So node 02 records the chain order it chose,
+#      node 03 carries it into prediction_manifest.json, and node 04 reads it from there
+#      instead of taking an edge back to 02.
+#   3. 01b depends on 01 alone, and node 02 depends on both. They share no output name:
+#      01 writes design_inventory.json and design_metrics.json, 01b writes target_msa.a3m
+#      and target_alignment.json. That was checked before the edge was added, which is the
+#      rule 7fba161c cost.
+[dependencies]
+01b-align-target = ["01-ingest-designs"]
+02-build-prediction-inputs = ["01-ingest-designs", "01b-align-target"]
+03-predict = ["02-build-prediction-inputs"]
+04-score = ["01-ingest-designs", "03-predict"]
+05-filter-and-report = ["04-score"]
+
+# Shared parameters are declared HERE and once. Workflow-029 declared receptor_chain at
+# both workflow and job level with different values, and because Silva's TUI passes an
+# empty map where the headless runner synthesises a node's job.toml defaults, node 05
+# inherited the workflow's value, PARAM_BINDER_CHAIN was never set, and every design was
+# scored against itself -- prodigy --selection A A (72e3a492). The fix was to recognise
+# that neither value was ever configuration. Anything not genuinely user-configurable
+# belongs in the node as a module constant, not as a parameter with a default in two
+# places. See also 326ab541, which moved the remaining duplicates up here.
+
+[params.max_sc_rmsd_a]
+type = "float"
+default = 2.0
+hint = "Self-consistency cutoff in angstroms: Ca RMSD of the refolded binder against the designed backbone. A default to calibrate, not truth -- scale-dependent, so a 30-mer and a 150-mer should not really share it. See validation_pipeline.md §7"
+
+[params.min_plddt_binder]
+type = "float"
+default = 80.0
+hint = "Mean pLDDT over the binder residues, below which a design is filtered. Standard AF2 confidence banding; measures fold confidence, not binding"
+
+[params.num_models]
+type = "integer"
+default = 5
+hint = "ColabFold models per prediction; scores are read from rank_001"
+
+[params.num_recycle]
+type = "integer"
+default = 3
+hint = "Recycles per prediction. 3 is right for a monomer; workflow-026 records 6-12 as the recommendation for multimers, so the Phase 2 complex path should raise this rather than inherit it. Recycles multiply GPU time, so this feeds the budget question in §11.5"
+
+[params.msa_mode]
+type = "string"
+default = "single_sequence"
+hint = "Alignment mode. single_sequence is correct for a de novo binder predicted alone -- it has no homologs, and designed proteins are idealised, which is why self-consistency works without an MSA. It is NOT correct for a complex: workflow-029 measured the target modelling at ~40 pLDDT instead of ~84 in this mode, which caps every interface metric (2361277f). See §4"
+
+[params.predict_timeout_s]
+type = "integer"
+default = 1800
+hint = "Wall-clock budget in seconds for one prediction; the process group is killed past it. Unmeasured for this workflow -- §11.5"
+
+[params.top_n]
+type = "integer"
+default = 10
+hint = "Size of the shortlist the report highlights. Rows below it are greyed and otherwise identical -- every design is in the table. Phase 1's report embeds no structures: the comparison a reader wants is the refold laid OVER the design, which is node 04's superposition rather than a structure, and a viewer showing two structures in unrelated frames looks like evidence without being any"
+
+[params.score_interface]
+type = "boolean"
+default = false
+hint = "Phase 2 interface scoring: predict the design as a TARGET:BINDER complex and report iptm, pae_interaction and the target's own pLDDT alongside the Phase 1 self-consistency numbers. Needs a target alignment, which 01b-align-target produces; a run that cannot get one FAILS rather than falling back to single_sequence, because §4 measured what that fallback does to the numbers (iPTM 0.100 against 0.860). Phase 1 remains the default and is correct on its own terms, not a degraded mode"
+
+# -- Phase 2 only ----------------------------------------------------------------------
+#
+# Declared once, here, like every other shared parameter. The thresholds are provisional
+# bands rather than gates until Phase 3 calibrates them, and each says so in its own hint
+# rather than relying on the reader having read §7.
+
+[params.msa_source]
+type = "string"
+default = "file"
+hint = "Where 01b-align-target gets the target alignment: 'file' reads an a3m from its inputs, 'server' queries the MSA server. 'file' is the default so that EGRESS HAS TO BE ASKED FOR -- a run that does not ask for it never opens a socket. Only the target sequence is ever sent, and the designed binders are not inputs to that node"
+
+[params.min_msa_sequences]
+type = "integer"
+default = 2
+hint = "Fewest sequences 01b will accept in the target alignment: the query plus at least one homolog. An alignment of one sequence IS single_sequence under another name, and §4's argument is that interface numbers measured that way are about the prediction mode rather than the design. Refused by name rather than used"
+
+[params.min_iptm]
+type = "float"
+default = 0.5
+hint = "Interface pTM floor. AF2-multimer convention, and WEAKER than pae_interaction -- Bennett et al. 2023 report the latter as the stronger discriminator, so this is secondary. Provisional until Phase 3; workflow-029 uses 0.6 on native complexes"
+
+[params.max_pae_interaction]
+type = "float"
+default = 10.0
+hint = "Interface PAE ceiling in angstroms. The strongest in-silico discriminator in Bennett et al. 2023, but their cutoff comes from protocols using AF2 INITIAL GUESS, which hands the predictor the designed complex as a starting point; vanilla ColabFold does not, so the number will not transfer unchanged. It is also floored by how well the TARGET was modelled (§4, 8e4772a7): a target at ~42 pLDDT moved the floor from 7.6 to 15.4 A and made 10.0 unreachable for a whole batch. Reported as a provisional band, not a gate, until Phase 3"
+
+[params.num_recycle_cplx]
+type = "integer"
+default = 6
+hint = "Recycles for the COMPLEX prediction, separate from num_recycle because 3 is right for a monomer and workflow-026 records 6-12 as the recommendation for multimers. Not inherited: inheriting it is how a multimer silently gets a monomer's budget"
