@@ -7,7 +7,7 @@ outputs = [
 ]
 
 [container]
-image = "rfd4-proteina:2026_11_04"
+image = "rfd4-proteina:2026_11_25"
 
 [resources]
 gpu = "none"

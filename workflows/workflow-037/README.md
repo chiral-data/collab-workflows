@@ -625,28 +625,28 @@ handed to another workflow.
 
 ### Running with Docker
 
-Built from [Dockerfile](Dockerfile) as `rfd4-proteina:2026_11_04`:
+Built from [Dockerfile](Dockerfile) as `rfd4-proteina:2026_11_25`:
 
 ```bash
-docker build -t rfd4-proteina:2026_11_04 workflows/workflow-037/
+docker build -t rfd4-proteina:2026_11_25 workflows/workflow-037/
 ```
 
 Node 01, fetching PD-L1 from RCSB:
 
 ```bash
-mkdir -p /tmp/wf037/01/inputs /tmp/wf037/01/outputs && docker run --rm -v /tmp/wf037/01/inputs:/workspace/inputs -v /tmp/wf037/01/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-037/01-acquire-target:/workspace -w /workspace -e PARAM_PDB_ID=5o45 -e PARAM_TARGET_CHAIN=A rfd4-proteina:2026_11_04 bash run.sh
+mkdir -p /tmp/wf037/01/inputs /tmp/wf037/01/outputs && docker run --rm -v /tmp/wf037/01/inputs:/workspace/inputs -v /tmp/wf037/01/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-037/01-acquire-target:/workspace -w /workspace -e PARAM_PDB_ID=5o45 -e PARAM_TARGET_CHAIN=A rfd4-proteina:2026_11_25 bash run.sh
 ```
 
 Node 03, resolving the argv without using the GPU:
 
 ```bash
-docker run --rm -v /tmp/wf037/03/inputs:/workspace/inputs -v /tmp/wf037/03/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-037/03-generate:/workspace -w /workspace rfd4-proteina:2026_11_04 python script.py --dry-run
+docker run --rm -v /tmp/wf037/03/inputs:/workspace/inputs -v /tmp/wf037/03/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-037/03-generate:/workspace -w /workspace rfd4-proteina:2026_11_25 python script.py --dry-run
 ```
 
 Node 03, for real:
 
 ```bash
-docker run --rm --gpus all -v /tmp/wf037/03/inputs:/workspace/inputs -v /tmp/wf037/03/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-037/03-generate:/workspace -w /workspace -e PARAM_NUM_REPLICATES=2 -e PARAM_SEED=42 rfd4-proteina:2026_11_04 bash run.sh
+docker run --rm --gpus all -v /tmp/wf037/03/inputs:/workspace/inputs -v /tmp/wf037/03/outputs:/workspace/outputs -v $(pwd)/workflows/workflow-037/03-generate:/workspace -w /workspace -e PARAM_NUM_REPLICATES=2 -e PARAM_SEED=42 rfd4-proteina:2026_11_25 bash run.sh
 ```
 
 Chain the nodes by copying each node's `outputs/` into the next node's `inputs/`.

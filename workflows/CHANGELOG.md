@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     20-minute GPU failure into a 10-second CPU one.
   - `01-acquire-target` emits both `label_seq_id` and `auth_seq_id` per chain, because RFD4
     contigs use mmCIF `label_seq_id` while RCSB files are author-numbered.
-  - Shared image `rfd4-proteina:2026_11_04` (`python:3.12-slim`, CUDA 12 profile via
+  - Shared image `rfd4-proteina:2026_11_25` (`python:3.12-slim`, CUDA 12 profile via
     `[all-cuda12]` + `--torch-backend cu126`, HF checkpoint pinned to
     `a06e2509c7033b010fc43614e9fd840303588502`). Registered in `apps/applications.json`.
   - Designs are **not** SecureDNA-screened: the RFD4 CLI/Python path does no screening. No
