@@ -28,7 +28,6 @@ FROM python:3.12-slim
 # If sm_70 is absent, the floor is 7.5 and the V100 claim has to come out of the README.
 
 ENV HF_HOME=/models \
-    BIOEMU2_MSA_CACHE=/models/colabfold_msa \
     PYTHONDONTWRITEBYTECODE=1 \
     NVIDIA_VISIBLE_DEVICES=all \
     NVIDIA_DRIVER_CAPABILITIES=compute,utility
@@ -103,5 +102,26 @@ print(f'pre-warmed {len(codes)} CCD codes')"
 
 # Report rendering (node 06) and analysis (node 05) need nothing beyond BioEmu2's own deps:
 # mdtraj, biotite, numpy and scipy all come in with bioemu2.
+
+# Everything above is baked as root, but silva runs containers as the invoking host's UID to
+# keep bind-mounted outputs owned by the user. That UID has no /etc/passwd entry, so HOME
+# resolves to "/" and every library caching under $HOME dies on a read-only root: Triton's
+# kernel cache takes `import bioemu2` down with it, so without this no node runs at all.
+# The MSA cache is run-time scratch rather than baked content -- bioemu2 creates it on the
+# first miss -- so it moves here too, instead of needing a writable directory under /models.
+ENV HOME=/tmp \
+    XDG_CACHE_HOME=/tmp/.cache \
+    MPLCONFIGDIR=/tmp/.config/matplotlib \
+    BIOEMU2_MSA_CACHE=/tmp/colabfold_msa
+
+# snapshot_download writes its tree cache 0600, so a non-root reader cannot open it,
+# huggingface_hub reports it corrupted and falls back to the network -- which HF_HUB_OFFLINE=1
+# then refuses, failing the model load with a misleading offline-mode error. Read and traverse
+# only; the weights are never written at run time.
+#
+# The two template caches are the exception: they ship pre-warmed but are written on first use
+# for a code outside the 126, so the directories themselves need to stay writable. Sticky, as
+# /tmp is. The .cif files inside are only ever read and keep their mode.
+RUN chmod -R a+rX /models && chmod 1777 /models/ccd /models/templates
 
 WORKDIR /workspace
