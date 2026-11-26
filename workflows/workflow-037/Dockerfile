@@ -53,4 +53,19 @@ RUN python -c "from huggingface_hub import snapshot_download; \
     revision='a06e2509c7033b010fc43614e9fd840303588502', \
     allow_patterns=['config.json', 'model.safetensors'])"
 
+# Everything above is baked as root, but silva runs containers as the invoking host's
+# UID to keep bind-mounted outputs owned by the user. That UID has no /etc/passwd entry,
+# so HOME resolves to "/" and every library that caches under $HOME dies on a read-only
+# root: Triton's kernel cache takes generation down with it, matplotlib's config dir only
+# warns. Point both at a writable path.
+ENV HOME=/tmp \
+    XDG_CACHE_HOME=/tmp/.cache \
+    MPLCONFIGDIR=/tmp/.config/matplotlib
+
+# snapshot_download writes its tree cache 0600, so a non-root reader cannot open it,
+# huggingface_hub reports it corrupted and falls back to the network -- which
+# HF_HUB_OFFLINE=1 then refuses, failing generation with a misleading offline-mode error.
+# Read and traverse only: nothing here is written at run time.
+RUN chmod -R a+rX /models
+
 WORKDIR /workspace
