@@ -765,7 +765,7 @@ Rg 1.1597 ± 0.0056 nm against an experimental 1.17 nm.
 The public ColabFold server is unreachable or rate-limiting. Retry later, or run node 02
 directly with Docker and mount pre-computed `<chain>.a3m` files into `/workspace/inputs` to skip
 the server entirely. bioemu2 also caches each chain's result under `BIOEMU2_MSA_CACHE`, which
-the image points at `/models/colabfold_msa` inside the container: mount a host directory there
+the image points at `/tmp/colabfold_msa` inside the container: mount a host directory there
 and a repeated run skips the server. `tests/run_gpu_campaign.sh` does exactly that, because the
 MSA fetches rather than the GPU are most of its wall time.
 
