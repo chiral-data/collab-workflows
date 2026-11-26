@@ -5,6 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2026-11-25]
+
+### Added
+
+- workflow-040: Binder Design Validation — **Gate A is met in the image on all 55 cases;
+  Gate B Phase 1 and Phase 2 are met on the GPU** (6 nodes: 01-ingest-designs,
+  01b-align-target, 02-build-prediction-inputs, 03-predict, 04-score,
+  05-filter-and-report). Depends on workflow-037, which must merge first: it reads 037's
+  `*_generated.cif` and `design_metrics.json`, and extends
+  `workflow-037/tests/make_designs.py` in place.
+  - The self-consistency filter 037 deliberately omits. Every metric 037 reports is
+    geometric, and all of them look ordinary on a design that folds into nothing, so each
+    sequence is refolded with a predictor that never saw it and compared against the
+    backbone it was designed as.
+  - Reads 037's structures rather than its exported FASTA: a sequence alone cannot be
+    compared against a backbone that stayed behind.
+  - Two tiers gate the merge. Tier 1 scores hand-built predictions whose correct answer is
+    known, and every passing check is broken on purpose and required to fail, because 037
+    shipped four checks that passed for the wrong reason. Tier 2 runs real predictions on
+    the GPU under `--network none` against designed positive and negative controls.
+  - `plddt_binder` is measured and does not gate alone: a 115-residue poly-alanine scores
+    95.81, above the real design. `sc_rmsd_A` is the metric doing the discriminating.
+  - Interface scoring (`score_interface`) is built, off by default and **uncalibrated**.
+    `iptm` and `pae_interaction` are reported and do not gate, pending Phase 3 controls.
+  - `01b-align-target` is the only node permitted egress, and the designed sequences are
+    not inputs to it. The boundary is enforced in the job config and checked by the suite.
+  - Designs remain un-screened upstream, and passing validation makes synthesis more
+    likely: the SecureDNA notice travels into every artifact here.
+  - Design doc and decisions in `workflows/workflow-040/validation_pipeline.md`; suite and
+    merge gate in `workflows/workflow-040/tests/README.md`.
+
 ## [2026-11-11]
 
 ### Added

@@ -1,10 +1,13 @@
 # workflow-040 — Binder Design Validation
 
-**Scaffold only. No node is implemented; every one exits 1.**
+**All six nodes are implemented. Gate A is met in `colabfold:2026_10_08` on all 55 cases,
+and Gate B Phase 1 and Phase 2 are met on the GPU. Interface scoring is off by default and
+its thresholds are uncalibrated: `iptm` and `pae_interaction` are reported and do not
+gate.** The [Status](#status) table below is the detailed version.
 
-This README is a skeleton. It gets filled in node by node, in the same commit as the node
-it describes — a README that describes behaviour the code does not have is a bug in this
-repo, not a follow-up (`CLAUDE.md`).
+Every claim on this page is kept in the same commit as the behaviour it describes — a
+README that describes behaviour the code does not have is a bug in this repo, not a
+follow-up (`CLAUDE.md`).
 
 - Design spec and decisions: [validation_pipeline.md](validation_pipeline.md)
 - Test suite and merge gate: [tests/README.md](tests/README.md),
