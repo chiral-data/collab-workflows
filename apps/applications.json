@@ -331,13 +331,13 @@
     {
       "id": "rfd4-proteina",
       "name": "RFD4-Proteina",
-      "version": "2026_11_04",
+      "version": "2026_11_25",
       "category": "Protein Design",
       "description": "Generative de novo protein design (binders, motif scaffolds, monomers)",
       "long_description": "RFD4-Proteina (RosettaCommons + NVIDIA GenAIR) is a generative protein design model superseding RFdiffusion 1/2/3, covering monomers, binders, motif scaffolding, antibodies and enzymes from a single condition-spec interface. This image installs the CUDA 12 profile and bakes in the matched flow + autoencoder checkpoint pair at a pinned revision. Note: the CLI path performs no SecureDNA screening, so designs are unscreened.",
       "base_image": "python:3.12-slim",
       "registry": "ghcr.io/chiral-data",
-      "image_path": "/rfd4-proteina:2026_11_04",
+      "image_path": "/rfd4-proteina:2026_11_25",
       "tags": [
         "protein",
         "protein-design",

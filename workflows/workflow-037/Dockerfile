@@ -48,10 +48,17 @@ RUN uv pip install --system --no-cache \
 # AlphaFold2 (51.6 GB) and OpenFold3 (21.2 GB) refolding runtime images used for scoring,
 # plus native .ckpt copies of the weights. This workflow runs ~metrics and never scores,
 # so none of that is fetched. An unfiltered snapshot_download fills the disk and fails.
+#
+# snapshot_download writes its tree cache 0600, so a non-root reader cannot open it,
+# huggingface_hub reports it corrupted and falls back to the network -- which
+# HF_HUB_OFFLINE=1 then refuses, failing generation with a misleading offline-mode error.
+# Read and traverse only: nothing here is written at run time. The chmod shares this RUN
+# because in a later one it would copy all 1.74 GB of weights into a new layer.
 RUN python -c "from huggingface_hub import snapshot_download; \
     snapshot_download('nvidia/RFD4-Proteina', \
     revision='a06e2509c7033b010fc43614e9fd840303588502', \
-    allow_patterns=['config.json', 'model.safetensors'])"
+    allow_patterns=['config.json', 'model.safetensors'])" && \
+    chmod -R a+rX /models
 
 # Everything above is baked as root, but silva runs containers as the invoking host's
 # UID to keep bind-mounted outputs owned by the user. That UID has no /etc/passwd entry,
@@ -61,11 +68,5 @@ RUN python -c "from huggingface_hub import snapshot_download; \
 ENV HOME=/tmp \
     XDG_CACHE_HOME=/tmp/.cache \
     MPLCONFIGDIR=/tmp/.config/matplotlib
-
-# snapshot_download writes its tree cache 0600, so a non-root reader cannot open it,
-# huggingface_hub reports it corrupted and falls back to the network -- which
-# HF_HUB_OFFLINE=1 then refuses, failing generation with a misleading offline-mode error.
-# Read and traverse only: nothing here is written at run time.
-RUN chmod -R a+rX /models
 
 WORKDIR /workspace

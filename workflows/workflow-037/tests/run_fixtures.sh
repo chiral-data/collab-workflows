@@ -18,7 +18,7 @@ WF="$(dirname "$TESTS")"
 WORK="${1:-$PWD/.fixture-run}"
 DL="$WORK/downloads"
 OUT="$WORK/results"
-IMG="${RFD4_IMAGE:-rfd4-proteina:2026_11_04}"
+IMG="${RFD4_IMAGE:-rfd4-proteina:2026_11_25}"
 
 mkdir -p "$DL" "$OUT" || exit 1
 

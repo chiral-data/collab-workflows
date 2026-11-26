@@ -82,7 +82,7 @@ Node 03 builds the `rfd4-generate` argv as a **Python list passed to `subprocess
 specifically to stop `~` becoming `$HOME`); bypassing the shell removes that class of bug entirely.
 It also sets `HF_HUB_OFFLINE=1`, so a baked-in-weights image never silently reaches for the network.
 
-Image name `rfd4-proteina:2026_11_04`. The repo's shared-image CI
+Image name `rfd4-proteina:2026_11_25`. The repo's shared-image CI
 (`build-changed-shared-workflow-images.yml`) greps the tag out of `job.toml` with
 `grep -A20 '\[container\]' | grep '^image'`, so **`image = "..."` must sit at column 0 within 20
 lines of `[container]`** in every `job.toml`.
@@ -204,10 +204,10 @@ Per `SILVA_MIGRATION_GUIDE.md` §6 — all must pass before the workflow is cons
 Build-time checks (these also resolve open items 1–3):
 
 ```bash
-docker build -t rfd4-proteina:2026_11_04 workflows/workflow-037/
-docker run --rm rfd4-proteina:2026_11_04 rfd4-generate --help          # CLI present
-docker run --rm rfd4-proteina:2026_11_04 python -c "import rfproteina" # resolve import name
-docker run --rm --gpus all rfd4-proteina:2026_11_04 \
+docker build -t rfd4-proteina:2026_11_25 workflows/workflow-037/
+docker run --rm rfd4-proteina:2026_11_25 rfd4-generate --help          # CLI present
+docker run --rm rfd4-proteina:2026_11_25 python -c "import rfproteina" # resolve import name
+docker run --rm --gpus all rfd4-proteina:2026_11_25 \
   python -c "import torch; print(torch.cuda.is_available(), torch.version.cuda)"
 ```
 
@@ -222,7 +222,7 @@ docker run --rm --gpus all \
   -v $(pwd)/workflows/workflow-037/03-generate:/workspace \
   -w /workspace \
   -e PARAM_NUM_REPLICATES=2 -e PARAM_SEED=42 -e PARAM_DISABLE_COMPILE=true \
-  rfd4-proteina:2026_11_04 bash run.sh
+  rfd4-proteina:2026_11_25 bash run.sh
 ```
 
 Node 03 first runs with `--dry-run` (prints resolved argv, exits 0, no GPU) — the testability
@@ -276,7 +276,7 @@ file whenever desired.
 ### Draft PR description
 
 > Adds `workflows/workflow-037/` — RFD4-Proteina de novo design, 6 nodes on one shared image
-> (`rfd4-proteina:2026_11_04`, `python:3.12-slim` base, weights baked at a pinned HF revision).
+> (`rfd4-proteina:2026_11_25`, `python:3.12-slim` base, weights baked at a pinned HF revision).
 >
 > - `01-acquire-target` — upload or RCSB fetch, normalise to mmCIF, inventory both residue numberings
 > - `02-build-spec` — render the task condition spec and validate it to an annotated CIF on CPU
